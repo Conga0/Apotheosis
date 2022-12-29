@@ -1,0 +1,34 @@
+<Entity 
+  name="unknown" tags="mortal,destruction_target" >
+
+  <SpriteComponent
+    _enabled="1" 
+    alpha="1" 
+    has_special_scale="0" 
+    image_file="mods/Apotheosis/files/enemies_gfx/esoteric_being_asleep.xml"
+    is_text_sprite="0" 
+    next_rect_animation=""
+    additive="1"
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="stand" 
+    visible="1" 
+     >
+  </SpriteComponent>
+  
+  <CollisionTriggerComponent
+    width="64"
+    height="64" 
+    radius="64"
+    required_tag="player_unit"
+    destroy_this_entity_when_triggered="0" >
+  </CollisionTriggerComponent>
+
+  <LuaComponent
+    script_collision_trigger_hit="mods/Apotheosis/files/scripts/animals/esoteric_being_awaken.lua"
+    execute_every_n_frame="-1"
+    execute_times="1" >
+  </LuaComponent>
+
+</Entity>
+

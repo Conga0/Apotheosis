@@ -1,0 +1,8 @@
+<Entity tags="glue_NOT,sleezebag" name="Kolmionmuotoinenkristalli" >
+  <Base file="data/entities/animals/triangle_gem.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="12"
+      max_hp="12"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

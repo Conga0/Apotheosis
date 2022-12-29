@@ -1,0 +1,135 @@
+<Entity name="Katon sieni" tags="standard_gravity,ui_use_raw_name">
+  
+	<Base file="data/entities/base_enemy_ceiling_creep.xml" >
+		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>
+
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="0"
+			attack_melee_damage_min="0.6" 
+			attack_melee_damage_max="1.0"
+			attack_melee_max_distance="0"
+			creature_detection_range_x="300"
+			creature_detection_range_y="300"
+			attack_melee_action_frame="4"
+			food_material="blood"
+			eye_offset_y="-10"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="0"
+			can_fly="0"  
+			attack_ranged_entity_count_min="1"
+			attack_ranged_entity_count_max="1"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="170"
+			attack_ranged_entity_file="data/entities/animals/ceiling_fungus_minion.xml"
+			attack_ranged_frames_between="90" 
+			attack_ranged_action_frame="4"
+			attack_ranged_offset_y="7"
+			attack_ranged_offset_x="0"
+			>
+		</AnimalAIComponent>
+
+		<DamageModelComponent 
+            hp="3.0"
+			air_needed="0"
+			minimum_knockback_force="1000000000"
+            materials_create_messages="1"
+			ragdoll_blood_amount_absolute="1.0"
+        	ragdoll_material="fungus_loose_trippy"
+            ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/ceiling_fungus/filenames.txt" 
+			ragdoll_offset_y="1"
+			fire_probability_of_ignition="0"
+			blood_multiplier="1.0"
+			blood_material="blood_fungi"
+			blood_spray_material="blood_fungi"
+			>
+			<damage_multipliers
+				fire="40.0" 
+				explosion="0.5"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/ceiling/ceiling_fungus.xml"
+			offset_x="0"
+			offset_y="0"
+			z_index="1.1">
+		</SpriteComponent>
+
+		<CharacterPlatformingComponent 
+			pixel_gravity="-600"
+		></CharacterPlatformingComponent>
+		
+		<PathFindingComponent
+			can_jump="0"
+			can_fly="0" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+
+		<GenomeDataComponent 
+			herd_id="fungus"
+			food_chain_rank="10"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterDataComponent 
+			buoyancy_check_offset_y="-4"
+			collision_aabb_min_x="-0.5"
+			collision_aabb_max_x="0.5"  
+			collision_aabb_min_y="-7"
+			collision_aabb_max_y="-7"
+			mass="1.8"
+			gravity="-10"
+			>
+		</CharacterDataComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-3.5" 
+			aabb_max_x="3.5" 
+			aabb_min_y="-7" 
+			aabb_max_y="7" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>
+
+		<CameraBoundComponent
+		  max_count="20"
+		  distance="160000">
+		</CameraBoundComponent>
+
+		<SpriteAnimatorComponent>
+		</SpriteAnimatorComponent>
+	</Base>
+	
+    <LuaComponent 
+		_enabled="1" 
+		script_source_file="mods/Apotheosis/files/scripts/animals/ceiling_start.lua" 
+		execute_every_n_frame="300"
+		execute_on_added="0"
+		remove_after_executed="1">
+   </LuaComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/fungus" >
+	</AudioComponent>
+
+	<LuaComponent
+        script_source_file="mods/Apotheosis/files/scripts/animals/ceiling_fungus_limiter.lua"
+        execute_every_n_frame="86"
+        >
+    </LuaComponent>
+
+</Entity>
+

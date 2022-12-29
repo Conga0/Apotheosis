@@ -1,0 +1,25 @@
+Please do not use any sprites or voiceline audio from this mod.
+I do not grant you permission to use any of the graphical work I have created for Apotheosis & Weirdos in your own project by downloading this file, graphical work includes but is not limited to all ".png" and ".xml" file types within Apotheosis as of download.
+If you are interested in using any graphical work in your own projects, please talk to me first, it would be easiest for me to reach you at Conga Lyne#2452.
+
+All files inside of Apotheosis/files/enemies_gfx/cats and any of it's sub-files are not created by me and I can not give permission for you to use them.
+The files blob_big.xml and blob_big.png within Apotheosis/files/enemies_gfx are not created by me and I can not give permission for you to use them.
+The Cat meowing audio files within Apotheosis & Weirdos is not voiced by me and I can not give permission for you to use it.
+
+
+
+
+If you are interested in reusing any code, go ahead.
+There's usually one best way to use code, but countless different unique ways to create pixel art with no one way being "correct".
+
+
+
+
+If you want to port any of the enemies in this mod 1:1 into one of your own projects,
+I ask two things of you, the first is that you talk to me first to discuss implementation.
+I can easily be contacted at Conga Lyne#2452 but also at congamailexpress@gmail.com if discord would be unpreferable, however I would prefer the former over the latter and may take some time to respond via email.
+The second thing I ask for is credit for what I created.
+
+
+
+- Conga Lyne

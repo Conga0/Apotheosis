@@ -1,0 +1,156 @@
+<Entity 
+  name="Polymorph Crystal"
+  tags="hittable,mortal" >
+
+  <DamageModelComponent 
+    _enabled="1" 
+	create_ragdoll="0"
+    air_needed="0"  
+    falling_damages="0" 
+    fire_damage_amount="0.2" 
+    fire_probability_of_ignition="0" 
+    hp="20" 
+    is_on_fire="0" 
+    blood_material="apotheosis_redstone"
+	blood_multiplier="0.5"
+    materials_create_messages="0" 
+    materials_damage="1" 
+    materials_how_much_damage="" 
+    materials_that_damage="" 
+    ragdoll_material="ice_b2"
+    ragdoll_filenames_file="" 
+    ragdoll_offset_y="-6" >
+  </DamageModelComponent>
+
+  <GenomeDataComponent 
+    _enabled="1" 
+    food_chain_rank="20" 
+    herd_id="robot" 
+    is_predator="1" >
+  </GenomeDataComponent>
+
+  <HitboxComponent 
+    _enabled="1" 
+    aabb_max_x="7" 
+    aabb_max_y="0" 
+    aabb_min_x="-6" 
+    aabb_min_y="-27" 
+    is_enemy="0" 
+    is_item="0" 
+    is_player="1" >
+  </HitboxComponent>
+
+  <PathFindingGridMarkerComponent 
+    _enabled="1" 
+    marker_offset_x="0" 
+    marker_offset_y="0" 
+    marker_work_flag="16" >
+  </PathFindingGridMarkerComponent>
+
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    has_special_scale="0" 
+    image_file="mods/Apotheosis/files/buildings_gfx/manadrain_crystal.xml"
+	emissive="0"
+    is_text_sprite="0" 
+    next_rect_animation="" 
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="stand" 
+    visible="1" 
+     >
+  </SpriteComponent>
+  
+  <VelocityComponent />
+
+  <SimplePhysicsComponent/>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="96"
+		fade_out_time="1.5" 
+		r="243"
+		g="214"
+		b="241"
+		offset_y="-6"
+		>
+	</LightComponent>
+
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/manadrain_crystal_aura.lua"
+		execute_every_n_frame="30"
+		>
+	</LuaComponent>
+
+
+
+		
+		<ParticleEmitterComponent 
+			emitted_material_name="spark_electric"
+			gravity.y="0.0"
+			lifetime_min="5.5"
+			lifetime_max="15.5"
+			count_min="2"
+			count_max="6"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.max="128"
+			cosmetic_force_create="0"
+			airflow_force="0.5"
+			airflow_time="1.9"
+			airflow_scale="0.15"
+			emission_interval_min_frames="1"
+			emission_interval_max_frames="4"
+			emit_cosmetic_particles="1"
+			x_vel_min="-1"
+			x_vel_max="1"
+			y_vel_min="-1"
+			y_vel_max="1"
+			is_emitting="1" >
+		</ParticleEmitterComponent>
+
+		<ParticleEmitterComponent 
+			emitted_material_name="spark_electric"
+			gravity.y="0.0"
+			lifetime_min="0.5"
+			lifetime_max="0.8"
+			count_min="20"
+			count_max="30"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.min="128"
+			area_circle_radius.max="128"
+			cosmetic_force_create="0"
+			airflow_force="1.5"
+			airflow_time="1.9"
+			airflow_scale="0.15"
+			emission_interval_min_frames="1"
+			emission_interval_max_frames="1"
+			emit_cosmetic_particles="1"
+			draw_as_long="1"
+			x_vel_min="-1"
+			x_vel_max="1"
+			y_vel_min="-1"
+			y_vel_max="1"
+			is_emitting="1" 
+			velocity_always_away_from_center="-220"
+			>
+		</ParticleEmitterComponent>
+
+		<LuaComponent
+			script_death="mods/Apotheosis/files/scripts/animals/manadrain_crystal_death.lua"
+			>
+		</LuaComponent>
+
+    </Entity>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_orb/loop"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>
+

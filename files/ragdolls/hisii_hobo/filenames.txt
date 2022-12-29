@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/hisii_hobo/head.png
+mods/Apotheosis/files/ragdolls/hisii_hobo/leg_l.png
+mods/Apotheosis/files/ragdolls/hisii_hobo/leg_r.png
+mods/Apotheosis/files/ragdolls/hisii_hobo/arm.png
+mods/Apotheosis/files/ragdolls/hisii_hobo/torso.png

@@ -1,0 +1,15 @@
+<Entity >
+  <Base file="data/entities/animals/lukki_fungus.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="11.5"
+      max_hp="11.5"
+     ></DamageModelComponent >
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_fungus_dirty.xml"
+		offset_x="0"
+		offset_y="0"
+		>
+	</SpriteComponent>
+  </Base>
+</Entity>

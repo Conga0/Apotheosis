@@ -1,0 +1,60 @@
+<Entity 
+  name="unknown" 
+  tags="hittable,mortal" >
+
+  <DamageModelComponent 
+    _enabled="1" 
+    air_needed="0"  
+    falling_damages="0" 
+    fire_damage_amount="0.2" 
+    fire_probability_of_ignition="0" 
+    hp="3" 
+    is_on_fire="0" 
+    blood_material="blood"
+	blood_multiplier="0.1"
+    materials_create_messages="0"
+    materials_damage="1" 
+    materials_how_much_damage="0.005,0.005,0.0005"
+    materials_that_damage="lava,acid,radioactive_gas"
+    ragdoll_material="cocoon_box2d"
+    ragdoll_filenames_file="" 
+    ragdoll_offset_y="-6" >
+  </DamageModelComponent>
+
+  <HitboxComponent 
+    _enabled="1"
+    aabb_min_x="-8"
+    aabb_max_x="9"
+    aabb_min_y="-17"
+    aabb_max_y="0"
+    is_enemy="0" 
+    is_item="0" 
+    is_player="1" >
+  </HitboxComponent>
+
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    has_special_scale="0" 
+    image_file="mods/Apotheosis/files/buildings_gfx/hamis_nest.xml"
+    is_text_sprite="0" 
+    next_rect_animation="" 
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="stand" 
+    visible="1" 
+     >
+  </SpriteComponent>
+  
+  <VelocityComponent />
+
+  <SimplePhysicsComponent/>
+
+  <LuaComponent
+    _enabled="1"
+    script_damage_received="mods/Apotheosis/files/scripts/buildings/hamis_nest_split.lua"
+    >
+  </LuaComponent>
+
+</Entity>
+

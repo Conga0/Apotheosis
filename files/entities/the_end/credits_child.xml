@@ -1,0 +1,60 @@
+<Entity >
+
+    <InheritTransformComponent
+		only_position="1"
+		>
+		<Transform
+			position.x="0" 
+			position.y="0" >
+		</Transform>
+	</InheritTransformComponent>
+	
+	<LifetimeComponent
+		lifetime="8000"
+		>
+	</LifetimeComponent>
+	
+	<!-- Scrolling Text-->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/entities/the_end/credits_scroll.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		remove_after_executed="0"
+		>
+	</LuaComponent>
+
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/entities/the_end/credits_scroll_init.lua"
+		execute_every_n_frame="2"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/entities/the_end/credits_scroll_music.lua"
+		execute_every_n_frame="500"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/entities/the_end/credits_scroll_end.lua"
+		execute_every_n_frame="8000"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<!-- The text itself -->
+	<SpriteComponent
+		_enabled="0"
+		z_index="-30"
+		image_file="mods/Apotheosis/files/entities/the_end/credits.png"
+		offset_x="295"
+		offset_y="-600"
+		emissive="1"
+		>
+	</SpriteComponent>
+</Entity>

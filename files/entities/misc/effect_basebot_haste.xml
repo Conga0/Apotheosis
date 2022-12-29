@@ -1,0 +1,27 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="MOVEMENT_FASTER_2X"
+    	frames="660"
+    >
+	</GameEffectComponent >
+    
+    <GameEffectComponent 
+    	effect="FASTER_LEVITATION"
+    	frames="660"
+    >
+	</GameEffectComponent >
+
+	<UIIconComponent
+		name="$status_apotheosis_haste_name"
+		description="$status_apotheosis_haste_desc"
+		icon_sprite_file="data/ui_gfx/status_indicators/movement_faster.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="0"
+		>
+	</UIIconComponent>
+	
+</Entity>

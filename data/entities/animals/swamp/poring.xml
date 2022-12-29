@@ -1,0 +1,37 @@
+<Entity name="Suohyytelö" tags="ui_use_raw_name">
+  
+    <Base file="data/entities/animals/poring.xml" >
+        <ItemChestComponent level="2" > </ItemChestComponent>
+        
+        <SpriteComponent 
+            image_file="mods/Apotheosis/files/enemies_gfx/poring_swamp.xml"
+            alpha="0.8" 
+            offset_x="14" 
+            offset_y="20" >
+        </SpriteComponent>
+
+        <DamageModelComponent
+            hp="1.5"
+            air_needed="0"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/poring_swamp/filenames.txt"
+			ragdoll_material="meat_slime"
+			blood_material="water_swamp"
+			blood_spray_material="water_swamp"
+			blood_multiplier="0.6"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			ragdoll_blood_amount_absolute="0"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid,poison" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
+			>
+        </DamageModelComponent>
+
+	</Base>
+
+    <LuaComponent
+        execute_every_n_frame="-1"
+        script_death="data/scripts/items/drop_money.lua"
+        remove_after_executed="1" >
+    </LuaComponent>
+
+</Entity>

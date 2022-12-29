@@ -1,0 +1,15 @@
+<Entity name="Vartiomies" tags="ui_use_raw_name" >
+  <Base file="data/entities/animals/sentry.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="45"
+      max_hp="45"
+     ></DamageModelComponent >
+		<AnimalAIComponent 
+			attack_ranged_entity_file="data/entities/projectiles/apotheosis_sentry_bullet_lethal.xml"
+			creature_detection_range_x="800"
+			creature_detection_range_y="800"
+			attack_ranged_max_distance="800"
+			>
+		</AnimalAIComponent>
+  </Base>
+</Entity>

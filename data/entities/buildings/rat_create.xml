@@ -1,0 +1,19 @@
+<Entity 
+  name="unknown" tags="prop" >
+  
+  <CollisionTriggerComponent
+    width="384"
+    height="384" 
+    radius="256"
+    required_tag="player_unit"
+    destroy_this_entity_when_triggered="0" >
+  </CollisionTriggerComponent>
+
+  <LuaComponent
+    script_collision_trigger_hit="data/scripts/buildings/rat_create.lua"
+    execute_every_n_frame="-1"
+    execute_times="1" >
+  </LuaComponent>
+
+</Entity>
+

@@ -1,0 +1,8 @@
+	<Mod
+		name="Apotheosis (Dev Build)"
+		description="WORK IN PROGRESS, goal is to massively expand world map with new content."
+		tags="creatures,perks,spells,gameplay,audio,streaming integration,bosses,perks,graphics,items,funny"
+		dont_upload_folders="FOLDER_TO_IGNORE1|FOLDER_TO_IGNORE2"
+		dont_upload_files="FILE_TO_IGNORE1|FILE_TO_IGNORE2"
+	> 
+	</Mod>

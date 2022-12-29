@@ -1,0 +1,12 @@
+<Entity >
+   
+  <SpriteComponent 
+    image_file="data/entities/verlet_chains/fungus_roots/fungus_root_verlet_2.png" 
+    offset_x="0"
+    offset_y="2"
+    update_transform="0"
+    update_transform_rotation="0"
+	  z_index="1.1" >
+  </SpriteComponent>
+  
+</Entity>

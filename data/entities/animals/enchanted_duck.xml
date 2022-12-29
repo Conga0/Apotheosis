@@ -1,0 +1,78 @@
+<Entity name="Lumottu ankka" tags="ui_use_raw_name">
+  
+    <Base file="data/entities/base_enemy_basic.xml" >
+        <ItemChestComponent level="1" > </ItemChestComponent>
+        
+        <AnimalAIComponent
+            sense_creatures="1"
+            attack_melee_max_distance="12" 
+    		attack_dash_enabled="1"
+			attack_melee_damage_min="0.9" 
+			attack_melee_damage_max="1.2"
+			attack_dash_distance="80"
+			creature_detection_range_x="200"
+			creature_detection_range_y="200"  >
+        </AnimalAIComponent>
+        
+        <SpriteComponent 
+            image_file="mods/Apotheosis/files/enemies_gfx/summons/enchanted_duck.xml"
+            offset_x="6" 
+            offset_y="12" >
+        </SpriteComponent>
+        
+        <SpriteAnimatorComponent
+            rotate_to_surface_normal="0" >
+        </SpriteAnimatorComponent>
+
+		<DamageModelComponent 
+			hp="2"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/enchanted_duck/filenames.txt" 
+			fire_probability_of_ignition="0.05"
+            blood_spray_material="blood"
+            blood_spray_create_some_cosmetic="1"
+			>
+		</DamageModelComponent>
+        
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0" 
+			can_walk="1"
+			can_dive="1" 
+			can_swim_on_surface="1" 
+			jump_speed="250" //originally 90
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="150"
+			initial_jump_max_distance_y="150"
+			>
+		</PathFindingComponent>
+
+        <CharacterPlatformingComponent 
+			jump_velocity_y="-45" // originally 12
+			jump_velocity_x="-70" //originally unaffected
+			run_velocity="225" >
+        </CharacterPlatformingComponent>
+
+        <GenomeDataComponent 
+            herd_id="mage">
+        </GenomeDataComponent>
+        
+        <HitboxComponent 
+            _enabled="1"
+			aabb_min_x="-5" 
+            aabb_min_y="-6" 
+            aabb_max_x="5" 
+            aabb_max_y="6" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-2" 
+			collision_aabb_max_x="2" 
+			collision_aabb_min_y="-6" 
+			collision_aabb_max_y="3"
+			mass="0.4"
+			>
+		</CharacterDataComponent>
+    </Base>
+
+</Entity>

@@ -1,0 +1,27 @@
+<Entity tags="effect_protection" >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+		_tags="effect_protection"
+    	effect="PROTECTION_RADIOACTIVITY"
+    	frames="-1"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+
+	<LuaComponent
+		execute_on_added="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/toxic_immunity_start.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_removed="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/toxic_immunity_end.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+</Entity>

@@ -1,0 +1,3 @@
+mods/Apotheosis/files/ragdolls/enchanted_duck/torso.png
+mods/Apotheosis/files/ragdolls/enchanted_duck/head.png
+mods/Apotheosis/files/ragdolls/enchanted_duck/feet.png

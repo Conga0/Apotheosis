@@ -1,0 +1,110 @@
+<Entity 
+  name="$projectile_default" 
+   >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+    		gravity_y="0"
+			air_friction="0"
+			mass="0.05"
+			>
+    	</VelocityComponent> 
+	</Base>
+
+  <ProjectileComponent 
+    _enabled="1" 
+	lob_min="0.8"
+  	lob_max="1.0"
+  	speed_min="350"
+  	speed_max="350"
+    die_on_low_velocity="0"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+	explosion_dont_damage_shooter="1"
+    damage="0.0"
+    on_collision_die="1"
+    lifetime="100" 
+	knockback_force="1.0"
+    penetrate_entities="1"
+    collide_with_world="1"
+    penetrate_world="0"
+    spawn_entity="mods/Apotheosis/files/entities/projectiles/mist_poison.xml"
+	>
+    <config_explosion
+      never_cache="1" 
+      camera_shake="0.5" 
+      explosion_radius="1" 
+      explosion_sprite="" 
+      explosion_sprite_lifetime="0.0" 
+      create_cell_probability="0" 
+      create_cell_material="plasma_fading" 
+	  ray_energy="10"
+      hole_destroy_liquid="1" 
+      hole_enabled="1" 
+	  damage = "0.0"
+      hole_image="data/temp/explosion_hole.png"
+	  explosion_sprite_emissive="1"
+	  explosion_sprite_additive="1"
+      particle_effect="0" 
+      damage_mortals="0"
+	  physics_explosion_power.min="0" 
+      physics_explosion_power.max="0"
+	  physics_throw_enabled="0"
+      shake_vegetation="0"  
+      sparks_enabled="0" 
+	  spark_material="plasma_fading_pink"
+      sparks_count_max="16" 
+      sparks_count_min="12"
+      light_fade_time="0.2" 
+	  light_r="0"
+	  light_g="0"
+      light_b="0"
+      stains_enabled="0" 
+      stains_image="data/temp/explosion_stain.png" >
+    </config_explosion>
+  </ProjectileComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/projectiles_gfx/orb_green.xml" 
+    next_rect_animation="" 
+    offset_x="6" 
+    offset_y="6" 
+    rect_animation="spawn" 
+     
+     
+	update_transform_rotation="0"
+	>
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/projectiles_gfx/orb_green.xml" 
+    next_rect_animation="" 
+    offset_x="6" 
+    offset_y="6" 
+    rect_animation="spawn" 
+	emissive="1"
+    additive="1"
+     
+	update_transform_rotation="0"
+	>
+  </SpriteComponent>
+  
+  <LightComponent 
+    _enabled="1" 
+    radius="150" 
+    r="30"
+    g="90"
+    b="30">
+  </LightComponent>
+  
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="mods/Apotheosis/files/entities/projectiles/boss_music_delayed_attack_start.xml"
+		>
+	</VariableStorageComponent>
+ </Entity>

@@ -1,0 +1,108 @@
+<Entity
+	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,lukki,glue_NOT,ui_use_raw_name" 
+	name="Kauhea pääkallo"> 
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>
+		
+		<AnimalAIComponent
+			attack_ranged_entity_file="data/entities/projectiles/darkflame_homing.xml"
+			attack_ranged_enabled="1"
+			attack_ranged_min_distance="30"
+			attack_ranged_max_distance="300"
+			attack_ranged_frames_between="240"
+			attack_ranged_action_frame="3"
+			can_fly="1" >
+		</AnimalAIComponent>
+
+		<DamageModelComponent
+            hp="15" 
+            ragdoll_material="meat_slime_cursed"
+			blood_material="slime"
+			blood_spray_material="slime"
+			blood_multiplier="0.2"
+			fire_probability_of_ignition="5" 
+            ragdoll_filenames_file=""
+			materials_that_damage="acid,poison,blood_cold,blood_cold_vapour,lava" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.004"
+			ragdollify_child_entity_sprites="1"
+			ragdollify_root_angular_damping="2"
+			ragdoll_offset_y="-6"
+			>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/bone_worm.xml"
+			offset_x="15" 
+			offset_y="13"
+			>
+		</SpriteComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-14" 
+			aabb_max_x="14" 
+			aabb_min_y="-13" 
+			aabb_max_y="13" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>		
+		
+		<GenomeDataComponent 
+			herd_id="ghost"
+			food_chain_rank="6"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-14.0" 
+			collision_aabb_max_x="14.0" 
+			collision_aabb_min_y="-13" 
+			collision_aabb_max_y="13" 
+			mass="2.3"
+			>
+		</CharacterDataComponent>
+	</Base>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/gazer" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/gazer/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<MaterialInventoryComponent 
+		_enabled="1" 
+		drop_as_item="0" 
+		leak_on_damage_percent="0.999" 
+		>
+		<count_per_material_type>
+		<Material material="blood" count="200"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
+
+	<IKLimbsAnimatorComponent>
+	</IKLimbsAnimatorComponent>
+
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_limb_bone_worm_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_limb_bone_worm_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_limb_bone_worm_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_limb_bone_worm_animated_alt.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_limb_bone_worm_animated_alt.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_limb_bone_worm_animated_alt.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_limb_bone_worm_animated_attacker.xml" />  </Entity>
+
+</Entity>
+

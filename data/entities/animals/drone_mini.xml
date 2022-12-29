@@ -1,0 +1,149 @@
+<Entity  name="Pieni Lennokki" tags="ui_use_raw_name">
+  
+	<Base file="data/entities/base_enemy_robot.xml" >
+		<AnimalAIComponent 
+			preferred_job="JobDefault"
+			creature_detection_range_x="150"
+			creature_detection_range_y="150"
+			food_material="blood"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="0"
+			can_fly="1"  
+			can_walk="0"
+			attack_ranged_entity_file="data/entities/projectiles/apotheosis_bullet_inaccurate.xml"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="120"
+			attack_ranged_frames_between="60"
+			attack_ranged_action_frame="4"
+			attack_ranged_offset_y="0"
+			attack_ranged_offset_x="0"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="0.8"
+            ragdoll_material="steel"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/drone_mini/filenames.txt"  >
+			<damage_multipliers
+				fire="0.0" 
+				drill="0.1"
+				slice="0.1"
+				melee="0.3"
+				projectile="0.6"
+				radioactive="0.0"
+				explosion="1.0"
+				electricity="2.0" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			offset_x="0"
+			offset_y="0"
+			image_file="mods/Apotheosis/files/enemies_gfx/drone_mini.xml" >
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_walk="0"
+			can_fly="1" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+
+		<GenomeDataComponent 
+			herd_id="orcs"
+			food_chain_rank="5"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-20"
+			run_velocity="60"  
+			fly_speed_max_up="80"
+			fly_speed_max_down="80"
+			fly_speed_mult="30"
+			fly_speed_change_spd="3"
+			swim_idle_buoyancy_coeff="0.8"
+			fly_velocity_x="120">
+		</CharacterPlatformingComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-5" 
+			aabb_max_x="4" 
+			aabb_min_y="-5" 
+			aabb_max_y="3" 
+			>
+		</HitboxComponent>
+  
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-5" 
+			collision_aabb_max_x="4" 
+			collision_aabb_min_y="-5" 
+			collision_aabb_max_y="3" 
+			mass="0.6"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+		<SpriteComponent 
+			offset_x="0"
+			offset_y="0"
+			image_file="mods/Apotheosis/files/enemies_gfx/drone_mini_propeller.xml" >
+		</SpriteComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_white"
+		x_pos_offset_min="-8"
+		x_pos_offset_max="8"
+		y_pos_offset_min="-5"
+		y_pos_offset_max="-3"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="40"
+		y_vel_max="120"
+		friction="1"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.2"
+		lifetime_max="0.7"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		fade_based_on_lifetime="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/drone_lasership" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/drone_lasership/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+</Entity>
+

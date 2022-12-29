@@ -1,0 +1,20 @@
+<Sprite 
+	filename="mods/Apotheosis/files/enemies_gfx/drone_mini_propeller.png" 
+	offset_x="6" 
+	offset_y="6" 
+	default_animation="stand"
+	>
+	
+  <RectAnimation 
+	name="stand" 
+	pos_x="0" 
+	pos_y="0" 
+	frame_count="12" 
+	frame_width="14" 
+	frame_height="11" 
+	frame_wait="0.01" 
+	frames_per_row="12" 
+	loop="1"  >
+  </RectAnimation>
+  
+</Sprite>

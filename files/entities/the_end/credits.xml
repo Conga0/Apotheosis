@@ -1,0 +1,12 @@
+<Entity >
+
+	<SpriteComponent
+		z_index="-30"
+		image_file="mods/Apotheosis/files/entities/the_end/credits.png"
+		offset_x="295"
+		offset_y="300"
+		emissive="1"
+		>
+	</SpriteComponent>
+</Entity>
+

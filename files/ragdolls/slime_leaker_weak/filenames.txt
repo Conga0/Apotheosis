@@ -1,0 +1,1 @@
+mods/Apotheosis/files/ragdolls/slime_leaker_weak/body.png

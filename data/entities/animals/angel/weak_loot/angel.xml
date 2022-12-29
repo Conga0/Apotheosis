@@ -1,0 +1,31 @@
+<Entity >
+  <Base file="data/entities/animals/angel.xml">
+
+	<LuaComponent
+		_tags="death_reward"
+		script_death="data/entities/animals/angel/angel_death_weak_loot.lua"
+		>
+	</LuaComponent>
+  </Base>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+</Entity>

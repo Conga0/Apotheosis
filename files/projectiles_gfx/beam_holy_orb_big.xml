@@ -1,0 +1,32 @@
+<Sprite
+ filename="mods/Apotheosis/files/projectiles_gfx/beam_holy_orb_big.png"
+ offset_x="51"
+ offset_y="51"
+ default_animation="spawn" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="fireball"
+  pos_x="0"
+  pos_y="102"
+  frame_count="1"
+  frame_width="102"
+  frame_height="102"
+  frame_wait="0.21"
+  frames_per_row="1"
+  loop="1"   >
+ </RectAnimation>
+
+ <RectAnimation
+  name="spawn"
+  pos_x="0"
+  pos_y="0"
+  frame_count="3"
+  frame_width="102"
+  frame_height="102"
+  frame_wait="0.04"
+  next_animation="fireball" 
+  frames_per_row="3"
+  loop="0"   >
+ </RectAnimation>
+</Sprite>

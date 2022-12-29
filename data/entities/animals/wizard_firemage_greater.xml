@@ -1,0 +1,224 @@
+<Entity name="Suur Stendari" tags="firemage,touchmagic_immunity,ui_use_raw_name" >
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="2" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			attack_melee_damage_min="0.4" 
+			attack_melee_damage_max="0.7"
+			creature_detection_range_x="300"
+			creature_detection_range_y="300"
+			food_material="blood"
+			needs_food="0"
+            attack_only_if_attacked="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="1"
+			can_fly="1"  
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/meteor_npc.xml"
+			attack_ranged_action_frame="4"
+			attack_melee_action_frame="4"
+			attack_ranged_frames_between="100"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="20"
+			ragdoll_filenames_file="data/ragdolls/firemage/filenames.txt" 
+			fire_probability_of_ignition="0" 
+			materials_that_damage="acid,water,poison,blood_cold,blood_cold_vapour,mud,water_swamp,water_salt,swamp,snow,water_ice,slime,slime_green,lava,water_fading" 
+			materials_how_much_damage="0.005,0.0006,0.002,0.001,0.0015,0.001,0.0008,0.0006,0.0006,0.0006,0.0007,0.0006,0.0006,-0.02,0.0006"
+			ragdoll_material="lavarock_static"
+			ragdoll_fx_forced="DISINTEGRATED"
+			blood_material="lava"
+			blood_spray_material="lava"
+			blood_multiplier="0.8"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			wet_status_effect_damage="0.4"
+			critical_damage_resistance="0.0"
+			physics_objects_damage="0"
+			air_needed="0"
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
+			>
+			<damage_multipliers
+				explosion="0.0"
+				fire="-0.2" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/firemage_big.xml" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="1" 
+			jump_speed="170"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="150"
+			initial_jump_max_distance_y="150"
+			>
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="mage"
+			food_chain_rank="6"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-12" 
+			swim_idle_buoyancy_coeff="1.0"
+			run_velocity="18"  >
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+		  max_count="30"
+		  distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+		  _enabled="1" 
+		  aabb_min_x="-6.5" 
+		  aabb_max_x="6.5" 
+		  aabb_min_y="-22" 
+		  aabb_max_y="3" 
+		  >
+		</HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-2.5" 
+			collision_aabb_max_x="3.0" 
+			collision_aabb_min_y="-22" 
+			collision_aabb_max_y="3" 
+			mass="1.4"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<SpriteComponent 
+		_tags="character" 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/firemage_big_emissive.xml"
+		offset_x="0" 
+		offset_y="0"
+		emissive="1"
+		additive="1"
+		>
+	</SpriteComponent>
+		
+  <LightComponent 
+    _enabled="1" 
+    radius="200" 
+    r="220"
+    g="120"
+    b="120"
+    fade_out_time="1.5"
+    >
+  </LightComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+	
+	<Entity>
+		<InheritTransformComponent>
+			<Transform 
+				position.x="0"
+				position.y="-22" 
+				>
+			</Transform>
+		</InheritTransformComponent>
+		
+		<Base file="data/entities/base_torch_particle.xml" >
+
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-3"
+				x_pos_offset_max="3" >
+			</ParticleEmitterComponent>
+	  
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-3"
+				x_pos_offset_max="3" >
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-3"
+				x_pos_offset_max="3" >
+			</ParticleEmitterComponent>
+
+		</Base>
+	</Entity>
+	
+	<HotspotComponent
+		_tags="hand_l"
+		sprite_hotspot_name="hand"
+		transform_with_scale="1" >
+	</HotspotComponent>
+
+	<Entity name="hand_l">	
+		<Base file="data/entities/base_torch_particle.xml" >
+
+			<ParticleEmitterComponent 
+				count_min="2"
+				count_max="3"
+				x_pos_offset_min="-3"
+				x_pos_offset_max="3" 
+				y_pos_offset_min="-3"
+				y_pos_offset_max="3"
+				>
+			</ParticleEmitterComponent>
+	  
+			<ParticleEmitterComponent 
+				count_min="2"
+				count_max="3"
+				x_pos_offset_min="-3"
+				x_pos_offset_max="3" 
+				y_pos_offset_min="-3"
+				y_pos_offset_max="3">
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-3"
+				x_pos_offset_max="3" 
+				y_pos_offset_min="-3"
+				y_pos_offset_max="3">
+			</ParticleEmitterComponent>
+
+		</Base>
+		
+		<InheritTransformComponent
+			parent_hotspot_tag="hand_l"
+			only_position="1" >
+		</InheritTransformComponent>
+
+	</Entity>
+
+    <MusicEnergyAffectorComponent
+    	energy_target="1">
+    </MusicEnergyAffectorComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/firemage" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/firemage/burning_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>
+

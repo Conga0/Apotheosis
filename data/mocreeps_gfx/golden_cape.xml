@@ -1,0 +1,8 @@
+<Entity name="cape">  
+    <Base file="data/entities/verlet_chains/cape/cape.xml">
+        <VerletPhysicsComponent
+            cloth_color_edge="0xFFffce62"
+            cloth_color="0xFF9b6f9a">
+        </VerletPhysicsComponent>
+    </Base>  
+</Entity>

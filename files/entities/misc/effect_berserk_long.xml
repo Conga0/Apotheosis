@@ -1,0 +1,30 @@
+<Entity>
+	<Base file="data/entities/particles/berserk.xml" >
+		<SpriteParticleEmitterComponent
+    		emission_interval_min_frames="10"
+    		emission_interval_max_frames="20"
+			randomize_position_inside_hitbox="1"  >
+		</SpriteParticleEmitterComponent>
+	</Base>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+        effect="BERSERK"
+        frames="3600"
+    >
+	</GameEffectComponent >
+
+	<UIIconComponent
+		name="Berserk"
+		description="A berserk curse affects you."
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/berserk_long.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>

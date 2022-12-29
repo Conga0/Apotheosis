@@ -1,0 +1,225 @@
+<Entity name="Mutamies" >
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="1" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1"
+			preferred_job="JobDefault"
+			attack_if_damaged_probability="100"
+			escape_if_damaged_probability="0"
+			attack_melee_enabled="1"
+            attack_melee_max_distance="16"
+			attack_melee_action_frame="5"
+			attack_melee_damage_min="1.2"
+			attack_melee_damage_max="1.8"
+			creature_detection_range_x="300"
+			creature_detection_range_y="300"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/slimeblob_mud.xml"
+			attack_ranged_action_frame="1"
+			attack_ranged_frames_between="130" 
+			attack_ranged_min_distance="90"
+			attack_ranged_max_distance="250"
+			attack_dash_enabled="1"
+			attack_dash_distance="90"
+			can_fly="0"
+			>
+		</AnimalAIComponent>
+
+		<SpriteComponent
+			alpha="1"
+			_enabled="1"
+			image_file="mods/Apotheosis/files/enemies_gfx/mudman_friendly.xml"
+			offset_x="0"
+			offset_y="0" >
+		</SpriteComponent>
+		
+		<DamageModelComponent 
+            hp="6.0"
+            materials_create_messages="1"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/mudman_friendly/filenames.txt" 
+			fire_probability_of_ignition="0"
+			blood_material="soil"
+    		blood_spray_material="mud"
+            blood_spray_create_some_cosmetic="1"
+			blood_multiplier="0.05"
+			ragdoll_material="soil"
+			>
+			<damage_multipliers
+				explosion="0.4"
+				fire="0.2"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0" 
+			jump_speed="120"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="60"
+			initial_jump_max_distance_y="60" 
+			can_swim_on_surface="1"
+			can_dive="1"
+			>
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+	
+		<GenomeDataComponent 
+			herd_id="flower"
+			food_chain_rank="15"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-15" 
+			run_velocity="15"  >
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent
+            _enabled="1"
+			aabb_min_x="-3"
+            aabb_max_x="3"
+			aabb_min_y="-6"
+            aabb_max_y="3"
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-2.0"
+			collision_aabb_max_x="2.0"
+			collision_aabb_min_y="-7.5"
+			collision_aabb_max_y="3"
+			mass="1.3"
+			>
+		</CharacterDataComponent>
+	</Base>
+		
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/shooterflower" >
+	</AudioComponent>
+	
+	<HitboxComponent 
+		_enabled="1" 
+		aabb_max_x="2.5" 
+		aabb_max_y="-6" 
+		aabb_min_x="-2.5" 
+		aabb_min_y="-12" 
+		damage_multiplier="0.9"
+		>
+	</HitboxComponent>
+	<Entity>
+	    <GameEffectComponent 
+	        effect="ALLERGY_RADIOACTIVE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<HotspotComponent
+		_tags="hand_hotspot,hand"
+		sprite_hotspot_name="hand"
+		offset.x="0" 
+		offset.y="0">
+	</HotspotComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/robot_alerter_fake_death.lua"
+		execute_every_n_frame="3600"
+		>
+	</LuaComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="soil"
+		offset.x="0"
+		offset.y="3"
+		fade_based_on_lifetime="1"
+		render_on_grid="1"
+		x_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_min="-8"
+		y_pos_offset_max="2"
+		airflow_force="0.1"
+		airflow_time="0.2"
+		airflow_scale="0.05"
+		gravity.y="0"
+		count_min="1"
+		count_max="1"
+		is_trail="1"
+		trail_gap="4"
+		lifetime_min="0.3"
+		lifetime_max="8.9"
+	create_real_particles="1"
+	emit_cosmetic_particles="0"
+		emission_interval_min_frames="30"
+		emission_interval_max_frames="60"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="mud"
+		offset.x="0"
+		offset.y="3"
+		fade_based_on_lifetime="1"
+		render_on_grid="1"
+		x_pos_offset_min="-5"
+		x_pos_offset_max="5"
+		y_pos_offset_min="-9"
+		y_pos_offset_max="3"
+		airflow_force="0.1"
+		airflow_time="0.2"
+		airflow_scale="0.05"
+		gravity.y="0"
+		count_min="3"
+		count_max="5"
+		is_trail="1"
+		trail_gap="4"
+		lifetime_min="0.3"
+		lifetime_max="8.9"
+	create_real_particles="0"
+	emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<!-- FX -->
+	<ParticleEmitterComponent 
+		emitted_material_name="water_fading"
+		x_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_min="-8"
+		y_pos_offset_max="2"
+		x_vel_min="-5"
+		x_vel_max="5"
+		y_vel_min="-5"
+		y_vel_max="-50"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.1"
+		lifetime_max="0.3"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="20"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+</Entity>

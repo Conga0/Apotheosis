@@ -1,0 +1,14 @@
+<Entity name="unknown">
+		
+	<LifetimeComponent
+		lifetime="500" >
+	</LifetimeComponent>
+	
+	<AudioLoopComponent
+		file="mods/Apotheosis/apotheosis_audio.bank"
+		event_name="apotheosis_audio/angel/warning"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>
+

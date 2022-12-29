@@ -1,0 +1,31 @@
+<Entity tags="neutralizer_target" >
+    <InheritTransformComponent
+		only_position="1"
+		>
+		<Transform 
+			position.x="0" 
+			position.y="-8" >
+		</Transform>
+	</InheritTransformComponent>
+	
+	<GameEffectComponent 
+    	effect="MOVEMENT_SLOWER_2X"
+    	frames="50"
+    >
+	</GameEffectComponent >
+
+	<UIIconComponent
+		name="Slow"
+		description="You feel sluggish."
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/movement_slow.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+	
+	<LifetimeComponent
+		lifetime="50"
+		>
+	</LifetimeComponent>
+</Entity>

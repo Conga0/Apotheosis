@@ -1,0 +1,6 @@
+mods/Apotheosis/files/ragdolls/goo_slug/eye.png
+mods/Apotheosis/files/ragdolls/goo_slug/chunk_01.png
+mods/Apotheosis/files/ragdolls/goo_slug/chunk_02.png
+mods/Apotheosis/files/ragdolls/goo_slug/chunk_03.png
+mods/Apotheosis/files/ragdolls/goo_slug/chunk_04.png
+mods/Apotheosis/files/ragdolls/goo_slug/chunk_05.png

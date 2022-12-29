@@ -1,0 +1,93 @@
+<Entity >
+
+	<MagicConvertMaterialComponent
+		_tags="enabled_by_liquid"
+		_enabled="0"
+		kill_when_finished="1"
+		steps_per_frame="5"
+		from_material="glowstone_altar"
+		to_material="gold_static"
+		clean_stains="0"
+		is_circle="1"
+		radius="200"
+		>
+	</MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+		_tags="enabled_by_liquid"
+		_enabled="0"
+		kill_when_finished="0"
+		steps_per_frame="5"
+		from_material_tag="[liquid]"
+		to_material="smoke"
+		clean_stains="0"
+		is_circle="1"
+		radius="60"
+		>
+	</MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+		_tags="enabled_by_liquid"
+		_enabled="0"
+		kill_when_finished="0"
+		steps_per_frame="5"
+		from_material_tag="apotheosis_redstone"
+		to_material="smoke"
+		clean_stains="0"
+		is_circle="1"
+		radius="60"
+		>
+	</MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+		_tags="enabled_by_liquid"
+		_enabled="0"
+		kill_when_finished="0"
+		steps_per_frame="5"
+		from_material_tag="apotheosis_insect_husk"
+		to_material="smoke"
+		clean_stains="0"
+		is_circle="1"
+		radius="60"
+		>
+	</MagicConvertMaterialComponent>
+
+	<MaterialAreaCheckerComponent
+		_tags="disabled_by_liquid"
+		_enabled="0"
+		area_aabb.min_x="-4" 
+		area_aabb.max_x="4" 
+		area_aabb.min_y="-4"   
+		area_aabb.max_y="4" 
+		update_every_x_frame="1"
+		material="apotheosis_liquid_knowledge_of_kings"
+		material2="apotheosis_liquid_knowledge_of_kings"
+		look_for_failure="0"
+		kill_after_message="0">
+	</MaterialAreaCheckerComponent>
+
+	<LuaComponent
+		_tags="disabled_by_liquid"
+		_enabled="0"
+		script_material_area_checker_success="mods/Apotheosis/files/scripts/buildings/divine_knowledge_check_success.lua" >
+	</LuaComponent>
+	
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/divine_knowledge_tester.lua"
+		execute_every_n_frame="60"
+		>
+	</LuaComponent>
+
+	<!-- If this secret has already been complete, don't bother trying it again -->
+	<!-- Note, this is now unnecessary as it will create a max health pickup instead -->
+	<!--
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/buildings/divine_knowledge_check_alreadydone.lua"
+		execute_every_n_frame="120"
+		execute_times="1"
+        remove_after_executed="1"
+		>
+	</LuaComponent>
+	-->
+</Entity>

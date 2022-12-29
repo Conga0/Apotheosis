@@ -1,0 +1,11 @@
+<Entity >
+    <InheritTransformComponent>
+	</InheritTransformComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/essence/essence_creature_shift.lua"
+		execute_every_n_frame="300"
+		_enabled="1"
+		>
+	</LuaComponent>
+</Entity>

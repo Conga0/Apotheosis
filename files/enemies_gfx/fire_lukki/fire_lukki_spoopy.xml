@@ -1,0 +1,73 @@
+<Sprite
+filename="mods/Apotheosis/files/enemies_gfx/fire_lukki/fire_lukki_spoopy.png"
+offset_x="23"
+offset_y="22" 
+default_animation="stand"
+>
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="48"
+  frame_height="46"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="1"   >
+ </RectAnimation>
+
+ <!-- Powerful Attack -->
+ <RectAnimation
+  name="attack_strong"
+  pos_x="0"
+  pos_y="46"
+  frame_count="12"
+  frame_width="48"
+  frame_height="46"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="0"   >
+ </RectAnimation>
+
+ <!-- Healing Phase Into -->
+ <RectAnimation
+  name="healing_enter"
+  pos_x="0"
+  pos_y="92"
+  frame_count="6"
+  frame_width="48"
+  frame_height="46"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="0"   >
+ </RectAnimation>
+
+ <!-- Healing Phase Idle -->
+ <RectAnimation
+  name="healing_idle"
+  pos_x="0"
+  pos_y="138"
+  frame_count="1"
+  frame_width="48"
+  frame_height="46"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="0"   >
+ </RectAnimation>
+
+ <!-- Healing Phase Ending -->
+ <RectAnimation
+  name="healing_exit"
+  pos_x="0"
+  pos_y="184"
+  frame_count="6"
+  frame_width="48"
+  frame_height="46"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="0"   >
+ </RectAnimation>
+
+</Sprite>

@@ -1,0 +1,7 @@
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/head.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/body.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/legs_1.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/legs_2.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/legs_3.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/legs_4.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/tail.png

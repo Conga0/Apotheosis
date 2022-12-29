@@ -1,0 +1,15 @@
+<Entity>
+	
+	<LifetimeComponent
+		lifetime="5"
+		>
+	</LifetimeComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/misc/psychotic_illusion_populator.lua"
+		execute_every_n_frame="1"
+		execute_times="1"
+		>
+	</LuaComponent>
+</Entity>
+

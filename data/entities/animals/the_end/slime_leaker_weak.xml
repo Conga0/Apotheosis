@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/animals/slime_leaker_weak.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="30"
+      max_hp="30"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

@@ -1,0 +1,64 @@
+<Entity >
+
+	<InheritTransformComponent />
+
+	<LifetimeComponent
+		lifetime="185"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_fire_lukki/misc/death_helper_end.lua"
+		execute_every_n_frame="180"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<!-- FX -->
+	<ParticleEmitterComponent 
+		_enabled="true"
+		_tags="invincible"
+        emitted_material_name="gunpowder_unstable"
+		area_circle_radius.min="0"
+		area_circle_radius.max="20"
+        x_vel_min="-10"
+        x_vel_max="10"
+        y_vel_min="-10"
+        y_vel_max="10"
+        count_min="15"
+        count_max="15"
+        lifetime_min="0.1"
+        lifetime_max="0.3"
+        create_real_particles="1"
+        emit_cosmetic_particles="0"
+        emission_interval_min_frames="3"
+        emission_interval_max_frames="3"
+        is_emitting="1"
+		velocity_always_away_from_center="0"
+		>
+    </ParticleEmitterComponent>
+
+	<ParticleEmitterComponent 
+		_enabled="true"
+        emitted_material_name="lava"
+		area_circle_radius.min="0"
+		area_circle_radius.max="15"
+        x_vel_min="-10"
+        x_vel_max="10"
+        y_vel_min="-10"
+        y_vel_max="10"
+        count_min="15"
+        count_max="15"
+        lifetime_min="0.1"
+        lifetime_max="0.3"
+        create_real_particles="1"
+        emit_cosmetic_particles="0"
+        emission_interval_min_frames="12"
+        emission_interval_max_frames="12"
+        is_emitting="1"
+		velocity_always_away_from_center="0"
+		>
+    </ParticleEmitterComponent>
+
+
+</Entity>

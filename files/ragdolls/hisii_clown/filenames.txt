@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/hisii_clown/head.png
+mods/Apotheosis/files/ragdolls/hisii_clown/leg_l.png
+mods/Apotheosis/files/ragdolls/hisii_clown/leg_r.png
+mods/Apotheosis/files/ragdolls/hisii_clown/arm.png
+mods/Apotheosis/files/ragdolls/hisii_clown/torso.png

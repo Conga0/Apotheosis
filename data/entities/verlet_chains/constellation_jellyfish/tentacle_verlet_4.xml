@@ -1,0 +1,16 @@
+<Entity >
+   
+  <SpriteComponent 
+    image_file="data/entities/verlet_chains/devourer_ghost/tentacle_4.xml" 
+    alpha="0.671429" 
+    offset_x="0"
+    offset_y="5.5"
+    update_transform="0"
+    update_transform_rotation="0"
+	z_index="1.1"
+			additive="1"
+			emissive="1"
+	>
+  </SpriteComponent>
+  
+</Entity>

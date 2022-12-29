@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/poring_desert/chunk_01.png
+mods/Apotheosis/files/ragdolls/poring_desert/chunk_02.png
+mods/Apotheosis/files/ragdolls/poring_desert/chunk_03.png
+mods/Apotheosis/files/ragdolls/poring_desert/chunk_04.png
+mods/Apotheosis/files/ragdolls/poring_desert/chunk_05.png

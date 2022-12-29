@@ -1,0 +1,19 @@
+<Entity tags="music_energy_100">
+    
+    <GameEffectComponent 
+        effect="CUSTOM"
+        custom_effect_id="TRIP_RED_00"
+        frames="600"
+    >
+	</GameEffectComponent >
+
+	<DrugEffectModifierComponent>
+		<fx_add
+			distortion_amount="0.0"
+			color_amount="0.0"
+			fractals_amount="1.5"
+			fractals_size="6.0"
+		/>
+	</DrugEffectModifierComponent>
+
+</Entity>

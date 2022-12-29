@@ -1,0 +1,37 @@
+<Entity >
+
+	<InheritTransformComponent />
+
+	<LifetimeComponent
+		lifetime="30"
+		>
+	</LifetimeComponent>
+
+	<ParticleEmitterComponent
+		emitted_material_name="fire"
+		gravity.y="0.0"
+		lifetime_min="0.7"
+		lifetime_max="1.2"
+		count_min="10"
+		count_max="20"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="5"
+		area_circle_radius.max="20"
+		cosmetic_force_create="0"
+		airflow_force="1.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" 
+		velocity_always_away_from_center="280"
+		>
+	</ParticleEmitterComponent>
+</Entity>

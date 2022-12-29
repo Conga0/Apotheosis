@@ -1,0 +1,114 @@
+<Sprite 
+  default_animation="stand" 
+  filename="mods/Apotheosis/files/enemies_gfx/hisii_engineer.png" 
+  offset_x="8" 
+  offset_y="17" >
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="19" 
+    frame_wait="0.2" 
+    frame_width="16" 
+    frames_per_row="6" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="19" 
+    frame_wait="0.082" 
+    frame_width="16" 
+    frames_per_row="12" 
+    name="walk" 
+    pos_x="0" 
+    pos_y="19" >
+
+    <Event 
+      check_physics_material="1" 
+      frame="2" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="5" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="3" 
+    frame_height="19" 
+    frame_wait="0.082" 
+    frame_width="16" 
+    frames_per_row="12" 
+    loop="0" 
+    name="jump_up" 
+    pos_x="0" 
+    pos_y="38" >
+
+    <Event 
+      check_physics_material="1" 
+      frame="0" 
+      max_distance="500" 
+      name="jump" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="2" 
+    frame_height="19" 
+    frame_wait="0.082" 
+    frame_width="20" 
+    frames_per_row="15" 
+    loop="0" 
+    name="jump_fall" 
+    pos_x="0" 
+    pos_y="57" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="3" 
+    frame_height="19" 
+    frame_wait="0.15" 
+    frame_width="16" 
+    frames_per_row="12" 
+    loop="0" 
+    name="attack" 
+    pos_x="0" 
+    pos_y="76" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="3" 
+    frame_height="19" 
+    frame_wait="0.15" 
+    frame_width="16" 
+    frames_per_row="12" 
+    loop="0" 
+    name="attack_ranged" 
+    pos_x="0" 
+    pos_y="76" >
+
+  </RectAnimation>
+
+</Sprite>
+

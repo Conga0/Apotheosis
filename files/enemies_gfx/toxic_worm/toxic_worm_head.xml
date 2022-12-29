@@ -1,0 +1,32 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/toxic_worm/toxic_worm_head.png" 
+  offset_x="20" 
+  offset_y="10"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_height="33" 
+    frame_wait="0.12" 
+    frame_width="34" 
+    frames_per_row="4" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_height="33" 
+    frame_wait="0.12" 
+    frame_width="34" 
+    frames_per_row="4" 
+    name="eat" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+</Sprite>
+

@@ -1,0 +1,192 @@
+<Entity tags="glue_NOT,monk_hand" name="Kolmionmuotoinenkristalli" >
+  
+  <PhysicsAIComponent
+		target_vec_max_len="20.0"
+		force_coeff="20.0"
+		force_balancing_coeff="0.8"
+		force_max="120"
+		torque_coeff="50"
+		torque_balancing_coeff="1.2"
+		torque_max="50.0"
+		damage_deactivation_probability="20"
+		damage_deactivation_time_min="20"
+		damage_deactivation_time_max="40" >
+	</PhysicsAIComponent>
+
+	<PhysicsBodyComponent 
+		allow_sleep="1" 
+		angular_damping="0.02" 
+		fixed_rotation="0" 
+		is_bullet="0" 
+		linear_damping="0" 
+		on_death_leave_physics_body="1" >
+	</PhysicsBodyComponent>
+
+	<PhysicsImageShapeComponent 
+		image_file="mods/Apotheosis/files/enemies_gfx/triangle_gem.png"
+		centered="0"
+		material="apotheosis_crystal_green" 
+		offset_x="16"
+		offset_y="16"
+		>
+	</PhysicsImageShapeComponent>
+	
+	<LightComponent 
+		_enabled="1" 
+		radius="200"
+		r="200"
+		g="225"
+		b="35" >
+	</LightComponent>
+	
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			creature_detection_range_x="300"
+			creature_detection_range_y="300"
+			sense_creatures="1"
+			needs_food="0"
+			attack_ranged_enabled="0"
+			attack_melee_enabled="0"
+			can_fly="1"  
+			eye_offset_y="-12"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="4"
+            ragdoll_material="apotheosis_crystal_green"
+			ragdoll_filenames_file="" 
+			blood_material="plasma_fading_green"
+			blood_spray_material="plasma_fading_green"
+			fire_probability_of_ignition="0" 
+			air_needed="0"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			>
+			<damage_multipliers
+				melee="0.5"
+				projectile="0.5"
+				explosion="1.0"
+				electricity="0.1"
+				ice="2.0"
+				fire="0" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<PathFindingComponent
+		    distance_to_reach_node_x="20"
+		    distance_to_reach_node_y="20"
+			frames_to_get_stuck="120"
+			can_jump="0" 
+			can_fly="1"
+			jump_speed="0"
+			>
+		</PathFindingComponent>
+
+		<GenomeDataComponent 
+			herd_id="ghost"
+			food_chain_rank="8"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="0" 
+			run_velocity="24"  >
+		</CharacterPlatformingComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_max_x="9" 
+			aabb_max_y="9" 
+			aabb_min_x="-9" 
+			aabb_min_y="-9" 
+			>
+		</HitboxComponent>
+	
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-9"
+			collision_aabb_max_x="9"
+			collision_aabb_min_y="-9"
+			collision_aabb_max_y="9"
+			mass="3.0"
+			>
+		</CharacterDataComponent>
+		
+		<SpriteStainsComponent
+			_enabled="0"
+			>
+		</SpriteStainsComponent>
+	</Base>
+
+	<CollisionTriggerComponent
+    	width="60"
+    	height="60"
+    	radius="30"
+		required_tag="prey"
+    	timer_for_destruction="30" 
+		destroy_this_entity_when_triggered="0"
+		>
+    </CollisionTriggerComponent>
+  	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/magical/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+    <AIAttackComponent
+    min_distance="0"
+    max_distance="400"
+    frames_between="120"
+    frames_between_global="0"
+    attack_ranged_action_frame="5"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_green_triangle.xml"
+    attack_ranged_offset_y="-6"
+    attack_ranged_offset_x="-10"
+    >
+	</AIAttackComponent>
+
+    <AIAttackComponent
+    min_distance="0"
+    max_distance="400"
+    frames_between="120"
+    frames_between_global="0"
+    attack_ranged_action_frame="5"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_green_triangle.xml"
+    attack_ranged_offset_y="-5"
+    attack_ranged_offset_x="9"
+    >
+	</AIAttackComponent>
+
+    <AIAttackComponent
+    min_distance="0"
+    max_distance="400"
+    frames_between="120"
+    frames_between_global="0"
+    attack_ranged_action_frame="5"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_green_triangle.xml"
+    attack_ranged_offset_y="12"
+    attack_ranged_offset_x="-1"
+    >
+	</AIAttackComponent>
+
+</Entity>
+

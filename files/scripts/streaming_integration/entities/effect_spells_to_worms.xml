@@ -1,0 +1,15 @@
+<Entity >
+	<InheritTransformComponent />
+   
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/streaming_integration/scripts/effect_spells_to_worms.lua"
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="1800"
+		>
+	</LifetimeComponent>
+  
+</Entity>

@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/wizard_explosive/torso.png
+mods/Apotheosis/files/ragdolls/wizard_explosive/hand.png
+mods/Apotheosis/files/ragdolls/wizard_explosive/feet.png
+mods/Apotheosis/files/ragdolls/wizard_explosive/head.png

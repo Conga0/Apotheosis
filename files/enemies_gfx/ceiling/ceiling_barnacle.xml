@@ -1,0 +1,56 @@
+<Sprite
+ filename="mods/Apotheosis/files/enemies_gfx/ceiling/ceiling_barnacle.png"
+ offset_x="8"
+ offset_y="7"
+ default_animation="stand" >
+
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="12"
+  frame_width="16"
+  frame_height="17"
+  frame_wait="0.11"
+  frames_per_row="13"
+  loop="1"   >
+ </RectAnimation>
+ 
+ <RectAnimation
+  name="jump_fall"
+  pos_x="0"
+  pos_y="0"
+  frame_count="12"
+  frame_width="16"
+  frame_height="17"
+  frame_wait="0.11"
+  frames_per_row="13"
+  loop="1"   >
+ </RectAnimation>
+ 
+ <RectAnimation
+  name="walk"
+  pos_x="0"
+  pos_y="0"
+  frame_count="12"
+  frame_width="16"
+  frame_height="17"
+  frame_wait="0.09"
+  frames_per_row="13"
+  loop="1"   >
+ </RectAnimation>
+ 
+ <RectAnimation
+  name="attack_ranged"
+  pos_x="0"
+  pos_y="16"
+  frame_count="4"
+  frame_width="16"
+  frame_height="17"
+  frame_wait="0.09"
+  frames_per_row="8"
+  loop="0"   >
+  <Event frame="1" name="attack_shoot" probability="1" check_physics_material="0" />
+ </RectAnimation>
+
+</Sprite>

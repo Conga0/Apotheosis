@@ -1,0 +1,20 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/angel/angel.png" 
+  offset_x="0" 
+  offset_y="0"
+  default_animation="fly" >
+
+  <RectAnimation 
+    frame_count="12" 
+    frame_height="96" 
+    frame_wait="0.12" 
+    frame_width="96" 
+    frames_per_row="12" 
+    name="fly" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+</Sprite>
+

@@ -1,0 +1,14 @@
+<Entity >
+  <Base file="data/entities/animals/drone_status_ailment.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="3.5"
+      max_hp="3.5"
+     ></DamageModelComponent >
+	 
+	<PhysicsAIComponent
+		damage_deactivation_probability="40"
+		damage_deactivation_time_min="40"
+		damage_deactivation_time_max="120" >
+	</PhysicsAIComponent>
+  </Base>
+</Entity>

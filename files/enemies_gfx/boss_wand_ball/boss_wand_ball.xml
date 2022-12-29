@@ -1,0 +1,20 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/boss_wand_ball/boss_wand_ball.png" 
+  offset_x="24" 
+  offset_y="24"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="48" 
+    frame_wait="0.2" 
+    frame_width="48" 
+    frames_per_row="8" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+</Sprite>
+

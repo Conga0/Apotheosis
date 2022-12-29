@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/fungus_smoking_apotheosis/head.png
+mods/Apotheosis/files/ragdolls/fungus_smoking_apotheosis/body.png
+mods/Apotheosis/files/ragdolls/fungus_smoking_apotheosis/foot_01.png
+mods/Apotheosis/files/ragdolls/fungus_smoking_apotheosis/foot_02.png
+mods/Apotheosis/files/ragdolls/fungus_smoking_apotheosis/foot_03.png

@@ -1,0 +1,274 @@
+<Entity name="apotheosis_fungus_stone" tags="hittable,teleportable_NOT,item_physics,item_pickup,poopstone" >
+  <Base file="data/entities/base_item_projectile.xml">
+  </Base>
+
+  <!-- physical presence -->
+  
+  <PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="0"
+    on_death_leave_physics_body="1"
+    hax_fix_going_through_ground="1"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="mods/Apotheosis/files/items_gfx/stone_fungus.png"
+    material="rock_box2d_hard"
+  ></PhysicsImageShapeComponent>
+  
+  <PhysicsThrowableComponent
+    max_throw_speed="180"
+    throw_force_coeff="1.5"
+  ></PhysicsThrowableComponent>
+
+  <VelocityComponent
+    _tags="enabled_in_world"
+  ></VelocityComponent>
+
+  <!-- steaming -->
+
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="sand"
+    to_material="fungi_creeping"
+    clean_stains="0"
+    is_circle="1"
+    radius="20" 
+    reaction_audio_amount="0.005"
+  >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="sand_static"
+    to_material="fungi_creeping"
+    clean_stains="0"
+    is_circle="1"
+    radius="20" 
+    reaction_audio_amount="0.005"
+  >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="sandstone_surface"
+    to_material="fungi_creeping"
+    clean_stains="0"
+    is_circle="1"
+    radius="20" 
+    reaction_audio_amount="0.005"
+  >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="sand_petrify"
+    to_material="fungi_creeping"
+    clean_stains="0"
+    is_circle="1"
+    radius="20" 
+    reaction_audio_amount="0.005"
+  >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="sand_surface"
+    to_material="fungi_creeping"
+    clean_stains="0"
+    is_circle="1"
+    radius="20" 
+    reaction_audio_amount="0.005"
+  >
+  </MagicConvertMaterialComponent>
+
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="sand_blue"
+    to_material="fungi"
+    clean_stains="0"
+    is_circle="1"
+    radius="20" 
+    reaction_audio_amount="0.005"
+  >
+  </MagicConvertMaterialComponent>
+  
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="blood"
+    to_material="apotheosis_redstone"
+    clean_stains="0"
+    is_circle="1"
+    radius="20" 
+    reaction_audio_amount="0.005"
+  >
+  </MagicConvertMaterialComponent>
+  
+  <!-- item -->
+
+  <SpriteComponent
+    _tags="enabled_in_hand"
+    _enabled="0"
+    offset_x="4"
+    offset_y="4"
+    image_file="mods/Apotheosis/files/items_gfx/stone_fungus.png"
+  ></SpriteComponent>
+
+  <ItemComponent
+    _tags="enabled_in_world"
+    item_name="$item_apotheosis_fungus_stone_name"
+    ui_description="$item_apotheosis_fungus_stone_desc"
+    ui_sprite="mods/Apotheosis/files/ui_gfx/items/stone_fungus.png"
+    max_child_items="0"
+    is_pickable="1"
+    is_equipable_forced="1"
+    preferred_inventory="QUICK"
+  ></ItemComponent>
+
+  <UIInfoComponent
+    _tags="enabled_in_world"
+    name="$item_apotheosis_fungus_stone_name">
+  </UIInfoComponent>
+  
+  <SpriteParticleEmitterComponent
+		sprite_file="data/particles/ray.xml" 
+		delay="0"
+		lifetime="1.5"
+		color.r="1" color.g="0.5" color.b="1" color.a="1.0"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-3.5"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		scale.x="1" scale.y="0"
+		scale_velocity.x="-0.3" scale_velocity.y="3"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="6"
+		emissive="1"
+		additive="1"
+		count_min="1" count_max="1"
+		use_velocity_as_rotation="1"
+		randomize_position.min_x="-2"
+		randomize_position.max_x="2"
+		randomize_position.min_y="-2"
+		randomize_position.max_y="2"
+		randomize_velocity.min_x="-30"
+		randomize_velocity.max_x="30"
+		randomize_velocity.min_y="-30"
+		randomize_velocity.max_y="30"
+		velocity_always_away_from_center="1">
+	</SpriteParticleEmitterComponent>
+	
+	<AbilityComponent
+		ui_name="$item_apotheosis_fungus_stone_name"
+		throw_as_item="1"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+  
+	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_blue"
+		gravity.y="0.0"
+		lifetime_min="0.7"
+		lifetime_max="1"
+		count_min="3"
+		count_max="3"
+		render_on_grid="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="1"
+		area_circle_radius.max="7"
+		cosmetic_force_create="1"
+		airflow_force="0.251"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="30"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="10"
+		collide_with_grid="0"
+		>
+	</ParticleEmitterComponent>
+  
+	<ParticleEmitterComponent
+    _tags="enabled_in_world,enabled_in_hand,item_identified"
+    _enabled="0"
+		emitted_material_name="fungi"
+		gravity.y="0.0"
+		count_min="1"
+		count_max="3"
+		render_on_grid="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="1"
+		area_circle_radius.max="7"
+		emission_interval_min_frames="20"
+		emission_interval_max_frames="30"
+		emit_cosmetic_particles="0"
+		emit_real_particles="1"
+		velocity_always_away_from_center="10"
+		collide_with_grid="0"
+		>
+	</ParticleEmitterComponent>
+  
+  <ParticleEmitterComponent 
+    _tags="enabled_in_world,enabled_in_hand,item_identified"
+    _enabled="0"
+    emitted_material_name="fungal_shift_particle_fx"
+    offset.x="0"
+    offset.y="0"
+    x_pos_offset_min="-3"
+    x_pos_offset_max="3"
+    y_pos_offset_min="-3"
+    y_pos_offset_max="3"
+    x_vel_min="-5"
+    x_vel_max="5"
+    y_vel_min="-10"
+    y_vel_max="-30"
+    count_min="1"
+    count_max="1"
+    lifetime_min="0.5"
+    lifetime_max="1.2"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+    emission_interval_min_frames="4"
+    emission_interval_max_frames="12"
+    gravity.y="-10"
+    fade_based_on_lifetime="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+  
+  <LightComponent 
+    _tags="enabled_in_hand,enabled_in_world,item_identified"
+    _enabled="1" 
+    radius="60"
+    fade_out_time="1.5" 
+    r="215"
+    g="30"
+    b="230" >
+  </LightComponent>
+
+</Entity>

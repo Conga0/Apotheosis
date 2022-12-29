@@ -1,0 +1,141 @@
+<Sprite
+	filename="mods/Apotheosis/files/enemies_gfx/shaman_greater.png"
+	hotspots_filename="mods/Apotheosis/files/enemies_gfx/shaman_greater_hotspots.png"
+	offset_x="10"
+	offset_y="10"
+	default_animation="stand" >
+
+	<!-- hotspots -->
+
+	<Hotspot
+		color="ff0000"
+		name="hand" >
+	</Hotspot>
+
+	<!-- stand -->
+	<RectAnimation
+		name="stand"
+		pos_x="0"
+		pos_y="0"
+		frame_count="10"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.18"
+		frames_per_row="10"
+		loop="1"   >
+	</RectAnimation>
+
+	<!-- walk -->
+	<RectAnimation
+		name="walk"
+		pos_x="0"
+		pos_y="28"
+		frame_count="6"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.16"
+		frames_per_row="8"
+		loop="1"   >
+	</RectAnimation>
+
+	<!-- fake run (just a copypaste of walk) -->
+	<RectAnimation
+		name="run"
+		pos_x="0"
+		pos_y="28"
+		frame_count="6"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.12"
+		frames_per_row="8"
+		loop="1"   >
+	</RectAnimation>
+
+	<RectAnimation
+		name="burn"
+		pos_x="0"
+		pos_y="28"
+		frame_count="6"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.12"
+		frames_per_row="8"
+		loop="1"   >
+	</RectAnimation>
+
+	<!-- attacks -->
+	<RectAnimation
+		name="attack_ranged"
+		pos_x="0"
+		pos_y="56"
+		frame_count="10"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.10"
+		frames_per_row="15"
+		loop="0"  >
+		<Event frame="0" name="cast_spell" probability="1" check_physics_material="0"/>
+		<Event frame="12" name="shoot_bullet" probability="1" check_physics_material="0"/>
+		<Event frame="12" name="attack_shoot" probability="1" check_physics_material="0"/>
+	</RectAnimation>
+
+	<RectAnimation
+		name="attack"
+		pos_x="0"
+		pos_y="56"
+		frame_count="10"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.10"
+		frames_per_row="15"
+		loop="0"  >
+		<Event frame="12" name="hit" probability="1" check_physics_material="0"/>
+		<Event frame="12" name="attack_melee" probability="1" check_physics_material="0"/>
+		<Event frame="12" name="voc_attack" probability="1" check_physics_material="0"/>
+	</RectAnimation>
+
+	<!-- jumps -->
+	<RectAnimation
+		name="jump_prepare"
+		pos_x="0"
+		pos_y="84"
+		frame_count="3"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.12"
+		frames_per_row="8"
+		loop="0"  >
+		<Event frame="3" name="jump_prepare"/>
+	</RectAnimation>
+	<RectAnimation
+		name="jump_up"
+		pos_x="0"
+		pos_y="112"
+		frame_count="3"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.12"
+		frames_per_row="8"
+		loop="0"   >
+		<Event 
+		  check_physics_material="0" 
+		  frame="0" 
+		  max_distance="500" 
+		  name="jump" 
+		  on_finished="0" 
+		  probability="1" >
+		</Event>
+	</RectAnimation>
+	<RectAnimation
+		name="jump_fall"
+		pos_x="0"
+		pos_y="140"
+		frame_count="3"
+		frame_width="22"
+		frame_height="28"
+		frame_wait="0.12"
+		frames_per_row="8"
+		loop="1"   >
+	</RectAnimation>
+
+</Sprite>

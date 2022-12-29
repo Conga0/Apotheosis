@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/sentry/torso.png
+mods/Apotheosis/files/ragdolls/sentry/hand.png
+mods/Apotheosis/files/ragdolls/sentry/feet.png
+mods/Apotheosis/files/ragdolls/sentry/head.png
+mods/Apotheosis/files/ragdolls/sentry/antenna.png

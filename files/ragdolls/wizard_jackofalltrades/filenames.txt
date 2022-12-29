@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/wizard_jackofalltrades/torso.png
+mods/Apotheosis/files/ragdolls/wizard_jackofalltrades/hand.png
+mods/Apotheosis/files/ragdolls/wizard_jackofalltrades/feet.png
+mods/Apotheosis/files/ragdolls/wizard_jackofalltrades/head.png

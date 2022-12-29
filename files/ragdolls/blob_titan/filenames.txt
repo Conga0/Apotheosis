@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/blob_titan/leg_1.png
+mods/Apotheosis/files/ragdolls/blob_titan/leg_2.png
+mods/Apotheosis/files/ragdolls/blob_titan/body.png
+mods/Apotheosis/files/ragdolls/blob_titan/leg_3.png
+mods/Apotheosis/files/ragdolls/blob_titan/leg_4.png

@@ -1,0 +1,9 @@
+<Entity name="Jättiristiriitakeiju" tags="ui_use_raw_name" >
+  <Base file="data/entities/animals/fairy_big_discord.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="45"
+      max_hp="45"
+     ></DamageModelComponent >
+  </Base>
+
+</Entity>

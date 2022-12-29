@@ -1,0 +1,24 @@
+<Entity>
+	<InheritTransformComponent />
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/duck_curse.lua" 
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
+
+	<LifetimeComponent
+		lifetime="900"
+		>
+	</LifetimeComponent>
+	
+	<UIIconComponent
+		name="Duck Curse"
+		description="Your projectiles have considerably more weight attached to them"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/duck_curse.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+</Entity>

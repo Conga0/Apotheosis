@@ -1,0 +1,782 @@
+<Materials> 
+
+  <CellDataChild
+  	_parent="meat"
+	name="apotheosis_meat_rage"
+	ui_name="$material_apotheosis_meat_irritating"
+	wang_color="ffbbf112"
+	solid_on_collision_material="blood"
+	solid_break_to_type="blood"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="BERSERK" amount="1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="meat"
+	name="apotheosis_meat_mana"
+	ui_name="$material_apotheosis_meat_mana"
+	wang_color="ffbbf113"
+	solid_on_collision_material="magic_liquid_mana_regeneration"
+	solid_break_to_type="magic_liquid_mana_regeneration"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="MANA_REGENERATION" amount="0.5" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="meat_slime"
+	name="apotheosis_meat_toxic_worm_cure"
+	ui_name="$material_apotheosis_meat_decaying"
+	solid_break_to_type="radioactive_liquid"
+	solid_restitution="0.4"
+	wang_color="ffed4d4d"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="radioactive_liquid" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_PROTECTION_RADIOACTIVITY_TEMPORARY" amount="2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="meat_slime"
+	name="apotheosis_meat_fire_lukki"
+	ui_name="$material_apotheosis_meat_fire_lukki"
+	solid_break_to_type="lava"
+	solid_restitution="0.4"
+	wang_color="ffed4d4f"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="lava" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_PROTECTION_LAVA" amount="4" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellData
+	name="apotheosis_meat_fire_lukki_rock"
+	ui_name="$material_apotheosis_meat_fire_lukki_rock"
+  	tags="[box2d],[corrodible],[meltable_to_lava],[alchemy],[solid],[earth]"
+	burnable="0"
+	density="3"
+	cell_type="solid"
+	wang_color="ffed4d5f"
+	generates_smoke="0"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="30"
+	autoignition_temperature="99" 
+	platform_type="0"
+	hp="100000" 
+	fire_hp="1200"
+	solid_collide_with_self="0"
+	solid_break_to_type="lava"
+	solid_break_to_type="slime"
+	solid_on_collision_splash_power="1"
+	solid_restitution="0.5"
+	audio_physics_material_event="rock"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	durability="6"
+	>
+  </CellData>
+
+  <CellDataChild
+  	_parent="meat"
+	name="apotheosis_meat_duck"
+	ui_name="$material_apotheosis_meat_feathery"
+	solid_break_to_type="blood"
+	solid_restitution="0.4"
+	wang_color="ffed4d4e"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="blood" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_DUCK_CURSE" amount="2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="sand"
+  	_inherit_reactions="1"
+  	name="apotheosis_sand_pink" 
+	ui_name="$material_apotheosis_sand_pink"
+	wang_color="ffca3e9c"
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+	texture_file="mods/Apotheosis/files/materials_gfx/sand_pink.png"
+	color="ffca3e9c" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="magic_liquid_protection_all"
+  	_inherit_reactions="1"
+  	name="apotheosis_magic_liquid_protection_all_fading" 
+	ui_name="$mat_magic_liquid_protection_all"
+  	tags="[liquid],[water],[magic_liquid],[soluble],[evaporable_fast],[impure]"
+	wang_color="80df9829"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+	color="00df9829"
+	>
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="water"
+	name="apotheosis_water_fading_fast"
+	ui_name="$mat_water"
+  	tags="[evaporable]"
+	wang_color="902F354D"
+	warmth_melts_to_material="steam"
+	warmth_melts_chance_rev="500"
+	status_effects="WET"
+	>
+    <Graphics
+	color="A0376259"
+	>
+    </Graphics>
+  </CellDataChild>
+
+  <CellData
+	name="apotheosis_cloud_poison"
+	ui_name="$material_apotheosis_mist_poison"
+  	tags="[liquid],[impure],[slime],[liquid_common]"
+	burnable="0"
+	density="1"
+	cell_type="liquid"
+	wang_color="2201FC35"
+	gfx_glow="130"
+	generates_smoke="0"
+	liquid_gravity="0"
+	liquid_sand="0"
+	liquid_stains="2"
+	liquid_stains_self="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10" 
+	lifetime="10"
+	status_effects="POISONED"
+	>
+	<Graphics
+		color="37c5447d"
+		>
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="POISONED" amount="0.2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_redstone"
+	ui_name="$material_apotheosis_sand_red"
+  	tags="[sand_ground],[corrodible],[meltable_to_lava_fast],[alchemy]"
+	burnable="0"
+	density="6"
+	cell_type="liquid"
+	wang_color="720000"
+	generates_smoke="0"
+	liquid_gravity="0.9"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10"
+	hp="800" 
+	electrical_conductivity="1"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	durability="4"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/redstone_dust.png"
+		color="720000" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_TRIP_RED" amount="0.8" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+  
+  <CellDataChild
+  	name="apotheosis_crystal_green" 
+	ui_name="$material_apotheosis_gem_green"
+  	_parent="crystal"
+  	_inherit_reactions="1"
+	wang_color="ffb3df4b" 
+	show_in_creative_mode="1"
+	>
+	    <Graphics
+		texture_file="data/materials_gfx/crystal_purple.png"
+		color="ffa53d77"
+		>
+    </Graphics>
+  </CellDataChild>
+
+  <CellData
+	name="apotheosis_magic_liquid_divine"
+	ui_name="$material_apotheosis_magic_divine_liquid"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="5.12"
+	cell_type="liquid"
+	wang_color="80fffb91"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="150"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="5.0"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="17.14"
+		vel_random.min_y="-100"
+		vel_random.max_y="25.71"
+		lifetime.min="0"
+		gravity.y="-8.57"
+		render_on_grid="1"
+		draw_as_long="1"
+		friction="-3.429"
+		probability="0.0518"
+	>
+	</ParticleEffect>
+  	<StatusEffects>
+		<Stains>
+			<StatusEffect type="HP_REGENERATION" />
+			<StatusEffect type="PROTECTION_ALL" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="HP_REGENERATION" amount="0.05" />
+			<StatusEffect type="PROTECTION_ALL" amount="0.05" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+  
+  <CellDataChild
+  	_parent="spark"
+  	_inherit_reactions="1"
+  	name="apotheosis_spark_orange" 
+	ui_name="$material_apotheosis_spark_orange"
+	wang_color="7fff9313"
+	gfx_glow="90"
+	>
+  	<Graphics
+	color="7fff9313"
+	fire_colors_index="3" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="blood_worm"
+  	_inherit_reactions="1"
+  	name="apotheosis_blood_worm_centipede" 
+	ui_name="$material_apotheosis_blood_centipede"
+	wang_color="ffca3e9d"
+	show_in_creative_mode="1"
+	>
+    <Graphics 
+	texture_file="mods/Apotheosis/files/materials_gfx/yellowblood_dark.png" 
+	color="88B38733" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellData
+	name="apotheosis_insect_husk"
+	ui_name="$material_apotheosis_sand_insect_husk"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="6"
+	cell_type="liquid"
+	wang_color="ff505053"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="95"
+	autoignition_temperature="94"
+	hp="1000" 
+	durability="8"
+	fire_hp="1000"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+	texture_file="data/materials_gfx/coal.png"
+	color="ff505050" >
+    </Graphics>
+  </CellData>
+  
+  <CellDataChild
+  	_parent="meat"
+	name="apotheosis_meat_centipede"
+	ui_name="$material_apotheosis_meat_centipede"
+	wang_color="ffebcda2"
+	solid_on_collision_material="apotheosis_blood_worm_centipede"
+	solid_break_to_type="apotheosis_blood_worm_centipede"
+	gfx_glow="50"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+	texture_file="data/materials_gfx/wormmeat.png"
+	color="ffebcd00"
+	>
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="urine"
+  	_inherit_reactions="1"
+  	name="apotheosis_urine_fading" 
+	ui_name="$mat_urine"
+  	tags="[liquid],[soluble],[evaporable]"
+	wang_color="33FFEE01"
+	show_in_creative_mode="1"
+	warmth_melts_to_material="steam"
+	warmth_melts_chance_rev="500"
+	>
+	<StatusEffects>
+		<Stains>
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="FOOD_POISONING" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+
+
+  <CellData 
+	name="apotheosis_fungi_static"  
+	ui_name="$mat_fungi_trippy"
+  	tags="[plant],[corrodible],[burnable],[alchemy],[impure],[fungus]"
+	burnable="1"  
+	density="6"  
+	cell_type="liquid" 
+	wang_color="33FFEE02"  
+	generates_smoke="20"  
+	liquid_gravity="0.0"  
+	liquid_sand="1"
+	liquid_viscosity="0"
+	liquid_sticks_to_ceiling="80"
+	on_fire="0"  
+	requires_oxygen="1"  
+	temperature_of_fire="90" 
+	autoignition_temperature="65" 
+	solid_on_collision_material="blood_fungi"
+	solid_break_to_type="blood_fungi"
+	liquid_sand_never_box2d="1"
+	platform_type="0"
+	gfx_glow="255"
+	fire_hp="60"
+	show_in_creative_mode="1"
+	> 
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="TRIP" amount="0.5" />
+		</Ingestion>
+	</StatusEffects>
+    <Graphics 
+	texture_file="data/materials_gfx/fungi.png" 
+	color="ffF064AA" >
+    </Graphics>
+  </CellData>
+  
+  <CellDataChild
+  	_parent="templerock_static"
+  	_inherit_reactions="1"
+  	name="templebrick_static_broken_apotheosisoft" 
+	ui_name="$mat_templebrick_static"
+	wang_color="ff9e8439"
+	wang_noise_percent="0.33"
+	hp="80000"
+	wang_curvature="0.5"
+	wang_noise_type="2"
+	durability="1"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+		texture_file="data/materials_gfx/templebrick_broken.png"
+		color="ff786C42" 
+		>
+		<Edge>
+			  <EdgeGraphics 
+				color="ff233112" 
+				overwrite="0" 
+				percent="1" 
+				require_same_material="0" 
+				require_same_material_type="1" 
+				type="NORMAL_BASED" 
+				z="1" >
+				<Images>
+				<Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="data/materials_gfx/edge_files/edge_temple_broken_hor.png" 
+					min_angle="45" 
+					max_angle="135" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="data/materials_gfx/edge_files/edge_temple_broken_ver.png" 
+					min_angle="135" 
+					max_angle="235" />
+				  <Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="data/materials_gfx/edge_files/edge_temple_broken_hor.png" 
+					min_angle="235" 
+					max_angle="315" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="data/materials_gfx/edge_files/edge_temple_broken_ver.png" 
+					min_angle="315" 
+					max_angle="360" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="data/materials_gfx/edge_files/edge_temple_broken_ver.png" 
+					min_angle="0" 
+					max_angle="45" />
+				</Images>
+			  </EdgeGraphics>
+		</Edge>
+    </Graphics>
+  </CellDataChild>
+
+  <CellData
+	name="apotheosis_plasma_fading_orange"
+	ui_name="$mat_plasma_fading"
+  	tags="[liquid],[corrodible],[soluble],[evaporable_fast],[impure],[liquid_common]"
+	burnable="0"
+	density="3"
+	cell_type="liquid"
+	wang_color="77f9e18e"
+	gfx_glow="254"
+	generates_smoke="0"
+	liquid_gravity="1.0"
+	liquid_sand="0"
+	liquid_stains="0"
+	liquid_stains_self="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10"  >
+  </CellData>
+  
+  <CellData
+	name="apotheosis_mudman_mud"
+	ui_name="$material_apotheosis_mudman_mud"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	cell_type="liquid"
+	wang_color="ff200074"
+	generates_smoke="0"
+	liquid_gravity="2.2"
+	liquid_sand="1"
+	on_fire="1"
+	requires_oxygen="0"
+	temperature_of_fire="50"
+	autoignition_temperature="1"
+	hp="1000" 
+	fire_hp="300"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	show_in_creative_mode="0"
+	audio_event_name="explosions/gunpowder"
+	>
+	<ParticleEffect
+		vel.y="17.14"
+		vel_random.min_y="-100"
+		vel_random.max_y="25.71"
+		lifetime.min="0"
+		gravity.y="-8.57"
+		render_on_grid="1"
+		draw_as_long="1"
+		friction="-3.429"
+		probability="0.0518"
+	>
+	</ParticleEffect>
+	<ExplosionConfig 
+		damage="0"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="10"
+		cell_explosion_radius_min="2"
+		explosion_sprite="data/particles/explosion_012.xml"
+		load_this_entity="mods/Apotheosis/files/scripts/materials/mudman_spawner.xml"
+		ray_energy="10"
+		>
+	</ExplosionConfig>
+    <Graphics 
+		texture_file="mods/Apotheosis/files/materials_gfx/mud_magic.png" 
+		color="A0363e21" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="POISONED" amount="0.15" />
+			<StatusEffect type="FOOD_POISONING" amount="0.05" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  
+  
+  <CellData
+	name="apotheosis_smoke_static_slowburn"
+	ui_name="$material_apotheosis_smoke_static_slowburn_name"
+  	tags="[gas],[burnable]"
+	burnable="1"
+	density="1"
+	lifetime="1600"
+	generates_flames="20"
+	cell_type="gas"
+	wang_color="7f848488"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	liquid_static="1"
+	on_fire="0"
+	fire_hp="500"
+	temperature_of_fire="80"
+	autoignition_temperature="20" 
+	requires_oxygen="0"  >
+    <Graphics 
+		color="7f606063" >
+    </Graphics>
+  </CellData>
+  
+  <CellData
+	name="apotheosis_smoke_static_slowburn_gas"
+	ui_name="$material_apotheosis_smoke_static_slowburn_name"
+  	tags="[gas],[burnable]"
+	burnable="1"
+	density="1"
+	lifetime="800"
+	generates_flames="20"
+	cell_type="gas"
+	wang_color="7f848489"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	liquid_static="0"
+	on_fire="0"
+	fire_hp="200"
+	temperature_of_fire="80"
+	autoignition_temperature="20" 
+	requires_oxygen="0"  >
+    <Graphics 
+		color="7f606063" >
+    </Graphics>
+  </CellData>
+
+  <CellDataChild
+  	_parent="rock_static"
+  	_inherit_reactions="1"
+	tags="[static],[alchemy],[solid],[earth],[matter_eater_ignore_list],[indestructible]"
+  	name="rock_static_cursed_hard" 
+	ui_name="$mat_rock_static_cursed"
+	wang_color="ffe6f4af"
+	hp="320000"
+	durability="16"
+	audio_physics_material_event="rock"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/rock_cursed_divine.png"
+		color="ff313b36"
+		pixel_all_around="ff313b36"
+		>
+		<Edge>
+			<EdgeGraphics 
+				color="ff233112" 
+				overwrite="0" 
+				percent="0.3" 
+				require_same_material="0" 
+				require_same_material_type="1" 
+				type="EVERYWHERE" 
+				z="1" >
+				<Images>
+					<Image 
+						allow_random_rotation="1"
+						filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_rock_cursed_ylw_1.png" 
+					/>
+					<Image 
+						allow_random_rotation="1"
+						filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_rock_cursed_ylw_2.png" 
+					/>
+					<Image 
+						allow_random_rotation="1"
+						filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_rock_cursed_ylw_3.png" 
+					/>
+					<Image 
+						allow_random_rotation="1"
+						filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_rock_cursed_ylw_4.png" 
+					/>
+					<Image 
+						allow_random_rotation="1"
+						filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_rock_cursed_ylw_5.png" 
+					/>
+					<Image 
+						allow_random_rotation="1"
+						filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_rock_cursed_ylw_6.png" 
+					/>
+				</Images>
+			</EdgeGraphics>
+		</Edge>
+	</Graphics>
+	<ParticleEffect
+		vel.y="-13.14"
+		vel_random.min_x="-17.71"
+		vel_random.max_x="17.71"
+		vel_random.min_y="-17.18"
+		vel_random.max_y="-2.8"
+		lifetime.min="0.9"
+		lifetime.max="1.6"
+		gravity.y="60"
+		render_on_grid="1"
+		airflow_force="0.5314"
+		airflow_scale="0.1371"
+		friction="0.0002"
+		probability="0.0145"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+  </CellDataChild>
+
+
+
+
+
+
+
+
+
+	<!-- Reactions -->
+
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_redstone"
+	output_cell1="lavarock_static"			output_cell2="steam"
+	blob_radius1="4"						blob_radius2="4"
+	blob_restrict_to_input_material1="1" 	blob_restrict_to_input_material2="1" 
+	audio_fx_volume_1="100.0" >
+  </Reaction>
+
+  <Reaction probability="80"
+	input_cell1="[lava]" 					input_cell2="water_fading"
+	output_cell1="rock_static" 				output_cell2="steam"
+	cosmetic_particle="steam"
+	blob_radius1="6"						blob_radius2="3"
+	blob_restrict_to_input_material1="1" 	blob_restrict_to_input_material2="1"
+	audio_fx_volume_1="100.0" >
+  </Reaction>
+
+  <Reaction probability="20"
+	input_cell1="water_fading" 	input_cell2="radioactive_liquid"
+	output_cell1="water_fading" 	output_cell2="water"
+	>
+  </Reaction>
+
+  <Reaction probability="10"
+	input_cell1="apotheosis_redstone" 	input_cell2="blood"
+	output_cell1="apotheosis_redstone" 	output_cell2="apotheosis_redstone"
+	blob_radius1="6"						blob_radius2="3"
+	audio_fx_volume_1="100.0" >
+	>
+  </Reaction>
+
+
+	<!--Mud Man reactions -->
+  <Reaction probability="10"
+	input_cell1="mud" 	input_cell2="magic_liquid_charm"
+	output_cell1="apotheosis_mudman_mud" 	output_cell2="apotheosis_mudman_mud"
+	blob_radius1="2"						blob_radius2="1">
+	>
+  </Reaction>
+
+	<!--
+  <Reaction probability="10"
+	input_cell1="[water]" 	input_cell2="soil"
+	output_cell1="mud" 	output_cell2="mud"
+	blob_radius1="3"						blob_radius2="2" >
+	>
+  </Reaction>
+
+  <Reaction probability="1"
+	input_cell1="apotheosis_mudman_mud" 	input_cell2="apotheosis_mudman_mud"
+	output_cell1="apotheosis_mudman_mud" 	output_cell2="fire">
+	>
+  </Reaction>
+  -->
+
+
+
+  <!-- Makes slow burning smoke burn slow -->
+
+	<Reaction probability="100"
+		input_cell1="[fire]" 		input_cell2="apotheosis_smoke_static_slowburn"
+		output_cell1="apotheosis_smoke_static_slowburn_gas"	output_cell2="apotheosis_smoke_static_slowburn_gas"
+		>
+	</Reaction>
+
+	<!--
+	<Reaction probability="15"
+		input_cell1="apotheosis_smoke_static_slowburn_gas" 		input_cell2="fire"
+		output_cell1="apotheosis_smoke_static_slowburn_gas"	output_cell2="apotheosis_smoke_static_slowburn_gas"
+		>
+	</Reaction>
+	-->
+
+</Materials>

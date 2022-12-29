@@ -1,0 +1,6 @@
+mods/Apotheosis/files/ragdolls/poring_devil/chunk_01.png
+mods/Apotheosis/files/ragdolls/poring_devil/chunk_02.png
+mods/Apotheosis/files/ragdolls/poring_devil/chunk_03.png
+mods/Apotheosis/files/ragdolls/poring_devil/chunk_04.png
+mods/Apotheosis/files/ragdolls/poring_devil/chunk_05.png
+mods/Apotheosis/files/ragdolls/poring_devil/core.png

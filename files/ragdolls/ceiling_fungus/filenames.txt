@@ -1,0 +1,2 @@
+mods/Apotheosis/files/ragdolls/ceiling_fungus/head.png
+mods/Apotheosis/files/ragdolls/ceiling_fungus/body.png

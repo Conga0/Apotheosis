@@ -1,0 +1,30 @@
+<Entity
+  name="$projectile_default" >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+    		gravity_y="0"
+			mass="20"
+			air_friction="0"
+			>
+    	</VelocityComponent> 
+	</Base>
+	
+	<BlackHoleComponent
+		particle_attractor_force="8"
+		damage_probability="0.0"
+		damage_amount="0"
+		radius="40">
+	</BlackHoleComponent>
+
+	<LifetimeComponent
+	lifetime="60"
+	>
+	</LifetimeComponent>
+	
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="mods/Apotheosis/files/entities/projectiles/star_shotgun.xml"
+		>
+	</VariableStorageComponent>
+</Entity>

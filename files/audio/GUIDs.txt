@@ -1,0 +1,45 @@
+{d3d376b6-af21-4ae3-917c-3e8fb781b724} bank:/Master Bank
+{4bce5662-de5a-06a1-1735-b4714672b1bc} bank:/Master Bank.strings
+{8c207427-d06b-495f-b6c7-8c4b0135f7d0} bank:/apotheosis_audio
+{91582d81-bc04-4e28-971c-5f71aeefedd7} bank:/my_mod_audio
+{fd1ec6a6-24b7-4a2e-9988-9733b99dc81e} bus:/
+{ab2beddd-fa07-445b-a933-d5cca76adb6e} bus:/UNASSIGNED 2
+{1a5d4dc3-8fc9-4261-a499-f3f6b0202e17} bus:/UNASSIGNED 3
+{0b728e09-75ca-402a-994c-60d2966e6400} bus:/UNASSIGNED 4
+{c77e6e4c-f45c-48ef-911b-7981915e0fd8} bus:/ambience+reverb
+{f34de4a2-1c20-4c14-99a0-eeb17d2f30a1} bus:/ambient
+{2cbf3aea-7bb4-4ea3-a5d4-bf22bf26f0d0} bus:/distant_reverb
+{af5b14c7-ccc0-43a9-aa70-65cd8f5344a4} bus:/game_sfx
+{8f8e9fd3-8a5c-4873-8776-2d3f3be234a5} bus:/lowpass
+{4686115c-5062-400a-b903-d03d5c45527e} bus:/music
+{5499ef15-f83e-4e92-9144-d53eab549f87} bus:/music_intro_etc
+{9e5f6674-ecca-4cb3-9e39-050604be24e9} bus:/music_reverb
+{8340afee-1bfb-481c-8b65-a1721703356c} bus:/reverb
+{40bdfd79-5dfd-4303-8a71-0792c637c380} bus:/ui
+{f2f92403-a3e0-42fc-943f-7299942e15ce} event:/apotheosis_audio/angel/warning
+{a16b29b2-f6ca-4152-94e4-e2975761674e} event:/apotheosis_audio/kittycat/meow_01
+{4490ae24-a5c7-47b3-a633-d8123ff0b9b6} event:/apotheosis_audio/kittycat/meow_02
+{c266f1c5-0e3c-4d6a-a3b6-24b26716a3bb} event:/apotheosis_audio/kittycat/meow_03
+{ce957986-50d8-40a1-ba2b-f4bbb38ba5a0} event:/apotheosis_audio/kittycat/sora_meow_01
+{bfd65cb5-0b77-4234-a09c-db0b080dabe9} event:/apotheosis_audio/kittycat/sora_meow_02
+{fea71ef6-ce88-4b1d-aa00-0649ff1d8dc1} event:/apotheosis_audio/kittycat/sora_meow_03
+{36ca5e77-1258-4747-b982-12bdd094057c} event:/apotheosis_audio/kittycat/sora_meow_04
+{6945c775-9b91-4c10-929d-0b8fe362e503} event:/apotheosis_audio/kittycat/sora_sneeze_01
+{91b3261f-71bc-4e5c-844b-67074604bbb1} event:/apotheosis_audio/kittycat/voc_attack
+{98453238-4eb8-4042-9c7b-00c8d2f4b2f4} event:/apotheosis_audio/kittycat/voc_attack_02
+{30ebb0f8-1ac5-467b-84cb-9aefe7ae8fc1} event:/apotheosis_audio/kittycat/voc_attack_03
+{cd9abbbf-a0fe-4a73-9db4-e4073e5f24dd} event:/apotheosis_audio/kittycat/voc_attack_purr_01
+{f6b37c19-e125-4d10-96a6-848850e2086c} event:/apotheosis_audio/reverberation/create
+{78155aa7-7cd5-4d10-9930-3fff2c96979b} event:/apotheosis_audio/sentry/voc_attack
+{2f99f806-4b51-4b0a-a879-566644591f29} parameter:/Migration Name Conflict (3)/lowpass
+{6864bf18-2f50-4b34-aecc-63c1bdf7fdf4} parameter:/Migration Name Conflict (4)/Distance
+{ddf75d16-bdbe-4460-908b-0a29bd483835} parameter:/lowpass
+{dadeda7a-c13b-484b-929e-d3c513e7173b} snapshot:/cave
+{bc5e80f9-a380-47c9-8799-3e02eea94feb} snapshot:/drugged
+{310cecea-3674-4ea8-a6ac-2a8facd05638} snapshot:/hills
+{2aa42396-4f12-4e40-9319-c51683cc06d1} snapshot:/music_duck
+{53a7180c-9635-4a37-a2b8-fb8001ac66ff} snapshot:/music_reverb
+{fcb63c0a-331d-44e6-bf64-cfa8c5b6e6e7} snapshot:/snowcave
+{8c3abc6b-141a-42fe-9d0f-eefcf03cd52f} snapshot:/teleport_nearby
+{c9b0b78b-9869-4058-91fb-73188f7b9103} snapshot:/underwater
+{a0219622-35b0-4a2d-8de4-650884606931} snapshot:/vault

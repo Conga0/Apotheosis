@@ -1,0 +1,56 @@
+Conga Lyne - Mod Creator, anything not specifically listed here was made by me
+
+Sorako Hinoguchi - Voicing Cats
+
+Spoopy (The One The Only Spoopy Boi#7859) - Creating fluffy cat sprites
+Creating Size 3 Blob Sprites, Creating Size 4 Blob Sprite, Creating Size 5 Sprite and barf attack
+Creating Aesthete of Heat Sprites
+Creating alternate Esoteric Being graphic
+
+Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help
+
+Blueberry#1414 - Translating the mod to Russian
+
+Extol#0629 - Helping getting translation keys working, needed for custom perks to show up correctly
+Also helped make split shot significantly less game breaking
+
+Zathers - creator of nxml.lua, a file required for pixel scenes to work with mod compatability for me.
+
+Horscht#6086 - Helping a ton with getting code working, including the toxic worm nest structure to spawn in the world,
+and all others as a result.
+He's my hero.
+
+Rib#1963 - Help with stain UV map generation, I probably wouldn't be able to have UV maps for enemies without his help
+
+KeithSammut - Provided base scripts needed for ceiling enemies
+
+Copi (Human#6606) - Helping think up some enemy ideas for unused sprites I had lying around
+Creating right click icon for alt-fire teleport bolts
+
+
+
+And you, for giving Apotheosis a try
+I hope you enjoyed playing it as much as I enjoyed making it <3
+
+
+
+
+
+
+Bonus shoutouts to:
+Freakstritch - I don't think you'll ever read this but.. thankyou for making Apotheosis & Weirdos all those years ago. I loved it. That mod means so much to me and impacted me in ways I don't think I could properly express in a simple word document I think you'll never read.. If I ever get in contact with you man, or you read this document long after I'm gone.. just.. Thankyou. Thankyou so much for making what you did.
+Hinoguchi Sorako - As far as i'll say in publicly available credits notes.. Beyond just voice acting the cats, you've been cool as hell and really nice to spend time with, thankyou.
+Moriko Yumi - As far as i'll say in publicly available credits notes.. You mean a lot, although i've also done one (now deleted) developer playthrough of Apotheosis on a livestream, it was entirely because of you. You're also cool as hell and i'm geninely really happy I met you, thankyou.
+Voksivs - First play tester of Apotheosis in the public eye, you've been a blast to watch and I genuinely enjoy hanging out in your streams, they're higher energy than a power plant- I hope everything works out for you man
+Tanksy Plays - Another beta tester of Apotheosis in the public eye, I enjoyed watching your streams and got some good feedback & bug testing from them
+clemfandongo - Yet another beta tester in the public eye for Apotheosis, thankyou man, I haven't seen you stream in ages as of writing but hopefully you can pop up again sometime, I hope you're doing well
+Aliasbot - You absolutely destroyed so many bosses, progressed more in the mod in a single day than everyone else has since it came out, you were so busted even I had to buff some enemies specifically because of you (and remove some polymorph crystals from certain areas)
+Tanky Plays - 2nd appearance here, but I enjoyed watching you play after the full release, also you've been a cool guy to hang out with in General outside of streaming & noita, thanks man
+DunkOrSlam's Community - Thankyou for voting overwhelming for MoreCreeps in the first ever DunkOrSlam modded day! It makes me feel really happy seeing you guys enjoy it so much to the point you wanted to see your favourite streamer play it, in addition to so many of you too! For that, thankyou, it made me feel like all the hard work was worth it that little bit more
+FuryForged - You've never played my mod as of writing (as far as I know), but your modded noita lets play videos on youtube pushed me a lot to create apotheosis, I especially enjoyed watching it while modding. For that and all the other awesome noita content, thankyou man.
+
+
+And the various modders of the Noita discord, you've helped me through hell and back, thankyou.
+
+I'm sure I've missed a few, there's definitely people I wanted to thank but couldn't find their name in memory unfortunately.
+Thankyou to you too

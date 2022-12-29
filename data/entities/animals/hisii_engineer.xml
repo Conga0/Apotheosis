@@ -1,0 +1,148 @@
+<Entity name="Insinöörihiisi" tags="ui_use_raw_name" >
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="2" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			creature_detection_range_x="200"
+			creature_detection_range_y="200"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			can_fly="0"
+			attack_melee_enabled="1"
+			attack_melee_damage_min="0.6" 
+			attack_melee_damage_max="0.7"
+			attack_melee_max_distance="20"
+			attack_melee_action_frame="2"
+			hide_from_prey="1"
+			hide_from_prey_target_distance="200"
+			hide_from_prey_time="600"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="3"
+            materials_create_messages="1"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hisii_engineer/filenames.txt" 
+			fire_probability_of_ignition="5"
+    		blood_spray_material="blood"
+			>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/hisii_engineer.xml" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0" 
+			jump_speed="120"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="90"
+			initial_jump_max_distance_y="90" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="24" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="orcs"
+			food_chain_rank="6"
+			is_predator="1" >
+		</GenomeDataComponent>
+
+        <CharacterPlatformingComponent 
+			jump_velocity_y="-15" // originally 12
+			jump_velocity_x="-10" //originally unaffected >
+        </CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+            _enabled="1" 
+            aabb_min_x="-4" 
+            aabb_max_x="4" 
+            aabb_min_y="-16" 
+            aabb_max_y="-0" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-4.0" 
+			collision_aabb_max_x="4.0" 
+			collision_aabb_min_y="-16" 
+			collision_aabb_max_y="0"
+			mass="1.1"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<LightComponent 
+		radius="50"
+		fade_out_time="1.5" >
+	</LightComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/scavenger" >
+	</AudioComponent>
+
+	<Entity>
+	    <GameEffectComponent 
+	        effect="ALLERGY_RADIOACTIVE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+
+
+    <AIAttackComponent
+    min_distance="30"
+    max_distance="270"
+    frames_between="1214"
+    frames_between_global="0"
+    attack_ranged_action_frame="2"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/summon_tank.xml"
+    attack_ranged_offset_y="0"
+    attack_ranged_offset_x="0"
+    attack_ranged_entity_count_min="1"
+    attack_ranged_entity_count_max="1"
+    >
+	</AIAttackComponent>
+
+    <AIAttackComponent
+    min_distance="30"
+    max_distance="370"
+    frames_between="1520"
+    frames_between_global="0"
+    attack_ranged_action_frame="2"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/summon_tank_rocket.xml"
+    attack_ranged_offset_y="0"
+    attack_ranged_offset_x="0"
+    attack_ranged_entity_count_min="1"
+    attack_ranged_entity_count_max="1"
+    >
+	</AIAttackComponent>
+
+	<LuaComponent
+        script_source_file="mods/Apotheosis/files/scripts/animals/hisii_engineer_limiter.lua"
+        execute_every_n_frame="86"
+        >
+    </LuaComponent>
+
+</Entity>
+

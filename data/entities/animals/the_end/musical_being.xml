@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/animals/musical_being.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="42"
+      max_hp="42"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

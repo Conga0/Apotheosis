@@ -1,0 +1,7 @@
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_tiger/head.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_tiger/body.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_tiger/legs_1.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_tiger/legs_2.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_tiger/legs_3.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_tiger/legs_4.png
+mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_tiger/tail.png

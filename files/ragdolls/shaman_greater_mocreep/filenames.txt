@@ -1,0 +1,6 @@
+mods/Apotheosis/files/ragdolls/shaman_greater_apotheosis/head.png
+mods/Apotheosis/files/ragdolls/shaman_greater_apotheosis/body.png
+mods/Apotheosis/files/ragdolls/shaman_greater_apotheosis/arm.png
+mods/Apotheosis/files/ragdolls/shaman_greater_apotheosis/leg_1.png
+mods/Apotheosis/files/ragdolls/shaman_greater_apotheosis/leg_2.png
+mods/Apotheosis/files/ragdolls/shaman_greater_apotheosis/lamp.png

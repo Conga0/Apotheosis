@@ -1,0 +1,26 @@
+<Entity>
+    <InheritTransformComponent>
+    </InheritTransformComponent>
+
+    <LuaComponent
+		script_shot="data/scripts/streaming_integration/scripts/matter_eater.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="1200"
+		>
+	</LifetimeComponent>
+	
+	<UIIconComponent
+		name="$action_matter_eater"
+		description="$actiondesc_matter_eater"
+		icon_sprite_file="data/ui_gfx/gun_actions/matter_eater.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>

@@ -1,0 +1,70 @@
+<Entity >
+
+	<SpriteComponent 
+		z_index="30"
+		image_file="mods/Apotheosis/files/props_gfx/symbols/boss_divine_being.png" 
+		offset_x="24"
+		offset_y="24" >
+	</SpriteComponent>
+
+	<!-- If you haven't killed all 5 bosses yet, hide the alchemical symbols -->
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/props/alchemy/symbol_boss_check_divine_being.lua"
+		execute_every_n_frame="60"
+		>
+	</LuaComponent>
+
+	<!-- Particle Emitter fx -->
+	<ParticleEmitterComponent 
+		_tags="invincible"
+		_enabled="0"
+		emitted_material_name="fire"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-2"
+		x_vel_max="2"
+		y_vel_min="-2"
+		y_vel_max="2"
+		gravity.y="0.0"
+		lifetime_min="2"
+		lifetime_max="3"
+		count_min="4"
+		count_max="4"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="0"
+		area_circle_radius.max="0"
+		cosmetic_force_create="0"
+		airflow_force="0.211"
+		airflow_time="0.81"
+		airflow_scale="0.05"
+		emission_interval_min_frames="40"
+		emission_interval_max_frames="50"
+		emit_cosmetic_particles="1"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/symbols/alchemy_centipede_blood.png"
+		image_animation_speed="1"
+		image_animation_loop="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+
+	<!-- Enables flame when getting nearby -->
+	<!--
+	<LuaComponent
+		script_collision_trigger_hit="mods/Apotheosis/files/scripts/props/alchemy/flame_enable.lua"
+		execute_times="1" >
+	</LuaComponent>
+
+	<CollisionTriggerComponent
+		width="360"
+		height="60"
+		radius="200"
+		required_tag="player_unit"
+		destroy_this_entity_when_triggered="0"
+		>
+	</CollisionTriggerComponent>
+	-->
+</Entity>
+

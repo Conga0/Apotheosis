@@ -1,0 +1,20 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/seasonal/mirrored/jackolantern_emissive.png" 
+  offset_x="8" 
+  offset_y="15"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="16" 
+    frame_wait="0.2" 
+    frame_width="18" 
+    frames_per_row="6" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0"  >
+
+  </RectAnimation>
+
+</Sprite>
+

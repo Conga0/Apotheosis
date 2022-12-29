@@ -1,0 +1,15 @@
+<Entity >
+  <Base file="data/entities/animals/devourer_magic.xml">
+    <DamageModelComponent 
+      hp="25"
+      max_hp="25"
+     ></DamageModelComponent >
+  </Base>
+
+	<Entity><Base file="data/entities/verlet_chains/devourer_magic/tentacle.xml"> <InheritTransformComponent><Transform position.x="-3"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_magic/tentacle.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_magic/tentacle.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_magic/tentacle.xml"> <InheritTransformComponent><Transform position.x="-4"  position.y="2" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_magic/tentacle.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="4" ></Transform></InheritTransformComponent> </Base></Entity>
+
+</Entity>

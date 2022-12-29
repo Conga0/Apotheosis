@@ -1,0 +1,15 @@
+<Entity tags="acid">
+	
+	<LifetimeComponent
+		lifetime="40"
+		>
+	</LifetimeComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/magic/creature_shift_file_refresh.lua"
+		execute_every_n_frame="30"
+		execute_times="1"
+		>
+	</LuaComponent>
+</Entity>
+

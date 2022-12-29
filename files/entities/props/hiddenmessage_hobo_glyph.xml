@@ -1,0 +1,11 @@
+<Entity >
+
+	<SpriteComponent 
+		z_index="30"
+		image_file="mods/Apotheosis/files/props_gfx/symbols/hisii_beggar_glpyh.png" 
+		offset_x="19"
+		offset_y="19" >
+	</SpriteComponent>
+
+</Entity>
+

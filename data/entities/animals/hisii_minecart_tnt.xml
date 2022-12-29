@@ -1,0 +1,156 @@
+<Entity name="Miinakärry Tappura Haulikkohiisi" >
+  
+	<Base file="data/entities/base_enemy_robot.xml" >
+		<ItemChestComponent level="1" >
+		</ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="40"
+			attack_melee_damage_min="0.4" 
+			attack_melee_damage_max="0.7"
+			creature_detection_range_x="400"
+			creature_detection_range_y="200"
+			creature_detection_angular_range_deg="60"
+			attack_melee_max_distance="12"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="1"
+			can_fly="0" 
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="180"
+			attack_melee_action_frame="4"
+			attack_ranged_action_frame="4"
+			attack_ranged_entity_file="data/entities/projectiles/tnt.xml"
+			attack_ranged_frames_between="100"
+			attack_ranged_offset_y="0" >
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="3.5"
+            materials_create_messages="1"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hisii_minecart/filenames.txt" 
+			fire_probability_of_ignition="5" 
+    		blood_material="apotheosis_spark_orange" 
+    		blood_spray_material="apotheosis_spark_orange"
+			blood_multiplier="0.2"
+            blood_spray_create_some_cosmetic="1"
+			ragdoll_fx_forced="NONE" 
+			>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/hisii_minecart_tnt.xml"
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="0"
+			can_fly="0" 
+			jump_speed="80"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="60"
+			initial_jump_max_distance_y="60" 
+			can_swim_on_surface="0"
+			can_dive="1" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="orcs"
+			food_chain_rank="9"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			accel_x="0.01"
+			run_velocity="40" >
+		</CharacterPlatformingComponent>
+
+		<CharacterDataComponent
+			collision_aabb_min_x="-7" 
+			collision_aabb_max_x="6" 
+			collision_aabb_min_y="-4"
+			collision_aabb_max_y="15" 
+			mass="3.3"
+			>
+		</CharacterDataComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000" >
+		</CameraBoundComponent>
+	
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-5" 
+			aabb_max_x="2" 
+			aabb_min_y="-7"
+			aabb_max_y="8"
+			damage_multiplier="3.0"
+			>
+		</HitboxComponent>
+	</Base>
+
+	<LightComponent 
+		radius="50"
+		fade_out_time="1.5" >
+	</LightComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1" >
+    </ItemPickUpperComponent>
+	
+	<HotspotComponent
+		_tags="hand_hotspot,hand"
+		sprite_hotspot_name="hand"
+		offset.x="0" 
+		offset.y="0">
+	</HotspotComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/shotgunner" >
+	</AudioComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals"
+		set_latest_event_position="1" >
+	</AudioComponent>
+		
+	<HitboxComponent 
+		_enabled="1" 
+		aabb_min_x="-7" 
+		aabb_max_x="6" 
+		aabb_min_y="8"
+		aabb_max_y="16" 
+		>
+	</HitboxComponent>
+
+	<Entity>
+	    <GameEffectComponent 
+	        effect="ALLERGY_RADIOACTIVE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<LuaComponent
+		_tags="death_reward"
+		script_death="mods/Apotheosis/files/scripts/animals/hisii_minecart_tnt_death.lua"
+		>
+	</LuaComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+
+</Entity>

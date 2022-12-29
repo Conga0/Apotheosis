@@ -1,0 +1,73 @@
+<Entity >
+	<MagicConvertMaterialComponent
+      kill_when_finished="1"
+      steps_per_frame="2"
+      clean_stains="0"
+      is_circle="1"
+      radius="150" 
+	  loop="0"
+      from_material_array="lava,blood,vomit,magic_liquid_charm,acid,water,magic_liquid_polymorph,magic_liquid_unstable_polymorph,cement,snow,magic_liquid_protection_all,blood_worm,rock_static,rock_hard,rock_static_radioactive,wood_static,sand_static_rainforest,sand_static_rainforest_dark,blood_cold,grass,cursed_liquid,smoke,rock_static_wet,coal,magic_liquid_mana_regeneration"
+      to_material_array="blood,apotheosis_redstone,magic_liquid_teleportation,magic_liquid_berserk,radioactive_liquid,alcohol,magic_liquid_unstable_teleportation,material_confusion,rock_hard_border,lavasand,gold_molten,blood_fungi,acid,soil,rock_static_cursed_green,steel_static_strong,poison,material_darkness,void_liquid,magic_liquid_protection_all,poison_gas,rainbow_gas,water_ice,gunpowder_unstable,water_ice"
+	  >
+    </MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+      kill_when_finished="1"
+	  from_material_tag="[frozen]"
+      steps_per_frame="2"
+      to_material="fire"
+      clean_stains="0"
+      is_circle="1"
+      radius="150" 
+	  loop="0"
+	  >
+    </MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+      kill_when_finished="1"
+	  from_material_tag="[sand_ground]"
+      steps_per_frame="2"
+      to_material="fungi_creeping"
+      clean_stains="0"
+      is_circle="1"
+      radius="150" 
+	  loop="0"
+	  >
+    </MagicConvertMaterialComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion.lua"
+		execute_every_n_frame="5"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_worm_rain.lua"
+		execute_every_n_frame="5"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_rat_bite.lua"
+		execute_every_n_frame="5"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_spark_bolt.lua"
+		execute_every_n_frame="5"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_materia_conversion.lua"
+		execute_every_n_frame="5"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+</Entity>

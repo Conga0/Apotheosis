@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/wizard_copeseethmald/torso.png
+mods/Apotheosis/files/ragdolls/wizard_copeseethmald/hand.png
+mods/Apotheosis/files/ragdolls/wizard_copeseethmald/feet.png
+mods/Apotheosis/files/ragdolls/wizard_copeseethmald/head.png

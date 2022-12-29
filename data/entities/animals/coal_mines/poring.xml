@@ -1,0 +1,45 @@
+<Entity name="Hyytelö">
+  
+	<Base file="data/entities/animals/poring.xml" include_children="1" >
+        <AnimalAIComponent
+			_enabled="1" 
+			preferred_job="JobDefault"
+            sense_creatures="1"
+            attack_melee_max_distance="22"
+			attack_melee_action_frame="3"
+			attack_melee_damage_min="0.4" 
+			attack_melee_damage_max="0.6"
+			creature_detection_range_x="300"
+			creature_detection_range_y="400"
+			sense_creatures="1"
+			food_material="water"
+			attack_dash_enabled="1"
+			attack_dash_distance="80"
+			attack_melee_enabled="1" >
+        </AnimalAIComponent>
+        
+        <SpriteComponent
+			alpha="1"
+            image_file="mods/Apotheosis/files/enemies_gfx/poring_weak.xml"
+            alpha="0.8" 
+            offset_x="14" 
+            offset_y="20" >
+        </SpriteComponent>
+
+        <DamageModelComponent
+            hp="1.05"
+            air_needed="0"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/poring_weak/filenames.txt"
+			ragdoll_material="meat_slime"
+			blood_material="slime"
+			blood_spray_material="slime"
+			blood_multiplier="0.35"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			ragdoll_blood_amount_absolute="30"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid,poison" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
+			>
+        </DamageModelComponent>
+	</Base>
+</Entity>

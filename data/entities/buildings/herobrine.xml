@@ -1,0 +1,37 @@
+<Entity 
+  name="Mina" tags="prop" >
+
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    has_special_scale="0" 
+    image_file="mods/Apotheosis/files/buildings_gfx/herobrine.xml"
+    is_text_sprite="0" 
+    next_rect_animation="" 
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="stand" 
+    visible="1" 
+     >
+  </SpriteComponent>
+  
+  <CollisionTriggerComponent
+    width="250"
+    height="150" 
+    radius="200"
+    required_tag="player_unit"
+    destroy_this_entity_when_triggered="0" >
+  </CollisionTriggerComponent>
+
+  <LuaComponent
+    script_collision_trigger_hit="data/scripts/buildings/herobrine_vanish.lua"
+    execute_every_n_frame="-1"
+    execute_times="1" >
+  </LuaComponent>
+
+	<VelocityComponent />
+
+  <SimplePhysicsComponent/>
+
+</Entity>
+

@@ -1,0 +1,14 @@
+<Entity >
+
+  <Base file="data/entities/animals/devourer_ghost_minion.xml">
+
+	<DamageNearbyEntitiesComponent
+    radius="17"
+    time_between_damaging="3"
+    damage_min="0.8"
+    damage_max="0.8" >
+	</DamageNearbyEntitiesComponent>
+
+  </Base>
+
+</Entity>

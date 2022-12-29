@@ -1,0 +1,3 @@
+mods/Apotheosis/files/ragdolls/wizard_ambrosia/torso.png
+mods/Apotheosis/files/ragdolls/wizard_ambrosia/hand.png
+mods/Apotheosis/files/ragdolls/wizard_ambrosia/feet.png

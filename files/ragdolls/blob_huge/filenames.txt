@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/blob_huge/body.png
+mods/Apotheosis/files/ragdolls/blob_huge/leg_1.png
+mods/Apotheosis/files/ragdolls/blob_huge/leg_2.png
+mods/Apotheosis/files/ragdolls/blob_huge/leg_3.png
+mods/Apotheosis/files/ragdolls/blob_huge/leg_4.png

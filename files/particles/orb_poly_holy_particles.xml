@@ -1,0 +1,19 @@
+<Sprite
+ filename="mods/Apotheosis/files/particles/orb_poly_holy_particles.png"
+ offset_x="8"
+ offset_y="8"
+ default_animation="default" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="default"
+  pos_x="0"
+  pos_y="0"
+  frame_count="3"
+  frame_width="16"
+  frame_height="16"
+  frame_wait="0.1"
+  frames_per_row="3"
+  loop="0"   >
+ </RectAnimation>
+</Sprite>

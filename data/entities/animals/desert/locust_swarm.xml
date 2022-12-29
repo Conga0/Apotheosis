@@ -1,0 +1,16 @@
+<Entity name="Heinäsirkka" tags="enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT,ui_use_raw_name" >
+  <Base file="data/entities/animals/locust_swarm.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="1.5"
+      max_hp="1.5"
+     ></DamageModelComponent >
+  </Base>
+
+  <LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/locust_height_check.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>

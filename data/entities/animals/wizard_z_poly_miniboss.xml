@@ -1,0 +1,260 @@
+<Entity name="Yliinnokaspolymorfoinninmestari" tags="polymorphable_NOT,touchmagic_immunity,ui_use_raw_name,music_energy_100,necrobot_NOT,glue_NOT,teleportable_NOT" >
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="2" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			attack_melee_enabled="0"
+			creature_detection_range_x="400"
+			creature_detection_range_y="400"
+			food_material="blood"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			can_fly="0"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_poly_chaotic_redirect_start.xml"
+			attack_ranged_action_frame="5"
+			attack_ranged_frames_between="120"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="300"
+			attack_ranged_offset_y="-8"
+			attack_ranged_offset_x="10"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="120"
+			physics_objects_damage="0"
+			air_needed="0"
+			fire_probability_of_ignition="0"
+            ragdoll_material="meat_polymorph_protection"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_z_poly_miniboss/filenames.txt" 
+			>
+			<damage_multipliers
+				melee="1.0"
+				projectile="0.7"
+				explosion="0.8"
+				electricity="0.8"
+				ice="0.8"
+				fire="0.8" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/wizard_z_poly_miniboss.xml" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="mage"
+			food_chain_rank="4"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-8" 
+			swim_idle_buoyancy_coeff="1.0"
+			run_velocity="12"  >
+		</CharacterPlatformingComponent>
+		
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+		  _enabled="1" 
+		  aabb_min_x="-6.5" 
+		  aabb_max_x="7.5" 
+		  aabb_min_y="-12" 
+		  aabb_max_y="6" 
+		  >
+		</HitboxComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-5.0" 
+			collision_aabb_max_x="5.0" 
+			collision_aabb_min_y="-12" 
+			collision_aabb_max_y="6" 
+			>
+	    </CharacterDataComponent>
+	</Base>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/shine_03.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="20"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-15"
+		randomize_position.max_x="15"
+		randomize_position.min_y="-18"
+		randomize_position.max_y="5"
+		>
+  </SpriteParticleEmitterComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+	
+	<SpriteComponent 
+		_tags="character" 
+		_enabled="0" 
+		alpha="1" 
+		image_file="data/enemies_gfx/wizard_poly_emissive.xml"
+		offset_x="0" 
+		offset_y="0"
+		emissive="1"
+		additive="1"
+		next_rect_animation="" 
+		rect_animation="walk" 
+		 >
+	</SpriteComponent>
+	
+	<HotspotComponent
+        _tags="cape_root"
+        sprite_hotspot_name="cape" >
+    </HotspotComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wizard/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/wizard" >
+	</AudioComponent>
+
+	<Entity name="cape">  
+        <Base file="data/entities/verlet_chains/cape/cape.xml">
+			<VerletPhysicsComponent
+        		cloth_color_edge="0xFFEBD1E6"
+        		cloth_color="0xFF773B3E">
+        	</VerletPhysicsComponent>
+        </Base>  
+    </Entity>
+
+	<SpriteComponent 
+		_tags="health_bar_back,ui,no_hitbox" 
+		_enabled="1" 
+		alpha="1" 
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_back.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="12" 
+		offset_y="22" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		z_index="-9000"
+		never_ragdollify_on_death="1"
+		 >
+	</SpriteComponent>
+
+	<SpriteComponent 
+		_tags="health_bar,ui,no_hitbox" 
+		_enabled="1" 
+		alpha="1" 
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_front.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="11" 
+		offset_y="22" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		z_index="-9000"
+		never_ragdollify_on_death="1"
+		 >
+	</SpriteComponent>
+
+	<HealthBarComponent>
+	</HealthBarComponent>
+
+	<AIAttackComponent
+	min_distance="40"
+	max_distance="260"
+	frames_between="125"
+	frames_between_global="0"
+	attack_ranged_action_frame="5"
+	attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_poly_chaotic_redirect_start.xml"
+	attack_ranged_offset_y="-6"
+	attack_ranged_offset_x="10"
+	attack_ranged_entity_count_min="2"
+	attack_ranged_entity_count_max="2"
+	>
+	</AIAttackComponent>
+
+	<AIAttackComponent
+	min_distance="0"
+	max_distance="30"
+	frames_between="400"
+	frames_between_global="300"
+	attack_ranged_action_frame="5"
+	attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_poly_chaotic_vacuum.xml"
+	attack_ranged_offset_y="-6"
+	attack_ranged_offset_x="10"
+	attack_ranged_entity_count_min="1"
+	attack_ranged_entity_count_max="1"
+	attack_ranged_predict="1"
+	>
+	</AIAttackComponent>
+
+	<LuaComponent
+		_tags="death_reward"
+		script_death="mods/Apotheosis/files/scripts/animals/polymage_miniboss_reward.lua"
+		>
+	</LuaComponent>
+	
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_half.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+    
+</Entity>
+

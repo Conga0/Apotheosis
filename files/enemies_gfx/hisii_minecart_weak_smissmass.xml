@@ -1,0 +1,80 @@
+<Sprite
+ filename="mods/Apotheosis/files/enemies_gfx/hisii_minecart_weak_smissmass.png"
+ hotspots_filename="mods/Apotheosis/files/enemies_gfx/hisii_minecart_hotspots.png"
+ offset_x="10"
+ offset_y="6"
+ default_animation="stand" >
+ 
+ <Hotspot
+    color="00ff0000"
+    name="hand" >
+  </Hotspot>
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="6"
+  frame_width="20"
+  frame_height="22"
+  frame_wait="0.16"
+  frames_per_row="6"
+  loop="1"   >
+ </RectAnimation>
+
+ <!-- walk -->
+ <RectAnimation
+  name="walk"
+  pos_x="0"
+  pos_y="22"
+  frame_count="5"
+  frame_width="20"
+  frame_height="22"
+  frame_wait="0.11"
+  frames_per_row="6"
+  loop="1"   >
+ </RectAnimation>
+
+ <!-- run - copied from walk -->
+ <RectAnimation
+  name="run"
+  pos_x="0"
+  pos_y="22"
+  frame_count="5"
+  frame_width="20"
+  frame_height="22"
+  frame_wait="0.11"
+  frames_per_row="8"
+  loop="1"   >
+ </RectAnimation>
+
+ <!-- burn - copied from walk -->
+ <RectAnimation
+  name="burn"
+  pos_x="0"
+  pos_y="22"
+  frame_count="5"
+  frame_width="20"
+  frame_height="22"
+  frame_wait="0.08"
+  frames_per_row="8"
+  loop="1"   >
+ </RectAnimation>
+ 
+ <!-- shoot -->
+  <RectAnimation
+  name="attack_ranged"
+  pos_x="0"
+  pos_y="44"
+  frame_count="7"
+  frame_width="20"
+  frame_height="22"
+  frame_wait="0.15"
+  frames_per_row="8"
+  loop="0"   >
+  <Event frame="0" name="shotgun_cock" probability="1" check_physics_material="0"/>
+  <Event frame="4" name="shoot_bullet" probability="1" check_physics_material="0"/>
+  <Event frame="0" name="throw"/>
+ </RectAnimation>
+</Sprite>

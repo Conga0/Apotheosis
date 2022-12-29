@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/hisii_giga_bomb/head.png
+mods/Apotheosis/files/ragdolls/hisii_giga_bomb/arm.png
+mods/Apotheosis/files/ragdolls/hisii_giga_bomb/body.png
+mods/Apotheosis/files/ragdolls/hisii_giga_bomb/leg_01.png
+mods/Apotheosis/files/ragdolls/hisii_giga_bomb/leg_02.png

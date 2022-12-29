@@ -1,0 +1,16 @@
+
+<Entity>
+    <CollisionTriggerComponent
+      width="9"
+      height="14" 
+      radius="16"
+      required_tag="apotheosis_polymorphcrystal"
+      destroy_this_entity_when_triggered="0" >
+  	</CollisionTriggerComponent>
+
+    <LuaComponent
+      script_collision_trigger_hit="data/scripts/buildings/trophy_room_trolling_check.lua"
+      execute_every_n_frame="-1"
+		  execute_times="1" >
+    </LuaComponent>
+</Entity>

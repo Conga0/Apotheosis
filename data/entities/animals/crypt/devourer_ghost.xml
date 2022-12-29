@@ -1,0 +1,26 @@
+<Entity tags="enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT" name="Nälkäinen aave">
+  <Base file="data/entities/animals/devourer_ghost.xml">
+    <DamageModelComponent 
+      hp="9"
+      max_hp="9"
+     ></DamageModelComponent >
+  </Base>
+
+	<Entity><Base file="data/entities/verlet_chains/devourer_ghost/tentacle.xml"> <InheritTransformComponent><Transform position.x="-3"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_ghost/tentacle.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_ghost/tentacle.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_ghost/tentacle.xml"> <InheritTransformComponent><Transform position.x="-4"  position.y="2" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_ghost/tentacle.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="4" ></Transform></InheritTransformComponent> </Base></Entity>
+
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+  
+</Entity>

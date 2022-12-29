@@ -1,0 +1,40 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/poring_magic_orb.png" 
+  offset_x="14" 
+  offset_y="20"
+  default_animation="idle" >
+
+    <RectAnimation 
+    frame_count="5" 
+    frame_height="24" 
+    frame_wait="0.2" 
+    frame_width="30" 
+    frames_per_row="8" 
+    name="idle" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+    <RectAnimation 
+    frame_count="5" 
+    frame_height="24" 
+    frame_wait="0.2" 
+    frame_width="30" 
+    frames_per_row="8" 
+    name="attack_ranged" 
+    pos_x="0" 
+    pos_y="25" >
+
+    <Event 
+      check_physics_material="0" 
+      frame="3" 
+      max_distance="500" 
+      name="shoot_magic" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+  </RectAnimation>
+
+  </Sprite>

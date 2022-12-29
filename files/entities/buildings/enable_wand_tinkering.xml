@@ -1,0 +1,14 @@
+<Entity 
+  tags="workshop" >
+
+  <HitboxComponent 
+    _enabled="1" 
+    aabb_max_x="170" 
+    aabb_min_x="-170" 
+    aabb_max_y="100" 
+    aabb_min_y="-100" 
+    is_enemy="0" 
+    is_item="0" 
+    is_player="1" >
+  </HitboxComponent>
+</Entity>

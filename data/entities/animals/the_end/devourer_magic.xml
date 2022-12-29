@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/animals/devourer_magic.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="22"
+      max_hp="22"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

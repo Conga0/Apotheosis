@@ -1,0 +1,31 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/esoteric_being_alt_asleep.png"
+  offset_x="40" 
+  offset_y="28"
+  default_animation="stand" >
+
+  <RectAnimation
+    frame_count="4"
+    frame_height="49"
+    frame_wait="0.2"
+    frame_width="75"
+    frames_per_row="4"
+    name="stand"
+    pos_x="0"
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation
+    frame_count="3"
+    frame_height="49"
+    frame_wait="0.2"
+    frame_width="75"
+    frames_per_row="4"
+    name="attack_ranged"
+    pos_x="0"
+    pos_y="49" >
+
+  </RectAnimation>
+
+</Sprite>

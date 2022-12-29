@@ -1,0 +1,53 @@
+<Entity>
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_red"
+		gravity.y="0.0"
+		lifetime_min="1.2"
+		lifetime_max="1.9"
+		count_min="1"
+		count_max="2"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.max="7"
+		cosmetic_force_create="0"
+		airflow_force="0.2"
+		airflow_time="0.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		emit_cosmetic_particles="1"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+    
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/mana_degradation_slow.lua"
+		execute_on_added="0"
+		execute_every_n_frame="1"
+		execute_times="900"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+        frames="900"
+    >
+	</GameEffectComponent >
+
+	<UIIconComponent
+		name="$status_apotheosis_manadrain_name"
+		description="$status_apotheosis_manadrain_desc"
+		icon_sprite_file="data/ui_gfx/status_indicators/mana_degradation.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>

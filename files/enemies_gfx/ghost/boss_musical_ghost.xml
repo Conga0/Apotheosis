@@ -1,0 +1,20 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/ghost/boss_musical_ghost.png" 
+  offset_x="39" 
+  offset_y="39"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_height="79" 
+    frame_wait="0.2" 
+    frame_width="79" 
+    frames_per_row="4" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+</Sprite>
+

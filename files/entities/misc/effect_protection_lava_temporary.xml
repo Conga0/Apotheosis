@@ -1,0 +1,27 @@
+<Entity tags="effect_protection" >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+		_tags="effect_protection"
+    	effect="PROTECTION_FIRE"
+    	frames="-1"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+
+	<LuaComponent
+		execute_on_added="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/lava_immunity_start.lua"
+		execute_every_n_frame="3600"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_removed="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/lava_immunity_end.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+</Entity>

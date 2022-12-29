@@ -1,0 +1,45 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/blob_huge_emissive.png" 
+  offset_x="32" 
+  offset_y="40"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="47" 
+    frame_wait="0.20" 
+    frame_width="61" 
+    frames_per_row="8" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="47" 
+    frame_wait="0.16" 
+    frame_width="61" 
+    frames_per_row="8" 
+    name="walk" 
+    pos_x="0" 
+    pos_y="47" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="47" 
+    frame_wait="0.1" 
+    frame_width="61" 
+    frames_per_row="8" 
+    loop="0" 
+    name="attack_ranged"
+    pos_x="0" 
+    pos_y="94" >
+
+  </RectAnimation>
+
+</Sprite>
+

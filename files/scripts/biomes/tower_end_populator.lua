@@ -1,0 +1,2 @@
+---there used to be the wand of wonders spawning here but it's been Moved to the Divine Being's drop table
+---Caused issues which prevented all other wand types from spawning, unknown why

@@ -1,0 +1,21 @@
+<Entity tags="prop"  >
+
+	<VelocityComponent />
+
+    <SimplePhysicsComponent/>
+
+	<SpriteComponent 
+		z_index="1"
+		image_file="mods/Apotheosis/files/props_gfx/sign_motd.png" 
+		offset_x="12"
+		offset_y="22" >
+	</SpriteComponent>
+
+	<InteractableComponent
+		radius="25"
+		ui_text="$book_apotheosis_motd_description_009"
+		name="TEST TITLE"
+	>
+	</InteractableComponent>
+</Entity>
+

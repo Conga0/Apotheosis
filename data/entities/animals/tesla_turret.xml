@@ -1,0 +1,303 @@
+<Entity name="Teslan torni">
+	<_Transform 
+		scale.x="1" 
+		>
+	</_Transform>
+  
+	<Base file="data/entities/base_enemy_robot.xml" >
+		<ItemChestComponent level="3" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="0"
+			creature_detection_range_x="700"
+			creature_detection_range_y="700"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="0"
+			can_fly="0" 
+			attack_ranged_action_frame="1"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="800"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/railcannon_delayed_attack_warning.xml"
+			attack_ranged_entity_count_min="1"
+			attack_ranged_entity_count_max="1"
+			attack_ranged_frames_between="45" 
+			attack_ranged_offset_y="-17"
+			attack_ranged_offset_x="0"
+			aggressiveness_min="80"
+			aggressiveness_max="100"
+		>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="5"
+            ragdoll_material="steel"
+			ragdoll_filenames_file=""
+    		blood_material="spark_electric" 
+			fire_probability_of_ignition="0"
+			in_liquid_shooting_electrify_prob="30" >
+			<damage_multipliers
+				projectile="0.5"
+				explosion="0.8"
+				electricity="0.0"
+				fire="0.1" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/turret_tesla.xml" 
+			offset_x="7"
+			offset_y="21"
+			>
+		</SpriteComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="robot"
+			food_chain_rank="9"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="0" 
+			run_velocity="0"
+			swim_idle_buoyancy_coeff="0.8"
+			swim_up_buoyancy_coeff="0.8"
+			swim_down_buoyancy_coeff="0.8"
+		></CharacterPlatformingComponent>
+		
+		<PathFindingComponent
+			can_jump="0"
+			can_fly="0" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+            _enabled="1" 
+            aabb_min_x="-6" 
+            aabb_max_x="6" 
+            aabb_min_y="-20" 
+            aabb_max_y="3" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-6.0" 
+			collision_aabb_max_x="6.0" 
+			collision_aabb_min_y="-20" 
+			collision_aabb_max_y="3" 
+			mass="2.2"
+			>
+	    </CharacterDataComponent>
+	</Base>
+	
+	<ExplodeOnDamageComponent
+  	explode_on_death_percent="1"
+  	explode_on_damage_percent="0.0"
+  	>
+    <config_explosion 
+      never_cache="0"
+      damage="2"
+      camera_shake="40" 
+      explosion_radius="30" 
+      explosion_sprite="data/particles/explosion_032.xml" 
+      explosion_sprite_lifetime="10" 
+      create_cell_probability="70"	  
+      hole_destroy_liquid="0" 
+      hole_enabled="1" 
+      ray_energy="180000"
+      particle_effect="1" 
+      damage_mortals="1" 
+      load_this_entity="data/entities/projectiles/thunderball.xml"
+      physics_explosion_power.min="0.7"
+      physics_explosion_power.max="1.2" 
+      physics_throw_enabled="1"
+      shake_vegetation="1" 
+      sparks_count_min="8" 
+      sparks_count_max="12" 
+      sparks_enabled="1" 
+      stains_enabled="1" 
+      stains_radius="15" >
+    </config_explosion>
+  </ExplodeOnDamageComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="64" 
+		r="80"
+		g="200"
+		b="250"
+		fade_out_time="1.5" >
+	</LightComponent>
+  
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/spark_electric.xml"
+		emissive="1"
+		delay="0"
+		lifetime="0"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="0"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="10"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_position.min_x="-3"
+		randomize_position.max_x="3"
+		randomize_position.min_y="-20"
+		randomize_position.max_y="-14"
+		>
+	</SpriteParticleEmitterComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+  
+	<ElectricChargeComponent
+    	_tags="enabled_in_hand,item_identified"
+		charge_time_frames="2" 
+		electricity_emission_interval_frames="10"
+		>
+	</ElectricChargeComponent>
+
+	<Entity tags="energy_shield">	
+
+		<HitboxComponent 
+			_tags="enabled_in_world"
+			aabb_min_x="-4" 
+			aabb_max_x="4" 
+			aabb_min_y="-3" 
+			aabb_max_y="3"
+		></HitboxComponent>
+
+		<InheritTransformComponent
+			_tags="enabled_in_hand"
+			use_root_parent="1">
+		<Transform 
+			position.x="0" 
+			position.y="-4" >
+		</Transform>
+		</InheritTransformComponent>
+
+		<EnergyShieldComponent 
+			_tags="enabled_in_hand"
+			recharge_speed="0.05" 
+			radius="22.0"
+			energy="0.25"
+			max_energy="0.5"
+			>
+		</EnergyShieldComponent>
+		
+		<ParticleEmitterComponent
+			_tags="character,enabled_in_hand"
+			emitted_material_name="plasma_fading"
+			gravity.y="0.0"
+			lifetime_min="0.1"
+			lifetime_max="0.5"
+			count_min="2"
+			count_max="4"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.max="12"
+			cosmetic_force_create="0"
+			airflow_force="0.5"
+			airflow_time="0.1"
+			airflow_scale="0.5"
+			emission_interval_min_frames="1"
+			emission_interval_max_frames="1"
+			emit_cosmetic_particles="1"
+			is_emitting="1" >
+		</ParticleEmitterComponent>
+
+		<ParticleEmitterComponent
+			_tags="character,enabled_in_hand,shield_ring"
+			emitted_material_name="plasma_fading"
+			gravity.y="0.0"
+			lifetime_min="0.02"
+			lifetime_max="0.05"
+			count_min="90"
+			count_max="100"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.min="12"
+			area_circle_radius.max="12"
+			cosmetic_force_create="0"
+			airflow_force="0.3"
+			airflow_time="0.01"
+			airflow_scale="0.05"
+			emission_interval_min_frames="0"
+			emission_interval_max_frames="0"
+			emit_cosmetic_particles="1"
+			is_emitting="1" >
+		</ParticleEmitterComponent>
+
+		<ParticleEmitterComponent
+			_tags="character,enabled_in_hand,shield_hit"
+			emitted_material_name="plasma_fading"
+			gravity.y="0.0"
+			lifetime_min="0.3"
+			lifetime_max="1"
+			count_min="300"
+			count_max="360"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.min="12"
+			area_circle_radius.max="12"
+			cosmetic_force_create="0"
+			airflow_force="2.8"
+			airflow_time="0.03"
+			airflow_scale="0.8"
+			emission_interval_min_frames="0"
+			emission_interval_max_frames="0"
+			emit_cosmetic_particles="1"
+			is_emitting="0" >
+		</ParticleEmitterComponent>
+
+		<LightComponent 
+			_tags="enabled_in_hand,item_identified"
+			_enabled="1" 
+			radius="60"
+			fade_out_time="1.5" 
+			r="150"
+			g="190"
+			b="230" >
+		</LightComponent>
+
+		<AudioComponent
+			_tags="enabled_in_hand,item_identified"
+			file="data/audio/Desktop/projectiles.bank"
+			event_root="player_projectiles/shield"
+			set_latest_event_position="1" >
+		</AudioComponent>
+
+	</Entity>
+
+</Entity>
+

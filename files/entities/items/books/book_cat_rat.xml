@@ -1,0 +1,38 @@
+<Entity tags="scroll">
+	<Base file="data/entities/items/books/base_book.xml">
+		<BookComponent
+			_enabled="0"
+			>
+		</BookComponent>
+
+		<ParticleEmitterComponent 
+			_enabled="0"
+			>
+		</ParticleEmitterComponent>
+
+		<UIInfoComponent
+			name="$book_apotheosis_cat_rat"
+			>
+		</UIInfoComponent>
+		
+		<ItemComponent
+			ui_sprite="data/items_gfx/book.png"
+			item_name="$book_apotheosis_cat_rat"
+			ui_description="$book_apotheosis_cat_rat_description"
+			>
+		</ItemComponent>
+		
+		<AbilityComponent
+			ui_name="$book_apotheosis_cat_rat"
+			>
+		</AbilityComponent>
+		
+		<SpriteComponent
+			image_file="data/items_gfx/in_hand/book_in_hand.png"
+		></SpriteComponent>
+		
+		<PhysicsImageShapeComponent 
+			image_file="data/items_gfx/book_small.png"
+		></PhysicsImageShapeComponent>
+	</Base>
+</Entity>

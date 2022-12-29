@@ -1,0 +1,5 @@
+<Entity name="Myrkyllinen mato" tags="ui_use_raw_name">
+  
+		<Base file="data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml">
+		</Base>
+</Entity>

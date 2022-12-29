@@ -1,0 +1,134 @@
+<Entity 
+	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name" 
+	name="Ultralisk"
+	>
+	<_Transform 
+		position.x="0" 
+		position.y="0" 
+		rotation="0" 
+		scale.x="1" 
+		scale.y="1" >
+	</_Transform>
+
+	<WormComponent
+		is_water_worm="1"
+		acceleration="0.75"
+		gravity="0"
+		tail_gravity="0"
+		part_distance="8"
+		ground_check_offset="8"
+		hitbox_radius="10"
+		target_kill_radius="18"
+		target_kill_ragdoll_force="8"
+		ragdoll_filename=""
+		eat_anim_wait_mult="0.05 "
+		jump_cam_shake="8" 
+		bite_damage="4"
+		>
+	</WormComponent>
+
+	<WormAIComponent
+		speed="6"
+		speed_hunt="8"
+		direction_adjust_speed="0.003"
+		direction_adjust_speed_hunt="0.04"
+		hunt_box_radius="1000"
+		random_target_box_radius="128"
+		new_hunt_target_check_every="240"
+		new_random_target_check_every="240"
+		give_up_area_radius="150"
+		give_up_time_frames="250"
+		>
+	</WormAIComponent>
+
+	<DamageModelComponent 
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0.2" 
+		fire_probability_of_ignition="0.5" 
+		blood_material="blood_worm"
+		blood_spray_material="blood_worm"
+		hp="20" 
+		is_on_fire="0" 
+		mAirAreWeInWater="0" 
+		mFallCount="0" 
+		mFallHighestY="3.40282e+038" 
+		mFallIsOnGround="0" 
+		mFireProbability="100" 
+		mIsOnFire="0" 
+		mLastCheckTime="0" 
+		mLastCheckX="0" 
+		mLastCheckY="0" 
+		materials_damage="1" 
+		materials_how_much_damage="0.0001,0.0001" 
+		materials_that_damage="acid,lava" 
+		ragdoll_filenames_file=""
+		ragdoll_material="meat_worm"
+		ragdoll_offset_y="-6"
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_yellow_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_large_yellow_$[1-3].xml"
+		>
+		<damage_multipliers
+			drill="0.4"
+			radioactive="0.0"
+			poison="0.0"
+			projectile="1.2"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<PathFindingGridMarkerComponent
+		marker_offset_y="0"
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+	<GenomeDataComponent 
+		_enabled="1"
+		herd_id="worm"
+		food_chain_rank="4"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/ultralisk_fish.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="2.0"
+		>
+	</SpriteComponent>
+
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="0">
+	</SpriteStainsComponent>
+
+	<StatusEffectDataComponent>
+	</StatusEffectDataComponent>
+
+	<CameraBoundComponent
+		max_count="10"
+		distance="2000">
+	</CameraBoundComponent>
+	
+	<ItemChestComponent level="3" enemy_drop="1" >
+	</ItemChestComponent>
+
+    <MusicEnergyAffectorComponent
+    	energy_target="1">
+    </MusicEnergyAffectorComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals">
+	</AudioComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/worm" >
+	</AudioComponent>
+
+</Entity>

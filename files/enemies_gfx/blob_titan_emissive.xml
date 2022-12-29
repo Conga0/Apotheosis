@@ -1,0 +1,58 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/blob_titan_emissive.png" 
+  offset_x="38" 
+  offset_y="44"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="64" 
+    frame_wait="0.20" 
+    frame_width="80" 
+    frames_per_row="8" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="64" 
+    frame_wait="0.16" 
+    frame_width="80" 
+    frames_per_row="8" 
+    name="walk" 
+    pos_x="0" 
+    pos_y="64" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="64" 
+    frame_wait="0.10" 
+    frame_width="80" 
+    frames_per_row="8" 
+    loop="0" 
+    name="attack_ranged"
+    pos_x="0" 
+    pos_y="128" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="64" 
+    frame_wait="0.11" 
+    frame_width="80" 
+    frames_per_row="8" 
+    loop="0" 
+    name="attack_barf"
+    pos_x="0" 
+    pos_y="192" >
+
+  </RectAnimation>
+
+</Sprite>
+

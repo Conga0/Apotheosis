@@ -1,0 +1,265 @@
+<Entity name="Kuulumaton" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT" >	
+	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
+
+	<!-- art main body -->
+
+	<SpriteComponent
+		image_file="mods/Apotheosis/files/enemies_gfx/ghost/musical_being.xml"
+		offset_x="0"
+		offset_y="0"
+		emissive="1"
+		additive="1"
+		alpha="0"
+		z_index="0.9"
+		has_special_scale="1"
+		special_scale_x="1" 
+		>
+	</SpriteComponent>
+
+	<!-- AI -->
+	
+	<AnimalAIComponent 
+		preferred_job="JobDefault"
+		creature_detection_range_x="300"
+		creature_detection_range_y="300"
+		attack_dash_enabled="0"
+		attack_ranged_enabled="1"
+		attack_melee_enabled="0"
+		food_material="blood"
+		needs_food="1"
+		sense_creatures="1"
+		can_fly="1" 
+		aggressiveness_min="1"
+		aggressiveness_max="100"
+		sense_creatures_through_walls="1"
+		attack_ranged_entity_count_min="2"
+		attack_ranged_entity_count_max="2"
+		attack_ranged_min_distance="70"
+		attack_ranged_max_distance="300"
+		attack_ranged_action_frame="3"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/musical_attack_shotgun_small.xml"
+		attack_ranged_frames_between="420" 
+		>
+	</AnimalAIComponent>
+
+	<PathFindingComponent 
+		can_dive="1" 
+		can_fly="1" 
+		can_jump="0" 
+		can_swim_on_surface="1" 
+		can_walk="0" 
+		cost_of_flying="500" 
+		distance_to_reach_node_x="20" 
+		distance_to_reach_node_y="20" 
+		frames_between_searches="20" 
+		frames_to_get_stuck="120" 
+		initial_jump_lob="1" 
+		initial_jump_max_distance_x="100" 
+		initial_jump_max_distance_y="60" 
+		iterations_max_no_goal="9999999" 
+		iterations_max_with_goal="145000" 
+		jump_speed="200" 
+		max_jump_distance_from_camera="400" 
+		search_depth_max_no_goal="120" 
+		search_depth_max_with_goal="145000" 
+		y_walking_compensation="8" >
+	</PathFindingComponent>
+	
+	<DamageModelComponent
+		_tags="magic_music"
+		hp="15.5"
+		physics_objects_damage="0"
+		ragdoll_filenames_file=""
+		fire_probability_of_ignition="0" 
+		ragdoll_fx_forced="DISINTEGRATED"
+		ragdoll_material="rock_static_glow"
+		blood_material="plasma_fading"
+		blood_spray_material="plasma_fading"
+		blood_sprite_directional=""
+		blood_sprite_large=""
+		air_needed="0"
+		falling_damages="0"
+		>
+		<damage_multipliers
+			projectile="0.0"
+			fire="0" 
+			ice="0"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+	
+	<HitboxComponent
+		_tags="magic_music"
+		aabb_min_x="-14" 
+		aabb_max_x="14" 
+		aabb_min_y="-22" 
+		aabb_max_y="22" 
+		is_enemy="1"
+		>
+	</HitboxComponent>
+	
+	<DamageNearbyEntitiesComponent
+		radius="16"
+		time_between_damaging="40"
+		damage_min="0.16"
+		damage_max="0.32"
+		target_tag="player_unit"
+		damage_description="$ethereal_damage"
+		damage_type="DAMAGE_CURSE"
+		ragdoll_fx="NONE"
+		>
+	</DamageNearbyEntitiesComponent>
+	
+	<DamageNearbyEntitiesComponent
+		_tags="magic_music"
+		radius="16"
+		time_between_damaging="3"
+		target_tag="player_unit"
+		damage_description="$ethereal_damage"
+		damage_type="DAMAGE_CURSE"
+		ragdoll_fx="NONE"
+		>
+	</DamageNearbyEntitiesComponent>
+
+	<PathFindingGridMarkerComponent 
+		_enabled="1" 
+		marker_offset_x="0" 
+		marker_offset_y="-6" 
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+	
+	<GenomeDataComponent 
+		herd_id="ghost"
+		food_chain_rank="10"
+		is_predator="1" >
+	</GenomeDataComponent>
+	
+	<CharacterPlatformingComponent 
+		accel_x="1"
+		pixel_gravity="100" 
+		jump_velocity_y="-8" 
+		run_velocity="12">
+	</CharacterPlatformingComponent>
+
+	<SpriteAnimatorComponent />
+
+	<!-- physics -->
+
+	<PhysicsAIComponent
+		target_vec_max_len="15.0"
+		force_coeff="14.0"
+		force_balancing_coeff="0.8"
+		force_max="160"
+		torque_coeff="50"
+		torque_balancing_coeff="0.8"
+		torque_max="50.0"
+		damage_deactivation_probability="0"
+		damage_deactivation_time_min="60"
+		damage_deactivation_time_max="120"
+		free_if_static="1"
+		>
+	</PhysicsAIComponent>
+
+	<PhysicsBodyComponent 
+		force_add_update_areas="1"
+		allow_sleep="1" 
+		angular_damping="0.02" 
+		fixed_rotation="1" 
+		is_bullet="0" 
+		linear_damping="0"
+		is_static="0"
+		>
+	</PhysicsBodyComponent>
+
+	<SpriteParticleEmitterComponent
+		_enabled="1"
+		sprite_file="data/particles/note_$[1-4].xml"
+		delay="0"
+		lifetime="1.5"
+		emissive="1"
+		additive="1"
+		color.r="0.6" color.g="0.6" color.b="1" color.a="0.5"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-0.3415"
+		randomize_rotation.max="0.3415"
+		randomize_angular_velocity.min="-0.1415"
+		randomize_angular_velocity.max="0.1415"
+		randomize_position.min_x="-15"
+		randomize_position.max_x="15"
+		randomize_position.min_y="-15"
+		randomize_position.max_y="15"
+		randomize_velocity.min_x="8"
+		randomize_velocity.max_x="8"
+		randomize_velocity.min_y="-8"
+		randomize_velocity.max_y="8"
+		entity_velocity_multiplier="0.1"
+		>
+	</SpriteParticleEmitterComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/ethereal_check_music.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_death="data/scripts/animals/log_kill.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/ghost/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+    </AudioLoopComponent>
+	
+	<CameraBoundComponent
+		max_count="20"
+		distance="160000">
+	</CameraBoundComponent>
+
+
+    <AIAttackComponent
+	_tags="magic_music"
+    min_distance="30"
+    max_distance="270"
+    frames_between="220"
+    frames_between_global="0"
+    attack_ranged_action_frame="3"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/musical_attack_shotgun_small.xml"
+    attack_ranged_offset_y="0"
+    attack_ranged_offset_x="0"
+    attack_ranged_entity_count_min="5"
+    attack_ranged_entity_count_max="7"
+    >
+	</AIAttackComponent>
+
+	<SpriteComponent
+		_tags="magic_music"
+		image_file="mods/Apotheosis/files/enemies_gfx/ghost/musical_being.xml"
+		offset_x="0"
+		offset_y="0"
+		emissive="1"
+		additive="1"
+		z_index="0.9"
+		has_special_scale="1"
+		special_scale_x="1" 
+		>
+	</SpriteComponent>
+	
+	<GameStatsComponent />
+
+</Entity>

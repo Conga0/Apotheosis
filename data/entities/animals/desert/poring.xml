@@ -1,0 +1,102 @@
+<Entity name="Aavikkohyytelö" tags="ui_use_raw_name">
+  
+    <Base file="data/entities/base_enemy_basic.xml" >
+        <ItemChestComponent level="1" > </ItemChestComponent>
+        
+        <AnimalAIComponent
+			_enabled="1" 
+			preferred_job="JobDefault"
+            sense_creatures="1"
+            attack_melee_max_distance="24"
+			attack_melee_action_frame="3"
+			attack_melee_damage_min="0.5" 
+			attack_melee_damage_max="0.7"
+			creature_detection_range_x="400"
+			creature_detection_range_y="400"
+			sense_creatures="1"
+			attack_dash_enabled="1"
+			attack_dash_distance="120"
+			attack_melee_enabled="1" >
+        </AnimalAIComponent>
+        
+        <SpriteComponent 
+            image_file="mods/Apotheosis/files/enemies_gfx/poring_sand.xml"
+            alpha="0.8" 
+            offset_x="14" 
+            offset_y="20" >
+        </SpriteComponent>
+
+        <DamageModelComponent
+            hp="2"
+            air_needed="0"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/poring_desert/filenames.txt"
+			ragdoll_material="meat_slime"
+			blood_material="water"
+			blood_spray_material="water"
+			blood_multiplier="0.8"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			ragdoll_blood_amount_absolute="0"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid,poison" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
+			>
+        </DamageModelComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0" 
+			can_walk="0"
+			can_dive="1" 
+			can_swim_on_surface="0" 
+			jump_speed="120"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="90"
+			initial_jump_max_distance_y="90"
+			>
+		</PathFindingComponent>
+        
+        <CharacterPlatformingComponent 
+			jump_velocity_y="-15"
+			jump_velocity_x="-10"
+			run_velocity="0"
+			swim_idle_buoyancy_coeff="2.0"
+			swim_up_buoyancy_coeff="2.0"
+			swim_down_buoyancy_coeff="2.0" >
+        </CharacterPlatformingComponent>
+
+        <GenomeDataComponent 
+            herd_id="slimes"
+			food_chain_rank="5"
+			is_predator="1" >
+        </GenomeDataComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+        
+        <HitboxComponent 
+            _enabled="1"
+			aabb_min_x="-13" 
+            aabb_min_y="-14" 
+            aabb_max_x="13" 
+            aabb_max_y="4" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-13" 
+			collision_aabb_min_y="-14" 
+			collision_aabb_max_x="13" 
+			collision_aabb_max_y="4"
+			mass="0.2"
+			>
+		</CharacterDataComponent>
+    </Base>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/longleg" >
+	</AudioComponent>
+
+</Entity>

@@ -1,0 +1,20 @@
+<Sprite
+ filename="mods/Apotheosis/files/projectiles_gfx/forsaken_eye_target.png"
+ offset_x="16"
+ offset_y="15"
+ default_animation="stand" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="64"
+  frame_height="64"
+  frame_wait="0.07"
+  frames_per_row="4"
+  loop="0"
+  z_index="0.1"   >
+ </RectAnimation>
+</Sprite>

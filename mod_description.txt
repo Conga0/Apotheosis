@@ -1,0 +1,53 @@
+[img]https://i.imgur.com/Ko6YxFl.png[/img]
+
+Adds various new Creeps & Weirdos to the world of Noita, including new characters such as:
+The Master of Mallards, the species of Porings, bigger scarier Elemental Wizards and much more to explore for yourself!
+
+Implements 82 new enemies, 5 new bosses and 12 attainable trophies to unlock.. but maybe there could be a few more hidden secrets too.
+Adds 36 new spells if you can conquer powerful foes.
+And an extra 5 more for free unlocked by default.
+With maybe a bit more for you to find too.
+
+Seasonal events include:
+April Fools April 1st to 3rd
+apotheosis Birthday July 20th to 22nd
+Halloween October 15th to 31st
+Smissmass December 15th to 31st
+
+
+[img]https://i.imgur.com/8JSYiR6.png[/img]
+
+Compatiable with:
+Worse Enemies
+New Enemies [Must be higher in load order than apotheosis for tower compatibility]
+New Biomes & Secrets
+Alternate Biomes
+Volcano Biome
+Flesh Biome
+Copi's Things [Must be higher in load order than apotheosis, or some enemies may break]
+Conjurer
+Noitavania
+Nightmare
+Purgatory (recommended over nightmare for encountering bosses)
+Twitch Integration
+Chemical Curiosities
+Spell Evolutions [Must enable Spell Evolutions compatibility mode in the mod settings]
+Removable Perks
+& Should be compatiable with most, if not all other mods if Apotheosis is put below them.
+
+Also fixes the missing Icemage spawn in the frozen vault.
+
+
+[img]https://i.imgur.com/32H75yO.png[/img]
+
+Full Enemy, Spell & Perk Documentation here: (Big Spoilers)
+https://docs.google.com/document/d/1IBhkBI9ZPdZP4Sxx59ilYKo4DXgsQ2fxBfcbWveaIyo/edit?usp=sharing
+
+This mod doesn't override any existing files, it is safe to put at the bottom of your load order for maximum compatibility.
+
+Supported languages: English, русский
+
+
+If you wish to support my work in a tangiable manner, you can donate here:
+https://ko-fi.com/congalyne
+I don't expect you to under any circumstances and appreciate you playing donated or not, thankyou for playing everyone

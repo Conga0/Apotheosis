@@ -1,0 +1,17 @@
+<Entity >
+  
+  <CollisionTriggerComponent
+    width="250"
+    height="50" 
+    radius="100"
+    required_tag="player_unit"
+    destroy_this_entity_when_triggered="0" >
+  </CollisionTriggerComponent>
+
+  <LuaComponent
+    script_collision_trigger_hit="mods/Apotheosis/files/scripts/buildings/smoke_field_creator_message.lua"
+    execute_every_n_frame="-1"
+    execute_times="1" >
+  </LuaComponent>
+
+</Entity>

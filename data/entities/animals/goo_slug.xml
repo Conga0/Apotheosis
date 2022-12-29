@@ -1,0 +1,121 @@
+<Entity name="Liiman etana" tags="ui_use_raw_name,glue_NOT">
+  
+    <Base file="data/entities/base_enemy_basic.xml" >
+        <ItemChestComponent level="1" > </ItemChestComponent>
+        
+        <AnimalAIComponent
+			_enabled="1" 
+			preferred_job="JobDefault"
+            sense_creatures="1"
+            attack_melee_max_distance="12"
+			attack_melee_action_frame="2"
+			attack_melee_damage_min="0.3" 
+			attack_melee_damage_max="0.6"
+			creature_detection_range_x="250"
+			creature_detection_range_y="150"
+			creature_detection_angular_range_deg="60"
+			sense_creatures="1"
+			food_material="water"
+			attack_dash_enabled="0"
+			attack_dash_distance="80"
+			attack_melee_enabled="1"
+			attack_ranged_enabled="1"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/slimeblob_gluey.xml"
+			attack_ranged_action_frame="3"
+			attack_ranged_frames_between="260"
+			attack_ranged_max_distance="250"
+			attack_ranged_offset_x="5"
+			attack_ranged_offset_y="0"
+			>
+        </AnimalAIComponent>
+        
+        <SpriteComponent 
+            image_file="mods/Apotheosis/files/enemies_gfx/goo_slug.xml"
+            alpha="0.8"
+			offset_x="13"
+			offset_y="17"
+			z_index="1.2" >
+        </SpriteComponent>
+
+        <DamageModelComponent
+            hp="1.5"
+            air_needed="0"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/goo_slug/filenames.txt"
+			blood_material="slime"
+			blood_spray_material="slime"
+			blood_multiplier="0.35"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid,poison" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
+			>
+			<damage_multipliers
+			    projectile="0.75"
+			    ice="1.2" >
+			</damage_multipliers>
+        </DamageModelComponent>
+
+		<PathFindingComponent
+			can_jump="0"
+			can_fly="0" 
+			can_walk="1"
+			can_dive="1"
+			can_swim_on_surface="0" 
+			jump_speed="120"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="90"
+			initial_jump_max_distance_y="90"
+			>
+		</PathFindingComponent>
+        
+        <CharacterPlatformingComponent 
+			jump_velocity_y="-15"
+			jump_velocity_x="-10"
+			run_velocity="12"
+			swim_idle_buoyancy_coeff="2.0"
+			swim_up_buoyancy_coeff="2.0"
+			swim_down_buoyancy_coeff="2.0" >
+        </CharacterPlatformingComponent>
+
+        <GenomeDataComponent 
+            herd_id="slimes"
+			food_chain_rank="9"
+			is_predator="1" >
+        </GenomeDataComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+        
+        <HitboxComponent 
+            _enabled="1"
+			aabb_min_x="-14" 
+            aabb_max_x="5" 
+            aabb_min_y="-5" 
+            aabb_max_y="4" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-14" 
+			collision_aabb_max_x="5" 
+			collision_aabb_min_y="-5" 
+			collision_aabb_max_y="4"
+			mass="1"
+			>
+		</CharacterDataComponent>
+    </Base>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/longleg" >
+	</AudioComponent>
+
+	<LuaComponent
+		_tags="death_reward"
+		script_death="data/entities/animals/secret/poring_death.lua"
+		>
+	</LuaComponent>
+
+</Entity>

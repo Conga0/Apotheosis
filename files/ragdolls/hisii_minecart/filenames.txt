@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/hisii_minecart/cart_1.png
+mods/Apotheosis/files/ragdolls/hisii_minecart/cart_2.png
+mods/Apotheosis/files/ragdolls/hisii_minecart/cart_wheel_1.png
+mods/Apotheosis/files/ragdolls/hisii_minecart/cart_wheel_2.png

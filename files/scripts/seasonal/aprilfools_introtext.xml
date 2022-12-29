@@ -1,0 +1,15 @@
+<Entity  >
+
+	<InheritTransformComponent />
+
+	<InteractableComponent
+		radius="25"
+		ui_text="$secretmessage_apotheosis_herobrine_01"
+		name="WHY ARE YOU LOOKING HERE"
+	>
+	</InteractableComponent>
+
+	<LifetimeComponent lifetime="120">
+	</LifetimeComponent>
+</Entity>
+

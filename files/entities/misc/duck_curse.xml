@@ -1,0 +1,14 @@
+<Entity>
+	<InheritTransformComponent />
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/duck_curse.lua" 
+		execute_every_n_frame="5"
+		execute_on_added="1"
+		>
+	</LuaComponent>
+
+	<LifetimeComponent lifetime="900">
+	</LifetimeComponent>
+
+</Entity>

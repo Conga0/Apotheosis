@@ -1,0 +1,29 @@
+<Entity tags="mortal" >
+	<Base file="data/entities/base_prop_crystal.xml" >
+		<PhysicsImageShapeComponent
+			image_file="mods/Apotheosis/files/props_gfx/crystal_opal.png"
+			material="crystal_solid" >
+		</PhysicsImageShapeComponent>
+
+		<MaterialInventoryComponent >
+			<count_per_material_type>
+				<Material material="spark_purple" count="300"  />
+			</count_per_material_type>
+		</MaterialInventoryComponent>
+		
+		<DamageModelComponent 
+			blood_material="spark_purple" >
+		</DamageModelComponent>
+		
+		<ExplodeOnDamageComponent>
+			<config_explosion
+				load_this_entity="data/entities/particles/particle_explosion/main_swirly_purple_giga.xml,data/entities/projectiles/deck/black_hole_big.xml,data/entities/props/crystal_opal_effect.xml" >
+			</config_explosion>
+		</ExplodeOnDamageComponent>
+
+		<ParticleEmitterComponent 
+		emitted_material_name="spark_purple" >
+		</ParticleEmitterComponent>
+	</Base>
+	
+</Entity>

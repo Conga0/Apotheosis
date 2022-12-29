@@ -1,0 +1,27 @@
+<Entity >
+
+    <InheritTransformComponent>
+	</InheritTransformComponent>
+	
+	<LifetimeComponent
+		lifetime="2700"
+		>
+	</LifetimeComponent>
+
+	<UIIconComponent
+		name="$status_apotheosis_delusional_name"
+		description="$status_apotheosis_delusional_desc"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/delusional.png"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/misc/psychotic_illusion_populator_excavationpit.lua"
+		execute_every_n_frame="120"
+		_enabled="1"
+		>
+	</LuaComponent>
+</Entity>

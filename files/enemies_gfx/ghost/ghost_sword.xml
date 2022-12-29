@@ -1,0 +1,20 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/ghost/ghost_sword.png" 
+  offset_x="17" 
+  offset_y="15"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_width="33" 
+    frame_wait="0.05" 
+    frame_height="33" 
+    frames_per_row="4" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+</Sprite>
+

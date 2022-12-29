@@ -1,0 +1,33 @@
+<Entity>
+    <InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="water_fading"
+		x_pos_offset_min="-3"
+		x_pos_offset_max="3"
+		y_pos_offset_min="-12"
+		y_pos_offset_max="2"
+		x_vel_min="-5"
+		x_vel_max="5"
+		y_vel_min="-30"
+		y_vel_max="-50"
+		count_min="4"
+		count_max="5"
+		lifetime_min="0.2"
+		lifetime_max="0.3"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+    
+    <GameEffectComponent 
+		_tags="effect_wet_magic"
+        effect="WET"
+        frames="30"
+    >
+	</GameEffectComponent >
+
+</Entity>

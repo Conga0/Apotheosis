@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/wizard_duck/torso.png
+mods/Apotheosis/files/ragdolls/wizard_duck/hand.png
+mods/Apotheosis/files/ragdolls/wizard_duck/feet.png
+mods/Apotheosis/files/ragdolls/wizard_duck/head.png

@@ -1,0 +1,164 @@
+<Entity name="Esoteerinen keiju">
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent
+			attack_melee_enabled="0"
+			attack_ranged_enabled="1"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_psychotic.xml"
+			attack_ranged_action_frame="1"
+			attack_ranged_frames_between="150" 
+			attack_ranged_max_distance="250"
+			attack_ranged_offset_y="4.5"
+			escape_if_damaged_probability="0"
+			needs_food="0"
+			can_fly="1" >
+		</AnimalAIComponent>
+
+		<DamageModelComponent 
+            hp="4"
+			air_needed="1"
+			ragdollify_child_entity_sprites="0"
+            ragdoll_material="meat_slime_green"
+		    ragdoll_fx_forced="DISINTEGRATED"
+			fire_probability_of_ignition="0.00"
+			physics_objects_damage="0"
+            ragdoll_filenames_file="" 
+			blood_material="void_liquid"
+			blood_spray_material="void_liquid"
+			blood_multiplier="0.1"
+			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_green_$[1-3].xml"
+			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_green_$[1-3].xml"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005"
+			>
+			<damage_multipliers
+				melee="0.01"
+				projectile="0.00"
+				explosion="0.01"
+				electricity="0.01"
+				fire="0.01"
+				slice="0.00"
+				drill="0.01"
+				ice="0.01"
+				radioactive="0.01"
+				curse="2.2"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big_esoteric.xml"
+			offset_x="12"
+			offset_y="12" >
+		</SpriteComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-6" 
+			aabb_max_x="6" 
+			aabb_min_y="-6" 
+			aabb_max_y="6" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>		
+		
+		<GenomeDataComponent 
+			herd_id="ghost" >
+		</GenomeDataComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-6" 
+			collision_aabb_max_x="6" 
+			collision_aabb_min_y="-6" 
+			collision_aabb_max_y="6" 
+			mass="0.3"
+			>
+		</CharacterDataComponent>
+
+		<!-- This exists purely to slow the Fairy down, remove if proven unnecessary to prevent unnecessary changes being made and to maintain consistency between other fairy type creatures -->
+		<CharacterPlatformingComponent
+			fly_speed_max_up="70"
+			fly_speed_max_down="70"
+			fly_speed_mult="20"
+			fly_velocity_x="70">
+		</CharacterPlatformingComponent>
+	</Base>
+  
+	<SpriteParticleEmitterComponent
+		sprite_file="mods/Apotheosis/files/particles/spark_electric_white.xml"
+		delay="0"
+		lifetime="0"
+		emissive="1"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="0"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="10"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="6"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_position.min_x="-6"
+		randomize_position.max_x="6"
+		randomize_position.min_y="-6"
+		randomize_position.max_y="2"
+		>
+	</SpriteParticleEmitterComponent>
+
+	<Entity>
+		
+		<InheritTransformComponent />
+		
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big_esoteric_emissive.xml"
+			alpha="0.9"
+			offset_x="12"
+			offset_y="12" >
+		</SpriteComponent>
+		
+		<SpriteComponent 
+			alpha="0.55"
+			image_file="data/particles/fog_of_war_hole_128.xml"
+			smooth_filtering="1"
+			fog_of_war_hole="1"
+			>
+		</SpriteComponent>
+
+	</Entity>
+
+	<LightComponent 
+	    _enabled="1" 
+	    radius="300" 
+		r="255"
+		g="255"
+		b="255"
+		fade_out_time="1.5"
+		>
+    </LightComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/lasershooter" >
+	</AudioComponent>
+
+    <LuaComponent
+        execute_every_n_frame="-1"
+        script_death="data/scripts/items/drop_money.lua"
+        remove_after_executed="1" >
+    </LuaComponent>
+	
+</Entity>
+

@@ -1,0 +1,15 @@
+<Entity>
+	<LoadEntitiesComponent
+		count.min="10"
+		count.max="10"
+		kill_entity="0"
+		entity_file="mods/Apotheosis/files/entities/projectiles/miniblob_throw.xml" >
+	</LoadEntitiesComponent>
+
+	<LoadEntitiesComponent
+		count.min="2"
+		count.max="2"
+		kill_entity="0"
+		entity_file="data/entities/animals/boss_blob/blob.xml" >
+	</LoadEntitiesComponent>
+</Entity>

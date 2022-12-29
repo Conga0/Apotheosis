@@ -1,0 +1,5 @@
+<Entity name="Hylätty orkesteri" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT,boss,touchmagic_immunity,music_energy_100,miniboss" >
+  <Base file="data/entities/animals/boss_musical_ghost/boss_musical_ghost.xml">
+  </Base>
+
+</Entity>

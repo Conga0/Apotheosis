@@ -1,0 +1,62 @@
+<Entity tags="essence,essence_effect">
+
+    <InheritTransformComponent>
+	</InheritTransformComponent>
+  
+	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_blue"
+		gravity.y="0.0"
+		lifetime_min="0.7"
+		lifetime_max="1"
+		count_min="3"
+		count_max="3"
+		render_on_grid="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="1"
+		area_circle_radius.max="7"
+		cosmetic_force_create="1"
+		airflow_force="0.251"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="30"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="10"
+		collide_with_grid="0"
+		>
+	</ParticleEmitterComponent>
+  
+	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="fungi"
+		gravity.y="0.0"
+		count_min="1"
+		count_max="1"
+		render_on_grid="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="1"
+		area_circle_radius.max="7"
+		emission_interval_min_frames="60"
+		emission_interval_max_frames="120"
+		emit_cosmetic_particles="0"
+		emit_real_particles="1"
+		velocity_always_away_from_center="10"
+		collide_with_grid="0"
+		>
+	</ParticleEmitterComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/essence/essence_fungus.lua"
+		execute_every_n_frame="140"
+		_enabled="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/essence/essence_fungus_shift.lua"
+		execute_every_n_frame="180"
+		_enabled="1"
+		>
+	</LuaComponent>
+</Entity>

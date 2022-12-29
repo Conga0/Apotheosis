@@ -1,0 +1,46 @@
+<Entity 
+  name="unknown" tags="prop" >
+	
+	<LifetimeComponent
+		lifetime="90"
+		>
+	</LifetimeComponent>
+
+		<SpriteParticleEmitterComponent
+			sprite_file="mods/Apotheosis/files/particles/smoke_04_long.xml"
+			delay="0"
+			lifetime="120"
+			color.r="1" color.g="1" color.b="1" color.a="1"
+			color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-2"
+			velocity.x="0" velocity.y="0"
+			gravity.x="0" gravity.y="10"
+			velocity_slowdown="0"
+			rotation="0"
+			angular_velocity="0"
+			emissive="1"
+			additive="1"
+			use_velocity_as_rotation="0"
+			scale.x="1" scale.y="1"
+			scale_velocity.x="0" scale_velocity.y="0"
+			emission_interval_min_frames="6"
+			emission_interval_max_frames="12"
+			count_min="6" count_max="8"
+			randomize_position.min_x="-16"
+			randomize_position.max_x="16"
+			randomize_position.min_y="-24"
+			randomize_position.max_y="24"
+			randomize_velocity.min_y="-20"
+			randomize_velocity.max_y="20"
+			randomize_velocity.min_x="-20"
+			randomize_velocity.max_x="20"
+			>
+		</SpriteParticleEmitterComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/misc/perk_maker_berserk_aura.lua"
+		execute_every_n_frame="88"
+		>
+	</LuaComponent>
+
+</Entity>
+

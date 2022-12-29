@@ -1,0 +1,162 @@
+<Entity name="Aluebotti">
+  
+	<Base file="data/entities/base_enemy_robot.xml" >
+		<ItemChestComponent level="1" > </ItemChestComponent>
+		
+		<AnimalAIComponent
+			preferred_job="JobDefault"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/robot_gunner_projectile.xml"
+			attack_ranged_enabled="1"
+			attack_ranged_action_frame="1"
+			attack_ranged_frames_between="600"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="600"
+			attack_dash_enabled="0"
+			sense_creatures="1"
+			creature_detection_range_x="650"
+			creature_detection_range_y="350"
+			can_fly="1"
+			can_walk="0" >
+		</AnimalAIComponent>
+
+		<DamageModelComponent
+            hp="16"
+            ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/gazer_robot/filenames.txt"
+			>
+			<damage_multipliers
+				projectile="0.0" 
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1"
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/gazer_robot.xml" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+		
+		<HitboxComponent
+			_enabled="1"
+			aabb_min_x="-10.5"
+			aabb_max_x="10.5"
+			aabb_min_y="-18.0"
+			aabb_max_y="6"
+			is_enemy="1"
+			is_item="0"
+			is_player="0" >
+		</HitboxComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="robot"
+			food_chain_rank="5"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-10.0" 
+			collision_aabb_max_x="10.0" 
+			collision_aabb_min_y="-19" 
+			collision_aabb_max_y="3" 
+			mass="2.3"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+		<SpriteComponent 
+			_tags="character" 
+			alpha="1" 
+			image_file="mods/Apotheosis/files/enemies_gfx/gazer_robot_emissive.xml" 
+			offset_x="0"
+			offset_y="0"
+			emissive="1">
+		</SpriteComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/drone_lasership" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/drone_lasership/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/gazer" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/gazer/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="spark"
+		x_pos_offset_min="-12"
+		x_pos_offset_max="12"
+		y_pos_offset_min="-12"
+		y_pos_offset_max="6"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="40"
+		y_vel_max="120"
+		friction="1"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.4"
+		lifetime_max="0.9"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		fade_based_on_lifetime="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+  <LightComponent
+    _enabled="1"
+    radius="140"
+    r="255"
+    g="80"
+    b="80"
+    fade_out_time="1.5"
+	offset_x="0"
+	offset_y="0"
+    >
+  </LightComponent>
+	
+	<!-- Reinforcement script disabled, not necessarily because I don't like the idea, more accurate because the Zoner feels really cheap with it. What good is a well tuned AI and code behaviour if the sprite sucks ass? It just makes the sprite look cheap... Which, I don't like. Spriting is hard... man. And I Don't want to just accept that, I want to be better, have more creative ideas for sprites and be able to execute them well. I just don't know the path forwards to reach that goal...
+	<LuaComponent 
+		_enabled="1" 
+		script_damage_received="mods/Apotheosis/files/scripts/animals/gazer_robot_reinforce.lua" 
+		>
+	</LuaComponent>
+	-->
+
+</Entity>
+

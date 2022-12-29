@@ -1,0 +1,24 @@
+<Entity tags="prop"  >
+
+	<VelocityComponent />
+
+    <SimplePhysicsComponent/>
+
+	<SpriteComponent 
+		z_index="1"
+		image_file="mods/Apotheosis/files/props_gfx/goldmode/statue_blob_titan.png" 
+		offset_x="0"
+		offset_y="47" >
+	</SpriteComponent>
+	
+	<!-- Removes physics after the position settles in-->
+	<!-- ..Yeah, this is the lazy method, I know. Sue me. -->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/props/trophy_fix.lua"
+		execute_every_n_frame="60"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+</Entity>
+

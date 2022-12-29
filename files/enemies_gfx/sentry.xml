@@ -1,0 +1,179 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/sentry.png" 
+  offset_x="6" 
+  offset_y="17"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="2" 
+    frame_height="20" 
+    frame_wait="0.2" 
+    frame_width="17" 
+    frames_per_row="2" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="20" 
+    frame_wait="0.1" 
+    frame_width="17" 
+    frames_per_row="6" 
+    name="walk" 
+    pos_x="0" 
+    pos_y="20"  >
+
+    <Event 
+      check_physics_material="1" 
+      frame="0" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="3" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="20" 
+    frame_wait="0.09" 
+    frame_width="17" 
+    frames_per_row="6" 
+    name="run" 
+    pos_x="0" 
+    pos_y="20"  >
+
+    <Event 
+      check_physics_material="1" 
+      frame="0" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="3" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="14" 
+    frame_height="20" 
+    frame_wait="0.08" 
+    frame_width="17" 
+    frames_per_row="14"
+    loop="0" 
+    name="attack_ranged" 
+    pos_x="0" 
+    pos_y="40" 
+    shrink_by_one_pixel="1" >
+
+  </RectAnimation>
+
+    <Event 
+      check_physics_material="0" 
+      frame="1" 
+      max_distance="600" 
+      name="voc_attack" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+    <Event 
+      check_physics_material="0" 
+      frame="10" 
+      max_distance="600" 
+      name="shoot_sniper" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="5" 
+    frame_height="20" 
+    frame_wait="0.09" 
+    frame_width="17" 
+    frames_per_row="5" 
+    loop="0" 
+    name="attack" 
+    pos_x="0" 
+    pos_y="60"  >
+
+    <Event 
+      check_physics_material="0" 
+      frame="1" 
+      max_distance="500" 
+      name="kick" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="3" 
+    frame_height="20" 
+    frame_wait="0.082" 
+    frame_width="17" 
+    frames_per_row="3" 
+    loop="0" 
+    name="jump_up" 
+    pos_x="0" 
+    pos_y="80"  >
+
+    <Event 
+      check_physics_material="1" 
+      frame="0" 
+      max_distance="500" 
+      name="jump" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="3" 
+    frame_height="20" 
+    frame_wait="0.082" 
+    frame_width="17" 
+    frames_per_row="3" 
+    loop="0" 
+    name="jump_fall" 
+    pos_x="0" 
+    pos_y="100"  >
+
+  </RectAnimation>
+
+</Sprite>
+

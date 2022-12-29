@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/tank_flame_apotheosis/gun.png
+mods/Apotheosis/files/ragdolls/tank_flame_apotheosis/strut.png
+mods/Apotheosis/files/ragdolls/tank_flame_apotheosis/base.png
+mods/Apotheosis/files/ragdolls/tank_flame_apotheosis/cord1.png
+mods/Apotheosis/files/ragdolls/tank_flame_apotheosis/cord2.png

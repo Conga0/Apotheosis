@@ -1,0 +1,15 @@
+<Entity >
+	
+	<LifetimeComponent
+		lifetime="10"
+		>
+	</LifetimeComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/mod_compatibility/twitch_cat_spawner.lua"
+		execute_every_n_frame="5"
+		execute_times="1"
+		>
+	</LuaComponent>
+</Entity>
+

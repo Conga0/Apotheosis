@@ -1,0 +1,9 @@
+<Entity >
+
+  <LuaComponent 
+    execute_every_n_frame="30"
+    script_source_file="mods/Apotheosis/files/scripts/buildings/smoke_field_creator.lua" >
+  </LuaComponent>
+
+</Entity>
+

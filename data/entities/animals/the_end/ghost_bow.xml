@@ -1,0 +1,15 @@
+<Entity name="Haamujousi" tags="touchmagic_immunity,ui_use_raw_name,monk_hand" >
+  <Base file="data/entities/animals/ghost_bow.xml" include_children="1" >
+
+		<AnimalAIComponent
+			attack_ranged_max_distance="350"
+			attack_ranged_frames_between="80"
+			>
+		</AnimalAIComponent>
+
+    <DamageModelComponent 
+      hp="42"
+      max_hp="42"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

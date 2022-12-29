@@ -1,0 +1,16 @@
+
+<Entity>
+    <CollisionTriggerComponent
+      width="1024"
+      height="512" 
+      radius="1024"
+      required_tag="player_unit"
+      destroy_this_entity_when_triggered="0" >
+  	</CollisionTriggerComponent>
+
+    <LuaComponent
+      script_collision_trigger_hit="data/scripts/buildings/intro_kitty_spawner.lua"
+      execute_every_n_frame="-1"
+		  execute_times="1" >
+    </LuaComponent>
+</Entity>

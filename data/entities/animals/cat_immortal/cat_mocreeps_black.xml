@@ -1,0 +1,107 @@
+<Entity tags="mortal,prey,ui_use_raw_name,acid" name="Kissa">
+  
+	<Base file="data/entities/base_helpless_animal.xml" >
+
+        <AnimalAIComponent 
+        	preferred_job="Escaping"
+			attack_melee_enabled="0"
+			attack_ranged_entity_file=""
+			attack_ranged_predict="1"
+			attack_ranged_enabled="0"
+			attack_melee_enabled="0"
+			sense_creatures="1"
+			creature_detection_range_x="128"
+			creature_detection_range_y="160"
+			attack_melee_damage_min="0"
+			attack_melee_damage_max="0"
+			can_fly="0"
+            >
+        </AnimalAIComponent >
+		
+		<DamageModelComponent 
+			_enabled="0"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_apotheosis_black/filenames.txt" 
+			fire_probability_of_ignition="0.05"
+			hp="0.6"
+			>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			_enabled="1" 
+			alpha="1" 
+			image_file="mods/Apotheosis/files/enemies_gfx/cats_immortal/cat_black.xml" 
+			next_rect_animation="" 
+			offset_x="15" 
+			offset_y="25" 
+			rect_animation="stand" 
+			 >
+		</SpriteComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="24" >
+		</PathFindingGridMarkerComponent>
+
+		<GenomeDataComponent 
+			herd_id="healer"
+            food_chain_rank="1"
+            is_predator="0" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-12" 
+			run_velocity="30"  
+			>
+		</CharacterPlatformingComponent>
+		
+		<HitboxComponent 
+			_enabled="0" 
+			aabb_min_x="-3.5" 
+			aabb_max_x="3.5" 
+			aabb_min_y="-3" 
+			aabb_max_y="3" 
+			>
+		</HitboxComponent>
+		
+		<PathFindingComponent
+		    can_swim_on_surface="1"
+		    can_dive="1"
+			>
+		</PathFindingComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-4.6" 
+			collision_aabb_max_x="4.6" 
+			collision_aabb_min_y="-3" 
+			collision_aabb_max_y="3" 
+			mass="2.4"
+			>
+		</CharacterDataComponent>
+
+		<CameraBoundComponent
+			max_count="20"
+			distance="2000"
+		freeze_on_distance_kill="1"
+		freeze_on_max_count_kill="1" >
+		</CameraBoundComponent>
+	</Base>
+	
+	<AudioComponent
+		file="mods/Apotheosis/apotheosis_audio.bank"
+		event_root="apotheosis/kittycat" >
+	</AudioComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow.lua"
+		execute_every_n_frame="60"
+		>
+	</LuaComponent>
+	
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/cat_homing_remove.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>
+

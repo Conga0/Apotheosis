@@ -1,0 +1,49 @@
+<Sprite
+ filename="mods/Apotheosis/files/enemies_gfx/cats_immortal/cat_skateboard.png"
+ offset_x="16"
+ offset_y="17"
+  default_animation="stand" >
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="1"
+  frame_width="32"
+  frame_height="32"
+  frame_wait="0.2"
+  frames_per_row="10"
+  loop="1"   >
+ </RectAnimation>
+
+ <!-- walk -->
+ <RectAnimation
+  name="walk"
+  pos_x="0"
+  pos_y="32"
+  frame_count="6"
+  frame_width="32"
+  frame_height="32"
+  frame_wait="0.1"
+  frames_per_row="10"
+  loop="1"   >
+  <Event frame="0" name="step" probability="1" check_physics_material="1"/>
+  <Event frame="3" name="step" probability="1" check_physics_material="1"/>
+ </RectAnimation>
+
+ <!-- run (placeholder) -->
+ <RectAnimation
+  name="run"
+  pos_x="0"
+  pos_y="32"
+  frame_count="6"
+  frame_width="32"
+  frame_height="32"
+  frame_wait="0.1"
+  frames_per_row="10"
+  loop="1"   >
+  <Event frame="0" name="step" probability="1" check_physics_material="1"/>
+  <Event frame="3" name="step" probability="1" check_physics_material="1"/>
+ </RectAnimation>
+</Sprite>

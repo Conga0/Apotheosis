@@ -1,0 +1,15 @@
+<Entity name="apotheosis_perk_ghostly_vision" tags="evil_eye,musical_stone">
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<LightComponent
+		_tags="magic_eye_check,musical_stone"
+		radius="0"
+		r="255"
+		g="255"
+		b="255"
+		fade_out_time="0.0"
+		>
+	</LightComponent>
+  
+</Entity>

@@ -1,0 +1,38 @@
+<Entity tags="prop"  >
+
+	<VelocityComponent />
+
+    <SimplePhysicsComponent/>
+
+	<SpriteComponent 
+		z_index="1"
+		image_file="mods/Apotheosis/files/enemies_gfx/seasonal/mirrored/jackolantern.xml"  >
+	</SpriteComponent>
+
+	<SpriteComponent 
+		z_index="1"
+		image_file="mods/Apotheosis/files/enemies_gfx/seasonal/mirrored/jackolantern_emissive.xml" 
+		emissive="1"
+		additive="1" >
+	</SpriteComponent>
+		
+	<SpriteComponent 
+		alpha="0.55"
+		image_file="data/particles/fog_of_war_hole_128.xml"
+		smooth_filtering="1"
+		fog_of_war_hole="1"
+		>
+	</SpriteComponent>
+
+	<LightComponent 
+	    _enabled="1" 
+	    radius="100" 
+		r="250"
+		g="200"
+		b="80"
+		fade_out_time="1.5"
+		offset_y="-5"
+		>
+    </LightComponent>
+</Entity>
+

@@ -1,0 +1,21 @@
+<Sprite
+filename="mods/Apotheosis/files/enemies_gfx/fire_lukki/fire_lukki.png"
+offset_x="22.5"
+offset_y="22.5" 
+default_animation="stand"
+>
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="45"
+  frame_height="45"
+  frame_wait="0.12"
+  frames_per_row="4"
+  loop="1"   >
+ </RectAnimation>
+
+</Sprite>

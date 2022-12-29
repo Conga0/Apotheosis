@@ -1,0 +1,23 @@
+dofile_once("data/scripts/lib/utilities.lua")
+
+local entity_id = GetUpdatedEntityID()
+local x, y = EntityGetTransform(entity_id)
+local vx, vy = GameGetVelocityCompVelocity(entity_id)
+
+local vx1, vy1 = vec_rotate(vx, vy, math.rad(45))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_nolua.xml", x, y, vx1, vy1)
+local vx2, vy2 = vec_rotate(vx, vy, -math.rad(45))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_nolua.xml", x, y, vx2, vy2)
+local vx1, vy1 = vec_rotate(vx, vy, math.rad(90))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_nolua.xml", x, y, vx1, vy1)
+local vx2, vy2 = vec_rotate(vx, vy, -math.rad(90))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_nolua.xml", x, y, vx2, vy2)
+local vx1, vy1 = vec_rotate(vx, vy, math.rad(135))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_nolua.xml", x, y, vx1, vy1)
+local vx2, vy2 = vec_rotate(vx, vy, -math.rad(135))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_nolua.xml", x, y, vx2, vy2)
+local vx1, vy1 = vec_rotate(vx, vy, math.rad(180))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_nolua.xml", x, y, vx1, vy1)
+
+local vx1, vy1 = vec_rotate(vx, vy, math.rad(180))
+shoot_projectile_from_projectile(entity_id, "mods/Apotheosis/files/entities/projectiles/star_shotgun_suck.xml", x, y, vx1, vy1)

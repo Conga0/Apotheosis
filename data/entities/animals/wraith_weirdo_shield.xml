@@ -1,0 +1,181 @@
+<Entity name="Outo">
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<ItemChestComponent level="1" > </ItemChestComponent>
+
+		<AnimalAIComponent
+			_enabled="1" 
+			preferred_job="JobDefault"
+			attack_ranged_enabled="0"
+			attack_dash_enabled="0"
+			attack_melee_enabled="1"
+			attack_melee_action_frame="2"
+			needs_food="0"
+			can_fly="1"
+			tries_to_ranged_attack_friends="1"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_ambrosia.xml"
+			attack_ranged_action_frame="5"
+			attack_ranged_frames_between="30"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="10"
+			creature_detection_range_x="400"
+			creature_detection_range_y="400"
+			sense_creatures="1">
+		</AnimalAIComponent>
+
+		<DamageModelComponent
+            hp="10"
+            fire_probability_of_ignition="0" 
+			ragdoll_fx_forced="DISINTEGRATED"
+			ragdoll_material="rock_static_glow"
+			blood_material="apotheosis_plasma_fading_orange"
+			blood_spray_material="apotheosis_plasma_fading_orange"
+			ragdoll_material="apotheosis_plasma_fading_orange"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			minimum_knockback_force="100000"
+			>
+			<damage_multipliers
+				projectile="0.3"
+				explosion="0.4"
+				electricity="0.4"
+				fire="0.4" 
+				slice="0.4"
+				ice="0.4"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/wraith_weirdo.xml" 
+			offset_x="12"
+			offset_y="0">
+		</SpriteComponent>   
+		
+		<GenomeDataComponent
+			herd_id="mage_swapper"
+			food_chain_rank="1"
+			is_predator="1" >
+		</GenomeDataComponent>
+
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-4.0" 
+			aabb_max_x="4.0" 
+			aabb_min_y="8" 
+			aabb_max_y="16" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>
+
+		<CharacterDataComponent 
+			_enabled="1" 
+			climb_over_y="4" 
+			collision_aabb_min_x="-2.0" 
+			collision_aabb_max_x="2.0" 
+			collision_aabb_min_y="2" 
+			collision_aabb_max_y="12" 
+			mass="0.9"
+			>
+	    </CharacterDataComponent>
+
+		<AudioComponent
+			file="data/audio/Desktop/animals.bank"
+			event_root="animals/wraith" >
+		</AudioComponent>
+		
+		<CharacterPlatformingComponent 
+			accel_x="1"
+    		pixel_gravity="0" 
+			jump_velocity_y="-8" 
+			run_velocity="12">
+		</CharacterPlatformingComponent>
+
+	</Base>
+
+	<GhostComponent 
+		_enabled="0" 
+		hunt_box_radius="912" 
+		new_hunt_target_check_every="250" 
+		speed="40" 
+		velocity.x="-0.37877" 
+		velocity.y="-0.307411"
+		die_if_no_home="0"
+		target_tag="ui_use_raw_name" >
+	</GhostComponent>
+
+	<LightComponent 
+	    _enabled="1" 
+	    radius="30" 
+		r="100"
+		g="255"
+		b="100"
+		offset_y="-21"
+		>
+    </LightComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith/vortex_loop"
+		auto_play="1">
+	</AudioLoopComponent>
+  
+	<Entity>  <Base file="mods/Apotheosis/files/entities/verlets/wraith_weirdo/wraith_cape.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="14" ></Transform></InheritTransformComponent> </Base>  </Entity>
+
+	<Entity>
+		<InheritTransformComponent>
+			<Transform 
+				only_position="1"
+				position.x="0" 
+				position.y="12" >
+			</Transform>
+		</InheritTransformComponent>
+		
+		<Base file="data/entities/misc/animal_energy_shield.xml">
+			<EnergyShieldComponent 
+				recharge_speed="0.0" 
+				max_energy="30.0"
+				energy_required_to_shield="0.1"
+				energy="30"
+				radius="64.0" >
+			</EnergyShieldComponent>
+
+			<ParticleEmitterComponent
+				emitted_material_name="spark_green"
+				area_circle_radius.max="64"
+				>
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent
+				emitted_material_name="spark_green"
+				area_circle_radius.min="64"
+				area_circle_radius.max="64"
+				>
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent
+				emitted_material_name="spark_green"
+				area_circle_radius.min="64"
+				area_circle_radius.max="64"
+				>
+			</ParticleEmitterComponent>
+		</Base>
+	</Entity>
+
+</Entity>
+

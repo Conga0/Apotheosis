@@ -1,0 +1,12 @@
+<Entity name="Tupakointi Sieni">
+  
+	<Base file="data/entities/animals/fungus_smoking_creep.xml" include_children="1" >
+
+    <DamageModelComponent 
+      hp="7"
+      max_hp="7">
+	 </DamageModelComponent >
+
+  </Base>
+
+</Entity>

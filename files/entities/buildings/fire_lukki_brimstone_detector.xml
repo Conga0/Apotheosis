@@ -1,0 +1,16 @@
+
+<Entity>
+    <CollisionTriggerComponent
+      width="256"
+      height="256" 
+      radius="256"
+      required_tag="brimstone"
+      destroy_this_entity_when_triggered="0" >
+  	</CollisionTriggerComponent>
+
+    <LuaComponent
+      script_collision_trigger_hit="mods/Apotheosis/files/scripts/buildings/fire_lukki_brimstone_populator.lua"
+      execute_every_n_frame="-1"
+		  execute_times="-1" >
+    </LuaComponent>
+</Entity>

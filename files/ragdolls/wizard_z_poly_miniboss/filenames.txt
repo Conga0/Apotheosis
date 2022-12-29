@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/wizard_z_poly_miniboss/body.png
+mods/Apotheosis/files/ragdolls/wizard_z_poly_miniboss/head.png
+mods/Apotheosis/files/ragdolls/wizard_z_poly_miniboss/arm.png
+mods/Apotheosis/files/ragdolls/wizard_z_poly_miniboss/arm_2.png
+mods/Apotheosis/files/ragdolls/wizard_z_poly_miniboss/rag.png

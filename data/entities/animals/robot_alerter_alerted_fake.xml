@@ -1,0 +1,76 @@
+<Entity name="Alerter Robot" tags="ui_use_raw_name">
+  
+	<Base file="data/entities/base_enemy_robot.xml" >
+		<ItemChestComponent level="1" > </ItemChestComponent>
+
+		<AnimalAIComponent
+			attack_ranged_enabled="0"
+			attack_dash_enabled="0"
+			needs_food="0"
+			can_fly="1">
+		</AnimalAIComponent>
+
+		<DamageModelComponent
+            hp="0.1"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/robot_alerter_fake/filenames.txt" 
+            fire_probability_of_ignition="0" 
+            ragdoll_material="steel"
+			minimum_knockback_force="100000"
+			>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/robot_alerter_alert.xml" 
+            alpha="0.8"
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>   
+		
+		<GenomeDataComponent 
+			herd_id="robot"
+			food_chain_rank="5"
+			is_predator="1" >
+		</GenomeDataComponent>
+
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-6.0" 
+			aabb_max_x="6.0" 
+			aabb_min_y="-4" 
+			aabb_max_y="4" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>
+
+		<CharacterDataComponent 
+			_enabled="1" 
+			climb_over_y="4" 
+			collision_aabb_min_x="-5" 
+			collision_aabb_max_x="5" 
+			collision_aabb_min_y="-4" 
+			collision_aabb_max_y="3" 
+			mass="0.9"
+			>
+	    </CharacterDataComponent>
+
+	</Base>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/robot_alerter_fake_death.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>
+

@@ -1,0 +1,14 @@
+<Entity name="unknown">
+		
+	<LifetimeComponent
+		lifetime="90" >
+	</LifetimeComponent>
+	
+	<AudioLoopComponent
+		file="mods/Apotheosis/apotheosis_audio.bank"
+		event_name="apotheosis_audio/kittycat/voc_attack_03"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>
+

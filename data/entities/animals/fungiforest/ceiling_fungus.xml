@@ -1,0 +1,25 @@
+<Entity name="Katon sieni" tags="standard_gravity,ui_use_raw_name">
+  
+    <Base file="data/entities/animals/ceiling_fungus.xml" include_children="1" >
+		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>
+
+        <DamageModelComponent
+            hp="6"
+			>
+        </DamageModelComponent>
+
+		<AnimalAIComponent 
+			attack_ranged_max_distance="180"
+			attack_ranged_frames_between="65" 
+			>
+		</AnimalAIComponent>
+
+        <LuaComponent
+            script_source_file="mods/Apotheosis/files/scripts/animals/ceiling_fungus_limiter.lua"
+            execute_every_n_frame="62"
+            >
+        </LuaComponent>
+
+	</Base>
+
+</Entity>

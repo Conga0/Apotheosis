@@ -1,0 +1,2 @@
+data/entities/animals/boss_wizard/spawn_wizard.lua is overridden to insert custom mages, supports new enemies mod
+data/scripts/animals/enlightened_alchemist_init.lua is overridden to insert custom enlightened alchemist variants

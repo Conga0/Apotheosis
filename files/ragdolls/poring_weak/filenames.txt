@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/poring_weak/chunk_01.png
+mods/Apotheosis/files/ragdolls/poring_weak/chunk_02.png
+mods/Apotheosis/files/ragdolls/poring_weak/chunk_03.png
+mods/Apotheosis/files/ragdolls/poring_weak/chunk_04.png
+mods/Apotheosis/files/ragdolls/poring_weak/chunk_05.png

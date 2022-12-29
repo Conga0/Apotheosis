@@ -1,0 +1,8 @@
+<Entity name="Suur Helvetinkatse" tags="touchmagic_immunity,ui_use_raw_name" >
+  <Base file="data/entities/animals/gazer_greater.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="90"
+      max_hp="90"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

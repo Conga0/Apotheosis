@@ -1,0 +1,20 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/robot_alerter.png" 
+  offset_x="8" 
+  offset_y="9"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="18" 
+    frame_wait="0.07" 
+    frame_width="17" 
+    frames_per_row="8" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="18" >
+
+  </RectAnimation>
+
+</Sprite>
+

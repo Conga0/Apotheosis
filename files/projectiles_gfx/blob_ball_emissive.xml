@@ -1,0 +1,19 @@
+<Sprite
+ filename="mods/Apotheosis/files/projectiles_gfx/blob_ball_emissive.png"
+ offset_x="19"
+ offset_y="20"
+ default_animation="default" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="default"
+  pos_x="0"
+  pos_y="0"
+  frame_count="8"
+  frame_width="37"
+  frame_height="36"
+  frame_wait="0.11"
+  frames_per_row="8"
+  loop="1"   >
+ </RectAnimation>
+</Sprite>

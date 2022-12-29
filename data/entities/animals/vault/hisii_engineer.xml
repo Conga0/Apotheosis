@@ -1,0 +1,8 @@
+<Entity name="Insinöörihiisi" tags="ui_use_raw_name" >
+  <Base file="data/entities/animals/hisii_engineer.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="23"
+      max_hp="23"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

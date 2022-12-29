@@ -1,0 +1,8 @@
+<Entity name="$animal_icemage" >
+  <Base file="data/entities/animals/icemage.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="15"
+      max_hp="15"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

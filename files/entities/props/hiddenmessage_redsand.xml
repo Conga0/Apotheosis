@@ -1,0 +1,11 @@
+<Entity >
+
+	<SpriteComponent 
+		z_index="30"
+		image_file="mods/Apotheosis/files/props_gfx/symbols/ultimatesecret_background.png" 
+		offset_x="55"
+		offset_y="13" >
+	</SpriteComponent>
+
+</Entity>
+

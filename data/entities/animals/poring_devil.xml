@@ -1,0 +1,158 @@
+<Entity name="Epäpyhä hyytelö" tags="ui_use_raw_name">
+  
+    <Base file="data/entities/base_enemy_basic.xml" >
+        <ItemChestComponent level="4" > </ItemChestComponent>
+        
+        <AnimalAIComponent
+			_enabled="1" 
+			preferred_job="JobDefault"
+            sense_creatures="1"
+            attack_melee_max_distance="22"
+			attack_melee_action_frame="3"
+			attack_melee_damage_min="2" 
+			attack_melee_damage_max="2.2"
+			can_fly="1"
+			creature_detection_range_x="300"
+			creature_detection_range_y="400"
+			sense_creatures="1"
+			attack_dash_enabled="1"
+			attack_dash_distance="80"
+			attack_melee_enabled="1"
+			attack_ranged_enabled="1"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_devil.xml"
+			attack_ranged_action_frame="2"
+			attack_ranged_frames_between="90"
+			attack_ranged_entity_count_min="1"
+			attack_ranged_entity_count_max="1"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="40"
+			attack_ranged_max_distance="300" >
+        </AnimalAIComponent>
+        
+        <SpriteComponent 
+            image_file="mods/Apotheosis/files/enemies_gfx/poring_devil.xml"
+            offset_x="14" 
+            offset_y="20" >
+        </SpriteComponent>
+
+        <DamageModelComponent
+            hp="20"
+            air_needed="0"
+            ragdoll_filenames_file=""
+			ragdoll_fx_forced="DISINTEGRATED"
+			blood_material="material_darkness"
+			blood_spray_material="material_darkness"
+			blood_multiplier="0.25"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid,poison"
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
+			>
+			<damage_multipliers
+				projectile="0.35"
+				fire="0.7" 
+				ice="1.4"
+				curse="0.0"
+				>
+			</damage_multipliers>
+        </DamageModelComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="1" 
+			can_walk="0"
+			can_dive="1" 
+            cost_of_flying="500" 
+			can_swim_on_surface="0" 
+			jump_speed="150"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="90"
+			initial_jump_max_distance_y="90"
+			>
+		</PathFindingComponent>
+        
+        <CharacterPlatformingComponent 
+			jump_velocity_y="-15"
+			jump_velocity_x="-10"
+			run_velocity="0"
+			swim_idle_buoyancy_coeff="2.0"
+			swim_up_buoyancy_coeff="2.0"
+			swim_down_buoyancy_coeff="2.0" >
+        </CharacterPlatformingComponent>
+
+        <GenomeDataComponent 
+            herd_id="ghost"
+			food_chain_rank="3"
+			is_predator="1" >
+        </GenomeDataComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+        
+        <HitboxComponent 
+            _enabled="1"
+			aabb_min_x="-13" 
+            aabb_min_y="-14" 
+            aabb_max_x="13" 
+            aabb_max_y="4" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-13" 
+			collision_aabb_min_y="-14" 
+			collision_aabb_max_x="13" 
+			collision_aabb_max_y="4"
+			mass="1"
+			>
+		</CharacterDataComponent>
+    </Base>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/enemies_gfx/poring_devilling_accessories.xml"
+        alpha="0.8"  >
+	</SpriteComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="110" 
+    r="10"
+    g="10"
+    b="40"
+    >
+  </LightComponent>
+
+    <AIAttackComponent
+    min_distance="50"
+    max_distance="150"
+    frames_between="272"
+    frames_between_global="0"
+    attack_ranged_action_frame="2"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_devil.xml"
+    attack_ranged_offset_y="0"
+    attack_ranged_offset_x="0"
+    attack_ranged_entity_count_min="1"
+    attack_ranged_entity_count_max="1"
+    >
+	</AIAttackComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/longleg" >
+	</AudioComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/poring_divine_collision.lua"
+		execute_every_n_frame="30"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags="death_reward"
+		script_death="data/entities/animals/secret/poring_death.lua"
+		>
+	</LuaComponent>
+
+</Entity>

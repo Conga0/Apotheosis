@@ -1,0 +1,12 @@
+<Entity name="Myrkyllinen sieni">
+  
+	<Base file="data/entities/animals/poisonmushroom.xml" include_children="1" >
+
+    <DamageModelComponent 
+      hp="12"
+      max_hp="12">
+	 </DamageModelComponent >
+
+  </Base>
+
+</Entity>

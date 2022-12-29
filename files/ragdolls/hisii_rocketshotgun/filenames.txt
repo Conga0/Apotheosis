@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/hisii_rocketshotgun/torso.png
+mods/Apotheosis/files/ragdolls/hisii_rocketshotgun/hand.png
+mods/Apotheosis/files/ragdolls/hisii_rocketshotgun/feet.png
+mods/Apotheosis/files/ragdolls/hisii_rocketshotgun/feet_right.png
+mods/Apotheosis/files/ragdolls/hisii_rocketshotgun/head.png

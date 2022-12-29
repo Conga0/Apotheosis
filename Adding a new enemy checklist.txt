@@ -1,0 +1,7 @@
+Does the entity work?
+Does it have a progress UI pic?
+Does it have documentation?
+Can it spawn in biomes?
+Can it spawn in the tower?
+Is it compatible with conjurer?
+Is it on the creature shift table?

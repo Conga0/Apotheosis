@@ -1,0 +1,107 @@
+<Entity name="Happo kupla">
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<ItemChestComponent level="1" > </ItemChestComponent>
+
+		<AnimalAIComponent
+			attack_ranged_enabled="0"
+			attack_dash_enabled="0"
+			needs_food="0"
+			can_fly="1">
+		</AnimalAIComponent>
+
+		<DamageModelComponent
+            hp="0.5"
+            air_needed="0"
+		    wait_for_kill_flag_on_death="0"
+            fire_probability_of_ignition="0" 
+			ragdoll_fx_forced="DISINTEGRATED"
+			ragdoll_material="water"
+			blood_material="water"
+			blood_spray_material="water"
+		    blood_multiplier="30"
+			ragdoll_material="water"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			minimum_knockback_force="100000"
+			>
+			<damage_multipliers
+				projectile="1.5"
+				explosion="1.5"
+				electricity="0.1"
+				slice="5"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/bubble_liquid_water.xml" 
+            alpha="0.8"
+			offset_x="11"
+			offset_y="11">
+		</SpriteComponent>   
+		
+		<GenomeDataComponent 
+			herd_id="mage"
+			food_chain_rank="5"
+			is_predator="1" >
+		</GenomeDataComponent>
+
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-11.0" 
+			aabb_max_x="11.0" 
+			aabb_min_y="-11" 
+			aabb_max_y="11" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>
+
+		<CharacterDataComponent 
+			_enabled="1" 
+			climb_over_y="4" 
+			collision_aabb_min_x="-11" 
+			collision_aabb_max_x="11" 
+			collision_aabb_min_y="-11" 
+			collision_aabb_max_y="11" 
+			mass="0.9"
+			>
+	    </CharacterDataComponent>
+
+		<AudioComponent
+			file="data/audio/Desktop/animals.bank"
+			event_root="animals/wraith_storm" >
+		</AudioComponent>
+
+	</Base>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith_storm/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith/electricity_loop"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<SpriteComponent 
+        alpha="0.55"
+        image_file="data/particles/fog_of_war_hole.xml"
+        smooth_filtering="1"
+        fog_of_war_hole="1"
+		>
+    </SpriteComponent>
+
+</Entity>
+

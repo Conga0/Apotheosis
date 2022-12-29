@@ -1,0 +1,17 @@
+<Entity>
+
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+
+    <VerletPhysicsComponent
+    	stiffness="1.15"
+    	num_points="7"
+		velocity_dampening="0.8"
+    	resting_distance="4.0"
+    	simulate_gravity="1" >
+    </VerletPhysicsComponent>
+
+	<Base file="data/entities/verlet_chains/fungus_roots/fungus_root_verlet_1.xml" />
+	<Base file="data/entities/verlet_chains/fungus_roots/fungus_root_verlet_2.xml" />
+
+</Entity>

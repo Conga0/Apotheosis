@@ -1,0 +1,9 @@
+<Entity tags="enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT" name="Heinäsirkka">
+  <Base file="data/entities/animals/locust_swarm.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="10"
+      max_hp="10"
+     ></DamageModelComponent >
+  </Base>
+
+</Entity>

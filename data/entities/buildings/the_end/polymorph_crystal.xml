@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/buildings/polymorph_crystal.xml">
+    <DamageModelComponent 
+      hp="80"
+      max_hp="80"
+     ></DamageModelComponent >
+  </Base>
+</Entity>
