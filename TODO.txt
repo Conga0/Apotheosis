@@ -1,0 +1,8 @@
+Add text to CoV & Healing Bolt spells mentioning they're uncopyable
+Remove self-damage on Bubble Bounce modifier
+Reduce mana cost of death cross?
+Add health hearts perk, health healed is equal to max health gained x 2
+Expand Connosier of Wands attack options
+All boss health should be doubled at least
+
+Test if copi's version of init files loads faster or slower

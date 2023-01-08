@@ -4,7 +4,7 @@
 	<TeleportComponent
 		_tags="enabled_by_liquid"
 		target_x_is_absolute_position="1"
-		target.x="-677" 
+		target.x="-22191" 
 		target.y="280" 
 	></TeleportComponent>
 
@@ -48,7 +48,7 @@
 	
 	<ParticleEmitterComponent 
 		_tags="enabled_by_liquid"
-		emitted_material_name="spark_purple"
+		emitted_material_name="spark_green"
 		gravity.y="0.0"
 		lifetime_min="3"
 		lifetime_max="4"
@@ -77,7 +77,7 @@
 
 	<ParticleEmitterComponent 
 		_tags="enabled_by_liquid"
-		emitted_material_name="spark_purple"
+		emitted_material_name="spark_green"
 		gravity.y="0.0"
 		lifetime_min="3"
 		lifetime_max="4"
@@ -106,7 +106,7 @@
 
 	<SpriteComponent 
 		_tags="enabled_by_liquid"
-		image_file="data/buildings_gfx/teleport_center.xml" 
+		image_file="mods/Apotheosis/files/buildings_gfx/teleport_center_alt.xml" 
 		offset_x="0"
 		offset_y="0"
 		z_index="1"

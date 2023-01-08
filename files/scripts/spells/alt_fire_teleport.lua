@@ -24,6 +24,8 @@ if GameGetFrameNum() >= cooldown_frame then
             GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("data/entities/projectiles/deck/teleport_projectile.xml", x, y))
             wand.mana = mana - manacost
             ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
+        else
+            GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", x, y );
         end
     end
 end

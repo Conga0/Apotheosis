@@ -31,40 +31,23 @@ local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
 -- They'll still get the spell, it just won't be added to their permanent record
 -- Rat bite isn't "verified" because it's a funny spell
 
-if HasFlagPersistent( "apotheosis_card_unlocked_divinebeing" ) then
-  AddFlagPersistent( "apotheosis_card_unlocked_divinebeing_spell" )
-else
-  RemoveFlagPersistent( "apotheosis_card_unlocked_divinebeing_spell" )
-end
-
-if HasFlagPersistent( "apotheosis_card_unlocked_boss_toxic_worm" ) then
-  AddFlagPersistent( "apotheosis_card_unlocked_boss_toxic_worm_spell" )
-else
-  RemoveFlagPersistent( "apotheosis_card_unlocked_boss_toxic_worm_spell" )
-end
-
-if HasFlagPersistent( "apotheosis_card_unlocked_musical_boss" ) then
-  AddFlagPersistent( "apotheosis_card_unlocked_musical_boss_spell" )
-else
-  RemoveFlagPersistent( "apotheosis_card_unlocked_musical_boss_spell" )
-end
-
-if HasFlagPersistent( "apotheosis_card_unlocked_blob_boss" ) then
-  AddFlagPersistent( "apotheosis_card_unlocked_blob_boss_spell" )
-else
-  RemoveFlagPersistent( "apotheosis_card_unlocked_blob_boss_spell" )
-end
-
-if HasFlagPersistent( "apotheosis_card_unlocked_fire_lukki" ) then
-  AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki_spell" )
-else
-  RemoveFlagPersistent( "apotheosis_card_unlocked_fire_lukki_spell" )
-end
-
-if HasFlagPersistent( "apotheosis_card_unlocked_cat_secret" ) then
-  AddFlagPersistent( "apotheosis_card_unlocked_cat_secret_spell" )
-else
-  RemoveFlagPersistent( "apotheosis_card_unlocked_cat_secret_spell" )
+-- Protect spell progress in case of accidental unlocks
+do
+  for _, entry in ipairs({
+    "divinebeing",
+    "boss_toxic_worm",
+    "musical_boss",
+    "blob_boss",
+    "fire_lukki",
+    "cat_secret",
+  }) do
+    local progressflag = "apotheosis_card_unlocked_" .. entry
+    if HasFlagPersistent( progressflag ) then
+      AddFlagPersistent( progressflag .. "_spell" )
+    else
+      RemoveFlagPersistent( progressflag .. "_spell" )
+    end
+  end
 end
 
 
@@ -392,6 +375,15 @@ credits_apotheosis_line_43,"And finally.. you, for giving Apotheosis a try and m
 credits_apotheosis_line_44,I hope you enjoyed playing it as much as I enjoyed making it <3,"Надеюсь, вам понравилось играть в него так же, как мне понравилось его создавать <3",,,,,,,,,,,,
 credits_apotheosis_line_45,Best of luck in your future adventures - Conga Lyne,Желаю удачи в ваших будущих приключениях - Conga Lyne,,,,,,,,,,,,
 credits_apotheosis_line_horscht,Provided a ton of help in the mod support channel during development and let me use his credits script.,Оказал тонну помощи в канале поддержки мода во время разработки и позволил мне использовать его скрипт для этого меню.,,,,,,,,,,,,
+Apotheosis content below,"=====================================================================================================================================================================================================================================================Below here are 1.1.0 translation keys",,,,,,,,,,,,,
+teleport_portal_alternate,"Portal Elsewhere",,,,,,,,,,,,,
+biome_slime_hell,"Slime Hell",,,,,,,,,,,,,
+biome_toxic_worm_cave,"Toxic Nest",,,,,,,,,,,,,
+biome_esoteric_den,"Esoteric Den",,,,,,,,,,,,,
+biome_underground_forest,"Subterrain Woodland",,,,,,,,,,,,,
+biome_evil_temple,"Temple of Sacrilegious Remains",,,,,,,,,,,,,
+material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
+material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -464,40 +456,62 @@ end
 
 
 
-
---Global Spawns
---DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
-ModLuaFileAppend( "data/scripts/biomes/wizardcave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
-ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Coal Mine, first area, goodluck on your run
-ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" ) --Heaven, or Hell, your choice. Either are The Work.
-ModLuaFileAppend( "data/scripts/biomes/desert.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Desert above ground, careful not to die to any Stendari
-
-ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Temple of the Arts.. who died here?
-ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Presumably everything below the entrance to the pyramid
-ModLuaFileAppend( "data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --BUNGUS!! cave, west side of area 2 for example
-ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Coalmine but to the west side near damp cave
-ModLuaFileAppend( "data/scripts/biomes/pyramid_hallway.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Pyramid entrance, presumably
-
-
-ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Coal Pits, area 2
-ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Overgrowth
-ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Snowy Depths
-ModLuaFileAppend( "data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Magical temple.. huh
-ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Desert sand cave, I don't think it includes desert chasm
-ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" ) --The Vault
-
---For Clarity, anything below this line has not yet been used to spawn in an enemy by normal methods, but is still wanted to be included in Global Spawning.
-
-ModLuaFileAppend( "data/scripts/biomes/clouds.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" ) --Cloudscapes
-ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" ) --Hills, aka forest.
-ModLuaFileAppend( "data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" ) --I'm sure you can guess
-ModLuaFileAppend( "data/scripts/biomes/winter.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Winter appears to be the snow chasm... terrifying. Also line 69!
-ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Jungle
-ModLuaFileAppend( "data/scripts/biomes/rainforest_dark.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Lukki Lair.. creepy
-ModLuaFileAppend( "data/scripts/biomes/vault_frozen.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" ) --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
-ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" ) --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
-ModLuaFileAppend( "data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" ) --Power Plant
-ModLuaFileAppend( "data/scripts/biomes/liquidcave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" ) --Abandoned Alchemy Lab
+--Will test if this has better performance on loadtime than previous method
+do  -- Global Spawns
+  --DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
+  for _, append in ipairs({
+    { -- General
+      script = "global_populator",
+      biomes = {
+        "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
+        "coalmine",         --Coal Mine, first area, goodluck on your run
+        "desert",           --Desert above ground, careful not to die to any Stendari
+        "crypt",            --Temple of the Arts.. who died here?
+        "pyramid",          --Presumably everything below the entrance to the pyramid
+        "fungicave",        --BUNGUS!! cave, west side of area 2 for example
+        "coalmine_alt",     --Coalmine but to the west side near damp cave
+        "pyramid_hallway",  --Pyramid entrance, presumably
+        "excavationsite",   --Coal Pits, area 2
+        "fungiforest",      --Overgrowth
+        "snowcave",         --Snowy Depths
+        "wandcave",         --Magical temple.. huh
+        "sandcave",         --Desert sand cave, I don't think it includes desert chasm
+        "winter",           --Winter appears to be the snow chasm... terrifying. Also line 69!
+        "rainforest",       --Jungle
+        "rainforest_dark",  --Lukki Lair.. creepy
+        "liquidcave",       --Abandoned Alchemy Lab
+      }
+    },
+    { -- No Magic
+      script = "global_populator_no_magic",
+      biomes = {
+        "the_end",          --Heaven, or Hell, your choice. Either are The Work.
+        "vault",            --The Vault
+        "robot_egg",        --I'm sure you can guess
+        "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
+        "snowcastle",       --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
+        "robobase",         --Power Plant
+      }
+    },
+    { -- Small Only
+      script = "global_populator_smallonly",
+      biomes = {
+        "clouds",           --Cloudscapes
+        "hills",            --Hills, aka forest.
+      }
+    },
+  }) do
+    -- Generate append script file path
+    local appendpath = table.concat({"mods/apotheosis/files/scripts/biomes/", append.script, ".lua"})
+    -- Iterate over all biomes for the path
+    for _, biome in ipairs(append.biomes) do
+      -- Generate biome file path
+      local biomepath = table.concat({"data/scripts/biomes/", biome, ".lua"})
+      -- Add the stuff
+      ModLuaFileAppend(biomepath, appendpath)
+    end
+  end
+end
 
 
 
@@ -1227,20 +1241,6 @@ end
 
 
 
---Adds Biome tracker script to the player character, it will update their current biome difficulty and save the highest one they've ever achieved, maxing out at 7 in Heaven/Hell
-
-local content = ModTextFileGetContent("data/entities/player_base.xml")
-local xml = nxml.parse(content)
-xml:add_child(nxml.parse([[
-  <LuaComponent
-    script_source_file="mods/Apotheosis/files/scripts/magic/biome_difficulty_tracker.lua"
-    execute_every_n_frame="600"
-    execute_times="-1"
-    remove_after_executed="0"
-    >
-  </LuaComponent>
-]]))
-ModTextFileSetContent("data/entities/player_base.xml", tostring(xml))
 
 
 
@@ -1260,7 +1260,7 @@ ModTextFileSetContent("data/entities/player_base.xml", tostring(xml))
 
 
 --Master of Masters master spawner insertion, allows him to spawn Master of Mallards & Master of Immortality too.. He doesn't appreciate Master of Trolling too much to invite him in
---Note, this has been moved to a file override
+--Note, this has been moved to a file override, could probably use string.gsub to fix that
 
 
 
@@ -1490,23 +1490,32 @@ ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scri
 
 --Secret
 
---Adds Golden Cape if check is successful
-
-if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
-
-  local content = ModTextFileGetContent("data/entities/player_base.xml")
-  local xml = nxml.parse(content)
+do  -- Player Editor
+  local path = "data/entities/player_base.xml"
+  local xml = nxml.parse(ModTextFileGetContent(path))
+  --Adds Biome tracker script to the player character, it will update their current biome difficulty and save the highest one they've ever achieved, maxing out at 7 in Heaven/Hell
   xml:add_child(nxml.parse([[
     <LuaComponent
-      script_source_file="data/apotheosis_gfx/player_cape_colour_append.lua"
-      execute_every_n_frame="1"
-      execute_times="1"
-      remove_after_executed="1"
+      script_source_file="mods/apotheosis/files/scripts/magic/biome_difficulty_tracker.lua"
+      execute_every_n_frame="600"
+      execute_times="-1"
+      remove_after_executed="0"
       >
     </LuaComponent>
   ]]))
+  if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
+    --Adds Golden Cape if check is successful
+    xml:add_child(nxml.parse([[
+      <LuaComponent
+        script_source_file="data/apotheosis_gfx/player_cape_colour_append.lua"
+        execute_every_n_frame="2"
+        execute_times="1"
+        remove_after_executed="1"
+        >
+      </LuaComponent>
+    ]]))
+  end
   ModTextFileSetContent("data/entities/player_base.xml", tostring(xml))
-
 end
 
 

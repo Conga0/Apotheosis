@@ -5,13 +5,13 @@ dofile("data/scripts/lib/utilities.lua")
 
 --Spawns Toxic Worm boss after filling the dragon egg with toxic sludge
 --This was the original intent, now the Toxic Worm spawns inside of a "nest" area of sorts with an egg, approach it and get got!
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
-local xml = nxml.parse(content)
-xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="2292" pos_y="2286" just_load_an_entity="data/entities/buildings/toxic_worm_nest_populator.xml" />
-]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+--local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+--local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+--local xml = nxml.parse(content)
+--xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+--    <PixelScene pos_x="2292" pos_y="2286" just_load_an_entity="data/entities/buildings/toxic_worm_nest_populator.xml" />
+--]]))
+--ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
 
 

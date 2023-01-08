@@ -5,10 +5,10 @@
 --Brooo "Trickshot" would like, totally be a killer name for this
 --[[table.insert(actions,
 {
-    id          = "apotheosis_BOUNCE_HOMING",
+    id          = "APOTHEOSIS_BOUNCE_HOMING",
     name 		= "Autoaiming Bounce",
     description = "Your spells redirect themselves into an enemy upon every bounce",
-    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/apotheosis_bounce_homing.png",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/APOTHEOSIS_bounce_homing.png",
     sprite_unidentified = "data/ui_gfx/gun_actions/sinewave_unidentified.png",
     related_extra_entities = { "mods/Apotheosis/files/entities/misc/bounce_homing.xml" },
     type 		= ACTION_TYPE_MODIFIER,
@@ -28,7 +28,7 @@
 
 table.insert(actions,
 {
-    id          = "apotheosis_SAWBLADE_BIG_RAY",
+    id          = "APOTHEOSIS_SAWBLADE_BIG_RAY",
     name 		= "$spell_apotheosis_thrower_disc_name",
     description = "$spell_apotheosis_thrower_disc_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray.png",
@@ -49,7 +49,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_CURSED_ORB_RAY",
+    id          = "APOTHEOSIS_CURSED_ORB_RAY",
     name 		= "$spell_apotheosis_thrower_cursed_orb_name",
     description = "$spell_apotheosis_thrower_cursed_orb_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray.png",
@@ -70,7 +70,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_DYNAMITE_RAY",
+    id          = "APOTHEOSIS_DYNAMITE_RAY",
     name 		= "$spell_apotheosis_thrower_tnt_name",
     description = "$spell_apotheosis_thrower_tnt_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray.png",
@@ -91,7 +91,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_ICEBALL_RAY",
+    id          = "APOTHEOSIS_ICEBALL_RAY",
     name 		= "$spell_apotheosis_thrower_ice_ball_name",
     description = "$spell_apotheosis_thrower_ice_ball_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray.png",
@@ -112,7 +112,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_NUKE_RAY",
+    id          = "APOTHEOSIS_NUKE_RAY",
     name 		= "$spell_apotheosis_thrower_nuke_name",
     description = "$spell_apotheosis_thrower_nuke_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray.png",
@@ -133,7 +133,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_SAWBLADE_BIG_RAY_ENEMY",
+    id          = "APOTHEOSIS_SAWBLADE_BIG_RAY_ENEMY",
     name 		= "$spell_apotheosis_thrower_disc_enemy_name",
     description = "$spell_apotheosis_thrower_disc_enemy_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray_enemy.png",
@@ -154,7 +154,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_CURSED_ORB_RAY_ENEMY",
+    id          = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
     name 		= "$spell_apotheosis_thrower_cursed_orb_enemy_name",
     description = "$spell_apotheosis_thrower_cursed_orb_enemy_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray_enemy.png",
@@ -175,7 +175,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_DYNAMITE_RAY_ENEMY",
+    id          = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
     name 		= "$spell_apotheosis_thrower_tnt_enemy_name",
     description = "$spell_apotheosis_thrower_tnt_enemy_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray_enemy.png",
@@ -196,7 +196,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_ICEBALL_RAY_ENEMY",
+    id          = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
     name 		= "$spell_apotheosis_thrower_ice_ball_enemy_name",
     description = "$spell_apotheosis_thrower_ice_ball_enemy_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray_enemy.png",
@@ -217,7 +217,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_NUKE_RAY_ENEMY",
+    id          = "APOTHEOSIS_NUKE_RAY_ENEMY",
     name 		= "$spell_apotheosis_thrower_nuke_enemy_name",
     description = "$spell_apotheosis_thrower_nuke_enemy_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray_enemy.png",
@@ -238,7 +238,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_HOLYORB_SHOTGUN",
+    id          = "APOTHEOSIS_HOLYORB_SHOTGUN",
     name 		= "$spell_apotheosis_holy_orb_barrage_name",
     description = "$spell_apotheosis_holy_orb_barrage_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
@@ -267,7 +267,7 @@ table.insert(actions,
 --[[
 table.insert(actions,
 {
-    id          = "apotheosis_HOLYORB_SHOTGUN_CURSED",
+    id          = "APOTHEOSIS_HOLYORB_SHOTGUN_CURSED",
     name 		= "$spell_apotheosis_cursed_orb_barrage_name",
     description = "$spell_apotheosis_cursed_orb_barrage_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun_cursed.png",
@@ -296,7 +296,7 @@ table.insert(actions,
 
 table.insert(actions,   --This spell is kinda weird
 {
-    id          = "apotheosis_BOMB_GIGA",
+    id          = "APOTHEOSIS_BOMB_GIGA",
     name 		= "$spell_apotheosis_giga_bomb_name",
     description = "$spell_apotheosis_giga_bomb_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bomb_giga.png",
@@ -316,7 +316,7 @@ table.insert(actions,   --This spell is kinda weird
 
 table.insert(actions,
 {
-    id          = "apotheosis_MASS_MATERIA_CONVERSION",
+    id          = "APOTHEOSIS_MASS_MATERIA_CONVERSION",
     name 		= "$spell_apotheosis_mass_materia_conversion_name",
     description = "$spell_apotheosis_mass_materia_conversion_desc", --Be Careful what you wish for.. Convert a large amount of materials in a radius to various counterparts
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_materia_conversion.png",
@@ -338,7 +338,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_BUNGAL_SHIFT",
+    id          = "APOTHEOSIS_BUNGAL_SHIFT",
     name 		= "$spell_apotheosis_bungal_shift_name",
     description = "$spell_apotheosis_bungal_shift_desc", --Be Careful what you wish for.. Triggers a fungal shift, still obeys normal fungal cooldown
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bungal_shift.png",
@@ -360,7 +360,7 @@ table.insert(actions,
 --[[
 table.insert(actions,
 {
-    id          = "apotheosis_TEST_HOLY_BEAM",
+    id          = "APOTHEOSIS_TEST_HOLY_BEAM",
     name 		= "Divine Light",
     description = "Creates a holy beam of divine light after 5 seconds, unbias to all it harms.",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/divine_light.png",
@@ -380,7 +380,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_AQUA_MINE",
+    id          = "APOTHEOSIS_AQUA_MINE",
     name 		= "$spell_apotheosis_aqua_mine_name",
     description = "$spell_apotheosis_aqua_mine_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/aquamine.png",
@@ -400,7 +400,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_MUSICAL_STRIKE",
+    id          = "APOTHEOSIS_MUSICAL_STRIKE",
     name 		= "$spell_apotheosis_musical_proj_name",
     description = "$spell_apotheosis_musical_proj_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/musical_strike.png",
@@ -420,7 +420,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_MUSICAL_STRIKE_TRIGGER",
+    id          = "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
     name 		= "$spell_apotheosis_musical_proj_trig_name",
     description = "$spell_apotheosis_musical_proj_trig_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/musical_strike_trigger.png",
@@ -440,7 +440,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_REVERBERATION",
+    id          = "APOTHEOSIS_REVERBERATION",
     name 		= "$spell_apotheosis_reverberation_name",
     description = "$spell_apotheosis_reverberation_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/reverberation.png",
@@ -461,7 +461,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_RAT_BITE",
+    id          = "APOTHEOSIS_RAT_BITE",
     name 		= "$spell_apotheosis_bite_name",
     description = "$spell_apotheosis_bite_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/rat_bite.png",
@@ -482,7 +482,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_BUNGAL_SHIFT_SPAM",
+    id          = "APOTHEOSIS_BUNGAL_SHIFT_SPAM",
     name 		= "$spell_apotheosis_bungal_shift_hyper_name",
     description = "$spell_apotheosis_bungal_shift_hyper_desc", --Triggers a fungal shift, no cooldown.
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bungal_shift_spam.png",
@@ -504,7 +504,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_SUMMON_WORM_BIG",
+    id          = "APOTHEOSIS_SUMMON_WORM_BIG",
     name 		= "$spell_apotheosis_summon_worm_name",
     description = "$spell_apotheosis_summon_worm_desc", --Triggers a fungal shift, no cooldown.
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/summon_worm_big.png",
@@ -527,7 +527,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_RAT_BITE_CRIT",
+    id          = "APOTHEOSIS_RAT_BITE_CRIT",
     name 		= "$spell_apotheosis_bite_crit_name",
     description = "$spell_apotheosis_bite_crit_desc", --Converted Rat Bite, Big Crit chance.
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/rat_bite_crit.png",
@@ -548,7 +548,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_SPELLS_TO_CATS",
+    id          = "APOTHEOSIS_SPELLS_TO_CATS",
     name 		= "$spell_apotheosis_spells_to_sorako_name",
     description = "$spell_apotheosis_spells_to_sorako_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cats.png",
@@ -571,7 +571,7 @@ table.insert(actions,
 --I want this to have x2 mana cost for the cast if you use it but need to wait for copi lib to make it happen
 table.insert(actions,
 {
-    id                = "apotheosis_SPLIT_SPELL",
+    id                = "APOTHEOSIS_SPLIT_SPELL",
     name              = "$spell_apotheosis_split_shot_name",
     description       = "$spell_apotheosis_split_shot_desc",
     sprite            = "mods/Apotheosis/files/ui_gfx/gun_actions/split_spell.png",
@@ -591,15 +591,15 @@ table.insert(actions,
         else
             -- this is run *after* reflection
             local iter = 1
-            local iter = tonumber(GlobalsGetValue("apotheosis_global_splitseed", "0"))
+            local iter = tonumber(GlobalsGetValue("APOTHEOSIS_global_splitseed", "0"))
             if iter == 0 then
                 SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() - 523 )
-                GlobalsSetValue("apotheosis_global_splitseed", "1")
+                GlobalsSetValue("APOTHEOSIS_global_splitseed", "1")
             end
             local rnd_num = Random( 1, 2 )
             if ( hand ~= nil ) and ( rnd_num == 1 ) then
                 for i,data in ipairs( hand ) do
-                    if ( data.id ~= "apotheosis_SPLIT_SPELL" and data.type ~= ACTION_TYPE_OTHER ) then
+                    if ( data.id ~= "APOTHEOSIS_SPLIT_SPELL" and data.type ~= ACTION_TYPE_OTHER ) then
                         data.action()
                     end
                 end
@@ -613,7 +613,7 @@ table.insert(actions,
 --[[
 table.insert(actions,
 {
-    id          = "apotheosis_CLOUD_ACID_PERSONAL",
+    id          = "APOTHEOSIS_CLOUD_ACID_PERSONAL",
     name 		= "Personal Acid Cloud",
     description = "Makes a projectile curse the creatures it hits with a cloud of Acid",
     sprite 		= "data/ui_gfx/gun_actions/cloud_acid.png",
@@ -634,7 +634,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_CLOUD_THUNDER_PERSONAL",
+    id          = "APOTHEOSIS_CLOUD_THUNDER_PERSONAL",
     name 		= "Personal Thunder Cloud",
     description = "Makes a projectile curse the creatures it hits with a cloud of Thunder",
     sprite 		= "data/ui_gfx/gun_actions/cloud_thunder.png",
@@ -655,7 +655,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_MASS_STATUS_DRUNK",
+    id          = "APOTHEOSIS_MASS_STATUS_DRUNK",
     name 		= "$spell_apotheosis_status_drunk_name",
     description = "$spell_apotheosis_status_drunk_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_alcohol.png",
@@ -677,7 +677,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_MASS_STATUS_WET",
+    id          = "APOTHEOSIS_MASS_STATUS_WET",
     name 		= "$spell_apotheosis_status_wet_name",
     description = "$spell_apotheosis_status_wet_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_wet.png",
@@ -699,7 +699,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_MASS_STATUS_FIRE",
+    id          = "APOTHEOSIS_MASS_STATUS_FIRE",
     name 		= "$spell_apotheosis_status_fire_name",
     description = "$spell_apotheosis_status_fire_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_fire.png",
@@ -721,7 +721,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_MASS_STATUS_URINE",
+    id          = "APOTHEOSIS_MASS_STATUS_URINE",
     name 		= "$spell_apotheosis_status_urine_name",
     description = "$spell_apotheosis_status_urine_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_urine.png",
@@ -743,7 +743,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_MASS_STATUS_POLYMORPH",
+    id          = "APOTHEOSIS_MASS_STATUS_POLYMORPH",
     name 		= "$spell_apotheosis_status_polymorph_name",
     description = "$spell_apotheosis_status_polymorph_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_polymorph.png",
@@ -765,7 +765,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_TARGETTER",
+    id          = "APOTHEOSIS_TARGETTER",
     name 		= "$spell_apotheosis_targetter_name",
     description = "$spell_apotheosis_targetter_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/targetter.png",
@@ -786,7 +786,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_ALT_FIRE_TELEPORT",
+    id          = "APOTHEOSIS_ALT_FIRE_TELEPORT",
     name 		= "$spell_apotheosis_alt_fire_teleport_name",
     description = "$spell_apotheosis_alt_fire_teleport_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_teleport_projectile.png",
@@ -807,7 +807,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_ALT_FIRE_TELEPORT_SHORT",
+    id          = "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT",
     name 		= "$spell_apotheosis_alt_fire_teleport_short_name",
     description = "$spell_apotheosis_alt_fire_teleport_short_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_teleport_projectile_short.png",
@@ -830,7 +830,7 @@ table.insert(actions,
 --I do want a spell which lets me do fire damage though.. so...
 table.insert(actions,
 {
-    id          = "apotheosis_FIRE_CHARGE",
+    id          = "APOTHEOSIS_FIRE_CHARGE",
     name 		= "$spell_apotheosis_firecharge_name",
     description = "$spell_apotheosis_firecharge_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/fire_charge.png",
@@ -853,7 +853,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_PORTAL_LUKKI_RED_PORTAL",
+    id          = "APOTHEOSIS_PORTAL_LUKKI_RED_PORTAL",
     name 		= "$spell_apotheosis_portal_lukki_red_portal_name",
     description = "$spell_apotheosis_portal_lukki_red_portal_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/portal_red_portal.png",
@@ -879,7 +879,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_PORTAL_LUKKI_BLUE_PORTAL",
+    id          = "APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL",
     name 		= "$spell_apotheosis_portal_lukki_blue_portal_name",
     description = "$spell_apotheosis_portal_lukki_blue_portal_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/portal_blue_portal.png",
@@ -905,7 +905,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_PORTAL_LUKKI_GREEN_PORTAL",
+    id          = "APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL",
     name 		= "$spell_apotheosis_portal_lukki_green_portal_name",
     description = "$spell_apotheosis_portal_lukki_green_portal_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/portal_green_portal.png",
@@ -931,7 +931,7 @@ table.insert(actions,
 
 table.insert(actions,
 {
-    id          = "apotheosis_KNOWLEDGE_OF_KINGS",
+    id          = "APOTHEOSIS_KNOWLEDGE_OF_KINGS",
     name 		= "$spell_apotheosis_knowledge_of_kings_name",
     description = "$spell_apotheosis_knowledge_of_kings_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/knowledge_of_kings.png",
@@ -957,3 +957,41 @@ table.insert(actions,
         current_reload_time = current_reload_time + 100
     end,
 })
+
+
+--Modifying Vanilla spells
+--Recursion = Greek letters
+--Iteration = divide by
+
+--Function for modifying existing spells
+function modify_existing_spell(spell_id, parameter_to_modify, new_value)
+	for i, spell in ipairs(actions) do
+		if spell.id == spell_id then
+			spell[parameter_to_modify] = new_value
+			break
+		end
+	end
+end
+
+--CoV can no longer be used by greek letters/splitshot
+modify_existing_spell(
+	"REGENERATION_FIELD",
+	"action",
+    function(recursion_level)
+        if (recursion_level) ~= nil then return; end
+        add_projectile("data/entities/projectiles/deck/regeneration_field.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 15
+    end
+)
+
+--Healing bolt can no longer be used by greek letters/splitshot
+modify_existing_spell(
+	"HEAL_BULLET",
+	"action",
+    function(recursion_level)
+        if (recursion_level) ~= nil then return; end
+        add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 4
+        c.spread_degrees = c.spread_degrees + 2.0
+    end
+)

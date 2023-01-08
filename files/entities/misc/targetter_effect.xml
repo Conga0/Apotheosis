@@ -36,4 +36,24 @@
 		lifetime="3600"
 		>
 	</LifetimeComponent>
+	
+	<VariableStorageComponent
+		name="herd_tracker"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/projectiles/targetter_herd_changer.lua"
+		execute_every_n_frame="2"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/projectiles/targetter_herd_changer_revert.lua"
+		execute_every_n_frame="3590"
+		execute_times="1"
+		>
+	</LuaComponent>
 </Entity>

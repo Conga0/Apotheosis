@@ -115,12 +115,6 @@
 		buoyancy_check_offset_y="-6">
 	</CharacterDataComponent>
 
-		<GenomeDataComponent 
-			herd_id="healer"
-            food_chain_rank="1"
-            is_predator="0" >
-		</GenomeDataComponent>
-
 	<CharacterPlatformingComponent
 		animation_to_play="" 
 		jump_keydown_buffer="2" 

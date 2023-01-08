@@ -169,21 +169,7 @@ ModTextFileSetContent("mods/noitavania/data/biome/_pixel_scenes.xml", tostring(x
 
 
 --Essence of Fungus
---256 + to x and y = center, where essence spawns
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("mods/noitavania/data/biome/_pixel_scenes.xml")
-local xml = nxml.parse(content)
-xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-14521" pos_y="13977" skip_biome_checks="1" skip_edge_textures="0"
-    material_filename="mods/Apotheosis/files/pixel_scenes/essence_diamond/essenceroom_fungus.png"
-    background_filename="data/biome_impl/essenceroom_background_with_diamond.png"
-    colors_filename="data/biome_impl/essenceroom_visual.png"
-  ></PixelScene>
-]]))
-xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="14777" pos_y="14233" just_load_an_entity="mods/Apotheosis/files/entities/items/pickups/essence_fungus.xml" />
-]]))
-ModTextFileSetContent("mods/noitavania/data/biome/_pixel_scenes.xml", tostring(xml))
+
 
 
 --Fire Lukki Portal Room

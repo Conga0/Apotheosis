@@ -28,7 +28,8 @@
     velocity_sets_scale="1"
     on_collision_die="1"
     lifetime="150"
-    damage_every_x_frames="8" >
+    damage_every_x_frames="8"
+    >
     <config_explosion
       never_cache="1" 
       camera_shake="0.5" 
