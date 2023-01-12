@@ -10,7 +10,8 @@ if charmTest >= 1 then friends = "player_unit" end
 local targets = EntityGetInRadiusWithTag( pos_x, pos_y, r, friends )
 local isFrozen = false
 
-for i,v in ipairs ( targets ) do
+for k=1, #targets
+do local v = targets[k];
 	local FrozenTest = GameGetGameEffectCount( v, "FROZEN" )
 	if FrozenTest >= 1 then
 		isFrozen = true

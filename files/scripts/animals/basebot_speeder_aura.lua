@@ -6,7 +6,8 @@ local r = 135
 
 local targets = EntityGetInRadiusWithTag( x, y, r, "enemy" )
 
-for i,v in ipairs( targets ) do
+for k=1, #targets
+do local v = targets[k];
 	if ( v ~= entity_id ) then
 		local c = EntityGetAllChildren( v )
 		

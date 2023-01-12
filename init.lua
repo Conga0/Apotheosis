@@ -379,6 +379,7 @@ Apotheosis content below,"======================================================
 teleport_portal_alternate,"Portal Elsewhere",,,,,,,,,,,,,
 biome_slime_hell,"Slime Hell",,,,,,,,,,,,,
 biome_toxic_worm_cave,"Toxic Nest",,,,,,,,,,,,,
+biome_abandoned_assembly,"Sandy Assembly",,,,,,,,,,,,,
 biome_esoteric_den,"Esoteric Den",,,,,,,,,,,,,
 biome_underground_forest,"Subterrain Woodland",,,,,,,,,,,,,
 biome_evil_temple,"Temple of Sacrilegious Remains",,,,,,,,,,,,,
@@ -1569,3 +1570,7 @@ height_index="10"
 color="ff3d3e4a" >
 </Biome>]]))
 ModTextFileSetContent("data/biome/_biomes_all.xml", tostring(xml))
+
+
+--Custom biome modifiers
+  ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))

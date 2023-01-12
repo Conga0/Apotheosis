@@ -45,7 +45,7 @@
       explosion_radius="35" 
       explosion_sprite="data/particles/explosion_040_poof_blue.xml" 
       explosion_sprite_lifetime="0" 
-      create_cell_probability="10" 
+      create_cell_probability="14" 
       create_cell_material="blood_cold_vapour" 
       hole_destroy_liquid="0"
       ray_energy="5000000"

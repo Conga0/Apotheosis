@@ -6,7 +6,8 @@ local r = 64
 
 local targets = EntityGetInRadiusWithTag( pos_x, pos_y, r, "poring_holy" )
 
-for i,v in ipairs( targets ) do
+for k=1, #targets
+do local v = targets[k];
 	EntityLoad( "data/entities/particles/image_emitters/magical_symbol_fast_holy.xml", pos_x, pos_y )
 	GamePlaySound( "data/audio/Desktop/event_cues.snd", "event_cues/greed_curse/create", pos_x, pos_y)
 	GamePlaySound( "data/audio/Desktop/misc.snd", " misc/sun/supernova", pos_x, pos_y)

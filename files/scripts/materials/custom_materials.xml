@@ -888,4 +888,18 @@
 		>
 	</Reaction>
 
+	<!--Small chance for bloody stonework to occasionally eat infectious blood-->
+	<Reaction probability="2"
+		input_cell1="apotheosis_eviltemple_stone" 		input_cell2="apotheosis_blood_infectious"
+		output_cell1="apotheosis_eviltemple_stone"	output_cell2="air"
+		>
+	</Reaction>
+	
+	<!--Remove unnecessary fading ambrosia if it piles up in a hidey hole beneath other liquids-->
+	<Reaction probability="10"
+		input_cell1="apotheosis_magic_liquid_protection_all_fading" 		input_cell2="[solid]"
+		output_cell1="air"
+		>
+	</Reaction>
+
 </Materials>

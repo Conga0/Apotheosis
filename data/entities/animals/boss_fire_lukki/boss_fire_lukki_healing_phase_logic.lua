@@ -30,8 +30,8 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 	--If the boss has performed a healing phase in the last 15 seconds, then it can not do another one until 15 seconds have passed
 	--The timer starts when the healing phase starts
-	--Note the healing phase itself lasts for 7 seconds in total, so 15 - 7 is 8 seconds of vulnerability
-	if( entity_who_caused == entity_id ) or (frame <= last_frame + 60*15) or ((max_health * 0.1) > health) or (phase >= 3) then return end
+	--Note the healing phase itself lasts for 7 seconds in total, so 13 - 7 is 6 seconds of vulnerability (note, it uses hp chunks to check if it's allowed to heal, so it's not too mean)
+	if( entity_who_caused == entity_id ) or (frame <= last_frame + 60*13) or ((max_health * 0.1) > health) or (phase >= 3) then return end
 	
 	local minion_count = 5
 	local minion_interval = max_health / minion_count

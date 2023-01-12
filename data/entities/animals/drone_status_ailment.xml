@@ -216,7 +216,7 @@
 	<!-- Originally every 180 frames but reduce to 130 since they get a chance to shine less often than I'd like...-->
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/ailment_extinguish_ai.lua"
-		execute_every_n_frame="130"
+		execute_every_n_frame="90"
 		execute_times="-1"
 		>
 	</LuaComponent>

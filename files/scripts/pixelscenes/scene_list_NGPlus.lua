@@ -1,18 +1,5 @@
 dofile("data/scripts/lib/utilities.lua")
 
---Toxic Worm Nest
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes_newgame_plus.xml")
-local xml = nxml.parse(content)
-xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="2097" pos_y="2100" skip_biome_checks="1" skip_edge_textures="0"
-    material_filename="mods/Apotheosis/files/pixel_scenes/toxic_worm_nest/toxic_worm_nest.png"
-    background_filename="mods/Apotheosis/files/pixel_scenes/toxic_worm_nest/toxic_worm_nest_background.png"
-    colors_filename="mods/Apotheosis/files/pixel_scenes/toxic_worm_nest/toxic_worm_nest_visual.png"
-  ></PixelScene>
-]]))
-ModTextFileSetContent("data/biome/_pixel_scenes_newgame_plus.xml", tostring(xml))
-
 --Wand Tinkering Crystal guaranteed spawn
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes_newgame_plus.xml")
@@ -24,29 +11,6 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     colors_filename="mods/Apotheosis/files/pixel_scenes/pyramid_wand_crystal/pyramid_wand_crystal_visual.png"
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes_newgame_plus.xml", tostring(xml))
-
---Abandoned Orchestra spawn auditorium
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes_newgame_plus.xml")
-local xml = nxml.parse(content)
-if ModIsEnabled("nightmare") then
-  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="7435" pos_y="1796" skip_biome_checks="1" skip_edge_textures="0"
-      material_filename="mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly.png"
-      background_filename="mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_background.png"
-      colors_filename="mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_visual.png"
-    ></PixelScene>
-  ]]))
-else
-  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="11550" pos_y="6748" skip_biome_checks="1" skip_edge_textures="0"
-      material_filename="mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly.png"
-      background_filename="mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_background.png"
-      colors_filename="mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_visual.png"
-    ></PixelScene>
-  ]]))
-end
 ModTextFileSetContent("data/biome/_pixel_scenes_newgame_plus.xml", tostring(xml))
 
 --Hisii Beggar Hint

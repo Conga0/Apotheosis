@@ -3,6 +3,7 @@ dofile("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID() 
 local player = EntityGetRootEntity( entity_id ) 
+local x,y = EntityGetTransform(player)
 
 --Adds swapper effect to player
 EntityAddComponent2(
@@ -16,3 +17,7 @@ EntityAddComponent2(
 		execute_times=-1
 	}
 )
+GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/megalaser/launch", x, y )
+
+local start_frame = GameGetFrameNum()
+GlobalsSetValue( "apotheosis_swapper_curse", tostring(start_frame) )

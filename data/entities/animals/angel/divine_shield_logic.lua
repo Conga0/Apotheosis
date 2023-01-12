@@ -6,7 +6,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local pos_x, pos_y = EntityGetTransform( entity_id )
 	local frame = GameGetFrameNum()
 
-	if( entity_who_caused == entity_id ) or (frame <= last_frame + 60*13) then return end
+	if( entity_who_caused == entity_id ) or (frame <= last_frame + 60*3) then return end
 	
 	local health = 0
 	local max_health = 0

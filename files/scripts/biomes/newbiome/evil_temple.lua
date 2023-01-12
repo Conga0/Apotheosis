@@ -83,6 +83,12 @@ g_small_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/buildings/manadrain_crystal.xml"
 	},
+	{
+		prob   		= 0.10,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/wizard_corrupt_swapper.xml"
+	},
 }
 
 g_stash =
@@ -147,22 +153,10 @@ g_big_enemies =
 		entity 	= "data/entities/animals/devourer_magic.xml"
 	},
 	{
-		prob   		= 0.07,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/phantom_a.xml"
-	},
-	{
 		prob   		= 0.3,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/hideous_mass_red.xml"
-	},
-	{
-		prob   		= 0.07,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/phantom_b.xml"
 	},
 	{
 		prob   		= 0.1,
@@ -181,6 +175,12 @@ g_big_enemies =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/worm_spine.xml" --Not sure how to make you look badass
+	},
+	{
+		prob   		= 0.15,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/wizard_corrupt_ambrosia.xml"
 	},
 }
 
@@ -218,7 +218,7 @@ g_pixel_scene_02 =
 {
 	total_prob = 0,
 	{
-		prob   			= 0.5,
+		prob   			= 1.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/stairs_right.png",
 		visual_file		= "",
 		background_file	= "",
@@ -230,7 +230,7 @@ g_pixel_scene_04 =
 {
 	total_prob = 0,
 	{
-		prob   			= 0.5,
+		prob   			= 1.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/stairs_left.png",
 		visual_file		= "",
 		background_file	= "",
@@ -455,14 +455,14 @@ g_pixel_scene_01 =
 {
 	total_prob = 0,
 	{
-		prob   			= 1.0,
+		prob   			= 2.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/challenge.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
-		prob   			= 1.0,
+		prob   			= 2.0,
 		material_file 	= "data/biome_impl/crypt/mining.png",
 		visual_file		= "",
 		background_file	= "",
@@ -474,21 +474,21 @@ g_pixel_scene_03 =
 {
 	total_prob = 0,
 	{
-		prob   			= 1.0,
+		prob   			= 2.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/lavaroom.png",
 		visual_file		= "mods/apotheosis/files/biome_impl/evil_temple/lavaroom_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
-		prob   			= 1.0,
+		prob   			= 2.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/pit.png",
 		visual_file		= "mods/apotheosis/files/biome_impl/evil_temple/pit_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
-		prob   			= 1.0,
+		prob   			= 2.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/symbolroom.png",
 		visual_file		= "",
 		background_file	= "",

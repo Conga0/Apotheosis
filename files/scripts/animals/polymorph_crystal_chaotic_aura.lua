@@ -6,7 +6,8 @@ local r = 128
 
 local targets = EntityGetInRadiusWithTag( x, y, r, "mortal" )
 
-for i,v in ipairs( targets ) do
+for k=1, #targets
+do local v = targets[k];
 	if (EntityHasTag( v, "player_unit") or EntityHasTag( v, "enemy") or EntityHasTag( v, "helpless_animal")) and (EntityHasTag( v, "polymorphable_NOT") == false) then
 		local c = EntityGetAllChildren( v )
 		local valid = true

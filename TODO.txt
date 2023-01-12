@@ -1,8 +1,16 @@
 Add text to CoV & Healing Bolt spells mentioning they're uncopyable
 Remove self-damage on Bubble Bounce modifier
-Reduce mana cost of death cross?
 Add health hearts perk, health healed is equal to max health gained x 2
 Expand Connosier of Wands attack options
 All boss health should be doubled at least
 
-Test if copi's version of init files loads faster or slower
+Fill normal next-level eye portal with a different liquid than teleportatium to make to create a portal to a different place
+Unstable teleportatium?
+
+
+Corrupt Master of Wounding (Healing disabled for 60 seconds)
+Corrupt Master of Mana (deletes your mana instantly instead of applying a drain effect)
+
+Check if Sandy Assembly biome is implemented correctly
+
+Evil Temple chest spawns should be guaranteed

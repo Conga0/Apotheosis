@@ -995,3 +995,20 @@ modify_existing_spell(
         c.spread_degrees = c.spread_degrees + 2.0
     end
 )
+
+--Death Cross becomes cheaper
+modify_existing_spell("DEATH_CROSS","mana", 30)
+
+--Giga Death Cross becomes cheaper
+modify_existing_spell("DEATH_CROSS_BIG", "mana", 80)
+modify_existing_spell("MEGALASER", "mana", 80)
+
+--Spitter Bolt Tier 2 & 3 becomes cheaper
+modify_existing_spell("SPITTER_TIER_2","mana",15)
+
+modify_existing_spell("SPITTER_TIER_2_TIMER","mana",20)
+
+--Spitter Bolt Tier 2 & 3 becomes cheaper
+modify_existing_spell("SPITTER_TIER_3","mana",25)
+
+modify_existing_spell("SPITTER_TIER_3_TIMER","mana",30)

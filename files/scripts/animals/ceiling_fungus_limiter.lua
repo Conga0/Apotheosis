@@ -8,9 +8,9 @@ local comp = EntityGetFirstComponent( entity_id, "AnimalAIComponent" )
 local targets = EntityGetInRadius( x, y, r )
 local minionCount = 0
 
-for i,v in ipairs( targets ) do
+for k=1, #targets
+do local v = targets[k];
 	if ( v ~= entity_id ) and ( EntityGetName( v ) == "Pieni räjähtävä sieni" ) then
-		--GamePrint("HISII MINECART LUA CHECK")
 		minionCount = minionCount + 1
 	end
 end

@@ -7,7 +7,8 @@ local r = 96
 local projectiles = EntityGetInRadiusWithTag( x, y, r, "projectile" )
 
 if ( #projectiles > 0 ) then
-	for i,projectile_id in ipairs( projectiles ) do
+	for k=1, #projectiles
+	do local projectile_id = projectiles[k];
 		local vel_x, vel_y = 0,0
 		
 		local velocitycomponents = EntityGetComponent( projectile_id, "VelocityComponent" )
@@ -22,3 +23,4 @@ if ( #projectiles > 0 ) then
 		end
 	end
 end
+

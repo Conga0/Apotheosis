@@ -83,6 +83,19 @@
 	>
   </SpriteComponent>
   
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/entities/animals/boss_fire_lukki/projectiles/deathcross_backupvis.xml" 
+    next_rect_animation="" 
+    offset_x="0" 
+    offset_y="0" 
+    rect_animation="fireball" 
+    additive="1"
+	update_transform_rotation="0"
+	>
+  </SpriteComponent>
+  
   <LightComponent 
     _enabled="1" 
     radius="250" 

@@ -8,7 +8,8 @@ local comps = EntityGetComponentIncludingDisabled( entity_id, "AIAttackComponent
 local targets = EntityGetInRadius( x, y, r )
 local minionCount = 0
 
-for i,v in ipairs( targets ) do
+for k=1, #targets
+do local v = targets[k];
 	local path = EntityGetFilename( v )
 	if ( v ~= entity_id ) and (path == "data/entities/animals/tank_rocket.xml" or path == "data/entities/animals/tank.xml" ) then
 		--GamePrint("HISII MINECART LUA CHECK")

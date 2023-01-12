@@ -6,7 +6,8 @@ local r = 128
 
 local targets = EntityGetInRadiusWithTag( x, y, r, "player_unit" )
 
-for i,v in ipairs( targets ) do
+for k=1, #targets
+do local v = targets[k];
 	local c = EntityGetAllChildren( v )
 	local valid = true
 	
