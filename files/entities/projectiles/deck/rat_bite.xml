@@ -32,6 +32,7 @@
     hit_particle_force_multiplier="0.25"
     muzzle_flash_file=""
     shoot_light_flash_radius="0" 
+    damage_every_x_frames="20"
     >
     <damage_by_type melee="0.1" >
     </damage_by_type>

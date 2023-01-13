@@ -14,3 +14,7 @@ Corrupt Master of Mana (deletes your mana instantly instead of applying a drain 
 Check if Sandy Assembly biome is implemented correctly
 
 Evil Temple chest spawns should be guaranteed
+
+Give glue slugs glow effect like shotgunners have, so they're easily identified in the darkness
+
+Test with Apotheosis Bite and Crit Bite spells to make them feel more bite-y and not have nuked damage output

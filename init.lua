@@ -385,6 +385,8 @@ biome_underground_forest,"Subterrain Woodland",,,,,,,,,,,,,
 biome_evil_temple,"Temple of Sacrilegious Remains",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
+spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
+spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)

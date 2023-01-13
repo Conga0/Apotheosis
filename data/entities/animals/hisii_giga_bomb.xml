@@ -146,6 +146,7 @@
 	<LuaComponent
 		_tags="death_reward"
 		script_death="mods/Apotheosis/files/scripts/animals/hisii_giga_bomb_death.lua"
+		execute_every_n_frame = "-1",
 		>
 	</LuaComponent>
 

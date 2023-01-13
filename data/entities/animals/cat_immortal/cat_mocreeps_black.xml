@@ -80,7 +80,7 @@
 	</Base>
 	
 	<AudioComponent
-		file="mods/Apotheosis/apotheosis_audio.bank"
+		file="mods/Apotheosis/mocreeps_audio.bank"
 		event_root="apotheosis/kittycat" >
 	</AudioComponent>
 

@@ -94,8 +94,8 @@
 		</ProjectileComponent>
 		
 		<AudioLoopComponent
-			file="mods/Apotheosis/apotheosis_audio.bank"
-			event_name="apotheosis_audio/reverberation/create"
+			file="mods/Apotheosis/mocreeps_audio.bank"
+			event_name="mocreeps_audio/reverberation/create"
 			auto_play="1">
 		</AudioLoopComponent>
 	</Base>
