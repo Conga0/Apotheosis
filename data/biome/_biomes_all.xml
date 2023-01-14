@@ -1069,4 +1069,10 @@
 		height_index="13"
 		color="ffc19221" >
 	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome/custom/orbroom_12.xml" 
+		height_index="13"
+		color="ffffd112" >
+	</Biome>
 </BiomesToLoad>

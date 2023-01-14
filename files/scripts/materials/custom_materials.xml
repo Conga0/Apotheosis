@@ -889,7 +889,7 @@
 	</Reaction>
 
 	<!--Small chance for bloody stonework to occasionally eat infectious blood-->
-	<Reaction probability="2"
+	<Reaction probability="5"
 		input_cell1="apotheosis_eviltemple_stone" 		input_cell2="apotheosis_blood_infectious"
 		output_cell1="apotheosis_eviltemple_stone"	output_cell2="air"
 		>

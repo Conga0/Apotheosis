@@ -968,20 +968,20 @@ table.insert(actions,
     id          = "APOTHEOSIS_SPELLS_TO_CURSOR",
     name 		= "$spell_apotheosis_spells_to_cursor_name",
     description = "$spell_apotheosis_spells_to_cursor_desc",
-    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cats.png",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cursor.png",
     sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
-    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spells_to_cats.xml"},
-    spawn_requires_flag = "apotheosis_card_unlocked_cat_secret_spell",
-    type 		= ACTION_TYPE_PROJECTILE,
-    spawn_level                       = "3,6,10", -- spells to Cats
-    spawn_probability                 = "0.1,0.05,1", -- spells to Cats
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spells_to_cursor.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_orb_12_spell",
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "3,4,6,9", -- spells to Cats
+    spawn_probability                 = "0.4,0.4,0.4,0.5", -- spells to Cats
     price = 600,
-    mana = 200,
+    mana = 220,
     --max_uses = 1000,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spells_to_cursor.xml")
-        c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        c.fire_rate_wait = c.fire_rate_wait + 50
+        current_reload_time = current_reload_time + 45
     end,
 })
 

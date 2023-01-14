@@ -387,6 +387,9 @@ material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,,
+orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
+book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
+book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)

@@ -1,0 +1,33 @@
+<Entity tags="hittable,teleportable_NOT">
+	
+	<Base file="mods/apotheosis/files/entities/items/orbs/custom/orb_base_apotheosis.xml">
+
+		<OrbComponent
+			orb_id="12" >
+		</OrbComponent>
+		
+		<SpriteComponent 
+			image_file="mods/apotheosis/files/items_gfx/orbs/orb_12.xml" 
+			>
+		</SpriteComponent>
+		
+		<VariableStorageComponent
+			name="card_name"
+			value_string="APOTHEOSIS_SPELLS_TO_CURSOR"
+		/>
+
+	</Base>
+	
+	<Entity>
+		<InheritTransformComponent>
+			<Transform 
+				position.x="0"   
+				position.y="-11" 
+				>
+			</Transform>
+		</InheritTransformComponent>
+		
+		<Base file="data/entities/items/orbs/orb_particles_base.xml" />
+	</Entity>
+
+</Entity>
