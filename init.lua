@@ -383,6 +383,7 @@ biome_abandoned_assembly,"Sandy Assembly",,,,,,,,,,,,,
 biome_esoteric_den,"Esoteric Den",,,,,,,,,,,,,
 biome_underground_forest,"Subterrain Woodland",,,,,,,,,,,,,
 biome_evil_temple,"Temple of Sacrilegious Remains",,,,,,,,,,,,,
+biomemod_esoteric_presence,"You feel an undescribable aura to the area...",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
@@ -390,6 +391,13 @@ spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to mo
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
+perk_apotheosis_shield_oversized_name,"Oversized Shield",,,,,,,,,,,,,
+perk_apotheosis_shield_oversized_description,"You gain a very large, permanent shield.",,,,,,,,,,,,,
+perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
+perk_apotheosis_haste_description,"You move faster and levitate quicker.",,,,,,,,,,,,,
+perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks. Enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
+status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
+status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -1526,10 +1534,9 @@ end
 
 
 
---10% chance for Coal Pits to have dense smoke in a run, 100% if first run with Apotheosis reaching the coal pits
+--Guarantees Dense Smoke modifier to appear in the coalpits for your first run when playing with Apotheosis
 if ModIsEnabled("raksa") == false then
-  SetRandomSeed( hour + minute, hour + day )
-  if (HasFlagPersistent( "apotheosis_card_unlocked_coalpits_dense_smoke" ) ~= true) or (Random(1,10) == 1) then
+  if (HasFlagPersistent( "apotheosis_card_unlocked_coalpits_dense_smoke" ) ~= true)then
     
     local filepc = "data/biome/_pixel_scenes.xml"
     if ModIsEnabled("purgatory") then
@@ -1579,3 +1586,23 @@ ModTextFileSetContent("data/biome/_biomes_all.xml", tostring(xml))
 
 --Custom biome modifiers
   ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
+
+
+
+
+
+
+
+
+--Vanilla Spell Fixups/changes
+
+--Bubble Spark Bounce no longer does self-damage
+local content = ModTextFileGetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire.xml")
+local xml = nxml.parse(content)
+xml:first_of("Base"):first_of("ProjectileComponent").attr.friendly_fire = "0"
+ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire.xml", tostring(xml))
+
+local content = ModTextFileGetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire_silent.xml")
+local xml = nxml.parse(content)
+xml:first_of("ProjectileComponent").attr.friendly_fire = "0"
+ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire_silent.xml", tostring(xml))

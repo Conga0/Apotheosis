@@ -1,3 +1,18 @@
 Music note spells only hit every 15 frames instead of every 1 frame
 Circle of Vigour & Healing Bolt can not be copied by greek spells (perk to make the uncopyable copyable? Spell Master?)
 Some spells have had their mana cost drastically reduced to become competitive with other spells again
+Bubblespark no longer does self damage
+Projectile Repulsion Field is removed and replaced with Oversized Shield
+Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing the effects of 1 movement perk and 0.5 levitation per stack
+Contact Damage now grants melee immunity
+
+
+
+
+
+
+
+
+New Biome Modifiers:
+Dense Smoke
+Esoteric Presence

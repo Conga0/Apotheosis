@@ -1,5 +1,5 @@
 <Sprite
-	filename="mods/Apotheosis/files/enemies_gfx/seeker.png"
+	filename="mods/Apotheosis/files/enemies_gfx/seeker_emissive.png"
 	offset_x="11"
 	offset_y="10"
 	default_animation="stand"

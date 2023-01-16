@@ -108,7 +108,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Cat",
 		path="mods/Apotheosis/files/entities/special/conjurer_cat_spawner.xml",
-		image="data/ui_gfx/animal_icons/cat_apotheosis.png",
+		image="data/ui_gfx/animal_icons/cat_mocreeps.png",
 	  },
 	  {
 		name="Ceiling Fungus",

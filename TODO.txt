@@ -1,5 +1,4 @@
 Add text to CoV & Healing Bolt spells mentioning they're uncopyable
-Remove self-damage on Bubble Bounce modifier
 Add health hearts perk, health healed is equal to max health gained x 2
 Expand Connosier of Wands attack options
 All boss health should be doubled at least
@@ -8,13 +7,11 @@ Fill normal next-level eye portal with a different liquid than teleportatium to 
 Unstable teleportatium?
 
 
-Corrupt Master of Wounding (Healing disabled for 60 seconds)
-Corrupt Master of Mana (deletes your mana instantly instead of applying a drain effect)
+Sprite Corrupt Master of Wounding
+Corrupt Master of Mana (deletes your mana instantly instead of applying a drain effect) (orb creates a mana vacuum field on impact)
 
 Evil Temple chest spawns should be guaranteed
 
-Give glue slugs glow effect like shotgunners have, so they're easily identified in the darkness
-
-Test with Apotheosis Bite and Crit Bite spells to make them feel more bite-y and not have nuked damage output
-
 Give orb room material puzzles unique inputs and lore readouts
+
+Fix Evil Temple edge background graphics being misaligned

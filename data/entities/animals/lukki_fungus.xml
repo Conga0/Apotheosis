@@ -1,5 +1,8 @@
 <Entity tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,glue_NOT,ui_use_raw_name" name="Revitty sieni" >
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
+	
+	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
+	<AnimalAIComponent/>
 
 	<LuaComponent
 	    execute_every_n_frame="-1"

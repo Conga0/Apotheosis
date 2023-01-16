@@ -63,7 +63,7 @@ g_small_enemies =
 		prob   		= 0.2,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/evil_temple/wizard_hearty.xml"
+		entity 	= "data/entities/animals/wizard_corrupt_hearty.xml"
 	},
 	{
 		prob   		= 0.05,
@@ -88,6 +88,12 @@ g_small_enemies =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/wizard_corrupt_swapper.xml"
+	},
+	{
+		prob   		= 0.10,
+		min_count	= 5,
+		max_count	= 7,  
+		entity 	= "data/entities/animals/seeker.xml"
 	},
 }
 
@@ -288,7 +294,7 @@ g_lamp2 =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/props/physics/chain_torch_blue.xml"
+		entity 	= "mods/apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
 	},
 }
 
@@ -544,7 +550,7 @@ g_ghostlamp =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,
-		entity 	= "data/entities/props/physics/chain_torch_ghostly.xml"
+		entity 	= "mods/apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
 	},
 }
 

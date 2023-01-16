@@ -219,7 +219,7 @@ biome_modifiers =
 		id = "PLANT_INFESTED",
 		ui_description="$biomemodifierdesc_plant_infested",
 		ui_decoration_file="data/ui_gfx/decorations_biome_modifier/plant_infested.png",
-		probability=1.0,
+		probability=0.75,
 		does_not_apply_to_biome={"snowcastle","snowcave","rainforest","rainforest_open","mountain_hall"},
 		action = function( biome_name, biome_filename ) end,
 		inject_spawns_action = function()
@@ -946,6 +946,54 @@ biome_modifiers =
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/animals/worm_big.xml",
+			})
+		end,
+	},
+	{
+		id = "SMOKE_DENSE",
+		ui_description="$biomemod_apotheosis_smoke_dense",
+		ui_decoration_file="data/ui_gfx/decorations_biome_modifier/fog_of_war.png",
+		probability=1.0,
+		does_not_apply_to_biome={"mountain_hall","rainforest","rainforest_open","snowcastle","snowcave"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 0.2, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/smoke_dense_creator_apotheosis.xml",
+			})
+			inject_spawn( g_props, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/smoke_dense_creator_apotheosis.xml",
+			})
+			inject_spawn( g_props2, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/smoke_dense_creator_apotheosis.xml",
+			})
+		end,
+	},
+	{
+		id = "ESOTERIC_PRESENCE",
+		ui_description="$biomemod_esoteric_presence",
+		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
+		probability=0.5,
+		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 0.25, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/esoteric_being_asleep.xml",
 			})
 		end,
 	},

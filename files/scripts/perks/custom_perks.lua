@@ -206,3 +206,118 @@ else
         end,
     })
 end
+
+table.insert(perk_list,
+{
+    id = "apotheosis_OVERSIZED_SHIELD",
+    ui_name = "$perk_apotheosis_shield_oversized_name",
+    ui_description = "$perk_apotheosis_shield_oversized_description",
+    ui_icon = "mods/apotheosis/files/ui_gfx/perk_icons/shield_oversized.png",
+    perk_icon = "mods/apotheosis/files/items_gfx/shield_oversized.png",
+    stackable = STACKABLE_YES,
+    stackable_how_often_reappears = 10,
+    stackable_maximum = 5,
+    max_in_perk_pool = 2,
+    usable_by_enemies = true,
+    func = function( entity_perk_item, entity_who_picked, item_name )
+        local x,y = EntityGetTransform( entity_who_picked )
+        local child_id = EntityLoad( "mods/apotheosis/files/scripts/perks/shield_oversized.xml", x, y )
+        
+        local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_OVERSIZED_COUNT", "0" ) )
+        local shield_radius = 75 + shield_num * 3.0
+        local charge_speed = math.max( 0.01 - shield_num * 0.05, 0.02 )
+        shield_num = shield_num + 1
+        GlobalsSetValue( "PERK_SHIELD_OVERSIZED_COUNT", tostring( shield_num ) )
+        
+        local comps = EntityGetComponent( child_id, "EnergyShieldComponent" )
+        if( comps ~= nil ) then
+            for i,comp in ipairs( comps ) do
+                ComponentSetValue2( comp, "radius", shield_radius )
+                ComponentSetValue2( comp, "recharge_speed", charge_speed )
+            end
+        end
+        
+        comps = EntityGetComponent( child_id, "ParticleEmitterComponent" )
+        if( comps ~= nil ) then
+            for i,comp in ipairs( comps ) do
+                local minradius,maxradius = ComponentGetValue2( comp, "area_circle_radius" )
+                
+                if ( minradius ~= nil ) and ( maxradius ~= nil ) then
+                    if ( minradius == 0 ) then
+                        ComponentSetValue2( comp, "area_circle_radius", 0, shield_radius )
+                    elseif ( minradius == 10 ) then
+                        ComponentSetValue2( comp, "area_circle_radius", shield_radius, shield_radius )
+                    end
+                end
+            end
+        end
+        
+        EntityAddTag( child_id, "perk_entity" )
+        EntityAddChild( entity_who_picked, child_id )
+    end,
+    func_enemy = function( entity_perk_item, entity_who_picked )
+        local x,y = EntityGetTransform( entity_who_picked )
+        local child_id = EntityLoad( "mods/apotheosis/files/scripts/perks/shield_oversized.xml", x, y )
+        EntityAddChild( entity_who_picked, child_id )
+    end,
+    func_remove = function( entity_who_picked )
+        local shield_num = 0
+        GlobalsSetValue( "PERK_SHIELD_OVERSIZED_COUNT", tostring( shield_num ) )
+    end,
+})
+
+table.insert(perk_list,
+{
+    id = "apotheosis_HASTE",
+    ui_name = "$perk_apotheosis_haste_name",
+    ui_description = "$perk_apotheosis_haste_description",
+    ui_icon = "data/ui_gfx/perk_icons/movement_faster.png",
+    perk_icon = "data/items_gfx/perks/movement_faster.png",
+    stackable = STACKABLE_YES,
+    not_in_default_perk_pool = false,
+    usable_by_enemies = true,
+    func = function(entity_perk_item, entity_who_picked, item_name)
+        LoadGameEffectEntityTo(entity_who_picked, "mods/apotheosis/files/scripts/perks/perk_haste.xml")
+    end,
+    func_remove = function(entity_who_picked)
+        local children = EntityGetAllChildren(entity_who_picked)
+        for k=1, #children
+        do local child = children[k];
+            if EntityGetName(child) == "apotheosis_perk_haste" then
+                EntityKill(child)
+            end
+        end
+    end
+})
+
+-- Remove Perks from perk_list
+function remove_perk(perk_name)
+	local key_to_perk = nil
+	for key, perk in pairs(perk_list) do
+		if (perk.id == perk_name) then
+			key_to_perk = key
+		end
+	end
+
+	if (key_to_perk ~= nil) then
+		table.remove(perk_list, key_to_perk)
+	end
+end
+
+remove_perk("PROJECTILE_REPULSION") --Reworked into Oversized Shield
+remove_perk("MOVEMENT_FASTER") --Combined into HASTE
+remove_perk("FASTER_LEVITATION") --Combined into HASTE
+
+--Modify existing perk data for minor changes, DO NOT USE FOR MAJOR REWORKS
+--if you need to do a major rework, remove the relevent perk(s) and add a new one instead
+function modify_existing_perk(perk_id, parameter_to_modify, new_value)
+	for i, perk in ipairs(perk_list) do
+		if perk.id == perk_id then
+			perk[parameter_to_modify] = new_value
+			break
+		end
+	end
+end
+
+modify_existing_perk("CONTACT_DAMAGE", "ui_description", "$perk_apotheosis_contactdamage_description")
+modify_existing_perk("CONTACT_DAMAGE", "game_effect", "PROTECTION_MELEE")

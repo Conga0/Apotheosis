@@ -1,6 +1,7 @@
 <Entity tags="enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT" name="Etsijä">
 	
-
+	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
+	<AnimalAIComponent/>
 
 	<LuaComponent
 	    execute_every_n_frame="-1"
@@ -17,9 +18,10 @@
 	</LightComponent>
 
 	<SpriteComponent 
-		_enabled="0"
+		_enabled="1"
 		_tags="character"
-		image_file="mods/Apotheosis/files/enemies_gfx/seeker_crystal.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/seeker.xml"
+		z_index="0.9"
 		>
 	</SpriteComponent>
 
@@ -102,7 +104,7 @@
 
 
 	<DamageModelComponent 
-		hp="20" 
+		hp="5" 
 		air_needed="0" 
 		falling_damages="0"
 		fire_probability_of_ignition="0" 
@@ -122,7 +124,7 @@
 		>
 		<damage_multipliers
 			melee="0.7"
-			projectile="0.35"
+			projectile="0.1"
 			explosion="0.7"
 			electricity="-0.5"
 			fire="0.3"
@@ -152,10 +154,27 @@
     time_between_damaging="15"
     damage_min="0.75"
     damage_max="0.75"
-    target_tag="mortal"
+    target_tag="player_unit"
 	damage_description="Etsijä's shock"
     damage_type="DAMAGE_ELECTRICITY"
-    ragdoll_fx="NONE">
+    ragdoll_fx="NONE"
+	damage_min="0.1"
+	damage_max="0.2"
+	>
+	</DamageNearbyEntitiesComponent>
+
+	<DamageNearbyEntitiesComponent
+    radius="10"
+    time_between_damaging="15"
+    damage_min="0.75"
+    damage_max="0.75"
+    target_tag="player_unit"
+	damage_description="Etsijä's slice"
+    damage_type="DAMAGE_SLICE"
+    ragdoll_fx="NONE"
+	damage_min="0.1"
+	damage_max="0.2"
+	>
 	</DamageNearbyEntitiesComponent>
 
 
@@ -183,12 +202,13 @@
 
 
 	<!--
+	-->
 	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="-3"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="-4"  position.y="2" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="4" ></Transform></InheritTransformComponent> </Base></Entity>
-	-->
+	
 
 	<SpriteParticleEmitterComponent
 	sprite_file="data/particles/spark_electric.xml"
@@ -216,6 +236,7 @@
 	>
 	</SpriteParticleEmitterComponent>
 
+	<!--
 	<SpriteParticleEmitterComponent
 	sprite_file="data/particles/smoke_cloud_grey_3.xml"
 	delay="0"
@@ -270,6 +291,7 @@
 		create_real_particles="1"
 		is_emitting="0" >
 	</ParticleEmitterComponent>
+	-->
 	
 	<!--Spawn homing accelerating Thunderball Meteor on death-->
 	<ExplodeOnDamageComponent
@@ -301,6 +323,17 @@
 			stains_radius="15" >
 		</config_explosion>
 	</ExplodeOnDamageComponent>
+
+	<SpriteComponent 
+		_enabled="1"
+		_tags="character"
+		emissive="1"
+		additive="1"
+		image_file="mods/Apotheosis/files/enemies_gfx/seeker_emissive.xml"
+		alpha="0.7"
+		z_index="0.9"
+		>
+	</SpriteComponent>
 	
 	<Entity>
 		<InheritTransformComponent />

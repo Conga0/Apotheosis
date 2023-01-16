@@ -1039,3 +1039,20 @@ modify_existing_spell("SPITTER_TIER_2_TIMER","mana",20)
 modify_existing_spell("SPITTER_TIER_3","mana",25)
 
 modify_existing_spell("SPITTER_TIER_3_TIMER","mana",30)
+
+
+--Remove Spells
+function remove_spell(spell_name)
+	local key_to_spell = nil
+	for key, perk in pairs(actions) do
+		if (perk.id == spell_name) then
+			key_to_spell = key
+		end
+	end
+
+	if (key_to_spell ~= nil) then
+		table.remove(actions, key_to_spell)
+	end
+end
+
+remove_spell("LASER_LUMINOUS_DRILL")

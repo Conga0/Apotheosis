@@ -4,7 +4,11 @@ local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
 local r = 128
 
-local targets = EntityGetInRadiusWithTag( x, y, r, "enemy" )
+local charmTest = GameGetGameEffectCount( entity_id, "CHARM" )
+friends = "enemy"
+if charmTest >= 1 then friends = "player_unit" end
+
+local targets = EntityGetInRadiusWithTag( x, y, r, friends )
 
 for k=1, #targets
 do local v = targets[k];

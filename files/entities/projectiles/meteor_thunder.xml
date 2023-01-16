@@ -31,6 +31,7 @@
     shoot_light_flash_b="255"
     shoot_light_flash_radius="160"
 	knockback_force="3.0"
+	  go_through_this_material="gold_box2d"
 	>
     <damage_by_type 
 		electricity="2.5" 
@@ -105,7 +106,7 @@
     scale_velocity.x="0" scale_velocity.y="0"
     emission_interval_min_frames="1"
     emission_interval_max_frames="1"
-    count_min="3" count_max="5"
+    count_min="1" count_max="1"
     randomize_rotation.min="-0.3415"
     randomize_rotation.max="0.3415"
     randomize_angular_velocity.min="-1.3415"
@@ -146,13 +147,13 @@
     scale_velocity.x="0" scale_velocity.y="0"
     emission_interval_min_frames="1"
     emission_interval_max_frames="2"
-    count_min="1" count_max="3"
+    count_min="2" count_max="4"
     randomize_rotation.min="-3.1415"
     randomize_rotation.max="3.1415"
-    randomize_position.min_x="-14"
-    randomize_position.max_x="14"
-    randomize_position.min_y="-14"
-    randomize_position.max_y="14"
+    randomize_position.min_x="-20"
+    randomize_position.max_x="20"
+    randomize_position.min_y="-20"
+    randomize_position.max_y="20"
     >
   </SpriteParticleEmitterComponent>
 

@@ -34,7 +34,7 @@
     shoot_light_flash_radius="0" 
     damage_every_x_frames="20"
     >
-    <damage_by_type melee="0.1" >
+    <damage_by_type melee="2.0" >
     </damage_by_type>
   </ProjectileComponent>
   

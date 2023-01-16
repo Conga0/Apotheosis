@@ -4,13 +4,13 @@
 
     <VerletPhysicsComponent
     	stiffness="2.5"
-    	num_points="9"
+    	num_points="11"
 		velocity_dampening="0.8"
     	resting_distance="4" 
 		pixelate_sprite_transforms="0"
 		animation_target_offset.y="1.0"
 		animation_energy="0.16"
-		stain_cells_probability="10"
+		stain_cells_probability="0"
     	constrain_stretching="1"
 		>
     </VerletPhysicsComponent>
