@@ -1,4 +1,4 @@
-<Entity tags="enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT" name="Etsijä">
+<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT" name="Etsijä">
 	
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>

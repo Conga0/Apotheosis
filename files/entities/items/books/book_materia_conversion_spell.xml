@@ -18,7 +18,7 @@
 		<ItemComponent
 			ui_sprite="data/items_gfx/book.png"
 			item_name="$book_apotheosis_materia_conversion_spell"
-			ui_description="$book_apotheosis_materia_conversion_spell_description"
+			ui_description="$book_apotheosis_materia_conversion_spell_description_new"
 			>
 		</ItemComponent>
 		

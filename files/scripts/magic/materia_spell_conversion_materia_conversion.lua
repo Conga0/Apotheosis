@@ -11,7 +11,7 @@ for i,v in ipairs( targets ) do
 		
         local comp = EntityGetFirstComponentIncludingDisabled( v, "ItemActionComponent")
 
-        if ComponentGetValue2(comp, "action_id") == "apotheosis_MASS_MATERIA_CONVERSION" then
+        if ComponentGetValue2(comp, "action_id") == "APOTHEOSIS_MASS_MATERIA_CONVERSION" then
             local perk_x,perk_y = EntityGetTransform( v )
         
             EntityKill(v)

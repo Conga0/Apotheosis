@@ -101,7 +101,6 @@ book_apotheosis_divine_liquid_description,"Long have been the days since the uni
 book_apotheosis_materia_conversion,Alchemist's Notes,Записи алхимика,,,,,,,,,,,,
 book_apotheosis_materia_conversion_description,"Transmutation.. Materia Conversion. \nFor years I've dedicated my life to this art, only to foolishly trick myself. \nFor years I thought Materia Conversion could only be used on solid matter, \nBut only now in my last few days I've come to learn it can be harnessed on magic as well. \nI can only hope the fruits of my labour will not forgotten.","Трансмутация. Превращение материи. \nГодами я посвящал свою жизнь этому искусству, но только для того, чтобы обмануть самого себя. \nДолгие годы я думал, что преобразование материи можно использовать только в твёрдой материи, \nНо только теперь, в последние дни, я узнал, что его можно использовать и в магии. \nОстаётся надеяться, что плоды моего труда не будут забыты.",,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell,Alchemist's Notes,Записи алхимика,,,,,,,,,,,,
-book_apotheosis_materia_conversion_spell_description,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая,,,,,,,,,,,,
 book_apotheosis_trophy_room,Alchemist's Notes,Записи алхимика,,,,,,,,,,,,
 book_apotheosis_trophy_room_description,"I have come to learn this Tree was deemed unfitting of.. certain.. accomplishments by the gods. \nCross the lava, descend where you would not normal. \nThere they will humour you.","Я узнал, что боги сочли это Дерево непригодным для... определённых... свершений. \nПересеките лаву, спуститесь туда, куда обычно не спускаются. \nТам они будут над вами насмехаться.",,,,,,,,,,,,
 book_apotheosis_trophy_room_description_purgatory,"I have come to learn this Tree was deemed unfitting of.. certain.. accomplishments by the gods. \nSpelunk east before you visit their place of worship, cross the fungus, holding the ceiling dear. \nThere they will humour you.","Я узнал, что боги сочли это Дерево непригодным для... определённых... свершений. \nСпешите на Восток, прежде чем посетить место их поклонения, перейдите по грибку, держась за потолок. \nТам они будут над вами насмехаться.",,,,,,,,,,,,
@@ -383,14 +382,26 @@ biome_abandoned_assembly,"Sandy Assembly",,,,,,,,,,,,,
 biome_esoteric_den,"Esoteric Den",,,,,,,,,,,,,
 biome_underground_forest,"Subterrain Woodland",,,,,,,,,,,,,
 biome_evil_temple,"Temple of Sacrilegious Remains",,,,,,,,,,,,,
+biome_desert_pit,"Sinkhole",,,,,,,,,,,,,
 biomemod_esoteric_presence,"You feel an undescribable aura to the area...",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,,
+spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,,
+spell_apotheosis_status_drunk_intense_desc,Affects every creature in a large radius a short but intense curse of endless spirits.,,,,,,,,,,,,,
+spell_apotheosis_status_wet_intense_name,Intense Mass Wet,,,,,,,,,,,,,
+spell_apotheosis_status_wet_intense_desc,Soaks every creature in a large radius with a short but intense curse of magical wetness.,,,,,,,,,,,,,
+spell_apotheosis_status_fire_intense_name,Intense Mass Fire,,,,,,,,,,,,,
+spell_apotheosis_status_fire_intense_desc,Burns every creature in a large radius with a dying but more damaging magical fire.,,,,,,,,,,,,,
+spell_apotheosis_status_urine_intense_name,Intense Mass Jarate,,,,,,,,,,,,,
+spell_apotheosis_status_urine_intense_desc,Douses every creature in a large radius with a short but intense curse of magical jarate.,,,,,,,,,,,,,
+spell_apotheosis_status_polymorph_intense_name,Mass Chaotic Polymorph,,,,,,,,,,,,
+spell_apotheosis_status_polymorph_intense_desc,Afflicts every creature in a large radius with a magical chaotic polymorphine.,,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
+book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nStatus,,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_name,"Oversized Shield",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_description,"You gain a very large, permanent shield.",,,,,,,,,,,,,
 perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
@@ -398,6 +409,10 @@ perk_apotheosis_haste_description,"You move faster and levitate quicker.",,,,,,,
 perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks. Enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
 status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
 status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
+status_apotheosis_magicwet_intense_ui,"Intense Wetness",,,,,,,,,,,,,
+status_drunk_intense_ui,"Aura of Spirits",,,,,,,,,,,,,
+status_apotheosis_magicurine_intense_ui,"Magic Incontinence",,,,,,,,,,,,,
+status_apotheosis_magicfire_intense_ui,"Cursed Flames",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -1230,6 +1245,10 @@ dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_health_multip
 
 --Boss vulnerability immunity insertion
 dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability_immune_plug.lua" )
+
+--Modifies vanilla boss data
+--Try not to tinker with base noita too much, the main goal to this mod is to be an expansion pack, not a rebalance.
+dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_boss_appends.lua" )
 
 --Overrides some creep's settings for spoopy's alternate graphics
 if spoopyGFXSetting == true then

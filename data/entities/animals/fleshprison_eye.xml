@@ -1,0 +1,162 @@
+<Entity  name="Fleshprison Eye" tags="ui_use_raw_name,hittable" >
+  
+	<VelocityComponent
+		gravity_y="0"
+		air_friction="2"
+		terminal_velocity="300"
+		displace_liquid="0"
+		liquid_drag="0"
+		>
+	</VelocityComponent>
+
+	<ProjectileComponent
+		speed_min="0"
+		speed_max="0"
+		lifetime="-1"
+		bounce_always="1"
+		bounces_left="9999999999999"
+		bounce_at_any_angle="1"
+		bounce_energy="0.5"
+		velocity_sets_rotation="0"
+		penetrate_entities="1"
+		collide_with_world="1"
+		>
+	</ProjectileComponent>
+	
+	<DamageModelComponent 
+		hp="3.0"
+		ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/forsaken_eye/filenames.txt" 
+		materials_that_damage="lava,poison,acid,rock_static_radioactive" 
+		materials_how_much_damage="0.004,0.001,0.005,0.1" >
+		<damage_multipliers
+			explosion="0.5"
+			electricity="0.0"
+			ice="0.0"
+			fire="0.0"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<SpriteComponent
+		_tags="character" 
+		image_file="mods/Apotheosis/files/enemies_gfx/forsaken_eye.png"
+		offset_x="6"
+		offset_y="6"
+		z_index="1.05"
+		>
+	</SpriteComponent>
+	
+	<GenomeDataComponent 
+		herd_id="ghost"
+		food_chain_rank="5"
+		is_predator="1" >
+	</GenomeDataComponent>
+	
+	<HitboxComponent 
+		_enabled="1" 
+		aabb_min_x="-6.5" 
+		aabb_max_x="6.5" 
+		aabb_min_y="-6.5" 
+		aabb_max_y="6.5" 
+		>
+	</HitboxComponent>
+
+	<CameraBoundComponent
+		max_count="30"
+		distance="160000">
+	</CameraBoundComponent>
+	
+	<CharacterDataComponent
+		collision_aabb_min_x="-6.5" 
+		collision_aabb_max_x="6.5" 
+		collision_aabb_min_y="-6.5" 
+		collision_aabb_max_y="6.5" 
+		mass="0.8"
+		>
+	</CharacterDataComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_red"
+		x_pos_offset_min="-8"
+		x_pos_offset_max="8"
+		y_pos_offset_min="5"
+		y_pos_offset_max="7"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="40"
+		y_vel_max="120"
+		friction="1"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.2"
+		lifetime_max="0.7"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		fade_based_on_lifetime="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/drone_lasership" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/magical/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<LuaComponent
+		script_source_file="data/scripts/animals/forsaken_eye_target_check.lua"
+		execute_every_n_frame="40"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animals/fleshprison_eye_ai.lua"
+		execute_every_n_frame="150"
+		>
+	</LuaComponent>
+	
+	<Entity>
+		<SpriteComponent
+			image_file="mods/Apotheosis/files/enemies_gfx/forsaken_eye_pupil.png"
+			offset_x="6"
+			offset_y="6"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
+
+</Entity>

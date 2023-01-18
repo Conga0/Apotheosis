@@ -39,34 +39,7 @@
 		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion.lua"
 		execute_every_n_frame="5"
 		execute_times="1"
-		>
-	</LuaComponent>
-	
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_worm_rain.lua"
-		execute_every_n_frame="5"
-		execute_times="1"
-		>
-	</LuaComponent>
-	
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_rat_bite.lua"
-		execute_every_n_frame="5"
-		execute_times="1"
-		>
-	</LuaComponent>
-	
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_spark_bolt.lua"
-		execute_every_n_frame="5"
-		execute_times="1"
-		>
-	</LuaComponent>
-	
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/magic/materia_spell_conversion_materia_conversion.lua"
-		execute_every_n_frame="5"
-		execute_times="1"
+        remove_after_executed="1"
 		>
 	</LuaComponent>
 

@@ -18,7 +18,7 @@ local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="16059" pos_y="-1637" skip_biome_checks="1" skip_edge_textures="0"
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="23789" pos_y="-1637" skip_biome_checks="1" skip_edge_textures="0"
     material_filename="mods/Apotheosis/files/pixel_scenes/hisii_beggar/hisii_beggar.png"
     background_filename="mods/Apotheosis/files/pixel_scenes/hisii_beggar/hisii_beggar_background.png"
     colors_filename=""

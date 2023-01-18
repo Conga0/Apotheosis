@@ -58,7 +58,7 @@
 	<LuaComponent
 		execute_on_added="0"
 		script_source_file="mods/Apotheosis/files/scripts/status_effects/plagiarize_swapper_start.lua"
-		execute_every_n_frame="30"
+		execute_every_n_frame="5"
 		execute_times="1"
 		>
 	</LuaComponent>

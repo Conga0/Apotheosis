@@ -986,6 +986,120 @@ table.insert(actions,
 })
 
 
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MASS_STATUS_DRUNK_INTENSE",
+    name 		= "$spell_apotheosis_status_drunk_intense_name",
+    description = "$spell_apotheosis_status_drunk_intense_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_intense_alcohol.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_drunk_intense.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "10", -- Conversion spell
+    spawn_probability                 = "0.01", -- Conversion spell
+    price = 180,
+    max_uses    = 20,
+    mana = 100,
+    action 		= function()
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_drunk_intense.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 100
+        current_reload_time = current_reload_time + 100
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MASS_STATUS_WET_INTENSE",
+    name 		= "$spell_apotheosis_status_wet_intense_name",
+    description = "$spell_apotheosis_status_wet_intense_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_intense_wet.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_wet_intense.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "10", -- Conversion spell
+    spawn_probability                 = "0.01", -- Conversion spell
+    price = 180,
+    max_uses    = 20,
+    mana = 100,
+    action 		= function()
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_wet_intense.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 100
+        current_reload_time = current_reload_time + 100
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MASS_STATUS_FIRE_INTENSE",
+    name 		= "$spell_apotheosis_status_fire_intense_name",
+    description = "$spell_apotheosis_status_fire_intense_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_intense_fire.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_fire_intense.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "10", -- Conversion spell
+    spawn_probability                 = "0.01", -- Conversion spell
+    price = 180,
+    max_uses    = 20,
+    mana = 100,
+    action 		= function()
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_fire_intense.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 100
+        current_reload_time = current_reload_time + 100
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MASS_STATUS_URINE_INTENSE",
+    name 		= "$spell_apotheosis_status_urine_intense_name",
+    description = "$spell_apotheosis_status_urine_intense_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_intense_urine.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_urine_intense.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "10", -- Conversion spell
+    spawn_probability                 = "0.01", -- Conversion spell
+    price = 180,
+    max_uses    = 20,
+    mana = 100,
+    action 		= function()
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_urine_intense.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 100
+        current_reload_time = current_reload_time + 100
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
+    name 		= "$spell_apotheosis_status_polymorph_intense_name",
+    description = "$spell_apotheosis_status_polymorph_intense_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_intense_polymorph.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_polymorph_intense.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "10", -- Conversion spell
+    spawn_probability                 = "0.01", -- Conversion spell
+    price = 240,
+    max_uses    = 20,
+    mana = 120,
+    action 		= function()
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_polymorph_intense.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 100
+        current_reload_time = current_reload_time + 100
+    end,
+})
+
+
+
+
+
 --Modifying Vanilla spells
 --Recursion = Greek letters
 --Iteration = divide by
@@ -1042,6 +1156,7 @@ modify_existing_spell("SPITTER_TIER_3_TIMER","mana",30)
 
 
 --Remove Spells
+--[[
 function remove_spell(spell_name)
 	local key_to_spell = nil
 	for key, perk in pairs(actions) do
@@ -1056,3 +1171,4 @@ function remove_spell(spell_name)
 end
 
 remove_spell("LASER_LUMINOUS_DRILL")
+]]--

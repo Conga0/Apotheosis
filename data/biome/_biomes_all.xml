@@ -1023,7 +1023,7 @@
 
 	<!-- Apotheosis biomes below -->
 	<Biome 
-		biome_filename="data/biome/custom/border_wall_divine.xml" 
+		biome_filename="data/biome/custom/border_wall_divine.xml"
 		height_index="10"
 		color="ff3d3e4a" >
 	</Biome>
@@ -1035,44 +1035,56 @@
 	</Biome>
 
 	<Biome 
-		biome_filename="data/biome/custom/slime_hell.xml" 
+		biome_filename="data/biome/custom/slime_hell.xml"
 		height_index="1" 
 		color="ff00bd28" >
 	</Biome>
 	
 	<Biome 
-		biome_filename="data/biome/custom/toxic_worm_cave.xml" 
+		biome_filename="data/biome/custom/toxic_worm_cave.xml"
 		height_index="13"
 		color="ff168a16" >
 	</Biome>
 
 	<Biome 
-		biome_filename="data/biome/custom/underground_forest.xml" 
+		biome_filename="data/biome/custom/underground_forest.xml"
 		height_index="1" 
 		color="ff4c8365" >
 	</Biome>
 	
 	<Biome 
-		biome_filename="data/biome/custom/essenceroom_fungus.xml" 
+		biome_filename="data/biome/custom/essenceroom_fungus.xml"
 		height_index="13"
 		color="ff7c38d0" >
 	</Biome>
 
 	<Biome 
-		biome_filename="data/biome/custom/evil_temple.xml" 
+		biome_filename="data/biome/custom/evil_temple.xml"
 		height_index="13"
 		color="ff880909" >
 	</Biome>
 	
 	<Biome 
-		biome_filename="data/biome/custom/abandoned_assembly.xml" 
+		biome_filename="data/biome/custom/abandoned_assembly.xml"
 		height_index="13"
 		color="ffc19221" >
 	</Biome>
 	
 	<Biome 
-		biome_filename="data/biome/custom/orbroom_12.xml" 
+		biome_filename="data/biome/custom/orbroom_12.xml"
 		height_index="13"
 		color="ffffd112" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/empty_desert.xml"
+		height_index="0"
+		color="ffa27424" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/desert_pit.xml"
+		height_index="0"
+		color="ff7b5b23" >
 	</Biome>
 </BiomesToLoad>

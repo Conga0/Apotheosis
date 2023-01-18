@@ -165,16 +165,10 @@ g_big_enemies =
 		entity 	= "data/entities/animals/hideous_mass_red.xml"
 	},
 	{
-		prob   		= 0.1,
+		prob   		= 0.5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/ghost_bow.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_den/forsaken_eye.xml"
+		entity 	= "data/entities/animals/lukki_tentacle_hungry.xml"
 	},
 	{
 		prob   		= 0.1,
@@ -183,7 +177,7 @@ g_big_enemies =
 		entity 	= "data/entities/animals/worm_spine.xml" --Not sure how to make you look badass
 	},
 	{
-		prob   		= 0.15,
+		prob   		= 0.25,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/wizard_corrupt_ambrosia.xml"

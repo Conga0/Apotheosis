@@ -3,11 +3,9 @@ Circle of Vigour & Healing Bolt can not be copied by greek spells (perk to make 
 Some spells have had their mana cost drastically reduced to become competitive with other spells again
 Bubblespark no longer does self damage
 Projectile Repulsion Field is removed and replaced with Oversized Shield
-Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing the effects of 1 movement perk and 0.5 levitation per stack
+Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing the effects of 2 movement perk and 1 levitation per stack
 Contact Damage now grants melee immunity
-
-
-
+Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with you for too long
 
 
 

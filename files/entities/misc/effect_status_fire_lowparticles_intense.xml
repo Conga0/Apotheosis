@@ -1,0 +1,49 @@
+<Entity>
+    <InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="fire"
+		x_pos_offset_min="-3"
+		x_pos_offset_max="3"
+		y_pos_offset_min="-8"
+		y_pos_offset_max="-2"
+		x_vel_min="-5"
+		x_vel_max="5"
+		y_vel_min="-5"
+		y_vel_max="-50"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.2"
+		lifetime_max="0.3"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="6"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+    
+    <GameEffectComponent 
+		_tags="effect_fire_magic"
+        effect="ON_FIRE"
+        frames="180"
+    >
+	</GameEffectComponent >
+
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/status_effects/burn_intense.lua"
+		execute_every_n_frame="10"
+		>
+	</LuaComponent>
+	
+	<UIIconComponent
+		name="$status_apotheosis_magicfire_intense_ui"
+		description="$statusdesc_apotheosis_magicfire_ui"
+		icon_sprite_file="data/ui_gfx/status_indicators/on_fire.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>

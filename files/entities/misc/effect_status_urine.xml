@@ -31,7 +31,7 @@
 	</GameEffectComponent >
 	
 	<UIIconComponent
-		name="$status_apotheosis_magicurine_ui"
+		name="$status_apotheosis_magicurine_intense_ui"
 		description="$statusdesc_apotheosis_magicurine_ui"
 		icon_sprite_file="data/ui_gfx/status_indicators/jarate.png"
 		is_perk="0"

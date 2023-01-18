@@ -7,18 +7,71 @@ local r = 160
 
 local targets = EntityGetInRadiusWithTag( x, y, r, "card_action" )
 
-for i,v in ipairs( targets ) do
+--Spells which can be converted
+local inputspells =  {
+    "APOTHEOSIS_BUNGAL_SHIFT",
+    "APOTHEOSIS_RAT_BITE",
+    "WORM_RAIN",
+    "LIGHT_BULLET",
+    "APOTHEOSIS_MASS_MATERIA_CONVERSION",
+    "APOTHEOSIS_MASS_STATUS_DRUNK",
+    "APOTHEOSIS_MASS_STATUS_WET",
+    "APOTHEOSIS_MASS_STATUS_FIRE",
+    "APOTHEOSIS_MASS_STATUS_URINE",
+    "APOTHEOSIS_MASS_STATUS_POLYMORPH",
+}
+
+--Spells we're converting them into
+--Position in this list correleations with their position in the input list
+--"SPECIAL_ACTION" means something special should happen instead of just normal spell conversion, such as spawning a worm or a massive explosion
+local outputspells = {
+    "APOTHEOSIS_BUNGAL_SHIFT_SPAM",
+    "APOTHEOSIS_RAT_BITE_CRIT",
+    "SPECIAL_ACTION",
+    "LIGHT_BULLET_TRIGGER",
+    "SPECIAL_ACTION",
+    "APOTHEOSIS_MASS_STATUS_DRUNK_INTENSE",
+    "APOTHEOSIS_MASS_STATUS_WET_INTENSE",
+    "APOTHEOSIS_MASS_STATUS_FIRE_INTENSE",
+    "APOTHEOSIS_MASS_STATUS_URINE_INTENSE",
+    "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
+}
+
+for k=1, #targets
+do local v = targets[k];
     if ( v ~= entity_id ) and EntityGetParent( v ) == 0 then
 		
         local comp = EntityGetFirstComponentIncludingDisabled( v, "ItemActionComponent")
 
-        if ComponentGetValue2(comp, "action_id") == "apotheosis_BUNGAL_SHIFT" then
-            local perk_x,perk_y = EntityGetTransform( v )
-        
-            EntityKill(v)
-            EntityLoad("data/entities/particles/image_emitters/magical_symbol_materia_fungus.xml", perk_x, perk_y)
-            GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
-            CreateItemActionEntity( "apotheosis_BUNGAL_SHIFT_SPAM", perk_x, perk_y )
+        local pos = 1
+
+        for k=1, #inputspells
+        do local inputmagic = inputspells[k];
+
+            if ComponentGetValue2(comp, "action_id") == inputmagic then
+                local perk_x,perk_y = EntityGetTransform( v )
+            
+                EntityKill(v)
+                EntityLoad("data/entities/particles/image_emitters/magical_symbol_materia_fungus.xml", perk_x, perk_y)
+                GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
+
+                if outputspells[pos] == "SPECIAL_ACTION" then
+                    if inputmagic == "WORM_RAIN" then
+                        EntityLoad("data/entities/animals/worm_big.xml", perk_x, perk_y)
+                        CreateItemActionEntity( "APOTHEOSIS_SUMMON_WORM_BIG", perk_x, perk_y )
+                    elseif inputmagic == "APOTHEOSIS_MASS_MATERIA_CONVERSION" then
+                        EntityLoad("mods/Apotheosis/files/entities/projectiles/materia_conversion_explosion.xml", perk_x, perk_y)
+                        EntityLoad("data/entities/misc/mass_materia_conversion.xml", perk_x, perk_y)
+                    end
+                else
+                    CreateItemActionEntity( outputspells[pos], perk_x, perk_y )
+                end
+            end
+            pos = pos + 1
         end
     end
 end
+
+--TODO: Different spell conversions should have different particles associated to them
+
+--Maybe use VSC to store a radius value and gradually scan outwards for spells? would look kinda cool
