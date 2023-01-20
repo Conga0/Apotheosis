@@ -407,12 +407,15 @@ perk_apotheosis_shield_oversized_description,"You gain a very large, permanent s
 perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
 perk_apotheosis_haste_description,"You move faster and levitate quicker.",,,,,,,,,,,,,
 perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks. Enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
+perk_apotheosis_alcohol_immunity,"Alcohol Immunity",,,,,,,,,,,,,
+perk_apotheosis_alcohol_immunity_description,"You take no effect to being drunk.",,,,,,,,,,,,,
 status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
 status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
 status_apotheosis_magicwet_intense_ui,"Intense Wetness",,,,,,,,,,,,,
 status_drunk_intense_ui,"Aura of Spirits",,,,,,,,,,,,,
 status_apotheosis_magicurine_intense_ui,"Magic Incontinence",,,,,,,,,,,,,
 status_apotheosis_magicfire_intense_ui,"Cursed Flames",,,,,,,,,,,,,
+creep_apotheosis_boss_flesh_monster_name,Unnamed Flesh Monster,,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -1235,6 +1238,15 @@ xml:add_child(nxml.parse([[
 	</LuaComponent>
 ]]))
 ModTextFileSetContent("data/entities/misc/effect_weaken.xml", tostring(xml))
+
+do -- Fix Spatial Awareness friendcave position(s)
+    local path = "data/scripts/perks/map.lua"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("local fspots = { { 249, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }", "local fspots = { { 309, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }")
+    ModTextFileSetContent(path, content)
+end
+
+
 
 
 

@@ -1,0 +1,20 @@
+<Sprite
+ filename="mods/apotheosis/files/props_gfx/statue_anvil.png"
+ offset_x="20"
+ offset_y="38" 
+ default_animation="stand">
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="1"
+  frame_width="40"
+  frame_height="40"
+  frame_wait="0.23"
+  frames_per_row="1"
+  loop="1"   >
+ </RectAnimation>
+
+</Sprite>

@@ -1,0 +1,7 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/buildings/perk_creation.lua"
+		execute_every_n_frame="80"
+		>
+	</LuaComponent>
+</Entity>

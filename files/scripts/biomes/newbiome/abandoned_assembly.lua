@@ -110,7 +110,7 @@ g_nest =
 -- actual functions that get called from the wang generator
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly.png", "mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_visual.png", x - 338, y, "mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_background.png", true )
+	LoadPixelScene( "mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly.png", "mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_visual.png", x - 290, y, "mods/Apotheosis/files/pixel_scenes/sandy_assembly/sandy_assembly_background.png", true )
 end
 
 function spawn_small_enemies(x, y)

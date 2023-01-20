@@ -3,32 +3,6 @@ dofile("data/scripts/lib/utilities.lua")
 --- Boss Spawns
 
 
---Spawns Toxic Worm boss after filling the dragon egg with toxic sludge
---This was the original intent, now the Toxic Worm spawns inside of a "nest" area of sorts with an egg, approach it and get got!
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes_newgame_plus.xml")
-local xml = nxml.parse(content)
-xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="2292" pos_y="2286" just_load_an_entity="data/entities/buildings/toxic_worm_nest_populator.xml" />
-]]))
-ModTextFileSetContent("data/biome/_pixel_scenes_newgame_plus.xml", tostring(xml))
-
-
-
---Spawns the Abandoned Orchestra in the sandcaves.
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes_newgame_plus.xml")
-local xml = nxml.parse(content)
-if ModIsEnabled("nightmare") then
-    xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-        <PixelScene pos_x="7681" pos_y="2076" just_load_an_entity="data/entities/buildings/boss_musical_ghost_sandcave_populator.xml" />
-    ]]))
-else
-    xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-        <PixelScene pos_x="11796" pos_y="7028" just_load_an_entity="data/entities/buildings/boss_musical_ghost_sandcave_populator.xml" />
-    ]]))
-end
-ModTextFileSetContent("data/biome/_pixel_scenes_newgame_plus.xml", tostring(xml))
 
 
 --Spawns a Magic Devourer inside the Abandoned Alchemy Lab to show off its' gimmick, only one though, and the only one with cell eater capabilities in the entire game!

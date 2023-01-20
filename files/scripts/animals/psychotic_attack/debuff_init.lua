@@ -6,10 +6,11 @@ local r = 96
 local p = EntityGetInRadiusWithTag( x, y, r, "player_unit" )
 
 if ( #p > 0 ) then
-	local pl = p[1]
-	
-	local eid = EntityLoad( "mods/Apotheosis/files/scripts/animals/psychotic_attack/debuff.xml" )
-	EntityAddChild( pl, eid )
+	for k=1, #p
+	do local pl = p[k];
+		local eid = EntityLoad( "mods/Apotheosis/files/scripts/animals/psychotic_attack/debuff.xml" )
+		EntityAddChild( pl, eid )
+	end
 end
 
 EntityKill( entity_id )

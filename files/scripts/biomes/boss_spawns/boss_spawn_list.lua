@@ -16,23 +16,6 @@ dofile("data/scripts/lib/utilities.lua")
 
 
 
---Spawns the Abandoned Orchestra in the sandcaves.
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
-local xml = nxml.parse(content)
-if ModIsEnabled("nightmare") then
-    xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-        <PixelScene pos_x="7681" pos_y="2076" just_load_an_entity="data/entities/buildings/boss_musical_ghost_sandcave_populator.xml" />
-    ]]))
-else
-    xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-        <PixelScene pos_x="11796" pos_y="7028" just_load_an_entity="data/entities/buildings/boss_musical_ghost_sandcave_populator.xml" />
-    ]]))
-end
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
-
-
-
 --Spawns a Magic Devourer inside the Abandoned Alchemy Lab to show off its' gimmick, only one though, and the only one with cell eater capabilities in the entire game!
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")

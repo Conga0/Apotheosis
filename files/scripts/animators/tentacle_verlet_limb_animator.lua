@@ -8,7 +8,9 @@ local last_direction = GetValueNumber("last_direction", 0)
 
 local tentacles = {}
 local target = {}
-for i, child in ipairs(EntityGetAllChildren(entity_id) or {} ) do
+local children = EntityGetAllChildren(entity_id) or {}
+for k=1, #children
+do local child = children[k];
   if EntityGetName(child) == "tentacle_verlet" then
     table.insert(tentacles, child)
   end

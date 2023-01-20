@@ -33,7 +33,7 @@ g_small_enemies =
 		prob   		= 0.15,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_manaeater.xml"
+		entity 	= "data/entities/animals/wizard_corrupt_manaeater.xml"
 	},
 	{
 		prob   		= 0.005,
@@ -45,7 +45,7 @@ g_small_enemies =
 		prob   		= 0.2,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_neutral.xml"
+		entity 	= "data/entities/animals/wizard_corrupt_neutral.xml"
 	},
 	{
 		prob   		= 0.1,
@@ -127,19 +127,19 @@ g_reward_items =
 		prob   		= 5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_level_05.xml"
+		entity 	= "data/entities/items/wand_level_06.xml"
 	},
 	{
 		prob   		= 3,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_unshuffle_03.xml"
+		entity 	= "data/entities/items/wand_unshuffle_04.xml"
 	},
 	{
 		prob   		= 1,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_unshuffle_04.xml"
+		entity 	= "data/entities/items/wand_unshuffle_05.xml"
 	},
 }
 
@@ -162,7 +162,7 @@ g_big_enemies =
 		prob   		= 0.3,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/hideous_mass_red.xml"
+		entity 	= "data/entities/animals/hideous_mass.xml" --Originally the red varient.. but I wanted more familiar creatures for the player to feel safe around and accustomed to
 	},
 	{
 		prob   		= 0.5,
@@ -192,7 +192,7 @@ g_statues =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/props/statue.xml"
+		entity 	= "mods/apotheosis/files/entities/props/statue_anvil.xml"
 	},
 }
 

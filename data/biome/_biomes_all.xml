@@ -1087,4 +1087,10 @@
 		height_index="0"
 		color="ff7b5b23" >
 	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/perk_creation.xml"
+		height_index="0"
+		color="ff57ead7" >
+	</Biome>
 </BiomesToLoad>

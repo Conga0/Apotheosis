@@ -8,6 +8,7 @@ SetRandomSeed( x, y * GameGetFrameNum() )
 
 local players = EntityGetWithTag( "player_unit" )
 local player = players[1]
+if player == nil then return end
 local plyr_x, plyr_y = EntityGetTransform(player)
 local shoot_blackhole = false
 

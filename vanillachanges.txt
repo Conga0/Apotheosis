@@ -14,3 +14,13 @@ Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with
 New Biome Modifiers:
 Dense Smoke
 Esoteric Presence
+
+Content list:
+87 new enemies
+5 new bosses
+42 new spells
+7 new perks
+1 new biome
+6 new structures
+1 new material
+12 attainable trophies

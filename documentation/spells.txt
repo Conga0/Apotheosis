@@ -2,6 +2,8 @@ Unlocked by Default:
 
 Giga Bomb
 Aqua Mine
+Alt Fire Teleport Bolt
+Alt Fire Small Teleport Bolt
 
 
 

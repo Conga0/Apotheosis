@@ -4,7 +4,7 @@ local kolmi_dead = HasFlagPersistent( "boss_centipede" )
 
 table.insert(perk_list,
 {
-    id = "apotheosis_GHOSTLY_VISION",
+    id = "APOTHEOSIS_GHOSTLY_VISION",
     ui_name = "$perk_apotheosis_ghostly_vision",
     ui_description = "$perk_apotheosis_ghostly_vision_description",
     ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/ghostly_vision_perk_ui.png",
@@ -32,7 +32,7 @@ table.insert(perk_list,
 if apotheosis_enrage_unlocked then
     table.insert(perk_list,
     {
-        id = "apotheosis_RAGE_AURA",
+        id = "APOTHEOSIS_RAGE_AURA",
         ui_name = "$perk_apotheosis_rage_aura",
         ui_description = "$perk_apotheosis_rage_aura_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/rage_aura_perk_ui.png",
@@ -60,7 +60,7 @@ if apotheosis_enrage_unlocked then
 else
     table.insert(perk_list,
     {
-        id = "apotheosis_RAGE_AURA",
+        id = "APOTHEOSIS_RAGE_AURA",
         ui_name = "$perk_apotheosis_rage_aura",
         ui_description = "$perk_apotheosis_rage_aura_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/rage_aura_perk_ui.png",
@@ -88,7 +88,7 @@ end
 if kolmi_dead then
     table.insert(perk_list,
     {
-        id = "apotheosis_REVENGE_REFLECTIVE",
+        id = "APOTHEOSIS_REVENGE_REFLECTIVE",
         ui_name = "$perk_apotheosis_revenge_reflective",
         ui_description = "$perk_apotheosis_revenge_reflective_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/revenge_reflection_perk_ui.png",
@@ -148,7 +148,7 @@ if kolmi_dead then
 else
     table.insert(perk_list,
     {
-        id = "apotheosis_REVENGE_REFLECTIVE",
+        id = "APOTHEOSIS_REVENGE_REFLECTIVE",
         ui_name = "$perk_apotheosis_revenge_reflective",
         ui_description = "$perk_apotheosis_revenge_reflective_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/revenge_reflection_perk_ui.png",
@@ -209,7 +209,7 @@ end
 
 table.insert(perk_list,
 {
-    id = "apotheosis_OVERSIZED_SHIELD",
+    id = "APOTHEOSIS_OVERSIZED_SHIELD",
     ui_name = "$perk_apotheosis_shield_oversized_name",
     ui_description = "$perk_apotheosis_shield_oversized_description",
     ui_icon = "mods/apotheosis/files/ui_gfx/perk_icons/shield_oversized.png",
@@ -221,7 +221,7 @@ table.insert(perk_list,
     usable_by_enemies = true,
     func = function( entity_perk_item, entity_who_picked, item_name )
         local x,y = EntityGetTransform( entity_who_picked )
-        local child_id = EntityLoad( "mods/apotheosis/files/scripts/perks/shield_oversized.xml", x, y )
+        local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/shield_oversized.xml", x, y )
         
         local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_OVERSIZED_COUNT", "0" ) )
         local shield_radius = 75 + shield_num * 3.0
@@ -257,7 +257,7 @@ table.insert(perk_list,
     end,
     func_enemy = function( entity_perk_item, entity_who_picked )
         local x,y = EntityGetTransform( entity_who_picked )
-        local child_id = EntityLoad( "mods/apotheosis/files/scripts/perks/shield_oversized.xml", x, y )
+        local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/shield_oversized.xml", x, y )
         EntityAddChild( entity_who_picked, child_id )
     end,
     func_remove = function( entity_who_picked )
@@ -268,7 +268,7 @@ table.insert(perk_list,
 
 table.insert(perk_list,
 {
-    id = "apotheosis_HASTE",
+    id = "APOTHEOSIS_HASTE",
     ui_name = "$perk_apotheosis_haste_name",
     ui_description = "$perk_apotheosis_haste_description",
     ui_icon = "data/ui_gfx/perk_icons/movement_faster.png",
@@ -277,7 +277,7 @@ table.insert(perk_list,
     not_in_default_perk_pool = false,
     usable_by_enemies = true,
     func = function(entity_perk_item, entity_who_picked, item_name)
-        LoadGameEffectEntityTo(entity_who_picked, "mods/apotheosis/files/scripts/perks/perk_haste.xml")
+        LoadGameEffectEntityTo(entity_who_picked, "mods/Apotheosis/files/entities/misc/perks/perk_haste.xml")
     end,
     func_remove = function(entity_who_picked)
         local children = EntityGetAllChildren(entity_who_picked)
@@ -289,6 +289,38 @@ table.insert(perk_list,
         end
     end
 })
+
+table.insert(perk_list,
+{
+    id = "APOTHEOSIS_ALCOHOL_IMMUNITY",
+    ui_name = "$perk_apotheosis_alcohol_immunity",
+    ui_description = "$perk_apotheosis_alcohol_immunity_description",
+    ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/protection_alcohol_perk_ui.png",
+    perk_icon = "mods/Apotheosis/files/items_gfx/protection_alcohol.png",
+    not_in_default_perk_pool = true,
+    stackable = STACKABLE_NO,
+    usable_by_enemies = true,
+    func = function( entity_perk_item, entity_who_picked, item_name )
+        local x,y = EntityGetTransform( entity_who_picked )
+        local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/alcohol_immunity_perk.xml", x, y )
+        EntityAddTag( child_id, "perk_entity" )
+        EntityAddChild( entity_who_picked, child_id )
+    end,
+    _remove = function(entity_id)
+        local apotheosis_targets = EntityGetAllChildren(entity_id)
+        for i,v in ipairs( apotheosis_targets ) do
+            if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_alcohol_immunity" ) then
+                EntityKill ( v )
+            end
+        end
+    end,
+})
+
+
+
+
+
+
 
 -- Remove Perks from perk_list
 function remove_perk(perk_name)

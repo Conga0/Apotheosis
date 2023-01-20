@@ -6,9 +6,17 @@ Fill normal next-level eye portal with a different liquid than teleportatium to 
 Unstable teleportatium?
 
 
-Sprite Corrupt Master of Wounding
-Corrupt Master of Mana (deletes your mana instantly instead of applying a drain effect) (orb creates a mana vacuum field on impact) (giant tongue similar to enlightened alchemists)
 
 Give orb room material puzzles unique inputs and lore readouts
 
-Master of Wounding status effect shows no timer
+Fix taking a perk from the perk creation altar casing the other perks to disappear
+
+Trip Immunity perk for Perk Creation Altar
+
+Ragdolls for new mages
+
+Improve Corrupt Master of Mana's Sprite
+
+Trophies for:
+Using Perk Creation Altar
+Reaching Max Orb Count, taking new orbs into consideration

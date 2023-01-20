@@ -22,3 +22,9 @@ xml:add_child(nxml.parse([[
     </VariableStorageComponent>
 ]]))
 ModTextFileSetContent("data/entities/animals/boss_pit/boss_pit.xml", tostring(xml))
+
+--Adds tag to wandstone so perk creation altar can detect it.. technically you can throw it into the sun because of this but, eh, nobody would ever do that.. right? I just wanna save on tags whenever possible
+local content = ModTextFileGetContent("data/entities/items/pickup/wandstone.xml")
+local xml = nxml.parse(content)
+xml.attr.tags = xml.attr.tags .. ",poopstone"
+ModTextFileSetContent("data/entities/items/pickup/wandstone.xml", tostring(xml))

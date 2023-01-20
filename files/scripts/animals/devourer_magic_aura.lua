@@ -10,7 +10,8 @@ local frozenTest = GameGetGameEffectCount( entity_id, "FROZEN" )
 if frozenTest <= 0 then
 	local targets = EntityGetInRadiusWithTag( x, y, r, "player_unit" )
 
-	for i,v in ipairs( targets ) do
+	for k=1, #targets
+	do local v = targets[k];
 		if ( v ~= entity_id ) then
 			local c = EntityGetAllChildren( v )
 			local valid = true

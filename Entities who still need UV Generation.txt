@@ -3,4 +3,6 @@ Giant centipede
 
 Corrupt Ambrosia Mage
 Corrupt Swapper Mage
+Corrupt Mana Mage
+Corrupt Heartbreak Mage
 Seeker

@@ -262,8 +262,8 @@
   </ParticleEmitterComponent>
 
 
+	<!-- Limbs -->
 
-
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
@@ -280,11 +280,31 @@
 	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
 	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
 
-   <LuaComponent
+   	<LuaComponent
 		script_source_file="mods/apotheosis/files/scripts/animators/tentacle_verlet_limb_animator.lua"
 		execute_on_added="1"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>
+    
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 </Entity>
