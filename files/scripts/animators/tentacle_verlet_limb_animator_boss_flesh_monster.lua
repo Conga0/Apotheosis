@@ -4,7 +4,6 @@ local num_limbs = 12
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
-local last_direction = GetValueNumber("last_direction", 0)
 
 local tentacles = {}
 local target = {}

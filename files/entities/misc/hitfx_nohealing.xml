@@ -32,7 +32,7 @@
 		name="$status_apotheosis_nohealing_name"
 		description="$status_apotheosis_nohealing_desc"
 		is_perk="0"
-		display_above_head="0"
+		display_above_head="1"
 		display_in_hud="1"
 		>
 	</UIIconComponent>

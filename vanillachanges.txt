@@ -6,6 +6,9 @@ Projectile Repulsion Field is removed and replaced with Oversized Shield
 Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing the effects of 2 movement perk and 1 levitation per stack
 Contact Damage now grants melee immunity
 Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with you for too long
+Arrow Now longer has increased recoil
+Relocated Friend Cave 1
+Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
 
 
 

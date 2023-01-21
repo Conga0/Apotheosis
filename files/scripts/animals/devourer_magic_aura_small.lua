@@ -13,7 +13,7 @@ do local v = targets[k];
 		local valid = true
 		
 		if valid then
-			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_mana_degradation.xml", x, y )
+			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_mana_degradation_fast.xml", x, y )
 			EntityAddChild( v, eid )
 		end
 	end

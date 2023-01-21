@@ -131,6 +131,17 @@ end
 -- TODO: pick one of the materials from cape
 -- TODO: pick one of the materials from a potion?
 function fungal_shift( entity, x, y, debug_no_limits )
+
+    if GameHasFlagRun("apotheosis_flag_no_tripping") then
+        local frame = GameGetFrameNum()
+        local last_frame = tonumber( GlobalsGetValue( "apotheosis_shift_block_last_frame", "-1000000" ) )
+        if frame > last_frame + 60*60*3 then --3 minute long cooldown between messages
+            GamePrintImportant( "$log_apotheosis_shift_blocked_name", "$log_apotheosis_shift_blocked_desc" )
+			GlobalsSetValue( "apotheosis_shift_block_last_frame", tostring(frame))
+        end
+        return
+    end
+	
 	local parent = EntityGetParent( entity )
 	if parent ~= 0 then
 		entity = parent

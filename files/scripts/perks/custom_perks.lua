@@ -316,6 +316,24 @@ table.insert(perk_list,
     end,
 })
 
+table.insert(perk_list,
+{
+    id = "APOTHEOSIS_TRIP_IMMUNITY",
+    ui_name = "$perk_apotheosis_trip_immunity",
+    ui_description = "$perk_apotheosis_trip_immunity_description",
+    ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/protection_trip_perk_ui.png",
+    perk_icon = "mods/Apotheosis/files/items_gfx/perks/protection_trip.png",
+    not_in_default_perk_pool = true,
+    stackable = STACKABLE_NO,
+    usable_by_enemies = false,
+    func = function()
+        GameAddFlagRun("apotheosis_flag_no_tripping")
+    end,
+    _remove = function()
+        GameRemoveFlagRun("apotheosis_flag_no_tripping")
+    end
+})
+
 
 
 

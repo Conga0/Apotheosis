@@ -409,6 +409,8 @@ perk_apotheosis_haste_description,"You move faster and levitate quicker.",,,,,,,
 perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks. Enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
 perk_apotheosis_alcohol_immunity,"Alcohol Immunity",,,,,,,,,,,,,
 perk_apotheosis_alcohol_immunity_description,"You take no effect to being drunk.",,,,,,,,,,,,,
+perk_apotheosis_trip_immunity,"Shift Immunity",,,,,,,,,,,,,
+perk_apotheosis_trip_immunity_description,"The world is set in stone and can not be shifted so long as you live.",,,,,,,,,,,,,
 status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
 status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
 status_apotheosis_magicwet_intense_ui,"Intense Wetness",,,,,,,,,,,,,
@@ -416,6 +418,8 @@ status_drunk_intense_ui,"Aura of Spirits",,,,,,,,,,,,,
 status_apotheosis_magicurine_intense_ui,"Magic Incontinence",,,,,,,,,,,,,
 status_apotheosis_magicfire_intense_ui,"Cursed Flames",,,,,,,,,,,,,
 creep_apotheosis_boss_flesh_monster_name,Unnamed Flesh Monster,,,,,,,,,,,,,
+log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
+log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -1246,7 +1250,25 @@ do -- Fix Spatial Awareness friendcave position(s)
     ModTextFileSetContent(path, content)
 end
 
+--Fix Weakening Curses not showing remaining time
+do
+  local curses = {"electricity","explosion","melee","projectile"}
+  for k=1, #curses
+  do local v = curses[k];
+    local content = ModTextFileGetContent("data/entities/misc/curse_wither_" .. v .. ".xml")
+    local xml = nxml.parse(content)
+    xml:first_of("UIIconComponent").attr.display_in_hud = "1"
+    xml:first_of("UIIconComponent").attr.is_perk = "0"
+    ModTextFileSetContent("data/entities/misc/curse_wither_" .. v .. ".xml", tostring(xml))
+  end
+end
 
+do -- Fix Spatial Awareness friendcave position(s)
+  local path = "data/scripts/magic/fungal_shift.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("local fspots = { { 249, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }", "local fspots = { { 309, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }")
+  ModTextFileSetContent(path, content)
+end
 
 
 

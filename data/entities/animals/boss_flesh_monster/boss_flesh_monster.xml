@@ -358,56 +358,42 @@
 
 	<!-- Attack AI -->
 	
+	<!-- Fire a devestating barrage of shadow bolts every 9.3 seconds -->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_shadow_barrage_setup.lua"
+		execute_every_n_frame="560"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
 	<!-- Mass Wounded all entities in a large radius -->
 	<!-- Disables Healing -->
 	<LuaComponent
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_mass_status_wounded.lua"
-		execute_every_n_frame="1620"
+		execute_every_n_frame="1740"
 		execute_times="-1"
 		>
 	</LuaComponent>
 	
 	<!-- Fire a dangerous barrage of master orbs every 12 seconds -->
+	<!--
+	-->
 	<LuaComponent
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_orb_barrage_setup.lua"
 		execute_every_n_frame="720"
 		execute_times="-1"
 		>
 	</LuaComponent>
+
+	<!-- Defense Mechanisms -->
 	
-	<!-- Summons a delayed explosion on top of the player every 16.3 seconds if they're too far away -->
-	<!-- Barrage of Dark Wands Attack? Purple Enlightened Alchemist Attack.. Unsure -->
-	<!-- Homing Dark Flame Attack to keep chasing you would be cool too -->
+	<!-- Enables Immortality if eye minions are alive and nearby -->
 	<LuaComponent
-		script_source_file="data/entities/animals/boss_fire_lukki/boss_fire_lukki_circle_explosion.lua"
-		execute_every_n_frame="980"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_check.lua"
+		execute_every_n_frame="50"
 		execute_times="-1"
 		>
 	</LuaComponent>
-
-
-	<!-- Retaliation AI Below -->
-
-	<!-- Revenge Damage, 20% chance to retaliate with 1-2 firebolts -->
-	<!-- Retaliate with Hearty/Mana orbs instead? Neutralise? Corrupt Mana? Hmmm-->
-	<!-- Also regularly summoning in eyes which provide invulnerability would be cool -->
-	<!-- Revenge Reflection...? -->
-	<LuaComponent
-		execute_every_n_frame="-1"
-		script_damage_received="data/entities/animals/boss_fire_lukki/boss_fire_lukki_retaliation_attack_script.lua"
-		>
-	</LuaComponent>
-
-	<!-- Line of Sight Check, if the boss can't make line of sight for longer than 30 seconds, shoot a blackhole at the player at high velocity-->
-	<!-- Might not be necessary if it's a matter eater -->
-	<!-- Actually, just don't do this and decide if it's needed later.. Don't tact on unneeded scripts/attacks, it'll just needlessly overcomplicate things and eat up unnecessary resources -->
-    <LuaComponent
-    script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_blackhole_check.lua"
-    execute_times="-1"
-    execute_every_n_frame="450"
-    remove_after_executed="0"
-    >
-    </LuaComponent>
 	
 	<!-- Boss Health Multiplier Script -->
   	<LuaComponent

@@ -33,9 +33,7 @@
     damage="0.3"
     velocity_sets_scale="1"
     on_collision_die="1"
-    lifetime="150"
-    spawn_entity="mods/Apotheosis/files/entities/projectiles/orb_corrupt_manadrain_vacuum.xml"
-    >
+    lifetime="150" >
     <config_explosion
       never_cache="1" 
       camera_shake="0.5" 
@@ -69,6 +67,11 @@
       stains_image="data/temp/explosion_stain.png" >
     </config_explosion>
   </ProjectileComponent>
+	
+	<HitEffectComponent 
+        effect_hit="LOAD_CHILD_ENTITY"
+        value_string="mods/Apotheosis/files/entities/misc/effect_mana_degradation_long.xml" >
+	</HitEffectComponent >
   
   <SpriteComponent 
     _enabled="1" 

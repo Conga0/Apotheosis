@@ -16,6 +16,7 @@ Trip Immunity perk for Perk Creation Altar
 Ragdolls for new mages
 
 Improve Corrupt Master of Mana's Sprite
+Blood Spray for Corrupt Master of Wounding's Head
 
 Trophies for:
 Using Perk Creation Altar

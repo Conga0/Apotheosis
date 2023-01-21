@@ -1137,6 +1137,17 @@ modify_existing_spell(
     end
 )
 
+--Arrow doesn't have increased knockback
+modify_existing_spell(
+	"ARROW",
+	"action",
+    function()
+        add_projectile("data/entities/projectiles/deck/arrow.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 10
+        c.spread_degrees = c.spread_degrees - 20
+    end
+)
+
 --Death Cross becomes cheaper
 modify_existing_spell("DEATH_CROSS","mana", 30)
 

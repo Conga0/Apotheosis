@@ -3,13 +3,13 @@
 	<InheritTransformComponent/>
 
 	<LifetimeComponent
-		lifetime="70"
+		lifetime="250"
 		>
 	</LifetimeComponent>
 
 	<LuaComponent
-		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_orb_barrage.lua"
-		execute_every_n_frame="30"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_mana_trail.lua"
+		execute_every_n_frame="60"
 		execute_times="-1"
 		>
 	</LuaComponent>
