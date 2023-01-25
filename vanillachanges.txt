@@ -7,9 +7,9 @@ Faster Movement is removed, Faster Levitation is removed, Haste replaces both of
 Contact Damage now grants melee immunity
 Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with you for too long
 Arrow Now longer has increased recoil
-Relocated Friend Cave 1
+Relocated Friend Cave 1 & 2
 Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
-
+Fixed Chainsaw memory leak
 
 
 

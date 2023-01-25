@@ -24,7 +24,7 @@ function spawn_potions( x, y ) end
 function spawn_wands( x, y ) end
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/perk_creation.png", "mods/Apotheosis/files/biome_impl/special_scenes/perk_creation_visual.png", x, y, "mods/Apotheosis/files/biome_impl/special_scenes/perk_creation_background.png", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/perk_creation.png", "mods/Apotheosis/files/biome_impl/special_scenes/perk_creation_visual.png", x, y - 30, "mods/Apotheosis/files/biome_impl/special_scenes/perk_creation_background.png", true )
 end
 
 function spawn_orb(x, y)

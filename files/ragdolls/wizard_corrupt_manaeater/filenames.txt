@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/wizard_corrupt_manaeater/torso.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_manaeater/hand.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_manaeater/feet.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_manaeater/head.png

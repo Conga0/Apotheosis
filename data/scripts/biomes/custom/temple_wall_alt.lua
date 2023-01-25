@@ -33,6 +33,6 @@ function spawn_portal_alt( x, y )
 	if( BIOME_NAME == "crypt" ) then
 		EntityLoad( "data/entities/buildings/teleport_boss_arena.xml", x, y - 4 )
 	else
-		EntityLoad( "mods/Apotheosis/files/entities/buildings/teleport_liquid_powered_alternate.xml", x, y - 4 )
+		EntityLoad( "data/entities/buildings/teleport_liquid_powered_alternate.xml", x, y - 4 )
 	end
 end

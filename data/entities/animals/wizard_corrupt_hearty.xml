@@ -26,7 +26,7 @@
 		<DamageModelComponent 
             hp="24"
             ragdoll_material="meat_confusion"
-			ragdoll_filenames_file="data/ragdolls/wizard_hearty/filenames.txt"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_hearty/filenames.txt"
 			critical_damage_resistance="1.0"
 			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
 			>

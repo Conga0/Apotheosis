@@ -998,6 +998,26 @@ biome_modifier_fog_of_war_clear_at_player = {
 	end,
 }
 
+
+	-- magmatic - frozen materials melt
+
+biome_modifier_magmatic = {
+	id = "MAGMATIC",
+	ui_description="$biomemod_magmatic",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/magmatic.png",
+	probability=0.0,
+	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
+	action = function( biome_name, biome_filename )
+		BiomeObjectSetValue( biome_filename, "modifiers", "reaction_unfreeze_chance", 40 )
+		BiomeVegetationSetValue( biome_filename, "grass", "tree_material", "grass_dry" )
+		BiomeVegetationSetValue( biome_filename, "fungus_loose", "tree_probability", 0.0 ) -- no mushrooms in dry biome
+		BiomeSetValue( biome_filename, "color_grading_r", 1.00 )
+		BiomeSetValue( biome_filename, "color_grading_g", 0.90 )
+		BiomeSetValue( biome_filename, "color_grading_b", 0.8 )
+		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.075 )
+	end,
+}
+
 --
 
 function table_clear(t)
@@ -1215,6 +1235,7 @@ function get_modifier_mappings()
 	result["wizardcave"] = biome_modifier_fog_of_war_clear_at_player
 	result["custom/evil_temple"] = biome_modifier_fog_of_war_clear_at_player
 	result["alchemist_secret"] = biome_modifier_fog_of_war_clear_at_player
+	result["custom/lava_excavation"] = biome_modifier_magmatic
 	--apply_modifier_if_has_none( "snowcave", "FREEZING" )
 
 	-- side biomes

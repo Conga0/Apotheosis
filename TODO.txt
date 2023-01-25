@@ -2,22 +2,24 @@ Add text to CoV & Healing Bolt spells mentioning they're uncopyable
 Add health hearts perk, health healed is equal to max health gained x 2
 All boss health should be doubled at least
 
-Fill normal next-level eye portal with a different liquid than teleportatium to make to create a portal to a different place
-Unstable teleportatium?
 
 
 
-Give orb room material puzzles unique inputs and lore readouts
+
+Give orb room material puzzles unique inputs and lore readouts (Likely need to ask letalli for help as they speak finnish)
 
 Fix taking a perk from the perk creation altar casing the other perks to disappear
-
-Trip Immunity perk for Perk Creation Altar
-
-Ragdolls for new mages
-
-Improve Corrupt Master of Mana's Sprite
-Blood Spray for Corrupt Master of Wounding's Head
 
 Trophies for:
 Using Perk Creation Altar
 Reaching Max Orb Count, taking new orbs into consideration
+
+use nxml on mainworld portals luascript instead of file replacing them
+
+Wand translations keys
+
+Finish or remove Corrupt Master of Grounding
+
+Finish or Remove Mainpath Portal Puzzle
+
+Make TWWE stone work in inventory instead of just inhand

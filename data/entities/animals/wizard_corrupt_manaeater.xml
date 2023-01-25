@@ -25,7 +25,7 @@
 		
 		<DamageModelComponent 
             hp="20"
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_manaeater/filenames.txt"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_manaeater/filenames.txt"
             ragdoll_material="apotheosis_meat_mana"
 			blood_material="magic_liquid_mana_regeneration"
 			blood_spray_material="magic_liquid_mana_regeneration"

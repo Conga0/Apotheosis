@@ -1138,6 +1138,7 @@ modify_existing_spell(
 )
 
 --Arrow doesn't have increased knockback
+--This spell is secretly kinda god-tier once you realise it gains damage from speed.. hmm
 modify_existing_spell(
 	"ARROW",
 	"action",
@@ -1149,10 +1150,10 @@ modify_existing_spell(
 )
 
 --Death Cross becomes cheaper
-modify_existing_spell("DEATH_CROSS","mana", 30)
+modify_existing_spell("DEATH_CROSS","mana", 40)
 
 --Giga Death Cross becomes cheaper
-modify_existing_spell("DEATH_CROSS_BIG", "mana", 80)
+modify_existing_spell("DEATH_CROSS_BIG", "mana", 100)
 modify_existing_spell("MEGALASER", "mana", 80)
 
 --Spitter Bolt Tier 2 & 3 becomes cheaper
@@ -1164,6 +1165,13 @@ modify_existing_spell("SPITTER_TIER_2_TIMER","mana",20)
 modify_existing_spell("SPITTER_TIER_3","mana",25)
 
 modify_existing_spell("SPITTER_TIER_3_TIMER","mana",30)
+
+--Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
+modify_existing_spell("ACCELERATING_SHOT","spawn_level","1,2,3,4,5")
+modify_existing_spell("ACCELERATING_SHOT","spawn_probability","0.5,1,1,1,0.5")
+
+modify_existing_spell("HOMING_ROTATE","spawn_level","2,3,4,5,6")
+modify_existing_spell("HOMING_ROTATE","spawn_probability","0.6,0.8,1,1,0.6")
 
 
 --Remove Spells

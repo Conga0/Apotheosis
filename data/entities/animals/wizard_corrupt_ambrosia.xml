@@ -30,7 +30,7 @@
 		<DamageModelComponent 
             hp="15"
 			fire_probability_of_ignition="0.05"
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_ambrosia/filenames.txt" 
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_ambrosia/filenames.txt" 
 			blood_material="apotheosis_magic_liquid_protection_all_fading"
 		    blood_multiplier="2"
 			>

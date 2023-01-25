@@ -26,7 +26,7 @@
 		<DamageModelComponent
             hp="12"
             ragdoll_material="meat_confusion"
-			ragdoll_filenames_file="data/ragdolls/wizard_swapper/filenames.txt" 
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/filenames.txt"
 			>
 		</DamageModelComponent>
 

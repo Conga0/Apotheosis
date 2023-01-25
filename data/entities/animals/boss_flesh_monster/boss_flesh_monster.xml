@@ -394,6 +394,15 @@
 		execute_times="-1"
 		>
 	</LuaComponent>
+
+	<!-- Revenge Damage, 25% chance to retaliate with 1-2 Random Master Orbs Summons -->
+	<LuaComponent
+		execute_every_n_frame="-1"
+		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_retaliation_script.lua"
+		>
+	</LuaComponent>
+
+	<!--Miscellaneous Scripts Below -->
 	
 	<!-- Boss Health Multiplier Script -->
   	<LuaComponent

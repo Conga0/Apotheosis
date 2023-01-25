@@ -204,7 +204,7 @@ spell_apotheosis_mass_materia_conversion_desc,Cave quid volunt,Cave quid volunt,
 spell_apotheosis_bungal_shift_name,Fungal Shift,Грибковое смещение,,,,,,,,,,,,
 spell_apotheosis_bungal_shift_desc,Cave quid volunt                 ,Cave quid volunt                 ,,,,,,,,,,,,
 spell_apotheosis_musical_proj_name,Musical Strike,Музыкальный удар,,,,,,,,,,,,
-spell_apotheosis_musical_proj_desc,"Fires a powerful musical attack, careful not to loose your creativity","Стреляет мощной музыкальной атакой, стараясь не потерять свой творческий потенциал",,,,,,,,,,,,
+spell_apotheosis_musical_proj_desc,"Fires a powerful musical attack, careful not to lose your creativity","Стреляет мощной музыкальной атакой, стараясь не потерять свой творческий потенциал",,,,,,,,,,,,
 spell_apotheosis_musical_proj_trig_name,Musical Strike with trigger,Музыкальный удар с активацией,,,,,,,,,,,,
 spell_apotheosis_musical_proj_trig_desc,"Fires a powerful musical attack, casts another spell upon collision","Стреляет мощной музыкальной атакой, при столкновении вызывает другое заклинание",,,,,,,,,,,,
 spell_apotheosis_reverberation_name,Reverberation,Реверберация,,,,,,,,,,,,
@@ -383,9 +383,13 @@ biome_esoteric_den,"Esoteric Den",,,,,,,,,,,,,
 biome_underground_forest,"Subterrain Woodland",,,,,,,,,,,,,
 biome_evil_temple,"Temple of Sacrilegious Remains",,,,,,,,,,,,,
 biome_desert_pit,"Sinkhole",,,,,,,,,,,,,
+biome_lava_excavation,"Core Mines",,,,,,,,,,,,,
 biomemod_esoteric_presence,"You feel an undescribable aura to the area...",,,,,,,,,,,,,
+biomemod_magmatic,"The air is burning",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
+material_apotheosis_volcanicrock_static_dense,"Dense Volcanic Rock",,,,,,,,,,,,,
+material_apotheosis_volcanicrock_superhot,"Burning Rock",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,,
 spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,,
@@ -492,7 +496,7 @@ end
 
 
 
---Will test if this has better performance on loadtime than previous method
+--Appends Global Spawns to vanilla biome
 do  -- Global Spawns
   --DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
   for _, append in ipairs({
@@ -543,6 +547,30 @@ do  -- Global Spawns
     for _, biome in ipairs(append.biomes) do
       -- Generate biome file path
       local biomepath = table.concat({"data/scripts/biomes/", biome, ".lua"})
+      -- Add the stuff
+      ModLuaFileAppend(biomepath, appendpath)
+    end
+  end
+end
+
+--Appends Global Spawns to new biome files
+do  -- Global Spawns
+  --DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
+  for _, append in ipairs({
+    { -- General
+      script = "global_populator",
+      biomes = {
+        "lava_excavation",       --Core Mines, Volcanic lava filled land in the desert with plenty of loot but plenty of death
+        "evil_temple",       --Temple of Sacriligious Remains
+      }
+    },
+  }) do
+    -- Generate append script file path
+    local appendpath = table.concat({"mods/apotheosis/files/scripts/biomes/", append.script, ".lua"})
+    -- Iterate over all biomes for the path
+    for _, biome in ipairs(append.biomes) do
+      -- Generate biome file path
+      local biomepath = table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/", biome, ".lua"})
       -- Add the stuff
       ModLuaFileAppend(biomepath, appendpath)
     end
@@ -1246,7 +1274,7 @@ ModTextFileSetContent("data/entities/misc/effect_weaken.xml", tostring(xml))
 do -- Fix Spatial Awareness friendcave position(s)
     local path = "data/scripts/perks/map.lua"
     local content = ModTextFileGetContent(path)
-    content = content:gsub("local fspots = { { 249, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }", "local fspots = { { 309, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }")
+    content = content:gsub("local fspots = { { 249, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }", "local fspots = { { 309, 153 }, { 260, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }")
     ModTextFileSetContent(path, content)
 end
 
@@ -1263,10 +1291,14 @@ do
   end
 end
 
-do -- Fix Spatial Awareness friendcave position(s)
-  local path = "data/scripts/magic/fungal_shift.lua"
+do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
+  local path = "data/biome/_pixel_scenes.xml"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("local fspots = { { 249, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }", "local fspots = { { 309, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }")
+  content = content:gsub("data/biome_impl/overworld/essence_altar_visual.png", "")
+  content = content:gsub("data/biome_impl/overworld/essence_altar_desert_visual.png", "")
+  content = content:gsub("data/biome_impl/overworld/essence_altar.png", "")
+  content = content:gsub("data/biome_impl/overworld/essence_altar_desert.png", "")
+  content = content:gsub("data/entities/buildings/essence_eater.xml", "")
   ModTextFileSetContent(path, content)
 end
 

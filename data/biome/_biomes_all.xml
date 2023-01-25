@@ -1021,7 +1021,7 @@
 		color="ff5f8fab" >
 	</Biome>
 
-	<!-- Apotheosis biomes below -->
+	<!-- Apotheosis biomes below ======================================================================================================================================= -->
 	<Biome 
 		biome_filename="data/biome/custom/border_wall_divine.xml"
 		height_index="10"
@@ -1032,6 +1032,12 @@
 		biome_filename="data/biome/custom/temple_wall_alt.xml"
 		height_index="0"
 		color="ff7adc32" >
+	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome/custom/temple_wall_ending_alt.xml" 
+		height_index="10"
+		color="ff578830" >
 	</Biome>
 
 	<Biome 
@@ -1092,5 +1098,23 @@
 		biome_filename="data/biome/custom/perk_creation.xml"
 		height_index="0"
 		color="ff57ead7" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/lava_excavation.xml"
+		height_index="13"
+		color="ffff7428" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/desert_essenceeater.xml"
+		height_index="11"
+		color="ffe1b66b" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/winter_essenceeater.xml"
+		height_index="11"
+		color="ffbbc1e0" >
 	</Biome>
 </BiomesToLoad>

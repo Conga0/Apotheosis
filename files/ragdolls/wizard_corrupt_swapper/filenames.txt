@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/torso.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/hand.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/feet.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/head.png
