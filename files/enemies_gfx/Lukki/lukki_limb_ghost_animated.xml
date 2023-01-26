@@ -1,0 +1,49 @@
+<Entity>
+
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+
+	<IKLimbComponent
+		length="80" >
+	</IKLimbComponent>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_ghost_a_long.png" 
+		z_index="1.1"
+		offset_x="0"
+		offset_y="5"
+		update_transform="0"
+		update_transform_rotation="0"
+		alpha="0.75"
+		additive="1"
+		emissive="1"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_ghost_b_long.png" 
+		z_index="1.1"
+		offset_x="0"
+		offset_y="5"
+		update_transform="0"
+		update_transform_rotation="0"
+		alpha="0.75"
+		additive="1"
+		emissive="1"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_ghost_knee.png" 
+		z_index="1.1"
+		offset_x="4"
+		offset_y="4"
+		update_transform="0"
+		update_transform_rotation="0"
+		alpha="0.75"
+		additive="1"
+		emissive="1"
+		>
+	</SpriteComponent>
+
+</Entity>

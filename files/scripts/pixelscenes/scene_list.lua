@@ -44,7 +44,7 @@ local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="12063" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="20255" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
     material_filename="mods/Apotheosis/files/pixel_scenes/wand_cave/wand_cave.png"
     background_filename="mods/Apotheosis/files/pixel_scenes/wand_cave/wand_cave_background.png"
     colors_filename=""
@@ -250,5 +250,30 @@ local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene pos_x="12026" pos_y="7104" just_load_an_entity="mods/Apotheosis/files/entities/props/hiddenmessage_hobo_glyph.xml" />
+]]))
+ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+
+
+--Apotheosis Pixelscenes below ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--Allows you to input the mana core to make a portal to the Core Mines (On second thought.. mana core, core mines, too punny)
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="12063" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
+    material_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input.png"
+    background_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_background.png"
+    colors_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_visual.png"
+  ></PixelScene>
+]]))
+ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+
+--Safe entrance in the Core Mines
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="12063" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
+    material_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input.png"
+    background_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_background.png"
+    colors_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_visual.png"
+  ></PixelScene>
 ]]))
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))

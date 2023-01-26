@@ -10,6 +10,7 @@ Arrow Now longer has increased recoil
 Relocated Friend Cave 1 & 2
 Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
 Fixed Chainsaw memory leak
+Wandstone now lets you tinker just by holding it
 
 
 

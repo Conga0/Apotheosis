@@ -30,10 +30,10 @@ local outputspells = {
     "SPECIAL_ACTION",
     "LIGHT_BULLET_TRIGGER",
     "SPECIAL_ACTION",
-    "APOTHEOSIS_MASS_STATUS_DRUNK_INTENSE",
-    "APOTHEOSIS_MASS_STATUS_WET_INTENSE",
-    "APOTHEOSIS_MASS_STATUS_FIRE_INTENSE",
-    "APOTHEOSIS_MASS_STATUS_URINE_INTENSE",
+    "APOTHEOSIS_MASS_DRY",
+    "APOTHEOSIS_MASS_DRY",
+    "APOTHEOSIS_MASS_DRY",
+    "APOTHEOSIS_MASS_DRY",
     "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
 }
 
@@ -58,7 +58,7 @@ do local v = targets[k];
                 if outputspells[pos] == "SPECIAL_ACTION" then
                     if inputmagic == "WORM_RAIN" then
                         EntityLoad("data/entities/animals/worm_big.xml", perk_x, perk_y)
-                        CreateItemActionEntity( "APOTHEOSIS_SUMMON_WORM_BIG", perk_x, perk_y )
+                        CreateItemActionEntity( "APOTHEOSIS_MASS_BURROW", perk_x, perk_y )
                     elseif inputmagic == "APOTHEOSIS_MASS_MATERIA_CONVERSION" then
                         EntityLoad("mods/Apotheosis/files/entities/projectiles/materia_conversion_explosion.xml", perk_x, perk_y)
                         EntityLoad("data/entities/misc/mass_materia_conversion.xml", perk_x, perk_y)

@@ -503,6 +503,7 @@ table.insert(actions,
     end,
 })
 
+--[[
 table.insert(actions,
 {
     id          = "APOTHEOSIS_SUMMON_WORM_BIG",
@@ -525,6 +526,7 @@ table.insert(actions,
         current_reload_time = current_reload_time + 60
     end,
 })
+]]--
 
 table.insert(actions,
 {
@@ -544,6 +546,52 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/rat_bite_crit.xml")
         c.damage_critical_chance = c.damage_critical_chance + 50
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MASS_BURROW",
+    name 		= "$spell_apotheosis_mass_burrow_name",
+    description = "$spell_apotheosis_mass_burrow_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_burrow.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+    related_projectiles	= {"data/entities/projectiles/remove_ground.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_boss_toxic_worm_spell",
+    never_unlimited		= true,
+    type 		= ACTION_TYPE_STATIC_PROJECTILE,
+    spawn_level                       = "10", -- Conversion spell
+    spawn_probability                 = "0.01", -- Conversion spell
+    price = 300,
+    max_uses    = 2, 
+    mana = 225, 
+    action 		= function()
+        add_projectile("data/entities/projectiles/remove_ground.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 100
+        current_reload_time = current_reload_time + 60
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MASS_DRY",
+    name 		= "$spell_apotheosis_status_dry_name",
+    description = "$spell_apotheosis_status_dry_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_dry.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml"},
+    spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+    never_unlimited		= true,
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "10", -- Conversion spell
+    spawn_probability                 = "0.01", -- Conversion spell
+    price = 180,
+    max_uses    = 20,
+    mana = 100,
+    action 		= function()
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -600,7 +648,7 @@ table.insert(actions,
             local rnd_num = Random( 1, 2 )
             if ( hand ~= nil ) and ( rnd_num == 1 ) then
                 for i,data in ipairs( hand ) do
-                    if ( data.id ~= "APOTHEOSIS_SPLIT_SPELL" and data.type ~= ACTION_TYPE_OTHER ) then
+                    if ( data.type ~= ACTION_TYPE_OTHER and data.type ~= ACTION_TYPE_MODIFIER ) then
                         data.action()
                     end
                 end
@@ -672,7 +720,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_drunk.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -694,7 +742,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_wet.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -716,7 +764,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_fire.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -738,7 +786,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_urine.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -760,7 +808,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_polymorph.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -985,7 +1033,9 @@ table.insert(actions,
     end,
 })
 
-
+--Bloat, Intention behind these spells was to remove stain effects very quickly, specifically for countering Masters of Immortality, but these have all been merged into one spell: "Mass Dry"
+--Exception to this is mass chaotic polymorph, because it's a liiil funny
+--[[
 table.insert(actions,
 {
     id          = "APOTHEOSIS_MASS_STATUS_DRUNK_INTENSE",
@@ -1004,7 +1054,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_drunk_intense.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -1026,7 +1076,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_wet_intense.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -1048,7 +1098,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_fire_intense.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 
@@ -1070,9 +1120,10 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_urine_intense.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
+]]--
 
 table.insert(actions,
 {
@@ -1092,7 +1143,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_polymorph_intense.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 100
+        current_reload_time = current_reload_time + 60
     end,
 })
 

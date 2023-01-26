@@ -1,0 +1,15 @@
+<Entity name="$creep_apotheosis_boss_fire_lukki_name" >
+
+	<LifetimeComponent
+		lifetime="38"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_miniboss_meteor_barrage.lua"
+		execute_every_n_frame="12"
+		execute_times="3"
+		>
+	</LuaComponent>
+
+</Entity>

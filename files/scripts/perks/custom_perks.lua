@@ -276,6 +276,9 @@ table.insert(perk_list,
     stackable = STACKABLE_YES,
     not_in_default_perk_pool = false,
     usable_by_enemies = true,
+    stackable_how_often_reappears = 10,
+    stackable_maximum = 5,
+    max_in_perk_pool = 1,
     func = function(entity_perk_item, entity_who_picked, item_name)
         LoadGameEffectEntityTo(entity_who_picked, "mods/Apotheosis/files/entities/misc/perks/perk_haste.xml")
     end,

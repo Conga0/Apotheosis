@@ -391,17 +391,21 @@ material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
 material_apotheosis_volcanicrock_static_dense,"Dense Volcanic Rock",,,,,,,,,,,,,
 material_apotheosis_volcanicrock_superhot,"Burning Rock",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
-spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,,
-spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,,
-spell_apotheosis_status_drunk_intense_desc,Affects every creature in a large radius a short but intense curse of endless spirits.,,,,,,,,,,,,,
-spell_apotheosis_status_wet_intense_name,Intense Mass Wet,,,,,,,,,,,,,
-spell_apotheosis_status_wet_intense_desc,Soaks every creature in a large radius with a short but intense curse of magical wetness.,,,,,,,,,,,,,
-spell_apotheosis_status_fire_intense_name,Intense Mass Fire,,,,,,,,,,,,,
-spell_apotheosis_status_fire_intense_desc,Burns every creature in a large radius with a dying but more damaging magical fire.,,,,,,,,,,,,,
-spell_apotheosis_status_urine_intense_name,Intense Mass Jarate,,,,,,,,,,,,,
-spell_apotheosis_status_urine_intense_desc,Douses every creature in a large radius with a short but intense curse of magical jarate.,,,,,,,,,,,,,
+spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_drunk_intense_desc,Affects every creature in a large radius a short but intense curse of endless spirits.,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_wet_intense_name,Intense Mass Wet,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_wet_intense_desc,Soaks every creature in a large radius with a short but intense curse of magical wetness.,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_fire_intense_name,Intense Mass Fire,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_fire_intense_desc,Burns every creature in a large radius with a dying but more damaging magical fire.,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_urine_intense_name,Intense Mass Jarate,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_status_urine_intense_desc,Douses every creature in a large radius with a short but intense curse of magical jarate.,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_polymorph_intense_name,Mass Chaotic Polymorph,,,,,,,,,,,,
 spell_apotheosis_status_polymorph_intense_desc,Afflicts every creature in a large radius with a magical chaotic polymorphine.,,,,,,,,,,,,,
+spell_apotheosis_mass_burrow_name,"Mass Burrow",,,,,,,,,,,,
+spell_apotheosis_mass_burrow_desc,"Rapidly excavate a large amount of terrain.",,,,,,,,,,,,,
+spell_apotheosis_status_dry_name,"Mass Infiltration",,,,,,,,,,,,,
+spell_apotheosis_status_dry_desc,"Freezes the stains on every creature in a large radius with a magical spell.",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
@@ -421,7 +425,9 @@ status_apotheosis_magicwet_intense_ui,"Intense Wetness",,,,,,,,,,,,,
 status_drunk_intense_ui,"Aura of Spirits",,,,,,,,,,,,,
 status_apotheosis_magicurine_intense_ui,"Magic Incontinence",,,,,,,,,,,,,
 status_apotheosis_magicfire_intense_ui,"Cursed Flames",,,,,,,,,,,,,
-creep_apotheosis_boss_flesh_monster_name,Unnamed Flesh Monster,,,,,,,,,,,,,
+status_apotheosis_dry_spell_name,"Infiltrated",,,,,,,,,,,,,
+status_apotheosis_dry_spell_desc,"Your stains are set in stone, nothing can be removed and nothing can be added.",,,,,,,,,,,,,
+creep_apotheosis_boss_flesh_monster_name,Warden,,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
 ]])
@@ -1276,6 +1282,15 @@ do -- Fix Spatial Awareness friendcave position(s)
     local content = ModTextFileGetContent(path)
     content = content:gsub("local fspots = { { 249, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }", "local fspots = { { 309, 153 }, { 260, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }")
     ModTextFileSetContent(path, content)
+end
+
+do -- Let Wand Stone enable tinkering regardless of if you have it held or not
+    local path = "data/entities/items/pickup/wandstone.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    local attrs = xml:first_of("GameEffectComponent").attr
+    attrs._tags = attrs._tags .. ",enabled_in_inventory"
+    ModTextFileSetContent(path, tostring(xml))
 end
 
 --Fix Weakening Curses not showing remaining time

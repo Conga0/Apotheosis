@@ -37,7 +37,7 @@ do local v = inputlist[k];
 		EntityLoad("data/entities/projectiles/explosion.xml", pos_x, pos_y - 10)
 		perk_spawn( pos_x, pos_y, outputlist[count] )
 		EntityKill(entity_id)
-        if GameHasFlagRun("apotheosis_perk_creation_angered") then
+        if not GameHasFlagRun("apotheosis_perk_creation_angered") then
             GameAddFlagRun("apotheosis_perk_creation_angered")
 
             --You Have Angered the Gods

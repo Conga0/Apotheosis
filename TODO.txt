@@ -4,7 +4,7 @@ All boss health should be doubled at least
 
 
 
-
+Weaken Haste into 1 faster movement and 0.5x faster levitation
 
 Give orb room material puzzles unique inputs and lore readouts (Likely need to ask letalli for help as they speak finnish)
 
@@ -22,4 +22,7 @@ Finish or remove Corrupt Master of Grounding
 
 Finish or Remove Mainpath Portal Puzzle
 
-Make TWWE stone work in inventory instead of just inhand
+
+
+Rework mass stain spells to immediately apply a large amount of their normal stain (ideally with lua, look up waterstone script) before continuing with their normal effects)
+Remove all intense mass status spells except for chaotic polymorph and replace with mass dry (Removes all stain effects)
