@@ -37,6 +37,19 @@ local outputspells = {
     "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
 }
 
+local effecttype = {
+    "magical_symbol_materia_fungus",
+    "magical_symbol",
+    "magical_symbol_hobo_money",
+    "magical_symbol_materia_fungus",
+    "NONE",
+    "magical_symbol_materia_fungus",
+    "magical_symbol_materia_fungus",
+    "magical_symbol_materia_fungus",
+    "magical_symbol_materia_fungus",
+    "magical_symbol_materia_fungus",
+}
+
 for k=1, #targets
 do local v = targets[k];
     if ( v ~= entity_id ) and EntityGetParent( v ) == 0 then
@@ -52,7 +65,7 @@ do local v = targets[k];
                 local perk_x,perk_y = EntityGetTransform( v )
             
                 EntityKill(v)
-                EntityLoad("data/entities/particles/image_emitters/magical_symbol_materia_fungus.xml", perk_x, perk_y)
+                if effecttype[pos] ~= "NONE" then EntityLoad("data/entities/particles/image_emitters/" .. effecttype[pos] .. ".xml", perk_x, perk_y) end
                 GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
 
                 if outputspells[pos] == "SPECIAL_ACTION" then

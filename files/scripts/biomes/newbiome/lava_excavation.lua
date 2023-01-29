@@ -23,6 +23,7 @@ RegisterSpawnFunction( 0xff70d7a0, "load_gunpowderpool_03" )
 RegisterSpawnFunction( 0xff70d7a1, "load_gunpowderpool_04" )
 RegisterSpawnFunction( 0xff33934c, "spawn_shopitem" )
 RegisterSpawnFunction( 0xffb09016, "spawn_meditation_cube" )
+RegisterSpawnFunction( 0xff4c11d4, "spawn_props_explosive" )
 RegisterSpawnFunction( 0xff00855c, "spawn_receptacle" )
 
 RegisterSpawnFunction( 0xffb1ff99, "spawn_tower_short" )
@@ -52,10 +53,10 @@ g_small_enemies =
 		entity 	= "data/entities/animals/firebug.xml"
 	},
 	{
-		prob   		= 0.1,
+		prob   		= 0.02,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/gazer.xml"
+		entity 	= "data/entities/animals/lava_excavation/gazer.xml"
 	},
 	{
 		prob   		= 0.08,
@@ -65,21 +66,27 @@ g_small_enemies =
 	},
 	{
 		prob   		= 0.2,
-		min_count	= 6,
-		max_count	= 8,  
+		min_count	= 1,
+		max_count	= 2,
 		entity 	= "data/entities/animals/goblin_bomb.xml"
 	},
 	{
 		prob   		= 0.2,
 		min_count	= 6,
 		max_count	= 9,  
-		entity 	= "data/entities/animals/sandcave/whisp.xml"
+		entity 	= "data/entities/animals/whisp.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_corrupt_hearty.xml"
+		entity 	= "data/entities/animals/lava_excavation/wizard_corrupt_hearty.xml"
+	},
+	{
+		prob   		= 0.08,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/fireskull.xml"
 	},
 }
 
@@ -109,7 +116,7 @@ g_big_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/gazer.xml"
+		entity 	= "data/entities/animals/lava_excavation/gazer.xml"
 	},
 	{
 		prob   		= 0.1,
@@ -124,7 +131,7 @@ g_big_enemies =
 		entity 	= "data/entities/animals/fireskull.xml"
 	},
 	{
-		prob   		= 0.06,
+		prob   		= 0.07,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/scavenger_mine.xml"
@@ -175,6 +182,41 @@ g_big_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/animals/tank_flame_apotheosis.xml"
 	},
+	{
+		prob   		= 0.01,
+		min_count	= 7,
+		max_count	= 10,
+		entity 	= "data/entities/animals/goblin_bomb.xml"
+	},
+    {
+        prob           = 0.15,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/tesla_turret.xml"
+    },
+    {
+        prob           = 0.05,
+        min_count    = 1,
+        max_count    = 1,
+        entities     =  {
+			{
+				min_count	= 2,
+				max_count 	= 2,
+				entity = "data/entities/animals/hisii_engineer.xml",
+			},
+			{
+				min_count	= 2,
+				max_count 	= 2,
+				entity = "data/entities/animals/tank_flame_apotheosis.xml",
+			},
+		}
+    },
+    {
+        prob           = 0.03,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/sentry.xml"
+    },
 }
 
 g_lamp =
@@ -278,7 +320,7 @@ g_unique_enemy3 =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_firemage_greater.xml"
+		entity 	= "data/entities/animals/coal_mines/wizard_firemage_greater.xml"
 	},
 	{
 		prob   		= 0.1,
@@ -305,16 +347,22 @@ g_items =
 		prob   		= 2,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_unshuffle_04.xml"
+		entity 	= "data/entities/items/wand_unshuffle_02.xml"
 	},
 	{
 		prob   		= 2,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_level_05.xml"
+		entity 	= "data/entities/items/wand_level_02.xml"
 	},
 	{
 		prob   		= 2,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/items/wand_level_03_better.xml"
+	},
+	{
+		prob   		= 0.02,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/wand_level_05_better.xml"
@@ -370,6 +418,49 @@ g_props =
 	},
 	{
 		prob   		= 0.03,
+		min_count	= 1,
+		max_count	= 1,
+		offset_y 	= -8,    
+		entity 	= "data/entities/props/physics_seamine.xml"
+	},
+}
+
+--- barrels ---
+--- only explosive props here ---
+
+g_props_explosive =
+{
+	total_prob = 0,
+	{
+		prob   		= 0.5,
+		min_count	= 0,
+		max_count	= 0,
+		offset_y 	= 0,    
+		entity 	= ""
+	},
+	{
+		prob   		= 0.3,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_box_explosive.xml"
+	},
+	{
+		prob   		= 0.50,
+		min_count	= 1,
+		max_count	= 1,
+		offset_y 	= 0,    
+		entity 	= "data/entities/props/physics_barrel_radioactive.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,
+		offset_y 	= 0,    
+		entity 	= "data/entities/props/physics_barrel_oil.xml"
+	},
+	{
+		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,
 		offset_y 	= -8,    
@@ -950,6 +1041,10 @@ end
 
 function spawn_props(x, y)
 	spawn(g_props,x,y-3,0,0)
+end
+
+function spawn_props_explosive(x, y)
+	spawn(g_props_explosive,x,y,0,0)
 end
 
 function spawn_props2(x, y)

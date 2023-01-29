@@ -14,7 +14,7 @@ Trophies for:
 Using Perk Creation Altar
 Reaching Max Orb Count, taking new orbs into consideration
 
-use nxml on mainworld portals luascript instead of file replacing them
+use nxml on mainworld portals luascript instead of file replacing them (mod compatiblity)
 
 Wand translations keys
 
@@ -22,7 +22,12 @@ Finish or remove Corrupt Master of Grounding
 
 Finish or Remove Mainpath Portal Puzzle
 
+Check if swapper curse buff applies per entity or if it's global
+
 
 
 Rework mass stain spells to immediately apply a large amount of their normal stain (ideally with lua, look up waterstone script) before continuing with their normal effects)
-Remove all intense mass status spells except for chaotic polymorph and replace with mass dry (Removes all stain effects)
+
+Altar ending code to check for updated orb counts
+
+Get FullHP song working on Kantele

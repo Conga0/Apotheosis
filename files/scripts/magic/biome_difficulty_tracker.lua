@@ -1,4 +1,4 @@
-dofile("data/scripts/lib/utilities.lua")
+if StreamingGetIsConnected() == false then return end
 
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform(entity_id)

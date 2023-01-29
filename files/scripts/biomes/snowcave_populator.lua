@@ -11,7 +11,7 @@
     {
         prob           = 0.1,
         min_count    = 1,
-        max_count    = 1,    
+        max_count    = 1,
         entity     = "data/entities/animals/hisii_engineer.xml"
     })
 
@@ -19,7 +19,7 @@
     {
         prob           = 0.03,
         min_count    = 1,
-        max_count    = 1,    
+        max_count    = 1,
         entity     = "data/entities/animals/sentry.xml"
     })
 
@@ -27,7 +27,7 @@
     {
         prob           = 0.15,
         min_count    = 1,
-        max_count    = 1,    
+        max_count    = 1,
         entity     = "data/entities/animals/tesla_turret.xml"
     })
 
@@ -130,7 +130,7 @@ table.insert(g_small_enemies,
     prob           = 0.12,
     min_count    = 1,
     max_count    = 1,    
-    entity     = "data/entities/animals/coldgazer_greater.xml",
+    entity     = "data/entities/animals/gazer_greater_cold.xml",
     ngpluslevel = 1
 })
 

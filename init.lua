@@ -58,26 +58,10 @@ end
 -- If Conjurer is enabled, disable this for a fix.
 if modCompatibilityConjurer == true then
   if ModIsEnabled("raksa") == false then
-    if ModIsEnabled("purgatory") then
-      dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_purgatory.lua" )
-      --dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_purgatory_NGPlus.lua" )
-    elseif ModIsEnabled("noitavania") then
-      dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_noitavania.lua" )
-    else
-      dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
-      dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_NGPlus.lua" )
-    end
+    dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
   end
 else
-  if ModIsEnabled("purgatory") then
-    dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_purgatory.lua" )
-    --dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_purgatory_NGPlus.lua" )
-  elseif ModIsEnabled("noitavania") then
-    dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_noitavania.lua" )
-  else
-    dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
-    dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list_NGPlus.lua" )
-  end
+  dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
 end
 
 
@@ -390,6 +374,7 @@ material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
 material_apotheosis_volcanicrock_static_dense,"Dense Volcanic Rock",,,,,,,,,,,,,
 material_apotheosis_volcanicrock_superhot,"Burning Rock",,,,,,,,,,,,,
+material_apotheosis_cursed_liquid,"Cursed Liquid",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
@@ -402,14 +387,14 @@ spell_apotheosis_status_urine_intense_name,Intense Mass Jarate,,,,,,,,,,,,"DOESN
 spell_apotheosis_status_urine_intense_desc,Douses every creature in a large radius with a short but intense curse of magical jarate.,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_polymorph_intense_name,Mass Chaotic Polymorph,,,,,,,,,,,,
 spell_apotheosis_status_polymorph_intense_desc,Afflicts every creature in a large radius with a magical chaotic polymorphine.,,,,,,,,,,,,,
-spell_apotheosis_mass_burrow_name,"Mass Burrow",,,,,,,,,,,,
+spell_apotheosis_mass_burrow_name,"Kaivossade",,,,,,,,,,,,
 spell_apotheosis_mass_burrow_desc,"Rapidly excavate a large amount of terrain.",,,,,,,,,,,,,
 spell_apotheosis_status_dry_name,"Mass Infiltration",,,,,,,,,,,,,
 spell_apotheosis_status_dry_desc,"Freezes the stains on every creature in a large radius with a magical spell.",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
-book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nStatus,,,,,,,,,,,,,
+book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nStatus,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
 perk_apotheosis_shield_oversized_name,"Oversized Shield",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_description,"You gain a very large, permanent shield.",,,,,,,,,,,,,
 perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
@@ -430,6 +415,8 @@ status_apotheosis_dry_spell_desc,"Your stains are set in stone, nothing can be r
 creep_apotheosis_boss_flesh_monster_name,Warden,,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
+item_apotheosis_egg_fire_lukki_name,"Volcanic Egg",,,,,,,,,,,,,
+item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)

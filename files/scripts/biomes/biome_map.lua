@@ -1,7 +1,7 @@
 -- constants (color format is ARGB)
 dofile_once("data/scripts/lib/utilities.lua")
 
-local w = 100
+local w = 102
 local h = 48
 
 BiomeMapSetSize(w, h)

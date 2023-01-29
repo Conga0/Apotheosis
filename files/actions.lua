@@ -591,7 +591,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml")
         c.fire_rate_wait = c.fire_rate_wait + 100
-        current_reload_time = current_reload_time + 60
+        current_reload_time = current_reload_time + 1800
     end,
 })
 
@@ -1029,7 +1029,7 @@ table.insert(actions,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spells_to_cursor.xml")
         c.fire_rate_wait = c.fire_rate_wait + 50
-        current_reload_time = current_reload_time + 45
+        current_reload_time = current_reload_time + 35
     end,
 })
 

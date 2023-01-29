@@ -1,8 +1,13 @@
-dofile("data/scripts/lib/utilities.lua")
+
+local appends = {"_pixel_scenes","_pixel_scenes_newgame_plus",}
+for k=1, #appends
+do local v = appends[k];
+
+
 
 --Wand Tinkering Crystal guaranteed spawn
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="10868" pos_y="-150" skip_biome_checks="1" skip_edge_textures="0"
@@ -11,11 +16,11 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     colors_filename="mods/Apotheosis/files/pixel_scenes/pyramid_wand_crystal/pyramid_wand_crystal_visual.png"
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --Hisii Beggar Hint
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="23789" pos_y="-1637" skip_biome_checks="1" skip_edge_textures="0"
@@ -24,11 +29,11 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     colors_filename=""
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --2nd Hisii Beggar Hint inside the south-west gold room
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-14140" pos_y="16819" skip_biome_checks="1" skip_edge_textures="0"
@@ -37,11 +42,11 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     colors_filename=""
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --Wand Cave Secret
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="20255" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
@@ -50,11 +55,11 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     colors_filename=""
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --Blob Cave Arena
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="2520" pos_y="8777" skip_biome_checks="1" skip_edge_textures="0"
@@ -70,7 +75,7 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     colors_filename=""
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --End the chaos here please
 
@@ -98,7 +103,7 @@ local apotheosis_fire_lukki_dead = HasFlagPersistent( "apotheosis_card_unlocked_
 if apotheosis_angel_dead and apotheosis_worm_dead and apotheosis_music_dead and apotheosis_blob_dead and apotheosis_divine_created and apotheosis_donated_beggar and apotheosis_enrage_unlocked and apotheosis_cat_secret_unlocked and apotheosis_essence_fungus and apotheosis_essence_fungus_moon and apotheosis_pandora_rain and apotheosis_fire_lukki_dead then
 
   local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-  local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+  local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
   local xml = nxml.parse(content)
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="4032" pos_y="1988" skip_biome_checks="1" skip_edge_textures="0"
@@ -107,13 +112,13 @@ if apotheosis_angel_dead and apotheosis_worm_dead and apotheosis_music_dead and 
       colors_filename=""
     ></PixelScene>
   ]]))
-  ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+  ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 else
 
   --Statue Room, shows which bosses you've killed
   local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-  local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+  local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
   local xml = nxml.parse(content)
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="4032" pos_y="1988" skip_biome_checks="1" skip_edge_textures="0"
@@ -122,17 +127,17 @@ else
       colors_filename=""
     ></PixelScene>
   ]]))
-  ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+  ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 end
 
 --Statue Spawner
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="4032" pos_y="1988" just_load_an_entity="mods/Apotheosis/files/scripts/biomes/boss_spawns/statue_room_populator_entity.xml" />
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 
 
@@ -148,7 +153,7 @@ ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
 --Fire Lukki Portal Room
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-8739" pos_y="16381" skip_biome_checks="1" skip_edge_textures="0"
@@ -220,7 +225,7 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="4022" pos_y="9110" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/hidden/alchemy_fungus.xml" />
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --Portal Offset amounts from pixelscene origin in top left
 --115,166 Music Stone         402,173 Lava lake
@@ -237,43 +242,73 @@ ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
 --Red Sand Hint
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene pos_x="3390" pos_y="8957" just_load_an_entity="mods/Apotheosis/files/entities/props/hiddenmessage_redsand.xml" />
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --Hiisi Beggar Hint Glyph
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
   <PixelScene pos_x="12026" pos_y="7104" just_load_an_entity="mods/Apotheosis/files/entities/props/hiddenmessage_hobo_glyph.xml" />
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 
 --Apotheosis Pixelscenes below ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --Allows you to input the mana core to make a portal to the Core Mines (On second thought.. mana core, core mines, too punny)
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="12063" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
-    material_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input.png"
-    background_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_background.png"
-    colors_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_visual.png"
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="28" pos_y="3196" skip_biome_checks="1" skip_edge_textures="0"
+    material_filename="mods/Apotheosis/files/biome_impl/snowcave/lava_nest.png"
+    background_filename="mods/Apotheosis/files/biome_impl/snowcave/lava_nest_background.png"
+    colors_filename="mods/Apotheosis/files/biome_impl/snowcave/lava_nest_visual.png"
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="66" pos_y="3231" just_load_an_entity="mods/Apotheosis/files/entities/buildings/lava_nest.xml" />
+]]))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 --Safe entrance in the Core Mines
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="12063" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
-    material_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input.png"
-    background_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_background.png"
-    colors_filename="mods/Apotheosis/files/biome_impl/snowcave/mana_core_input_visual.png"
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-21519" pos_y="3036" skip_biome_checks="1" skip_edge_textures="0"
+    material_filename="mods/Apotheosis/files/biome_impl/lava_excavation/intro.png"
+    background_filename=""
+    colors_filename=""
   ></PixelScene>
 ]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+--Music Altar in Core Mines
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-19211" pos_y="3283" skip_biome_checks="1" skip_edge_textures="0"
+    material_filename="mods/Apotheosis/files/biome_impl/musicspot.png"
+    background_filename=""
+    colors_filename="mods/Apotheosis/files/biome_impl/musicspot_visual.png"
+  ></PixelScene>
+]]))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="-19131" pos_y="3363" just_load_an_entity="mods/Apotheosis/files/entities/buildings/musichints/hint_coremines.xml" />
+]]))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+end

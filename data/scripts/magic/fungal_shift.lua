@@ -2,7 +2,7 @@ dofile_once("data/scripts/lib/utilities.lua")
 
 materials_from = 
 {
-	{ probability = 1.0, materials = { "water", "water_static", "water_salt", "water_ice" }, name_material = "water" },
+	{ probability = 1.0, materials = { "water", "water_static", "water_salt", "water_ice", "water_fading", "apotheosis_water_fading_fast", }, name_material = "water" },
 	{ probability = 1.0, materials = { "lava" } },
 	{ probability = 1.0, materials = { "radioactive_liquid", "poison", "material_darkness" }, name_material = "radioactive_liquid"},
 	{ probability = 1.0, materials = { "oil", "swamp", "peat" }, name_material = "oil" },
