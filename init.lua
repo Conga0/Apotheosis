@@ -618,9 +618,7 @@ if modCompatibilityConjurer == true then
       dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list_noitavania.lua" )
     else
       dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua" )
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list_NGPLUS.lua" )
       dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua" )
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list_NGPlus.lua" )
     end
   end
 else
@@ -1604,6 +1602,12 @@ do  -- Player Editor
       >
     </LuaComponent>
   ]]))
+
+  --Makes player take contact damage from cursed liquid
+  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
+  attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004"
+
   if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
     --Adds Golden Cape if check is successful
     xml:add_child(nxml.parse([[

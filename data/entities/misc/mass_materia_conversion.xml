@@ -6,8 +6,8 @@
       is_circle="1"
       radius="150" 
 	  loop="0"
-      from_material_array="lava,blood,vomit,magic_liquid_charm,acid,water,magic_liquid_polymorph,magic_liquid_unstable_polymorph,cement,snow,magic_liquid_protection_all,blood_worm,rock_static,rock_hard,rock_static_radioactive,wood_static,sand_static_rainforest,sand_static_rainforest_dark,blood_cold,grass,cursed_liquid,smoke,rock_static_wet,coal,magic_liquid_mana_regeneration,apotheosis_cursed_liquid_red,cursed_liquid"
-      to_material_array="blood,apotheosis_redstone,magic_liquid_teleportation,magic_liquid_berserk,radioactive_liquid,alcohol,magic_liquid_unstable_teleportation,material_confusion,rock_hard_border,lavasand,gold_molten,blood_fungi,acid,soil,rock_static_cursed_green,steel_static_strong,poison,material_darkness,void_liquid,magic_liquid_protection_all,poison_gas,rainbow_gas,water_ice,gunpowder_unstable,water_ice,steam,steam"
+      from_material_array="lava,blood,vomit,magic_liquid_charm,acid,water,magic_liquid_polymorph,magic_liquid_unstable_polymorph,cement,snow,magic_liquid_protection_all,blood_worm,rock_static,rock_hard,rock_static_radioactive,wood_static,sand_static_rainforest,sand_static_rainforest_dark,blood_cold,grass,cursed_liquid,smoke,rock_static_wet,coal,magic_liquid_mana_regeneration,cursed_liquid,apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static"
+      to_material_array="blood,apotheosis_redstone,magic_liquid_teleportation,magic_liquid_berserk,radioactive_liquid,alcohol,magic_liquid_unstable_teleportation,material_confusion,rock_hard_border,lavasand,gold_molten,blood_fungi,acid,soil,rock_static_cursed_green,steel_static_strong,poison,material_darkness,void_liquid,magic_liquid_protection_all,poison_gas,rainbow_gas,water_ice,gunpowder_unstable,water_ice,steam,steam,steam"
 	  >
     </MagicConvertMaterialComponent>
 

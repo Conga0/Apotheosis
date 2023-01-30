@@ -1,0 +1,257 @@
+<Entity name="Tähtilapsi" tags="ui_use_raw_name,monk_hand">
+  
+    <Base file="data/entities/base_enemy_basic.xml" >
+        <ItemChestComponent level="4" > </ItemChestComponent>
+        
+        <AnimalAIComponent
+			_enabled="1" 
+			preferred_job="JobDefault"
+            sense_creatures="1"
+			can_fly="1"  
+			can_walk="0"
+			creature_detection_range_x="300"
+			creature_detection_range_y="400"
+			sense_creatures="1"
+			attack_dash_enabled="0"
+			attack_melee_enabled="0"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_devil.xml"
+			attack_ranged_action_frame="2"
+			attack_ranged_frames_between="90"
+			attack_ranged_entity_count_min="1"
+			attack_ranged_entity_count_max="1"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="40"
+			attack_ranged_max_distance="300" >
+        </AnimalAIComponent>
+        
+        <SpriteComponent 
+            image_file="mods/Apotheosis/files/enemies_gfx/star_child.xml"
+            offset_x="0" 
+            offset_y="0"
+			alpha="0" >
+        </SpriteComponent>
+
+        <DamageModelComponent
+            hp="10"
+            air_needed="0"
+			fire_probability_of_ignition="0"
+            ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/star_child/filenames.txt"
+            ragdoll_material="steel"
+			blood_material="plasma_fading"
+			blood_spray_material="plasma_fading"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid,poison"
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
+			>
+			<damage_multipliers
+				curse="0.0"
+				>
+			</damage_multipliers>
+        </DamageModelComponent>
+
+		<PathFindingComponent
+			can_walk="0"
+			can_fly="1" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+        
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-20"
+			run_velocity="60"  
+			fly_speed_max_up="80"
+			fly_speed_max_down="80"
+			fly_speed_mult="30"
+			fly_speed_change_spd="3"
+			swim_idle_buoyancy_coeff="0.8"
+			fly_velocity_x="120">
+		</CharacterPlatformingComponent>
+
+        <GenomeDataComponent 
+            herd_id="ghost"
+			food_chain_rank="10"
+			is_predator="1" >
+        </GenomeDataComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+        
+        <HitboxComponent 
+            _enabled="1"
+			aabb_min_x="-7" 
+            aabb_max_x="7" 
+            aabb_min_y="-7" 
+            aabb_max_y="7" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-7" 
+			collision_aabb_max_x="7" 
+			collision_aabb_min_y="-7" 
+			collision_aabb_max_y="7"
+			mass="1"
+			>
+		</CharacterDataComponent>
+
+		<AudioComponent
+			file="data/audio/Desktop/animals.bank"
+			event_root="animals/robot">
+		</AudioComponent>
+
+ 		<!-- gets rid of generic animal sounds (e.g. attack_melee) -->
+		<AudioComponent 
+			file="data/audio/Desktop/animals.bank"
+			event_root=""
+			set_latest_event_position="1" >
+		</AudioComponent>
+    </Base>
+
+	<SpriteComponent 
+		_tags="character"
+		image_file="mods/Apotheosis/files/enemies_gfx/star_child_emissive.xml"
+        emissive="1"
+		additive="1"  >
+	</SpriteComponent>
+
+	<SpriteComponent
+		_tags="gun" 
+        alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/star_child.xml"
+        transform_offset.y="-0.0"
+        transform_offset.x="-0.0"
+        next_rect_animation="" 
+        rect_animation=""
+        update_transform="1"
+        update_transform_rotation="0"
+        has_special_scale="1"
+        z_index="-1"
+		>
+	</SpriteComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="110" 
+    r="200"
+    g="200"
+    b="200"
+    >
+  </LightComponent>
+
+    <AIAttackComponent
+    min_distance="20"
+    max_distance="200"
+    frames_between="128"
+    frames_between_global="0"
+    attack_ranged_action_frame="2"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/star_shotgun.xml"
+		attack_ranged_aim_rotation_enabled="1"
+		attack_ranged_aim_rotation_speed="0.08"
+		attack_ranged_aim_rotation_shooting_ok_angle_deg="10"
+    attack_ranged_offset_y="0"
+    attack_ranged_offset_x="0"
+    attack_ranged_entity_count_min="1"
+    attack_ranged_entity_count_max="1"
+    >
+	</AIAttackComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/drone_lasership" >
+	</AudioComponent>
+  
+	<LightComponent 
+		_enabled="1" 
+		radius="250" 
+		r="240"
+		g="240"
+		b="240">
+	</LightComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/shine_blue.xml"
+		delay="0"
+		lifetime="30"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="6"
+		count_min="3" count_max="6"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-9"
+		randomize_velocity.max_x="9"
+		randomize_velocity.min_y="-9"
+		randomize_velocity.max_y="9"
+		randomize_position.min_x="-18"
+		randomize_position.max_x="18"
+		randomize_position.min_y="-18"
+		randomize_position.max_y="18"
+		>
+  </SpriteParticleEmitterComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="enabled_in_world,enabled_in_hand"
+		emitted_material_name="spark_blue_dark"
+		fade_based_on_lifetime="1"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-15"
+		x_vel_max="15"
+		y_vel_min="-15"
+		y_vel_max="15"
+		area_circle_radius.min="6"
+		area_circle_radius.max="18"
+		velocity_always_away_from_center="75"
+		gravity.y="0"
+		friction="0.1"
+		airflow_force="0.9"
+		airflow_time="0.101"
+		airflow_scale="0.81"
+		count_min="2"
+		count_max="4"
+		lifetime_min="0.1"
+		lifetime_max="0.8"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		collide_with_grid="0"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		attractor_force="16"
+		render_ultrabright="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/mimic_hp_test.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name="mimic_proj_file"
+		value_string="data/entities/projectiles/wraith_glowing_laser.xml"
+		>
+	</VariableStorageComponent>
+
+</Entity>

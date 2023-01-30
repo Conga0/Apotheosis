@@ -397,3 +397,36 @@
             is_unique		= 0
     })
     ]]--
+
+RegisterSpawnFunction( 0xff876543, "spawn_nest_egg" )
+RegisterSpawnFunction( 0xffffeedd, "init" )
+
+if init ~= nil then
+    local previousinit = init
+end
+
+function init(x, y, w, h)
+    -- figure out positions for 4 fire lukki eggs within the biome
+    -- and spawn them if a position is within the bounds of this function call
+    -- NOTE: only 1 egg is needed to complete the nest portal
+    for i=1,4 do
+        local biome_x_min = -1887
+        local biome_x_max = 1843
+        local biome_y_min = 1701
+        local biome_y_max = 2403
+
+        local pos_x = ProceduralRandomi(109,i*53,biome_x_min,biome_x_max)
+        local pos_y = ProceduralRandomi(111,i*2.9,biome_y_min,biome_y_max)
+
+        if pos_x >= x and pos_x <= x+w
+        and pos_y >= y and pos_y <= y+h then
+            -- spawn
+            --print("spawned statue " .. i .. " at " .. pos_x .. ", " .. pos_y)
+            LoadPixelScene( "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", true )
+        end	
+    end
+end
+
+function spawn_nest_egg(x, y)
+	EntityLoad("mods/apotheosis/files/entities/items/pickups/egg_volcanic_lukki.xml", x, y)
+end

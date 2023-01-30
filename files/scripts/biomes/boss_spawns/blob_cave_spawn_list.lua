@@ -1,4 +1,7 @@
-dofile("data/scripts/lib/utilities.lua")
+local appends = {"_pixel_scenes","_pixel_scenes_newgame_plus",}
+for k=1, #appends
+do local v = appends[k];
+
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 
 --- Boss Spawns
@@ -59,3 +62,5 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="3090" pos_y="9175" just_load_an_entity="data/entities/props/physics_fungus_hugeish.xml" />
 ]]))
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+
+end

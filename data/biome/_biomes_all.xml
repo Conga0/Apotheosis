@@ -1119,7 +1119,7 @@
 	</Biome>
 	
 	<Biome 
-		biome_filename="data/biome/custom/solid_wall_tower_liquid.xml" 
+		biome_filename="data/biome/custom/solid_wall_tower_liquid.xml"
 		height_index="10"
 		color="ff4f4d4e" >
 	</Biome>
