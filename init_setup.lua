@@ -1593,6 +1593,7 @@ do  -- Player Editor
   local path = "data/entities/player_base.xml"
   local xml = nxml.parse(ModTextFileGetContent(path))
   --Adds Biome tracker script to the player character, it will update their current biome difficulty and save the highest one they've ever achieved, maxing out at 7 in Heaven/Hell
+  --This is currently only used for twitch integration so is disabled if TI is turned off, can be changed if needed elsewhere
   xml:add_child(nxml.parse([[
     <LuaComponent
       script_source_file="mods/apotheosis/files/scripts/magic/biome_difficulty_tracker.lua"
@@ -1604,7 +1605,7 @@ do  -- Player Editor
   ]]))
 
   --Makes player take contact damage from cursed liquid
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
+  local attrs = xml:first_of("DamageModelComponent").attr
   attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static"
   attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004"
 
@@ -1620,7 +1621,7 @@ do  -- Player Editor
       </LuaComponent>
     ]]))
   end
-  ModTextFileSetContent("data/entities/player_base.xml", tostring(xml))
+  ModTextFileSetContent(path, tostring(xml))
 end
 
 
@@ -1697,3 +1698,9 @@ local content = ModTextFileGetContent("data/entities/projectiles/deck/bounce_spa
 local xml = nxml.parse(content)
 xml:first_of("ProjectileComponent").attr.friendly_fire = "0"
 ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire_silent.xml", tostring(xml))
+
+--More Musical Magic implementation, coded by Y🍵
+ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
+ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_apotheosis.lua")
+
+

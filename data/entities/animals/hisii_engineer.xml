@@ -58,8 +58,8 @@
 		</GenomeDataComponent>
 
         <CharacterPlatformingComponent 
-			jump_velocity_y="-15" // originally 12
-			jump_velocity_x="-10" //originally unaffected >
+			jump_velocity_y="-15"
+			jump_velocity_x="-10" >
         </CharacterPlatformingComponent>
 
 		<CameraBoundComponent

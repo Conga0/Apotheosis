@@ -11,6 +11,8 @@ Relocated Friend Cave 1 & 2
 Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
 Fixed Chainsaw memory leak
 Wandstone now lets you tinker just by holding it
+Parrallel worlds are now harder to break into
+Kantele Bomb Song is fixed
 
 
 
@@ -24,7 +26,9 @@ Content list:
 5 new bosses
 42 new spells
 7 new perks
-1 new biome
+2 new biomes
 6 new structures
 1 new material
 12 attainable trophies
+3 new items
+1 new song
