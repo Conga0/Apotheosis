@@ -8,7 +8,7 @@
 		
 		<ItemActionComponent 
 			_tags="enabled_in_world"
-			action_id="apotheosis_PORTAL_LUKKI_GREEN_PORTAL" >
+			action_id="APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL" >
 		</ItemActionComponent>
 	</Base>
 

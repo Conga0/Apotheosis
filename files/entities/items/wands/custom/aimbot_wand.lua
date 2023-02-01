@@ -35,17 +35,16 @@ SetRandomSeed( x, y + GameGetFrameNum() )
 local ability_comp = EntityGetFirstComponent( entity_id, "AbilityComponent" )
 
 local gun = { }
-gun.name = {"Korttipakka"}
-gun.deck_capacity = 25
+gun.name = {"Wand of Aiming"}
+gun.deck_capacity = {17,22}
 gun.actions_per_round = 1
-gun.reload_time = {25,55}
+gun.reload_time = {15,25}
 gun.shuffle_deck_when_empty = 0
-gun.fire_rate_wait = {10,45}
+gun.fire_rate_wait = {-5,25}
 gun.spread_degrees = 0
 gun.speed_multiplier = 1.33
-gun.mana_charge_speed = {50,150}
-gun.mana_max = {400,600}
-gun.actions = {"RANDOM_MODIFIER", "RANDOM_SPELL"}
+gun.mana_charge_speed = {300,400}
+gun.mana_max = {800,1100}
 
 local mana_max = get_random_between_range( gun.mana_max )
 local deck_capacity = gun.deck_capacity
@@ -57,7 +56,7 @@ ComponentObjectSetValue( ability_comp, "gunaction_config", "fire_rate_wait", get
 ComponentSetValue( ability_comp, "mana_charge_speed", get_random_between_range( gun.mana_charge_speed ) )
 
 ComponentObjectSetValue( ability_comp, "gun_config", "actions_per_round", gun.actions_per_round )
-ComponentObjectSetValue( ability_comp, "gun_config", "deck_capacity", gun.deck_capacity )
+ComponentObjectSetValue( ability_comp, "gun_config", "deck_capacity", get_random_between_range( gun.deck_capacity ) )
 ComponentObjectSetValue( ability_comp, "gun_config", "shuffle_deck_when_empty", gun.shuffle_deck_when_empty )
 ComponentObjectSetValue( ability_comp, "gunaction_config", "spread_degrees", gun.spread_degrees )
 ComponentObjectSetValue( ability_comp, "gunaction_config", "speed_multiplier", gun.speed_multiplier )
@@ -65,16 +64,14 @@ ComponentObjectSetValue( ability_comp, "gunaction_config", "speed_multiplier", g
 ComponentSetValue( ability_comp, "mana_max", mana_max )
 ComponentSetValue( ability_comp, "mana", mana_max )
 
-AddGunActionPermanent( entity_id, "RESET")
+AddGunActionPermanent( entity_id, "AUTOAIM")
+AddGunActionPermanent( entity_id, "HOMING_SHORT")
+AddGunActionPermanent( entity_id, "APOTHEOSIS_AUTOFIRE")
 
-local action_count = 0
-local gun_action = get_random_from( gun.actions )
+--Always spawn with Magic Bolt
+AddGunAction( entity_id, "HEAVY_BULLET" )
 
-for i=1,action_count do
-	--AddGunActionPermanent( entity_id, gun_action )
-	AddGunAction( entity_id, gun_action )
-end
 
 local item_comp = EntityGetFirstComponent( entity_id, "ItemComponent" )
-ComponentSetValue2( item_comp, "item_name", "Korttipakka" )
+ComponentSetValue2( item_comp, "item_name", "Wand of Aiming" )
 ComponentSetValue2( item_comp, "always_use_item_name_in_ui", true )

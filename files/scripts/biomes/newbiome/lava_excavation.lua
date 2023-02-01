@@ -33,6 +33,8 @@ RegisterSpawnFunction( 0xff8228ff, "spawn_beam_low_flipped" )
 RegisterSpawnFunction( 0xff0098ba, "spawn_beam_steep" )
 RegisterSpawnFunction( 0xff7600a9, "spawn_beam_steep_flipped" )
 
+RegisterSpawnFunction( 0xffe8892c, "spawn_miniboss" )
+
 ------------ small enemies -------------------------------
 
 g_small_enemies =
@@ -217,6 +219,24 @@ g_big_enemies =
         max_count    = 1,
         entity     = "data/entities/animals/sentry.xml"
     },
+}
+g_miniboss_enemies =
+{
+	total_prob = 0,
+	-- this is air, so nothing spawns at 0.1
+	{
+		prob   		= 0.1,
+		min_count	= 0,
+		max_count	= 0,    
+		entity 	= ""
+	},
+	-- add skullflys after this step
+	{
+		prob   		= 1.0,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/secret/lukki_fire_miniboss.xml"
+	},
 }
 
 g_lamp =
@@ -590,65 +610,23 @@ g_pixel_scene_04 =
 	total_prob = 0,
 	{
 		prob   			= 1.0,
-        material_file 	= "mods/Apotheosis/files/biome_impl/excavationsite/redstone_01.png",
-        visual_file		= "",
-        background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 1.0,
-        material_file 	= "mods/Apotheosis/files/biome_impl/excavationsite/redstone_02.png",
-        visual_file		= "",
-        background_file	= "mods/Apotheosis/files/biome_impl/excavationsite/redstone_02_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/excavationsite/machine_3b.png",
-		visual_file		= "data/biome_impl/excavationsite/machine_3b_visual.png",
-		background_file	= "data/biome_impl/excavationsite/machine_3b_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "mods/Apotheosis/files/biome_impl/excavationsite/redstone_machine_4.png",
-		visual_file		= "data/biome_impl/excavationsite/machine_4_visual.png",
-		background_file	= "data/biome_impl/excavationsite/machine_4_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/excavationsite/machine_5.png",
-		visual_file		= "data/biome_impl/excavationsite/machine_5_visual.png",
-		background_file	= "data/biome_impl/excavationsite/machine_5_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/excavationsite/machine_6.png",
-		visual_file		= "data/biome_impl/excavationsite/machine_6_visual.png",
-		background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.3,
-		material_file 	= "data/biome_impl/excavationsite/machine_7.png",
-		visual_file		= "data/biome_impl/excavationsite/machine_5_visual.png",
-		background_file	= "data/biome_impl/excavationsite/machine_5_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 3,
         material_file 	= "mods/Apotheosis/files/biome_impl/excavationsite/shop_01.png",
         visual_file		= "mods/Apotheosis/files/biome_impl/excavationsite/shop_01_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
-		prob   			= 0.8,
-		material_file 	= "data/biome_impl/excavationsite/oiltank_1.png",
-		visual_file		= "data/biome_impl/excavationsite/oiltank_1_visual.png",
-		background_file	= "",
+		prob   			= 1.0,
+		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava.png",
+		visual_file		= "",
+		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava_background.png",
+		is_unique		= 0
+	},
+	{
+		prob   			= 3.5,
+		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
 		is_unique		= 0
 	},
 	{
@@ -710,6 +688,13 @@ g_pixel_scene_04_alt =
 		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava.png",
 		visual_file		= "",
 		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava_background.png",
+		is_unique		= 0
+	},
+	{
+		prob   			= 3.5,
+		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
 		is_unique		= 0
 	},
 	{
@@ -1154,6 +1139,10 @@ end
 
 function spawn_receptacle( x, y )
 	EntityLoad( "mods/apotheosis/files/entities/buildings/puzzle_check_lava.xml", x, y )
+end
+
+function spawn_miniboss(x, y)
+	spawn(g_miniboss_enemies,x,y)
 end
 
 -- Background sprites

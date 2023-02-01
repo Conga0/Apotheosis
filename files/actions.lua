@@ -875,6 +875,27 @@ table.insert(actions,
     end,
 })
 
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_ALT_FIRE_SWAPPER",
+    name 		= "$spell_apotheosis_alt_fire_swapper_name",
+    description = "$spell_apotheosis_alt_fire_swapper_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_swapper_projectile.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+    --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+    type    = ACTION_TYPE_PASSIVE,
+    spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
+    spawn_probability                 = "0.2,0.2,0.2,0.1,0.1,0.1,0.05", -- TELEPORT_PROJECTILE
+    price = 130,
+    mana = 0,
+    --max_uses    = 1,
+    custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_swapper.xml",
+    action            = function()
+        -- Go to the next card
+        draw_actions(1, true)
+    end,
+})
+
 --Wait.. is burning trail literally just fire charge but not called fire charge..? Keep your naming consistency together Noita please
 --I do want a spell which lets me do fire damage though.. so...
 table.insert(actions,
@@ -1147,6 +1168,116 @@ table.insert(actions,
     end,
 })
 
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_AUTOFIRE",
+    name 		= "$spell_apotheosis_autofire_name",
+    description = "$spell_apotheosis_autofire_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/autofire.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+    --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+    type    = ACTION_TYPE_PASSIVE,
+    spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
+    spawn_probability                 = "0.45,0.45,0.45,0.3,0.3,0.3,0.8", -- TELEPORT_PROJECTILE
+    price = 130,
+    mana = 0,
+    --max_uses    = 1,
+    custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/autofire.xml",
+    action            = function()
+        -- Go to the next card
+        draw_actions(1, true)
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_UPGRADE_ALWAYSCAST",
+    name 		= "$spell_apotheosis_upgrade_alwayscast_name",
+    description = "$spell_apotheosis_upgrade_alwayscast_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/upgrade_alwayscast.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+    --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+    type    = ACTION_TYPE_UTILITY,
+    spawn_level = "0",
+    spawn_probability = "0",
+    price = 200,
+    mana = 0,
+    recursive = true,
+    never_ac = true,
+    action = function(recursion_level, iteration)
+        if reflecting then
+            return
+        end
+        if (recursion_level or iteration) ~= nil then
+            GameScreenshake(50, pos_x, pos_y)
+            GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", pos_x, pos_y )
+            GamePrintImportant("$log_apotheosis_upgrade_alwayscast_cheater_name", "")
+            return
+        end
+        draw_actions(1, true)
+        local EZWand = dofile_once("mods/Apotheosis/lib/EZWand/EZWand.lua")
+        local entity_id = GetUpdatedEntityID()
+        local pos_x, pos_y = EntityGetTransform(entity_id)
+        local wand = EZWand.GetHeldWand()
+
+        if wand ~= nil then
+            local spells = wand:GetSpells()
+
+
+            if #spells >= 1 then
+                if (spells[1].action_id) == "APOTHEOSIS_UPGRADE_ALWAYSCAST" then
+                    GameScreenshake(50, pos_x, pos_y)
+                    GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", pos_x, pos_y )
+                    GamePrintImportant("$log_apotheosis_upgrade_alwayscast_cheater_name", "")
+                    --GamePrint("First Slot is found to be an always cast upgrade!!")
+                else
+                    --AddGunAction( wand, gun_action )
+                    wand:RemoveSpells("APOTHEOSIS_UPGRADE_ALWAYSCAST")
+                    wand:RemoveSpells(spells[1].action_id)
+                    wand:AttachSpells(spells[1].action_id)
+                    GameScreenshake(50, pos_x, pos_y)
+                    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/wand/create", pos_x, pos_y )
+                    GamePrintImportant("$log_apotheosis_upgrade_alwayscast_success_name", "$log_apotheosis_upgrade_alwayscast_success_desc")
+                end
+            end
+        end
+    end
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_ALT_FIRE_COV",
+    name 		= "$spell_apotheosis_alt_fire_cov_name",
+    description = "$spell_apotheosis_alt_fire_cov_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_cov_projectile.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+    --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+    type    = ACTION_TYPE_PASSIVE,
+    spawn_level                       = "1,2,3,4", -- REGENERATION_FIELD
+    spawn_probability                 = "0.2,0.2,0.2,0.2", -- REGENERATION_FIELD
+    price = 250,
+    mana = 0,
+    max_uses = 2,
+    never_unlimited = true,
+    custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_cov.xml",
+    action            = function()
+        if reflecting then
+            return
+        end
+        -- Go to the next card
+        draw_actions(1, true)
+
+        local entity_id = GetUpdatedEntityID()
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
+        local uses = ComponentGetValue2(comp,"uses_remaining")
+        GamePrint("Component is " .. tostring(comp))
+        if uses >= 1 then
+            uses = uses + 1
+        end
+        ComponentSetValue2(comp,"uses_remaining",uses)
+    end
+})
+
 
 
 
@@ -1223,6 +1354,9 @@ modify_existing_spell("ACCELERATING_SHOT","spawn_probability","0.5,1,1,1,0.5")
 
 modify_existing_spell("HOMING_ROTATE","spawn_level","2,3,4,5,6")
 modify_existing_spell("HOMING_ROTATE","spawn_probability","0.6,0.8,1,1,0.6")
+
+--Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
+modify_existing_spell("CHAINSAW","mana",12)
 
 
 --Remove Spells

@@ -2,13 +2,13 @@
 	
 	<Base file="data/entities/base_custom_card.xml" > 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/ui_gfx/gun_actions/portal_red_portal.png" 
+			image_file="mods/Apotheosis/files/ui_gfx/gun_actions/portal_green_portal.png" 
 			>
 		</SpriteComponent>
 		
 		<ItemActionComponent 
 			_tags="enabled_in_world"
-			action_id="APOTHEOSIS_PORTAL_LUKKI_RED_PORTAL" >
+			action_id="APOTHEOSIS_ALT_FIRE_SWAPPER" >
 		</ItemActionComponent>
 	</Base>
 
@@ -18,7 +18,7 @@
 
 	<LuaComponent 
 		_tags="enabled_in_hand"
-		script_source_file="mods/Apotheosis/files/scripts/spells/portal_red_marker.lua"
+		script_source_file="mods/Apotheosis/files/scripts/spells/alt_fire_swapper.lua"
 		execute_every_n_frame="1" >
 	</LuaComponent>
 

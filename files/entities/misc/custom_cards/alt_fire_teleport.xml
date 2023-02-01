@@ -8,7 +8,7 @@
 		
 		<ItemActionComponent 
 			_tags="enabled_in_world"
-			action_id="apotheosis_TELEPORT_ALT_FIRE" >
+			action_id="APOTHEOSIS_TELEPORT_ALT_FIRE" >
 		</ItemActionComponent>
 	</Base>
 

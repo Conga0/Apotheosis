@@ -13,6 +13,8 @@ Fixed Chainsaw memory leak
 Wandstone now lets you tinker just by holding it
 Parrallel worlds are now harder to break into
 Kantele Bomb Song is fixed
+Chainsaw now costs 12 mana
+Giga Death Cross now does much, much more damage
 
 
 

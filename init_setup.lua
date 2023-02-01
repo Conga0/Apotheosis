@@ -391,6 +391,14 @@ spell_apotheosis_mass_burrow_name,"Kaivossade",,,,,,,,,,,,
 spell_apotheosis_mass_burrow_desc,"Rapidly excavate a large amount of terrain.",,,,,,,,,,,,,
 spell_apotheosis_status_dry_name,"Mass Infiltration",,,,,,,,,,,,,
 spell_apotheosis_status_dry_desc,"Freezes the stains on every creature in a large radius with a magical spell.",,,,,,,,,,,,,
+spell_apotheosis_autofire_name,"Auto-Fire",,,,,,,,,,,,,
+spell_apotheosis_autofire_desc,"Causes the wand to automatically shoot if there's nearby enemies.",,,,,,,,,,,,,
+spell_apotheosis_upgrade_alwayscast_name,"Upgrade Wand: Always Cast",,,,,,,,,,,,,
+spell_apotheosis_upgrade_alwayscast_desc,"The first spell slotted in your wand will be applied to the wand as an always cast. Spell is voided upon use!",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_swapper_desc,"Right click to fire a swapper bolt for 10 mana.",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_cov_desc,"Right click to cast a Circle of Vigour for 80 mana.",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
@@ -399,7 +407,7 @@ perk_apotheosis_shield_oversized_name,"Oversized Shield",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_description,"You gain a very large, permanent shield.",,,,,,,,,,,,,
 perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
 perk_apotheosis_haste_description,"You move faster and levitate quicker.",,,,,,,,,,,,,
-perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks. Enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
+perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks but enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
 perk_apotheosis_alcohol_immunity,"Alcohol Immunity",,,,,,,,,,,,,
 perk_apotheosis_alcohol_immunity_description,"You take no effect to being drunk.",,,,,,,,,,,,,
 perk_apotheosis_trip_immunity,"Shift Immunity",,,,,,,,,,,,,
@@ -415,6 +423,10 @@ status_apotheosis_dry_spell_desc,"Your stains are set in stone, nothing can be r
 creep_apotheosis_boss_flesh_monster_name,Warden,,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
+log_apotheosis_upgrade_alwayscast_cheater_name,"You cannot cheat the gods!",,,,,,,,,,,,,
+log_apotheosis_upgrade_alwayscast_cheater_desc,"Always cast upgrade can only be used once",,,,,,,,,,,,,
+log_apotheosis_upgrade_alwayscast_success_name,"A permanent enchantment sinks into your wand",,,,,,,,,,,,,
+log_apotheosis_upgrade_alwayscast_success_desc,"Some things can never be undone...",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_name,"Volcanic Egg",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.",,,,,,,,,,,,,
 ]])
@@ -1299,6 +1311,14 @@ do -- Remove some pixelscenes as they're being turned into biomes to recur infin
   content = content:gsub("data/biome_impl/overworld/essence_altar.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar_desert.png", "")
   content = content:gsub("data/entities/buildings/essence_eater.xml", "")
+  ModTextFileSetContent(path, content)
+end
+
+do -- Increase Giga Death Cross's Damage
+  local path = "data/entities/projectiles/deck/death_cross_big_laser.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("0.38", "1.20")
+  content = content:gsub("1.15", "1.35")
   ModTextFileSetContent(path, content)
 end
 
