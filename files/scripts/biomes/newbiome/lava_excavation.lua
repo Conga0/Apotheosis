@@ -123,6 +123,12 @@ g_big_enemies =
 	{
 		prob   		= 0.1,
 		min_count	= 1,
+		max_count	= 2,    
+		entity 	= "data/entities/animals/whisp_big.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/triangle_gem.xml"
 	},
