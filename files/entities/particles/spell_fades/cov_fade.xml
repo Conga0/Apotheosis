@@ -1,0 +1,26 @@
+<Entity>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_cov_projectile.png" 
+		offset_x="8"
+		offset_y="24">
+	</SpriteComponent>   
+	
+	<LifetimeComponent
+		lifetime="60"
+		fade_sprites="1"
+		>
+	</LifetimeComponent>
+
+	<!-- Ideally this would float up slowly after appearing, but it's very uncooperative -->
+
+	<VelocityComponent
+		mass="0.05"
+		affect_physics_bodies="1"
+		gravity_y="-200">
+	</VelocityComponent>
+
+</Entity>
+
+
+

@@ -1177,8 +1177,8 @@ table.insert(actions,
     sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
     --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
     type    = ACTION_TYPE_PASSIVE,
-    spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
-    spawn_probability                 = "0.45,0.45,0.45,0.3,0.3,0.3,0.8", -- TELEPORT_PROJECTILE
+    spawn_level                       = "2,3,4,5,6", -- AUTOAIM
+    spawn_probability                 = "0.4,0.4,0.4,0.4,0.4", -- AUTOAIM
     price = 130,
     mana = 0,
     --max_uses    = 1,
@@ -1244,6 +1244,7 @@ table.insert(actions,
     end
 })
 
+--Wait.. this works..? lol
 table.insert(actions,
 {
     id          = "APOTHEOSIS_ALT_FIRE_COV",
@@ -1261,20 +1262,7 @@ table.insert(actions,
     never_unlimited = true,
     custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_cov.xml",
     action            = function()
-        if reflecting then
-            return
-        end
-        -- Go to the next card
-        draw_actions(1, true)
-
-        local entity_id = GetUpdatedEntityID()
-        local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
-        local uses = ComponentGetValue2(comp,"uses_remaining")
-        GamePrint("Component is " .. tostring(comp))
-        if uses >= 1 then
-            uses = uses + 1
-        end
-        ComponentSetValue2(comp,"uses_remaining",uses)
+        return
     end
 })
 

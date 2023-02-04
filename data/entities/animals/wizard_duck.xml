@@ -1,4 +1,4 @@
-<Entity name="Sinisorsienmestari" tags="ui_use_raw_name" serialize="1">
+<Entity name="Sinisorsienmestari" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

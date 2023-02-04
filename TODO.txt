@@ -3,9 +3,6 @@ Add health hearts perk, health healed is equal to max health gained x 2
 All boss health should be doubled at least
 
 
-
-Weaken Haste into 1 faster movement and 0.5x faster levitation
-
 Give orb room material puzzles unique inputs and lore readouts (Likely need to ask letalli for help as they speak finnish)
 
 Fix taking a perk from the perk creation altar casing the other perks to disappear
@@ -16,18 +13,12 @@ Reaching Max Orb Count, taking new orbs into consideration
 
 use nxml on mainworld portals luascript instead of file replacing them (mod compatiblity)
 
-Wand translations keys
-
 Finish or remove Corrupt Master of Grounding
 
 Finish or Remove Mainpath Portal Puzzle
 
-Check if swapper curse buff applies per entity or if it's global
+Check if swapper curse buff timeout applies per entity or if it's global
 
 
-
-Rework mass stain spells to immediately apply a large amount of their normal stain (ideally with lua, look up waterstone script) before continuing with their normal effects)
 
 Altar ending code to check for updated orb counts
-
-Get FullHP song working on Kantele

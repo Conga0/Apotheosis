@@ -90,6 +90,12 @@ g_small_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/animals/fireskull.xml"
 	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/lava_excavation/whisp_big.xml"
+	},
 }
 
 g_big_enemies =
@@ -121,10 +127,10 @@ g_big_enemies =
 		entity 	= "data/entities/animals/lava_excavation/gazer.xml"
 	},
 	{
-		prob   		= 0.17,
+		prob   		= 0.10,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/whisp_big.xml"
+		entity 	= "data/entities/animals/lava_excavation/whisp_big.xml"
 	},
 	{
 		prob   		= 0.1,

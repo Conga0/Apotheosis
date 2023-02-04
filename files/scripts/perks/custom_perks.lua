@@ -26,6 +26,14 @@ table.insert(perk_list,
             end
         end
     end,
+    func_remove = function( entity_who_picked )
+        local apotheosis_targets = EntityGetAllChildren(entity_id)
+        for i,v in ipairs( apotheosis_targets ) do
+            if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_ghostly_vision" ) then
+                EntityKill ( v )
+            end
+        end
+    end,
 })
 
 
@@ -56,6 +64,15 @@ if apotheosis_enrage_unlocked then
                 end
             end
         end,
+        func_remove = function( entity_who_picked )
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_rage_aura" ) then
+                    EntityKill ( v )
+                    add_halo_level(entity_id, 1)
+                end
+            end
+        end,
     })
 else
     table.insert(perk_list,
@@ -75,6 +92,14 @@ else
             EntityAddChild( entity_who_picked, child_id )
         end,
         _remove = function(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_rage_aura" ) then
+                    EntityKill ( v )
+                end
+            end
+        end,
+        func_remove = function( entity_who_picked )
             local apotheosis_targets = EntityGetAllChildren(entity_id)
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_rage_aura" ) then
@@ -144,6 +169,18 @@ if kolmi_dead then
                 end
             end        
         end,
+        func_remove = function( entity_who_picked )
+            local comp_lua = EntityGetComponentIncludingDisabled( player, "LuaComponent" )
+            if ( comp_lua ~= nil ) then
+                for i,v in ipairs( comp_lua ) do
+                    local name = ComponentGetValue2( v, "script_damage_received" )
+                    
+                    if ( name == "mods/Apotheosis/files/scripts/perks/wraith_returner_damage.lua" ) or ( name == "mods/Apotheosis/files/scripts/perks/wraith_returner_memory.lua" ) then
+                        EntityRemoveComponent(player, v)
+                    end
+                end
+            end        
+        end,
     })
 else
     table.insert(perk_list,
@@ -204,6 +241,18 @@ else
                 end
             end        
         end,
+        func_remove = function( entity_who_picked )
+            local comp_lua = EntityGetComponentIncludingDisabled( player, "LuaComponent" )
+            if ( comp_lua ~= nil ) then
+                for i,v in ipairs( comp_lua ) do
+                    local name = ComponentGetValue2( v, "script_damage_received" )
+                    
+                    if ( name == "mods/Apotheosis/files/scripts/perks/wraith_returner_damage.lua" ) or ( name == "mods/Apotheosis/files/scripts/perks/wraith_returner_memory.lua" ) then
+                        EntityRemoveComponent(player, v)
+                    end
+                end
+            end      
+        end,
     })
 end
 
@@ -260,12 +309,141 @@ table.insert(perk_list,
         local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/shield_oversized.xml", x, y )
         EntityAddChild( entity_who_picked, child_id )
     end,
+    _remove = function( entity_who_picked )
+        local shield_num = 0
+        GlobalsSetValue( "PERK_SHIELD_OVERSIZED_COUNT", tostring( shield_num ) )
+    end,
     func_remove = function( entity_who_picked )
         local shield_num = 0
         GlobalsSetValue( "PERK_SHIELD_OVERSIZED_COUNT", tostring( shield_num ) )
     end,
 })
 
+table.insert(perk_list,
+{
+    id = "APOTHEOSIS_HASTE",
+    ui_name = "$perk_apotheosis_haste_name",
+    ui_description = "$perk_apotheosis_haste_description",
+    ui_icon = "data/ui_gfx/perk_icons/movement_faster.png",
+    perk_icon = "data/items_gfx/perks/movement_faster.png",
+    stackable = STACKABLE_YES,
+    not_in_default_perk_pool = false,
+    usable_by_enemies = true,
+    stackable_how_often_reappears = 6,
+    stackable_maximum = 4,
+    max_in_perk_pool = 1,
+    func = function(entity_perk_item, entity_who_picked, item_name)
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
+        if comp ~= nil then
+            local values = {
+                "jump_velocity_y",
+                "jump_velocity_x",
+                "fly_speed_max_up",
+                "fly_speed_max_down",
+                "run_velocity",
+                "fly_velocity_x",
+                "velocity_min_x",
+                "velocity_max_x",
+                "velocity_min_y",
+                "velocity_max_y"
+            }
+
+            --60% movement speed boost with each haste pickup
+            local increments = {
+            -57,
+            34,
+            57,
+            51,
+            92.4,
+            31.2,
+            -34,
+            34,
+            -120,
+            210,
+            }
+            for k=1,#values
+            do v = values[k]
+                ComponentSetValue2(comp,v,val + increments[k])
+            end
+        end
+    end,
+    func_enemy = function( entity_perk_item, entity_who_picked )
+        LoadGameEffectEntityTo(entity_who_picked, "mods/Apotheosis/files/entities/misc/perks/perk_haste.xml")
+    end,
+    _remove = function(entity_who_picked)
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
+        if comp ~= nil then
+            local values = {
+                "jump_velocity_y",
+                "jump_velocity_x",
+                "fly_speed_max_up",
+                "fly_speed_max_down",
+                "run_velocity",
+                "fly_velocity_x",
+                "velocity_min_x",
+                "velocity_max_x",
+                "velocity_min_y",
+                "velocity_max_y"
+            }
+
+            local defaults = {
+            -95,
+            56,
+            95,
+            85,
+            154,
+            52,
+            -57,
+            57,
+            -200,
+            350,
+            }
+
+            for k=1,#values
+            do v = values[k]
+                ComponentSetValue2(comp,v,defaults[k])
+            end
+        end
+    end,
+    func_remove = function( entity_who_picked )
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
+        if comp ~= nil then
+            local values = {
+                "jump_velocity_y",
+                "jump_velocity_x",
+                "fly_speed_max_up",
+                "fly_speed_max_down",
+                "run_velocity",
+                "fly_velocity_x",
+                "velocity_min_x",
+                "velocity_max_x",
+                "velocity_min_y",
+                "velocity_max_y"
+            }
+
+            local defaults = {
+            -95,
+            56,
+            95,
+            85,
+            154,
+            52,
+            -57,
+            57,
+            -200,
+            350,
+            }
+
+            for k=1,#values
+            do v = values[k]
+                ComponentSetValue2(comp,v,defaults[k])
+            end
+        end
+    end,
+})
+
+--[[
+--Backup of previous iteration
 table.insert(perk_list,
 {
     id = "APOTHEOSIS_HASTE",
@@ -292,6 +470,7 @@ table.insert(perk_list,
         end
     end
 })
+]]--
 
 table.insert(perk_list,
 {
@@ -317,6 +496,14 @@ table.insert(perk_list,
             end
         end
     end,
+    func_remove = function( entity_who_picked )
+        local apotheosis_targets = EntityGetAllChildren(entity_id)
+        for i,v in ipairs( apotheosis_targets ) do
+            if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_alcohol_immunity" ) then
+                EntityKill ( v )
+            end
+        end
+    end,
 })
 
 table.insert(perk_list,
@@ -334,7 +521,10 @@ table.insert(perk_list,
     end,
     _remove = function()
         GameRemoveFlagRun("apotheosis_flag_no_tripping")
-    end
+    end,
+    func_remove = function( entity_who_picked )
+        GameRemoveFlagRun("apotheosis_flag_no_tripping")
+    end,
 })
 
 

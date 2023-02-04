@@ -1,4 +1,4 @@
-<Entity tags="hittable" serialize="1" >
+<Entity tags="hittable" >
 
   	<Base file="data/entities/base_chain_torch.xml" /> 
 

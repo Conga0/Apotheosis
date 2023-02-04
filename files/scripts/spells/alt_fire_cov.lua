@@ -18,14 +18,25 @@ local manacost = 80
 
 if GameGetFrameNum() >= cooldown_frame then
     if ComponentGetValue2(controlscomp, "mButtonDownRightClick") then
-        local mana = wand.mana
-        if (mana > manacost) then
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
+        local uses = ComponentGetValue2(comp,"uses_remaining")
+        if uses >= 1 then
+            local mana = wand.mana
+            if (mana > manacost) then
 
-            GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("data/entities/projectiles/deck/regeneration_field.xml", x, y))
-            wand.mana = mana - manacost
-            ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
-        else
-            GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", x, y );
+                GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("data/entities/projectiles/deck/regeneration_field.xml", x, y))
+                wand.mana = mana - manacost
+                ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
+                uses = uses - 1
+                ComponentSetValue2(comp,"uses_remaining",uses)
+                if uses <= 0 then
+                    GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/action_consumed", x, y )
+                    EntityLoad("mods/apotheosis/files/entities/particles/spell_fades/cov_fade.xml", x, y )
+                end
+            else
+                GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", x, y );
+            end
         end
     end
 end
+

@@ -35,7 +35,7 @@ SetRandomSeed( x, y + GameGetFrameNum() )
 local ability_comp = EntityGetFirstComponent( entity_id, "AbilityComponent" )
 
 local gun = { }
-gun.name = {"Wand of Aiming"}
+gun.name = {"$wand_apotheosis_aimbot_name"}
 gun.deck_capacity = {17,22}
 gun.actions_per_round = 1
 gun.reload_time = {15,25}
@@ -73,5 +73,5 @@ AddGunAction( entity_id, "HEAVY_BULLET" )
 
 
 local item_comp = EntityGetFirstComponent( entity_id, "ItemComponent" )
-ComponentSetValue2( item_comp, "item_name", "Wand of Aiming" )
+ComponentSetValue2( item_comp, "item_name", "$wand_apotheosis_aimbot_name" )
 ComponentSetValue2( item_comp, "always_use_item_name_in_ui", true )

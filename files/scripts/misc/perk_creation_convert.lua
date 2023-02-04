@@ -28,14 +28,12 @@ local outputlist = {
     "EDIT_WANDS_EVERYWHERE",
 }
 
-local count = 1
-
 for k=1, #inputlist
 do local v = inputlist[k];
 
     if image == v then
 		EntityLoad("data/entities/projectiles/explosion.xml", pos_x, pos_y - 10)
-		perk_spawn( pos_x, pos_y, outputlist[count] )
+		perk_spawn( pos_x, pos_y, outputlist[k] )
 		EntityKill(entity_id)
         if not GameHasFlagRun("apotheosis_perk_creation_angered") then
             GameAddFlagRun("apotheosis_perk_creation_angered")
@@ -46,9 +44,6 @@ do local v = inputlist[k];
         end
         return
     end
-    count = count + 1
 end
-
-if count == 7 then Print("Error: Found no valid output targets for Perk Creation Altar") end
 
 EntityKill(reforge_entity_id)

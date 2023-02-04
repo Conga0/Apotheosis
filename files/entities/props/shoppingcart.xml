@@ -1,4 +1,4 @@
-<Entity name="unknown" serialize="1">
+<Entity name="unknown">
 
     <PhysicsBody2Component 
         allow_sleep="1" 

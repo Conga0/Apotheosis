@@ -393,7 +393,7 @@ spell_apotheosis_status_dry_name,"Mass Infiltration",,,,,,,,,,,,,
 spell_apotheosis_status_dry_desc,"Freezes the stains on every creature in a large radius with a magical spell.",,,,,,,,,,,,,
 spell_apotheosis_autofire_name,"Auto-Fire",,,,,,,,,,,,,
 spell_apotheosis_autofire_desc,"Causes the wand to automatically shoot if there's nearby enemies.",,,,,,,,,,,,,
-spell_apotheosis_upgrade_alwayscast_name,"Upgrade Wand: Always Cast",,,,,,,,,,,,,
+spell_apotheosis_upgrade_alwayscast_name,"Spell Infusion",,,,,,,,,,,,,
 spell_apotheosis_upgrade_alwayscast_desc,"The first spell slotted in your wand will be applied to the wand as an always cast. Spell is voided upon use!",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_desc,"Right click to fire a swapper bolt for 10 mana.",,,,,,,,,,,,,
@@ -420,7 +420,7 @@ status_apotheosis_magicurine_intense_ui,"Magic Incontinence",,,,,,,,,,,,,
 status_apotheosis_magicfire_intense_ui,"Cursed Flames",,,,,,,,,,,,,
 status_apotheosis_dry_spell_name,"Infiltrated",,,,,,,,,,,,,
 status_apotheosis_dry_spell_desc,"Your stains are set in stone, nothing can be removed and nothing can be added.",,,,,,,,,,,,,
-creep_apotheosis_boss_flesh_monster_name,Warden,,,,,,,,,,,,,
+creep_apotheosis_boss_flesh_monster_name,"Warden",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
 log_apotheosis_upgrade_alwayscast_cheater_name,"You cannot cheat the gods!",,,,,,,,,,,,,
@@ -429,9 +429,17 @@ log_apotheosis_upgrade_alwayscast_success_name,"A permanent enchantment sinks in
 log_apotheosis_upgrade_alwayscast_success_desc,"Some things can never be undone...",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_name,"Volcanic Egg",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.",,,,,,,,,,,,,
+wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
+wand_apotheosis_rat_name,"Rat",,,,,,,,,,,,,
+wand_apotheosis_cat_name,"Cat",,,,,,,,,,,,,
+wand_apotheosis_mana_battery_name,"Mana Battery",,,,,,,,,,,,,
+wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
+
+--Custom Spell Border for one-off spells would be sick, even if it's just for the one
 
 
 

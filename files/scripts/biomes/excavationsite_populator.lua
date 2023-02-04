@@ -274,6 +274,15 @@
         entity     = "data/entities/animals/vault/tentacler_big.xml",
         ngpluslevel = 1
     })
+    
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.3,
+        min_count    = 2,
+        max_count    = 3,    
+        entity     = "data/entities/animals/whisp_big.xml",
+        ngpluslevel = 1
+    })
 
 
 

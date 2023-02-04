@@ -41,6 +41,7 @@ do local v = targets[k];
 		
 		if valid and EntityHasTag(v, "hittable") then
 			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_status_urine.xml", pos_x, pos_y )
+			EntityAddRandomStains( v, CellFactory_GetType("urine"), 400 )
 			EntityAddChild( v, eid )
 		end
 	end

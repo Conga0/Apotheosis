@@ -386,6 +386,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/whisp.png",
 	  },
 	  {
+		name="Giant Will O' the Whisp",
+		path="data/entities/animals/whisp_big.xml",
+		image="data/ui_gfx/animal_icons/whisp_big.png",
+	  },
+	  {
 		name="Master of Immortality",
 		path="data/entities/animals/wizard_ambrosia.xml",
 		image="data/ui_gfx/animal_icons/wizard_ambrosia.png",
@@ -429,6 +434,26 @@ table.insert(ALL_ENTITIES, {
 		name="Overzealous Polymaster",
 		path="data/entities/animals/wizard_z_poly_miniboss.xml",
 		image="data/ui_gfx/animal_icons/wizard_z_poly_miniboss.png",
+	  },
+	  {
+		name="Corrupt Master of Immortality",
+		path="data/entities/animals/wizard_corrupt_ambrosia.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_ambrosia.png",
+	  },
+	  {
+		name="Corrupt Master of Wounding",
+		path="data/entities/animals/wizard_corrupt_hearty.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_hearty.png",
+	  },
+	  {
+		name="Corrupt Master of Swapping",
+		path="data/entities/animals/wizard_corrupt_swapper.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_swapper.png",
+	  },
+	  {
+		name="Corrupt Master of Mana",
+		path="data/entities/animals/wizard_corrupt_manaeater.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_manaeater.png",
 	  },
 	  {
 		name="Reflective Weirdo",

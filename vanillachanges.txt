@@ -24,13 +24,13 @@ Dense Smoke
 Esoteric Presence
 
 Content list:
-87 new enemies
+88 new enemies
 5 new bosses
-42 new spells
+46 new spells
 7 new perks
 2 new biomes
 6 new structures
-1 new material
+3 new material (1 interactable, 3 total)
 12 attainable trophies
 3 new items
 1 new song
