@@ -43,11 +43,11 @@
     velocity_sets_scale="0"
 	knockback_force="0.0"
 	penetrate_entities="1"
+    >
 	<damage_by_type
 		fire="0.7"
 		>
 	</damage_by_type>
-    >
     <config_explosion
       never_cache="1" 
       camera_shake="5" 
@@ -57,7 +57,7 @@
       create_cell_material="fire" 
 	  ray_energy="0"
       hole_enabled="0" 
-	  damage="0"
+	  damage="0.5"
       particle_effect="0" 
       damage_mortals="0" 
 	  physics_explosion_power.min="0.2"

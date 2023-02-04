@@ -1244,7 +1244,6 @@ table.insert(actions,
     end
 })
 
---Wait.. this works..? lol
 table.insert(actions,
 {
     id          = "APOTHEOSIS_ALT_FIRE_COV",
@@ -1260,10 +1259,12 @@ table.insert(actions,
     mana = 0,
     max_uses = 2,
     never_unlimited = true,
+    custom_uses_logic = true,
     custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_cov.xml",
     action            = function()
-        return
-    end
+        -- Go to the next card
+        draw_actions(1, true)
+    end,
 })
 
 

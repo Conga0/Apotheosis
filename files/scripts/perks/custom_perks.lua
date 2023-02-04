@@ -363,6 +363,7 @@ table.insert(perk_list,
             }
             for k=1,#values
             do v = values[k]
+                local val = ComponentGetValue2(comp,v)
                 ComponentSetValue2(comp,v,val + increments[k])
             end
         end
@@ -386,6 +387,7 @@ table.insert(perk_list,
                 "velocity_max_y"
             }
 
+            --Default speed values Mina starts with
             local defaults = {
             -95,
             56,

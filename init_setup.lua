@@ -1270,66 +1270,6 @@ xml:add_child(nxml.parse([[
 ]]))
 ModTextFileSetContent("data/entities/misc/perks/freeze_field.xml", tostring(xml))
 
---Adds Vulnerability immunity check to Master of Vulnerability's attack
-local content = ModTextFileGetContent("data/entities/misc/effect_weaken.xml")
-local xml = nxml.parse(content)
-xml:add_child(nxml.parse([[
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/status_effects/weaken_immunity_check.lua"
-		execute_every_n_frame="2"
-		>
-	</LuaComponent>
-]]))
-ModTextFileSetContent("data/entities/misc/effect_weaken.xml", tostring(xml))
-
-do -- Fix Spatial Awareness friendcave position(s)
-    local path = "data/scripts/perks/map.lua"
-    local content = ModTextFileGetContent(path)
-    content = content:gsub("local fspots = { { 249, 153 }, { 261, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }", "local fspots = { { 309, 153 }, { 260, 201 }, { 153, 141 }, { 87, 135 }, { 81, 219 }, { 153, 237 } }")
-    ModTextFileSetContent(path, content)
-end
-
-do -- Let Wand Stone enable tinkering regardless of if you have it held or not
-    local path = "data/entities/items/pickup/wandstone.xml"
-    local content = ModTextFileGetContent(path)
-    local xml = nxml.parse(content)
-    local attrs = xml:first_of("GameEffectComponent").attr
-    attrs._tags = attrs._tags .. ",enabled_in_inventory"
-    ModTextFileSetContent(path, tostring(xml))
-end
-
---Fix Weakening Curses not showing remaining time
-do
-  local curses = {"electricity","explosion","melee","projectile"}
-  for k=1, #curses
-  do local v = curses[k];
-    local content = ModTextFileGetContent("data/entities/misc/curse_wither_" .. v .. ".xml")
-    local xml = nxml.parse(content)
-    xml:first_of("UIIconComponent").attr.display_in_hud = "1"
-    xml:first_of("UIIconComponent").attr.is_perk = "0"
-    ModTextFileSetContent("data/entities/misc/curse_wither_" .. v .. ".xml", tostring(xml))
-  end
-end
-
-do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
-  local path = "data/biome/_pixel_scenes.xml"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("data/biome_impl/overworld/essence_altar_visual.png", "")
-  content = content:gsub("data/biome_impl/overworld/essence_altar_desert_visual.png", "")
-  content = content:gsub("data/biome_impl/overworld/essence_altar.png", "")
-  content = content:gsub("data/biome_impl/overworld/essence_altar_desert.png", "")
-  content = content:gsub("data/entities/buildings/essence_eater.xml", "")
-  ModTextFileSetContent(path, content)
-end
-
-do -- Increase Giga Death Cross's Damage
-  local path = "data/entities/projectiles/deck/death_cross_big_laser.xml"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("0.38", "1.20")
-  content = content:gsub("1.15", "1.35")
-  ModTextFileSetContent(path, content)
-end
-
 
 
 
@@ -1340,9 +1280,9 @@ dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_health_multip
 --Boss vulnerability immunity insertion
 dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability_immune_plug.lua" )
 
---Modifies vanilla boss data
+--Modifies vanilla entity data
 --Try not to tinker with base noita too much, the main goal to this mod is to be an expansion pack, not a rebalance.
-dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_boss_appends.lua" )
+dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua" )
 
 --Overrides some creep's settings for spoopy's alternate graphics
 if spoopyGFXSetting == true then

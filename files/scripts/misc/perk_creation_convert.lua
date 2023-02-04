@@ -16,6 +16,7 @@ local inputlist = {
     "data/items_gfx/kakke.png",
     "mods/Apotheosis/files/items_gfx/stone_fungus.png",
     "data/items_gfx/goldnugget_01.png",
+    "data/items_gfx/beamstone.png",
 }
 
 local outputlist = {
@@ -26,6 +27,7 @@ local outputlist = {
     "APOTHEOSIS_ALCOHOL_IMMUNITY",
     "APOTHEOSIS_TRIP_IMMUNITY",
     "EDIT_WANDS_EVERYWHERE",
+    "MEGA_BEAM_STONE",
 }
 
 for k=1, #inputlist

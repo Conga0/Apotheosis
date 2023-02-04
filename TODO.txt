@@ -17,8 +17,6 @@ Finish or remove Corrupt Master of Grounding
 
 Finish or Remove Mainpath Portal Puzzle
 
-Check if swapper curse buff timeout applies per entity or if it's global
-
 
 
 Altar ending code to check for updated orb counts
