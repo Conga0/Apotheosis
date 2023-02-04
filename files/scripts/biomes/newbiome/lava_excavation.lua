@@ -121,7 +121,7 @@ g_big_enemies =
 		entity 	= "data/entities/animals/lava_excavation/gazer.xml"
 	},
 	{
-		prob   		= 0.1,
+		prob   		= 0.17,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/whisp_big.xml"
