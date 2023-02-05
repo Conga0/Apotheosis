@@ -14,7 +14,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
         if #blobs_remaining == 1 and blobs_remaining[1] == entity_id then
             --GamePrint("All Blob are Dead")
             if flag_status then
-                local opts = { "apotheosis_MASS_STATUS_DRUNK", "apotheosis_MASS_STATUS_WET", "apotheosis_MASS_STATUS_FIRE", "apotheosis_MASS_STATUS_URINE", "apotheosis_MASS_STATUS_POLYMORPH", "apotheosis_SPLIT_SPELL" }
+                local opts = { "APOTHEOSIS_MASS_STATUS_DRUNK", "APOTHEOSIS_MASS_STATUS_WET", "APOTHEOSIS_MASS_STATUS_FIRE", "APOTHEOSIS_MASS_STATUS_URINE", "APOTHEOSIS_MASS_STATUS_POLYMORPH", "APOTHEOSIS_SPLIT_SPELL" }
                 local rnd = Random( 1, #opts )
                 --I don't know what reward to put here????
                 EntityLoad( "data/entities/items/wand_unshuffle_06.xml", pos_x, pos_y - 16 )
@@ -29,10 +29,10 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
                 end
 
             else
-                local opts = { "apotheosis_MASS_STATUS_DRUNK", "apotheosis_MASS_STATUS_WET", "apotheosis_MASS_STATUS_FIRE", "apotheosis_MASS_STATUS_URINE", "apotheosis_MASS_STATUS_POLYMORPH" }
+                local opts = { "APOTHEOSIS_MASS_STATUS_DRUNK", "APOTHEOSIS_MASS_STATUS_WET", "APOTHEOSIS_MASS_STATUS_FIRE", "APOTHEOSIS_MASS_STATUS_URINE", "APOTHEOSIS_MASS_STATUS_POLYMORPH" }
                 local rnd = Random( 1, #opts )
                 EntityLoad( "data/entities/items/wand_unshuffle_06.xml", pos_x, pos_y - 16 )
-                CreateItemActionEntity( "apotheosis_SPLIT_SPELL", pos_x + 16, pos_y ) --I've calmed down now and don't need profanities here.. but this spell was still a headache to make.
+                CreateItemActionEntity( "APOTHEOSIS_SPLIT_SPELL", pos_x + 16, pos_y ) --I've calmed down now and don't need profanities here.. but this spell was still a headache to make.
                 EntityLoad( "data/entities/items/pickup/heart.xml", pos_x - 8, pos_y )
                 EntityLoad("data/entities/particles/image_emitters/magical_symbol_hobo_money.xml", pos_x, pos_y)
                 GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", pos_x, pos_y)

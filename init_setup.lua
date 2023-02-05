@@ -1672,3 +1672,5 @@ ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_apotheosis.lua")
 
 
+--Set Custom Seed (And Check for Secret Seeds)
+dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")

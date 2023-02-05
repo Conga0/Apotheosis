@@ -25,6 +25,8 @@ local mod_compat_mode_conjurer_name = "Conjurer extra Compatibility Mode"
 local mod_compat_mode_conjurer_desc = "Some people may have issues with this mod not loading into Conjurer properly. \nIf this happens, try enabling this option and loading conjurer again. \n \nThis option is on by default but can be turned off if you wish to \nhave the pixel scenes & bosses appear in conjurer worlds. \n \nIf Conjurer still fails to load despite having this turned on, although unlikely, \nit may be a mod compatibility issue with something else, \nperhaps try disabling mods to find the troublesome one. \n \nIf nothing else works please let me know to by filing a bug report to me. \nIt would be easiest for me to reach & investigate your report at the discord link below: \nhttps://discord.gg/gtyGnv8Pxk"
 local mod_compat_mode_spell_evolution_name = "Spell Evolution Compatibility Mode"
 local mod_compat_mode_spell_evolution_desc = "Turn this setting on if youre playing with the Spell Evolution mod to fix it.\n \nAs far as I can tell, a bug in Spell Evolutions causes it to break if a modded spell \nUses translation keys for their name and/or description. \n \nUnfortunately there's nothing I can do about this as it's not my mod, \nand I have no intention to remove the translation keys \nas I hope to use them one day in the event \nIm offered a translation for the mod to another language. \nHowever, I can put a setting in to optionally let you use the spells without \ntranslation keys to get around the issue."
+local custom_seed_name = "Set Custom Seed"
+local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or PuppyDogs" --Sneak in some secret seeds here
 
 local seasonal_forced_name = "Forced Seasonal Events"
 local seasonal_forced_desc = "A list of Seasonal Events which can be forced"
@@ -50,7 +52,7 @@ if currentLang == "русский" then
   motd_setting_name = "Сообщение дня"
   motd_setting_desc = "Будет ли сообщение дня отображаться в начале каждого забега? \nМожет содержать бонусные подсказки с различными секретами."
   seasonal_events_name = "Сезонные праздники"
-  seasonal_events_desc = "Включены ли сезонные праздники? \nНапример, Хэллоуин, день рождения мода More Creep и т.д."
+  seasonal_events_desc = "Включены ли сезонные праздники? \nНапример, Хэллоуин, день рождения мода Apotheosis и т.д."
   boss_health_multiplayer_name = "Множитель здоровья босса"
   boss_health_multiplayer_formatting = " $0% ОЗ"
   boss_health_multiplayer_desc = "Умножает здоровье всех боссов на это количество. \nДля тех, кто ищет особо стойких противников. \nНе влияет на Колмисильмяна \nМини-боссы также будут иметь частичное увеличение здоровья. \nЭто можно изменить в середине игры, но не для всех боссов, \n не забудьте перезапустить игру после обновления множителя.\n \nДля создателей модов: \nЕсли ваш мод не указан в разделе совместимости на странице \n модов, это скорее всего не поможет, вам придётся добавить \n lua-компонент кода к вашим боссам. \nНе стесняйтесь обращаться ко мне за инструкциями или \n помощью, если это необходимо. \nМне будет проще всего ответить вам в \n Discord, Conga Lyne#2452. [ТОЛЬКО НА АНГЛИЙСКОМ]"
@@ -151,6 +153,15 @@ mod_settings =
     ui_name = mod_compat_mode_spell_evolution_name,
     ui_description = mod_compat_mode_spell_evolution_desc,
     value_default = false,
+    scope = MOD_SETTING_SCOPE_NEW_GAME,
+  },
+  {
+    id = "custom_seed",
+    ui_name = custom_seed_name,
+    ui_description = custom_seed_desc,
+    value_default = "",
+    text_max_length = 30,
+    allowed_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_0123456789/.- ",
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
 

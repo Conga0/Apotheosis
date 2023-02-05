@@ -88,3 +88,65 @@ do -- Increase Giga Death Cross's Damage
   content = content:gsub("1.15", "1.35")
   ModTextFileSetContent(path, content)
 end
+
+--Can't gsub anything with a string? [[]] doesn't work?
+--do -- Fix Darkcave not spawning in properly, because it just doesn't if I don't do this...? weird
+--  local path = "data/scripts/biomes/watercave.lua"
+--  local content = ModTextFileGetContent(path)
+--  content = content:gsub([[function random_layout( x, y )]], [[function init( x, y )]])
+--  content = content:gsub([[LoadPixelScene( "data/biome_impl/watercave_layout_"..r..".png", "", x, y, "", true )]], [[LoadPixelScene( "data/biome_impl/watercave_layout_"..r..".png", "", x, y + 3, "", true )]])
+--  ModTextFileSetContent(path, content)
+--end
+
+
+--Maybe only do this for an optional "hardmode? Unsure"
+--Goal is for the mod to be accessible to anyone but it gets so freakin boring 1 shotting everything
+do --Boosts Health of various creatures
+  local multiplier = 2.0
+  local enemy_list = {
+    "acidshooter",
+    "barfer",
+    "crystal_physics",
+    "enlightened_alchemist",
+    --"failed_alchemist",
+    "maggot",
+    "necromancer",
+    "phantom_a",
+    "phantom_b",
+    "skullfly",
+    "skullrat",
+    "tentacler",
+    "tentacler_small",
+    "thundermage",
+    "wizard_dark",
+    "wizard_neutral",
+    "wizard_poly",
+    "wizard_returner",
+    "wizard_tele",
+    "worm",
+    "worm_skull",
+    --Modded Enemies below
+    "devourer_ghost",
+    "devourer_magic",
+    "hideous_mass",
+    "hideous_mass_red",
+    "tentacler_big",
+    "triangle_gem",
+    "wizard_firemage_greater",
+  }
+
+  for k=1,#enemy_list
+  do v = enemy_list[k]
+    local path = "data/entities/animals/crypt/" .. v .. ".xml"
+    print("Filepath is " .. path)
+    local content = ModTextFileGetContent(path)
+    if content ~= nil then
+      local xml = nxml.parse(content)
+      local max_hp = xml:first_of("Base"):first_of("DamageModelComponent").attr.hp
+      max_hp = max_hp * multiplier
+      xml:first_of("Base"):first_of("DamageModelComponent").attr.max_hp = tostring(max_hp)
+      xml:first_of("Base"):first_of("DamageModelComponent").attr.hp = tostring(max_hp)
+      ModTextFileSetContent(path, tostring(xml))
+    end
+  end
+end

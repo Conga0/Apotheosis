@@ -191,7 +191,7 @@ g_candles =
 
 function init(x, y, w, h)
 	parallel_check( x, y )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/essence_altar_desert.png", "mods/apotheosis/files/biome_impl/special_scenes/essence_altar_desert_visual.png", x, y + 240, "", true )
+	LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/essence_altar_desert.png", "mods/apotheosis/files/biome_impl/special_scenes/essence_altar_desert_visual.png", x, y - 210, "", true )
 end
 
 function spawn_essence_eater(x, y)
