@@ -89,6 +89,8 @@ end
 
 if input_seed == "0" then
     output_seed = "0"
+else
+    output_seed = input_seed
 end
 
 --Set Custom Seed
@@ -97,3 +99,12 @@ if output_seed ~= "0" then
     ModTextFileSetContent("mods/apotheosis/scripts/setup/set_seed.xml", set_seed_xml)
     ModMagicNumbersFileAdd("mods/apotheosis/scripts/setup/set_seed.xml")
 end
+
+--Remind player they're on a custom seed
+function OnPlayerSpawned()
+    if output_seed ~= "0" then
+        GamePrint("$sign_apotheosis_custom_seed" )
+        --GamePrint(ModSettingGet( "Apotheosis.custom_seed" ))
+    end
+end
+

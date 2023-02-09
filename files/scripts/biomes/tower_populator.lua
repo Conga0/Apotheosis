@@ -22,7 +22,7 @@ function spawn_any_enemy( x, y )
         if ( target ~= "scavenger_heal" ) and ( target ~= "healerdrone_physics" ) and ( target ~= "boss_toxic_worm" ) then
             local damagemodels = EntityGetComponent( eid, "DamageModelComponent" )
             if( damagemodels ~= nil ) then
-                for k=1,damagemodels
+                for k=1,#damagemodels
                 do damagemodel = damagemodels[k]
                     local hp = tonumber( ComponentGetValue( damagemodel, "hp" ) ) * 4
                     

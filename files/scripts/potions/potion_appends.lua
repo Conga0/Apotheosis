@@ -2,7 +2,11 @@ local mm_insert = {
     {
     material="apotheosis_mudman_mud",
     cost=1600,
-},
+    },
+    {
+    material="apotheosis_magic_liquid_infinte_flight",
+    cost=800,
+    },
 }
 
 --[[

@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="data/entities/animals/firebug.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="3"
+      max_hp="3"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

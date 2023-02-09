@@ -1,6 +1,6 @@
 {d3d376b6-af21-4ae3-917c-3e8fb781b724} bank:/Master Bank
 {4bce5662-de5a-06a1-1735-b4714672b1bc} bank:/Master Bank.strings
-{8c207427-d06b-495f-b6c7-8c4b0135f7d0} bank:/apotheosis_audio
+{8c207427-d06b-495f-b6c7-8c4b0135f7d0} bank:/mocreeps_audio
 {91582d81-bc04-4e28-971c-5f71aeefedd7} bank:/my_mod_audio
 {fd1ec6a6-24b7-4a2e-9988-9733b99dc81e} bus:/
 {ab2beddd-fa07-445b-a933-d5cca76adb6e} bus:/UNASSIGNED 2
@@ -30,7 +30,9 @@
 {30ebb0f8-1ac5-467b-84cb-9aefe7ae8fc1} event:/mocreeps_audio/kittycat/voc_attack_03
 {cd9abbbf-a0fe-4a73-9db4-e4073e5f24dd} event:/mocreeps_audio/kittycat/voc_attack_purr_01
 {f6b37c19-e125-4d10-96a6-848850e2086c} event:/mocreeps_audio/reverberation/create
-{78155aa7-7cd5-4d10-9930-3fff2c96979b} event:/mocreeps_audio/sentry/voc_attack
+{2b3a6fc5-24e7-4321-8b89-a84daa849a8b} event:/mocreeps_audio/spells/explosion_magical_01
+{c677ecfb-c7de-4b7b-94d2-ab3fab7f0e3b} event:/mocreeps_audio/spells/teleport_alt
+{ad135cb0-375e-4245-a1d1-ed616d80ec92} event:/mocreeps_audio/spells/warp_alt
 {2f99f806-4b51-4b0a-a879-566644591f29} parameter:/Migration Name Conflict (3)/lowpass
 {6864bf18-2f50-4b34-aecc-63c1bdf7fdf4} parameter:/Migration Name Conflict (4)/Distance
 {ddf75d16-bdbe-4460-908b-0a29bd483835} parameter:/lowpass

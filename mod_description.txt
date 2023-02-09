@@ -1,12 +1,29 @@
 [img]https://i.imgur.com/Ko6YxFl.png[/img]
 
-Adds various new Creeps & Weirdos to the world of Noita, including new characters such as:
-The Master of Mallards, the species of Porings, bigger scarier Elemental Wizards and much more to explore for yourself!
+Apotheosis is a massive content mod which expands upon [b]EVERYTHING.[/b]
+88 new enemies!
+6 new bosses!
+46 new spells!
+2 new biomes!
+Perks, Items, materials, structures, Secrets, and more!
 
-Implements 85 new enemies, 5 new bosses and 12 attainable trophies to unlock.. but maybe there could be a few more hidden secrets too.
-Adds 37 new spells if you can conquer powerful foes.
-And an extra 5 more for free unlocked by default.
-With maybe a bit more for you to find too.
+[img banner seperation here]
+
+Explore a massively expanded world map with smooth gameplay containing bug fixes, rebalances and optimisations.
+
+[gif of core mines here]
+
+New player or seasones veteran? No worries!
+Apotheosis is built for skill levels of all types, with brutal endgame content to early game quests you can complete for fun unlocks and optional areas you can visit to fast track your progress to the harder content, if you're a ready for it.
+Just be aware Apotheosis is it's own world, so not everything may be the same you're familiar with.
+
+[gif of random bossfight/secret portal here]
+
+If you're a seasoned veteran, you may prefer the seed "hardmode" also for a little extra challenge in your journey.
+
+With all that aside, go nuts, have fun and goodluck out there!
+
+[img banner seperation here]
 
 Seasonal events include:
 April Fools April 1st to 3rd
@@ -14,38 +31,11 @@ apotheosis Birthday July 20th to 22nd
 Halloween October 15th to 31st
 Smissmass December 15th to 31st
 
+World Map: 
+Documentation: 
+Discord Server (for discussion:
 
-[img]https://i.imgur.com/8JSYiR6.png[/img]
-
-Compatiable with:
-Worse Enemies
-New Enemies [Must be higher in load order than apotheosis for tower compatibility]
-New Biomes & Secrets
-Alternate Biomes
-Volcano Biome
-Flesh Biome
-Copi's Things [Must be higher in load order than apotheosis, or some enemies may break]
-Conjurer
-Noitavania
-Nightmare
-Purgatory (recommended over nightmare for encountering bosses)
-Twitch Integration
-Chemical Curiosities
-Spell Evolutions [Must enable Spell Evolutions compatibility mode in the mod settings]
-Removable Perks
-& Should be compatiable with most, if not all other mods if Apotheosis is put below them.
-
-Also fixes the missing Icemage spawn in the frozen vault.
-
-
-[img]https://i.imgur.com/32H75yO.png[/img]
-
-Full Enemy, Spell & Perk Documentation here: (Big Spoilers)
-https://docs.google.com/document/d/1IBhkBI9ZPdZP4Sxx59ilYKo4DXgsQ2fxBfcbWveaIyo/edit?usp=sharing
-
-This mod doesn't override any existing files, it is safe to put at the bottom of your load order for maximum compatibility.
-
-Supported languages: English, русский
+[img banner seperation here]
 
 
 If you wish to support my work in a tangiable manner, you can donate here:

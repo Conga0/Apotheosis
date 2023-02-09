@@ -31,12 +31,12 @@
 		script_source_file="mods/Apotheosis/files/scripts/status_effects/mana_degradation_fast.lua"
 		execute_on_added="0"
 		execute_every_n_frame="1"
-		execute_times="30"
+		execute_times="10"
 		>
 	</LuaComponent>
 
     <GameEffectComponent
-        frames="30"
+        frames="10"
     >
 	</GameEffectComponent >
 

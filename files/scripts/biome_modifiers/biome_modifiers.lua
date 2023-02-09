@@ -219,7 +219,7 @@ biome_modifiers =
 		id = "PLANT_INFESTED",
 		ui_description="$biomemodifierdesc_plant_infested",
 		ui_decoration_file="data/ui_gfx/decorations_biome_modifier/plant_infested.png",
-		probability=0.75,
+		probability=1.0,
 		does_not_apply_to_biome={"snowcastle","snowcave","rainforest","rainforest_open","mountain_hall"},
 		action = function( biome_name, biome_filename ) end,
 		inject_spawns_action = function()
@@ -997,6 +997,23 @@ biome_modifiers =
 			})
 		end,
 	},
+	{
+		id = "NECROMANCY",
+		ui_description="$biomemod_necromancy",
+		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+		probability=0.2,
+		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 1.25, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+			})
+		end,
+	},
 	--[[-- dry - fire spreads faster than usually, fire demons spawn
 	-- bouncy - projectiles and physics bodies bounce from surfaces
 	-- corrupted - corruption grows everywhere. corruption = some sort of easily destructible static material
@@ -1043,6 +1060,45 @@ biome_modifier_fog_of_war_clear_at_player = {
 	probability=0,
 	action = function( biome_name, biome_filename )
 		BiomeSetValue( biome_filename, "fog_of_war_type", "HEAVY_CLEAR_AT_PLAYER" )
+	end,
+}
+
+
+	-- magmatic - frozen materials melt
+
+biome_modifier_magmatic = {
+	id = "MAGMATIC",
+	ui_description="$biomemod_magmatic",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/magmatic.png",
+	probability=0.0,
+	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
+	action = function( biome_name, biome_filename )
+		BiomeObjectSetValue( biome_filename, "modifiers", "reaction_unfreeze_chance", 40 )
+		BiomeVegetationSetValue( biome_filename, "grass", "tree_material", "grass_dry" )
+		BiomeVegetationSetValue( biome_filename, "fungus_loose", "tree_probability", 0.0 ) -- no mushrooms in dry biome
+		BiomeSetValue( biome_filename, "color_grading_r", 1.10 )
+		BiomeSetValue( biome_filename, "color_grading_g", 0.90 )
+		BiomeSetValue( biome_filename, "color_grading_b", 0.8 )
+		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.075 )
+		BiomeObjectSetValue( biome_filename, "modifiers", "dust_amount", 0.75 )
+	end,
+}
+
+biome_modifier_devtest = {
+	id = "DEVTEST",
+	ui_description="$biomemod_necromancy",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+	probability=0.0,
+	does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
+	action = function( biome_name, biome_filename )	end,
+	inject_spawns_action = function()
+		inject_spawn( g_small_enemies, 0.25, {
+			prob   		= 0,
+			min_count	= 1,
+			max_count	= 1,
+			offset_y 	= 0,    
+			entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+		})
 	end,
 }
 
@@ -1263,7 +1319,11 @@ function get_modifier_mappings()
 	result["wizardcave"] = biome_modifier_fog_of_war_clear_at_player
 	result["custom/evil_temple"] = biome_modifier_fog_of_war_clear_at_player
 	result["alchemist_secret"] = biome_modifier_fog_of_war_clear_at_player
+	result["custom/lava_excavation"] = biome_modifier_magmatic
 	--apply_modifier_if_has_none( "snowcave", "FREEZING" )
+
+	--DEVTST
+	--result["coalmine"] = biome_modifier_devtest
 
 	-- side biomes
 	set_modifier_if_has_none( "mountain_top", "FREEZING" ) -- NOTE: Freezing tends to occasionally bug out physics bodies, only put it in overworld biomes

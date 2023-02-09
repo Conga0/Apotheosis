@@ -52,7 +52,7 @@ g_small_enemies =
 		prob   		= 0.2,
 		min_count	= 1,
 		max_count	= 4,    
-		entity 	= "data/entities/animals/firebug.xml"
+		entity 	= "data/entities/animals/lava_excavation/firebug.xml"
 	},
 	{
 		prob   		= 0.02,
@@ -64,7 +64,7 @@ g_small_enemies =
 		prob   		= 0.08,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/bigfirebug.xml"
+		entity 	= "data/entities/animals/lava_excavation/bigfirebug.xml"
 	},
 	{
 		prob   		= 0.2,
@@ -169,7 +169,7 @@ g_big_enemies =
 		prob   		= 0.2,
 		min_count	= 2,
 		max_count	= 4,    
-		entity 	= "data/entities/animals/firebug.xml"
+		entity 	= "data/entities/animals/lava_excavation/firebug.xml"
 	},
 	{
 		prob   		= 0.08,
@@ -793,7 +793,7 @@ g_nest =
 		prob   		= 0.5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/buildings/firebugnest.xml"
+		entity 	= "data/entities/animals/lava_excavation/firebugnest.xml"
 	},
 	{
 		prob   		= 0.5,

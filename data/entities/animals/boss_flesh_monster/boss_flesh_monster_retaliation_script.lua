@@ -36,7 +36,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 			local vel_x = math.cos( angle ) * length
 			local vel_y = 0- math.sin( angle ) * length
 
-			local spells = { "orb_manadrain", "orb_unstable_transmutation", "orb_tele", "orb_hearty", "orb_neutral", "orb_homing" } --Homebringer curse of swapping would be evil... hmmm
+			local spells = { "orb_manadrain", "orb_unstable_transmutation", "orb_tele", "orb_hearty", "orb_neutral", "orb_homing", "orb_twitchy" } --Homebringer curse of swapping would be evil... hmmm
 			local rnd = Random( 1, #spells )
 			local path = "data/entities/animals/boss_flesh_monster/projectiles/master_orbs/" .. spells[rnd] .. ".xml"
 

@@ -1,4 +1,4 @@
-<Entity name="Corrupt Mana Mage" tags="ui_use_raw_name">
+<Entity name="Korruptoitunut Mananmestari" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -20,6 +20,7 @@
 			attack_ranged_offset_y="0"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="300"
+			creature_detection_check_every_x_frames="40"
 			>
 		</AnimalAIComponent>
 		
@@ -166,6 +167,19 @@
 		is_circle="1"
         radius="15" >
     </MagicConvertMaterialComponent>
+	
+	<LuaComponent
+		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name="shield_colour"
+		value_string="cyan"
+		value_int="-10000"
+		>
+	</VariableStorageComponent>
     
 </Entity>
 

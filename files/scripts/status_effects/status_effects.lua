@@ -77,3 +77,11 @@ table.insert(status_effects,
     effect_entity="mods/Apotheosis/files/entities/misc/effect_trip_red_03.xml",
     min_threshold_normalized="3.0",
 })
+table.insert(status_effects,
+{
+    id="apotheosis_INFINITE_FLIGHT",
+    ui_name="$status_apotheosis_infinite_flight_name",
+    ui_description="$status_apotheosis_infinite_flight_desc",
+    ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/infinite_flight.png",
+    effect_entity="mods/Apotheosis/files/entities/misc/effect_infinite_flight.xml",
+})

@@ -20,3 +20,9 @@ Finish or Remove Mainpath Portal Puzzle
 
 
 Altar ending code to check for updated orb counts
+NG+ Picks from 6 random pre-set NG+ maps, including the normal one (but only after NG+1)
+
+Move Blood limiting from magic numbers to elsewhere
+
+Nerf weakening curses, especially projectile/explosive as they invalidate resistances/immunities/vulnerabilities
+50% multiplier instead of flat reduction? 1.25 x 0 is still 0

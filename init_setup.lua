@@ -370,11 +370,13 @@ biome_desert_pit,"Sinkhole",,,,,,,,,,,,,
 biome_lava_excavation,"Core Mines",,,,,,,,,,,,,
 biomemod_esoteric_presence,"You feel an undescribable aura to the area...",,,,,,,,,,,,,
 biomemod_magmatic,"The air is burning",,,,,,,,,,,,,
+biomemod_necromancy,"The Dead are Restless",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectous Blood",,,,,,,,,,,,,
 material_apotheosis_volcanicrock_static_dense,"Dense Volcanic Rock",,,,,,,,,,,,,
 material_apotheosis_volcanicrock_superhot,"Burning Rock",,,,,,,,,,,,,
 material_apotheosis_cursed_liquid,"Cursed Liquid",,,,,,,,,,,,,
+material_apotheosis_magic_liquid_infinite_flight,"Soarium",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
@@ -399,6 +401,8 @@ spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_desc,"Right click to fire a swapper bolt for 10 mana.",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_desc,"Right click to cast a Circle of Vigour for 80 mana.",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_cov_name,"Alt Fire Alpha",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_cov_desc,"Right click to cast a copy of the first spell in your wand for 40 mana.",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
@@ -407,7 +411,7 @@ perk_apotheosis_shield_oversized_name,"Oversized Shield",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_description,"You gain a very large, permanent shield.",,,,,,,,,,,,,
 perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
 perk_apotheosis_haste_description,"You move faster and levitate quicker.",,,,,,,,,,,,,
-perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks but enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
+perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks but enemies near you take damage.",,,,,,,,,,,,,
 perk_apotheosis_alcohol_immunity,"Alcohol Immunity",,,,,,,,,,,,,
 perk_apotheosis_alcohol_immunity_description,"You take no effect to being drunk.",,,,,,,,,,,,,
 perk_apotheosis_trip_immunity,"Shift Immunity",,,,,,,,,,,,,
@@ -420,6 +424,8 @@ status_apotheosis_magicurine_intense_ui,"Magic Incontinence",,,,,,,,,,,,,
 status_apotheosis_magicfire_intense_ui,"Cursed Flames",,,,,,,,,,,,,
 status_apotheosis_dry_spell_name,"Infiltrated",,,,,,,,,,,,,
 status_apotheosis_dry_spell_desc,"Your stains are set in stone, nothing can be removed and nothing can be added.",,,,,,,,,,,,,
+status_apotheosis_infinite_flight_name,"Limitless Flight",,,,,,,,,,,,,
+status_apotheosis_infinite_flight_desc,"You can fly forever.",,,,,,,,,,,,,
 creep_apotheosis_boss_flesh_monster_name,"Warden",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
@@ -429,6 +435,7 @@ log_apotheosis_upgrade_alwayscast_success_name,"A permanent enchantment sinks in
 log_apotheosis_upgrade_alwayscast_success_desc,"Some things can never be undone...",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_name,"Volcanic Egg",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.",,,,,,,,,,,,,
+sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
 wand_apotheosis_rat_name,"Rat",,,,,,,,,,,,,
@@ -438,8 +445,11 @@ wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
-
+--
 --Custom Spell Border for one-off spells would be sick, even if it's just for the one
+--
+--Previous contact damage description
+--perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks but enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
 
 
 
@@ -479,6 +489,7 @@ ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/Apotheosis/files/script
 ModLuaFileAppend( "data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/scripts/biomes/robot_egg_populator.lua" ) --End of Everything Robotic Egg
 
 
+--[[
 if modCompatibilitySpellEvolutions == true then
   local currentLang = GameTextGetTranslatedOrNot("$current_language")
   if currentLang == "русский" then
@@ -489,7 +500,9 @@ if modCompatibilitySpellEvolutions == true then
 else
   ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
 end
+]]--
 
+ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
 
 
 --Custom Materials
@@ -1646,26 +1659,6 @@ ModTextFileSetContent("data/biome/_biomes_all.xml", tostring(xml))
 
 --Custom biome modifiers
   ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
-
-
-
-
-
-
-
-
---Vanilla Spell Fixups/changes
-
---Bubble Spark Bounce no longer does self-damage
-local content = ModTextFileGetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire.xml")
-local xml = nxml.parse(content)
-xml:first_of("Base"):first_of("ProjectileComponent").attr.friendly_fire = "0"
-ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire.xml", tostring(xml))
-
-local content = ModTextFileGetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire_silent.xml")
-local xml = nxml.parse(content)
-xml:first_of("ProjectileComponent").attr.friendly_fire = "0"
-ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire_silent.xml", tostring(xml))
 
 --More Musical Magic implementation, coded by Y🍵
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")

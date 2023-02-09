@@ -26,7 +26,7 @@ local mod_compat_mode_conjurer_desc = "Some people may have issues with this mod
 local mod_compat_mode_spell_evolution_name = "Spell Evolution Compatibility Mode"
 local mod_compat_mode_spell_evolution_desc = "Turn this setting on if youre playing with the Spell Evolution mod to fix it.\n \nAs far as I can tell, a bug in Spell Evolutions causes it to break if a modded spell \nUses translation keys for their name and/or description. \n \nUnfortunately there's nothing I can do about this as it's not my mod, \nand I have no intention to remove the translation keys \nas I hope to use them one day in the event \nIm offered a translation for the mod to another language. \nHowever, I can put a setting in to optionally let you use the spells without \ntranslation keys to get around the issue."
 local custom_seed_name = "Set Custom Seed"
-local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or PuppyDogs" --Sneak in some secret seeds here
+local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or towerclimb" --Sneak in some secret seeds here "PuppyDogs"?
 
 local seasonal_forced_name = "Forced Seasonal Events"
 local seasonal_forced_desc = "A list of Seasonal Events which can be forced"
@@ -148,6 +148,7 @@ mod_settings =
     value_default = true,
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
+  --[[
   {
     id = "mod_compat_mode_spell_evolution",
     ui_name = mod_compat_mode_spell_evolution_name,
@@ -155,6 +156,7 @@ mod_settings =
     value_default = false,
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
+  ]]--
   {
     id = "custom_seed",
     ui_name = custom_seed_name,

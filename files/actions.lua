@@ -1208,7 +1208,10 @@ table.insert(actions,
         if reflecting then
             return
         end
-        if (recursion_level or iteration) ~= nil then
+        local entity_id = GetUpdatedEntityID()
+        local pos_x, pos_y = EntityGetTransform(entity_id)
+
+        if (recursion_level or iteration) ~= nil or (current_action.id ~= "APOTHEOSIS_UPGRADE_ALWAYSCAST") then
             GameScreenshake(50, pos_x, pos_y)
             GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", pos_x, pos_y )
             GamePrintImportant("$log_apotheosis_upgrade_alwayscast_cheater_name", "")
@@ -1217,8 +1220,9 @@ table.insert(actions,
         draw_actions(1, true)
         local EZWand = dofile_once("mods/Apotheosis/lib/EZWand/EZWand.lua")
         local entity_id = GetUpdatedEntityID()
-        local pos_x, pos_y = EntityGetTransform(entity_id)
-        local wand = EZWand.GetHeldWand()
+        local inventory = EntityGetFirstComponent( entity_id, "Inventory2Component" )
+        local active_wand = ComponentGetValue2( inventory, "mActiveItem" )
+        local wand = EZWand(active_wand)
 
         if wand ~= nil then
             local spells = wand:GetSpells()
@@ -1267,6 +1271,30 @@ table.insert(actions,
     end,
 })
 
+--Not sure how to implement
+--[[
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_ALT_FIRE_ALPHA",
+    name 		= "$spell_apotheosis_alt_fire_alpha_name",
+    description = "$spell_apotheosis_alt_fire_alpha_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_alpha.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+    spawn_requires_flag = "card_unlocked_duplicate",
+    --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+    type    = ACTION_TYPE_PASSIVE,
+    spawn_level                       = "5,6,10", -- MANA_REDUCE
+    spawn_probability                 = "0.1,0.1,1", -- MANA_REDUCE
+    price = 200,
+    mana = 0,
+    --max_uses    = 1,
+    custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_alpha.xml",
+    action            = function()
+        -- Go to the next card
+        draw_actions(1, true)
+    end,
+})
+]]--
 
 
 

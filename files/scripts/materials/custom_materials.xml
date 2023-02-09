@@ -1103,6 +1103,45 @@
 	</ParticleEffect>
   </CellDataChild>
 
+  <CellData
+	name="apotheosis_magic_liquid_infinite_flight"
+	ui_name="$material_apotheosis_magic_liquid_infinite_flight"
+  	tags="[liquid],[water],[magic_liquid],[impure],[magic_faster]"
+	burnable="0"
+	density="0.90"
+	cell_type="liquid"
+	wang_color="8059FDD9"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	status_effects="apotheosis_INFINITE_FLIGHT"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="17.14"
+		vel_random.min_y="-100"
+		vel_random.max_y="25.71"
+		lifetime.min="0"
+		gravity.y="-8.57"
+		render_on_grid="1"
+		draw_as_long="1"
+		friction="-3.429"
+		probability="0.0518"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_INFINITE_FLIGHT" amount="0.2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
 
 
 
@@ -1267,4 +1306,27 @@
 		>
 	</Reaction>
 
+	<!--Cursed Liquid leaks out when broken-->
+	<Reaction probability="50"
+		fast_reaction="1"
+		input_cell1="apotheosis_cursed_liquid_red_static" 		input_cell2="air"
+		output_cell1="apotheosis_cursed_liquid_red_static"	output_cell2="apotheosis_cursed_liquid_red"
+		>
+	</Reaction>
+
+	<!-- Turns Levitatium into Soarium and vice versa -->
+	<Reaction probability="45"
+		input_cell1="magic_liquid_faster_levitation" input_cell2="[slime]"
+		output_cell1="apotheosis_magic_liquid_infinite_flight" output_cell2="apotheosis_magic_liquid_infinite_flight"
+		>
+	</Reaction>
+
+	<Reaction probability="45"
+		input_cell1="apotheosis_magic_liquid_infinite_flight" input_cell2="alcohol"
+		output_cell1="magic_liquid_faster_levitation" output_cell2="magic_liquid_faster_levitation"
+		>
+	</Reaction>
+
 </Materials>
+
+

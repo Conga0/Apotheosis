@@ -949,6 +949,71 @@ biome_modifiers =
 			})
 		end,
 	},
+	{
+		id = "SMOKE_DENSE",
+		ui_description="$biomemod_apotheosis_smoke_dense",
+		ui_decoration_file="data/ui_gfx/decorations_biome_modifier/fog_of_war.png",
+		probability=1.0,
+		does_not_apply_to_biome={"mountain_hall","rainforest","rainforest_open","snowcastle","snowcave"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 0.2, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/smoke_dense_creator_apotheosis.xml",
+			})
+			inject_spawn( g_props, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/smoke_dense_creator_apotheosis.xml",
+			})
+			inject_spawn( g_props2, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/smoke_dense_creator_apotheosis.xml",
+			})
+		end,
+	},
+	{
+		id = "ESOTERIC_PRESENCE",
+		ui_description="$biomemod_esoteric_presence",
+		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
+		probability=0.5,
+		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 0.25, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/buildings/esoteric_being_asleep.xml",
+			})
+		end,
+	},
+	{
+		id = "NECROMANCY",
+		ui_description="$biomemod_necromancy",
+		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+		probability=0.2,
+		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 1.25, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+			})
+		end,
+	},
 	--[[-- dry - fire spreads faster than usually, fire demons spawn
 	-- bouncy - projectiles and physics bodies bounce from surfaces
 	-- corrupted - corruption grows everywhere. corruption = some sort of easily destructible static material
@@ -1015,6 +1080,25 @@ biome_modifier_magmatic = {
 		BiomeSetValue( biome_filename, "color_grading_g", 0.90 )
 		BiomeSetValue( biome_filename, "color_grading_b", 0.8 )
 		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.075 )
+		BiomeObjectSetValue( biome_filename, "modifiers", "dust_amount", 0.75 )
+	end,
+}
+
+biome_modifier_devtest = {
+	id = "DEVTEST",
+	ui_description="$biomemod_necromancy",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+	probability=0.2,
+	does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
+	action = function( biome_name, biome_filename )	end,
+	inject_spawns_action = function()
+		inject_spawn( g_small_enemies, 0.25, {
+			prob   		= 0,
+			min_count	= 1,
+			max_count	= 1,
+			offset_y 	= 0,    
+			entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+		})
 	end,
 }
 
@@ -1237,6 +1321,9 @@ function get_modifier_mappings()
 	result["alchemist_secret"] = biome_modifier_fog_of_war_clear_at_player
 	result["custom/lava_excavation"] = biome_modifier_magmatic
 	--apply_modifier_if_has_none( "snowcave", "FREEZING" )
+
+	--DEVTST
+	--result["coalmine"] = biome_modifier_devtest
 
 	-- side biomes
 	set_modifier_if_has_none( "mountain_top", "FREEZING" ) -- NOTE: Freezing tends to occasionally bug out physics bodies, only put it in overworld biomes

@@ -59,7 +59,7 @@
 			is_predator="1" >
 		</GenomeDataComponent>
 		
-		<CharacterPlatformingComponent 
+		<CharacterPlatformingComponent
 			jump_velocity_y="-20"
 			run_velocity="60"  
 			fly_speed_max_up="80"

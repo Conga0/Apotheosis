@@ -437,7 +437,7 @@ end
 if ModIsEnabled("biome-plus") then
 
 
---Spin Boss
+--Electric Lukki
 local content = ModTextFileGetContent("data/entities/animals/lukki/mod/electrolukki_big.xml")
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
@@ -450,6 +450,82 @@ xml:add_child(nxml.parse([[
   </LuaComponent>
 ]]))
 ModTextFileSetContent("data/entities/animals/lukki/mod/electrolukki_big.xml", tostring(xml))
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+---More Stuff
+if ModIsEnabled("more-stuff") then
+
+
+--Apophis
+local path = "data/entities/animals/boss_apophis.xml"
+local content = ModTextFileGetContent(path)
+local xml = nxml.parse(content)
+xml:add_child(nxml.parse([[
+  <LuaComponent
+    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    execute_times="1"
+		execute_every_n_frame="3"
+    remove_after_executed="1"
+    >
+  </LuaComponent>
+]]))
+ModTextFileSetContent(path, tostring(xml))
+
+--Frozen Giant
+local path = "data/entities/animals/boss_frozen_giant.xml"
+local content = ModTextFileGetContent(path)
+local xml = nxml.parse(content)
+xml:add_child(nxml.parse([[
+  <LuaComponent
+    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    execute_times="1"
+		execute_every_n_frame="3"
+    remove_after_executed="1"
+    >
+  </LuaComponent>
+]]))
+ModTextFileSetContent(path, tostring(xml))
+
+local path = "data/entities/animals/necromancer_minion.xml"
+local content = ModTextFileGetContent(path)
+local xml = nxml.parse(content)
+xml:add_child(nxml.parse([[
+  <LuaComponent
+    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    execute_times="1"
+		execute_every_n_frame="3"
+    remove_after_executed="1"
+    >
+  </LuaComponent>
+]]))
+ModTextFileSetContent(path, tostring(xml))
+
+--Hell Skull
+local path = "data/entities/animals/boss_hell_skull.xml"
+local content = ModTextFileGetContent(path)
+local xml = nxml.parse(content)
+xml:add_child(nxml.parse([[
+  <LuaComponent
+    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    execute_times="1"
+		execute_every_n_frame="3"
+    remove_after_executed="1"
+    >
+  </LuaComponent>
+]]))
+ModTextFileSetContent(path, tostring(xml))
 
 end
 

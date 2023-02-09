@@ -98,9 +98,23 @@ end
 --  ModTextFileSetContent(path, content)
 --end
 
+--Bubble Spark Bounce no longer does self-damage
+local content = ModTextFileGetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire.xml")
+local xml = nxml.parse(content)
+xml:first_of("Base"):first_of("ProjectileComponent").attr.friendly_fire = "0"
+ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire.xml", tostring(xml))
+
+local content = ModTextFileGetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire_silent.xml")
+local xml = nxml.parse(content)
+xml:first_of("ProjectileComponent").attr.friendly_fire = "0"
+ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire_silent.xml", tostring(xml))
+
 
 --Maybe only do this for an optional "hardmode? Unsure"
 --Goal is for the mod to be accessible to anyone but it gets so freakin boring 1 shotting everything
+
+dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+
 do --Boosts Health of various creatures
   local multiplier = 2.0
   local enemy_list = {
@@ -135,18 +149,63 @@ do --Boosts Health of various creatures
     "wizard_firemage_greater",
   }
 
-  for k=1,#enemy_list
-  do v = enemy_list[k]
-    local path = "data/entities/animals/crypt/" .. v .. ".xml"
-    print("Filepath is " .. path)
-    local content = ModTextFileGetContent(path)
-    if content ~= nil then
-      local xml = nxml.parse(content)
-      local max_hp = xml:first_of("Base"):first_of("DamageModelComponent").attr.hp
-      max_hp = max_hp * multiplier
-      xml:first_of("Base"):first_of("DamageModelComponent").attr.max_hp = tostring(max_hp)
-      xml:first_of("Base"):first_of("DamageModelComponent").attr.hp = tostring(max_hp)
-      ModTextFileSetContent(path, tostring(xml))
-    end
-  end
+  MultiplyHP("data/entities/animals/crypt/",enemy_list,multiplier,true)
+end
+
+
+
+do --Boosts Health of various creatures (THE_END)
+  local multiplier = 10.0
+  local enemy_list = {
+    "bloodcrystal_physics",
+    "gazer",
+    "skycrystal_physics",
+    "skygazer",
+    "spearbot",
+    "spitmonster",
+    "worm_end",
+    "worm_skull",
+    --Modded Enemies below
+    "blindgazer",
+    "fairy_big_discord",
+    "forsaken_eye",
+    "gazer_cold_apotheosis",
+    "gazer_greater",
+    "gazer_greater_cold",
+    "gazer_greater_sky",
+    "ghost_bow",
+    "musical_being",
+    "sentry",
+    "slime_leaker_weak",
+    "star_child",
+    "wizard_firemage_greater",
+    "wraith_returner_apotheosis",
+  }
+
+  MultiplyHP("data/entities/animals/the_end/",enemy_list,multiplier,true)
+end
+
+do --Boosts Health of various creatures (THE_END)
+  local multiplier = 10.0
+  local enemy_list = {
+    "poring_holy",
+    "poring_devil",
+  }
+
+  MultiplyHP("data/entities/animals/",enemy_list,multiplier,true)
+
+end
+
+do
+  --Triple health of Evil Temple Masters
+  multiplier = 3.0
+  enemy_list = {
+    "wizard_corrupt_ambrosia",
+    "wizard_corrupt_hearty",
+    "wizard_corrupt_manaeater",
+    "wizard_corrupt_neutral",
+    "wizard_corrupt_swapper",
+  }
+
+  MultiplyHP("data/entities/animals/",enemy_list,multiplier,true)
 end

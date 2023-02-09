@@ -1,4 +1,4 @@
-<Entity name="Corrupt Immortality Mage" tags="ui_use_raw_name">
+<Entity name="Korruptoitunut Kuolemattomuudenmestari" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -24,6 +24,7 @@
 			attack_ranged_offset_y="0"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="300"
+			creature_detection_check_every_x_frames="40"
 			>
 		</AnimalAIComponent>
 		
@@ -197,6 +198,19 @@
 		execute_every_n_frame="101"
 		>
 	</LuaComponent>
+	
+	<LuaComponent
+		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name="shield_colour"
+		value_string="ambrosia"
+		value_int="-10000"
+		>
+	</VariableStorageComponent>
     
 </Entity>
 

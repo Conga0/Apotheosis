@@ -1,0 +1,7 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/buildings/necromancy_setup.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+</Entity>
