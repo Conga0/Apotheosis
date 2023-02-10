@@ -4,7 +4,7 @@ local mm_insert = {
     cost=1600,
     },
     {
-    material="apotheosis_magic_liquid_infinte_flight",
+    material="apotheosis_magic_liquid_infinite_flight",
     cost=800,
     },
 }

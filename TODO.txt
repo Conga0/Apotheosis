@@ -5,8 +5,6 @@ All boss health should be doubled at least
 
 Give orb room material puzzles unique inputs and lore readouts (Likely need to ask letalli for help as they speak finnish)
 
-Fix taking a perk from the perk creation altar casing the other perks to disappear
-
 Trophies for:
 Using Perk Creation Altar
 Reaching Max Orb Count, taking new orbs into consideration
@@ -26,3 +24,5 @@ Move Blood limiting from magic numbers to elsewhere
 
 Nerf weakening curses, especially projectile/explosive as they invalidate resistances/immunities/vulnerabilities
 50% multiplier instead of flat reduction? 1.25 x 0 is still 0
+
+Parrallel world enemies should have x10 hp

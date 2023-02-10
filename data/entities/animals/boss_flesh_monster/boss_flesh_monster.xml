@@ -140,7 +140,7 @@
 		aabb_max_x="20" 
 		aabb_min_y="-20" 
 		aabb_max_y="20"
-		damage_multiplier="0.7"
+		damage_multiplier="0.3"
 		>
 	</HitboxComponent>
 
@@ -375,12 +375,20 @@
 		>
 	</LuaComponent>
 	
-	<!-- Fire a dangerous barrage of master orbs every 12 seconds -->
+	<!-- Fire a dangerous barrage of Shadow Beams every 12 seconds -->
 	<!--
 	-->
 	<LuaComponent
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_orb_barrage_setup.lua"
 		execute_every_n_frame="720"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<!-- Fire a dangerous kill laser every minute, after a lengthy chargeup and LoS warning indicator -->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_deathlaser_setup.lua"
+		execute_every_n_frame="3600"
 		execute_times="-1"
 		>
 	</LuaComponent>
@@ -395,7 +403,7 @@
 		>
 	</LuaComponent>
 
-	<!-- Revenge Damage, 25% chance to retaliate with 1-2 Random Master Orbs Summons -->
+	<!-- Revenge Damage, 50% chance to retaliate with 1-2 Random Master Orbs Summons and create a protective shield -->
 	<LuaComponent
 		execute_every_n_frame="-1"
 		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_retaliation_script.lua"
@@ -406,6 +414,7 @@
 	<!-- Brain AI -->
 
 	<!-- Triggers Phase Changes -->
+	<!-- Boss Might not have multiple phases, may be unnecessary -->
 	<LuaComponent
 		execute_every_n_frame="-1"
 		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_brain.lua"

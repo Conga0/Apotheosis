@@ -35,7 +35,9 @@ do local v = inputlist[k];
 
     if image == v then
 		EntityLoad("data/entities/projectiles/explosion.xml", pos_x, pos_y - 10)
-		perk_spawn( pos_x, pos_y, outputlist[k] )
+		local perk_id = perk_spawn( pos_x, pos_y, outputlist[k] )
+        --Perk tag is removed so other perks aren't deleted upon picking this one up
+        EntityRemoveTag(perk_id, "perk")
 		EntityKill(entity_id)
         if not GameHasFlagRun("apotheosis_perk_creation_angered") then
             GameAddFlagRun("apotheosis_perk_creation_angered")

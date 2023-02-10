@@ -4,7 +4,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local entity_id    = GetUpdatedEntityID()
 	local x, y = EntityGetTransform( entity_id )
 	SetRandomSeed( GameGetFrameNum(), x + y + entity_id )
-	if Random( 1 , 4 ) == 1 then
+	if Random( 1 , 2 ) == 1 then
 
 		if( entity_who_caused == entity_id ) then return end
 		if script_wait_frames( entity_id, 2 ) then  return  end
@@ -42,6 +42,9 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 			shoot_projectile( entity_id, path, x, y, vel_x, vel_y )
 		end
+
+		--local eid = EntityLoad( "data/entities/animals/boss_flesh_monster/misc/shield_red.xml", x, y )
+		--EntityAddChild( entity_id, eid )
 		
 		GameEntityPlaySound( entity_id, "shoot" )
 	end

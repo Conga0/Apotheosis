@@ -1106,7 +1106,7 @@
   <CellData
 	name="apotheosis_magic_liquid_infinite_flight"
 	ui_name="$material_apotheosis_magic_liquid_infinite_flight"
-  	tags="[liquid],[water],[magic_liquid],[impure],[magic_faster]"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
 	burnable="0"
 	density="0.90"
 	cell_type="liquid"
@@ -1316,7 +1316,7 @@
 
 	<!-- Turns Levitatium into Soarium and vice versa -->
 	<Reaction probability="45"
-		input_cell1="magic_liquid_faster_levitation" input_cell2="[slime]"
+		input_cell1="magic_liquid_faster_levitation" input_cell2="magic_liquid_mana_regeneration"
 		output_cell1="apotheosis_magic_liquid_infinite_flight" output_cell2="apotheosis_magic_liquid_infinite_flight"
 		>
 	</Reaction>
@@ -1324,6 +1324,12 @@
 	<Reaction probability="45"
 		input_cell1="apotheosis_magic_liquid_infinite_flight" input_cell2="alcohol"
 		output_cell1="magic_liquid_faster_levitation" output_cell2="magic_liquid_faster_levitation"
+		>
+	</Reaction>
+
+	<Reaction probability="45"
+		input_cell1="apotheosis_meat_duck" input_cell2="magic_liquid_mana_regeneration"
+		output_cell1="apotheosis_magic_liquid_infinite_flight" output_cell2="apotheosis_magic_liquid_infinite_flight"
 		>
 	</Reaction>
 

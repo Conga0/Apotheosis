@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="corrupted_shield" >
     <InheritTransformComponent>
     </InheritTransformComponent>
     

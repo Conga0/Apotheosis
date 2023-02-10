@@ -35,50 +35,8 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 		GamePlaySound( "data/audio/Desktop/animals.bank", "animals/boss_centipede/destroy_face", pos_x, pos_y );
 
-		local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
-		if( comp ~= nil ) then
-			ComponentSetValue( comp, "max_hp", 0 )
-			ComponentSetValue( comp, "hp", 0 )
-			ComponentSetValue2(comp, "air_needed", true)
-			ComponentSetValue2(comp, "air_in_lungs", 0)
-		end
-
-		local lukki_new = EntityLoad("data/entities/animals/boss_fire_lukki/boss_fire_lukki_phase2.xml", pos_x, pos_y)
-
-
-		--Triggers the mass Death Cross attack upon transformation
-		local cid = EntityLoad( "data/entities/animals/boss_fire_lukki/projectiles/deathcross_barrage_setup_long.xml", pos_x, pos_y )
-		EntityAddChild( lukki_new, cid )
-
-
-		--Enables the mass Death Cross attack
-		EntityAddComponent2(
-			lukki_new,
-			"LuaComponent",
-			{
-				execute_on_added = false,
-				script_source_file = "data/entities/animals/boss_fire_lukki/boss_fire_lukki_deathcross_barrage_setup.lua",
-				execute_every_n_frame = 2400,
-				remove_after_executed = false,
-				execute_times=-1
-			}
-		)
-
-		--Spits out a ton of firebolts when the rocks break
-		EntityAddComponent2(
-			lukki_new,
-			"LuaComponent",
-			{
-				execute_on_added = false,
-				script_source_file = "data/entities/animals/boss_fire_lukki/boss_fire_lukki_healing_phase_logic_lowhp_burst.lua",
-				execute_every_n_frame = 1,
-				remove_after_executed = false,
-				execute_times=16
-			}
-		)
-
 		--50% speed boost in phase 2
-		local comp = EntityGetComponentIncludingDisabled( lukki_new, "PhysicsAIComponent")[1]
+		local comp = EntityGetComponentIncludingDisabled( entity_id, "PhysicsAIComponent")[1]
 		ComponentSetValue2(comp, "force_coeff", 24)
 		ComponentSetValue2(comp, "force_max", 300)
 		
