@@ -1,5 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
-
 local num_limbs = 12
 
 local entity_id = GetUpdatedEntityID()

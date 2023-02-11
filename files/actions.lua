@@ -1049,8 +1049,7 @@ table.insert(actions,
     --max_uses = 1000,
     action 		= function()
         add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spells_to_cursor.xml")
-        c.fire_rate_wait = c.fire_rate_wait + 50
-        current_reload_time = current_reload_time + 35
+        c.fire_rate_wait = c.fire_rate_wait + 20
     end,
 })
 

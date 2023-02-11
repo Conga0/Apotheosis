@@ -4,6 +4,9 @@ local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
 local r = 400
 
+local players = EntityGetInRadiusWithTag(x,y,r,"player_unit")
+if #players <= 0 then return end
+
 local targets = EntityGetInRadiusWithTag( x, y, r, "touchmagic_immunity" )
 local count = 0
 
