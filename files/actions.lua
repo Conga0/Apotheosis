@@ -1374,6 +1374,50 @@ modify_existing_spell("HOMING_ROTATE","spawn_probability","0.6,0.8,1,1,0.6")
 --Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
 modify_existing_spell("CHAINSAW","mana",12)
 
+--Slightly buff Bubbly Bounce by reducing the spell cost & removing the recoil effect from the modiifer
+modify_existing_spell("BOUNCE_SPARK","price",60)
+modify_existing_spell(
+	"BOUNCE_SPARK",
+	"action",
+    function()
+        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_spark.xml,"
+        c.bounces = c.bounces + 1
+        c.fire_rate_wait = c.fire_rate_wait + 8
+        draw_actions( 1, true )
+    end
+)
+
+--Slightly buff Plasma Beam Bounce by reducing the spell cost & removing the recoil effect from the modiifer
+modify_existing_spell("BOUNCE_LASER_EMITTER","price",90)
+modify_existing_spell(
+	"BOUNCE_LASER_EMITTER",
+	"action",
+    function()
+        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser_emitter.xml,"
+        c.bounces = c.bounces + 1
+        c.fire_rate_wait = c.fire_rate_wait + 12
+        draw_actions( 1, true )
+    end
+)
+
+--Slightly buff Concentrated Light Bounce by reducing the spell cost & removing the recoil effect from the modiifer
+modify_existing_spell("BOUNCE_LASER","price",90)
+modify_existing_spell(
+	"BOUNCE_LASER",
+	"action",
+    function()
+        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser.xml,"
+        c.bounces = c.bounces + 1
+        c.fire_rate_wait = c.fire_rate_wait + 12
+        draw_actions( 1, true )
+    end
+)
+
+--Fix Healing Bolt & Circle of Vigour to have updated spell descriptions
+modify_existing_spell("REGENERATION_FIELD","description","$spell_apotheosis_cov_desc")
+modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bolt_desc")
+
+
 
 --Remove Spells
 --[[

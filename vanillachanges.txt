@@ -1,9 +1,9 @@
 Music note spells only hit every 15 frames instead of every 1 frame
 Circle of Vigour & Healing Bolt can not be copied by greek spells (perk to make the uncopyable copyable? Spell Master?)
 Some spells have had their mana cost drastically reduced to become competitive with other spells again
-Bubblespark no longer does self damage
+Bubbly Bounce no longer does self damage
 Projectile Repulsion Field is removed and replaced with Oversized Shield
-Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing the effects of 2 movement perk and 1 levitation per stack
+Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing a 60% movement speed boost in all directions per stack
 Contact Damage now grants melee immunity
 Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with you for too long
 Arrow Now longer has increased recoil
@@ -15,13 +15,15 @@ Parrallel worlds are now harder to break into
 Kantele Bomb Song is fixed
 Chainsaw now costs 12 mana
 Giga Death Cross now does much, much more damage
-
+Weakening Curses now cause a target to take double damage instead of a flat 25% vulnerability against a certain damage type, the concept is in late game Noita, it's very easy to put projectile or explosive weakening curse on a wand and ignore all damage resistances enemies has, it doesn't force you to build wands outside of your comfort zone for certain environments and I feel it restricts wand creativity by allowing you, borderline making the best strategy to stick to one damage type, rather than needing to mix it up for endgame areas of the game. This change should also hopefully make weakening curses significantly more impactful in normal builds for optimising damage output than simply being a means to bypass damage resistances with little gain to overall damage output
+Masters of Exchange no longer swap non-mortal entities (for example, cursed rock damage fields)
 
 
 
 New Biome Modifiers:
 Dense Smoke
 Esoteric Presence
+The Dead are Restless
 
 Content list:
 88 new enemies
@@ -30,7 +32,7 @@ Content list:
 7 new perks
 2 new biomes
 6 new structures
-4 new material (2 interactable, 4 total)
+4 new materials (2 interactable, 4 total)
 12 attainable trophies
 3 new items
 1 new song

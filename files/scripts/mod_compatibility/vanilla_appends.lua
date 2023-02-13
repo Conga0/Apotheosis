@@ -21,6 +21,16 @@ xml:add_child(nxml.parse([[
         >
     </VariableStorageComponent>
 ]]))
+xml:add_child(nxml.parse([[
+    <LuaComponent
+    script_damage_received="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+    script_death="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+    execute_times="-1"
+    execute_every_n_frame="-1"
+    remove_after_executed="0"
+    >
+    </LuaComponent>
+]]))
 ModTextFileSetContent("data/entities/animals/boss_pit/boss_pit.xml", tostring(xml))
 
 --Adds tag to wandstone so perk creation altar can detect it.. technically you can throw it into the sun because of this but, eh, nobody would ever do that.. right? I just wanna save on tags whenever possible
@@ -215,5 +225,53 @@ do -- Add some new magical liquids to the Ancient Laboratory
   local path = "data/biome/liquidcave.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5", "FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5,FF59FDD9")
+  ModTextFileSetContent(path, content)
+end
+
+
+do -- Rework Vulnerability Curses.. hmm..
+  local path = "data/scripts/projectiles/curse_wither_start.lua"
+  local path_2 = "data/scripts/projectiles/curse_wither_end.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+	
+	if ( comp ~= nil ) then]], [[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+	
+    if ( comp ~= nil )and ComponentObjectGetValue2( comp, "damage_multipliers", name ) > 0 then]])
+  content = content:gsub("mult = mult + 0.25", "mult = mult * 2")
+  ModTextFileSetContent(path, content)
+
+  local content = ModTextFileGetContent(path_2)
+  content = content:gsub([[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+	
+	if ( comp ~= nil ) then]], [[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+	
+    if ( comp ~= nil ) and ComponentObjectGetValue2( comp, "damage_multipliers", name ) > 0 then]])
+  content = content:gsub("mult = mult - 0.25", "mult = mult * 0.5")
+  ModTextFileSetContent(path, content)
+end
+
+
+do -- Add projectile tag to pit boss wands so they can be cleaned up too
+  local path = "data/entities/animals/boss_pit/wand.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[name="$projectile_default"]], [[name="$projectile_default" tags="projectile"]])
+  ModTextFileSetContent(path, content)
+end
+
+do -- Add secret path check to portal entity
+  local path = "data/entities/buildings/teleport_liquid_powered.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("LuaComponent").attr
+  attrpath.script_portal_teleport_used = "mods/apotheosis/files/scripts/buildings/teleporter_secret_check_fail.lua"
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Fixes Leviathan Portal to Coral Chest
+  local path = "data/entities/buildings/teleport_teleroom_6.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("7480", "7060")
+  content = content:gsub("-12288", "-12209")
   ModTextFileSetContent(path, content)
 end

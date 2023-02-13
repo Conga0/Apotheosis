@@ -42,7 +42,7 @@ local r = 350
 	local vel_x = math.cos( angle ) * length
 	local vel_y = 0- math.sin( angle ) * length
 
-	shoot_projectile( parent_id, "data/entities/animals/boss_fire_lukki/projectiles/enlightened_laser_fire_wand.xml", pos_x, pos_y, vel_x, vel_y )
+	shoot_projectile( parent_id, "mods/apotheosis/files/projectiles/lukki_fire_miniboss_laser_fire_wand.xml", pos_x, pos_y, vel_x, vel_y )
 
 
 

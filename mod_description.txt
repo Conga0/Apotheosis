@@ -35,6 +35,16 @@ World Map:
 Documentation: 
 Discord Server (for discussion:
 
+This mod is compatiable with:
+Copi's Things
+Graham's Things
+
+This mod is not compatiable with:
+Any and all biome map mods (noitavania, purgatory, more stuff, etc)
+
+This mod already contains:
+More Musical Magic built in
+
 [img banner seperation here]
 
 

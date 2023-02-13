@@ -164,34 +164,33 @@
     is_emitting="1" >
   </ParticleEmitterComponent>
   
-  <ParticleEmitterComponent 
-  _tags="lurker_data"
-    emitted_material_name="fire"
-	custom_style="FIRE"
-    count_min="3"
-    count_max="7"
-    offset.x="0"
-    offset.y="-0.5"
-    x_pos_offset_min="-4"
-    y_pos_offset_min="-4"
-    x_pos_offset_max="4"
-    y_pos_offset_max="4"
-    x_vel_min="-10"
-    x_vel_max="10"
-    y_vel_min="-10"
-    y_vel_max="10"
-    count_min="8"
-    count_max="8"
-    lifetime_min="0.4"
-    lifetime_max="1.0"
-    create_real_particles="1"
-    emit_cosmetic_particles="0"
-    emission_interval_min_frames="1"
-    emission_interval_max_frames="2"
-    is_emitting="1" >
-  </ParticleEmitterComponent>
+  	<ParticleEmitterComponent 
+	_tags="lurker_data"
+		emitted_material_name="fire"
+		custom_style="FIRE"
+		count_min="3"
+		count_max="7"
+		offset.x="0"
+		offset.y="-0.5"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		count_min="8"
+		count_max="8"
+		lifetime_min="0.4"
+		lifetime_max="1.0"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
 
-  
 	<ParticleEmitterComponent 
 		emitted_material_name="flame"
 		offset.x="0"
@@ -380,17 +379,19 @@
 		auto_play="1">
 	</AudioLoopComponent>
 
-  <AudioComponent
-      file="data/audio/Desktop/projectiles.bank"
-      event_root="projectiles/flamethrower">
-  </AudioComponent>
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="projectiles/flamethrower">
+	</AudioComponent>
 	
+	<!--
+	Probably wouldn't make sense for a "living creature" to be copied as if it was a projectile.. even though it technically is
 	<VariableStorageComponent
 		name="projectile_file"
 		value_string="mods/Apotheosis/files/entities/projectiles/whisp_big_dash.xml"
 		>
 	</VariableStorageComponent>
-	
+	-->
 
 	<MagicConvertMaterialComponent
       kill_when_finished="0"
@@ -435,28 +436,30 @@
 			>
 		</SpriteComponent>
 
-  <ParticleEmitterComponent 
-    emitted_material_name="fire"
-    offset.x="-1"
-    offset.y="0"
-    x_pos_offset_min="-1"
-    y_pos_offset_min="-1"
-    x_pos_offset_max="1"
-    y_pos_offset_max="1"
-    x_vel_min="-10"
-    x_vel_max="10"
-    y_vel_min="0"
-    y_vel_max="0"
-    count_min="5"
-    count_max="9"
-    lifetime_min="0.3"
-    lifetime_max="1.6"
-    create_real_particles="0"
-    emit_cosmetic_particles="0"
-    emission_interval_min_frames="1"
-    emission_interval_max_frames="1"
-    is_emitting="1" >
-  </ParticleEmitterComponent>
+	<!--It feels unnecessary to punish the player for trying to avoid the whisp for going under, might undo this decision; but for now I feel confident you shouldn't be punished for trying to dodge the Whisp's charge by going in a specific direction instead of another
+	<ParticleEmitterComponent 
+		emitted_material_name="fire"
+		offset.x="-1"
+		offset.y="0"
+		x_pos_offset_min="-1"
+		y_pos_offset_min="-1"
+		x_pos_offset_max="1"
+		y_pos_offset_max="1"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="0"
+		y_vel_max="0"
+		count_min="5"
+		count_max="9"
+		lifetime_min="0.3"
+		lifetime_max="1.6"
+		create_real_particles="0"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		is_emitting="1" >
+  	</ParticleEmitterComponent>
+  -->
 
 	<LuaComponent
 		_enabled="1"

@@ -13,6 +13,7 @@ function MultiplyHP(filepath,enemy_list,multiplier,base)
       max_hp = max_hp * multiplier
       attrpath.max_hp = tostring(max_hp)
       attrpath.hp = tostring(max_hp)
+      attrpath.blood_multiplier = tostring(1 / multiplier)
       ModTextFileSetContent(path, tostring(xml))
     end
   end

@@ -1,4 +1,3 @@
-Add text to CoV & Healing Bolt spells mentioning they're uncopyable
 Add health hearts perk, health healed is equal to max health gained x 2
 All boss health should be doubled at least
 
@@ -9,8 +8,6 @@ Trophies for:
 Using Perk Creation Altar
 Reaching Max Orb Count, taking new orbs into consideration
 
-use nxml on mainworld portals luascript instead of file replacing them (mod compatiblity)
-
 Finish or remove Corrupt Master of Grounding
 
 Finish or Remove Mainpath Portal Puzzle
@@ -20,10 +17,4 @@ Finish or Remove Mainpath Portal Puzzle
 Altar ending code to check for updated orb counts
 NG+ Picks from 6 random pre-set NG+ maps, including the normal one (but only after NG+1)
 
-Move Blood limiting from magic numbers to elsewhere
-
-Nerf weakening curses, especially projectile/explosive as they invalidate resistances/immunities/vulnerabilities
-50% multiplier instead of flat reduction? 1.25 x 0 is still 0
-
 Parrallel world enemies should have x10 hp
-
