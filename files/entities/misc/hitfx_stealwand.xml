@@ -1,0 +1,19 @@
+<Entity>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>
+    
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/stealwand.lua"
+		execute_on_added="0"
+		execute_every_n_frame="2"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="10"
+	>
+	</LifetimeComponent>
+
+</Entity>

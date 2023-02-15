@@ -118,7 +118,7 @@
 			material_index="10" 
 			material_max="0.95" 
 			material_min="0.72" 
-			material_name="sandstone_surface" 
+			material_name="sandstone" 
 			>
 		</MaterialComponent>
 
@@ -153,7 +153,7 @@
 			material_index="10" 
 			material_max="0.95" 
 			material_min="0.68" 
-			material_name="sandstone_surface" 
+			material_name="sandstone" 
 			rare_polka_is_boxed="1" 
 			rare_polka_probability="0.2" 
 			rare_polka_radius_high="0.65" 

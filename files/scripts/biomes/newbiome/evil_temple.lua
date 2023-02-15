@@ -95,6 +95,12 @@ g_small_enemies =
 		max_count	= 7,  
 		entity 	= "data/entities/animals/seeker.xml"
 	},
+	{
+		prob   		= 0.10,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/wizard_wands.xml"
+	},
 }
 
 g_stash =
@@ -133,7 +139,7 @@ g_reward_items =
 		prob   		= 3,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_unshuffle_04.xml"
+		entity 	= "data/entities/items/wand_unshuffle_05.xml"
 	},
 	{
 		prob   		= 1,
@@ -181,6 +187,18 @@ g_big_enemies =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/wizard_corrupt_ambrosia.xml"
+	},
+	{
+		prob   		= 0.25,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/wizard_wands.xml"
+	},
+	{
+		prob   		= 0.15,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/miniboss_pit_02.xml"
 	},
 }
 
@@ -370,7 +388,7 @@ g_unique_enemy =
 		min_count	= 1,
 		max_count	= 1,  
 		offset_x	= 2,		
-		entity 	= "data/entities/buildings/arrowtrap_right.xml"
+		entity 	= "data/entities/buildings/eviltemple_tentacle_trap_right.xml"
 	},
 }
 
@@ -390,7 +408,7 @@ g_large_enemies =
 		min_count	= 1,
 		max_count	= 1,  
 		offset_x	= 1,
-		entity 	= "data/entities/buildings/arrowtrap_left.xml"
+		entity 	= "data/entities/buildings/eviltemple_tentacle_trap_left.xml"
 	},
 }
 

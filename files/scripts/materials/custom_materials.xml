@@ -623,7 +623,7 @@
   <CellDataChild
   	_parent="rock_static"
   	_inherit_reactions="1"
-	tags="[static],[alchemy],[solid],[earth],[matter_eater_ignore_list],[indestructible]"
+	tags="[static],[alchemy],[earth],[matter_eater_ignore_list],[indestructible]"
   	name="rock_static_cursed_hard" 
 	ui_name="$mat_rock_static_cursed"
 	wang_color="ffe6f4af"
@@ -703,7 +703,7 @@
   	_inherit_reactions="1"
   	name="apotheosis_eviltemple_stone" 
 	ui_name="$material_apotheosis_bloodystone"
-	tags="[static],[corrodible],[alchemy],[solid],[earth],[matter_eater_ignore_list],[indestructible]"
+	tags="[static],[corrodible],[alchemy],[earth],[matter_eater_ignore_list],[indestructible]"
 	wang_color="ff490b0b"
 	wang_noise_percent="0.33"
 	hp="240000"
@@ -1142,6 +1142,95 @@
 	</StatusEffects>
   </CellData>
 
+  <CellData
+	name="apotheosis_magic_liquid_nukes"
+	ui_name="$material_apotheosis_magic_liquid_nukes"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="0.90"
+	cell_type="liquid"
+	wang_color="80d5cd4c"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+    <Graphics 
+	texture_file="mods/Apotheosis/files/materials_gfx/magic_liquid_nukes.png" 
+	color="80d5cd4c" >
+    </Graphics>
+	<ParticleEffect
+		vel.y="17.14"
+		vel_random.min_y="-100"
+		vel_random.max_y="25.71"
+		vel_random.min_x="-20"
+		vel_random.max_x="20"
+		lifetime.min="0"
+		gravity.y="-8.57"
+		render_on_grid="1"
+		draw_as_long="1"
+		friction="-3.429"
+		probability="0.0518"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_NUKES" amount="0.2" />
+		</Ingestion>
+		<Stains>
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_magic_liquid_escapium"
+	ui_name="$material_apotheosis_magic_liquid_escapium"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="0.90"
+	cell_type="liquid"
+	wang_color="80e72525"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="17.14"
+		vel_random.min_y="-50"
+		vel_random.max_y="20"
+		vel_random.min_x="-30"
+		vel_random.max_x="30"
+		lifetime.min="0"
+		gravity.y="-4.5"
+		render_on_grid="1"
+		draw_as_long="1"
+		friction="-3.429"
+		probability="0.0518"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_ESCAPIUM" amount="0.2" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_ESCAPIUM" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
 
 
 
@@ -1330,6 +1419,14 @@
 	<Reaction probability="45"
 		input_cell1="apotheosis_meat_duck" input_cell2="magic_liquid_mana_regeneration"
 		output_cell1="apotheosis_magic_liquid_infinite_flight" output_cell2="apotheosis_magic_liquid_infinite_flight"
+		>
+	</Reaction>
+
+	<!-- Creates Escium from Ambrosia + Hasteium -->
+	<!-- Escium's name is coined after an alchemist who famously used it to escape from his alchemical failures repeatedly, esc being shorthand for escape, ultimatly being pronounced "Escapium" in full. -->
+	<Reaction probability="50"
+		input_cell1="magic_liquid_protection_all" input_cell2="magic_liquid_faster_levitation_and_movement"
+		output_cell1="apotheosis_magic_liquid_escapium" output_cell2="apotheosis_magic_liquid_escapium"
 		>
 	</Reaction>
 

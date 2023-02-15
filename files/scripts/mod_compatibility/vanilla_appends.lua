@@ -215,6 +215,7 @@ do
     "wizard_corrupt_manaeater",
     "wizard_corrupt_neutral",
     "wizard_corrupt_swapper",
+    "wizard_wands",
   }
 
   MultiplyHP("data/entities/animals/",enemy_list,multiplier,true)
@@ -274,4 +275,29 @@ do -- Fixes Leviathan Portal to Coral Chest
   content = content:gsub("7480", "7060")
   content = content:gsub("-12288", "-12209")
   ModTextFileSetContent(path, content)
+end
+
+do
+  --Prevents Worm launcher from eating through indestructible terrain
+  local path = "data/entities/projectiles/deck/worm_shot.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("CellEaterComponent").attr
+  attrpath.ignored_material_tag = "[indestructible]"
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Add a 1% chance for potions to be replaced with a potion from the rare pool
+  local path = "data/entities/items/pickup/potion.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent 
+    execute_on_added="1"
+    remove_after_executed="1"
+    call_init_function="1"
+    script_source_file="mods/apotheosis/files/scripts/potions/potion_rare_spawninjector.lua" 
+  ></LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
 end

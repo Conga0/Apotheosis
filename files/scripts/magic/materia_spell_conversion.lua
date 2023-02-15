@@ -56,8 +56,6 @@ do local v = targets[k];
 		
         local comp = EntityGetFirstComponentIncludingDisabled( v, "ItemActionComponent")
 
-        local pos = 1
-
         for k=1, #inputspells
         do local inputmagic = inputspells[k];
 
@@ -65,10 +63,10 @@ do local v = targets[k];
                 local perk_x,perk_y = EntityGetTransform( v )
             
                 EntityKill(v)
-                if effecttype[pos] ~= "NONE" then EntityLoad("data/entities/particles/image_emitters/" .. effecttype[pos] .. ".xml", perk_x, perk_y) end
+                if effecttype[k] ~= "NONE" then EntityLoad("data/entities/particles/image_emitters/" .. effecttype[k] .. ".xml", perk_x, perk_y) end
                 GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
 
-                if outputspells[pos] == "SPECIAL_ACTION" then
+                if outputspells[k] == "SPECIAL_ACTION" then
                     if inputmagic == "WORM_RAIN" then
                         EntityLoad("data/entities/animals/worm_big.xml", perk_x, perk_y)
                         CreateItemActionEntity( "APOTHEOSIS_MASS_BURROW", perk_x, perk_y )
@@ -77,10 +75,9 @@ do local v = targets[k];
                         EntityLoad("data/entities/misc/mass_materia_conversion.xml", perk_x, perk_y)
                     end
                 else
-                    CreateItemActionEntity( outputspells[pos], perk_x, perk_y )
+                    CreateItemActionEntity( outputspells[k], perk_x, perk_y )
                 end
             end
-            pos = pos + 1
         end
     end
 end

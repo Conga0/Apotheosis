@@ -10,7 +10,7 @@ Reaching Max Orb Count, taking new orbs into consideration
 
 Finish or remove Corrupt Master of Grounding
 
-Finish or Remove Mainpath Portal Puzzle
+Finish or remove Mainpath Portal Puzzle
 
 
 
@@ -18,3 +18,10 @@ Altar ending code to check for updated orb counts
 NG+ Picks from 6 random pre-set NG+ maps, including the normal one (but only after NG+1)
 
 Parrallel world enemies should have x10 hp
+
+Would be good to have a corrupt version of Master of Puppetering for Temple of Sacriligious Remains, or maybe he's just corrupt by default
+We'll have to see
+
+Finish or remove Master of Puppetering
+
+Finish of remove Wand Appreciator

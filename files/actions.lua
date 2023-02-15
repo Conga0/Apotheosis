@@ -1295,6 +1295,29 @@ table.insert(actions,
 })
 ]]--
 
+--Ideally 2 more alt-fire spells here so all alt-fire spells are grouped together ideally
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_HITFX_CRITICAL_DRUNK",
+    name 		= "$spell_apotheosis_critical_drunk_name",
+    description = "$spell_apotheosis_critical_drunk_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/critical_drunk.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+    related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_critical_drunk.xml" },
+    spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+    type 		= ACTION_TYPE_MODIFIER,
+    spawn_level                       = "1,3,4,5", -- HITFX_CRITICAL_WATER
+    spawn_probability                 = "0.2,0.2,0.2,0.2", -- HITFX_CRITICAL_WATER
+    price = 70,
+    mana = 10,
+    --max_uses = 16,
+    action 		= function()
+        c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_critical_drunk.xml,"
+        draw_actions( 1, true )
+    end,
+})
+
 
 
 

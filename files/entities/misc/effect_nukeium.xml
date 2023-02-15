@@ -1,0 +1,19 @@
+<Entity >
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+   
+	<LuaComponent
+		script_source_file="data/scripts/streaming_integration/scripts/effect_nukes.lua"
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="3600"
+    >
+	</GameEffectComponent >
+  
+</Entity>

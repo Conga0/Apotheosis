@@ -22,7 +22,7 @@
 
     <GameEffectComponent
     	effect="NONE"
-    	frames="-1"
+    	frames="3600"
     >
 	</GameEffectComponent >
 

@@ -377,6 +377,8 @@ material_apotheosis_volcanicrock_static_dense,"Dense Volcanic Rock",,,,,,,,,,,,,
 material_apotheosis_volcanicrock_superhot,"Burning Rock",,,,,,,,,,,,,
 material_apotheosis_cursed_liquid,"Cursed Liquid",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_infinite_flight,"Soarium",,,,,,,,,,,,,
+material_apotheosis_magic_liquid_nukes,"Nukium",,,,,,,,,,,,,
+material_apotheosis_magic_liquid_escapium,"Escium",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles to move towards your mouse cursor at high speed.",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
@@ -403,6 +405,8 @@ spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_desc,"Right click to cast a Circle of Vigour for 80 mana.",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_alpha_name,"Alt Fire Alpha",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_alpha_desc,"Right click to cast a copy of the first spell in your wand for 40 mana.",,,,,,,,,,,,,
+spell_apotheosis_critical_drunk_name,"Critical on Drunk",,,,,,,,,,,,,
+spell_apotheosis_critical_drunk_desc,"Make a projectile always do a critical hit on drunk enemies.",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Target hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_explosion,Target hit by a projectile takes 100% extra explosion damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от взрывов,O alvo atingido por um projétil recebe mais 100% de dano de explosão por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de explosiones durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Explosionsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des explosions pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da esplosione in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od wybuchów,被投射物击中的目标短时间内会受到额外的 100% 爆炸伤害,放射物が当たったターゲットが一定期間100%の追加の爆破ダメージを受ける,일정 시간 동안 폭발이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_melee,Target hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -432,6 +436,8 @@ status_apotheosis_dry_spell_name,"Infiltrated",,,,,,,,,,,,,
 status_apotheosis_dry_spell_desc,"Your stains are set in stone, nothing can be removed and nothing can be added.",,,,,,,,,,,,,
 status_apotheosis_infinite_flight_name,"Limitless Flight",,,,,,,,,,,,,
 status_apotheosis_infinite_flight_desc,"You can fly forever.",,,,,,,,,,,,,
+status_apotheosis_escapium_name,"Safe Escape",,,,,,,,,,,,,
+status_apotheosis_escapium_desc,"A protective barrier shields you, and you feel faster.",,,,,,,,,,,,,
 statusdesc_curse_wither_projectile,You take 100% extra damage from projectiles.,Вы получаете 100% дополнительного урона от снарядов.,Você recebe mais 100% de dano de projéteis.,Recibes 100 % más de daño de proyectiles.,Du erleidest 100 % zusätzlichen Schaden durch Projektile.,Vous subissez 100 % de dégâts supplémentaires des projectiles.,Subisci il 100% in più di danni da proiettili.,Otrzymujesz 100% więcej obrażeń od pocisków.,投射物额外对你造成 100% 伤害。,放射物から100%の追加ダメージを受ける。,발사체로부터 대미지를 100% 더 받습니다.,,,
 statusdesc_curse_wither_explosion,You take 100% extra damage from explosions.,Вы получаете 100% дополнительного урона от взрывов.,Você recebe mais 100% de dano de explosões.,Recibes 100 % más de daño de explosiones.,Du erleidest 100 % zusätzlichen Schaden durch Explosionen.,Vous subissez 100 % de dégâts supplémentaires des explosions.,Subisci il 100% in più di danni da esplosioni.,Otrzymujesz 100% więcej obrażeń od wybuchów.,爆炸额外对你造成 100% 伤害。,爆破から100%の追加ダメージを受ける。,폭발로부터 대미지를 100% 더 받습니다.,,,
 statusdesc_curse_wither_melee,You take 100% extra damage from melee attacks.,Вы получаете 100% дополнительного урона от рукопашных атак.,Você recebe mais 100% de dano de ataques corpo a corpo.,Recibes 100 % más de daño de ataques cuerpo a cuerpo.,Du erleidest 100 % zusätzlichen Schaden durch Nahkampfangriffe.,Vous subissez 100 % de dégâts supplémentaires des attaques de mêlée.,Subisci il 100% in più di danni da mischia.,Otrzymujesz 100% więcej obrażeń od ataków wręcz.,近战攻击额外对你造成 100% 伤害。,近接攻撃から100%の追加ダメージを受ける。,근접 공격으로부터 대미지를 100% 더 받습니다.,,,
@@ -1655,20 +1661,8 @@ end
 -- Sets biome map to the new one
 ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
 
---Adds custom biome colours to the biome list
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_biomes_all.xml")
-local xml = nxml.parse(content)
-xml:add_child(nxml.parse([[<Biome
-biome_filename="data/biome/custom/border_wall_divine.xml"
-height_index="10"
-color="ff3d3e4a" >
-</Biome>]]))
-ModTextFileSetContent("data/biome/_biomes_all.xml", tostring(xml))
-
-
 --Custom biome modifiers
-  ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
+ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
 
 --More Musical Magic implementation, coded by Y🍵
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
@@ -1677,3 +1671,6 @@ ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/
 
 --Set Custom Seed (And Check for Secret Seeds)
 dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
+
+--Appending extra modiifers
+ModLuaFileAppend( "data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")

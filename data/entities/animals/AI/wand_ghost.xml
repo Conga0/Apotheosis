@@ -1,0 +1,62 @@
+<Entity tags="mortal,hittable,homing_target,wand_ghost" name="$animal_wand_ghost">
+
+	<Base file="data/entities/base_wand_ghost.xml" >
+		<CameraBoundComponent
+			_enabled="0"
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+
+		<GenomeDataComponent 
+			herd_id="mage"
+			food_chain_rank="7"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<DamageModelComponent 
+            hp="1.5"
+            ragdoll_material="crystal"
+			ragdoll_filenames_file="" 
+			blood_material="plasma_fading"
+			fire_probability_of_ignition="0" 
+			air_needed="0" 
+			>
+			<damage_multipliers
+				melee="100.0"
+				projectile="1.0"
+				explosion="1.0"
+				electricity="0.1"
+				fire="0" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+	</Base>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/ghost/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+    
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/stealwand_emptyhands.lua"
+		execute_on_added="0"
+		execute_every_n_frame="15"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animals/minion_distance_delete.lua"
+		execute_every_n_frame="60"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
+		
+	<!-- finite use spells, like healing bolt, will not use charges-->
+	<ShotEffectComponent
+		extra_modifier="apotheosis_use_no_charges"
+		>
+	</ShotEffectComponent>
+
+</Entity>
