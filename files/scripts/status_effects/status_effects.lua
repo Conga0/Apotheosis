@@ -89,6 +89,13 @@ local apotheosis_status_list = {
         ui_description="$status_apotheosis_escapium_desc",
         ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/escapium.png",
         effect_entity="mods/apotheosis/files/entities/misc/effect_escapium.xml",
+    },
+    {
+        id="apotheosis_HOMING",
+        ui_name="$status_apotheosis_homing_name",
+        ui_description="$status_apotheosis_homing_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/homing.png",
+        effect_entity="mods/apotheosis/files/entities/misc/effect_homing.xml",
     }
 }
 

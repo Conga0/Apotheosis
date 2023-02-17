@@ -225,7 +225,7 @@ end
 do -- Add some new magical liquids to the Ancient Laboratory
   local path = "data/biome/liquidcave.xml"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5", "FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5,FF59FDD9")
+  content = content:gsub("FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5", "FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5,FF59FDD9,FFF6CBAE")
   ModTextFileSetContent(path, content)
 end
 

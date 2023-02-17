@@ -1,0 +1,17 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+	<LuaComponent
+		script_shot="mods/apotheosis/files/scripts/status_effects/attunium_homing_shoot.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="600"
+    >
+	</GameEffectComponent >
+	
+</Entity>

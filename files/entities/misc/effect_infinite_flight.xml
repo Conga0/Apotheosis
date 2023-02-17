@@ -2,7 +2,7 @@
 	
 	<InheritTransformComponent 
 		_enabled="1" >
-    </InheritTransformComponent>	
+    </InheritTransformComponent>
     
 	<LuaComponent
 		script_source_file="mods/apotheosis/files/scripts/status_effects/flight_start.lua"

@@ -444,36 +444,6 @@ table.insert(perk_list,
     end,
 })
 
---[[
---Backup of previous iteration
-table.insert(perk_list,
-{
-    id = "APOTHEOSIS_HASTE",
-    ui_name = "$perk_apotheosis_haste_name",
-    ui_description = "$perk_apotheosis_haste_description",
-    ui_icon = "data/ui_gfx/perk_icons/movement_faster.png",
-    perk_icon = "data/items_gfx/perks/movement_faster.png",
-    stackable = STACKABLE_YES,
-    not_in_default_perk_pool = false,
-    usable_by_enemies = true,
-    stackable_how_often_reappears = 10,
-    stackable_maximum = 5,
-    max_in_perk_pool = 1,
-    func = function(entity_perk_item, entity_who_picked, item_name)
-        LoadGameEffectEntityTo(entity_who_picked, "mods/Apotheosis/files/entities/misc/perks/perk_haste.xml")
-    end,
-    func_remove = function(entity_who_picked)
-        local children = EntityGetAllChildren(entity_who_picked)
-        for k=1, #children
-        do local child = children[k];
-            if EntityGetName(child) == "apotheosis_perk_haste" then
-                EntityKill(child)
-            end
-        end
-    end
-})
-]]--
-
 table.insert(perk_list,
 {
     id = "APOTHEOSIS_ALCOHOL_IMMUNITY",
@@ -529,6 +499,39 @@ table.insert(perk_list,
     end,
 })
 
+table.insert(perk_list,
+{
+    id = "APOTHEOSIS_NO_RECOIL",
+    ui_name = "$perk_apotheosis_no_recoil",
+    ui_description = "$perk_apotheosis_no_recoil_description",
+    ui_icon = "data/ui_gfx/perk_icons/low_recoil.png",
+    perk_icon = "data/items_gfx/perks/low_recoil.png",
+    stackable = STACKABLE_NO,
+    usable_by_enemies = false,
+    func = function( entity_perk_item, entity_who_picked, item_name )
+        local x,y = EntityGetTransform( entity_who_picked )
+        local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/no_recoil.xml", x, y )
+        EntityAddTag( child_id, "perk_entity" )
+        EntityAddChild( entity_who_picked, child_id )
+    end,
+    _remove = function(entity_id)
+        local apotheosis_targets = EntityGetAllChildren(entity_id)
+        for i,v in ipairs( apotheosis_targets ) do
+            if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_no_recoil" ) then
+                EntityKill ( v )
+            end
+        end
+    end,
+    func_remove = function( entity_who_picked )
+        local apotheosis_targets = EntityGetAllChildren(entity_id)
+        for i,v in ipairs( apotheosis_targets ) do
+            if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_recoil" ) then
+                EntityKill ( v )
+            end
+        end
+    end,
+})
+
 
 
 
@@ -552,6 +555,7 @@ end
 remove_perk("PROJECTILE_REPULSION") --Reworked into Oversized Shield
 remove_perk("MOVEMENT_FASTER") --Combined into HASTE
 remove_perk("FASTER_LEVITATION") --Combined into HASTE
+remove_perk("LOW_RECOIL") --Reworked into No Recoil
 
 --Modify existing perk data for minor changes, DO NOT USE FOR MAJOR REWORKS
 --if you need to do a major rework, remove the relevent perk(s) and add a new one instead

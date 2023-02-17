@@ -1231,6 +1231,48 @@
 	</StatusEffects>
   </CellData>
 
+  <CellData
+	name="apotheosis_magic_liquid_attunium"
+	ui_name="$material_apotheosis_magic_liquid_attunium"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="0.90"
+	cell_type="liquid"
+	wang_color="80f6cbae"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel_random.min_x="-17"
+		vel_random.max_x="17"
+		vel_random.min_y="-17"
+		vel_random.max_y="-5"
+		lifetime.min="0.12"
+		lifetime.max="0.41"
+		gravity.y="2.857"
+		render_on_grid="1"
+		friction="-10"
+		probability="0.3571"
+		>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_HOMING" amount="0.2" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_HOMING" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
 
 
 
@@ -1427,6 +1469,13 @@
 	<Reaction probability="50"
 		input_cell1="magic_liquid_protection_all" input_cell2="magic_liquid_faster_levitation_and_movement"
 		output_cell1="apotheosis_magic_liquid_escapium" output_cell2="apotheosis_magic_liquid_escapium"
+		>
+	</Reaction>
+
+	<!-- Creates Attunium from Flummoxium + Concentrated Mana -->
+	<Reaction probability="50"
+		input_cell1="material_confusion" input_cell2="magic_liquid_mana_regeneration"
+		output_cell1="apotheosis_magic_liquid_attunium" output_cell2="apotheosis_magic_liquid_attunium"
 		>
 	</Reaction>
 

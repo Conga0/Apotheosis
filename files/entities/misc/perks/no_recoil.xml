@@ -1,0 +1,10 @@
+<Entity name="apotheosis_perk_no_recoil" >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+		
+	<ShotEffectComponent
+		extra_modifier="apotheosis_no_recoil"
+		>
+	</ShotEffectComponent>
+  
+</Entity>

@@ -1081,6 +1081,12 @@
 		height_index="13"
 		color="ffffd112" >
 	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome/custom/orbroom_13.xml"
+		height_index="13"
+		color="ffffd113" >
+	</Biome>
 
 	<Biome 
 		biome_filename="data/biome/custom/empty_desert.xml"
@@ -1123,4 +1129,11 @@
 		height_index="10"
 		color="ff4f4d4e" >
 	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/sunken_cave.xml"
+		height_index="13"
+		color="ff0c86a4" >
+	</Biome>
+
 </BiomesToLoad>

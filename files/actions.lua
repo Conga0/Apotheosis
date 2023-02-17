@@ -1318,6 +1318,124 @@ table.insert(actions,
     end,
 })
 
+--This would deal damage to all creatures in a large radius proportional to gold spent, but it'd be so easy to hit for 5k damage an use ambrosia + CoV to bypass the downside, collect gold from the dead to get your wealth back
+--[[
+table.insert(actions,{
+    id          = "APOTHEOSIS_AFFLUENCE",
+    name 		= "Affluence",
+    description = "Spends 5% of your current gold and deals damage proportional to the amount spent to all creatures in a large radius, including yourself",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/critical_drunk.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+    related_extra_entities = { "data/entities/particles/gold_sparks.xml" },
+    type 		= ACTION_TYPE_UTILITY,
+    spawn_level                       = "3,5,6,10", -- MANA_REDUCE
+    spawn_probability                 = "0.2,0.8,0.1,0.5", -- MANA_REDUCE
+    price = 200,
+    mana = 30,
+    custom_xml_file = "data/entities/misc/custom_cards/money_magic.xml",
+    action 		= function()
+        local entity_id = GetUpdatedEntityID()
+        
+        local dcomp = EntityGetFirstComponent( entity_id, "WalletComponent" )
+        
+        if ( dcomp ~= nil ) then
+            local money = ComponentGetValue2( dcomp, "money" )
+            local moneyspent = ComponentGetValue2( dcomp, "money_spent" )
+            local damage = math.min( math.floor( money * 0.05 ), 24000 )
+            
+            if ( damage > 1 ) and ( money >= 10 ) then
+                damage = math.max( damage, 10 )
+                
+                c.extra_entities = c.extra_entities .. "data/entities/particles/gold_sparks.xml,"
+                
+                money = money - damage
+                moneyspent = moneyspent + damage
+                ComponentSetValue2( dcomp, "money", money )
+                ComponentSetValue2( dcomp, "money_spent", moneyspent )
+                
+                -- print( "Spent " .. tostring( damage ) )
+                
+                if ( damage < 120 ) then
+                    c.damage_projectile_add = c.damage_projectile_add + ( damage / 25 )
+                elseif ( damage < 300 ) then
+                    c.damage_projectile_add = c.damage_projectile_add + ( damage / 35 )
+                elseif ( damage < 500 ) then
+                    c.damage_projectile_add = c.damage_projectile_add + ( damage / 45 )
+                else
+                    c.damage_projectile_add = c.damage_projectile_add + ( damage / 55 )
+                end
+            end
+        end
+        
+        draw_actions( 1, true )
+    end,
+})
+]]--
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_HITFX_AFFLUENCE",
+    name 		= "$spell_apotheosis_affluence_name",
+    description = "$spell_apotheosis_affluence_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/affluence.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+    related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_affluence.xml" },
+    type 		= ACTION_TYPE_MODIFIER,
+    spawn_level                       = "2,3,4,6", -- APOTHEOSIS_HITFX_AFFLUENCE
+    spawn_probability                 = "0.3,0.3,0.2,0.2", -- APOTHEOSIS_HITFX_AFFLUENCE
+    price = 200,
+    mana = 20,
+    max_uses = 20,
+    action 		= function()
+        c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_affluence.xml,mods/apotheosis/files/entities/particles/tinyspark_gold.xml,"
+        draw_actions( 1, true )
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_LIQUIDSPHERE_ACID",
+    name 		= "$spell_apotheosis_liquidsphere_acid_name",
+    description = "$spell_apotheosis_liquidsphere_acid_desc",
+    sprite 		= "data/ui_gfx/gun_actions/black_hole.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
+    related_projectiles	= {"data/entities/projectiles/deck/black_hole.xml"},
+    type 		= ACTION_TYPE_PROJECTILE,
+    spawn_level                       = "0,2,4,5", -- BLACK_HOLE
+    spawn_probability                 = "0.8,0.8,0.8,0.8", -- BLACK_HOLE
+    price = 200,
+    mana = 180,
+    max_uses    = 3, 
+    never_unlimited = true,
+    custom_xml_file = "data/entities/misc/custom_cards/black_hole.xml",
+    action 		= function()
+        add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 80
+        c.screenshake = c.screenshake + 20
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_STAR_SHOT",
+    name 		= "$spell_apotheosis_star_shot_name",
+    description = "$spell_apotheosis_star_shot_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/star_shot.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/star_shot.xml", 2},
+    type 		= ACTION_TYPE_PROJECTILE,
+    spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
+    spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+    price = 140,
+    mana = 30,
+    action 		= function()
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/star_shot.xml")
+        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/star_shot.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 16
+        c.spread_degrees = c.spread_degrees + 25.0
+    end,
+})
+
 
 
 

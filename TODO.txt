@@ -25,3 +25,5 @@ We'll have to see
 Finish or remove Master of Puppetering
 
 Finish of remove Wand Appreciator
+
+Check Master of Puppetering shoots from the right x,y coordinates

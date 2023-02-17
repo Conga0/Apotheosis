@@ -9,10 +9,13 @@ Feathery Meat + Concentrated Mana = Soarium
 
 Ambrosia + Hasteium = Escium
 
+Flummoxium + Concentrated Mana = Attunium
+
 
 Normal Potion Pool:
 Magical Mud: Creates Mud Men when exposed to fire or other sources of explosions
 Soarium: Grants infinite flight when stained or consumed
+Attunium: Grants homing when stained or consumed
 
 Rare Potion Pool:
 Nukium: Causes all airborne projectiles to transform into nukes when consumed
