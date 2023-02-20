@@ -29,6 +29,7 @@ local apotheosis_status_list = {
         ui_name="$status_apotheosis_manadrain_name",
         ui_description="$status_apotheosis_manadrain_desc",
         ui_icon="data/ui_gfx/status_indicators/mana_degradation.png",
+	    is_harmful=true,
         effect_entity="mods/Apotheosis/files/entities/misc/effect_mana_degradation.xml",
     },
     {
@@ -96,6 +97,21 @@ local apotheosis_status_list = {
         ui_description="$status_apotheosis_homing_desc",
         ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/homing.png",
         effect_entity="mods/apotheosis/files/entities/misc/effect_homing.xml",
+    },
+    {
+        id="apotheosis_LIGHT_REFLECTION",
+        ui_name="$status_apotheosis_light_reflect_name",
+        ui_description="$status_apotheosis_light_reflect_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/light_reflect.png",
+        effect_entity="mods/apotheosis/files/entities/misc/effect_light_reflect.xml",
+    },
+    {
+        id="apotheosis_BREATH_DRAIN",
+        ui_name="$status_apotheosis_breath_drain_name",
+        ui_description="$status_apotheosis_breath_drain_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/breath_drain.png",
+	    is_harmful=true,
+        effect_entity="mods/apotheosis/files/entities/misc/effect_breath_drain.xml",
     }
 }
 

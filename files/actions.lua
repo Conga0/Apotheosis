@@ -228,7 +228,7 @@ table.insert(actions,
     spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
     spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
     price = 100,
-    mana = 90,
+    mana = 250,
     max_uses = 20,
     action 		= function()
         c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_nuke_ray_enemy.xml,"
@@ -476,8 +476,13 @@ table.insert(actions,
     mana = 20,
     --max_uses = 1000,
     action 		= function()
-        add_projectile("mods/Apotheosis/files/entities/projectiles/deck/rat_bite.xml")
-        c.damage_critical_chance = c.damage_critical_chance + 10
+        --if reflecting then
+		--	c.damage_melee_add = c.damage_melee_add + 1.0
+        --else
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/rat_bite.xml")
+            c.damage_critical_chance = c.damage_critical_chance + 10
+        --end
+        --It says "+25 melee damage" instead of "25 melee damage"... hmm.. not satisfactory
     end,
 })
 

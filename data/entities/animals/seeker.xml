@@ -163,6 +163,7 @@
 	>
 	</DamageNearbyEntitiesComponent>
 
+	<!--
 	<DamageNearbyEntitiesComponent
     radius="10"
     time_between_damaging="15"
@@ -176,6 +177,7 @@
 	damage_max="0.2"
 	>
 	</DamageNearbyEntitiesComponent>
+	-->
 
 
 

@@ -5,11 +5,28 @@
 	<!-- art - main body  -->
 
 	<SpriteComponent 
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/boss_flesh.xml"
-		offset_x="0"
-		offset_y="0"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor.png"
+		offset_x="56.5"
+		offset_y="56.5"
 		>
 	</SpriteComponent>
+	
+	<Entity>
+		<SpriteComponent
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			offset_x="8.5"
+			offset_y="8.5"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
 
 	<!-- AI  -->
 
@@ -76,14 +93,14 @@
 
 	<PhysicsShapeComponent
 		is_circle="1"
-		radius_x="10"
-		radius_y="10"
+		radius_x="40"
+		radius_y="40"
 		friction="0.0"
 		restitution="0.3" >
 	</PhysicsShapeComponent>
 	
 	<CellEaterComponent
-		radius="19" 
+		radius="60" 
 		eat_probability="100">
 	</CellEaterComponent>
 
@@ -105,7 +122,7 @@
 		materials_how_much_damage="0.1" 
 		materials_that_damage="acid" 
 		ragdoll_filenames_file=""
-        ragdoll_material="meat_slime_cursed"
+        ragdoll_material="rock_box2d_nohit_hard"
 		ragdoll_offset_y="-6"
 		ragdollify_child_entity_sprites="1" 
 		ragdollify_root_angular_damping="2"
@@ -115,7 +132,7 @@
 		>
 		<damage_multipliers
 			melee="0.7"
-			projectile="0.3"
+			projectile="0.1"
 			explosion="0.3"
 			electricity="0.3"
 			fire="0.3" 
@@ -136,10 +153,10 @@
 	<!-- center hitbox (weak spot) -->
 	<HitboxComponent 
 		_tags="hitbox_weak_spot"
-		aabb_min_x="-20" 
-		aabb_max_x="20" 
-		aabb_min_y="-20" 
-		aabb_max_y="20"
+		aabb_min_x="-40" 
+		aabb_max_x="40" 
+		aabb_min_y="-40" 
+		aabb_max_y="40"
 		damage_multiplier="0.3"
 		>
 	</HitboxComponent>
@@ -187,10 +204,10 @@
 	</ParticleEmitterComponent>
 	
 	<AreaDamageComponent
-		aabb_min.x="-23" 
-		aabb_min.y="-23" 
-		aabb_max.x="23" 
-		aabb_max.y="23" 
+		aabb_min.x="-30" 
+		aabb_min.y="-30" 
+		aabb_max.x="30" 
+		aabb_max.y="30" 
 		damage_per_frame="0.14"
 		update_every_n_frame="4"
 		entities_with_tag="player_unit"
@@ -199,10 +216,10 @@
 	</AreaDamageComponent>
 	
 	<AreaDamageComponent
-		aabb_min.x="-23" 
-		aabb_min.y="-23" 
-		aabb_max.x="23" 
-		aabb_max.y="23" 
+		aabb_min.x="-30" 
+		aabb_min.y="-30" 
+		aabb_max.x="30" 
+		aabb_max.y="30" 
 		damage_per_frame="0.14"
 		update_every_n_frame="4"
 		entities_with_tag="player_unit"

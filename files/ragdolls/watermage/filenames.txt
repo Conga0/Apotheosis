@@ -1,0 +1,6 @@
+mods/Apotheosis/files/ragdolls/watermage/arm_left.png
+mods/Apotheosis/files/ragdolls/watermage/arm_right.png
+mods/Apotheosis/files/ragdolls/watermage/leg_left.png
+mods/Apotheosis/files/ragdolls/watermage/leg_right.png
+mods/Apotheosis/files/ragdolls/watermage/body_lower.png
+mods/Apotheosis/files/ragdolls/watermage/body_upper.png

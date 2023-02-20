@@ -1136,4 +1136,10 @@
 		color="ff0c86a4" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/sunken_cave_entrance_lake.xml"
+		height_index="13"
+		color="ff1191b1" >
+	</Biome>
+
 </BiomesToLoad>

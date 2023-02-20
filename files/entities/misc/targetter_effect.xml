@@ -16,13 +16,6 @@
 		</Transform>
 	</InheritTransformComponent>
 	
-	<GenomeDataComponent 
-		herd_id="target"
-		food_chain_rank="20"
-		is_predator="0"
-		>
-	</GenomeDataComponent>
-	
 	<SpriteComponent 
 		image_file="mods/Apotheosis/files/projectiles_gfx/forsaken_eye_target_new.xml"
 		emissive="1"

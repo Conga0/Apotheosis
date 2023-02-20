@@ -16,4 +16,4 @@ if comp ~= nil then
     ComponentSetValue2(comp,"value_int",herd_id)
 end
 
-GenomeSetHerdId( parent, "helpless" )
+GenomeSetHerdId( parent, "target" )

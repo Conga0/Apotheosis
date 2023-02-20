@@ -1,0 +1,19 @@
+<Entity >
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>	
+   
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/status_effects/breath_drain.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="300"
+    >
+	</GameEffectComponent >
+  
+</Entity>

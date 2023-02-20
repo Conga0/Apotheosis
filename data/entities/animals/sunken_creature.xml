@@ -1,0 +1,173 @@
+<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT" name="Sukelluskello">
+	
+	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
+	<AnimalAIComponent/>
+
+	<LuaComponent
+	    execute_every_n_frame="-1"
+	    script_death="data/scripts/items/drop_money.lua"
+	    remove_after_executed="1" >
+	</LuaComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="256"
+		r="100"
+		g="100"
+		b="255"
+		offset_y="0"
+   		fade_out_time="1.5" >
+	</LightComponent>
+
+	<SpriteComponent 
+		_tags="character"
+		image_file="mods/Apotheosis/files/enemies_gfx/sunken_creature.xml" 
+		>
+	</SpriteComponent>
+
+	<PathFindingComponent 
+		can_dive="1" 
+		can_fly="1" 
+		can_jump="0" 
+		can_swim_on_surface="0" 
+		can_walk="0" 
+		cost_of_flying="500" 
+		distance_to_reach_node_x="20" 
+		distance_to_reach_node_y="20" 
+		frames_between_searches="20" 
+		frames_to_get_stuck="120" 
+		initial_jump_lob="1" 
+		initial_jump_max_distance_x="100" 
+		initial_jump_max_distance_y="60" 
+		iterations_max_no_goal="9999999" 
+		iterations_max_with_goal="145000" 
+		jump_speed="200" 
+		max_jump_distance_from_camera="400" 
+		search_depth_max_no_goal="120" 
+		search_depth_max_with_goal="145000" 
+		y_walking_compensation="8" >
+	</PathFindingComponent>
+
+	<PathFindingGridMarkerComponent 
+		_enabled="1" 
+		marker_offset_x="0" 
+		marker_offset_y="0" 
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+	<PhysicsAIComponent
+		target_vec_max_len="15.0"
+		force_coeff="10.0"
+		force_balancing_coeff="0.8"
+		force_max="100"
+		torque_coeff="50"
+		torque_balancing_coeff="4"
+		torque_max="50.0"
+		damage_deactivation_probability="0"
+		damage_deactivation_time_min="2"
+		damage_deactivation_time_max="10" >
+	</PhysicsAIComponent>
+
+	<PhysicsBodyComponent 
+		force_add_update_areas="1"
+		allow_sleep="1" 
+		angular_damping="0.02" 
+		fixed_rotation="1" 
+		is_bullet="0" 
+		linear_damping="0"  >
+	</PhysicsBodyComponent>
+
+	<PhysicsShapeComponent
+		is_circle="1"
+		radius_x="13"
+		radius_y="13"
+		friction="0.0"
+		restitution="0.3" >
+	</PhysicsShapeComponent>
+
+
+	<CharacterDataComponent 
+		collision_aabb_min_x="-5"
+		collision_aabb_max_x="6"  
+		collision_aabb_min_y="-8"
+		collision_aabb_max_y="8"
+		mass="3.0"
+		>
+	</CharacterDataComponent>
+
+	<DamageModelComponent 
+		hp="20" 
+		air_needed="0" 
+		falling_damages="0"
+		fire_probability_of_ignition="0" 
+		blood_material="slime_green"
+		blood_multiplier="0.4"
+		is_on_fire="0" 
+		ragdoll_filenames_file=""
+		ragdoll_offset_y="-6"
+		ragdoll_material="meat_slime_green"
+		ragdollify_child_entity_sprites="1" 
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_blue_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_blue_$[1-3].xml"
+		critical_damage_resistance="1.0"
+		physics_objects_damage="0"
+		>
+		<damage_multipliers
+			melee="1.0"
+			projectile="0.5"
+			explosion="0.0"
+			electricity="1.25"
+			fire="1.4"
+			ice="0.75"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<GenomeDataComponent 
+		food_chain_rank="5" 
+		herd_id="slimes" 
+		is_predator="1" >
+	</GenomeDataComponent>
+	
+	<HitboxComponent 
+		_enabled="1"
+		damage_multiplier="0.33"
+		aabb_min_x="-10" 
+		aabb_max_x="10" 
+		aabb_max_y="10" 
+		aabb_min_y="-10" >
+	</HitboxComponent>
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals" >
+	</AudioComponent>
+
+	<SpriteAnimatorComponent />
+	
+	<AudioComponent
+      file="data/audio/Desktop/animals.bank"
+      event_root="animals/boss_limbs"
+      set_latest_event_position="1" >
+	</AudioComponent>
+
+	<IKLimbsAnimatorComponent>
+	</IKLimbsAnimatorComponent>
+
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb_attacker.xml" />  </Entity>
+
+	<LuaComponent 
+		_enabled="1" 
+		script_source_file="mods/Apotheosis/files/scripts/animals/sunken_creature_thrower.lua" 
+		execute_every_n_frame="1020">
+  	</LuaComponent>
+
+</Entity>

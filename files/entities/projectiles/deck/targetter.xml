@@ -125,7 +125,7 @@
 	</VariableStorageComponent>
 	
 	<HitEffectComponent 
-        effect_hit="LOAD_CHILD_ENTITY"
+        effect_hit="LOAD_UNQIUE_CHILD_ENTITY"
         value_string="mods/Apotheosis/files/entities/misc/targetter_effect.xml" >
 	</HitEffectComponent >
 </Entity>

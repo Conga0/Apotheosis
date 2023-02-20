@@ -27,3 +27,22 @@ Finish or remove Master of Puppetering
 Finish of remove Wand Appreciator
 
 Check Master of Puppetering shoots from the right x,y coordinates
+
+Update Curse of Swapping status effect to check for a child entity name instead of a global frame timer for removing
+
+Improve Particle Effects for Pure Light
+
+Waterstone charms nearby Water Mages
+
+Do something with Wand of Aiming
+Do something with Suffocatium
+
+Optimise Mass Status status effects to look for names instead of tags
+
+Fix "Custom Seed Successfully Set" appearing every run
+
+Give eel.xml creatures an "avoiding arc" effect so they stop getting stuck in water
+
+Fix Sunken Cavern Lake Entrance not generating properly
+
+Give Sunken Creature a unique "blue slimey meat" ragdoll material

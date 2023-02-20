@@ -225,7 +225,7 @@ end
 do -- Add some new magical liquids to the Ancient Laboratory
   local path = "data/biome/liquidcave.xml"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5", "FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5,FF59FDD9,FFF6CBAE")
+  content = content:gsub("FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5", "FFF86868,FF7FCEEA,FFA3569F,FFC23055,FF0BFFE5,FF59FDD9,FFF6CBAE,FFF6F7FD")
   ModTextFileSetContent(path, content)
 end
 
@@ -298,6 +298,29 @@ do -- Add a 1% chance for potions to be replaced with a potion from the rare poo
     call_init_function="1"
     script_source_file="mods/apotheosis/files/scripts/potions/potion_rare_spawninjector.lua" 
   ></LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Add lua script to vulnerability effect which applies "vulnerable" tag to afflicted creature (allows for lua scripts to detect for vulnerability)
+  local path = "data/entities/misc/effect_weaken.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    script_source_file="mods/apotheosis/files/scripts/status_effects/vulnerability_tag_start.lua"
+    execute_every_n_frame="4"
+    remove_after_executed="1"
+    >
+    </LuaComponent>
+  ]]))
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    script_source_file="mods/apotheosis/files/scripts/status_effects/vulnerability_tag_end.lua"
+    execute_every_n_frame="-1"
+    execute_on_removed="1"
+    >
+    </LuaComponent>
   ]]))
   ModTextFileSetContent(path, tostring(xml))
 end

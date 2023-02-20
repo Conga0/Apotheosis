@@ -127,7 +127,7 @@
 	</VariableStorageComponent>
 	
 	<HitEffectComponent 
-        effect_hit="LOAD_CHILD_ENTITY"
-        value_string="data/entities/misc/forsaken_eye_target.xml" >
+        effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+        value_string="mods/apotheosis/files/entities/misc/targetter_effect.xml" >
 	</HitEffectComponent >
 </Entity>

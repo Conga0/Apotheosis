@@ -1320,6 +1320,7 @@ function get_modifier_mappings()
 	result["custom/evil_temple"] = biome_modifier_fog_of_war_clear_at_player
 	result["alchemist_secret"] = biome_modifier_fog_of_war_clear_at_player
 	result["custom/lava_excavation"] = biome_modifier_magmatic
+	set_modifier_if_has_none( "custom/sunken_cave", "MOIST" )
 	--apply_modifier_if_has_none( "snowcave", "FREEZING" )
 
 	--DEVTST

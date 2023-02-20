@@ -133,6 +133,16 @@
     })
 
 
+    --Firemage Spawns
+    table.insert(g_unique_enemy3,
+    {
+        prob           = 0.05,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/watermage.xml"
+    })
+
+
 
 
 

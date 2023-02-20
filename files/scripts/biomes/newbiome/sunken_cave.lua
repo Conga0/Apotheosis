@@ -17,6 +17,7 @@ RegisterSpawnFunction( 0xff23B9C3, "spawn_altar_torch" )
 RegisterSpawnFunction( 0xff55AF8C, "spawn_skulls" ) 
 RegisterSpawnFunction( 0xffF516E3, "spawn_scavenger_party" )
 RegisterSpawnFunction( 0xff3208e5, "spawn_aquatic" )
+RegisterSpawnFunction( 0xff00e396, "spawn_mist_colossal" )
 RegisterSpawnFunction( 0xffFFC84E, "spawn_acid" )
 RegisterSpawnFunction( 0xff7285c4, "load_acidtank_right" )
 RegisterSpawnFunction( 0xff9472c4, "load_acidtank_left" )
@@ -44,19 +45,7 @@ g_small_enemies =
 		max_count	= 0,    
 		entity 	= ""
 	},
-	-- add skullflys after this step
-	{
-		prob   		= 0.2,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/shotgunner.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/slimeshooter.xml"
-	},
+	--
 	{
 		prob   		= 0.5,
 		min_count	= 1,
@@ -67,53 +56,7 @@ g_small_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/iceskull.xml"
-	},
-	{
-		prob   		= 0.07,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/scavenger_grenade.xml"
-	},
-	{
-		prob   		= 0.07,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/scavenger_smg.xml"
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entities 	= {
-		"data/entities/animals/scavenger_smg.xml",
-		"data/entities/animals/scavenger_grenade.xml"
-		}
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/sniper.xml"
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/tank.xml"
-	},
-	{
-		prob   		= 0.01,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/tank_rocket.xml"
-	},
-	{
-		prob   		= 0.09,
-		min_count	= 1,
-		max_count	= 1,
-		ngpluslevel	= 1,
-		entity 	= "data/entities/animals/thundermage.xml"
+		entity 	= "data/entities/animals/thunderskull.xml"
 	},
 	{
 		prob   		= 0.09,
@@ -121,6 +64,30 @@ g_small_enemies =
 		max_count	= 1,
 		ngpluslevel	= 2,
 		entity 	= "data/entities/animals/thundermage_big.xml"
+	},
+	{
+		prob   		= 0.15,
+		min_count	= 1,
+		max_count	= 2,    
+		entity 	= "data/entities/animals/sunken_cave/watermage.xml",
+	},
+	{
+		prob   		= 0.08,
+		min_count	= 2,
+		max_count	= 3,  
+		entity 	= "data/entities/animals/seeker.xml"
+	},
+	{
+		prob		= 0.10,
+		min_count	= 1,
+		max_count	= 2,
+		entity		= "data/entities/animals/scavenger_grenade.xml"
+	},
+	{
+		prob   		= 0.10,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 		= "data/entities/animals/wizard_weaken.xml"
 	},
 }
 
@@ -139,12 +106,6 @@ g_big_enemies =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 0.15,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/thundermage.xml"
-	},
-	{
 		prob   		= 0.08,
 		min_count	= 1,
 		max_count	= 1,
@@ -158,145 +119,16 @@ g_big_enemies =
 		entity 	= "data/entities/animals/worm_big.xml"
 	},
 	{
-		prob   		= 0.01,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/worm.xml"
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 3,    
-		entity 	= "data/entities/animals/worm_tiny.xml"
-	},
-	{
-		prob   		= 0.4,
-		min_count	= 1,
-		max_count	= 3,    
-		entity 	= "data/entities/animals/iceskull.xml"
-	},
-	{
 		prob   		= 0.2,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/giant.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_wands.xml"
-	},
-	{
-		prob   		= 0.2,
-		min_count	= 1,
-		max_count	= 1,    
-		entities 	= {
-			{
-				min_count	= 1,
-				max_count 	= 1,
-				entity = "data/entities/animals/sniper.xml",
-			},
-			{
-				min_count	= 0,
-				max_count 	= 2,
-				entity = "data/entities/animals/shotgunner.xml",
-			},
-		}
-	},
-	{
-		prob   		= 0.2,
-		min_count	= 2,
-		max_count	= 3,    
-		entity 	= "data/entities/animals/scavenger_grenade.xml"
-	},
-	{
-		prob   		= 0.2,
-		min_count	= 2,
-		max_count	= 3,    
-		entity 	= "data/entities/animals/scavenger_smg.xml"
-	},
-	{
-		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 2,    
-		entities 	= {
-			{
-				min_count	= 1,
-				max_count 	= 2,
-				entity = "data/entities/animals/scavenger_smg.xml",
-			},
-			{
-				min_count	= 1,
-				max_count 	= 2,
-				entity = "data/entities/animals/scavenger_grenade.xml",
-			},
-		}
-	},
-	{
-		prob   		= 0.02,
-		min_count	= 1,
-		max_count	= 1,
-		ngpluslevel = 1,
-		entities 	= {
-			{
-				min_count	= 1,
-				max_count 	= 1,
-				entity = "data/entities/animals/scavenger_smg.xml",
-			},
-			{
-				min_count	= 1,
-				max_count 	= 2,
-				entity = "data/entities/animals/scavenger_grenade.xml",
-			},
-			{
-				min_count	= 0,
-				max_count 	= 1,
-				entity = "data/entities/animals/coward.xml",
-			},
-		}
+		entity 	= "data/entities/animals/wizard_transmutation.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/tank.xml"
-	},
-	{
-		prob   		= 0.03,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/tank_rocket.xml"
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entities 	= {
-			{
-				min_count	= 1,
-				max_count 	= 3,
-				entity = "data/entities/animals/scavenger_smg.xml",
-			},
-			{
-				min_count	= 1,
-				max_count 	= 3,
-				entity = "data/entities/animals/scavenger_grenade.xml",
-			},
-			"data/entities/animals/scavenger_leader.xml",
-		}
-	},
-	{
-		prob   		= 0.01,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 		= "data/entities/animals/monk.xml"
-	},
-	{
-		prob   		= 0.01,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 		= "data/entities/animals/wizard_neutral.xml"
+		max_count	= 3,    
+		entity 	= "data/entities/animals/wizard_wands.xml"
 	},
 	{
 		prob   		= 0.05,
@@ -305,39 +137,22 @@ g_big_enemies =
 		entity 	= "data/entities/animals/thunderskull.xml"
 	},
 	{
-		prob   		= 0.1,
-		min_count	= 2,
-		max_count	= 4,    
-		entity 	= "data/entities/animals/scavenger_glue.xml",
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/drone_shield.xml",
-		ngpluslevel = 2,
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/buildings/hpcrystal.xml",
-		ngpluslevel = 1,
-	},
-	{
-		prob   		= 0.01,
+		prob   		= 0.2,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/easter/sniper.xml",
-		spawn_check = function() 
-			local year, month, day = GameGetDateAndTimeLocal()
-			
-			if ( month == 8 ) and ( day == 24 ) then
-				return true
-			else
-				return false 
-			end
-		end,
+		entity 	= "data/entities/animals/sunken_cave/watermage.xml",
+	},
+	{
+		prob           = 0.15,
+		min_count    = 1,
+		max_count    = 1,    
+		entity     = "data/entities/animals/fungiforest/shaman_greater_apotheosis.xml"
+	},
+	{
+		prob           = 0.2,
+		min_count    = 1,
+		max_count    = 1,    
+		entity     = "data/entities/animals/crypt/tentacler_big.xml"
 	},
 }
 
@@ -349,45 +164,66 @@ g_scavenger_party =
 	total_prob = 0,
 	-- 
 	{
-		prob   		= 1,
+		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entities 	= {
-			{
-				min_count	= 1,
-				max_count 	= 3,
-				entity = "data/entities/animals/scavenger_smg.xml",
-			},
-			{
-				min_count	= 1,
-				max_count 	= 3,
-				entity = "data/entities/animals/scavenger_grenade.xml",
-			},
-			{
-				min_count	= 0,
-				max_count 	= 1,
-				entity = "data/entities/animals/coward.xml",
-			},
-			"data/entities/animals/scavenger_leader.xml",
-		}
+		entity 	= "data/entities/animals/miniboss_pit_02.xml"
 	},
 	{
 		prob   		= 0.5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/miniboss_pit_02.xml"
+		entity 	= "data/entities/animals/sunken_creature.xml"
 	},
 }
 
 g_aquatic =
 {
 	total_prob = 0,
+	-- this is air, so nothing spawns at 0.6
+	{
+		prob   		= 0.5,
+		min_count	= 0,
+		max_count	= 0,    
+		entity 	= ""
+	},
 	-- 
 	{
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/eel.xml"
+	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/buildings/hpcrystal.xml",
+	},
+}
+
+g_mist_colossal =
+{
+	total_prob = 0,
+	-- this is air, so nothing spawns at 0.6
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/sunken_creature.xml"
+	},
+	-- 
+	{
+		prob   		= 1.0,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "mods/apotheosis/files/entities/buildings/mist_trap_large_attunium.xml"
+	},
+	{
+		prob   		= 1.0,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "mods/apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml"
 	},
 }
 
@@ -495,20 +331,26 @@ g_items =
 		prob   		= 5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_level_02.xml"
+		entity 	= "data/entities/items/wand_level_04.xml"
 	},
 	-- debug tests
 	{
 		prob   		= 5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_level_02_better.xml"
+		entity 	= "data/entities/items/wand_level_04_better.xml"
 	},
 	{
 		prob   		= 5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_unshuffle_02.xml"
+		entity 	= "data/entities/items/wand_unshuffle_05.xml"
+	},
+	{
+		prob   		= 2,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/items/pickup/waterstone.xml"
 	},
 }
 
@@ -1088,22 +930,6 @@ function init(x, y, w, h)
 	-- figure out positions for 8 statues within the biome
 	-- and spawn them if a position is within the bounds of this function call
 	-- NOTE: only 3 statues need to be destroyed to complete sequence
-	for i=1,8 do
-		local biome_x_min = -2350
-		local biome_x_max = 2350
-		local biome_y_min = 3140
-		local biome_y_max = 4500
-
-		local pos_x = ProceduralRandomi(109,i*53,biome_x_min,biome_x_max)
-		local pos_y = ProceduralRandomi(111,i*2.9,biome_y_min,biome_y_max)
-
-		if pos_x >= x and pos_x <= x+w
-		and pos_y >= y and pos_y <= y+h then
-			-- spawn
-			--print("spawned statue " .. i .. " at " .. pos_x .. ", " .. pos_y)
-			LoadPixelScene( "data/biome_impl/snowcave/statue_hand.png", "", pos_x-22, pos_y-22, "", true )
-		end	
-	end
 end
 
 function spawn_small_enemies(x, y)
@@ -1142,6 +968,12 @@ function spawn_aquatic(x,y)
 	end
 end
 
+function spawn_mist_colossal(x,y)
+	if safe( x, y ) then
+		spawn(g_mist_colossal, x, y)
+	end
+end
+
 function spawn_items(x, y)
 	local r = ProceduralRandom( x-11.631, y+10.2257 )
 	
@@ -1160,11 +992,11 @@ function spawn_props(x, y)
 	if safe( x, y ) then
 		local r = ProceduralRandom( x-11.231, y+10.2157 )
 		
-		if (r < 0.9) then
+		--if (r < 0.9) then
 			spawn(g_props,x,y-3,0,0)
-		else
-			LoadPixelScene( "data/biome_impl/snowperson.png", "data/biome_impl/snowperson_visual.png", x-12, y-38, "", true )
-		end
+		--else
+		--	LoadPixelScene( "data/biome_impl/snowperson.png", "data/biome_impl/snowperson_visual.png", x-12, y-38, "", true )
+		--end
 	end
 end
 

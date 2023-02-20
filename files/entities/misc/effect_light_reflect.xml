@@ -1,0 +1,26 @@
+<Entity name="apotheosis_pure_light_buff" >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/light_reflect_start.lua"
+		execute_every_n_frame="2"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_removed="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/light_reflect_end.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="600"
+    >
+	</GameEffectComponent >
+	
+</Entity>

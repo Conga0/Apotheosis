@@ -1236,11 +1236,11 @@
 	ui_name="$material_apotheosis_magic_liquid_attunium"
   	tags="[liquid],[water],[magic_liquid],[impure]"
 	burnable="0"
-	density="0.90"
+	density="0.91"
 	cell_type="liquid"
 	wang_color="80f6cbae"
 	generates_smoke="0"
-	liquid_gravity="0.8"
+	liquid_gravity="0.81"
 	liquid_sand="0"
 	gfx_glow="100"
 	on_fire="0"
@@ -1272,6 +1272,267 @@
 		</Stains>
 	</StatusEffects>
   </CellData>
+
+  <CellData
+	name="apotheosis_magic_liquid_attunium_cloud"
+	ui_name="$material_apotheosis_magic_liquid_attunium_cloud"
+  	tags="[liquid],[impure],[impure],[magic_liquid]"
+	burnable="0"
+	density="1"
+	cell_type="liquid"
+	wang_color="11f6cbad"
+	gfx_glow="130"
+	generates_smoke="0"
+	liquid_gravity="0"
+	liquid_sand="0"
+	liquid_stains="2"
+	liquid_stains_self="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10" 
+	danger_radioactive="0" 
+	lifetime="10"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_HOMING" amount="0.2" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_HOMING" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_magic_liquid_pure_light"
+	ui_name="$material_apotheosis_magic_liquid_pure_light"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="4.95"
+	cell_type="liquid"
+	wang_color="80f6f7fd"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel_random.min_x="-17"
+		vel_random.max_x="17"
+		vel_random.min_y="-17"
+		vel_random.max_y="-5"
+		lifetime.min="0.12"
+		lifetime.max="0.41"
+		gravity.y="2.857"
+		render_on_grid="1"
+		friction="-10"
+		probability="0.3571"
+		>
+	</ParticleEffect>
+  	<Graphics
+	color="80ffffff" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_LIGHT_REFLECTION" amount="0.2" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_LIGHT_REFLECTION" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_magic_liquid_pure_light_cloud"
+	ui_name="$material_apotheosis_magic_liquid_pure_light_cloud"
+  	tags="[liquid],[impure],[impure],[magic_liquid]"
+	burnable="0"
+	density="1"
+	cell_type="liquid"
+	wang_color="11f6f7fe"
+	gfx_glow="130"
+	generates_smoke="0"
+	liquid_gravity="0"
+	liquid_sand="0"
+	liquid_stains="2"
+	liquid_stains_self="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10" 
+	danger_radioactive="0" 
+	lifetime="10"
+	>
+  	<Graphics
+	color="11ffffff" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_LIGHT_REFLECTION" amount="0.2" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_LIGHT_REFLECTION" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_magic_liquid_suffocatium"
+	ui_name="$material_apotheosis_magic_liquid_suffocatium"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="0.91"
+	cell_type="liquid"
+	wang_color="803d4180"
+	generates_smoke="0"
+	liquid_gravity="0.81"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="-40"
+		vel_random.min_y="-20.21"
+		vel_random.max_y="-2.861"
+		vel_random.min_x="-6.667"
+		vel_random.max_x="6.667"
+		lifetime.min="0.3238"
+		lifetime.max="9.3238"
+		gravity.y="-100"
+		render_on_grid="1"
+		airflow_force="10"
+		airflow_scale="6.857"
+		draw_as_long="0"
+		friction="1.352"
+		probability="0.0343"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_BREATH_DRAIN" amount="0.5" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_BREATH_DRAIN" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
+  <CellDataChild
+  	_parent="templebrick_static"
+  	_inherit_reactions="1"
+	name="apotheosis_sunkenrock_static"
+	ui_name="$material_apotheosis_sunkenrock"
+	wang_color="ff5e689f"
+	wang_noise_percent="0.5"
+	hp="100000"
+	durability="9"
+	wang_curvature="0.5"
+	wang_noise_type="1"
+	audio_physics_material_wall="gravel"
+	audio_physics_material_solid="rock"
+	>
+	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/sunken_rock.png"
+		color="ff5F2621"
+		pixel_all_around="ff5F2621"
+
+		pixel_lonely="ff5F2621"
+		pixel_top_right="ff5F2621"
+		pixel_bottom_left="ff5F2621"
+
+		pixel_left="ff8D3620"
+		pixel_top_left="ff8D3620"
+		pixel_top="ff8D3620"
+
+		pixel_right="ff321616"
+		pixel_bottom_right="ff321616"
+		pixel_bottom="ff321616"
+	>
+	<Edge>
+			<EdgeGraphics 
+			color="ff233112" 
+			overwrite="0" 
+			percent="1" 
+			require_same_material="0" 
+			require_same_material_type="1" 
+			type="NORMAL_BASED" 
+			z="1" >
+			<Images>
+				<Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_sunken_hor.png" 
+					min_angle="45" 
+					max_angle="135" />
+				<Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_sunken_ver.png" 
+					min_angle="135" 
+					max_angle="235" />
+				<Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_sunken_hor.png" 
+					min_angle="235" 
+					max_angle="315" />
+				<Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_sunken_ver.png" 
+					min_angle="315" 
+					max_angle="360" />
+				<Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_sunken_ver.png" 
+					min_angle="0" 
+					max_angle="45" />
+			</Images>
+			</EdgeGraphics>
+	</Edge>
+	</Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="apotheosis_sunkenrock_static"
+  	_inherit_reactions="1"
+	name="apotheosis_sunkenrock_static_sandy"
+	ui_name="$material_apotheosis_sunkenrock_sandy"
+	wang_color="ff5e6900"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	>
+	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/sunken_rock_sandy.png"
+		color="ff5F2621"
+		pixel_all_around="ff5F2621"
+
+		pixel_lonely="ff5F2621"
+		pixel_top_right="ff5F2621"
+		pixel_bottom_left="ff5F2621"
+
+		pixel_left="ff8D3620"
+		pixel_top_left="ff8D3620"
+		pixel_top="ff8D3620"
+
+		pixel_right="ff321616"
+		pixel_bottom_right="ff321616"
+		pixel_bottom="ff321616"
+	>
+	</Graphics>
+  </CellDataChild>
+
 
 
 
@@ -1476,6 +1737,13 @@
 	<Reaction probability="50"
 		input_cell1="material_confusion" input_cell2="magic_liquid_mana_regeneration"
 		output_cell1="apotheosis_magic_liquid_attunium" output_cell2="apotheosis_magic_liquid_attunium"
+		>
+	</Reaction>
+	
+	<!--Pure Light converts other magical liquids into more of itself-->
+	<Reaction probability="50"
+		input_cell1="apotheosis_magic_liquid_pure_light" 		input_cell2="[magic_liquid]"
+		output_cell1="apotheosis_magic_liquid_pure_light"		output_cell2="apotheosis_magic_liquid_pure_light"
 		>
 	</Reaction>
 

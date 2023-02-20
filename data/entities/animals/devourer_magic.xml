@@ -25,11 +25,6 @@
 		>
 	</SpriteComponent>
 
-	<LimbBossComponent
-		state="1"
-		>
-	</LimbBossComponent>
-
 	<PathFindingComponent 
 		can_dive="1" 
 		can_fly="1" 
