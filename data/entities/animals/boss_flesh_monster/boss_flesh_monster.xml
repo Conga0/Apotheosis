@@ -336,18 +336,18 @@
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_very_long_animated.xml" />  </Entity>
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_very_long_animated.xml" />  </Entity>
 
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
 
 	<!--Would probably be better to just have a VSC to store how many limbs we're using and determine it from there instead of having 900 indiviudal lua scripts for each time we use a different/new limb count-->
    	<LuaComponent

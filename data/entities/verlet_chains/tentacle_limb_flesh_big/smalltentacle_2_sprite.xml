@@ -1,0 +1,32 @@
+<Sprite
+filename="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle.png" 
+offset_x="0"
+offset_y="0"
+default_animation="appear" >
+
+<!-- animation -->
+	<RectAnimation
+		name="stand"
+		pos_x="63"
+		pos_y="0"
+		frame_count="1"
+		frame_width="31"
+		frame_height="17"
+		frame_wait="1"
+		frames_per_row="8"
+		loop="1"   >
+	</RectAnimation>
+
+	<RectAnimation
+		name="appear" 
+   		next_animation="stand" 
+		pos_x="6"
+		pos_y="0"
+		frame_count="2"
+		frame_width="1"
+		frame_height="1"
+		frame_wait="0.4"
+		frames_per_row="8"
+		loop="0"   >
+	</RectAnimation>
+</Sprite>
