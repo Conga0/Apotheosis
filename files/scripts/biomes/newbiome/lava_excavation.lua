@@ -203,12 +203,6 @@ g_big_enemies =
 		entity 	= "data/entities/animals/goblin_bomb.xml"
 	},
     {
-        prob           = 0.15,
-        min_count    = 1,
-        max_count    = 1,
-        entity     = "data/entities/animals/tesla_turret.xml"
-    },
-    {
         prob           = 0.05,
         min_count    = 1,
         max_count    = 1,

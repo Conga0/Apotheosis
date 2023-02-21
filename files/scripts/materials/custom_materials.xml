@@ -1533,6 +1533,45 @@
 	</Graphics>
   </CellDataChild>
 
+  <CellData
+  	name="apotheosis_magic_liquid_protection_all_fading_dulled" 
+	ui_name="$material_apotheosis_ambrosia_dull"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="5.12"
+	cell_type="liquid"
+	wang_color="80df982a"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="150"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="apotheosis_PROTECTION_ALL_DULL"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="17.14"
+		vel_random.min_y="-100"
+		vel_random.max_y="25.71"
+		lifetime.min="0"
+		gravity.y="-8.57"
+		render_on_grid="1"
+		draw_as_long="1"
+		friction="-3.429"
+		probability="0.0518"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="FOOD_POISONING" amount="0.2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
 
 
 
@@ -1744,6 +1783,13 @@
 	<Reaction probability="50"
 		input_cell1="apotheosis_magic_liquid_pure_light" 		input_cell2="[magic_liquid]"
 		output_cell1="apotheosis_magic_liquid_pure_light"		output_cell2="apotheosis_magic_liquid_pure_light"
+		>
+	</Reaction>
+	
+	<!--Infected Ambrosia converts nearby ambrosia to more of itself-->
+	<Reaction probability="100"
+		input_cell1="apotheosis_magic_liquid_protection_all_fading_dulled" 		input_cell2="magic_liquid_protection_all"
+		output_cell1="apotheosis_magic_liquid_protection_all_fading_dulled"		output_cell2="apotheosis_magic_liquid_protection_all_fading_dulled"
 		>
 	</Reaction>
 

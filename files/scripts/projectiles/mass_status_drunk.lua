@@ -25,23 +25,22 @@ local targets = EntityGetInRadiusWithTag( pos_x, pos_y, r, "mortal" )
 for k=1, #targets
 do local v = targets[k];
 	if ( v ~= entity_id ) then
-		local c = EntityGetAllChildren( v )
+		local children = EntityGetAllChildren( v )
 		local valid = true
 		
-		if ( c ~= nil ) then
-			for a,b in ipairs( c ) do
-				local comps = EntityGetComponent( b, "GameEffectComponent", "effect_drunk_magic" )
-				
-				if ( comps ~= nil ) then
+		if children ~= nil then
+			for z=1, #children
+			do local c = children[z];
+				if EntityGetName(c) == "apotheosis_drunk_magic" then
 					valid = false
-					break
 				end
 			end
 		end
-		
-		if valid and EntityHasTag(v, "hittable") then
-			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_status_drunk.xml", pos_x, pos_y )
-			EntityAddChild( v, eid )
+
+
+		if valid == true then
+			local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_status_drunk.xml", pos_x, pos_y)
+			EntityAddChild(v,c)
 		end
 	end
 end

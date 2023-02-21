@@ -1,0 +1,32 @@
+<Entity >
+	
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent
+        effect="NONE"
+        frames="120"
+    >
+	</GameEffectComponent >
+
+    <LuaComponent
+        execute_on_added="0"
+        script_source_file="mods/Apotheosis/files/scripts/status_effects/corrupt_ambrosia.lua"
+        execute_every_n_frame="1"
+        remove_after_executed="1"
+    >
+    </LuaComponent>
+
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="magic_liquid_protection_all"
+      steps_per_frame="30"
+      to_material="apotheosis_magic_liquid_protection_all_fading_dulled"
+      clean_stains="0"
+      is_circle="1"
+      radius="30" 
+	  loop="1"
+	  >
+    </MagicConvertMaterialComponent>
+
+</Entity>

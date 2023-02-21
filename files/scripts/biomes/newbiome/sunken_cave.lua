@@ -154,6 +154,12 @@ g_big_enemies =
 		max_count    = 1,    
 		entity     = "data/entities/animals/crypt/tentacler_big.xml"
 	},
+    {
+        prob           = 0.15,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/tesla_turret.xml"
+    },
 }
 
 
@@ -192,7 +198,7 @@ g_aquatic =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/eel.xml"
+		entity 	= "data/entities/animals/sunken_cave/eel.xml"
 	},
 	{
 		prob   		= 0.05,

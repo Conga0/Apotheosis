@@ -1,4 +1,4 @@
-<Entity name="Vesimagi" >
+<Entity name="Vesimagi" tags="watermage,ui_use_raw_name" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>
@@ -18,7 +18,7 @@
 			can_fly="0"  
 			attack_ranged_action_frame="3"
 			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/aquamage_pylon.xml"
-			attack_ranged_frames_between="180"
+			attack_ranged_frames_between="220"
 			attack_ranged_min_distance="10" 
 			>
 		</AnimalAIComponent>
@@ -39,8 +39,9 @@
 			>
 			<damage_multipliers
 				explosion="1.2"
-				fire="2.0"
-				electricity="0.1">
+				fire="1.3"
+				electricity="0.1"
+				ice="2.0">
 			</damage_multipliers>
 		</DamageModelComponent>
 
@@ -325,6 +326,19 @@
 		randomize_position.max_y="6"
 		>
 	</SpriteParticleEmitterComponent>
+
+
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
 
     <MusicEnergyAffectorComponent
     	energy_target="1">

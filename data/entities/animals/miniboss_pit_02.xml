@@ -55,7 +55,7 @@
 	</LuaComponent>
 	
 	<LuaComponent 
-		script_damage_received="data/entities/animals/boss_pit/boss_pit_damage.lua">
+		script_damage_received="data/entities/animals/ai/miniboss_pit_damage.lua">
 	</LuaComponent>
 	
 	<!--

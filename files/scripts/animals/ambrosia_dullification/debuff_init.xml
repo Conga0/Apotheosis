@@ -1,0 +1,12 @@
+<Entity 
+  name="$projectile_default" 
+  tags=""
+   >
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/ambrosia_dullification/debuff_init.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+	
+	
+</Entity>

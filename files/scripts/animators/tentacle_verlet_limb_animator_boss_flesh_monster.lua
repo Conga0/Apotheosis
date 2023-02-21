@@ -5,6 +5,7 @@ local x, y = EntityGetTransform(entity_id)
 
 local tentacles = {}
 local target = {}
+local chains = {}
 local children = EntityGetAllChildren(entity_id) or {}
 for k=1, #children
 do local child = children[k];
@@ -13,6 +14,9 @@ do local child = children[k];
   end
   if EntityGetName(child) == "tentacle_limb_leg" then
     table.insert(target, child)
+  end
+  if EntityGetName(child) == "chain_verlet" then
+    table.insert(chains, child)
   end
 end
 
@@ -33,5 +37,27 @@ do local child = tentacles[k];
   end
   if verlet_world_joint_component then
 	ComponentSetValue2(verlet_world_joint_component, "world_position", x, y - 3)
+  end
+end
+
+for k=1,#chains
+do local child = chains[k];
+
+  local verlet_component = EntityGetFirstComponentIncludingDisabled(child, "VerletPhysicsComponent")
+  local verlet_world_joint_component = EntityGetFirstComponentIncludingDisabled(child, "VerletWorldJointComponent")
+
+  local positions = ComponentGetValue2(verlet_component, "positions")
+  if k == 1 then
+    positions[29] = x + 25
+    positions[30] = y + 10
+  else
+    positions[29] = x + 50
+    positions[30] = y
+  end
+  if verlet_component then
+	ComponentSetValue2(verlet_component, "positions", positions)
+  end
+  if verlet_world_joint_component then
+	ComponentSetValue2(verlet_world_joint_component, "world_position", x - 30, y + 30)
   end
 end

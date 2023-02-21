@@ -18,7 +18,8 @@ Giga Death Cross now does much, much more damage
 Weakening Curses now cause a target to take double damage instead of a flat 25% vulnerability against a certain damage type, the concept is in late game Noita, it's very easy to put projectile or explosive weakening curse on a wand and ignore all damage resistances enemies has, it doesn't force you to build wands outside of your comfort zone for certain environments and I feel it restricts wand creativity by allowing you, borderline making the best strategy to stick to one damage type, rather than needing to mix it up for endgame areas of the game. This change should also hopefully make weakening curses significantly more impactful in normal builds for optimising damage output than simply being a means to bypass damage resistances with little gain to overall damage output
 Masters of Exchange no longer swap non-mortal entities (for example, cursed rock damage fields)
 Low Recoil is replaced with No Recoil
-
+Pit Boss now has a projectile failsafe incase it spawns too many wands (over 1k with high boss health multipliers)
+Individual Enemies can now drop a maximum of 250k gold at any given time to prevent crashes in high NG+ runs (high NG+ runs usually become unplayable at a certain point otherwise if enemies start dying, flooding the screen with hundreds, sometimes thousands of gigantic physics objects)
 
 
 New Biome Modifiers:
@@ -29,7 +30,7 @@ The Dead are Restless
 Content list:
 94 new enemies
 6 new bosses
-49 new spells
+50 new spells
 8 new perks
 3 new biomes
 6 new structures
@@ -37,3 +38,8 @@ Content list:
 12 attainable trophies
 3 new items
 1 new song
+
+
+Custom tag count: [2]
+vulnerable
+watermage

@@ -22,27 +22,27 @@ Parrallel world enemies should have x10 hp
 Would be good to have a corrupt version of Master of Puppetering for Temple of Sacriligious Remains, or maybe he's just corrupt by default
 We'll have to see
 
-Finish or remove Master of Puppetering
-
-Finish of remove Wand Appreciator
-
 Check Master of Puppetering shoots from the right x,y coordinates
 
 Update Curse of Swapping status effect to check for a child entity name instead of a global frame timer for removing
 
 Improve Particle Effects for Pure Light
 
-Waterstone charms nearby Water Mages
-
 Do something with Wand of Aiming
-Do something with Suffocatium
-
-Optimise Mass Status status effects to look for names instead of tags
 
 Fix "Custom Seed Successfully Set" appearing every run
-
-Give eel.xml creatures an "avoiding arc" effect so they stop getting stuck in water
 
 Fix Sunken Cavern Lake Entrance not generating properly
 
 Give Sunken Creature a unique "blue slimey meat" ragdoll material
+
+Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
+
+Portal Visual Effects for Flesh Boss minion summoning
+
+Waterstone + Suffocatium = Permanent 0 oxygen glitch
+If you're stained in suffocatium and pull out a waterstone for the breathless ability, you're glitched with never being able to regenerate your breath meter
+What's Happening:
+Copi's things lets the breathless effect occur in-inventory, for whatever reason, breathless disables natural breath regeneration (why nolla..????)
+As a result, suffocatium doens't detect you have breathless via a water stone in your inventory and doesn't properly stop your breath being lowered.
+How does it successfully apply breathless to the player, but fails to properly pick up the player has breathless? Bug in the function code?

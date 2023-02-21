@@ -112,6 +112,14 @@ local apotheosis_status_list = {
         ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/breath_drain.png",
 	    is_harmful=true,
         effect_entity="mods/apotheosis/files/entities/misc/effect_breath_drain.xml",
+    },
+    {
+        id="apotheosis_PROTECTION_ALL_DULL",
+        ui_name="$status_apotheosis_protection_all_dull_name",
+        ui_description="$status_apotheosis_protection_all_dull_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/protection_all_dull.png",
+	    is_harmful=true,
+        effect_entity="mods/apotheosis/files/entities/misc/effect_protection_all_dull.xml",
     }
 }
 

@@ -1441,6 +1441,27 @@ table.insert(actions,
     end,
 })
 
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_HITFX_HEX_WATER",
+    name 		= "$spell_apotheosis_hex_water_name",
+    description = "$spell_apotheosis_hex_water_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_water.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+    related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml" },
+    spawn_requires_flag = "apotheosis_card_unlocked_orb_13_spell",
+    type 		= ACTION_TYPE_MODIFIER,
+    spawn_level       = "1,2,3,4,5,6", -- X_RAY
+    spawn_probability = "0.5,0.5,0.6,0.4,0.3,0.4", -- X_RAY
+    price = 40,
+    mana = 30,
+    --max_uses = 16,
+    action 		= function()
+        c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml,mods/apotheosis/files/entities/particles/tinyspark_water.xml,"
+        draw_actions( 1, true )
+    end,
+})
+
 
 
 

@@ -9,7 +9,7 @@ SetRandomSeed( GameGetFrameNum() + GetUpdatedComponentID(), pos_x + pos_y + enti
 
 for k=1,6 do
     local angle = math.rad(Random(0,359))
-    local length = Random(100,250)
+    local length = Random(200,400)
 
     local vel_x = math.cos( angle ) * length
     local vel_y = 0 - math.sin( angle ) * length

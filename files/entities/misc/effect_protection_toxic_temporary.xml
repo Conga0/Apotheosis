@@ -6,14 +6,14 @@
     <GameEffectComponent
 		_tags="effect_protection"
     	effect="PROTECTION_RADIOACTIVITY"
-    	frames="-1"
+    	frames="3600"
     	exclusivity_group="0"
     ></GameEffectComponent >
 
 	<LuaComponent
-		execute_on_added="1"
+		execute_on_added="0"
 		script_source_file="mods/Apotheosis/files/scripts/status_effects/toxic_immunity_start.lua"
-		execute_every_n_frame="-1"
+		execute_every_n_frame="2"
 		>
 	</LuaComponent>
 

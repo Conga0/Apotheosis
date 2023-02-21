@@ -324,3 +324,26 @@ do -- Add lua script to vulnerability effect which applies "vulnerable" tag to a
   ]]))
   ModTextFileSetContent(path, tostring(xml))
 end
+
+do -- Add lua script to Waterstone, allowing you to charm watermages
+  local path = "data/entities/items/pickup/waterstone.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+		_tags="enabled_in_hand"
+    script_source_file="mods/apotheosis/files/scripts/items/waterstone_charm.lua"
+    execute_every_n_frame="30"
+    remove_after_executed="0"
+    >
+    </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Fix Swapper Projectiles stretching weirdly (only horizontal instead of all directions)
+  local path = "data/entities/projectiles/deck/swapper.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[update_transform_rotation="0"]], [[update_transform_rotation="1"]])
+  ModTextFileSetContent(path, content)
+end

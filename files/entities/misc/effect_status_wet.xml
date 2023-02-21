@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="apotheosis_wet_magic" >
     <InheritTransformComponent>
     </InheritTransformComponent>
 

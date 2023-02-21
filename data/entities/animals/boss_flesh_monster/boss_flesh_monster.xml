@@ -14,6 +14,7 @@
 	<Entity>
 		<SpriteComponent
 			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			emissive="1"
 			offset_x="8.5"
 			offset_y="8.5"
 			has_special_scale="1"
@@ -357,6 +358,11 @@
 		>
 	</LuaComponent>
 
+	<!-- Decorative Chains -->
+	
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain.xml"> </Base></Entity>
+
 	<!-- Audio -->
 
 	<AudioLoopComponent
@@ -452,6 +458,14 @@
 	<LuaComponent
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_summon.lua"
 		execute_every_n_frame="300"
+		>
+	</LuaComponent>
+
+	<!-- Nullify Ambrosia every 20 seconds -->
+	<!-- Maybe just remove the infiltration part of this effect and keep the ambrosia removal? -->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_ambrosia_corruption.lua"
+		execute_every_n_frame="1200"
 		>
 	</LuaComponent>
 	

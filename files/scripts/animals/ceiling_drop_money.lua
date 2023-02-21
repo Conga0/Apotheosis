@@ -7,6 +7,7 @@ function do_money_drop( amount_multiplier )
 
 	local entity = GetUpdatedEntityID()
 
+	
 	local no_gold_drop = false
 	edit_component_with_tag( entity, "VariableStorageComponent", "no_gold_drop", function(comp,vars) no_gold_drop = true end )
 	
@@ -24,6 +25,10 @@ function do_money_drop( amount_multiplier )
 		end
 
 	end)
+	
+	if GameHasFlagRun( "greed_curse" ) and ( GameHasFlagRun( "greed_curse_gone" ) == false ) then
+		amount = amount * 3.0
+	end
 
 	amount = amount * amount_multiplier
 	--[[if( amount > ( 15 * amount_multiplier ) ) then
@@ -31,10 +36,13 @@ function do_money_drop( amount_multiplier )
 	end]]--
 
 	local money = 10 * amount
+	--Prevent game from lagging to death everytime you kill someone in high NG+ amounts
+	if money > 250000 then money = 250000 end
 	local x, y = EntityGetTransform( entity )
 
 	--- spawn first 10 gold as small nuggets
 	local nugget_10_count = 0
+	--Prevent game from lagging to death everytime you kill someone in high NG+ amounts
 	while money >= 10 and nugget_10_count < 5 do
 		EntityLoad( "data/entities/items/pickup/goldnugget_10.xml", x, y + 9.5 )
 		money = money - 10

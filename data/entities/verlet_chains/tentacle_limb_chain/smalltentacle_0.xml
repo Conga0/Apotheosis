@@ -1,0 +1,13 @@
+<Entity >
+   
+  <SpriteComponent 
+    image_file="data/entities/verlet_chains/tentacle_limb_chain/smalltentacle_0_sprite.xml" 
+    offset_x="0"
+    offset_y="3"
+    update_transform="0"
+    update_transform_rotation="0"
+    z_index="1.6"
+    >
+  </SpriteComponent>
+  
+</Entity>

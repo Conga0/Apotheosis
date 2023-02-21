@@ -16,4 +16,9 @@
 	>
 	</LifetimeComponent>
 
+	<AudioComponent
+		file="data/audio/Desktop/misc.bank"
+		event_root="game_effect/blindness" >
+	</AudioComponent>
+
 </Entity>

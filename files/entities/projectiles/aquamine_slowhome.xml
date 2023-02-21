@@ -13,7 +13,7 @@
 	
 	<HomingComponent
 		target_tag="player_unit"
-		homing_targeting_coeff="7"
+		homing_targeting_coeff="8"
 		detect_distance="70"
 		homing_velocity_multiplier="1.0"
 		>
@@ -52,7 +52,7 @@
     <config_explosion
       never_cache="1" 
       camera_shake="25.0" 
-      explosion_radius="30" 
+      explosion_radius="35" 
       explosion_sprite="data/particles/explosion_040_poof.xml"
       load_this_entity="data/entities/particles/particle_explosion/main.xml"
       explosion_sprite_lifetime="0" 

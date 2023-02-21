@@ -30,16 +30,14 @@ local targets = EntityGetInRadiusWithTag( pos_x, pos_y, r, "mortal" )
 for k=1, #targets
 do local v = targets[k];
 	if ( v ~= entity_id ) then
-		local c = EntityGetAllChildren( v )
+		local children = EntityGetAllChildren( v )
 		local valid = true
 		
-		if ( c ~= nil ) then
-			for a,b in ipairs( c ) do
-				local comps = EntityGetComponent( b, "GameEffectComponent", "effect_fire_magic" )
-				
-				if ( comps ~= nil ) then
+		if children ~= nil then
+			for z=1, #children
+			do local c = children[z];
+				if EntityGetName(c) == "apotheosis_fire_magic" then
 					valid = false
-					break
 				end
 			end
 		end

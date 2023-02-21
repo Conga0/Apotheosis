@@ -33,6 +33,8 @@
 {2b3a6fc5-24e7-4321-8b89-a84daa849a8b} event:/mocreeps_audio/spells/explosion_magical_01
 {c677ecfb-c7de-4b7b-94d2-ab3fab7f0e3b} event:/mocreeps_audio/spells/teleport_alt
 {ad135cb0-375e-4245-a1d1-ed616d80ec92} event:/mocreeps_audio/spells/warp_alt
+{ea72df5a-790d-4bd9-9b81-4144bb545851} event:/mocreeps_audio/watermage/ambient_underwater
+{f7093f32-b622-43e9-be22-cc1aa3b3071d} event:/mocreeps_audio/watermage/drown_sfx
 {2f99f806-4b51-4b0a-a879-566644591f29} parameter:/Migration Name Conflict (3)/lowpass
 {6864bf18-2f50-4b34-aecc-63c1bdf7fdf4} parameter:/Migration Name Conflict (4)/Distance
 {ddf75d16-bdbe-4460-908b-0a29bd483835} parameter:/lowpass

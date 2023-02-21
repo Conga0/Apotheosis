@@ -30,21 +30,20 @@ do local v = targets[k];
 		
 		if children ~= nil then
 			for z=1, #children
-			do local p = children[z];
-				if EntityHasTag(p,"effect_wet_magic") then
+			do local c = children[z];
+				if EntityGetName(c) == "apotheosis_dry_magic" then
 					valid = false
 				end
 			end
+		end
 
+		if valid == true then
+			local comp = EntityGetFirstComponentIncludingDisabled(v,"SpriteStainsComponent")
+			if comp ~= nil then
+				EntitySetComponentIsEnabled(v,comp,false)
 
-			if valid == true then
-				local comp = EntityGetFirstComponentIncludingDisabled(v,"SpriteStainsComponent")
-				if comp ~= nil then
-					EntitySetComponentIsEnabled(v,comp,false)
-
-					local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_status_dry.xml", pos_x, pos_y)
-					EntityAddChild(v,c)
-				end
+				local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_status_dry.xml", pos_x, pos_y)
+				EntityAddChild(v,c)
 			end
 		end
 	end

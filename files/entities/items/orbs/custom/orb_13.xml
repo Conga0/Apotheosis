@@ -2,8 +2,9 @@
 	
 	<Base file="mods/apotheosis/files/entities/items/orbs/custom/orb_base_apotheosis.xml">
 
+		<!--We need to start counting orb count +1 here because of an unused but technically obtainable vanilla 13th orb (Great Chest Orb)-->
 		<OrbComponent
-			orb_id="13" >
+			orb_id="14" >
 		</OrbComponent>
 		
 		<SpriteComponent 
@@ -13,7 +14,7 @@
 		
 		<VariableStorageComponent
 			name="card_name"
-			value_string="APOTHEOSIS_MASS_DRY"
+			value_string="APOTHEOSIS_HITFX_HEX_WATER"
 		/>
 
 	</Base>
