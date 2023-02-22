@@ -532,6 +532,127 @@ table.insert(perk_list,
     end,
 })
 
+table.insert(perk_list,
+{
+    id = "APOTHEOSIS_VOID",
+    ui_name = "$perk_apotheosis_void",
+    ui_description = "$perk_apotheosis_void_description",
+    ui_icon = "data/ui_gfx/perk_icons/void.png",
+    perk_icon = "data/items_gfx/perks/void.png",
+    stackable = STACKABLE_YES,
+    usable_by_enemies = true,
+    func = function(entity_perk_item, entity_who_picked, item_name)
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
+        if comp ~= nil then
+            local values = {
+                "jump_velocity_y",
+                "jump_velocity_x",
+                "fly_speed_max_up",
+                "fly_speed_max_down",
+                "run_velocity",
+                "fly_velocity_x",
+                "velocity_min_x",
+                "velocity_max_x",
+                "velocity_min_y",
+                "velocity_max_y"
+            }
+
+            --60% movement speed boost with each haste pickup
+            local increments = {
+            -57,
+            34,
+            57,
+            51,
+            92.4,
+            31.2,
+            -34,
+            34,
+            -120,
+            210,
+            }
+            for k=1,#values
+            do v = values[k]
+                local val = ComponentGetValue2(comp,v)
+                ComponentSetValue2(comp,v,val + increments[k])
+            end
+        end
+    end,
+    func_enemy = function( entity_perk_item, entity_who_picked )
+        LoadGameEffectEntityTo(entity_who_picked, "mods/Apotheosis/files/entities/misc/perks/perk_haste.xml")
+    end,
+    _remove = function(entity_who_picked)
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
+        if comp ~= nil then
+            local values = {
+                "jump_velocity_y",
+                "jump_velocity_x",
+                "fly_speed_max_up",
+                "fly_speed_max_down",
+                "run_velocity",
+                "fly_velocity_x",
+                "velocity_min_x",
+                "velocity_max_x",
+                "velocity_min_y",
+                "velocity_max_y"
+            }
+
+            --Default speed values Mina starts with
+            local defaults = {
+            -95,
+            56,
+            95,
+            85,
+            154,
+            52,
+            -57,
+            57,
+            -200,
+            350,
+            }
+
+            for k=1,#values
+            do v = values[k]
+                ComponentSetValue2(comp,v,defaults[k])
+            end
+        end
+    end,
+    func_remove = function( entity_who_picked )
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
+        if comp ~= nil then
+            local values = {
+                "jump_velocity_y",
+                "jump_velocity_x",
+                "fly_speed_max_up",
+                "fly_speed_max_down",
+                "run_velocity",
+                "fly_velocity_x",
+                "velocity_min_x",
+                "velocity_max_x",
+                "velocity_min_y",
+                "velocity_max_y"
+            }
+
+            local defaults = {
+            -95,
+            56,
+            95,
+            85,
+            154,
+            52,
+            -57,
+            57,
+            -200,
+            350,
+            }
+
+            for k=1,#values
+            do v = values[k]
+                ComponentSetValue2(comp,v,defaults[k])
+            end
+        end
+    end,
+})
+
 
 
 

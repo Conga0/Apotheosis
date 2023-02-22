@@ -12,5 +12,5 @@ end
 ]]--
 
 for k, v in ipairs(mm_insert) do
-table.insert(materials_magic, v)
+table.insert(potions, v)
 end

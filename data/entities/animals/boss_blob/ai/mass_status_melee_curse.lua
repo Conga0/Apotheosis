@@ -20,7 +20,7 @@ for i=1,how_many do
 	shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/mass_status_melee_curse_effect.xml", pos_x, pos_y, vel_x, vel_y )
 end
 
-GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/all_seeing_eye", pos_x, pos_y );
+GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/all_seeing_eye/create", pos_x, pos_y );
 
 local targets = EntityGetInRadiusWithTag( pos_x, pos_y, r, "player_unit" )
 
