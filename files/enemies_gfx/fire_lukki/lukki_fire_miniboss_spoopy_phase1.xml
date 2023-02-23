@@ -1,0 +1,21 @@
+<Sprite
+filename="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_fire_miniboss_spoopy.png"
+offset_x="13"
+offset_y="12.5" 
+default_animation="stand"
+>
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="130"
+  pos_y="0"
+  frame_count="4"
+  frame_width="26"
+  frame_height="25"
+  frame_wait="0.12"
+  frames_per_row="4"
+  loop="1"   >
+ </RectAnimation>
+
+</Sprite>

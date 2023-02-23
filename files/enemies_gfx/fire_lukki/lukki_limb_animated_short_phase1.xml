@@ -8,7 +8,7 @@
 	</IKLimbComponent>
 
 	<SpriteComponent 
-		image_file="mods/Apotheosis/files/enemies_gfx/fire_lukki/limb_a.png" 
+		image_file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_fire_miniboss_limb_phase1_a.png" 
 		z_index="1.1"
 		offset_x="0"
 		offset_y="5"
@@ -17,7 +17,7 @@
 	</SpriteComponent>
 
 	<SpriteComponent 
-		image_file="mods/Apotheosis/files/enemies_gfx/fire_lukki/limb_b.png" 
+		image_file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_fire_miniboss_limb_phase1_b.png" 
 		z_index="1.1"
 		offset_x="0"
 		offset_y="5"

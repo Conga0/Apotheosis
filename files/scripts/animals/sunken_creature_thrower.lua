@@ -17,4 +17,4 @@ for k=1,6 do
     shoot_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/aquamine_slowhome.xml", pos_x, pos_y, vel_x, vel_y )
 end
 
-EntityLoad("mods/apotheosis/files/entities/projectiles/deck/markerportals/portal_blue_fx.xml", pos_x, pos_y)
+EntityLoad("mods/apotheosis/files/entities/particles/circle_fast_blue.xml", pos_x, pos_y)

@@ -540,7 +540,7 @@ table.insert(perk_list,
     ui_icon = "data/ui_gfx/perk_icons/void.png",
     perk_icon = "data/items_gfx/perks/void.png",
     stackable = STACKABLE_YES,
-    usable_by_enemies = true,
+    usable_by_enemies = false,
     func = function(entity_perk_item, entity_who_picked, item_name)
         local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
         if comp ~= nil then
@@ -576,9 +576,6 @@ table.insert(perk_list,
                 ComponentSetValue2(comp,v,val + increments[k])
             end
         end
-    end,
-    func_enemy = function( entity_perk_item, entity_who_picked )
-        LoadGameEffectEntityTo(entity_who_picked, "mods/Apotheosis/files/entities/misc/perks/perk_haste.xml")
     end,
     _remove = function(entity_who_picked)
         local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
@@ -652,6 +649,30 @@ table.insert(perk_list,
         end
     end,
 })
+
+-- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?
+--[[
+table.insert(perk_list,
+{
+    id = "APOTHEOSIS_COPY_SPELLS",
+    ui_name = "$perk_apotheosis_copy_spells",
+    ui_description = "$perk_apotheosis_copy_spells_description",
+    ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/copy_spells_perk_ui.png",
+    perk_icon = "mods/Apotheosis/files/items_gfx/perks/copy_spells.png",
+    not_in_default_perk_pool = true,
+    stackable = STACKABLE_NO,
+    usable_by_enemies = false,
+    func = function()
+        GameAddFlagRun("apotheosis_flag_copy_spells")
+    end,
+    _remove = function()
+        GameRemoveFlagRun("apotheosis_flag_copy_spells")
+    end,
+    func_remove = function( entity_who_picked )
+        GameRemoveFlagRun("apotheosis_flag_copy_spells")
+    end,
+})
+]]--
 
 
 

@@ -78,6 +78,26 @@
 	</StatusEffects>
   </CellDataChild>
 
+  <CellDataChild
+  	_parent="apotheosis_meat_fire_lukki"
+	name="apotheosis_meat_fire_lukki_child"
+	ui_name="$material_apotheosis_meat_fire_lukki"
+	solid_break_to_type="lava"
+	solid_restitution="0.4"
+	wang_color="ffed4d6f"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="lava" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_PROTECTION_LAVA" amount="0.4" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
   <CellData
 	name="apotheosis_meat_fire_lukki_rock"
 	ui_name="$material_apotheosis_meat_fire_lukki_rock"

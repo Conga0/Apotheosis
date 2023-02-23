@@ -12,5 +12,3 @@ if ( #p > 0 ) then
 		EntityAddChild( pl, eid )
 	end
 end
-
-EntityKill( entity_id )

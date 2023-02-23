@@ -1,0 +1,90 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+	<LuaComponent
+		script_shot="mods/apotheosis/files/scripts/status_effects/infusion_hex_water_shoot.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="1800"
+		>
+	</LifetimeComponent>
+	
+	<UIIconComponent
+		name="$status_apotheosis_infusion_hex_water_name"
+		description="$status_apotheosis_infusion_hex_water_desc"
+		icon_sprite_file="mods/apotheosis/files/ui_gfx/status_indicators/infusion_hex_water.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+	
+	<!-- Used for visual effects -->
+	<VariableStorageComponent
+		name="parent"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<!-- used for pylon_link_effect_new.lua -->
+	<!--
+	<ParticleEmitterComponent
+		emitted_material_name="magic_liquid_teleportation"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-6"
+		x_pos_offset_max="6"
+		y_pos_offset_min="-6"
+		y_pos_offset_max="6"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="0"
+		y_vel_max="0"
+		gravity.y="0.0"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.5"
+		lifetime_max="1"
+		is_trail="1"
+		trail_gap="15.0"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		airflow_force="0"
+		airflow_time="0"
+		airflow_scale="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	-->
+
+	<!-- pylon_link_effect_new is the one using trails for the beam effect... not working as hoped, doesn't load when entity is offscreen which looks bad -->
+	<!-- pylon_link_effect.lua is the old script -->
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animators/pylon_link_effect.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<!-- used for pylon_link_effect.lua -->
+	<Entity tags="arm_fx">
+		<Base file="mods/apotheosis/files/entities/animators/pylon_fx_blue.xml" />
+	</Entity>
+	<Entity tags="arm_fx">
+		<Base file="mods/apotheosis/files/entities/animators/pylon_fx_blue.xml" />
+	</Entity>
+	<Entity tags="arm_fx">
+		<Base file="mods/apotheosis/files/entities/animators/pylon_fx_blue.xml" />
+	</Entity>
+	<Entity tags="arm_fx">
+		<Base file="mods/apotheosis/files/entities/animators/pylon_fx_blue.xml" />
+	</Entity>
+
+	
+</Entity>

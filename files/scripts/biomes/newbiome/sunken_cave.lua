@@ -251,6 +251,18 @@ g_pylon =
 		max_count	= 1,    
 		entity 	= "mods/apotheosis/files/entities/buildings/pylon_vulnerability.xml"
 	},
+	{
+		prob   		= 1.0,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "mods/apotheosis/files/entities/buildings/pylon_hex_water.xml"
+	},
+	{
+		prob   		= 1.0,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "mods/apotheosis/files/entities/buildings/pylon_escium.xml"
+	},
 }
 
 

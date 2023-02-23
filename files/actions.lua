@@ -1462,7 +1462,13 @@ table.insert(actions,
     end,
 })
 
-
+-- Checks if a spell is being cast by a greek letter & if you have the perk which allows it
+-- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?
+function disablecopying(recursion_level)
+    if (recursion_level) ~= nil and GameHasRunFlag("apotheosis_flag_copy_spells") == false then return true
+    else return false
+    end
+end
 
 
 --Modifying Vanilla spells

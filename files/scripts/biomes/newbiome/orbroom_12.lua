@@ -39,6 +39,7 @@ end
 
 function spawn_orb(x, y)
 	EntityLoad( "mods/apotheosis/files/entities/items/orbs/custom/orb_12.xml", x, y )
+	EntityLoad( "mods/apotheosis/files/entities/buildings/flesh_boss_summon.xml", x, y - 40 )
 	--EntityLoad( "data/entities/misc/orb_07_pitcheck_a.xml", x, y )
 	--EntityLoad( "data/entities/items/pickup/heart_better.xml", x + 30, y - 20 )
 	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_12.xml", x - 30, y + 40 )

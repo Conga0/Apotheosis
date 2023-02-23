@@ -23,10 +23,12 @@ if count < 4 then
 	GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/spells/teleport_alt", x, y );
 	for k=1,7 do
 		SetRandomSeed(x + k,y)
-		rnd = Random(-60,60)
 		list = {"hearty","manaeater","neutral",}
-		EntityLoad("data/entities/animals/boss_flesh_monster/minions/wizard_corrupt_" .. list[Random(1,3)] .. ".xml", x + rnd, y + rnd)
+		rnd = Random(-60,60)
+		rnd2 = Random(1,#list)
+		EntityLoad("data/entities/animals/boss_flesh_monster/minions/wizard_corrupt_" .. list[rnd2] .. ".xml", x + rnd, y + rnd)
 		EntityLoad( "data/entities/particles/teleportation_target.xml", x + rnd, y + rnd )
+		EntityLoad("data/entities/animals/boss_flesh_monster/particles/circle_fast_" .. list[rnd2] .. ".xml", x + rnd, y + rnd )
 		--RO teleport sound
 	end
 end

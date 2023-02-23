@@ -21,6 +21,7 @@ Parrallel world enemies should have x10 hp
 
 Would be good to have a corrupt version of Master of Puppetering for Temple of Sacriligious Remains, or maybe he's just corrupt by default
 We'll have to see
+Note: Spoopy is working on a giant Master of Puppetering Sprite, check his DMs for notes on how it would work, should be good!
 
 Check Master of Puppetering shoots from the right x,y coordinates
 
@@ -38,11 +39,11 @@ Give Sunken Creature a unique "blue slimey meat" ragdoll material
 
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 
-Portal Visual Effects for Flesh Boss minion summoning
-
 Waterstone + Suffocatium = Permanent 0 oxygen glitch
 If you're stained in suffocatium and pull out a waterstone for the breathless ability, you're glitched with never being able to regenerate your breath meter
 What's Happening:
 Copi's things lets the breathless effect occur in-inventory, for whatever reason, breathless disables natural breath regeneration (why nolla..????)
 As a result, suffocatium doens't detect you have breathless via a water stone in your inventory and doesn't properly stop your breath being lowered.
 How does it successfully apply breathless to the player, but fails to properly pick up the player has breathless? Bug in the function code?
+
+Herobrine only spawns at 7pm to 5am (when it's dark outside)

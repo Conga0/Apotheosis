@@ -5,6 +5,7 @@ local x, y = EntityGetTransform( entity_id )
 
 local vsccomp = EntityGetFirstComponentIncludingDisabled(entity_id,"VariableStorageComponent")
 local parent = ComponentGetValue2(vsccomp,"value_int")
+if EntityHasTag(parent,"mortal") == false then EntityKill(entity_id) return end
 local time = GameGetFrameNum()
 
 -- "arms" particle fx position.

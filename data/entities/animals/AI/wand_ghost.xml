@@ -1,6 +1,12 @@
 <Entity tags="mortal,hittable,homing_target,wand_ghost" name="$animal_wand_ghost">
 
 	<Base file="data/entities/base_wand_ghost.xml" >
+
+		<AnimalAIComponent
+			attack_ranged_enabled="0"
+			>
+		</AnimalAIComponent>
+
 		<CameraBoundComponent
 			_enabled="0"
 			max_count="30"
@@ -14,7 +20,7 @@
 		</GenomeDataComponent>
 		
 		<DamageModelComponent 
-            hp="1.5"
+            hp="0.4"
             ragdoll_material="crystal"
 			ragdoll_filenames_file="" 
 			blood_material="plasma_fading"

@@ -331,6 +331,7 @@ do -- Add lua script to Waterstone, allowing you to charm watermages
   local xml = nxml.parse(content)
   xml:add_child(nxml.parse([[
     <LuaComponent
+    _enabled="0"
 		_tags="enabled_in_hand"
     script_source_file="mods/apotheosis/files/scripts/items/waterstone_charm.lua"
     execute_every_n_frame="30"
