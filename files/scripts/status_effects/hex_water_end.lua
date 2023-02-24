@@ -1,6 +1,8 @@
 local entity_id = GetUpdatedEntityID()
 entity_id = EntityGetRootEntity(entity_id)
 
+if EntityHasTag(entity_id,"firemage") then return end
+
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
 if comp ~= nil then
 
@@ -19,6 +21,5 @@ if comp ~= nil then
     for k=1,#materials do
         EntitySetDamageFromMaterial( entity_id, materials[k], 0)
     end
-    ComponentSetValue2(comp,"wet_status_effect_damage",0.0)
 
 end

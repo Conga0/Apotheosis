@@ -1591,6 +1591,48 @@
 		</Ingestion>
 	</StatusEffects>
   </CellData>
+  
+  <CellDataChild
+  	_parent="meat_slime"
+	name="apotheosis_meat_slime_blue"
+	ui_name="$material_apotheosis_meat_slime_blue"
+	solid_break_to_type="apotheosis_slime_blue"
+	solid_restitution="0.4"
+	wang_color="ffed4d5c"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="apotheosis_slime_blue" 
+	show_in_creative_mode="1"
+	>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="slime"
+  	_inherit_reactions="1"
+  	name="apotheosis_slime_blue" 
+	ui_name="$mat_slime_green"
+	wang_color="8880FF90" 
+	liquid_viscosity="0"
+	liquid_sticks_to_ceiling="100"
+	liquid_damping="0.9"
+	liquid_flow_speed="0.15"
+	status_effects="SLIMY"
+	audio_physics_material_event="slime"
+	audio_physics_material_wall="slime"
+	audio_physics_material_solid="slime"
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+	texture_file="mods/apotheosis/files/materials_gfx/slime_blue.png"
+	color="884fab2e" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="FOOD_POISONING" amount="0.2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
 
 
 

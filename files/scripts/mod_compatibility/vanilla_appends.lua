@@ -348,3 +348,11 @@ do -- Fix Swapper Projectiles stretching weirdly (only horizontal instead of all
   content = content:gsub([[update_transform_rotation="0"]], [[update_transform_rotation="1"]])
   ModTextFileSetContent(path, content)
 end
+
+   -- Not working, not sure why
+do -- Limit enemies to dropping 250k gold at any given time, prevents lag in NG+ runs
+  local path = "data/scripts/items/drop_money.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 250000 then money = 250000 end local x, y = EntityGetTransform( entity )")
+  ModTextFileSetContent(path, content)
+end

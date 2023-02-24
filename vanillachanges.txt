@@ -28,9 +28,9 @@ Esoteric Presence
 The Dead are Restless
 
 Content list:
-94 new enemies (+2 Pylon varients)
+94 new enemies (+3 Pylon varients)
 6 new bosses
-50 new spells
+52 new spells
 8 new perks
 3 new biomes
 6 new structures

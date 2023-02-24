@@ -9,6 +9,7 @@ Creating alternate Esoteric Being graphic
 Created the Giant Whisp creature
 Creating Master of Puppetering's Sprites
 Creating [UNNAMED FLESH BOSS]'s Sprites
+Creating Juvenile Fire Lukki's Sprites
 
 Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help
 

@@ -9,7 +9,6 @@ dofile( "data/scripts/items/generate_shop_item.lua" )
 
 RegisterSpawnFunction( 0xffffeedd, "init" )
 RegisterSpawnFunction( 0xff00AC33, "load_pixel_scene3" )
-RegisterSpawnFunction( 0xff00AC64, "load_pixel_scene4" )
 RegisterSpawnFunction( 0xff4691c7, "load_puzzle_capsule" )
 RegisterSpawnFunction( 0xff3691d7, "load_puzzle_capsule_b" )
 RegisterSpawnFunction( 0xff55AF4B, "load_altar" )
@@ -255,7 +254,7 @@ g_pylon =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/pylon_hex_water.xml"
+		entity 	= "mods/apotheosis/files/entities/buildings/pylon_protection_proj.xml"
 	},
 	{
 		prob   		= 1.0,
@@ -397,37 +396,9 @@ g_pixel_scene_01 =
 	total_prob = 0,
 	{
 		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/verticalobservatory.png",
-		visual_file		= "data/biome_impl/snowcave/verticalobservatory_visual.png",
-		background_file	= "data/biome_impl/snowcave/verticalobservatory_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/verticalobservatory2.png",
+		material_file 	= "mods/apotheosis/files/biome_impl/sunken_cave/verticalobservatory2.png",
 		visual_file		= "data/biome_impl/snowcave/verticalobservatory2_visual.png",
 		background_file	= "data/biome_impl/snowcave/verticalobservatory2_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/icebridge2.png",
-		visual_file		= "",
-		background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/pipe.png",
-		visual_file		= "data/biome_impl/snowcave/pipe_visual.png",
-		background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.25,
-		material_file 	= "data/biome_impl/snowcave/receptacle_water.png",
-		visual_file		= "",
-		background_file	= "data/biome_impl/snowcave/receptacle_water_background.png",
 		is_unique		= 0
 	},
 }
@@ -437,30 +408,9 @@ g_pixel_scene_01_alt =
 	total_prob = 0,
 	{
 		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/verticalobservatory_alt.png",
-		visual_file		= "data/biome_impl/snowcave/verticalobservatory_visual.png",
-		background_file	= "data/biome_impl/snowcave/verticalobservatory_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/verticalobservatory2_alt.png",
+		material_file 	= "mods/apotheosis/files/biome_impl/sunken_cave/verticalobservatory2.png",
 		visual_file		= "data/biome_impl/snowcave/verticalobservatory2_visual.png",
 		background_file	= "data/biome_impl/snowcave/verticalobservatory2_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/icebridge2_alt.png",
-		visual_file		= "",
-		background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/pipe_alt.png",
-		visual_file		= "data/biome_impl/snowcave/pipe_visual.png",
-		background_file	= "",
 		is_unique		= 0
 	},
 }
@@ -497,27 +447,6 @@ g_pixel_scene_02 =
 		is_unique		= 0
 	},
 	{
-		prob   			= 0.4,
-		material_file 	= "data/biome_impl/snowcave/icebridge.png",
-		visual_file		= "",
-		background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.4,
-		material_file 	= "data/biome_impl/snowcave/snowcastle.png",
-		visual_file		= "data/biome_impl/snowcave/snowcastle_visual.png",
-		background_file	= "data/biome_impl/snowcave/snowcastle_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0,
-		material_file 	= "data/biome_impl/snowcave/symbolroom.png",
-		visual_file		= "",
-		background_file	= "",
-		is_unique		= 0
-	},
-	{
 		prob   			= 0.5,
 		material_file 	= "data/biome_impl/snowcave/icepillar.png",
 		visual_file		= "",
@@ -526,15 +455,8 @@ g_pixel_scene_02 =
 	},
 	{
 		prob   			= 1.5,
-		material_file 	= "data/biome_impl/snowcave/shop.png",
-		visual_file		= "data/biome_impl/snowcave/shop_visual.png",
-		background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/camp.png",
-		visual_file		= "",
+		material_file 	= "mods/apotheosis/files/biome_impl/sunken_cave/shop.png",
+		visual_file		= "mods/apotheosis/files/biome_impl/sunken_cave/shop_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
@@ -583,13 +505,6 @@ g_acidtank_right =
 		background_file	= "",
 		is_unique		= 0
 	},
-	{
-		prob   			= 0.2,
-		material_file 	= "data/biome_impl/acidtank_2.png",
-		visual_file		= "data/biome_impl/acidtank_2_visual.png",
-		background_file	= "data/biome_impl/acidtank_2_background.png",
-		is_unique		= 0
-	},
 }
 
 g_acidtank_left =
@@ -600,13 +515,6 @@ g_acidtank_left =
 		material_file 	= "",
 		visual_file		= "",
 		background_file	= "",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.2,
-		material_file 	= "data/biome_impl/acidtank.png",
-		visual_file		= "data/biome_impl/acidtank_visual.png",
-		background_file	= "data/biome_impl/acidtank_background.png",
 		is_unique		= 0
 	},
 }
@@ -1009,6 +917,7 @@ end
 function spawn_mist_colossal(x,y)
 	if safe( x, y ) then
 		spawn(g_mist_colossal, x, y)
+		EntityLoad("mods/apotheosis/files/entities/buildings/pylon_hex_water.xml", x, y)
 	end
 end
 
@@ -1066,10 +975,6 @@ end
 
 function load_pixel_scene3( x, y )
 	load_random_pixel_scene( g_pixel_scene_03, x, y )
-end
-
-function load_pixel_scene4( x, y )
-	load_random_pixel_scene( g_pixel_scene_04, x, y )
 end
 
 function load_puzzle_capsule( x, y )

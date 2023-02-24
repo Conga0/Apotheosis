@@ -1045,7 +1045,7 @@ table.insert(actions,
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cursor.png",
     sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
     related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spells_to_cursor.xml"},
-    spawn_requires_flag = "apotheosis_card_unlocked_orb_12_spell",
+    spawn_requires_flag = "apotheosis_card_unlocked_orb_12_spell",  --Temple of Sacriligious Remains
     type 		= ACTION_TYPE_UTILITY,
     spawn_level                       = "3,4,6,9", -- spells to Cats
     spawn_probability                 = "0.4,0.4,0.4,0.5", -- spells to Cats
@@ -1449,7 +1449,7 @@ table.insert(actions,
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_water.png",
     sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
     related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml" },
-    spawn_requires_flag = "apotheosis_card_unlocked_orb_13_spell",
+    spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
     type 		= ACTION_TYPE_MODIFIER,
     spawn_level       = "1,2,3,4,5,6", -- X_RAY
     spawn_probability = "0.5,0.5,0.6,0.4,0.3,0.4", -- X_RAY
@@ -1458,6 +1458,48 @@ table.insert(actions,
     --max_uses = 16,
     action 		= function()
         c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml,mods/apotheosis/files/entities/particles/tinyspark_water.xml,"
+        draw_actions( 1, true )
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_HITFX_HEX_OIL",
+    name 		= "$spell_apotheosis_hex_oil_name",
+    description = "$spell_apotheosis_hex_oil_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_oil.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+    related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_oil.xml" },
+    spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
+    type 		= ACTION_TYPE_MODIFIER,
+    spawn_level       = "2,3,4,5,6", -- X_RAY
+    spawn_probability = "0.25,0.3,0.2,0.15", -- X_RAY
+    price = 40,
+    mana = 30,
+    --max_uses = 16,
+    action 		= function()
+        c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_oil.xml,mods/apotheosis/files/entities/particles/tinyspark_oil.xml,"
+        draw_actions( 1, true )
+    end,
+})
+
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_HITFX_HEX_BLOOD",
+    name 		= "$spell_apotheosis_hex_blood_name",
+    description = "$spell_apotheosis_hex_blood_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_blood.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+    related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_blood.xml" },
+    spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
+    type 		= ACTION_TYPE_MODIFIER,
+    spawn_level       = "2,3,4,5,6", -- X_RAY
+    spawn_probability = "0.25,0.3,0.2,0.15", -- X_RAY
+    price = 40,
+    mana = 30,
+    --max_uses = 16,
+    action 		= function()
+        c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_blood.xml,mods/apotheosis/files/entities/particles/tinyspark_blood.xml,"
         draw_actions( 1, true )
     end,
 })

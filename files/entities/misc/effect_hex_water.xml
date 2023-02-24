@@ -16,6 +16,13 @@
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/hex_water_persistent.lua"
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
 	
 	<LifetimeComponent
 		lifetime="1200"

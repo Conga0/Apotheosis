@@ -73,9 +73,6 @@
 	<Entity tags="arm_fx">
 		<Base file="mods/apotheosis/files/entities/animators/pylon_fx_escium.xml" />
 	</Entity>
-	<Entity tags="arm_fx">
-		<Base file="mods/apotheosis/files/entities/animators/pylon_fx_escium.xml" />
-	</Entity>
 
 	<!--Buff data below-->
 

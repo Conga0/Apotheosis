@@ -19,10 +19,5 @@ if comp ~= nil then
     for k=1,#materials do
         EntitySetDamageFromMaterial( entity_id, materials[k], 0.003)
     end
-    if EntityHasTag(entity_id,"player_unit") then
-        ComponentSetValue2(comp,"wet_status_effect_damage",0.1)
-    else
-        ComponentSetValue2(comp,"wet_status_effect_damage",0.6)
-    end
 
 end

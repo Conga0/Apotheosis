@@ -1,6 +1,6 @@
 <Entity 
   name="Abyssal Pylon of Drowning" 
-  tags="hittable,mortal,glue_NOT,homing_target,polymorphable_NOT" >
+  tags="hittable,mortal,glue_NOT,polymorphable_NOT" >
 	
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>
