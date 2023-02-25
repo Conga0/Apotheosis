@@ -1,0 +1,27 @@
+<Entity>
+	<VerletWorldJointComponent/>
+
+    <VerletPhysicsComponent
+    	num_points="15"
+    	stiffness="1.0"
+		velocity_dampening="0.9"
+    	resting_distance="2" 
+    	simulate_wind="1"
+		pixelate_sprite_transforms="1"
+        follow_entity_transform="0"
+        wind_change_speed="0.25"
+    	simulate_gravity="1" >
+    </VerletPhysicsComponent>
+
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_0.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_1.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_1.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_2.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_3.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_3.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_4.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_4.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_5.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_6.xml" />
+
+</Entity>

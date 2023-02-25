@@ -349,7 +349,6 @@ do -- Fix Swapper Projectiles stretching weirdly (only horizontal instead of all
   ModTextFileSetContent(path, content)
 end
 
-   -- Not working, not sure why
 do -- Limit enemies to dropping 250k gold at any given time, prevents lag in NG+ runs
   local path = "data/scripts/items/drop_money.lua"
   local content = ModTextFileGetContent(path)

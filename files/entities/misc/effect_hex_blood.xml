@@ -1,4 +1,4 @@
-<Entity >
+<Entity name="apotheosis_hex_blood" >
 
 	<InheritTransformComponent>
     </InheritTransformComponent>

@@ -1387,7 +1387,7 @@ table.insert(actions,
     related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_affluence.xml" },
     type 		= ACTION_TYPE_MODIFIER,
     spawn_level                       = "2,3,4,6", -- APOTHEOSIS_HITFX_AFFLUENCE
-    spawn_probability                 = "0.3,0.3,0.2,0.2", -- APOTHEOSIS_HITFX_AFFLUENCE
+    spawn_probability                 = "1.0,0.8,0.5,0.2", -- APOTHEOSIS_HITFX_AFFLUENCE
     price = 200,
     mana = 20,
     max_uses = 20,
@@ -1451,8 +1451,8 @@ table.insert(actions,
     related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml" },
     spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
     type 		= ACTION_TYPE_MODIFIER,
-    spawn_level       = "1,2,3,4,5,6", -- X_RAY
-    spawn_probability = "0.5,0.5,0.6,0.4,0.3,0.4", -- X_RAY
+    spawn_level       = "0,1,2,3,4,5,6", -- X_RAY
+    spawn_probability = "0.8,1,1,0.8,0.6,0.4,0.2", -- X_RAY
     price = 40,
     mana = 30,
     --max_uses = 16,
@@ -1472,8 +1472,8 @@ table.insert(actions,
     related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_oil.xml" },
     spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
     type 		= ACTION_TYPE_MODIFIER,
-    spawn_level       = "2,3,4,5,6", -- X_RAY
-    spawn_probability = "0.25,0.3,0.2,0.15", -- X_RAY
+    spawn_level       = "1,2,3,4,5,6", -- X_RAY
+    spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- X_RAY
     price = 40,
     mana = 30,
     --max_uses = 16,
@@ -1493,8 +1493,8 @@ table.insert(actions,
     related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_blood.xml" },
     spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
     type 		= ACTION_TYPE_MODIFIER,
-    spawn_level       = "2,3,4,5,6", -- X_RAY
-    spawn_probability = "0.25,0.3,0.2,0.15", -- X_RAY
+    spawn_level       = "1,2,3,4,5,6", -- X_RAY
+    spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- X_RAY
     price = 40,
     mana = 30,
     --max_uses = 16,

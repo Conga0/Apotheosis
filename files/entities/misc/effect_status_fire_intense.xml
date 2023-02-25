@@ -100,7 +100,6 @@
     </ParticleEmitterComponent>
     
     <GameEffectComponent 
-		_tags="effect_fire_magic"
         effect="ON_FIRE"
         frames="180"
     >

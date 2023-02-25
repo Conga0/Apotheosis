@@ -47,4 +47,4 @@ How does it successfully apply breathless to the player, but fails to properly p
 
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
 
-Update drop_money.lua to use a gsub instead of a file overwrite (ask copi for help how)
+Make Blob Cave a biome so it spawns in parallel wolds

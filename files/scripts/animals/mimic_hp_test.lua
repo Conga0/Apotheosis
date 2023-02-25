@@ -30,3 +30,5 @@ if( comps ~= nil ) then
         end
     end
 end
+
+GamePrint(tostring(currbiome))

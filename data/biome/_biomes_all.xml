@@ -1142,4 +1142,10 @@
 		color="ff1191b1" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/abyssal_depths.xml"
+		height_index="13"
+		color="ff0f7180" >
+	</Biome>
+
 </BiomesToLoad>

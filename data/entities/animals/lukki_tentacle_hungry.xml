@@ -2,46 +2,24 @@
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 	
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
-	<AnimalAIComponent/>
+	<AnimalAIComponent
+		preferred_job="JobDefault"
+		attack_ranged_enabled="1"
+		attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/hexshot_bloodcurse.xml"
+		attack_ranged_predict="0"
+		attack_ranged_min_distance="0"
+		attack_ranged_max_distance="300"
+		attack_ranged_frames_between="60"
+		attack_ranged_offset_y="0"
+		aggressiveness_min="80"
+		aggressiveness_max="100"
+	>
+	</AnimalAIComponent>
 
 	<LuaComponent
 	    execute_every_n_frame="-1"
 	    script_death="data/scripts/items/drop_money.lua"
 	    remove_after_executed="1" >
-	</LuaComponent>
-
-	<ParticleEmitterComponent 
-		emitted_material_name="spark_white"
-		gravity.y="0.0"
-		lifetime_min="0.4"
-		lifetime_max="0.7"
-		count_min="20"
-		count_max="30"
-		render_on_grid="1"
-		fade_based_on_lifetime="1"
-		area_circle_radius.min="32"
-		area_circle_radius.max="72"
-		cosmetic_force_create="0"
-		airflow_force="1.5"
-		airflow_time="1.9"
-		airflow_scale="0.15"
-		emission_interval_min_frames="1"
-		emission_interval_max_frames="1"
-		emit_cosmetic_particles="1"
-		draw_as_long="1"
-		x_vel_min="-1"
-		x_vel_max="1"
-		y_vel_min="-1"
-		y_vel_max="1"
-		is_emitting="1" 
-		velocity_always_away_from_center="220"
-		>
-	</ParticleEmitterComponent>
-	
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fungus_aura.lua"
-		execute_every_n_frame="3"
-		>
 	</LuaComponent>
 
 
@@ -57,11 +35,29 @@
 	</LightComponent>
 
 	<SpriteComponent 
-		image_file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_fungus.xml"
-		offset_x="0"
-		offset_y="0"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_eye_only.png"
+		offset_x="56.5"
+		offset_y="56.5"
 		>
 	</SpriteComponent>
+	
+	<Entity>
+		<SpriteComponent
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			emissive="1"
+			offset_x="8.5"
+			offset_y="8.5"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
 
 
 
@@ -133,11 +129,6 @@
 		friction="0.0"
 		restitution="0.3" >
 	</PhysicsShapeComponent>
-	
-	<CellEaterComponent
-		radius="16" 
-		eat_probability="100">
-	</CellEaterComponent>
 
 
 
@@ -176,12 +167,12 @@
 		leak_on_damage_percent="0.999" 
 		>
 		<count_per_material_type>
-		<Material material="blood_fungi" count="400"  />
+		<Material material="blood" count="400"  />
 		</count_per_material_type>
 	</MaterialInventoryComponent>
 
 	<GenomeDataComponent 
-		herd_id="fungus"
+		herd_id="mage"
 		food_chain_rank="15"
 		is_predator="1" >
 	</GenomeDataComponent>
@@ -192,7 +183,7 @@
 		_tags="hitbox_weak_spot"
 		aabb_min_x="-10" 
 		aabb_max_x="10" 
-		aabb_min_y="-35" 
+		aabb_min_y="-10" 
 		aabb_max_y="10"
 		damage_multiplier="1.0" >
 	</HitboxComponent>
@@ -214,71 +205,25 @@
 		rotate_to_surface_normal="0" 
 		target_sprite_comp_name="character" >
 	</SpriteAnimatorComponent>
-	
-	<ParticleEmitterComponent 
-    emitted_material_name="spark_white"
-    offset.x="0"
-    offset.y="0"
-    x_pos_offset_min="-3"
-    y_pos_offset_min="-35"
-    x_pos_offset_max="3"
-    y_pos_offset_max="-30"
-    x_vel_min="-10"
-    x_vel_max="10"
-    y_vel_min="-10"
-    y_vel_max="10"
-    count_min="1"
-    count_max="2"
-    lifetime_min="0.6"
-    lifetime_max="1.8"
-    create_real_particles="0"
-    emit_cosmetic_particles="1"
-    emission_interval_min_frames="8"
-    emission_interval_max_frames="14"
-    is_emitting="1" >
-  </ParticleEmitterComponent>
-	
-	<ParticleEmitterComponent 
-    emitted_material_name="soil"
-    offset.x="0"
-    offset.y="0"
-    x_pos_offset_min="-4"
-    y_pos_offset_min="-9"
-    x_pos_offset_max="3"
-    y_pos_offset_max="7"
-    x_vel_min="-10"
-    x_vel_max="10"
-    y_vel_min="-10"
-    y_vel_max="10"
-    count_min="1"
-    count_max="2"
-    lifetime_min="1.6"
-    lifetime_max="2.8"
-    create_real_particles="0"
-    emit_cosmetic_particles="1"
-    emission_interval_min_frames="2"
-    emission_interval_max_frames="6"
-    is_emitting="1" >
-  </ParticleEmitterComponent>
 
 
 	<!-- Limbs -->
 
-	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
-	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
-	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
-	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
-	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
-	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
-	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
 
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_red/tentacle_limb_red.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
 
    	<LuaComponent
 		script_source_file="mods/apotheosis/files/scripts/animators/tentacle_verlet_limb_animator.lua"

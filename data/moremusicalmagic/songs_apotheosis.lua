@@ -1,5 +1,5 @@
 ocarina_songs["fullhp"]  = { "d", "e", "a", "d" }                 --Hinted at in Core Mines
-ocarina_songs["spawnpouch"]  = { "b", "a2", "f", "e" }            --
+ocarina_songs["spawnpouch"]  = { "b", "a2", "f", "e" }            --Hinted at in Sink Hole (Desert)
 ocarina_songs["spawnpotion"]  = { "d", "d", "e", "e" }            --Hinted at in Sunken Cavern
 
 kantele_songs["fullhp"]  = { "d", "e", "a", "d" }
