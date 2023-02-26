@@ -1,0 +1,21 @@
+<Entity tags="effect_protection" >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+		_enabled="0"
+		_tags="effect_protection"
+    	effect="STUN_PROTECTION_ELECTRICITY"
+    	frames="70"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/tesla_turret_delay_protection.lua"
+		execute_every_n_frame="2"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>

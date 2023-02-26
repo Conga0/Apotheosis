@@ -355,3 +355,49 @@ do -- Limit enemies to dropping 250k gold at any given time, prevents lag in NG+
   content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 250000 then money = 250000 end local x, y = EntityGetTransform( entity )")
   ModTextFileSetContent(path, content)
 end
+
+do -- Nerf Kantele & Ocarina notes to only hit once very 15 frames instead of once every 1 frame
+  local pathprefix = "data/entities/projectiles/deck/"
+  local notes = {
+    "kantele/kantele_a.xml",
+    "kantele/kantele_d.xml",
+    "kantele/kantele_dis.xml",
+    "kantele/kantele_e.xml",
+    "kantele/kantele_g.xml",
+    "ocarina/ocarina_a.xml",
+    "ocarina/ocarina_a2.xml",
+    "ocarina/ocarina_b.xml",
+    "ocarina/ocarina_c.xml",
+    "ocarina/ocarina_d.xml",
+    "ocarina/ocarina_e.xml",
+    "ocarina/ocarina_f.xml",
+    "ocarina/ocarina_gsharp.xml",
+  }
+
+  for k=1,#notes do
+    local path = pathprefix .. notes[k]
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    attrpath = xml:first_of("ProjectileComponent").attr
+    attrpath.damage_every_x_frames = "15"
+    ModTextFileSetContent(path, tostring(xml))
+  end
+end
+
+do -- Nerf Plasma beams to hit every 10 frames instead of every 1 frame
+  local pathprefix = "data/entities/projectiles/deck/"
+  local notes = {
+    "orb_laseremitter.xml",
+    "orb_laseremitter_four.xml",
+    "orb_laseremitter_cutter.xml",
+  }
+
+  for k=1,#notes do
+    local path = pathprefix .. notes[k]
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    attrpath = xml:first_of("ProjectileComponent").attr
+    attrpath.damage_every_x_frames = "15"
+    ModTextFileSetContent(path, tostring(xml))
+  end
+end

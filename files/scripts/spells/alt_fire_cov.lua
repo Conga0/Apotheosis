@@ -20,7 +20,7 @@ if GameGetFrameNum() >= cooldown_frame then
     if ComponentGetValue2(controlscomp, "mButtonDownRightClick") then
         local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
         local uses = ComponentGetValue2(comp,"uses_remaining")
-        if uses >= 1 then
+        if uses >= 1 or uses == -1 then
             local mana = wand.mana
             if (mana > manacost) then
 

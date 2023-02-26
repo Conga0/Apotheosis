@@ -44,3 +44,5 @@ Custom tag count: [3]
 musical_stone
 vulnerable
 watermage
+
+Note: Readthrough vanilla changes and remove any notes before release

@@ -3,7 +3,7 @@
 	<InheritTransformComponent />
 
 	<LifetimeComponent
-		lifetime="470"
+		lifetime="530"
 		>
 	</LifetimeComponent>
 
@@ -16,23 +16,42 @@
 	</AudioLoopComponent>
 	
 	<AudioLoopComponent
-		file="data/audio/Desktop/animals.bank"
-		event_name="animals/wraith/vortex_loop"
-		auto_play="1">
+		file="data/audio/Desktop/misc.bank"
+		event_name="misc/sun/size_3_loop"
+		auto_play="1"
+		m_volume="4">
 	</AudioLoopComponent>
 
-	<!-- Suction -->
-	
+	<!-- Death. -->
+	<LuaComponent
+		_enabled="1"
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/warning_start.lua"
+		execute_every_n_frame="440"
+		>
+	</LuaComponent>
+
+	<!-- Death. -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/barrage_start.lua"
+		execute_every_n_frame="470"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<!-- Death. -->
 	<LuaComponent
 		_enabled="0"
-		_tags="invincible"
-		script_source_file="data/entities/animals/boss_fire_lukki/misc/healing_phase_projectile_suction.lua"
-		execute_every_n_frame="1"
+		_tags="magic_music"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/barrage.lua"
+		execute_every_n_frame="3"
 		>
 	</LuaComponent>
 
 	<!-- FX -->
 	<ParticleEmitterComponent 
+		_tags="invincible"
         emitted_material_name="spark_purple"
 		area_circle_radius.min="65"
 		area_circle_radius.max="85"
@@ -56,6 +75,7 @@
     </ParticleEmitterComponent>
 
     <ParticleEmitterComponent 
+		_tags="invincible"
         emitted_material_name="spark_purple_bright"
 		area_circle_radius.min="65"
 		area_circle_radius.max="85"
@@ -80,6 +100,7 @@
     </ParticleEmitterComponent>
   
     <ParticleEmitterComponent 
+		_tags="invincible"
         emitted_material_name="spark_purple"
 		area_circle_radius.min="65"
 		area_circle_radius.max="85"
@@ -103,6 +124,7 @@
     </ParticleEmitterComponent>
 
     <ParticleEmitterComponent
+		_tags="invincible"
         emitted_material_name="spark_purple_bright"
 		area_circle_radius.min="0"
 		area_circle_radius.max="20"
@@ -123,6 +145,32 @@
 		gravity.x="0"
 		render_ultrabright="1"
 		velocity_always_away_from_center="-10"
+		>
+    </ParticleEmitterComponent>
+  
+    <ParticleEmitterComponent 
+		_enabled="0"
+		_tags="enabled_by_liquid"
+        emitted_material_name="spark_purple"
+		area_circle_radius.min="45"
+		area_circle_radius.max="95"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="30"
+        count_max="35"
+		lifetime_min="0.7"
+		lifetime_max="1.2"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="1"
+        emission_interval_max_frames="3"
+        is_emitting="1"
+		gravity.y="0"
+		gravity.x="0"
+		render_ultrabright="1"
+		velocity_always_away_from_center="100"
 		>
     </ParticleEmitterComponent>
 </Entity>

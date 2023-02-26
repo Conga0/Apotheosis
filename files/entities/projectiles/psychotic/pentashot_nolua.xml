@@ -148,7 +148,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/Apotheosis/files/projectiles/pentashot.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/pentashot.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

@@ -19,7 +19,7 @@
         </AnimalAIComponent >
 		
 		<DamageModelComponent 
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_frisky/filenames.txt" 
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_frisky/filenames.txt" 
 			fire_probability_of_ignition="0.05"
 			hp="0.6"
 			>

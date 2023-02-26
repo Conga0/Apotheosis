@@ -1,6 +1,14 @@
 <Entity 
   name="$projectile_default" 
    >
+	
+	<HomingComponent
+		target_tag="prey"
+		homing_targeting_coeff="7"
+		detect_distance="350"
+		homing_velocity_multiplier="1.0"
+		>
+	</HomingComponent>
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
@@ -54,17 +62,20 @@
 			>
         </config_explosion>
     </ProjectileComponent>
-
+  
 	<SpriteComponent 
-		_enabled="0" 
+		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/projectiles_gfx/hexshot_blood.xml" 
+		image_file="mods/Apotheosis/files/projectiles_gfx/orb_light_red.xml" 
 		next_rect_animation="" 
-		offset_x="8" 
-		offset_y="6" 
-		rect_animation="" 
-		 
-		 >
+		offset_x="5" 
+		offset_y="5" 
+		rect_animation="fireball" 
+		emissive="1"
+		additive="1"
+		
+		update_transform_rotation="0"
+		>
 	</SpriteComponent>
   
   	<!-- dense emitter -->
@@ -165,11 +176,17 @@
 		render_ultrabright="0"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
-
+  
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="projectiles/laser">
+		event_root="projectiles/orb_poly" >
 	</AudioComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_orb/loop"
+		auto_play="1">
+	</AudioLoopComponent>
   
 	<VariableStorageComponent
 		name="projectile_file"

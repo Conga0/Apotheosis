@@ -1,4 +1,7 @@
 function damage_received( damage, desc, entity_who_caused, is_fatal )
+
+	if damage <= 0 then return end
+
 	local entity_id	= GetUpdatedEntityID()
 	local x, y = EntityGetTransform( entity_id )
 	local found = false

@@ -1570,12 +1570,12 @@ modify_existing_spell("DEATH_CROSS_BIG", "mana", 100)
 modify_existing_spell("MEGALASER", "mana", 80)
 
 --Spitter Bolt Tier 2 & 3 becomes cheaper
-modify_existing_spell("SPITTER_TIER_2","mana",15)
+modify_existing_spell("SPITTER_TIER_2","mana",10)
 
 modify_existing_spell("SPITTER_TIER_2_TIMER","mana",20)
 
 --Spitter Bolt Tier 2 & 3 becomes cheaper
-modify_existing_spell("SPITTER_TIER_3","mana",25)
+modify_existing_spell("SPITTER_TIER_3","mana",20)
 
 modify_existing_spell("SPITTER_TIER_3_TIMER","mana",30)
 

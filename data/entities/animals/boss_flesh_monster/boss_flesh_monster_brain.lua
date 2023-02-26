@@ -40,6 +40,25 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		ComponentSetValue2(comp, "force_coeff", 24)
 		ComponentSetValue2(comp, "force_max", 300)
 		
+		local comps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")
+		for k=1,#comps
+		do v = comps[k]
+			local script_source_file = ComponentGetValue2(v,"script_source_file")
+			if script_source_file == "data/entities/animals/boss_flesh_monster/boss_flesh_monster_mass_status_wounded.lua" then
+				ComponentSetValue2(v,"script_source_file","data/entities/animals/boss_flesh_monster/boss_flesh_monster_mass_status_hex_blood.lua")
+			end
+		end
 
+		EntityAddComponent2(
+			entity_id,
+			"LuaComponent",
+			{
+				execute_on_added = false,
+				script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_summon_phase2.lua",
+				execute_every_n_frame = 10,
+				remove_after_executed = false,
+				execute_times=7
+			}
+		)
 	end
 end

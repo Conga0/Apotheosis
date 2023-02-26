@@ -7,6 +7,7 @@
 		execute_on_added="0"
 		script_source_file="mods/Apotheosis/files/scripts/status_effects/hex_blood_start.lua"
 		execute_every_n_frame="1"
+		remove_after_executed="1"
 		>
 	</LuaComponent>
 

@@ -51,7 +51,7 @@ do local child = chains[k];
     positions[29] = x + 25
     positions[30] = y + 10
   else
-    positions[29] = x + 50
+    positions[29] = x + 40
     positions[30] = y
   end
   if verlet_component then

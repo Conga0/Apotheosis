@@ -431,7 +431,7 @@ function init(x, y, w, h)
         and pos_y >= y and pos_y <= y+h then
             -- spawn
             --print("spawned statue " .. i .. " at " .. pos_x .. ", " .. pos_y)
-            LoadPixelScene( "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", true )
+            LoadPixelScene( "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", true )
         end	
     end
 end

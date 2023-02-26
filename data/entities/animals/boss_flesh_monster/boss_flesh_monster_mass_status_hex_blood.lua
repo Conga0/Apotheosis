@@ -26,7 +26,7 @@ for k=1,#targets
 do v = targets[k]
 	if ( v ~= entity_id ) then
 		if EntityHasTag(v, "hittable") then
-			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/hitfx_nohealing_short.xml", pos_x, pos_y )
+			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_hex_blood_short.xml", pos_x, pos_y )
 			GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/all_seeing_eye/create", pos_x, pos_y );
 			EntityAddChild( v, eid )
 		end
