@@ -1,5 +1,5 @@
 <Entity 
-  name="$projectile_default" tags="projectile_player"
+  name="$projectile_default"
    >
 
 	<Base file="data/entities/base_projectile.xml" >

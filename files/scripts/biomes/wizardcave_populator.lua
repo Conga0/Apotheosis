@@ -100,6 +100,14 @@
 		max_count	= 1,    
 		entities 	= { "data/entities/animals/duck.xml", "data/entities/animals/wizard_ambrosia.xml", "data/entities/animals/wizard_ambrosia.xml", "data/entities/animals/wizard_ambrosia.xml", "data/entities/animals/wizard_jackofalltrades.xml", "data/entities/animals/wizard_jackofalltrades.xml", "data/entities/animals/wizard_transmutation.xml", "data/entities/animals/wizard_poly.xml", "data/entities/animals/wizard_swapper.xml", "data/entities/animals/wizard_homing.xml" },
 	})
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.045,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/wizard_watermage_greater.xml"
+    })
 
 
 

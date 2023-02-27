@@ -1,7 +1,7 @@
-mods/Apotheosis/files/ragdolls/cat_apotheosis_white/head.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_white/body.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_white/legs_1.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_white/legs_2.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_white/legs_3.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_white/legs_4.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_white/tail.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_white/head.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_white/body.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_white/legs_1.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_white/legs_2.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_white/legs_3.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_white/legs_4.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_white/tail.png

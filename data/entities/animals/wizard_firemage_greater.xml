@@ -6,8 +6,8 @@
 		<AnimalAIComponent 
 			_enabled="1" 
 			preferred_job="JobDefault"
-			attack_melee_damage_min="0.4" 
-			attack_melee_damage_max="0.7"
+			attack_melee_damage_min="1.7"
+			attack_melee_damage_max="2.2"
 			creature_detection_range_x="300"
 			creature_detection_range_y="300"
 			food_material="blood"

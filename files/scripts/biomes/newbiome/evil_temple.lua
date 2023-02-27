@@ -430,6 +430,25 @@ g_ghost_crystal =
 	},
 }
 
+g_scavengers =
+{
+	total_prob = 0,
+	-- this is air, so nothing spawns at 0.6
+	{
+		prob   		= 0.9,
+		min_count	= 0,
+		max_count	= 0,    
+		entity 	= ""
+	},
+	-- add skullflys after this step
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/lukki_tentacle_hungry.xml"
+	},
+}
+
 g_pressureplates =
 {
 	total_prob = 0,
@@ -517,46 +536,6 @@ g_pixel_scene_03 =
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
-	},
-}
-
-g_scavengers =
-{
-	total_prob = 0,
-	-- this is air, so nothing spawns at 0.6
-	{
-		prob   		= 0.9,
-		min_count	= 0,
-		max_count	= 0,    
-		entity 	= ""
-	},
-	-- add skullflys after this step
-	{
-		prob   		= 0.2,
-		min_count	= 1,
-		max_count	= 3,    
-		entities 	= {
-			"data/entities/animals/scavenger_smg.xml",
-			"data/entities/animals/scavenger_grenade.xml",
-			}
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/scavenger_leader.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/scavenger_clusterbomb.xml"
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/scavenger_poison.xml"
 	},
 }
 

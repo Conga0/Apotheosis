@@ -1,7 +1,7 @@
-mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_skittle/head.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_skittle/body.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_skittle/legs_1.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_skittle/legs_2.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_skittle/legs_3.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_skittle/legs_4.png
-mods/Apotheosis/files/ragdolls/cat_apotheosis_spoopy_skittle/tail.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_skittle/head.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_skittle/body.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_skittle/legs_1.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_skittle/legs_2.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_skittle/legs_3.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_skittle/legs_4.png
+mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy_skittle/tail.png

@@ -132,13 +132,13 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 	
-	<LightComponent 
-		_enabled="1" 
-		radius="150" 
+	<LightComponent
+		_enabled="1"
+		radius="150"
 		r="45"
 		g="45"
 		b="90">
-	</LightComponent>	
+	</LightComponent>
    
   <LuaComponent 
 		_enabled="1" 

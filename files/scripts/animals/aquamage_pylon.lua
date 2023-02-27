@@ -6,7 +6,7 @@ local targets = EntityGetInRadiusWithTag( x, y, r, "mortal" )
 
 for k=1, #targets
 do local v = targets[k];
-	if EntityHasTag("watermage") == false then
+	if EntityHasTag(v, "watermage") == false then
 		EntityAddRandomStains( v, CellFactory_GetType("apotheosis_magic_liquid_suffocatium"), 5 )
 	end
 end

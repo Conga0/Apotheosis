@@ -66,7 +66,7 @@ g_small_enemies =
 		entity 	= "data/entities/animals/thundermage_big.xml"
 	},
 	{
-		prob   		= 0.15,
+		prob   		= 0.10,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/sunken_cave/watermage.xml",
@@ -137,7 +137,7 @@ g_big_enemies =
 		entity 	= "data/entities/animals/thunderskull.xml"
 	},
 	{
-		prob   		= 0.2,
+		prob   		= 0.10,
 		min_count	= 1,
 		max_count	= 2,    
 		entity 	= "data/entities/animals/sunken_cave/watermage.xml",
@@ -180,6 +180,12 @@ g_scavenger_party =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/sunken_creature.xml"
+	},
+	{
+		prob   		= 0.33,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/sunken_cave/watermage_greater.xml"
 	},
 }
 

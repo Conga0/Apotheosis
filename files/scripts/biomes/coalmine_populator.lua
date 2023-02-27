@@ -1,10 +1,18 @@
 
     table.insert(g_big_enemies,
     {
-        prob           = 0.001,
+        prob           = 0.0005,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/coal_mines/wizard_firemage_greater.xml"
+    })
+
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.0005,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/coal_mines/watermage_greater.xml"
     })
 
     table.insert(g_big_enemies,
@@ -139,7 +147,7 @@
         prob           = 0.05,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/animals/watermage.xml"
+        entity     = "data/entities/animals/coal_mines/watermage.xml"
     })
 
 

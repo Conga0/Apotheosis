@@ -1504,6 +1504,26 @@ table.insert(actions,
     end,
 })
 
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_MIST_ATTUNIUM",
+    name 		= "$spell_apotheosis_mist_attunium_name",
+    description = "$spell_apotheosis_mist_attunium_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mist_attunium.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/slimeball_unidentified.png",
+    related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/mist_attunium.xml"},
+    type 		= ACTION_TYPE_PROJECTILE,
+    spawn_level                       = "1,2,3,4", -- MIST_RADIOACTIVE
+    spawn_probability                 = "0.3,0.3,0.3,0.3", -- MIST_RADIOACTIVE
+    price = 120,
+    mana = 40,
+    --max_uses = 10,
+    action 		= function()
+        add_projectile("mods/apotheosis/files/entities/projectiles/deck/mist_attunium.xml")
+        c.fire_rate_wait = c.fire_rate_wait + 10
+    end,
+})
+
 -- Checks if a spell is being cast by a greek letter & if you have the perk which allows it
 -- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?
 function disablecopying(recursion_level)

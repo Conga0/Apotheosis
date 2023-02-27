@@ -1,4 +1,8 @@
 <Entity name="Suur Stendari" tags="firemage,touchmagic_immunity,ui_use_raw_name" >
+
+<!------------------------------------------------------------------------------------------------------------------------------------------------>
+<!--WARNING: This is not the real Greater Watermage file, this is an old attempt at it, but is still used ingame as a rare creatureshift outcome-->
+<!------------------------------------------------------------------------------------------------------------------------------------------------>
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
