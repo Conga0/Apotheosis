@@ -1,0 +1,15 @@
+<Entity tags="effect_protection" >
+	
+	<InheritTransformComponent 
+	  _enabled="1" >
+  </InheritTransformComponent>	
+    
+  <!--1.5 seconds-->
+  <GameEffectComponent 
+    _tags="effect_protection_all"
+    effect="PROTECTION_ALL"
+    frames="150"
+    >
+	</GameEffectComponent >
+
+</Entity>

@@ -7,6 +7,7 @@ Give orb room material puzzles unique inputs and lore readouts (Likely need to a
 Trophies for:
 Using Perk Creation Altar
 Reaching Max Orb Count, taking new orbs into consideration
+Killing the Heretic
 
 Finish or remove Corrupt Master of Grounding
 
@@ -22,10 +23,6 @@ Parrallel world enemies should have x10 hp
 Would be good to have a corrupt version of Master of Puppetering for Temple of Sacriligious Remains, or maybe he's just corrupt by default
 We'll have to see
 Note: Spoopy is working on a giant Master of Puppetering Sprite, check his DMs for notes on how it would work, should be good!
-
-Check Master of Puppetering shoots from the right x,y coordinates
-
-Update Curse of Swapping status effect to check for a child entity name instead of a global frame timer for removing
 
 Improve Particle Effects for Pure Light
 
@@ -49,5 +46,6 @@ Herobrine only spawns at 7pm to 5am (when it's dark outside)
 
 Make Blob Cave a biome so it spawns in parallel wolds
 
-Blob ball attack hitbox is too large, investigate & fix
-May need same fix for more creeps
+Fix Polymorph crystals spawning at the entrance to Temple of the Art, it's unfair to have something at the very entrance you can't avoid zone you out with a near-instant kill
+
+Lava Immunity periodically makes you vulnerable to lava for 1 frame

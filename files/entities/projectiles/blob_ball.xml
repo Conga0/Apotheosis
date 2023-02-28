@@ -118,7 +118,7 @@
   </LightComponent>
 
   <GameAreaEffectComponent
-      radius="16"
+      radius="13"
       collide_with_tag="hittable"
       frame_length="1"
   ></GameAreaEffectComponent>

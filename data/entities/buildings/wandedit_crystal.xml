@@ -92,12 +92,6 @@
 		script_death="mods/Apotheosis/files/scripts/animals/wandedit_crystal_death.lua"
 		>
 	</LuaComponent>
-	
-	<AudioLoopComponent
-		file="data/audio/Desktop/projectiles.bank"
-		event_name="projectiles/magic_orb/loop"
-		auto_play="1">
-	</AudioLoopComponent>
 
 </Entity>
 

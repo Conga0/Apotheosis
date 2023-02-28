@@ -21,7 +21,7 @@ local r = 350
 	local angle_inc = 0
 	local angle_inc_set = false
 
-	local length = 1.5
+	local length = 1.25
 
 	if ( target ~= nil ) and ( target ~= NULL_ENTITY ) then
 		local ex, ey = EntityGetTransform( target )

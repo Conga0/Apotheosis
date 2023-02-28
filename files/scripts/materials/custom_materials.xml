@@ -1610,9 +1610,9 @@
   <CellDataChild
   	_parent="slime"
   	_inherit_reactions="1"
-  	name="apotheosis_slime_blue" 
+  	name="apotheosis_slime_blue"
 	ui_name="$mat_slime_green"
-	wang_color="8880FF90" 
+	wang_color="8880FF90"
 	liquid_viscosity="0"
 	liquid_sticks_to_ceiling="100"
 	liquid_damping="0.9"

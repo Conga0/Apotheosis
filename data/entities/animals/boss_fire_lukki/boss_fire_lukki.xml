@@ -84,7 +84,7 @@
 	
 	<CellEaterComponent
 		radius="19" 
-		eat_probability="100">
+		eat_probability="90">
 	</CellEaterComponent>
 
 

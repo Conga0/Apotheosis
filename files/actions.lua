@@ -1261,8 +1261,8 @@ table.insert(actions,
     sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
     --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
     type    = ACTION_TYPE_PASSIVE,
-    spawn_level                       = "1,2,3,4", -- REGENERATION_FIELD
-    spawn_probability                 = "0.2,0.2,0.2,0.2", -- REGENERATION_FIELD
+    spawn_level                       = "1,2,3,4,10", -- REGENERATION_FIELD
+    spawn_probability                 = "0.2,0.2,0.2,0.2,0.7", -- REGENERATION_FIELD
     price = 250,
     mana = 0,
     max_uses = 2,
@@ -1513,10 +1513,10 @@ table.insert(actions,
     sprite_unidentified = "data/ui_gfx/gun_actions/slimeball_unidentified.png",
     related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/mist_attunium.xml"},
     type 		= ACTION_TYPE_PROJECTILE,
-    spawn_level                       = "1,2,3,4", -- MIST_RADIOACTIVE
-    spawn_probability                 = "0.3,0.3,0.3,0.3", -- MIST_RADIOACTIVE
+    spawn_level                       = "1,2,3,4", -- APOTHEOSIS_MIST_ATTUNIUM
+    spawn_probability                 = "0.3,0.3,0.3,0.3", -- APOTHEOSIS_MIST_ATTUNIUM
     price = 120,
-    mana = 40,
+    mana = 120,
     --max_uses = 10,
     action 		= function()
         add_projectile("mods/apotheosis/files/entities/projectiles/deck/mist_attunium.xml")
@@ -1651,6 +1651,9 @@ modify_existing_spell(
 --Fix Healing Bolt & Circle of Vigour to have updated spell descriptions
 modify_existing_spell("REGENERATION_FIELD","description","$spell_apotheosis_cov_desc")
 modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bolt_desc")
+
+modify_existing_spell("REGENERATION_FIELD","spawn_level","1,2,3,4,10")
+modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.7")
 
 
 
