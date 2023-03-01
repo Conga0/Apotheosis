@@ -9,8 +9,7 @@ Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with
 Arrow Now longer has increased recoil
 Relocated Friend Cave 1 & 2
 Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
-Fixed Chainsaw memory leak
-Wandstone now lets you tinker just by holding it
+Wandstone now lets you tinker while in your inventory
 Parrallel worlds are now harder to break into
 Kantele Bomb Song is fixed
 Chainsaw now costs 12 mana
@@ -31,7 +30,7 @@ Content list:
 96 new enemies (+3 Pylon varients)
 6 new bosses
 53 new spells
-8 new perks
+9 new perks
 3 new biomes
 6 new structures
 8 new materials (6 interactable, 8 total)

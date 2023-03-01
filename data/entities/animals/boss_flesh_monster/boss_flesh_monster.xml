@@ -10,10 +10,21 @@
 
 	<!-- art - main body  -->
 
-	<SpriteComponent 
+	<SpriteComponent
 		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor.png"
 		offset_x="56.5"
 		offset_y="56.5"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
+		offset_x="56.5"
+		offset_y="56.5"
+		emissive="1"
+		additive="1"
 		>
 	</SpriteComponent>
 	
@@ -116,6 +127,7 @@
 
 	<DamageModelComponent
 		hp="520" 
+		wait_for_kill_flag_on_death="1"
 		air_needed="0" 
 		falling_damages="0" 
 		fire_damage_amount="0.2" 
@@ -321,12 +333,6 @@
 		>
 	</VariableStorageComponent>
 
-    <VariableStorageComponent
-        name="apotheosis_blackhole_count"
-        value_int="0"
-        >
-    </VariableStorageComponent>
-
 
 	<!-- Limbs -->
 
@@ -389,6 +395,7 @@
 	
 	<!-- Fire a devestating barrage of shadow bolts every 9.3 seconds -->
 	<LuaComponent
+		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_shadow_barrage_setup.lua"
 		execute_every_n_frame="560"
 		execute_times="-1"
@@ -398,16 +405,18 @@
 	<!-- Mass Wounded all entities in a large radius -->
 	<!-- Disables Healing -->
 	<LuaComponent
+		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_mass_status_wounded.lua"
 		execute_every_n_frame="1740"
 		execute_times="-1"
 		>
 	</LuaComponent>
 	
-	<!-- Fire a dangerous barrage of Shadow Beams every 12 seconds -->
+	<!-- Fire a dangerous barrage of freezing orbs every 12 seconds -->
 	<!--
 	-->
 	<LuaComponent
+		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_orb_barrage_setup.lua"
 		execute_every_n_frame="720"
 		execute_times="-1"
@@ -416,6 +425,7 @@
 	
 	<!-- Fire a dangerous kill laser every minute, after a lengthy chargeup and LoS warning indicator -->
 	<LuaComponent
+		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_deathlaser_setup.lua"
 		execute_every_n_frame="3600"
 		execute_times="-1"
@@ -426,6 +436,7 @@
 	
 	<!-- Enables Immortality if eye minions are alive and nearby -->
 	<LuaComponent
+		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_check.lua"
 		execute_every_n_frame="50"
 		execute_times="-1"
@@ -462,6 +473,7 @@
 
 	<!-- Summon Minions -->
 	<LuaComponent
+		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_summon.lua"
 		execute_every_n_frame="300"
 		>
@@ -470,6 +482,7 @@
 	<!-- Nullify Ambrosia every 20 seconds -->
 	<!-- Maybe just remove the infiltration part of this effect and keep the ambrosia removal? -->
 	<LuaComponent
+		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_ambrosia_corruption.lua"
 		execute_every_n_frame="1200"
 		>
@@ -481,6 +494,23 @@
 		execute_every_n_frame="6"
 		execute_times="1"
 		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<!-- Death Scripts -->
+	
+	<!-- Fancy Death Script -->
+	<LuaComponent
+		execute_every_n_frame="-1"
+		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death_check.lua"
+		enable_coroutines="1"
+		>
+	</LuaComponent>
+
+	<!-- Death Reward, only applies to phase 2 -->
+	<LuaComponent
+		_tags="death_reward"
+		script_death="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death.lua"
 		>
 	</LuaComponent>
 </Entity>

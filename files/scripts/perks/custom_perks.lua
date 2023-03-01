@@ -348,23 +348,24 @@ table.insert(perk_list,
                 "velocity_max_y"
             }
 
-            --60% movement speed boost with each haste pickup
-            local increments = {
-            -57,
-            34,
-            57,
-            51,
-            92.4,
-            31.2,
-            -34,
-            34,
-            -120,
-            210,
+            --Default speed values Mina starts with, multiplid to be a 60% boost in ComponentSetValue
+            local defaults = {
+                -95,
+                56,
+                95,
+                85,
+                154,
+                52,
+                -57,
+                57,
+                -200,
+                350,
             }
+
             for k=1,#values
             do v = values[k]
                 local val = ComponentGetValue2(comp,v)
-                ComponentSetValue2(comp,v,val + increments[k])
+                ComponentSetValue2(comp,v,val + (defaults[k] * 0.6))
             end
         end
     end,
@@ -537,13 +538,45 @@ table.insert(perk_list,
     id = "APOTHEOSIS_VOID",
     ui_name = "$perk_apotheosis_void",
     ui_description = "$perk_apotheosis_void_description",
-    ui_icon = "data/ui_gfx/perk_icons/void.png",
-    perk_icon = "data/items_gfx/perks/void.png",
+    ui_icon = "mods/apotheosis/files/ui_gfx/perk_icons/void.png",
+    perk_icon = "mods/apotheosis/files/items_gfx/perks/void.png",
     stackable = STACKABLE_YES,
     usable_by_enemies = false,
+    one_off_effect = true,
     func = function(entity_perk_item, entity_who_picked, item_name)
+
+        local value = tonumber(GlobalsGetValue( "APOTHEOSIS_VOID_COUNT", "0" ))
+        GlobalsSetValue( "APOTHEOSIS_VOID_COUNT", tostring(value + 1))
+
+        local pos_x, pos_y = EntityGetTransform(entity_who_picked)
+        local c = EntityLoad( "mods/apotheosis/files/entities/misc/effect_tinker_with_wands_temporary.xml", pos_x, pos_y )
+        EntityAddChild( entity_who_picked, c )
+
+
+        local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
+        if( damagemodels ~= nil ) then
+            for i,damagemodel in ipairs(damagemodels) do
+                local old_max_hp = tonumber( ComponentGetValue( damagemodel, "max_hp" ) )
+                local multiplier = 1.5
+                if old_max_hp >= 40 then multiplier = 1.15 end
+                local max_hp = old_max_hp * multiplier
+                
+                local max_hp_cap = tonumber( ComponentGetValue( damagemodel, "max_hp_cap" ) )
+                if max_hp_cap > 0 then
+                    max_hp = math.min( max_hp, max_hp_cap )
+                end
+                
+                local current_hp = tonumber( ComponentGetValue( damagemodel, "hp" ) )
+                current_hp = math.min( current_hp + math.abs(max_hp - old_max_hp), max_hp )
+                
+                ComponentSetValue( damagemodel, "max_hp", max_hp )
+                ComponentSetValue( damagemodel, "hp", current_hp )
+            end
+        end
+
         local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
         if comp ~= nil then
+
             local values = {
                 "jump_velocity_y",
                 "jump_velocity_x",
@@ -557,27 +590,52 @@ table.insert(perk_list,
                 "velocity_max_y"
             }
 
-            --60% movement speed boost with each haste pickup
-            local increments = {
-            -57,
-            34,
-            57,
-            51,
-            92.4,
-            31.2,
-            -34,
-            34,
-            -120,
-            210,
+            --Default speed values Mina starts with, multiplied to be a 15% boost in ComponentSetValue
+            local defaults = {
+                -95,
+                56,
+                95,
+                85,
+                154,
+                52,
+                -57,
+                57,
+                -200,
+                350,
             }
+
             for k=1,#values
             do v = values[k]
                 local val = ComponentGetValue2(comp,v)
-                ComponentSetValue2(comp,v,val + increments[k])
+                if val <= defaults[k] * 1.75 then
+                    ComponentSetValue2(comp,v,val + (defaults[k] * 0.15))
+                end
             end
         end
     end,
     _remove = function(entity_who_picked)
+
+        GlobalsSetValue( "APOTHEOSIS_VOID_COUNT", 0 )
+
+        local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
+        if( damagemodels ~= nil ) then
+            for i,damagemodel in ipairs(damagemodels) do
+                local old_max_hp = tonumber( ComponentGetValue( damagemodel, "max_hp" ) )
+                local max_hp = old_max_hp / 1.5
+                
+                local max_hp_cap = tonumber( ComponentGetValue( damagemodel, "max_hp_cap" ) )
+                if max_hp_cap > 0 then
+                    max_hp = math.min( max_hp, max_hp_cap )
+                end
+                
+                local current_hp = tonumber( ComponentGetValue( damagemodel, "hp" ) )
+                current_hp = math.min( current_hp + math.abs(max_hp - old_max_hp), max_hp )
+                
+                ComponentSetValue( damagemodel, "max_hp", max_hp )
+                ComponentSetValue( damagemodel, "hp", current_hp )
+            end
+        end
+
         local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
         if comp ~= nil then
             local values = {
@@ -614,6 +672,28 @@ table.insert(perk_list,
         end
     end,
     func_remove = function( entity_who_picked )
+
+        GlobalsSetValue( "APOTHEOSIS_VOID_COUNT", 0 )
+
+        local damagemodels = EntityGetComponent( entity_who_picked, "DamageModelComponent" )
+        if( damagemodels ~= nil ) then
+            for i,damagemodel in ipairs(damagemodels) do
+                local old_max_hp = tonumber( ComponentGetValue( damagemodel, "max_hp" ) )
+                local max_hp = old_max_hp / 1.5
+                
+                local max_hp_cap = tonumber( ComponentGetValue( damagemodel, "max_hp_cap" ) )
+                if max_hp_cap > 0 then
+                    max_hp = math.min( max_hp, max_hp_cap )
+                end
+                
+                local current_hp = tonumber( ComponentGetValue( damagemodel, "hp" ) )
+                current_hp = math.min( current_hp + math.abs(max_hp - old_max_hp), max_hp )
+                
+                ComponentSetValue( damagemodel, "max_hp", max_hp )
+                ComponentSetValue( damagemodel, "hp", current_hp )
+            end
+        end
+
         local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
         if comp ~= nil then
             local values = {

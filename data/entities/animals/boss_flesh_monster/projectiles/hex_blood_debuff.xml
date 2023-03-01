@@ -30,7 +30,7 @@
 	</ParticleEmitterComponent>
   
 	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/ambrosia_dullification/debuff.lua"
+		script_source_file="data/entities/animals/boss_flesh_monster/projectiles/hex_blood_debuff.lua"
 		execute_every_n_frame="70"
 		>
 	</LuaComponent>

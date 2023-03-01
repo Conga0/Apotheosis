@@ -17,6 +17,7 @@ local inputlist = {
     "mods/Apotheosis/files/items_gfx/stone_fungus.png",
     "data/items_gfx/goldnugget_01.png",
     "data/items_gfx/beamstone.png",
+    "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png",
 }
 
 local outputlist = {
@@ -28,6 +29,7 @@ local outputlist = {
     "APOTHEOSIS_TRIP_IMMUNITY",
     "EDIT_WANDS_EVERYWHERE",
     "MEGA_BEAM_STONE",
+    "REMOVE_FOG_OF_WAR",
 }
 
 for k=1, #inputlist

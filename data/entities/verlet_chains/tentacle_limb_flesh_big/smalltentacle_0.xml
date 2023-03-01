@@ -1,6 +1,7 @@
 <Entity >
    
-  <SpriteComponent 
+  <SpriteComponent
+    _enabled="0"
     image_file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_0_sprite.xml" 
     offset_x="0"
     offset_y="8"

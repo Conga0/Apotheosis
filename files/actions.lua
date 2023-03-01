@@ -1652,8 +1652,9 @@ modify_existing_spell(
 modify_existing_spell("REGENERATION_FIELD","description","$spell_apotheosis_cov_desc")
 modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bolt_desc")
 
+--I feel worried that I'm tinkering with the base game a bit too much here
 modify_existing_spell("REGENERATION_FIELD","spawn_level","1,2,3,4,10")
-modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.7")
+modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.5")
 
 
 

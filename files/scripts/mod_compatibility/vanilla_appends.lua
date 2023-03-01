@@ -401,3 +401,29 @@ do -- Nerf Plasma beams to hit every 10 frames instead of every 1 frame
     ModTextFileSetContent(path, tostring(xml))
   end
 end
+
+do -- Change sunseed sprite filepath for Perk Creation Anvil
+  local path = "data/entities/items/pickup/sun/sunseed.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("data/items_gfx/goldnugget_01.png", "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png")
+  ModTextFileSetContent(path, content)
+end
+
+do --Softcap heart spawns at 1,000 hp
+  ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/Apotheosis/files/scripts/biome_scripts_appends.lua" )
+end
+
+do -- Add Void script to reroll machines in Holy Mountains
+  local path = "data/entities/items/pickup/perk_reroll.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/buildings/perk_void_check.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end

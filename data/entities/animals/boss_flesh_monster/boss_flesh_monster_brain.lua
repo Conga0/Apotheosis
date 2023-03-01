@@ -49,6 +49,11 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 			end
 		end
 
+		--Enable emissive phase 2 glyphs
+		EntitySetComponentsWithTagEnabled(entity_id,"enabled_by_liquid",true)
+
+		EntityAddChild(entity_id,EntityLoad("data/entities/animals/boss_flesh_monster/phase_change_particles.xml", pos_x, pos_y))
+
 		EntityAddComponent2(
 			entity_id,
 			"LuaComponent",
