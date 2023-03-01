@@ -1,4 +1,4 @@
-<Entity tags="effect_protection" >
+<Entity name="apotheosis_protection_lava" tags="effect_protection" >
 
 	<InheritTransformComponent>
     </InheritTransformComponent>

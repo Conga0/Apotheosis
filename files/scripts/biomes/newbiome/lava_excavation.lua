@@ -615,21 +615,42 @@ g_pixel_scene_04 =
 {
 	total_prob = 0,
 	{
-		prob   			= 0.5,
+		prob   			= 0.1,
         material_file 	= "mods/Apotheosis/files/biome_impl/excavationsite/shop_01.png",
         visual_file		= "mods/Apotheosis/files/biome_impl/excavationsite/shop_01_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
-		prob   			= 0.5,
+		prob   			= 0.1,
 		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava.png",
 		visual_file		= "",
 		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava_background.png",
 		is_unique		= 0
 	},
 	{
-		prob   			= 4.0,
+		prob   			= 1.0,
+		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		is_unique		= 0
+	},
+	{
+		prob   			= 1.0,
+		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		is_unique		= 0
+	},
+	{
+		prob   			= 1.0,
+		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		is_unique		= 0
+	},
+	{
+		prob   			= 1.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
 		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
 		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
@@ -690,7 +711,7 @@ g_pixel_scene_04_alt =
 		is_unique		= 0
 	},
 	{
-		prob   			= 3.5,
+		prob   			= 5.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
 		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
 		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",

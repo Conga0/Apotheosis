@@ -1,9 +1,7 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
-local targets = EntityGetWithTag( "player_unit" )
+local entity_id = GetUpdatedEntityID()
+local target = EntityGetRootEntity(entity_id)
+EntityGetTransform(target)
 
-local target = targets[1]
-
-if target ~= nil then
-    EntitySetDamageFromMaterial( target, "lava", 0.003)
-end
+local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_protection_lava_temporary_remove.xml", pos_x, pos_y)
+EntityAddChild(target,c)
