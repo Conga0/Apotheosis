@@ -1553,6 +1553,7 @@ modify_existing_spell(
 	"action",
     function(recursion_level)
         if (recursion_level) ~= nil then return; end
+        --if disablecopying(recursion_level) then return; end
         add_projectile("data/entities/projectiles/deck/regeneration_field.xml")
         c.fire_rate_wait = c.fire_rate_wait + 15
     end
@@ -1564,6 +1565,7 @@ modify_existing_spell(
 	"action",
     function(recursion_level)
         if (recursion_level) ~= nil then return; end
+        --if disablecopying(recursion_level) then return; end
         add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
         c.fire_rate_wait = c.fire_rate_wait + 4
         c.spread_degrees = c.spread_degrees + 2.0
