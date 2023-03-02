@@ -558,7 +558,10 @@ table.insert(perk_list,
             for i,damagemodel in ipairs(damagemodels) do
                 local old_max_hp = tonumber( ComponentGetValue( damagemodel, "max_hp" ) )
                 local multiplier = 1.5
-                if old_max_hp >= 40 then multiplier = 1.15 end
+                if old_max_hp >= 120 then multiplier = 1.01
+                elseif old_max_hp >= 80 then multiplier = 1.05
+                elseif old_max_hp >= 40 then multiplier = 1.15
+                end
                 local max_hp = old_max_hp * multiplier
                 
                 local max_hp_cap = tonumber( ComponentGetValue( damagemodel, "max_hp_cap" ) )

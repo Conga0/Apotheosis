@@ -1524,6 +1524,37 @@ table.insert(actions,
     end,
 })
 
+table.insert(actions,
+{
+    id          = "APOTHEOSIS_HOMING_DELAYED",
+    name 		= "$spell_apotheosis_homing_delayed_name",
+    description = "$spell_apotheosis_homing_delayed_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/homing_delayed.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+    related_extra_entities = { "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml" },
+    type 		= ACTION_TYPE_MODIFIER,
+    spawn_level                       = "1,2,3,4,5,6", -- HOMING
+    spawn_probability                 = "0.1,0.4,0.4,0.4,0.4,0.4", -- HOMING
+    price = 200,
+    mana = 50,
+    --max_uses = 16,
+    action 		= function()
+        c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml,data/entities/particles/tinyspark_white_weak.xml,"
+        draw_actions( 1, true )
+    end,
+})
+
+
+
+
+
+
+
+
+
+
+
+
 -- Checks if a spell is being cast by a greek letter & if you have the perk which allows it
 -- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?
 function disablecopying(recursion_level)

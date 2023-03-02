@@ -66,4 +66,33 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 			}
 		)
 	end
+	
+
+	--Phase 3 (panic) starts at 10% hp
+	if phase == 2 and ((max_health * 0.1) >= health) then
+		local storages = EntityGetComponentIncludingDisabled( entity_id, "VariableStorageComponent" )[1]
+		ComponentSetValue2( storages, "value_int", 3)
+
+		GamePlaySound( "data/audio/Desktop/animals.bank", "animals/boss_centipede/destroy_face", pos_x, pos_y );
+
+		--200% speed boost in phase 2
+		local comp = EntityGetComponentIncludingDisabled( entity_id, "PhysicsAIComponent")[1]
+		ComponentSetValue2(comp, "force_coeff", 48)
+		ComponentSetValue2(comp, "force_max", 600)
+
+		local cid = EntityLoad( "data/entities/animals/boss_flesh_monster/deathlaser/deathlaser_helper_phase3.xml", pos_x, pos_y )
+		EntityAddChild( entity_id, cid )
+
+		EntityAddComponent2(
+			entity_id,
+			"LuaComponent",
+			{
+				execute_on_added = false,
+				script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_summon_phase2.lua",
+				execute_every_n_frame = 10,
+				remove_after_executed = false,
+				execute_times=7
+			}
+		)
+	end
 end

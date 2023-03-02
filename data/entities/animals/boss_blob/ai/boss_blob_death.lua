@@ -6,7 +6,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
         local entity_id = GetUpdatedEntityID()
         local pos_x, pos_y = EntityGetTransform(entity_id)
         local flag_status = HasFlagPersistent( "apotheosis_card_unlocked_blob_boss" )
-        local blobs_remaining = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "apotheosis_blob_boss")
+        local blobs_remaining = EntityGetWithTag("apotheosis_blob_boss")
         SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() - 523 )
 
         table.remove(blobs_remaining, entity_id)

@@ -207,8 +207,8 @@ do --Boosts Health of various creatures (THE_END)
 end
 
 do
-  --Triple health of Evil Temple Masters
-  multiplier = 3.0
+  --Sextuple health of Evil Temple Masters
+  multiplier = 6.0
   enemy_list = {
     "wizard_corrupt_ambrosia",
     "wizard_corrupt_hearty",
@@ -413,17 +413,7 @@ do --Softcap heart spawns at 1,000 hp
   ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/Apotheosis/files/scripts/biome_scripts_appends.lua" )
 end
 
-do -- Add Void script to reroll machines in Holy Mountains
-  local path = "data/entities/items/pickup/perk_reroll.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  xml:add_child(nxml.parse([[
-    <LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/buildings/perk_void_check.lua"
-		execute_every_n_frame="1"
-		remove_after_executed="1"
-		>
-	</LuaComponent>
-  ]]))
-  ModTextFileSetContent(path, tostring(xml))
+do --Spawn entity for perk manipulation at holy mountains
+  ModLuaFileAppend( "data/scripts/biomes/temple_altar.lua", "mods/Apotheosis/files/scripts/biomes/temple_altar_populator.lua" )
+  ModLuaFileAppend( "data/scripts/biomes/boss_arena.lua", "mods/Apotheosis/files/scripts/biomes/temple_altar_populator.lua" )
 end

@@ -9,8 +9,6 @@ Using Perk Creation Altar
 Reaching Max Orb Count, taking new orbs into consideration
 Killing the Heretic
 
-Finish or remove Corrupt Master of Grounding
-
 Finish or remove Mainpath Portal Puzzle
 
 
@@ -27,7 +25,6 @@ Note: Spoopy is working on a giant Master of Puppetering Sprite, check his DMs f
 Improve Particle Effects for Pure Light
 
 Do something with Wand of Aiming
-Finish or Remove the Void Perk
 
 Fix "Custom Seed Successfully Set" appearing every run
 
@@ -44,8 +41,4 @@ How does it successfully apply breathless to the player, but fails to properly p
 
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
 
-Make Blob Cave a biome so it spawns in parallel wolds
-
 Fix Polymorph crystals spawning at the entrance to Temple of the Art, it's unfair to have something at the very entrance you can't avoid zone you out with a near-instant kill
-
-Lava Immunity periodically makes you vulnerable to lava for 1 frame

@@ -1143,9 +1143,9 @@
 	</Biome>
 
 	<Biome 
-		biome_filename="data/biome/custom/abyssal_depths.xml"
+		biome_filename="data/biome/custom/ant_hell.xml"
 		height_index="13"
-		color="ff0f7180" >
+		color="ffa01515" >
 	</Biome>
 
 </BiomesToLoad>

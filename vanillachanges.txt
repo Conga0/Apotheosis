@@ -27,9 +27,9 @@ Esoteric Presence
 The Dead are Restless
 
 Content list:
-96 new enemies (+3 Pylon varients)
+97 new enemies (+3 Pylon varients)
 6 new bosses
-53 new spells
+54 new spells
 9 new perks
 3 new biomes
 6 new structures
@@ -39,9 +39,10 @@ Content list:
 3 new musical curiosities 
 
 
-Custom tag count: [3]
+Custom tag count: [4]
 musical_stone
 vulnerable
 watermage
+apotheosis_blob_boss
 
 Note: Readthrough vanilla changes and remove any notes before release

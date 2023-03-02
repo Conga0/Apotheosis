@@ -1636,6 +1636,72 @@
 
 
 
+  <CellDataChild
+  	_parent="templebrick_static"
+  	_inherit_reactions="1"
+  	name="apotheosis_marblebrick_static"
+	ui_name="$mat_templeslab_static"	
+	wang_color="ffefee9e"
+	wang_noise_percent="0.25"
+	durability="10"
+	hp="100000"
+	wang_curvature="0.5"
+	wang_noise_type="0"
+	audio_physics_material_wall="gravel"
+	audio_physics_material_solid="rock"
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/marblebrick.png"
+		color="ff4e4343" >
+		<Edge>
+			  <EdgeGraphics 
+				color="ff4e4343" 
+				overwrite="0" 
+				percent="1" 
+				require_same_material="0" 
+				require_same_material_type="1" 
+				type="NORMAL_BASED" 
+				z="1" >
+				<Images>
+				<Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="data/materials_gfx/edge_files/edge_temple_golden_hor.png" 
+					min_angle="45" 
+					max_angle="135" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="data/materials_gfx/edge_files/edge_temple_golden_ver.png" 
+					min_angle="165" 
+					max_angle="195" />
+				  <Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="data/materials_gfx/edge_files/edge_temple_golden_hor.png" 
+					min_angle="235" 
+					max_angle="315" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="data/materials_gfx/edge_files/edge_temple_golden_ver.png" 
+					min_angle="345" 
+					max_angle="360" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="data/materials_gfx/edge_files/edge_temple_golden_ver.png" 
+					min_angle="0" 
+					max_angle="15" />
+				</Images>
+			  </EdgeGraphics>
+		</Edge>
+    </Graphics>
+  </CellDataChild>
+
+
+
 
 
 

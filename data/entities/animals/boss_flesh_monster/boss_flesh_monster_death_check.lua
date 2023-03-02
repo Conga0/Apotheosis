@@ -2,12 +2,11 @@ dofile_once( "data/scripts/lib/coroutines.lua" )
 dofile_once( "data/scripts/lib/utilities.lua" )
 local entity_id = GetUpdatedEntityID()
 local is_dead = false
-local phase_boss
 local death_sound_started
 
 function damage_received( damage, desc, entity_who_caused, is_fatal )
     entity_id = GetUpdatedEntityID()
-    phase_boss = check_phase()
+    local phase_boss = check_phase()
     --GamePrint("Current Phase is " .. tostring(phase_boss))
     check_death(phase_boss)
     --GamePrint("Damage Taken")
@@ -45,7 +44,7 @@ function check_death(phase_boss)
         local pos_x, pos_y = EntityGetTransform( entity_id )
 
 		-- check death
-		if ( hp <= 0.0 ) and (is_dead ~= true) and (phase_boss == 2) then
+		if ( hp <= 0.0 ) and (is_dead ~= true) and (phase_boss == 4) then
             --GamePrint("IM DEAD")
 			GameTriggerMusicFadeOutAndDequeueAll()
 			if death_sound_started == false then

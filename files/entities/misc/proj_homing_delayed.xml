@@ -1,0 +1,10 @@
+<Entity>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/proj_homing_delayed.lua"
+		execute_every_n_frame="15"
+        remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>
