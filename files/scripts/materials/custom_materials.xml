@@ -1447,6 +1447,15 @@
 	</StatusEffects>
   </CellData>
 
+
+  
+  <CellDataChild
+  	_parent="apotheosis_magic_liquid_suffocatium"
+	name="apotheosis_magic_liquid_suffocatium_fading"
+	wang_color="803d4181"
+	>
+  </CellDataChild>
+
   <CellDataChild
   	_parent="templebrick_static"
   	_inherit_reactions="1"
@@ -1635,7 +1644,7 @@
   </CellDataChild>
 
 
-
+	<!--Note(Conga): Can safely remove this to remove material bloat as marble biome isn't currently being used-->
   <CellDataChild
   	_parent="templebrick_static"
   	_inherit_reactions="1"
@@ -1918,6 +1927,12 @@
 	<Reaction probability="100"
 		input_cell1="apotheosis_magic_liquid_protection_all_fading_dulled" 		input_cell2="magic_liquid_protection_all"
 		output_cell1="apotheosis_magic_liquid_protection_all_fading_dulled"		output_cell2="apotheosis_magic_liquid_protection_all_fading_dulled"
+		>
+	</Reaction>
+  
+	<Reaction probability="5"
+		input_cell1="apotheosis_magic_liquid_suffocatium_fading" 			input_cell2="air"
+		output_cell1="air" 													output_cell2="air"
 		>
 	</Reaction>
 

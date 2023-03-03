@@ -39,7 +39,7 @@
 			ragdoll_fx_forced="DISINTEGRATED"
 			blood_material="water"
 			blood_spray_material="water"
-			blood_multiplier="0.5"
+			blood_multiplier="0.33"
 			blood_sprite_directional=""
 			blood_sprite_large=""
 			critical_damage_resistance="0.0"

@@ -1143,6 +1143,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/sunken_cave_entrance_lake_alt.xml"
+		height_index="13"
+		color="ff1191b2" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/ant_hell.xml"
 		height_index="13"
 		color="ffa01515" >

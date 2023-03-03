@@ -128,7 +128,7 @@ g_big_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/wizard_wands.xml"
+		entity 	= "data/entities/animals/sunken_cave/wizard_wands.xml"
 	},
 	{
 		prob   		= 0.05,
@@ -158,7 +158,7 @@ g_big_enemies =
         prob           = 0.15,
         min_count    = 1,
         max_count    = 1,
-        entity     = "data/entities/animals/tesla_turret.xml"
+        entity     = "data/entities/animals/sunken_cave/tesla_turret.xml"
     },
 }
 

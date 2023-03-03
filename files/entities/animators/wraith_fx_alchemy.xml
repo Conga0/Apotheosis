@@ -62,7 +62,7 @@
 	</ParticleEmitterComponent>
 
 	<ParticleEmitterComponent
-		emitted_material_name="spark"
+		emitted_material_name="spark_red"
 		offset.x="0"
 		offset.y="0"
 		x_pos_offset_min="-4"

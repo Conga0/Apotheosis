@@ -22,13 +22,9 @@ Would be good to have a corrupt version of Master of Puppetering for Temple of S
 We'll have to see
 Note: Spoopy is working on a giant Master of Puppetering Sprite, check his DMs for notes on how it would work, should be good!
 
-Improve Particle Effects for Pure Light
-
 Do something with Wand of Aiming
 
 Fix "Custom Seed Successfully Set" appearing every run
-
-Fix Sunken Cavern Lake Entrance not generating properly
 
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 
@@ -40,5 +36,3 @@ As a result, suffocatium doens't detect you have breathless via a water stone in
 How does it successfully apply breathless to the player, but fails to properly pick up the player has breathless? Bug in the function code?
 
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
-
-Fix Polymorph crystals spawning at the entrance to Temple of the Art, it's unfair to have something at the very entrance you can't avoid zone you out with a near-instant kill

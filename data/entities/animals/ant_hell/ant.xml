@@ -1,4 +1,4 @@
-<Entity  name="Fire Ant">
+<Entity  name="$animal_ant">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 
@@ -9,7 +9,7 @@
 			attack_melee_damage_max="1.0"
 			attack_melee_max_distance="15"
 			attack_ranged_min_distance="20"
-			attack_ranged_max_distance="80"
+			attack_ranged_max_distance="50"
 			creature_detection_range_x="300"
 			creature_detection_range_y="300"
 			attack_melee_action_frame="3"
@@ -20,35 +20,31 @@
 			attack_ranged_enabled="1"
 			attack_melee_enabled="1"
 			can_fly="0"  
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/ant_fireburst.xml"
-			attack_ranged_frames_between="50" >
+			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/ant_acidburst.xml"
+			attack_ranged_frames_between="90" >
 		</AnimalAIComponent>
 		
 		<DamageModelComponent 
-            hp="0.8"
-			fire_damage_amount="0.0" 
-			fire_probability_of_ignition="0" 
+            hp="5"
             ragdoll_material="meat_slime"
-			ragdoll_filenames_file="mods/apotheosis/files/ragdolls/ant_fire/filenames.txt" 
-			blood_material="fire"
-			blood_spray_material="fire"
-			blood_multiplier="0.2"
+			ragdoll_filenames_file="data/ragdolls/ant/filenames.txt" 
+			blood_material="slime"
+			blood_spray_material="slime"
+			blood_multiplier="0.5"
 			fire_probability_of_ignition="5" 
-			materials_that_damage="acid,poison,blood_cold,blood_cold_vapour" 
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour" 
 			materials_how_much_damage="0.004,0.001,0.0008,0.0007"
 			air_lack_of_damage="0.2" 
-			air_needed="1"
+			air_needed="0"
+			air_in_lungs="199"
+			air_in_lungs_max="199"
 			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_purple_$[1-3].xml"
 			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
 			>
-			<damage_multipliers
-				fire="0" 
-				>
-			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/ant_fire.xml" 
+			image_file="data/enemies_gfx/ant.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -94,19 +90,15 @@
 		</CameraBoundComponent>
 		
 		<CharacterDataComponent
-			collision_aabb_min_x="-4.0"
-			collision_aabb_max_x="4.0"
-			collision_aabb_min_y="-5"
+			collision_aabb_min_x="-4.0" 
+			collision_aabb_max_x="4.0" 
+			collision_aabb_min_y="-5" 
 			collision_aabb_max_y="3"
 			mass="2.0"
 			>
 		</CharacterDataComponent>
 	</Base>
 		
-	<LuaComponent
-		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_1.lua"
-		>
-	</LuaComponent>
 		
 
 </Entity>

@@ -150,7 +150,7 @@
 		healing_particle_effect_entity="mods/Apotheosis/files/entities/particles/heal_effect_big.xml"
 		>
 		<damage_multipliers
-			melee="0.7"
+			melee="0.3"
 			projectile="0.1"
 			explosion="0.3"
 			electricity="0.3"
@@ -433,15 +433,6 @@
 	</LuaComponent>
 
 	<!-- Defense Mechanisms -->
-	
-	<!-- Enables Immortality if eye minions are alive and nearby -->
-	<LuaComponent
-		_tags="invincible"
-		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_check.lua"
-		execute_every_n_frame="50"
-		execute_times="-1"
-		>
-	</LuaComponent>
 
 	<!-- Revenge Damage, 50% chance to retaliate with 1-2 Random Master Orbs Summons and create a protective shield -->
 	<LuaComponent
@@ -499,18 +490,14 @@
 
 	<!-- Death Scripts -->
 	
+	<!-- Condensed to save resources, it's more effecient to have 1 lua comp than 2-->
 	<!-- Fancy Death Script -->
-	<LuaComponent
-		execute_every_n_frame="-1"
-		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death_check.lua"
-		enable_coroutines="1"
-		>
-	</LuaComponent>
-
 	<!-- Death Reward, only applies to phase 2 -->
 	<LuaComponent
 		_tags="death_reward"
 		script_death="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death.lua"
+		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death_check.lua"
+		enable_coroutines="1"
 		>
 	</LuaComponent>
 </Entity>

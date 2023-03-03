@@ -137,7 +137,7 @@ table.insert(g_small_enemies,
 
 table.insert(g_physics_fungi,
 {
-    prob           = 0.1,
+    prob           = 0.05,
     min_count    = 1,
     max_count    = 1,    
     entity     = "mods/Apotheosis/files/entities/props/shoppingcart.xml"

@@ -417,3 +417,10 @@ do --Spawn entity for perk manipulation at holy mountains
   ModLuaFileAppend( "data/scripts/biomes/temple_altar.lua", "mods/Apotheosis/files/scripts/biomes/temple_altar_populator.lua" )
   ModLuaFileAppend( "data/scripts/biomes/boss_arena.lua", "mods/Apotheosis/files/scripts/biomes/temple_altar_populator.lua" )
 end
+
+do -- Buffs ants to have a faster moving & longer range acid spit
+  local path = "data/entities/animals/ant.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("data/entities/projectiles/acidburst.xml", "mods/apotheosis/files/entities/projectiles/ant_acidburst.xml")
+  ModTextFileSetContent(path, content)
+end

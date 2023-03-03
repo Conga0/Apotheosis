@@ -46,3 +46,8 @@ watermage
 apotheosis_blob_boss
 
 Note: Readthrough vanilla changes and remove any notes before release
+
+Enemies not yet added to enemy count:
+Red Tentacle Eye (lukki hungry)
+Fire Ant
+Suffocating Ant

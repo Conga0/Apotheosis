@@ -109,7 +109,7 @@ g_nest =
 -- actual functions that get called from the wang generator
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/Apotheosis/files/biome_impl/sunken_cave/entrance_lake.png", "", x - 62, y, "", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/sunken_cave/entrance_lake_alt.png", "", x - 44, y, "", true )
 end
 
 function spawn_small_enemies(x, y)

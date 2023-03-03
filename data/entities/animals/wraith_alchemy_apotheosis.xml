@@ -32,7 +32,6 @@
 				ice="0.1"
 				>
 			</damage_multipliers>
-		</DamageModelComponent>
 
 		<PathFindingComponent
 			can_fly="1" 
