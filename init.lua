@@ -525,6 +525,7 @@ wand_apotheosis_rat_name,"Rat",,,,,,,,,,,,,
 wand_apotheosis_cat_name,"Cat",,,,,,,,,,,,,
 wand_apotheosis_mana_battery_name,"Mana Battery",,,,,,,,,,,,,
 wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
+damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)

@@ -446,7 +446,7 @@ table.insert(actions,
     description = "$spell_apotheosis_reverberation_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/reverberation.png",
     sprite_unidentified = "data/ui_gfx/gun_actions/bomb_unidentified.png",
-    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/field_reverberation.xml"},
+    related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/field_reverberation_visual.xml"},
     spawn_requires_flag = "apotheosis_card_unlocked_musical_boss_spell",
     type 		= ACTION_TYPE_STATIC_PROJECTILE,
     spawn_level                       = "0,1,2,3,4,5,6", -- FREEZE_FIELD

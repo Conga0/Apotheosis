@@ -16,8 +16,8 @@
     wang_map_width="64"
     wang_map_height="64"
     limit_background_image="0"
-    audio_music_2="wandcave"
-    audio_ambience="temple"
+    audio_music_2="side_biome_action"
+    audio_ambience="cave"
   >
   
   <RandomMaterials>

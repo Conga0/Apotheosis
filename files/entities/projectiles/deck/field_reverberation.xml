@@ -50,7 +50,7 @@
 		</SpriteComponent>
 		
 		<LifetimeComponent
-			lifetime="90" >
+			lifetime="110" >
 		</LifetimeComponent>
 
 	<SpriteParticleEmitterComponent
@@ -172,7 +172,7 @@
     damage_min="1"
     damage_max="1"
     target_tag="mortal"
-	damage_description="Sound Waves"
+	damage_description="$damage_apotheosis_reverberation"
     damage_type="DAMAGE_SLICE"
     ragdoll_fx="NONE">
 	</DamageNearbyEntitiesComponent>
