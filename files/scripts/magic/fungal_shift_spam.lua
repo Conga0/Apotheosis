@@ -13,6 +13,7 @@ materials_from =
 	{ probability = 0.8, materials = { "meat" } },
 	{ probability = 0.6, materials = { "diamond" } },
 	{ probability = 0.6, materials = { "silver", "brass", "copper" } },
+	{ probability = 0.4, materials = { "apotheosis_cursed_liquid_red_static", "apotheosis_cursed_liquid_red" }, name_material = "apotheosis_cursed_liquid_red_static" },
 	{ probability = 0.4, materials = { "acid_gas", "acid_gas_static", "poison_gas", "fungal_gas", "radioactive_gas", "radioactive_gas_static" }, name_material = "acid_gas" },
 	{ probability = 0.4, materials = { "magic_liquid_polymorph", "magic_liquid_unstable_polymorph" }, name_material = "magic_liquid_polymorph" },
 	{ probability = 0.4, materials = { "magic_liquid_berserk", "magic_liquid_charm", "magic_liquid_invisibility" } },

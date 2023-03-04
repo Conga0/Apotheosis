@@ -190,20 +190,11 @@ do --Boosts Health of various creatures (THE_END)
     "star_child",
     "wizard_firemage_greater",
     "wraith_returner_apotheosis",
-  }
-
-  MultiplyHP("data/entities/animals/the_end/",enemy_list,multiplier,true)
-end
-
-do --Boosts Health of various creatures (THE_END)
-  local multiplier = 10.0
-  local enemy_list = {
     "poring_holy",
     "poring_devil",
   }
 
-  MultiplyHP("data/entities/animals/",enemy_list,multiplier,true)
-
+  MultiplyHP("data/entities/animals/the_end/",enemy_list,multiplier,true)
 end
 
 do

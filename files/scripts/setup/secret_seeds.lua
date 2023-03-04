@@ -45,7 +45,8 @@ function towerclimb()
     --Appends Tower Spawns to All new biomes
     local biomes = {
         "lava_excavation",       --Core Mines, Volcanic lava filled land in the desert with plenty of loot but plenty of death
-        "evil_temple",       --Temple of Sacriligious Remains
+        "evil_temple",           --Temple of Sacriligious Remains
+        "sunken_cave",           --Sunken Cavern, aquamages be ware!
     }
 
     for k=1,#biomes
@@ -67,6 +68,7 @@ end
 
 local input_seed = string.lower(ModSettingGet( "Apotheosis.custom_seed" ))
 local output_seed = "0"
+local custom_seed = false
 
 local secret_seeds = {
     {
@@ -82,6 +84,7 @@ do local v = secret_seeds[k]
     if (v.ID == input_seed) then
         input_seed = "0"
         v.func()
+        custom_seed = true
     end
 end
 
@@ -98,13 +101,14 @@ if output_seed ~= "0" and input_seed ~= "0" then
     local set_seed_xml = '<MagicNumbers WORLD_SEED="' .. output_seed .. '" _DEBUG_DONT_SAVE_MAGIC_NUMBERS="1"/>'
     ModTextFileSetContent("mods/apotheosis/scripts/setup/set_seed.xml", set_seed_xml)
     ModMagicNumbersFileAdd("mods/apotheosis/scripts/setup/set_seed.xml")
+    custom_seed = true
 end
 
 --Remind player they're on a custom seed
-function OnPlayerSpawned()
-    if output_seed ~= "0" and input_seed ~= "0" then
-        GamePrint("$sign_apotheosis_custom_seed" )
-        --GamePrint(ModSettingGet( "Apotheosis.custom_seed" ))
-    end
+if custom_seed == true then
+    function OnPlayerSpawned()
+            GamePrint("$sign_apotheosis_custom_seed" )
+            --GamePrint(ModSettingGet( "Apotheosis.custom_seed" ))
+     end
 end
 

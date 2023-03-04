@@ -48,7 +48,7 @@ table.insert(g_small_enemies,
     prob           = 0.1,
     min_count    = 1,
     max_count    = 1,    
-    entity     = "data/entities/animals/poring_devil.xml"
+    entity     = "data/entities/animals/the_end/poring_devil.xml"
 })
 
 table.insert(g_small_enemies,
@@ -70,7 +70,7 @@ table.insert(g_small_enemies_sky,
     prob           = 0.18,
     min_count    = 1,
     max_count    = 1,    
-    entity     = "data/entities/animals/poring_holy.xml"
+    entity     = "data/entities/animals/the_end/poring_holy.xml"
 })
 
 table.insert(g_small_enemies_sky,

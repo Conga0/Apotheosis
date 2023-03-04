@@ -122,7 +122,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/Apotheosis/files/projectiles/orb_fairy.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/orb_fairy.xml"
 		>
 	</VariableStorageComponent>
 </Entity>
