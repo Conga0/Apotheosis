@@ -10,6 +10,7 @@ Perks, Items, materials, structures, Secrets, and more!
 [img banner seperation here]
 
 Explore a massively expanded world map with smooth gameplay containing bug fixes, rebalances and optimisations.
+Alchemic Curiosities, Musical Wonders, you want it? we have!
 
 [gif of core mines here]
 
@@ -38,9 +39,11 @@ Discord Server (for discussion:
 This mod is compatiable with:
 Copi's Things
 Graham's Things
+More Stuff [Must disable More Stuff's custom biomemap]
 
 This mod is not compatiable with:
 Any and all biome map mods (noitavania, purgatory, more stuff, etc)
+Potentially NE as they override a whacky amount of files
 
 This mod already contains:
 More Musical Magic built in

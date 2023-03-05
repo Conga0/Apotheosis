@@ -1175,6 +1175,9 @@ local apotheosis_spellappends = {
         end,
     },
     ]]--
+    --Most of these material spells are bloat, it'd be better to have a bunch of one-off flasks with these relevent materials than a ton of spells dedicated to each one you'd only ever use maybe once.
+    --Slime & Whiskey are the most practical for people to use due to their alchemic reactions, assuming you know them...
+    --Hey, while you're here snooping as usual I see, have you ever tried mixing whiskey & soarium? Or was it concentrated mana and levitatium? I don't remember
     {
         id          = "APOTHEOSIS_MATERIAL_SLIME",
         name 		= "$spell_apotheosis_material_slime_name",
