@@ -795,3 +795,4 @@ end
 
 modify_existing_perk("CONTACT_DAMAGE", "ui_description", "$perk_apotheosis_contactdamage_description")
 modify_existing_perk("CONTACT_DAMAGE", "game_effect", "PROTECTION_MELEE")
+

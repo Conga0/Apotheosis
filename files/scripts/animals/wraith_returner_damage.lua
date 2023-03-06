@@ -12,7 +12,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local angle_inc = 0
 	local angle_inc_set = false
 	
-	local length = 400
+	local length = 600
 	
 	if ( entity_who_caused ~= nil ) and ( entity_who_caused ~= NULL_ENTITY ) then
 		local ex, ey = EntityGetTransform( entity_who_caused )

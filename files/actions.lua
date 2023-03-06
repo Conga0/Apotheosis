@@ -1192,6 +1192,7 @@ local apotheosis_spellappends = {
         sound_loop_tag = "sound_spray",
         action 		= function()
             add_projectile("mods/apotheosis/files/entities/projectiles/deck/material_slime.xml")
+			c.game_effect_entities = c.game_effect_entities .. "mods/apotheosis/files/entities/misc/effect_apply_slimy.xml,"
 			c.fire_rate_wait = c.fire_rate_wait - 15
             current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
         end,
@@ -1210,6 +1211,7 @@ local apotheosis_spellappends = {
         sound_loop_tag = "sound_spray",
         action 		= function()
             add_projectile("mods/apotheosis/files/entities/projectiles/deck/material_alcohol.xml")
+			c.game_effect_entities = c.game_effect_entities .. "mods/apotheosis/files/entities/misc/effect_apply_drunk.xml,"
 			c.fire_rate_wait = c.fire_rate_wait - 15
             current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
         end,
@@ -1421,6 +1423,10 @@ modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bol
 --I feel worried that I'm tinkering with the base game a bit too much here
 modify_existing_spell("REGENERATION_FIELD","spawn_level","1,2,3,4,10")
 modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.5")
+
+--Makes Giant Explosion Spells infinite use, they're extremely rare, conditional & mana hungry, so why make them limited use too? Seems a bit overkill for something that's just a slightly weaker holy bomb; plus material spell + gigaexplosion is a crazy fun spell combo
+modify_existing_spell("HITFX_EXPLOSION_ALCOHOL_GIGA","max_uses",-1)
+modify_existing_spell("HITFX_EXPLOSION_SLIME_GIGA","max_uses",-1)
 
 
 

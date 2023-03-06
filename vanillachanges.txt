@@ -19,6 +19,8 @@ Masters of Exchange no longer swap non-mortal entities (for example, cursed rock
 Low Recoil is replaced with No Recoil
 Pit Boss now has a projectile failsafe incase it spawns too many wands (over 1k with high boss health multipliers)
 Individual Enemies can now drop a maximum of 250k gold at any given time to prevent crashes in high NG+ runs (high NG+ runs usually become unplayable at a certain point otherwise if enemies start dying, flooding the screen with hundreds, sometimes thousands of gigantic physics objects)
+Giant Explosion on Drunk Enemies now has unlimited charges
+Giant Explosion on Slimy Enemies now has unlimited charges
 
 
 New Biome Modifiers:

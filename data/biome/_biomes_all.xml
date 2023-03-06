@@ -1154,4 +1154,10 @@
 		color="ffa01515" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/ant_hell_alchemyroom.xml"
+		height_index="13"
+		color="ffbcb137" >
+	</Biome>
+
 </BiomesToLoad>
