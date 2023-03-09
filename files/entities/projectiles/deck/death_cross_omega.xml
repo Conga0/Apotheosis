@@ -1,0 +1,207 @@
+<Entity 
+  name="$projectile_default" tags="projectile_player,death_cross"
+   >
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+    		gravity_y="0"
+			air_friction="0"
+			mass="0.08"
+			>
+    	</VelocityComponent> 
+	</Base>
+	
+	<HomingComponent
+		target_tag="prey"
+		homing_targeting_coeff="3"
+		detect_distance="350"
+		homing_velocity_multiplier="1.0"
+		>
+	</HomingComponent>
+
+  <ProjectileComponent 
+    _enabled="1" 
+	lob_min="0.8"
+  	lob_max="1.0"
+  	speed_min="0"
+  	speed_max="0"
+    die_on_low_velocity="0"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+	explosion_dont_damage_shooter="0"
+    damage="0.0"
+    on_collision_die="0"
+	bounces_left="20"
+    lifetime="80"
+	shoot_light_flash_r="35"
+    shoot_light_flash_g="210"
+    shoot_light_flash_b="255"
+    shoot_light_flash_radius="90"
+	knockback_force="1.6"
+	damage_every_x_frames="5"
+	>
+    <config_explosion
+      never_cache="1" 
+      camera_shake="90" 
+      explosion_radius="42" 
+      explosion_sprite="data/particles/explosion_032_pink.xml"
+      explosion_sprite_lifetime="0"
+	    load_this_entity="mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_explosion.xml"
+      create_cell_probability="40" 
+      cell_explosion_power_ragdoll_coeff="0.5"
+      hole_destroy_liquid="0"
+      explosion_sprite_additive="1"
+      hole_enabled="1" 
+      ray_energy="6200000"
+      damage="5.2"
+      particle_effect="1" 
+      damage_mortals="1"
+      physics_explosion_power.min="1.0" 
+      physics_explosion_power.max="1.4"
+      physics_throw_enabled="1"
+      shake_vegetation="1" 
+      sparks_count_max="50" 
+      sparks_count_min="30" 
+	    spark_material="spark_purple_bright"
+      sparks_enabled="1" 
+      stains_enabled="1" 
+      stains_radius="20"
+      audio_event_name="explosions/magic_rocket_big" >
+    </config_explosion>
+  </ProjectileComponent>
+  
+  <SpriteComponent 
+    _enabled="0" 
+    alpha="1" 
+    image_file="data/projectiles_gfx/glow.xml" 
+    next_rect_animation="" 
+    offset_x="32" 
+    offset_y="32" 
+    rect_animation="fireball" 
+    additive="1"
+	update_transform_rotation="0"
+	>
+  </SpriteComponent>
+  
+  <LightComponent 
+    _enabled="1" 
+    radius="250" 
+    r="180"
+    g="255"
+    b="40">
+  </LightComponent>
+  
+  <!-- Large Cross -->
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_purple"
+    offset.x="-1"
+    offset.y="0"
+    x_pos_offset_min="-2"
+    x_pos_offset_max="2"
+    y_pos_offset_min="-2"
+    y_pos_offset_max="2"
+    x_vel_min="-120"
+    x_vel_max="120"
+    y_vel_min="0"
+    y_vel_max="0"
+	gravity.y="0"
+    count_min="14"
+    count_max="19"
+    lifetime_min="0.3"
+    lifetime_max="2.6"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+	fade_based_on_lifetime="1"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+  
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_purple"
+    offset.x="-1"
+    offset.y="0"
+    x_pos_offset_min="-2"
+    x_pos_offset_max="2"
+    y_pos_offset_min="-2"
+    y_pos_offset_max="2"
+    x_vel_min="0"
+    x_vel_max="0"
+    y_vel_min="-120"
+    y_vel_max="120"
+	gravity.y="0"
+    count_min="14"
+    count_max="19"
+    lifetime_min="0.3"
+    lifetime_max="2.6"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+	fade_based_on_lifetime="1"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <!-- Small Cross -->
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_purple"
+    offset.x="-1"
+    offset.y="0"
+    x_pos_offset_min="-1"
+    y_pos_offset_min="-1"
+    x_pos_offset_max="1"
+    y_pos_offset_max="1"
+    x_vel_min="-120"
+    x_vel_max="120"
+    y_vel_min="0"
+    y_vel_max="0"
+	gravity.y="0"
+    count_min="5"
+    count_max="9"
+    lifetime_min="0.3"
+    lifetime_max="2.6"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+	fade_based_on_lifetime="1"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+  
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_purple"
+    offset.x="-1"
+    offset.y="0"
+    x_pos_offset_min="-1"
+    y_pos_offset_min="-1"
+    x_pos_offset_max="1"
+    y_pos_offset_max="1"
+    x_vel_min="0"
+    x_vel_max="0"
+    y_vel_min="-120"
+    y_vel_max="120"
+	gravity.y="0"
+    count_min="5"
+    count_max="9"
+    lifetime_min="0.3"
+    lifetime_max="2.6"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+	fade_based_on_lifetime="1"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+  
+  <AudioComponent
+      file="data/audio/Desktop/projectiles.bank"
+      event_root="player_projectiles/death_cross_big">
+  </AudioComponent>
+  
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"
+		>
+	</VariableStorageComponent>
+</Entity>

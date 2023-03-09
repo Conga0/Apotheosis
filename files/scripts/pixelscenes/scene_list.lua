@@ -364,6 +364,30 @@ ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 
 
+--Music Altar above the tree
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-1580" pos_y="-2200" skip_biome_checks="1" skip_edge_textures="0"
+    material_filename="mods/Apotheosis/files/biome_impl/musicspot.png"
+    background_filename=""
+    colors_filename="mods/Apotheosis/files/biome_impl/musicspot_visual.png"
+  ></PixelScene>
+]]))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+--offset from pixelscene by:
+-- x +80
+-- y +80
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="-1500" pos_y="-2120" just_load_an_entity="mods/Apotheosis/files/entities/buildings/musichints/hint_tree.xml" />
+]]))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+
+
 --Alchemy Notes in Ant Hell
 local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)

@@ -31,8 +31,8 @@
         
         <SpriteComponent 
             image_file="mods/Apotheosis/files/enemies_gfx/poring_magic.xml"
-            offset_x="14" 
-            offset_y="20" >
+            offset_x="0" 
+            offset_y="0" >
         </SpriteComponent>
 
         <DamageModelComponent

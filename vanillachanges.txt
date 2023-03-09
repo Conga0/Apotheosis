@@ -8,12 +8,14 @@ Contact Damage now grants melee immunity
 Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with you for too long
 Arrow Now longer has increased recoil
 Relocated Friend Cave 1 & 2
+Relocated Eye Room
 Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
 Wandstone now lets you tinker while in your inventory
 Parrallel worlds are now harder to break into
 Kantele Bomb Song is fixed
 Chainsaw now costs 12 mana
 Giga Death Cross now does much, much more damage
+Giga Death Cross now uses green wand particles instead of blue
 Weakening Curses now cause a target to take double damage instead of a flat 25% vulnerability against a certain damage type, the concept is in late game Noita, it's very easy to put projectile or explosive weakening curse on a wand and ignore all damage resistances enemies has, it doesn't force you to build wands outside of your comfort zone for certain environments and I feel it restricts wand creativity by allowing you, borderline making the best strategy to stick to one damage type, rather than needing to mix it up for endgame areas of the game. This change should also hopefully make weakening curses significantly more impactful in normal builds for optimising damage output than simply being a means to bypass damage resistances with little gain to overall damage output
 Masters of Exchange no longer swap non-mortal entities (for example, cursed rock damage fields)
 Low Recoil is replaced with No Recoil

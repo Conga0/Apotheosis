@@ -1,6 +1,7 @@
 local apotheosis_spellappends = {
     {
         id          = "APOTHEOSIS_SAWBLADE_BIG_RAY",
+        id_matchup  = "LASER_EMITTER_RAY",
         name 		= "$spell_apotheosis_thrower_disc_name",
         description = "$spell_apotheosis_thrower_disc_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray.png",
@@ -20,6 +21,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_CURSED_ORB_RAY",
+        id_matchup  = "APOTHEOSIS_SAWBLADE_BIG_RAY",
         name 		= "$spell_apotheosis_thrower_cursed_orb_name",
         description = "$spell_apotheosis_thrower_cursed_orb_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray.png",
@@ -39,6 +41,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY",
+        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY",
         name 		= "$spell_apotheosis_thrower_tnt_name",
         description = "$spell_apotheosis_thrower_tnt_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray.png",
@@ -58,6 +61,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_ICEBALL_RAY",
+        id_matchup  = "APOTHEOSIS_DYNAMITE_RAY",
         name 		= "$spell_apotheosis_thrower_ice_ball_name",
         description = "$spell_apotheosis_thrower_ice_ball_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray.png",
@@ -77,6 +81,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_NUKE_RAY",
+        id_matchup  = "APOTHEOSIS_ICEBALL_RAY",
         name 		= "$spell_apotheosis_thrower_nuke_name",
         description = "$spell_apotheosis_thrower_nuke_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray.png",
@@ -96,6 +101,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_SAWBLADE_BIG_RAY_ENEMY",
+        id_matchup  = "TENTACLE_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_disc_enemy_name",
         description = "$spell_apotheosis_thrower_disc_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray_enemy.png",
@@ -115,6 +121,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
+        id_matchup  = "APOTHEOSIS_SAWBLADE_BIG_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_cursed_orb_enemy_name",
         description = "$spell_apotheosis_thrower_cursed_orb_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray_enemy.png",
@@ -134,6 +141,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
+        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_tnt_enemy_name",
         description = "$spell_apotheosis_thrower_tnt_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray_enemy.png",
@@ -153,6 +161,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
+        id_matchup  = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_ice_ball_enemy_name",
         description = "$spell_apotheosis_thrower_ice_ball_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray_enemy.png",
@@ -172,6 +181,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_NUKE_RAY_ENEMY",
+        id_matchup  = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_nuke_enemy_name",
         description = "$spell_apotheosis_thrower_nuke_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray_enemy.png",
@@ -191,6 +201,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HOLYORB_SHOTGUN",
+        id_matchup  = "LANCE",
         name 		= "$spell_apotheosis_holy_orb_barrage_name",
         description = "$spell_apotheosis_holy_orb_barrage_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
@@ -217,6 +228,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_BOMB_GIGA",
+        id_matchup  = "BOMB",
         name 		= "$spell_apotheosis_giga_bomb_name",
         description = "$spell_apotheosis_giga_bomb_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bomb_giga.png",
@@ -372,6 +384,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_BUNGAL_SHIFT_SPAM",
+        id_matchup  = "APOTHEOSIS_BUNGAL_SHIFT",
         name 		= "$spell_apotheosis_bungal_shift_hyper_name",
         description = "$spell_apotheosis_bungal_shift_hyper_desc", --Triggers a fungal shift, no cooldown.
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bungal_shift_spam.png",
@@ -392,6 +405,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_RAT_BITE_CRIT",
+        id_matchup  = "APOTHEOSIS_RAT_BITE",
         name 		= "$spell_apotheosis_bite_crit_name",
         description = "$spell_apotheosis_bite_crit_desc", --Converted Rat Bite, Big Crit chance.
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/rat_bite_crit.png",
@@ -410,56 +424,15 @@ local apotheosis_spellappends = {
         end,
     },
     {
-        id          = "APOTHEOSIS_MASS_BURROW",
-        name 		= "$spell_apotheosis_mass_burrow_name",
-        description = "$spell_apotheosis_mass_burrow_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_burrow.png",
-        sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
-        related_projectiles	= {"data/entities/projectiles/remove_ground.xml"},
-        spawn_requires_flag = "apotheosis_card_unlocked_boss_toxic_worm_spell",
-        never_unlimited		= true,
-        type 		= ACTION_TYPE_STATIC_PROJECTILE,
-        spawn_level                       = "10", -- Conversion spell
-        spawn_probability                 = "0.01", -- Conversion spell
-        price = 300,
-        max_uses    = 2, 
-        mana = 225, 
-        action 		= function()
-            add_projectile("data/entities/projectiles/remove_ground.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 100
-            current_reload_time = current_reload_time + 60
-        end,
-    },
-    {
-        id          = "APOTHEOSIS_MASS_DRY",
-        name 		= "$spell_apotheosis_status_dry_name",
-        description = "$spell_apotheosis_status_dry_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_dry.png",
-        sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
-        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml"},
-        spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
-        never_unlimited		= true,
-        type 		= ACTION_TYPE_UTILITY,
-        spawn_level                       = "10", -- Conversion spell
-        spawn_probability                 = "0.01", -- Conversion spell
-        price = 180,
-        max_uses    = 20,
-        mana = 100,
-        action 		= function()
-            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 100
-            current_reload_time = current_reload_time + 1800
-        end,
-    },
-    {
         id          = "APOTHEOSIS_SPELLS_TO_CATS",
+        id_matchup  = "ALL_ACID",
         name 		= "$spell_apotheosis_spells_to_sorako_name",
         description = "$spell_apotheosis_spells_to_sorako_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cats.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spells_to_cats.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_cat_secret_spell",
-        type 		= ACTION_TYPE_PROJECTILE,
+        type 		= ACTION_TYPE_UTILITY,
         spawn_level                       = "3,6,10", -- spells to Cats
         spawn_probability                 = "0.1,0.05,1", -- spells to Cats
         price = 600,
@@ -690,6 +663,7 @@ local apotheosis_spellappends = {
     --I do want a spell which lets me do fire damage though.. so...
     {
         id          = "APOTHEOSIS_FIRE_CHARGE",
+        id_matchup  = "FREEZE",
         name 		= "$spell_apotheosis_firecharge_name",
         description = "$spell_apotheosis_firecharge_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/fire_charge.png",
@@ -816,6 +790,7 @@ local apotheosis_spellappends = {
 
     {
         id          = "APOTHEOSIS_SPELLS_TO_CURSOR",
+        id_matchup  = "APOTHEOSIS_SPELLS_TO_CATS",
         name 		= "$spell_apotheosis_spells_to_cursor_name",
         description = "$spell_apotheosis_spells_to_cursor_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cursor.png",
@@ -835,6 +810,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
+        id_matchup  = "APOTHEOSIS_MASS_STATUS_POLYMORPH",
         name 		= "$spell_apotheosis_status_polymorph_intense_name",
         description = "$spell_apotheosis_status_polymorph_intense_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_intense_polymorph.png",
@@ -851,6 +827,50 @@ local apotheosis_spellappends = {
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_polymorph_intense.xml")
             c.fire_rate_wait = c.fire_rate_wait + 100
             current_reload_time = current_reload_time + 60
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_MASS_BURROW",
+        id_matchup  = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
+        name 		= "$spell_apotheosis_mass_burrow_name",
+        description = "$spell_apotheosis_mass_burrow_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_burrow.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+        related_projectiles	= {"data/entities/projectiles/remove_ground.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_boss_toxic_worm_spell",
+        never_unlimited		= true,
+        type 		= ACTION_TYPE_STATIC_PROJECTILE,
+        spawn_level                       = "10", -- Conversion spell
+        spawn_probability                 = "0.01", -- Conversion spell
+        price = 300,
+        max_uses    = 2, 
+        mana = 225, 
+        action 		= function()
+            add_projectile("data/entities/projectiles/remove_ground.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 100
+            current_reload_time = current_reload_time + 60
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_MASS_DRY",
+        id_matchup  = "APOTHEOSIS_MASS_BURROW",
+        name 		= "$spell_apotheosis_status_dry_name",
+        description = "$spell_apotheosis_status_dry_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_dry.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/chainsaw_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",
+        never_unlimited		= true,
+        type 		= ACTION_TYPE_UTILITY,
+        spawn_level                       = "10", -- Conversion spell
+        spawn_probability                 = "0.01", -- Conversion spell
+        price = 180,
+        max_uses    = 20,
+        mana = 100,
+        action 		= function()
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 100
+            current_reload_time = current_reload_time + 1800
         end,
     },
     {
@@ -931,6 +951,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_ALT_FIRE_COV",
+        id_matchup  = "APOTHEOSIS_ALT_FIRE_SWAPPER",
         name 		= "$spell_apotheosis_alt_fire_cov_name",
         description = "$spell_apotheosis_alt_fire_cov_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_cov_projectile.png",
@@ -980,6 +1001,7 @@ local apotheosis_spellappends = {
 
     {
         id          = "APOTHEOSIS_HITFX_CRITICAL_DRUNK",
+        id_matchup  = "HITFX_CRITICAL_BLOOD",
         name 		= "$spell_apotheosis_critical_drunk_name",
         description = "$spell_apotheosis_critical_drunk_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/critical_drunk.png",
@@ -1071,8 +1093,8 @@ local apotheosis_spellappends = {
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml" },
         spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
         type 		= ACTION_TYPE_MODIFIER,
-        spawn_level       = "0,1,2,3,4,5,6", -- X_RAY
-        spawn_probability = "0.8,1,1,0.8,0.6,0.4,0.2", -- X_RAY
+        spawn_level       = "1,2,3,4,5,6", -- Material Hex
+        spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- Material Hex
         price = 40,
         mana = 30,
         --max_uses = 16,
@@ -1090,8 +1112,8 @@ local apotheosis_spellappends = {
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_oil.xml" },
         spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
         type 		= ACTION_TYPE_MODIFIER,
-        spawn_level       = "1,2,3,4,5,6", -- X_RAY
-        spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- X_RAY
+        spawn_level       = "1,2,3,4,5,6", -- Material Hex
+        spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- Material Hex
         price = 40,
         mana = 30,
         --max_uses = 16,
@@ -1109,8 +1131,8 @@ local apotheosis_spellappends = {
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_hex_blood.xml" },
         spawn_requires_flag = "apotheosis_card_unlocked_orb_14_spell",  --Sunken Cavern
         type 		= ACTION_TYPE_MODIFIER,
-        spawn_level       = "1,2,3,4,5,6", -- X_RAY
-        spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- X_RAY
+        spawn_level       = "1,2,3,4,5,6", -- Material Hex
+        spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- Material Hex
         price = 40,
         mana = 30,
         --max_uses = 16,
@@ -1121,6 +1143,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MIST_ATTUNIUM",
+        id_matchup  = "MIST_BLOOD",
         name 		= "$spell_apotheosis_mist_attunium_name",
         description = "$spell_apotheosis_mist_attunium_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mist_attunium.png",
@@ -1139,6 +1162,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HOMING_DELAYED",
+        id_matchup  = "HOMING_AREA",
         name 		= "$spell_apotheosis_homing_delayed_name",
         description = "$spell_apotheosis_homing_delayed_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/homing_delayed.png",
@@ -1180,6 +1204,7 @@ local apotheosis_spellappends = {
     --Hey, while you're here snooping as usual I see, have you ever tried mixing whiskey & soarium? Or was it concentrated mana and levitatium? I don't remember
     {
         id          = "APOTHEOSIS_MATERIAL_SLIME",
+        id_matchup  = "MATERIAL_CEMENT",
         name 		= "$spell_apotheosis_material_slime_name",
         description = "$spell_apotheosis_material_slime_desc",
         sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/material_slime.png",
@@ -1199,6 +1224,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MATERIAL_ALCOHOL",
+        id_matchup  = "APOTHEOSIS_MATERIAL_SLIME",
         name 		= "$spell_apotheosis_material_alcohol_name",
         description = "$spell_apotheosis_material_alcohol_desc",
         sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/material_alcohol.png",
@@ -1272,18 +1298,55 @@ local apotheosis_spellappends = {
         end,
     },
     ]]--
-    --TODO
-    --All of these material spells should spawn in a special place.. take inspiration from the lake bunker
-    --Check DM Notes
+    --Note (Conga): Omega Death Cross should spawn in a special place after a questline, similar to how Giga Nuke and Omega Sawblade does
+	{
+		id          = "APOTHEOSIS_DEATH_CROSS_OMEGA",
+        id_matchup  = "DEATH_CROSS_BIG",
+        name 		= "$spell_apotheosis_death_cross_omega_name",
+        description = "$spell_apotheosis_death_cross_omega_desc",
+        sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/death_cross_omega.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/death_cross_unidentified.png",
+		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "2,3,5,10", -- DISC_BULLET_BIGGER
+		spawn_probability                 = "0.1,0.6,1.0,0.1", -- DISC_BULLET_BIGGER
+		price = 310,
+		mana = 150,
+		max_uses = 8,
+		custom_xml_file = "mods/apotheosis/files/entities/misc/custom_cards/death_cross_omega.xml",
+		action 		= function()
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 70
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
+		end,
+	},
 }
 
-
-
-for k=1,#apotheosis_spellappends
-do local v = apotheosis_spellappends[k]
-    table.insert(actions,v)
+if ModSettingGet( "Apotheosis.organised_icons" ) == true then
+    for k=1,#apotheosis_spellappends
+    do local v = apotheosis_spellappends[k]
+        if v.id_matchup == nil then
+            table.insert(actions,v)
+        else
+            for z=1,#actions
+            do c = actions[z]
+                if c.id == v.id_matchup then
+                    table.insert(actions,z + 1,v)
+                    break
+                end
+                if z == #actions then
+                    --Insert here as a failsafe incase the matchup ID can't be found.. some other mod might delete the spell we're trying to insert at
+                    table.insert(actions,v)
+                end
+            end
+        end
+    end
+else
+    for k=1,#apotheosis_spellappends
+    do local v = apotheosis_spellappends[k]
+        table.insert(actions,v)
+    end
 end
-
 
 
 
@@ -1429,6 +1492,9 @@ modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,
 --Makes Giant Explosion Spells infinite use, they're extremely rare, conditional & mana hungry, so why make them limited use too? Seems a bit overkill for something that's just a slightly weaker holy bomb; plus material spell + gigaexplosion is a crazy fun spell combo
 modify_existing_spell("HITFX_EXPLOSION_ALCOHOL_GIGA","max_uses",-1)
 modify_existing_spell("HITFX_EXPLOSION_SLIME_GIGA","max_uses",-1)
+
+--Fix Giga Death Cross to use green sparks instead of blue ones
+modify_existing_spell("DEATH_CROSS_BIG","custom_xml_file","mods/apotheosis/files/entities/misc/custom_cards/death_cross_big.xml")
 
 
 

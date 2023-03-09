@@ -52,7 +52,7 @@ if ( state == 1 ) then
 		local vel_x = math.cos( angle ) * 100
 		local vel_y = 0 - math.cos( angle ) * 100
 		
-		local spells = { "deck/rocket_tier_2", "deck/grenade_tier_2", "deck/grenade_tier_3", "deck/glue_shot", "thunderball", "deck/fireworks/firework_blue" }
+		local spells = { "deck/rocket_tier_2", "deck/grenade_tier_2", "deck/grenade_tier_3", "orb_expanding", "thunderball", "deck/fireworks/firework_blue" }
 		local rnd = Random( 1, #spells )
 		local path = "data/entities/projectiles/" .. spells[rnd] .. ".xml"
 		
@@ -68,17 +68,23 @@ if ( state == 1 ) then
 			target_tag = "player_unit",
 		} )
 		
-		if ( string.find( path, "rocket" ) ~= nil ) then
+		if spells[rnd] == "deck/rocket_tier_2" then
 			EntityAddComponent( wid, "VariableStorageComponent", 
 			{ 
 				name = "mult",
 				value_float = 0.5,
 			} )
-		elseif( string.find( path, "thunderball" ) ~= nil ) then
+		elseif spells[rnd] == "thunderball" then
 			EntityAddComponent( wid, "VariableStorageComponent", 
 			{ 
 				name = "mult",
 				value_float = 0.6,
+			} )
+		elseif spells[rnd] == "orb_expanding" then
+			EntityAddComponent( wid, "VariableStorageComponent", 
+			{ 
+				name = "mult",
+				value_float = 0.3,
 			} )
 		else
 			EntityAddComponent( wid, "VariableStorageComponent", 

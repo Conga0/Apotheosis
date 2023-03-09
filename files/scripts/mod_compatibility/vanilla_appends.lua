@@ -417,3 +417,23 @@ do -- Buffs ants to have a faster moving & longer range acid spit
   content = content:gsub("data/entities/projectiles/acidburst.xml", "mods/apotheosis/files/entities/projectiles/ant_acidburst.xml")
   ModTextFileSetContent(path, content)
 end
+
+do -- gsub new wizards into Master of Master's spawn table
+  local path = "data/entities/animals/boss_wizard/spawn_wizard.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[local opts = { "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }]], [[local opts = { "wizard_ambrosia", "wizard_duck", "wizard_jackofalltrades", "wizard_manaeater", "wizard_transmutation", "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }
+
+  if ModIsEnabled("new_enemies") then
+    opts = { "wizard_random", "wizard_time", "wizard_toxic", "wizard_trip", "wizard_earthquake", "wizard_water", "wizard_ambrosia", "wizard_duck", "wizard_jackofalltrades", "wizard_manaeater", "wizard_transmutation", "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }
+  else
+    opts = { "wizard_ambrosia", "wizard_duck", "wizard_jackofalltrades", "wizard_manaeater", "wizard_transmutation", "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }
+  end]])
+  ModTextFileSetContent(path, content)
+end
+
+do -- Fixes Hourglass portal leading to the wrong x,y coordinates in the new world map
+  local path = "data/entities/buildings/teleport_hourglass.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("5420", "4908")
+  ModTextFileSetContent(path, content)
+end

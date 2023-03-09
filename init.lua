@@ -1,6 +1,6 @@
 dofile("data/scripts/lib/utilities.lua")
 
-local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
+--local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
 local modCompatibilitySpellEvolutions = ModSettingGet( "Apotheosis.mod_compat_mode_spell_evolution" )
 local motdSetting = ModSettingGet( "Apotheosis.motd_setting" )
 local seasonalSetting = ModSettingGet( "Apotheosis.seasonal_events" )
@@ -58,11 +58,7 @@ end
 
 
 -- If Conjurer is enabled, disable this for a fix.
-if modCompatibilityConjurer == true then
-  if ModIsEnabled("raksa") == false then
-    dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
-  end
-else
+if ModIsEnabled("raksa") == false then
   dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
 end
 
@@ -417,8 +413,8 @@ spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_desc,"Right click to fire a swapper bolt for 10 mana",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_desc,"Right click to cast a Circle of Vigour for 80 mana",,,,,,,,,,,,,
-spell_apotheosis_alt_fire_alpha_name,"Alt Fire Alpha",,,,,,,,,,,,,
-spell_apotheosis_alt_fire_alpha_desc,"Right click to cast a copy of the first spell in your wand for 40 mana",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_alpha_name,"Alt Fire Alpha",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_alt_fire_alpha_desc,"Right click to cast a copy of the first spell in your wand for 40 mana",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_critical_drunk_name,"Critical on Drunk",,,,,,,,,,,,,
 spell_apotheosis_critical_drunk_desc,"Make a projectile always do a critical hit on drunk enemies",,,,,,,,,,,,,
 spell_apotheosis_affluence_name,"Affluence",,,,,,,,,,,,,
@@ -447,6 +443,8 @@ spell_apotheosis_material_copper_name,"Copper",,,,,,,,,,,,,
 spell_apotheosis_material_copper_desc,"Transmute grains of copper out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_fungi_name,"Fungus",,,,,,,,,,,,,
 spell_apotheosis_material_fungi_desc,"Transmute sprouts of fungus out of nothing!",,,,,,,,,,,,,
+spell_apotheosis_death_cross_omega_name,"Omega Death Cross",,,,,,,,,,,,,
+spell_apotheosis_death_cross_omega_desc,"A violent, giant, deadly energy cross that explodes after a short time",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Target hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_explosion,Target hit by a projectile takes 100% extra explosion damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от взрывов,O alvo atingido por um projétil recebe mais 100% de dano de explosão por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de explosiones durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Explosionsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des explosions pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da esplosione in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od wybuchów,被投射物击中的目标短时间内会受到额外的 100% 爆炸伤害,放射物が当たったターゲットが一定期間100%の追加の爆破ダメージを受ける,일정 시간 동안 폭발이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_melee,Target hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -736,22 +734,7 @@ ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apothe
 
 --Spawns all the above spawns in a single file and appends to pixel scenes to prevent double spawning
 -- If Conjurer is enabled, disable this for a fix.
-if modCompatibilityConjurer == true then
-  if ModIsEnabled("raksa") == false then
-    if ModIsEnabled("purgatory") then
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/boss_spawn_list.lua" )
-      --dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/boss_spawn_list_NGPLUS.lua" )
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/blob_cave_spawn_list.lua" )
-      --dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/blob_cave_spawn_list_NGPlus.lua" )
-    elseif ModIsEnabled("noitavania") then
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list_noitavania.lua" )
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list_noitavania.lua" )
-    else
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua" )
-      dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua" )
-    end
-  end
-else
+if ModIsEnabled("raksa") == false then
   if ModIsEnabled("purgatory") then
     dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/boss_spawn_list.lua" )
     --dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/boss_spawn_list_NGPLUS.lua" )
@@ -762,9 +745,7 @@ else
     dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list_noitavania.lua" )
   else
     dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua" )
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list_NGPLUS.lua" )
     dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua" )
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list_NGPlus.lua" )
   end
 end
 
