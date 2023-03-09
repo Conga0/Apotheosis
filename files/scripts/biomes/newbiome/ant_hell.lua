@@ -13,6 +13,7 @@ RegisterSpawnFunction( 0xff2FC6EC, "spawn_alchemy_secret_entry" )
 RegisterSpawnFunction( 0xff8EF1B3, "spawn_alchemy_secret_entry_book" )
 RegisterSpawnFunction( 0xffB0742E, "spawn_enemy_clear_256" )
 RegisterSpawnFunction( 0xff15a43a, "spawn_potions" )
+RegisterSpawnFunction( 0xffd9aa2d, "spawn_eggs" )
 
 g_small_enemies =
 {
@@ -42,6 +43,24 @@ g_small_enemies =
 		min_count	= 1,
 		max_count	= 3,    
 		entity 	= "data/entities/animals/ant_suffocate.xml"
+	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/fly.xml"
+	},
+	{
+		prob   		= 0.05,
+		min_count	= 2,
+		max_count	= 4,    
+		entity 	= "data/entities/animals/rat.xml"
+	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/zombie.xml"
 	},
 }
 
@@ -417,4 +436,11 @@ end
 
 function spawn_potions(x, y)
 	EntityLoad("data/entities/items/pickup/potion.xml", x, y)
+end
+
+function spawn_eggs(x, y)
+	SetRandomSeed(x+y, x*y)
+	if Random(1,2) == 1 then
+		EntityLoad("data/entities/buildings/apotheosis_ant_eggs.xml", x, y)
+	end
 end

@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT" >
+<Entity name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT" >
 		
 	<AnimalAIComponent
 		creature_detection_range_x="600"
@@ -474,8 +474,8 @@
 	<!-- Maybe just remove the infiltration part of this effect and keep the ambrosia removal? -->
 	<LuaComponent
 		_tags="invincible"
-		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_ambrosia_corruption.lua"
-		execute_every_n_frame="1200"
+		script_damage_about_to_be_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_dmg_limit_2_percent.lua"
+		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
 	

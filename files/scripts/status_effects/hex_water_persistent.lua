@@ -6,6 +6,6 @@ if effectTest >= 1 then
     if EntityHasTag(entity_id,"player_unit") then
         EntityInflictDamage( entity_id, 0.030, "DAMAGE_CURSE", "$status_apotheosis_hex_water_name", "NONE", 0, 0, 0 )
     else
-        EntityInflictDamage( entity_id, 0.216, "DAMAGE_CURSE", "$status_apotheosis_hex_water_name", "NONE", 0, 0, 0 )
+        EntityInflictDamage( entity_id, 0.108, "DAMAGE_CURSE", "$status_apotheosis_hex_water_name", "NONE", 0, 0, 0 )
     end
 end

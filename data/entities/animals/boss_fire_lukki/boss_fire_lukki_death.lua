@@ -29,6 +29,9 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		GameAddFlagRun( "apotheosis_miniboss_boss_fire_lukki" )
 		AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki" )
 		AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki_spell" )
+		if GameHasFlagRun("apotheosis_hardmode") then
+			AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki_goldmode" )
+		end
 	end
 	
 	--StatsLogPlayerKill( entity_id )

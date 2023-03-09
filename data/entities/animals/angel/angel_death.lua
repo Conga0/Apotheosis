@@ -46,6 +46,9 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	if ModIsEnabled("raksa") == false then
 		AddFlagPersistent( "apotheosis_card_unlocked_divinebeing" )
 		AddFlagPersistent( "apotheosis_card_unlocked_divinebeing_spell" )
+		if GameHasFlagRun("apotheosis_hardmode") then
+			AddFlagPersistent( "apotheosis_card_unlocked_divinebeing_goldmode" )
+		end
 	end
 	
 	--StatsLogPlayerKill( entity_id )

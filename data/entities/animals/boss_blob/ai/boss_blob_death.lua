@@ -49,6 +49,9 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
             if ModIsEnabled("raksa") == false then
                 AddFlagPersistent( "apotheosis_card_unlocked_blob_boss" )
                 AddFlagPersistent( "apotheosis_card_unlocked_blob_boss_spell" )
+                if GameHasFlagRun("apotheosis_hardmode") then
+                    AddFlagPersistent( "apotheosis_card_unlocked_blob_boss_goldmode" )
+                end
             end
             GameAddFlagRun( "apotheosis_blob_boss_slain" )
         end

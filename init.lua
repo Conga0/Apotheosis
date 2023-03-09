@@ -42,6 +42,7 @@ do
     "cat_secret",
     "orb_12",
     "orb_14",
+    "lost_alchemy",
   }) do
     local progressflag = "apotheosis_card_unlocked_" .. entry
     if HasFlagPersistent( progressflag ) then
@@ -51,7 +52,6 @@ do
     end
   end
 end
-
 
 
 
@@ -373,7 +373,7 @@ biome_lava_excavation,"Core Mines",,,,,,,,,,,,,
 biome_abyssal_depths,"Forgotten Depths",,,,,,,,,,,,,
 biome_mueseum,"Marble Halls",,,,,,,,,,,,,
 biome_ant_hell,"Ant Nest",,,,,,,,,,,,,
-biomemod_esoteric_presence,"You feel an undescribable aura to the area...",,,,,,,,,,,,,
+biomemod_esoteric_presence,"You feel an undescribable aura...",,,,,,,,,,,,,
 biomemod_magmatic,"The air is burning",,,,,,,,,,,,,
 biomemod_necromancy,"The Dead are Restless",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,

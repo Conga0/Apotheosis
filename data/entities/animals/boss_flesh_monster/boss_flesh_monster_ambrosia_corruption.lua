@@ -1,4 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local p = EntityGetWithTag( "player_unit" )

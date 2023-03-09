@@ -1314,6 +1314,7 @@ function modify_existing_spell(spell_id, parameter_to_modify, new_value)
 end
 
 --CoV can no longer be used by greek letters/splitshot
+--[[
 modify_existing_spell(
 	"REGENERATION_FIELD",
 	"action",
@@ -1337,6 +1338,7 @@ modify_existing_spell(
         c.spread_degrees = c.spread_degrees + 2.0
     end
 )
+]]--
 
 --Arrow doesn't have increased knockback
 --This spell is secretly kinda god-tier once you realise it gains damage from speed.. hmm
@@ -1360,12 +1362,12 @@ modify_existing_spell("MEGALASER", "mana", 80)
 --Spitter Bolt Tier 2 & 3 becomes cheaper
 modify_existing_spell("SPITTER_TIER_2","mana",10)
 
-modify_existing_spell("SPITTER_TIER_2_TIMER","mana",20)
+modify_existing_spell("SPITTER_TIER_2_TIMER","mana",15)
 
 --Spitter Bolt Tier 2 & 3 becomes cheaper
-modify_existing_spell("SPITTER_TIER_3","mana",20)
+modify_existing_spell("SPITTER_TIER_3","mana",15)
 
-modify_existing_spell("SPITTER_TIER_3_TIMER","mana",30)
+modify_existing_spell("SPITTER_TIER_3_TIMER","mana",20)
 
 --Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
 modify_existing_spell("ACCELERATING_SHOT","spawn_level","1,2,3,4,5")
@@ -1417,12 +1419,12 @@ modify_existing_spell(
 )
 
 --Fix Healing Bolt & Circle of Vigour to have updated spell descriptions
-modify_existing_spell("REGENERATION_FIELD","description","$spell_apotheosis_cov_desc")
-modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bolt_desc")
+--modify_existing_spell("REGENERATION_FIELD","description","$spell_apotheosis_cov_desc")
+--modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bolt_desc")
 
 --I feel worried that I'm tinkering with the base game a bit too much here
 modify_existing_spell("REGENERATION_FIELD","spawn_level","1,2,3,4,10")
-modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.5")
+modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.1")
 
 --Makes Giant Explosion Spells infinite use, they're extremely rare, conditional & mana hungry, so why make them limited use too? Seems a bit overkill for something that's just a slightly weaker holy bomb; plus material spell + gigaexplosion is a crazy fun spell combo
 modify_existing_spell("HITFX_EXPLOSION_ALCOHOL_GIGA","max_uses",-1)

@@ -409,6 +409,7 @@
 	</LuaComponent>
 
 	<!-- Death Reward, only applies to phase 2 -->
+	<!-- script_damage_about_to_be_received="data/entities/animals/boss_fire_lukki/boss_fire_lukki_dmg_limit_20_percent.lua" -->
 	<LuaComponent
 		_tags="death_reward"
 		script_death="data/entities/animals/boss_fire_lukki/boss_fire_lukki_death.lua"

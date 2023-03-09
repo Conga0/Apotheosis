@@ -125,6 +125,8 @@ ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire
 
 dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
+--Moved over to hardmode seed
+
 do --Boosts Health of various creatures
   local multiplier = 2.0
   local enemy_list = {
@@ -340,10 +342,10 @@ do -- Fix Swapper Projectiles stretching weirdly (only horizontal instead of all
   ModTextFileSetContent(path, content)
 end
 
-do -- Limit enemies to dropping 250k gold at any given time, prevents lag in NG+ runs
+do -- Limit enemies to dropping 100k gold at any given time, prevents lag in NG+ runs
   local path = "data/scripts/items/drop_money.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 250000 then money = 250000 end local x, y = EntityGetTransform( entity )")
+  content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 100000 then money = 100000 end local x, y = EntityGetTransform( entity )")
   ModTextFileSetContent(path, content)
 end
 
