@@ -28,7 +28,7 @@ local mod_compat_mode_spell_evolution_desc = "Turn this setting on if youre play
 local custom_seed_name = "Set Custom Seed"
 local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or towerclimb" --Sneak in some secret seeds here "PuppyDogs"? --Hardmode?
 local organised_icons_name = "Organise Icons"
-local organised_icons_desc = "Will Spells & Perks be organised with the vanilla perk list? \n \nFor example, if this is enabled, an immunity related perk will appear next to other \nimmunity perks in the progress log rather than at the bottom of the perk list. \nThe same applies to spells."
+local organised_icons_desc = "Will Spells & Perks be organised with the vanilla perk list? \n \nFor example, if this is enabled, an immunity related perk will appear next to other \nimmunity perks in the progress log rather than at the bottom of the perk list. \nThe same applies to spells and creature icons."
 
 local seasonal_forced_name = "Forced Seasonal Events"
 local seasonal_forced_desc = "A list of Seasonal Events which can be forced"

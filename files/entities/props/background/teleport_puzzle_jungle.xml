@@ -1,0 +1,11 @@
+<Entity >
+
+	<SpriteComponent 
+		z_index="30"
+		image_file="mods/Apotheosis/files/props_gfx/teleport_puzzle_hints/teleport_hint_jungle.png" 
+		offset_x="67"
+		offset_y="21" >
+	</SpriteComponent>
+
+</Entity>
+

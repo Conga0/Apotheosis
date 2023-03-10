@@ -1,0 +1,131 @@
+<Entity tags="teleportable_NOT,item_physics,chest_pandora,item_pickup,effectable_prop,music_energy_100_near">
+	<UIInfoComponent
+		name="$item_apotheosis_chest_death_cross"
+		>
+	</UIInfoComponent>
+
+  <PositionSeedComponent />
+	
+	<PhysicsBodyComponent 
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="1"
+    hax_fix_going_through_ground="1"
+    on_death_leave_physics_body="0"
+    on_death_really_leave_body="0"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="mods/Apotheosis/files/buildings_gfx/chest_death_cross.png"
+    material="rock_box2d_nohit_hard"
+  ></PhysicsImageShapeComponent>
+
+  <ItemComponent
+    item_name="$item_apotheosis_chest_death_cross"
+    stats_count_as_item_pick_up="0"
+    play_spinning_animation="0"
+    custom_pickup_string="$itempickup_open"
+    play_pick_sound="0" >
+  </ItemComponent>
+
+  <LuaComponent 
+    script_physics_body_modified="mods/Apotheosis/files/scripts/buildings/chest_portals.lua" 
+    execute_times="1"
+	>
+  </LuaComponent>
+  
+  <LuaComponent 
+    script_item_picked_up="mods/Apotheosis/files/scripts/buildings/chest_death_cross.lua" >
+  </LuaComponent>
+
+  <LightComponent 
+    _tags="enabled_in_world"
+    r="255"
+    g="255"
+    b="255"
+    radius="64"
+    fade_out_time="0.75" >
+  </LightComponent>
+
+  <!-- fx -->
+	<SpriteParticleEmitterComponent
+			sprite_file="data/particles/shine_pink.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="20"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-10"
+		randomize_position.max_x="10"
+		randomize_position.min_y="-10"
+		randomize_position.max_y="10"
+		>
+  </SpriteParticleEmitterComponent>
+  
+    <ParticleEmitterComponent 
+			emitted_material_name="spark_purple"
+		area_circle_radius.min="0"
+		area_circle_radius.max="10"
+		velocity_always_away_from_center="10"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="6"
+        count_max="9"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="4"
+        emission_interval_max_frames="12"
+        is_emitting="1"
+		>
+    </ParticleEmitterComponent>
+      
+    <ParticleEmitterComponent 
+			emitted_material_name="spark_purple"
+		area_circle_radius.min="0"
+		area_circle_radius.max="10"
+		velocity_always_away_from_center="10"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="6"
+        count_max="9"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="4"
+        emission_interval_max_frames="12"
+        fire_cells_dont_ignite_damagemodel="1"
+		>
+    </ParticleEmitterComponent>
+
+</Entity>

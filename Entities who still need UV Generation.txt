@@ -3,3 +3,13 @@ Giant centipede
 
 Fire Ant
 Suffocating Ant
+
+
+
+
+
+
+
+
+Enemies who need to be sorted in the progress menu:
+

@@ -74,12 +74,6 @@ g_small_enemies =
 	{
 		prob   		= 0.05,
 		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/evil_temple/necromancer_shop.xml"
-	},
-	{
-		prob   		= 0.05,
-		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/buildings/manadrain_crystal.xml"
 	},

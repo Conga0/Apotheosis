@@ -43,6 +43,7 @@ do
     "orb_12",
     "orb_14",
     "lost_alchemy",
+    "omega_cross",
   }) do
     local progressflag = "apotheosis_card_unlocked_" .. entry
     if HasFlagPersistent( progressflag ) then
@@ -528,6 +529,7 @@ log_apotheosis_upgrade_alwayscast_success_desc,"Some things can never be undone.
 log_apotheosis_flesh_boss_warning,"Something wicked this way comes...",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_name,"Volcanic Egg",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.",,,,,,,,,,,,,
+item_apotheosis_chest_death_cross,Deathly Chest,,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,

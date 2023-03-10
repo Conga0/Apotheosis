@@ -421,13 +421,7 @@ end
 do -- gsub new wizards into Master of Master's spawn table
   local path = "data/entities/animals/boss_wizard/spawn_wizard.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local opts = { "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }]], [[local opts = { "wizard_ambrosia", "wizard_duck", "wizard_jackofalltrades", "wizard_manaeater", "wizard_transmutation", "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }
-
-  if ModIsEnabled("new_enemies") then
-    opts = { "wizard_random", "wizard_time", "wizard_toxic", "wizard_trip", "wizard_earthquake", "wizard_water", "wizard_ambrosia", "wizard_duck", "wizard_jackofalltrades", "wizard_manaeater", "wizard_transmutation", "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }
-  else
-    opts = { "wizard_ambrosia", "wizard_duck", "wizard_jackofalltrades", "wizard_manaeater", "wizard_transmutation", "wizard_tele", "wizard_dark", "wizard_poly", "wizard_homing", "wizard_weaken", "wizard_twitchy", "wizard_neutral", "wizard_hearty", "wizard_returner" }
-  end]])
+  content = content:gsub([[local opts = { "wizard_tele"]], [[local opts = { "wizard_ambrosia", "wizard_duck", "wizard_jackofalltrades", "wizard_manaeater", "wizard_transmutation", "wizard_tele"]])
   ModTextFileSetContent(path, content)
 end
 
@@ -436,4 +430,49 @@ do -- Fixes Hourglass portal leading to the wrong x,y coordinates in the new wor
   local content = ModTextFileGetContent(path)
   content = content:gsub("5420", "4908")
   ModTextFileSetContent(path, content)
+end
+
+--I can not get this to work and I'm not sure how.. I mean it works, but gsubbing blob and it also gsubbing miniblob is a pain, but there's no good place to reinsert either because multi-line gsubbing doesn't want to work and it's just arrrgghhh
+--Moved to a file overwrite until a better solution is found
+--[[
+do -- Organise Creature Progress List
+
+  local list_order = {
+    {
+      id_matchup  = "blob",
+      id          = "blob_big",
+    },
+    {
+      id_matchup  = "blob_big",
+      id          = "blob_huge",
+    },
+    {
+      id_matchup  = "blob_huge",
+      id          = "blob_titan",
+    },
+  }
+
+  local path = "data/ui_gfx/animal_icons/_list.txt"
+  local content = ModTextFileGetContent(path)
+
+  content = content:gsub("miniblob", "")
+
+  for k=1,#list_order
+  do local v = list_order[k]
+    content = content:gsub(v.id_matchup, v.id_matchup .. "\n" .. v.id)
+  end
+
+  content = content:gsub([[giantshooter_weak
+giantshooter]]--[[, "giantshooter_weak" .. "\n" .. "giantshooter" .. "\n" .. "miniblob")
+
+  ModTextFileSetContent(path, content)
+end
+]]--
+
+
+do  --File override approach for organising animal icons
+  if ModSettingGet( "Apotheosis.organised_icons" ) == true then
+    local content = ModTextFileGetContent("mods/apotheosis/files/ui_gfx/animal_icons/list_override.txt")
+    ModTextFileSetContent("data/ui_gfx/animal_icons/_list.txt",content)
+  end
 end

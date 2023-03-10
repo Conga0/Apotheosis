@@ -400,4 +400,30 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
 ]]))
 ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
+--Teleporter Path Hints
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="9740" pos_y="8787" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_mines.xml" />
+]]))
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="9740" pos_y="8403" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_excavation_site.xml" />
+]]))
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="9740" pos_y="8013" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_snowy_depths.xml" />
+]]))
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="9740" pos_y="7468" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_hiisi_base.xml" />
+]]))
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="9740" pos_y="6406" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_jungle.xml" />
+]]))
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="9740" pos_y="5896" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_vault.xml" />
+]]))
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene pos_x="9740" pos_y="5397" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_crypt.xml" />
+]]))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
 end

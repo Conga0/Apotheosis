@@ -1160,4 +1160,10 @@
 		color="ffbcb137" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/teleport_puzzle_outcome.xml"
+		height_index="13"
+		color="ffe7b369" >
+	</Biome>
+
 </BiomesToLoad>

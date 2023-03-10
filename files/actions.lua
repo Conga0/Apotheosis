@@ -1307,6 +1307,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/death_cross_omega.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/death_cross_unidentified.png",
 		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_omega_cross_spell",  --Teleporter Puzzle
 		type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "2,3,5,10", -- DISC_BULLET_BIGGER
 		spawn_probability                 = "0.1,0.6,1.0,0.1", -- DISC_BULLET_BIGGER

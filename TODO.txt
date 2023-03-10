@@ -9,8 +9,7 @@ Using Perk Creation Altar
 Reaching Max Orb Count, taking new orbs into consideration
 Killing the Heretic
 Secret Alchemy Puzzle in Ant Nest
-
-Finish or remove Mainpath Portal Puzzle
+Completing the Omega Death Cross quest
 
 
 
@@ -31,6 +30,3 @@ Fix Seekers permanently stunning you to death with electric damage if they sit o
 
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
 
-
-Hey Copi, if you're reading this, I hope you have a nice day!
-If you're not Copi, then, you too, whoever else you are!

@@ -1,37 +1,30 @@
 <Entity>
-
 	<!-- teleport logic -->
-	<!-- Todo: Create a location for this to take you to -->
-	<!-- Todo: Create a hint for the correct path of portals to take -->
 
 	<TeleportComponent
 		_tags="enabled_by_liquid"
 		target_x_is_absolute_position="1"
 		target_y_is_absolute_position="1"
-		target.x="-12081" 
-		target.y="14596" 
+		target.x="1912" 
+		target.y="13155" 
 	></TeleportComponent>
 
 	<HitboxComponent 
-		_tags="enabled_by_liquid"
 		aabb_min_x="-15" 
 		aabb_min_y="-15"
 		aabb_max_x="15" 
 		aabb_max_y="15" 
 	></HitboxComponent>
-  
-	<!-- ui -->
+
+	<!-- gfx -->
 	
 	<UIInfoComponent
 		_tags="enabled_by_liquid"
-		name="$teleport_deeper"
+		name="$teleport_ending"
 		>
 	</UIInfoComponent>
-  
-	<!-- gfx -->
 
 	<LightComponent 
-		_tags="enabled_by_liquid"
 		_enabled="1" 
 		radius="255"
 		fade_out_time="1.5" 
@@ -42,7 +35,6 @@
 	></LightComponent>
 	
 	<LightComponent 
-		_tags="enabled_by_liquid"
 		_enabled="1" 
 		radius="64"
 		fade_out_time="1.5" 
@@ -52,9 +44,44 @@
 		offset_y="-16"
 	></LightComponent>
 	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/redwhirl_$[1-8].png"
+		sprite_centered="1"
+		delay="0"
+		lifetime="1.5"
+		color.r="1" color.g="1" color.b="1" color.a="0.75"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-0.8"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0.35"
+		rotation="0"
+		angular_velocity="7.5"
+		render_back="1"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="1.0075" scale_velocity.y="1.0075"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="4"
+		count_min="1" count_max="1"
+		randomize_position.min_x="-0.5"
+		randomize_position.max_x="0.5"
+		randomize_position.min_y="-0.5"
+		randomize_position.max_y="0.5"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_lifetime.min="-0.2"
+		randomize_lifetime.max="0.2"
+		randomize_angular_velocity.min="-3.5"
+		randomize_angular_velocity.max="3.5"
+		randomize_rotation.min="-90"
+		randomize_rotation.max="90"
+		>
+	</SpriteParticleEmitterComponent>
+
 	<ParticleEmitterComponent 
-		_tags="enabled_by_liquid"
-		emitted_material_name="spark_purple"
+		emitted_material_name="spark_red"
 		gravity.y="0.0"
 		lifetime_min="3"
 		lifetime_max="4"
@@ -62,7 +89,7 @@
 		x_vel_max="0"
 		y_vel_min="0"
 		y_vel_max="0"
-		count_min="115"
+		count_min="75"
 		count_max="115"
 		render_on_grid="1"
 		fade_based_on_lifetime="0"
@@ -82,8 +109,7 @@
 	</ParticleEmitterComponent>
 
 	<ParticleEmitterComponent 
-		_tags="enabled_by_liquid"
-		emitted_material_name="spark_purple"
+		emitted_material_name="spark_red"
 		gravity.y="0.0"
 		lifetime_min="3"
 		lifetime_max="4"
@@ -110,22 +136,36 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 
-	<SpriteComponent 
+	<AudioLoopComponent
 		_tags="enabled_by_liquid"
-		image_file="data/buildings_gfx/teleport_center.xml" 
-		offset_x="0"
-		offset_y="0"
-		z_index="1"
-		additive="1"
-		>
-	</SpriteComponent>
+		file="data/audio/Desktop/misc.bank"
+		event_name="misc/teleport_loop"
+		calculate_material_lowpass="0"
+		auto_play="1" >
+	</AudioLoopComponent>
 
-	<!-- teleporter powered by teleportium beneath -->
+	<AudioLoopComponent
+		_tags="enabled_by_liquid"
+		file="data/audio/Desktop/misc.bank"
+		event_name="misc/teleport_emitter_loop"
+		calculate_material_lowpass="0"
+		auto_play="1" >
+	</AudioLoopComponent>
+
+	<!-- apparently the Message_Teleported is called after this has been initialized, so we keep calling this script every second or so -->
+	<LuaComponent
+		script_source_file="data/scripts/buildings/teleport_snowcave_buried_eye_return.lua"
+		execute_every_n_frame="71"
+		>
+	</LuaComponent>
+
+
+	<!-- teleporter powered by teleportium beneath 
 	<MaterialAreaCheckerComponent
 		area_aabb.min_x="-2" 
 		area_aabb.max_x="2" 
-		area_aabb.min_y="136"		
-		area_aabb.max_y="140"	
+		area_aabb.min_y="98"		
+		area_aabb.max_y="102"	
 		update_every_x_frame="60"
 		material="magic_liquid_teleportation"
 		material2="magic_liquid_unstable_teleportation"
@@ -133,10 +173,10 @@
 		kill_after_message="0">
 	</MaterialAreaCheckerComponent>
 	<MaterialAreaCheckerComponent
-		area_aabb.min_x="-2" 
-		area_aabb.max_x="2" 
-		area_aabb.min_y="136"		
-		area_aabb.max_y="140"	
+		area_aabb.min_x="-1" 
+		area_aabb.max_x="1" 
+		area_aabb.min_y="99"		
+		area_aabb.max_y="101"	
 		update_every_x_frame="60"
 		material="magic_liquid_teleportation"
 		material2="magic_liquid_unstable_teleportation"
@@ -147,24 +187,5 @@
 		script_material_area_checker_failed="data/scripts/buildings/teleport_liquid_check.lua"
 		script_material_area_checker_success="data/scripts/buildings/teleport_liquid_check.lua" >
 	</LuaComponent>
-	
-	<AudioLoopComponent
-		_tags="enabled_by_liquid"
-		file="data/audio/Desktop/misc.bank"
-		event_name="misc/teleport_end_loop"
-		calculate_material_lowpass="0"
-		auto_play="0"
-		auto_play_if_enabled="1"
-		play_on_component_enable="1" >
-	</AudioLoopComponent>
-
-	<AudioLoopComponent
-		_tags="enabled_by_liquid"
-		file="data/audio/Desktop/misc.bank"
-		event_name="misc/teleport_end_emitter_loop"
-		calculate_material_lowpass="0"
-		auto_play="0"
-		auto_play_if_enabled="1"
-		play_on_component_enable="1" >
-	</AudioLoopComponent>
+	-->
 </Entity>
