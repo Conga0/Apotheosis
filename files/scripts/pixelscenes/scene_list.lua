@@ -392,7 +392,7 @@ ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17340" pos_y="3253" skip_biome_checks="1" skip_edge_textures="0"
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17340" pos_y="3765" skip_biome_checks="1" skip_edge_textures="0"
     material_filename="mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_entry.png"
     background_filename="mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_entry_background.png"
     colors_filename="mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_entry_visual.png"

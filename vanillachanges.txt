@@ -31,7 +31,7 @@ Esoteric Presence
 The Dead are Restless
 
 Content list:
-98 new enemies (+3 Pylon varients)
+100 new enemies (+3 Pylon varients)
 6 new bosses
 56 new spells
 9 new perks
@@ -48,11 +48,9 @@ musical_stone
 vulnerable
 watermage
 apotheosis_blob_boss
-chest_pandora
+chest_pandora (Could be optimised by only looking for an entity name)
 
 Note: Readthrough vanilla changes and remove any notes before release
 
 Enemies not yet added to enemy count:
 Red Tentacle Eye (lukki hungry)
-Fire Ant
-Suffocating Ant

@@ -1,4 +1,4 @@
-<Entity  name="Fire Ant">
+<Entity  name="Palomurkku">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

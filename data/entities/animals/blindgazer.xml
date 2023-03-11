@@ -30,6 +30,9 @@
 			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour" 
 			materials_how_much_damage="0.004,0.001,0.0008,0.0007"
 			>
+		<damage_multipliers
+			radioactive="0.0" >
+		</damage_multipliers>
 		</DamageModelComponent>
 
 		<PathFindingComponent

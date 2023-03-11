@@ -45,12 +45,6 @@ g_small_enemies =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/shotgunner.xml"
-	},
-	{
 		prob   		= 0.1,
 		min_count	= 2,
 		max_count	= 3,    
@@ -58,33 +52,51 @@ g_small_enemies =
 	},
 	{
 		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
+		min_count	= 2,
+		max_count	= 3,    
 		entity 	= "data/entities/animals/acidshooter.xml"
 	},
 	{
 		prob   		= 0.08,
-		min_count	= 2,
-		max_count	= 2,    
+		min_count	= 4,
+		max_count	= 6,    
 		entity 	= "data/entities/animals/acidshooter_weak.xml"
 	},
 	{
 		prob   		= 0.05,
-		min_count	= 1,
-		max_count	= 1,    
+		min_count	= 2,
+		max_count	= 2,    
 		entity 	= "data/entities/animals/giantshooter.xml"
 	},
 	{
 		prob   		= 0.02,
 		min_count	= 2,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/giantshooter_weak.xml"
+		entity 	= "data/entities/animals/slime_leaker.xml"
 	},
 	{
-		prob   		= 0.02,
+		prob   		= 0.1,
+		min_count	= 2,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/the_end/blindgazer.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 2,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/the_end/lasershooter.xml"
+	},
+	{
+		prob   		= 0.05,
 		min_count	= 2,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/slime_leaker.xml"
+		entity 	= "data/entities/animals/the_end/gazer_greater.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 2,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/the_end/gazer_cold_apotheosis.xml"
 	},
 }
 
