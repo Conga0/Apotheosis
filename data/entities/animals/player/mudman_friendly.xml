@@ -1,0 +1,16 @@
+<Entity name="Mutamies" >
+  
+	<Base file="data/entities/animals/mudman_friendly.xml" >
+	</Base>
+
+	<Entity>
+    
+		<GameEffectComponent 
+			effect="CHARM"
+			frames="3600"
+		>
+		</GameEffectComponent >
+
+	<Entity/>
+
+</Entity>

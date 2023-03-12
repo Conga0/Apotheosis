@@ -1,0 +1,11 @@
+<Entity>
+    
+    <HitEffectComponent 
+        condition_effect="SLIMY"
+        effect_hit="LOAD_ENTITY"
+        value_string="data/entities/animals/longleg.xml" >
+	</HitEffectComponent >
+
+</Entity>
+
+<!-- Hey o/ -->

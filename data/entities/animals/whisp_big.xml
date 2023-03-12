@@ -74,27 +74,27 @@
 		</CharacterDataComponent>
 	</Base>
 
-		<SpriteComponent 
+	<SpriteComponent
 		_tags="character,lurker_data" 
-			alpha="0.8" 
-			image_file="mods/Apotheosis/files/enemies_gfx/whisp_big_emissive.xml"
-			emissive="1"
-			additive="1"
-			offset_x="0"
-			offset_y="0"
-			next_rect_animation="" 
-			rect_animation="stand" 
-			>
-		</SpriteComponent>
-		
-		<SpriteComponent 
+		alpha="0.8" 
+		image_file="mods/Apotheosis/files/enemies_gfx/whisp_big_emissive.xml"
+		emissive="1"
+		additive="1"
+		offset_x="0"
+		offset_y="0"
+		next_rect_animation="" 
+		rect_animation="stand" 
+		>
+	</SpriteComponent>
+	
+	<SpriteComponent 
 		_tags="character,lurker_data" 
-			alpha="0.55"
-			image_file="data/particles/fog_of_war_hole_128.xml"
-			smooth_filtering="1"
-			fog_of_war_hole="1"
-			>
-		</SpriteComponent>
+		alpha="0.55"
+		image_file="data/particles/fog_of_war_hole_128.xml"
+		smooth_filtering="1"
+		fog_of_war_hole="1"
+		>
+	</SpriteComponent>
 
 	<LuaComponent
 		script_shot="data/scripts/animals/lurkershot_start.lua"

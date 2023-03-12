@@ -1321,6 +1321,68 @@ local apotheosis_spellappends = {
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
 		end,
 	},
+    --There's a really fun way to Noita yourself here by using boomerang + healing bolt :)
+    {
+        id          = "APOTHEOSIS_HITFX_MUDMAN_SLIMY",
+        id_matchup  = "HITFX_EXPLOSION_ALCOHOL_GIGA",
+        name 		= "$spell_apotheosis_mudman_slimy_name",
+        description = "$spell_apotheosis_mudman_slimy_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mudman_slimy.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+        related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_mudman_slimy.xml" },
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "1,3,4,5", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
+        spawn_probability                 = "0.05,0.05,0.02,0.02", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
+        price = 200,
+        mana = 200,
+        max_uses = 20,
+        action 		= function()
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_mudman_slimy.xml,"
+            draw_actions( 1, true )
+        end,
+    },
+    --Not as fun as I thought it'd be
+    --[[
+	{
+		id          = "APOTHEOSIS_CLOUD_GUNPOWDER",
+        id_matchup  = "CLOUD_ACID",
+        name 		= "$spell_apotheosis_cloud_gunpowder_name",
+        description = "$spell_apotheosis_cloud_gunpowder_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/cloud_gunpowder.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/cloud_water_unidentified.png",
+		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/cloud_gunpowder.xml"},
+		type 		= ACTION_TYPE_STATIC_PROJECTILE,
+		spawn_level                       = "0,1,2,3,4,5", -- CLOUD_ACID
+		spawn_probability                 = "0.2,0.2,0.2,0.2,0.2,0.2", -- CLOUD_ACID
+		price = 180,
+		mana = 90,
+		max_uses = 8,
+		action 		= function()
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/cloud_gunpowder.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
+    --More interesting as a perk
+    {
+        id          = "APOTHEOSIS_HITFX_NORAGDOLL",
+        id_matchup  = "HITFX_PETRIFY",
+        name 		= "$spell_apotheosis_noragdoll_name",
+        description = "$spell_apotheosis_noragdoll_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/noragdoll.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+        related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_noragdoll.xml" },
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "1,3,4,5", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
+        spawn_probability                 = "0.05,0.05,0.02,0.02", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
+        price = 50,
+        mana = 20,
+        max_uses = 20,
+        action 		= function()
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_noragdoll.xml,"
+            draw_actions( 1, true )
+        end,
+    },
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -1496,6 +1558,13 @@ modify_existing_spell("HITFX_EXPLOSION_SLIME_GIGA","max_uses",-1)
 
 --Fix Giga Death Cross to use green sparks instead of blue ones
 modify_existing_spell("DEATH_CROSS_BIG","custom_xml_file","mods/apotheosis/files/entities/misc/custom_cards/death_cross_big.xml")
+
+--Spells to Power only spawns in Heaven/Hell, or other T10 spell spawn locations
+--If the player wants an infinite damage wand, they need to visit a dangerous biome and put their life at risk
+--With great power comes great sacrifice
+--NOTE, may want to add an extra "unique spawnpool" for certain funky spells, like StP
+--modify_existing_spell("SPELLS_TO_POWER","spawn_level","10")
+--modify_existing_spell("SPELLS_TO_POWER","spawn_probability","0.1")
 
 
 

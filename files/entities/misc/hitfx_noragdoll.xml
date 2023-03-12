@@ -1,0 +1,10 @@
+<Entity>
+    
+    <HitEffectComponent 
+        effect_hit="CONVERT_RAGDOLL_TO_MATERIAL"
+        value_string="smoke" >
+	</HitEffectComponent >
+
+</Entity>
+
+<!-- Hey o/ -->

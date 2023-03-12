@@ -78,19 +78,23 @@
 		</CharacterDataComponent>
 	</Base>
 
-	<SpriteComponent 
-		image_file="mods/Apotheosis/files/enemies_gfx/whisp_emissive.xml"
-		offset_x="4"
-		offset_y="4" >
-	</SpriteComponent>
-	
-	<SpriteComponent 
-        alpha="0.55"
-        image_file="data/particles/fog_of_war_hole_64.xml"
-        smooth_filtering="1"
-        fog_of_war_hole="1"
-		>
-    </SpriteComponent>
+	<Entity>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/whisp_emissive.xml"
+			offset_x="4"
+			offset_y="4" >
+		</SpriteComponent>
+		
+		<SpriteComponent 
+			alpha="0.55"
+			image_file="data/particles/fog_of_war_hole_64.xml"
+			smooth_filtering="1"
+			fog_of_war_hole="1"
+			>
+		</SpriteComponent>
+
+	</Entity>
 
 	<LightComponent 
 	    _enabled="1" 

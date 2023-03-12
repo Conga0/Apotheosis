@@ -609,6 +609,39 @@ local apotheosis_perkappends = {
             end
         end,
     },
+    {
+        id = "APOTHEOSIS_NO_BLOOD",
+        id_matchup = "GLOBAL_GORE",
+        ui_name = "$perk_apotheosis_no_blood",
+        ui_description = "$perk_apotheosis_no_blood_description",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/no_blood_perk_ui.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/no_blood_perk.png",
+        not_in_default_perk_pool = true,
+        stackable = STACKABLE_NO,
+        usable_by_enemies = false,
+        func = function( entity_perk_item, entity_who_picked, item_name )
+            local x,y = EntityGetTransform( entity_who_picked )
+            local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/no_blood_perk.xml", x, y )
+            EntityAddTag( child_id, "perk_entity" )
+            EntityAddChild( entity_who_picked, child_id )
+        end,
+        _remove = function(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_no_blood" ) then
+                    EntityKill ( v )
+                end
+            end
+        end,
+        func_remove = function( entity_who_picked )
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_no_blood" ) then
+                    EntityKill ( v )
+                end
+            end
+        end,
+    },
 }
 
 -- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?

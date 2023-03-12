@@ -152,11 +152,3 @@
         max_count    = 2,    
         entity     = "data/entities/animals/wizard_jackofalltrades.xml"
     })
-  
-    table.insert(g_small_enemies,
-    {
-        prob           = 0.1,
-        min_count    = 1,
-        max_count    = 2,    
-        entity     = "data/entities/animals/watermage.xml"
-    })

@@ -1,0 +1,12 @@
+<Entity name="apotheosis_perk_no_blood" >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/perks/no_blood.lua"
+		execute_every_n_frame="120"
+		execute_times="-1"
+	>
+	</LuaComponent>
+  
+</Entity>
