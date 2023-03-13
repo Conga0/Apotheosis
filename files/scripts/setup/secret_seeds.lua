@@ -65,56 +65,7 @@ function hardmode()
 
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
 
-     --Boosts Health of various creatures (NOTE: 4x multiplier total when combined with vanilla_appends.lua multiplier)
-    do --Temple of the Art
-      local multiplier = 2.0
-      local enemy_list = {
-        "acidshooter",
-        "barfer",
-        "crystal_physics",
-        "enlightened_alchemist",
-        --"failed_alchemist",
-        "maggot",
-        "necromancer",
-        "phantom_a",
-        "phantom_b",
-        "skullfly",
-        "skullrat",
-        "tentacler",
-        "tentacler_small",
-        "thundermage",
-        "wizard_dark",
-        "wizard_neutral",
-        "wizard_poly",
-        "wizard_returner",
-        "wizard_tele",
-        "worm",
-        "worm_skull",
-        --Modded Enemies below
-        "devourer_ghost",
-        "devourer_magic",
-        "hideous_mass",
-        "hideous_mass_red",
-        "tentacler_big",
-        "triangle_gem",
-        "wizard_firemage_greater",
-      }
-    
-      MultiplyHP("data/entities/animals/crypt/",enemy_list,multiplier,true)
-    end
-
-    do --Power Plant
-        local multiplier = 3.0
-        local enemy_list = {
-            "basebot_hidden",
-            "basebot_neutralizer",
-            "basebot_sentry",
-            "basebot_soldier",
-            "c_basebot_speeder_apotheosis",
-        }
-        
-        MultiplyHP("data/entities/animals/",enemy_list,multiplier,true)
-    end
+    dofile_once("mods/apotheosis/files/scripts/setup/hardmode_setup.lua")
 
 end
 

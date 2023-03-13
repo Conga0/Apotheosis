@@ -1746,3 +1746,4 @@ dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
 
 --Appending extra modiifers
 ModLuaFileAppend( "data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
+

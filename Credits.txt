@@ -32,6 +32,7 @@ KeithSammut - Provided base scripts needed for ceiling enemies
 
 Copi (Human#6606) - Helping think up some enemy ideas for unused sprites I had lying around
 Creating right click icon for alt-fire teleport bolts
+Creating shield sapper script
 
 
 

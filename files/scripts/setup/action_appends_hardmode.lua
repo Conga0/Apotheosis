@@ -42,3 +42,28 @@ modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bol
 --Make CoV spawn in Above & Below
 modify_existing_spell("REGENERATION_FIELD","spawn_level","1,2,3,4,10")
 modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.5")
+
+
+--Remove Spells
+function remove_spell(spell_name)
+	local key_to_spell = nil
+    for k=1,#actions
+    do v = actions[k]
+		if (v.id == spell_name) then
+			key_to_spell = key
+		end
+	end
+
+	if (key_to_spell ~= nil) then
+		table.remove(actions, key_to_spell)
+	end
+end
+
+--Remove Teleport Bolts from the spell pool
+remove_spell("TELEPORT_PROJECTILE")
+remove_spell("TELEPORT_PROJECTILE_SHORT")
+remove_spell("GRAHAM_TELEPORT")
+
+--Increases the spawnrate of alt-fire teleport spells to compensate
+modify_existing_spell("APOTHEOSIS_ALT_FIRE_TELEPORT","spawn_probability","1.0,0.8,0.8,0.6,0.6,0.6,1.6")
+modify_existing_spell("APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT","spawn_probability","1.0,0.8,0.8,0.6,0.6,0.6,1.6")
