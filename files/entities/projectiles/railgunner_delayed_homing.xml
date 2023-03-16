@@ -141,7 +141,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/Apotheosis/files/projectiles/railgunner_homing.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/railgunner_homing.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

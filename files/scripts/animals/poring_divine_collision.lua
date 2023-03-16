@@ -23,7 +23,7 @@ do local v = targets[k];
 			AddFlagPersistent( "apotheosis_card_unlocked_divine_liquid_goldmode" )
 		end
 
-		if (ModIsEnabled("nightmare") or ModIsEnabled("purgatory")) and HasFlagPersistent( "apotheosis_card_unlocked_divine_liquid_goldmode") == false then
+		if GameHasFlagRun("apotheosis_hardmode") and HasFlagPersistent( "apotheosis_card_unlocked_divine_liquid_goldmode") == false then
 			EntityLoad( "mods/Apotheosis/files/entities/props/goldmode/statue_divine_liquid.xml", 4178, 2049 )
 		elseif HasFlagPersistent( "apotheosis_card_unlocked_divine_liquid" ) == false then
 			EntityLoad( "mods/Apotheosis/files/entities/props/statue_divine_liquid.xml", 4178, 2049 )

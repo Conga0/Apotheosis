@@ -1095,7 +1095,7 @@ local apotheosis_spellappends = {
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level       = "0,1,2,3,4,5,6", -- Material Hex
         spawn_probability = "0.1,0.5,1.0,0.6,0.4,0.3,0.4", -- Material Hex
-        price = 40,
+        price = 110,
         mana = 30,
         --max_uses = 16,
         action 		= function()
@@ -1114,7 +1114,7 @@ local apotheosis_spellappends = {
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level       = "1,2,3,4,5,6", -- Material Hex
         spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- Material Hex
-        price = 40,
+        price = 110,
         mana = 30,
         --max_uses = 16,
         action 		= function()
@@ -1133,7 +1133,7 @@ local apotheosis_spellappends = {
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level       = "1,2,3,4,5,6", -- Material Hex
         spawn_probability = "0.5,1.0,0.6,0.4,0.3,0.4", -- Material Hex
-        price = 40,
+        price = 110,
         mana = 30,
         --max_uses = 16,
         action 		= function()
@@ -1383,6 +1383,45 @@ local apotheosis_spellappends = {
         end,
     },
     ]]--
+	{
+		id          = "APOTHEOSIS_TRAIL_LARGER",
+        id_matchup  = "FIRE_TRAIL",
+        name 		= "$spell_apotheosis_trail_enhancer_name",
+        description = "$spell_apotheosis_trail_enhancer_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/trail_enhancer.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/burn_trail_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,3,4,5", -- WATER_TRAIL
+		spawn_probability                 = "0.3,0.3,0.3,0.3,0.3", -- WATER_TRAIL
+		price = 100,
+		mana = 10,
+		--max_uses = 120,
+		action 		= function()
+			c.trail_material_amount = c.trail_material_amount + 150
+			draw_actions( 1, true )
+		end,
+	},
+    --[[
+        --Bloat, when would you ever use this?.... within reason!
+	{
+		id          = "APOTHEOSIS_TRAIL_SMALLER",
+        id_matchup  = "APOTHEOSIS_TRAIL_LARGER",
+        name 		= "$spell_apotheosis_trail_reducer_name",
+        description = "$spell_apotheosis_trail_reducer_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/trail_reducer.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/burn_trail_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "0,1,2,3,4", -- WATER_TRAIL
+		spawn_probability                 = "0.1,0.2,0.3,0.3,0.3", -- WATER_TRAIL
+		price = 100,
+		mana = -10,
+		--max_uses = 120,
+		action 		= function()
+			c.trail_material_amount = c.trail_material_amount - 30
+			draw_actions( 1, true )
+		end,
+	},
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -1565,6 +1604,21 @@ modify_existing_spell("DEATH_CROSS_BIG","custom_xml_file","mods/apotheosis/files
 --NOTE, may want to add an extra "unique spawnpool" for certain funky spells, like StP
 --modify_existing_spell("SPELLS_TO_POWER","spawn_level","10")
 --modify_existing_spell("SPELLS_TO_POWER","spawn_probability","0.1")
+
+
+
+--Changes Summon Egg to implement modded Apotheosis eggs in
+modify_existing_spell(
+	"SUMMON_EGG",
+	"action",
+    function()
+        SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
+        local types = {"egg_monster","egg_slime","egg_red","egg_fire","apotheosis/egg_fairy","apotheosis/egg_mud","apotheosis/egg_robot"}
+        local rnd = Random(1, #types)
+        local egg_name = types[rnd] .. ".xml"
+        add_projectile("data/entities/items/pickup/" .. egg_name)
+    end
+)
 
 
 

@@ -59,7 +59,7 @@ end
 
 
 
-function hardmode()
+function hardcore()
 
     GameAddFlagRun("apotheosis_hardmode")
 
@@ -90,8 +90,8 @@ local secret_seeds = {
         func = towerclimb
     },
     {
-        ID = "hardmode",
-        func = hardmode
+        ID = "hardcore",
+        func = hardcore
     },
 }
 

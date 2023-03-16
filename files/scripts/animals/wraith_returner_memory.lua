@@ -11,12 +11,14 @@ local rnd = Random( 1, #projectiles )
 local projectile_id = projectiles[rnd]
 local projectile = ""
 local damageCount = "0.5"
+local damageCountMisc = ""
 
 local storages = EntityGetComponent( projectile_id, "VariableStorageComponent" )
 
 --Gets projectile filepath to return it
 if ( storages ~= nil ) then
-	for i,comp in ipairs( storages ) do
+	for k=1,#storages
+	do comp = storages[k]
 		local name = ComponentGetValue2( comp, "name" )
 		if ( name == "projectile_file" ) then
 			projectile = ComponentGetValue2( comp, "value_string" )
@@ -29,8 +31,10 @@ end
 local DMGstorages = EntityGetComponent( projectile_id, "ProjectileComponent" )
 
 if ( DMGstorages ~= nil ) then
-	for i,comp in ipairs( DMGstorages ) do
+	for k=1,#DMGstorages
+	do comp = DMGstorages[k]
 		damageCount = ComponentGetValue2( comp, "damage" )
+		damageCountMisc = ComponentObjectGetValue2( comp, "damage_by_type", "electricity")
 	end
 end
 
@@ -38,7 +42,8 @@ if ( string.len( projectile ) > 0 ) then
 	storages = EntityGetComponent( entity_id, "VariableStorageComponent" )
 	
 	if ( storages ~= nil ) then
-		for i,comp in ipairs( storages ) do
+		for k=1,#storages
+		do comp = storages[k]
 			ComponentSetValue2( comp, "value_string", projectile )
 			ComponentSetValue2( comp, "value_float", damageCount )
 		end
