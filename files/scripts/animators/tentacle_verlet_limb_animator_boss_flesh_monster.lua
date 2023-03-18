@@ -48,16 +48,20 @@ do local child = chains[k];
 
   local positions = ComponentGetValue2(verlet_component, "positions")
   if k == 1 then
-    positions[29] = x + 25
-    positions[30] = y + 10
+    positions[29] = x + 10
+    positions[30] = y + 35
   else
-    positions[29] = x + 40
-    positions[30] = y
+    positions[43] = x + 30
+    positions[44] = y + 30
   end
   if verlet_component then
 	ComponentSetValue2(verlet_component, "positions", positions)
   end
   if verlet_world_joint_component then
-	ComponentSetValue2(verlet_world_joint_component, "world_position", x - 30, y + 30)
+	if k == 1 then
+	  ComponentSetValue2(verlet_world_joint_component, "world_position", x - 30, y + 30)
+	else
+	  ComponentSetValue2(verlet_world_joint_component, "world_position", x - 5, y + 35)
+	end
   end
 end

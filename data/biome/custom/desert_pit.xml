@@ -14,7 +14,8 @@
     lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/desert_pit.lua"
     wang_map_width="256"
     wang_map_height="256"
-		audio_music_enter="music/desert/enter"
+    audio_music_2="side_biome_action"
+		audio_music_enter="music/oneshot/dark_03"
 		audio_ambience="temple"
 		audio_ambience_surface="desert"
     >

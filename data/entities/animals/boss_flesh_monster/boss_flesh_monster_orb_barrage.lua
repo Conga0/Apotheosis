@@ -8,7 +8,7 @@ SetRandomSeed( x, y * GameGetFrameNum() )
 
 local spells = { "orb_manadrain", "orb_unstable_transmutation", "orb_tele", "orb_hearty", "orb_poly", "orb_neutral", "orb_homing" } --Homebringer curse of swapping would be evil... hmmm
 local rnd = Random( 1, #spells )
-local path = "data/entities/animals/boss_flesh_monster/projectiles/master_orbs/coldshot_BoC.xml"
+local path = "data/entities/animals/boss_flesh_monster/projectiles/bloodtentacle_flesh.xml"
 
 local arc = math.pi * 0.25
 local offset = math.pi * ( Random( 1, 10 ) * 0.1 )

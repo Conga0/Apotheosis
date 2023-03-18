@@ -22,6 +22,14 @@
 		m_volume="4">
 	</AudioLoopComponent>
 
+	<!-- Death Cross appears to break ground a bit before the barrage -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/deathcross_spawn.lua"
+		execute_every_n_frame="340"
+		>
+	</LuaComponent>
+
 	<!-- Death. -->
 	<LuaComponent
 		_enabled="1"

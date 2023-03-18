@@ -1709,6 +1709,27 @@
     </Graphics>
   </CellDataChild>
 
+  <CellDataChild
+  	_parent="templebrick_static"
+	name="corrupt_flesh_static"
+	ui_name="$mat_meat_slime"
+	wang_color="ffb13b3b"
+	wang_noise_percent="0.7"
+	hp="10000"
+	durability="9"
+	density="10"
+	wang_curvature="0.4"
+	wang_noise_type="2"
+	solid_break_to_type="apotheosis_blood_infectious"
+	audio_physics_material_wall="organicbouncy"
+	audio_physics_material_solid="organicbouncy"
+	>
+	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh.png"
+		color="ffb13b3b"
+	>
+	</Graphics>
+  </CellDataChild>
 
 
 
