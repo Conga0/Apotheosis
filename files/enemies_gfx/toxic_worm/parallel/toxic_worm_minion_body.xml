@@ -1,0 +1,21 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/toxic_worm/parallel/toxic_worm_minion_body.png" 
+  offset_x="14" 
+  offset_y="6"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="12" 
+    frame_wait="0.082" 
+    frame_width="11" 
+    frames_per_row="1" 
+    name="stand" 
+    pos_x="1" 
+    pos_y="0" 
+    >
+
+  </RectAnimation>
+
+</Sprite>
+
