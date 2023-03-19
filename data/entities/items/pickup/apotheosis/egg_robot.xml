@@ -76,7 +76,7 @@
       damage="0"
       camera_shake="10" 
       explosion_radius="3" 
-      explosion_sprite="" 
+      explosion_sprite="data/particles/explosion_012.xml" 
       explosion_sprite_lifetime="10"
 	  load_this_entity="mods/apotheosis/files/entities/projectiles/egg_robot.xml"
       hole_destroy_liquid="0" 
