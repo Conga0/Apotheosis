@@ -29,4 +29,5 @@ Fix "Custom Seed Successfully Set" appearing every run
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
+Herobrine rework
 

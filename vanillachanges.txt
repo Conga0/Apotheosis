@@ -23,6 +23,7 @@ Pit Boss now has a projectile failsafe incase it spawns too many wands (over 1k 
 Individual Enemies can now drop a maximum of 100k gold at any given time to prevent crashes in high NG+ runs (high NG+ runs usually become unplayable at a certain point otherwise if enemies start dying, flooding the screen with hundreds, sometimes thousands of gigantic physics objects)
 Giant Explosion on Drunk Enemies now has unlimited charges
 Giant Explosion on Slimy Enemies now has unlimited charges
+Summon Egg spell features new eggs it can roll
 
 
 New Biome Modifiers:
@@ -33,13 +34,13 @@ The Dead are Restless
 Content list:
 100 new enemies (+3 Pylon varients)
 6 new bosses
-56 new spells
+57 new spells
 9 new perks
-4 new biomes
+5 new biomes
 7 new structures
-8 new materials (6 interactable, 8 total)
+9 new materials (7 interactable, 9 total)
 12 attainable trophies
-3 new items
+6 new items
 4 new musical curiosities 
 
 

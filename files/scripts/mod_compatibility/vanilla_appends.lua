@@ -476,3 +476,12 @@ do  --File override approach for organising animal icons
     ModTextFileSetContent("data/ui_gfx/animal_icons/_list.txt",content)
   end
 end
+
+do -- gsub new Creeps into Summon Egg's spawn table
+  local path = "data/scripts/items/egg_hatch.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[fire = { {"firebug", 3}, {"bigfirebug"} },]], [[fire = { {"firebug", 3}, {"bigfirebug"}, {"whisp", 10} },]])
+  content = content:gsub([[chilly = { {"tentacler_small"}, {"tentacler"} },]], [[chilly = { {"tentacler_small"}, {"tentacler"}, {"tentacler_big"} },]])
+  content = content:gsub([[red = { {"bat", 3}, {"tentacler_small"}, {"tentacler"} },]], [[red = { {"bat", 3}, {"fairy_big", 2}, {"tentacler_small"}, {"tentacler"} },]])
+  ModTextFileSetContent(path, content)
+end

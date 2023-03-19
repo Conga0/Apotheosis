@@ -33,7 +33,7 @@
 			blood_spray_material="magic_liquid_mana_regeneration"
 			blood_multiplier="0.1"
 			>
-			</DamageModelComponent>
+		</DamageModelComponent>
 
 		<SpriteComponent 
 			image_file="mods/Apotheosis/files/enemies_gfx/wizard_wands.xml" 

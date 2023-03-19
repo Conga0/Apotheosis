@@ -6,7 +6,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 
 	-- Spawn Statue ------------------------------------------------------
 
-	if (ModIsEnabled("nightmare") or ModIsEnabled("purgatory")) and HasFlagPersistent( "apotheosis_essence_fungus_goldmode" ) == false then
+	if GameHasFlagRun("apotheosis_hardmode") and HasFlagPersistent( "apotheosis_essence_fungus_goldmode" ) == false then
 		EntityLoad( "mods/Apotheosis/files/entities/props/goldmode/statue_essence_fungus.xml", 4351, 2049 )
 		AddFlagPersistent( "apotheosis_essence_fungus_goldmode" )
 	elseif HasFlagPersistent( "apotheosis_essence_fungus" ) == false then

@@ -41,5 +41,3 @@ do
 		end
 	end
 end
-
-
