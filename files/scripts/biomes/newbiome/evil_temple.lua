@@ -3,6 +3,34 @@ CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
 
+function load_random_background_sprite_with_entity( what, x, y )
+    if( what.total_prob == 0 ) then
+        init_total_prob( what, x )
+    end
+
+    local r = ProceduralRandom(x,y) * what.total_prob
+    for i,v in ipairs(what) do
+        if( v.prob ~= nil ) then
+            if( v.prob ~= 0 and r <= v.prob ) then
+                if( is_empty( v.sprite_file) ) then
+                    -- loading empty sprite, don't do anything
+                    return
+                else
+                    -- LoadBackgroundSprite( string background_file, x, y, int background_z_index = 40 )
+                    local z_index = 40
+                    if( v.z_index ) then z_index = v.z_index end
+
+                    LoadBackgroundSprite( v.sprite_file, x, y, z_index, true )
+                    EntityLoad(v.entity_file, x, y)
+                    return
+                end
+            else
+                r = r - v.prob
+            end
+        end
+    end
+end
+
 RegisterSpawnFunction( 0xffffeedd, "init" )
 RegisterSpawnFunction( 0xff808000, "spawn_statues" )
 RegisterSpawnFunction( 0xff00AC64, "load_pixel_scene4" )
@@ -17,6 +45,8 @@ RegisterSpawnFunction( 0xff00AC33, "load_pixel_scene3" )
 RegisterSpawnFunction( 0xffFFCD2A, "spawn_scorpions" )
 RegisterSpawnFunction( 0xff905ecb, "spawn_reward_wands" )
 RegisterSpawnFunction( 0xff905ecc, "spawn_boss_limbs_trigger" )
+RegisterSpawnFunction( 0xff783060, "load_background_window" )
+RegisterSpawnFunction( 0xff378ec4, "load_background_drape" )
 
 ------------ small enemies -------------------------------
 
@@ -545,6 +575,41 @@ g_ghostlamp =
 	},
 }
 
+g_background_windows =
+{
+	total_prob = 0,
+	{
+		prob   			= 3.0,
+		sprite_file		= "",
+	},
+	{
+		prob   			= 1.0,
+		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/alcove_window_01_background.png",
+		entity_file 	= "mods/apotheosis/files/entities/buildings/alcove_window_glow.xml"
+	},
+}
+
+g_background_drapes =
+{
+	total_prob = 0,
+	{
+		prob   			= 4.0,
+		sprite_file		= "",
+	},
+	{
+		prob   			= 1.0,
+		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/drape_1.png"
+	},	
+	{
+		prob   			= 0.66,
+		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/drape_2.png"
+	},
+	{
+		prob   			= 0.33,
+		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/drape_3.png"
+	},
+}
+
 -- actual functions that get called from the wang generator
 
 function spawn_small_enemies(x, y)
@@ -643,6 +708,13 @@ function spawn_boss_limbs_trigger( x, y )
 	EntityLoad("data/entities/items/books/book_music_b.xml", x, y )
 end
 
+function load_background_window( x, y )
+	load_random_background_sprite_with_entity( g_background_windows, x+5, y )
+end
+
+function load_background_drape( x, y )
+	load_random_background_sprite( g_background_drapes, x+5, y )
+end
 
 --Ideas
 --corrupted versions of masters, punished by the gods

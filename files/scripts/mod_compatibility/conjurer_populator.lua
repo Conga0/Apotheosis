@@ -51,6 +51,16 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/boss_fire_lukki_phase2.png",
 	  },
 	  {
+		name="Young Fire Spider",
+		path="data/entities/animals/lukki_fire_miniboss.xml",
+		image="data/ui_gfx/animal_icons/lukki_fire_miniboss_phase2.png",
+	  },
+	  {
+		name="Heretic",
+		path="data/entities/animals/boss_flesh_monster/boss_flesh_monster.xml",
+		image="data/ui_gfx/animal_icons/boss_flesh_monster.png",
+	  },
+	  {
 		name="Manager",
 		path="data/entities/animals/c_basebot_speeder_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/c_basebot_speeder_apotheosis.png",
