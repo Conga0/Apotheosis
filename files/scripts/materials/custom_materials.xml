@@ -1709,6 +1709,51 @@
     </Graphics>
   </CellDataChild>
 
+  <CellData
+	name="apotheosis_malicious_powder"
+	ui_name="$material_apotheosis_malicious_powder"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+	burnable="1"
+	density="7"
+	cell_type="liquid"
+	wang_color="ff200075"
+	generates_smoke="0"
+	liquid_gravity="2"
+	liquid_sand="1"
+	on_fire="1"
+	requires_oxygen="0"
+	temperature_of_fire="50"
+	autoignition_temperature="0"
+	hp="1000" 
+	fire_hp="300"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	show_in_creative_mode="0"
+	audio_event_name="explosions/gunpowder"
+	>
+	<ExplosionConfig 
+		damage="0"
+		cell_explosion_power="20"
+		cell_explosion_damage_required="10"
+		cell_explosion_radius_min="2"
+		explosion_sprite="data/particles/explosion_012.xml"
+		load_this_entity="data/entities/animals/boss_flesh_monster/boss_flesh_monster.xml"
+		ray_energy="10"
+		>
+	</ExplosionConfig>
+    <Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/redstone_dust_malicious.png"
+		color="720000" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="POISONED" amount="0.15" />
+			<StatusEffect type="FOOD_POISONING" amount="0.05" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
   <CellDataChild
   	_parent="templebrick_static"
 	name="corrupt_flesh_static"
