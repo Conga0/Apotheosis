@@ -123,7 +123,7 @@ g_small_enemies =
 		prob   		= 0.10,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_wands.xml"
+		entity 	= "data/entities/animals/evil_temple/wizard_wands.xml"
 	},
 	{
 		prob   		= 0.10,
@@ -584,7 +584,7 @@ g_background_windows =
 	},
 	{
 		prob   			= 1.0,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/alcove_window_01_background.png",
+		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/alcove_window_background.png",
 		entity_file 	= "mods/apotheosis/files/entities/buildings/alcove_window_glow.xml"
 	},
 }

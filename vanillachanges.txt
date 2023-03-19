@@ -27,6 +27,7 @@ Summon Egg spell features new eggs it can roll
 
 
 New Biome Modifiers:
+The Air is Burning
 Dense Smoke
 Esoteric Presence
 The Dead are Restless
@@ -34,7 +35,7 @@ The Dead are Restless
 Content list:
 100 new enemies (+3 Pylon varients)
 6 new bosses
-57 new spells
+59 new spells
 9 new perks
 5 new biomes
 7 new structures

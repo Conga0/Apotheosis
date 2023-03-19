@@ -208,7 +208,7 @@ do
     "wizard_corrupt_manaeater",
     "wizard_corrupt_neutral",
     "wizard_corrupt_swapper",
-    "wizard_wands",
+    --"wizard_wands",
   }
 
   MultiplyHP("data/entities/animals/",enemy_list,multiplier,true)

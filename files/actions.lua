@@ -1040,14 +1040,15 @@ local apotheosis_spellappends = {
     },
 
     --[[
+    ]]--
     --Note: Missing Sprites
     {
         id          = "APOTHEOSIS_LIQUIDSPHERE_ACID",
         name 		= "$spell_apotheosis_liquidsphere_acid_name",
         description = "$spell_apotheosis_liquidsphere_acid_desc",
-        sprite 		= "data/ui_gfx/gun_actions/black_hole.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_acid.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
-        related_projectiles	= {"data/entities/projectiles/deck/black_hole.xml"},
+        related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml"},
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level                       = "0,2,4,5", -- BLACK_HOLE
         spawn_probability                 = "0.8,0.8,0.8,0.8", -- BLACK_HOLE
@@ -1062,7 +1063,6 @@ local apotheosis_spellappends = {
             c.screenshake = c.screenshake + 20
         end,
     },
-    ]]--
 
 
     {
@@ -1422,6 +1422,25 @@ local apotheosis_spellappends = {
 		end,
 	},
     ]]--
+	{
+		id          = "APOTHEOSIS_CLOUD_VOLCANIC",
+        id_matchup  = "CLOUD_ACID",
+        name 		= "$spell_apotheosis_cloud_volcanic_name",
+        description = "$spell_apotheosis_cloud_volcanic_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/cloud_volcanic.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/cloud_water_unidentified.png",
+		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/cloud_volcanic.xml"},
+		type 		= ACTION_TYPE_STATIC_PROJECTILE,
+		spawn_level                       = "0,1,2,3,4,5", -- CLOUD_ACID
+		spawn_probability                 = "0.2,0.2,0.2,0.2,0.2,0.2", -- CLOUD_ACID
+		price = 180,
+		mana = 110,
+		max_uses = 8,
+		action 		= function()
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/cloud_volcanic.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
