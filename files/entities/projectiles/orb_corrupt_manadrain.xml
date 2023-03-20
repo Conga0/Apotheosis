@@ -134,7 +134,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/Apotheosis/files/entities/projectiles/orb_manadrain.xml"
+		value_string="mods/apotheosis/files/entities/projectiles/orb_corrupt_manadrain.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

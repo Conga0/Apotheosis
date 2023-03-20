@@ -16,17 +16,6 @@
 		offset_y="56.5"
 		>
 	</SpriteComponent>
-
-	<SpriteComponent
-		_enabled="0"
-		_tags="enabled_by_liquid"
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
-		offset_x="56.5"
-		offset_y="56.5"
-		emissive="1"
-		additive="1"
-		>
-	</SpriteComponent>
 	
 	<Entity>
 		<SpriteComponent
@@ -378,6 +367,8 @@
 	<!-- Stationary Particles -->
 
 	<ParticleEmitterComponent 
+		_enabled="0"
+		_tags="enabled_by_liquid"
 		emitted_material_name="spark_red"
 		gravity.y="0.0"
 		offset.x="1.5"
@@ -408,6 +399,8 @@
 	<!-- Radial Movement Particles -->
 
 	<ParticleEmitterComponent 
+		_enabled="0"
+		_tags="enabled_by_liquid"
 		emitted_material_name="spark_red"
 		gravity.y="0.0"
 		offset.x="1.5"
@@ -530,8 +523,7 @@
 		>
 	</LuaComponent>
 
-	<!-- Nullify Ambrosia every 20 seconds -->
-	<!-- Maybe just remove the infiltration part of this effect and keep the ambrosia removal? -->
+	<!-- Limit boss to taking only 2% health damage maximum with each instance of damage -->
 	<LuaComponent
 		_tags="invincible"
 		script_damage_about_to_be_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_dmg_limit_2_percent.lua"

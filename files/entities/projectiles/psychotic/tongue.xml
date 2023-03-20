@@ -93,7 +93,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/entities/projectiles/tongue.xml"
+		value_string="mods/apotheosis/files/entities/projectiles/psychotic/tongue.xml"
 		>
 	</VariableStorageComponent>
 

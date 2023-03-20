@@ -15,9 +15,9 @@
     wang_map_width="256"
     wang_map_height="256"
     audio_music_2="side_biome_action"
-		audio_music_enter="music/desert/enter"
-		audio_ambience="temple"
-		audio_ambience_surface="desert"
+	audio_music_enter="music/desert/enter"
+	audio_ambience="temple"
+	audio_ambience_surface="desert"
     >
     <BitmapCaves 
         size_x="516"

@@ -263,7 +263,7 @@
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/entities/projectiles/meteor_green.xml"
+		value_string="mods/apotheosis/files/entities/projectiles/psychotic/meteor_green.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

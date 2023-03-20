@@ -74,7 +74,7 @@
 
 	<MaterialComponent 
       is_rare="1" 
-      material_name="corrupt_flesh_static" 
+      material_name="corrupt_flesh_static"
       material_index="11" 
       material_max="3.5" 
       material_min="0.00006" 

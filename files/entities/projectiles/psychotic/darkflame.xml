@@ -105,7 +105,7 @@
   
   <VariableStorageComponent
 		name="projectile_file"
-		value_string="data/entities/projectiles/darkflame.xml"
+		value_string="mods/apotheosis/files/entities/projectiles/psychotic/darkflame.xml"
 		>
 	</VariableStorageComponent>
 

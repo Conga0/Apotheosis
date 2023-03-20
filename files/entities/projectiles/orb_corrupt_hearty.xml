@@ -108,7 +108,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/entities/projectiles/orb_hearty.xml"
+		value_string="mods/apotheosis/files/entities/projectiles/orb_corrupt_hearty.xml"
 		>
 	</VariableStorageComponent>
 	

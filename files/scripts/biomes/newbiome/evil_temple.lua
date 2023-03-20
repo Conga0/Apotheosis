@@ -550,7 +550,7 @@ g_pixel_scene_03 =
 	{
 		prob   			= 2.0,
 		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/pit.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/evil_temple/pit_visual.png",
+		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
@@ -709,11 +709,11 @@ function spawn_boss_limbs_trigger( x, y )
 end
 
 function load_background_window( x, y )
-	load_random_background_sprite_with_entity( g_background_windows, x+5, y )
+	load_random_background_sprite_with_entity( g_background_windows, x - 89 + 5, y - 57.5 )
 end
 
 function load_background_drape( x, y )
-	load_random_background_sprite( g_background_drapes, x+5, y )
+	load_random_background_sprite( g_background_drapes, x-18 + 5, y )
 end
 
 --Ideas

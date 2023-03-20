@@ -35,7 +35,7 @@ The Dead are Restless
 Content list:
 100 new enemies (+3 Pylon varients)
 6 new bosses
-59 new spells
+60 new spells
 9 new perks
 5 new biomes
 7 new structures
