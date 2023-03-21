@@ -11,3 +11,7 @@ end
 extra_modifiers["apotheosis_homing"] = function()
     c.extra_entities = c.extra_entities .. "data/entities/misc/homing.xml,data/entities/particles/tinyspark_white_weak.xml,"
 end
+
+extra_modifiers["apotheosis_speedup"] = function()
+    c.speed_multiplier = c.speed_multiplier * 2.5
+end

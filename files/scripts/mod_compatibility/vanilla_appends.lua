@@ -485,3 +485,14 @@ do -- gsub new Creeps into Summon Egg's spawn table
   content = content:gsub([[red = { {"bat", 3}, {"tentacler_small"}, {"tentacler"} },]], [[red = { {"bat", 3}, {"fairy_big", 2}, {"tentacler_small"}, {"tentacler"} },]])
   ModTextFileSetContent(path, content)
 end
+
+do  -- Robots take damage from Veloium
+  local path = "data/entities/base_enemy_robot.xml"
+  local xml = nxml.parse(ModTextFileGetContent(path))
+
+  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
+  attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_magic_liquid_velocium"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.0003"
+
+  ModTextFileSetContent(path, tostring(xml))
+end

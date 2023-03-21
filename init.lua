@@ -42,6 +42,7 @@ do
     "cat_secret",
     "orb_12",
     "orb_14",
+    "orb_15",
     "lost_alchemy",
     "omega_cross",
   }) do
@@ -386,6 +387,7 @@ material_apotheosis_magic_liquid_attunium_cloud,"Attunium Mist",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_pure_light,"Pure Light",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_pure_light_cloud,"Pure Light Mist",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_suffocatium,"Suffocatium",,,,,,,,,,,,,
+material_apotheosis_magic_liquid_velocium,"Veloium",,,,,,,,,,,,,
 material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,,,,,
 material_apotheosis_sunkenrock_sandy,"Sandy Rock",,,,,,,,,,,,,
 material_apotheosis_ambrosia_dull,"Infected Ambrosia",,,,,,,,,,,,,
@@ -472,10 +474,13 @@ spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_14_desc,"Secrets of the drowning depths have been unlocked to you.",,,,,,,,,,,,,
+orb_apotheosis_15_desc,"Secrets of unworldly transmutation have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_name,"Emerald Tablet - Volume XII",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in an infinitely empty field, Divinity could hear but not see any. \nDivinity assumed they would be standing within a crowd of four, yet they observed in solitude. \nDivinity brought preference to the world, and deemed some creations superior to others in their solitude \nDivinity believed the world to be better with their touch, but without contention it was improvable. \nTo those who seek knowledge not true but divine, blood must fall upon one's hands.",,,,,,,,,,,,,
+book_apotheosis_orbbook_14_name,"Emerald Tablet - Volume XIII",,,,,,,,,,,,,
+book_apotheosis_orbbook_14_description,"You shouldn't be here.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nStatus,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
 book_apotheosis_material_spells_name,"Lost Alchemy",,,,,,,,,,,,,
 book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nTurn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
@@ -522,6 +527,8 @@ status_apotheosis_light_reflect_name,"Magical Light",,,,,,,,,,,,,
 status_apotheosis_light_reflect_desc,"Taking damage causes you to retaliate with a beam of light.",,,,,,,,,,,,,
 status_apotheosis_breath_drain_name,"Suffocating",,,,,,,,,,,,,
 status_apotheosis_breath_drain_desc,"You are rapidly loosing oxygen!!",,,,,,,,,,,,,
+status_apotheosis_speedup_name,"Accelerated Velocity",,,,,,,,,,,,,
+status_apotheosis_speedup_desc,"Your spells feel significantly faster.",,,,,,,,,,,,,
 status_apotheosis_hex_water_name,"Abyssal Hex",,,,,,,,,,,,,
 status_apotheosis_hex_water_desc,"You take damage from water and other wet substances.",,,,,,,,,,,,,
 status_apotheosis_hex_oil_name,"Industrious Hex",,,,,,,,,,,,,
@@ -1692,8 +1699,8 @@ do  -- Player Editor
 
   --Makes player take contact damage from cursed liquid
   local attrs = xml:first_of("DamageModelComponent").attr
-  attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static"
-  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004"
+  attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0009"
 
   if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
     --Adds Golden Cape if check is successful

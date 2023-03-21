@@ -1446,8 +1446,6 @@
 		</Stains>
 	</StatusEffects>
   </CellData>
-
-
   
   <CellDataChild
   	_parent="apotheosis_magic_liquid_suffocatium"
@@ -1455,6 +1453,48 @@
 	wang_color="803d4181"
 	>
   </CellDataChild>
+
+  <CellData
+	name="apotheosis_magic_liquid_velocium"
+	ui_name="$material_apotheosis_magic_liquid_velocium"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="0.99"
+	cell_type="liquid"
+	wang_color="804848e8"
+	generates_smoke="0"
+	liquid_gravity="0.81"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel_random.min_x="-17"
+		vel_random.max_x="17"
+		vel_random.min_y="-17"
+		vel_random.max_y="-5"
+		lifetime.min="0.12"
+		lifetime.max="0.41"
+		gravity.y="2.857"
+		render_on_grid="1"
+		friction="-10"
+		probability="0.3571"
+		>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_SPEEDUP" amount="0.2" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_SPEEDUP" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
 
   <CellDataChild
   	_parent="templebrick_static"
@@ -1961,6 +2001,7 @@
 		>
 	</Reaction>
 
+	<!-- Feathery Meat + Concentrated Mana = Soarium -->
 	<Reaction probability="45"
 		input_cell1="apotheosis_meat_duck" input_cell2="magic_liquid_mana_regeneration"
 		output_cell1="apotheosis_magic_liquid_infinite_flight" output_cell2="apotheosis_magic_liquid_infinite_flight"
@@ -1974,10 +2015,17 @@
 		output_cell1="apotheosis_magic_liquid_escapium" output_cell2="apotheosis_magic_liquid_escapium"
 		>
 	</Reaction>
-
-	<!-- Creates Attunium from Flummoxium + Concentrated Mana -->
-	<Reaction probability="50"
-		input_cell1="material_confusion" input_cell2="magic_liquid_mana_regeneration"
+	
+	<!-- Attunium + Flummoxium = Veloium -->
+	<Reaction probability="20"
+		input_cell1="material_confusion" input_cell2="apotheosis_magic_liquid_attunium"
+		output_cell1="apotheosis_magic_liquid_velocium" output_cell2="apotheosis_magic_liquid_velocium"
+		>
+	</Reaction>
+	
+	<!-- Veloium + Slime = Attunium -->
+	<Reaction probability="20"
+		input_cell1="slime" input_cell2="apotheosis_magic_liquid_velocium"
 		output_cell1="apotheosis_magic_liquid_attunium" output_cell2="apotheosis_magic_liquid_attunium"
 		>
 	</Reaction>
@@ -1999,6 +2047,27 @@
 	<Reaction probability="5"
 		input_cell1="apotheosis_magic_liquid_suffocatium_fading" 			input_cell2="air"
 		output_cell1="air" 													output_cell2="air"
+		>
+	</Reaction>
+  
+	<!-- Allows for water_fading to be turned into Concentrated Mana, like normal water does -->
+	<Reaction probability="50"
+		input_cell1="water_fading" 							input_cell2="magic_liquid_mana_regeneration"
+		output_cell1="magic_liquid_mana_regeneration" 		output_cell2="magic_liquid_mana_regeneration"
+		>
+	</Reaction>
+	
+	<!-- Veloium + Steel = Poison -->
+	<!-- It accelerates the decay of metal to rust, and then nothing -->
+	<Reaction probability="15"
+		input_cell1="apotheosis_magic_liquid_velocium" input_cell2="[meltable_metal]"
+		output_cell1="apotheosis_magic_liquid_velocium" output_cell2="poison_gas"
+		>
+	</Reaction>
+
+	<Reaction probability="15"
+		input_cell1="apotheosis_magic_liquid_velocium" input_cell2="[meltable_metal_generic]"
+		output_cell1="apotheosis_magic_liquid_velocium" output_cell2="poison_gas"
 		>
 	</Reaction>
 

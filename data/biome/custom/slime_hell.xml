@@ -11,7 +11,7 @@
 
     limit_background_image="0"
     noise_biome_edges="1"
-    wang_template_file="data/wang_tiles/slime_hell.png" 
+    wang_template_file="data/wang_tiles/slime_hell_test3.png" 
     lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/slime_hell.lua"
     wang_map_width="256"
     wang_map_height="256"

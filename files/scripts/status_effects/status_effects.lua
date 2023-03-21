@@ -114,13 +114,20 @@ local apotheosis_status_list = {
         effect_entity="mods/apotheosis/files/entities/misc/effect_breath_drain.xml",
     },
     {
-        id="apotheosis_PROTECTION_ALL_DULL",
+        id="apotheosis_PROTECTION_ALL_DULL",                                                    --Note, this isn't used ingame, can be removed if the parent material is removed as well
         ui_name="$status_apotheosis_protection_all_dull_name",
         ui_description="$status_apotheosis_protection_all_dull_desc",
         ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/protection_all_dull.png",
 	    is_harmful=true,
         effect_entity="mods/apotheosis/files/entities/misc/effect_protection_all_dull.xml",
-    }
+    },
+    {
+        id="apotheosis_SPEEDUP",
+        ui_name="$status_apotheosis_speedup_name",
+        ui_description="$status_apotheosis_speedup_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/speedup.png",
+        effect_entity="mods/apotheosis/files/entities/misc/effect_speedup.xml",
+    },
 }
 
 for k=1,#apotheosis_status_list

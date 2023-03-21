@@ -11,6 +11,10 @@ local mm_insert = {
     material="apotheosis_magic_liquid_attunium",
     cost=800,
     },
+    {
+    material="apotheosis_magic_liquid_velocium",
+    cost=800,
+    },
 }
 
 --[[
@@ -19,6 +23,7 @@ table.insert(materials_standard, v)
 end
 ]]--
 
-for k, v in ipairs(mm_insert) do
-table.insert(materials_magic, v)
+for k=1,#mm_insert
+do v = mm_insert[k]
+    table.insert(materials_magic, v)
 end

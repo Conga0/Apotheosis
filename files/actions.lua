@@ -1364,6 +1364,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mudman_slimy.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_mudman_slimy.xml" },
+        --spawn_requires_flag = "apotheosis_card_unlocked_orb_15_spell",  --Divine Rock
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "1,3,4,5", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
         spawn_probability                 = "0.05,0.05,0.02,0.02", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
@@ -1655,8 +1656,9 @@ modify_existing_spell("DEATH_CROSS_BIG","custom_xml_file","mods/apotheosis/files
 --If the player wants an infinite damage wand, they need to visit a dangerous biome and put their life at risk
 --With great power comes great sacrifice
 --NOTE, may want to add an extra "unique spawnpool" for certain funky spells, like StP
---modify_existing_spell("SPELLS_TO_POWER","spawn_level","10")
---modify_existing_spell("SPELLS_TO_POWER","spawn_probability","0.1")
+--This forces you to visit endgame biomes if you want endgame dps
+modify_existing_spell("SPELLS_TO_POWER","spawn_level","10")
+modify_existing_spell("SPELLS_TO_POWER","spawn_probability","1.0")
 
 
 

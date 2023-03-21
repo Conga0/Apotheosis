@@ -24,6 +24,7 @@ Individual Enemies can now drop a maximum of 100k gold at any given time to prev
 Giant Explosion on Drunk Enemies now has unlimited charges
 Giant Explosion on Slimy Enemies now has unlimited charges
 Summon Egg spell features new eggs it can roll
+Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations, the goal behind this is StP is a very endgame spell capable of insanely high Damage output, if you want endgame damage spells, you need to visit endgame biomes
 
 
 New Biome Modifiers:
@@ -39,7 +40,7 @@ Content list:
 9 new perks
 5 new biomes
 7 new structures
-9 new materials (7 interactable, 9 total)
+10 new materials (8 interactable, 10 total)
 12 attainable trophies
 6 new items
 4 new musical curiosities 

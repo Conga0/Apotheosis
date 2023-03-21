@@ -1,0 +1,16 @@
+<Entity >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+		
+	<ShotEffectComponent
+		extra_modifier="apotheosis_speedup"
+		>
+	</ShotEffectComponent>
+  
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="600"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+
+</Entity>

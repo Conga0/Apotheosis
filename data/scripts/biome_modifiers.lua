@@ -988,7 +988,7 @@ biome_modifiers =
 		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 		action = function( biome_name, biome_filename )	end,
 		inject_spawns_action = function()
-			inject_spawn( g_small_enemies, 0.25, {
+			inject_spawn( g_small_enemies, 0.5, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
