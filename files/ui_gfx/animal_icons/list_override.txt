@@ -221,7 +221,7 @@ gazer
 gazer_greater
 skygazer
 gazer_greater_sky
-gazer_cold__apotheosis
+gazer_cold_apotheosis
 gazer_greater_cold
 gazer_robot
 spitmonster

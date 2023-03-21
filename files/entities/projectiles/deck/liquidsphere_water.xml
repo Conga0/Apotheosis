@@ -5,6 +5,7 @@
 			air_friction="-0.2"
 			gravity_y="0" 
 			mass="0.3"
+			liquid_drag="0"
 			>
 		</VelocityComponent>
 	</Base>
@@ -65,7 +66,7 @@
 			stains_enabled="1" 
 			stains_radius="9"
 			audio_enabled="0"
-				spark_material="acid"
+			spark_material="water"
 			>
 		</config_explosion>
 	</ProjectileComponent>
@@ -104,23 +105,12 @@
 
 	<MagicConvertMaterialComponent
       kill_when_finished="0"
-	  from_material="radioactive_liquid"
       steps_per_frame="18"
-      to_material="water"
       clean_stains="0"
       is_circle="1"
       radius="18"
-	  >
-    </MagicConvertMaterialComponent>
-
-	<MagicConvertMaterialComponent
-      kill_when_finished="0"
-	  from_material="fire"
-      steps_per_frame="18"
-      to_material="steam"
-      clean_stains="0"
-      is_circle="1"
-      radius="18"
+	  from_material_array="lava,fire,radioactive_liquid,magic_liquid_invisibility"
+      to_material_array="rock_static,steam,water,water"
 	  >
     </MagicConvertMaterialComponent>
 
@@ -142,8 +132,8 @@
 		x_pos_offset_max="8"
 		y_pos_offset_min="-8"
 		y_pos_offset_max="8"
-		area_circle_radius.min="14"
-		area_circle_radius.max="16"
+		area_circle_radius.min="12"
+		area_circle_radius.max="14"
 		x_vel_min="0"
 		x_vel_max="0"
 		y_vel_min="-1"
@@ -174,8 +164,8 @@
 		x_pos_offset_max="8"
 		y_pos_offset_min="-8"
 		y_pos_offset_max="8"
-		area_circle_radius.min="14"
-		area_circle_radius.max="16"
+		area_circle_radius.min="12"
+		area_circle_radius.max="14"
 		x_vel_min="0"
 		x_vel_max="0"
 		y_vel_min="-1"
@@ -199,7 +189,16 @@
 	</ParticleEmitterComponent>
 	
 	<LuaComponent
-		script_source_file="data/scripts/items/waterstone.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/liquidsphere_stain_enable.lua"
+		execute_every_n_frame="10"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		script_source_file="mods/apotheosis/files/scripts/projectiles/liquidsphere_stain_water.lua"
 		execute_every_n_frame="5"
 		>
 	</LuaComponent>

@@ -15,6 +15,7 @@ Creating the glass panes & banners in Temple of Sacriligious Remains
 Creating the Flesh Material in Temple of Sacriligious Remains
 Contributed to Heretic Boss's design, code and created all sprite work related to him.
 Unintentionally significantly helping create the Liquid Sphere sprites
+Creating the Liquid Sphere spell set UI Icons
 
 Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help
 

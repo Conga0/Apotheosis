@@ -1052,7 +1052,6 @@ local apotheosis_spellappends = {
         mana = 180,
         max_uses    = 3, 
         never_unlimited = true,
-        custom_xml_file = "data/entities/misc/custom_cards/black_hole.xml",
         action 		= function()
             add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml")
             c.fire_rate_wait = c.fire_rate_wait + 80
@@ -1067,13 +1066,12 @@ local apotheosis_spellappends = {
         sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
         related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml"},
         type 		= ACTION_TYPE_PROJECTILE,
-        spawn_level                       = "0,2,4,5", -- BLACK_HOLE
-        spawn_probability                 = "0.8,0.8,0.8,0.8", -- BLACK_HOLE
+        spawn_level       = "0,1,2,3,4,5,6", -- X_RAY
+        spawn_probability = "0.8,1,1,0.8,0.6,0.4,0.2", -- X_RAY
         price = 120,
         mana = 120,
         --max_uses    = 3, 
-        never_unlimited = true,
-        custom_xml_file = "data/entities/misc/custom_cards/black_hole.xml",
+        never_unlimited = false,
         action 		= function()
             add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml")
             c.fire_rate_wait = c.fire_rate_wait + 80
@@ -1081,7 +1079,28 @@ local apotheosis_spellappends = {
         end,
     },
     {
+        id          = "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM",
+        name 		= "$spell_apotheosis_liquidsphere_teleportatium_name",
+        description = "$spell_apotheosis_liquidsphere_teleportatium_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_teleportatium.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
+        related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml"},
+        type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "0,1,2,3,4,5", -- TELEPORTATION_FIELD
+		spawn_probability                 = "0.3,0.6,0.3,0.3,0.6,0.3", -- TELEPORTATION_FIELD
+        price = 120,
+        mana = 120,
+        max_uses    = 3, 
+        never_unlimited = false,
+        action 		= function()
+            add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 80
+            c.screenshake = c.screenshake + 20
+        end,
+    },
+    {
         id          = "APOTHEOSIS_STAR_SHOT",
+        id_matchup  = "APOTHEOSIS_HOLYORB_SHOTGUN",
         name 		= "$spell_apotheosis_star_shot_name",
         description = "$spell_apotheosis_star_shot_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/star_shot.png",
@@ -1324,8 +1343,8 @@ local apotheosis_spellappends = {
 		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_omega_cross_spell",  --Teleporter Puzzle
 		type 		= ACTION_TYPE_PROJECTILE,
-		spawn_level                       = "2,3,5,10", -- DISC_BULLET_BIGGER
-		spawn_probability                 = "0.1,0.6,1.0,0.1", -- DISC_BULLET_BIGGER
+		spawn_level                       = "4,5,10", -- DISC_BULLET_BIGGER
+		spawn_probability                 = "0.1,0.2,1", -- DISC_BULLET_BIGGER
 		price = 310,
 		mana = 150,
 		max_uses = 8,
