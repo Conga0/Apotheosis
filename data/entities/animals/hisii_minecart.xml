@@ -157,5 +157,11 @@
  	<VariableStorageComponent
 		_tags="no_gold_drop">
 	</VariableStorageComponent>
+  
+ 	<VariableStorageComponent
+		name="cart_combo_bonus"
+		value_int="2"
+	>
+	</VariableStorageComponent>
 
 </Entity>

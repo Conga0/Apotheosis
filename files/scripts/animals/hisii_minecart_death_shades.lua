@@ -16,7 +16,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		remove_after_executed = "1",
 	} )
 
-	if ModIsEnabled("purgatory") or ModIsEnabled("nightmare") then
+	if GameHasFlagRun("apotheosis_hardmode") then
 		local comp = EntityGetFirstComponent( eid, "DamageModelComponent" )
 
 		local health = ComponentGetValue2( comp, "hp" )

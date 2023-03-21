@@ -4,10 +4,11 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	-- kill self
 	local entity_id    = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( entity_id )
-	local seasonalSetting = ModSettingGet( "Apotheosis.seasonal_events" )
-	local year, month, day = GameGetDateAndTimeLocal()
+	local health = 0
+	local max_health = 0
+	local combo_count = 2
 
-	local eid
+	local eid = ""
 
 	if seasonalSetting == true then
 		if ( month == 12 ) and ( day >= 15 ) then
@@ -18,26 +19,40 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	else
 		eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
 	end
-	
+
+	local VSCComps = EntityGetComponentIncludingDisabled(entity_id,"VariableStorageComponent")
+	if VSCComps then
+		for k=1,#VSCComps
+		do v = VSCComps[k]
+			if ComponentGetValue2(v,"name") == "cart_combo_bonus" then
+				combo_count = ComponentGetValue2(v,"value_int")
+			end
+		end
+	end
+
+	if combo_count > 64 then combo_count = 64 end
+
+	EntityAddComponent2(
+		eid,
+		"VariableStorageComponent",
+		{
+			name="cart_combo_bonus",
+			value_int=combo_count * 2,
+		}
+	)
+
 	EntityAddComponent( eid, "LuaComponent", 
 	{ 
 		execute_every_n_frame = "-1",
 		script_death = "data/scripts/items/drop_money4x.lua",
+		script_death = "data/scripts/items/drop_money" .. combo_count * 2 .. "x.lua",
 		remove_after_executed = "1",
 	} )
 
-	if ModIsEnabled("purgatory") or ModIsEnabled("nightmare") then
-		local comp = EntityGetFirstComponent( eid, "DamageModelComponent" )
+	--GamePrint("combo_count is " .. combo_count)
 
-		local health = ComponentGetValue2( comp, "hp" )
-		local health_max = ComponentGetValue2( comp, "max_hp" )
-
-		health = health * 3
-		health_max = health_max * 3
-
-		ComponentSetValue( comp, "max_hp", tostring(health_max) )
-		ComponentSetValue( comp, "hp", tostring(health) )
-	end
-	
 	--EntityKill( entity_id )
 end
+
+
+
