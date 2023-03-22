@@ -235,7 +235,7 @@
         prob           = 0.005,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/animals/wizard_watermage_greater.xml",
+        entity     = "data/entities/animals/watermage_greater.xml",
         spawn_check = function() 
             if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
                 return true

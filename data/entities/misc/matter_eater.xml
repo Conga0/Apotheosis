@@ -3,8 +3,10 @@
     </InheritTransformComponent>
 	
     <CellEaterComponent
-		eat_probability="90"
+		eat_probability="100"
         radius="8"
+		eat_dynamic_physics_bodies="1"
+		ignored_material_tag="[indestructible]"
 		>
     </CellEaterComponent>
 	

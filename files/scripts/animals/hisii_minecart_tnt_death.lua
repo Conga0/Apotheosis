@@ -30,7 +30,11 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		end
 	end
 
-	if combo_count > 64 then combo_count = 64 end
+	if combo_count >= 64 then
+		combo_count = 64
+		local c = EntityLoad("mods/apotheosis/files/entities/misc/drop_gold_visual.xml", x, y)
+		EntityAddChild(eid,c)
+	end
 
 	EntityAddComponent2(
 		eid,
