@@ -1482,16 +1482,19 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
     for k=1,#apotheosis_spellappends
     do local v = apotheosis_spellappends[k]
         if v.id_matchup == nil then
+            v.author = "Apotheosis - Conga Lyne"
             table.insert(actions,v)
         else
             for z=1,#actions
             do c = actions[z]
                 if c.id == v.id_matchup then
+                    v.author = "Apotheosis - Conga Lyne"
                     table.insert(actions,z + 1,v)
                     break
                 end
                 if z == #actions then
                     --Insert here as a failsafe incase the matchup ID can't be found.. some other mod might delete the spell we're trying to insert at
+                    v.author = "Apotheosis - Conga Lyne"
                     table.insert(actions,v)
                 end
             end
@@ -1500,6 +1503,7 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
 else
     for k=1,#apotheosis_spellappends
     do local v = apotheosis_spellappends[k]
+        v.author = "Apotheosis - Conga Lyne"
         table.insert(actions,v)
     end
 end

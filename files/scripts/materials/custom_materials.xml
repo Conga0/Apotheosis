@@ -1796,7 +1796,7 @@
 
   <CellDataChild
   	_parent="templebrick_static"
-	name="corrupt_flesh_static"
+	name="apotheosis_corrupt_flesh_static"
 	ui_name="$mat_meat_slime"
 	wang_color="ffb13b3b"
 	wang_noise_percent="0.7"
@@ -1815,6 +1815,31 @@
 	>
 	</Graphics>
   </CellDataChild>
+
+  <CellData
+	name="apotheosis_milk"
+	ui_name="$material_apotheosis_milk"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common],[food]"
+	burnable="0"
+	density="4.1"
+	cell_type="liquid"
+	wang_color="aaf6f7fd"
+	generates_smoke="0"
+	liquid_gravity="0.7"
+	liquid_sand="0"
+	liquid_stains="2"
+	liquid_stains_self="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_CLEAR_STATUS" amount="0.05" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
 
 
 
@@ -1856,7 +1881,7 @@
 	input_cell1="apotheosis_redstone" 	input_cell2="blood"
 	output_cell1="apotheosis_redstone" 	output_cell2="apotheosis_redstone"
 	blob_radius1="6"						blob_radius2="3"
-	audio_fx_volume_1="100.0" >
+	audio_fx_volume_1="100.0"
 	>
   </Reaction>
 
@@ -1865,7 +1890,7 @@
   <Reaction probability="10"
 	input_cell1="mud" 	input_cell2="magic_liquid_charm"
 	output_cell1="apotheosis_mudman_mud" 	output_cell2="apotheosis_mudman_mud"
-	blob_radius1="2"						blob_radius2="1">
+	blob_radius1="2"						blob_radius2="1"
 	>
   </Reaction>
 
@@ -2069,6 +2094,21 @@
 		input_cell1="apotheosis_magic_liquid_velocium" input_cell2="[meltable_metal_generic]"
 		output_cell1="apotheosis_magic_liquid_velocium" output_cell2="poison_gas"
 		>
+	</Reaction>
+
+	<!--Milk turns to cheese over time-->
+	<Reaction probability="5" 
+		input_cell1="apotheosis_milk" 				input_cell2="air"
+		output_cell1="cheese_static" 		output_cell2="air"
+		destroy_horizontally_lonely_pixels="1"
+		req_lifetime="600" >
+	</Reaction>
+
+	<Reaction probability="20" 
+		input_cell1="apotheosis_milk" 				input_cell2="cheese_static"
+		output_cell1="cheese_static" 		output_cell2="cheese_static"
+		destroy_horizontally_lonely_pixels="1"
+		req_lifetime="400" >
 	</Reaction>
 
 </Materials>

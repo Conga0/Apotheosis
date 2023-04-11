@@ -39,7 +39,7 @@
         prob           = 0.115,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/animals/hisii_minecart.xml"
+        entity     = "data/entities/animals/hisii_minecart_weak.xml"
     })
 
     table.insert(g_big_enemies,

@@ -25,6 +25,7 @@ Giant Explosion on Drunk Enemies now has unlimited charges
 Giant Explosion on Slimy Enemies now has unlimited charges
 Summon Egg spell features new eggs it can roll
 Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations, the goal behind this is StP is a very endgame spell capable of insanely high Damage output, if you want endgame damage spells, you need to visit endgame biomes
+Piercing Shot is significantly weaker, only hitting once every 10 frames instead of once every 1 frame
 
 
 New Biome Modifiers:

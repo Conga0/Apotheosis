@@ -128,6 +128,13 @@ local apotheosis_status_list = {
         ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/speedup.png",
         effect_entity="mods/apotheosis/files/entities/misc/effect_speedup.xml",
     },
+    {
+        id="apotheosis_CLEAR_STATUS",
+        ui_name="$status_apotheosis_clear_status_name",
+        ui_description="$status_apotheosis_clear_status_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/clear_status.png",
+        effect_entity="mods/apotheosis/files/entities/misc/effect_clear_status.xml",
+    },
 }
 
 for k=1,#apotheosis_status_list

@@ -1172,4 +1172,10 @@
 		color="ffe7b369" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/solid_wall_worm.xml" 
+		height_index="10"
+		color="ff584242" >
+	</Biome>
+
 </BiomesToLoad>

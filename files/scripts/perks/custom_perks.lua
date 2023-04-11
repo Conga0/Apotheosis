@@ -682,16 +682,19 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
 
         --Adds Perk into the list at the position we want
         if v.id_matchup == nil then
+            v.author = "Apotheosis - Conga Lyne"
             table.insert(perk_list,v)
         else
             for z=1,#perk_list
             do c = perk_list[z]
                 if c.id == v.id_matchup then
+                    v.author = "Apotheosis - Conga Lyne"
                     table.insert(perk_list,z + 1,v)
                     break
                 end
                 if z == #perk_list then
                     --Insert here as a failsafe incase the matchup ID can't be found.. some other mod might delete the perk we're trying to insert at
+                    v.author = "Apotheosis - Conga Lyne"
                     table.insert(perk_list,v)
                 end
             end
@@ -705,6 +708,7 @@ else
                 v.not_in_default_perk_pool = false
             end
         end
+        v.author = "Apotheosis - Conga Lyne"
         table.insert(perk_list,v)
     end
 end
