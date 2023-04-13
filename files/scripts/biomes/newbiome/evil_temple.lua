@@ -198,7 +198,7 @@ g_big_enemies =
 		prob   		= 0.3,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/crypt/hideous_mass.xml" --Originally the red varient.. but I wanted more familiar creatures for the player to feel safe around and accustomed to
+		entity 	= "data/entities/animals/crypt/hideous_mass.xml" --Originally the red variant.. but I wanted more familiar creatures for the player to feel safe around and accustomed to
 	},
 	{
 		prob   		= 0.5,
