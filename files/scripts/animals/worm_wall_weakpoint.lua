@@ -6,7 +6,9 @@ if( hitboxes ~= nil ) then
     do v = hitboxes[k]
 	    if (k ~= #hitboxes) then
 			ComponentSetValue2( v, "damage_multiplier", 0 )
-            --EntitySetComponentIsEnabled(entity_id,v,false)
+            --EntitySetComponentIsEnabled(entity_id,v,false) --This breaks how worms work?
+		else
+			ComponentSetValue2( v, "damage_multiplier", 2 )
 		end
 	end
 end

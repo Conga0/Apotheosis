@@ -497,14 +497,15 @@ do  -- Robots take damage from Veloium
   ModTextFileSetContent(path, tostring(xml))
 end
 
-do -- Piercing only hits once every 15 frames
+
+do -- Piercing only hit 5 times per modifier
   local path = "data/entities/misc/piercing_shot.xml"
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
   xml:add_child(nxml.parse([[
     <LuaComponent
     _enabled="1"
-    script_source_file="mods/apotheosis/files/scripts/projectiles/piercing_shot_rebalance.lua"
+    script_source_file="mods/apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive.lua"
     execute_every_n_frame="1"
     remove_after_executed="1"
     >
@@ -513,4 +514,5 @@ do -- Piercing only hits once every 15 frames
   ModTextFileSetContent(path, tostring(xml))
 end
 
-ModLuaFileAppend("mods/anvil_of_destiny/entities/anvil/potion_bonuses.lua", "mods/apotheosis/files/scripts/mod_compatibility/anvil_of_destiny_appends.lua")
+--Anvil of Destiny Compatibility
+--ModLuaFileAppend("mods/anvil_of_destiny/entities/anvil/potion_bonuses.lua", "mods/apotheosis/files/scripts/mod_compatibility/anvil_of_destiny_appends.lua")

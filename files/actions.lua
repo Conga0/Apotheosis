@@ -1476,6 +1476,25 @@ local apotheosis_spellappends = {
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
 	},
+	{
+		id          = "APOTHEOSIS_LARPA_DELAYED",
+        id_matchup  = "BOUNCE_LARPA",
+        name 		= "$spell_apotheosis_larpa_delayed_name",
+        description = "$spell_apotheosis_larpa_delayed_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/larpa_delay.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/burn_trail_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "4,5,6", -- BOUNCE_SPARK
+		spawn_probability                 = "0.4,0.6,0.4", -- BOUNCE_SPARK
+		price = 250,
+		mana = 40,
+		--max_uses = 150,
+		action 		= function()
+			c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/larpa_shotgun.xml,"
+			c.fire_rate_wait = c.fire_rate_wait + 32
+			draw_actions( 1, true )
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -1638,6 +1657,26 @@ modify_existing_spell(
         c.bounces = c.bounces + 1
         c.fire_rate_wait = c.fire_rate_wait + 12
         draw_actions( 1, true )
+    end
+)
+
+--Update Piercing's Spell Description & code to showcase it's new functionality
+--Removed due to unreliability issues
+--[[
+]]--
+modify_existing_spell("PIERCING_SHOT","mana",90)
+modify_existing_spell("PIERCING_SHOT","description","$spell_apotheosis_piercing_shot_desc")
+modify_existing_spell(
+	"PIERCING_SHOT",
+	"action",
+    function()
+        --c.damage_projectile_add = c.damage_projectile_add - 0.6
+        c.friendly_fire		= true
+        if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
+            c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+        end
+        c.extra_entities = c.extra_entities .. "data/entities/misc/piercing_shot.xml,"
+        draw_actions(1, true)
     end
 )
 
