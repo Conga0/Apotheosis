@@ -265,7 +265,7 @@ material_apotheosis_knowledge_of_kings,Yggdrasil's Knowledge,Знания Игг
 spell_apotheosis_targetter_name,Targetter,Целеуказатель,,,,,,,,,,,,
 spell_apotheosis_targetter_desc,Fire a projectile which causes irresistable hatred towards anything it hits.,"Выпускает снаряд, который вызывает непреодолимую ненависть ко всему, во что попадает.",,,,,,,,,,,,
 spell_apotheosis_firecharge_name,Fire Charge,Огненный заряд,,,,,,,,,,,,
-spell_apotheosis_firecharge_desc,"Imbues a projectile with a fiery charge that it will release on impact.","Наделяет снаряд огненным зарядом, который он выпустит при ударе.",,,,,,,,,,,,
+spell_apotheosis_firecharge_desc,"Imbues a projectile with a fiery charge, that it will release on impact.","Наделяет снаряд огненным зарядом, который он выпустит при ударе.",,,,,,,,,,,,
 spell_apotheosis_knowledge_of_kings_name,The Knowledge of Kings,Знание королей,,,,,,,,,,,,
 spell_apotheosis_knowledge_of_kings_desc,Casting this spell causes something irreversibly permanent to occur,Использовании этого заклинания происходит нечто необратимо постоянное,,,,,,,,,,,,
 spell_apotheosis_portal_lukki_red_portal_name,Summon Red Portal,Призыв красного портала,,,,,,,,,,,,
