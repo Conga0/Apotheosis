@@ -651,12 +651,6 @@
 	
 	<ItemChestComponent level="3" enemy_drop="1" >
 	</ItemChestComponent>
-	
-	<LuaComponent
-		_tags="death_reward"
-		script_death="mods/Apotheosis/files/scripts/animals/centipede_death.lua"
-		>
-	</LuaComponent>
 
     <MusicEnergyAffectorComponent
     	energy_target="1">

@@ -125,8 +125,10 @@ end
 --Remind player they're on a custom seed
 if custom_seed == true then
     function OnPlayerSpawned()
+        if #ModSettingGet( "Apotheosis.custom_seed" ) > 0 then
             GamePrint("$sign_apotheosis_custom_seed" )
             --GamePrint(ModSettingGet( "Apotheosis.custom_seed" ))
+        end
      end
 end
 

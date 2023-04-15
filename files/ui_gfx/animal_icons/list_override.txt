@@ -120,6 +120,7 @@ star_child
 worm_tiny
 worm
 worm_big
+worm_wall
 worm_skull
 worm_end
 drone_physics

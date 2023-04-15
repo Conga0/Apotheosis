@@ -24,11 +24,10 @@ Note: Spoopy is working on a giant Master of Puppetering Sprite, check his DMs f
 
 Do something with Wand of Aiming
 
-Fix "Custom Seed Successfully Set" appearing every run
-
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
 Herobrine rework
 Note: Extol *might* be willing to help program this? hit him up when it's time
 
+Omega Death Cross hint book
