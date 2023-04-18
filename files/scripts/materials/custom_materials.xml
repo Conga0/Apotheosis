@@ -116,7 +116,6 @@
 	fire_hp="1200"
 	solid_collide_with_self="0"
 	solid_break_to_type="lava"
-	solid_break_to_type="slime"
 	solid_on_collision_splash_power="1"
 	solid_restitution="0.5"
 	audio_physics_material_event="rock"

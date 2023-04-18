@@ -1203,6 +1203,7 @@ local apotheosis_spellappends = {
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml" },
         type 		= ACTION_TYPE_MODIFIER,
+        subtype     = "homing",
         spawn_level                       = "1,2,3,4,5,6", -- HOMING
         spawn_probability                 = "0.1,0.4,0.4,0.4,0.4,0.4", -- HOMING
         price = 200,
@@ -1495,6 +1496,93 @@ local apotheosis_spellappends = {
 			draw_actions( 1, true )
 		end,
 	},
+	{
+		id          = "APOTHEOSIS_RANDOM_HOMING",
+        id_matchup  = "RANDOM_STATIC_PROJECTILE",
+        name 		= "$spell_apotheosis_random_homing_name",
+        description = "$spell_apotheosis_random_homing_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_homing.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		spawn_requires_flag = "card_unlocked_pyramid",
+		type 		= ACTION_TYPE_MODIFIER,
+		recursive	= true,
+		spawn_level                       = "4,5,6,10", -- MANA_REDUCE
+		spawn_probability                 = "0.3,0.1,0.1,0.5", -- MANA_REDUCE
+		price = 120,
+		mana = 20,
+		action 		= function( recursion_level, iteration )
+			SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
+            local tdelay = c.fire_rate_wait
+
+            local IDTable = {}
+
+            for k=1,#actions
+            do local v = actions[k]
+                if v.subtype == "homing" then
+                    table.insert(IDTable,k)
+                end
+            end
+
+			local rnd = Random( 1, #IDTable )
+			local data = actions[IDTable[rnd]]
+			
+			local safety = 0
+			local rec = check_recursion( data, recursion_level )
+			
+			data.action( rec )
+            c.fire_rate_wait = tdelay
+		end,
+	},
+    --[[
+	{   --How would this even work on a technical level? Idea is to share lua components of projectiles amongst all other projectiles
+		id          = "APOTHEOSIS_LUA_SHARING",
+        id_matchup  = "TRANSMUTATION",
+        name 		= "$spell_apotheosis_lua_sharing_name",
+        description = "$spell_apotheosis_lua_sharing_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_homing.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "2,3,4,5,6,10", -- TRANSMUTATION
+		spawn_probability                 = "0.3,0.3,0.3,0.3,0.3,0.2", -- TRANSMUTATION
+		price = 180,
+		mana = 60,
+		--max_uses = 8,
+		action 		= function()
+
+            local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+            local init = true
+
+            local content_modifier = ModTextFileGetContent("mods/Apotheosis/files/entities/misc/lua_sharing.xml")
+            local xml2 = nxml.parse(content_modifier)
+            local luacomp = xml2:first_of("LuaComponent")
+            if luacomp then
+                xml2:remove_child(luacomp)
+                GamePrint("Lua Child Found")
+            end
+
+            for k=1,#deck
+            do local v = deck[k]
+                if v.type <= 1 then
+                    local proj_file = v.related_projectiles[1] or v.related_projectiles
+
+                    local content = ModTextFileGetContent(proj_file)
+                    local xml = nxml.parse(content)
+                    local attrs = xml:first_of("LuaComponent")
+
+                    xml2:add_child(attrs)
+                    ModTextFileSetContent("mods/Apotheosis/files/entities/misc/lua_sharing.xml",tostring(xml2))
+
+                    c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/lua_sharing.xml,"
+                    GamePrint("Success")
+                end
+            end
+
+			--c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/lua_sharing.xml,data/entities/particles/tinyspark_purple_bright.xml,"
+			c.fire_rate_wait = c.fire_rate_wait + 20
+			draw_actions( 1, true )
+		end,
+	},
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -1621,7 +1709,20 @@ modify_existing_spell("HOMING_ROTATE","spawn_probability","0.6,0.8,1,1,0.6")
 --Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
 modify_existing_spell("CHAINSAW","mana",12)
 
---Slightly buff Bubbly Bounce by reducing the spell cost & removing the recoil effect from the modiifer
+--Slightly buff Explosive Bounce by reducing the spell cost & removing the recoil effect from the modifier
+modify_existing_spell("BOUNCE_EXPLOSION","price",90)
+modify_existing_spell(
+	"BOUNCE_EXPLOSION",
+	"action",
+    function()
+        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_explosion.xml,"
+        c.bounces = c.bounces + 1
+        c.fire_rate_wait = c.fire_rate_wait + 25
+        draw_actions( 1, true )
+    end
+)
+
+--Slightly buff Bubbly Bounce by reducing the spell cost & removing the recoil effect from the modifier
 modify_existing_spell("BOUNCE_SPARK","price",60)
 modify_existing_spell(
 	"BOUNCE_SPARK",
@@ -1634,7 +1735,7 @@ modify_existing_spell(
     end
 )
 
---Slightly buff Plasma Beam Bounce by reducing the spell cost & removing the recoil effect from the modiifer
+--Slightly buff Plasma Beam Bounce by reducing the spell cost & removing the recoil effect from the modifier
 modify_existing_spell("BOUNCE_LASER_EMITTER","price",90)
 modify_existing_spell(
 	"BOUNCE_LASER_EMITTER",
@@ -1647,7 +1748,7 @@ modify_existing_spell(
     end
 )
 
---Slightly buff Concentrated Light Bounce by reducing the spell cost & removing the recoil effect from the modiifer
+--Slightly buff Concentrated Light Bounce by reducing the spell cost & removing the recoil effect from the modifier
 modify_existing_spell("BOUNCE_LASER","price",90)
 modify_existing_spell(
 	"BOUNCE_LASER",
@@ -1661,10 +1762,9 @@ modify_existing_spell(
 )
 
 --Update Piercing's Spell Description & code to showcase it's new functionality
---Removed due to unreliability issues
 --[[
 ]]--
-modify_existing_spell("PIERCING_SHOT","mana",90)
+modify_existing_spell("PIERCING_SHOT","mana",80)
 modify_existing_spell("PIERCING_SHOT","description","$spell_apotheosis_piercing_shot_desc")
 modify_existing_spell(
 	"PIERCING_SHOT",
@@ -1718,6 +1818,28 @@ modify_existing_spell(
     end
 )
 
+
+
+
+modify_existing_spell("HOMING","subtype","homing")
+modify_existing_spell("HOMING_SHORT","subtype","homing")
+modify_existing_spell("HOMING_ROTATE","subtype","homing")
+modify_existing_spell("AUTOAIM","subtype","homing")
+modify_existing_spell("HOMING_ACCELERATING","subtype","homing")
+modify_existing_spell("HOMING_CURSOR","subtype","homing")
+modify_existing_spell("HOMING_AREA","subtype","homing")
+
+if ModIsEnabled("copis_things") then
+    modify_existing_spell("COPIS_THINGS_PSYCHIC_SHOT","subtype","homing")
+    modify_existing_spell("COPIS_THINGS_HOMING_ANTI","subtype","homing")
+    modify_existing_spell("COPIS_THINGS_ULT_CONTROL","subtype","homing")
+    modify_existing_spell("COPIS_THINGS_HOMING_SEEKER","subtype","homing")
+    modify_existing_spell("COPIS_THINGS_HOMING_ANTI_SHOOTER","subtype","homing")
+    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE","subtype","homing")
+    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE_CURSOR","subtype","homing")
+    modify_existing_spell("COPIS_THINGS_HOMING_INTERVAL","subtype","homing")
+    --modify_existing_spell("COPIS_THINGS_HOMING_MACROSS","subtype","homing") No point having multiple delayed homing spells in the RNG pool, while funny, it'll just result in a bias towards delayed homing being chosen
+end
 
 
 --Remove Spells

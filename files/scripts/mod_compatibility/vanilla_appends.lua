@@ -516,3 +516,11 @@ end
 
 --Anvil of Destiny Compatibility
 --ModLuaFileAppend("mods/anvil_of_destiny/entities/anvil/potion_bonuses.lua", "mods/apotheosis/files/scripts/mod_compatibility/anvil_of_destiny_appends.lua")
+
+
+do --Add Random Homing to Pyramid Boss loot pool
+  local path = "data/entities/animals/boss_limbs/boss_limbs_death.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM" }]], [[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM", "APOTHEOSIS_RANDOM_HOMING" }]])
+  ModTextFileSetContent(path, content)
+end

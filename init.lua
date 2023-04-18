@@ -468,6 +468,10 @@ spell_apotheosis_trail_reducer_name,"Trail Reducer",,,,,,,,,,,,,
 spell_apotheosis_trail_reducer_desc,"Significantly reduce the amount of material produced by other trail spells in the wand",,,,,,,,,,,,,
 spell_apotheosis_larpa_delayed_name,"Burst Larpa",,,,,,,,,,,,,
 spell_apotheosis_larpa_delayed_desc,"Make a projectile cast a burst of copies after a short delay",,,,,,,,,,,,,
+spell_apotheosis_random_homing_name,"Random Homing",,,,,,,,,,,,,
+spell_apotheosis_random_homing_desc,"Cast one random homing spell",,,,,,,,,,,,,
+spell_apotheosis_lua_sharing_name,"Magic Inerberation",,,,,,,,,,,,,
+spell_apotheosis_lua_sharing_desc,"Wildly diffuses the magical properties of different spells",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Creatures hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_explosion,Creatures hit by a projectile takes 100% extra explosion damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от взрывов,O alvo atingido por um projétil recebe mais 100% de dano de explosão por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de explosiones durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Explosionsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des explosions pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da esplosione in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od wybuchów,被投射物击中的目标短时间内会受到额外的 100% 爆炸伤害,放射物が当たったターゲットが一定期間100%の追加の爆破ダメージを受ける,일정 시간 동안 폭발이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_melee,Creatures hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -808,46 +812,6 @@ end
 
 --Modded compatibility
 
---New Biomes & Secrets
-if ModIsEnabled("New Biomes + Secrets") then
-
-    --Normal Spawns
-	ModLuaFileAppend( "data/scripts/biomes/SEWER.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/SEWER_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/radioactive_pits.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/radioactive_pits_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/gascave_left.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/gascave_middle_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/gascave_middle.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/gascave_middle_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/gascave_right.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/gascave_middle_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/LANDING.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/LANDING_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/space.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/space_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_left7.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_toxic_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_middle7.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_toxic_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_right7.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_toxic_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_left6.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_snow_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_middle6.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_snow_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_right6.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_snow_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_left5.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_heat_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_middle5.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_heat_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_right5.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_heat_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_left3.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_heat_bug_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_middle3.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_heat_bug_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_right3.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_heat_bug_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_left2.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_norm_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_middle2.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_norm_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_right2.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_norm_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_left1.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_norm_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_middle1.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_norm_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/tower_ascending_right1.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/forbidden_tower_norm_populator.lua" )
-
-    --Global Spawns
-	ModLuaFileAppend( "data/scripts/biomes/SEWER.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/radioactive_pits.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/gascave_middle.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/LANDING.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/space.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-
-end
-
-
 --Alternate Biomes
 --Remember to make specific files for these at some point.. it'd be weird if there were totally normal guys spawning in irridiated mines, or magical people in the robotics factory
 if ModIsEnabled("biome-plus") then
@@ -897,18 +861,6 @@ if ModIsEnabled("biome-plus") then
 end
 
 
---Volcano Biome
-if ModIsEnabled("VolcanoBiome") then
-
-    --Normal Spawns
-	ModLuaFileAppend( "mods/VolcanoBiome/files/biome/inside.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/volcano_populator.lua" )
-
-    --Global Spawns
-	ModLuaFileAppend( "mods/VolcanoBiome/files/biome/inside.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-
-end
-
-
 --Flesh Biome
 if ModIsEnabled("flesh_biome") then
 
@@ -917,39 +869,6 @@ if ModIsEnabled("flesh_biome") then
 
     --Global Spawns
 	ModLuaFileAppend( "mods/flesh_biome/files/scripts/flesh_biome.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-
-end
-
-
---Sewer Standalone Mod
-if ModIsEnabled("sewer_updated") then
-
-    --Normal Spawns
-	ModLuaFileAppend( "mods/sewer_updated/files/sewer_biome/sewer.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/SEWER_populator.lua" )
-
-    --Global Spawns
-	ModLuaFileAppend( "mods/sewer_updated/files/sewer_biome/sewer.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-
-end
-
-
---Chasm Biomes
-if ModIsEnabled("chasm biomes") then
-
-    --Normal Spawns
-	ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/outpost.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua" )
-	ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/winter_caves.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua" )
-	ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/polycave.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/polycave_populator.lua" )
-
-    --Global Spawns
-	ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/outpost.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-	ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/winter_caves.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-	ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/polycave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-
-  --Suspicious
-  ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/outpost.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" )
-  ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/winter_caves.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" )
-  ModLuaFileAppend( "mods/chasm biomes/files/scripts/biomes/polycave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" )
 
 end
 
@@ -966,45 +885,6 @@ if ModIsEnabled("new_enemies") then
   if ModIsEnabled("biome-plus") then
     ModLuaFileAppend( "data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua" )
   end
-end
-
-
---Noitavania, inserts enemies into various biome pools
-if ModIsEnabled("noitavania") then
-
-    --Normal Spawns
-	ModLuaFileAppend( "data/scripts/biomes/nv_hills.lua", "mods/Apotheosis/files/scripts/biomes/hills_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_volcano/inside.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/volcano_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/sewer.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/SEWER_populator.lua" )
-	--ModLuaFileAppend( "data/scripts/biomes/nv_cursed.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/cursed_populator.lua" ) -- I don't have any enemies which would fit this area as of now
-  ModLuaFileAppend( "data/scripts/biomes/nv_space.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/space_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/landing.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/LANDING_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/outpost.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/outpost_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_castle/maze.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/castle_maze_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_castle/main.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/castle_main_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_radioactive.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/nv_radioactive_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/snowcastle_cavern.lua", "mods/Apotheosis/files/scripts/biomes/nv_snowcastle_cavern_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_gascave/left.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/gascave_middle_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_gascave/middle.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/gascave_middle_populator.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_gascave/right.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/gascave_middle_populator.lua" )
-
-    --Global Spawns
-	ModLuaFileAppend( "data/scripts/biomes/nv_hills.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/nv_volcano/inside.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/sewer.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/nv_cursed.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_space.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/landing.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/outpost.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_castle/maze.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_castle/main.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_radioactive.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  -- ModLuaFileAppend( "data/scripts/biomes/snowcastle_cavern.lua", "mods/Apotheosis/files/scripts/biomes/nv_snowcastle_cavern_populator.lua" ) -- no creature spawns to append to
-  ModLuaFileAppend( "data/scripts/biomes/nv_gascave/left.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_gascave/middle.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-  ModLuaFileAppend( "data/scripts/biomes/nv_gascave/right.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_smallonly.lua" )
-
-
 end
 
 

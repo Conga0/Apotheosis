@@ -1,4 +1,44 @@
 dofile_once("data/scripts/lib/utilities.lua")
+dofile_once( "data/scripts/gun/gun_actions.lua" )
+
+function make_random_card( x, y )
+	-- this does NOT call SetRandomSeed() on purpouse. 
+	-- SetRandomSeed( x, y )
+
+	local item = ""
+	local valid = false
+
+	while ( valid == false ) do
+		local itemno = Random( 1, #actions )
+		local thisitem = actions[itemno]
+		item = string.lower(thisitem.id)
+		
+		if ( thisitem.spawn_requires_flag ~= nil ) then
+			local flag_name = thisitem.spawn_requires_flag
+			local flag_status = HasFlagPersistent( flag_name )
+			
+			if flag_status then
+				valid = true
+			end
+
+			-- 
+			if( thisitem.spawn_probability == "0" ) then 
+				valid = false
+			end
+			
+		else
+			valid = true
+		end
+	end
+
+
+	if ( string.len(item) > 0 ) then
+		local card_entity = CreateItemActionEntity( item, x, y )
+		return card_entity
+	else
+		print( "No valid action entity found!" )
+	end
+end
 
 
 local pool = {
@@ -161,6 +201,9 @@ function item_pickup( entity_item, entity_who_picked, name )
     local rnd = Random(1, #pool)
 
     local enemyCount = 25
+    if pool[rnd] == "giant_centipede" then
+        enemyCount = 8
+    end
     local calcVar = 77
 
     repeat
@@ -199,8 +242,16 @@ function item_pickup( entity_item, entity_who_picked, name )
 
     for i = 1, spellCount do
         local rnd = Random(1, #prizeSpells)
-        CreateItemActionEntity(prizeSpells[rnd], x - 8 * spellCount + (i - 0.5) * 16, y)
+        if math.random(1,5) == 1 then
+            make_random_card(x - 8 * spellCount + (i - 0.5) * 16, y)
+        else
+            CreateItemActionEntity(prizeSpells[rnd], x - 8 * spellCount + (i - 0.5) * 16, y)
+        end
         table.remove(prizeSpells, rnd)
+
+        if math.random(1,spellCount) == 1 then
+            spellCount = spellCount + 1
+        end
     end
 
     --[[
