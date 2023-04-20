@@ -1084,6 +1084,24 @@ biome_modifier_magmatic = {
 	end,
 }
 
+biome_modifier_esoteric_den = {
+	id = "ESOTERIC_DEN",
+	ui_description="$biomemod_esoteric_den",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
+	probability=0.0,
+	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
+	action = function( biome_name, biome_filename )
+		BiomeObjectSetValue( biome_filename, "modifiers", "reaction_unfreeze_chance", 40 )
+		BiomeVegetationSetValue( biome_filename, "grass", "tree_material", "grass_dry" )
+		BiomeVegetationSetValue( biome_filename, "fungus_loose", "tree_probability", 0.0 ) -- no mushrooms in dry biome
+		BiomeSetValue( biome_filename, "color_grading_r", 0.10 )
+		BiomeSetValue( biome_filename, "color_grading_g", 0.10 )
+		BiomeSetValue( biome_filename, "color_grading_b", 0.10 )
+		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.150 )
+		BiomeObjectSetValue( biome_filename, "modifiers", "dust_amount", 0.85 )
+	end,
+}
+
 biome_modifier_devtest = {
 	id = "DEVTEST",
 	ui_description="$biomemod_necromancy",
@@ -1320,6 +1338,7 @@ function get_modifier_mappings()
 	result["custom/evil_temple"] = biome_modifier_fog_of_war_clear_at_player
 	result["alchemist_secret"] = biome_modifier_fog_of_war_clear_at_player
 	result["custom/lava_excavation"] = biome_modifier_magmatic
+	result["custom/esoteric_den"] = biome_modifier_esoteric_den
 	set_modifier_if_has_none( "custom/ant_hell", "FOG_OF_WAR_REAPPEARS" )
 	set_modifier_if_has_none( "custom/sunken_cave", "MOIST" )
 	--apply_modifier_if_has_none( "snowcave", "FREEZING" )

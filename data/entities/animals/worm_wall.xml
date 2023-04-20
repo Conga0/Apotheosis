@@ -678,12 +678,5 @@
 		script_source_file="mods/Apotheosis/files/scripts/animals/worm_wall_weakpoint.lua"
 		remove_after_executed="1">
 	</LuaComponent>
-	
-  	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_half.lua"
-		execute_times="1"
-		remove_after_executed="1"
-		>
-	</LuaComponent>
 
 </Entity>

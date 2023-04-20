@@ -1479,7 +1479,7 @@ local apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_LARPA_DELAYED",
-        id_matchup  = "BOUNCE_LARPA",
+        id_matchup  = "LARPA_DEATH",
         name 		= "$spell_apotheosis_larpa_delayed_name",
         description = "$spell_apotheosis_larpa_delayed_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/larpa_delay.png",

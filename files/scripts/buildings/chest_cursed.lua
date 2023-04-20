@@ -9,7 +9,7 @@ function make_random_card( x, y )
 	local valid = false
 
 	while ( valid == false ) do
-		local itemno = Random( 1, #actions )
+		local itemno = math.random( 1, #actions )
 		local thisitem = actions[itemno]
 		item = string.lower(thisitem.id)
 		

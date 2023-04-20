@@ -16,6 +16,7 @@ RegisterSpawnFunction( 0xff55AF4B, "load_altar" )
 RegisterSpawnFunction( 0xff23B9C3, "spawn_altar_torch" ) 
 RegisterSpawnFunction( 0xff55AF8C, "spawn_skulls" ) 
 RegisterSpawnFunction( 0xffF516E3, "spawn_scavenger_party" )
+RegisterSpawnFunction( 0xff00e396, "spawn_mist_colossal" )
 RegisterSpawnFunction( 0xffFFC84E, "spawn_acid" )
 RegisterSpawnFunction( 0xff7285c4, "load_acidtank_right" )
 RegisterSpawnFunction( 0xff9472c4, "load_acidtank_left" )
@@ -57,6 +58,24 @@ g_small_enemies =
 		entity 	= "data/entities/animals/fairy_esoteric.xml"
 	},
 }
+
+if ModSettingGet( "Apotheosis.congacat_cat_immortal" ) then
+	table.insert(g_small_enemies,
+	{
+		prob   		= 0.005,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/cat_immortal/cat_mocreeps_esoteric.xml"
+	})
+else
+	table.insert(g_small_enemies,
+	{
+		prob   		= 0.005,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/cat_mocreeps_esoteric.xml"
+	})
+end
 
 
 ------------ BIG ENEMIES ------------------------------------------------------
@@ -114,6 +133,25 @@ g_scavenger_party =
 			},
 			"data/entities/animals/scavenger_leader.xml",
 		}
+	},
+}
+
+g_mist_colossal =
+{
+	total_prob = 0,
+	-- this is air, so nothing spawns at 0.6
+	{
+		prob   		= 0.5,
+		min_count	= 0,
+		max_count	= 0,    
+		entity 	= ""
+	},
+	-- 
+	{
+		prob   		= 1.0,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "mods/apotheosis/files/entities/buildings/status_trap_esoteric_damage.xml"
 	},
 }
 
@@ -852,6 +890,12 @@ end
 function spawn_scavenger_party(x,y)
 	if safe( x, y ) then
 		spawn(g_scavenger_party, x, y)
+	end
+end
+
+function spawn_mist_colossal(x,y)
+	if safe( x, y ) then
+		spawn(g_mist_colossal, x, y)
 	end
 end
 

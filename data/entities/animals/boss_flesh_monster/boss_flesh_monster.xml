@@ -16,6 +16,17 @@
 		offset_y="56.5"
 		>
 	</SpriteComponent>
+
+	<SpriteComponent
+		enabled="0"
+		_tags="enabled_by_liquid"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
+		offset_x="56.5"
+		offset_y="56.5"
+		emissive="1"
+		additive="1"
+		>
+	</SpriteComponent>
 	
 	<Entity>
 		<SpriteComponent
@@ -367,7 +378,7 @@
 	<!-- Stationary Particles -->
 
 	<ParticleEmitterComponent 
-		_enabled="0"
+		_enabled="1"
 		_tags="enabled_by_liquid"
 		emitted_material_name="spark_red"
 		gravity.y="0.0"
@@ -399,7 +410,7 @@
 	<!-- Radial Movement Particles -->
 
 	<ParticleEmitterComponent 
-		_enabled="0"
+		_enabled="1"
 		_tags="enabled_by_liquid"
 		emitted_material_name="spark_red"
 		gravity.y="0.0"
