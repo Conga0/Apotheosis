@@ -206,6 +206,7 @@ fairy_big
 fairy_big_discord
 fairy_esoteric
 esoteric_being
+worm_esoteric
 ghost
 wand_ghost
 ethereal_being

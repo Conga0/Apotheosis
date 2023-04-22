@@ -1110,7 +1110,7 @@ local apotheosis_spellappends = {
         spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
         spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
         price = 140,
-        mana = 30,
+        mana = 40,
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/star_shot.xml")
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/star_shot.xml")
@@ -1582,6 +1582,42 @@ local apotheosis_spellappends = {
 			draw_actions( 1, true )
 		end,
 	},
+    ]]--
+    --Attempt 2 at trying this, goal was to grab a projectile file and make it an extra entity, no success as of writing, will try again tomorrow as it's 12 right now, man. I'm tired
+    --[[
+	{   --How would this even work on a technical level? Idea is to share lua components of projectiles amongst all other projectiles
+    id          = "APOTHEOSIS_LUA_SHARING",
+    id_matchup  = "TRANSMUTATION",
+    name 		= "$spell_apotheosis_lua_sharing_name",
+    description = "$spell_apotheosis_lua_sharing_desc",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_homing.png",
+    sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+    type 		= ACTION_TYPE_MODIFIER,
+    spawn_level                       = "2,3,4,5,6,10", -- TRANSMUTATION
+    spawn_probability                 = "0.3,0.3,0.3,0.3,0.3,0.2", -- TRANSMUTATION
+    price = 180,
+    mana = 60,
+    --max_uses = 8,
+    action 		= function()
+
+        for k=1,#deck
+        do local v = deck[k]
+            if v.id == "APOTHEOSIS_LUA_SHARING" then
+                for z=1,20 do
+                    if deck[k+z].related_projectiles then
+                        local projectile = deck[k+z].related_projectiles[1]
+                        c.extra_entities = c.extra_entities .. projectile .. ",data/entities/particles/tinyspark_purple_bright.xml,"
+                        GamePrint(tostring(projectile))
+                        break
+                    end
+                end
+            end
+        end
+
+        c.fire_rate_wait = c.fire_rate_wait + 20
+        draw_actions( 1, true )
+    end,
+    },
     ]]--
 }
 

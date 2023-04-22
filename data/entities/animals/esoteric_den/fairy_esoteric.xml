@@ -1,0 +1,12 @@
+<Entity name="Esoteerinen keiju" tags="ui_use_raw_name" >
+  <Base file="data/entities/animals/fairy_esoteric.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="6"
+      max_hp="6">
+	</DamageModelComponent >
+	<AnimalAIComponent 
+		attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/orb_psychotic_esoteric.xml"
+		>
+	</AnimalAIComponent>
+  </Base>
+</Entity>

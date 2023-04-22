@@ -676,7 +676,7 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
         -- Disables the perk from spawning if it's not unlocked
         if v.unlock_flag then
             if HasFlagPersistent( v.unlock_flag ) == false then
-                v.not_in_default_perk_pool = false
+                v.not_in_default_perk_pool = true
             end
         end
 
@@ -705,7 +705,7 @@ else
     do local v = apotheosis_perkappends[k]
         if v.unlock_flag then
             if HasFlagPersistent( v.unlock_flag ) == false then
-                v.not_in_default_perk_pool = false
+                v.not_in_default_perk_pool = true
             end
         end
         v.author = "Apotheosis - Conga Lyne"

@@ -55,7 +55,13 @@ g_small_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/fairy_esoteric.xml"
+		entity 	= "data/entities/animals/esoteric_den/fairy_esoteric.xml"
+	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/worm_esoteric.xml"
 	},
 }
 
@@ -100,7 +106,7 @@ g_big_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/fairy_esoteric.xml"
+		entity 	= "data/entities/animals/esoteric_den/fairy_esoteric.xml"
 	},
 }
 

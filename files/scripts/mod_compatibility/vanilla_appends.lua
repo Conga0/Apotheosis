@@ -242,7 +242,7 @@ do -- Rework Vulnerability Curses.. hmm..
 	
     if ( comp ~= nil ) and ComponentObjectGetValue2( comp, "damage_multipliers", name ) > 0 then]])
   content = content:gsub("mult = mult - 0.25", "mult = mult * 0.5")
-  ModTextFileSetContent(path, content)
+  ModTextFileSetContent(path2, content)
 end
 
 

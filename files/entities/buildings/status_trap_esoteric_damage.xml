@@ -29,8 +29,8 @@
 	<DamageNearbyEntitiesComponent
 		radius="32"
 		time_between_damaging="4"
-		damage_min="0.04"
-		damage_max="0.08"
+		damage_min="0.12"
+		damage_max="0.16"
 		target_tag="player_unit"
 		damage_description="Divine Light"
 		damage_type="DAMAGE_CURSE"

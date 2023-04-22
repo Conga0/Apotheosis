@@ -1179,7 +1179,7 @@
 	</Biome>
 
 	<Biome 
-		biome_filename="data/biome/custom/solid_wall_tower_esoteric_stone.xml" 
+		biome_filename="data/biome/custom/solid_wall_tower_esoteric_stone.xml"
 		height_index="10"
 		color="ff574b70" >
 	</Biome>

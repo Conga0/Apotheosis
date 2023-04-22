@@ -41,8 +41,11 @@
 
     <EnergyShieldComponent 
         _tags="enabled_in_hand"
-        recharge_speed="0.22" 
+        recharge_speed="0.0" 
 		radius="13.0"
+		max_energy="2.0"
+		energy_required_to_shield="1.0"
+		energy="2"
 		>
     </EnergyShieldComponent>
     

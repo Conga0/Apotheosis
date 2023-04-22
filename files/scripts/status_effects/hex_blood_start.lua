@@ -2,7 +2,7 @@ local entity_id = GetUpdatedEntityID()
 entity_id = EntityGetRootEntity(entity_id)
 
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
-if comp ~= 0 then
+if comp then
 
     local materials = {
         "blood",
