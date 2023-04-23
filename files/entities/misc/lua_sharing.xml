@@ -1,3 +1,10 @@
-<Entity >
+<Entity>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/lua_sharing.lua"
+		execute_every_n_frame="1"
+        remove_after_executed="1"
+		>
+	</LuaComponent>
 
 </Entity>

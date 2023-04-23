@@ -1584,41 +1584,42 @@ local apotheosis_spellappends = {
 	},
     ]]--
     --Attempt 2 at trying this, goal was to grab a projectile file and make it an extra entity, no success as of writing, will try again tomorrow as it's 12 right now, man. I'm tired
-    --[[
 	{   --How would this even work on a technical level? Idea is to share lua components of projectiles amongst all other projectiles
     id          = "APOTHEOSIS_LUA_SHARING",
     id_matchup  = "TRANSMUTATION",
     name 		= "$spell_apotheosis_lua_sharing_name",
     description = "$spell_apotheosis_lua_sharing_desc",
-    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_homing.png",
+    sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/lua_sharing.png",
     sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
     type 		= ACTION_TYPE_MODIFIER,
     spawn_level                       = "2,3,4,5,6,10", -- TRANSMUTATION
     spawn_probability                 = "0.3,0.3,0.3,0.3,0.3,0.2", -- TRANSMUTATION
     price = 180,
-    mana = 60,
+    mana = 40,
     --max_uses = 8,
-    action 		= function()
+    action = function()
 
-        for k=1,#deck
-        do local v = deck[k]
-            if v.id == "APOTHEOSIS_LUA_SHARING" then
-                for z=1,20 do
-                    if deck[k+z].related_projectiles then
-                        local projectile = deck[k+z].related_projectiles[1]
-                        c.extra_entities = c.extra_entities .. projectile .. ",data/entities/particles/tinyspark_purple_bright.xml,"
-                        GamePrint(tostring(projectile))
-                        break
-                    end
-                end
+        if not reflecting then
+
+            if c.caststate == nil then
+                -- Relies on gun.lua haxx refer to "gun_append.lua" if you want to use data transfer haxx
+                c.action_description = table.concat(
+                    {
+                        (c.action_description or ""),
+                        "\nCASTSTATE_APOLUASHARE|",
+                        GlobalsGetValue("APOTHEOSIS_LUA_SHARING_CAST_STATE", "0"),
+                    }
+                )
+                c.caststate = true
             end
+            c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/lua_sharing.xml,"
+
         end
 
-        c.fire_rate_wait = c.fire_rate_wait + 20
-        draw_actions( 1, true )
-    end,
+        --c.fire_rate_wait = c.fire_rate_wait + 20
+        draw_actions(1, true)
+    end
     },
-    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
