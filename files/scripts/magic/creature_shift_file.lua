@@ -241,7 +241,7 @@ function creature_shift( entity, x, y, debug_no_limits )
         end
 
         local icon_name = target2
-        if icon_name == "hideous_mass_red" or icon_name == "gazer_cold_apotheosis" or icon_name == "tree_tall" then
+        if icon_name == "hideous_mass_red" or icon_name == "tree_tall" then
             icon_name = "hidden/" .. icon_name
         end
 

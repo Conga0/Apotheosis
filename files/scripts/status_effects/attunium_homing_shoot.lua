@@ -2,11 +2,13 @@
 
 function shot( entity_id )
 
+    --Sets homing strength to 40 for monsters, 100 for the player
     local homingspeed=40
     if EntityHasTag(entity_id,"projectile_player") then
         homingspeed=100
     end
 
+    --Adds homing to a projectile using designated values
     EntityAddComponent2(
         entity_id,
         "HomingComponent",
@@ -16,6 +18,7 @@ function shot( entity_id )
         }
     )
 
+    --Adds homing particle effects to the projectile
     local comp = EntityAddComponent2(
         entity_id,
         "ParticleEmitterComponent",
@@ -47,6 +50,7 @@ function shot( entity_id )
             is_emitting=true,
         }
     )
+    --We can't set these values inherently when creating a new component via lua, so set them here instead
     ComponentSetValue2(comp, "offset", 0, 0)
     ComponentSetValue2(comp, "gravity", 0, 0)
 end

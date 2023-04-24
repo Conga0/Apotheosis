@@ -1,6 +1,6 @@
 table.insert(ALL_ENTITIES, {
-  name="Mo Creeps",
-  desc="Enemies, Buildings & Wands from the Apotheosis & Weirdos mod",
+  name="Apotheosis",
+  desc="Enemies, Buildings & Wands from the Apotheosis mod",
   icon="data/ui_gfx/animal_icons/wizard_duck.png",
   icon_off="data/ui_gfx/bubbles/wizard_duck_dim.png",
   grid_size=12,
@@ -603,6 +603,11 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Nightmare Asthete of Heat",
 		path="data/entities/animals/gold_bosses/boss_fire_lukki/boss_fire_lukki.xml",
+		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
+	  },
+	  {
+		name="ACTUAL WANDGHOST",
+		path="data/entities/animals/apparition/playerghost.xml",
 		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
 	  }
   },

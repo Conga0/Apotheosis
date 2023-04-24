@@ -1583,8 +1583,7 @@ local apotheosis_spellappends = {
 		end,
 	},
     ]]--
-    --Attempt 2 at trying this, goal was to grab a projectile file and make it an extra entity, no success as of writing, will try again tomorrow as it's 12 right now, man. I'm tired
-	{   --How would this even work on a technical level? Idea is to share lua components of projectiles amongst all other projectiles
+	{   --Thankyou Copi'r for the help!
     id          = "APOTHEOSIS_LUA_SHARING",
     id_matchup  = "TRANSMUTATION",
     name 		= "$spell_apotheosis_lua_sharing_name",
@@ -1593,7 +1592,7 @@ local apotheosis_spellappends = {
     sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
     type 		= ACTION_TYPE_MODIFIER,
     spawn_level                       = "2,3,4,5,6,10", -- TRANSMUTATION
-    spawn_probability                 = "0.3,0.3,0.3,0.3,0.3,0.2", -- TRANSMUTATION
+    spawn_probability                 = "0.3,0.3,0.3,0.3,0.3,0.5", -- TRANSMUTATION
     price = 180,
     mana = 40,
     --max_uses = 8,

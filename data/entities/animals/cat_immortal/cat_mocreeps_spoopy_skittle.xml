@@ -97,5 +97,20 @@
 		>
 	</LuaComponent>
 
+
+
+	<!--Fire Protection-->
+	<Entity>
+		
+		<InheritTransformComponent />
+		
+		<GameEffectComponent
+			effect="WET"
+			frames="-1"
+			>
+		</GameEffectComponent >
+
+	</Entity>
+
 </Entity>
 

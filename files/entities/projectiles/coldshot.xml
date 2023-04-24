@@ -8,7 +8,7 @@
     	</VelocityComponent> 
 	</Base>
 
-  <ProjectileComponent 
+  <ProjectileComponent
     _enabled="1" 
 	speed_min="130"
 	speed_max="160"

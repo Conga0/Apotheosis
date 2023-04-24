@@ -47,12 +47,14 @@ Content list:
 4 new musical curiosities 
 
 
-Custom tag count: [5]
+Custom tag count: [7]
 musical_stone
 vulnerable
 watermage
 apotheosis_blob_boss
 chest_pandora (Could be optimised by only looking for an entity name)
+weaken_NOT
+cast_share
 
 Note: Readthrough vanilla changes and remove any notes before release
 

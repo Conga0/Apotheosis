@@ -16,4 +16,13 @@
 			>
 		</AbilityComponent>
 	</Base>
+
+	<LuaComponent
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/items/obj_path.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
 </Entity>

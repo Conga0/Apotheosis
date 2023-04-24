@@ -1,18 +1,18 @@
 <Entity tags="tablet,normal_tablet">
 	<Base file="data/entities/items/books/base_book.xml">
 		<UIInfoComponent
-			name="$book_apotheosis_orbbook_13_name"
+			name="$book_apotheosis_playerghost_name"
 			>
 		</UIInfoComponent>
 		
 		<ItemComponent
-			item_name="$book_apotheosis_orbbook_13_name"
-			ui_description="$book_apotheosis_orbbook_13_description"
+			item_name="$book_apotheosis_playerghost_name"
+			ui_description="$book_apotheosis_playerghost_description"
 			>
 		</ItemComponent>
 		
 		<AbilityComponent
-			ui_name="$book_apotheosis_orbbook_13_name"
+			ui_name="$book_apotheosis_playerghost_name"
 			>
 		</AbilityComponent>
 	</Base>

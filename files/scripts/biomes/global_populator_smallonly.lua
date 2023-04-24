@@ -170,3 +170,24 @@ if ModIsEnabled("Hydroxide") then
         entity     = "data/entities/animals/bubbles/stophittingyourself/bubble_liquid.xml"
     })
 end
+
+
+--Tablet Ghost
+table.insert(g_small_enemies,
+{
+    prob           = 0.004,
+    min_count    = 1,
+    max_count    = 1,
+    entity     = "data/entities/animals/playerghost_apotheosis/playerghost.xml",
+    spawn_check = function() 
+
+        local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) )
+        
+        if ghost_count >= 3 then
+            return false
+        else
+            GlobalsSetValue("apotheosis_tabletghost_count", ghost_count + 1 )
+            return true 
+        end
+    end,
+})

@@ -524,3 +524,126 @@ do --Add Random Homing to Pyramid Boss loot pool
   content = content:gsub([[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM" }]], [[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM", "APOTHEOSIS_RANDOM_HOMING" }]])
   ModTextFileSetContent(path, content)
 end
+
+
+do -- Autogenerate filepath VSCs for various items
+  local paths = {
+    "data/entities/items/books/book_00.xml",
+    "data/entities/items/books/book_01.xml",
+    "data/entities/items/books/book_02.xml",
+    "data/entities/items/books/book_03.xml",
+    "data/entities/items/books/book_04.xml",
+    "data/entities/items/books/book_05.xml",
+    "data/entities/items/books/book_06.xml",
+    "data/entities/items/books/book_07.xml",
+    "data/entities/items/books/book_08.xml",
+    "data/entities/items/books/book_09.xml",
+    "data/entities/items/books/book_10.xml",
+    "data/entities/items/books/base_book.xml",
+    "data/entities/items/books/book_tree.xml",
+  }
+
+  for k=1,#paths
+  do local v = paths[k]
+    local content = ModTextFileGetContent(v)
+    local xml = nxml.parse(content)
+    xml:add_child(nxml.parse([[
+      <LuaComponent
+      _enabled="1"
+      script_source_file="mods/apotheosis/files/scripts/items/obj_path.lua"
+      execute_every_n_frame="1"
+      remove_after_executed="1"
+      >
+      </LuaComponent>
+    ]]))
+    ModTextFileSetContent(v, tostring(xml))
+  end
+end
+
+do --Update vanilla Player Ghost to be able to catch & throw back tablets
+  local path = "data/entities/animals/apparition/playerghost.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+
+	xml:add_children(nxml.parse_many([[
+    <LuaComponent
+		_enabled="1"
+		_tags="disabled_by_liquid"
+		script_source_file="mods/apotheosis/files/scripts/animals/playerghost/tablet_catch.lua"
+		execute_every_n_frame="3"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name="tablet_path"
+		value_string=""
+		value_int="0"
+	>
+	</VariableStorageComponent>
+
+	<AIAttackComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		min_distance="20"
+		max_distance="200"
+		frames_between="220"
+		frames_between_global="60"
+		attack_ranged_offset_x="0"
+		attack_ranged_offset_y="0"
+		animation_name="attack_tablet"
+		attack_ranged_entity_file=""
+		attack_ranged_action_frame="4"
+		>
+	</AIAttackComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		script_shot="mods/apotheosis/files/scripts/animals/playerghost/tablet_throw.lua"
+		execute_every_n_frame="-1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<HotspotComponent
+		_tags="hand_l"
+		sprite_hotspot_name="hand"
+		transform_with_scale="1" >
+	</HotspotComponent>
+
+	<Entity name="hand_l">	
+		
+		<InheritTransformComponent
+			parent_hotspot_tag="hand_l"
+			only_position="1" >
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_enabled="0"
+			_tags="enabled_by_liquid"
+			image_file="data/items_gfx/in_hand/emerald_tablet_in_hand.png" 
+			emissive="0"
+			additive="0"
+			offset_x="4" 
+			offset_y="4" >
+		</SpriteComponent>
+
+	</Entity>
+
+	<LuaComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		script_death="mods/apotheosis/files/scripts/animals/playerghost/tablet_death.lua"
+		execute_every_n_frame="-1"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	]]))
+
+  --xml:first_of("SpriteComponent").attr.image_file = "mods/apotheosis/files/enemies_gfx/playerghost/playerghost.xml"
+  ModTextFileSetContent(path, tostring(xml))
+
+  ModTextFileSetContent("data/enemies_gfx/playerghost.xml",ModTextFileGetContent("mods/apotheosis/files/enemies_gfx/playerghost/playerghost.xml"))
+end

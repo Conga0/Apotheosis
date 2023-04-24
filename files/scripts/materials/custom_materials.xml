@@ -1905,7 +1905,7 @@
 	tags="[static],[alchemy],[earth],[matter_eater_ignore_list],[indestructible]"
   	name="rock_static_cursed_esoteric" 
 	ui_name="$material_apotheosis_esoteric_stone_glowing"
-	wang_color="ffe6f4af"
+	wang_color="ffe6f4bf"
 	gfx_glow="255"
 	hp="320000"
 	durability="16"

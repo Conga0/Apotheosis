@@ -1,0 +1,134 @@
+<Entity tags="glue_NOT" name="$animal_playerghost">
+	<!-- NOTE! This is the file for the spawned ghost that olds a unique Apotheosis Tablet -->
+	<!-- This is not used for polymorph, or normal playerghost spawns -->
+	
+	<Base file="data/entities/base_apparition.xml">
+		<CameraBoundComponent
+			_enabled="0"
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+
+		<SpriteComponent
+			image_file="mods/apotheosis/files/enemies_gfx/playerghost/playerghost.xml" 
+			emissive="1"
+			additive="1"
+			offset_x="6" 
+			offset_y="13" >
+		</SpriteComponent>
+
+		<DamageModelComponent 
+			hp="20"
+			max_hp="20"
+			>
+		</DamageModelComponent>
+	</Base>
+
+    <MusicEnergyAffectorComponent
+    	energy_target="0.5">
+    </MusicEnergyAffectorComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/ghost/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<!--Misc AI-->
+	<!--Detects if the creature has seen the player, if so activate other lua components-->
+	<LuaComponent
+		_enabled="0"
+		_tags="disabled_by_liquid"
+		script_source_file="mods/apotheosis/files/scripts/animals/playerghost/tablet_catch.lua"
+		execute_every_n_frame="3"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="tablet_path"
+		value_string="mods/apotheosis/files/entities/items/books/orbrooms/playerghost_book.xml"
+		value_int="0"
+	>
+	</VariableStorageComponent>
+
+	<AIAttackComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		min_distance="20"
+		max_distance="200"
+		frames_between="220"
+		frames_between_global="60"
+		attack_ranged_offset_x="0"
+		attack_ranged_offset_y="0"
+		animation_name="attack_tablet"
+		attack_ranged_entity_file="mods/apotheosis/files/entities/items/books/orbrooms/playerghost_book.xml"
+		attack_ranged_action_frame="4"
+		>
+	</AIAttackComponent>
+
+	<LuaComponent
+		_enabled="1"
+		_tags="enabled_by_liquid"
+		script_shot="mods/apotheosis/files/scripts/animals/playerghost/tablet_throw.lua"
+		execute_every_n_frame="-1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<HotspotComponent
+		_tags="hand_l"
+		sprite_hotspot_name="hand"
+		transform_with_scale="1" >
+	</HotspotComponent>
+
+	<Entity name="hand_l">	
+		
+		<InheritTransformComponent
+			parent_hotspot_tag="hand_l"
+			only_position="1" >
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_enabled="1"
+			_tags="enabled_by_liquid"
+			image_file="data/items_gfx/in_hand/emerald_tablet_in_hand.png" 
+			emissive="0"
+			additive="0"
+			offset_x="4" 
+			offset_y="4" >
+		</SpriteComponent>
+
+	</Entity>
+
+	<LuaComponent
+		_enabled="1"
+		_tags="enabled_by_liquid"
+		script_death="mods/apotheosis/files/scripts/animals/playerghost/tablet_death.lua"
+		execute_every_n_frame="-1"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<!--Don't allow the tablet ghost specifically to shoot until it's seen the player-->
+	<LuaComponent
+		_enabled="1"
+		_tags="invincible"
+		script_source_file="mods/apotheosis/files/scripts/animals/playerghost/tablet_ghost_LoS_check.lua"
+		execute_every_n_frame="120"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+</Entity>

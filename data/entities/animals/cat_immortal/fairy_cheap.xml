@@ -1,4 +1,4 @@
-<Entity name="Keiju" tags="mortal,human,hittable,teleportable_NOT,flying,sleezebag" >
+<Entity name="Keiju" tags="mortal,human,hittable,teleportable_NOT,flying" >
 	
 	<ItemChestComponent
 		_enabled="0"
@@ -19,20 +19,20 @@
 	</VelocityComponent>
 
 	<AnimalAIComponent 
-            preferred_job="JobDefault"
-            creature_detection_range_x="300"
-            creature_detection_range_y="300"
-            attack_dash_enabled="0"
-            attack_ranged_enabled="0"
-		    attack_melee_enabled="0"
-            attack_ranged_frames_between="40"
-            food_material="blood"
-            needs_food="0"
-            sense_creatures="1"
-            can_fly="1" 
-            aggressiveness_min="1"
-            aggressiveness_max="100"
-			escape_if_damaged_probability="100"
+		preferred_job="JobDefault"
+		creature_detection_range_x="300"
+		creature_detection_range_y="300"
+		attack_dash_enabled="0"
+		attack_ranged_enabled="0"
+		attack_melee_enabled="0"
+		attack_ranged_frames_between="40"
+		food_material="blood"
+		needs_food="0"
+		sense_creatures="1"
+		can_fly="1" 
+		aggressiveness_min="1"
+		aggressiveness_max="100"
+		escape_if_damaged_probability="100"
 		ai_state="0" 
 		ai_state_timer="0" 
 		eye_offset_x="0"
@@ -193,7 +193,7 @@
 		<InheritTransformComponent />
 		
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/fairy_ylw_emissive.xml"
+			image_file="mods/mo_creeps/files/enemies_gfx/fairy_ylw_emissive.xml"
 			offset_x="4"
 			offset_y="4">
 		</SpriteComponent>
@@ -205,6 +205,12 @@
 			fog_of_war_hole="1"
 			>
 		</SpriteComponent>
+
+		<GameEffectComponent
+			effect="WET"
+			frames="-1"
+			>
+		</GameEffectComponent >
 
 	</Entity>
 

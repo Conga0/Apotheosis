@@ -1,4 +1,4 @@
-<Entity name="Keiju" tags="mortal,human,hittable,teleportable_NOT,flying,sleezebag" >
+<Entity name="Keiju" tags="mortal,human,hittable,teleportable_NOT,flying" >
 	
 	<ItemChestComponent
 		_enabled="0"
