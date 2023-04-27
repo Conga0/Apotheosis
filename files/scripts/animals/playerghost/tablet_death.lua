@@ -16,3 +16,7 @@ do local v = luacomps[k]
         break
     end
 end
+
+--NOTE: This is still bugged, very inconsistent, but will sometimes spawn a tablet on death without picking up the original tablet, when being killed via tablet physics dmg
+
+--Could check for nearby entities with tag tablet, if they have the same entity filepath as the planned tablet to death, don't drop it?

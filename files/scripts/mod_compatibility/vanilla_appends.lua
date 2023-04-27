@@ -515,7 +515,9 @@ do -- Piercing only hit 5 times per modifier
 end
 
 --Anvil of Destiny Compatibility
---ModLuaFileAppend("mods/anvil_of_destiny/entities/anvil/potion_bonuses.lua", "mods/apotheosis/files/scripts/mod_compatibility/anvil_of_destiny_appends.lua")
+if ModIsEnabled("anvil_of_destiny") then
+  ModLuaFileAppend("mods/anvil_of_destiny/files/scripts/modded_content.lua", "mods/apotheosis/files/scripts/mod_compatibility/anvil_of_destiny_appends.lua")
+end
 
 
 do --Add Random Homing to Pyramid Boss loot pool
@@ -646,4 +648,21 @@ do --Update vanilla Player Ghost to be able to catch & throw back tablets
   ModTextFileSetContent(path, tostring(xml))
 
   ModTextFileSetContent("data/enemies_gfx/playerghost.xml",ModTextFileGetContent("mods/apotheosis/files/enemies_gfx/playerghost/playerghost.xml"))
+end
+
+
+do --Fix Unstable Crystal not being affected by Larpa
+  local path = "data/entities/projectiles/deck/mine.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+
+  xml:add_child(nxml.parse([[
+    <VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/projectiles/deck/mine.xml"
+		>
+	</VariableStorageComponent>
+  ]]))
+
+  ModTextFileSetContent(path, tostring(xml))
 end

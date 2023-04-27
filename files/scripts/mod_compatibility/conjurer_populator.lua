@@ -606,8 +606,8 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
 	  },
 	  {
-		name="ACTUAL WANDGHOST",
-		path="data/entities/animals/apparition/playerghost.xml",
+		name="Tablet Ghost",
+		path="data/entities/animals/playerghost_apotheosis/playerghost.xml",
 		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
 	  }
   },
