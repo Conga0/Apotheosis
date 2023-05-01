@@ -1,5 +1,6 @@
 # Apotheosis
 Apotheosis is a continuation of the More Creeps projects planning to expand heavily to the world map with plenty of new content
+
 If you're interested in discussing the mod, there is a *[Discord Server](https://discord.gg/gtyGnv8Pxk)*
 
 
