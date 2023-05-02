@@ -984,7 +984,7 @@ biome_modifiers =
 		id = "ESOTERIC_PRESENCE",
 		ui_description="$biomemod_esoteric_presence",
 		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
-		probability=0.5,
+		probability=0.3,
 		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 		action = function( biome_name, biome_filename )	end,
 		inject_spawns_action = function()
@@ -1001,7 +1001,7 @@ biome_modifiers =
 		id = "NECROMANCY",
 		ui_description="$biomemod_necromancy",
 		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
-		probability=0.2,
+		probability=0.3,
 		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 		action = function( biome_name, biome_filename )	end,
 		inject_spawns_action = function()
@@ -1011,6 +1011,51 @@ biome_modifiers =
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+			})
+		end,
+	},
+	{
+		id = "ALCHEMIC",
+		ui_description="$biomemod_alchemic",
+		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/alchemic.png",
+		probability=0.5,
+		does_not_apply_to_biome={"mountain_hall","coalmine"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/buildings/pylon_escium_lowhp.xml",
+			})
+			inject_spawn( g_small_enemies, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_attunium.xml",
+			})
+			inject_spawn( g_small_enemies, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml",
+			})
+			inject_spawn( g_small_enemies, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_berserkium.xml",
+			})
+			inject_spawn( g_small_enemies, 0.5, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_pheromone.xml",
 			})
 		end,
 	},

@@ -32,4 +32,8 @@ Note: Extol *might* be willing to help program this? hit him up when it's time
 
 Give Yellow Cursed Rock a unique name
 
-Creature Shift Spell
+Using Water Hex Pylons would be really fun in combination with the Alchemic Biome Modiifer which puts a bunch of alchemical mists around the biome.
+Only concern is existing Apotheosis Abyssal Hex does a mountain of damage for early game players.. could move sunken cavern to be more
+early game content?
+I don't want the same debuff to have two different damage amounts depending on when you encounter it...
+% based damage could help?

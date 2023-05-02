@@ -136,18 +136,4 @@
 		offset.y="0">
 	</HotspotComponent>
 
-	<LuaComponent
-		execute_every_n_frame = "-1",
-		script_death = "data/scripts/items/drop_money4x.lua",
-		remove_after_executed = "1",
-		>
-	</LuaComponent>
-
-	<LuaComponent
-		_tags="death_reward"
-		script_death="mods/Apotheosis/files/scripts/animals/hisii_giga_bomb_death.lua"
-		execute_every_n_frame = "-1",
-		>
-	</LuaComponent>
-
 </Entity>

@@ -1,22 +1,27 @@
+function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
 
-local entity_id = GetUpdatedEntityID()
+    local entity_id = GetUpdatedEntityID()
 
-local luacomps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")
-for k=1,#luacomps
-do local v = luacomps[k]
-    if ComponentGetValue2(v,"script_source_file") == "mods/apotheosis/files/scripts/animals/playerghost/tablet_catch.lua" then
-        if ComponentGetValue2(v,"mLastExecutionFrame") + 1 <= GameGetFrameNum() then                    -- if the catch script runs at the exact same frame as the death script, tablets duplicate
-            local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"AIAttackComponent")    -- We run a check to make sure they aren't running at the same frame to prevent this
-            local path = ComponentGetValue2(comp,"attack_ranged_entity_file")
-            if path ~= nil then
-                local pos_x, pos_y = EntityGetTransform(entity_id)
-                EntityLoad(path,pos_x,pos_y)
-            end
+    local path = ""
+    local comps = EntityGetComponentIncludingDisabled(entity_id,"VariableStorageComponent")
+    for k=1,#comps
+    do local v = comps[k]
+        if ComponentGetValue2(v,"name") == "tablet_path" then
+            path = ComponentSetValue2(v,"value_string")
+            break
         end
-        break
     end
+
+
+
+    if path ~= nil then
+        local pos_x, pos_y = EntityGetTransform(entity_id)
+        EntityLoad(path,pos_x,pos_y)
+    end
+
+
+    --NOTE: This is still bugged, very inconsistent, but will sometimes spawn a tablet on death without picking up the original tablet, when being killed via tablet physics dmg
+    --Could check for nearby entities with tag tablet, if they have the same entity filepath as the planned tablet to death, don't drop it?
+
+    --NOTE (03/05/2023): Not sure if still bugged, tried a new method of grabbing the tablet's filepath, the originally intended method.. let's see if it still dupes...
 end
-
---NOTE: This is still bugged, very inconsistent, but will sometimes spawn a tablet on death without picking up the original tablet, when being killed via tablet physics dmg
-
---Could check for nearby entities with tag tablet, if they have the same entity filepath as the planned tablet to death, don't drop it?

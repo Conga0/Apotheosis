@@ -1,0 +1,8 @@
+<Entity >
+  <Base file="mods/apotheosis/files/entities/buildings/pylon_escium.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="4"
+      max_hp="4"
+     ></DamageModelComponent >
+  </Base>
+</Entity>
