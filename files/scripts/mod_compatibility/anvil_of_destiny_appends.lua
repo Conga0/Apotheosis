@@ -134,10 +134,12 @@ do
         wand.castDelay = wand.castDelay - math.max(Random(1, 2), wand.castDelay * Randomf(0.05, 0.1))
     end)
 
-    local spells = { "GRAVITY_ANTI" }
-    if ModIsEnabled("copis_things") then
-        table.insert(spells,"COPIS_THINGS_LEVITY_SHOT")
-    end
+    local copi = ModIsEnabled("copis_things")
+    local spells = {
+        "GRAVITY_ANTI",
+        copi and "COPIS_THINGS_LEVITY_SHOT" or nil
+    }
+
     add_spells_to_effect("blood", spells)
 end
 

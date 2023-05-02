@@ -1,10 +1,11 @@
 local apo_state = { -- Altars of apostasy....... pft, -copi
-    new_cast = nil,
-    old = {
+    new_cast = nil,             ---@type boolean|nil
+    old = {                     ---@type table
         draw_shot = draw_shot   ---@type function
     }
 }
 
+---@diagnostic disable-next-line: lowercase-global
 function draw_shot( shot, instant_reload_if_empty )
     -- Don't ask why this works -copi
     local call_end_cast = false
@@ -22,6 +23,7 @@ function draw_shot( shot, instant_reload_if_empty )
     apo_state.old.draw_shot( shot, instant_reload_if_empty )
 end
 
+---@diagnostic disable-next-line: lowercase-global
 function set_current_action( action )
     -- CAST STATE VALUE             |       -- ACTION VALUE             |   -- FALLBACK
     c.action_id                                = action.id
@@ -42,7 +44,6 @@ function set_current_action( action )
     c.action_mana_drain                     = action.mana                   or ACTION_MANA_DRAIN_DEFAULT
     c.action_unidentified_sprite_filename   = action.sprite_unidentified    or ACTION_UNIDENTIFIED_SPRITE_DEFAULT
     c.action_description                    = reflecting and action.description or c.action_description
-
 
     current_action = action
 end
