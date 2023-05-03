@@ -1733,7 +1733,8 @@ local actions_to_edit = {
         custom_xml_file = "mods/apotheosis/files/entities/misc/custom_cards/death_cross_big.xml"
     },
 
-    -- @Conga describe this
+    -- Copi: describe this
+    -- Reduced mana cost of Concentrated Light to be more appropriate for it's functionality & spell tier
     ["MEGALASER"] = {
         mana = 80
     },
@@ -1820,7 +1821,16 @@ local actions_to_edit = {
         end
     },
 
-    -- @Conga change this to reflect the changes better
+    --Apply bounce subtype to bounce larpa for random bounce
+    ["BBOUNCE_LARPA"] = {
+        subtype = {
+            bounce=true,
+        },
+    },
+
+    -- Copi: change this to reflect the changes better
+    -- Conga: What do you mean?
+    --        Side note, please add your name to any future comments here on out if possible if it's personal thoughts rather than code documentation, I'll try to do the same, it'll be way, way easier to keep track of who's asking what that way.
     --Update Piercing's Spell Description & code to showcase it's new functionality
     ["PIERCING_SHOT"] = {
         description = "$spell_apotheosis_piercing_shot_desc",
@@ -1906,37 +1916,8 @@ local actions_to_edit = {
     ["HOMING_CURSOR"] = {
         subtype = { homing=true }
     },
-    ["COPIS_THINGS_PSYCHIC_SHOT"] = {
+    ["HOMING_AREA"] = {
         subtype = { homing=true }
-    },
-    ["COPIS_THINGS_HOMING_ANTI"] = {
-        subtype = { homing=true }
-    },
-    ["COPIS_THINGS_ULT_CONTROL"] = {
-        subtype = { homing=true }
-    },
-    ["COPIS_THINGS_HOMING_SEEKER"] = {
-        subtype = { homing=true }
-    },
-    ["COPIS_THINGS_HOMING_ANTI_SHOOTER"] = {
-        subtype = { homing=true }
-    },
-    ["COPIS_THINGS_HOMING_BOUNCE"] = {
-        subtype = {
-            homing=true,
-            bounce=true,
-        }
-    },
-    ["COPIS_THINGS_HOMING_BOUNCE_CURSOR"] = {
-        subtype = {
-            homing=true,
-            bounce=true,
-        }
-    },
-    ["COPIS_THINGS_HOMING_INTERVAL"] = {
-        subtype = {
-            homing=true,
-        }
     },
 }
 

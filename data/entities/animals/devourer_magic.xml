@@ -68,7 +68,7 @@
 		damage_deactivation_time_max="10" >
 	</PhysicsAIComponent>
 
-	<PhysicsBodyComponent 
+	<PhysicsBodyComponent
 		force_add_update_areas="1"
 		allow_sleep="1" 
 		angular_damping="0.02" 
@@ -220,6 +220,13 @@
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/devourer_magic_aura.lua"
 		execute_every_n_frame="30"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/base_scripts/enemy_wallunstuck.lua"
+		execute_every_n_frame="30"
+		remove_after_executed = "1"
 		>
 	</LuaComponent>
 

@@ -535,28 +535,28 @@ g_pixel_scene_04 =
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/icicles.png",
+		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/icicles2.png",
+		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles2.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/icicles3.png",
+		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles3.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/icicles4.png",
+		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles4.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0

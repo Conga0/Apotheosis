@@ -21,6 +21,8 @@ Parrallel world enemies should have x10 hp
 Would be good to have a corrupt version of Master of Puppetering for Temple of Sacriligious Remains, or maybe he's just corrupt by default
 We'll have to see
 Note: Spoopy is working on a giant Master of Puppetering Sprite, check his DMs for notes on how it would work, should be good!
+Note 2: Spoop made (is working on?) a sprite for a wand stealing crystal sprite, if he doesn't go through with the giant master of puppeterring sprite, this guy looks a zillion times more twisted!
+...I still want my ants though :(
 
 Do something with Wand of Aiming
 
@@ -29,11 +31,3 @@ Fix Seekers permanently stunning you to death with electric damage if they sit o
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
 Herobrine rework
 Note: Extol *might* be willing to help program this? hit him up when it's time
-
-Give Yellow Cursed Rock a unique name
-
-Using Water Hex Pylons would be really fun in combination with the Alchemic Biome Modiifer which puts a bunch of alchemical mists around the biome.
-Only concern is existing Apotheosis Abyssal Hex does a mountain of damage for early game players.. could move sunken cavern to be more
-early game content?
-I don't want the same debuff to have two different damage amounts depending on when you encounter it...
-% based damage could help?

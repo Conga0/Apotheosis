@@ -185,6 +185,13 @@
 		execute_every_n_frame="-1"
 		script_source_file="mods/Apotheosis/files/scripts/animals/devourer_ghost.lua" >
 	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/base_scripts/enemy_wallunstuck.lua"
+		execute_every_n_frame="30"
+		remove_after_executed = "1"
+		>
+	</LuaComponent>
 	
 	<LuaComponent 
 		_enabled="1" 

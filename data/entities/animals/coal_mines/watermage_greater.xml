@@ -3,6 +3,8 @@
     <DamageModelComponent 
       hp="10"
       max_hp="10"
+      materials_that_damage="acid,lava,magic_liquid_mana_regeneration,water,poison,blood_cold,blood_cold_vapour,mud,water_swamp,water_salt,swamp,water_ice" 
+			materials_how_much_damage="0.005,0.024,0.024,-0.001,0.003,0.0024,0.0021,-0.001,-0.001,-0.001,-0.001,-0.001"
      ></DamageModelComponent >
   </Base>
 </Entity>
