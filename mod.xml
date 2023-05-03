@@ -11,5 +11,12 @@
 		ui_newgame_gfx_banner_fg="mods/apotheosis/files/ui_gfx/menu/menu_banner_overlay.png"
 		request_no_api_restrictions="0" 
 		is_game_mode="0"
-	> 
-	</Mod>
+
+        download_link="https://github.com/Conga0/Apotheosis#apotheosis"
+	/>
+    <!-- 
+        Format: 
+        General mod data
+        Game mode data
+        Additional data
+    -->

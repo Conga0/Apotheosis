@@ -1523,6 +1523,14 @@ local apotheosis_spellappends = {
                 end
             end
 
+            --[[ Demo code for new subtypes system 
+            for i = 1, #actions do
+                if actions[i].subtypes["homing"] and actions[i].id ~= "COPIS_THINGS_HOMING_MACROSS" then
+                    IDTable[#IDTable+1] = actions[i]
+                end
+            end
+            ]] -- - Copi
+
 			local rnd = Random( 1, #IDTable )
 			local data = actions[IDTable[rnd]]
 			
@@ -1533,7 +1541,7 @@ local apotheosis_spellappends = {
             c.fire_rate_wait = tdelay
 		end,
 	},
-    --[[
+    --[[ Old Lua Sharing - new one directly below
 	{   --How would this even work on a technical level? Idea is to share lua components of projectiles amongst all other projectiles
 		id          = "APOTHEOSIS_LUA_SHARING",
         id_matchup  = "TRANSMUTATION",
@@ -1600,7 +1608,7 @@ local apotheosis_spellappends = {
 
         if not reflecting then
 
-            if c.caststate == nil then
+            if c.apo_caststate == nil then
                 -- Relies on gun.lua haxx refer to "gun_append.lua" if you want to use data transfer haxx
                 c.action_description = table.concat(
                     {
@@ -1609,7 +1617,7 @@ local apotheosis_spellappends = {
                         GlobalsGetValue("APOTHEOSIS_LUA_SHARING_CAST_STATE", "0"),
                     }
                 )
-                c.caststate = true
+                c.apo_caststate = true
             end
             c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/lua_sharing.xml,"
 
@@ -1624,20 +1632,19 @@ local apotheosis_spellappends = {
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
     for k=1,#apotheosis_spellappends
     do local v = apotheosis_spellappends[k]
+        v.author    = v.author  or "Conga Lyne"
+        v.mod       = v.mod     or "Apotheosis"
         if v.id_matchup == nil then
-            v.author = "Apotheosis - Conga Lyne"
             table.insert(actions,v)
         else
             for z=1,#actions
             do c = actions[z]
                 if c.id == v.id_matchup then
-                    v.author = "Apotheosis - Conga Lyne"
                     table.insert(actions,z + 1,v)
                     break
                 end
                 if z == #actions then
                     --Insert here as a failsafe incase the matchup ID can't be found.. some other mod might delete the spell we're trying to insert at
-                    v.author = "Apotheosis - Conga Lyne"
                     table.insert(actions,v)
                 end
             end
@@ -1646,7 +1653,8 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
 else
     for k=1,#apotheosis_spellappends
     do local v = apotheosis_spellappends[k]
-        v.author = "Apotheosis - Conga Lyne"
+        v.author    = v.author  or "Conga Lyne"
+        v.mod       = v.mod     or "Apotheosis"
         table.insert(actions,v)
     end
 end
