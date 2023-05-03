@@ -1883,62 +1883,40 @@ local actions_to_edit = {
 
     -- Homing subtype data
     ["HOMING"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["HOMING_SHORT"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     -- Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
     ["HOMING_ROTATE"] = {
         spawn_level         = "2,3,4,5,6",
         spawn_probability   = "0.6,0.8,1,1,0.6",
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["AUTOAIM"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["HOMING_ACCELERATING"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["HOMING_CURSOR"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["COPIS_THINGS_PSYCHIC_SHOT"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["COPIS_THINGS_HOMING_ANTI"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["COPIS_THINGS_ULT_CONTROL"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["COPIS_THINGS_HOMING_SEEKER"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["COPIS_THINGS_HOMING_ANTI_SHOOTER"] = {
-        subtype = {
-            homing=true
-        }
+        subtype = { homing=true }
     },
     ["COPIS_THINGS_HOMING_BOUNCE"] = {
         subtype = {
