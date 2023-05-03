@@ -1203,7 +1203,7 @@ local apotheosis_spellappends = {
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml" },
         type 		= ACTION_TYPE_MODIFIER,
-        subtype     = "homing",
+        subtype     = { homing = true },
         spawn_level                       = "1,2,3,4,5,6", -- HOMING
         spawn_probability                 = "0.1,0.4,0.4,0.4,0.4,0.4", -- HOMING
         price = 200,
@@ -1518,8 +1518,10 @@ local apotheosis_spellappends = {
 
             for k=1,#actions
             do local v = actions[k]
-                if v.subtype == "homing" then
-                    table.insert(IDTable,k)
+                if v.subtype and v.id ~= "COPIS_THINGS_HOMING_MACROSS" then
+                    if v.subtype.homing then
+                        table.insert(IDTable,k)
+                    end
                 end
             end
 
@@ -1865,26 +1867,28 @@ modify_existing_spell(
 
 
 
-modify_existing_spell("HOMING","subtype","homing")
-modify_existing_spell("HOMING_SHORT","subtype","homing")
-modify_existing_spell("HOMING_ROTATE","subtype","homing")
-modify_existing_spell("AUTOAIM","subtype","homing")
-modify_existing_spell("HOMING_ACCELERATING","subtype","homing")
-modify_existing_spell("HOMING_CURSOR","subtype","homing")
-modify_existing_spell("HOMING_AREA","subtype","homing")
+modify_existing_spell("HOMING","subtype",{ homing = true })
+modify_existing_spell("HOMING_SHORT","subtype",{ homing = true })
+modify_existing_spell("HOMING_ROTATE","subtype",{ homing = true })
+modify_existing_spell("AUTOAIM","subtype",{ homing = true })
+modify_existing_spell("HOMING_ACCELERATING","subtype",{ homing = true })
+modify_existing_spell("HOMING_CURSOR","subtype",{ homing = true })
+modify_existing_spell("HOMING_AREA","subtype",{ homing = true })
 
+--Commented out as Copi may be implemeneting his own subtype system
+--[[
 if ModIsEnabled("copis_things") then
-    modify_existing_spell("COPIS_THINGS_PSYCHIC_SHOT","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_ANTI","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_ULT_CONTROL","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_SEEKER","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_ANTI_SHOOTER","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE_CURSOR","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_INTERVAL","subtype","homing")
-    --modify_existing_spell("COPIS_THINGS_HOMING_MACROSS","subtype","homing") No point having multiple delayed homing spells in the RNG pool, while funny, it'll just result in a bias towards delayed homing being chosen
+    modify_existing_spell("COPIS_THINGS_PSYCHIC_SHOT","subtype",{ homing = true })
+    modify_existing_spell("COPIS_THINGS_HOMING_ANTI","subtype",{ homing = true })
+    modify_existing_spell("COPIS_THINGS_ULT_CONTROL","subtype",{ homing = true })
+    modify_existing_spell("COPIS_THINGS_HOMING_SEEKER","subtype",{ homing = true })
+    modify_existing_spell("COPIS_THINGS_HOMING_ANTI_SHOOTER","subtype",{ homing = true })
+    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE","subtype",{ homing = true })
+    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE_CURSOR","subtype",{ homing = true })
+    modify_existing_spell("COPIS_THINGS_HOMING_INTERVAL","subtype",{ homing = true })
+    --modify_existing_spell("COPIS_THINGS_HOMING_MACROSS","subtype",{ homing = true }) No point having multiple delayed homing spells in the RNG pool, while funny, it'll just result in a bias towards delayed homing being chosen
 end
-
+]]--
 
 --Remove Spells
 --[[
