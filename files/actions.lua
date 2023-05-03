@@ -1203,12 +1203,14 @@ local apotheosis_spellappends = {
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml" },
         type 		= ACTION_TYPE_MODIFIER,
-        subtype     = "homing",
         spawn_level                       = "1,2,3,4,5,6", -- HOMING
         spawn_probability                 = "0.1,0.4,0.4,0.4,0.4,0.4", -- HOMING
         price = 200,
         mana = 50,
         --max_uses = 16,
+        subtype = {
+            homing = true
+        },
         action 		= function()
             c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml,data/entities/particles/tinyspark_white_weak.xml,"
             draw_actions( 1, true )
@@ -1714,192 +1716,258 @@ modify_existing_spell(
 )
 ]]--
 
---Arrow doesn't have increased knockback
---This spell is secretly kinda god-tier once you realise it gains damage from speed.. hmm
-modify_existing_spell(
-	"ARROW",
-	"action",
-    function()
-        add_projectile("data/entities/projectiles/deck/arrow.xml")
-        c.fire_rate_wait = c.fire_rate_wait + 10
-        c.spread_degrees = c.spread_degrees - 20
-    end
-)
 
---Death Cross becomes cheaper
-modify_existing_spell("DEATH_CROSS","mana", 40)
+local actions_to_edit = {
+    --Death Cross becomes cheaper
+    ["DEATH_CROSS"] = {
+        mana = 40
+    },
 
---Giga Death Cross becomes cheaper
-modify_existing_spell("DEATH_CROSS_BIG", "mana", 100)
-modify_existing_spell("MEGALASER", "mana", 80)
+    --Giga Death Cross becomes cheaper
+    --Fix Giga Death Cross to use green sparks instead of blue ones
+    ["DEATH_CROSS_BIG"] = {
+        mana = 100,
+        custom_xml_file = "mods/apotheosis/files/entities/misc/custom_cards/death_cross_big.xml"
+    },
 
---Spitter Bolt Tier 2 & 3 becomes cheaper
-modify_existing_spell("SPITTER_TIER_2","mana",10)
+    -- @Conga describe this
+    ["MEGALASER"] = {
+        mana = 80
+    },
 
-modify_existing_spell("SPITTER_TIER_2_TIMER","mana",15)
+    --Spitter Bolt Tier 2 & 3 becomes cheaper
+    ["SPITTER_TIER_2"] = {
+        mana = 10
+    },
+    ["SPITTER_TIER_2_TIMER"] = {
+        mana = 15
+    },
+    ["SPITTER_TIER_3"] = {
+        mana = 15
+    },
+    ["SPITTER_TIER_3_TIMER"] = {
+        mana = 20
+    },
 
---Spitter Bolt Tier 2 & 3 becomes cheaper
-modify_existing_spell("SPITTER_TIER_3","mana",15)
+    --Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
+    ["ACCELERATING_SHOT"] = {
+        spawn_level         = "1,2,3,4,5",
+        spawn_probability   = "0.5,1,1,1,0.5"
+    },
 
-modify_existing_spell("SPITTER_TIER_3_TIMER","mana",20)
+    --Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
+    --[[ COPI: This is incredibly based, thank you conga ]]
+    ["CHAINSAW"] = {
+        mana = 12
+    },
 
---Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
-modify_existing_spell("ACCELERATING_SHOT","spawn_level","1,2,3,4,5")
-modify_existing_spell("ACCELERATING_SHOT","spawn_probability","0.5,1,1,1,0.5")
-
-modify_existing_spell("HOMING_ROTATE","spawn_level","2,3,4,5,6")
-modify_existing_spell("HOMING_ROTATE","spawn_probability","0.6,0.8,1,1,0.6")
-
---Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
-modify_existing_spell("CHAINSAW","mana",12)
-
---Slightly buff Explosive Bounce by reducing the spell cost & removing the recoil effect from the modifier
-modify_existing_spell("BOUNCE_EXPLOSION","price",90)
-modify_existing_spell(
-	"BOUNCE_EXPLOSION",
-	"action",
-    function()
-        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_explosion.xml,"
-        c.bounces = c.bounces + 1
-        c.fire_rate_wait = c.fire_rate_wait + 25
-        draw_actions( 1, true )
-    end
-)
-
---Slightly buff Bubbly Bounce by reducing the spell cost & removing the recoil effect from the modifier
-modify_existing_spell("BOUNCE_SPARK","price",60)
-modify_existing_spell(
-	"BOUNCE_SPARK",
-	"action",
-    function()
-        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_spark.xml,"
-        c.bounces = c.bounces + 1
-        c.fire_rate_wait = c.fire_rate_wait + 8
-        draw_actions( 1, true )
-    end
-)
-
---Slightly buff Plasma Beam Bounce by reducing the spell cost & removing the recoil effect from the modifier
-modify_existing_spell("BOUNCE_LASER_EMITTER","price",90)
-modify_existing_spell(
-	"BOUNCE_LASER_EMITTER",
-	"action",
-    function()
-        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser_emitter.xml,"
-        c.bounces = c.bounces + 1
-        c.fire_rate_wait = c.fire_rate_wait + 12
-        draw_actions( 1, true )
-    end
-)
-
---Slightly buff Concentrated Light Bounce by reducing the spell cost & removing the recoil effect from the modifier
-modify_existing_spell("BOUNCE_LASER","price",90)
-modify_existing_spell(
-	"BOUNCE_LASER",
-	"action",
-    function()
-        c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser.xml,"
-        c.bounces = c.bounces + 1
-        c.fire_rate_wait = c.fire_rate_wait + 12
-        draw_actions( 1, true )
-    end
-)
-
---Update Piercing's Spell Description & code to showcase it's new functionality
---[[
-]]--
-modify_existing_spell("PIERCING_SHOT","mana",80)
-modify_existing_spell("PIERCING_SHOT","description","$spell_apotheosis_piercing_shot_desc")
-modify_existing_spell(
-	"PIERCING_SHOT",
-	"action",
-    function()
-        --c.damage_projectile_add = c.damage_projectile_add - 0.6
-        c.friendly_fire		= true
-        if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
-            c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+    --Slightly buff Explosive Bounce by reducing the spell cost & removing the recoil effect from the modifier
+    ["BOUNCE_EXPLOSION"] = {
+        price = 90,
+        subtype = {
+            bounce=true,
+        },
+        action = function ()
+            c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_explosion.xml,"
+            c.bounces = c.bounces + 1
+            c.fire_rate_wait = c.fire_rate_wait + 25
+            draw_actions( 1, true )
         end
-        c.extra_entities = c.extra_entities .. "data/entities/misc/piercing_shot.xml,"
-        draw_actions(1, true)
+    },
+
+    --Slightly buff Bubbly Bounce by reducing the spell cost & removing the recoil effect from the modifier
+    ["BOUNCE_SPARK"] = {
+        price = 60,
+        subtype = {
+            bounce=true,
+        },
+        action = function()
+            c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_spark.xml,"
+            c.bounces = c.bounces + 1
+            c.fire_rate_wait = c.fire_rate_wait + 8
+            draw_actions( 1, true )
+        end
+    },
+
+    --Slightly buff Plasma Beam Bounce by reducing the spell cost & removing the recoil effect from the modifier
+    ["BOUNCE_LASER_EMITTER"] = {
+        price = 90,
+        subtype = {
+            bounce=true,
+        },
+        action = function()
+            c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser_emitter.xml,"
+            c.bounces = c.bounces + 1
+            c.fire_rate_wait = c.fire_rate_wait + 12
+            draw_actions( 1, true )
+        end
+    },
+
+    --Slightly buff Plasma Beam Bounce by reducing the spell cost & removing the recoil effect from the modifier
+    ["BOUNCE_LASER"] = {
+        price = 90,
+        subtype = {
+            bounce=true,
+        },
+        action = function()
+            c.extra_entities = c.extra_entities .. "data/entities/misc/bounce_laser.xml,"
+            c.bounces = c.bounces + 1
+            c.fire_rate_wait = c.fire_rate_wait + 12
+            draw_actions( 1, true )
+        end
+    },
+
+    -- @Conga change this to reflect the changes better
+    --Update Piercing's Spell Description & code to showcase it's new functionality
+    ["PIERCING_SHOT"] = {
+        description = "$spell_apotheosis_piercing_shot_desc",
+        mana = 80,
+        action = function()
+            --c.damage_projectile_add = c.damage_projectile_add - 0.6
+            c.friendly_fire		= true
+            if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
+                c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+            end
+            c.extra_entities = c.extra_entities .. "data/entities/misc/piercing_shot.xml,"
+            draw_actions(1, true)
+        end
+    },
+
+    --I feel worried that I'm tinkering with the base game a bit too much here
+    --[[ COPI: I think it's alright :^) ]]
+    ["REGENERATION_FIELD"] = {
+        spawn_level         = "1,2,3,4,10",
+        spawn_probability   = "0.2,0.2,0.2,0.2,0.1"
+    },
+
+    --Makes Giant Explosion Spells infinite use, they're extremely rare, conditional & mana hungry, so why make them limited use too? Seems a bit overkill for something that's just a slightly weaker holy bomb; plus material spell + gigaexplosion is a crazy fun spell combo
+    ["HITFX_EXPLOSION_ALCOHOL_GIGA"] = {
+        max_uses = -1,
+    },
+    ["HITFX_EXPLOSION_SLIME_GIGA"] = {
+        max_uses = -1,
+    },
+
+    --[[
+    Spells to Power only spawns in Heaven/Hell, or other T10 spell spawn locations
+    If the player wants an infinite damage wand, they need to visit a dangerous biome and put their life at risk
+    With great power comes great sacrifice
+    NOTE, may want to add an extra "unique spawnpool" for certain funky spells, like StP
+    This forces you to visit endgame biomes if you want endgame dps
+    ]]
+    --[[ COPI: Unique spawnpool sounds sick as hell ]]
+    ["SPELLS_TO_POWER"] = {
+        spawn_level         = "10",
+        spawn_probability   = "1.0"
+    },
+
+    --Changes Summon Egg to implement modded Apotheosis eggs in
+    ["SUMMON_EGG"] = {
+        action = function()
+            SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
+            local types = {"egg_monster","egg_slime","egg_red","egg_fire","apotheosis/egg_fairy","apotheosis/egg_mud","apotheosis/egg_robot"}
+            local rnd = Random(1, #types)
+            add_projectile(table.concat{"data/entities/items/pickup/", types[rnd], ".xml"})
+        end
+    },
+
+    --Arrow doesn't have increased knockback
+    --This spell is secretly kinda god-tier once you realise it gains damage from speed.. hmm
+    ["ARROW"] = {
+        action = function()
+            add_projectile("data/entities/projectiles/deck/arrow.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 10
+            c.spread_degrees = c.spread_degrees - 20
+        end
+    },
+
+    -- Homing subtype data
+    ["HOMING"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["HOMING_SHORT"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    -- Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
+    ["HOMING_ROTATE"] = {
+        spawn_level         = "2,3,4,5,6",
+        spawn_probability   = "0.6,0.8,1,1,0.6",
+        subtype = {
+            homing=true
+        }
+    },
+    ["AUTOAIM"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["HOMING_ACCELERATING"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["HOMING_CURSOR"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["COPIS_THINGS_PSYCHIC_SHOT"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["COPIS_THINGS_HOMING_ANTI"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["COPIS_THINGS_ULT_CONTROL"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["COPIS_THINGS_HOMING_SEEKER"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["COPIS_THINGS_HOMING_ANTI_SHOOTER"] = {
+        subtype = {
+            homing=true
+        }
+    },
+    ["COPIS_THINGS_HOMING_BOUNCE"] = {
+        subtype = {
+            homing=true,
+            bounce=true,
+        }
+    },
+    ["COPIS_THINGS_HOMING_BOUNCE_CURSOR"] = {
+        subtype = {
+            homing=true,
+            bounce=true,
+        }
+    },
+    ["COPIS_THINGS_HOMING_INTERVAL"] = {
+        subtype = {
+            homing=true,
+        }
+    },
+}
+
+for actions_index = 1,#actions do
+    for edit_id, edit_contents in pairs(actions_to_edit) do
+        if actions[actions_index].id == edit_id then
+            for key, value in pairs(edit_contents) do
+                actions[actions_index][key] = value
+            end
+            actions[actions_index].apo_edited = true
+            actions_to_edit[edit_id] = nil
+            break
+        end
     end
-)
-
---Fix Healing Bolt & Circle of Vigour to have updated spell descriptions
---modify_existing_spell("REGENERATION_FIELD","description","$spell_apotheosis_cov_desc")
---modify_existing_spell("HEAL_BULLET","description","$spell_apotheosis_healing_bolt_desc")
-
---I feel worried that I'm tinkering with the base game a bit too much here
-modify_existing_spell("REGENERATION_FIELD","spawn_level","1,2,3,4,10")
-modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,0.1")
-
---Makes Giant Explosion Spells infinite use, they're extremely rare, conditional & mana hungry, so why make them limited use too? Seems a bit overkill for something that's just a slightly weaker holy bomb; plus material spell + gigaexplosion is a crazy fun spell combo
-modify_existing_spell("HITFX_EXPLOSION_ALCOHOL_GIGA","max_uses",-1)
-modify_existing_spell("HITFX_EXPLOSION_SLIME_GIGA","max_uses",-1)
-
---Fix Giga Death Cross to use green sparks instead of blue ones
-modify_existing_spell("DEATH_CROSS_BIG","custom_xml_file","mods/apotheosis/files/entities/misc/custom_cards/death_cross_big.xml")
-
---Spells to Power only spawns in Heaven/Hell, or other T10 spell spawn locations
---If the player wants an infinite damage wand, they need to visit a dangerous biome and put their life at risk
---With great power comes great sacrifice
---NOTE, may want to add an extra "unique spawnpool" for certain funky spells, like StP
---This forces you to visit endgame biomes if you want endgame dps
-modify_existing_spell("SPELLS_TO_POWER","spawn_level","10")
-modify_existing_spell("SPELLS_TO_POWER","spawn_probability","1.0")
-
-
-
---Changes Summon Egg to implement modded Apotheosis eggs in
-modify_existing_spell(
-	"SUMMON_EGG",
-	"action",
-    function()
-        SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
-        local types = {"egg_monster","egg_slime","egg_red","egg_fire","apotheosis/egg_fairy","apotheosis/egg_mud","apotheosis/egg_robot"}
-        local rnd = Random(1, #types)
-        local egg_name = types[rnd] .. ".xml"
-        add_projectile("data/entities/items/pickup/" .. egg_name)
-    end
-)
-
-
-
-
-modify_existing_spell("HOMING","subtype","homing")
-modify_existing_spell("HOMING_SHORT","subtype","homing")
-modify_existing_spell("HOMING_ROTATE","subtype","homing")
-modify_existing_spell("AUTOAIM","subtype","homing")
-modify_existing_spell("HOMING_ACCELERATING","subtype","homing")
-modify_existing_spell("HOMING_CURSOR","subtype","homing")
-modify_existing_spell("HOMING_AREA","subtype","homing")
-
-if ModIsEnabled("copis_things") then
-    modify_existing_spell("COPIS_THINGS_PSYCHIC_SHOT","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_ANTI","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_ULT_CONTROL","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_SEEKER","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_ANTI_SHOOTER","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_BOUNCE_CURSOR","subtype","homing")
-    modify_existing_spell("COPIS_THINGS_HOMING_INTERVAL","subtype","homing")
-    --modify_existing_spell("COPIS_THINGS_HOMING_MACROSS","subtype","homing") No point having multiple delayed homing spells in the RNG pool, while funny, it'll just result in a bias towards delayed homing being chosen
 end
-
-
---Remove Spells
---[[
-function remove_spell(spell_name)
-	local key_to_spell = nil
-	for key, perk in pairs(actions) do
-		if (perk.id == spell_name) then
-			key_to_spell = key
-		end
-	end
-
-	if (key_to_spell ~= nil) then
-		table.remove(actions, key_to_spell)
-	end
-end
-
-remove_spell("LASER_LUMINOUS_DRILL")
-]]--
