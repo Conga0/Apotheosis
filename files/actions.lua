@@ -1203,6 +1203,7 @@ local apotheosis_spellappends = {
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml" },
         type 		= ACTION_TYPE_MODIFIER,
+        subtype     = { homing = true },
         spawn_level                       = "1,2,3,4,5,6", -- HOMING
         spawn_probability                 = "0.1,0.4,0.4,0.4,0.4,0.4", -- HOMING
         price = 200,
@@ -1520,8 +1521,10 @@ local apotheosis_spellappends = {
 
             for k=1,#actions
             do local v = actions[k]
-                if v.subtype == "homing" then
-                    table.insert(IDTable,k)
+                if v.subtype and v.id ~= "COPIS_THINGS_HOMING_MACROSS" then
+                    if v.subtype.homing then
+                        table.insert(IDTable,k)
+                    end
                 end
             end
 
