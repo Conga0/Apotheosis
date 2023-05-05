@@ -1856,7 +1856,7 @@
   <CellDataChild
   	_parent="templebrick_static"
 	name="apotheosis_corrupt_flesh_static"
-	ui_name="$mat_meat_slime"
+	ui_name="$material_apotheosis_corruptflesh"
 	wang_color="ffb13b3b"
 	wang_noise_percent="0.7"
 	hp="10000"

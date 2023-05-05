@@ -18,7 +18,7 @@
 	</SpriteComponent>
 
 	<SpriteComponent
-		enabled="0"
+		_enabled="0"
 		_tags="enabled_by_liquid"
 		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
 		offset_x="56.5"

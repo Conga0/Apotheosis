@@ -105,6 +105,12 @@ g_small_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,    
+		entity 	= "mods/apotheosis/files/entities/buildings/crystal_wandsteal.xml"
+	},
+	{
+		prob		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
 		entity 	= "data/entities/buildings/manadrain_crystal.xml"
 	},
 	{
@@ -236,12 +242,26 @@ g_statues =
 {
 	total_prob = 0,
 	-- add skullflys after this step
+	--[[
 	{
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "mods/apotheosis/files/entities/props/statue_anvil.xml"
 	},
+	]]--
+	{
+		prob   		= 1.6,
+		min_count	= 0,
+		max_count	= 0,    
+		entity 	= ""
+	},
+	{
+		prob   		= 0.4,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "mods/apotheosis/files/entities/buildings/crystal_wandsteal.xml"
+	}
 }
 
 g_scorpions =

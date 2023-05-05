@@ -93,7 +93,7 @@ local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="19880" pos_y="-4202" just_load_an_entity="data/entities/buildings/wand_cave_populator.xml" />
+    <PixelScene pos_x="20380" pos_y="-4202" just_load_an_entity="data/entities/buildings/wand_cave_populator.xml" />
 ]]))
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 

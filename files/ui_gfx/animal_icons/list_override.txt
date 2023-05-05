@@ -70,6 +70,7 @@ blob
 blob_big
 blob_huge
 ant
+ant_fire
 rat
 rat_birthday
 bat

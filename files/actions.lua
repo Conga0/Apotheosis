@@ -1512,7 +1512,7 @@ local apotheosis_spellappends = {
 		spawn_level                       = "4,5,6,10", -- MANA_REDUCE
 		spawn_probability                 = "0.3,0.1,0.1,0.5", -- MANA_REDUCE
 		price = 120,
-		mana = 20,
+		mana = 30,
 		action 		= function( recursion_level, iteration )
 			SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
             local tdelay = c.fire_rate_wait
