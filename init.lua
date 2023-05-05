@@ -1658,7 +1658,7 @@ end
 ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
 
 --Custom biome modifiers
-ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
+--ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
 
 --More Musical Magic implementation, coded by Y🍵
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
