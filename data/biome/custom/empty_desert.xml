@@ -10,7 +10,6 @@
 
 		lua_script="data/scripts/biomes/desert.lua"
     noise_type="SIN_CAPPED_SIMPLEX"
-		audio_music_enter="music/desert/enter"
 		audio_ambience="temple"
 		audio_ambience_surface="desert"
 
