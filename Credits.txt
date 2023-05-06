@@ -16,6 +16,8 @@ Creating the Flesh Material in Temple of Sacriligious Remains
 Contributed to Heretic Boss's design, code and created all sprite work related to him.
 Unintentionally significantly helping create the Liquid Sphere sprites
 Creating the Liquid Sphere spell set UI Icons
+Creating Corrupt Master of Teleportation's sprite
+Helping significantly with Corrupt Master of Exchange's sprite
 
 Copi (Human#6606) - Helping think up some enemy ideas for unused sprites I had lying around
 Creating right click icon for alt-fire spells

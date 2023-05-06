@@ -96,6 +96,12 @@ g_small_enemies =
 		entity 	= "data/entities/animals/wizard_corrupt_hearty.xml"
 	},
 	{
+		prob   		= 0.2,
+		min_count	= 1,
+		max_count	= 2,    
+		entity 	= "data/entities/animals/wizard_corrupt_teleport.xml"
+	},
+	{
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 2,    

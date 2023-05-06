@@ -67,7 +67,7 @@
 			stains_enabled="1" 
 			stains_radius="9"
 			audio_enabled="0"
-				spark_material="acid"
+			spark_material="acid"
 			>
 		</config_explosion>
 	</ProjectileComponent>
@@ -100,7 +100,7 @@
 
 	<GameAreaEffectComponent
 		radius="18"
-		collide_with_tag="hittable"
+		collide_with_tag="human"
 		frame_length="1"
 	></GameAreaEffectComponent>
 	
@@ -125,17 +125,6 @@
     </MagicConvertMaterialComponent>
 	-->
 
-	<MagicConvertMaterialComponent
-      kill_when_finished="0"
-	  from_material="apotheosis_corrupt_flesh_static"
-      steps_per_frame="18"
-      to_material="acid_gas"
-      clean_stains="0"
-      is_circle="1"
-      radius="18"
-	  >
-    </MagicConvertMaterialComponent>
-
 	<LightComponent 
 	    _enabled="1" 
 	    radius="48" 
@@ -155,7 +144,7 @@
 		circle_radius="18"
 		damage_per_frame="0.90"
 		update_every_n_frame="5"
-		entities_with_tag="mortal"
+		entities_with_tag="human"
 		death_cause="$mat_acid"
 		damage_type="DAMAGE_MATERIAL_WITH_FLASH"
 		>

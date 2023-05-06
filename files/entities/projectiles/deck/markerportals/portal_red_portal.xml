@@ -13,6 +13,7 @@
 	</CollisionTriggerComponent>
 	
 	<LuaComponent
+		_tags="apotheosis_blob_boss"
 		script_source_file="mods/Apotheosis/files/scripts/magic/markerportals/portal_activate.lua"
 		execute_every_n_frame="45"
 		remove_after_executed="1"
