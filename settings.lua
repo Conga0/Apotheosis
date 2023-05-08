@@ -87,7 +87,7 @@ mod_settings_version = 1
 mod_settings = 
 {
   {
-    image_filename = "mods/Apotheosis/files/ui_gfx/interface_gfx/sunlight.png",
+    image_filename = "mods/Apotheosis/files/ui_gfx/interface_gfx/apotheosis_settings.png",
     ui_fn = mod_setting_image,
   },
   {

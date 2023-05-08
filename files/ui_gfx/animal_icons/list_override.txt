@@ -187,6 +187,7 @@ wizard_corrupt_hearty
 wizard_corrupt_manaeater
 wizard_corrupt_neutral
 wizard_corrupt_swapper
+wizard_corrupt_tele
 enlightened_alchemist
 failed_alchemist
 failed_alchemist_b

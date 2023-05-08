@@ -27,6 +27,7 @@ Summon Egg spell features new eggs it can roll
 Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations, the goal behind this is StP is a very endgame spell capable of insanely high Damage output, if you want endgame damage spells, you need to visit endgame biomes
 Piercing Shot is reworked
 Unstable Crystal can now be affected by Larpa
+Playerghosts can now "parry" tablets
 
 
 New Biome Modifiers:
@@ -34,11 +35,12 @@ The Air is Burning
 Dense Smoke
 Esoteric Presence
 The Dead are Restless
+Alchemical Mists
 
 Content list:
 104 new enemies (+3 Pylon variants)
 6 new bosses
-63 new spells
+64 new spells
 9 new perks
 5 new biomes
 7 new structures

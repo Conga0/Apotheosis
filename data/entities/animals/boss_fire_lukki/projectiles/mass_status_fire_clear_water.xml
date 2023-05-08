@@ -1,0 +1,18 @@
+<Entity>
+    <MagicConvertMaterialComponent
+      kill_when_finished="1"
+      from_material_tag="[water]"
+      steps_per_frame="10"
+      to_material="steam"
+      clean_stains="0"
+      is_circle="1"
+      radius="256" 
+	  >
+    </MagicConvertMaterialComponent>
+	
+	<LifetimeComponent
+		lifetime="80"
+		>
+	</LifetimeComponent>
+</Entity>
+

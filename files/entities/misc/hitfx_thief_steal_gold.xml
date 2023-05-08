@@ -1,0 +1,25 @@
+<Entity>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>
+    
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/thief_steal_gold.lua"
+		execute_on_added="0"
+		execute_every_n_frame="2"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="10"
+	>
+	</LifetimeComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/misc.bank"
+		event_root="game_effect/blindness" >
+	</AudioComponent>
+
+</Entity>

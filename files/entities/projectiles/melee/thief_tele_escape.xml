@@ -1,0 +1,27 @@
+<Entity tags="projectile_item">
+	<Base file="data/entities/items/pickup/potion.xml">
+
+		<!--High torque leads to the bottle shattering on contact with solid terrain-->
+		<PhysicsThrowableComponent
+			max_throw_speed="2"
+			throw_force_coeff="1.5"
+			min_torque="13"
+			max_torque="15"
+		></PhysicsThrowableComponent>
+
+		<LuaComponent 
+			script_source_file="mods/apotheosis/files/scripts/projectiles/melee/thief_tele_escape.lua"
+		></LuaComponent>
+		
+		<LuaComponent 
+		></LuaComponent>
+
+		<LuaComponent 
+			script_death="data/scripts/items/potion_glass_break_temporary.lua" 
+		></LuaComponent>
+
+		<MaterialSuckerComponent 
+			barrel_size="500"
+		></MaterialSuckerComponent>
+	</Base>
+</Entity>

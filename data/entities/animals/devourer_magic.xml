@@ -21,7 +21,7 @@
 
 	<SpriteComponent 
 		_tags="character"
-		image_file="mods/Apotheosis/files/enemies_gfx/devourer_magic.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/devourer_magic.xml"
 		>
 	</SpriteComponent>
 

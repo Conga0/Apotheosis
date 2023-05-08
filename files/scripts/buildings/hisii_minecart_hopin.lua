@@ -11,7 +11,7 @@ local targets = EntityGetInRadius( x, y, r )
 local player = EntityGetWithTag("player_unit")
 if #player >= 1 then
 	for k=1,#targets
-	do v= targets[k]
+	do local v = targets[k]
 		if ( v ~= entity_id ) and ( EntityGetName( v ) == "minecart_hisii_hopin" ) and cart_found == false then
 			--GamePrint("HISII MINECART LUA CHECK")
 			local target_x,target_y = EntityGetTransform( v )

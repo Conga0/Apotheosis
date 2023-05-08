@@ -61,6 +61,16 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/boss_flesh_monster.png",
 	  },
 	  {
+		name="Fire Ant",
+		path="data/entities/animals/ant_fire.xml",
+		image="data/ui_gfx/animal_icons/ant_fire.png",
+	  },
+	  {
+		name="Suffocation Ant",
+		path="data/entities/animals/ant_suffocate.xml",
+		image="data/ui_gfx/animal_icons/ant_fire.png",
+	  },
+	  {
 		name="Manager",
 		path="data/entities/animals/c_basebot_speeder_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/c_basebot_speeder_apotheosis.png",
@@ -141,6 +151,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/devourer_magic.png",
 	  },
 	  {
+		name="Appreciator of Wands",
+		path="data/entities/animals/miniboss_pit_02.xml",
+		image="data/ui_gfx/animal_icons/miniboss_pit_02.png",
+	  },
+	  {
 		name="Mini Drone",
 		path="data/entities/animals/drone_mini.xml",
 		image="data/ui_gfx/animal_icons/drone_mini.png",
@@ -154,6 +169,11 @@ table.insert(ALL_ENTITIES, {
 		name="Esoteric Being",
 		path="data/entities/buildings/esoteric_being_asleep.xml",
 		image="data/ui_gfx/animal_icons/esoteric_being.png",
+	  },
+	  {
+		name="Esoteric Worm",
+		path="data/entities/buildings/worm_esoteric.xml",
+		image="data/ui_gfx/animal_icons/worm_esoteric.png",
 	  },
 	  {
 		name="Enchanted Duck",
@@ -271,6 +291,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/hisii_rocketshotgun.png",
 	  },
 	  {
+		name="Hisii Thief",
+		path="data/entities/animals/hiisi_thief.xml",
+		image="data/ui_gfx/animal_icons/hisii_hobo.png",
+	  },
+	  {
 		name="Locust Swarm",
 		path="data/entities/animals/locust_swarm.xml",
 		image="data/ui_gfx/animal_icons/locust_swarm.png",
@@ -296,6 +321,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/mimic_explosive_box.png",
 	  },
 	  {
+		name="TWWE Mimic",
+		path="data/entities/animals/mimic_perk_twwe.xml",
+		image="data/ui_gfx/animal_icons/mimic_perk_twwe.png",
+	  },
+	  {
 		name="Unheard",
 		path="data/entities/animals/musical_being.xml",
 		image="data/ui_gfx/animal_icons/musical_being.png",
@@ -303,6 +333,11 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Quiet",
 		path="data/entities/animals/musical_being_weak.xml",
+		image="data/ui_gfx/animal_icons/musical_being_weak.png",
+	  },
+	  {
+		name="Healing Quiet",
+		path="data/entities/animals/musical_being_weak_healer.xml",
 		image="data/ui_gfx/animal_icons/musical_being_weak.png",
 	  },
 	  {
@@ -441,6 +476,21 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_firemage_greater.png",
 	  },
 	  {
+		name="Watermage",
+		path="data/entities/animals/watermage.xml",
+		image="data/ui_gfx/animal_icons/watermage.png",
+	  },
+	  {
+		name="Greater Watermage",
+		path="data/entities/animals/watermage_greater.xml",
+		image="data/ui_gfx/animal_icons/watermage_greater.png",
+	  },
+	  {
+		name="Master of Puppetering",
+		path="data/entities/animals/wizard_wands.xml",
+		image="data/ui_gfx/animal_icons/wizard_wands.png",
+	  },
+	  {
 		name="Overzealous Polymaster",
 		path="data/entities/animals/wizard_z_poly_miniboss.xml",
 		image="data/ui_gfx/animal_icons/wizard_z_poly_miniboss.png",
@@ -456,14 +506,29 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_corrupt_hearty.png",
 	  },
 	  {
+		name="Corrupt Master of Grounding",
+		path="data/entities/animals/wizard_corrupt_neutral.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_neutral.png",
+	  },
+	  {
 		name="Corrupt Master of Swapping",
 		path="data/entities/animals/wizard_corrupt_swapper.xml",
 		image="data/ui_gfx/animal_icons/wizard_corrupt_swapper.png",
 	  },
 	  {
+		name="Corrupt Master of Teleportation",
+		path="data/entities/animals/wizard_corrupt_teleport.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_teleport.png",
+	  },
+	  {
 		name="Corrupt Master of Mana",
 		path="data/entities/animals/wizard_corrupt_manaeater.xml",
 		image="data/ui_gfx/animal_icons/wizard_corrupt_manaeater.png",
+	  },
+	  {
+		name="Alchemic Weirdo",
+		path="data/entities/animals/wraith_alchemy_apotheosis.xml",
+		image="data/ui_gfx/animal_icons/wraith_alchemy_apotheosis.png",
 	  },
 	  {
 		name="Reflective Weirdo",
@@ -474,6 +539,11 @@ table.insert(ALL_ENTITIES, {
 		name="Weirdo",
 		path="data/entities/animals/wraith_weirdo_shield.xml",
 		image="data/ui_gfx/animal_icons/wraith_weirdo_shield.png",
+	  },
+	  {
+		name="Wall Worm",
+		path="data/entities/animals/worm_wall.xml",
+		image="data/ui_gfx/animal_icons/worm_wall.png",
 	  },
 	  {
 		name="Hämis Nest",

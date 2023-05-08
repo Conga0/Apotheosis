@@ -673,7 +673,7 @@ local apotheosis_spellappends = {
         spawn_level                       = "1,2,4,5", -- ELECTRIC_CHARGE
         spawn_probability                 = "1,1,1,1", -- ELECTRIC_CHARGE
         price = 150,
-        mana = 8,
+        mana = 10,
         --max_uses = 8,
         custom_xml_file = "data/entities/misc/custom_cards/torch.xml",
         action 		= function()
@@ -1631,6 +1631,26 @@ local apotheosis_spellappends = {
         --c.fire_rate_wait = c.fire_rate_wait + 20
         draw_actions(1, true)
     end
+    },
+    {
+        id          = "APOTHEOSIS_GLUE_CHARGE",
+        id_matchup  = "APOTHEOSIS_FIRE_CHARGE",
+        name 		= "$spell_apotheosis_gluecharge_name",
+        description = "$spell_apotheosis_gluecharge_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/glue_charge.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/heavy_bullet_unidentified.png",
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "1,2,4,5", -- ELECTRIC_CHARGE
+        spawn_probability                 = "1,1,1,1", -- ELECTRIC_CHARGE
+        price = 160,
+        mana = 20,
+        --max_uses = 8,
+        --custom_xml_file = "data/entities/misc/custom_cards/torch.xml",
+        action 		= function()
+            c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/hitfx_glue_charge.xml,data/entities/particles/tinyspark_white_small.xml,"
+            c.fire_rate_wait = c.fire_rate_wait + 30
+            draw_actions( 1, true )
+        end,
     },
 }
 

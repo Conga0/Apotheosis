@@ -11,6 +11,7 @@ local how_many = 12
 local angle_inc = ( 2 * 3.14159 ) / how_many
 local theta = 0
 local length = 400
+EntityLoad( "data/entities/animals/boss_fire_lukki/projectiles/mass_status_fire_clear_water.xml", pos_x, pos_y )
 
 for i=1,how_many do
 	local vel_x = math.cos( theta ) * length
