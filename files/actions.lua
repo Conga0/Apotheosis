@@ -1848,9 +1848,10 @@ local actions_to_edit = {
         },
     },
 
-    -- Copi: change this to reflect the changes better
-    -- Conga: What do you mean?
-    --        Side note, please add your name to any future comments here on out if possible if it's personal thoughts rather than code documentation, I'll try to do the same, it'll be way, way easier to keep track of who's asking what that way.
+    -- Copi:    change this to reflect the changes better
+    -- Conga:   What do you mean?
+    --          Side note, please add your name to any future comments here on out if possible if it's personal thoughts rather than code documentation, I'll try to do the same, it'll be way, way easier to keep track of who's asking what that way.
+    -- Copi:    by this I mean changing the line above the change 'Update Piercing's Spell Description & code to showcase it's new functionality' to reflect what the rework actually does
     --Update Piercing's Spell Description & code to showcase it's new functionality
     ["PIERCING_SHOT"] = {
         description = "$spell_apotheosis_piercing_shot_desc",
@@ -1941,15 +1942,11 @@ local actions_to_edit = {
     },
 }
 
-for actions_index = 1,#actions do
-    for edit_id, edit_contents in pairs(actions_to_edit) do
-        if actions[actions_index].id == edit_id then
-            for key, value in pairs(edit_contents) do
-                actions[actions_index][key] = value
-            end
-            actions[actions_index].apo_edited = true
-            actions_to_edit[edit_id] = nil
-            break
+for i=1,#actions do -- fast as fuck boi
+    if actions_to_edit[actions[i].id] then
+        for key, value in pairs(actions_to_edit[actions[i].id]) do
+            actions[i][key] = value
         end
+        actions[i]['apotheosis_reworked'] = true
     end
 end
