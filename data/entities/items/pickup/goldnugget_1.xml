@@ -39,7 +39,7 @@
 	<ItemComponent
 		_tags="enabled_in_world"
 		auto_pickup="1"
-		item_name="$item_goldnugget_10"
+		item_name="$item_apotheosis_money_1"
 		stats_count_as_item_pick_up="0"
 		max_child_items="0"
 		is_pickable="1"

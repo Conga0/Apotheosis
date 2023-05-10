@@ -1,6 +1,6 @@
 <Entity name="unknown" tags="item_physics,gold_nugget" >
 
-	<Base file="data/entities/items/pickup/goldnugget_10.xml" >
+	<Base file="data/entities/items/pickup/goldnugget_1.xml" >
 
 		<!-- physical presence -->
 		<UIInfoComponent
@@ -13,7 +13,7 @@
 
 		<ItemComponent
 			_tags="enabled_in_world"
-			item_name="$item_bloodmoney_10"
+			item_name="$item_apotheosis_bloodmoney_1"
 			>
 		</ItemComponent>
 	</Base>

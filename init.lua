@@ -588,6 +588,8 @@ item_apotheosis_egg_robot_name,"Robotic Egg",,,,,,,,,,,,,
 item_apotheosis_egg_robot_desc,"The egg feels like it's moving",,,,,,,,,,,,,
 item_apotheosis_egg_mud_name,"Muddy Egg",,,,,,,,,,,,,
 item_apotheosis_egg_mud_desc,"The egg feels amorphous",,,,,,,,,,,,,
+item_apotheosis_money_1,Gold nugget (1),Золотой самородок (1),Pepita de ouro (1),Pepita de oro (1),Goldklumpen (1),Pépite d'or (1),Pepita d'oro (1),Grudka złota (1),金块 (1),金塊 (1),황금 덩어리(1),,,
+item_apotheosis_bloodmoney_1,Bloody gold nugget (1),Кровавый золотой самородок (1),Pepita de ouro ensanguentada (1),Pepita de oro sangrienta (1),Blutiger Goldklumpen (1),Pépite d'or ensanglantée (1),Pepita d'oro insanguinata (1),Krwaw grudka złota (1),染血金块 (1),ブラッディー金塊 (1),피투성이 황금 덩어리(1),,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
@@ -1675,3 +1677,7 @@ dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
 --Appending extra modiifers
 ModLuaFileAppend( "data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
 
+--Polymorph pool addition preperation
+--Will be uncommented once it's pushed to main
+--If you want, uncommented this and it'll probably work
+--dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
