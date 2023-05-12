@@ -1,3 +1,4 @@
+-- Copio todo: use the table system for spell modification at some point
 
 --Function for modifying existing spells
 function modify_existing_spell(spell_id, parameter_to_modify, new_value)
@@ -63,6 +64,8 @@ end
 remove_spell("TELEPORT_PROJECTILE")
 remove_spell("TELEPORT_PROJECTILE_SHORT")
 remove_spell("GRAHAM_TELEPORT")
+
+-- Copi note: removing spells from progress can have issues, imo better to make 0 spawn chance and give it a never spawn flag (see how my spell disabling works) so it stays in the menu, maybe change desc to say it won't spawn so it can still appear in progress? outright removing spells makes them dissapear from copis things spell disabling menu, so I suggest not doing so, I do intend to add a way for other mods to forcibly flag a spell as disabled so it shows up in my gui as disabled too
 
 --Increases the spawnrate of alt-fire teleport spells to compensate
 modify_existing_spell("APOTHEOSIS_ALT_FIRE_TELEPORT","spawn_probability","1.0,0.8,0.8,0.6,0.6,0.6,1.6")

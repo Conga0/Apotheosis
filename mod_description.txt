@@ -1,5 +1,6 @@
 =================================================================================================================================
 NOTE: Having borders around the image banners would look really good
+NOTE(COPI): [HR][/HR] makes for nice separators/borders to section off banners and stuff
 =================================================================================================================================
 
 
