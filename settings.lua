@@ -26,7 +26,7 @@ local mod_compat_mode_conjurer_desc = "Some people may have issues with this mod
 local mod_compat_mode_spell_evolution_name = "Spell Evolution Compatibility Mode"
 local mod_compat_mode_spell_evolution_desc = "Turn this setting on if youre playing with the Spell Evolution mod to fix it.\n \nAs far as I can tell, a bug in Spell Evolutions causes it to break if a modded spell \nUses translation keys for their name and/or description. \n \nUnfortunately there's nothing I can do about this as it's not my mod, \nand I have no intention to remove the translation keys \nas I hope to use them one day in the event \nIm offered a translation for the mod to another language. \nHowever, I can put a setting in to optionally let you use the spells without \ntranslation keys to get around the issue."
 local custom_seed_name = "Set Custom Seed"
-local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or towerclimb" --Sneak in some secret seeds here "PuppyDogs"? --Hardmode?
+local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or hardcore" --Sneak in some secret seeds here "PuppyDogs"? --Hardmode? Towerclimb?
 local organised_icons_name = "Organise Icons"
 local organised_icons_desc = "Will Spells & Perks be organised with the vanilla perk list? \n \nFor example, if this is enabled, an immunity related perk will appear next to other \nimmunity perks in the progress log rather than at the bottom of the perk list. \nThe same applies to spells and creature icons."
 
@@ -42,6 +42,9 @@ local seasonal_forced_smissmass_name = "Forced Smissmass"
 local seasonal_forced_smissmass_desc = "Is the Smissmass holiday forcefully enabled?"
 local secret_golden_cape_name = "Golden Cape"
 local secret_golden_cape_desc = "Is the Golden Cape cosmetic enabled? \nSome people may want to disable this if using custom character mods."
+
+local exp_poly_name = "Expanded Polymorph Pool"
+local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph pool? \n \nThis is under a mod setting temporarily \nuntil this feature is added to the base game (non-beta branch) \nWARNING: Experimental \n \nNote [Conga]: This function is currently broken and crashes the game. \nHopefully petri (or whoever else is working on it) fixes this."
 
 
   --Russian Translations
@@ -166,6 +169,13 @@ mod_settings =
     value_default = "",
     text_max_length = 30,
     allowed_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_0123456789/.- ",
+    scope = MOD_SETTING_SCOPE_NEW_GAME,
+  },
+  {
+    id = "exp_poly",
+    ui_name = exp_poly_name,
+    ui_description = exp_poly_desc,
+    value_default = false,
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
 

@@ -19,9 +19,9 @@
 
     <EnergyShieldComponent 
         _tags="enabled_in_hand,item_identified__LEGACY"
-        recharge_speed="0.01" 
+        recharge_speed="0.01"
 		radius="72.0"
-		damage_multiplier="0.20"
+		damage_multiplier="0.25"
 		>
     </EnergyShieldComponent>
     

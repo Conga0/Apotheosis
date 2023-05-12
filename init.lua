@@ -1678,6 +1678,8 @@ dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
 ModLuaFileAppend( "data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
 
 --Polymorph pool addition preperation
---Will be uncommented once it's pushed to main
---If you want, uncommented this and it'll probably work
---dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+--Will be controlled via mod settings until it's pushed to main
+--If you want to enable it, you can toggle "Expanded Polymorph Pool" in the mod settings
+if ModSettingGet( "Apotheosis.exp_poly" ) == true then
+  dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+end

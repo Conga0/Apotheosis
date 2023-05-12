@@ -11,7 +11,7 @@
 		</AnimalAIComponent>
 
 		<DamageModelComponent
-            hp="0.5"
+            hp="0.2"
             air_needed="0"
 		    wait_for_kill_flag_on_death="0"
             fire_probability_of_ignition="0" 
@@ -19,7 +19,7 @@
 			ragdoll_material="blood"
 			blood_material="blood"
 			blood_spray_material="blood"
-		    blood_multiplier="30"
+		    blood_multiplier="2"
 			ragdoll_material="blood"
 			blood_sprite_directional=""
 			blood_sprite_large=""
@@ -102,6 +102,21 @@
         fog_of_war_hole="1"
 		>
     </SpriteComponent>
+
+	<MaterialInventoryComponent
+		_enabled="1" 
+		drop_as_item="0"
+		on_death_spill="1"
+		kill_when_empty="1"
+		leak_on_damage_percent="0.999" 
+		leak_pressure_min="0.4"
+		leak_pressure_max="0.6"
+		death_throw_particle_velocity_coeff="0.5"
+		>
+		<count_per_material_type>
+		<Material material="blood" count="1200"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
 
 </Entity>
 

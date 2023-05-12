@@ -1190,4 +1190,10 @@
 		color="ff733ede" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/desert_sleep_secret.xml"
+		height_index="11"
+		color="ffe1b66c" >
+	</Biome>
+
 </BiomesToLoad>

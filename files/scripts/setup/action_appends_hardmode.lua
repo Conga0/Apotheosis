@@ -67,3 +67,28 @@ remove_spell("GRAHAM_TELEPORT")
 --Increases the spawnrate of alt-fire teleport spells to compensate
 modify_existing_spell("APOTHEOSIS_ALT_FIRE_TELEPORT","spawn_probability","1.0,0.8,0.8,0.6,0.6,0.6,1.6")
 modify_existing_spell("APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT","spawn_probability","1.0,0.8,0.8,0.6,0.6,0.6,1.6")
+
+
+--Copis Things compatibility for finite healing spells
+if ModIsEnabled("copis_things") then
+	
+	--Ophiuchus Arts can no longer be used by greek letters/splitshot
+	modify_existing_spell(
+		"COPIS_THINGS_OPHIUCHUS",
+		"action",
+		function(recursion_level)
+			if (recursion_level) ~= nil then return; end
+            copi_state.mana_multiplier = copi_state.mana_multiplier * 2.0
+            c.extra_entities =
+                c.extra_entities ..
+                "mods/copis_things/files/entities/particles/healing.xml,mods/copis_things/files/entities/misc/ophiuchus.xml,"
+            c.friendly_fire = true
+            c.fire_rate_wait = c.fire_rate_wait + 12
+            current_reload_time = current_reload_time + 12
+            draw_actions(1, true)
+		end
+	)
+
+	--Update Ophiuchus arts description to match the new functionality
+	modify_existing_spell("COPIS_THINGS_OPHIUCHUS","description","All your damage is halved, then converted to healing, and your projectile can hit you. The next spell costs twice as much mana. Uncopiable.")
+end

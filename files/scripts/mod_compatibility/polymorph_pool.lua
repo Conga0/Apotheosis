@@ -94,8 +94,10 @@ local options = {
 
 for k=1,#options do
     --PolymorphTableAddEntity( entity_xml:string, is_rare:bool = false, add_only_one_copy:bool = true ) [Adds the entity to the polymorph random table]
-    PolymorphTableAddEntity( "data/entities/animals/" .. options[k] .. ".xml")
+    --PolymorphTableAddEntity( "data/entities/animals/" .. options[k] .. ".xml", false, true)
 end
+
+--PolymorphTableAddEntity( "data/entities/animals/boss_pit/boss_pit.xml", false)
 
 --I don't know how table.concat works and it's 12am
 --Good night :congasleep:

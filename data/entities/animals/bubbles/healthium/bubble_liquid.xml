@@ -111,5 +111,20 @@
 		radius="64" >
 	</LightComponent>
 
+	<MaterialInventoryComponent
+		_enabled="1" 
+		drop_as_item="0"
+		on_death_spill="1"
+		kill_when_empty="1"
+		leak_on_damage_percent="0.999" 
+		leak_pressure_min="0.4"
+		leak_pressure_max="0.6"
+		death_throw_particle_velocity_coeff="0.5"
+		>
+		<count_per_material_type>
+		<Material material="magic_liquid_hp_regeneration_unstable" count="1200"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
+
 </Entity>
 

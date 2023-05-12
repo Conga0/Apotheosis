@@ -26,7 +26,7 @@ if EntityHasTag(player_id,"player_unit") == true then
     end
 end
 
-if owner_id ~= nil then
+if owner_id ~= 0 then
     local walletcomp = EntityGetFirstComponentIncludingDisabled(player_id,"WalletComponent")
     local gold = ComponentGetValue2(walletcomp,"money") or 0
     if gold > 0 then

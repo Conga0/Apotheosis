@@ -7,7 +7,7 @@
     background_edge_right="data/weather_gfx/edges/background_cave_04_alt_right.png"
     background_edge_top="data/weather_gfx/edges/background_cave_04_alt_top.png"
     background_edge_bottom="data/weather_gfx/edges/background_cave_04_alt_bottom.png"
-    background_edge_priority="10"     
+    background_edge_priority="9"     
     background_use_neighbor="0"
     background_image_height="0"
 

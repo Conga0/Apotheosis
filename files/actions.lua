@@ -1521,7 +1521,7 @@ local apotheosis_spellappends = {
 
             for k=1,#actions
             do local v = actions[k]
-                if v.subtype and v.id ~= "COPIS_THINGS_HOMING_MACROSS" then
+                if v.subtype then
                     if v.subtype.homing then
                         table.insert(IDTable,k)
                     end
@@ -1799,7 +1799,7 @@ local actions_to_edit = {
         end
     },
 
-    --Slightly buff Bubbly Bounce by reducing the spell cost & removing the recoil effect from the modifier
+    --Slightly buff Bubbly Bounce by reducing the spell cost & removing the recoil effect from the modifier, also does no self-damage
     ["BOUNCE_SPARK"] = {
         price = 60,
         subtype = {
@@ -1842,6 +1842,7 @@ local actions_to_edit = {
     },
 
     --Apply bounce subtype to bounce larpa for random bounce
+    --Conga: or, whatever else Copi is up to
     ["BBOUNCE_LARPA"] = {
         subtype = {
             bounce=true,
@@ -1853,6 +1854,8 @@ local actions_to_edit = {
     --          Side note, please add your name to any future comments here on out if possible if it's personal thoughts rather than code documentation, I'll try to do the same, it'll be way, way easier to keep track of who's asking what that way.
     -- Copi:    by this I mean changing the line above the change 'Update Piercing's Spell Description & code to showcase it's new functionality' to reflect what the rework actually does
     --Update Piercing's Spell Description & code to showcase it's new functionality
+    --Piercing now lets a projectile hit an enemy 5 times per piercing modifier
+    --If a projectile pierces more than 50 times, it gains infinite piercing, still allowing for infiniwisps to exist
     ["PIERCING_SHOT"] = {
         description = "$spell_apotheosis_piercing_shot_desc",
         mana = 80,
