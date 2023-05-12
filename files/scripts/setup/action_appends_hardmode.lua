@@ -88,7 +88,21 @@ if ModIsEnabled("copis_things") then
             draw_actions(1, true)
 		end
 	)
+	
+	--Healthy Cloud can no longer be used by greek letters/splitshot
+	modify_existing_spell(
+		"COPIS_THINGS_CLOUD_MAGIC_LIQUID_HP_REGENERATION",
+		"action",
+		function(recursion_level)
+			if (recursion_level) ~= nil then return; end
+            add_projectile("mods/copis_things/files/entities/projectiles/cloud_magic_liquid_hp_regeneration.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 15
+		end
+	)
 
-	--Update Ophiuchus arts description to match the new functionality
+	--Update Ophiuchus Arts description to match the new functionality
 	modify_existing_spell("COPIS_THINGS_OPHIUCHUS","description","All your damage is halved, then converted to healing, and your projectile can hit you. The next spell costs twice as much mana. Uncopiable.")
+
+	--Update Healthy Cloud description to match the new functionality
+	modify_existing_spell("COPIS_THINGS_CLOUD_MAGIC_LIQUID_HP_REGENERATION","description","Creates a soothing rain that cures your wounds. Uncopiable.")
 end

@@ -767,3 +767,28 @@ end
 modify_existing_perk("CONTACT_DAMAGE", "ui_description", "$perk_apotheosis_contactdamage_description")
 modify_existing_perk("CONTACT_DAMAGE", "game_effect", "PROTECTION_MELEE")
 
+--Make glass cannon compatible with glass cannon.. because.. it's funny? :gigachad:
+--Side note, this could definitely be faster, same for hardcore spell changes, need to do tomorrow I suppose
+
+--Concept code for getting bubbles working with GC, once material value is obtained it can be multiplied by * 5
+--Had trouble getting the game to properly update GC with the new func_enemy code I wanted
+--Not 100% sure to grab the material amount data in the first place honestly, mostly looking at bottled percentages for reference here.. maybe soler TI would be a better example though with the spiked drinks event? Unsure.
+--[[
+    if EntityGetName(entity_who_picked) == "Nestemäinen kupla" then
+        local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"MaterialInventoryComponent")
+        local vel_coeff = ComponentGetValue2(comp,"death_throw_particle_velocity_coeff")
+        ComponentSetValue2(comp,"death_throw_particle_velocity_coeff", velo_coeff * 2.5)
+
+        local vel_coeff = ComponentGetValue2(comp,"death_throw_particle_velocity_coeff")
+        ComponentSetValue2(comp,"death_throw_particle_velocity_coeff", velo_coeff * 2.5)
+
+        local count_per_material_type = ComponentGetValue2( comp, "count_per_material_type")
+        GamePrint("Test 1")
+        for k,v in pairs(count_per_material_type) do
+            if v ~= 0 then --material exists
+                GamePrint("material count is " .. v)
+                break
+            end
+        end
+    end
+]]
