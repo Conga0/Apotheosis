@@ -1,5 +1,6 @@
 dofile("data/scripts/lib/mod_settings.lua")
 
+---@diagnostic disable-next-line: lowercase-global
 function mod_setting_change_callback( mod_id, gui, in_main_menu, setting, old_value, new_value  )
 	print( tostring(new_value) )
 end
@@ -86,11 +87,14 @@ if currentLang == "русский" then
 end
 
 local mod_id = "Apotheosis"
+---@diagnostic disable-next-line: lowercase-global
 mod_settings_version = 1
+---@diagnostic disable-next-line: lowercase-global
 mod_settings = 
 {
   {
     image_filename = "mods/Apotheosis/files/ui_gfx/interface_gfx/apotheosis_settings.png",
+    ---@diagnostic disable-next-line: undefined-global
     ui_fn = mod_setting_image,
   },
   {
@@ -98,6 +102,7 @@ mod_settings =
     ui_name = congacat_cat_immortal_name,
     ui_description = congacat_cat_immortal_desc,
     value_default = true,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
   {
@@ -105,6 +110,7 @@ mod_settings =
     ui_name = fairy_immortality_name,
     ui_description = fairy_immortality_desc,
     value_default = false,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
   {
@@ -112,6 +118,7 @@ mod_settings =
     ui_name = motd_setting_name,
     ui_description = motd_setting_desc,
     value_default = false,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
   {
@@ -119,6 +126,7 @@ mod_settings =
     ui_name = seasonal_events_name,
     ui_description = seasonal_events_desc,
     value_default = true,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
   {
@@ -130,6 +138,7 @@ mod_settings =
     value_max = 1000,
     value_display_multiplier = 1,
     value_display_formatting = boss_health_multiplayer_formatting,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME,
   },
   {
@@ -137,6 +146,7 @@ mod_settings =
     ui_name = particle_reduction_name,
     ui_description = particle_reduction_desc,
     value_default = false,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME,
   },
   {
@@ -144,6 +154,7 @@ mod_settings =
     ui_name = spoopy_graphics_name,
     ui_description = spoopy_graphics_desc,
     value_default = false,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
   },
   {
@@ -151,6 +162,7 @@ mod_settings =
     ui_name = organised_icons_name,
     ui_description = organised_icons_desc,
     value_default = true,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
   --[[
@@ -169,6 +181,7 @@ mod_settings =
     value_default = "",
     text_max_length = 30,
     allowed_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_0123456789/.- ",
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
   {
@@ -176,6 +189,7 @@ mod_settings =
     ui_name = exp_poly_name,
     ui_description = exp_poly_desc,
     value_default = false,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
 
@@ -242,6 +256,7 @@ if statue_count >= 8 then
         ui_name = seasonal_forced_april_fools_name,
         ui_description = seasonal_forced_april_fools_desc,
         value_default = false,
+        ---@diagnostic disable-next-line: undefined-global
         scope = MOD_SETTING_SCOPE_NEW_GAME,
       },
       {
@@ -249,6 +264,7 @@ if statue_count >= 8 then
         ui_name = seasonal_forced_birthday_name,
         ui_description = seasonal_forced_birthday_desc,
         value_default = false,
+        ---@diagnostic disable-next-line: undefined-global
         scope = MOD_SETTING_SCOPE_NEW_GAME,
       },
       {
@@ -256,6 +272,7 @@ if statue_count >= 8 then
         ui_name = seasonal_forced_halloween_name,
         ui_description = seasonal_forced_halloween_desc,
         value_default = false,
+        ---@diagnostic disable-next-line: undefined-global
         scope = MOD_SETTING_SCOPE_NEW_GAME,
       },
       {
@@ -263,6 +280,7 @@ if statue_count >= 8 then
         ui_name = seasonal_forced_smissmass_name,
         ui_description = seasonal_forced_smissmass_desc,
         value_default = false,
+        ---@diagnostic disable-next-line: undefined-global
         scope = MOD_SETTING_SCOPE_NEW_GAME,
       }
     }
@@ -276,6 +294,7 @@ if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) the
     ui_name = secret_golden_cape_name,
     ui_description = secret_golden_cape_desc,
     value_default = true,
+    ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   })
 end
@@ -294,14 +313,20 @@ table.insert(mod_settings,
 
 
 function ModSettingsUpdate( init_scope )
+    ---@diagnostic disable-next-line: undefined-global
 	local old_version = mod_settings_get_version( mod_id )
+    ---@diagnostic disable-next-line: undefined-global
 	mod_settings_update( mod_id, mod_settings, init_scope )
 end
 
 function ModSettingsGuiCount()
+    ---@diagnostic disable-next-line: undefined-global
 	return mod_settings_gui_count( mod_id, mod_settings )
 end
 
 function ModSettingsGui( gui, in_main_menu )
+    ---@diagnostic disable-next-line: undefined-global
 	mod_settings_gui( mod_id, mod_settings, gui, in_main_menu )
 end
+
+-- I SILENCED THOSE ANNOYING GLOBAL WARNINGS!!!!!!!!!!!!!!! -COPI

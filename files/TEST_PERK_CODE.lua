@@ -1,3 +1,4 @@
+---@diagnostic disable shuts up diagnostics here
 local function BuildStainIDs()
     -- Cache stain IDs
     local stain_ids = {}

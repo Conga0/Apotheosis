@@ -1,6 +1,5 @@
-
-
 --Biome modifier injection
+---@diagnostic disable-next-line: undefined-global
 table.insert(inject_spawns_action,
 inject_spawn( g_big_enemies, 0.05, {
   prob   		= 0,

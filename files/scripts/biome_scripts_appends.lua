@@ -1,4 +1,5 @@
 --If the player has over 1,000 max hp, soft-cap heart spawns by disabling random heart generation in the wild
+---@diagnostic disable-next-line: lowercase-global
 function player_health_check(player_id)
 	local player_id = EntityGetWithTag("player_unit")[1]
 	if player_id ~= 0 then
@@ -14,6 +15,7 @@ function player_health_check(player_id)
 end
 
 
+---@diagnostic disable-next-line: lowercase-global
 function spawn_heart( x, y )
 	local r = ProceduralRandom( x, y )
 	SetRandomSeed( x, y )
@@ -30,8 +32,7 @@ function spawn_heart( x, y )
 		local rnd = Random( 1, 100 )
 		
 		if (rnd <= 90) or (y < 512 * 3) then
-			rnd = Random( 1, 1000 )
-			
+			rnd = Random( 1, 1000 ) ---@diagnostic disable-next-line: undefined-global
 			if( Random( 1, 300 ) == 1 ) then spawn_mimic_sign( x, y ) end
 
 			if ( rnd < 1000 ) then
@@ -40,7 +41,7 @@ function spawn_heart( x, y )
 				local entity = EntityLoad( "data/entities/items/pickup/chest_random_super.xml", x, y)
 			end
 		else
-			rnd = Random( 1, 100 )
+			rnd = Random( 1, 100 ) ---@diagnostic disable-next-line: undefined-global
 			if( Random( 1, 30 ) == 1 ) then spawn_mimic_sign( x, y ) end
 
 			if( rnd <= 95 ) then

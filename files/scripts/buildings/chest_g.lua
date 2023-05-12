@@ -35,4 +35,4 @@ function physics_body_modified( is_destroyed )
 end
 
 
-"apotheosis_SAWBLADE_BIG_RAY", "apotheosis_SAWBLADE_BIG_RAY_ENEMY"
+--"apotheosis_SAWBLADE_BIG_RAY", "apotheosis_SAWBLADE_BIG_RAY_ENEMY"
