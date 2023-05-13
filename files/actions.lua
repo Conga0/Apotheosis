@@ -1845,7 +1845,7 @@ local actions_to_edit = {
     --Conga: or, whatever else Copi is up to
     -- Copi:    Wait, BBOUNCE? Is that a typo???
     -- Copi:    I forgot why I did this, I plan to subtype a few spells in my own mod for categories or something, though a random bounce spell sounds really funny if its quite cheap
-    ["BBOUNCE_LARPA"] = {
+    ["BOUNCE_LARPA"] = {
         subtype = {
             bounce=true,
         },

@@ -23,6 +23,7 @@ Copi (Human#6606) - Helping think up some enemy ideas for unused sprites I had l
 Creating right click icon for alt-fire spells
 Creating shield sapper script
 Creating Magic Inerberation script
+Glass Cannon compatibility for Liquid Bubbles
 Various Code Contributions
 
 Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help

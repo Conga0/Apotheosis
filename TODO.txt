@@ -40,4 +40,4 @@ Finish or Remove Hisii Thief
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
-Speedup perk & hardcore spell appends
+Optimise perk & hardcore spell appends

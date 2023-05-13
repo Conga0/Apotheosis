@@ -46,19 +46,21 @@ modify_existing_spell("REGENERATION_FIELD","spawn_probability","0.2,0.2,0.2,0.2,
 
 
 --Remove Spells
-function remove_spell(spell_name)
-	local key_to_spell = nil
-    for k=1,#actions
-    do v = actions[k]
-		if (v.id == spell_name) then
-			key_to_spell = key
+function remove_spell(spell_id)
+	do local spell = actions[k]
+	for i, spell in ipairs(actions) do
+		if spell.id == spell_id then
+			spell[spawn_level] = "0"
+			spell[spawn_probability] = "0"
+			spell[spawn_requires_flag] = "this_should_never_spawn"
+			break
 		end
 	end
-
-	if (key_to_spell ~= nil) then
-		table.remove(actions, key_to_spell)
-	end
 end
+
+spawn_level = "0",
+spawn_probability = "0",
+spawn_requires_flag = "this_should_never_spawn",
 
 --Remove Teleport Bolts from the spell pool
 remove_spell("TELEPORT_PROJECTILE")
@@ -66,6 +68,7 @@ remove_spell("TELEPORT_PROJECTILE_SHORT")
 remove_spell("GRAHAM_TELEPORT")
 
 -- Copi note: removing spells from progress can have issues, imo better to make 0 spawn chance and give it a never spawn flag (see how my spell disabling works) so it stays in the menu, maybe change desc to say it won't spawn so it can still appear in progress? outright removing spells makes them dissapear from copis things spell disabling menu, so I suggest not doing so, I do intend to add a way for other mods to forcibly flag a spell as disabled so it shows up in my gui as disabled too
+-- Conga note: Should be done now, hopefully this prevents them from ever spawning
 
 --Increases the spawnrate of alt-fire teleport spells to compensate
 modify_existing_spell("APOTHEOSIS_ALT_FIRE_TELEPORT","spawn_probability","1.0,0.8,0.8,0.6,0.6,0.6,1.6")

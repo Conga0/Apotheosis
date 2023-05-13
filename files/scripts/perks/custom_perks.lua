@@ -792,29 +792,32 @@ modify_existing_perk("CONTACT_DAMAGE", "game_effect", "PROTECTION_MELEE")
 --          Thoughts?
 
 -- code by copi, feel free to mess around with it and just mark what bits ive done if you want idc that much though its not too fancy
-for i = 1, #perk_list do
-    if perk_list[i].id == "GLASS_CANNON" then
-        -- Monkey patch
-        local fn_old = perk_list[i].func_enemy ---@type function
-        perk_list[i].func_enemy = function(entity_perk_item, entity_who_picked)
-            if EntityGetName(entity_who_picked) == "Nestemäinen kupla" then
-                local inv = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "MaterialInventoryComponent")
-                if inv then
-                    -- Pentuple(?) material count
-                    local mats = ComponentGetValue2(inv, "count_per_material_type") --{} only here to prevent ide from getting mad, -copiop
-                    for j = 0, #mats, 1 do
-                        -- print(string.format("%-80s | %12s", CellFactory_GetName(j), mats[j+1])) -- Displays material count by id, prints laggy as FUCK though...
-                        -- Actually *sets* material count, do not be fooled.
-                        AddMaterialInventoryMaterial(entity_who_picked, CellFactory_GetName(j), (mats[j+1] or 0) * 5)
+-- Conga: This seems to work perfectly fine, the only mistake with it is when I said multiplying the material amount by 5 was enough. It isn't. I want more suffering.
+do  --Allow glass cannon to function with Liquid Bubbles
+    for i = 1, #perk_list do
+        if perk_list[i].id == "GLASS_CANNON" then
+            -- Monkey patch
+            local fn_old = perk_list[i].func_enemy ---@type function
+            perk_list[i].func_enemy = function(entity_perk_item, entity_who_picked)
+                if EntityGetName(entity_who_picked) == "Nestemäinen kupla" then
+                    local inv = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "MaterialInventoryComponent")
+                    if inv then
+                        -- Pentuple(?) material count
+                        local mats = ComponentGetValue2(inv, "count_per_material_type") --{} only here to prevent ide from getting mad, -copiop
+                        for j = 0, #mats, 1 do
+                            -- print(string.format("%-80s | %12s", CellFactory_GetName(j), mats[j+1])) -- Displays material count by id, prints laggy as FUCK though...
+                            -- Actually *sets* material count, do not be fooled.
+                            AddMaterialInventoryMaterial(entity_who_picked, CellFactory_GetName(j), (mats[j+1] or 0) * 10) --Amount liquid contained is multiplied by, in this example it's 1000%
+                        end
+                        -- piss materials **REALLY** hard
+                        local vel_coeff = ComponentGetValue2(inv, "death_throw_particle_velocity_coeff")
+                        ComponentSetValue2(inv, "death_throw_particle_velocity_coeff", vel_coeff * 2.5) --Speed stray liquid is shot out at is multiplied by this amount, in this example it's 250%
                     end
-                    -- piss materials **REALLY** hard
-                    local vel_coeff = ComponentGetValue2(inv, "death_throw_particle_velocity_coeff")
-                    ComponentSetValue2(inv, "death_throw_particle_velocity_coeff", vel_coeff * 2.5)
                 end
+                -- Run old func
+                fn_old(entity_perk_item, entity_who_picked)
             end
-            -- Run old func
-            fn_old(entity_perk_item, entity_who_picked)
+            break
         end
-        break
     end
 end

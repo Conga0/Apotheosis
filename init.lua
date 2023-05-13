@@ -55,6 +55,10 @@ do
   end
 end
 
+--Ensure this flag is never enabled, so spells can properly be disabled in hardcore mode while still appearing in the progress log
+RemoveFlagPersistent("this_should_never_spawn")
+
+
 
 
 
