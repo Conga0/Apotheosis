@@ -50,17 +50,13 @@ function remove_spell(spell_id)
 	do local spell = actions[k]
 	for i, spell in ipairs(actions) do
 		if spell.id == spell_id then
-			spell[spawn_level] = "0"
-			spell[spawn_probability] = "0"
-			spell[spawn_requires_flag] = "this_should_never_spawn"
+			spell["spawn_level"] = "0"
+			spell["spawn_probability"] = "0"
+			spell["spawn_requires_flag"] = "this_should_never_spawn"
 			break
 		end
 	end
 end
-
-spawn_level = "0",
-spawn_probability = "0",
-spawn_requires_flag = "this_should_never_spawn",
 
 --Remove Teleport Bolts from the spell pool
 remove_spell("TELEPORT_PROJECTILE")
