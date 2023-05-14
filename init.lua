@@ -998,7 +998,9 @@ ModRegisterAudioEventMappings("mods/Apotheosis/files/audio/GUIDs.txt")
 -- Misc
 
 --Twitch Integration
-ModLuaFileAppend( "data/scripts/streaming_integration/event_list.lua", "mods/Apotheosis/files/scripts/streaming_integration/event_list_populator.lua" )
+--Conga: This has been disabled as I don't feel comfortable maintaining Twitch Integration, vanilla TI is also really.. extreme.
+--It's it's own discussion, but I feel if I want more TI integration, it's best to make it as a seperate mod.
+--ModLuaFileAppend( "data/scripts/streaming_integration/event_list.lua", "mods/Apotheosis/files/scripts/streaming_integration/event_list_populator.lua" )
 
 
 --Musicstone tag addition
@@ -1597,17 +1599,17 @@ do  -- Player Editor
   local xml = nxml.parse(ModTextFileGetContent(path))
   --Adds Biome tracker script to the player character, it will update their current biome difficulty and save the highest one they've ever achieved, maxing out at 7 in Heaven/Hell
   --This is currently only used for twitch integration so is disabled if TI is turned off, can be changed if needed elsewhere
-  xml:add_child(nxml.parse([[
-    <LuaComponent
-      script_source_file="mods/apotheosis/files/scripts/magic/biome_difficulty_tracker.lua"
-      execute_every_n_frame="600"
-      execute_times="-1"
-      remove_after_executed="0"
-      >
-    </LuaComponent>
-  ]]))
+--  xml:add_child(nxml.parse([[
+--    <LuaComponent
+--      script_source_file="mods/apotheosis/files/scripts/magic/biome_difficulty_tracker.lua"
+--      execute_every_n_frame="600"
+--      execute_times="-1"
+--      remove_after_executed="0"
+--      >
+--    </LuaComponent>
+--  ]]))
 
-  --Makes player take contact damage from cursed liquid
+  --Makes player take contact damage from cursed liquid, poisonous gas, and other materials added by Apotheosis
   local attrs = xml:first_of("DamageModelComponent").attr
   attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas"
   attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0009"

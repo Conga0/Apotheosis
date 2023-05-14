@@ -71,6 +71,30 @@ end
 
 
 
+--function perkedup()
+--
+--    local path = "data/entities/player_base.xml"
+--    local content = ModTextFileGetContent(path)
+--    local xml = nxml.parse(content)
+--    
+--    xml:add_child(nxml.parse([[
+--        <LuaComponent
+--            execute_on_added=0
+--            script_source_file="mods/apotheosis/files/scripts/setup/perkedup_update.lua"
+--            execute_every_n_frame=120
+--            remove_after_executed=0
+--            execute_times=-1
+--            >
+--        </LuaComponent>
+--    ]]))
+--    
+--    ModTextFileSetContent(path, tostring(xml))
+--
+--end
+
+
+
+
 
 
 
@@ -93,6 +117,13 @@ local secret_seeds = {
         ID = "hardcore",
         func = hardcore
     },
+    --[[
+    --Vanilla enemy-perk integration is.. "functional", at best.
+    {
+        ID = "perkedup",
+        func = perkedup
+    },
+    ]]--
 }
 
 

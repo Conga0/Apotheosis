@@ -122,7 +122,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/entities/projectiles/forsaken_eye_targetter.xml"
+		value_string="mods/apotheosis/files/entities/projectiles/imp_slow_proj.xml"
 		>
 	</VariableStorageComponent>
 	

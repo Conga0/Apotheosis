@@ -1,5 +1,8 @@
 dofile_once( "data/scripts/lib/utilities.lua" )
 
+--Conga: use the file in the data folder instead
+--Setting file content seems to break biome modifiers, but overriding the file raw seems to work fine?
+
 CHANCE_OF_MODIFIER_PER_BIOME = 0.1
 CHANCE_OF_MODIFIER_COALMINE = 0.2
 CHANCE_OF_MODIFIER_EXCAVATIONSITE = 0.15
