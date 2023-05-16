@@ -79,7 +79,7 @@
 			>
 	    </CharacterDataComponent>
 		
-		<CharacterPlatformingComponent 
+		<CharacterPlatformingComponent
 			jump_velocity_y="-20"
 			run_velocity="40"  
 			fly_speed_max_up="40"

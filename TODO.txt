@@ -42,3 +42,9 @@ Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
 Optimise perk & hardcore spell appends
+
+Updating swappermage.lua may be not needed anymore.. but
+
+Make Worse Enemies minecart BFG hiisi have significantly more wind-up time to match the WE update
+
+Make the tower more mod-compatipilled
