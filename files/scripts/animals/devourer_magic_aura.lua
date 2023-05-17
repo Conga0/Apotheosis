@@ -13,8 +13,8 @@ if frozenTest <= 0 then
 	for k=1, #targets
 	do local v = targets[k];
 		if ( v ~= entity_id ) then
-				local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_mana_degradation.xml", x, y )
-				EntityAddChild( v, eid )
+			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_mana_degradation.xml", x, y )
+			EntityAddChild( v, eid )
 		end
 	end
 end

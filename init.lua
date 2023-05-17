@@ -375,11 +375,13 @@ biome_lava_excavation,"Core Mines",,,,,,,,,,,,,
 biome_abyssal_depths,"Forgotten Depths",,,,,,,,,,,,,
 biome_mueseum,"Marble Halls",,,,,,,,,,,,,
 biome_ant_hell,"Ant Nest",,,,,,,,,,,,,
+biome_plane_yggdrasil,"Plane of Yggdrasil",,,,,,,,,,,,,
 biomemod_esoteric_presence,"You feel an indescribable aura...",,,,,,,,,,,,,
 biomemod_magmatic,"The air is burning",,,,,,,,,,,,,
 biomemod_necromancy,"The Dead are Restless",,,,,,,,,,,,,
 biomemod_esoteric_den,"You feel the world has indescribable shapes...",,,,,,,,,,,,,
 biomemod_alchemic,"You feel an alchemical mist in the air",,,,,,,,,,,,,
+biomemod_plane_yggdrasil,"A dense jungle with endless life, filled with monsters foreign",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_corruptflesh,"Vacillating Flesh",,,,,,,,,,,,,
 material_apotheosis_blood_infectous,"Infectious Blood",,,,,,,,,,,,,
@@ -604,6 +606,8 @@ wand_apotheosis_cat_name,"Cat",,,,,,,,,,,,,
 wand_apotheosis_mana_battery_name,"Mana Battery",,,,,,,,,,,,,
 wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
 damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
+curse_apotheosis_yggdrasil_name,"Yggdrasil's Curse",,,,,,,,,,,,,
+curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to levitate.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -1689,5 +1693,7 @@ ModLuaFileAppend( "data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/f
 --Will be controlled via mod settings until it's pushed to main
 --If you want to enable it, you can toggle "Expanded Polymorph Pool" in the mod settings
 if ModSettingGet( "Apotheosis.exp_poly" ) == true then
-  dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+  function OnWorldInitialized()
+    dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+  end
 end

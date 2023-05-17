@@ -2,7 +2,7 @@ dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id    = GetUpdatedEntityID()
 
-local comp = EntityGetFirstComponent( entity_id, "AnimalAIComponent" )
+local comp = EntityGetFirstComponentIncludingDisabled( entity_id, "AnimalAIComponent" )
 local x,y = EntityGetTransform( entity_id )
 
 SetRandomSeed(x, y * GameGetFrameNum())

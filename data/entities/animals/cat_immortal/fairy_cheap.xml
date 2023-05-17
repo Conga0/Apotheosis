@@ -1,4 +1,4 @@
-<Entity name="Keiju" tags="mortal,human,hittable,teleportable_NOT,flying" >
+<Entity name="Keiju" tags="mortal,human,hittable,teleportable_NOT,flying,polymorphable_NOT" >
 	
 	<ItemChestComponent
 		_enabled="0"

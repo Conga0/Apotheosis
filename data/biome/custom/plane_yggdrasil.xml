@@ -1,6 +1,6 @@
 <Biome>
   <Topology 
-    name="Test Biome 01"
+    name="$biome_plane_yggdrasil"
     type="BIOME_WANG_TILE"
     background_image="data/weather_gfx/background_cave_04_alt.png"
     background_edge_left="data/weather_gfx/edges/background_cave_04_alt_left.png"
@@ -12,7 +12,7 @@
     background_image_height="0"
 
     wang_template_file="data/wang_tiles/ant_hell.png" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/ant_hell.lua"
+    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/plane_yggdrasil.lua"
     wang_map_width="64"
     wang_map_height="64"
     limit_background_image="0"

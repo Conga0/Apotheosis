@@ -1,4 +1,4 @@
-<Entity tags="mortal,prey,ui_use_raw_name,acid" name="Louis">
+<Entity tags="mortal,prey,ui_use_raw_name,acid,polymorphable_NOT" name="Louis">
   
 	<Base file="data/entities/base_helpless_animal.xml" >
 

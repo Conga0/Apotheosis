@@ -1147,6 +1147,21 @@ biome_modifier_esoteric_den = {
 	end,
 }
 
+biome_modifier_plane_yggdrasil = {
+	id = "PLANE_YGGDRASIL",
+	ui_description="$biomemod_plane_yggdrasil",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/plane_yggdrasil.png",
+	probability=0.0,
+	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
+	action = function( biome_name, biome_filename )
+		BiomeSetValue( biome_filename, "color_grading_r", 0.70 )
+		BiomeSetValue( biome_filename, "color_grading_g", 1.00 )
+		BiomeSetValue( biome_filename, "color_grading_b", 0.9 )
+		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.050 )
+		BiomeObjectSetValue( biome_filename, "modifiers", "dust_amount", 0.60 )
+	end,
+}
+
 biome_modifier_devtest = {
 	id = "DEVTEST",
 	ui_description="$biomemod_necromancy",
@@ -1384,6 +1399,7 @@ function get_modifier_mappings()
 	result["alchemist_secret"] = biome_modifier_fog_of_war_clear_at_player
 	result["custom/lava_excavation"] = biome_modifier_magmatic
 	result["custom/esoteric_den"] = biome_modifier_esoteric_den
+	result["custom/plane_yggdrasil"] = biome_modifier_plane_yggdrasil
 	set_modifier_if_has_none( "custom/ant_hell", "FOG_OF_WAR_REAPPEARS" )
 	set_modifier_if_has_none( "custom/sunken_cave", "MOIST" )
 	--apply_modifier_if_has_none( "snowcave", "FREEZING" )

@@ -1,4 +1,4 @@
-<Entity tags="mortal,prey,ui_use_raw_name,acid" name="Sorako">
+<Entity tags="mortal,prey,ui_use_raw_name,acid,polymorphable_NOT" name="Sorako">
   
 	<Base file="data/entities/base_helpless_animal.xml" >
 

@@ -10,10 +10,10 @@
 			>
     	</VelocityComponent> 
 	</Base>
-	
+
 	<HomingComponent
-		target_tag="prey"
-		homing_targeting_coeff="7"
+		target_tag="homing_target"
+		homing_targeting_coeff="9"
 		detect_distance="350"
 		homing_velocity_multiplier="1.0"
 		>

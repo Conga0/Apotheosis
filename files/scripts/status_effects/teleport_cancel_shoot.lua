@@ -8,8 +8,7 @@ function shot( entity_id )
         do local v = comps[k]
             EntityRemoveComponent(entity_id,v)
         end
-
-        --Disables RGB Portals from teleporting you
-        EntitySetComponentsWithTagEnabled(entity_id,"apotheosis_blob_boss",false)
     end
+    --Disables RGB Portals from teleporting you
+    EntitySetComponentsWithTagEnabled(entity_id,"apotheosis_blob_boss",false)
 end
