@@ -9,7 +9,7 @@ local jump_vel = -55
 local swim_vel = 1.1
 
 --If this effect is from the "yggdrasil's Curse" entity, give the player extra jump strength to compensate for their permanent lack of levitation
-if EntityGetName(entity_id) == "apotheosis_curse_of_yggdrasil" then
+if EntityHasTag(child_id,"watermage") then
     jump_vel = -105
     swim_vel = 1.6
 end
@@ -34,16 +34,17 @@ if permitted == true then
     if comp ~= nil then
         if balance == false then
             ComponentSetValue2(comp,"fly_time_max",3)
-            local comp2 = EntityGetFirstComponentIncludingDisabled(player,"CharacterPlatformingComponent")
-
-            --Restore player's jump & swim velocity back to normal
-            local old_jump = ComponentGetValue2(comp2,"jump_velocity_y")
-            local old_swim = ComponentGetValue2(comp2,"swim_up_buoyancy_coeff")
-            
-            ComponentSetValue2(comp2,"jump_velocity_y",old_jump - jump_vel)
-            ComponentSetValue2(comp2,"swim_up_buoyancy_coeff",old_swim - swim_vel)
         else
             ComponentSetValue2(comp, "flying_needs_recharge", false)
         end
     end
+
+    --Restore player's jump & swim velocity back to normal
+    local comp2 = EntityGetFirstComponentIncludingDisabled(player,"CharacterPlatformingComponent")
+
+    local old_jump = ComponentGetValue2(comp2,"jump_velocity_y")
+    local old_swim = ComponentGetValue2(comp2,"swim_up_buoyancy_coeff")
+
+    ComponentSetValue2(comp2,"jump_velocity_y",old_jump - jump_vel)
+    ComponentSetValue2(comp2,"swim_up_buoyancy_coeff",old_swim - swim_vel)
 end

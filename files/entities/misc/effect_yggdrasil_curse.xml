@@ -1,4 +1,4 @@
-<Entity name="apotheosis_curse_of_yggdrasil">
+<Entity name="apotheosis_no_flight" tags="watermage">
 	<InheritTransformComponent>
     </InheritTransformComponent>
     

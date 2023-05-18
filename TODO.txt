@@ -48,3 +48,5 @@ Updating swappermage.lua may be not needed anymore.. but
 Make Worse Enemies minecart BFG hiisi have significantly more wind-up time to match the WE update
 
 Make the tower more mod-compatipilled
+
+Make lua sharing, share additional lua components for each modifier of it applied

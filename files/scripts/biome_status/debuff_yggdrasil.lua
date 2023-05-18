@@ -5,7 +5,7 @@ function collision_trigger( player_id )
 	local found = false
 	for k=1,#children
 	do local v = children[k]
-		if EntityGetName(v) == "apotheosis_curse_of_yggdrasil" then
+		if EntityGetName(v) == "apotheosis_no_flight" and EntityHasTag(v,"watermage") then
 			found = true
 			break
 		end
