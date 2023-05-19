@@ -94,6 +94,14 @@ table.insert(g_small_enemies,
     entity     = "data/entities/animals/fungus_smoking_creep.xml"
 })
 
+table.insert(g_small_enemies,
+{
+    prob           = 0.03,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/hiisi_thief.xml"
+})
+
 
 
 --New Game +

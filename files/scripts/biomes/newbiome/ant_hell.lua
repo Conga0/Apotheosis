@@ -62,6 +62,12 @@ g_small_enemies =
 		max_count	= 3,    
 		entity 	= "data/entities/animals/zombie.xml"
 	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/hiisi_thief.xml"
+	},
 }
 
 g_big_enemies =

@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/hiisi_thief/head.png
+mods/Apotheosis/files/ragdolls/hiisi_thief/leg_l.png
+mods/Apotheosis/files/ragdolls/hiisi_thief/leg_r.png
+mods/Apotheosis/files/ragdolls/hiisi_thief/arm.png
+mods/Apotheosis/files/ragdolls/hiisi_thief/torso.png

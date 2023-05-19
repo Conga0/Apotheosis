@@ -38,15 +38,15 @@
 		<SpriteComponent
 			alpha="1"
 			_enabled="1"
-			image_file="mods/Apotheosis/files/enemies_gfx/hisii_hobo.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/hiisi_thief.xml"
 			offset_x="0"
 			offset_y="0" >
 		</SpriteComponent>
 		
 		<DamageModelComponent 
-            hp="8.0"
+            hp="2.0"
             materials_create_messages="1"
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hisii_hobo/filenames.txt" 
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hiisi_thief/filenames.txt" 
 			fire_probability_of_ignition="0"
 			blood_material="blood"
     		blood_spray_material="blood"
@@ -54,8 +54,8 @@
 			blood_multiplier="0.75"
 			>
 			<damage_multipliers
-				explosion="0.4"
-				fire="0.2"
+				explosion="0.8"
+				fire="0.7"
 				>
 			</damage_multipliers>
 		</DamageModelComponent>

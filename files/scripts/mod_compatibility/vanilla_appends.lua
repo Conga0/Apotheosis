@@ -280,6 +280,16 @@ do
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do
+  --Prevents Omega Disc Projectile from eating through indestructible terrain
+  local path = "data/entities/projectiles/deck/disc_bullet_bigger.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("CellEaterComponent").attr
+  attrpath.ignored_material_tag = "[indestructible]"
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 do -- Add a 1% chance for potions to be replaced with a potion from the rare pool
   local path = "data/entities/items/pickup/potion.xml"
   local content = ModTextFileGetContent(path)

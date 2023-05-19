@@ -1693,7 +1693,11 @@ ModLuaFileAppend( "data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/f
 --Will be controlled via mod settings until it's pushed to main
 --If you want to enable it, you can toggle "Expanded Polymorph Pool" in the mod settings
 if ModSettingGet( "Apotheosis.exp_poly" ) == true then
-  function OnWorldInitialized()
-    dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+  if ModIsEnabled("Global_Poly") then
+    ModLuaFileAppend( "mods/global_poly/files/scripts/poly_pool.lua", "mods/apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
+  else
+    function OnWorldInitialized()
+      dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+    end
   end
 end

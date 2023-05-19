@@ -39,7 +39,7 @@
 			can_walk="1"
 			can_dive="1" 
 			can_swim_on_surface="1" 
-			jump_speed="250" //originally 90
+			jump_speed="250"
 			initial_jump_lob="1"
 			initial_jump_max_distance_x="150"
 			initial_jump_max_distance_y="150"
@@ -47,8 +47,8 @@
 		</PathFindingComponent>
 
         <CharacterPlatformingComponent 
-			jump_velocity_y="-45" // originally 12
-			jump_velocity_x="-70" //originally unaffected
+			jump_velocity_y="-45"
+			jump_velocity_x="-70"
 			run_velocity="225" >
         </CharacterPlatformingComponent>
 
