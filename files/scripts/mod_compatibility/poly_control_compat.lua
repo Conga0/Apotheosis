@@ -564,7 +564,7 @@ local apotheosis_creatures_default = {
     "goo_slug",
     "hideous_mass",
     "hideous_mass_red",
-    "hiisi_thief",
+    --"hiisi_thief",
     "hisii_giga_bomb",
     --"hisii_hobo",
     "hisii_hobo_rich",

@@ -9,17 +9,11 @@ local targets = EntityGetInRadiusWithTag( x, y, r, "mortal" )
 for k=1, #targets
 do local v = targets[k];
 	if (EntityHasTag( v, "player_unit") or EntityHasTag( v, "enemy") or EntityHasTag( v, "helpless_animal")) and (EntityHasTag( v, "polymorphable_NOT") == false) then
-		local c = EntityGetAllChildren( v )
 		local valid = true
-		
-		if ( c ~= nil ) then
-			for a,b in ipairs( c ) do
-				local comps = EntityGetComponent( b, "GameEffectComponent", "effect_polymorph_short" )
-				if ( EntityGetName( b ) == "creep_debuff_polycrystal" ) or ( comps ~= nil ) then
-					valid = false
-					break
-				end
-			end
+
+		if GameGetGameEffectCount( v, "POLYMORPH_RANDOM" ) > 0 then
+			valid = false
+			break
 		end
 
 		if ( EntityGetName( v ) == "Chaotic Polymorph Crystal" ) or ( EntityGetName( v ) == "Polymorph Crystal" ) or ( EntityGetName( v ) == "unknown" ) then

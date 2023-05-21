@@ -33,6 +33,9 @@ do local v = targets[k];
 		local children = EntityGetAllChildren( v )
 		local valid = true
 		
+		local comp = EntityGetFirstComponentIncludingDisabled(v,"DamageModelComponent")
+		if ComponentGetValue2(comp,"fire_probability_of_ignition") < 10 then valid = false end
+		
 		if children ~= nil then
 			for z=1, #children
 			do local c = children[z];

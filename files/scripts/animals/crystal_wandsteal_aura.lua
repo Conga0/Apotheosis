@@ -12,7 +12,8 @@ do local v = targets[k];
 	local valid = true
 	
 	if ( c ~= nil ) then
-		for a,b in ipairs( c ) do
+			for z=1,#c
+			do local b = c[z]
 			if ( EntityGetName( b ) == "creep_debuff_polycrystal" ) then
 				valid = false
 				break

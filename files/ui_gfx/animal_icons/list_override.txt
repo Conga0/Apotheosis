@@ -20,6 +20,7 @@ miner
 miner_fire
 miner_santa
 miner_chef
+hiisi_thief
 goblin_bomb
 shotgunner_weak
 shotgunner

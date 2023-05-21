@@ -1,6 +1,7 @@
 
 local entity_id = GetUpdatedEntityID()
 local player_id = EntityGetRootEntity(entity_id)
+local pos_x, pos_y = player_id
 local owner_id = 0
 
 --This function changes the thief into "flee" mode after successfully stealing your gold
@@ -39,6 +40,7 @@ if owner_id ~= 0 then
     do local v = thiefgoldcomps[k]
         if ComponentGetValue2(v,"name") == "thief_gold" then
             ComponentSetValue2(v,"value_int",gold)
+            GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/goldnugget/create", pos_x, pos_y );
             thiefFleeMode(owner_id)
             break
         end

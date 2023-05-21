@@ -45,7 +45,7 @@ local secret_golden_cape_name = "Golden Cape"
 local secret_golden_cape_desc = "Is the Golden Cape cosmetic enabled? \nSome people may want to disable this if using custom character mods."
 
 local exp_poly_name = "Expanded Polymorph Pool"
-local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph pool? \n \nThis is under a mod setting temporarily \nuntil this feature is added to the base game (non-beta branch) \nWARNING: Experimental \n \nNote [Conga]: This function is currently broken and crashes the game. \nHopefully petri (or whoever else is working on it) fixes this."
+local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph pool? \n \nThis is under a mod setting temporarily \nuntil this feature is added to the base game (non-beta branch) \nWARNING: This might break creature shifts as it *might* serialise entity data, currently untested. \nIf this message is still here, it still hasn't been tested"
 
 
   --Russian Translations

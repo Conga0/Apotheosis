@@ -281,6 +281,16 @@ do
 end
 
 do
+  --Prevents Giga Disc Projectile from eating through indestructible terrain
+  local path = "data/entities/projectiles/deck/disc_bullet_big.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("CellEaterComponent").attr
+  attrpath.ignored_material_tag = "[indestructible]"
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do
   --Prevents Omega Disc Projectile from eating through indestructible terrain
   local path = "data/entities/projectiles/deck/disc_bullet_bigger.xml"
   local content = ModTextFileGetContent(path)
@@ -444,6 +454,14 @@ end
 
 --I can not get this to work and I'm not sure how.. I mean it works, but gsubbing blob and it also gsubbing miniblob is a pain, but there's no good place to reinsert either because multi-line gsubbing doesn't want to work and it's just arrrgghhh
 --Moved to a file overwrite until a better solution is found
+--
+--Could gsub with [[3 lines of reference here]] instead
+--ie:
+--[[giantshooter
+--miniblob
+--blob]]
+--
+--
 --[[
 do -- Organise Creature Progress List
 

@@ -1,13 +1,5 @@
 <Entity name="Varas Hiisi" >
 
-	<!--Note [Conga]: This guy needs a unique sprite but.. I just, can't today man, it's 11am and I have no freaking clue how to sprite Hiisi Still.
-	Monsters beyond your wildest imagination? easy.
-	A guy with two legs and some arms? Impossible.
-	How does Spoop do it?
-	actually.. hey.. would you mind lending me a hand here? Pretty please? If I haven't already asked you by this point.
-	He's a thief who steals half your gold on melee, before throwing down teleportatium to escape, so go wild with your imagination
-	-->
-  
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>
 		

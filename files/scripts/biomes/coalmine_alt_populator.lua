@@ -134,7 +134,7 @@
         prob           = 0.02,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/animals/hiisi_thief.xml"
+        entity     = "data/entities/animals/coal_mines/hiisi_thief.xml"
     })
 
 
