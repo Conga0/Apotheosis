@@ -499,6 +499,7 @@ local apotheosis_creatures = {
     {
         file="angel",
         name="Divine Being",
+        uniquegfx="hidden/angel",
     },
     {
         file="boss_fire_lukki",

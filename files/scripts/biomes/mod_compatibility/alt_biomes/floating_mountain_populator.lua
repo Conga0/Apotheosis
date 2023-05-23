@@ -47,6 +47,7 @@ end
 		entity 	= "data/entities/animals/the_end/gazer_cold_apotheosis.xml"
 	})
 
+    --[[
     if apotheosis_HardmodeCheck then 
         table.insert(g_big_enemies_sky,
         {
@@ -64,6 +65,7 @@ end
             entity     = "data/entities/animals/angel.xml"
         })
     end
+    ]]--
     
 
 
@@ -79,7 +81,7 @@ end
 
 
     --New Game ++ (2)
-
+--[[
     table.insert(g_big_enemies_sky,
     {
         prob           = 0.1,
@@ -101,3 +103,4 @@ end
         entity     = "data/entities/animals/angel/weak_loot/angel.xml",
         ngpluslevel = 4
     })
+]]--

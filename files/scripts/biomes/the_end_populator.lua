@@ -7,6 +7,7 @@ end
 
 ---Hell enemies 
 
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies,
     {
@@ -24,6 +25,7 @@ else
         entity     = "data/entities/animals/angel.xml"
     })
 end
+]]--
 
 
 table.insert(g_small_enemies,
@@ -97,6 +99,7 @@ table.insert(g_small_enemies_sky,
     entity     = "data/entities/animals/the_end/fairy_big_discord.xml"
 })
 
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies_sky,
     {
@@ -114,7 +117,7 @@ else
         entity     = "data/entities/animals/angel.xml"
     })
 end
-
+]]--
 
 
 table.insert(g_small_enemies_sky,
@@ -139,7 +142,7 @@ table.insert(g_small_enemies_sky,
 
 
 --New Game ++ (2)
-
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies,
     {
@@ -183,3 +186,4 @@ else
         ngpluslevel = 4
     })
 end
+]]--

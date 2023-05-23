@@ -30,19 +30,19 @@ g_small_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/ant_hell/ant.xml"
+		entity 	= "data/entities/animals/planes/ant.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/ant_fire.xml"
+		entity 	= "data/entities/animals/planes/ant_fire.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/ant_suffocate.xml"
+		entity 	= "data/entities/animals/planes/ant_suffocate.xml"
 	},
 	{
 		prob   		= 0.05,
@@ -59,8 +59,8 @@ g_small_enemies =
 	{
 		prob   		= 0.05,
 		min_count	= 1,
-		max_count	= 3,    
-		entity 	= "data/entities/animals/zombie.xml"
+		max_count	= 1,    
+		entity 	= "data/entities/animals/giant_centipede.xml"
 	},
 }
 

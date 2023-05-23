@@ -102,6 +102,17 @@
         entity     = "data/entities/animals/goo_slug.xml"
     })
 
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.02,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/coal_mines/hiisi_thief.xml"
+    })
+
+
+    
+
     table.insert(g_props,
     {
         prob           = 0.02,

@@ -12,7 +12,7 @@ table.insert(g_big_enemies,
     max_count    = 1,    
     entity     = "data/entities/animals/wizard_copeseethmald.xml"
 })
-
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies,
     {
@@ -30,7 +30,7 @@ else
         entity     = "data/entities/animals/angel.xml"
     })
 end
-
+]]--
 
 
 --Small Enemies
