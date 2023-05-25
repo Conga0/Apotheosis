@@ -1673,6 +1673,26 @@ local apotheosis_spellappends = {
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
 		end,
     },
+	{
+		id          = "APOTHEOSIS_SEA_BERSERK",
+        id_matchup  = "SEA_ACID_GAS",
+        name 		= "$spell_apotheosis_sea_berserk_name",
+        description = "$spell_apotheosis_sea_berserk_desc",
+		sprite 		= "data/ui_gfx/gun_actions/sea_berserk.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/sea_berserk.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_rage_aura",
+		type 		= ACTION_TYPE_MATERIAL,
+		spawn_level                       = "0,4,5,6", -- SEA_ACID
+		spawn_probability                 = "0.2,0.2,0.2,0.2", -- SEA_ACID
+		price = 350,
+		mana = 140,
+		max_uses = 3,
+		action 		= function()
+			add_projectile("data/entities/projectiles/deck/sea_berserk.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

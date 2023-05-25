@@ -32,6 +32,9 @@ local apotheosis_perkappends = {
             end
         end,
     },
+    --[[
+    --Removed Perk, not very interesting to play with and has much less interaction with the monsters than originally intended
+    --This has instead been replaced with the Sea of Berserkium spell
     {
         id = "APOTHEOSIS_RAGE_AURA",
         unlock_flag = "apotheosis_card_unlocked_rage_aura",
@@ -68,6 +71,7 @@ local apotheosis_perkappends = {
             end
         end,
     },
+    ]]--
     {
         id = "APOTHEOSIS_REVENGE_REFLECTIVE",
         id_matchup = "REVENGE_BULLET",
@@ -616,7 +620,7 @@ local apotheosis_perkappends = {
         ui_description = "$perk_apotheosis_no_blood_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/no_blood_perk_ui.png",
         perk_icon = "mods/Apotheosis/files/items_gfx/perks/no_blood_perk.png",
-        not_in_default_perk_pool = true,
+        not_in_default_perk_pool = false,
         stackable = STACKABLE_NO,
         usable_by_enemies = false,
         func = function( entity_perk_item, entity_who_picked, item_name )

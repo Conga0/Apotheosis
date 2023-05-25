@@ -59,7 +59,7 @@ do local v = targets[k]
 
         --Play audio up to one time when shooting
         if sound == false then
-            GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/glowing_bolt/create", pos_x, pos_y )
+            GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/chain_bolt/create", pos_x, pos_y )
             sound = true
         end
 

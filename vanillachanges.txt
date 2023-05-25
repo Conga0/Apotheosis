@@ -40,8 +40,8 @@ Alchemical Mists
 Content list:
 104 new enemies (+3 Pylon variants)
 5 new bosses
-64 new spells
-9 new perks
+66 new spells
+8 new perks
 5 new biomes
 7 new structures
 10 new materials (8 interactable, 10 total)

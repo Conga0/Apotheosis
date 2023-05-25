@@ -525,6 +525,17 @@ do  -- Robots take damage from Veloium
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do  -- Fix monks not taking damage from concentrated mana or Veloium
+  local path = "data/entities/animals/monk.xml"
+  local xml = nxml.parse(ModTextFileGetContent(path))
+
+  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
+  attrs.materials_that_damage = "acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_velocium,magic_liquid_mana_regeneration"
+  attrs.materials_how_much_damage = "0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.0003,0.001"
+
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 
 do -- Piercing only hit 5 times per modifier
   local path = "data/entities/misc/piercing_shot.xml"
