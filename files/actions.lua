@@ -1680,7 +1680,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_sea_berserk_desc",
 		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/sea_berserk.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
-		related_projectiles	= {"data/entities/projectiles/deck/sea_berserk.xml"},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/sea_berserk.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_rage_aura",
 		type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "0,4,5,6", -- SEA_ACID
@@ -1689,7 +1689,7 @@ local apotheosis_spellappends = {
 		mana = 140,
 		max_uses = 3,
 		action 		= function()
-			add_projectile("data/entities/projectiles/deck/sea_berserk.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/sea_berserk.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
 	},
