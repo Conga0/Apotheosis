@@ -293,7 +293,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Hisii Thief",
 		path="data/entities/animals/hiisi_thief.xml",
-		image="data/ui_gfx/animal_icons/hisii_hobo.png",
+		image="data/ui_gfx/animal_icons/hisii_thief.png",
 	  },
 	  {
 		name="Locust Swarm",

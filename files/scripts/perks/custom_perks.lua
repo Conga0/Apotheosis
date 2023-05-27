@@ -727,17 +727,11 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
         else
             for z=1,#perk_list
             do c = perk_list[z]
-                if c.id == v.id_matchup then
+                if c.id == v.id_matchup or z == #perk_list then
                     v.author    = v.author  or "Conga Lyne"
                     v.mod       = v.mod     or "Apotheosis"
                     table.insert(perk_list,z + 1,v)
                     break
-                end
-                if z == #perk_list then
-                    --Insert here as a failsafe incase the matchup ID can't be found.. some other mod might delete the perk we're trying to insert at
-                    v.author    = v.author  or "Conga Lyne"
-                    v.mod       = v.mod     or "Apotheosis"
-                    table.insert(perk_list,v)
                 end
             end
         end

@@ -1652,7 +1652,7 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
-    {
+    {   --Conga: Confession, I only made this because of Lua Sharing, and it's so damn worth it
         id          = "APOTHEOSIS_ELECTROSPHERE",
         id_matchup  = "APOTHEOSIS_HOLYORB_SHOTGUN",
         name 		= "$spell_apotheosis_electrosphere_name",
@@ -1678,7 +1678,7 @@ local apotheosis_spellappends = {
         id_matchup  = "SEA_ACID_GAS",
         name 		= "$spell_apotheosis_sea_berserk_name",
         description = "$spell_apotheosis_sea_berserk_desc",
-		sprite 		= "data/ui_gfx/gun_actions/sea_berserk.png",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/sea_berserk.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
 		related_projectiles	= {"data/entities/projectiles/deck/sea_berserk.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_rage_aura",
@@ -1705,13 +1705,9 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
         else
             for z=1,#actions
             do c = actions[z]
-                if c.id == v.id_matchup then
+                if c.id == v.id_matchup or z == #actions then
                     table.insert(actions,z + 1,v)
                     break
-                end
-                if z == #actions then
-                    --Insert here as a failsafe incase the matchup ID can't be found.. some other mod might delete the spell we're trying to insert at
-                    table.insert(actions,v)
                 end
             end
         end

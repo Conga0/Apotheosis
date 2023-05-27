@@ -209,7 +209,8 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/poring_holy.xml",
-    ngpluslevel = 1
+    ngpluslevel = 1,
+    ng_exclusive = true,
 })
 
 table.insert(g_small_enemies,
@@ -218,7 +219,8 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/poring_magic.xml",
-    ngpluslevel = 1
+    ngpluslevel = 1,
+    ng_exclusive = true,
 })
 
 

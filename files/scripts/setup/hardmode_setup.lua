@@ -65,3 +65,57 @@ do -- Buff Final Boss's HP as if you grabed 10 orbs
   ModTextFileSetContent(path, content)
 end
 
+do --Reduces the NG+ count of each biome's enemy pool by 1
+  local biomes = {
+    "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
+    "coalmine",         --Coal Mine, first area, goodluck on your run
+    "desert",           --Desert above ground, careful not to die to any Stendari
+    "crypt",            --Temple of the Arts.. who died here?
+    "pyramid",          --Presumably everything below the entrance to the pyramid
+    "fungicave",        --BUNGUS!! cave, west side of area 2 for example
+    "coalmine_alt",     --Coalmine but to the west side near damp cave
+    "pyramid_hallway",  --Pyramid entrance, presumably
+    "excavationsite",   --Coal Pits, area 2
+    "fungiforest",      --Overgrowth
+    "snowcave",         --Snowy Depths
+    "wandcave",         --Magical temple.. huh
+    "sandcave",         --Desert sand cave, I don't think it includes desert chasm
+    "winter",           --Winter appears to be the snow chasm... terrifying. Also line 69!
+    "rainforest",       --Jungle
+    "rainforest_dark",  --Lukki Lair.. creepy
+    "liquidcave",       --Abandoned Alchemy Lab
+    "the_end",          --Heaven, or Hell, your choice. Either are The Work.
+    "vault",            --The Vault
+    "robot_egg",        --I'm sure you can guess
+    "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
+    "snowcastle",       --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
+    "robobase",         --Power Plant
+    "clouds",           --Cloudscapes
+    "hills",            --Hills, aka forest.
+  }
+  local appendpath ="mods/apotheosis/files/scripts/setup/enemy_appends_hardmode.lua"
+
+  for k=1,#biomes
+  do local v = biomes[k]
+    local biomepath = table.concat({"data/scripts/biomes/", v, ".lua"})
+    ModLuaFileAppend(biomepath, appendpath)
+  end
+end
+
+do --Reduces the NG+ count of each biome's enemy pool by 1 (modded)
+  local biomes = {
+    "ant_hell", --Ant Nest
+    "desert_pit", --Sink Hole
+    "esoteric_den", --Esoteric Den
+    "evil_temple",  --Temple of Sacriligious Remains
+    "lava_excavation",  --Core Mines
+    "sunken_cave",  --Sunken Cavern
+  }
+  local appendpath ="mods/apotheosis/files/scripts/setup/enemy_appends_hardmode.lua"
+
+  for k=1,#biomes
+  do local v = biomes[k]
+    local biomepath = table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
+    ModLuaFileAppend(biomepath, appendpath)
+  end
+end

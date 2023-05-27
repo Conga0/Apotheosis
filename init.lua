@@ -652,7 +652,7 @@ ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scr
 ModLuaFileAppend( "data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/vault_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/tower.lua", "mods/Apotheosis/files/scripts/biomes/tower_populator.lua" )
+--ModLuaFileAppend( "data/scripts/biomes/tower.lua", "mods/Apotheosis/files/scripts/biomes/tower_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/rainforest_populator.lua" ) --Jungle
 ModLuaFileAppend( "data/scripts/biomes/rainforest_dark.lua", "mods/Apotheosis/files/scripts/biomes/rainforest_dark_populator.lua" ) --Lukki Lair
 ModLuaFileAppend( "data/scripts/biomes/winter.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua" ) --Snow Chasm

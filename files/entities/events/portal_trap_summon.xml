@@ -81,12 +81,12 @@
 	
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/props/trap_portal_summon.lua"
-		execute_every_n_frame="180"
+		execute_every_n_frame="120"
 		>
 	</LuaComponent>
 	
 	<LifetimeComponent
-		lifetime="400"
+		lifetime="340"
 		>
 	</LifetimeComponent>
 	

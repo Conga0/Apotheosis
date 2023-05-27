@@ -130,7 +130,7 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/hisii_engineer.xml",
-    ngpluslevel = 1
+    ngpluslevel = 1,
 })
 
 table.insert(g_small_enemies,
@@ -139,7 +139,7 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/gazer_greater_cold.xml",
-    ngpluslevel = 1
+    ngpluslevel = 1,
 })
 
 table.insert(g_small_enemies,
@@ -148,7 +148,8 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/the_end/gazer_cold_apotheosis.xml",
-    ngpluslevel = 1
+    ngpluslevel = 1,
+    ng_exclusive = true,
 })
 
 
