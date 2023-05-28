@@ -4,22 +4,21 @@
 
   <DamageModelComponent 
     _enabled="1" 
-	create_ragdoll="0"
     air_needed="0"  
     falling_damages="0" 
     fire_damage_amount="0.2" 
     fire_probability_of_ignition="0" 
     hp="120" 
     is_on_fire="0" 
-    blood_material="apotheosis_sand_pink"
-	blood_multiplier="0.5"
+    blood_material="magic_liquid_mana_regeneration"
+	blood_multiplier="0.1"
     materials_create_messages="0" 
     materials_damage="1" 
     materials_how_much_damage="" 
     materials_that_damage="" 
-    ragdoll_material="ice_b2"
-    ragdoll_filenames_file="" 
-    ragdoll_offset_y="-6" >
+    ragdoll_material="rock_box2d_nohit"
+    ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wandsteal_crystal/filenames.txt" 
+    ragdoll_offset_y="-20" >
   </DamageModelComponent>
 
   <GenomeDataComponent 

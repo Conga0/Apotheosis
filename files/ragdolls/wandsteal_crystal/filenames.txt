@@ -1,0 +1,16 @@
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/crystal1.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/crystal2.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/crystal3.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/crystal4.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/crystal5.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/crystal6.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/hand1.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/hand2.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/hand3.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/hand4.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/hand5.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/hand6.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/base1.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/base2.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/base3.png
+mods/Apotheosis/files/ragdolls/wandsteal_crystal/base4.png

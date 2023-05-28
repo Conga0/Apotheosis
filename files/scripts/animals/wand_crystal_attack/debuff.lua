@@ -11,5 +11,3 @@ do local v = targets[k]
         EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_wands_nodmg.xml", x, y )
     end
 end
-
-EntityKill( entity_id )
