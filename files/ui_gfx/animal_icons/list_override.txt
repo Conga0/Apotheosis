@@ -262,7 +262,6 @@ boss_wizard
 boss_centipede
 ultimate_killer
 friend
-angel
 boss_toxic_worm
 boss_toxic_worm_minion
 boss_musical_ghost

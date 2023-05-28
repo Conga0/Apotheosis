@@ -11,6 +11,6 @@ function shot()
     ComponentSetValue2(animalcomp,"attack_if_damaged_probability",50)
     ComponentSetValue2(animalcomp,"escape_if_damaged_probability",50)
 
-    local luacomp = EntityGetFirstComponentIncludingDisabled(thief_id,"LuaComponent")
+    local luacomp = EntityGetFirstComponentIncludingDisabled(entity_id,"LuaComponent")
     EntitySetComponentIsEnabled(entity_id,luacomp,false)
 end

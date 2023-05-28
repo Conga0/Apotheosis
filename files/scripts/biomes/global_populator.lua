@@ -180,7 +180,7 @@ end
 --Tablet Ghost
 table.insert(g_small_enemies,
 {
-    prob           = 0.004,
+    prob           = 0.002,
     min_count    = 1,
     max_count    = 1,
     entity     = "data/entities/animals/playerghost_apotheosis/playerghost.xml",
@@ -191,7 +191,7 @@ table.insert(g_small_enemies,
         if ghost_count >= 3 then
             return false
         else
-            GlobalsSetValue("apotheosis_tabletghost_count", ghost_count + 1 )
+            GlobalsSetValue("apotheosis_tabletghost_count", tostring(ghost_count + 1) )
             return true 
         end
     end,

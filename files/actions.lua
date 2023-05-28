@@ -7,7 +7,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/thrower_disc_big_ray.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -27,7 +27,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/thrower_cursed_orb_ray.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -47,7 +47,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/thrower_dynamite_ray.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -67,7 +67,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/thrower_ice_ball_ray.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -87,7 +87,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/thrower_nuke_ray.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "5,6,10", -- GRAVITY_FIELD_ENEMY
         spawn_probability                 = "0.1,0.2,1", -- GRAVITY_FIELD_ENEMY
@@ -107,7 +107,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray_enemy.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_disc_big_ray_enemy.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -127,7 +127,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray_enemy.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_cursed_orb_ray_enemy.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -147,7 +147,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray_enemy.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_dynamite_ray_enemy.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -167,7 +167,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray_enemy.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_ice_ball_ray_enemy.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -187,7 +187,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray_enemy.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_nuke_ray_enemy.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "2,3,4,5,6", -- FIREBALL_RAY_LINE
         spawn_probability                 = "0.6,0.4,0.4,0.4,1", -- FIREBALL_RAY_LINE
@@ -207,7 +207,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_holy_shotgun.xml", 7},
-        spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level                       = "2,3,4,5,6", -- BUCKSHOT  Originally this was 1-5 but was changed because the spell feels too good to get early on, might revert, unsure
         --spawn_probability                 = "0.7,0.9,1,0.8,0.6", -- Original Rates
@@ -1652,6 +1652,95 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    {   --Conga: Confession, I only made this because of Lua Sharing, and it's so damn worth it
+        id          = "APOTHEOSIS_ELECTROSPHERE",
+        id_matchup  = "APOTHEOSIS_HOLYORB_SHOTGUN",
+        name 		= "$spell_apotheosis_electrosphere_name",
+        description = "$spell_apotheosis_electrosphere_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/electrosphere.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/electrosphere.xml"},
+        type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "0,4,5,6", -- CHAIN_BOLT
+		spawn_probability                 = "1,1,1,1", -- CHAIN_BOLT
+        price = 240,
+        mana = 80,
+		action 		= function()
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/electrosphere.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 50
+			c.screenshake = c.screenshake + 2
+			c.spread_degrees = c.spread_degrees + 3.6
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 20.0
+		end,
+    },
+	{
+		id          = "APOTHEOSIS_SEA_BERSERK",
+        id_matchup  = "SEA_ACID_GAS",
+        name 		= "$spell_apotheosis_sea_berserk_name",
+        description = "$spell_apotheosis_sea_berserk_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/sea_berserk.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/sea_berserk.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_rage_aura",
+		type 		= ACTION_TYPE_MATERIAL,
+		spawn_level                       = "0,4,5,6", -- SEA_ACID
+		spawn_probability                 = "0.2,0.2,0.2,0.2", -- SEA_ACID
+		price = 350,
+		mana = 140,
+		max_uses = 3,
+		action 		= function()
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/sea_berserk.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_KINDNESS_TO_POWER",
+        id_matchup  = "ESSENCE_TO_POWER",
+        name 		= "$spell_apotheosis_kindness_to_power_name",
+        description = "$spell_apotheosis_kindness_to_power_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/kindness_to_power.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,3,10", -- AREA_DAMAGE
+		spawn_probability                 = "0.2,0.5,0.5,0.5", -- AREA_DAMAGE
+		price = 180,
+		mana = 40,
+		-- max_uses = 20,
+		action 		= function()
+            local targets = EntityGetWithTag("mortal")
+            local hotness = 1
+            for k=1,#targets
+            do local v = targets[k]
+                if GameGetGameEffectCount( v, "CHARM" ) > 0 then
+                    hotness = hotness + 1
+                end
+            end
+            if c.damage_critical_chance < 20 and hotness > 1 then
+                c.damage_critical_chance = 20
+            end
+			c.damage_critical_chance = (c.damage_critical_chance * hotness)
+			draw_actions( 1, true )
+		end,
+	},
+    {
+        id          = "APOTHEOSIS_MIND_VISION",
+        id_matchup  = "X_RAY",
+        name 		= "$spell_apotheosis_mind_vision_name",
+        description = "$spell_apotheosis_mind_vision_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mindvision.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+        related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_mindvision.xml" },
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "0,1,2,3", -- APOTHEOSIS_MIND_VISION
+        spawn_probability                 = "0.5,1,1,0.5", -- APOTHEOSIS_MIND_VISION
+        price = 180,
+        mana = 10,
+        --max_uses = 16,
+        action 		= function()
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_mindvision.xml,"
+            draw_actions( 1, true )
+        end,
+    },
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -1664,13 +1753,9 @@ if ModSettingGet( "Apotheosis.organised_icons" ) == true then
         else
             for z=1,#actions
             do c = actions[z]
-                if c.id == v.id_matchup then
+                if c.id == v.id_matchup or z == #actions then
                     table.insert(actions,z + 1,v)
                     break
-                end
-                if z == #actions then
-                    --Insert here as a failsafe incase the matchup ID can't be found.. some other mod might delete the spell we're trying to insert at
-                    table.insert(actions,v)
                 end
             end
         end

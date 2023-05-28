@@ -8,7 +8,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Divine Being",
 		path="data/entities/animals/angel.xml",
-		image="data/ui_gfx/animal_icons/angel.png",
+		image="data/ui_gfx/animal_icons/hidden/angel.png",
 	  },
 	  {
 		name="Blind Gazer",
@@ -211,6 +211,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/forsaken_eye.png",
 	  },
 	  {
+		name="Forsaken Eye (Orbitals)",
+		path="data/entities/animals/eye_forsaken_orbit.xml",
+		image="data/ui_gfx/animal_icons/forsaken_eye.png",
+	  },
+	  {
 		name="Cold Gazer",
 		path="data/entities/animals/gazer_cold_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/gazer_cold_apotheosis.png",
@@ -298,7 +303,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Hisii Thief",
 		path="data/entities/animals/hiisi_thief.xml",
-		image="data/ui_gfx/animal_icons/hisii_hobo.png",
+		image="data/ui_gfx/animal_icons/hiisi_thief.png",
 	  },
 	  {
 		name="Locust Swarm",

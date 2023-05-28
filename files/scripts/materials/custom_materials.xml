@@ -2042,6 +2042,47 @@
 
 
 
+  <CellData
+	name="apotheosis_magic_liquid_mimic"
+	ui_name="$material_apotheosis_magic_liquid_mimic"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="0.90"
+	cell_type="liquid"
+	wang_color="8034c95f"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	status_effects="apotheosis_INFINITE_FLIGHT"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel.y="17.14"
+		vel_random.min_y="-100"
+		vel_random.max_y="25.71"
+		lifetime.min="0"
+		gravity.y="-8.57"
+		render_on_grid="1"
+		draw_as_long="1"
+		friction="-3.429"
+		probability="0.0518"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_INFINITE_FLIGHT" amount="0.2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+
+
 
 
 
@@ -2189,7 +2230,7 @@
 	<!--Remove unnecessary fading ambrosia if it piles up in a hidey hole beneath other liquids-->
 	<Reaction probability="10"
 		input_cell1="apotheosis_magic_liquid_protection_all_fading" 		input_cell2="[solid]"
-		output_cell1="air"
+		output_cell1="air"	output_cell2="[solid]"
 		>
 	</Reaction>
 	
@@ -2334,6 +2375,13 @@
 		output_cell1="cheese_static" 		output_cell2="cheese_static"
 		destroy_horizontally_lonely_pixels="1"
 		req_lifetime="400" >
+	</Reaction>
+
+	<Reaction probability="60" 
+		input_cell1="apotheosis_magic_liquid_mimic" 				input_cell2="[liquid]"
+		output_cell1="[liquid]" 		output_cell2="[liquid]"
+		destroy_horizontally_lonely_pixels="1"
+		req_lifetime="100" >
 	</Reaction>
 
 </Materials>

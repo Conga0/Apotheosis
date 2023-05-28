@@ -39,13 +39,13 @@ https://discord.com/channels/@me/1013670507146653767/1087217718572371988
 
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
-
-Optimise perk & hardcore spell appends
+Finish or Remove Mimicium
 
 Updating swappermage.lua may be not needed anymore.. but
 
-Make Worse Enemies minecart BFG hiisi have significantly more wind-up time to match the WE update
-
-Make the tower more mod-compatipilled
-
 Make lua sharing, share additional lua components for each modifier of it applied
+
+Rename inner spell to inner cast, this inconsistency, genuinely bugs me just a lil
+Note: Only do after the update goes live, as it may be changed prior to beta going to main
+
+add ui_use_raw_name tag to enemies missing it

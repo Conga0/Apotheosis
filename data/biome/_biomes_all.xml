@@ -1202,4 +1202,10 @@
 		color="ff56cf1b" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/plane_yggdrasil_border.xml"
+		height_index="13"
+		color="ff29660b" >
+	</Biome>
+
 </BiomesToLoad>

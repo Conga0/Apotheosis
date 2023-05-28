@@ -1,0 +1,192 @@
+<Entity  name="Orbitting silmä" tags="ui_use_raw_name">
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent 
+			preferred_job="JobDefault"
+			creature_detection_range_x="250"
+			creature_detection_range_y="250"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="0"
+			can_fly="1"  
+			can_walk="0"
+			attack_ranged_entity_file="data/entities/projectiles/forsaken_eye_targetter.xml"
+			attack_ranged_predict="0"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="200"
+			attack_ranged_frames_between="60"
+			attack_ranged_offset_y="2"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="3.0"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/forsaken_eye/filenames.txt" 
+			materials_that_damage="lava,poison,acid,rock_static_radioactive" 
+			materials_how_much_damage="0.004,0.001,0.005,0.1" >
+			<damage_multipliers
+				explosion="0.5"
+				electricity="0.0"
+				ice="0.0"
+				fire="0.0"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent
+			_tags="character" 
+			image_file="mods/Apotheosis/files/enemies_gfx/forsaken_eye.png"
+			offset_x="6"
+			offset_y="6"
+			z_index="1.05"
+			>
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_walk="0"
+			can_fly="1" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="ghost"
+			food_chain_rank="5"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-10" 
+			run_velocity="20"  
+			fly_speed_max_up="40"
+			fly_speed_max_down="40"
+			fly_speed_mult="10"
+			fly_speed_change_spd="1.2"
+			swim_idle_buoyancy_coeff="0.8"
+			fly_velocity_x="40" >
+		</CharacterPlatformingComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-6.5" 
+			aabb_max_x="6.5" 
+			aabb_min_y="-6.5" 
+			aabb_max_y="6.5" 
+			>
+		</HitboxComponent>
+  
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-6.5" 
+			collision_aabb_max_x="6.5" 
+			collision_aabb_min_y="-6.5" 
+			collision_aabb_max_y="6.5" 
+			mass="0.8"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_red"
+		x_pos_offset_min="-8"
+		x_pos_offset_max="8"
+		y_pos_offset_min="5"
+		y_pos_offset_max="7"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="40"
+		y_vel_max="120"
+		friction="1"
+		count_min="1"
+		count_max="1"
+		lifetime_min="0.2"
+		lifetime_max="0.7"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="3"
+		fade_based_on_lifetime="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/drone_lasership" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/magical/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<LuaComponent
+		script_source_file="data/scripts/animals/forsaken_eye_target_check.lua"
+		execute_every_n_frame="40"
+		>
+	</LuaComponent>
+
+	<SpriteComponent 
+		alpha="0.4" 
+		image_file="mods/Apotheosis/files/enemies_gfx/forsaken_eye_symbol.xml"
+		emissive="1"
+		additive="1"
+		offset_x="16"
+		offset_y="15"
+		z_index="1.1" >
+	</SpriteComponent>
+	
+	<Entity>
+		<SpriteComponent
+			image_file="mods/Apotheosis/files/enemies_gfx/forsaken_eye_pupil.png"
+			offset_x="6"
+			offset_y="6"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animals/eye_forsaken_orbitting_init.lua"
+		script_death="mods/apotheosis/files/scripts/animals/eye_orbitting_death.lua"
+		execute_every_n_frame="2"
+		remove_after_executed="0"
+		>
+	</LuaComponent>
+
+</Entity>

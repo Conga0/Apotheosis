@@ -285,7 +285,8 @@
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/vault/tentacler_big.xml",
-        ngpluslevel = 1
+        ngpluslevel = 1,
+        ng_exclusive = true,
     })
     
     table.insert(g_small_enemies,

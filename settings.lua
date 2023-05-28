@@ -22,10 +22,6 @@ local particle_reduction_name = "Minimal Particles"
 local particle_reduction_desc = "Reduce the number of particles spawned by certain spells. \nThis should help reduce lag if your computer's reaching it's limit."
 local spoopy_graphics_name = "Alternate Graphics"
 local spoopy_graphics_desc = "This setting toggles the alternate graphics of some creeps made by Spoopy. \nThis setting is turned off by default but can be enabled here."
-local mod_compat_mode_conjurer_name = "Conjurer extra Compatibility Mode"
-local mod_compat_mode_conjurer_desc = "Some people may have issues with this mod not loading into Conjurer properly. \nIf this happens, try enabling this option and loading conjurer again. \n \nThis option is on by default but can be turned off if you wish to \nhave the pixel scenes & bosses appear in conjurer worlds. \n \nIf Conjurer still fails to load despite having this turned on, although unlikely, \nit may be a mod compatibility issue with something else, \nperhaps try disabling mods to find the troublesome one. \n \nIf nothing else works please let me know to by filing a bug report to me. \nIt would be easiest for me to reach & investigate your report at the discord link below: \nhttps://discord.gg/gtyGnv8Pxk"
-local mod_compat_mode_spell_evolution_name = "Spell Evolution Compatibility Mode"
-local mod_compat_mode_spell_evolution_desc = "Turn this setting on if youre playing with the Spell Evolution mod to fix it.\n \nAs far as I can tell, a bug in Spell Evolutions causes it to break if a modded spell \nUses translation keys for their name and/or description. \n \nUnfortunately there's nothing I can do about this as it's not my mod, \nand I have no intention to remove the translation keys \nas I hope to use them one day in the event \nIm offered a translation for the mod to another language. \nHowever, I can put a setting in to optionally let you use the spells without \ntranslation keys to get around the issue."
 local custom_seed_name = "Set Custom Seed"
 local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or hardcore" --Sneak in some secret seeds here "PuppyDogs"? --Hardmode? Towerclimb?
 local organised_icons_name = "Organise Icons"
@@ -45,7 +41,7 @@ local secret_golden_cape_name = "Golden Cape"
 local secret_golden_cape_desc = "Is the Golden Cape cosmetic enabled? \nSome people may want to disable this if using custom character mods."
 
 local exp_poly_name = "Expanded Polymorph Pool"
-local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph pool? \n \nThis is under a mod setting temporarily \nuntil this feature is added to the base game (non-beta branch) \nWARNING: This might break creature shifts as it *might* serialise entity data, currently untested. \nIf this message is still here, it still hasn't been tested"
+local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph pool? \n \nThis is under a mod setting temporarily \nuntil this feature is added to the base game (non-beta branch)"
 
 
   --Russian Translations
@@ -66,10 +62,6 @@ if currentLang == "русский" then
   particle_reduction_desc = "Уменьшить количество частиц, создаваемых некоторыми заклинаниями. \nЭто поможет уменьшить задержку, если ваш компьютер достигает предела."
   spoopy_graphics_name = "Альтернативная графика"
   spoopy_graphics_desc = "Эта настройка включает альтернативную графику некоторых существ, созданных Spoopy. \nЭта настройка выключена по умолчанию, но может быть включена здесь."
-  mod_compat_mode_conjurer_name = "Режим совместимости: Conjurer"
-  mod_compat_mode_conjurer_desc = "У некоторых людей могут возникнуть проблемы с тем, что этот мод \n не загружается вместе с модом Conjurer должным образом. \nЕсли это произошло, попробуйте включить этот параметр и загрузить \n мод Conjurer снова. \n \nЭта опция включена по умолчанию, но может быть выключена, если вы хотите, \n чтобы пиксельные сцены и боссы появлялись в мирах Conjurer. \n \nЕсли Conjurer всё ещё не загружается, несмотря на включение этого параметра, \n хотя это маловероятно, может быть проблема совместимости мода с чем-то \n другим, возможно, попробуйте отключить все моды поочерёдно, \n чтобы найти проблемный. \nЕсли ничего не помогает, пожалуйста, сообщите мне об этом, написав \n сообщение об ошибке. \nМне будет проще всего связаться и изучить ваше сообщение из discord: \n https://discord.gg/gtyGnv8Pxk \n [ТОЛЬКО НА АНГЛИЙСКОМ]"
-  mod_compat_mode_spell_evolution_name = "Режим совместимости: Spell Evolution"
-  mod_compat_mode_spell_evolution_desc = "Включите этот параметр, если вы играете с модом Spell Evolution, \n чтобы исправить ошибки в нём.\n \nНасколько я могу судить, ошибка в Spell Evolutions приводит к тому, \n что он ломается, если модифицированное заклинание \n использует ключи перевода для своего имени и/или описания. \n \nК сожалению, я ничего не могу с этим поделать, поскольку это не мой \n мод, и у меня нет намерения удалять ключи перевода, поскольку \n я надеюсь использовать их однажды в случае, если мне \n предложат перевести мод на другие языки. \nОднако, я могу сделать настройку, которая позволит вам \n использовать заклинания без ключей перевода, чтобы обойти эту \n проблему."
 
   seasonal_forced_name = "Запустить сезонные праздники"
   seasonal_forced_desc = "Список сезонных праздников, которые можно принудительно запустить"
@@ -165,15 +157,6 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
-  --[[
-  {
-    id = "mod_compat_mode_spell_evolution",
-    ui_name = mod_compat_mode_spell_evolution_name,
-    ui_description = mod_compat_mode_spell_evolution_desc,
-    value_default = false,
-    scope = MOD_SETTING_SCOPE_NEW_GAME,
-  },
-  ]]--
   {
     id = "custom_seed",
     ui_name = custom_seed_name,
@@ -250,6 +233,8 @@ if statue_count >= 8 then
     category_id = "seasonal_events_forced",
     ui_name = seasonal_forced_name,
     ui_description = seasonal_forced_desc,
+    foldable = true,
+    _folded = true,
     settings = {
       {
         id = "seasonal_events_forced_april_fools",
@@ -302,6 +287,7 @@ end
 
 
 --[[ This looks.. weird?
+--Conga 26/05/2023: Might look better as a foldable, will need to try
 --Inserted to guarantee it always loads at the bottom of the settings list
 table.insert(mod_settings,
 {

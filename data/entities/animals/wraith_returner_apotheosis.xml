@@ -1,4 +1,4 @@
-<Entity name="Heijastava Outo">
+<Entity name="Heijastava Outo" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>
@@ -12,7 +12,7 @@
 
 		<DamageModelComponent
             hp="14.75"
-            fire_probability_of_ignition="11" 
+            fire_probability_of_ignition="0.11" 
 			ragdoll_fx_forced="DISINTEGRATED"
 			ragdoll_material="rock_static_glow"
 			blood_material="apotheosis_plasma_fading_orange"

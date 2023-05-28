@@ -102,6 +102,17 @@
         entity     = "data/entities/animals/goo_slug.xml"
     })
 
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.02,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/coal_mines/hiisi_thief.xml"
+    })
+
+
+    
+
     table.insert(g_props,
     {
         prob           = 0.02,
@@ -198,7 +209,8 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/poring_holy.xml",
-    ngpluslevel = 1
+    ngpluslevel = 1,
+    ng_exclusive = true,
 })
 
 table.insert(g_small_enemies,
@@ -207,7 +219,8 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/poring_magic.xml",
-    ngpluslevel = 1
+    ngpluslevel = 1,
+    ng_exclusive = true,
 })
 
 

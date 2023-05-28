@@ -525,6 +525,17 @@ do  -- Robots take damage from Veloium
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do  -- Fix monks not taking damage from concentrated mana or Veloium
+  local path = "data/entities/animals/monk.xml"
+  local xml = nxml.parse(ModTextFileGetContent(path))
+
+  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
+  attrs.materials_that_damage = "acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_velocium,magic_liquid_mana_regeneration"
+  attrs.materials_how_much_damage = "0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.0003,0.001"
+
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 
 do -- Piercing only hit 5 times per modifier
   local path = "data/entities/misc/piercing_shot.xml"
@@ -693,4 +704,66 @@ do --Fix Unstable Crystal not being affected by Larpa
   ]]))
 
   ModTextFileSetContent(path, tostring(xml))
+end
+
+do --Tower creature appends
+  local path = "data/scripts/biomes/tower.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant",]])
+  ModTextFileSetContent(path, content)
+end
+
+do --Reduces enemy spawnrates by increasing chance of a null spawn
+  local biomes = {
+    "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
+    "coalmine",         --Coal Mine, first area, goodluck on your run
+    "desert",           --Desert above ground, careful not to die to any Stendari
+    "crypt",            --Temple of the Arts.. who died here?
+    "pyramid",          --Presumably everything below the entrance to the pyramid
+    "fungicave",        --BUNGUS!! cave, west side of area 2 for example
+    "coalmine_alt",     --Coalmine but to the west side near damp cave
+    "pyramid_hallway",  --Pyramid entrance, presumably
+    "excavationsite",   --Coal Pits, area 2
+    "fungiforest",      --Overgrowth
+    "snowcave",         --Snowy Depths
+    "wandcave",         --Magical temple.. huh
+    "sandcave",         --Desert sand cave, I don't think it includes desert chasm
+    "winter",           --Winter appears to be the snow chasm... terrifying. Also line 69!
+    "rainforest",       --Jungle
+    "rainforest_dark",  --Lukki Lair.. creepy
+    "liquidcave",       --Abandoned Alchemy Lab
+    "the_end",          --Heaven, or Hell, your choice. Either are The Work.
+    "vault",            --The Vault
+    "robot_egg",        --I'm sure you can guess
+    "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
+    "snowcastle",       --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
+    "robobase",         --Power Plant
+    "clouds",           --Cloudscapes
+    "hills",            --Hills, aka forest.
+  }
+  local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_touchups.lua"
+
+  for k=1,#biomes
+  do local v = biomes[k]
+    local biomepath = table.concat({"data/scripts/biomes/", v, ".lua"})
+    ModLuaFileAppend(biomepath, appendpath)
+  end
+end
+
+do --Reduces enemy spawnrates by increasing chance of a null spawn (modded)
+  local biomes = {
+    "ant_hell", --Ant Nest
+    "desert_pit", --Sink Hole
+    "esoteric_den", --Esoteric Den
+    "evil_temple",  --Temple of Sacriligious Remains
+    "lava_excavation",  --Core Mines
+    "sunken_cave",  --Sunken Cavern
+  }
+  local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_touchups_modded.lua"
+
+  for k=1,#biomes
+  do local v = biomes[k]
+    local biomepath = table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
+    ModLuaFileAppend(biomepath, appendpath)
+  end
 end
