@@ -8,7 +8,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Divine Being",
 		path="data/entities/animals/angel.xml",
-		image="data/ui_gfx/animal_icons/angel.png",
+		image="data/ui_gfx/animal_icons/hidden/angel.png",
 	  },
 	  {
 		name="Blind Gazer",
@@ -172,7 +172,7 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Esoteric Worm",
-		path="data/entities/buildings/worm_esoteric.xml",
+		path="data/entities/animals/worm_esoteric.xml",
 		image="data/ui_gfx/animal_icons/worm_esoteric.png",
 	  },
 	  {
@@ -203,6 +203,11 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Forsaken Eye",
 		path="data/entities/animals/forsaken_eye.xml",
+		image="data/ui_gfx/animal_icons/forsaken_eye.png",
+	  },
+	  {
+		name="Forsaken Eye (Orbitals)",
+		path="data/entities/animals/eye_forsaken_orbit.xml",
 		image="data/ui_gfx/animal_icons/forsaken_eye.png",
 	  },
 	  {
@@ -293,7 +298,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Hisii Thief",
 		path="data/entities/animals/hiisi_thief.xml",
-		image="data/ui_gfx/animal_icons/hisii_thief.png",
+		image="data/ui_gfx/animal_icons/hiisi_thief.png",
 	  },
 	  {
 		name="Locust Swarm",

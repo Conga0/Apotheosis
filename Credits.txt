@@ -10,7 +10,7 @@ Created the Giant Whisp creature
 Creating Master of Puppetering's Sprites
 Creating Heretic's Sprites
 Creating Juvenile Fire Lukki's Sprites
-Creating Fire Ant & Suffocating Ant's Sprites
+Creating Fire Ant Sprites
 Creating the glass panes & banners in Temple of Sacriligious Remains
 Creating the Flesh Material in Temple of Sacriligious Remains
 Contributed to Heretic Boss's design, code and created all sprite work related to him.

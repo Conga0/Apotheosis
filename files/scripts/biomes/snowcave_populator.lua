@@ -50,6 +50,14 @@
 		}
     })
 
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.002,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/eye_forsaken_orbit.xml"
+    })
+
 
 
     --Small enemies

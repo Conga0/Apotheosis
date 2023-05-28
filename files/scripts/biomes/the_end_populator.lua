@@ -1,5 +1,7 @@
 
 local apotheosis_HardmodeCheck = false
+local seasonalForced_AprilFools = ModSettingGet( "Apotheosis.seasonal_events_forced_april_fools" )
+local year, month, day, hour, minute = GameGetDateAndTimeLocal()
 
 if ModIsEnabled("nightmare") or ModIsEnabled("purgatory") then
     apotheosis_HardmodeCheck = true
@@ -8,24 +10,17 @@ end
 ---Hell enemies 
 
 --[[
-if apotheosis_HardmodeCheck then 
+]]--
+--Divine Being only spawns during April Fools
+if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then 
     table.insert(g_big_enemies,
     {
-        prob           = 0.04,
-        min_count    = 1,
-        max_count    = 1,    
-        entity     = "data/entities/animals/gold_bosses/angel/angel.xml"
-    })
-else
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.04,
+        prob           = 0.08,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/angel.xml"
     })
 end
-]]--
 
 
 table.insert(g_small_enemies,
@@ -100,15 +95,8 @@ table.insert(g_small_enemies_sky,
 })
 
 --[[
-if apotheosis_HardmodeCheck then 
-    table.insert(g_big_enemies_sky,
-    {
-        prob           = 0.04,
-        min_count    = 1,
-        max_count    = 1,    
-        entity     = "data/entities/animals/gold_bosses/angel/angel.xml"
-    })
-else
+]]--
+if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then 
     table.insert(g_big_enemies_sky,
     {
         prob           = 0.04,
@@ -117,7 +105,6 @@ else
         entity     = "data/entities/animals/angel.xml"
     })
 end
-]]--
 
 
 table.insert(g_small_enemies_sky,

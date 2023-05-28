@@ -1693,6 +1693,54 @@ local apotheosis_spellappends = {
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
 	},
+	{
+		id          = "APOTHEOSIS_KINDNESS_TO_POWER",
+        id_matchup  = "ESSENCE_TO_POWER",
+        name 		= "$spell_apotheosis_kindness_to_power_name",
+        description = "$spell_apotheosis_kindness_to_power_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/kindness_to_power.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,3,10", -- AREA_DAMAGE
+		spawn_probability                 = "0.2,0.5,0.5,0.5", -- AREA_DAMAGE
+		price = 180,
+		mana = 40,
+		-- max_uses = 20,
+		action 		= function()
+            local targets = EntityGetWithTag("mortal")
+            local hotness = 1
+            for k=1,#targets
+            do local v = targets[k]
+                if GameGetGameEffectCount( v, "CHARM" ) > 0 then
+                    hotness = hotness + 1
+                end
+            end
+            if c.damage_critical_chance < 20 and hotness > 1 then
+                c.damage_critical_chance = 20
+            end
+			c.damage_critical_chance = (c.damage_critical_chance * hotness)
+			draw_actions( 1, true )
+		end,
+	},
+    {
+        id          = "APOTHEOSIS_MIND_VISION",
+        id_matchup  = "X_RAY",
+        name 		= "$spell_apotheosis_mind_vision_name",
+        description = "$spell_apotheosis_mind_vision_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mindvision.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
+        related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_mindvision.xml" },
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "0,1,2,3", -- APOTHEOSIS_MIND_VISION
+        spawn_probability                 = "0.5,1,1,0.5", -- APOTHEOSIS_MIND_VISION
+        price = 180,
+        mana = 10,
+        --max_uses = 16,
+        action 		= function()
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_mindvision.xml,"
+            draw_actions( 1, true )
+        end,
+    },
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
