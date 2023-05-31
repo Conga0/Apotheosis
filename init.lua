@@ -11,6 +11,8 @@ local seasonalForced_Birthday = ModSettingGet( "Apotheosis.seasonal_events_force
 local seasonalForced_Halloween = ModSettingGet( "Apotheosis.seasonal_events_forced_halloween" )
 local seasonalForced_Smissmass = ModSettingGet( "Apotheosis.seasonal_events_forced_smissmass" )
 
+local experimental_biomemap = ModSettingGet( "Apotheosis.exp_biomemap" )
+
 local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
 
 --Debug flag removals, be sure to remove before release!!!
@@ -1685,7 +1687,12 @@ if ModIsEnabled("raksa") == false then
 end
 
 -- Sets biome map to the new one
-ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
+if experimental_biomemap then
+  ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers_experimental.xml") --Sets the biome map
+  dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends_experimental.lua" ) --appends experimental data
+else
+  ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
+end
 
 --Custom biome modifiers
 --ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))

@@ -49,3 +49,7 @@ Rename inner spell to inner cast, this inconsistency, genuinely bugs me just a l
 Note: Only do after the update goes live, as it may be changed prior to beta going to main
 
 add ui_use_raw_name tag to enemies missing it
+
+
+Death easter egg will likely break on the experimental map, as the holy mountain portal lay outs are not the same
+reorganise when it's time
