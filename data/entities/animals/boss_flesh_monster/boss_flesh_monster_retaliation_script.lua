@@ -38,7 +38,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 			local spells = { "orb_manadrain", "orb_unstable_transmutation", "orb_tele", "orb_hearty", "orb_neutral", "orb_homing", "orb_twitchy" } --Homebringer curse of swapping would be evil... hmmm
 			local rnd = Random( 1, #spells )
-			local path = "data/entities/animals/boss_flesh_monster/projectiles/master_orbs/" .. spells[rnd] .. ".xml"
+			local path = table.concat({"data/entities/animals/boss_flesh_monster/projectiles/master_orbs/",spells[rnd],".xml"})
 
 			shoot_projectile( entity_id, path, x, y, vel_x, vel_y )
 		end

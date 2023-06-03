@@ -68,7 +68,7 @@
     ragdoll_fx="NONE">
 	</DamageNearbyEntitiesComponent>
 
-  <GhostComponent 
+  <GhostComponent
     _enabled="1" 
     hunt_box_radius="412" 
     new_hunt_target_check_every="150" 

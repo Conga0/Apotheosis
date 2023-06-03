@@ -1,5 +1,5 @@
 <Entity 
-	tags="enemy,mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,glue_NOT,necrobot_NOT,polymorphable_NOT,music_energy_100,miniboss,ui_use_raw_name,boss_dragon" 
+	tags="enemy,mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,glue_NOT,necrobot_NOT,polymorphable_NOT,music_energy_100,miniboss,boss_dragon" 
 	name="Adult Centipede"
 	>
 	<_Transform

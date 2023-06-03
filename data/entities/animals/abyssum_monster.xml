@@ -1,0 +1,402 @@
+<Entity name="Esoteerinen olento" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT,music_energy_100,curse_NOT,weaken_NOT" >
+		
+	<!--NOTE, Deathcross sfx will be added when it's time to implement Heretic Death Loot And/Or Phase 3, already have death loot in mind, just waiting for right time to implement it.-->
+	<!--Check TODO.txt for link to sound effect-->
+	<!--I would prefer to do everything at once in one continuous workflow, rather than work with multiple different mindsets over the course of a week/month-->
+
+	<AnimalAIComponent
+		creature_detection_range_x="600"
+		creature_detection_range_y="600"
+		>
+	</AnimalAIComponent>
+
+	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
+
+	<!-- art - main body  -->
+
+	<SpriteComponent
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/abyssum_test.png"
+		offset_x="56.5"
+		offset_y="56.5"
+		>
+	</SpriteComponent>
+	
+	<Entity>
+		<SpriteComponent
+			_tags="invincible"
+			_enabled="1"
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil_white.png"
+			emissive="1"
+			offset_x="8.5"
+			offset_y="8.5"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			_tags="invincible"
+			_enabled="1"
+			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
+
+	<!-- AI  -->
+
+	<LimbBossComponent
+		state = "1">
+	</LimbBossComponent>
+
+	<PathFindingComponent
+		can_dive="1" 
+		can_fly="1" 
+		can_jump="0" 
+		can_swim_on_surface="1" 
+		can_walk="1" 
+		cost_of_flying="500" 
+		distance_to_reach_node_x="40"
+		distance_to_reach_node_y="40"
+		frames_between_searches="20" 
+		frames_to_get_stuck="120" 
+		initial_jump_lob="1" 
+		initial_jump_max_distance_x="100" 
+		initial_jump_max_distance_y="60" 
+		iterations_max_no_goal="9999999" 
+		iterations_max_with_goal="145000" 
+		jump_speed="200" 
+		max_jump_distance_from_camera="400" 
+		search_depth_max_no_goal="120" 
+		search_depth_max_with_goal="145000" 
+		y_walking_compensation="8" >
+	</PathFindingComponent>
+
+	<PathFindingGridMarkerComponent 
+		_enabled="1" 
+		marker_offset_x="0" 
+		marker_offset_y="-6" 
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+	<IKLimbsAnimatorComponent>
+	</IKLimbsAnimatorComponent>
+
+	<!-- physics  -->
+
+	<PhysicsAIComponent
+		target_vec_max_len="24.0"
+		force_coeff="16.0"
+		force_balancing_coeff="0.9"
+		force_max="200"
+		torque_coeff="50"
+		torque_balancing_coeff="1"
+		torque_max="50.0"
+		damage_deactivation_probability="0"
+		damage_deactivation_time_min="2"
+		damage_deactivation_time_max="10" >
+	</PhysicsAIComponent>
+
+	<PhysicsBodyComponent 
+		force_add_update_areas="1"
+		allow_sleep="1" 
+		angular_damping="0.02" 
+		fixed_rotation="0" 
+		is_bullet="0" 
+		linear_damping="0"  >
+	</PhysicsBodyComponent>
+
+	<PhysicsShapeComponent
+		is_circle="1"
+		radius_x="40"
+		radius_y="40"
+		friction="0.0"
+		restitution="0.3" >
+	</PhysicsShapeComponent>
+
+
+	<!-- damage  -->
+
+	<DamageModelComponent
+		hp="100" 
+		wait_for_kill_flag_on_death="0"
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0.2" 
+		 
+		fire_probability_of_ignition="0"
+		blood_material="void_liquid"
+		blood_spray_material="void_liquid"
+		blood_multiplier="0.05"
+		is_on_fire="0" 
+		materials_damage="1"
+		materials_how_much_damage="0.1"
+		materials_that_damage="acid"
+		ragdoll_filenames_file=""
+        ragdoll_material="void_liquid"
+		ragdoll_offset_y="-6"
+		ragdollify_child_entity_sprites="1"
+		ragdollify_root_angular_damping="2"
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_$[1-3].xml"
+		healing_particle_effect_entity="mods/Apotheosis/files/entities/particles/heal_effect_big.xml"
+		>
+		<damage_multipliers
+			melee="0.01"
+			projectile="0.00"
+			explosion="0.01"
+			electricity="0.01"
+			fire="0.01"
+			slice="0.00"
+			drill="0.01"
+			ice="0.01"
+			radioactive="0.01"
+			curse="2.2"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<GenomeDataComponent 
+		food_chain_rank="2"
+		herd_id="mage"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+	<!-- center hitbox (weak spot) -->
+	<HitboxComponent 
+		_tags="hitbox_weak_spot"
+		aabb_min_x="-40" 
+		aabb_max_x="40" 
+		aabb_min_y="-40" 
+		aabb_max_y="40"
+		damage_multiplier="0.3"
+		>
+	</HitboxComponent>
+
+
+	<!-- etc -->
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals" >
+	</AudioComponent>
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/lukki" >
+	</AudioComponent>
+
+	<SpriteAnimatorComponent 
+		rotate_to_surface_normal="1" 
+		target_sprite_comp_name="character" >
+	</SpriteAnimatorComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_white"
+		offset.x="-1"
+		offset.y="0"
+		x_pos_offset_min="-16"
+		y_pos_offset_min="-16"
+		x_pos_offset_max="16"
+		y_pos_offset_max="16"
+		x_vel_min="-4"
+		x_vel_max="4"
+		y_vel_min="-10"
+		y_vel_max="5"
+		count_min="1"
+		count_max="5"
+		lifetime_min="0.3"
+		lifetime_max="1.6"
+		render_on_grid="1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="5"
+		emission_interval_max_frames="15"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<AreaDamageComponent
+		aabb_min.x="-30" 
+		aabb_min.y="-30" 
+		aabb_max.x="30" 
+		aabb_max.y="30" 
+		damage_per_frame="0.14"
+		update_every_n_frame="4"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_SLICE"
+		>
+	</AreaDamageComponent>
+	
+	<AreaDamageComponent
+		aabb_min.x="-30" 
+		aabb_min.y="-30" 
+		aabb_max.x="30" 
+		aabb_max.y="30" 
+		damage_per_frame="0.14"
+		update_every_n_frame="4"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_MELEE"
+		>
+	</AreaDamageComponent>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent
+			effect="PROTECTION_FREEZE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+
+
+	<!-- Phase Brain -->
+	
+	<VariableStorageComponent
+		name="phase_brain"
+		value_int="1"
+		>
+	</VariableStorageComponent>
+	
+	<VariableStorageComponent
+		name="meteor_cooldown"
+		value_int="-10000"
+		>
+	</VariableStorageComponent>
+
+	<!-- Radial Movement Particles -->
+
+	<ParticleEmitterComponent 
+		_enabled="1"
+		_tags="enabled_by_liquid"
+		emitted_material_name="spark_white"
+		gravity.y="0.0"
+		offset.x="1.5"
+		offset.y="1.5"
+		lifetime_min="2"
+		lifetime_max="12"
+		count_min="1"
+		count_max="1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		cosmetic_force_create="0"
+		render_on_grid="1"
+		collide_with_grid="1"
+		collide_with_gas_and_fire="0"
+		fade_based_on_lifetime="1"
+		velocity_always_away_from_center="25"
+		airflow_force="0.164"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		image_animation_file="mods/apotheosis/files/particles/image_emitters/abyssum_test_glow.png"
+		image_animation_speed="1"
+		image_animation_loop="1"
+		image_animation_raytrace_from_center="0" >
+	</ParticleEmitterComponent>
+
+	<SpriteParticleEmitterComponent
+		sprite_file="mods/Apotheosis/files/particles/spark_electric_white.xml"
+		delay="0"
+		lifetime="0"
+		emissive="1"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="0"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="10"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="4"
+		count_min="3" count_max="4"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_position.min_x="-48"
+		randomize_position.max_x="48"
+		randomize_position.min_y="-48"
+		randomize_position.max_y="48"
+		>
+	</SpriteParticleEmitterComponent>
+
+	<!-- Audio -->
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wizard/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+    <MusicEnergyAffectorComponent
+    	energy_target="1">
+    </MusicEnergyAffectorComponent>
+
+
+	<!-- Boss AI -->
+
+	<!-- Attack AI -->
+	
+	<!-- Fire a devestating barrage of shadow bolts every 9.3 seconds -->
+	<!--TODO: Make aggressive only after loosing 1% hp-->
+	<LuaComponent
+		_tags="invincible"
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/animals/abyssum_monster_barrage.lua"
+		execute_every_n_frame="10"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<!-- Defense Mechanisms -->
+
+	<!-- Revenge Damage, 50% chance to retaliate with 1-2 Random Master Orbs Summons and create a protective shield -->
+	<LuaComponent
+		_tags="invincible"
+		_enabled="1"
+		execute_every_n_frame="-1"
+		script_damage_received="mods/apotheosis/files/scripts/animals/abyssum_monster_retaliate.lua"
+		>
+	</LuaComponent>
+
+
+	<!-- Brain AI -->
+
+	<!-- Triggers Phase Changes -->
+	<!-- Boss Might not have multiple phases, may be unnecessary -->
+
+	<!--Miscellaneous Scripts Below -->
+	
+	<!-- Boss Health Multiplier Script -->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_half.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<!-- Limit boss to taking only 2% health damage maximum with each instance of damage -->
+	<LuaComponent
+		script_damage_about_to_be_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_dmg_limit_2_percent.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+</Entity>

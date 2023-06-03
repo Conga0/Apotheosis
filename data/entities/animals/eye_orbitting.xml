@@ -11,7 +11,7 @@
 			attack_melee_enabled="0"
 			can_fly="1"  
 			can_walk="0"
-			attack_ranged_entity_file="data/entities/projectiles/forsaken_eye_targetter.xml"
+			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/eye_nebula_shot.xml"
 			attack_ranged_predict="0"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="200"
@@ -147,12 +147,6 @@
 	    >
 		</GameEffectComponent >
 	</Entity>
-	
-	<LuaComponent
-		script_source_file="data/scripts/animals/forsaken_eye_target_check.lua"
-		execute_every_n_frame="40"
-		>
-	</LuaComponent>
 
 	<SpriteComponent 
 		alpha="0.4" 

@@ -1,6 +1,6 @@
 <Biome>
   <Topology 
-    name="???"
+    name="$biome_esoteric_den"
     type="BIOME_WANG_TILE"
 	  background_image="data/weather_gfx/background_cave_04_alt6.png"
 	  background_edge_left="data/weather_gfx/edges/background_cave_04_alt6_left.png"

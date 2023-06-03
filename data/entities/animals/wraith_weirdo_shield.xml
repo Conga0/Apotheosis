@@ -100,17 +100,6 @@
 
 	</Base>
 
-	<GhostComponent 
-		_enabled="0" 
-		hunt_box_radius="912" 
-		new_hunt_target_check_every="250" 
-		speed="40" 
-		velocity.x="-0.37877" 
-		velocity.y="-0.307411"
-		die_if_no_home="0"
-		target_tag="ui_use_raw_name" >
-	</GhostComponent>
-
 	<LightComponent 
 	    _enabled="1" 
 	    radius="30" 

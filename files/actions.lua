@@ -287,6 +287,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_AQUA_MINE",
+        id_matchup  = "GRENADE_LARGE",
         name 		= "$spell_apotheosis_aqua_mine_name",
         description = "$spell_apotheosis_aqua_mine_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/aquamine.png",
@@ -305,6 +306,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MUSICAL_STRIKE",
+        id_matchup  = "MEGALASER",
         name 		= "$spell_apotheosis_musical_proj_name",
         description = "$spell_apotheosis_musical_proj_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/musical_strike.png",
@@ -323,6 +325,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
+        id_matchup  = "APOTHEOSIS_MUSICAL_STRIKE",
         name 		= "$spell_apotheosis_musical_proj_trig_name",
         description = "$spell_apotheosis_musical_proj_trig_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/musical_strike_trigger.png",
@@ -341,6 +344,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_REVERBERATION",
+        id_matchup  = "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
         name 		= "$spell_apotheosis_reverberation_name",
         description = "$spell_apotheosis_reverberation_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/reverberation.png",

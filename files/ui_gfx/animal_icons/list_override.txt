@@ -218,6 +218,7 @@ musical_being_weak
 playerghost
 phantom_a
 phantom_b
+phantom_c_apotheosis
 devourer_ghost
 ghost_bow
 forsaken_eye

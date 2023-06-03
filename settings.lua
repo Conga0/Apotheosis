@@ -175,7 +175,6 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
-
 }
 
 --statue settings unlocks
