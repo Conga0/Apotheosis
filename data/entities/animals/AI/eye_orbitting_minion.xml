@@ -11,7 +11,7 @@
 			attack_melee_enabled="0"
 			can_fly="1"  
 			can_walk="0"
-			attack_ranged_entity_file="data/entities/projectiles/forsaken_eye_targetter.xml"
+			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/eye_nebula_orb.xml"
 			attack_ranged_predict="0"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="200"
@@ -22,14 +22,15 @@
 		
 		<DamageModelComponent 
             hp="3.0"
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/forsaken_eye/filenames.txt" 
-			materials_that_damage="lava,poison,acid,rock_static_radioactive" 
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/forsaken_eye/filenames.txt"
+			materials_that_damage="lava,poison,acid,rock_static_radioactive"
 			materials_how_much_damage="0.004,0.001,0.005,0.1" >
 			<damage_multipliers
 				explosion="0.5"
 				electricity="0.0"
 				ice="0.0"
 				fire="0.0"
+				physics_hit="0"
 				>
 			</damage_multipliers>
 		</DamageModelComponent>
@@ -148,12 +149,6 @@
 	    >
 		</GameEffectComponent >
 	</Entity>
-	
-	<LuaComponent
-		script_source_file="data/scripts/animals/forsaken_eye_target_check.lua"
-		execute_every_n_frame="40"
-		>
-	</LuaComponent>
 
 	<SpriteComponent 
 		alpha="0.4" 

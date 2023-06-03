@@ -39,7 +39,7 @@ g_small_enemies =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 0.1,
+		prob   		= 0.5,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
@@ -62,6 +62,12 @@ g_small_enemies =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/worm_esoteric.xml"
+	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/abyssum_monster.xml"
 	},
 }
 
@@ -906,11 +912,13 @@ function spawn_mist_colossal(x,y)
 end
 
 function spawn_items(x, y)
+	--[[
 	local r = ProceduralRandom( x-11.631, y+10.2257 )
 	
 	if (r < 0.45) then
 		LoadPixelScene( "data/biome_impl/wand_altar.png", "data/biome_impl/wand_altar_visual.png", x-15, y-17, "", true )
 	end
+	]]--
 end
 
 function spawn_lamp(x, y)

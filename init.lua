@@ -369,7 +369,7 @@ teleport_portal_alternate,"Portal Elsewhere",,,,,,,,,,,,,
 biome_slime_hell,"Slime Hell",,,,,,,,,,,,,
 biome_toxic_worm_cave,"Toxic Nest",,,,,,,,,,,,,
 biome_abandoned_assembly,"Sandy Assembly",,,,,,,,,,,,,
-biome_esoteric_den,"Esoteric Den",,,,,,,,,,,,,
+biome_esoteric_den,"Abyssum",,,,,,,,,,,,,
 biome_underground_forest,"Subterrain Woodland",,,,,,,,,,,,,
 biome_evil_temple,"Temple of Sacrilegious Remains",,,,,,,,,,,,,
 biome_desert_pit,"Sinkhole",,,,,,,,,,,,,
@@ -1687,12 +1687,21 @@ if ModIsEnabled("raksa") == false then
 end
 
 -- Sets biome map to the new one
+--[[
 if experimental_biomemap then
   ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers_experimental.xml") --Sets the biome map
   dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends_experimental.lua" ) --appends experimental data
+  Note: It would be fun to replace the entire world map one day, but that's biting off way more than I can chew, a small rat eating a whole cow level huge,
+  A single person with 0 mods for a game trying to make an Rlcraft modpack huge
+  Maybe after Apotheosis is done and we have a bunch of biome assets, enemy assets, spell, perk, item, etc assets, we could make a new world
+  But until that day comes, We're sticking to the plan!
 else
   ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
+  side note: maybe in that new world enemies could drop wands directly instead of finding them on pedestals
 end
+]]--
+
+ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
 
 --Custom biome modifiers
 --ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))

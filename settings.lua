@@ -175,15 +175,6 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
-  {
-    id = "exp_biomemap",
-    ui_name = "Experimental biomemap",
-    ui_description = "Experimental biomemap. \nUNSTABLE, do not use unless you know what you're doing!",
-    value_default = false,
-    ---@diagnostic disable-next-line: undefined-global
-    scope = MOD_SETTING_SCOPE_NEW_GAME,
-  },
-
 }
 
 --statue settings unlocks

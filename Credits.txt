@@ -18,6 +18,7 @@ Unintentionally significantly helping create the Liquid Sphere sprites
 Creating the Liquid Sphere spell set UI Icons
 Creating Corrupt Master of Teleportation's sprite
 Helping significantly with Corrupt Master of Exchange's sprite
+Creating Wand-Stealing Crystal's Sprite
 Reflective Weirdo resprite
 
 Copi (Human#6606) - Helping think up some enemy ideas for unused sprites I had lying around

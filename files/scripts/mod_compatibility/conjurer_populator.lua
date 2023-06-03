@@ -346,6 +346,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/musical_being_weak.png",
 	  },
 	  {
+		name="Obsessive Phantom",
+		path="data/entities/animals/phantom_c_apotheosis.xml",
+		image="data/ui_gfx/animal_icons/phantom_c_apotheosis.png",
+	  },
+	  {
 		name="Poisonous Mushroom",
 		path="data/entities/animals/poisonmushroom.xml",
 		image="data/ui_gfx/animal_icons/poisonmushroom.png",

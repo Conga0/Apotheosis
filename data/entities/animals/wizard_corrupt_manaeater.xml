@@ -49,7 +49,7 @@
 		</PathFindingGridMarkerComponent>
 		
 		<GenomeDataComponent 
-			herd_id="mage"
+			herd_id="mage_corrupted"
 			food_chain_rank="6"
 			is_predator="1" >
 		</GenomeDataComponent>

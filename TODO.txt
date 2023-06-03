@@ -1,7 +1,3 @@
-Add health hearts perk, health healed is equal to max health gained x 2
-All boss health should be doubled at least
-
-
 Give orb room material puzzles unique inputs and lore readouts (Likely need to ask letalli for help as they speak finnish)
 
 Trophies for:
@@ -17,16 +13,6 @@ Sleeping Altar
 Altar ending code to check for updated orb counts
 NG+ Picks from 6 random pre-set NG+ maps, including the normal one (but only after NG+1)
 
-Parrallel world enemies should have x10 hp
-
-Would be good to have a corrupt version of Master of Puppetering for Temple of Sacriligious Remains, or maybe he's just corrupt by default
-We'll have to see
-Note: Spoopy is working on a giant Master of Puppetering Sprite, check his DMs for notes on how it would work, should be good!
-Note 2: Spoop made (is working on?) a sprite for a wand stealing crystal sprite, if he doesn't go through with the giant master of puppeterring sprite, this guy looks a zillion times more twisted!
-...I still want my ants though :(
-
-Do something with Wand of Aiming
-
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
@@ -40,15 +26,7 @@ https://discord.com/channels/@me/1013670507146653767/1087217718572371988
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 Finish or Remove Mimicium
-
-Updating swappermage.lua may be not needed anymore.. but
-
-Make lua sharing, share additional lua components for each modifier of it applied
-
-Rename inner spell to inner cast, this inconsistency, genuinely bugs me just a lil
-Note: Only do after the update goes live, as it may be changed prior to beta going to main
-
-add ui_use_raw_name tag to enemies missing it
+Finish or Remove Wand of Aiming
 
 
 Death easter egg will likely break on the experimental map, as the holy mountain portal lay outs are not the same
