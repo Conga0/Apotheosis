@@ -1,4 +1,4 @@
-<Entity name="Mutamies" >
+<Entity name="Mutamies" tags="ui_use_raw_name" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

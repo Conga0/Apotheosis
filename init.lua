@@ -366,7 +366,7 @@ credits_apotheosis_line_45,Best of luck in your future adventures - Conga Lyne,�
 credits_apotheosis_line_horscht,Provided a ton of help in the mod support channel during development and let me use his credits script.,Оказал тонну помощи в канале поддержки мода во время разработки и позволил мне использовать его скрипт для этого меню.,,,,,,,,,,,,
 Apotheosis content below,"=====================================================================================================================================================================================================================================================Below here are 1.1.0 translation keys",,,,,,,,,,,,,
 teleport_portal_alternate,"Portal Elsewhere",,,,,,,,,,,,,
-biome_slime_hell,"Slime Hell",,,,,,,,,,,,,
+biome_slime_hell,"Virulent Caverns",,,,,,,,,,,,,
 biome_toxic_worm_cave,"Toxic Nest",,,,,,,,,,,,,
 biome_abandoned_assembly,"Sandy Assembly",,,,,,,,,,,,,
 biome_esoteric_den,"Abyssum",,,,,,,,,,,,,
@@ -410,6 +410,8 @@ material_apotheosis_milk,"Milk",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone,"Esoteric Stone",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone_glowing,"Luminescent Rock",,,,,,,,,,,,,
 material_apotheosis_cursed_rock_hard,"Sacred Rock",,,,,,,,,,,,,
+material_apotheosis_radioactive_liquid_strong,"Noxious Sludge",,,,,,,,,,,,,
+material_apotheosis_radioactive_mud,"Defiled Mud",,,,,,,,,,,,,
 magic_liquid_berserk_cloud_name,"Berserkium Mist",,,,,,,,,,,,,
 magic_liquid_charm_cloud_name,"Pheromone Mist",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
@@ -502,6 +504,10 @@ spell_apotheosis_kindness_to_power_name,"Kindness to Power",,,,,,,,,,,,,
 spell_apotheosis_kindness_to_power_desc,"Increase critical hit chance proportional to how many charmed creatures are nearby",,,,,,,,,,,,,
 spell_apotheosis_mind_vision_name,"Mind Vision",,,,,,,,,,,,,
 spell_apotheosis_mind_vision_desc,"Creatures hit by a projectile are temporarily revealed through fog of war",,,,,,,,,,,,,
+spell_apotheosis_water_power_name,"Hydromancy",,,,,,,,,,,,,
+spell_apotheosis_water_power_desc,"Reduce mana cost by 30 and increase fire rate when wet",,,,,,,,,,,,,
+spell_apotheosis_shape_wall_name,"Formation - Wall",,,,,,,,,,,,,
+spell_apotheosis_shape_wall_desc,"Casts 5 spells in a wall-shaped pattern",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Creatures hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_explosion,Creatures hit by a projectile takes 100% extra explosion damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от взрывов,O alvo atingido por um projétil recebe mais 100% de dano de explosão por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de explosiones durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Explosionsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des explosions pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da esplosione in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od wybuchów,被投射物击中的目标短时间内会受到额外的 100% 爆炸伤害,放射物が当たったターゲットが一定期間100%の追加の爆破ダメージを受ける,일정 시간 동안 폭발이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_melee,Creatures hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -1630,9 +1636,10 @@ do  -- Player Editor
 --  ]]))
 
   --Makes player take contact damage from cursed liquid, poisonous gas, and other materials added by Apotheosis
+  --Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
   local attrs = xml:first_of("DamageModelComponent").attr
-  attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas"
-  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0009"
+  attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0009,0.0009"
 
   if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
     --Adds Golden Cape if check is successful

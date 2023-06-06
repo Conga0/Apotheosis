@@ -1,7 +1,6 @@
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform(entity_id)
-local controlscomp = EntityGetFirstComponent(root, "ControlsComponent")
 local cooldown_frames = 660
 local current_frame = GameGetFrameNum()
 

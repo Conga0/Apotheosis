@@ -14,6 +14,7 @@
 		execute_on_added="0"
 		script_source_file="mods/Apotheosis/files/scripts/status_effects/lava_immunity_start.lua"
 		execute_every_n_frame="2"
+		remove_after_executed="1"
 		>
 	</LuaComponent>
 

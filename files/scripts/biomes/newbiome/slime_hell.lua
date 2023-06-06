@@ -98,6 +98,18 @@ g_small_enemies =
 		max_count	= 3,    
 		entity 	= "data/entities/animals/the_end/gazer_cold_apotheosis.xml"
 	},
+	{
+		prob   		= 0.1,
+		min_count	= 2,
+		max_count	= 2,    
+		entity 	= "data/entities/animals/the_end/gazer_parasitic.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 4,
+		max_count	= 6,    
+		entity 	= "data/entities/animals/the_end/slimeshooter_boss_limbs.xml",
+	},
 }
 
 
@@ -149,6 +161,14 @@ g_big_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/items/pickup/heart.xml"
 	},
+	--[[
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/gazer_MVP.xml"
+	},
+	]]--
 }
 
 
@@ -158,29 +178,36 @@ g_scavenger_party =
 {
 	total_prob = 0,
 	-- 
+	
 	{
-		prob   		= 1,
+		prob   		= 0.8,
+		min_count	= 4,
+		max_count	= 6,    
+		entity 	= "data/entities/animals/the_end/barfer.xml"
+	},
+	{
+		prob   		= 0.2,
 		min_count	= 1,
-		max_count	= 1,    
+		max_count	= 1,
 		entities 	= {
 			{
 				min_count	= 1,
 				max_count 	= 3,
-				entity = "data/entities/animals/scavenger_smg.xml",
+				entity = "data/entities/animals/drone_status_ailment.xml",
 			},
 			{
 				min_count	= 1,
 				max_count 	= 3,
-				entity = "data/entities/animals/scavenger_grenade.xml",
+				entity = "data/entities/animals/basebot_sentry.xml",
 			},
 			{
 				min_count	= 0,
 				max_count 	= 1,
-				entity = "data/entities/animals/coward.xml",
+				entity = "data/entities/animals/roboguard_big.xml",
 			},
-			"data/entities/animals/scavenger_leader.xml",
+			"data/entities/animals/c_basebot_speeder_apotheosis.xml",
 		}
-	},
+	}
 }
 
 
@@ -359,13 +386,6 @@ g_pixel_scene_01_alt =
 		material_file 	= "data/biome_impl/snowcave/verticalobservatory2_alt.png",
 		visual_file		= "data/biome_impl/snowcave/verticalobservatory2_visual.png",
 		background_file	= "data/biome_impl/snowcave/verticalobservatory2_background.png",
-		is_unique		= 0
-	},
-	{
-		prob   			= 0.5,
-		material_file 	= "data/biome_impl/snowcave/icebridge2_alt.png",
-		visual_file		= "",
-		background_file	= "",
 		is_unique		= 0
 	},
 	{

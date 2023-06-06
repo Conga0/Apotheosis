@@ -40,7 +40,7 @@ Alchemical Mists
 Content list:
 105 new enemies (+3 Pylon variants)
 5 new bosses
-68 new spells
+70 new spells
 8 new perks
 5 new biomes
 7 new structures
@@ -63,3 +63,4 @@ Note: Readthrough vanilla changes and remove any notes before release
 
 Enemies not yet added to enemy count:
 Red Tentacle Eye (lukki hungry)
+Parasitic Gazer
