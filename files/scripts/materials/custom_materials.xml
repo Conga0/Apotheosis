@@ -2500,8 +2500,44 @@
 
 	<!--Dense Toxic Sludge converts nearby water into more sludge-->
 	<Reaction probability="13"
-		input_cell1="[water]" 	input_cell2="apotheosis_radioactive_liquid_strong"
+		input_cell1="water" 	input_cell2="apotheosis_radioactive_liquid_strong"
 		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_liquid_strong"
+		>
+	</Reaction>
+
+	<Reaction probability="13"
+		input_cell1="water_swamp" 	input_cell2="apotheosis_radioactive_liquid_strong"
+		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_liquid_strong"
+		>
+	</Reaction>
+
+	<Reaction probability="13"
+		input_cell1="water_static" 	input_cell2="apotheosis_radioactive_liquid_strong"
+		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_liquid_strong"
+		>
+	</Reaction>
+
+	<Reaction probability="13"
+		input_cell1="water_fading" 	input_cell2="apotheosis_radioactive_liquid_strong"
+		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_liquid_strong"
+		>
+	</Reaction>
+
+	<Reaction probability="13"
+		input_cell1="water_salt" 	input_cell2="apotheosis_radioactive_liquid_strong"
+		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_liquid_strong"
+		>
+	</Reaction>
+
+	<Reaction probability="13"
+		input_cell1="apotheosis_water_fading_fast" 	input_cell2="apotheosis_radioactive_liquid_strong"
+		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_liquid_strong"
+		>
+	</Reaction>
+
+	<Reaction probability="100"
+		input_cell1="magic_liquid_polymorph" 	input_cell2="apotheosis_radioactive_liquid_strong"
+		output_cell1="magic_liquid_random_polymorph" 	output_cell2="apotheosis_radioactive_liquid_strong"
 		>
 	</Reaction>
 

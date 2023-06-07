@@ -788,17 +788,47 @@ remove_perk("LOW_RECOIL") --Reworked into No Recoil
 
 --Modify existing perk data for minor changes, DO NOT USE FOR MAJOR REWORKS
 --if you need to do a major rework, remove the relevent perk(s) and add a new one instead
-function modify_existing_perk(perk_id, parameter_to_modify, new_value)
-	for i, perk in ipairs(perk_list) do
-		if perk.id == perk_id then
-			perk[parameter_to_modify] = new_value
-			break
-		end
-	end
+local old_gas_blood_func = 0
+for k=1,#perk_list
+do local v = perk_list[k]
+    if v.id == "BLEED_GAS" then
+        old_gas_blood_func = v.func
+        break
+    end
 end
 
-modify_existing_perk("CONTACT_DAMAGE", "ui_description", "$perk_apotheosis_contactdamage_description")
-modify_existing_perk("CONTACT_DAMAGE", "game_effect", "PROTECTION_MELEE")
+local perks_to_edit = {
+
+    ["CONTACT_DAMAGE"] = {
+        ui_description = "$perk_apotheosis_contactdamage_description",
+        game_effect = "PROTECTION_MELEE",
+    },
+
+    ["PROTECTION_RADIOACTIVITY"] = {
+		func = function( entity_perk_item, entity_who_picked, item_name )
+            EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+        end
+    },
+
+    --Could probably be monkey wrenched
+    ["BLEED_GAS"] = {
+		func = function( entity_perk_item, entity_who_picked, item_name )
+
+            old_gas_blood_func( entity_perk_item, entity_who_picked, item_name )
+            EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+		end,
+    },
+
+}
+
+for i=1,#perk_list do -- fast as fuck boi
+    if perks_to_edit[perk_list[i].id] then
+        for key, value in pairs(perks_to_edit[perk_list[i].id]) do
+            perk_list[i][key] = value
+        end
+        perk_list[i]['apotheosis_reworked'] = true
+    end
+end
 
 --Make glass cannon compatible with glass cannon.. because.. it's funny? :gigachad:
 --Side note, this could definitely be faster, same for hardcore spell changes, need to do tomorrow I suppose

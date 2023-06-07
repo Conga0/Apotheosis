@@ -4,5 +4,9 @@
       hp="40"
       max_hp="40"
      ></DamageModelComponent >
+		
+		<GenomeDataComponent 
+			herd_id="slimes" >
+		</GenomeDataComponent>
   </Base>
 </Entity>

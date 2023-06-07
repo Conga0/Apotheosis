@@ -241,4 +241,12 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 
+	<!--
+	<LuaComponent
+		_tags="death_reward"
+		script_death="data/entities/animals/secret/star_child_death.lua"
+		>
+	</LuaComponent>
+	-->
+
 </Entity>

@@ -20,6 +20,11 @@
 	  audio_music_enter="music/oneshot/heaven_02_no_drs"
     audio_music_energy_coeff="1"
     audio_music_forced_quietness_duration_seconds="4"
+
+    color_grading_r="0.8"
+    color_grading_g="1.0"
+    color_grading_b="0.8"
+    color_grading_grayscale="0.01"
     >
 	<BitmapCaves 
       size_x="512"

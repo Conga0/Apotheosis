@@ -1,0 +1,20 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical_tail.png" 
+  offset_x="9" 
+  offset_y="26"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="52" 
+    frame_wait="0.16" 
+    frame_width="34" 
+    frames_per_row="2" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+</Sprite>
+

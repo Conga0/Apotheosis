@@ -283,6 +283,40 @@ if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) the
   })
 end
 
+--[[
+  --Conga: This is by all means functional, until the sounds are played; at which point they're immediately told to be paused until the game is unpaused.
+  --I'm assuming this is something that must be changed in Fmod studio, but I see zero documentation on what audio tag the game is asking for
+do -- Cat Button
+  table.insert(mod_settings,
+    {
+      id = "cat_button",
+      ui_name = "",
+      ui_fn = function(mod_id, gui, in_main_menu, im_id, setting)
+          if not in_main_menu then
+                GuiLayoutBeginHorizontal(gui, 0, 0, false, 6, 6)
+                GuiOptionsAddForNextWidget(gui, 28)
+                GuiOptionsAddForNextWidget(gui, 4)
+                GuiOptionsAddForNextWidget(gui, 6)
+                local lmb, rmb = GuiImageButton(gui, im_id, 0, 0, "", "data/ui_gfx/animal_icons/cat_mocreeps_spoopy_skittle.png")
+                GuiTooltip(gui, "Cat", "")
+                if lmb then
+                    dofile_once("mods/apotheosis/files/scripts/magic/cat_random_sound.lua")
+                    CatMeow( GameGetCameraPos())
+                end
+                if rmb then
+                    GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/sora_sneeze_01", GameGetCameraPos() )
+                end
+              GuiLayoutEnd(gui)
+              GuiIdPop(gui)
+          else    -- In main menu warning
+              GuiImage(gui, im_id, 0, 0, "data/ui_gfx/inventory/icon_warning.png", 1, 1, 1)
+          end
+      end
+    }
+  )
+end
+]]--
+
 
 
 --[[ This looks.. weird?

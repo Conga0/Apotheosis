@@ -156,7 +156,7 @@ g_big_enemies =
 		entity 	= "data/entities/animals/drone_status_ailment.xml"
 	},
 	{
-		prob   		= 0.05,
+		prob   		= 0.15,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/items/pickup/heart.xml"
@@ -269,31 +269,36 @@ g_unique_enemy =
 g_unique_enemy2 =
 {
 	total_prob = 0,
-	-- this is air, so nothing spawns at 0.6
+	-- 
+	
 	{
-		prob   		= 0.0,
-		min_count	= 0,
-		max_count	= 0,    
-		entity 	= ""
-	},
-	-- add skullflys after this step
-	{
-		prob   		= 0.6,
-		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/scavenger_grenade.xml"
+		prob   		= 0.8,
+		min_count	= 4,
+		max_count	= 6,    
+		entity 	= "data/entities/animals/the_end/barfer.xml"
 	},
 	{
-		prob   		= 0.6,
+		prob   		= 0.2,
 		min_count	= 1,
-		max_count	= 2,    
-		entity 	= "data/entities/animals/scavenger_smg.xml"
-	},
-	{
-		prob   		= 0.5,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/sniper.xml"
+		max_count	= 1,
+		entities 	= {
+			{
+				min_count	= 1,
+				max_count 	= 3,
+				entity = "data/entities/animals/drone_status_ailment.xml",
+			},
+			{
+				min_count	= 1,
+				max_count 	= 3,
+				entity = "data/entities/animals/basebot_sentry.xml",
+			},
+			{
+				min_count	= 0,
+				max_count 	= 1,
+				entity = "data/entities/animals/roboguard_big.xml",
+			},
+			"data/entities/animals/c_basebot_speeder_apotheosis.xml",
+		}
 	}
 }
 
@@ -970,33 +975,33 @@ function spawn_stones(x, y)
 end
 
 function load_pixel_scene( x, y )
-	load_random_pixel_scene( g_pixel_scene_01, x, y )
+	--load_random_pixel_scene( g_pixel_scene_01, x, y )
 end
 
 function load_pixel_scene_alt( x, y )
-	load_random_pixel_scene( g_pixel_scene_01_alt, x, y )
+	--load_random_pixel_scene( g_pixel_scene_01_alt, x, y )
 end
 
 function load_pixel_scene2( x, y )
-	load_random_pixel_scene( g_pixel_scene_02, x, y )
+	--load_random_pixel_scene( g_pixel_scene_02, x, y )
 end
 
 function load_pixel_scene3( x, y )
-	load_random_pixel_scene( g_pixel_scene_03, x, y )
+	--load_random_pixel_scene( g_pixel_scene_03, x, y )
 end
 
 function load_pixel_scene4( x, y )
-	load_random_pixel_scene( g_pixel_scene_04, x, y )
+	--load_random_pixel_scene( g_pixel_scene_04, x, y )
 end
 
 function load_puzzle_capsule( x, y )
 	--print("puzzle capsule spawned at " .. x .. ", " .. y)
-	load_random_pixel_scene( g_puzzle_capsule, x, y )
+	--load_random_pixel_scene( g_puzzle_capsule, x, y )
 end
 
 function load_puzzle_capsule_b( x, y )
 	--print("puzzle capsule spawned at " .. x .. ", " .. y)
-	load_random_pixel_scene( g_puzzle_capsule_b, x-50, y-230 )
+	--load_random_pixel_scene( g_puzzle_capsule_b, x-50, y-230 )
 end
 
 function spawn_altar_torch(x, y)

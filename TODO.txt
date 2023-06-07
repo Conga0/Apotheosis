@@ -27,6 +27,7 @@ Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 Finish or Remove Mimicium
 Finish or Remove Wand of Aiming
+Finish or Remove Mechanical Worm
 
 
 Death easter egg will likely break on the experimental map, as the holy mountain portal lay outs are not the same

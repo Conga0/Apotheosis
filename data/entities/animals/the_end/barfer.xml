@@ -3,6 +3,8 @@
     <DamageModelComponent 
       hp="30"
       max_hp="30"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007"
      ></DamageModelComponent >
   </Base>
 

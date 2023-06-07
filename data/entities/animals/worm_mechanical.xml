@@ -1,0 +1,789 @@
+<Entity 
+	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,worm" 
+	name="Mekaaninenmato"
+	>
+	<_Transform 
+		position.x="0" 
+		position.y="0" 
+		rotation="0" 
+		scale.x="1" 
+		scale.y="1" >
+	</_Transform>
+
+	<WormComponent
+		acceleration="0.75"
+		gravity="0"
+		tail_gravity="0"
+		part_distance="10"
+		ground_check_offset="8"
+		hitbox_radius="9"
+		target_kill_radius="17"
+		target_kill_ragdoll_force="8"
+		ragdoll_filename=""
+		eat_anim_wait_mult="0.05"
+		jump_cam_shake="12" 
+		bite_damage="2"
+		>
+	</WormComponent>
+
+	<WormAIComponent
+		speed="6"
+		speed_hunt="8"
+		direction_adjust_speed="0.003"
+		direction_adjust_speed_hunt="0.04"
+		hunt_box_radius="1000"
+		random_target_box_radius="128"
+		new_hunt_target_check_every="240"
+		new_random_target_check_every="240"
+		give_up_area_radius="150"
+		give_up_time_frames="250"
+		>
+	</WormAIComponent>
+
+	<!--
+	<CellEaterComponent
+		_tags="cell_eater"
+		radius="7" >
+	</CellEaterComponent>
+	-->
+
+	<DamageModelComponent 
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0.2" 
+		fire_probability_of_ignition="0.00"
+		blood_material="oil"
+		blood_spray_material="oil"
+		blood_multiplier="0.25"
+		hp="280"
+		is_on_fire="0" 
+		mAirAreWeInWater="0" 
+		mFallCount="0" 
+		mFallHighestY="3.40282e+038" 
+		mFallIsOnGround="0" 
+		mFireProbability="100" 
+		mIsOnFire="0" 
+		mLastCheckTime="0" 
+		mLastCheckX="0" 
+		mLastCheckY="0" 
+		materials_damage="1" 
+		materials_that_damage="acid,lava,magic_liquid_mana_regeneration"
+		materials_how_much_damage="0.001,0.0007,0.001"
+		ragdoll_filenames_file=""
+		ragdoll_material="steel"
+		ragdoll_offset_y="-6"
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_oil_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_oil_$[1-3].xml"
+		>
+		<damage_multipliers
+			fire="0.0" 
+			drill="0.1"
+			slice="0.1"
+			melee="0.3"
+			projectile="0.5"
+			radioactive="0.0"
+			explosion="1.0"
+			electricity="2.0" >
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<PathFindingGridMarkerComponent
+		marker_offset_y="0"
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+	<GenomeDataComponent 
+		_enabled="1"
+		herd_id="robot"
+		food_chain_rank="4"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical_head.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.5"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.49"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.48"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.47"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.46"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.45"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.44"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.43"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.42"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.41"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.4"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.39"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.38"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.37"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.36"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.35"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.34"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.33"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.32"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.31"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.3"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.29"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.28"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.27"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.26"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.25"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.24"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.23"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.22"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.21"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.2"
+		>
+	</SpriteComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/mechanical/worm_mechanical_tail.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.19"
+		>
+	</SpriteComponent>
+
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="0">
+	</SpriteStainsComponent>
+		
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="1">
+	</SpriteStainsComponent>
+
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="2">
+	</SpriteStainsComponent>
+
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="3">
+	</SpriteStainsComponent>
+		
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="4">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="5">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="6">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="7">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="8">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="9">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="10">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="11">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="12">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="13">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="14">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="15">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="16">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="17">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="18">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="19">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="20">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="21">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="22">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="23">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="24">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="25">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="26">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="27">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="28">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="29">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="30">
+	</SpriteStainsComponent>
+	
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="31">
+	</SpriteStainsComponent>
+
+
+	<StatusEffectDataComponent>
+	</StatusEffectDataComponent>
+
+	<!--Worm Turret-->
+	<!--
+	<Entity>
+		<Base file="data/entities/animals/ai/turret_rocket.xml" />
+		<InheritTransformComponent
+			parent_sprite_id="13"
+			>
+		</InheritTransformComponent>
+
+	</Entity>
+	-->
+
+	<!--Worm Turret-->
+	<!--
+	<Entity>
+		<Base file="data/entities/animals/ai/turret_rocket.xml" />
+		<InheritTransformComponent
+			parent_sprite_id="13"
+			>
+		</InheritTransformComponent>
+
+	</Entity>
+	-->
+	
+	<VariableStorageComponent
+		name="laser_cooldown"
+		value_int="-10000"
+		value_float="1"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animals/worm_mechanical_laser.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="0.05"
+			max_cell_durability_to_destroy="14"
+			damage_to_cells="50000"
+			max_length="240"
+			beam_radius="10.5"
+			hit_particle_chance="20"
+			beam_particle_chance="100"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+	
+	<LaserEmitterComponent
+		is_emitting="0"
+		laser_angle_add_rad="0"
+		>
+		<laser
+			damage_to_entities="0.05"
+			max_cell_durability_to_destroy="14"
+			damage_to_cells="50000"
+			max_length="240"
+			beam_radius="10.5"
+			hit_particle_chance="20"
+			beam_particle_chance="100"
+			beam_particle_type="spark_red"
+			audio_enabled="1"
+			>
+		</laser>
+	</LaserEmitterComponent>
+	
+	<SpriteParticleEmitterComponent
+		_tags="invincible"
+		_enabled="0"
+		sprite_file="mods/apotheosis/files/particles/shine_red.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		emissive="1"
+		additive="1"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		count_min="1" count_max="3"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-2"
+		randomize_velocity.max_x="2"
+		randomize_velocity.min_y="-2"
+		randomize_velocity.max_y="2"
+		randomize_position.min_x="-10"
+		randomize_position.max_x="10"
+		randomize_position.min_y="-10"
+		randomize_position.max_y="10"
+		>
+	</SpriteParticleEmitterComponent>
+
+	<CameraBoundComponent
+		max_count="10"
+		distance="2000">
+	</CameraBoundComponent>
+	
+	<ItemChestComponent level="3" enemy_drop="1" >
+	</ItemChestComponent>
+
+    <MusicEnergyAffectorComponent
+    	energy_target="1">
+    </MusicEnergyAffectorComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/robot">
+	</AudioComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/worm" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/worm/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>

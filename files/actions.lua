@@ -1793,6 +1793,28 @@ local apotheosis_spellappends = {
 			c.pattern_degrees = 5
 		end,
 	},
+    --[[
+    --Kind of boring, an bloat
+	{
+		id          = "APOTHEOSIS_SUMMON_STAR_CHILD",
+		id_matchup  = "FRIEND_FLY",
+        name 		= "$spell_apotheosis_summon_star_child_name",
+        description = "$spell_apotheosis_summon_star_child_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/star_child.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
+		spawn_requires_flag = "this_should_never_spawn",
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "0", -- Spawns Disabled
+		spawn_probability                 = "0", -- Spawns Disabled
+		price = 250,
+		mana = 200,
+		max_uses = 2,
+		action 		= function()
+			add_projectile("data/entities/animals/player/star_child.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
