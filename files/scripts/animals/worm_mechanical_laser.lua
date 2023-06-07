@@ -11,6 +11,8 @@ local current_frame = GameGetFrameNum()
 
 --GamePrint("Angle is " .. angle)
 
+--I used two laser comps here in hopes of the game making more particles to give a denser beam... unfortunately that didn't seem to work...
+--It'd be a waste on performance to use 2 beams if we get the same graphical outcome.. something to fix in the morning
 function UpdateLaserData(action,key,value)
     local laserComps = EntityGetComponentIncludingDisabled(entity_id,"LaserEmitterComponent")
     for k=1,#laserComps
@@ -31,7 +33,7 @@ function Stage1()
 end
 
 function Stage2()
-    UpdateLaserData( "value", "is_emitting", true )
+    UpdateLaserData( "value", "is_emitting", true ) --Particles on
     UpdateLaserData( "object", "beam_radius", 4.5 )
     UpdateLaserData( "object", "damage_to_entities", 0 )
     UpdateLaserData( "object", "damage_to_cells", 10 )
@@ -53,7 +55,7 @@ function Stage3()
 end
 
 function Stage4()
-    UpdateLaserData( "value", "is_emitting", false )
+    UpdateLaserData( "value", "is_emitting", false ) --Particles off
     EntitySetComponentsWithTagEnabled(entity_id,"invincible",false)
 
 	ComponentSetValue2( wormAiComp, "speed", 6 )
@@ -86,7 +88,7 @@ do
         GamePlaySound( "data/audio/Desktop/misc.bank", "misc/beam_from_sky_start", pos_x, pos_y )
         Stage2()
     elseif (current_frame >= cooldown_frame) and laser_stage == 3 then
-        ComponentSetValue2( variablecomp, "value_int", current_frame + 270 )
+        ComponentSetValue2( variablecomp, "value_int", current_frame + 240 )
         ComponentSetValue2( variablecomp, "value_float", 4 )
         Stage3()
     elseif (current_frame >= cooldown_frame) and laser_stage == 4 then

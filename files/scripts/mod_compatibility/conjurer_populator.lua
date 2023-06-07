@@ -216,6 +216,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/gazer_cold_apotheosis.png",
 	  },
 	  {
+		name="Parasitic Gazer",
+		path="data/entities/animals/gazer_parasitic.xml",
+		image="data/ui_gfx/animal_icons/gazer_parasitic.png",
+	  },
+	  {
 		name="Greater Hell Gazer",
 		path="data/entities/animals/gazer_greater.xml",
 		image="data/ui_gfx/animal_icons/gazer_greater.png",
@@ -554,6 +559,11 @@ table.insert(ALL_ENTITIES, {
 		name="Wall Worm",
 		path="data/entities/animals/worm_wall.xml",
 		image="data/ui_gfx/animal_icons/worm_wall.png",
+	  },
+	  {
+		name="Mechanical Worm",
+		path="data/entities/animals/worm_mechanical.xml",
+		image="data/ui_gfx/animal_icons/worm_mechanical.png",
 	  },
 	  {
 		name="Hämis Nest",
