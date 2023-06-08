@@ -195,7 +195,7 @@ end
 function spawn_spells(x, y)
 	CreateItemActionEntity( "APOTHEOSIS_MATERIAL_SLIME", x - 16, y )
 	CreateItemActionEntity( "APOTHEOSIS_MATERIAL_ALCOHOL", x + 16, y )
-	EntityLoad("mods/apotheosis/files/entities/items/books/book_omegadeath.xml", x + 32, y)
+	EntityLoad("mods/apotheosis/files/entities/items/books/book_omegadeath.xml", x + 150, y - 185) --Old Numbers: x32, y8
 end
 
 function spawn_shopitem( x, y ) end

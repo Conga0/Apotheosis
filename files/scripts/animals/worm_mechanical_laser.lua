@@ -13,6 +13,8 @@ local current_frame = GameGetFrameNum()
 
 --I used two laser comps here in hopes of the game making more particles to give a denser beam... unfortunately that didn't seem to work...
 --It'd be a waste on performance to use 2 beams if we get the same graphical outcome.. something to fix in the morning
+--
+--08/06/2023 - Digs better with 2
 function UpdateLaserData(action,key,value)
     local laserComps = EntityGetComponentIncludingDisabled(entity_id,"LaserEmitterComponent")
     for k=1,#laserComps
@@ -38,20 +40,27 @@ function Stage2()
     UpdateLaserData( "object", "damage_to_entities", 0 )
     UpdateLaserData( "object", "damage_to_cells", 10 )
     UpdateLaserData( "object", "max_cell_durability_to_destroy", 2 )
+    UpdateLaserData( "object", "beam_particle_type", 228 )                  --Spark Blue Dark
     UpdateLaserData( "object", "audio_enabled", false )
+
+	ComponentSetValue2( wormAiComp, "speed", 4 )
+	ComponentSetValue2( wormAiComp, "speed_hunt", 4 )
+	ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.05 )
+	ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.05 )    
+end
+
+function Stage3()
+    UpdateLaserData( "object", "beam_radius", 10.5 )
+    UpdateLaserData( "object", "damage_to_entities", 0.20 )
+    UpdateLaserData( "object", "damage_to_cells", 100000 )
+    UpdateLaserData( "object", "max_cell_durability_to_destroy", 15 )
+    UpdateLaserData( "object", "beam_particle_type", 230 )                --Spark Red Bright
+    UpdateLaserData( "object", "audio_enabled", true )
 
 	ComponentSetValue2( wormAiComp, "speed", 1 )
 	ComponentSetValue2( wormAiComp, "speed_hunt", 1 )
 	ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.00001 )
 	ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.00001 )    
-end
-
-function Stage3()
-    UpdateLaserData( "object", "beam_radius", 10.5 )
-    UpdateLaserData( "object", "damage_to_entities", 0.10 )
-    UpdateLaserData( "object", "damage_to_cells", 100000 )
-    UpdateLaserData( "object", "max_cell_durability_to_destroy", 15 )
-    UpdateLaserData( "object", "audio_enabled", true )
 end
 
 function Stage4()
@@ -85,7 +94,7 @@ do
     elseif (current_frame >= cooldown_frame) and laser_stage == 2 then
         ComponentSetValue2( variablecomp, "value_int", current_frame + 90 )
         ComponentSetValue2( variablecomp, "value_float", 3 )
-        GamePlaySound( "data/audio/Desktop/misc.bank", "misc/beam_from_sky_start", pos_x, pos_y )
+        GamePlaySound( "data/audio/Desktop/materials.bank", "materials/laser_source", pos_x, pos_y )
         Stage2()
     elseif (current_frame >= cooldown_frame) and laser_stage == 3 then
         ComponentSetValue2( variablecomp, "value_int", current_frame + 240 )
@@ -106,3 +115,23 @@ end
 -- 2. begin slowing the worm down and intensify beam particles
 -- 3. 0.5-1 seconds later, unleash a massive powerful laser beam
 -- 4. after 2-3 seconds pass, disable the laser beam and give the worm it's normal movement back
+
+
+
+--Keeps worm focused on the player if they're their target
+if ComponentGetValue2( variablecomp, "value_string" ) == "player" then
+    local player_id = EntityGetWithTag("player_unit")[1]
+    if EntityHasTag(player_id,"mortal") then
+        ComponentSetValue2(wormAiComp,"mTargetEntityId",player_id)
+        --GamePrint("Test 1")
+    else
+        ComponentSetValue2( variablecomp, "value_string", "null" )
+        --GamePrint("Test 2")
+    end
+else
+    local target_id = ComponentGetValue2(wormAiComp,"mTargetEntityId")
+    if EntityHasTag(target_id,"player_unit") then
+        ComponentSetValue2( variablecomp, "value_string", "player" )
+        --GamePrint("Test 3")
+    end
+end

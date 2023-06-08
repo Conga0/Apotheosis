@@ -22,6 +22,14 @@
         max_count    = 1,    
         entity     = "data/entities/animals/tank_flame_apotheosis.xml"
     })
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.03,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/worm_mechanical.xml"
+    })
 
 
 

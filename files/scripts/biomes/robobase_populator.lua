@@ -40,6 +40,14 @@
         max_count    = 1,    
         entity     = "data/entities/buildings/portal_stand.xml"
     })
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.05,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/power_plant/worm_mechanical.xml"
+    })
 
 
     --Small enemies

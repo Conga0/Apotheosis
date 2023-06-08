@@ -180,6 +180,15 @@
         entity     = "data/entities/animals/watermage.xml",
     })
 
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.2,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/phantom_c_apotheosis.xml"
+    })
+    
+
     
     --Crystals
   

@@ -47,26 +47,26 @@
 	</CellEaterComponent>
 	-->
 
-	<DamageModelComponent 
-		air_needed="0" 
-		falling_damages="0" 
-		fire_damage_amount="0.2" 
+	<DamageModelComponent
+		air_needed="0"
+		falling_damages="0"
+		fire_damage_amount="0.2"
 		fire_probability_of_ignition="0.00"
 		blood_material="oil"
 		blood_spray_material="oil"
 		blood_multiplier="0.25"
-		hp="280"
-		is_on_fire="0" 
-		mAirAreWeInWater="0" 
-		mFallCount="0" 
-		mFallHighestY="3.40282e+038" 
-		mFallIsOnGround="0" 
-		mFireProbability="100" 
-		mIsOnFire="0" 
-		mLastCheckTime="0" 
-		mLastCheckX="0" 
-		mLastCheckY="0" 
-		materials_damage="1" 
+		hp="100"
+		is_on_fire="0"
+		mAirAreWeInWater="0"
+		mFallCount="0"
+		mFallHighestY="3.40282e+038"
+		mFallIsOnGround="0"
+		mFireProbability="100"
+		mIsOnFire="0"
+		mLastCheckTime="0"
+		mLastCheckX="0"
+		mLastCheckY="0"
+		materials_damage="1"
 		materials_that_damage="acid,lava,magic_liquid_mana_regeneration"
 		materials_how_much_damage="0.001,0.0007,0.001"
 		ragdoll_filenames_file=""
@@ -78,11 +78,11 @@
 		<damage_multipliers
 			fire="0.0" 
 			drill="0.1"
-			slice="0.1"
-			melee="0.3"
+			slice="0.2"
+			melee="0.5"
 			projectile="0.5"
 			radioactive="0.0"
-			explosion="1.0"
+			explosion="0.5"
 			electricity="2.0" >
 		</damage_multipliers>
 	</DamageModelComponent>
@@ -648,33 +648,52 @@
 	</StatusEffectDataComponent>
 
 	<!--Worm Turret-->
+	<!--Uses this filename so any turret deaths contribute to the Mechanical Worm's kills in the progress log-->
 	<!--
+	-->
 	<Entity>
-		<Base file="data/entities/animals/ai/turret_rocket.xml" />
+		<Base file="data/entities/animals/ai/worm_mechanical.xml" >
 		<InheritTransformComponent
-			parent_sprite_id="13"
+			parent_sprite_id="8"
 			>
 		</InheritTransformComponent>
+		</Base>
 
 	</Entity>
-	-->
 
 	<!--Worm Turret-->
+	<!--Uses this filename so any turret deaths contribute to the Mechanical Worm's kills in the progress log-->
 	<!--
+	-->
 	<Entity>
-		<Base file="data/entities/animals/ai/turret_rocket.xml" />
+		<Base file="data/entities/animals/ai/worm_mechanical.xml" >
 		<InheritTransformComponent
-			parent_sprite_id="13"
+			parent_sprite_id="16"
 			>
 		</InheritTransformComponent>
+		</Base>
 
 	</Entity>
+
+	<!--Worm Turret-->
+	<!--Uses this filename so any turret deaths contribute to the Mechanical Worm's kills in the progress log-->
+	<!--
 	-->
+	<Entity>
+		<Base file="data/entities/animals/ai/worm_mechanical.xml" >
+		<InheritTransformComponent
+			parent_sprite_id="24"
+			>
+		</InheritTransformComponent>
+		</Base>
+
+	</Entity>
 	
 	<VariableStorageComponent
 		name="laser_cooldown"
 		value_int="-10000"
 		value_float="1"
+		value_string="player"
 		>
 	</VariableStorageComponent>
 

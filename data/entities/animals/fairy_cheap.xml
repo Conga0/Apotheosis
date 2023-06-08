@@ -219,7 +219,7 @@
         is_enemy="1" 
         is_item="0" 
         is_player="0" >
-    </HitboxComponent>		
+    </HitboxComponent>
 
 	<LightComponent 
 	    _enabled="1" 

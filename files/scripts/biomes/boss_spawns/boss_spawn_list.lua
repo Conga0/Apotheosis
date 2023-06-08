@@ -39,13 +39,13 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
 
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
-local xml = nxml.parse(content)
-xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="11062" pos_y="-80" just_load_an_entity="data/entities/buildings/pyramid_wandedit_crystal_book_populator.xml" />
-]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
+--local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+--local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
+--local xml = nxml.parse(content)
+--xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+--    <PixelScene pos_x="11062" pos_y="-80" just_load_an_entity="data/entities/buildings/pyramid_wandedit_crystal_book_populator.xml" />
+--]]))
+--ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
 
 
