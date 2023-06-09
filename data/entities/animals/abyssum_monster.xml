@@ -279,7 +279,7 @@
 
 	<!-- Radial Movement Particles -->
 
-	<ParticleEmitterComponent 
+	<ParticleEmitterComponent
 		_enabled="1"
 		_tags="enabled_by_liquid"
 		emitted_material_name="spark_white"
@@ -306,7 +306,9 @@
 		image_animation_file="mods/apotheosis/files/particles/image_emitters/abyssum_test_glow.png"
 		image_animation_speed="1"
 		image_animation_loop="1"
-		image_animation_raytrace_from_center="0" >
+		image_animation_raytrace_from_center="0"
+		render_ultrabright="1"
+		>
 	</ParticleEmitterComponent>
 
 	<SpriteParticleEmitterComponent

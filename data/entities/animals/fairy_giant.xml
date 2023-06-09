@@ -1,12 +1,12 @@
-<Entity name="Jättikeiju" tags="ui_use_raw_name">
+<Entity name="Kolossaalinenkeiju" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent
 			attack_melee_enabled="0"
 			attack_ranged_enabled="1"
-			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_fairy.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_fairy_colossal.xml"
 			attack_ranged_action_frame="1"
-			attack_ranged_frames_between="130" 
+			attack_ranged_frames_between="360" 
 			attack_ranged_max_distance="250"
 			attack_ranged_offset_y="4.5"
 			escape_if_damaged_probability="0"
@@ -15,7 +15,7 @@
 		</AnimalAIComponent>
 
 		<DamageModelComponent 
-            hp="1.5"
+            hp="200"
 			air_needed="1"
 			ragdollify_child_entity_sprites="0"
             ragdoll_material="meat_slime_green"
@@ -37,9 +37,9 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big.xml"
-			offset_x="12"
-			offset_y="12" >
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_giant.xml"
+			offset_x="0"
+			offset_y="0" >
 		</SpriteComponent>
 		
 		<HitboxComponent 
@@ -72,15 +72,15 @@
 		<InheritTransformComponent />
 		
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big_emissive.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_giant_emissive.xml"
 			alpha="0.9"
-			offset_x="12"
-			offset_y="12" >
+			offset_x="24"
+			offset_y="24" >
 		</SpriteComponent>
 		
 		<SpriteComponent 
 			alpha="0.55"
-			image_file="data/particles/fog_of_war_hole_128.xml"
+			image_file="data/particles/fog_of_war_hole_256.xml"
 			smooth_filtering="1"
 			fog_of_war_hole="1"
 			>
@@ -88,9 +88,9 @@
 
 	</Entity>
 
-	<LightComponent 
+	<LightComponent
 	    _enabled="1" 
-	    radius="300" 
+	    radius="600" 
 		r="233"
 		g="227"
 		b="68"

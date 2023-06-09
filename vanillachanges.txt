@@ -38,7 +38,7 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-106 new enemies (+3 Pylon variants)
+107 new enemies (+3 Pylon variants)
 5 new bosses
 70 new spells
 8 new perks
@@ -64,3 +64,4 @@ Note: Readthrough vanilla changes and remove any notes before release
 Enemies not yet added to enemy count:
 Red Tentacle Eye (lukki hungry)
 Parasitic Gazer (would be cooler if he had a unique sprite, maybe give him a sine-wave worm pattern to his shot too? unsure, maybe apply gravity?)
+Abyssum Monster (I would like if there was some sort of Abyssum creature, where if it's completely docile, but if you get too close to it, it notices you)

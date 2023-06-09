@@ -191,6 +191,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/fairy_big.png",
 	  },
 	  {
+		name="Colossal Fairy",
+		path="data/entities/animals/fairy_giant.xml",
+		image="data/ui_gfx/animal_icons/fairy_giant.png",
+	  },
+	  {
 		name="Giant Discord Fairy",
 		path="data/entities/animals/fairy_big_discord.xml",
 		image="data/ui_gfx/animal_icons/fairy_big_discord.png",
