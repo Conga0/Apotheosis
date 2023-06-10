@@ -207,6 +207,7 @@ whisp
 whisp_big
 fairy_cheap
 fairy_big
+fairy_giant
 fairy_big_discord
 fairy_esoteric
 esoteric_being

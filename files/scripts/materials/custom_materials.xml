@@ -1838,12 +1838,12 @@
 		cell_explosion_damage_required="10"
 		cell_explosion_radius_min="2"
 		explosion_sprite="data/particles/explosion_012.xml"
-		load_this_entity="data/entities/animals/boss_flesh_monster/boss_flesh_monster.xml"
+		load_this_entity="data/entities/animals/boss_fire_lukki/boss_fire_lukki.xml"
 		ray_energy="10"
 		>
 	</ExplosionConfig>
     <Graphics
-		texture_file="mods/Apotheosis/files/materials_gfx/redstone_dust_malicious.png"
+		texture_file="mods/Apotheosis/files/materials_gfx/redstone_dust_volcanic.png"
 		color="720000" >
     </Graphics>
 	<StatusEffects>
@@ -2042,9 +2042,9 @@
   <CellData
 	name="apotheosis_magic_liquid_mimic"
 	ui_name="$material_apotheosis_magic_liquid_mimic"
-  	tags="[liquid],[water],[magic_liquid],[impure]"
+  	tags="[water],[magic_liquid],[impure]"
 	burnable="0"
-	density="0.90"
+	density="5.90"
 	cell_type="liquid"
 	wang_color="8034c95f"
 	generates_smoke="0"
@@ -2055,10 +2055,13 @@
 	requires_oxygen="0"
 	liquid_stains="1"
 	liquid_sprite_stain_shaken_drop_chance="1"
-	status_effects="apotheosis_INFINITE_FLIGHT"
 	audio_materialaudio_type="MAGICAL" 
 	show_in_creative_mode="1"
 	>
+  	<Graphics
+		color="ffc2762b"
+		>
+	</Graphics>
 	<ParticleEffect
 		vel.y="17.14"
 		vel_random.min_y="-100"
@@ -2071,11 +2074,6 @@
 		probability="0.0518"
 	>
 	</ParticleEffect>
-	<StatusEffects>
-		<Ingestion>
-			<StatusEffect type="apotheosis_INFINITE_FLIGHT" amount="0.2" />
-		</Ingestion>
-	</StatusEffects>
   </CellData>
 
 
@@ -2205,8 +2203,6 @@
 	</StatusEffects>
   </CellData>
 
-
-  
   <CellDataChild
   	_parent="radioactive_gas"
 	name="apotheosis_radioactive_gas_fading"
@@ -2214,6 +2210,33 @@
 	lifetime="120.0"
 	>
   </CellDataChild>
+
+  <CellData 
+	name="apotheosis_vine_yggdrasil"
+	ui_name="$mat_vine"
+  	tags="[static],[sand_ground],[corrodible],[alchemy],[matter_eater_ignore_list],[indestructible]"
+	burnable="0"  
+	density="12"  
+	cell_type="liquid" 
+	cell_holes_in_texture="1"
+	wang_color="ff526F42"  
+	generates_smoke="0"    
+	liquid_sand="1"
+    liquid_static="1"	
+	liquid_viscosity="0"
+	on_fire="0"  
+	requires_oxygen="1"  
+	autoignition_temperature="60"
+	temperature_of_fire="90"
+	hp="360000"
+	durability="15"
+	show_in_creative_mode="1"
+	>
+    <Graphics 
+	texture_file="mods/apotheosis/files/materials_gfx/vines.png" 
+	color="ff526F36" >
+    </Graphics>
+  </CellData>
 
 
 
@@ -2491,11 +2514,10 @@
 		req_lifetime="400" >
 	</Reaction>
 
-	<Reaction probability="60" 
+	<Reaction probability="100" 
 		input_cell1="apotheosis_magic_liquid_mimic" 				input_cell2="[liquid]"
 		output_cell1="[liquid]" 		output_cell2="[liquid]"
-		destroy_horizontally_lonely_pixels="1"
-		req_lifetime="100" >
+		req_lifetime="120" >
 	</Reaction>
 
 	<!--Dense Toxic Sludge converts nearby water into more sludge-->

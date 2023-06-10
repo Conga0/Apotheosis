@@ -1794,7 +1794,7 @@ local apotheosis_spellappends = {
 		end,
 	},
     --[[
-    --Kind of boring, an bloat
+    --Kind of boring, and bloat
 	{
 		id          = "APOTHEOSIS_SUMMON_STAR_CHILD",
 		id_matchup  = "FRIEND_FLY",
@@ -1815,6 +1815,48 @@ local apotheosis_spellappends = {
 		end,
 	},
     ]]--
+	{
+		id          = "APOTHEOSIS_FIRE_WALL",
+		id_matchup  = "INFESTATION",
+        name 		= "$spell_apotheosis_fire_wall_name",
+        description = "$spell_apotheosis_fire_wall_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/fire_wall.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/teleport_projectile_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/wall_of_fire.xml"},
+		type 		= ACTION_TYPE_STATIC_PROJECTILE,
+		spawn_level                       = "0,1,2,4,5", -- WALL_VERTICAL
+		spawn_probability                 = "0.4,0.4,0.6,0.5,0.2", -- WALL_VERTICAL
+		price = 160,
+		mana = 70,
+		--max_uses = 80,
+		action 		= function()
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
+			
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire_setup.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 5
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_RANDOM_BURST",
+        id_matchup  = "APOTHEOSIS_RANDOM_HOMING",
+        name 		= "$spell_apotheosis_random_burst_name",
+        description = "$spell_apotheosis_random_burst_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_burst.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		spawn_requires_flag = "card_unlocked_pyramid",
+		type 		= ACTION_TYPE_MODIFIER,
+		recursive	= true,
+		spawn_level                       = "2,3,4,5,6", -- BURST_4
+		spawn_probability                 = "0.4,0.5,0.6,0.6,0.6", -- BURST_4
+		price = 120,
+		mana = 5,
+		action 		= function( recursion_level, iteration )
+			SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
+			draw_actions( Random(4,8), true )
+        end
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

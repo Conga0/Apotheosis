@@ -307,7 +307,7 @@
 		image_animation_speed="1"
 		image_animation_loop="1"
 		image_animation_raytrace_from_center="0"
-		render_ultrabright="1"
+		render_ultrabright="0"
 		>
 	</ParticleEmitterComponent>
 

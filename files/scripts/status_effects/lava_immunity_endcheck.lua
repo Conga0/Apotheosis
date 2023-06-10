@@ -7,10 +7,12 @@ if target == 0 then return end
 local c_check = false
 
 local children = EntityGetAllChildren(target)
-for k=1,#children
-do v = children[k]
-    if EntityGetName(v) == "apotheosis_protection_lava" then
-        c_check = true
+if children then
+    for k=1,#children
+    do v = children[k]
+        if EntityGetName(v) == "apotheosis_protection_lava" then
+            c_check = true
+        end
     end
 end
 

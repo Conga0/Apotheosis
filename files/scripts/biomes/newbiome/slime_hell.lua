@@ -29,6 +29,7 @@ RegisterSpawnFunction( 0xffaa42ff, "spawn_electricity_trap" )
 RegisterSpawnFunction( 0xff366178, "spawn_buried_eye_teleporter" )
 RegisterSpawnFunction( 0xff876543, "spawn_statue_hand" )
 RegisterSpawnFunction( 0xff00855c, "spawn_receptacle" )
+RegisterSpawnFunction( 0xfff48942, "spawn_heart_random" )
 
 
 ------------ SMALL ENEMIES ----------------------------------------------------
@@ -154,12 +155,6 @@ g_big_enemies =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/drone_status_ailment.xml"
-	},
-	{
-		prob   		= 0.15,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/items/pickup/heart.xml"
 	},
 	--[[
 	{
@@ -648,28 +643,28 @@ g_props =
 {
 	total_prob = 0,
 	{
-		prob   		= 0.15,
+		prob   		= 0.20,
 		min_count	= 0,
 		max_count	= 0,
 		offset_y 	= 0,    
 		entity 	= ""
 	},
 	{
-		prob   		= 0.5,
+		prob   		= 0.01,
 		min_count	= 1,
 		max_count	= 1,    
 		offset_y 	= 0,
 		entity 	= "data/entities/props/physics_box_explosive.xml"
 	},
 	{
-		prob   		= 0.3,
+		prob   		= 0.8,
 		min_count	= 1,
 		max_count	= 1,    
 		offset_y 	= 0,
 		entity 	= "data/entities/props/physics_barrel_radioactive.xml"
 	},
 	{
-		prob   		= 0.05,
+		prob   		= 0.01,
 		min_count	= 1,
 		max_count	= 1,    
 		offset_y 	= 0,
@@ -1050,7 +1045,7 @@ function spawn_burning_barrel(x, y)
 end
 
 function spawn_fish(x, y)
-	spawn(g_fish,x,y)
+	--spawn(g_fish,x,y)
 end
 
 function spawn_buried_eye_teleporter(x, y)
@@ -1064,3 +1059,13 @@ end
 function spawn_receptacle( x, y )
 	EntityLoad( "data/entities/buildings/receptacle_water.xml", x, y )
 end
+
+
+function spawn_heart_random( x, y )
+	SetRandomSeed(x,y)
+	if Random(1,4) == 1 then
+		EntityLoad( "data/entities/items/pickup/heart.xml", x, y )
+	end
+end
+
+--Maybe soft cap these heart like normal heartspawns get? unsure

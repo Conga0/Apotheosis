@@ -354,6 +354,7 @@ g_background_panel_big =
 
 -- this is a special function tweaked for spawning things in coal mines
 function spawn_items( pos_x, pos_y )
+	--[[
 	local r = ProceduralRandom( pos_x, pos_y )
 	-- 20% is air, nothing happens
 	-- is this needed anymore?
@@ -365,6 +366,7 @@ function spawn_items( pos_x, pos_y )
 		LoadPixelScene( "data/biome_impl/wand_altar.png", "data/biome_impl/wand_altar_visual.png", pos_x-10, pos_y-17, "", true )
 		return
 	end
+	]]--
 end
 
 function spawn_small_enemies(x, y)

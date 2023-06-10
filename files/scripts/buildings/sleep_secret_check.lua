@@ -16,6 +16,7 @@ if GameGetRealWorldTimeSinceStarted() < 12 then
             "data/entities/items/wand_unshuffle_01.xml",
         }
         EntityLoad(lootpool[Random(1,#lootpool)], pos_x, pos_y)
+        EntityLoad("mods/apotheosis/files/entities/items/pickups/potion_mimicium.xml", pos_x + 30, pos_y + 5)
         GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/orb/create", pos_x, pos_y )
         EntityKill(entity_id)
     end

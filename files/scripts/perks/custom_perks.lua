@@ -681,6 +681,29 @@ local apotheosis_perkappends = {
         end,
     },
     ]]--
+    --NOTE: Plane gateway is unfinished, but this will point towards it when it's time
+    --I'm expecting the player has the plane gateway perk when inside the dimensional planes as well, since otherwise goodluck finding the next gateway without the perk
+    --[[
+	{
+		id = "APOTHEOSIS_PLANE_RADAR",
+        id_matchup = "MOON_RADAR",
+        ui_name = "$perk_apotheosis_plane_radar",
+        ui_description = "$perk_apotheosis_plane_radar_description",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/plane_radar_perk_ui.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/plane_radar_perk.png",
+		not_in_default_perk_pool = true,
+		stackable = STACKABLE_NO,
+		func = function( entity_perk_item, entity_who_picked, item_name )
+		
+			EntityAddComponent( entity_who_picked, "LuaComponent", 
+			{
+				_tags = "perk_component",
+				script_source_file = "data/scripts/perks/radar_moon.lua",
+				execute_every_n_frame = "1",
+			} )
+		end,
+	},
+    ]]--
 }
 
 -- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?

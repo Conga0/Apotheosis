@@ -703,6 +703,12 @@
 		execute_times="-1"
 		>
 	</LuaComponent>
+
+	<LuaComponent
+		_tags="death_reward"
+		script_death="data/entities/animals/secret/mechanical_worm_death.lua"
+		>
+	</LuaComponent>
 	
 	<LaserEmitterComponent
 		is_emitting="0"

@@ -172,8 +172,8 @@
 	</MaterialInventoryComponent>
 
 	<GenomeDataComponent 
-		herd_id="mage"
-		food_chain_rank="15"
+		herd_id="mage_corrupted"
+		food_chain_rank="10"
 		is_predator="1" >
 	</GenomeDataComponent>
 

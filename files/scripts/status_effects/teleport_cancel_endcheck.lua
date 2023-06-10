@@ -6,10 +6,12 @@ local teledisabled = false
 
 --Check if player is still teleport nullified
 local children = EntityGetAllChildren(player_id)
-for k=1,#children
-do local v = children[k]
-    if EntityGetName(v) == "apotheosis_teleport_cancel" and v ~= entity_id then
-        teledisabled = true
+if children then
+    for k=1,#children
+    do local v = children[k]
+        if EntityGetName(v) == "apotheosis_teleport_cancel" and v ~= entity_id then
+            teledisabled = true
+        end
     end
 end
 

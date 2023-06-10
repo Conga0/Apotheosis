@@ -39,6 +39,9 @@
     fat_biome_edges="0"
     audio_music_2="smokecave"
     audio_ambience="snowcave"
+    
+    background_image_height="-9999"
+    limit_background_image="false"
      >
 
   </Topology>

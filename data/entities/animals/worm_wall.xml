@@ -24,7 +24,7 @@
 		ragdoll_filename=""
 		eat_anim_wait_mult="0.05"
 		jump_cam_shake="12" 
-		bite_damage="2"
+		bite_damage="1"
 		>
 	</WormComponent>
 

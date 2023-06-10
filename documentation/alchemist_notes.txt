@@ -18,10 +18,13 @@ Normal Potion Pool:
 Magical Mud: Creates Mud Men when exposed to fire or other sources of explosions
 Soarium: Grants infinite flight when stained or consumed
 Attunium: Grants homing when stained or consumed
+Velocium: Increases projectile speed significantly when stained or consumed
 
 Rare Potion Pool:
 Nukium: Causes all airborne projectiles to transform into nukes when consumed
 Escium: Significantly increases movement speed & provides a shield when stained or consumed
+Milk: Drinking cleanses all negative effectsof liquids you've consumed
+Mimicium: After a short moment, it will change itself into any nearby liquids it touches
 
 
 

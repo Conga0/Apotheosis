@@ -44,7 +44,7 @@ Content list:
 8 new perks
 5 new biomes
 7 new structures
-10 new materials (8 interactable, 10 total)
+11 new materials (9 interactable, 11 total)
 12 attainable trophies
 6 new items
 4 new musical curiosities 
