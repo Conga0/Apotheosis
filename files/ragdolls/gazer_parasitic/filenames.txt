@@ -1,0 +1,1 @@
+mods/Apotheosis/files/ragdolls/gazer_parasitic/torso.png

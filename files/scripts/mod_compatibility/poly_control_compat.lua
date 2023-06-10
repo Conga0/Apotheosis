@@ -84,6 +84,10 @@ local apotheosis_creatures = {
         name="Psychic Bat",
     },
     {
+        file="phantom_c_apotheosis",
+        name="Obsessive Phantom",
+    },
+    {
         file="ceiling_fungus",
         name="Ceiling Fungus",
     },
@@ -124,6 +128,10 @@ local apotheosis_creatures = {
     {
         file="fairy_big",
         name="Giant Fairy",
+    },
+    {
+        file="fairy_giant",
+        name="Colossal Fairy",
     },
     {
         file="fairy_big_discord",
@@ -465,6 +473,10 @@ local apotheosis_creatures = {
         name="Wall Worm",
     },
     {
+        file="worm_mechanical",
+        name="Mechanical Worm",
+    },
+    {
         file="wraith_weirdo_shield",
         name="Weirdo",
     },
@@ -546,6 +558,7 @@ local apotheosis_creatures_default = {
     --"cat_mocreeps_white",
     --"cat_mocreeps_wizard",
     "ccc_bat_psychic",
+    "phantom_c_apotheosis",
     "devourer_magic",
     "drone_mini",
     "esoteric_being",

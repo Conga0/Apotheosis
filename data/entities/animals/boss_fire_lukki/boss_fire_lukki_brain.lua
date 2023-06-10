@@ -7,12 +7,9 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local pos_x, pos_y = EntityGetTransform( entity_id )
 	local phase = 0
 
-	local health = 0
-	local max_health = 0
-	edit_component( entity_id, "DamageModelComponent", function(comp,vars)
-		health = tonumber(ComponentGetValue( comp, "hp"))
-		max_health = tonumber(ComponentGetValue( comp, "max_hp"))
-	end)
+    local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
+	local health = ComponentGetValue( dmgcomp, "hp")
+	local max_health = ComponentGetValue( dmgcomp, "max_hp")
 
 	local storages = EntityGetComponent( entity_id, "VariableStorageComponent" )
 

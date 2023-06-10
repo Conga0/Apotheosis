@@ -1,4 +1,4 @@
-<Entity  name="Palomurkku">
+<Entity  name="Palomurkku" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

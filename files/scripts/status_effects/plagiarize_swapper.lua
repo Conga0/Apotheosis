@@ -25,7 +25,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local entity_b = entity_who_caused
 	local xb,yb = EntityGetTransform( entity_b )
 
-	if not EntityHasTag(entity_b,"mortal") then return end
+	if not EntityHasTag(entity_b,"mortal") or EntityHasTag(entity_b,"no_swap") or EntityHasTag(entity_a,"no_swap") then return end
 
 	EntitySetTransform( entity_a, xb, yb )
 	EntitySetTransform( entity_b, xa, ya )

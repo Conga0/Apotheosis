@@ -196,6 +196,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/fairy_big.png",
 	  },
 	  {
+		name="Colossal Fairy",
+		path="data/entities/animals/fairy_giant.xml",
+		image="data/ui_gfx/animal_icons/fairy_giant.png",
+	  },
+	  {
 		name="Giant Discord Fairy",
 		path="data/entities/animals/fairy_big_discord.xml",
 		image="data/ui_gfx/animal_icons/fairy_big_discord.png",
@@ -219,6 +224,11 @@ table.insert(ALL_ENTITIES, {
 		name="Cold Gazer",
 		path="data/entities/animals/gazer_cold_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/gazer_cold_apotheosis.png",
+	  },
+	  {
+		name="Parasitic Gazer",
+		path="data/entities/animals/gazer_parasitic.xml",
+		image="data/ui_gfx/animal_icons/gazer_parasitic.png",
 	  },
 	  {
 		name="Greater Hell Gazer",
@@ -560,6 +570,11 @@ table.insert(ALL_ENTITIES, {
 		name="Wall Worm",
 		path="data/entities/animals/worm_wall.xml",
 		image="data/ui_gfx/animal_icons/worm_wall.png",
+	  },
+	  {
+		name="Mechanical Worm",
+		path="data/entities/animals/worm_mechanical.xml",
+		image="data/ui_gfx/animal_icons/worm_mechanical.png",
 	  },
 	  {
 		name="Hämis Nest",

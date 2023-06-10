@@ -1745,6 +1745,76 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+	{
+		id          = "APOTHEOSIS_WATER_POWER",
+        id_matchup  = "MANA_REDUCE",
+        name 		= "$spell_apotheosis_water_power_name",
+        description = "$spell_apotheosis_water_power_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hydromancy.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,3,4,5,6", -- MANA_REDUCE
+		spawn_probability                 = "0.7,0.9,1,1,1,1", -- MANA_REDUCE
+		price = 180,
+		mana = -30,
+		-- max_uses = 20,
+		action 		= function()
+            draw_actions( 1, true )
+            if reflecting then
+                --Stops the game from getting angry
+                c.fire_rate_wait    = c.fire_rate_wait - 10
+                current_reload_time = current_reload_time - 20
+            else
+                local entity_id = GetUpdatedEntityID()
+                if GameGetGameEffectCount( entity_id, "WET" ) > 0 then
+                    c.fire_rate_wait    = c.fire_rate_wait - 10
+                    current_reload_time = current_reload_time - 20
+                else
+                    mana = mana - 30
+                end
+            end
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_SHAPE_WALL",
+		id_matchup  = "PENTAGRAM_SHAPE",
+        name 		= "$spell_apotheosis_shape_wall_name",
+        description = "$spell_apotheosis_shape_wall_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/wall_shape.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
+		type 		= ACTION_TYPE_DRAW_MANY,
+		spawn_level                       = "1,2,3,4,5,6", -- SHAPE_WALL
+		spawn_probability                 = "0.5,0.5,0.5,0.5,0.5,0.5", -- SHAPE_WALL
+		price = 180,
+		mana = 5,
+		--max_uses = 100,
+		action 		= function()
+			draw_actions(5, true)
+			c.pattern_degrees = 5
+		end,
+	},
+    --[[
+    --Kind of boring, an bloat
+	{
+		id          = "APOTHEOSIS_SUMMON_STAR_CHILD",
+		id_matchup  = "FRIEND_FLY",
+        name 		= "$spell_apotheosis_summon_star_child_name",
+        description = "$spell_apotheosis_summon_star_child_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/star_child.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
+		spawn_requires_flag = "this_should_never_spawn",
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "0", -- Spawns Disabled
+		spawn_probability                 = "0", -- Spawns Disabled
+		price = 250,
+		mana = 200,
+		max_uses = 2,
+		action 		= function()
+			add_projectile("data/entities/animals/player/star_child.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -2000,7 +2070,6 @@ local actions_to_edit = {
     },
 
     --Arrow doesn't have increased knockback
-    --This spell is secretly kinda god-tier once you realise it gains damage from speed.. hmm
     ["ARROW"] = {
         action = function()
             add_projectile("data/entities/projectiles/deck/arrow.xml")

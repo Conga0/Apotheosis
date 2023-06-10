@@ -125,6 +125,7 @@ worm_big
 worm_wall
 worm_skull
 worm_end
+worm_mechanical
 drone_physics
 drone_status_ailment
 drone_mini

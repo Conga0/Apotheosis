@@ -1,11 +1,28 @@
-<Entity>
+<Entity name="apotheosis_teleport_cancel">
 	<InheritTransformComponent>
     </InheritTransformComponent>
     
 	<LuaComponent
 		script_shot="mods/apotheosis/files/scripts/status_effects/teleport_cancel_shoot.lua"
 		script_source_file="mods/apotheosis/files/scripts/status_effects/teleport_cancel.lua"
-		execute_every_n_frame="3"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_cancel_start.lua"
+		execute_every_n_frame="2"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_cancel_endcheck.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		remove_after_executed="1"
 		>
 	</LuaComponent>
 

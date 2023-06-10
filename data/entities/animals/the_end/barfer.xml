@@ -1,0 +1,20 @@
+<Entity >
+  <Base file="data/entities/animals/barfer.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="30"
+      max_hp="30"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007"
+     ></DamageModelComponent >
+  </Base>
+
+  <Entity>
+
+    <GameEffectComponent
+    	effect="PROTECTION_RADIOACTIVITY"
+    	frames="-1"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+
+  </Entity>
+</Entity>

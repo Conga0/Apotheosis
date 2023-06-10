@@ -303,6 +303,15 @@
         entity     = "data/entities/animals/vault/drone_status_ailment.xml",
         ngpluslevel = 1
     })
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.08,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/worm_mechanical.xml",
+        ngpluslevel = 1
+    })
 
 
 

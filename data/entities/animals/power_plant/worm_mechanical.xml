@@ -1,0 +1,19 @@
+<Entity name="Mekaaninenmato" tags="ui_use_raw_name" >
+  <Base file="data/entities/animals/worm_mechanical.xml" include_children="1" >
+    <DamageModelComponent
+		hp="200"
+		max_hp="200"
+		>
+		<damage_multipliers
+			fire="0.0" 
+			drill="0.1"
+			slice="0.1"
+			melee="0.3"
+			projectile="0.0"
+			radioactive="0.0"
+			explosion="0.1"
+			electricity="1.0" >
+		</damage_multipliers>
+	</DamageModelComponent >
+  </Base>
+</Entity>
