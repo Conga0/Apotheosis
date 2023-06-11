@@ -1,5 +1,5 @@
 <Entity 
-	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,worm" 
+	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,worm,robot" 
 	name="Mekaaninenmato"
 	>
 	<_Transform 
@@ -781,6 +781,16 @@
 		randomize_position.max_y="10"
 		>
 	</SpriteParticleEmitterComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 	<CameraBoundComponent
 		max_count="10"

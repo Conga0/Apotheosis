@@ -88,6 +88,12 @@ do local v = targets[k];
     end
 end
 
+if GameHasFlagRun("apotheosis_materia_converted") == false then 
+	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
+	GameTriggerMusicEvent( "music/oneshot/dark_01", true, x, y )
+    GameAddFlagRun("apotheosis_materia_converted")
+end
+
 --TODO: Different spell conversions should have different particles associated to them
 
 --Maybe use VSC to store a radius value and gradually scan outwards for spells? would look kinda cool

@@ -191,7 +191,10 @@ g_candles =
 
 function init(x, y, w, h)
 	parallel_check( x, y )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret.png", "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret_visual.png", x, y - 210, "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret_background.png", true )
+	LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret.png", "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret_visual.png", x, y - 210, "", true )
+	
+	--Old func
+	--LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret.png", "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret_visual.png", x, y - 210, "mods/apotheosis/files/biome_impl/special_scenes/sleep_secret_background.png", true )
 end
 
 function spawn_essence_eater(x, y)

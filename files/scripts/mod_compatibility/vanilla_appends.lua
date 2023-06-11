@@ -783,3 +783,6 @@ end
 do --Genomes
   dofile_once("mods/apotheosis/files/scripts/mod_compatibility/genomes.lua")
 end
+
+--Hiisi Anvil appends
+ModLuaFileAppend( "data/scripts/buildings/forge_item_convert.lua", "mods/apotheosis/files/scripts/buildings/anvil_appends.lua")

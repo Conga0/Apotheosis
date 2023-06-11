@@ -1,8 +1,24 @@
 <Entity name="Jäänkatse" tags="ui_use_raw_name" >
   <Base file="data/entities/animals/gazer_cold_apotheosis.xml" include_children="1" >
     <DamageModelComponent 
-      hp="60"
-      max_hp="60"
+      hp="12"
+      max_hp="12"
      ></DamageModelComponent >
+	
+    <HitboxComponent 
+      damage_multiplier="0.2"
+      >
+    </HitboxComponent>
   </Base>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 </Entity>

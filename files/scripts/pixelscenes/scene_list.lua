@@ -426,4 +426,16 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
 ]]))
 ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
+--True Gods Message
+local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+local xml = nxml.parse(content)
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17150" pos_y="4292" skip_biome_checks="1" skip_edge_textures="0"
+    material_filename="mods/Apotheosis/files/pixel_scenes/true_gods/true_gods.png"
+    background_filename="mods/Apotheosis/files/pixel_scenes/true_gods/true_gods_background.png"
+    colors_filename=""
+  ></PixelScene>
+]]))
+ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
 end

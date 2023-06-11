@@ -1,6 +1,7 @@
 Give orb room material puzzles unique inputs and lore readouts (Likely need to ask letalli for help as they speak finnish)
 
 If a new trophy room is being made, transfer all the existing achievement statues over
+Remember to update/remove tree book when this is done
 
 Trophies for:
 Using Perk Creation Altar
@@ -29,7 +30,3 @@ Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
 Remove the Angelling + Devilling statue
-
-
-Death easter egg will likely break on the experimental map, as the holy mountain portal lay outs are not the same
-reorganise when it's time

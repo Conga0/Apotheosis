@@ -1,8 +1,7 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform( entity_id )
-local r = 116
+local r = 110
 local p = EntityGetInRadiusWithTag( x, y, r, "cube_fx" )
 
 if #p >= 1 then

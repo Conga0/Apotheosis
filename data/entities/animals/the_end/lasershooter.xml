@@ -1,8 +1,13 @@
 <Entity >
   <Base file="data/entities/animals/lasershooter.xml" include_children="1" >
     <DamageModelComponent 
-      hp="45"
-      max_hp="45"
+      hp="9"
+      max_hp="9"
      ></DamageModelComponent >
+	
+    <HitboxComponent 
+      damage_multiplier="0.2"
+      >
+    </HitboxComponent>
   </Base>
 </Entity>

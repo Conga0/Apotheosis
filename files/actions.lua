@@ -2145,6 +2145,15 @@ local actions_to_edit = {
     ["HOMING_AREA"] = {
         subtype = { homing=true }
     },
+
+    --Conga: Actually, this was unneccessary, bastard still worms it's way in
+    --Definitely impossible to find when you add the new copis spells into the mix with apotheosis though
+    --[[
+    ["MANA_REDUCE"] = {
+        spawn_level         = "1,2,3,4,5,6",
+        spawn_probability   = "1,1,1,1,1,1",
+    },
+    ]]--
 }
 
 for i=1,#actions do -- fast as fuck boi

@@ -34,6 +34,7 @@ end
 
 ------------------------------------------------------------------------
 
+--Redirect
 
 ------------------------------------------------------------------------
 
@@ -42,7 +43,7 @@ function spawn_orb(x, y)
 	EntityLoad( "mods/apotheosis/files/entities/buildings/flesh_boss_summon.xml", x, y - 40 )
 	--EntityLoad( "data/entities/misc/orb_07_pitcheck_a.xml", x, y )
 	--EntityLoad( "data/entities/items/pickup/heart_better.xml", x + 30, y - 20 )
-	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_12.xml", x - 30, y + 30 )
+	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_12.xml", x - 30, y - 30 )
 	EntityLoad( "data/entities/misc/music_energy_000.xml", x, y - 10 )
 
 	spawn_material_checker( x - 197, y - 11, "slime", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "data/particles/image_emitters/orbrooms/05_02.xml", x, y - 100 )

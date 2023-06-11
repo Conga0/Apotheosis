@@ -72,6 +72,7 @@ blob_big
 blob_huge
 ant
 ant_fire
+ant_suffocate
 rat
 rat_birthday
 bat

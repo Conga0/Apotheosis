@@ -1,4 +1,4 @@
-<Entity name="$animal_roboguard,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT" >
+<Entity name="$animal_roboguard" tags="polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT" >
   
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<AnimalAIComponent 

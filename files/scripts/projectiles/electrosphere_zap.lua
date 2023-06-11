@@ -80,8 +80,10 @@ do local v = targets[k]
 
             --Unlike burn or electric damage, The frozen effect isn't handled innately through ice damage, so we need to insert it here
             if c.name == "ICE" then
-                local child = EntityLoad("data/entities/misc/effect_frozen.xml",pos_x,pos_y)
-                EntityAddChild(v,child)
+                if EntityHasTag(v,"robot") == false and GameGetGameEffectCount( v, "STUN_PROTECTION_FREEZE" ) < 1 and GameGetGameEffectCount( v, "PROTECTION_FREEZE" ) < 1 then
+                    local child = EntityLoad("data/entities/misc/effect_frozen.xml",pos_x,pos_y)
+                    EntityAddChild(v,child)
+                end
             end
         end
     end

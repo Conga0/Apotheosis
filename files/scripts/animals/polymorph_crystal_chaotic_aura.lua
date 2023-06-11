@@ -20,11 +20,13 @@ do local v = targets[k];
 		end
 	
 		local children = EntityGetAllChildren(v)
-		for z=1,#children
-		do local c = children[z]
-			if EntityGetName(c) == "creep_debuff_polycrystal" then
-				valid = false
-				break
+		if children then
+			for z=1,#children
+			do local c = children[z]
+				if EntityGetName(c) == "creep_debuff_polycrystal" then
+					valid = false
+					break
+				end
 			end
 		end
 		

@@ -1,8 +1,24 @@
 <Entity name="Suur Taivaankatse" tags="touchmagic_immunity,ui_use_raw_name" >
   <Base file="data/entities/animals/gazer_greater_sky.xml" include_children="1" >
     <DamageModelComponent 
-      hp="90"
-      max_hp="90"
+      hp="18"
+      max_hp="18"
      ></DamageModelComponent >
+	
+    <HitboxComponent 
+      damage_multiplier="0.2"
+      >
+    </HitboxComponent>
   </Base>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 </Entity>
