@@ -45,6 +45,7 @@ He's my hero.
 
 Rib#1963 - Help with stain UV map generation, I probably wouldn't be able to have UV maps for enemies without his help
 
+The many cat lives who were lost in the process of testing new spells
 
 
 

@@ -61,6 +61,7 @@ giantshooter_weak
 giantshooter
 slime_leaker_weak
 slime_leaker
+slime_teleporter
 goo_slug
 poring
 poring_magic

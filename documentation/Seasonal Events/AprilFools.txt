@@ -7,3 +7,4 @@ Small Fairies do contact damage, but large orb-shooting fairies do no damage
 Very rarely a fungal or creature shift may occur for no reason
 Pandora's Chest spawnrate is significantly increased
 Main path biomes have a small chance to include every Mo Creeps enemy spawn, descending into chaos
+A divine friend comes back to fight some more

@@ -220,11 +220,13 @@ table.insert(ALL_ENTITIES, {
 		path="data/entities/animals/gazer_cold_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/gazer_cold_apotheosis.png",
 	  },
+	  --[[
 	  {
 		name="Parasitic Gazer",
 		path="data/entities/animals/gazer_parasitic.xml",
 		image="data/ui_gfx/animal_icons/gazer_parasitic.png",
 	  },
+	  ]]--
 	  {
 		name="Greater Hell Gazer",
 		path="data/entities/animals/gazer_greater.xml",
@@ -414,6 +416,11 @@ table.insert(ALL_ENTITIES, {
 		name="Weak Leaky Slime",
 		path="data/entities/animals/slime_leaker_weak.xml",
 		image="data/ui_gfx/animal_icons/slime_leaker_weak.png",
+	  },
+	  {
+		name="Warping Slime",
+		path="data/entities/animals/slime_teleporter.xml",
+		image="data/ui_gfx/animal_icons/slime_teleporter.png",
 	  },
 	  {
 		name="Star Child",

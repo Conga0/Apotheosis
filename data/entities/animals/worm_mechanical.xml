@@ -820,5 +820,12 @@
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>
+	
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_half.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
 
 </Entity>

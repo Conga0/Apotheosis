@@ -111,6 +111,12 @@ g_small_enemies =
 		max_count	= 6,    
 		entity 	= "data/entities/animals/the_end/slimeshooter_boss_limbs.xml",
 	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/the_end/slime_teleporter.xml"
+	},
 }
 
 

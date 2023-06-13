@@ -1071,7 +1071,7 @@ local apotheosis_spellappends = {
         related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml"},
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level       = "0,1,2,3,4,5,6", -- X_RAY
-        spawn_probability = "0.8,1,1,0.8,0.6,0.4,0.2", -- X_RAY
+        spawn_probability = "0.7,0.8,0.8,0.7,0.6,0.4,0.2", -- X_RAY
         price = 120,
         mana = 120,
         --max_uses    = 3, 
@@ -1857,6 +1857,38 @@ local apotheosis_spellappends = {
 			draw_actions( Random(4,8), true )
         end
 	},
+	{
+		id          = "APOTHEOSIS_JUMPER_CABLES",
+        id_matchup  = "TENTACLE_TIMER",
+		name 		= "$spell_apotheosis_jumper_cables_name",
+		description = "$spell_apotheosis_jumper_cables_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/jumper_cables.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/tentacle_unidentified.png",
+		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml", 2},
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "3,4,5,6", -- TENTACLE
+		spawn_probability                 = "1,0.5,1,0.8", -- TENTACLE
+		price = 200,
+		mana = 40,
+		--max_uses = 40,
+		custom_xml_file = "data/entities/misc/custom_cards/electric_charge.xml",
+		action 		= function()
+			c.fire_rate_wait = c.fire_rate_wait + 40
+            c.spread_degrees = c.spread_degrees + 30.0
+            if reflecting then
+                --Stops the game from getting angry
+			    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
+            else
+                if math.random(1,2) == 1 then
+                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
+                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
+                else
+                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
+                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
+                end
+            end
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -2111,7 +2143,7 @@ local actions_to_edit = {
         end
     },
 
-    --Arrow doesn't have increased knockback
+    --Arrow doesn't have increased recoil
     ["ARROW"] = {
         action = function()
             add_projectile("data/entities/projectiles/deck/arrow.xml")

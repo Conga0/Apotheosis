@@ -66,6 +66,7 @@ function polytest()
         "sentry",
         "shaman_greater_apotheosis",
         "slime_leaker",
+        "slime_teleporter",
         "star_child",
         "tentacler_big",
         "tesla_turret",

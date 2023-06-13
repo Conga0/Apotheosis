@@ -368,6 +368,10 @@ local apotheosis_creatures = {
         name="Leaky Slime (Mines)",
     },
     {
+        file="slime_teleporter",
+        name="Warping Slime",
+    },
+    {
         file="star_child",
         name="Star Child",
     },
@@ -600,6 +604,7 @@ local apotheosis_creatures_default = {
     "sentry",
     "shaman_greater_apotheosis",
     "slime_leaker",
+    "slime_teleporter",
     "star_child",
     "tentacler_big",
     "tesla_turret",

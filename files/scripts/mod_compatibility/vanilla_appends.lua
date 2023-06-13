@@ -80,7 +80,7 @@ do
   end
 end
 
-do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
+do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width) --Also, update some existing ones to new locations
   local path = "data/biome/_pixel_scenes.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("data/biome_impl/overworld/essence_altar_visual.png", "")
@@ -88,6 +88,18 @@ do -- Remove some pixelscenes as they're being turned into biomes to recur infin
   content = content:gsub("data/biome_impl/overworld/essence_altar.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar_desert.png", "")
   content = content:gsub("data/entities/buildings/essence_eater.xml", "")
+
+  --Update existing pixelscenes to new x,y coordinates
+  --Note: 52224 is the length of an entire Apotheosis world
+
+  --Note: non-functional, regardless of mod load order
+  --More Stuff West Meteorite
+  content = content:gsub("\"-45452\" pos_y=\"-450\"", "\"-61,324\" pos_y=\"-450\"")
+  content = content:gsub("\"-45175\" pos_y=\"1\"", "\"-61,047\" pos_y=\"1\"")
+  
+  --More Stuff East Meteorite
+  content = content:gsub("\"27252\" pos_y=\"-450\"", "\"43124\" pos_y=\"-450\"")
+  content = content:gsub("\"27529\" pos_y=\"1\"", "\"43401\" pos_y=\"1\"")
   ModTextFileSetContent(path, content)
 end
 
@@ -178,6 +190,7 @@ do --Boosts Health of various creatures (THE_END)
     "worm_end",
     "worm_skull",
     --Modded Enemies below
+    "barfer",
     "blindgazer",
     "fairy_big_discord",
     "forsaken_eye",
@@ -189,6 +202,8 @@ do --Boosts Health of various creatures (THE_END)
     "musical_being",
     "sentry",
     "slime_leaker_weak",
+    "slime_teleporter",
+    "slimeshooter_boss_limbs",
     "star_child",
     "wizard_firemage_greater",
     "wraith_returner_apotheosis",
@@ -709,7 +724,7 @@ end
 do --Tower creature appends
   local path = "data/scripts/biomes/tower.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant",]])
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant",]])
   ModTextFileSetContent(path, content)
 end
 

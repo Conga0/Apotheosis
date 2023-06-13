@@ -30,3 +30,6 @@ Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
 Remove the Angelling + Devilling statue
+
+Custom creature shifting icon
+Could learn C#, study priskip's program to make icons in mass
