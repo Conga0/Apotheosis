@@ -33,3 +33,6 @@ Remove the Angelling + Devilling statue
 
 Custom creature shifting icon
 Could learn C#, study priskip's program to make icons in mass
+
+Improve Wall of Fire's ui icon
+Improve Jumper Cable's visuals

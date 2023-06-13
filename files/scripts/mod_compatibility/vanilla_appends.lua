@@ -80,7 +80,7 @@ do
   end
 end
 
-do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width) --Also, update some existing ones to new locations
+do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
   local path = "data/biome/_pixel_scenes.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("data/biome_impl/overworld/essence_altar_visual.png", "")
@@ -88,18 +88,6 @@ do -- Remove some pixelscenes as they're being turned into biomes to recur infin
   content = content:gsub("data/biome_impl/overworld/essence_altar.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar_desert.png", "")
   content = content:gsub("data/entities/buildings/essence_eater.xml", "")
-
-  --Update existing pixelscenes to new x,y coordinates
-  --Note: 52224 is the length of an entire Apotheosis world
-
-  --Note: non-functional, regardless of mod load order
-  --More Stuff West Meteorite
-  content = content:gsub("\"-45452\" pos_y=\"-450\"", "\"-61,324\" pos_y=\"-450\"")
-  content = content:gsub("\"-45175\" pos_y=\"1\"", "\"-61,047\" pos_y=\"1\"")
-  
-  --More Stuff East Meteorite
-  content = content:gsub("\"27252\" pos_y=\"-450\"", "\"43124\" pos_y=\"-450\"")
-  content = content:gsub("\"27529\" pos_y=\"1\"", "\"43401\" pos_y=\"1\"")
   ModTextFileSetContent(path, content)
 end
 

@@ -16,7 +16,11 @@
     wang_map_height="256"
     audio_music_2="smokecave"
     audio_ambience="snowcave"
-  >
+
+    color_grading_r="0.85"
+    color_grading_g="0.85"
+    color_grading_b="1.0"
+    >
   <BitmapCaves 
       size_x="256"
       size_y="256"

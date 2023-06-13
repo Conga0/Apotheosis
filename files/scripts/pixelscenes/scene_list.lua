@@ -19,7 +19,6 @@ do local v = appends[k];
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
   --Wand Tinkering Crystal guaranteed spawn (PW East)
-  --Here we concatoncate the x position of the pixel scene in the main world with the world length, adding to it for east worlds
   local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
   local xml = nxml.parse(content)
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
@@ -32,8 +31,6 @@ do local v = appends[k];
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
   --Wand Tinkering Crystal guaranteed spawn (PW West)
-  --And subtracing it for west worlds
-  --We also use table.concat here because normal .. concats are famously slow
   local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
   local xml = nxml.parse(content)
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
