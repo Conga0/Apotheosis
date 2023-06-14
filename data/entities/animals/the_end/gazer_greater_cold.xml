@@ -3,7 +3,13 @@
     <DamageModelComponent 
       hp="18"
       max_hp="18"
-     ></DamageModelComponent >
+     >
+		<damage_multipliers
+			radioactive="0.0"
+			physics_hit="0.1"
+			>
+		</damage_multipliers>
+    </DamageModelComponent >
 	
     <HitboxComponent 
       damage_multiplier="0.2"

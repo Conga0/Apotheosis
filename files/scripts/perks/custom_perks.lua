@@ -698,7 +698,7 @@ local apotheosis_perkappends = {
 			EntityAddComponent( entity_who_picked, "LuaComponent", 
 			{
 				_tags = "perk_component",
-				script_source_file = "data/scripts/perks/radar_moon.lua",
+				script_source_file = "mods/apotheosis/files/scripts/perks/plane_radar.lua",
 				execute_every_n_frame = "1",
 			} )
 		end,

@@ -8,7 +8,7 @@
 			attack_ranged_enabled="1"
 			attack_ranged_action_frame="1"
 			attack_dash_enabled="0"
-			attack_ranged_frames_between="50"
+			attack_ranged_frames_between="40"
 			attack_ranged_entity_count_min="1"
 			attack_ranged_entity_count_max="1"
 			can_fly="1" >

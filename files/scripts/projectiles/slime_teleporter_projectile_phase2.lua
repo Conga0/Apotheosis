@@ -13,8 +13,8 @@ do local v = vsccomp[k]
     end
 end
 
---If the portals are 130 pixels or closer to each other, stop the process and cancel operations
-if (math.abs(start_y - pos_y) + math.abs(start_x - pos_x)) <= 130 then
+--If the portals are 140 pixels or closer to each other, stop the process and cancel operations
+if (math.abs(start_y - pos_y) + math.abs(start_x - pos_x)) <= 140 then
     return
 end
 

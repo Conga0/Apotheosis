@@ -28,6 +28,8 @@ Creating Magic Inerberation script
 Glass Cannon compatibility for Liquid Bubbles
 Various Code Contributions
 
+PickledSosig - Created the Virulent Caverns background sprite
+
 Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help
 
 Y🍵 - Creator of More Musical Magic, implemented into this mod to allow for new musical songs

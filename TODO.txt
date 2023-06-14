@@ -36,3 +36,11 @@ Could learn C#, study priskip's program to make icons in mass
 
 Improve Wall of Fire's ui icon
 Improve Jumper Cable's visuals
+
+Gateway sprite, needs:
+A large stone arch that can fit a portal inside
+An alternative shattered stone arch sprite for if you fail the requirements
+
+Guarantee Mechanical Worm spawn on fury's playthrough, maybe some other stuff too
+
+Implement cat hurt noises

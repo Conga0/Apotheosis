@@ -1665,6 +1665,17 @@ do  -- Player Editor
       </LuaComponent>
     ]]))
   end
+
+  --Adds Parallel World checker to the player
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+      execute_every_n_frame="1800"
+      execute_times="-1"
+      remove_after_executed="0"
+      >
+    </LuaComponent>
+  ]]))
   ModTextFileSetContent(path, tostring(xml))
 end
 

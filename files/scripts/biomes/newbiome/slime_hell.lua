@@ -217,53 +217,17 @@ g_unique_enemy =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 0.0,
+		prob   		= 1.0,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 1.0,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/tank.xml"
-	},
-	{
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/tank_rocket.xml"
-	},
-	{
-		prob   		= 0.001,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/tank_super.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_tele.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_dark.xml"
-	},
-	{
-		prob   		= 0.07,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_swapper.xml"
-	},
-	{
-		prob   		= 0.1,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/animals/necromancer.xml"
+		entity 	= "data/entities/animals/gazer_MVP.xml"
 	},
 }
 
