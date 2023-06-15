@@ -17,8 +17,12 @@ materials_rare =
 	},
 	{
 		material="apotheosis_milk",
+		cost=800,
+	},
+	{
+		material="apotheosis_magic_liquid_mimic",
 		cost=800, --Hey, I'll be real with you, cost changes literally nothing, even in the normal potion.lua file, I'm just keeping it here incase a mod far off in the future decides to change that
-	}
+	},
 }
 
 function init( entity_id )

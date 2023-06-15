@@ -61,6 +61,7 @@ giantshooter_weak
 giantshooter
 slime_leaker_weak
 slime_leaker
+slime_teleporter
 goo_slug
 poring
 poring_magic
@@ -72,6 +73,7 @@ blob_big
 blob_huge
 ant
 ant_fire
+ant_suffocate
 rat
 rat_birthday
 bat
@@ -207,6 +209,7 @@ whisp
 whisp_big
 fairy_cheap
 fairy_big
+fairy_giant
 fairy_big_discord
 fairy_esoteric
 esoteric_being

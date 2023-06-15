@@ -1,4 +1,4 @@
-<Entity tags="tablet,normal_tablet">
+<Entity tags="tablet,normal_tablet,forgeable">
 	<Base file="data/entities/items/books/base_book.xml">
 		<UIInfoComponent
 			name="$book_apotheosis_orbbook_13_name"

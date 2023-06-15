@@ -166,6 +166,13 @@ g_big_enemies =
         max_count    = 1,
         entity     = "data/entities/animals/sunken_cave/tesla_turret.xml"
     },
+	{
+		prob   		= 0.30,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/sunken_cave/watermage_greater.xml",
+		ngpluslevel = 1,
+	},
 }
 
 

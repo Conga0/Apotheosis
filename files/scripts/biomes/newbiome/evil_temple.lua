@@ -234,7 +234,7 @@ g_big_enemies =
 		prob   		= 0.25,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/wizard_wands.xml"
+		entity 	= "data/entities/animals/evil_temple/wizard_wands.xml"
 	},
 	{
 		prob   		= 0.15,

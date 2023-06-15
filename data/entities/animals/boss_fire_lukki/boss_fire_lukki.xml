@@ -295,7 +295,9 @@
 			frames="-1"
 			>
 		</GameEffectComponent >
+	</Entity>
 
+	<Entity>
 		<GameEffectComponent 
 			effect="SAVING_GRACE"
 			frames="6"

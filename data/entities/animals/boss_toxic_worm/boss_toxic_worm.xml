@@ -44,7 +44,7 @@
 		fire_damage_amount="0" 
 		fire_how_much_fire_generates="0" 
 		fire_probability_of_ignition="0" 
-		hp="160" 
+		hp="120" 
 		materials_damage="1" 
 		materials_how_much_damage="0.3,0.2,0.02,0.1,0.1" 
 		materials_that_damage="purifying_powder,cursed_liquid,blood_cold,lava,acid" 

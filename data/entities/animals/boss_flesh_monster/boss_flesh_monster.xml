@@ -564,7 +564,7 @@
 
 	<!-- Death Scripts -->
 	
-	<!-- Condensed to save resources, it's more effecient to have 1 lua comp than 2-->
+	<!-- Condensed to save resources, it's more efficient to have 1 lua comp than 2-->
 	<!-- Fancy Death Script -->
 	<!-- Death Reward, only applies to phase 2 -->
 	<LuaComponent

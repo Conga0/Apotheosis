@@ -17,7 +17,6 @@ Chainsaw now costs 12 mana
 Giga Death Cross now does much, much more damage
 Giga Death Cross now uses green wand particles instead of blue
 Weakening Curses now cause a target to take double damage instead of a flat 25% vulnerability against a certain damage type, the concept is in late game Noita, it's very easy to put projectile or explosive weakening curse on a wand and ignore all damage resistances enemies has, it doesn't force you to build wands outside of your comfort zone for certain environments and I feel it restricts wand creativity by allowing you, borderline making the best strategy to stick to one damage type, rather than needing to mix it up for endgame areas of the game. This change should also hopefully make weakening curses significantly more impactful in normal builds for optimising damage output than simply being a means to bypass damage resistances with little gain to overall damage output
-Masters of Exchange no longer swap non-mortal entities (for example, cursed rock damage fields)
 Low Recoil is replaced with No Recoil
 Pit Boss now has a projectile failsafe incase it spawns too many wands (over 1k with high boss health multipliers)
 Individual Enemies can now drop a maximum of 100k gold at any given time to prevent crashes in high NG+ runs (high NG+ runs usually become unplayable at a certain point otherwise if enemies start dying, flooding the screen with hundreds, sometimes thousands of gigantic physics objects)
@@ -38,16 +37,17 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-107 new enemies (+3 Pylon variants)
+108 new enemies (+3 Pylon variants)
 5 new bosses
-70 new spells
+71 new spells
 8 new perks
-5 new biomes
+6 new biomes
 7 new structures
-10 new materials (8 interactable, 10 total)
+11 new materials (9 interactable, 11 total)
 12 attainable trophies
 6 new items
-4 new musical curiosities 
+4 new musical curiosities
+And countless new secrets...
 
 
 Custom tag count: [7]

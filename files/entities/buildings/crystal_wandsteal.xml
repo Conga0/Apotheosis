@@ -24,7 +24,7 @@
   <GenomeDataComponent 
     _enabled="1" 
     food_chain_rank="20" 
-    herd_id="ghost" 
+	herd_id="mage_corrupted"
     is_predator="1" >
   </GenomeDataComponent>
 

@@ -45,6 +45,14 @@ if ModIsEnabled("worse_enemies") == false then
     })
 end
 
+table.insert(g_big_enemies,
+{
+    prob           = 0.05,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/fungicave/slime_warping.xml"
+})
+
 
 -- Robots
 

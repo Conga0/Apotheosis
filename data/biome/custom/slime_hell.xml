@@ -2,11 +2,11 @@
   <Topology 
     name="$biome_slime_hell"
     type="BIOME_WANG_TILE"
-	  background_image="mods/apotheosis/files/weather_gfx/background_cave_green_02.png"
-	  background_edge_left="mods/apotheosis/files/weather_gfx/edges/background_cave_green_02_left.png"
-    background_edge_right="mods/apotheosis/files/weather_gfx/edges/background_cave_green_02_right.png"
-    background_edge_top="mods/apotheosis/files/weather_gfx/edges/background_cave_green_02_top.png"
-    background_edge_bottom="mods/apotheosis/files/weather_gfx/edges/background_cave_green_02_bottom.png"
+	  background_image="mods/apotheosis/files/weather_gfx/background_toxic_01.png"
+	  background_edge_left="mods/apotheosis/files/weather_gfx/edges/background_toxic_01_left.png"
+    background_edge_right="mods/apotheosis/files/weather_gfx/edges/background_toxic_01_right.png"
+    background_edge_top="mods/apotheosis/files/weather_gfx/edges/background_toxic_01_top.png"
+    background_edge_bottom="mods/apotheosis/files/weather_gfx/edges/background_toxic_01_bottom.png"
     background_edge_priority="10"     
 
     limit_background_image="0"

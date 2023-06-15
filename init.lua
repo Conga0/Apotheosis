@@ -406,7 +406,7 @@ material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,,,,,
 material_apotheosis_sunkenrock_sandy,"Sandy Rock",,,,,,,,,,,,,
 material_apotheosis_ambrosia_dull,"Infected Ambrosia",,,,,,,,,,,,,
 material_apotheosis_meat_slime_blue,"Blue Slimy Meat",,,,,,,,,,,,,
-material_apotheosis_malicious_powder,"Malicious Powder",,,,,,,,,,,,,
+material_apotheosis_malicious_powder,"Volcanic Powder",,,,,,,,,,,,,
 material_apotheosis_milk,"Milk",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone,"Esoteric Stone",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone_glowing,"Luminescent Rock",,,,,,,,,,,,,
@@ -487,8 +487,8 @@ spell_apotheosis_noragdoll_name,"Corpse Sublimation",,,,,,,,,,,,"DOESN'T NEED TO
 spell_apotheosis_noragdoll_desc,"Magically converts an enemy's corpse to smoke on death",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_trail_enhancer_name,"Trail Enhancer",,,,,,,,,,,,,
 spell_apotheosis_trail_enhancer_desc,"Significantly increase the amount of material produced by other trail spells in the wand",,,,,,,,,,,,,
-spell_apotheosis_trail_reducer_name,"Trail Reducer",,,,,,,,,,,,,
-spell_apotheosis_trail_reducer_desc,"Significantly reduce the amount of material produced by other trail spells in the wand",,,,,,,,,,,,,
+spell_apotheosis_trail_reducer_name,"Trail Reducer",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_trail_reducer_desc,"Significantly reduce the amount of material produced by other trail spells in the wand",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_larpa_delayed_name,"Burst Larpa",,,,,,,,,,,,,
 spell_apotheosis_larpa_delayed_desc,"Make a projectile cast a burst of copies after a short delay",,,,,,,,,,,,,
 spell_apotheosis_random_homing_name,"Random Homing",,,,,,,,,,,,,
@@ -509,8 +509,14 @@ spell_apotheosis_water_power_name,"Hydromancy",,,,,,,,,,,,,
 spell_apotheosis_water_power_desc,"Reduce mana cost by 30 and increase fire rate when wet",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_name,"Formation - Wall",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_desc,"Casts 5 spells in a wall-shaped pattern",,,,,,,,,,,,,
-spell_apotheosis_summon_star_child_name,"Summon Star Child",,,,,,,,,,,,,
-spell_apotheosis_summon_star_child_desc,"Summons a celestial familiar",,,,,,,,,,,,,
+spell_apotheosis_summon_star_child_name,"Summon Star Child",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_summon_star_child_desc,"Summons a celestial familiar",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_fire_wall_name,"Wall of Fire",,,,,,,,,,,,,
+spell_apotheosis_fire_wall_desc,"Summons a wall of fire to ward off foes",,,,,,,,,,,,,
+spell_apotheosis_random_burst_name,"Random Cast",,,,,,,,,,,,,
+spell_apotheosis_random_burst_desc,"Multicast between 4 to 8 random spells     ",,,,,,,,,,,,,
+spell_apotheosis_jumper_cables_name,"Summon Jumper Cables",,,,,,,,,,,,,
+spell_apotheosis_jumper_cables_desc,"Summon a pair of electrifying vices to shock your victims",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Creatures hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_explosion,Creatures hit by a projectile takes 100% extra explosion damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от взрывов,O alvo atingido por um projétil recebe mais 100% de dano de explosão por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de explosiones durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Explosionsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des explosions pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da esplosione in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od wybuchów,被投射物击中的目标短时间内会受到额外的 100% 爆炸伤害,放射物が当たったターゲットが一定期間100%の追加の爆破ダメージを受ける,일정 시간 동안 폭발이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_melee,Creatures hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -525,9 +531,10 @@ orb_apotheosis_15_desc,"Secrets of unworldly transmutation have been unlocked to
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_name,"Emerald Tablet - Volume XII",,,,,,,,,,,,,
-book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in an infinitely empty field, Divinity could hear but not see any. \nDivinity assumed they would be standing within a crowd of four, yet they observed in solitude. \nDivinity brought preference to the world, and deemed some creations superior to others in their solitude \nDivinity believed the world to be better with their touch, but without contention it was improvable. \nTo those who seek knowledge not true but divine, blood must fall upon one's hands.",,,,,,,,,,,,,
+book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in an infinitely empty field, Divinity could hear but not see any. \nDivinity assumed they would be standing within a crowd, yet they observed in solitude. \nDivinity brought preference to the world, and deemed some creations superior to others in their lone judgement \nDivinity believed the world to be better with their touch, but without contention it was improvable. \nTo those who seek knowledge not true but divine, blood must fall upon one's hands.",,,,,,,,,,,,,
 book_apotheosis_orbbook_14_name,"Emerald Tablet - Volume XIII",,,,,,,,,,,,,
-book_apotheosis_orbbook_14_description,"You shouldn't be here.",,,,,,,,,,,,,
+book_apotheosis_orbbook_14_description,"The bird cackled and sang\nWhat good is one's time if it is without encouragement?\nTo those who dream when they feel, they know not the encouragement\nof knowing what to do before their dream and how much.\nTo those who plan their dream ahead of time, when and where,\nthey know what they can do and what time they have to do it.\nThe bird cackled once more before it flew off.\nIt's wisdom soaked into the minds of those who heard it, \nas water soaked into glass",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_workinprogress_description,"Seeker of knowledge, your nose is on the right path \nyet some secrets are yet to be revealed.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
@@ -560,6 +567,8 @@ perk_apotheosis_no_blood,"Smoked Corpses",,,,,,,,,,,,,
 perk_apotheosis_no_blood_description,"Enemies leave behind no corpse, and bleed no blood.",,,,,,,,,,,,,
 perk_apotheosis_god_ti,"Divine Intervention",,,,,,,,,,,,,
 perk_apotheosis_god_ti_description,"The gods will cause something sporadic to occur every 3-4 minutes.",,,,,,,,,,,,,
+perk_apotheosis_plane_radar,"Plane Radar",,,,,,,,,,,,,
+perk_apotheosis_plane_radar_description,"You can sense otherworldy energy somewhere in the world.",,,,,,,,,,,,,
 status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
 status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
 status_apotheosis_magicwet_intense_ui,"Intense Wetness",,,,,,,,,,,,,
@@ -1656,6 +1665,17 @@ do  -- Player Editor
       </LuaComponent>
     ]]))
   end
+
+  --Adds Parallel World checker to the player
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+      execute_every_n_frame="1800"
+      execute_times="-1"
+      remove_after_executed="0"
+      >
+    </LuaComponent>
+  ]]))
   ModTextFileSetContent(path, tostring(xml))
 end
 

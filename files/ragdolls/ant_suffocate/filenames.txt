@@ -1,0 +1,13 @@
+mods/Apotheosis/files/ragdolls/ant_suffocate/head.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/upper_torso.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/lower_torso.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/left_hind_leg.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/right_hind_leg.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/left_front_leg.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/right_front_leg.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/antenna_left.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/antenna_right.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/left_arm.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/left_hand.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/right_arm.png
+mods/Apotheosis/files/ragdolls/ant_suffocate/right_hand.png

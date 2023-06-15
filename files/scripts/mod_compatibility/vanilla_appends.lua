@@ -178,6 +178,7 @@ do --Boosts Health of various creatures (THE_END)
     "worm_end",
     "worm_skull",
     --Modded Enemies below
+    "barfer",
     "blindgazer",
     "fairy_big_discord",
     "forsaken_eye",
@@ -189,6 +190,8 @@ do --Boosts Health of various creatures (THE_END)
     "musical_being",
     "sentry",
     "slime_leaker_weak",
+    "slime_teleporter",
+    "slimeshooter_boss_limbs",
     "star_child",
     "wizard_firemage_greater",
     "wraith_returner_apotheosis",
@@ -562,7 +565,7 @@ end
 do --Add Random Homing to Pyramid Boss loot pool
   local path = "data/entities/animals/boss_limbs/boss_limbs_death.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM" }]], [[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM", "APOTHEOSIS_RANDOM_HOMING" }]])
+  content = content:gsub([[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM" }]], [[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM", "APOTHEOSIS_RANDOM_HOMING", "APOTHEOSIS_RANDOM_BURST" }]])
   ModTextFileSetContent(path, content)
 end
 
@@ -709,7 +712,7 @@ end
 do --Tower creature appends
   local path = "data/scripts/biomes/tower.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant",]])
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant",]])
   ModTextFileSetContent(path, content)
 end
 
@@ -783,3 +786,6 @@ end
 do --Genomes
   dofile_once("mods/apotheosis/files/scripts/mod_compatibility/genomes.lua")
 end
+
+--Hiisi Anvil appends
+ModLuaFileAppend( "data/scripts/buildings/forge_item_convert.lua", "mods/apotheosis/files/scripts/buildings/anvil_appends.lua")

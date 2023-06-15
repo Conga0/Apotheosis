@@ -8,8 +8,8 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local phase = 0
 
     local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
-	local health = ComponentGetValue( dmgcomp, "hp")
-	local max_health = ComponentGetValue( dmgcomp, "max_hp")
+	local health = tonumber(ComponentGetValue( dmgcomp, "hp"))
+	local max_health = tonumber(ComponentGetValue( dmgcomp, "max_hp"))
 
 	local storages = EntityGetComponent( entity_id, "VariableStorageComponent" )
 

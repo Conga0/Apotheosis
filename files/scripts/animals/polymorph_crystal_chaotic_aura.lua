@@ -1,4 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
@@ -18,6 +17,17 @@ do local v = targets[k];
 
 		if ( EntityGetName( v ) == "Chaotic Polymorph Crystal" ) or ( EntityGetName( v ) == "Polymorph Crystal" ) or ( EntityGetName( v ) == "unknown" ) then
 			valid = false
+		end
+	
+		local children = EntityGetAllChildren(v)
+		if children then
+			for z=1,#children
+			do local c = children[z]
+				if EntityGetName(c) == "creep_debuff_polycrystal" then
+					valid = false
+					break
+				end
+			end
 		end
 		
 		if valid then

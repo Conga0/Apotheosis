@@ -67,7 +67,7 @@
         prob           = 0.12,
         min_count    = 1,
         max_count    = 1,
-        entity     = "data/entities/animals/coldgazer_greater.xml",
+        entity     = "data/entities/animals/gazer_greater_cold.xml",
         ngpluslevel = 1
     })
 
@@ -94,10 +94,10 @@
 
 table.insert(g_small_enemies,
 {
-    prob           = 0.1,
+    prob           = 0.2,
     min_count    = 1,
     max_count    = 1,    
-    entity     = "data/entities/animals/wizard_firemage_greater.xml",
+    entity     = "data/entities/animals/watermage_greater.xml",
     ngpluslevel = 1
 })
 

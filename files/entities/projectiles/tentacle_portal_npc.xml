@@ -1,4 +1,4 @@
-<Entity name="Eldritch Portal"  >
+<Entity name="Eldritch Portal" tags="ui_use_raw_name" >
 
 	<!-- teleport logic -->
 

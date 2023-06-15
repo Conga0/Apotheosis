@@ -148,6 +148,7 @@ table.insert(g_small_enemies,
     max_count    = 1,    
     entity     = "data/entities/animals/gazer_greater_cold.xml",
     ngpluslevel = 1,
+    ng_exclusive = true,
 })
 
 table.insert(g_small_enemies,
@@ -158,6 +159,24 @@ table.insert(g_small_enemies,
     entity     = "data/entities/animals/the_end/gazer_cold_apotheosis.xml",
     ngpluslevel = 1,
     ng_exclusive = true,
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.5,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/apotheosis/files/entities/buildings/snowcave/pylon_vulnerability.xml",
+    ngpluslevel = 1,
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.5,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/apotheosis/files/entities/buildings/snowcave/pylon_escium.xml",
+    ngpluslevel = 1,
 })
 
 

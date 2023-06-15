@@ -1214,10 +1214,16 @@
 		color="ff733eee" >
 	</Biome>
 
-	<Biome 
-		biome_filename="data/biome/custom/arena_boss_mid_spawner.xml" 
+	<Biome
+		biome_filename="data/biome/custom/arena_boss_mid_spawner.xml"
 		height_index="10"
 		color="ff612dd7" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/plane_portal_01.xml"
+		height_index="10"
+		color="ffeae85f" >
 	</Biome>
 
 </BiomesToLoad>

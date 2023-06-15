@@ -1,8 +1,19 @@
 <Entity name="Parasiittinenkatse" tags="ui_use_raw_name" >
   <Base file="data/entities/animals/gazer_parasitic.xml" include_children="1" >
     <DamageModelComponent 
-      hp="60"
-      max_hp="60"
-     ></DamageModelComponent >
+      hp="12"
+      max_hp="12"
+     >
+		<damage_multipliers
+			radioactive="0.0"
+			physics_hit="0.1"
+			>
+		</damage_multipliers>
+    </DamageModelComponent >
+	
+    <HitboxComponent 
+      damage_multiplier="0.2"
+      >
+    </HitboxComponent>
   </Base>
 </Entity>
