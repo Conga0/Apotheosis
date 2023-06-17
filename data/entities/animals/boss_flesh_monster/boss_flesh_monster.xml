@@ -451,6 +451,13 @@
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/fireskull/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
 	
     <MusicEnergyAffectorComponent
     	energy_target="1">

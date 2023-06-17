@@ -46,7 +46,7 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/boss_toxic_worm_minion.png",
 	  },
 	  {
-		name="Asthete of Heat",
+		name="Aesthete of Heat",
 		path="data/entities/animals/boss_fire_lukki/boss_fire_lukki.xml",
 		image="data/ui_gfx/animal_icons/boss_fire_lukki_phase2.png",
 	  },
@@ -61,14 +61,9 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/boss_flesh_monster.png",
 	  },
 	  {
-		name="Fire Ant",
-		path="data/entities/animals/ant_fire.xml",
-		image="data/ui_gfx/animal_icons/ant_fire.png",
-	  },
-	  {
-		name="Suffocation Ant",
-		path="data/entities/animals/ant_suffocate.xml",
-		image="data/ui_gfx/animal_icons/ant_fire.png",
+		name="Adult Centipede",
+		path="data/entities/animals/boss_adult_centipede/boss_adult_centipede.xml",
+		image="data/ui_gfx/animal_icons/giant_centipede.png",
 	  },
 	  {
 		name="Manager",
@@ -124,6 +119,16 @@ table.insert(ALL_ENTITIES, {
 		name="Psychic Bat",
 		path="data/entities/animals/ccc_bat_psychic.xml",
 		image="data/ui_gfx/animal_icons/ccc_bat_psychic.png",
+	  },
+	  {
+		name="Fire Ant",
+		path="data/entities/animals/ant_fire.xml",
+		image="data/ui_gfx/animal_icons/ant_fire.png",
+	  },
+	  {
+		name="Suffocation Ant",
+		path="data/entities/animals/ant_suffocate.xml",
+		image="data/ui_gfx/animal_icons/ant_fire.png",
 	  },
 	  {
 		name="Cat",
@@ -513,11 +518,6 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/watermage_greater.png",
 	  },
 	  {
-		name="Master of Puppetering",
-		path="data/entities/animals/wizard_wands.xml",
-		image="data/ui_gfx/animal_icons/wizard_wands.png",
-	  },
-	  {
 		name="Overzealous Polymaster",
 		path="data/entities/animals/wizard_z_poly_miniboss.xml",
 		image="data/ui_gfx/animal_icons/wizard_z_poly_miniboss.png",
@@ -551,6 +551,11 @@ table.insert(ALL_ENTITIES, {
 		name="Corrupt Master of Mana",
 		path="data/entities/animals/wizard_corrupt_manaeater.xml",
 		image="data/ui_gfx/animal_icons/wizard_corrupt_manaeater.png",
+	  },
+	  {
+		name="Corrupt Master of Puppetering",
+		path="data/entities/animals/wizard_wands.xml",
+		image="data/ui_gfx/animal_icons/wizard_wands.png",
 	  },
 	  {
 		name="Alchemic Weirdo",
@@ -601,6 +606,11 @@ table.insert(ALL_ENTITIES, {
 		name="Wand Tinkering Crystal",
 		path="data/entities/buildings/wandedit_crystal.xml",
 		image="data/ui_gfx/building_icons/wandedit_crystal.png",
+	  },
+	  {
+		name="Puppetering Crystal",
+		path="mods/apotheosis/files/entities/buildings/crystal_wandsteal.xml",
+		image="data/ui_gfx/building_icons/crystal_wandsteal.png",
 	  },
 	  {
 		name="Nova Stand",

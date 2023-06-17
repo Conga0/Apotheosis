@@ -1,4 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x, y = EntityGetTransform( entity_id )
@@ -11,5 +10,3 @@ do local v = targets[k]
         EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_wands_nodmg.xml", x, y )
     end
 end
-
-EntityKill( entity_id )

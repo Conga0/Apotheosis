@@ -1865,9 +1865,12 @@
 	density="10"
 	wang_curvature="0.4"
 	wang_noise_type="2"
+	solid_on_collision_material="apotheosis_blood_infectious"
+	solid_on_collision_splash_power="1"
 	solid_break_to_type="apotheosis_blood_infectious"
-	audio_physics_material_wall="organicbouncy"
-	audio_physics_material_solid="organicbouncy"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
 	>
 	<Graphics
 		texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh.png"
@@ -2361,6 +2364,33 @@
 	<Reaction probability="5"
 		input_cell1="apotheosis_eviltemple_stone" 		input_cell2="apotheosis_blood_infectious"
 		output_cell1="apotheosis_eviltemple_stone"	output_cell2="air"
+		>
+	</Reaction>
+
+	<!--Same thing for bloody stonework just for the corrupt flesh-->
+	<Reaction probability="100"
+		input_cell1="apotheosis_corrupt_flesh_static" 		input_cell2="[liquid]"
+		output_cell1="apotheosis_corrupt_flesh_static"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+
+	<Reaction probability="100"
+		input_cell1="apotheosis_corrupt_flesh_static" 		input_cell2="[slime]"
+		output_cell1="apotheosis_corrupt_flesh_static"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+
+	<!--Corrupt flesh likes to drip blood-->
+	<Reaction probability="10"
+		input_cell1="apotheosis_corrupt_flesh_static" 		input_cell2="air"
+		output_cell1="apotheosis_corrupt_flesh_static"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+
+	<!--Small chance for flesh to occasionally eat infectious blood-->
+	<Reaction probability="10"
+		input_cell1="apotheosis_corrupt_flesh_static" 		input_cell2="apotheosis_blood_infectious"
+		output_cell1="apotheosis_corrupt_flesh_static"	output_cell2="air"
 		>
 	</Reaction>
 	
