@@ -19,11 +19,9 @@ SetRandomSeed( second + minute, second + minute + 3 )
 
 --enemy_list = { "bubbles/freezing_liquid/bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "forsaken_eye", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "fairy_big_discord", "fairy_esoteric", "hideous_mass", "hisii_engineer", "hisii_giga_bomb", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_magic", "rat_birthday", "sentry", "star_child", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "triangle_gem", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "miniblob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "scavenger_smg", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", }
 
-if ModIsEnabled("new_enemies") and minute > 20 then
-    enemy_list = { "bubbles/freezing_liquid/bubble_liquid", "bubbles/ambrosia/bubble_liquid", "c_basebot_speeder_apotheosis", "blindgazer", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_cheap", "fairy_big", "fairy_big_discord", "fairy_esoteric", "hideous_mass", "hisii_engineer", "hisii_giga_bomb", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "mudman_friendly", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_magic", "rat_birthday", "sentry", "star_child", "slime_leaker", "slime_leaker_weak", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "triangle_gem", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "manus","polyp_gas","conduit","drone_trail","irtokki","tank_fire2","scavenger_poison_immunity","sporeling_tiny","sporeling","sporeling_large","wizard_madness","eradicator","mirror_physics","drake_snake","slime_ghoul","wizard_twin","lukki_weird","wizard_random","drone_beam","hazmat","radiobot","electrobot","cargobot","commander","sawbot","singularitor","wraith_void2","giantfirebug","alien","mutant2","smoke_bot","lukki_swamp2","fungus_swamp2","scavenger_electrocuter2","drone_face2","valkyrie2","wandmaster2","void_mask2","phantom_trapper","potionmaster2","toxicmage_acid2","toxicmage2","lost_soul_big","lost_soul","twig_grower","player_ai","menhir","knight","wizard_trip","worm_fungal","igu","chest_great_mimic","hybrid","scavenger_undercover","zombie_giant","head_statue_physics","fallen_alchemist","icemage_big2","cyborg","scavenger_laser","icicle_king","corrupt_alchemist","longleg_big","forgotten_alchemist","eldari_big","firemage_big","desulitor","alchaos","bloodmage_greater","fire_crawler","gazer_laser","menace","giant_energy","giant_alt","bloodmage_lesser","thou","giant_old","wizard_time","flesh_monster","wizard_earthquake","nova","ghuu","gonha","miner_alcohol","scavenger_alcohol","worm_eel","worm_robot","jellyfish","scavenger_radiolava","scavenger_compressor_robot","scavenger_turbo_robot","scavenger_gas_robot","slime_turret","enigma","flesh_wall","frog_bot","eye_bat","snowman","wraith_speed","phan","ooion","moal","mutant_blob","stone_crab","stalker_ceiling","dripper","driller","vine_monster","sneeker","ground_terror","bouncer","fungus_spore","stalker","monkey","invisiman","eye_monster","scavenger_robot","scavenger_compressor","scavenger_turbo","scavenger_gas","scavenger_oiler","hairling","goomonster","face_worm","shapeshifter","wyrm","lukki_white","cobra","draghoul","imp","lukki_blue","lukki_red","scavenger_trigger", "lurker2","crawler","bot","laserbot","robot","bluemancer","lavashooter","gigashooter","archer","axeman","bigfly","bloodskull","drone2","earthskull","electricskull","earthmage","polyshooter","chaoticpolyshooter","watermonster","acidmonster","bloodmonster","scavenger_plasma","fireflower","creeper","bloom_ceiling","book","darkghost2","ent","eyeling","ghostling","icemage","icicle","jungle_worm","long_ghost","nautilus","nightmare","skeleton","skullmage","spider","spooky_ghost","stone_physics","summoner" }
-else
-    enemy_list = { "bubbles/freezing_liquid/bubble_liquid", "bubbles/ambrosia/bubble_liquid", "c_basebot_speeder_apotheosis", "blindgazer", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_cheap", "fairy_big", "fairy_big_discord", "fairy_esoteric", "hideous_mass", "hisii_engineer", "hisii_giga_bomb", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "mudman_friendly", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_magic", "rat_birthday", "sentry", "star_child", "slime_leaker", "slime_leaker_weak", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "triangle_gem", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield" }
-end
+
+enemy_list = { "bubbles/freezing_liquid/bubble_liquid", "bubbles/ambrosia/bubble_liquid", "c_basebot_speeder_apotheosis", "blindgazer", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_cheap", "fairy_big", "fairy_big_discord", "fairy_esoteric", "hideous_mass", "hisii_engineer", "hisii_giga_bomb", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "mudman_friendly", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_magic", "rat_birthday", "sentry", "star_child", "slime_leaker", "slime_leaker_weak", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "triangle_gem", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield" }
+
 
 enemy_list_from = { "bubbles/freezing_liquid/bubble_liquid", "bubbles/ambrosia/bubble_liquid", "c_basebot_speeder_apotheosis", "blindgazer", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_cheap", "fairy_big", "fairy_big_discord", "fairy_esoteric", "hideous_mass", "hisii_engineer", "hisii_giga_bomb", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "mudman_friendly", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_magic", "rat_birthday", "sentry", "star_child", "slime_leaker", "slime_leaker_weak", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "triangle_gem", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "miniblob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "scavenger_smg", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", "hideous_mass_red", "tree_tall", }
 
@@ -134,6 +132,9 @@ function creature_shift( entity, x, y, debug_no_limits )
         local content = ModTextFileGetContent("data/entities/animals/" .. target2 .. ".xml")
         local xml = nxml.parse(content)
         local creature_name_get = xml.attr.name
+        local creature_ragdoll_get = xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_filenames_file or false
+        local creature_ragdoll_material_get = xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_material or "meat"
+
 
 
 
@@ -245,13 +246,38 @@ function creature_shift( entity, x, y, debug_no_limits )
             icon_name = "hidden/" .. icon_name
         end
 
+        --[[
+        if creature_ragdoll_get then
+            local player_id_ragdoll = EntityGetWithTag("player_unit")[1]
+            local pos_x, pos_y = EntityGetTransform(player_id_ragdoll)
+            LoadRagdoll(creature_ragdoll_get, pos_x, pos_y - 60, creature_ragdoll_material_get, 1, 0, 0 )
+        end
+
+        --Experimental setting to use the default creature shift icon (red sand) but spawn the creature's ragdoll above the player
+        --Feels weird, unintuitive (even when I knew how it functioned)
+        --Having the creature in the hud ui is a lot more intuitive, even if it'll require a ton of manually generated icons to look 'proper'
+        --Which.. is still on the todo.. bleh
+        --A ton of work whether it's automated or not
+        --And honestly, it'd probably be less work doing it manually
+        --
+        --Hey, you, yeah you from the future
+        --I know you're reading this
+        --Cleanup these unnecessary variables!
+        --Past me didn't do it because someone else might wanna snoop the code and give a golden idea
+        --
+        --Note to past me from slightly less past me, screw you man
+        ]]--
+
+        local desc_1 = GameTextGetTranslatedOrNot("$status_apotheosis_creature_shifted_desc")
+        local creature_shift_description = table.concat({desc_1,"\n",from_creature_name})
+
         if add_icon then
             local icon_entity = EntityCreateNew( "creature_shift_ui_icon" )
             EntityAddComponent( icon_entity, "UIIconComponent", 
             { 
-                name = "$status_reality_mutation",
-                description = "$statusdesc_reality_mutation",
-                --icon_sprite_file = "mods/Apotheosis/files/ui_gfx/status_indicators/creature_shift.png"
+                name = "$status_apotheosis_creature_shifted_name",
+                description = "$status_apotheosis_creature_shifted_desc",
+                --icon_sprite_file = "mods/Apotheosis/files/ui_gfx/status_indicators/creature_shift_perk.png"
                 icon_sprite_file = "data/ui_gfx/animal_icons/" .. icon_name .. ".png"
             })
             local targets = EntityGetWithTag( "player_unit" )
@@ -263,6 +289,18 @@ function creature_shift( entity, x, y, debug_no_limits )
             end
         end
 
+        --[[
+        --  Updates Creature description to the new creature name
+        local targets = EntityGetInRadius( x, y, 30 )
+        for i,v in ipairs( targets ) do
+            if ( v ~= entity_id ) and ( EntityGetName( v ) == "creature_shift_ui_icon" ) then
+                local comp = EntityGetFirstComponent( v, "UIIconComponent" )
+                ComponentSetValue2( comp, "description", creature_shift_description )
+            end
+        end
+        ]]--
+
+        --  Updates Creature icon to the new creature icon
         local targets = EntityGetInRadius( x, y, 30 )
         for i,v in ipairs( targets ) do
             if ( v ~= entity_id ) and ( EntityGetName( v ) == "creature_shift_ui_icon" ) then

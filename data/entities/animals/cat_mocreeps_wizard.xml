@@ -95,6 +95,7 @@
 
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow.lua"
+		script_damage_received="mods/Apotheosis/files/scripts/animals/cat_meow_hurt.lua"
 		execute_every_n_frame="60"
 		>
 	</LuaComponent>

@@ -22,8 +22,9 @@ local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
 --Spawn Bosses
 
 --This was a coding marathon and a half, huge shoutouts to Horscht for the help on this one.
---And Zathers for making this seductive lua file
+--And Zathers for making this lua file
 --Note: This has been moved lower down for cleaner organisation & implementing mod compatibility
+--Note: 16/06/2023 Some boss spawns may be moved into biome files as well
 
 
 
@@ -448,11 +449,11 @@ spell_apotheosis_critical_drunk_desc,"Make a projectile always do a critical hit
 spell_apotheosis_affluence_name,"Affluence",,,,,,,,,,,,,
 spell_apotheosis_affluence_desc,"Creatures hit by your projectiles drop extra gold",,,,,,,,,,,,,
 spell_apotheosis_liquidsphere_acid_name,"Sphere of Acid",,,,,,,,,,,,,
-spell_apotheosis_liquidsphere_acid_desc,"Cast a powerful sphere of acid, melting everything in it's path",,,,,,,,,,,,,
+spell_apotheosis_liquidsphere_acid_desc,"Cast a powerful sphere of acid, melting everything in its path",,,,,,,,,,,,,
 spell_apotheosis_liquidsphere_water_name,"Sphere of Water",,,,,,,,,,,,,
-spell_apotheosis_liquidsphere_water_desc,"Cast an enduring sphere of water, soaking everything in it's path",,,,,,,,,,,,,
+spell_apotheosis_liquidsphere_water_desc,"Cast an enduring sphere of water, soaking everything in its path",,,,,,,,,,,,,
 spell_apotheosis_liquidsphere_teleportatium_name,"Sphere of Teleportatium",,,,,,,,,,,,,
-spell_apotheosis_liquidsphere_teleportatium_desc,"Cast a malicious sphere of teleportatium, relocating everything in it's path",,,,,,,,,,,,,
+spell_apotheosis_liquidsphere_teleportatium_desc,"Cast a malicious sphere of teleportatium, relocating everything in its path",,,,,,,,,,,,,
 spell_apotheosis_star_shot_name,"Star Shot",,,,,,,,,,,,,
 spell_apotheosis_star_shot_desc,"Fire two starry projectiles with a bright light",,,,,,,,,,,,,
 spell_apotheosis_hex_water_name,"Vulnerability Hex - Water",,,,,,,,,,,,,
@@ -607,6 +608,8 @@ status_apotheosis_infusion_hex_water_name,"Water Hex Infusion",,,,,,,,,,,,,
 status_apotheosis_infusion_hex_water_desc,"Your attacks inflict Abyssal Hex.",,,,,,,,,,,,,
 status_apotheosis_no_flight_name,"Grounded",,,,,,,,,,,,,
 status_apotheosis_no_flight_desc,"You are unable to levitate.",,,,,,,,,,,,,
+status_apotheosis_creature_shifted_name,"The evolution has shifted",,,,,,,,,,,,,
+status_apotheosis_creature_shifted_desc,"You sense life is no longer what it used to be.",,,,,,,,,,,,,
 statusdesc_curse_wither_projectile,You take 100% extra damage from projectiles.,Вы получаете 100% дополнительного урона от снарядов.,Você recebe mais 100% de dano de projéteis.,Recibes 100 % más de daño de proyectiles.,Du erleidest 100 % zusätzlichen Schaden durch Projektile.,Vous subissez 100 % de dégâts supplémentaires des projectiles.,Subisci il 100% in più di danni da proiettili.,Otrzymujesz 100% więcej obrażeń od pocisków.,投射物额外对你造成 100% 伤害。,放射物から100%の追加ダメージを受ける。,발사체로부터 대미지를 100% 더 받습니다.,,,
 statusdesc_curse_wither_explosion,You take 100% extra damage from explosions.,Вы получаете 100% дополнительного урона от взрывов.,Você recebe mais 100% de dano de explosões.,Recibes 100 % más de daño de explosiones.,Du erleidest 100 % zusätzlichen Schaden durch Explosionen.,Vous subissez 100 % de dégâts supplémentaires des explosions.,Subisci il 100% in più di danni da esplosioni.,Otrzymujesz 100% więcej obrażeń od wybuchów.,爆炸额外对你造成 100% 伤害。,爆破から100%の追加ダメージを受ける。,폭발로부터 대미지를 100% 더 받습니다.,,,
 statusdesc_curse_wither_melee,You take 100% extra damage from melee attacks.,Вы получаете 100% дополнительного урона от рукопашных атак.,Você recebe mais 100% de dano de ataques corpo a corpo.,Recibes 100 % más de daño de ataques cuerpo a cuerpo.,Du erleidest 100 % zusätzlichen Schaden durch Nahkampfangriffe.,Vous subissez 100 % de dégâts supplémentaires des attaques de mêlée.,Subisci il 100% in più di danni da mischia.,Otrzymujesz 100% więcej obrażeń od ataków wręcz.,近战攻击额外对你造成 100% 伤害。,近接攻撃から100%の追加ダメージを受ける。,근접 공격으로부터 대미지를 100% 더 받습니다.,,,
@@ -1018,17 +1021,14 @@ end
 
 
 -- Custom Perk support injection
-
 ModLuaFileAppend( "data/scripts/perks/perk_list.lua", "mods/Apotheosis/files/scripts/perks/custom_perks.lua" )
 
 
 -- Custom Status support injection
-
 ModLuaFileAppend( "data/scripts/status_effects/status_list.lua", "mods/Apotheosis/files/scripts/status_effects/status_effects.lua" )
 
 
 -- Custom Audio Support
-
 ModRegisterAudioEventMappings("mods/Apotheosis/files/audio/GUIDs.txt")
 
 
@@ -1403,6 +1403,7 @@ end
 
 --Master of Masters master spawner insertion, allows him to spawn Master of Mallards & Master of Immortality too.. He doesn't appreciate Master of Trolling too much to invite him in
 --Note, this has been moved to a file override, could probably use string.gsub to fix that
+--Note 17/07/2023, string.gsub has been used
 
 
 
@@ -1561,6 +1562,7 @@ if seasonalSetting == true then
     end
     if Random(1,randomCap) == 1 then
       ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
+      ModLuaFileAppend( "mods/apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
       randomCap = randomCap + 1
     end
     if Random(1,randomCap) == 1 then

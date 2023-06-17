@@ -20,6 +20,9 @@
 {a16b29b2-f6ca-4152-94e4-e2975761674e} event:/mocreeps_audio/kittycat/meow_01
 {4490ae24-a5c7-47b3-a633-d8123ff0b9b6} event:/mocreeps_audio/kittycat/meow_02
 {c266f1c5-0e3c-4d6a-a3b6-24b26716a3bb} event:/mocreeps_audio/kittycat/meow_03
+{2356d7a1-72da-48a0-8638-6ea8db38b586} event:/mocreeps_audio/kittycat/sora_hurt_02
+{38e77bff-2f49-4d3f-9adf-d364e9f4651f} event:/mocreeps_audio/kittycat/sora_hurt_04
+{a0af0a27-cbbc-48c7-be9f-95fd3e01d47c} event:/mocreeps_audio/kittycat/sora_hurt_05
 {ce957986-50d8-40a1-ba2b-f4bbb38ba5a0} event:/mocreeps_audio/kittycat/sora_meow_01
 {bfd65cb5-0b77-4234-a09c-db0b080dabe9} event:/mocreeps_audio/kittycat/sora_meow_02
 {fea71ef6-ce88-4b1d-aa00-0649ff1d8dc1} event:/mocreeps_audio/kittycat/sora_meow_03
@@ -29,6 +32,7 @@
 {98453238-4eb8-4042-9c7b-00c8d2f4b2f4} event:/mocreeps_audio/kittycat/voc_attack_02
 {30ebb0f8-1ac5-467b-84cb-9aefe7ae8fc1} event:/mocreeps_audio/kittycat/voc_attack_03
 {cd9abbbf-a0fe-4a73-9db4-e4073e5f24dd} event:/mocreeps_audio/kittycat/voc_attack_purr_01
+{3435f967-aeee-4f1a-be08-d233570dd5a1} event:/mocreeps_audio/magic/heretic_deathlaser
 {f6b37c19-e125-4d10-96a6-848850e2086c} event:/mocreeps_audio/reverberation/create
 {2b3a6fc5-24e7-4321-8b89-a84daa849a8b} event:/mocreeps_audio/spells/explosion_magical_01
 {c677ecfb-c7de-4b7b-94d2-ab3fab7f0e3b} event:/mocreeps_audio/spells/teleport_alt

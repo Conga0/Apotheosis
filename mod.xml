@@ -1,6 +1,6 @@
 	<Mod
-		name="Apotheosis (Dev Build)"
-		description="WORK IN PROGRESS, goal is to massively expand world map with new content."
+		name="Apotheosis (Beta)"
+		description="A massive world map expansion with new content. \nMade with love by the help of many modders. \n\nNew updates available at: https://github.com/Conga0/Apotheosis"
 		tags="creatures,perks,spells,gameplay,audio,streaming integration,bosses,perks,graphics,items,funny"
 		dont_upload_folders="FOLDER_TO_IGNORE1|FOLDER_TO_IGNORE2"
 		dont_upload_files="FILE_TO_IGNORE1|FILE_TO_IGNORE2"

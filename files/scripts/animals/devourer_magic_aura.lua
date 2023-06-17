@@ -1,10 +1,10 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
 local r = 105
+--local converted = false
 
---I feel thise frozen check could be optimised somehow.. but I am unsure how
+--I feel this frozen check could be optimised somehow.. but I am unsure how
 
 local frozenTest = GameGetGameEffectCount( entity_id, "FROZEN" )
 if frozenTest <= 0 then
@@ -17,4 +17,21 @@ if frozenTest <= 0 then
 			EntityAddChild( v, eid )
 		end
 	end
+
+	--[[
+	--Would perform better if put on the wandstone itself
+	local stones = EntityGetInRadiusWithTag(x,y,20,"poopstone")
+	for k=1,#stones
+	do local v = stones[k]
+		local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
+		if EntityGetParent(v) == 0 then
+			if ComponentGetValue2(comp,"image_file") == "data/items_gfx/goldnugget_01.png" and converted == false then
+				converted = true
+					EntityLoad("data/entities/animals/planes/devourer_magic.xml",x,y)
+					EntityKill(entity_id)
+				break
+			end
+		end
+	end
+	]]--
 end

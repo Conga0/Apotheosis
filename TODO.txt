@@ -24,6 +24,7 @@ Note: Extol *might* be willing to help program this? hit him up when it's time
 
 
 Add custom SFX to heretic
+Meant to play as it does pulses? :SBHmm:
 https://discord.com/channels/@me/1013670507146653767/1087217718572371988
 
 Finish or Remove Spine Worm
@@ -34,13 +35,13 @@ Remove the Angelling + Devilling statue
 Custom creature shifting icon
 Could learn C#, study priskip's program to make icons in mass
 
-Improve Wall of Fire's ui icon
-Improve Jumper Cable's visuals
-
 Gateway sprite, needs:
 A large stone arch that can fit a portal inside
 An alternative shattered stone arch sprite for if you fail the requirements
 
 Guarantee Mechanical Worm spawn on fury's playthrough, maybe some other stuff too
+Remove Reflective Revenge spawn flag requirements if we're doing this
 
-Implement cat hurt noises
+AC CoV/Healing Bolt is still infinite in hardcore mode
+
+Warning message if mod is loaded alongside MoreCreeps (Don't do that!)

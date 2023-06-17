@@ -75,7 +75,7 @@ local apotheosis_perkappends = {
     {
         id = "APOTHEOSIS_REVENGE_REFLECTIVE",
         id_matchup = "REVENGE_BULLET",
-        unlock_flag = "boss_centipede",
+        unlock_flag = "boss_centipede", --despite what you may think, this is Kolmisilma, not the adult centipede
         ui_name = "$perk_apotheosis_revenge_reflective",
         ui_description = "$perk_apotheosis_revenge_reflective_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/revenge_reflection_perk_ui.png",
@@ -234,7 +234,7 @@ local apotheosis_perkappends = {
                     "velocity_max_y"
                 }
 
-                --Default speed values Mina starts with, multiplid to be a 60% boost in ComponentSetValue
+                --Default speed values Mina starts with, multiplied to be a 40% boost in ComponentSetValue
                 local defaults = {
                     -95,
                     56,
@@ -251,14 +251,14 @@ local apotheosis_perkappends = {
                 for k=1,#values
                 do v = values[k]
                     local val = ComponentGetValue2(comp,v)
-                    ComponentSetValue2(comp,v,val + (defaults[k] * 0.6))
+                    ComponentSetValue2(comp,v,val + (defaults[k] * 0.4))
                 end
             end
         end,
         func_enemy = function( entity_perk_item, entity_who_picked )
             LoadGameEffectEntityTo(entity_who_picked, "mods/Apotheosis/files/entities/misc/perks/perk_haste.xml")
         end,
-        _remove = function(entity_who_picked)
+        _remove = function(entity_who_picked) --Sets movement data to default values
             local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
             if comp ~= nil then
                 local values = {
@@ -294,7 +294,7 @@ local apotheosis_perkappends = {
                 end
             end
         end,
-        func_remove = function( entity_who_picked )
+        func_remove = function( entity_who_picked ) --Sets movement data to default values
             local comp = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "CharacterPlatformingComponent")
             if comp ~= nil then
                 local values = {

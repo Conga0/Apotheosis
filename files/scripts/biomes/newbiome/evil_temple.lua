@@ -87,7 +87,7 @@ g_small_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/crypt/enlightened_alchemist.xml"
+		entity 	= "data/entities/animals/evil_temple/enlightened_alchemist.xml"
 	},
 	{
 		prob   		= 0.2,

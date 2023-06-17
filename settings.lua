@@ -93,7 +93,7 @@ mod_settings =
     id = "congacat_cat_immortal",
     ui_name = congacat_cat_immortal_name,
     ui_description = congacat_cat_immortal_desc,
-    value_default = true,
+    value_default = false,
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
