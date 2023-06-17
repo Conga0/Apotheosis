@@ -835,7 +835,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MASS_BURROW",
-        id_matchup  = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
+        id_matchup  = "WORM_RAIN",
         name 		= "$spell_apotheosis_mass_burrow_name",
         description = "$spell_apotheosis_mass_burrow_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_burrow.png",
@@ -1074,7 +1074,7 @@ local apotheosis_spellappends = {
         spawn_probability = "0.7,0.8,0.8,0.7,0.6,0.4,0.2", -- X_RAY
         price = 120,
         mana = 120,
-        --max_uses    = 3, 
+        --max_uses    = 30, 
         never_unlimited = false,
         action 		= function()
             add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml")

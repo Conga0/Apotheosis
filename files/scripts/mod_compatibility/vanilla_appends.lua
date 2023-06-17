@@ -365,7 +365,7 @@ do -- Fix Swapper Projectiles stretching weirdly (only horizontal instead of all
   ModTextFileSetContent(path, content)
 end
 
-do -- Limit enemies to dropping 100k gold at any given time, prevents lag in NG+ runs
+do -- Limit enemies to dropping 300k gold at any given time, prevents lag in NG+ runs
   local path = "data/scripts/items/drop_money.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 100000 then money = 100000 end local x, y = EntityGetTransform( entity )")
@@ -499,6 +499,9 @@ giantshooter]]--[[, "giantshooter_weak" .. "\n" .. "giantshooter" .. "\n" .. "mi
   ModTextFileSetContent(path, content)
 end
 ]]--
+
+--Might be a good learning exercise to convert the list_override.txt file into a table?
+--mmmmmmmmmmm
 
 
 do  --File override approach for organising animal icons
