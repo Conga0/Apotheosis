@@ -1,12 +1,7 @@
-dofile("data/scripts/lib/utilities.lua")
 
 --function reload_creature_shifts( entity, x, y, debug_no_limits )
 
     local iter_count = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
-
-
-
-
 
     --Debugging shift, forces all Forsaken Eyes to be turned into Blind Gazers
     --target = "blindgazer"

@@ -39,6 +39,7 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    --[[
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY",
         id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY",
@@ -59,9 +60,10 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    ]]--
     {
         id          = "APOTHEOSIS_ICEBALL_RAY",
-        id_matchup  = "APOTHEOSIS_DYNAMITE_RAY",
+        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY",
         name 		= "$spell_apotheosis_thrower_ice_ball_name",
         description = "$spell_apotheosis_thrower_ice_ball_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray.png",
@@ -139,6 +141,7 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    --[[
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
         id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
@@ -159,9 +162,10 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    ]]--
     {
         id          = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
-        id_matchup  = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
+        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_ice_ball_enemy_name",
         description = "$spell_apotheosis_thrower_ice_ball_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray_enemy.png",
@@ -1074,7 +1078,7 @@ local apotheosis_spellappends = {
         spawn_probability = "0.7,0.8,0.8,0.7,0.6,0.4,0.2", -- X_RAY
         price = 120,
         mana = 120,
-        --max_uses    = 30, 
+        max_uses    = 30, 
         never_unlimited = false,
         action 		= function()
             add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml")
@@ -1846,7 +1850,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_burst.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
 		spawn_requires_flag = "card_unlocked_pyramid",
-		type 		= ACTION_TYPE_MODIFIER,
+		type 		= ACTION_TYPE_DRAW_MANY,
 		recursive	= true,
 		spawn_level                       = "2,3,4,5,6", -- BURST_4
 		spawn_probability                 = "0.4,0.5,0.6,0.6,0.6", -- BURST_4

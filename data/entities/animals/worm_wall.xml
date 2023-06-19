@@ -55,7 +55,7 @@
 		blood_material="blood_worm"
 		blood_spray_material="blood_worm"
 		blood_multiplier="0.25"
-		hp="280"
+		hp="240"
 		is_on_fire="0" 
 		mAirAreWeInWater="0" 
 		mFallCount="0" 

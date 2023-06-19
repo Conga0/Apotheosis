@@ -185,7 +185,7 @@
         prob           = 0.2,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/animals/phantom_c_apotheosis.xml"
+        entity     = "data/entities/animals/crypt/phantom_c_apotheosis.xml"
     })
     
 

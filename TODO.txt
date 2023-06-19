@@ -21,19 +21,19 @@ Fix Seekers permanently stunning you to death with electric damage if they sit o
 Herobrine only spawns at 7pm to 5am (when it's dark outside)
 Herobrine rework
 Note: Extol *might* be willing to help program this? hit him up when it's time
+Reduce spawn chance dramatically after the player's initial encounter with it
+Add a time check to the lua script itself too
 
 
 Add custom SFX to heretic
 Meant to play as it does pulses? :SBHmm:
+Doublecheck the audio level
 https://discord.com/channels/@me/1013670507146653767/1087217718572371988
 
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
 Remove the Angelling + Devilling statue
-
-Custom creature shifting icon
-Could learn C#, study priskip's program to make icons in mass
 
 Gateway sprite, needs:
 A large stone arch that can fit a portal inside
@@ -45,4 +45,9 @@ Remove super stendari/super watermage spawns in floor 1
 
 AC CoV/Healing Bolt is still infinite in hardcore mode
 
-Warning message if mod is loaded alongside MoreCreeps (Don't do that!)
+"New mod Apotheosis is out now!"
+MoCreeps
+Congas Cats
+
+Check if Wall Worms spawn on screen, or off screen
+Might need accel + blackhole/sphere of acid to check

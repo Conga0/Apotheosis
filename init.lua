@@ -534,7 +534,7 @@ book_apotheosis_orbbook_12_description,"The world shook asunder and cried in nei
 book_apotheosis_orbbook_13_name,"Emerald Tablet - Volume XII",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in an infinitely empty field, Divinity could hear but not see any. \nDivinity assumed they would be standing within a crowd, yet they observed in solitude. \nDivinity brought preference to the world, and deemed some creations superior to others in their lone judgement \nDivinity believed the world to be better with their touch, but without contention it was improvable. \nTo those who seek knowledge not true but divine, blood must fall upon one's hands.",,,,,,,,,,,,,
 book_apotheosis_orbbook_14_name,"Emerald Tablet - Volume XIII",,,,,,,,,,,,,
-book_apotheosis_orbbook_14_description,"The bird cackled and sang\nWhat good is one's time if it is without encouragement?\nTo those who dream when they feel, they know not the encouragement\nof knowing what to do before their dream and how much.\nTo those who plan their dream ahead of time, when and where,\nthey know what they can do and what time they have to do it.\nThe bird cackled once more before it flew off.\nIt's wisdom soaked into the minds of those who heard it, \nas water soaked into glass",,,,,,,,,,,,,
+book_apotheosis_orbbook_14_description,"The bird cackled and sang\nWhat good is one's time if it is without encouragement?\nTo those who dream when they feel, they know not the encouragement\nof knowing what to do before their dream and how much.\nTo those who plan their dream ahead of time, when and where,\nthey know what they can do and what time they have to do it.\nThe bird cackled once more before it flew off.\nIt's wisdom soaked into the minds of those who heard it, \nas water soaked into glass.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_workinprogress_description,"Seeker of knowledge, your nose is on the right path \nyet some secrets are yet to be revealed.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
@@ -557,7 +557,7 @@ perk_apotheosis_no_recoil_description,"Your spells have no recoil.",,,,,,,,,,,,,
 perk_apotheosis_void,"Void",,,,,,,,,,,,,
 perk_apotheosis_void_description,"Gain immense power, but the void grows jealous of your options.",,,,,,,,,,,,,
 perk_apotheosis_copy_spells,"Copy Spells",,,,,,,,,,,,,
-perk_apotheosis_copy_spells_description,"Copy the Uncopiable.",,,,,,,,,,,,,
+perk_apotheosis_copy_spells_description,"Copy the Uncopyable.",,,,,,,,,,,,,
 perk_apotheosis_curse_mana,"Endless Mana",,,,,,,,,,,,,
 perk_apotheosis_curse_mana_reveal,"Curse of Mana",,,,,,,,,,,,,
 perk_apotheosis_curse_mana_description,"Your wands feel terribly unstable.. but have infinite mana!",,,,,,,,,,,,,
@@ -647,7 +647,7 @@ curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to
 
 --Yggdrasil's Knowledge (The knowledge of life)
 --
---Custom Spell Border for one-off spells would be sick, even if it's just for the one
+--Custom Spell Border for one-off spells would be sick
 --
 --Previous contact damage description
 --perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks but enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
@@ -718,6 +718,7 @@ ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/custom_materials.x
 ]]--
 function OnMagicNumbersAndWorldSeedInitialized()
 		ModLuaFileAppend( "data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua" )
+		ModLuaFileAppend( "data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua" )
 		ModLuaFileAppend( "data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua" )
 end
 
@@ -976,6 +977,7 @@ if ModIsEnabled("worse_enemies") then
   local xml = nxml.parse(content)
   xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse.xml"
   xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file = "data/entities/projectiles/meteor_green.xml"
+  xml:first_of("Base"):first_of("DamageModelComponent").attr.hp = "1.0"
   xml:add_child(nxml.parse([[
     <SpriteComponent 
       _tags="character" 
@@ -1149,20 +1151,6 @@ local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
 attrs.materials_that_damage = attrs.materials_that_damage .. ",water,water_fading"
 attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.0005,0.0005"
 ModTextFileSetContent("data/entities/animals/spitmonster.xml", tostring(xml))
-
-
-
--- Creature shift fix upon reloading world
-function OnPlayerSpawned( player_entity )
-	local x, y = EntityGetTransform( player_entity ) --This was just "player" by default but I feel like something broke.. I hope not
-	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
-
-  --[[
-    if ModIsEnabled("Ride Minecart") == true then
-    GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Mo Creeps should function as normal otherwise though.")
-  end
-  ]]--
-end
 
 --Allows for essence of fungus to be turned into a stone
 local content = ModTextFileGetContent("data/entities/buildings/essence_eater.xml")
@@ -1533,17 +1521,7 @@ if seasonalSetting == true then
     --Replace big fairies with non-lethal versions.
     local content = ModTextFileGetContent("data/entities/animals/seasonal/fairy_big.xml")
     ModTextFileSetContent("data/entities/animals/fairy_big.xml", content)
-
-    --Randomly cause a fungal shift/creature shift at any time, at random.
-    function OnPlayerSpawned( player_entity )
-      local x, y = EntityGetTransform( player_entity )
-      local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
-      EntityAddChild( player_entity, cid )
-      local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_creature_curse_slow.xml", x, y)
-      EntityAddChild( player_entity, cid )
-      local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/creature_shift_april_fools_bootup.xml", x, y) --20 random creature shifts at the start of the run
-      EntityAddChild( player_entity, cid )
-    end
+    
     local randomCap = 10
 
     SetRandomSeed( hour + minute, hour + day )
@@ -1586,10 +1564,6 @@ if seasonalSetting == true then
     ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
 
 
-    --Happy april fools <3
-    function OnPlayerSpawned()
-      GamePrint("$sign_apotheosis_aprilfools_intro")
-    end
 
     --Remember to check global spawn files, pandora's chest spawnrate boost is managed there
 
@@ -1627,6 +1601,7 @@ ModLuaFileAppend( "data/scripts/biomes/vault_frozen.lua", "mods/Apotheosis/files
 ModLuaFileAppend( "data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Power Plant
 ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Heaven & Hell, but for this specific lua file append I'm only adding to hell
 
+ModLuaFileAppend( "mods/apotheosis/files/scripts/biomes/newbiome/evil_temple.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --The Vault
 
 --ModLuaFileAppend( "data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/weather/weather_wet_append.lua" ) --Attempt to insert shaman into biome wet modifier spawn additions. Started eating up too much time.
 --If you know how to do this, please let me know. -Conga Lyne
@@ -1760,4 +1735,42 @@ if ModSettingGet( "Apotheosis.exp_poly" ) == true then
       dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
     end
   end
+end
+
+--Randomly cause a fungal shift/creature shift at any time, at random.
+--And print Happy April Fools at the start of the run
+--Happy april fools <3
+function AprilFoolsPlayerSpawn()
+  if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then
+    local x, y = EntityGetTransform( player_entity )
+    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
+    EntityAddChild( player_entity, cid )
+    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_creature_curse_slow.xml", x, y)
+    EntityAddChild( player_entity, cid )
+    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/creature_shift_april_fools_bootup.xml", x, y) --20 random creature shifts at the start of the run
+    EntityAddChild( player_entity, cid )
+
+    GamePrint("$sign_apotheosis_aprilfools_intro")
+  end
+end
+
+
+-- Creature shift fix upon reloading world
+-- Keep this at the bottom of the file, and only let one of this function exist, silly
+function OnPlayerSpawned( player_entity )
+	local x, y = EntityGetTransform( player_entity ) --This was just "player" by default but I feel like something broke.. I hope not
+	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
+
+  --Previously a game print to warn against Ride Minecarts
+  --[[if ModIsEnabled("Ride Minecart") == true then
+    GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
+  end]]--
+
+  --Warns the player if Mo Creeps is enabled, to shut it off
+  if ModIsEnabled("Mo_Creeps") then
+    GamePrintImportant("WARNING: MO CREEPS IS ENABLED","Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+  end
+
+  --Handles AprilFools related code
+  AprilFoolsPlayerSpawn()
 end

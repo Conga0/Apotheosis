@@ -2066,15 +2066,19 @@
 		>
 	</Graphics>
 	<ParticleEffect
-		vel.y="17.14"
-		vel_random.min_y="-100"
-		vel_random.max_y="25.71"
+		vel.y="-14.28"
+		vel_random.min_x="-0.285"
+		vel_random.max_x="0.285"
+		vel_random.min_y="-11.43"
+		vel_random.max_y="11.43"
 		lifetime.min="0"
-		gravity.y="-8.57"
+		lifetime.max="20"
+		gravity.y="0"
 		render_on_grid="1"
-		draw_as_long="1"
-		friction="-3.429"
-		probability="0.0518"
+		airflow_force="0.1146"
+		airflow_scale="-0.028"
+		probability="0.028"
+		count.min="0"
 	>
 	</ParticleEffect>
   </CellData>

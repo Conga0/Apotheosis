@@ -157,6 +157,7 @@ do --Boosts Health of various creatures
     "hideous_mass",
     "hideous_mass_red",
     "tentacler_big",
+    "phantom_c_apotheosis",
     "triangle_gem",
     "wizard_firemage_greater",
   }
