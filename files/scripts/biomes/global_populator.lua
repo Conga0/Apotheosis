@@ -1,97 +1,133 @@
-    --- Rare Bubbles
     
-
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.012,
-        min_count    = 1,
-        max_count    = 1,    
-        entity     = "data/entities/animals/bubbles/ambrosia/bubble_liquid.xml"
-    })
-
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.0008,
-        min_count    = 1,
-        max_count    = 1,    
-        entity     = "data/entities/animals/bubbles/alchemicprecursor/bubble_liquid.xml"
-    })
-
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.0012,
-        min_count    = 1,
-        max_count    = 1,    
-        entity     = "data/entities/animals/bubbles/healthium/bubble_liquid.xml"
-    })
-
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.0006,
-        min_count    = 1,
-        max_count    = 1,    
-        entity     = "data/entities/animals/bubbles/voidliquid/bubble_liquid.xml"
-    })
+--If the player has over 1,000 max hp, soft-cap heart spawns by disabling random heart generation in the wild
+---@diagnostic disable-next-line: lowercase-global
+function player_health_check(player_id)
+    local player_id = EntityGetWithTag("player_unit")[1]
+    if player_id ~= 0 then
+        local comp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
+        if comp ~= nil then
+            if ComponentGetValue2(comp,"max_hp") >= 40 then
+                return false
+            else
+                return true
+            end
+        else return true end
+    else return true end
+end
 
 
 
-    -- Chaotic Polymorphing Crystal
-
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.006,
-        min_count    = 1,
-        max_count    = 1,
-        entity     = "data/entities/buildings/polymorph_crystal_chaotic.xml"
-    })
-
-    -- Wand Editting Crystal
-
-    table.insert(g_small_enemies,
-    {
-        prob           = 0.01,
-        min_count    = 1,
-        max_count    = 1,
-        entity     = "data/entities/buildings/wandedit_crystal.xml"
-    })
-
-    table.insert(g_small_enemies,
-    {
-        prob           = 0.03,
-        min_count    = 1,
-        max_count    = 1,
-        entity     = "data/entities/buildings/wandedit_crystal.xml",
-		spawn_check = function() 
-			local year, month, day = GameGetDateAndTimeLocal()
-			
-            if ( month == 7 ) and (( day >= 20 ) and ( day <= 22 )) then
-				return true
-			else
-				return false 
-			end
-		end,
-    })
 
 
-    -- New Game +
-    
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.010,
-        min_count    = 1,
-        max_count    = 1,
-        entity     = "data/entities/buildings/polymorph_crystal_chaotic.xml",
-        ngpluslevel = 1
-    })
+--- Rare Bubbles
 
-    table.insert(g_big_enemies,
-    {
-        prob           = 0.03,
-        min_count    = 1,
-        max_count    = 1,
-        entity     = "data/entities/buildings/manadrain_crystal.xml",
-        ngpluslevel = 1
-    })
+table.insert(g_big_enemies,
+{
+    prob           = 0.012,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/bubbles/ambrosia/bubble_liquid.xml"
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.0008,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/bubbles/alchemicprecursor/bubble_liquid.xml"
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.0012,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/bubbles/healthium/bubble_liquid.xml"
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.0006,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/bubbles/voidliquid/bubble_liquid.xml"
+})
+
+
+
+-- Chaotic Polymorphing Crystal
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.006,
+    min_count    = 1,
+    max_count    = 1,
+    entity     = "data/entities/buildings/polymorph_crystal_chaotic.xml"
+})
+
+-- Wand Editting Crystal
+
+table.insert(g_small_enemies,
+{
+    prob           = 0.01,
+    min_count    = 1,
+    max_count    = 1,
+    entity     = "data/entities/buildings/wandedit_crystal.xml"
+})
+
+table.insert(g_small_enemies,
+{
+    prob           = 0.03,
+    min_count    = 1,
+    max_count    = 1,
+    entity     = "data/entities/buildings/wandedit_crystal.xml",
+    spawn_check = function() 
+        local year, month, day = GameGetDateAndTimeLocal()
+        
+        if ( month == 7 ) and (( day >= 20 ) and ( day <= 22 )) then
+            return true
+        else
+            return false 
+        end
+    end,
+})
+
+--Adds extra health ups to the spawn pool if you've openned a Pandora's Chest
+table.insert(g_small_enemies,
+{
+    prob           = 0.01,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/items/pickup/heart.xml",
+    spawn_check = function() 
+        if GameHasFlagRun( "apotheosis_pandora_unleashed" ) and player_health_check() then
+            return true
+        else
+            return false 
+        end
+    end,
+})
+
+
+-- New Game +
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.010,
+    min_count    = 1,
+    max_count    = 1,
+    entity     = "data/entities/buildings/polymorph_crystal_chaotic.xml",
+    ngpluslevel = 1
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.03,
+    min_count    = 1,
+    max_count    = 1,
+    entity     = "data/entities/buildings/manadrain_crystal.xml",
+    ngpluslevel = 1
+})
 
 
 

@@ -21,6 +21,7 @@ local inputspells =  {
     "APOTHEOSIS_MASS_STATUS_POLYMORPH",
     "LIFETIME",
     "LIFETIME_DOWN",
+    "BULLET",
 }
 
 --Spells we're converting them into
@@ -39,6 +40,7 @@ local outputspells = {
     "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
     "LIFETIME_DOWN",
     "LIFETIME",
+    "BULLET_TRIGGER",
 }
 
 local effecttype = {
@@ -54,6 +56,7 @@ local effecttype = {
     "magical_symbol_materia_fungus",
     "magical_symbol_materia_red",
     "magical_symbol_materia_blue",
+    "magical_symbol_hobo_money",
 }
 
 for k=1, #targets

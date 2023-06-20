@@ -368,6 +368,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/phantom_c_apotheosis.png",
 	  },
 	  {
+		name="Apparition Player Ghost (Debug)",
+		path="data/entities/animals/apparition/playerghost.xml",
+		image="data/ui_gfx/animal_icons/playerghost.png",
+	  },
+	  {
 		name="Poisonous Mushroom",
 		path="data/entities/animals/poisonmushroom.xml",
 		image="data/ui_gfx/animal_icons/poisonmushroom.png",

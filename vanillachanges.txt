@@ -43,19 +43,18 @@ Content list:
 8 new perks
 6 new biomes
 7 new structures
-11 new materials (9 interactable, 11 total)
+12 new materials (10 interactable, 12 total)
 12 attainable trophies
 6 new items
 4 new musical curiosities
 And countless new secrets...
 
 
-Custom tag count: [7]
+Custom tag count: [6]
 musical_stone
 vulnerable
 watermage
 apotheosis_blob_boss
-chest_pandora (Could be optimised by only looking for an entity name)
 weaken_NOT
 cast_share
 

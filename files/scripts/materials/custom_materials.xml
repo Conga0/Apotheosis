@@ -255,6 +255,40 @@
 		</Ingestion>
 	</StatusEffects>
   </CellData>
+
+
+
+  <CellData
+	name="apotheosis_milk_powder"
+	ui_name="$material_apotheosis_milk_powder"
+  	tags="[sand_ground],[corrodible],[alchemy]"
+	burnable="0"
+	density="6"
+	cell_type="liquid"
+	wang_color="aaf6f7fe"
+	generates_smoke="0"
+	liquid_gravity="0.9"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10"
+	hp="800" 
+	electrical_conductivity="1"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	durability="4"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/milk_dust.png"
+		color="720000" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
   
   <CellDataChild
   	name="apotheosis_crystal_green" 
@@ -2062,8 +2096,8 @@
 	show_in_creative_mode="1"
 	>
   	<Graphics
-		color="ffc2762b"
-		>
+		color="90c2762b"
+	>
 	</Graphics>
 	<ParticleEffect
 		vel.y="-14.28"
@@ -2535,17 +2569,24 @@
 
 	<!--Milk turns to cheese over time-->
 	<Reaction probability="5" 
-		input_cell1="apotheosis_milk" 				input_cell2="air"
+		input_cell1="apotheosis_milk" 		input_cell2="air"
 		output_cell1="cheese_static" 		output_cell2="air"
 		destroy_horizontally_lonely_pixels="1"
 		req_lifetime="600" >
 	</Reaction>
 
 	<Reaction probability="20" 
-		input_cell1="apotheosis_milk" 				input_cell2="cheese_static"
+		input_cell1="apotheosis_milk" 		input_cell2="cheese_static"
 		output_cell1="cheese_static" 		output_cell2="cheese_static"
 		destroy_horizontally_lonely_pixels="1"
 		req_lifetime="400" >
+	</Reaction>
+
+	<!--Turn powdered milk into milk with water-->
+	<Reaction probability="20" 
+		input_cell1="apotheosis_milk_powder" input_cell2="[water]"
+		output_cell1="apotheosis_milk" 		output_cell2="apotheosis_milk"
+	>
 	</Reaction>
 
 	<Reaction probability="100" 

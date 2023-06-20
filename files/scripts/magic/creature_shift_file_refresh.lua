@@ -2,6 +2,11 @@
 --function reload_creature_shifts( entity, x, y, debug_no_limits )
 
     local iter_count = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
+    local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+
+    --Debug Helpers
+    --print("Running creature_shift_file_refresh.lua")
+    --print("iter_count is " .. iter_count)
 
     --Debugging shift, forces all Forsaken Eyes to be turned into Blind Gazers
     --target = "blindgazer"
@@ -15,9 +20,11 @@
             local target2 = (GlobalsGetValue("apotheosis_global_Cshift_" .. targ_count .. "_targ2", "failed") )
 
             --Debug helpers
-            --GamePrint(target2 .. " has turned into " .. target)
+            --print("targ_count is " .. targ_count)
+            --print("target is " .. target)
+            --print("target2 is " .. target2)
+            --print(target2 .. " has turned into " .. target)
 
-            local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
             local content = ModTextFileGetContent("data/entities/animals/" .. target .. ".xml")
             local xml = nxml.parse(content)
             xml:add_child(nxml.parse([[

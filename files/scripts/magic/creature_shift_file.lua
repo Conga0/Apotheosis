@@ -79,7 +79,6 @@ function creature_shift( entity, x, y, debug_no_limits )
     end
 
     local iter = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
-    GlobalsSetValue( "apotheosis_creature_shift_iteration", tostring(iter+1) )
     if iter > 30 and not debug_no_limits then
         shift_check_2 = false --max shifts hit (30)
     else
@@ -96,11 +95,17 @@ function creature_shift( entity, x, y, debug_no_limits )
 
 
         --Actual enemy shift
+        --First, we increment the shift interger
+        GlobalsSetValue( "apotheosis_creature_shift_iteration", tostring(iter+1) )
+
+
         --Grabs Target enemy (the shift-to target) & Target2 Enemy (the victim)
 
         rnd = Random(1, #enemy_list)
         local target2 = enemy_list[rnd]
         table.remove(enemy_list, rnd)
+        --Conga: I don't know why I'm only removing from the table if NE is enabled.. autocorrect typo?
+        --Maybe some attempt to reduce likelyhood of clones? I genuinely don't know
         if ModIsEnabled("new_enemies") == false then
             table.remove(enemy_list_from, rnd)
         end
@@ -336,22 +341,41 @@ function creature_shift( entity, x, y, debug_no_limits )
         --
         --[[
         ]]--
-        if iter_glob == 1 then
+
+        --Add a lua script to the player as an emergency backup option for creature shifting
+        --Conga: Unnecessary since creature_shift_file_refresh.lua has been fixed! (Thankyou me) (Obama medal meme)
+        --[[
+        do
             local player_list = EntityGetWithTag("player_unit")
-            for i,v in ipairs(player_list) do
-                EntityAddComponent2(
-                    v,
-                    "LuaComponent",
-                    {
-                        execute_on_added = true,
-                        script_source_file = "mods/Apotheosis/files/scripts/magic/creature_shift_new/player_shift_update.lua",
-                        execute_every_n_frame = 150,
-                        remove_after_executed = false,
-                        execute_times=-1
-                    }
-                )
+            for k=1,#player_list
+            do local v = player_list[k]
+
+                local valid = true
+
+                local luacomps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
+                for z=1,#luacomps
+                do local c = luacomps[z]
+                    if ComponentGetValue2(c,"script_source_file") == "mods/Apotheosis/files/scripts/magic/creature_shift_new/player_shift_update.lua" then
+                        valid = false
+                    end
+                end
+
+                if valid then
+                    EntityAddComponent2(
+                        v,
+                        "LuaComponent",
+                        {
+                            execute_on_added = true,
+                            script_source_file = "mods/Apotheosis/files/scripts/magic/creature_shift_new/player_shift_update.lua",
+                            execute_every_n_frame = 150,
+                            remove_after_executed = false,
+                            execute_times=-1
+                        }
+                    )
+                end
             end
         end
+        ]]--
 
         if ModIsEnabled("fungal_timer") then
             local player_list = EntityGetWithTag("player_unit")

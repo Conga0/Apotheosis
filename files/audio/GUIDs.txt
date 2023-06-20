@@ -23,6 +23,8 @@
 {2356d7a1-72da-48a0-8638-6ea8db38b586} event:/mocreeps_audio/kittycat/sora_hurt_02
 {38e77bff-2f49-4d3f-9adf-d364e9f4651f} event:/mocreeps_audio/kittycat/sora_hurt_04
 {a0af0a27-cbbc-48c7-be9f-95fd3e01d47c} event:/mocreeps_audio/kittycat/sora_hurt_05
+{c2cc1d7f-2c1f-42ec-a244-fc553fd39c7d} event:/mocreeps_audio/kittycat/sora_hurt_06
+{1f4f2d0f-6062-4b72-b4fb-f05d305f2077} event:/mocreeps_audio/kittycat/sora_hurt_07
 {ce957986-50d8-40a1-ba2b-f4bbb38ba5a0} event:/mocreeps_audio/kittycat/sora_meow_01
 {bfd65cb5-0b77-4234-a09c-db0b080dabe9} event:/mocreeps_audio/kittycat/sora_meow_02
 {fea71ef6-ce88-4b1d-aa00-0649ff1d8dc1} event:/mocreeps_audio/kittycat/sora_meow_03

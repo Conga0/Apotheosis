@@ -3,6 +3,10 @@ local standard_insert = {
         material="apotheosis_redstone",
         cost=800,
     },
+    {
+        material="apotheosis_milk_powder",
+        cost=800,
+    },
 }
 
 local magic_insert = {

@@ -38,10 +38,12 @@ Remove the Angelling + Devilling statue
 Gateway sprite, needs:
 A large stone arch that can fit a portal inside
 An alternative shattered stone arch sprite for if you fail the requirements
+Note: Spicy (might) be working on this
 
 Guarantee Mechanical Worm spawn on fury's playthrough, maybe some other stuff too
 Remove Reflective Revenge spawn flag requirements if we're doing this
 Remove super stendari/super watermage spawns in floor 1
+Guarantee at least one (funny mimic)
 
 AC CoV/Healing Bolt is still infinite in hardcore mode
 
@@ -49,5 +51,7 @@ AC CoV/Healing Bolt is still infinite in hardcore mode
 MoCreeps
 Congas Cats
 
-Check if Wall Worms spawn on screen, or off screen
-Might need accel + blackhole/sphere of acid to check
+Better Aquamine sprites
+Better Fungal Shift Spell sprites
+
+Make Red Sand guaranteed accessible by the 2nd biome at least, gotta get those shift addictions taken care of, by encouraging it!
