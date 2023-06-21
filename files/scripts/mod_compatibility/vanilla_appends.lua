@@ -815,3 +815,11 @@ do -- Allow Friend & Horror Monsters to use portals
   ModTextFileSetContent(path, content)
 end
 ]]--
+
+
+do -- Allow Karl the Mighty, First of its Name, Mover of Suns and Friend to All to be teleported by Portalium
+  local path = "data/entities/buildings/racing_cart.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("racing_cart,moon_energy", "racing_cart,moon_energy,teleportable_NOT")
+  ModTextFileSetContent(path, content)
+end
