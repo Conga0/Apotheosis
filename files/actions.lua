@@ -716,30 +716,6 @@ local apotheosis_spellappends = {
         end,
     },
     {
-        id          = "APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL",
-        name 		= "$spell_apotheosis_portal_lukki_blue_portal_name",
-        description = "$spell_apotheosis_portal_lukki_blue_portal_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/portal_blue_portal.png",
-        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
-        spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
-        spawn_manual_unlock = true,
-        never_unlimited		= false,
-        type 		= ACTION_TYPE_OTHER,
-        recursive	= true,
-        ai_never_uses = true,
-        spawn_level                       = "10", -- MANA_REDUCE
-        spawn_probability                 = "0", -- MANA_REDUCE
-        price = 4300,
-        mana = 300,
-        --max_uses    = 1,
-        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_blue_marker.xml",
-        action 		= function()
-            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_blue_portal.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 100
-            current_reload_time = current_reload_time + 100
-        end,
-    },
-    {
         id          = "APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL",
         name 		= "$spell_apotheosis_portal_lukki_green_portal_name",
         description = "$spell_apotheosis_portal_lukki_green_portal_desc",
@@ -759,6 +735,30 @@ local apotheosis_spellappends = {
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_green_marker.xml",
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_green_portal.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 100
+            current_reload_time = current_reload_time + 100
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL",
+        name 		= "$spell_apotheosis_portal_lukki_blue_portal_name",
+        description = "$spell_apotheosis_portal_lukki_blue_portal_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/portal_blue_portal.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+        spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        spawn_manual_unlock = true,
+        never_unlimited		= false,
+        type 		= ACTION_TYPE_OTHER,
+        recursive	= true,
+        ai_never_uses = true,
+        spawn_level                       = "10", -- MANA_REDUCE
+        spawn_probability                 = "0", -- MANA_REDUCE
+        price = 4300,
+        mana = 300,
+        --max_uses    = 1,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_blue_marker.xml",
+        action 		= function()
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_blue_portal.xml")
             c.fire_rate_wait = c.fire_rate_wait + 100
             current_reload_time = current_reload_time + 100
         end,

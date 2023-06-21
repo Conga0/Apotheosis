@@ -748,8 +748,6 @@
 	>
 	</ParticleEffect>
   </CellDataChild>
-
-
   
   <CellDataChild
   	_parent="templerock_static"
@@ -1586,6 +1584,48 @@
 		</Ingestion>
 		<Stains>
 			<StatusEffect type="apotheosis_SPEEDUP" />
+		</Stains>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_magic_liquid_rideshare"
+	ui_name="$material_apotheosis_magic_liquid_rideshare"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="2.99"
+	cell_type="liquid"
+	wang_color="8091e8e3"
+	generates_smoke="0"
+	liquid_gravity="0.81"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel_random.min_x="-3"
+		vel_random.max_x="3"
+		vel_random.min_y="-60"
+		vel_random.max_y="-45"
+		lifetime.min="0.32"
+		lifetime.max="0.61"
+		gravity.y="2.857"
+		render_on_grid="1"
+		friction="-10"
+		probability="0.2500"
+		>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_RIDESHARE" amount="0.2" />
+		</Ingestion>
+		<Stains>
+			<StatusEffect type="apotheosis_RIDESHARE" />
 		</Stains>
 	</StatusEffects>
   </CellData>

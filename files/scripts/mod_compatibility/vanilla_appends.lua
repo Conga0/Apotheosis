@@ -80,14 +80,22 @@ do
   end
 end
 
-do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
+do --Vanilla Pixel Scene adjustments
   local path = "data/biome/_pixel_scenes.xml"
   local content = ModTextFileGetContent(path)
+
+  -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
   content = content:gsub("data/biome_impl/overworld/essence_altar_visual.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar_desert_visual.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar_desert.png", "")
   content = content:gsub("data/entities/buildings/essence_eater.xml", "")
+  
+  -- Fix Music Machines to spawn in PWs properly
+  content = content:gsub("data/entities/props/music_machines/music_machine_00.xml", "")
+  content = content:gsub("data/entities/props/music_machines/music_machine_01.xml", "")
+  content = content:gsub("data/entities/props/music_machines/music_machine_02.xml", "")
+  content = content:gsub("data/entities/props/music_machines/music_machine_03.xml", "")
   ModTextFileSetContent(path, content)
 end
 
@@ -793,3 +801,17 @@ end
 
 --Hiisi Anvil appends
 ModLuaFileAppend( "data/scripts/buildings/forge_item_convert.lua", "mods/apotheosis/files/scripts/buildings/anvil_appends.lua")
+
+--[[
+do -- Allow Friend & Horror Monsters to use portals
+  local path = "data/entities/animals/ultimate_killer.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("small_friend", "small_friend,teleportable")
+  ModTextFileSetContent(path, content)
+
+  local path = "data/entities/animals/friend.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("big_friend", "big_friend,teleportable")
+  ModTextFileSetContent(path, content)
+end
+]]--

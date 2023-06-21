@@ -66,10 +66,7 @@ RemoveFlagPersistent("this_should_never_spawn")
 
 
 
--- If Conjurer is enabled, disable this for a fix.
-if ModIsEnabled("raksa") == false then
-  dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
-end
+
 
 
 
@@ -403,6 +400,7 @@ material_apotheosis_magic_liquid_pure_light_cloud,"Pure Light Mist",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_suffocatium,"Suffocatium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_velocium,"Veloium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_mimic,"Mimicium",,,,,,,,,,,,,
+material_apotheosis_magic_liquid_rideshare,"Portalium",,,,,,,,,,,,,
 material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,,,,,
 material_apotheosis_sunkenrock_sandy,"Sandy Rock",,,,,,,,,,,,,
 material_apotheosis_ambrosia_dull,"Infected Ambrosia",,,,,,,,,,,,,
@@ -537,6 +535,9 @@ book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in 
 book_apotheosis_orbbook_14_name,"Emerald Tablet - Volume XIII",,,,,,,,,,,,,
 book_apotheosis_orbbook_14_description,"The bird cackled and sang\nWhat good is one's time if it is without encouragement?\nTo those who dream when they feel, they know not the encouragement\nof knowing what to do before their dream and how much.\nTo those who plan their dream ahead of time, when and where,\nthey know what they can do and what time they have to do it.\nThe bird cackled once more before it flew off.\nIt's wisdom soaked into the minds of those who heard it, \nas water soaked into glass.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_workinprogress_description,"Seeker of knowledge, your nose is on the right path \nyet some secrets are yet to be revealed.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_12_description,"Evolution is forever changing.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_13_description,"Bring your friends along when you travel.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must remain pure and unintoxicated.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
@@ -601,6 +602,8 @@ status_apotheosis_speedup_name,"Accelerated Velocity",,,,,,,,,,,,,
 status_apotheosis_speedup_desc,"Your spells feel significantly faster.",,,,,,,,,,,,,
 status_apotheosis_clear_status_name,"Pure Stomach",,,,,,,,,,,,,
 status_apotheosis_clear_status_desc,"Your stomach is clear from negative effects you've ingested.",,,,,,,,,,,,,
+status_apotheosis_rideshare_name,"Portalic Rideshare",,,,,,,,,,,,,
+status_apotheosis_rideshare_desc,"You feel nearby creatures will follow you through portals.",,,,,,,,,,,,,
 status_apotheosis_hex_water_name,"Abyssal Hex",,,,,,,,,,,,,
 status_apotheosis_hex_water_desc,"You take damage from water and other wet substances.",,,,,,,,,,,,,
 status_apotheosis_hex_oil_name,"Industrious Hex",,,,,,,,,,,,,
@@ -1353,6 +1356,12 @@ dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability
 --Modifies vanilla entity data
 --Try not to tinker with base noita too much, the main goal to this mod is to be an expansion pack, not a rebalance.
 dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua" )
+
+-- If Conjurer is enabled, disable this for a fix.
+-- Adds custom Pixel Scenes in
+if ModIsEnabled("raksa") == false then
+  dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
+end
 
 --Overrides some creep's settings for spoopy's alternate graphics
 if spoopyGFXSetting == true then

@@ -480,6 +480,9 @@ do local v = appends[k];
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="4843" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_alt.xml" />
   ]]))
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene pos_x="4853" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/potion_portalium.xml" />
+  ]]))
 
   
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
@@ -498,6 +501,32 @@ do local v = appends[k];
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
   ]]))
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene pos_x="-17667" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/potion_portalium.xml" />
+  ]]))
+  ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+  --Fixing Music Machines not spawning in PWs properly
+  local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+  local xml = nxml.parse(content)
+  xml:first_of("mBufferedPixelScenes"):add_children(nxml.parse_many([[
+    <PixelScene pos_x="14698" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+    <PixelScene pos_x="]] .. (10868 + worldsize)  .. [[" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+    <PixelScene pos_x="]] .. (10868 - worldsize)  .. [[" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+
+    <PixelScene pos_x="-1905" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
+    <PixelScene pos_x="]] .. (-1905 + worldsize)  .. [[" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
+    <PixelScene pos_x="]] .. (-1905 - worldsize)  .. [[" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
+
+    <PixelScene pos_x="24166" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+    <PixelScene pos_x="]] .. (24166 + worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+    <PixelScene pos_x="]] .. (24166 - worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+
+    <PixelScene pos_x="2800" pos_y="250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+    <PixelScene pos_x="]] .. (2800 + worldsize)  .. [[" pos_y="-250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+    <PixelScene pos_x="]] .. (2800 - worldsize)  .. [[" pos_y="-250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+  ]]))
+
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 end

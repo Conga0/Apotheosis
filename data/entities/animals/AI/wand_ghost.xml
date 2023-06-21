@@ -14,7 +14,7 @@
 		</CameraBoundComponent>
 
 		<GenomeDataComponent 
-			herd_id="mage"
+			herd_id="healer"
 			food_chain_rank="7"
 			is_predator="1" >
 		</GenomeDataComponent>

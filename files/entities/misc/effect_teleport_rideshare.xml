@@ -1,0 +1,28 @@
+<Entity name="apotheosis_teleport_rideshare" >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+    	effect="CUSTOM"
+		custom_effect_id="TELEPORT_RIDESHARE"
+    	frames="600"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_rideshare_start.lua"
+		execute_every_n_frame="2"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_removed="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_rideshare_end.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+</Entity>

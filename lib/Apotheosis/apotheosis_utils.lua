@@ -48,3 +48,24 @@ function MultiplyHPSelective(filepath,multiplier,base)
     ModTextFileSetContent(filepath, tostring(xml))
   end
 end
+
+--Split a string separated by a specific character into a table
+function SplitStringOnCharIntoTable(string, char)
+  local list = {}
+  for w in (string .. char):gmatch("([^" .. char .. "]*)" .. char) do
+      table.insert(list, w)
+  end
+  return list
+end
+
+--Assemble a table of values into a single string split by a specific character
+function TableToCharSeparatedString(list, char)
+    local string = ""
+    for i, v in ipairs(list) do
+        string = string .. v
+        if i ~= #list then
+            string = string .. char
+        end
+    end
+    return string
+end

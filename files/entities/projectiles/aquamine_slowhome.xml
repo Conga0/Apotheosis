@@ -60,7 +60,7 @@
       create_cell_material="water_fading" 
       ray_energy="100000"
       hole_destroy_liquid="0" 
-      damage="4"
+      damage="8"
       hole_enabled="1" 
       hole_image="data/temp/explosion_hole.png" 
       particle_effect="1" 

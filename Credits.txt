@@ -28,7 +28,9 @@ Creating Magic Inerberation script
 Glass Cannon compatibility for Liquid Bubbles
 Various Code Contributions
 
-PickledSosig - Created the Virulent Caverns background sprite
+PickledSosig - Creating the Virulent Caverns background sprites
+Creating the Ant Nest background sprites
+Creating the Sunken Cavern background sprites
 
 Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help
 

@@ -240,7 +240,7 @@ g_big_enemies =
 		prob   		= 0.15,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/miniboss_pit_02.xml"
+		entity 	= "data/entities/animals/evil_temple/miniboss_pit_02.xml"
 	},
 }
 

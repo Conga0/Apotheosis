@@ -1,0 +1,8 @@
+<Entity name="Wandsin Arvostelija" tags="enemy,mortal,human,hittable,homing_target,teleportable_NOT,touchmagic_immunity,polymorphable_NOT,necrobot_NOT,glue_NOT" >
+  <Base file="data/entities/animals/miniboss_pit_02.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="24"
+      max_hp="24"
+     ></DamageModelComponent >
+  </Base>
+</Entity>
