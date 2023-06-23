@@ -7,10 +7,10 @@ NOTE(COPI): [HR][/HR] makes for nice separators/borders to section off banners a
 [img]https://i.imgur.com/Ko6YxFl.png[/img]
 
 Apotheosis is a massive content mod which expands upon [b]EVERYTHING.[/b]
-88 new enemies!
-6 new bosses!
-46 new spells!
-2 new biomes!
+108 new enemies!
+5 new bosses!
+69 new spells!
+6 new biomes!
 Perks, Items, materials, structures, Secrets, and more!
 
 [img banner seperation here]
@@ -26,7 +26,7 @@ Just be aware Apotheosis is it's own world, so not everything may be the same wo
 
 [gif of random bossfight/secret portal here]
 
-If you're a seasoned veteran, you may prefer the seed "hardmode" also for a little extra challenge in your journey.
+If you're a seasoned veteran, you may prefer the seed "hardcore" also for a little extra challenge in your journey.
 
 With all that aside, go nuts, have fun and goodluck out there!
 
@@ -47,9 +47,9 @@ Copi's Things
 Graham's Things
 More Stuff [Must disable More Stuff's custom biomemap]
 
-This mod is not compatiable with:
+This mod is [b]not[/b] compatiable with:
 Any and all biome map mods (noitavania, purgatory, more stuff, etc)
-Potentially NE as they override a whacky amount of files
+Potentially NE as they override a large amount of files
 
 This mod already contains:
 More Musical Magic built in

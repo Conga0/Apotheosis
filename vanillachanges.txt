@@ -27,6 +27,7 @@ Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations
 Piercing Shot is reworked
 Unstable Crystal can now be affected by Larpa
 Playerghosts can now "parry" tablets
+Friendship quest now is now slightly more involved
 
 
 New Biome Modifiers:

@@ -1617,7 +1617,7 @@
 		gravity.y="2.857"
 		render_on_grid="1"
 		friction="-10"
-		probability="0.2500"
+		probability="0.0450"
 		>
 	</ParticleEffect>
 	<StatusEffects>

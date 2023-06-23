@@ -1,0 +1,552 @@
+<Entity name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT" >
+		
+	<!--NOTE, Deathcross sfx will be added when it's time to implement Heretic Death Loot And/Or Phase 3, already have death loot in mind, just waiting for right time to implement it.-->
+	<!--Check TODO.txt for link to sound effect-->
+	<!--I would prefer to do everything at once in one continuous workflow, rather than work with multiple different mindsets over the course of a week/month-->
+
+	<AnimalAIComponent
+		creature_detection_range_x="600"
+		creature_detection_range_y="600"
+		>
+	</AnimalAIComponent>
+
+	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
+
+	<!-- art - main body  -->
+
+	<SpriteComponent
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor.png"
+		offset_x="56.5"
+		offset_y="56.5"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
+		offset_x="56.5"
+		offset_y="56.5"
+		emissive="1"
+		additive="1"
+		>
+	</SpriteComponent>
+	
+	<Entity>
+		<SpriteComponent
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			emissive="1"
+			offset_x="8.5"
+			offset_y="8.5"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
+
+	<!-- AI  -->
+
+	<LimbBossComponent
+		state = "1">
+	</LimbBossComponent>
+
+	<PathFindingComponent
+		can_dive="1" 
+		can_fly="1" 
+		can_jump="0" 
+		can_swim_on_surface="1" 
+		can_walk="1" 
+		cost_of_flying="500" 
+		distance_to_reach_node_x="40"
+		distance_to_reach_node_y="40"
+		frames_between_searches="20" 
+		frames_to_get_stuck="120" 
+		initial_jump_lob="1" 
+		initial_jump_max_distance_x="100" 
+		initial_jump_max_distance_y="60" 
+		iterations_max_no_goal="9999999" 
+		iterations_max_with_goal="145000" 
+		jump_speed="200" 
+		max_jump_distance_from_camera="400" 
+		search_depth_max_no_goal="120" 
+		search_depth_max_with_goal="145000" 
+		y_walking_compensation="8" >
+	</PathFindingComponent>
+
+	<PathFindingGridMarkerComponent 
+		_enabled="1" 
+		marker_offset_x="0" 
+		marker_offset_y="-6" 
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+	<IKLimbsAnimatorComponent>
+	</IKLimbsAnimatorComponent>
+
+	<!-- physics  -->
+
+	<PhysicsAIComponent
+		target_vec_max_len="24.0"
+		force_coeff="20.0"
+		force_balancing_coeff="0.9"
+		force_max="300"
+		torque_coeff="50"
+		torque_balancing_coeff="1"
+		torque_max="50.0"
+		damage_deactivation_probability="0"
+		damage_deactivation_time_min="2"
+		damage_deactivation_time_max="10" >
+	</PhysicsAIComponent>
+
+	<PhysicsBodyComponent 
+		force_add_update_areas="1"
+		allow_sleep="1" 
+		angular_damping="0.02" 
+		fixed_rotation="0" 
+		is_bullet="0" 
+		linear_damping="0"  >
+	</PhysicsBodyComponent>
+
+	<PhysicsShapeComponent
+		is_circle="1"
+		radius_x="40"
+		radius_y="40"
+		friction="0.0"
+		restitution="0.3" >
+	</PhysicsShapeComponent>
+	
+	<CellEaterComponent
+		radius="60" 
+		eat_probability="100">
+	</CellEaterComponent>
+
+
+	<!-- damage  -->
+
+	<DamageModelComponent
+		hp="520" 
+		wait_for_kill_flag_on_death="1"
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0.2" 
+		 
+		fire_probability_of_ignition="0" 
+		blood_material="blood"
+		blood_spray_material="blood"
+		blood_multiplier="0.05"
+		is_on_fire="0" 
+		materials_damage="1" 
+		materials_how_much_damage="0.1" 
+		materials_that_damage="acid" 
+		ragdoll_filenames_file=""
+        ragdoll_material="rock_box2d_nohit_hard"
+		ragdoll_offset_y="-6"
+		ragdollify_child_entity_sprites="1" 
+		ragdollify_root_angular_damping="2"
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_$[1-3].xml"
+		healing_particle_effect_entity="mods/Apotheosis/files/entities/particles/heal_effect_big.xml"
+		>
+		<damage_multipliers
+			melee="0.3"
+			projectile="0.1"
+			explosion="0.3"
+			electricity="0.3"
+			fire="0.3" 
+			slice="0.3"
+			ice="0.3"
+			curse="0.7"
+			drill="0.3"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<GenomeDataComponent 
+		food_chain_rank="2"
+		herd_id="mage_corrupted"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+	<!-- center hitbox (weak spot) -->
+	<HitboxComponent 
+		_tags="hitbox_weak_spot"
+		aabb_min_x="-40" 
+		aabb_max_x="40" 
+		aabb_min_y="-40" 
+		aabb_max_y="40"
+		damage_multiplier="0.3"
+		>
+	</HitboxComponent>
+
+
+	<!-- etc -->
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals" >
+	</AudioComponent>
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/lukki" >
+	</AudioComponent>
+
+	<SpriteAnimatorComponent 
+		rotate_to_surface_normal="1" 
+		target_sprite_comp_name="character" >
+	</SpriteAnimatorComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="blood"
+		offset.x="-1"
+		offset.y="0"
+		x_pos_offset_min="-16"
+		y_pos_offset_min="-16"
+		x_pos_offset_max="16"
+		y_pos_offset_max="16"
+		x_vel_min="-4"
+		x_vel_max="4"
+		y_vel_min="-10"
+		y_vel_max="5"
+		count_min="1"
+		count_max="5"
+		lifetime_min="0.3"
+		lifetime_max="1.6"
+		render_on_grid="1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="5"
+		emission_interval_max_frames="15"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<AreaDamageComponent
+		aabb_min.x="-30" 
+		aabb_min.y="-30" 
+		aabb_max.x="30" 
+		aabb_max.y="30" 
+		damage_per_frame="0.14"
+		update_every_n_frame="4"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_SLICE"
+		>
+	</AreaDamageComponent>
+	
+	<AreaDamageComponent
+		aabb_min.x="-30" 
+		aabb_min.y="-30" 
+		aabb_max.x="30" 
+		aabb_max.y="30" 
+		damage_per_frame="0.14"
+		update_every_n_frame="4"
+		entities_with_tag="player_unit"
+		damage_type="DAMAGE_MELEE"
+		>
+	</AreaDamageComponent>
+
+
+
+
+
+	<!-- Health Bar -->
+
+		<SpriteComponent 
+		_tags="health_bar_back,ui"
+		_enabled="1" 
+		transform_offset.x="0"
+		transform_offset.y="5"
+		alpha="1" 
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_back.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="12" 
+		offset_y="42" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		emissive="1"
+		never_ragdollify_on_death="1"
+		z_index="-9000" >
+	</SpriteComponent>
+	
+	<SpriteComponent 
+		_tags="health_bar,ui" 
+		_enabled="1" 
+		alpha="1" 
+		transform_offset.x="0"
+		transform_offset.y="5"
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_front.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="12" 
+		offset_y="42" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		emissive="1"
+		never_ragdollify_on_death="1"
+		z_index="-9000" >
+	</SpriteComponent>
+	
+	<HealthBarComponent>
+	</HealthBarComponent>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent
+			effect="PROTECTION_FREEZE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+
+
+	<!-- Phase Brain -->
+	
+	<VariableStorageComponent
+		name="phase_brain"
+		value_int="1"
+		>
+	</VariableStorageComponent>
+
+
+	<!-- limbs  -->
+
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_limb_animated.xml" />  </Entity>
+
+	<!-- Decorative Chains -->
+	
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+
+	<!-- Stationary Particles -->
+
+	<ParticleEmitterComponent 
+		_enabled="1"
+		_tags="enabled_by_liquid"
+		emitted_material_name="spark_red"
+		gravity.y="0.0"
+		offset.x="1.5"
+		offset.y="1.5"
+		lifetime_min="2"
+		lifetime_max="5"
+		count_min="1"
+		count_max="1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		cosmetic_force_create="1"
+		render_on_grid="1"
+		collide_with_grid="0"
+		collide_with_gas_and_fire="0"
+		fade_based_on_lifetime="1"
+		velocity_always_away_from_center="0"
+		airflow_force="0.0"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		image_animation_file="mods/apotheosis/files/particles/image_emitters/boss_flesh_monster_glow.png"
+		image_animation_speed="1"
+		image_animation_loop="1"
+		image_animation_raytrace_from_center="0" >
+	</ParticleEmitterComponent>
+
+	<!-- Radial Movement Particles -->
+
+	<ParticleEmitterComponent 
+		_enabled="1"
+		_tags="enabled_by_liquid"
+		emitted_material_name="spark_red"
+		gravity.y="0.0"
+		offset.x="1.5"
+		offset.y="1.5"
+		lifetime_min="2"
+		lifetime_max="12"
+		count_min="1"
+		count_max="1"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		cosmetic_force_create="0"
+		render_on_grid="1"
+		collide_with_grid="1"
+		collide_with_gas_and_fire="0"
+		fade_based_on_lifetime="1"
+		velocity_always_away_from_center="25"
+		airflow_force="0.164"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		image_animation_file="mods/apotheosis/files/particles/image_emitters/boss_flesh_monster_glow.png"
+		image_animation_speed="1"
+		image_animation_loop="1"
+		image_animation_raytrace_from_center="0" >
+	</ParticleEmitterComponent>
+
+	<!-- Audio -->
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wizard/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/fireskull/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+    <MusicEnergyAffectorComponent
+    	energy_target="1">
+    </MusicEnergyAffectorComponent>
+
+
+	<!-- Boss AI -->
+
+	<!-- Attack AI -->
+	
+	<!-- Fire a devestating barrage of shadow bolts every 9.3 seconds -->
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_shadow_barrage_setup.lua"
+		execute_every_n_frame="560"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<!-- Mass Wounded all entities in a large radius -->
+	<!-- Disables Healing -->
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_mass_status_wounded.lua"
+		execute_every_n_frame="1740"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<!-- Fire a dangerous barrage of freezing orbs every 12 seconds -->
+	<!--
+	-->
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_orb_barrage_setup.lua"
+		execute_every_n_frame="720"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<!-- Fire a dangerous kill laser every minute, after a lengthy chargeup and LoS warning indicator -->
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_deathlaser_setup.lua"
+		execute_every_n_frame="3600"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<!-- Defense Mechanisms -->
+
+	<!-- Revenge Damage, 50% chance to retaliate with 1-2 Random Master Orbs Summons and create a protective shield -->
+	<LuaComponent
+		execute_every_n_frame="-1"
+		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_retaliation_script.lua"
+		>
+	</LuaComponent>
+
+
+	<!-- Brain AI -->
+
+	<!-- Triggers Phase Changes -->
+	<!-- Boss Might not have multiple phases, may be unnecessary -->
+	<LuaComponent
+		execute_every_n_frame="-1"
+		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_brain.lua"
+		>
+	</LuaComponent>
+
+	<!--Miscellaneous Scripts Below -->
+	
+	<!-- Boss Health Multiplier Script -->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<!-- Summon Minions -->
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_minion_summon.lua"
+		execute_every_n_frame="300"
+		>
+	</LuaComponent>
+
+	<!-- Limit boss to taking only 2% health damage maximum with each instance of damage -->
+	<LuaComponent
+		_tags="invincible"
+		script_damage_about_to_be_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_dmg_limit_2_percent.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<!-- Boss Health Scaling based off NG+ level-->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_newgameplus.lua"
+		execute_every_n_frame="6"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<!-- Death Scripts -->
+	
+	<!-- Condensed to save resources, it's more efficient to have 1 lua comp than 2-->
+	<!-- Fancy Death Script -->
+	<!-- Death Reward, only applies to phase 2 -->
+	<LuaComponent
+		_tags="death_reward"
+		script_death="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death.lua"
+		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death_check.lua"
+		enable_coroutines="1"
+		>
+	</LuaComponent>
+</Entity>

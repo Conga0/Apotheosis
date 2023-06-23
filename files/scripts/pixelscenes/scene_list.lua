@@ -480,9 +480,6 @@ do local v = appends[k];
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="4843" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_alt.xml" />
   ]]))
-  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="4853" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/potion_portalium.xml" />
-  ]]))
 
   
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
@@ -500,9 +497,6 @@ do local v = appends[k];
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
-  ]]))
-  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="-17667" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/potion_portalium.xml" />
   ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
@@ -530,3 +524,4 @@ do local v = appends[k];
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 end
+

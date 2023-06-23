@@ -1030,7 +1030,7 @@ function spawn_receptacle( x, y )
 	EntityLoad( "data/entities/buildings/receptacle_water.xml", x, y )
 end
 
-
+--Conga: This heart spawning function ignores the hp soft cap on purpose, consider it an endgame way to boost your max hp if you feel ready to enter PW-God status
 function spawn_heart_random( x, y )
 	SetRandomSeed(x,y)
 	if Random(1,4) == 1 then
