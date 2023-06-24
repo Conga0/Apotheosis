@@ -117,7 +117,6 @@
   </SpriteParticleEmitterComponent>
 	
 	<ParticleEmitterComponent 
-		_tags="enabled_in_world,enabled_in_hand"
 		emitted_material_name="spark_white"
 		fade_based_on_lifetime="1"
 		x_pos_offset_min="0"
@@ -146,7 +145,7 @@
 		collide_with_grid="0"
 		render_on_grid="1"
 		emission_interval_min_frames="1"
-		emission_interval_max_frames="1"
+		emission_interval_max_frames="2"
 		attractor_force="16"
 		render_ultrabright="1"
 		is_emitting="1" >

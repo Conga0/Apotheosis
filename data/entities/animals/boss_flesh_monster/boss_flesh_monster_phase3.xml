@@ -95,7 +95,7 @@
 		target_vec_max_len="24.0"
 		force_coeff="20.0"
 		force_balancing_coeff="0.9"
-		force_max="300"
+		force_max="400"
 		torque_coeff="50"
 		torque_balancing_coeff="1"
 		torque_max="50.0"
@@ -130,7 +130,7 @@
 	<!-- damage  -->
 
 	<DamageModelComponent
-		hp="520" 
+		hp="170" 
 		wait_for_kill_flag_on_death="1"
 		air_needed="0" 
 		falling_damages="0" 

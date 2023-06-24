@@ -18,6 +18,8 @@ local inputlist = {
     "data/items_gfx/goldnugget_01.png",
     "data/items_gfx/beamstone.png",
     "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png",
+    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png",
+    --"mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png",
 }
 
 local outputlist = {
@@ -30,6 +32,7 @@ local outputlist = {
     "EDIT_WANDS_EVERYWHERE",
     "MEGA_BEAM_STONE",
     "REMOVE_FOG_OF_WAR",
+    "GLOBAL_GORE",
 }
 
 for k=1, #inputlist
