@@ -20,7 +20,7 @@
 		body_id="1"
 		centered="1"
 		image_file="mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png"
-		material="gem_box2d_red"
+		material="apotheosis_gem_box2d_red_hard"
 	></PhysicsImageShapeComponent>
 	
 	<PhysicsThrowableComponent

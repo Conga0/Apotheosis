@@ -1205,9 +1205,6 @@ xml:add_child(nxml.parse([[
 ]]))
 ModTextFileSetContent("data/entities/buildings/dark_moon_altar.xml", tostring(xml))
 
---Allows for Pandora Chest rain to occur if you bring a Pandora's Chest to the mountain altar
-ModLuaFileAppend( "data/scripts/magic/altar_tablet_magic.lua", "mods/Apotheosis/files/scripts/magic/mountain_altar_appends.lua" )
-
 
 
 --Nightmare & Purgatory fixes for bubbles so they don't spew out infinite liquid everywhere

@@ -16,11 +16,11 @@
 		hax_fix_going_through_ground="1"
 	></PhysicsBodyComponent>
 	
-	<PhysicsImageShapeComponent 
+	<PhysicsImageShapeComponent
 		body_id="1"
 		centered="1"
 		image_file="mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png"
-		material="gem_box2d_white"
+		material="gem_box2d_green"
 	></PhysicsImageShapeComponent>
 	
 	<PhysicsThrowableComponent
@@ -110,14 +110,14 @@
 		_enabled="0"
 		offset_x="4"
 		offset_y="4"
-		image_file="data/items_gfx/sunseed.png"
+		image_file="mods/apotheosis/files/items_gfx/stone_radar.png"
 	></SpriteComponent>
 
 	<ItemComponent
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_stone_radar_name"
 		ui_description="$item_apotheosis_stone_radar_desc"
-		ui_sprite="data/ui_gfx/items/sunseed.png"
+		ui_sprite="mods/apotheosis/files/ui_gfx/items/stone_radar.png"
 		max_child_items="0"
 		is_pickable="1"
 		is_equipable_forced="1"
@@ -136,6 +136,30 @@
 			deck_capacity="0"
 		></gun_config>
 	</AbilityComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags = "enabled_in_inventory,enabled_in_hand",
+		script_source_file = "data/scripts/perks/radar.lua",
+		execute_every_n_frame = "1",
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags = "enabled_in_inventory,enabled_in_hand",
+		script_source_file = "data/scripts/perks/radar_wand.lua",
+		execute_every_n_frame = "1",
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags = "enabled_in_inventory,enabled_in_hand",
+		script_source_file = "data/scripts/perks/radar_item.lua",
+		execute_every_n_frame = "1",
+	>
+	</LuaComponent>
 	
 	<CameraBoundComponent
 	  max_count="5"

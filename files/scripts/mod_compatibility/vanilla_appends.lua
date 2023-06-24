@@ -833,3 +833,23 @@ do -- Add Portalium to the HM liquid pool
   ModLuaFileAppend( path, path_append )
 end
 ]]--
+
+
+--Allows for Pandora Chest rain to occur if you bring a Pandora's Chest to the mountain altar
+--ModLuaFileAppend( "data/scripts/magic/altar_tablet_magic.lua", "mods/Apotheosis/files/scripts/magic/mountain_altar_appends.lua" )
+
+do -- Mountain Altar Appends
+  local path = "data/entities/animals/boss_centipede/ending/ending_sampo_spot_mountain.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    _enabled="1"
+    script_source_file="mods/Apotheosis/files/scripts/magic/mountain_altar_appends.lua"
+    execute_every_n_frame="240"
+    remove_after_executed="0"
+    >
+    </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end

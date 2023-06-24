@@ -2297,7 +2297,7 @@
 	ui_name="$mat_vine"
   	tags="[static],[sand_ground],[corrodible],[alchemy],[matter_eater_ignore_list],[indestructible]"
 	burnable="0"  
-	density="12"  
+	density="12"
 	cell_type="liquid" 
 	cell_holes_in_texture="1"
 	wang_color="ff526F42"  
@@ -2318,6 +2318,22 @@
 	color="ff526F36" >
     </Graphics>
   </CellData>
+  
+  <CellDataChild
+  	_parent="gem_box2d_red"
+  	_inherit_reactions="1"
+  	name="apotheosis_gem_box2d_red_hard"
+	ui_name="$mat_gem_box2d_red"
+	gfx_glow_color="0xFFFF0000"
+	wang_color="fffd2d9e"
+	show_in_creative_mode="1"
+	durability="15"
+	hp="360000"
+	>
+  	<Graphics
+	color="ffE72850" >
+    </Graphics>
+  </CellDataChild>
 
 
 
