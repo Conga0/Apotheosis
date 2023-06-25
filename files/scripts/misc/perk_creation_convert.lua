@@ -47,6 +47,7 @@ do local v = inputlist[k];
 		EntityKill(entity_id)
         if not GameHasFlagRun("apotheosis_perk_creation_angered") then
             GameAddFlagRun("apotheosis_perk_creation_angered")
+            AddFlagPersistent("apotheosis_card_unlocked_perk_creation")
 
             --You Have Angered the Gods
             GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )

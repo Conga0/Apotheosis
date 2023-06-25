@@ -751,6 +751,26 @@
 		remove_after_executed="1"
 		>
 	</LuaComponent>
+	
+	<!--Keep the worm focused on the player-->
+	<VariableStorageComponent
+		name="basic_ai"
+		value_string="player"
+		>
+	</VariableStorageComponent>
+
+	<!--Slow down to spit acid attack similar to the Mechanical Worms-->
+	<!--Slow chomp phase at ~half health or at each 3rd percentage; look at tower climb worms for what this means, Worm is invincible during this but can be knocked out of it by attacking the tail end or a certain thing nearby the Centipede's Nest-->
+	<!--Occasionally summon charmed ants?-->
+	<!--3 attacks should be good enough, 4 if you count the worm's normal bite attack-->
+	<!--Doesn't need to be too complicated, that's how we get burn out-->
+	<!--That goes both ways, I just don't know what's difficult for a sprite artist if you're reading this so shout if anything's up-->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_basic_ai.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
   
  	<VariableStorageComponent
 		name="acid_atk_storage"

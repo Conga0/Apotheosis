@@ -4,12 +4,12 @@ If a new trophy room is being made, transfer all the existing achievement statue
 Remember to update/remove tree book when this is done
 
 Trophies for:
-Using Perk Creation Altar
-Reaching Max Orb Count, taking new orbs into consideration
-Killing the Heretic
-Secret Alchemy Puzzle in Ant Nest
-Completing the Omega Death Cross quest
-Sleeping Altar
+✓ Using Perk Creation Altar
+X Reaching Max Orb Count, taking new orbs into consideration (Conga: Might add a 4th orb as well, will have to see)
+✓ Killing the Heretic
+✓ Secret Alchemy Puzzle in Ant Nest
+✓ Completing the Omega Death Cross quest
+✓ Sleeping Altar
 
 
 

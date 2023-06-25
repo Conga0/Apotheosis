@@ -204,7 +204,7 @@ g_big_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/devourer_magic.xml"
+		entity 	= "data/entities/animals/evil_temple/devourer_magic.xml"
 	},
 	{
 		prob   		= 0.3,

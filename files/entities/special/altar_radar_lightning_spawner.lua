@@ -5,7 +5,7 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 
 --Particle gfx
 EntitySetComponentsWithTagEnabled( entity_id, "enabled_in_world", true )
-component_write( EntityGetFirstComponent( entity_id, "ParticleEmitterComponent"), { count_min=100, count_max=100, cosmetic_force_create=true } ) 
+component_write( EntityGetFirstComponent( entity_id, "ParticleEmitterComponent"), { count_min=200, count_max=200, cosmetic_force_create=true } ) 
 EntityLoad( "data/entities/particles/particle_explosion/main_blue.xml", pos_x, pos_y )
 
 --Lightning audio
@@ -14,7 +14,7 @@ GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet
 --Screenshake
 GameScreenshake( 40 )
 
-local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,96,"poopstone")
+local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,48,"poopstone")
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")

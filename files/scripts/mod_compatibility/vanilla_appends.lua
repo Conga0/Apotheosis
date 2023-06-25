@@ -853,3 +853,11 @@ do -- Mountain Altar Appends
   ]]))
   ModTextFileSetContent(path, tostring(xml))
 end
+
+do --Update Masters of Homing to be made out of attuning meat
+  local path = "data/entities/animals/wizard_homing.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_material = "apotheosis_meat_homing"
+  ModTextFileSetContent(path, tostring(xml))
+end

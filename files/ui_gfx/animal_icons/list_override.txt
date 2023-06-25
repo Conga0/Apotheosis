@@ -132,8 +132,8 @@ drone_physics
 drone_status_ailment
 drone_mini
 drone_lasership
-drone_shield
 tesla_turret
+drone_shield
 basebot_sentry
 basebot_hidden
 basebot_neutralizer

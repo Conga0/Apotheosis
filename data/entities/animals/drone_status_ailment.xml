@@ -1,4 +1,4 @@
-<Entity tags="glue_NOT" name="Parannuskeinot Lennokki">
+<Entity tags="glue_NOT,ui_use_raw_name" name="Parannuskeinot Lennokki">
   
 	<PhysicsAIComponent
 		target_vec_max_len="15.0"

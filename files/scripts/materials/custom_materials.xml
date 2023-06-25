@@ -5,8 +5,8 @@
 	name="apotheosis_meat_rage"
 	ui_name="$material_apotheosis_meat_irritating"
 	wang_color="ffbbf112"
-	solid_on_collision_material="blood"
-	solid_break_to_type="blood"
+	solid_on_collision_material="magic_liquid_berserk"
+	solid_break_to_type="magic_liquid_berserk"
 	audio_physics_material_wall="meat"
 	audio_physics_material_solid="meat"
 	audio_is_soft="1"
@@ -34,6 +34,25 @@
 	<StatusEffects>
 		<Ingestion>
 			<StatusEffect type="MANA_REGENERATION" amount="1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="meat"
+	name="apotheosis_meat_homing"
+	ui_name="$material_apotheosis_meat_homing"
+	wang_color="ffbbf114"
+	solid_on_collision_material="blood"
+	solid_break_to_type="blood"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_HOMING" amount="1" />
 		</Ingestion>
 	</StatusEffects>
   </CellDataChild>

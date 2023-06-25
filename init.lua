@@ -278,10 +278,10 @@ spell_apotheosis_portal_lukki_blue_portal_name,Summon Blue Portal,Призыв �
 spell_apotheosis_portal_lukki_blue_portal_desc,"Summons a blue tinted portal where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с синим оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
 spell_apotheosis_portal_lukki_green_portal_name,Summon Green Portal,Призыв зелёного портала,,,,,,,,,,,,
 spell_apotheosis_portal_lukki_green_portal_desc,"Summons a green tinted portal where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с зелёным оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_name,Alt Fire Teleport Bolt,Телепортирующая молния (ПКМ),,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_desc,Right Click to fire a teleport bolt for 40 mana.,"Щёлкните правой кнопкой мыши, чтобы запустить телепортационную молнию.",,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_short_name,Alt Fire Small Teleport Bolt,Малая телепортирующая молния (ПКМ),,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_short_desc,Right Click to fire a small teleport bolt for 20 mana.,"Щёлкните правой кнопкой мыши, чтобы запустить малую телепортационную молнию.",,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_name,"Alt Fire Teleport Bolt",Телепортирующая молния (ПКМ),,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_desc,"Right Click to fire a magical bolt that moves you wherever it ends up flying","Щёлкните правой кнопкой мыши, чтобы запустить телепортационную молнию.",,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_short_name,"Alt Fire Small Teleport Bolt",Малая телепортирующая молния (ПКМ),,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_short_desc,"Right Click to fire a shortlived magical bolt that moves you wherever it ends up flying","Щёлкните правой кнопкой мыши, чтобы запустить малую телепортационную молнию.",,,,,,,,,,,,
 misc_apotheosis_energy_nova,Energy Nova,Энергия Новы,,,,,,,,,,,,
 log_apotheosis_moon_altar_fungus,AN IRREVERSIBLE CORRUPTION HAS OCCURRED,ПРОИЗОШЛА НЕОБРАТИМАЯ ПОРЧА,,,,,,,,,,,,
 logdesc_apotheosis_moon_altar_fungus,WHAT HAVE YOU DONE!?,ЧТО ВЫ НАДЕЛАЛИ!?,,,,,,,,,,,,
@@ -405,6 +405,7 @@ material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,,,,,
 material_apotheosis_sunkenrock_sandy,"Sandy Rock",,,,,,,,,,,,,
 material_apotheosis_ambrosia_dull,"Infected Ambrosia",,,,,,,,,,,,,
 material_apotheosis_meat_slime_blue,"Blue Slimy Meat",,,,,,,,,,,,,
+material_apotheosis_meat_homing,"Writhing Meat",,,,,,,,,,,,,
 material_apotheosis_malicious_powder,"Volcanic Powder",,,,,,,,,,,,,
 material_apotheosis_milk,"Milk",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone,"Esoteric Stone",,,,,,,,,,,,,
@@ -438,9 +439,9 @@ spell_apotheosis_autofire_desc,"Causes the wand to automatically shoot if there'
 spell_apotheosis_upgrade_alwayscast_name,"Spell Infusion",,,,,,,,,,,,,
 spell_apotheosis_upgrade_alwayscast_desc,"The first spell slotted in your wand will be applied to the wand as an always cast. Spell is voided upon use!",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
-spell_apotheosis_alt_fire_swapper_desc,"Right Click to fire a swapper bolt for 10 mana",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_swapper_desc,"Right Click to fire a projectile that swaps your position with the target's",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
-spell_apotheosis_alt_fire_cov_desc,"Right Click to cast a Circle of Vigour for 80 mana",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_cov_desc,"Right Click to cast a field of regenerative magic",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_alpha_name,"Alt Fire Alpha",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_alt_fire_alpha_desc,"Right Click to cast a copy of the first spell in your wand for 40 mana",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_critical_drunk_name,"Critical on Drunk",,,,,,,,,,,,,
@@ -468,9 +469,9 @@ spell_apotheosis_homing_delayed_desc,"Makes a projectile accelerate towards your
 spell_apotheosis_material_slime_name,"Slime",,,,,,,,,,,,,
 spell_apotheosis_material_slime_desc,"Transmute globs of slime out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_alcohol_name,"Whiskey",,,,,,,,,,,,,
-spell_apotheosis_material_alcohol_desc,"Transmute globs of whiskey out of nothing!",,,,,,,,,,,,,
+spell_apotheosis_material_alcohol_desc,"Transmute drops of whiskey out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_confuse_name,"Flummoxium",,,,,,,,,,,,,
-spell_apotheosis_material_confuse_desc,"Transmute globs of flummoxium out of nothing!",,,,,,,,,,,,,
+spell_apotheosis_material_confuse_desc,"Transmute drops of flummoxium out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_copper_name,"Copper",,,,,,,,,,,,,
 spell_apotheosis_material_copper_desc,"Transmute grains of copper out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_fungi_name,"Fungus",,,,,,,,,,,,,
@@ -702,6 +703,9 @@ ModLuaFileAppend( "data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scr
 ModLuaFileAppend( "data/scripts/biomes/lake_statue.lua", "mods/Apotheosis/files/scripts/biomes/lake_statue_populator.lua" ) --Lake Island
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/hills_populator.lua" ) --Hills and shallow caves
 ModLuaFileAppend( "data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/scripts/biomes/robot_egg_populator.lua" ) --End of Everything Robotic Egg
+
+--Not looking quite as good as the statues, might need a different art approach
+--ModLuaFileAppend( "data/scripts/biomes/mountain_tree.lua", "mods/Apotheosis/files/scripts/biomes/mountain_tree_populator.lua" ) --Treechievements
 
 
 --[[

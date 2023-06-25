@@ -1,4 +1,4 @@
-<Entity name="Teslan torni">
+<Entity name="Teslan torni" tags="ui_use_raw_name">
 	<_Transform 
 		scale.x="1" 
 		>
