@@ -5,7 +5,6 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 --Conga: keep this on the github build until the run has confirmed to have started
 
 local void_count = tonumber(GlobalsGetValue( "APOTHEOSIS_VOID_COUNT", "0" ))
-RemoveFlagPersistent("apotheosis_twwe_encountered")
 local twwe_check = HasFlagPersistent("apotheosis_twwe_encountered")
 local twwe_check_2 = false
 

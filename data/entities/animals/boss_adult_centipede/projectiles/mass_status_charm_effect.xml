@@ -46,7 +46,7 @@
     </VelocityComponent>
 	
 	<SpriteParticleEmitterComponent
-		sprite_file="data/particles/fire.xml"
+		sprite_file="data/particles/charm.xml"
 		delay="0"
 		lifetime="2"
 		color.r="1" color.g="1" color.b="1" color.a="0.8"
