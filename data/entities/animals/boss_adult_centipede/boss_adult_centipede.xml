@@ -723,8 +723,10 @@
 	<!--
 	-->
 	<LuaComponent
+		_enabled="0"
+		_tags="lurker_data"
 		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_mouthattack.lua"
-		execute_every_n_frame="6"
+		execute_every_n_frame="9"
 		execute_times="-1"
 		>
 	</LuaComponent>
@@ -755,14 +757,17 @@
 	<!--Keep the worm focused on the player-->
 	<VariableStorageComponent
 		name="basic_ai"
+		value_int="-10000"
+		value_float="1"
 		value_string="player"
 		>
 	</VariableStorageComponent>
 
 	<!--Slow down to spit acid attack similar to the Mechanical Worms-->
 	<!--Slow chomp phase at ~half health or at each 3rd percentage; look at tower climb worms for what this means, Worm is invincible during this but can be knocked out of it by attacking the tail end or a certain thing nearby the Centipede's Nest-->
-	<!--Occasionally summon charmed ants?-->
+	<!--Occasionally summon charmed ants? or Adult centipede emits mass pheromones and causes all nearby ant eggs to hatch-->
 	<!--3 attacks should be good enough, 4 if you count the worm's normal bite attack-->
+	<!--  -->
 	<!--Doesn't need to be too complicated, that's how we get burn out-->
 	<!--That goes both ways, I just don't know what's difficult for a sprite artist if you're reading this so shout if anything's up-->
 	<LuaComponent
@@ -771,13 +776,42 @@
 		execute_times="-1"
 		>
 	</LuaComponent>
-  
- 	<VariableStorageComponent
-		name="acid_atk_storage"
-		value_int="-10000"
-		value_float="0"
-		_tags="no_gold_drop">
-	</VariableStorageComponent>
+	
+	<SpriteParticleEmitterComponent
+		_tags="invincible"
+		_enabled="0"
+		sprite_file="data/particles/shine_green.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		emissive="1"
+		additive="1"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="4"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-2"
+		randomize_velocity.max_x="2"
+		randomize_velocity.min_y="-2"
+		randomize_velocity.max_y="2"
+		randomize_position.min_x="-10"
+		randomize_position.max_x="10"
+		randomize_position.min_y="-10"
+		randomize_position.max_y="10"
+		>
+	</SpriteParticleEmitterComponent>
 	
 	<Entity>
 		<InheritTransformComponent />

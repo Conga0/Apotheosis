@@ -4,10 +4,12 @@
 		<VelocityComponent
     		gravity_y="10"
 			mass="0.07"
+			air_friction="0.15"
 			>
     	</VelocityComponent> 
 	</Base>
 	
+	<!--
 	<HomingComponent
 		homing_targeting_coeff="4.0"
 		homing_velocity_multiplier="1"
@@ -15,6 +17,7 @@
 		target_tag="prey"
 		>
 	</HomingComponent>
+	-->
 
   <ProjectileComponent 
     _enabled="1" 
@@ -122,9 +125,10 @@
         create_ragdoll="0" >
     </DamageModelComponent>
 
+	<!--
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/projectiles/lavashot_BoC.lua"
-		execute_every_n_frame="45"
+		execute_every_n_frame="60"
 		execute_times="1"
 		>
 	</LuaComponent>
@@ -135,6 +139,7 @@
 		execute_times="1"
 		>
 	</LuaComponent>
+	-->
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"

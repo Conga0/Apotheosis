@@ -656,6 +656,7 @@ wand_apotheosis_cat_name,"Cat",,,,,,,,,,,,,
 wand_apotheosis_mana_battery_name,"Mana Battery",,,,,,,,,,,,,
 wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
 damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
+damage_apotheosis_toxic_sphere,"Toxic Sphere",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_name,"Yggdrasil's Curse",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to levitate.",,,,,,,,,,,,,
 ]])
@@ -707,19 +708,6 @@ ModLuaFileAppend( "data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/sc
 --Not looking quite as good as the statues, might need a different art approach
 --ModLuaFileAppend( "data/scripts/biomes/mountain_tree.lua", "mods/Apotheosis/files/scripts/biomes/mountain_tree_populator.lua" ) --Treechievements
 
-
---[[
-if modCompatibilitySpellEvolutions == true then
-  local currentLang = GameTextGetTranslatedOrNot("$current_language")
-  if currentLang == "русский" then
-    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions_untranslated_RUSSIAN.lua" )
-  else
-    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions_UNTRANSLATED.lua" )
-  end
-else
-  ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
-end
-]]--
 
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
 

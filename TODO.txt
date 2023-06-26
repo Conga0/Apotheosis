@@ -27,7 +27,6 @@ Add a time check to the lua script itself too
 
 Add custom SFX to heretic
 Meant to play as it does pulses? :SBHmm:
-Doublecheck the audio level
 https://discord.com/channels/@me/1013670507146653767/1087217718572371988
 
 Finish or Remove Spine Worm

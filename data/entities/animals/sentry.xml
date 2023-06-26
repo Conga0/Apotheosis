@@ -1,4 +1,4 @@
-<Entity name="Vartiomies" >
+<Entity name="Vartiomies" tags="ui_use_raw_name" >
 
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

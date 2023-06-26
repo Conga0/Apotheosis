@@ -830,6 +830,10 @@ local perks_to_edit = {
     ["PROTECTION_RADIOACTIVITY"] = {
 		func = function( entity_perk_item, entity_who_picked, item_name )
             EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+
+            --Makes Toxic Immunity actually make you toxic immune
+            local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
+            ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
         end
     },
 
@@ -839,6 +843,10 @@ local perks_to_edit = {
 
             old_gas_blood_func( entity_perk_item, entity_who_picked, item_name )
             EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+
+            --Makes Toxic Immunity actually make you toxic immune
+            local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
+            ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
 		end,
     },
 

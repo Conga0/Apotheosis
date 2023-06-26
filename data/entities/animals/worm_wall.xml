@@ -10,9 +10,34 @@
 		scale.y="1" >
 	</_Transform>
 
-	<!--Note, only take damage from backmost segment-->
+	<!--We Initialise the worm with a dragon component so it spawns in curled up-->
+	<BossDragonComponent
+		_enabled="1"
+		speed="4"
+		speed_hunt="5"
+		acceleration="0.35"
+		direction_adjust_speed="0.003"
+		direction_adjust_speed_hunt="0.035"
+		tail_gravity="0"
+		part_distance="8"
+		ground_check_offset="8"
+		eat_anim_wait_mult="0.15"
+		hitbox_radius="9"
+		target_kill_radius="10"
+		target_kill_ragdoll_force="10"
+		hunt_box_radius="256"
+		random_target_box_radius="400"
+		new_hunt_target_check_every="240"
+		new_random_target_check_every="240"
+		ragdoll_filename="data/ragdolls/dragon/filenames.txt"
+		jump_cam_shake="20"
+		projectile_1=""
+		projectile_2="" >
+	</BossDragonComponent>
 
+	<!--Note, only take damage from backmost segment-->
 	<WormComponent
+		_enabled="0"
 		acceleration="0.75"
 		gravity="0"
 		tail_gravity="0"
@@ -29,6 +54,7 @@
 	</WormComponent>
 
 	<WormAIComponent
+		_enabled="0"
 		speed="6"
 		speed_hunt="8"
 		direction_adjust_speed="0.003"
@@ -672,6 +698,13 @@
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/worm_dragon_init.lua"
+		execute_every_n_frame="1"
+		execute_times="1"
+		>
+	</LuaComponent>
 	
 	<LuaComponent
 		execute_every_n_frame="1"

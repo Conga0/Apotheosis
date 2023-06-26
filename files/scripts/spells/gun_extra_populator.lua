@@ -5,8 +5,8 @@ extra_modifiers["apotheosis_use_no_charges"] = function()
     end
 
     --Caps the firerate of possessed wands
-    if c.fire_rate_wait < 10 then c.fire_rate_wait = 10 end
-    if current_reload_time < 10 then current_reload_time = 10 end
+    if c.fire_rate_wait < 15 then c.fire_rate_wait = 15 end
+    if current_reload_time < 15 then current_reload_time = 15 end
 end
 
 extra_modifiers["apotheosis_no_recoil"] = function()

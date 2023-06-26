@@ -41,6 +41,10 @@ if c_check ~= true then
             EntitySetDamageFromMaterial( target, "ice_radioactive_glass", 0.001)
             EntitySetDamageFromMaterial( target, "gold_radioactive", 0.001)
             EntitySetDamageFromMaterial( target, "gold_static_radioactive", 0.001)
+
+            --Makes Toxic Immunity actually make you toxic immune
+            local dmgcomp = EntityGetFirstComponentIncludingDisabled(target,"DamageModelComponent")
+            ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 1.0 )            
         end
     end
 end

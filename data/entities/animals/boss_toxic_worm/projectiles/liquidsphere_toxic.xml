@@ -2,7 +2,7 @@
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
-			air_friction="0.00"
+			air_friction="-0.05"
 			gravity_y="0" 
 			mass="0.3"
 			liquid_drag="0"
@@ -11,7 +11,7 @@
 	</Base>
 	
 	<HomingComponent
-		homing_targeting_coeff="4.0"
+		homing_targeting_coeff="2.5"
 		homing_velocity_multiplier="0.98"
 		detect_distance="0"
 		target_tag="player_unit"
@@ -58,7 +58,7 @@
 			explosion_radius="18" 
 			explosion_sprite="data/particles/explosion_040_poof_green.xml" 
 			explosion_sprite_lifetime="0" 
-			create_cell_material="acid"
+			create_cell_material="radioactive_liquid"
 			create_cell_probability="100"  
 			hole_destroy_liquid="0" 
 			hole_enabled="1" 
@@ -75,7 +75,7 @@
 			stains_enabled="1" 
 			stains_radius="9"
 			audio_enabled="0"
-			spark_material="acid"
+			spark_material="radioactive_liquid"
 			>
 		</config_explosion>
 	</ProjectileComponent>
@@ -83,7 +83,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="0.6" 
-		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_acid.xml" 
+		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_toxic.xml" 
 		next_rect_animation="" 
 		offset_x="18"
 		offset_y="18"
@@ -96,7 +96,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1.0" 
-		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_acid_glow.png" 
+		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_toxic_glow.png" 
 		next_rect_animation="" 
 		offset_x="30"
 		offset_y="30"
@@ -111,14 +111,6 @@
 		collide_with_tag="human"
 		frame_length="1"
 	></GameAreaEffectComponent>
-	
-	<!-- Can't eat through Cursed Rock, but can eat through Bloody Brickwork -->
-	<CellEaterComponent
-		radius="18"
-		eat_dynamic_physics_bodies="1"
-		ignored_material_tag="[indestructible]"
-		>
-	</CellEaterComponent>
 
 	<!-- Better luck next time buddy
 	<MagicConvertMaterialComponent
@@ -142,21 +134,6 @@
 		fade_out_time="1.5"
 		>
     </LightComponent>
-	
-	<AreaDamageComponent
-		_enabled="0"
-		aabb_min.x="-18" 
-		aabb_min.y="-18" 
-		aabb_max.x="18" 
-		aabb_max.y="18" 
-		circle_radius="18"
-		damage_per_frame="0.90"
-		update_every_n_frame="5"
-		entities_with_tag="human"
-		death_cause="$mat_acid"
-		damage_type="DAMAGE_MATERIAL_WITH_FLASH"
-		>
-	</AreaDamageComponent>
 
   	<ParticleEmitterComponent 
 		emitted_material_name="acid_gas"
@@ -191,7 +168,7 @@
 	</ParticleEmitterComponent>
 
   	<ParticleEmitterComponent 
-		emitted_material_name="acid"
+		emitted_material_name="radioactive_liquid"
 		offset.x="0"
 		offset.y="0"
 		x_pos_offset_min="-8"
@@ -216,15 +193,15 @@
 		airflow_scale="0.1833"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		emit_cosmetic_particles="1"
-		create_real_particles="0"
+		emit_cosmetic_particles="0"
+		create_real_particles="1"
 		is_emitting="1"
     >
 	</ParticleEmitterComponent>
 	
 	<ParticleEmitterComponent 
 		_tags="enabled_in_world,enabled_in_hand"
-		emitted_material_name="acid"
+		emitted_material_name="radioactive_liquid"
 		fade_based_on_lifetime="1"
 		x_pos_offset_min="0"
 		x_pos_offset_max="0"
@@ -259,6 +236,14 @@
 	</ParticleEmitterComponent>
 	
 	<LuaComponent
+		_enabled="1"
+		_tags="enabled_by_liquid"
+		script_source_file="data/entities/animals/boss_toxic_worm/projectiles/liquidsphere_stain_toxic.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/projectiles/areadamage_enable.lua"
 		execute_every_n_frame="10"
 		execute_times="1"
@@ -266,15 +251,8 @@
 	</LuaComponent>
 
 	<LuaComponent
-		script_source_file="data/entities/animals/boss_adult_centipede/projectiles/liquidsphere_acid_homing.lua"
+		script_source_file="data/entities/animals/boss_toxic_worm/projectiles/liquidsphere_toxic_homing.lua"
 		execute_every_n_frame="60"
-		execute_times="1"
-		>
-	</LuaComponent>
-	
-	<LuaComponent
-		script_source_file="data/entities/animals/boss_adult_centipede/projectiles/liquidsphere_acid_burst.lua"
-		execute_every_n_frame="598"
 		execute_times="1"
 		>
 	</LuaComponent>
@@ -292,7 +270,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml"
+		value_string="data/entities/animals/boss_toxic_worm/projectiles/liquidsphere_toxic.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

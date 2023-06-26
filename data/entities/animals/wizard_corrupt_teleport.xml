@@ -1,4 +1,4 @@
-<Entity name="Korruptoitunut Siirtäjämestari" >
+<Entity name="Korruptoitunut Siirtäjämestari" tags="ui_use_raw_name" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
