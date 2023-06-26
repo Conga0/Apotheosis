@@ -1,0 +1,119 @@
+<Entity>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/entities/special/altar_radar_lightning_spawner.lua"
+		execute_every_n_frame="120"
+		>
+	</LuaComponent>
+
+  <LifetimeComponent
+  	lifetime="122"
+  ></LifetimeComponent>
+
+  <AreaDamageComponent
+    _enabled="0"
+    _tags="enabled_in_world"
+    aabb_min.x="-15" 
+    aabb_max.x="15" 
+    aabb_min.y="-400" 
+    aabb_max.y="5" 
+    damage_per_frame="1"
+    update_every_n_frame="1"
+    entities_with_tag="human"
+    damage_type="DAMAGE_PROJECTILE"
+    death_cause="$damage_plasmabeam"
+  ></AreaDamageComponent>
+
+  <!-- fx -->
+
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_blue"
+    gravity.y="-1"
+    lifetime_min="1"
+    lifetime_max="2"
+    x_vel_min="0"
+    x_vel_max="0"
+    y_vel_min="-20"
+    y_vel_max="-0"
+    x_pos_offset_min="-15"
+    x_pos_offset_max="15"
+    y_pos_offset_min="-400"
+    y_pos_offset_max="5"
+    count_min="15"
+    count_max="20"
+    render_on_grid="1"
+    fade_based_on_lifetime="0"
+    airflow_force="0.0"
+    airflow_time="0.1"
+    airflow_scale="0.03"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    cosmetic_force_create="1"
+    emit_cosmetic_particles="1"
+    is_emitting="1"
+  ></ParticleEmitterComponent>
+  
+   <ParticleEmitterComponent 
+    emitted_material_name="spark_white"
+    gravity.y="-1"
+    lifetime_min="1"
+    lifetime_max="2"
+    x_vel_min="-10"
+    x_vel_max="10"
+    y_vel_min="0"
+    y_vel_max="0"
+    x_pos_offset_min="-10"
+    x_pos_offset_max="10"
+    y_pos_offset_min="-400"
+    y_pos_offset_max="5"
+    count_min="15"
+    count_max="20"
+    render_on_grid="1"
+    fade_based_on_lifetime="1"
+    airflow_force="0.0"
+    airflow_time="0.1"
+    airflow_scale="0.03"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    cosmetic_force_create="1"
+    emit_cosmetic_particles="1"
+    is_emitting="1"
+  ></ParticleEmitterComponent>
+
+  <ParticleEmitterComponent 
+    _enabled="0"
+    _tags="enabled_in_world"
+    emitted_material_name="spark_blue"
+    gravity.y="-1"
+    lifetime_min="1"
+    lifetime_max="2"
+    x_vel_min="-8"
+    x_vel_max="8"
+    y_vel_min="-20"
+    y_vel_max="-0"
+    x_pos_offset_min="-15"
+    x_pos_offset_max="15"
+    y_pos_offset_min="-400"
+    y_pos_offset_max="5"
+    count_min="50"
+    count_max="100"
+    render_on_grid="1"
+    fade_based_on_lifetime="0"
+    airflow_force="0.1"
+    airflow_time="0.1"
+    airflow_scale="0.03"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    cosmetic_force_create="1"
+    emit_cosmetic_particles="1"
+    render_ultrabright="1"
+    is_emitting="1"
+  ></ParticleEmitterComponent>
+  
+  <AudioComponent
+    file="data/audio/Desktop/misc.bank"
+    event_root="misc"
+    remove_latest_event_on_destroyed="1">
+  </AudioComponent>
+
+</Entity>

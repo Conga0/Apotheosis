@@ -47,3 +47,15 @@ do local v = appends[k];
     ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 end
+
+--Demo tower code
+do --Tower creature appends
+    local creature_table = {"enemy_1","enemy_2","enemy_3",}
+  
+    local concat_table = table.concat(creature_table, "\",\"")
+  
+    local path = "data/scripts/biomes/tower.lua"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], table.concat({[[enemy_list = { "acidshooter", "alchemist", "ant","]],concat_table,"\","}))
+    ModTextFileSetContent(path, content)
+end

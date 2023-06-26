@@ -616,12 +616,13 @@ local apotheosis_spellappends = {
         spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
         spawn_probability                 = "0.45,0.45,0.45,0.3,0.3,0.3,0.8", -- TELEPORT_PROJECTILE
         price = 130,
-        mana = 0,
+        mana = 40,
         --max_uses    = 1,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_teleport.xml",
         action            = function()
             -- Go to the next card
             draw_actions(1, true)
+            mana = mana + 40
         end,
     },
     {
@@ -635,12 +636,13 @@ local apotheosis_spellappends = {
         spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
         spawn_probability                 = "0.45,0.45,0.45,0.3,0.3,0.3,0.8", -- TELEPORT_PROJECTILE
         price = 130,
-        mana = 0,
+        mana = 20,
         --max_uses    = 1,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_teleport_short.xml",
         action            = function()
             -- Go to the next card
             draw_actions(1, true)
+            mana = mana + 20
         end,
     },
     {
@@ -654,12 +656,13 @@ local apotheosis_spellappends = {
         spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
         spawn_probability                 = "0.2,0.2,0.2,0.1,0.1,0.1,0.05", -- TELEPORT_PROJECTILE
         price = 130,
-        mana = 0,
+        mana = 10,
         --max_uses    = 1,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_swapper.xml",
         action            = function()
             -- Go to the next card
             draw_actions(1, true)
+            mana = mana + 10
         end,
     },
 
@@ -857,7 +860,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MASS_DRY",
-        id_matchup  = "APOTHEOSIS_MASS_BURROW",
+        id_matchup  = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
         name 		= "$spell_apotheosis_status_dry_name",
         description = "$spell_apotheosis_status_dry_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_dry.png",
@@ -965,7 +968,7 @@ local apotheosis_spellappends = {
         spawn_level                       = "1,2,3,4,10", -- REGENERATION_FIELD
         spawn_probability                 = "0.2,0.2,0.2,0.2,0.7", -- REGENERATION_FIELD
         price = 250,
-        mana = 0,
+        mana = 80,
         max_uses = 2,
         never_unlimited = true,
         custom_uses_logic = true,
@@ -973,6 +976,7 @@ local apotheosis_spellappends = {
         action            = function()
             -- Go to the next card
             draw_actions(1, true)
+            mana = mana + 80
         end,
     },
 

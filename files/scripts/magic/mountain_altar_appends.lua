@@ -49,3 +49,12 @@ if( GlobalsGetValue("MISC_PANDORA_CHEST_RAIN") ~= "1" ) then
 		end
 	end
 end
+
+local heretic_stones = EntityGetInRadiusWithTag(x,y,48,"poopstone")
+for k=1,#heretic_stones
+do local v = heretic_stones[k]
+	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
+	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+		EntityLoad("mods/apotheosis/files/entities/special/altar_radar_lightning_spawner.xml",x,y)
+	end
+end

@@ -37,4 +37,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	--StatsLogPlayerKill( entity_id )
 
 	--EntityKill( entity_id )
+
+	--drop eye
+	--drop stone
 end

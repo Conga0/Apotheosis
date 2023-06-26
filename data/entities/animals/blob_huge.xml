@@ -1,4 +1,4 @@
-<Entity  name="Kammottava Möykky">
+<Entity  name="Kammottava Möykky" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

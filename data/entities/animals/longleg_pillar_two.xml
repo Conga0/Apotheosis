@@ -1,4 +1,4 @@
-<Entity name="Kohoava pilari hämis">
+<Entity name="Kohoava pilari hämis" tags="ui_use_raw_name" >
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="1" > </ItemChestComponent>

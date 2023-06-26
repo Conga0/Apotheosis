@@ -20,6 +20,7 @@ if GameGetRealWorldTimeSinceStarted() < 12 then
         local dmgcomp = EntityGetFirstComponentIncludingDisabled(players[1],"DamageModelComponent")
         ComponentSetValue2(dmgcomp,"hp",ComponentGetValue2(dmgcomp,"max_hp"))
         GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/orb/create", pos_x, pos_y )
+        AddFlagPersistent( "apotheosis_card_unlocked_sleep" )
         EntityKill(entity_id)
     end
 end

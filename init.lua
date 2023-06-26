@@ -66,10 +66,7 @@ RemoveFlagPersistent("this_should_never_spawn")
 
 
 
--- If Conjurer is enabled, disable this for a fix.
-if ModIsEnabled("raksa") == false then
-  dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
-end
+
 
 
 
@@ -97,7 +94,7 @@ book_apotheosis_trophy_room_description,"I have come to learn this Tree was deem
 book_apotheosis_trophy_room_description_purgatory,"I have come to learn this Tree was deemed unfitting of.. certain.. accomplishments by the gods. \nSpelunk east before you visit their place of worship, cross the fungus, holding the ceiling dear. \nThere they will humour you.","Я узнал, что боги сочли это Дерево непригодным для... определённых... свершений. \nСпешите на Восток, прежде чем посетить место их поклонения, перейдите по грибку, держась за потолок. \nТам они будут над вами насмехаться.",,,,,,,,,,,,
 mat_cloth,Cloth,Ткань,,,,,,,,,,,,
 book_apotheosis_cat_rat,Cat Lover's Notes,Записи любителя кошек,,,,,,,,,,,,
-book_apotheosis_cat_rat_description,My Cats seem scared of normal rats.. \nBut have an irresistible hate towards magical rats for some reason. \nIt's kind of cute.. But I can't brush away the feeling they distance themselves with truly divine purpose...,"Мои кошки боятся обычных крыс... \nНо почему-то испытывают непреодолимую ненависть к магическим крысам. \nЭто даже мило... Но я не могу избавиться от ощущения, что они отдаляются от меня с поистине божественной целью...",,,,,,,,,,,,
+book_apotheosis_cat_rat_description,My cats seem scared of normal rats.. \nBut have an irresistible hate towards magical rats for some reason. \nIt's kind of cute.. But I can't brush away the feeling they distance themselves with truly divine purpose...,"Мои кошки боятся обычных крыс... \nНо почему-то испытывают непреодолимую ненависть к магическим крысам. \nЭто даже мило... Но я не могу избавиться от ощущения, что они отдаляются от меня с поистине божественной целью...",,,,,,,,,,,,
 book_apotheosis_motd,Message of the Day,Сообщение дня,,,,,,,,,,,,
 book_apotheosis_motd_description,Message of the Day \nYou shouldn't be reading this.,Сообщение дня \nВы не должны были это прочесть.,,,,,,,,,,,,
 book_apotheosis_motd_description_birthday,Message of the Day \nHappy Birthday Apotheosis,"Сообщение дня \nПоздравлем с днём рождения, Apotheosis",,,,,,,,,,,,
@@ -127,7 +124,7 @@ book_apotheosis_motd_description_020,Message of the Day \nThe coldest Magical te
 book_apotheosis_motd_description_021,Message of the Day \nAngelings and Devilings distance themselves.,Сообщение дня \nАнгелинги и Демолинги отдаляются друг от друга.,,,,,,,,,,,,
 book_apotheosis_motd_description_022,Message of the Day \nWith truly divine purpose.,Сообщение дня \nС поистине божественной целью.,,,,,,,,,,,,
 book_apotheosis_motd_description_023,Message of the Day \nPerhaps not every creep is a hostile. \nPerhaps not every crystal is a threat.,"Сообщение дня \nПожалуй, не каждый гад - враг. \Возможно, не каждый кристалл является угрозой.",,,,,,,,,,,,
-book_apotheosis_motd_description_024,Message of the Day \nAlso try Congas Cats! ...Just not with Apotheosis enabled. \nApotheosis cats override Congas Cats' cats... Update your settings!!!,Сообщение дня \nТакже попробуйте мод Congas Cats! ...только не с включенным модом Apotheosis. \nКошки из мода Apotheosis будут конфликтовать с кошками мода Congas Cats... Обновите настройки!!!,,,,,,,,,,,,
+book_apotheosis_motd_description_024,Message of the Day \nAlso try Conga's Cats! ...Just not with Apotheosis enabled. \nApotheosis cats override Conga's Cats' cats... Update your settings!!!,Сообщение дня \nТакже попробуйте мод Congas Cats! ...только не с включенным модом Apotheosis. \nКошки из мода Apotheosis будут конфликтовать с кошками мода Congas Cats... Обновите настройки!!!,,,,,,,,,,,,
 book_apotheosis_motd_description_025,"Message of the Day \nFun Fact, Despite this mod releasing on 24/10/2022, \nthe birthday event occurs in July to avoid clashing with Halloween.","Сообщение дня \nПрикольный факт, несмотря на то, что этот мод вышел 10.24.2022, \n праздник дня рождения происходит в ноябре, чтобы избежать столкновения с Хэллоуином.",,,,,,,,,,,,
 book_apotheosis_motd_description_026,"Message of the Day \nGoodluck and have fun!. \nIf you're feeling frustrated or stressed, remember to take a break.","Сообщение дня \nУдачи и веселья! \nЕсли вы чувствуете разочарование или стресс, не забудьте сделать перерыв.",,,,,,,,,,,,
 book_apotheosis_motd_description_027,Message of the Day \nI believe in you.,Сообщение дня \nЯ верю в вас.,,,,,,,,,,,,
@@ -248,7 +245,7 @@ item_apotheosis_essence_fungus_desc,Your very being is infecting the environment
 sign_apotheosis_welcome_hint,"Hello and Welcome to Apotheosis! \nAlthough this may seem inconvenient, please take a moment to view the mod settings page in Options > Mod Settings. \nSome mods need compatibility modes enabled, I did I my best but some things are outside my control sadly. Other than that, go nuts and have fun <3","Здравствуйте и добро пожаловать в мод Apotheosis \nХотя это может показаться неубедительным, пожалуйста, уделите время просмотру страницы настроек мода в «Параметры» > «Модификации». \nНекоторые моды требуют включения модов совместимости, я сделал всё возможное, но некоторые вещи, к сожалению, находятся вне моего контроля. В остальном, не сомневайтесь и получайте удовольствие <3",,,,,,,,,,,,
 sign_apotheosis_aprilfools_intro,Happy April Fools <3,Счастливого дня смеха <3,,,,,,,,,,,,
 status_apotheosis_trip_red_00_name,Blazed,Ломка,,,,,,,,,,,,
-status_apotheosis_trip_red_00_desc,You feel dizzy,Вы чувствуете головокружение,,,,,,,,,,,,
+status_apotheosis_trip_red_00_desc,You feel dizzy.,Вы чувствуете головокружение.,,,,,,,,,,,,
 status_apotheosis_trip_red_01_name,Somewhat Blazed,Небольшая ломка,,,,,,,,,,,,
 status_apotheosis_trip_red_01_desc,You feel interlinked with Yggdrasil.,Вы чувствуете связь с Иггдрасилем.,,,,,,,,,,,,
 status_apotheosis_trip_red_02_name,Really Blazed,Сильная ломка,,,,,,,,,,,,
@@ -262,7 +259,7 @@ item_apotheosis_orb_mattereater_desc,You feel like kicking it...,Вам хоче
 item_apotheosis_chest_portals,Dimensional Chest,Пространственный сундук,,,,,,,,,,,,
 item_apotheosis_chest_volcanic,Volcanic Chest,Вулканический сундук,,,,,,,,,,,,
 status_apotheosis_haste_name,Haste,Спешка,,,,,,,,,,,,
-status_apotheosis_haste_desc,You feel Faster,Вы чувствуете себя быстрее,,,,,,,,,,,,
+status_apotheosis_haste_desc,You feel faster,Вы чувствуете себя быстрее,,,,,,,,,,,,
 material_apotheosis_meat_mana,Enchanting Meat,Очаровательное мясо,,,,,,,,,,,,
 material_apotheosis_smoke_static_slowburn_name,Dense Smoke,Плотный дым,,,,,,,,,,,,
 material_apotheosis_meat_fire_lukki,Infernal Meat,Адское мясо,,,,,,,,,,,,
@@ -281,10 +278,10 @@ spell_apotheosis_portal_lukki_blue_portal_name,Summon Blue Portal,Призыв �
 spell_apotheosis_portal_lukki_blue_portal_desc,"Summons a blue tinted portal where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с синим оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
 spell_apotheosis_portal_lukki_green_portal_name,Summon Green Portal,Призыв зелёного портала,,,,,,,,,,,,
 spell_apotheosis_portal_lukki_green_portal_desc,"Summons a green tinted portal where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с зелёным оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_name,Alt Fire Teleport Bolt,Телепортирующая молния (ПКМ),,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_desc,Right click to fire a teleport bolt for 40 mana.,"Щёлкните правой кнопкой мыши, чтобы запустить телепортационную молнию.",,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_short_name,Alt Fire Small Teleport Bolt,Малая телепортирующая молния (ПКМ),,,,,,,,,,,,
-spell_apotheosis_alt_fire_teleport_short_desc,Right click to fire a small teleport bolt for 20 mana.,"Щёлкните правой кнопкой мыши, чтобы запустить малую телепортационную молнию.",,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_name,"Alt Fire Teleport Bolt",Телепортирующая молния (ПКМ),,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_desc,"Right Click to fire a magical bolt that moves you wherever it ends up flying","Щёлкните правой кнопкой мыши, чтобы запустить телепортационную молнию.",,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_short_name,"Alt Fire Small Teleport Bolt",Малая телепортирующая молния (ПКМ),,,,,,,,,,,,
+spell_apotheosis_alt_fire_teleport_short_desc,"Right Click to fire a shortlived magical bolt that moves you wherever it ends up flying","Щёлкните правой кнопкой мыши, чтобы запустить малую телепортационную молнию.",,,,,,,,,,,,
 misc_apotheosis_energy_nova,Energy Nova,Энергия Новы,,,,,,,,,,,,
 log_apotheosis_moon_altar_fungus,AN IRREVERSIBLE CORRUPTION HAS OCCURRED,ПРОИЗОШЛА НЕОБРАТИМАЯ ПОРЧА,,,,,,,,,,,,
 logdesc_apotheosis_moon_altar_fungus,WHAT HAVE YOU DONE!?,ЧТО ВЫ НАДЕЛАЛИ!?,,,,,,,,,,,,
@@ -299,7 +296,7 @@ integration_apotheosis_RANDOM_CATS_desc,Cat! I'm a kitty cat! And I dance dance 
 integration_apotheosis_RANDOM_CREEPS_name,Random Creeps & Weirdos,Случайные твари и чудики,,,,,,,,,,,,
 integration_apotheosis_RANDOM_CREEPS_desc,Random Creeps & Weirdos will appear in 5 seconds.,Случайные твари и чудики появятся через 5 секунд.,,,,,,,,,,,,
 integration_apotheosis_WAND_WONDERS_name,Spawn Wand of Wonders,Создать Жезл чудес,,,,,,,,,,,,
-integration_apotheosis_WAND_WONDERS_desc,A wonderful wand capable of anything. Cast It!,"Чудесный жезл, способный на всё. Колдуйте!!",,,,,,,,,,,,
+integration_apotheosis_WAND_WONDERS_desc,A wonderful wand capable of anything. Cast it!,"Чудесный жезл, способный на всё. Колдуйте!!",,,,,,,,,,,,
 integration_apotheosis_PANDORA_CHEST_name,Pandora's Chest,Сундук Пандоры,,,,,,,,,,,,
 integration_apotheosis_PANDORA_CHEST_desc,Do you dare open?,Осмелитесь ли вы открыть?,,,,,,,,,,,,
 integration_apotheosis_RANDOM_CREEPS_BOSS_name,Random Weirdo Boss,Случайный босс-чудик,,,,,,,,,,,,
@@ -403,10 +400,12 @@ material_apotheosis_magic_liquid_pure_light_cloud,"Pure Light Mist",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_suffocatium,"Suffocatium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_velocium,"Veloium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_mimic,"Mimicium",,,,,,,,,,,,,
+material_apotheosis_magic_liquid_rideshare,"Portalium",,,,,,,,,,,,,
 material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,,,,,
 material_apotheosis_sunkenrock_sandy,"Sandy Rock",,,,,,,,,,,,,
 material_apotheosis_ambrosia_dull,"Infected Ambrosia",,,,,,,,,,,,,
 material_apotheosis_meat_slime_blue,"Blue Slimy Meat",,,,,,,,,,,,,
+material_apotheosis_meat_homing,"Writhing Meat",,,,,,,,,,,,,
 material_apotheosis_malicious_powder,"Volcanic Powder",,,,,,,,,,,,,
 material_apotheosis_milk,"Milk",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone,"Esoteric Stone",,,,,,,,,,,,,
@@ -414,6 +413,7 @@ material_apotheosis_esoteric_stone_glowing,"Luminescent Rock",,,,,,,,,,,,,
 material_apotheosis_cursed_rock_hard,"Sacred Rock",,,,,,,,,,,,,
 material_apotheosis_radioactive_liquid_strong,"Noxious Sludge",,,,,,,,,,,,,
 material_apotheosis_radioactive_mud,"Defiled Mud",,,,,,,,,,,,,
+material_apotheosis_milk_powder,"Powdered Milk",,,,,,,,,,,,,
 magic_liquid_berserk_cloud_name,"Berserkium Mist",,,,,,,,,,,,,
 magic_liquid_charm_cloud_name,"Pheromone Mist",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
@@ -439,11 +439,11 @@ spell_apotheosis_autofire_desc,"Causes the wand to automatically shoot if there'
 spell_apotheosis_upgrade_alwayscast_name,"Spell Infusion",,,,,,,,,,,,,
 spell_apotheosis_upgrade_alwayscast_desc,"The first spell slotted in your wand will be applied to the wand as an always cast. Spell is voided upon use!",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
-spell_apotheosis_alt_fire_swapper_desc,"Right click to fire a swapper bolt for 10 mana",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_swapper_desc,"Right Click to fire a projectile that swaps your position with the target's",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
-spell_apotheosis_alt_fire_cov_desc,"Right click to cast a Circle of Vigour for 80 mana",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_cov_desc,"Right Click to cast a field of regenerative magic",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_alpha_name,"Alt Fire Alpha",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
-spell_apotheosis_alt_fire_alpha_desc,"Right click to cast a copy of the first spell in your wand for 40 mana",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_alt_fire_alpha_desc,"Right Click to cast a copy of the first spell in your wand for 40 mana",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_critical_drunk_name,"Critical on Drunk",,,,,,,,,,,,,
 spell_apotheosis_critical_drunk_desc,"Make a projectile always do a critical hit on drunk enemies",,,,,,,,,,,,,
 spell_apotheosis_affluence_name,"Affluence",,,,,,,,,,,,,
@@ -469,9 +469,9 @@ spell_apotheosis_homing_delayed_desc,"Makes a projectile accelerate towards your
 spell_apotheosis_material_slime_name,"Slime",,,,,,,,,,,,,
 spell_apotheosis_material_slime_desc,"Transmute globs of slime out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_alcohol_name,"Whiskey",,,,,,,,,,,,,
-spell_apotheosis_material_alcohol_desc,"Transmute globs of whiskey out of nothing!",,,,,,,,,,,,,
+spell_apotheosis_material_alcohol_desc,"Transmute drops of whiskey out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_confuse_name,"Flummoxium",,,,,,,,,,,,,
-spell_apotheosis_material_confuse_desc,"Transmute globs of flummoxium out of nothing!",,,,,,,,,,,,,
+spell_apotheosis_material_confuse_desc,"Transmute drops of flummoxium out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_copper_name,"Copper",,,,,,,,,,,,,
 spell_apotheosis_material_copper_desc,"Transmute grains of copper out of nothing!",,,,,,,,,,,,,
 spell_apotheosis_material_fungi_name,"Fungus",,,,,,,,,,,,,
@@ -515,7 +515,7 @@ spell_apotheosis_summon_star_child_desc,"Summons a celestial familiar",,,,,,,,,,
 spell_apotheosis_fire_wall_name,"Wall of Fire",,,,,,,,,,,,,
 spell_apotheosis_fire_wall_desc,"Summons a wall of fire to ward off foes",,,,,,,,,,,,,
 spell_apotheosis_random_burst_name,"Random Cast",,,,,,,,,,,,,
-spell_apotheosis_random_burst_desc,"Multicast between 4 to 8 random spells     ",,,,,,,,,,,,,
+spell_apotheosis_random_burst_desc,"Multicasts between 4 to 8 random spells     ",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_name,"Summon Jumper Cables",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_desc,"Summon a pair of electrifying vices to shock your victims",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Creatures hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -523,19 +523,22 @@ actiondesc_curse_wither_explosion,Creatures hit by a projectile takes 100% extra
 actiondesc_curse_wither_melee,Creatures hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_electricity,Creatures hit by a projectile takes 100% extra electricity damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от электричества,O alvo atingido por um projétil recebe mais 100% de dano de eletricidade por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño eléctrico durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Elektrizitätsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires de l'électricité pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da elettricità in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od elektryczności,被投射物击中的目标短时间内会受到额外的 100% 电力伤害,放射物が当たったターゲットが一定期間100%の追加の電撃ダメージを受ける,일정 시간 동안 전기가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет жезлу 30 ед           . маны,Adiciona 30 de mana à varinha           ,Añade 30 maná a la varita           ,Fügt dem Zauberstab 30 Mana hinzu           ,Ajoute 30 points de mana à la baguette           ,Aggiunge 30 punti mana alla bacchetta.           ,Dodaje do różdżki 30 pkt. many           ,向魔杖增加 30 法力           ,30マナを杖に追加する,완드에 마나 30을 추가합니다.           ,,,
-spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopiable.",,,,,,,,,,,,,
-spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopiable.",,,,,,,,,,,,,
+spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,,,,,
+spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_14_desc,"Secrets of the drowning depths have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_15_desc,"Secrets of unworldly transmutation have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
-book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware \nTo those who seek knowledge not true, but divine, a musical taste must be acquired.",,,,,,,,,,,,,
+book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware.",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_name,"Emerald Tablet - Volume XII",,,,,,,,,,,,,
-book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in an infinitely empty field, Divinity could hear but not see any. \nDivinity assumed they would be standing within a crowd, yet they observed in solitude. \nDivinity brought preference to the world, and deemed some creations superior to others in their lone judgement \nDivinity believed the world to be better with their touch, but without contention it was improvable. \nTo those who seek knowledge not true but divine, blood must fall upon one's hands.",,,,,,,,,,,,,
+book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in an infinitely empty field, Divinity could hear but not see any. \nDivinity assumed they would be standing within a crowd, yet they observed in solitude. \nDivinity brought preference to the world, and deemed some creations superior to others in their lone judgement \nDivinity believed the world to be better with their touch, but without contention it was improvable.",,,,,,,,,,,,,
 book_apotheosis_orbbook_14_name,"Emerald Tablet - Volume XIII",,,,,,,,,,,,,
-book_apotheosis_orbbook_14_description,"The bird cackled and sang\nWhat good is one's time if it is without encouragement?\nTo those who dream when they feel, they know not the encouragement\nof knowing what to do before their dream and how much.\nTo those who plan their dream ahead of time, when and where,\nthey know what they can do and what time they have to do it.\nThe bird cackled once more before it flew off.\nIt's wisdom soaked into the minds of those who heard it, \nas water soaked into glass",,,,,,,,,,,,,
+book_apotheosis_orbbook_14_description,"The bird cackled and sang\nWhat good is one's time if it is without encouragement?\nTo those who dream when they feel, they know not the encouragement\nof knowing what to do before their dream and how much.\nTo those who plan their dream ahead of time, when and where,\nthey know what they can do and what time they have to do it.\nThe bird cackled once more before it flew off.\nIt's wisdom soaked into the minds of those who heard it, \nas water soaked into glass.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_workinprogress_description,"Seeker of knowledge, your nose is on the right path \nyet some secrets are yet to be revealed.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_12_description,"Evolution is forever changing.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_13_description,"Bring your friends along when you travel.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must remain pure and unintoxicated.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
@@ -543,6 +546,12 @@ book_apotheosis_material_spells_name,"Lost Alchemy",,,,,,,,,,,,,
 book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nTurn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
 book_apotheosis_omegadeath_name,"Death",,,,,,,,,,,,,
 book_apotheosis_omegadeath_description,"Follow my exact path only. I detailed it in the land containing the diamond \nOnly the uninitiated will bare usefulness to this knowledge to avoid corruption among our ranks, \nso teach the right way to teleport only to those pure \nThose who have strayed from my pathway will not be rewarded with death",,,,,,,,,,,,,
+book_apotheosis_realquest_name,"Day 7",,,,,,,,,,,,,
+book_apotheosis_realquest_description,"I've come here in search of the legendary Red Fish, I remember it's name on the tip of my tongue..\nSomething starting with H.. yet I can't recall it\nNo matter, I'll name it after myself after I become the first to discover it.\nThen I'll never forget it's name again!",,,,,,,,,,,,,
+book_apotheosis_realquest_alt_name,"Day 297",,,,,,,,,,,,,
+book_apotheosis_realquest_alt_description,"Remember.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real\nThe red fish is reall\nThe red f",,,,,,,,,,,,,
+book_apotheosis_realquest_tale_name,"Gone Fishing",,,,,,,,,,,,,
+book_apotheosis_realquest_tale_description,"The grand red fish is divine bait, only with it will one catch \nthe grandest of beasts lying at the ocean's trench.\nFinding such a specimen often requires one's entire life however, \nand those who have tried often return without fruit or holding defeat.\nTales speak of the red fish coming to those who wait patiently at the water, \nbut only if your palm holds the right blessing.",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_name,"Oversized Shield",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_description,"You gain a very large, permanent shield.",,,,,,,,,,,,,
 perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
@@ -557,7 +566,7 @@ perk_apotheosis_no_recoil_description,"Your spells have no recoil.",,,,,,,,,,,,,
 perk_apotheosis_void,"Void",,,,,,,,,,,,,
 perk_apotheosis_void_description,"Gain immense power, but the void grows jealous of your options.",,,,,,,,,,,,,
 perk_apotheosis_copy_spells,"Copy Spells",,,,,,,,,,,,,
-perk_apotheosis_copy_spells_description,"Copy the Uncopiable.",,,,,,,,,,,,,
+perk_apotheosis_copy_spells_description,"Copy the Uncopyable.",,,,,,,,,,,,,
 perk_apotheosis_curse_mana,"Endless Mana",,,,,,,,,,,,,
 perk_apotheosis_curse_mana_reveal,"Curse of Mana",,,,,,,,,,,,,
 perk_apotheosis_curse_mana_description,"Your wands feel terribly unstable.. but have infinite mana!",,,,,,,,,,,,,
@@ -594,6 +603,8 @@ status_apotheosis_speedup_name,"Accelerated Velocity",,,,,,,,,,,,,
 status_apotheosis_speedup_desc,"Your spells feel significantly faster.",,,,,,,,,,,,,
 status_apotheosis_clear_status_name,"Pure Stomach",,,,,,,,,,,,,
 status_apotheosis_clear_status_desc,"Your stomach is clear from negative effects you've ingested.",,,,,,,,,,,,,
+status_apotheosis_rideshare_name,"Portalic Rideshare",,,,,,,,,,,,,
+status_apotheosis_rideshare_desc,"You feel nearby creatures will follow you through portals.",,,,,,,,,,,,,
 status_apotheosis_hex_water_name,"Abyssal Hex",,,,,,,,,,,,,
 status_apotheosis_hex_water_desc,"You take damage from water and other wet substances.",,,,,,,,,,,,,
 status_apotheosis_hex_oil_name,"Industrious Hex",,,,,,,,,,,,,
@@ -633,6 +644,10 @@ item_apotheosis_egg_mud_name,"Muddy Egg",,,,,,,,,,,,,
 item_apotheosis_egg_mud_desc,"The egg feels amorphous",,,,,,,,,,,,,
 item_apotheosis_money_1,Gold nugget (1),Золотой самородок (1),Pepita de ouro (1),Pepita de oro (1),Goldklumpen (1),Pépite d'or (1),Pepita d'oro (1),Grudka złota (1),金块 (1),金塊 (1),황금 덩어리(1),,,
 item_apotheosis_bloodmoney_1,Bloody gold nugget (1),Кровавый золотой самородок (1),Pepita de ouro ensanguentada (1),Pepita de oro sangrienta (1),Blutiger Goldklumpen (1),Pépite d'or ensanglantée (1),Pepita d'oro insanguinata (1),Krwaw grudka złota (1),染血金块 (1),ブラッディー金塊 (1),피투성이 황금 덩어리(1),,,
+item_apotheosis_stone_heretic_name,"Korruptoitunutkivi",,,,,,,,,,,,,
+item_apotheosis_stone_heretic_desc,"It feels drenched in blood.",,,,,,,,,,,,,
+item_apotheosis_stone_radar_name,"Opastavakivi",,,,,,,,,,,,,
+item_apotheosis_stone_radar_desc,"It pulses strangely.",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
@@ -641,13 +656,14 @@ wand_apotheosis_cat_name,"Cat",,,,,,,,,,,,,
 wand_apotheosis_mana_battery_name,"Mana Battery",,,,,,,,,,,,,
 wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
 damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
+damage_apotheosis_toxic_sphere,"Toxic Sphere",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_name,"Yggdrasil's Curse",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to levitate.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
 --
---Custom Spell Border for one-off spells would be sick, even if it's just for the one
+--Custom Spell Border for one-off spells would be sick
 --
 --Previous contact damage description
 --perk_apotheosis_contactdamage_description,"You take no damage from close-range enemy attacks but enemies near you take damage; the damage is higher the lower your health gets.",,,,,,,,,,,,,
@@ -689,19 +705,9 @@ ModLuaFileAppend( "data/scripts/biomes/lake_statue.lua", "mods/Apotheosis/files/
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/hills_populator.lua" ) --Hills and shallow caves
 ModLuaFileAppend( "data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/scripts/biomes/robot_egg_populator.lua" ) --End of Everything Robotic Egg
 
+--Not looking quite as good as the statues, might need a different art approach
+--ModLuaFileAppend( "data/scripts/biomes/mountain_tree.lua", "mods/Apotheosis/files/scripts/biomes/mountain_tree_populator.lua" ) --Treechievements
 
---[[
-if modCompatibilitySpellEvolutions == true then
-  local currentLang = GameTextGetTranslatedOrNot("$current_language")
-  if currentLang == "русский" then
-    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions_untranslated_RUSSIAN.lua" )
-  else
-    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions_UNTRANSLATED.lua" )
-  end
-else
-  ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
-end
-]]--
 
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
 
@@ -718,6 +724,7 @@ ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/custom_materials.x
 ]]--
 function OnMagicNumbersAndWorldSeedInitialized()
 		ModLuaFileAppend( "data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua" )
+		ModLuaFileAppend( "data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua" )
 		ModLuaFileAppend( "data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua" )
 end
 
@@ -976,6 +983,7 @@ if ModIsEnabled("worse_enemies") then
   local xml = nxml.parse(content)
   xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse.xml"
   xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file = "data/entities/projectiles/meteor_green.xml"
+  xml:first_of("Base"):first_of("DamageModelComponent").attr.hp = "1.0"
   xml:add_child(nxml.parse([[
     <SpriteComponent 
       _tags="character" 
@@ -1150,20 +1158,6 @@ attrs.materials_that_damage = attrs.materials_that_damage .. ",water,water_fadin
 attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.0005,0.0005"
 ModTextFileSetContent("data/entities/animals/spitmonster.xml", tostring(xml))
 
-
-
--- Creature shift fix upon reloading world
-function OnPlayerSpawned( player_entity )
-	local x, y = EntityGetTransform( player_entity ) --This was just "player" by default but I feel like something broke.. I hope not
-	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
-
-  --[[
-    if ModIsEnabled("Ride Minecart") == true then
-    GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Mo Creeps should function as normal otherwise though.")
-  end
-  ]]--
-end
-
 --Allows for essence of fungus to be turned into a stone
 local content = ModTextFileGetContent("data/entities/buildings/essence_eater.xml")
 local xml = nxml.parse(content)
@@ -1202,9 +1196,6 @@ xml:add_child(nxml.parse([[
   </LuaComponent>
 ]]))
 ModTextFileSetContent("data/entities/buildings/dark_moon_altar.xml", tostring(xml))
-
---Allows for Pandora Chest rain to occur if you bring a Pandora's Chest to the mountain altar
-ModLuaFileAppend( "data/scripts/magic/altar_tablet_magic.lua", "mods/Apotheosis/files/scripts/magic/mountain_altar_appends.lua" )
 
 
 
@@ -1358,6 +1349,12 @@ dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability
 --Modifies vanilla entity data
 --Try not to tinker with base noita too much, the main goal to this mod is to be an expansion pack, not a rebalance.
 dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua" )
+
+-- If Conjurer is enabled, disable this for a fix.
+-- Adds custom Pixel Scenes in
+if ModIsEnabled("raksa") == false then
+  dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
+end
 
 --Overrides some creep's settings for spoopy's alternate graphics
 if spoopyGFXSetting == true then
@@ -1533,17 +1530,7 @@ if seasonalSetting == true then
     --Replace big fairies with non-lethal versions.
     local content = ModTextFileGetContent("data/entities/animals/seasonal/fairy_big.xml")
     ModTextFileSetContent("data/entities/animals/fairy_big.xml", content)
-
-    --Randomly cause a fungal shift/creature shift at any time, at random.
-    function OnPlayerSpawned( player_entity )
-      local x, y = EntityGetTransform( player_entity )
-      local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
-      EntityAddChild( player_entity, cid )
-      local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_creature_curse_slow.xml", x, y)
-      EntityAddChild( player_entity, cid )
-      local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/creature_shift_april_fools_bootup.xml", x, y) --20 random creature shifts at the start of the run
-      EntityAddChild( player_entity, cid )
-    end
+    
     local randomCap = 10
 
     SetRandomSeed( hour + minute, hour + day )
@@ -1586,10 +1573,6 @@ if seasonalSetting == true then
     ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
 
 
-    --Happy april fools <3
-    function OnPlayerSpawned()
-      GamePrint("$sign_apotheosis_aprilfools_intro")
-    end
 
     --Remember to check global spawn files, pandora's chest spawnrate boost is managed there
 
@@ -1627,6 +1610,7 @@ ModLuaFileAppend( "data/scripts/biomes/vault_frozen.lua", "mods/Apotheosis/files
 ModLuaFileAppend( "data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Power Plant
 ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Heaven & Hell, but for this specific lua file append I'm only adding to hell
 
+ModLuaFileAppend( "mods/apotheosis/files/scripts/biomes/newbiome/evil_temple.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --The Vault
 
 --ModLuaFileAppend( "data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/weather/weather_wet_append.lua" ) --Attempt to insert shaman into biome wet modifier spawn additions. Started eating up too much time.
 --If you know how to do this, please let me know. -Conga Lyne
@@ -1760,4 +1744,42 @@ if ModSettingGet( "Apotheosis.exp_poly" ) == true then
       dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
     end
   end
+end
+
+--Randomly cause a fungal shift/creature shift at any time, at random.
+--And print Happy April Fools at the start of the run
+--Happy april fools <3
+function AprilFoolsPlayerSpawn()
+  if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then
+    local x, y = EntityGetTransform( player_entity )
+    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
+    EntityAddChild( player_entity, cid )
+    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_creature_curse_slow.xml", x, y)
+    EntityAddChild( player_entity, cid )
+    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/creature_shift_april_fools_bootup.xml", x, y) --20 random creature shifts at the start of the run
+    EntityAddChild( player_entity, cid )
+
+    GamePrint("$sign_apotheosis_aprilfools_intro")
+  end
+end
+
+
+-- Creature shift fix upon reloading world
+-- Keep this at the bottom of the file, and only let one of this function exist, silly
+function OnPlayerSpawned( player_entity )
+	local x, y = EntityGetTransform( player_entity ) --This was just "player" by default but I feel like something broke.. I hope not
+	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
+
+  --Previously a game print to warn against Ride Minecarts
+  --[[if ModIsEnabled("Ride Minecart") == true then
+    GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
+  end]]--
+
+  --Warns the player if Mo Creeps is enabled, to shut it off
+  if ModIsEnabled("Mo_Creeps") then
+    GamePrintImportant("WARNING: MO CREEPS IS ENABLED","Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+  end
+
+  --Handles AprilFools related code
+  AprilFoolsPlayerSpawn()
 end

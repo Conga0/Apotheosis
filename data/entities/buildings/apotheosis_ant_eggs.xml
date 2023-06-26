@@ -1,5 +1,5 @@
 <Entity 
-  name="unknown" 
+  name="Ant Egg" 
   tags="hittable,mortal,enemy,homing_target" >
 
   <DamageModelComponent 

@@ -81,7 +81,7 @@
 
     table.insert(g_small_enemies,
     {
-        prob           = 0.02,
+        prob           = 0.005,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/hiisi_thief.xml"

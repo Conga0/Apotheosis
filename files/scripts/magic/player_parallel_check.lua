@@ -1,10 +1,9 @@
 
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
+local worldsize = tonumber((ModTextFileGetContent("data/compatibilitydata/worldsize.txt") or 35840)) --If the player enters West 2 or East 2, this triggers; multiply by 0.5 for West 1 and East 1
 
-local parallelworld = GetParallelWorldPosition(pos_x, pos_y)
-
-if parallelworld ~= 0 then
+if pos_x > worldsize or pos_x < (worldsize * -1) then
 
     local comps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")
     for k=1,#comps

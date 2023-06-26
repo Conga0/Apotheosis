@@ -80,14 +80,22 @@ do
   end
 end
 
-do -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
+do --Vanilla Pixel Scene adjustments
   local path = "data/biome/_pixel_scenes.xml"
   local content = ModTextFileGetContent(path)
+
+  -- Remove some pixelscenes as they're being turned into biomes to recur infinitely with world width (essence eaters use pixelscenes that don't line up with the new world width)
   content = content:gsub("data/biome_impl/overworld/essence_altar_visual.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar_desert_visual.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar.png", "")
   content = content:gsub("data/biome_impl/overworld/essence_altar_desert.png", "")
   content = content:gsub("data/entities/buildings/essence_eater.xml", "")
+  
+  -- Fix Music Machines to spawn in PWs properly
+  content = content:gsub("data/entities/props/music_machines/music_machine_00.xml", "")
+  content = content:gsub("data/entities/props/music_machines/music_machine_01.xml", "")
+  content = content:gsub("data/entities/props/music_machines/music_machine_02.xml", "")
+  content = content:gsub("data/entities/props/music_machines/music_machine_03.xml", "")
   ModTextFileSetContent(path, content)
 end
 
@@ -157,8 +165,10 @@ do --Boosts Health of various creatures
     "hideous_mass",
     "hideous_mass_red",
     "tentacler_big",
+    "phantom_c_apotheosis",
     "triangle_gem",
     "wizard_firemage_greater",
+    "watermage",
   }
 
   MultiplyHP("data/entities/animals/crypt/",enemy_list,multiplier,true)
@@ -715,7 +725,7 @@ end
 do --Tower creature appends
   local path = "data/scripts/biomes/tower.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant",]])
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm/boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
   ModTextFileSetContent(path, content)
 end
 
@@ -792,3 +802,63 @@ end
 
 --Hiisi Anvil appends
 ModLuaFileAppend( "data/scripts/buildings/forge_item_convert.lua", "mods/apotheosis/files/scripts/buildings/anvil_appends.lua")
+
+--[[
+do -- Allow Friend & Horror Monsters to use portals
+  local path = "data/entities/animals/ultimate_killer.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("small_friend", "small_friend,teleportable")
+  ModTextFileSetContent(path, content)
+
+  local path = "data/entities/animals/friend.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("big_friend", "big_friend,teleportable")
+  ModTextFileSetContent(path, content)
+end
+]]--
+
+
+do -- Allow Karl the Mighty, First of its Name, Mover of Suns and Friend to All to be teleported by Portalium
+  local path = "data/entities/buildings/racing_cart.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("racing_cart,moon_energy", "racing_cart,moon_energy,teleportable_NOT")
+  ModTextFileSetContent(path, content)
+end
+
+--[[
+-- Conga: Feels wrong
+do -- Add Portalium to the HM liquid pool
+  local path = "data/scripts/biomes/temple_altar_top_shared.lua"
+  local path_append = "mods/apotheosis/files/scripts/biomes/temple_wall_appends.lua"
+
+  ModLuaFileAppend( path, path_append )
+end
+]]--
+
+
+--Allows for Pandora Chest rain to occur if you bring a Pandora's Chest to the mountain altar
+--ModLuaFileAppend( "data/scripts/magic/altar_tablet_magic.lua", "mods/Apotheosis/files/scripts/magic/mountain_altar_appends.lua" )
+
+do -- Mountain Altar Appends
+  local path = "data/entities/animals/boss_centipede/ending/ending_sampo_spot_mountain.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    _enabled="1"
+    script_source_file="mods/Apotheosis/files/scripts/magic/mountain_altar_appends.lua"
+    execute_every_n_frame="240"
+    remove_after_executed="0"
+    >
+    </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do --Update Masters of Homing to be made out of attuning meat
+  local path = "data/entities/animals/wizard_homing.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_material = "apotheosis_meat_homing"
+  ModTextFileSetContent(path, tostring(xml))
+end

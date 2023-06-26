@@ -12,3 +12,7 @@ EntitySetDamageFromMaterial( target, "ice_radioactive_static", 0)
 EntitySetDamageFromMaterial( target, "ice_radioactive_glass", 0)
 EntitySetDamageFromMaterial( target, "gold_radioactive", 0)
 EntitySetDamageFromMaterial( target, "gold_static_radioactive", 0)
+
+--Makes Toxic Immunity actually make you toxic immune
+local dmgcomp = EntityGetFirstComponentIncludingDisabled(target,"DamageModelComponent")
+ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )

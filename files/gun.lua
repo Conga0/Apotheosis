@@ -8,6 +8,7 @@ local apo_state = { -- Altars of apostasy....... pft, -copi
 ---@diagnostic disable-next-line: lowercase-global
 function draw_shot( shot, instant_reload_if_empty )
     -- Don't ask why this works -copi
+    -- okay -conga
     local call_end_cast = false
     if apo_state.new_cast == nil then
         call_end_cast = true

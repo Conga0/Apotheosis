@@ -51,7 +51,7 @@
 		fire_probability_of_ignition="0.5" 
 		blood_material="radioactive_liquid"
 		blood_spray_material="radioactive_liquid"
-		hp="20" 
+		hp="16" 
 		is_on_fire="0" 
 		mAirAreWeInWater="0" 
 		mFallCount="0" 

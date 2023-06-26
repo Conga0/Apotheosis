@@ -2,20 +2,28 @@
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
-			air_friction="-0.2"
+			air_friction="0.00"
 			gravity_y="0" 
 			mass="0.3"
 			liquid_drag="0"
 			>
 		</VelocityComponent>
 	</Base>
+	
+	<HomingComponent
+		homing_targeting_coeff="4.0"
+		homing_velocity_multiplier="0.98"
+		detect_distance="0"
+		target_tag="player_unit"
+		>
+	</HomingComponent>
 
 	<ProjectileComponent 
 		_enabled="1" 
 		lob_min="0.8"
 		lob_max="1.0"
-		speed_min="40"
-		speed_max="40"
+		speed_min="120"
+		speed_max="120"
 		collide_with_world="0"
 		direction_random_rad="0.00"
 		on_death_explode="1"
@@ -23,7 +31,7 @@
 		on_lifetime_out_explode="1"
 		explosion_dont_damage_shooter="1" 
 		on_collision_die="0"
-		lifetime="120"
+		lifetime="600"
 		damage="0"
     	damage_every_x_frames="10"
 		knockback_force="0.1"
@@ -208,8 +216,8 @@
 		airflow_scale="0.1833"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		emit_cosmetic_particles="0"
-		create_real_particles="1"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
 		is_emitting="1"
     >
 	</ParticleEmitterComponent>
@@ -253,6 +261,20 @@
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/projectiles/areadamage_enable.lua"
 		execute_every_n_frame="10"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_adult_centipede/projectiles/liquidsphere_acid_homing.lua"
+		execute_every_n_frame="60"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_adult_centipede/projectiles/liquidsphere_acid_burst.lua"
+		execute_every_n_frame="598"
 		execute_times="1"
 		>
 	</LuaComponent>

@@ -18,6 +18,8 @@ local inputlist = {
     "data/items_gfx/goldnugget_01.png",
     "data/items_gfx/beamstone.png",
     "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png",
+    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png",
+    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png",
 }
 
 local outputlist = {
@@ -30,6 +32,8 @@ local outputlist = {
     "EDIT_WANDS_EVERYWHERE",
     "MEGA_BEAM_STONE",
     "REMOVE_FOG_OF_WAR",
+    "GLOBAL_GORE",
+    "APOTHEOSIS_PLANE_RADAR",
 }
 
 for k=1, #inputlist
@@ -43,6 +47,7 @@ do local v = inputlist[k];
 		EntityKill(entity_id)
         if not GameHasFlagRun("apotheosis_perk_creation_angered") then
             GameAddFlagRun("apotheosis_perk_creation_angered")
+            AddFlagPersistent("apotheosis_card_unlocked_perk_creation")
 
             --You Have Angered the Gods
             GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )

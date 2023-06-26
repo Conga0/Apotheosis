@@ -14,6 +14,8 @@ function item_pickup( entity_item, entity_who_picked, name )
 	GamePlaySound( "data/audio/Desktop/misc.bank", "misc/chest_dark_open", pos_x, pos_y )
 	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
 	GameTriggerMusicEvent( "music/oneshot/dark_03", true, pos_x, pos_y )
+	AddFlagPersistent("apotheosis_card_unlocked_omega_cross")
+	AddFlagPersistent("apotheosis_card_unlocked_omega_cross_spell")
     EntityKill( entity_item )
 
 end

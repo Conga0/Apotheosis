@@ -684,6 +684,7 @@ local apotheosis_perkappends = {
     --NOTE: Plane gateway is unfinished, but this will point towards it when it's time
     --I'm expecting the player has the plane gateway perk when inside the dimensional planes as well, since otherwise goodluck finding the next gateway without the perk
     --[[
+    ]]--
 	{
 		id = "APOTHEOSIS_PLANE_RADAR",
         id_matchup = "MOON_RADAR",
@@ -703,7 +704,6 @@ local apotheosis_perkappends = {
 			} )
 		end,
 	},
-    ]]--
 }
 
 -- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?
@@ -830,6 +830,10 @@ local perks_to_edit = {
     ["PROTECTION_RADIOACTIVITY"] = {
 		func = function( entity_perk_item, entity_who_picked, item_name )
             EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+
+            --Makes Toxic Immunity actually make you toxic immune
+            local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
+            ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
         end
     },
 
@@ -839,6 +843,10 @@ local perks_to_edit = {
 
             old_gas_blood_func( entity_perk_item, entity_who_picked, item_name )
             EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+
+            --Makes Toxic Immunity actually make you toxic immune
+            local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
+            ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
 		end,
     },
 

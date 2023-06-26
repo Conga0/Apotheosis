@@ -9,8 +9,10 @@
 		scale.x="1" 
 		scale.y="1" >
 	</_Transform>
-												<!-- hunt speed originally 0.045  -->
+
+	<!--We Initialise the worm with a dragon component so it spawns in curled up-->
 	<BossDragonComponent
+		_enabled="1"
 		speed="4"
 		speed_hunt="5"
 		acceleration="0.35"
@@ -19,7 +21,7 @@
 		tail_gravity="50"
 		part_distance="16"
 		ground_check_offset="8"
-		eat_anim_wait_mult="0.15 "
+		eat_anim_wait_mult="0.15"
 		hitbox_radius="9"
 		target_kill_radius="10"
 		target_kill_ragdoll_force="10"
@@ -32,6 +34,39 @@
 		projectile_1=""
 		projectile_2="" >
 	</BossDragonComponent>
+
+	<!--Actual Movement Data-->
+	<WormComponent
+		_enabled="0"
+		acceleration="0.35"
+		gravity="0"
+		tail_gravity="0"
+		part_distance="16"
+		ground_check_offset="8"
+		hitbox_radius="9"
+		target_kill_radius="11"
+		target_kill_ragdoll_force="10"
+		ragdoll_filename=""
+		eat_anim_wait_mult="0.15"
+		jump_cam_shake="20" 
+		bite_damage="0.5"
+		>
+	</WormComponent>
+
+	<WormAIComponent
+		_enabled="0"
+		speed="4"
+		speed_hunt="5"
+		direction_adjust_speed="0.003"
+		direction_adjust_speed_hunt="0.035"
+		hunt_box_radius="256"
+		random_target_box_radius="400"
+		new_hunt_target_check_every="240"
+		new_random_target_check_every="240"
+		give_up_area_radius="150"
+		give_up_time_frames="250"
+		>
+	</WormAIComponent>
 
 	<CellEaterComponent
 		radius="9" >
@@ -319,13 +354,6 @@
 		</InheritTransformComponent>
 		
 		<LuaComponent
-			script_source_file="data/entities/animals/boss_toxic_worm/tail_projectile_spawner.lua"
-			execute_every_n_frame="80"
-			execute_times="-1"
-			>
-		</LuaComponent>
-		
-		<LuaComponent
 			script_source_file="data/entities/animals/boss_toxic_worm/tail_projectile_spawner_worm.lua"
 			execute_every_n_frame="600"
 			execute_times="-1"
@@ -333,6 +361,67 @@
 		</LuaComponent>
 
 	</Entity>
+	
+	<!--Keep the worm focused on the player-->
+	<VariableStorageComponent
+		name="basic_ai"
+		value_int="-10000"
+		value_float="1"
+		value_string="player"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags="counter"
+		script_source_file="data/entities/animals/boss_toxic_worm/boss_toxic_worm_basic_ai.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_toxic_worm/boss_toxic_worm_init.lua"
+		execute_every_n_frame="1"
+		execute_times="1"
+		>
+	</LuaComponent>
+	
+	<SpriteParticleEmitterComponent
+		_tags="invincible"
+		_enabled="0"
+		sprite_file="data/particles/shine_green.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		emissive="1"
+		additive="1"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="4"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-2"
+		randomize_velocity.max_x="2"
+		randomize_velocity.min_y="-2"
+		randomize_velocity.max_y="2"
+		randomize_position.min_x="-10"
+		randomize_position.max_x="10"
+		randomize_position.min_y="-10"
+		randomize_position.max_y="10"
+		>
+	</SpriteParticleEmitterComponent>
 	
   	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
