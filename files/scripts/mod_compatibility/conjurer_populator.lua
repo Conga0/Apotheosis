@@ -678,6 +678,16 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/bubbles/wand_random.png",
 	  },
 	  {
+		name="Wand of Aiming",
+		path="mods/Apotheosis/files/entities/items/wands/custom/aimbot_wand.xml",
+		image="data/ui_gfx/bubbles/wand_aimbot.png",
+	  },
+	  {
+		name="Deck of Cards",
+		path="mods/Apotheosis/files/entities/items/wands/custom/deck_of_cards.xml",
+		image="data/ui_gfx/bubbles/wand_deck_of_cards.png",
+	  },
+	  {
 		name="Rat",
 		path="mods/Apotheosis/files/entities/items/wands/custom/rat_wand.xml",
 		image="data/ui_gfx/bubbles/rat_wand.png",
@@ -725,7 +735,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Tablet Ghost",
 		path="data/entities/animals/playerghost_apotheosis/playerghost.xml",
-		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
+		image="data/ui_gfx/animal_icons/playerghost.png",
 	  }
   },
 })
