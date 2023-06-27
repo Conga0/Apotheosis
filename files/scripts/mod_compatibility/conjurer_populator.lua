@@ -37,7 +37,7 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Giant Toxic Worm",
-		path="data/entities/animals/boss_toxic_worm.xml",
+		path="data/entities/animals/boss_toxic_worm/boss_toxic_worm.xml",
 		image="data/ui_gfx/animal_icons/boss_toxic_worm.png",
 	  },
 	  {
@@ -126,9 +126,9 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/ant_fire.png",
 	  },
 	  {
-		name="Suffocation Ant",
+		name="Suffocating Ant",
 		path="data/entities/animals/ant_suffocate.xml",
-		image="data/ui_gfx/animal_icons/ant_fire.png",
+		image="data/ui_gfx/animal_icons/ant_suffocate.png",
 	  },
 	  {
 		name="Cat",

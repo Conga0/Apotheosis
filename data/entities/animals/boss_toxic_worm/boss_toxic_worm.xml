@@ -372,8 +372,7 @@
 	</VariableStorageComponent>
 
 	<LuaComponent
-		_enabled="0"
-		_tags="counter"
+		_enabled="1"
 		script_source_file="data/entities/animals/boss_toxic_worm/boss_toxic_worm_basic_ai.lua"
 		execute_every_n_frame="1"
 		execute_times="-1"

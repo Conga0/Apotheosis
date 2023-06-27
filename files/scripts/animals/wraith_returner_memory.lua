@@ -11,7 +11,6 @@ local rnd = Random( 1, #projectiles )
 local projectile_id = projectiles[rnd]
 local projectile = ""
 local damageCount = "0.5"
-local damageCountMisc = ""
 
 local storages = EntityGetComponent( projectile_id, "VariableStorageComponent" )
 
@@ -33,8 +32,7 @@ local DMGstorages = EntityGetComponent( projectile_id, "ProjectileComponent" )
 if ( DMGstorages ~= nil ) then
 	for k=1,#DMGstorages
 	do comp = DMGstorages[k]
-		damageCount = ComponentGetValue2( comp, "damage" )
-		damageCountMisc = ComponentObjectGetValue2( comp, "damage_by_type", "electricity")
+		damageCount = tonumber(ComponentGetValue2( comp, "damage" ))
 	end
 end
 
