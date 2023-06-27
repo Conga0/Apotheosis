@@ -1357,6 +1357,8 @@ if ModIsEnabled("raksa") == false then
 end
 
 --Overrides some creep's settings for spoopy's alternate graphics
+--Removed as it uses Spoopy's Graphics by default
+--[[
 if spoopyGFXSetting == true then
 
   --Esoteric Being
@@ -1377,6 +1379,7 @@ if spoopyGFXSetting == true then
   ModTextFileSetContent("mods/Apotheosis/files/scripts/animals/angel_holy_beam_calldown.lua", content)
 
 end
+]]--
 
 
 

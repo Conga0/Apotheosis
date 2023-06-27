@@ -18,7 +18,7 @@
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="200"
 			attack_ranged_frames_between="120"
-			attack_ranged_action_frame="3"
+			attack_ranged_action_frame="2"
 			attack_ranged_offset_y="0"
 			attack_ranged_offset_x="0"
 			attack_ranged_entity_count_min="2"
@@ -60,7 +60,7 @@
 		<SpriteComponent 
 			offset_x="0"
 			offset_y="0"
-			image_file="mods/Apotheosis/files/enemies_gfx/esoteric_being.xml" >
+			image_file="mods/Apotheosis/files/enemies_gfx/esoteric_being_alt.xml" >
 		</SpriteComponent>
 
 		<PathFindingComponent
@@ -89,7 +89,7 @@
 			fly_velocity_x="120">
 		</CharacterPlatformingComponent>
 		
-		<HitboxComponent 
+		<HitboxComponent
 			_enabled="1" 
 			aabb_min_x="-16" 
 			aabb_max_x="16" 
@@ -120,8 +120,8 @@
 	</Base>
 
 	<SpriteComponent 
-		offset_x="0"
-		offset_y="0"
+		offset_x="18.5"
+		offset_y="17.5"
 		image_file="mods/Apotheosis/files/projectiles_gfx/beam_holy_warning.xml" >
 	</SpriteComponent>
 

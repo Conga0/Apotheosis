@@ -141,6 +141,7 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME,
   },
+  --[[
   {
     id = "spoopy_graphics",
     ui_name = spoopy_graphics_name,
@@ -149,6 +150,7 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
   },
+  ]]--
   {
     id = "organised_icons",
     ui_name = organised_icons_name,

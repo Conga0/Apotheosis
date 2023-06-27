@@ -37,7 +37,7 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Giant Toxic Worm",
-		path="data/entities/animals/boss_toxic_worm.xml",
+		path="data/entities/animals/boss_toxic_worm/boss_toxic_worm.xml",
 		image="data/ui_gfx/animal_icons/boss_toxic_worm.png",
 	  },
 	  {
@@ -121,14 +121,14 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/ccc_bat_psychic.png",
 	  },
 	  {
-		name="Ant Fire",
+		name="Fire Ant",
 		path="data/entities/animals/ant_fire.xml",
 		image="data/ui_gfx/animal_icons/ant_fire.png",
 	  },
 	  {
-		name="Ant Suffocate",
+		name="Suffocating Ant",
 		path="data/entities/animals/ant_suffocate.xml",
-		image="data/ui_gfx/animal_icons/ant_fire.png",
+		image="data/ui_gfx/animal_icons/ant_suffocate.png",
 	  },
 	  {
 		name="Cat",
@@ -368,6 +368,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/phantom_c_apotheosis.png",
 	  },
 	  {
+		name="Apparition Player Ghost (Debug)",
+		path="data/entities/animals/apparition/playerghost.xml",
+		image="data/ui_gfx/animal_icons/playerghost.png",
+	  },
+	  {
 		name="Poisonous Mushroom",
 		path="data/entities/animals/poisonmushroom.xml",
 		image="data/ui_gfx/animal_icons/poisonmushroom.png",
@@ -556,7 +561,6 @@ table.insert(ALL_ENTITIES, {
 		name="Corrupt Master of Puppetering",
 		path="data/entities/animals/wizard_wands.xml",
 		image="data/ui_gfx/animal_icons/wizard_wands.png",
-
 	  },
 	  {
 		name="Alchemic Weirdo",
@@ -674,6 +678,16 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/bubbles/wand_random.png",
 	  },
 	  {
+		name="Wand of Aiming",
+		path="mods/Apotheosis/files/entities/items/wands/custom/aimbot_wand.xml",
+		image="data/ui_gfx/bubbles/wand_aimbot.png",
+	  },
+	  {
+		name="Deck of Cards",
+		path="mods/Apotheosis/files/entities/items/wands/custom/deck_of_cards.xml",
+		image="data/ui_gfx/bubbles/wand_deck_of_cards.png",
+	  },
+	  {
 		name="Rat",
 		path="mods/Apotheosis/files/entities/items/wands/custom/rat_wand.xml",
 		image="data/ui_gfx/bubbles/rat_wand.png",
@@ -721,7 +735,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Tablet Ghost",
 		path="data/entities/animals/playerghost_apotheosis/playerghost.xml",
-		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
+		image="data/ui_gfx/animal_icons/playerghost.png",
 	  }
   },
 })

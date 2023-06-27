@@ -57,7 +57,7 @@
 			</damage_multipliers>
 		</DamageModelComponent>
 
-		<SpriteComponent 
+		<SpriteComponent
 			offset_x="0"
 			offset_y="0"
 			image_file="mods/Apotheosis/files/enemies_gfx/esoteric_being_alt.xml" >
