@@ -11,7 +11,9 @@
 			attack_ranged_offset_y="4.5"
 			escape_if_damaged_probability="0"
 			needs_food="0"
-			can_fly="1" >
+			can_fly="1"
+			aggressiveness_min="1"
+			aggressiveness_max="100" >
 		</AnimalAIComponent>
 
 		<DamageModelComponent 
@@ -61,7 +63,7 @@
 		</HitboxComponent>		
 		
 		<GenomeDataComponent 
-			herd_id="ghost" >
+			herd_id="ghost_whisp" >
 		</GenomeDataComponent>
 		
 		<CharacterDataComponent
@@ -131,68 +133,79 @@
     </LuaComponent>
 
 	<DamageNearbyEntitiesComponent
-    radius="15"
-    time_between_damaging="4"
-    damage_max="0.02"
-    damage_max="0.02"
-    target_tag="prey"
-	damage_description="Jättipalavakeiju fire"
-    damage_type="DAMAGE_FIRE"
-    ragdoll_fx="NONE">
+		radius="15"
+		time_between_damaging="4"
+		damage_max="0.02"
+		damage_max="0.02"
+		target_tag="prey"
+		damage_description="Jättipalavakeiju fire"
+		damage_type="DAMAGE_FIRE"
+		ragdoll_fx="NONE">
 	</DamageNearbyEntitiesComponent>
 	
 	<ParticleEmitterComponent 
-	_tags="lurker_data"
-    emitted_material_name="fire"
-    count_min="3"
-    count_max="7"
-    offset.x="0"
-    offset.y="-0.5"
-    x_pos_offset_min="-4"
-    y_pos_offset_min="-4"
-    x_pos_offset_max="4"
-    y_pos_offset_max="4"
-    x_vel_min="-10"
-    x_vel_max="10"
-    y_vel_min="-10"
-    y_vel_max="10"
-    count_min="8"
-    count_max="8"
-    lifetime_min="0.4"
-    lifetime_max="1.0"
-    create_real_particles="1"
-    emit_cosmetic_particles="0"
-    emission_interval_min_frames="2"
-    emission_interval_max_frames="3"
-    is_emitting="1" >
-  </ParticleEmitterComponent>
+		_tags="lurker_data"
+		emitted_material_name="fire"
+		count_min="3"
+		count_max="7"
+		offset.x="0"
+		offset.y="-0.5"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		count_min="8"
+		count_max="8"
+		lifetime_min="0.4"
+		lifetime_max="1.0"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="3"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
   
-  <ParticleEmitterComponent 
-  _tags="lurker_data"
-    emitted_material_name="fire"
-	custom_style="FIRE"
-    count_min="3"
-    count_max="7"
-    offset.x="0"
-    offset.y="-0.5"
-    x_pos_offset_min="-4"
-    y_pos_offset_min="-4"
-    x_pos_offset_max="4"
-    y_pos_offset_max="4"
-    x_vel_min="-10"
-    x_vel_max="10"
-    y_vel_min="-10"
-    y_vel_max="10"
-    count_min="8"
-    count_max="8"
-    lifetime_min="0.4"
-    lifetime_max="1.0"
-    create_real_particles="1"
-    emit_cosmetic_particles="0"
-    emission_interval_min_frames="1"
-    emission_interval_max_frames="2"
-    is_emitting="1" >
-  </ParticleEmitterComponent>
+	<ParticleEmitterComponent 
+		_tags="lurker_data"
+		emitted_material_name="fire"
+		custom_style="FIRE"
+		count_min="3"
+		count_max="7"
+		offset.x="0"
+		offset.y="-0.5"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		count_min="8"
+		count_max="8"
+		lifetime_min="0.4"
+		lifetime_max="1.0"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LuaComponent
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/fairy_kill.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="fairy_version"
+		value_string="data/entities/animals/fairy_big.xml"
+	></VariableStorageComponent>
 	
 </Entity>
 
