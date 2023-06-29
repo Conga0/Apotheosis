@@ -17,6 +17,11 @@
 {8340afee-1bfb-481c-8b65-a1721703356c} bus:/reverb
 {40bdfd79-5dfd-4303-8a71-0792c637c380} bus:/ui
 {f2f92403-a3e0-42fc-943f-7299942e15ce} event:/mocreeps_audio/angel/warning
+{a74edb18-3a73-40e1-bf61-eded630224d3} event:/mocreeps_audio/animals/fairy_giga/damage/explosion
+{ffc47620-e1bd-471f-9c18-0ef06c279469} event:/mocreeps_audio/animals/fairy_giga/damage/physics_hit
+{974e4a72-7160-49be-b55f-118b6695b427} event:/mocreeps_audio/animals/fairy_giga/damage/projectile
+{2d5891c3-5b16-4928-bce9-751caa14d91b} event:/mocreeps_audio/animals/fairy_giga/death
+{8bf95da9-30b1-4fb9-9c40-8d637ed746ae} event:/mocreeps_audio/animals/fairy_giga/voc_shoot
 {a16b29b2-f6ca-4152-94e4-e2975761674e} event:/mocreeps_audio/kittycat/meow_01
 {4490ae24-a5c7-47b3-a633-d8123ff0b9b6} event:/mocreeps_audio/kittycat/meow_02
 {c266f1c5-0e3c-4d6a-a3b6-24b26716a3bb} event:/mocreeps_audio/kittycat/meow_03
