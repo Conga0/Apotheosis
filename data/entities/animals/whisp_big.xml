@@ -11,7 +11,9 @@
 			attack_ranged_offset_y="4.5"
 			escape_if_damaged_probability="0"
 			needs_food="0"
-			can_fly="1" >
+			can_fly="1"
+			aggressiveness_min="1"
+			aggressiveness_max="100" >
 		</AnimalAIComponent>
 
 		<DamageModelComponent 
@@ -61,7 +63,7 @@
 		</HitboxComponent>		
 		
 		<GenomeDataComponent 
-			herd_id="ghost" >
+			herd_id="ghost_whisp" >
 		</GenomeDataComponent>
 		
 		<CharacterDataComponent
@@ -193,6 +195,17 @@
     emission_interval_max_frames="2"
     is_emitting="1" >
   </ParticleEmitterComponent>
+
+	<LuaComponent
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/fairy_kill.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+	  name="fairy_version"
+	  value_string="data/entities/animals/fairy_big.xml"
+	></VariableStorageComponent>
 	
 </Entity>
 

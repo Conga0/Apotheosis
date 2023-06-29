@@ -1,0 +1,31 @@
+<Sprite
+ filename="mods/Apotheosis/files/enemies_gfx/fairy_giga_emissive.png"
+ offset_x="52"
+ offset_y="50"
+ default_animation="stand" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="8"
+  frame_width="105"
+  frame_height="96"
+  frame_wait="0.1"
+  frames_per_row="8"
+  loop="1"   >
+ </RectAnimation>
+
+  <RectAnimation 
+    frame_count="8" 
+    frame_height="96" 
+    frame_wait="0.1" 
+    frame_width="105" 
+    frames_per_row="11" 
+    loop="0" 
+    name="attack_ranged"
+    pos_x="0" 
+    pos_y="96" >
+  </RectAnimation>
+</Sprite>

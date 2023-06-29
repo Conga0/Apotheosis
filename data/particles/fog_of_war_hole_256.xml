@@ -1,8 +1,8 @@
 <Sprite 
   default_animation="explosion" 
   filename="data/particles/fog_of_war_hole_256.png" 
-  offset_x="128" 
-  offset_y="128" >
+  offset_x="64.5" 
+  offset_y="64.5" >
 
   <RectAnimation 
     frame_count="1" 

@@ -6,7 +6,9 @@
 			attack_melee_enabled="0"
 			escape_if_damaged_probability="100"
 			needs_food="0"
-			can_fly="1" >
+			can_fly="1" 
+			aggressiveness_min="1"
+			aggressiveness_max="60" >
 		</AnimalAIComponent>
 
 		<DamageModelComponent 
@@ -50,7 +52,7 @@
 		</HitboxComponent>		
 		
 		<GenomeDataComponent 
-			herd_id="ghost" >
+			herd_id="ghost_whisp" >
 		</GenomeDataComponent>
 
 		<PathFindingGridMarkerComponent

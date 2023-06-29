@@ -80,5 +80,19 @@ function split_string(inputstr, sep)
       ghost_boss = 100,
       healer = 100,
   })
+  content = add_new_genome(content, "ghost_whisp", 90, 90, 100, {
+      player = 0,
+      ["-1"] = 0,
+      nest = 100,
+      ghost = { 70, 90 },
+      boss_limbs = 0,
+      healer = 100,
+      apparition = 50,
+      bat = { 100, 90 },
+      mage_swapper = { 90, 0 },
+      curse = 100,
+      trap = 100,
+      ghost_boss = 100,
+  })
   
   ModTextFileSetContent("data/genome_relations.csv", content)

@@ -5,7 +5,7 @@
 			attack_melee_enabled="0"
 			attack_ranged_enabled="1"
 			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_fairy_colossal.xml"
-			attack_ranged_action_frame="1"
+			attack_ranged_action_frame="5"
 			attack_ranged_frames_between="360" 
 			attack_ranged_max_distance="250"
 			attack_ranged_offset_y="4.5"
@@ -37,7 +37,7 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/fairy_giant.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_giga.xml"
 			offset_x="0"
 			offset_y="0" >
 		</SpriteComponent>
@@ -72,13 +72,16 @@
 		<InheritTransformComponent />
 		
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/fairy_giant_emissive.xml"
-			alpha="0.9"
-			offset_x="24"
-			offset_y="24" >
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_giga_emissive.xml"
+			alpha="1"
+			emissive="1"
+			additive="0"
+			offset_x="0"
+			offset_y="0" >
 		</SpriteComponent>
 		
 		<SpriteComponent 
+			_tags="character"
 			alpha="0.55"
 			image_file="data/particles/fog_of_war_hole_256.xml"
 			smooth_filtering="1"
