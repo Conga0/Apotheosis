@@ -101,10 +101,10 @@
 		>
     </LightComponent>
 	
-	<AudioComponent
-		file="data/audio/Desktop/animals.bank"
-		event_root="animals/lasershooter" >
-	</AudioComponent>
+	    <AudioComponent
+        file="mods/Apotheosis/mocreeps_audio.bank"
+        event_root="mocreeps_audio/animals/fairy_giga" >
+    </AudioComponent>
 
     <LuaComponent
         execute_every_n_frame="-1"

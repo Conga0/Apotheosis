@@ -4,7 +4,7 @@
 --More infighting might be fun
 --
 --
---Conga: There's probably a more effecient way to run all of this.. will need to investigate after my modjam entry is complete
+--Conga: There's probably a more efficient way to run all of this.. will need to investigate after my modjam entry is complete
 --
 
 -- Big thank you to Horscht for this genome adding function :)
