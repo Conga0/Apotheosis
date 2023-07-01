@@ -49,3 +49,5 @@ Better Aquamine sprites
 Better Fungal Shift Spell sprites
 
 Make Red Sand guaranteed accessible by the 2nd biome at least, gotta get those shift addictions taken care of, by encouraging it!
+
+Custom intro cutscene would be nice, similar to what the base game does

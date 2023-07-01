@@ -1,0 +1,28 @@
+<Entity tags="tablet,normal_tablet,forgeable">
+	<Base file="data/entities/items/books/base_book.xml">
+		<UIInfoComponent
+			name="$book_apotheosis_orbbook_15_name"
+			>
+		</UIInfoComponent>
+		
+		<ItemComponent
+			item_name="$book_apotheosis_orbbook_15_name"
+			ui_description="$book_apotheosis_orbbook_15_description"
+			>
+		</ItemComponent>
+		
+		<AbilityComponent
+			ui_name="$book_apotheosis_orbbook_15_name"
+			>
+		</AbilityComponent>
+	</Base>
+
+	<LuaComponent
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/items/obj_path.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+</Entity>

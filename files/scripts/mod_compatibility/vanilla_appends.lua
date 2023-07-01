@@ -96,6 +96,9 @@ do --Vanilla Pixel Scene adjustments
   content = content:gsub("data/entities/props/music_machines/music_machine_01.xml", "")
   content = content:gsub("data/entities/props/music_machines/music_machine_02.xml", "")
   content = content:gsub("data/entities/props/music_machines/music_machine_03.xml", "")
+
+  --Move Hidden Glyph Jungle down slightly so it isn't revealed in open terrain
+  content = content:gsub("x=\"2806\" y=\"6614\"", "x=\"2806\" y=\"6714\"")
   ModTextFileSetContent(path, content)
 end
 
@@ -273,14 +276,6 @@ do -- Add secret path check to portal entity
   attrpath = xml:first_of("LuaComponent").attr
   attrpath.script_portal_teleport_used = "mods/apotheosis/files/scripts/buildings/teleporter_secret_check_fail.lua"
   ModTextFileSetContent(path, tostring(xml))
-end
-
-do -- Fixes Leviathan Portal to Coral Chest
-  local path = "data/entities/buildings/teleport_teleroom_6.xml"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("7480", "7060")
-  content = content:gsub("-12288", "-12209")
-  ModTextFileSetContent(path, content)
 end
 
 do
@@ -581,7 +576,6 @@ do --Add Random Homing to Pyramid Boss loot pool
   content = content:gsub([[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM" }]], [[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM", "APOTHEOSIS_RANDOM_HOMING", "APOTHEOSIS_RANDOM_BURST" }]])
   ModTextFileSetContent(path, content)
 end
-
 
 do -- Autogenerate filepath VSCs for various items
   local paths = {

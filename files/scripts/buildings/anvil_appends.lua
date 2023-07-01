@@ -21,6 +21,7 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 70, "tablet")) do
 				if( item_name == "$book_apotheosis_orbbook_12_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
 				if( item_name == "$book_apotheosis_orbbook_13_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
 				if( item_name == "$book_apotheosis_orbbook_14_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
+				if( item_name == "$book_apotheosis_orbbook_15_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
 
 			end
 		end
