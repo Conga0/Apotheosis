@@ -1,11 +1,11 @@
--- location: Temple of Sacriligious Remains
+-- location: Ant Hell
 
 CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
 dofile_once("data/scripts/lib/utilities.lua")
 dofile( "data/scripts/biomes/orbrooms/orbroom_shared.lua" )
--- Orb inside the Temple of Sacriligious Remains
+-- Orb inside the Ant Hell
 
 RegisterSpawnFunction( 0xffffeedd, "init" )
 
@@ -34,7 +34,7 @@ end
 
 ------------------------------------------------------------------------
 
---Transmute Slimy Enemies into Mudmen
+--Magic Inebriation
 
 ------------------------------------------------------------------------
 

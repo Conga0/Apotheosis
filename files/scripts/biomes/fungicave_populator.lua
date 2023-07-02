@@ -50,7 +50,7 @@ table.insert(g_big_enemies,
     prob           = 0.05,
     min_count    = 1,
     max_count    = 1,    
-    entity     = "data/entities/animals/fungicave/slime_warping.xml"
+    entity     = "data/entities/animals/fungicave/slime_teleporter.xml"
 })
 
 

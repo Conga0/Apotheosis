@@ -1,11 +1,11 @@
--- location: Temple of Sacriligious Remains
+-- location: Virulent Caverns
 
 CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
 dofile_once("data/scripts/lib/utilities.lua")
 dofile( "data/scripts/biomes/orbrooms/orbroom_shared.lua" )
--- Orb inside the Temple of Sacriligious Remains
+-- Orb inside the Virulent Caverns
 
 RegisterSpawnFunction( 0xffffeedd, "init" )
 

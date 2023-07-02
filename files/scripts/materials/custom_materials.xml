@@ -2725,6 +2725,20 @@
 		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_gas_fading"
 		>
 	</Reaction>
+	
+	<!--Teleportatium + Blood = Portalium-->
+	<Reaction probability="15"
+		input_cell1="blood" 		input_cell2="magic_liquid_teleportation"
+		output_cell1="steam"	output_cell2="apotheosis_magic_liquid_rideshare"
+		>
+	</Reaction>
+	
+	<!--Wizard Stone turns blood into Portalium-->
+	<Reaction probability="50"
+		input_cell1="wizardstone" input_cell2="blood"
+		output_cell1="steam" output_cell2="apotheosis_magic_liquid_rideshare"
+		>
+	</Reaction>
 
 </Materials>
 

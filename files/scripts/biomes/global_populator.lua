@@ -222,7 +222,7 @@ table.insert(g_small_enemies,
     entity     = "data/entities/animals/playerghost_apotheosis/playerghost.xml",
     spawn_check = function() 
 
-        local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) )
+        local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
         
         if ghost_count >= 3 then
             return false

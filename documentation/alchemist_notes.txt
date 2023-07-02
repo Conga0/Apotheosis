@@ -16,6 +16,9 @@ Veloium + Metal = Veloium + Poison Gas
 
 Powdered Milk + Water = Milk
 
+Blood + Teleportatium = Portalium
+Wizardstone + Blood = Portalium
+
 
 Normal Potion Pool:
 Magical Mud: Creates Mud Men when exposed to fire or other sources of explosions

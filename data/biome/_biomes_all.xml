@@ -1215,6 +1215,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/plane_magic.xml"
+		height_index="13"
+		color="ff9426bd" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/arena_boss_mid.xml" 
 		height_index="10"
 		color="ff733eee" >
@@ -1230,6 +1236,12 @@
 		biome_filename="data/biome/custom/plane_portal_01.xml"
 		height_index="10"
 		color="ffeae85f" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/empty_ant.xml" 
+		height_index="0"
+		color="ff48E312" >
 	</Biome>
 
 </BiomesToLoad>

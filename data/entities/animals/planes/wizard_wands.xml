@@ -1,0 +1,8 @@
+<Entity>
+  <Base file="data/entities/animals/wizard_wands.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="160"
+      max_hp="160"
+     ></DamageModelComponent >
+  </Base>
+</Entity>

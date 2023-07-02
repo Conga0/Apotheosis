@@ -378,12 +378,14 @@ biome_mueseum,"Marble Halls",,,,,,,,,,,,,
 biome_ant_hell,"Ant Nest",,,,,,,,,,,,,
 biome_plane_yggdrasil,"Plane of Yggdrasil",,,,,,,,,,,,,
 biome_plane_yggdrasil_border,"Outer Plane of Yggdrasil",,,,,,,,,,,,,
+biome_plane_magic,"Plane of Soul",,,,,,,,,,,,,
 biomemod_esoteric_presence,"You feel an indescribable aura...",,,,,,,,,,,,,
 biomemod_magmatic,"The air is burning",,,,,,,,,,,,,
 biomemod_necromancy,"The Dead are Restless",,,,,,,,,,,,,
 biomemod_esoteric_den,"You feel the world has indescribable shapes...",,,,,,,,,,,,,
 biomemod_alchemic,"You feel an alchemical mist in the air",,,,,,,,,,,,,
 biomemod_plane_yggdrasil,"A dense jungle with endless life, filled with monsters foreign",,,,,,,,,,,,,
+biomemod_plane_magic,"Your soul feels heavy",,,,,,,,,,,,,
 biomemod_slime_hell,"You feel strangely warm",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_corruptflesh,"Vacillating Flesh",,,,,,,,,,,,,
@@ -1645,7 +1647,7 @@ do  -- Player Editor
   --Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
   local attrs = xml:first_of("DamageModelComponent").attr
   attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
-  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0009,0.001"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0002,0.001"
 
   if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
     --Adds Golden Cape if check is successful

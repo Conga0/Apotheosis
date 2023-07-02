@@ -4,7 +4,7 @@
 
 		<!--We need to start counting orb count +1 here because of an unused but technically obtainable vanilla 13th orb (Great Chest Orb)-->
 		<OrbComponent
-			orb_id="15" >
+			orb_id="16" >
 		</OrbComponent>
 		
 		<SpriteComponent 
