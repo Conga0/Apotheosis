@@ -55,7 +55,7 @@
 
     <Event 
       check_physics_material="0" 
-      frame="1" 
+      frame="3" 
       max_distance="500" 
       name="shoot_fire" 
       on_finished="0" 
@@ -64,7 +64,7 @@
 	
 	<Event 
       check_physics_material="0" 
-      frame="1" 
+      frame="3" 
       max_distance="500" 
       name="attack_shoot" 
       on_finished="0" 

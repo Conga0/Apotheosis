@@ -50,17 +50,17 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		--Slow down the worm but give it very high turn speed
 		local wormAiComp = EntityGetFirstComponentIncludingDisabled(entity_id,"WormAIComponent")
 		ComponentSetValue2( wormAiComp, "speed", 1 )
-		ComponentSetValue2( wormAiComp, "speed_hunt", 1 )
+		ComponentSetValue2( wormAiComp, "speed_hunt", 3 )
 		ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.15 )
-		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.15 )
+		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.45 )
 
-		EntitySetComponentsWithTagEnabled(entity_id,"watermage",true)	--Enable TowerClimb phase components
+		EntitySetComponentsWithTagEnabled(entity_id,"disabled_by_liquid",true)	--Enable TowerClimb phase components
 		EntitySetComponentsWithTagEnabled(entity_id,"counter",false)	--Disable normal phase components
 	end
 	
 
-	--Towerclimb Phase #1 ends at 65% hp
-	if phase == 2 and ((max_health * 0.65) >= health) then
+	--Towerclimb Phase #1 ends at 64% hp
+	if phase == 2 and ((max_health * 0.64) >= health) then
 		IncrementPhase(entity_id,phase)
 
 		--Bring worm back up to it's normal speed
@@ -70,7 +70,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.003 )
 		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.04 )  
 
-		EntitySetComponentsWithTagEnabled(entity_id,"watermage",false)	--Disable TowerClimb phase components
+		EntitySetComponentsWithTagEnabled(entity_id,"disabled_by_liquid",false)	--Disable TowerClimb phase components
 		EntitySetComponentsWithTagEnabled(entity_id,"counter",true)	--Enable normal phase components
 	end
 	
@@ -88,17 +88,17 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		--Slow down the worm but give it very high turn speed
 		local wormAiComp = EntityGetFirstComponentIncludingDisabled(entity_id,"WormAIComponent")
 		ComponentSetValue2( wormAiComp, "speed", 1 )
-		ComponentSetValue2( wormAiComp, "speed_hunt", 1 )
+		ComponentSetValue2( wormAiComp, "speed_hunt", 3 )
 		ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.15 )
-		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.15 )
+		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.45 )
 
-		EntitySetComponentsWithTagEnabled(entity_id,"watermage",true)	--Enable TowerClimb phase components
+		EntitySetComponentsWithTagEnabled(entity_id,"disabled_by_liquid",true)	--Enable TowerClimb phase components
 		EntitySetComponentsWithTagEnabled(entity_id,"counter",false)	--Disable normal phase components
 	end
 	
 
-	--Towerclimb Phase #2 ends at 32% hp
-	if phase == 4 and ((max_health * 0.32) >= health) then
+	--Towerclimb Phase #2 ends at 31% hp
+	if phase == 4 and ((max_health * 0.31) >= health) then
 		IncrementPhase(entity_id,phase)
 
 		--Bring worm back up to it's normal speed
@@ -108,7 +108,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.003 )
 		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.04 )  
 
-		EntitySetComponentsWithTagEnabled(entity_id,"watermage",false)	--Disable TowerClimb phase components
+		EntitySetComponentsWithTagEnabled(entity_id,"disabled_by_liquid",false)	--Disable TowerClimb phase components
 		EntitySetComponentsWithTagEnabled(entity_id,"counter",true)	--Enable normal phase components
 
 		--Lets the worm die

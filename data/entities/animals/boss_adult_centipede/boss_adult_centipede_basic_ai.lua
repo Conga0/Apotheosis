@@ -6,11 +6,12 @@ local wormAiComp = EntityGetFirstComponentIncludingDisabled(entity_id,"WormAICom
 local targ_x, targ_y = ComponentGetValue2(wormComp,"mTargetVec")
 
 local angle = math.atan2(targ_y, targ_x)
-local acidspit_cooldown_duration = 15 * 60
+local acidspit_cooldown_duration = 18 * 60
 local current_frame = GameGetFrameNum()
 
 function CrackEggs(table)
 
+    local how_many = 12
     local angle_inc = ( 2 * 3.14159 ) / how_many
     local theta = 0
     local length = 400
@@ -35,6 +36,7 @@ function CrackEggs(table)
         GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/egg/hatch", pos_x, pos_y );
     end
 end
+
 
 
 function Stage1()
@@ -116,6 +118,10 @@ do
         Stage3()
     elseif (current_frame >= cooldown_frame) and laser_stage == 4 then
         ComponentSetValue2( variablecomp, "value_int", current_frame + acidspit_cooldown_duration )
+        ComponentSetValue2( variablecomp, "value_float", 5 )
+        Stage4()
+    elseif (current_frame >= cooldown_frame) and laser_stage == 5 then
+        ComponentSetValue2( variablecomp, "value_int", current_frame + (7 * 60) )
         ComponentSetValue2( variablecomp, "value_float", 1 )
         Stage4()
     end
@@ -128,24 +134,16 @@ end
 -- 1. begin emitting particles/fake laser from the worm's head, in the direction it's moving
 -- 2. begin slowing the worm down and intensify beam particles
 -- 3. 0.5-1 seconds later, unleash a massive powerful laser beam
--- 4. after 2-3 seconds pass, disable the laser beam and give the worm it's normal movement back
+-- 4. After 2-3 seconds pass, disable the laser beam and give the worm it's normal movement back, but potentially disengage with the player
+-- 5. After the cooldown finishes, chase after the player again
 
 
 
---Keeps worm focused on the player if they're their target
-if ComponentGetValue2( variablecomp, "value_string" ) == "player" then
+--Keeps worm focused on the player during the Acid Sphere attack
+if laser_stage ~= 1 then
     local player_id = EntityGetWithTag("player_unit")[1]
     if EntityHasTag(player_id,"mortal") then
         ComponentSetValue2(wormAiComp,"mTargetEntityId",player_id)
         --GamePrint("Test 1")
-    else
-        ComponentSetValue2( variablecomp, "value_string", "null" )
-        --GamePrint("Test 2")
-    end
-else
-    local target_id = ComponentGetValue2(wormAiComp,"mTargetEntityId")
-    if EntityHasTag(target_id,"player_unit") then
-        ComponentSetValue2( variablecomp, "value_string", "player" )
-        --GamePrint("Test 3")
     end
 end

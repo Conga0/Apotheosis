@@ -51,7 +51,7 @@
 		blood_material="apotheosis_blood_worm_centipede"
 		blood_spray_material="apotheosis_blood_worm_centipede"
 		blood_multiplier="0.01"
-		hp="880" 
+		hp="600" 
 		wait_for_kill_flag_on_death="1"
 		is_on_fire="0" 
 		mAirAreWeInWater="0" 
@@ -795,8 +795,8 @@
 
 	<LuaComponent
 		_enabled="0"
-		_tags="watermage"
-		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_1.lua"
+		_tags="disabled_by_liquid"
+		script_damage_about_to_be_received="data/entities/animals/boss_adult_centipede/dmg_limit_1.lua"
 		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_towerclimb_ai.lua"
 		execute_every_n_frame="1"
 		execute_times="-1"

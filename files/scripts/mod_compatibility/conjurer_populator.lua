@@ -225,13 +225,11 @@ table.insert(ALL_ENTITIES, {
 		path="data/entities/animals/gazer_cold_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/gazer_cold_apotheosis.png",
 	  },
-	  --[[
 	  {
 		name="Parasitic Gazer",
 		path="data/entities/animals/gazer_parasitic.xml",
 		image="data/ui_gfx/animal_icons/gazer_parasitic.png",
 	  },
-	  ]]--
 	  {
 		name="Greater Hell Gazer",
 		path="data/entities/animals/gazer_greater.xml",
