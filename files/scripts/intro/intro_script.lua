@@ -104,12 +104,7 @@ if runtime == 0 then
     ToggleUI(player_id,false)
 end
 
-if runtime == 1260 then
-    --Disable the Camera Light
-    --Note: Causes a weird glitching effect
-    --GameSetCameraFree(false)
-end
-
+--Pan camera downwards to the player
 if runtime > 1260 then
     --pos_y = pos_y + 2
     --EntitySetTransform(entity_id, pos_x, pos_y)
@@ -127,18 +122,21 @@ if runtime > 1260 then
     -- move towards target
     pos_x,pos_y = lerpVec(pos_x, pos_y, target_x, target_y + 30, lerp_amount)
     EntitySetTransform( entity_id, pos_x, pos_y, 0, 1, 1)
-
+    
+    --Fast forward time to midday
+    local worldEntity = GameGetWorldStateEntity()
+    local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
+    local time = ComponentGetValue2(comp,"time")
+    ComponentSetValue2(comp,"time",time + 0.001)
 end
 
+--Make player stand up, timed so the animation ends perfectly with the player gaining control
 if runtime == 1260 + 189 then
-    --refreshSprites(player_id)
     GamePlayAnimation( player_id, "intro_stand_up", 51, "stand", 52 )
-
-    --EntityKill(EntityGetWithName( "intro_actor_laydown" ))
-    --local actor_id = EntityLoad("mods/apotheosis/files/entities/intro/player_actor_lay.xml", 227, -85)
-    --GamePlayAnimation( actor_id, "intro_stand_up", 99, "stand", 1 )
 end
 
+--Exit cutscene mode, reenable hud, return control to player
+--Else, update the camera position each frame
 if runtime > 1260 + 420 then
     GameSetCameraFree(false)
     set_controls_enabled(true)
@@ -147,6 +145,10 @@ if runtime > 1260 + 420 then
     --EntitySetTransform(player_id, 227, -85)
     refreshSprites(player_id)
     ToggleUI(player_id,true)
+
+    local worldEntity = GameGetWorldStateEntity()
+    local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
+    ComponentSetValue2(comp,"time_dt",1)
 else
     GameSetCameraPos(pos_x,pos_y)
 end

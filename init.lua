@@ -545,7 +545,7 @@ book_apotheosis_orbbook_stone_workinprogress_description,"Seeker of knowledge, y
 book_apotheosis_orbbook_stone_12_description,"Evolution is forever changing.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_13_description,"Bring your friends along when you travel.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must remain pure and unintoxicated.",,,,,,,,,,,,,
-book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so, and your arrow shall move faster.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so and your arrow shall move faster.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
