@@ -517,8 +517,8 @@ do local v = appends[k];
     <PixelScene pos_x="]] .. (24166 - worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
 
     <PixelScene pos_x="2800" pos_y="250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
-    <PixelScene pos_x="]] .. (2800 + worldsize)  .. [[" pos_y="-250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
-    <PixelScene pos_x="]] .. (2800 - worldsize)  .. [[" pos_y="-250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+    <PixelScene pos_x="]] .. (2800 + worldsize)  .. [[" pos_y="-550" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+    <PixelScene pos_x="]] .. (2800 - worldsize)  .. [[" pos_y="-550" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
   ]]))
 
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))

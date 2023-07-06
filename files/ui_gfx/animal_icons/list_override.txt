@@ -233,6 +233,7 @@ skygazer
 gazer_greater_sky
 gazer_cold_apotheosis
 gazer_greater_cold
+gazer_parasitic
 gazer_robot
 spitmonster
 sentry

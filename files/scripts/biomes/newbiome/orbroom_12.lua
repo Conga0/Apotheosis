@@ -46,8 +46,8 @@ function spawn_orb(x, y)
 	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_12.xml", x - 30, y - 30 )
 	EntityLoad( "data/entities/misc/music_energy_000.xml", x, y - 10 )
 
-	spawn_material_checker( x - 197, y - 11, "slime", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "data/particles/image_emitters/orbrooms/05_02.xml", x, y - 100 )
-	spawn_material_checker( x + 198, y - 11, "slime", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "data/particles/image_emitters/orbrooms/05_02.xml", x, y - 100 )
+	spawn_material_checker( x - 197, y - 11, "apotheosis_redstone", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_12.xml", x, y - 100 )
+	spawn_material_checker( x + 198, y - 11, "apotheosis_redstone", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_12.xml", x, y - 100 )
 
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x - 197, y - 11 )
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x + 198, y - 11 )

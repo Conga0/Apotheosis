@@ -545,7 +545,7 @@ book_apotheosis_orbbook_stone_workinprogress_description,"Seeker of knowledge, y
 book_apotheosis_orbbook_stone_12_description,"Evolution is forever changing.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_13_description,"Bring your friends along when you travel.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must remain pure and unintoxicated.",,,,,,,,,,,,,
-book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so, and your arrow shall move faster.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
@@ -1788,6 +1788,15 @@ function OnPlayerSpawned( player_entity )
   --Warns the player if Mo Creeps is enabled, to shut it off
   if ModIsEnabled("Mo_Creeps") then
     GamePrintImportant("WARNING: MO CREEPS IS ENABLED","Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+  end
+
+  --Debug Testing for intro scene
+  --RemoveFlagPersistent( "apotheosis_intro_cutscene_devtest" )
+
+  --Handles the intro cutscene if the player hasn't encountered it yet
+  if ModIsEnabled("Mo_Creeps") == false and HasFlagPersistent( "apotheosis_intro_cutscene_devtest" ) == false then
+    EntityLoad("mods/apotheosis/files/entities/intro/controller_scenes.xml", x, y)
+    AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
   end
 
   --Handles AprilFools related code

@@ -1,0 +1,13 @@
+<Entity serialize="0">
+
+	<Base file="data/entities/intro/constellation_base.xml">
+	  	<ParticleEmitterComponent 
+			emitted_material_name="spark_red_bright"
+			emission_chance="16"
+			image_animation_file="mods/apotheosis/files/entities/intro/3_3.png"
+			image_animation_colors_file="mods/apotheosis/files/entities/intro/3_3_colour.png" 
+			>
+		</ParticleEmitterComponent>
+	</Base>
+
+</Entity>

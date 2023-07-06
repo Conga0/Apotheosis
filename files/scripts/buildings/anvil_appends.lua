@@ -18,10 +18,10 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 70, "tablet")) do
 			for i,itemc in ipairs(item_comps) do
 				item_name = ComponentGetValue2( itemc, "item_name" )
 
-				if( item_name == "$book_apotheosis_orbbook_12_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
-				if( item_name == "$book_apotheosis_orbbook_13_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
-				if( item_name == "$book_apotheosis_orbbook_14_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
-				if( item_name == "$book_apotheosis_orbbook_15_name" ) then new_desc = "$book_apotheosis_orbbook_stone_workinprogress_description" end
+				if( item_name == "$book_apotheosis_orbbook_12_name" ) then new_desc = "$book_apotheosis_orbbook_stone_12_description" end
+				if( item_name == "$book_apotheosis_orbbook_13_name" ) then new_desc = "$book_apotheosis_orbbook_stone_13_description" end
+				if( item_name == "$book_apotheosis_orbbook_14_name" ) then new_desc = "$book_apotheosis_orbbook_stone_14_description" end
+				if( item_name == "$book_apotheosis_orbbook_15_name" ) then new_desc = "$book_apotheosis_orbbook_stone_15_description" end
 
 			end
 		end

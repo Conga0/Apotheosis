@@ -138,13 +138,13 @@
 		>
   </SpriteParticleEmitterComponent>
 
-  <LuaComponent
-      _enabled="1"
-      script_source_file="mods/apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive_tracker.lua"
-      execute_every_n_frame="1"
-      remove_after_executed="0"
-      >
-  </LuaComponent>
+	<LuaComponent
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive_tracker.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="0"
+		>
+	</LuaComponent>
 
 	<LuaComponent
 		_enabled="1"
@@ -152,7 +152,13 @@
 		execute_every_n_frame="1"
 		remove_after_executed="1"
 		>
-  </LuaComponent>
+	</LuaComponent>
+  
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/meteor/loop"
+		auto_play="1">
+	</AudioLoopComponent>
   
 	<VariableStorageComponent
 		name="projectile_file"

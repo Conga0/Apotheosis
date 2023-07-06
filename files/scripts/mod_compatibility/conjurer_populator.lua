@@ -556,6 +556,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_corrupt_manaeater.png",
 	  },
 	  {
+		name="Corrupt Master of Polymorphing",
+		path="data/entities/animals/wizard_corrupt_poly.xml",
+		image="data/ui_gfx/animal_icons/wizard_poly.png",
+	  },
+	  {
 		name="Corrupt Master of Puppetering",
 		path="data/entities/animals/wizard_wands.xml",
 		image="data/ui_gfx/animal_icons/wizard_wands.png",

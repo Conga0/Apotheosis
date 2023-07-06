@@ -27,7 +27,7 @@ function spawn_potions( x, y ) end
 function spawn_wands( x, y ) end
 
 function init( x, y, w, h )
-	LoadPixelScene( "data/biome_impl/orbroom.png", "data/biome_impl/orbroom_visual.png", x, y, "data/biome_impl/orbroom_background.png", true )
+	LoadPixelScene( "data/biome_impl/orbroom_noxioussludge.png", "data/biome_impl/orbroom_visual.png", x, y, "data/biome_impl/orbroom_background.png", true )
 	
 	--EntityLoad( "data/entities/misc/orb_07_pitcheck_b.xml", x - 64, y + 256 )
 end
@@ -45,8 +45,8 @@ function spawn_orb(x, y)
 	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_14.xml", x - 30, y - 30 )
 	EntityLoad( "data/entities/misc/music_energy_000.xml", x, y - 10 )
 
-	spawn_material_checker( x - 197, y - 11, "slime", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "data/particles/image_emitters/orbrooms/05_02.xml", x, y - 100 )
-	spawn_material_checker( x + 198, y - 11, "slime", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "data/particles/image_emitters/orbrooms/05_02.xml", x, y - 100 )
+	spawn_material_checker( x - 197, y - 11, "water", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_14.xml", x, y - 100 )
+	spawn_material_checker( x + 198, y - 11, "water", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_14.xml", x, y - 100 )
 
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x - 197, y - 11 )
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x + 198, y - 11 )

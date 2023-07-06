@@ -9,7 +9,7 @@
   	</CollisionTriggerComponent>
 
     <LuaComponent
-		tags="invincible"
+		_tags="invincible"
 		script_collision_trigger_hit="mods/apotheosis/files/scripts/biome_status/debuff_magic.lua"
 		execute_every_n_frame="-1"
 		execute_times="-1" >

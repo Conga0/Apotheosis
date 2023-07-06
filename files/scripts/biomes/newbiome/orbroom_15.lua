@@ -1,11 +1,11 @@
--- location: Ant Hell
+-- location: West Forest
 
 CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
 dofile_once("data/scripts/lib/utilities.lua")
 dofile( "data/scripts/biomes/orbrooms/orbroom_shared.lua" )
--- Orb inside the Ant Hell
+-- Orb inside the West Forest behind EDR
 
 RegisterSpawnFunction( 0xffffeedd, "init" )
 
@@ -45,8 +45,8 @@ function spawn_orb(x, y)
 	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml", x - 30, y - 30 )
 	EntityLoad( "data/entities/misc/music_energy_000.xml", x, y - 10 )
 
-	spawn_material_checker( x - 197, y - 11, "slime", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "data/particles/image_emitters/orbrooms/05_02.xml", x, y - 100 )
-	spawn_material_checker( x + 198, y - 11, "slime", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "data/particles/image_emitters/orbrooms/05_02.xml", x, y - 100 )
+	spawn_material_checker( x - 197, y - 11, "apotheosis_magic_liquid_attunium", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_15_1.xml", x, y - 100 )
+	spawn_material_checker( x + 198, y - 11, "apotheosis_magic_liquid_velocium", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_15_2.xml", x, y - 100 )
 
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x - 197, y - 11 )
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x + 198, y - 11 )
