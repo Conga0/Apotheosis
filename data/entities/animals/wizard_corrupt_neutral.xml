@@ -31,6 +31,9 @@
 			critical_damage_resistance="1.0"
 			ragdoll_fx_forced="DISINTEGRATED"
 			>
+			<damage_multipliers
+				physics_hit="0.0" >
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 
@@ -143,15 +146,6 @@
         	</VerletPhysicsComponent>
         </Base>  
     </Entity>
-	
-	<MagicConvertMaterialComponent
-        from_material="rock_box2d_hard"
-        to_material="air"
-        steps_per_frame="15"
-        loop="1"
-		is_circle="1"
-        radius="15" >
-    </MagicConvertMaterialComponent>
 	
 	<SpriteComponent 
 		_tags="character" 

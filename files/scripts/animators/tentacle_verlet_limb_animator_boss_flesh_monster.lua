@@ -30,6 +30,8 @@ do local child = tentacles[k];
   local target_x, target_y = ComponentGetValue2(comp, "end_position")
 
   local positions = ComponentGetValue2(verlet_component, "positions")
+  positions[1] = x
+  positions[2] = y
   positions[29] = target_x
   positions[30] = target_y
   if verlet_component then

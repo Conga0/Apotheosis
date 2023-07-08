@@ -83,8 +83,6 @@ if runtime == 0 then
     PlayerCamControls(false)
     pos_x, pos_y = (225 -700)
 
-    --GamePlayAnimation( player_id, "intro_sleep", 50 )
-
     --Kill mountain music & play intro music
     EntityKill(EntityGetWithName( "intro_start_music_trigger" ))
     EntityKill(EntityGetWithName( "intro_start_music_trigger_left" ))
@@ -96,18 +94,11 @@ if runtime == 0 then
     local child = EntityLoad("mods/apotheosis/files/entities/misc/effect_protection_all_intro.xml")
     EntityAddChild(player_id,child)
 
-    --Lower the player into the ground for cutscene mina to take their place
-    --EntitySetTransform(player_id, 227, 0)
-    --local actor_id = EntityLoad("mods/apotheosis/files/entities/intro/player_actor_lay.xml", 227, -85)
-    --GamePlayAnimation( actor_id, "intro_sleep", 99 )
-
     ToggleUI(player_id,false)
 end
 
 --Pan camera downwards to the player
 if runtime > 1260 then
-    --pos_y = pos_y + 2
-    --EntitySetTransform(entity_id, pos_x, pos_y)
 
     local lerp_amount = 0.993
 

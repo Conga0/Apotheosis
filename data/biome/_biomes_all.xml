@@ -1244,4 +1244,10 @@
 		color="ff48E312" >
 	</Biome>
 
+	<Biome
+		biome_filename="data/biome/custom/special_infinite_flight.xml"
+		height_index="10"
+		color="ffd59720" >
+	</Biome>
+
 </BiomesToLoad>

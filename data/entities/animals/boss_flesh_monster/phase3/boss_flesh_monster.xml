@@ -22,17 +22,6 @@
 		offset_y="56.5"
 		>
 	</SpriteComponent>
-
-	<SpriteComponent
-		_enabled="0"
-		_tags="enabled_by_liquid"
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
-		offset_x="56.5"
-		offset_y="56.5"
-		emissive="1"
-		additive="1"
-		>
-	</SpriteComponent>
 	
 	<Entity>
 		<SpriteComponent
@@ -132,7 +121,7 @@
 	<!-- damage  -->
 
 	<DamageModelComponent
-		hp="520" 
+		hp="170" 
 		wait_for_kill_flag_on_death="1"
 		air_needed="0" 
 		falling_damages="0" 
@@ -147,7 +136,7 @@
 		materials_how_much_damage="0.1" 
 		materials_that_damage="acid" 
 		ragdoll_filenames_file=""
-        ragdoll_material="rock_box2d_nohit_hard"
+        ragdoll_material="meat"
 		ragdoll_offset_y="-6"
 		ragdollify_child_entity_sprites="1" 
 		ragdollify_root_angular_damping="2"
@@ -380,7 +369,7 @@
 	<!--Would probably be better to just have a VSC to store how many limbs we're using and determine it from there instead of having 900 indiviudal lua scripts for each time we use a different/new limb count-->
    	<LuaComponent
 		script_source_file="mods/apotheosis/files/scripts/animators/tentacle_verlet_limb_animator_boss_flesh_monster.lua"
-		execute_on_added="1"
+		execute_on_added="0"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>
@@ -410,11 +399,11 @@
 
 	<!-- Attack AI -->
 	
-	<!-- Fire a devestating barrage of shadow bolts every 9.3 seconds -->
+	<!-- Fire a devestating barrage of 3 shadow bolt wands every 7 seconds -->
 	<LuaComponent
 		_tags="invincible"
-		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_shadow_barrage_setup.lua"
-		execute_every_n_frame="560"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_shadow_barrage_2.lua"
+		execute_every_n_frame="420"
 		execute_times="-1"
 		>
 	</LuaComponent>
@@ -429,13 +418,11 @@
 		>
 	</LuaComponent>
 	
-	<!-- Fire a dangerous barrage of freezing orbs every 12 seconds -->
-	<!--
-	-->
+	<!-- Fire a dangerous arc of blood-hexing orbs every 10.5 seconds seconds -->
 	<LuaComponent
 		_tags="invincible"
-		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_orb_barrage_setup.lua"
-		execute_every_n_frame="720"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_hex_arc.lua"
+		execute_every_n_frame="630"
 		execute_times="-1"
 		>
 	</LuaComponent>
@@ -446,26 +433,6 @@
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_deathlaser_setup.lua"
 		execute_every_n_frame="3600"
 		execute_times="-1"
-		>
-	</LuaComponent>
-
-	<!-- Defense Mechanisms -->
-
-	<!-- Revenge Damage, 50% chance to retaliate with 1-2 Random Master Orbs Summons and create a protective shield -->
-	<LuaComponent
-		execute_every_n_frame="-1"
-		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_retaliation_script.lua"
-		>
-	</LuaComponent>
-
-
-	<!-- Brain AI -->
-
-	<!-- Triggers Phase Changes -->
-	<!-- Boss Might not have multiple phases, may be unnecessary -->
-	<LuaComponent
-		execute_every_n_frame="-1"
-		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_brain.lua"
 		>
 	</LuaComponent>
 
@@ -511,8 +478,8 @@
 	<!-- Death Reward, only applies to phase 2 -->
 	<LuaComponent
 		_tags="death_reward"
-		script_death="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death.lua"
-		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death_check.lua"
+		script_death="data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_death.lua"
+		script_damage_received="data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_death_check.lua"
 		enable_coroutines="1"
 		>
 	</LuaComponent>

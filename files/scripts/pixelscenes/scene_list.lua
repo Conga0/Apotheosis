@@ -86,15 +86,27 @@ do local v = appends[k];
   local xml = nxml.parse(content)
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="2520" pos_y="8777" skip_biome_checks="1" skip_edge_textures="0"
-      material_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_1.png"
+      material_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_1_1.png"
       background_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_1_bg.png"
       colors_filename=""
     ></PixelScene>
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="2939" pos_y="8777" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_1_2.png"
+      colors_filename=""
+    ></PixelScene>
+  ]]))
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="3358" pos_y="8777" skip_biome_checks="1" skip_edge_textures="0"
-      material_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_2.png"
+      material_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_2_1.png"
       background_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_2_bg.png"
+      colors_filename=""
+    ></PixelScene>
+  ]]))
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="3777" pos_y="8777" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/pixel_scenes/blob_cavern/blob_cavern_2_2.png"
       colors_filename=""
     ></PixelScene>
   ]]))
@@ -263,20 +275,20 @@ do local v = appends[k];
   --Dragon Cave
 
   --Red Sand Hint
-  local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
-  local xml = nxml.parse(content)
-  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="3390" pos_y="8957" just_load_an_entity="mods/Apotheosis/files/entities/props/hiddenmessage_redsand.xml" />
-  ]]))
-  ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+  --local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+  --local xml = nxml.parse(content)
+  --xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  --  <PixelScene pos_x="3390" pos_y="8957" just_load_an_entity="mods/Apotheosis/files/entities/props/hiddenmessage_redsand.xml" />
+  --]]))
+  --ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
   --Hiisi Beggar Hint Glyph
-  local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
-  local xml = nxml.parse(content)
-  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="12026" pos_y="7104" just_load_an_entity="mods/Apotheosis/files/entities/props/hiddenmessage_hobo_glyph.xml" />
-  ]]))
-  ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+  --local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+  --local xml = nxml.parse(content)
+  --xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+  --  <PixelScene pos_x="12026" pos_y="7104" just_load_an_entity="mods/Apotheosis/files/entities/props/hiddenmessage_hobo_glyph.xml" />
+  --]]))
+  --ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
 
   --Apotheosis Pixelscenes below ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

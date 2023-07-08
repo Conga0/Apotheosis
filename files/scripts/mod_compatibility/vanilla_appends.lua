@@ -224,6 +224,10 @@ do
     "wizard_corrupt_manaeater",
     "wizard_corrupt_neutral",
     "wizard_corrupt_swapper",
+    "wizard_corrupt_teleport",
+    "wizard_corrupt_twitchy",
+    "wizard_corrupt_weaken",
+    "wizard_corrupt_poly",
     --"wizard_wands",
   }
 
@@ -855,4 +859,15 @@ do --Update Masters of Homing to be made out of attuning meat
   local xml = nxml.parse(content)
   xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_material = "apotheosis_meat_homing"
   ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb rooms into consideration, 45 for all orbs and 46+ for Red Gem
+  local path = "data/entities/animals/boss_centipede/ending/sampo_start_ending_sequence.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("( orb_count >= 33 )", "( orb_count >= 45 )")
+  content = content:gsub("( orb_count > 33 )", "( orb_count > 45 )")
+
+  --Debug data
+  --print("printing sampo_start_ending_senquence.lua\n\n" .. content)
+  ModTextFileSetContent(path, content)
 end

@@ -192,6 +192,8 @@ wizard_corrupt_manaeater
 wizard_corrupt_neutral
 wizard_corrupt_swapper
 wizard_corrupt_teleport
+wizard_corrupt_twitchy
+wizard_corrupt_weaken
 enlightened_alchemist
 failed_alchemist
 failed_alchemist_b

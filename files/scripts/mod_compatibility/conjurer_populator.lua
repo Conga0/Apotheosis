@@ -226,11 +226,6 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/gazer_cold_apotheosis.png",
 	  },
 	  {
-		name="Parasitic Gazer",
-		path="data/entities/animals/gazer_parasitic.xml",
-		image="data/ui_gfx/animal_icons/gazer_parasitic.png",
-	  },
-	  {
 		name="Greater Hell Gazer",
 		path="data/entities/animals/gazer_greater.xml",
 		image="data/ui_gfx/animal_icons/gazer_greater.png",
@@ -244,6 +239,11 @@ table.insert(ALL_ENTITIES, {
 		name="Greater Cold Gazer",
 		path="data/entities/animals/gazer_greater_cold.xml",
 		image="data/ui_gfx/animal_icons/gazer_greater_cold.png",
+	  },
+	  {
+		name="Parasitic Gazer",
+		path="data/entities/animals/gazer_parasitic.xml",
+		image="data/ui_gfx/animal_icons/gazer_parasitic.png",
 	  },
 	  {
 		name="Zoner",
@@ -551,14 +551,19 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_corrupt_teleport.png",
 	  },
 	  {
+		name="Corrupt Master of Twitching",
+		path="data/entities/animals/wizard_corrupt_twitchy.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_twitchy.png",
+	  },
+	  {
 		name="Corrupt Master of Mana",
 		path="data/entities/animals/wizard_corrupt_manaeater.xml",
 		image="data/ui_gfx/animal_icons/wizard_corrupt_manaeater.png",
 	  },
 	  {
-		name="Corrupt Master of Polymorphing",
-		path="data/entities/animals/wizard_corrupt_poly.xml",
-		image="data/ui_gfx/animal_icons/wizard_poly.png",
+		name="Corrupt Master of Vulnerability",
+		path="data/entities/animals/wizard_corrupt_weaken.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_weaken.png",
 	  },
 	  {
 		name="Corrupt Master of Puppetering",
@@ -739,6 +744,11 @@ table.insert(ALL_ENTITIES, {
 		name="Tablet Ghost",
 		path="data/entities/animals/playerghost_apotheosis/playerghost.xml",
 		image="data/ui_gfx/animal_icons/playerghost.png",
-	  }
+	  },
+	  {
+		name="Corrupt Master of Polymorphing (unimplemented)",
+		path="data/entities/animals/wizard_corrupt_poly.xml",
+		image="data/ui_gfx/animal_icons/wizard_poly.png",
+	  },
   },
 })

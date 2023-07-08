@@ -1,54 +1,30 @@
-Give orb room material puzzles unique inputs and lore readouts (Likely need to ask letalli for help as they speak finnish)
-
-If a new trophy room is being made, transfer all the existing achievement statues over
-Remember to update/remove tree book when this is done
-
 Trophies for:
-✓ Using Perk Creation Altar
-X Reaching Max Orb Count, taking new orbs into consideration (Conga: Might add a 4th orb as well, will have to see)
+X Using Perk Creation Altar
+✓ Reaching Max Orb Count, taking new orbs into consideration (Conga: Might add a 4th orb as well, will have to see)
 ✓ Killing the Heretic
-✓ Secret Alchemy Puzzle in Ant Nest
+X Secret Alchemy Puzzle in Ant Nest
 ✓ Completing the Omega Death Cross quest
-✓ Sleeping Altar
-
-
-
-Altar ending code to check for updated orb counts
-NG+ Picks from 6 random pre-set NG+ maps, including the normal one (but only after NG+1)
+X Sleeping Altar
 
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 
-Herobrine rework
-Note: Extol *might* be willing to help program this? hit him up when it's time
-Reduce spawn chance dramatically after the player's initial encounter with it
-
-Add custom SFX to heretic
-Meant to play as it does pulses? :SBHmm:
-https://discord.com/channels/@me/1013670507146653767/1087217718572371988
-
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
-
-Remove the Angelling + Devilling statue
+Finish or Remove Corrupt Master of Twitching
 
 Gateway sprite, needs:
 A large stone arch that can fit a portal inside
 An alternative shattered stone arch sprite for if you fail the requirements
-Note: Need to find artist to work on this
-
-AC CoV/Healing Bolt is still infinite in hardcore mode
+Note: Pickled Sosig is on the case
 
 "New mod Apotheosis is out now!"
 MoCreeps
 Congas Cats
 Remove _devtest from apotheosis_intro_cutscene for official release
 
-Better Aquamine sprites
-Better Fungal Shift Spell sprites
-
-Bug: Blob Cave breaks if you approach from the right side, left half doesn't spawn in
-
 Magic sits in the moon
 Nature sits in the blood moon
 Technology sits in the robotic egg
 Where does divinity sit?
+
+Improve Heretic Statue

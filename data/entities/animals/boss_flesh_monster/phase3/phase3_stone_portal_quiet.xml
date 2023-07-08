@@ -1,0 +1,23 @@
+<Entity serialize="1">
+
+	<LoadEntitiesComponent
+        count.min="1"
+        count.max="1"
+        timeout_frames="5"
+        kill_entity="1"
+        entity_file="mods/apotheosis/files/entities/items/pickups/stone_heretic.xml" >
+    </LoadEntitiesComponent>
+
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      steps_per_frame="150"
+      clean_stains="0"
+      is_circle="1"
+      radius="150" 
+	  loop="1"
+      from_material="meat"
+      to_material="blood"
+	  >
+    </MagicConvertMaterialComponent>
+
+</Entity>

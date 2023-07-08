@@ -1,0 +1,27 @@
+<Entity name="Korruptoitunut Mestari" tags="touchmagic_immunity,ui_use_raw_name" >
+  <Base file="data/entities/animals/wizard_corrupt_twitchy.xml" include_children="1" >
+  </Base>
+	
+	<LifetimeComponent
+		lifetime="2400"
+		>
+	</LifetimeComponent>
+	
+	<LuaComponent
+		script_source_file="data/scripts/animals/illusion_disappear.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animals/minion_distance_delete.lua"
+		execute_every_n_frame="90"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
+
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+</Entity>

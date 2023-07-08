@@ -2,9 +2,11 @@ CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
 dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("data/scripts/perks/perk.lua")
 
 RegisterSpawnFunction( 0xffffeedd, "init" )
 RegisterSpawnFunction( 0xffc812e3, "spawn_gate")
+RegisterSpawnFunction( 0xff36dfe1, "spawn_perk")
 
 function spawn_small_enemies( x, y ) end
 function spawn_big_enemies( x, y ) end
@@ -33,4 +35,8 @@ end
 function spawn_gate(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
+end
+
+function spawn_perk(x, y)
+	perk_spawn( x, y, "APOTHEOSIS_INFINITE_FLIGHT" )
 end

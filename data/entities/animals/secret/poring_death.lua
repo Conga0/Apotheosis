@@ -14,6 +14,6 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		EntityLoad("data/entities/particles/image_emitters/magical_symbol_materia_blue.xml", pos_x, pos_y)
 		GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", pos_x, pos_y)
 	elseif rng > 495 then
-		EntityLoad( "mods/Apotheosis/files/entities/animals/fairy_cheap.xml", pos_x, pos_y )
+		EntityLoad( "data/entities/animals/fairy_cheap.xml", pos_x, pos_y )
 	end
 end

@@ -420,7 +420,7 @@ material_apotheosis_milk_powder,"Powdered Milk",,,,,,,,,,,,,
 magic_liquid_berserk_cloud_name,"Berserkium Mist",,,,,,,,,,,,,
 magic_liquid_charm_cloud_name,"Pheromone Mist",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
-spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles towards your mouse cursor at a high speed",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles towards your mouse cursor at a high speed",,,,,,,,,,,,,
 spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_drunk_intense_desc,Affects every creature in a large radius a short but intense curse of endless spirits.,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_wet_intense_name,Intense Mass Wet,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
@@ -572,6 +572,8 @@ perk_apotheosis_no_recoil,"No Recoil",,,,,,,,,,,,,
 perk_apotheosis_no_recoil_description,"Your spells have no recoil.",,,,,,,,,,,,,
 perk_apotheosis_void,"Void",,,,,,,,,,,,,
 perk_apotheosis_void_description,"Gain immense power, but the void grows jealous of your options.",,,,,,,,,,,,,
+perk_apotheosis_infinite_flight,"Our Gift",,,,,,,,,,,,,
+perk_apotheosis_infinite_flight_description,"A divine blessing grants you infinite flight.",,,,,,,,,,,,,
 perk_apotheosis_copy_spells,"Copy Spells",,,,,,,,,,,,,
 perk_apotheosis_copy_spells_description,"Copy the Uncopyable.",,,,,,,,,,,,,
 perk_apotheosis_curse_mana,"Endless Mana",,,,,,,,,,,,,
@@ -1672,6 +1674,20 @@ do  -- Player Editor
       >
     </LuaComponent>
   ]]))
+
+  --Debug
+  --xml:add_child(nxml.parse([[
+  --  <SpriteComponent 
+  --  _tags="character" 
+  --  alpha="1" 
+  --  image_file="mods/apotheosis/files/player_gfx/perk_wings.xml"
+  --  next_rect_animation="" 
+  --  offset_x="6" 
+  --  offset_y="14" 
+  --  rect_animation="walk" 
+  --  z_index="0.61"
+  --></SpriteComponent>
+  --]]))
   ModTextFileSetContent(path, tostring(xml))
 end
 

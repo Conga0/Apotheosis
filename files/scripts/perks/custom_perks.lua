@@ -704,6 +704,43 @@ local apotheosis_perkappends = {
 			} )
 		end,
 	},
+    --[[
+    --I really like this perk visually, but the only issue is if this was easy to access, then you'd have no reason not to grab it everytime you want to go for the alternate ending
+    --Maybe there could be a puzzle or cost behind it like needing to go through a sacred rock tomb and you need to figure out a wand that can teleport you through it, but I can't think of anything particularly fitting right now...
+    {
+        id = "APOTHEOSIS_INFINITE_FLIGHT",
+        id_matchup = "PROTECTION_INFINITE_FLIGHT",
+        ui_name = "$perk_apotheosis_infinite_flight",   --Our Gift
+        ui_description = "$perk_apotheosis_infinite_flight_description",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/infinite_flight_ui.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/infinite_flight_perk.png",
+        not_in_default_perk_pool = true,
+        stackable = STACKABLE_NO,
+        usable_by_enemies = false,
+        func = function( entity_perk_item, entity_who_picked, item_name )
+            local x,y = EntityGetTransform( entity_who_picked )
+            local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/infinite_flight_perk.xml", x, y )
+            EntityAddTag( child_id, "perk_entity" )
+            EntityAddChild( entity_who_picked, child_id )
+        end,
+        _remove = function(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_infinite_flight" ) and EntityHasTag(v,"perk_entity") then
+                    EntityKill ( v )
+                end
+            end
+        end,
+        func_remove = function( entity_who_picked )
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_infinite_flight" ) and EntityHasTag(v,"perk_entity") then
+                    EntityKill ( v )
+                end
+            end
+        end,
+    },
+    ]]--
 }
 
 -- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?

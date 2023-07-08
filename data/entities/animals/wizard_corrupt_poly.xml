@@ -29,6 +29,9 @@
             ragdoll_material="meat_confusion"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/filenames.txt"
 			>
+			<damage_multipliers
+				physics_hit="0.0" >
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 

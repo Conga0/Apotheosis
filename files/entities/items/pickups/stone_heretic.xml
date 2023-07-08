@@ -98,6 +98,15 @@
 		></gun_config>
 	</AbilityComponent>
 	
+	<!--
+	<LuaComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		script_source_file="mods/apotheosis/files/scripts/items/stone_heretic.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+	-->
+	
 	<ParticleEmitterComponent 
 		_tags="enabled_in_world,enabled_in_hand"
 		emitted_material_name="apotheosis_blood_infectious"
