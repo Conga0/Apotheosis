@@ -37,7 +37,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
                 EntityLoad("data/entities/particles/image_emitters/magical_symbol_hobo_money.xml", pos_x, pos_y)
                 GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", pos_x, pos_y)
                 EntityLoad( "data/entities/items/pickup/heart_fullhp.xml",  pos_x + 8, pos_y )
-                EntityLoad( "mods/Apotheosis/files/entities/props/statue_blob_titan.xml", 4312, 2115 )
+                --EntityLoad( "mods/Apotheosis/files/entities/props/statue_blob_titan.xml", 4312, 2115 )
 
                 for i=1,3 do
                     rnd = Random( 1, #opts )

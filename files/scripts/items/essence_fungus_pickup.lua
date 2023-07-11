@@ -6,11 +6,8 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 
 	-- Spawn Statue ------------------------------------------------------
 
-	if GameHasFlagRun("apotheosis_hardmode") and HasFlagPersistent( "apotheosis_essence_fungus_goldmode" ) == false then
-		EntityLoad( "mods/Apotheosis/files/entities/props/goldmode/statue_essence_fungus.xml", 4351, 2049 )
-		AddFlagPersistent( "apotheosis_essence_fungus_goldmode" )
-	elseif HasFlagPersistent( "apotheosis_essence_fungus" ) == false then
-		EntityLoad( "mods/Apotheosis/files/entities/props/statue_essence_fungus.xml", 4351, 2049 )
+	if HasFlagPersistent( "apotheosis_card_unlocked_essence_fungus" ) == false then
+		--EntityLoad( "mods/Apotheosis/files/entities/props/statue_essence_fungus.xml", 4351, 2049 )
 	end
 
 	-- fetch perk info ---------------------------------------------------
@@ -46,8 +43,8 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 		EntityAddChild( entity_who_picked, cid )
 	end
 	
-	GameAddFlagRun( "apotheosis_essence_fungus" )
-	AddFlagPersistent( "apotheosis_essence_fungus" )
+	GameAddFlagRun( "apotheosis_card_unlocked_essence_fungus" )
+	AddFlagPersistent( "apotheosis_card_unlocked_essence_fungus" )
 	
 	local globalskey = "ESSENCE_" .. string.upper(id) .. "_PICKUP_COUNT"
 	local pickups = tonumber( GlobalsGetValue( globalskey, "0" ) )

@@ -13,6 +13,7 @@ kantele_songs["krittycats"]  = { "a", "d", "e", "g" }
 ocarina_funcs["fullhp"]  = function()
   local x, y = EntityGetTransform( entity_id )
   SongEntityLoad( "ocarina", "_secret_fullhp", -1, "data/entities/items/pickup/heart_fullhp.xml", x, y - 32, 0 )
+  AddFlagPersistent("apotheosis_card_unlocked_musical_magic_played")
 end
 
 ocarina_funcs["spawnpouch"]  = function()

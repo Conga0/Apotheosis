@@ -40,13 +40,9 @@ if( GlobalsGetValue("MISC_PANDORA_CHEST_RAIN") ~= "1" ) then
 	
 				-- Spawn Statue ------------------------------------------------------
 		
-				if (ModIsEnabled("nightmare") or ModIsEnabled("purgatory")) and HasFlagPersistent( "apotheosis_misc_pandora_chest_rain_goldmode" ) == false then
-					EntityLoad( "mods/Apotheosis/files/entities/props/goldmode/statue_pandora_rain.xml", 4351, 2150 )
-					AddFlagPersistent( "apotheosis_misc_pandora_chest_rain_goldmode" )
-					AddFlagPersistent( "apotheosis_misc_pandora_chest_rain" )
-				elseif HasFlagPersistent( "apotheosis_misc_pandora_chest_rain" ) == false then
-					EntityLoad( "mods/Apotheosis/files/entities/props/statue_pandora_rain.xml", 4351, 2150 )
-					AddFlagPersistent( "apotheosis_misc_pandora_chest_rain" )
+				if HasFlagPersistent( "apotheosis_card_unlocked_pandora_chest_rain" ) == false then
+					--EntityLoad( "mods/Apotheosis/files/entities/props/statue_pandora_rain.xml", 4351, 2150 )
+					AddFlagPersistent( "apotheosis_card_unlocked_pandora_chest_rain" )
 				end
 			end
 			break

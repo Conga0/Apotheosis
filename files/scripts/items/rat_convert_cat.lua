@@ -15,12 +15,6 @@ function collision_trigger()
 		AddFlagPersistent( "apotheosis_card_unlocked_cat_secret" )
 		AddFlagPersistent( "apotheosis_card_unlocked_cat_secret_spell" )
 
-		if GameHasFlagRun("apotheosis_hardmode") and HasFlagPersistent( "apotheosis_card_unlocked_cat_secret_goldmode") == false then
-			EntityLoad( "mods/Apotheosis/files/entities/props/goldmode/statue_cat_secret.xml", 4288, 2049 )
-		elseif HasFlagPersistent( "apotheosis_card_unlocked_cat_secret" ) == false then
-			EntityLoad( "mods/Apotheosis/files/entities/props/statue_cat_secret.xml", 4288, 2049 )
-		end
-
 		if GameHasFlagRun("apotheosis_hardmode") then
 			AddFlagPersistent( "apotheosis_card_unlocked_cat_secret_goldmode" )
 		end

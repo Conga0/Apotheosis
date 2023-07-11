@@ -44,6 +44,7 @@ do local v = inputlist[k];
 		local perk_id = perk_spawn( pos_x, pos_y, outputlist[k] )
         --Perk tag is removed so other perks aren't deleted upon picking this one up
         EntityRemoveTag(perk_id, "perk")
+        AddFlagPersistent(table.concat({"apotheosis_card_unlocked_perkforged_",string.lower(outputlist[k])}))
 		EntityKill(entity_id)
         if not GameHasFlagRun("apotheosis_perk_creation_angered") then
             GameAddFlagRun("apotheosis_perk_creation_angered")

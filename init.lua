@@ -26,6 +26,21 @@ local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
 --Note: This has been moved lower down for cleaner organisation & implementing mod compatibility
 --Note: 16/06/2023 Some boss spawns may be moved into biome files as well
 
+--Retroactively add flags under new name if the player has the previous ones
+local flags = {
+  { "apotheosis_misc_pandora_chest_rain", "apotheosis_card_unlocked_pandora_chest_rain" },
+  { "apotheosis_essence_fungus", "apotheosis_card_unlocked_essence_fungus" },
+  { "apotheosis_moon_fungus_unlock", "apotheosis_card_unlocked_moon_fungus_unlock" }
+}
+
+for k=1,#flags
+do local v = flags[k]
+  if HasFlagPersistent(v[1]) then
+    AddFlagPersistent(v[2])
+    RemoveFlagPersistent(v[1])
+  end
+end
+
 
 
 
@@ -413,6 +428,7 @@ material_apotheosis_malicious_powder,"Volcanic Powder",,,,,,,,,,,,,
 material_apotheosis_milk,"Milk",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone,"Esoteric Stone",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone_glowing,"Luminescent Rock",,,,,,,,,,,,,
+material_apotheosis_crystal_glow,"Glowing Crystal",,,,,,,,,,,,,
 material_apotheosis_cursed_rock_hard,"Sacred Rock",,,,,,,,,,,,,
 material_apotheosis_radioactive_liquid_strong,"Noxious Sludge",,,,,,,,,,,,,
 material_apotheosis_radioactive_mud,"Defiled Mud",,,,,,,,,,,,,
@@ -586,7 +602,7 @@ perk_apotheosis_no_blood,"Smoked Corpses",,,,,,,,,,,,,
 perk_apotheosis_no_blood_description,"Enemies leave behind no corpse, and bleed no blood.",,,,,,,,,,,,,
 perk_apotheosis_god_ti,"Divine Intervention",,,,,,,,,,,,,
 perk_apotheosis_god_ti_description,"The gods will cause something sporadic to occur every 3-4 minutes.",,,,,,,,,,,,,
-perk_apotheosis_plane_radar,"Plane Radar",,,,,,,,,,,,,
+perk_apotheosis_plane_radar,"Divine Radar",,,,,,,,,,,,,
 perk_apotheosis_plane_radar_description,"You can sense otherworldy energy somewhere in the world.",,,,,,,,,,,,,
 status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
 status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
@@ -635,6 +651,7 @@ statusdesc_curse_wither_explosion,You take 100% extra damage from explosions.,В
 statusdesc_curse_wither_melee,You take 100% extra damage from melee attacks.,Вы получаете 100% дополнительного урона от рукопашных атак.,Você recebe mais 100% de dano de ataques corpo a corpo.,Recibes 100 % más de daño de ataques cuerpo a cuerpo.,Du erleidest 100 % zusätzlichen Schaden durch Nahkampfangriffe.,Vous subissez 100 % de dégâts supplémentaires des attaques de mêlée.,Subisci il 100% in più di danni da mischia.,Otrzymujesz 100% więcej obrażeń od ataków wręcz.,近战攻击额外对你造成 100% 伤害。,近接攻撃から100%の追加ダメージを受ける。,근접 공격으로부터 대미지를 100% 더 받습니다.,,,
 statusdesc_curse_wither_electricity,You take 100% extra damage from electricity.,Вы получаете 100% дополнительного урона от электричества.,Você recebe mais 100% de dano de eletricidade.,Recibes 100 % más de daño de electricidad.,Du erleidest 100 % zusätzlichen Schaden durch Elektrizität.,Vous subissez 100 % de dégâts supplémentaires de l'électricité.,Subisci il 100% in più di danni da elettricità.,Otrzymujesz 100% więcej obrażeń od elektryczności.,雷电额外对你造成 100% 伤害。,電撃から100%の追加ダメージを受ける。,전기로부터 대미지를 100% 더 받습니다.,,,
 creep_apotheosis_boss_flesh_monster_name,"Kerettiläinenhirviö",,,,,,,,,,,,,
+log_apotheosis_fish,"The red fish is real",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
 log_apotheosis_upgrade_alwayscast_cheater_name,"You cannot cheat the gods!",,,,,,,,,,,,,

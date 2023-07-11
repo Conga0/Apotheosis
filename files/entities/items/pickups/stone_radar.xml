@@ -120,8 +120,8 @@
 		airflow_force="0.251"
 		airflow_time="1.01"
 		airflow_scale="0.05"
-		emission_interval_min_frames="240"
-		emission_interval_max_frames="240"
+		emission_interval_min_frames="600"
+		emission_interval_max_frames="600"
 		emit_cosmetic_particles="1"
 		velocity_always_away_from_center="10"
 		collide_with_grid="0"
@@ -162,27 +162,17 @@
 		></gun_config>
 	</AbilityComponent>
 
-	<LuaComponent
-		_enabled="0"
-		_tags = "enabled_in_inventory,enabled_in_hand",
-		script_source_file = "data/scripts/perks/radar.lua",
-		execute_every_n_frame = "1",
+	<VariableStorageComponent
+		name="radar_storage"
+		value_int="-10000"
 	>
-	</LuaComponent>
+	</VariableStorageComponent>
 
 	<LuaComponent
 		_enabled="0"
-		_tags = "enabled_in_inventory,enabled_in_hand",
-		script_source_file = "data/scripts/perks/radar_wand.lua",
-		execute_every_n_frame = "1",
-	>
-	</LuaComponent>
-
-	<LuaComponent
-		_enabled="0"
-		_tags = "enabled_in_inventory,enabled_in_hand",
-		script_source_file = "data/scripts/perks/radar_item.lua",
-		execute_every_n_frame = "1",
+		_tags = "enabled_in_inventory,enabled_in_hand"
+		script_source_file = "mods/apotheosis/files/scripts/items/radar_stone.lua"
+		execute_every_n_frame = "1"
 	>
 	</LuaComponent>
 	

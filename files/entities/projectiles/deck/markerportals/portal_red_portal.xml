@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="lukki_portal" >
 
 	<!-- teleport logic -->
 	

@@ -40,14 +40,14 @@ Alchemical Mists
 
 Content list:
 111 new enemies (+3 Pylon variants)
-5 new bosses
+6 new bosses
 69 new spells
 8 new perks
 6 new biomes
 7 new structures
 13 new materials (11 interactable, 13 total)
 12 attainable trophies
-6 new items
+8 new items
 4 new musical curiosities
 And countless new secrets...
 
@@ -65,3 +65,4 @@ Note: Readthrough vanilla changes and remove any notes before release
 Enemies not yet added to enemy count:
 Red Tentacle Eye (lukki hungry)
 Abyssum Monster (I would like if there was some sort of Abyssum creature, where if it's completely docile, but if you get too close to it, it notices you)
+Corrupt Master of Twitching

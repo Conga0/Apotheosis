@@ -66,6 +66,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/giant_centipede.png",
 	  },
 	  {
+		name="Monolith",
+		path="data/entities/animals/forest_monolith.xml",
+		image="data/ui_gfx/animal_icons/forest_monolith.png",
+	  },
+	  {
 		name="Manager",
 		path="data/entities/animals/c_basebot_speeder_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/c_basebot_speeder_apotheosis.png",

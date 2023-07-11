@@ -5,7 +5,7 @@ dofile_once("data/scripts/lib/utilities.lua")
 dofile_once("data/scripts/perks/perk.lua")
 
 RegisterSpawnFunction( 0xffffeedd, "init" )
-RegisterSpawnFunction( 0xffc812e3, "spawn_gate")
+RegisterSpawnFunction( 0xffc40909, "spawn_gate")
 RegisterSpawnFunction( 0xff36dfe1, "spawn_perk")
 
 function spawn_small_enemies( x, y ) end
@@ -27,14 +27,16 @@ function spawn_wands( x, y ) end
 
 function init( x, y, w, h )
 	SetRandomSeed(444,777)
-	if Random(1,6) == 1 or (1 == 1) then
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
+	if Random(1,6) == 1 then
+		--LoadPixelScene( "mods/apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
+		LoadPixelScene( "mods/apotheosis/files/biome_impl/magicegg/magicegg.png", "mods/apotheosis/files/biome_impl/magicegg/magicegg_visual.png", x, y, "mods/apotheosis/files/biome_impl/magicegg/magicegg_background.png", true )
 	end
 end
 
 function spawn_gate(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
+	EntityLoad("mods/apotheosis/files/entities/buildings/gateway_base.xml", x, y)
 end
 
 function spawn_perk(x, y)

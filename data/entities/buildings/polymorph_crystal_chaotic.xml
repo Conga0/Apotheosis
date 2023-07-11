@@ -1,6 +1,6 @@
 <Entity 
   name="Chaotic Polymorph Crystal"
-  tags="hittable,mortal" >
+  tags="hittable,mortal,enemy,teleportable_NOT,polymorphable_NOT" >
 
   <DamageModelComponent 
     _enabled="1" 
@@ -86,96 +86,87 @@
 		>
 	</LuaComponent>
 
-
-		<SpriteParticleEmitterComponent
-			sprite_file="mods/Apotheosis/files/particles/shine_03_long.xml"
-			delay="0"
-			lifetime="30"
-			color.r="1" color.g="1" color.b="1" color.a="1"
-			color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-2"
-			velocity.x="0" velocity.y="0"
-			gravity.x="0" gravity.y="10"
-			velocity_slowdown="0"
-			rotation="0"
-			angular_velocity="0"
-			emissive="1"
-			additive="1"
-			use_velocity_as_rotation="0"
-			scale.x="1" scale.y="1"
-			scale_velocity.x="0" scale_velocity.y="0"
-			emission_interval_min_frames="5"
-			emission_interval_max_frames="10"
-			count_min="2" count_max="2"
-			randomize_position.min_x="-118"
-			randomize_position.max_x="110"
-			randomize_position.min_y="-118"
-			randomize_position.max_y="110"
-			randomize_velocity.min_y="-10"
-			randomize_velocity.max_y="10"
-			>
-		</SpriteParticleEmitterComponent>
-		
-		<ParticleEmitterComponent 
-			emitted_material_name="magic_liquid_random_polymorph"
-			gravity.y="0.0"
-			lifetime_min="5.5"
-			lifetime_max="15.5"
-			count_min="4"
-			count_max="12"
-			render_on_grid="1"
-			fade_based_on_lifetime="1"
-			area_circle_radius.max="128"
-			cosmetic_force_create="0"
-			airflow_force="0.5"
-			airflow_time="1.9"
-			airflow_scale="0.15"
-			emission_interval_min_frames="1"
-			emission_interval_max_frames="4"
-			emit_cosmetic_particles="1"
-			x_vel_min="-1"
-			x_vel_max="1"
-			y_vel_min="-1"
-			y_vel_max="1"
-			is_emitting="1" >
-		</ParticleEmitterComponent>
-		
-		<ParticleEmitterComponent 
-			emitted_material_name="magic_liquid_random_polymorph"
-			gravity.y="0.0"
-			lifetime_min="0.3"
-			lifetime_max="0.5"
-			count_min="40"
-			count_max="80"
-			render_on_grid="1"
-			fade_based_on_lifetime="1"
-			area_circle_radius.max="128"
-			area_circle_radius.min="128"
-			cosmetic_force_create="0"
-			airflow_force="0.5"
-			airflow_time="1.9"
-			airflow_scale="0.15"
-			emission_interval_min_frames="1"
-			emission_interval_max_frames="1"
-			emit_cosmetic_particles="1"
-			x_vel_min="-1"
-			x_vel_max="1"
-			y_vel_min="-1"
-			y_vel_max="1"
-			is_emitting="1" >
-		</ParticleEmitterComponent>
-
-		<LuaComponent
-			script_death="mods/Apotheosis/files/scripts/animals/polymorph_crystal_death.lua"
-			>
-		</LuaComponent>
-
-    </Entity>
+	<SpriteParticleEmitterComponent
+		sprite_file="mods/Apotheosis/files/particles/shine_03_long.xml"
+		delay="0"
+		lifetime="30"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-2"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="10"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		emissive="1"
+		additive="1"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="5"
+		emission_interval_max_frames="10"
+		count_min="2" count_max="2"
+		randomize_position.min_x="-118"
+		randomize_position.max_x="110"
+		randomize_position.min_y="-118"
+		randomize_position.max_y="110"
+		randomize_velocity.min_y="-10"
+		randomize_velocity.max_y="10"
+		>
+	</SpriteParticleEmitterComponent>
 	
-	<AudioLoopComponent
-		file="data/audio/Desktop/projectiles.bank"
-		event_name="projectiles/magic_orb/loop"
-		auto_play="1">
-	</AudioLoopComponent>
+	<ParticleEmitterComponent 
+		emitted_material_name="magic_liquid_random_polymorph"
+		gravity.y="0.0"
+		lifetime_min="5.5"
+		lifetime_max="15.5"
+		count_min="4"
+		count_max="12"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.max="128"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="4"
+		emit_cosmetic_particles="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="magic_liquid_random_polymorph"
+		gravity.y="0.0"
+		lifetime_min="0.3"
+		lifetime_max="0.5"
+		count_min="40"
+		count_max="80"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.max="128"
+		area_circle_radius.min="128"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/polymorph_crystal_death.lua"
+		>
+	</LuaComponent>
 
 </Entity>
 

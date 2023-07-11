@@ -535,5 +535,13 @@ do local v = appends[k];
 
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
+do  --Spawn Forest Monolith
+  local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+  local xml = nxml.parse(content)
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene pos_x="-19100" pos_y="-160" just_load_an_entity="mods/apotheosis/files/entities/buildings/forest_monolith_spawner.xml" />
+  ]]))
+  ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 end
 
+end

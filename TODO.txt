@@ -1,30 +1,23 @@
-Trophies for:
-X Using Perk Creation Altar
-✓ Reaching Max Orb Count, taking new orbs into consideration (Conga: Might add a 4th orb as well, will have to see)
-✓ Killing the Heretic
-X Secret Alchemy Puzzle in Ant Nest
-✓ Completing the Omega Death Cross quest
-X Sleeping Altar
-
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 Finish or Remove Corrupt Master of Twitching
 
-Gateway sprite, needs:
-A large stone arch that can fit a portal inside
-An alternative shattered stone arch sprite for if you fail the requirements
-Note: Pickled Sosig is on the case
-
 "New mod Apotheosis is out now!"
 MoCreeps
 Congas Cats
 Remove _devtest from apotheosis_intro_cutscene for official release
 
-Magic sits in the moon
-Nature sits in the blood moon
-Technology sits in the robotic egg
-Where does divinity sit?
+Magic Eggs feels unfinished
+Revise
 
-Improve Heretic Statue
+Finalise Heretic
+todo: Heretical eye
+"It pulses like a beating heart"
+Make the eye rotate towards the player while it's held in hand
+
+Finish A Message From Beyond tablet
+
+Make a more mod-compatipilled way to organise the creature list, as well as add the script to the wiki
+Use Copi code to aid with this

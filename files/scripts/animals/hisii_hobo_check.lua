@@ -47,16 +47,6 @@ function material_area_checker_success( pos_x, pos_y )
 	
     if ModIsEnabled("raksa") == false then
 	    AddFlagPersistent( "apotheosis_card_unlocked_donated_beggar" )
-
-        if ModIsEnabled("nightmare") or ModIsEnabled("purgatory") then
-            AddFlagPersistent( "apotheosis_card_unlocked_donated_beggar_goldmode" )
-        end
-    end
-
-    if (ModIsEnabled("nightmare") or ModIsEnabled("purgatory")) and HasFlagPersistent( "apotheosis_card_unlocked_donated_beggar_goldmode") == false then
-        EntityLoad( "mods/Apotheosis/files/entities/props/goldmode/statue_generous.xml", 4178, 2150 )
-    elseif HasFlagPersistent( "apotheosis_card_unlocked_donated_beggar" ) == false then
-        EntityLoad( "mods/Apotheosis/files/entities/props/statue_generous.xml", 4178, 2150 )
     end
 
 end

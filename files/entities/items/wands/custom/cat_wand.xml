@@ -62,6 +62,14 @@
 	>
     </LuaComponent>
 
+	<LuaComponent
+        _enabled="0"
+		_tags="item,enabled_in_world,enabled_in_hand" 
+		script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow.lua"
+		execute_every_n_frame="300"
+		>
+	</LuaComponent>
+
     <ManaReloaderComponent
         _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory" >
     </ManaReloaderComponent>

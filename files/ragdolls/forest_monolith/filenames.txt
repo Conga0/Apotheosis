@@ -1,0 +1,10 @@
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_01.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_02.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_03.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_04.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_05.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_06.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_07.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_08.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_09.png
+mods/Apotheosis/files/ragdolls/forest_monolith/shard_10.png

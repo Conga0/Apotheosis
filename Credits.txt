@@ -28,10 +28,12 @@ Creating shield sapper script
 Creating Magic Inerberation script
 Glass Cannon compatibility for Liquid Bubbles
 Various Code Contributions
+Creating the Pillar Sprites for various perk creation altar stones
 
 PickledSosig - Creating the Virulent Caverns background sprites
 Creating the Ant Nest background sprites
 Creating the Sunken Cavern background sprites
+Creating the Crystal Egg
 
 Letaali - Translating Orb Room lore to finnish
 
