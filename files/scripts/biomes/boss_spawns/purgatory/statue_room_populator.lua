@@ -27,9 +27,9 @@ function collision_trigger()
     --1.1.0 unlocks
 
     --Normal Mode Unlocks
-    local apotheosis_essence_fungus = HasFlagPersistent( "apotheosis_essence_fungus" )
-    local apotheosis_essence_fungus_moon = HasFlagPersistent( "apotheosis_moon_fungus_unlock" )
-    local apotheosis_pandora_rain = HasFlagPersistent( "apotheosis_misc_pandora_chest_rain" )
+    local apotheosis_essence_fungus = HasFlagPersistent( "apotheosis_card_unlocked_essence_fungus" )
+    local apotheosis_essence_fungus_moon = HasFlagPersistent( "apotheosis_card_unlocked_moon_fungus_unlock" )
+    local apotheosis_pandora_rain = HasFlagPersistent( "apotheosis_card_unlocked_pandora_chest_rain" )
     local apotheosis_fire_lukki = HasFlagPersistent( "apotheosis_card_unlocked_boss_fire_lukki" )
 
     --Nightmare/Purgatory Unlocks

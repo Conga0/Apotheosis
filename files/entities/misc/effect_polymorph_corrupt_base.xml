@@ -1,0 +1,17 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>	
+    
+    <GameEffectComponent 
+    	effect="NONE"
+    	frames="10"
+    >
+	</GameEffectComponent >
+
+	<LuaComponent 
+		execute_on_removed="0"
+		execute_every_n_frame="1"
+		script_source_file="mods/apotheosis/files/scripts/misc/polymorph_corrupt_pickrnd.lua" >
+	</LuaComponent>
+
+</Entity>

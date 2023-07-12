@@ -26,6 +26,21 @@ local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
 --Note: This has been moved lower down for cleaner organisation & implementing mod compatibility
 --Note: 16/06/2023 Some boss spawns may be moved into biome files as well
 
+--Retroactively add flags under new name if the player has the previous ones
+local flags = {
+  { "apotheosis_misc_pandora_chest_rain", "apotheosis_card_unlocked_pandora_chest_rain" },
+  { "apotheosis_essence_fungus", "apotheosis_card_unlocked_essence_fungus" },
+  { "apotheosis_moon_fungus_unlock", "apotheosis_card_unlocked_moon_fungus_unlock" }
+}
+
+for k=1,#flags
+do local v = flags[k]
+  if HasFlagPersistent(v[1]) then
+    AddFlagPersistent(v[2])
+    RemoveFlagPersistent(v[1])
+  end
+end
+
 
 
 
@@ -46,6 +61,7 @@ do
     "orb_12",
     "orb_14",
     "orb_15",
+    "orb_16",
     "lost_alchemy",
     "omega_cross",
   }) do
@@ -377,12 +393,14 @@ biome_mueseum,"Marble Halls",,,,,,,,,,,,,
 biome_ant_hell,"Ant Nest",,,,,,,,,,,,,
 biome_plane_yggdrasil,"Plane of Yggdrasil",,,,,,,,,,,,,
 biome_plane_yggdrasil_border,"Outer Plane of Yggdrasil",,,,,,,,,,,,,
+biome_plane_magic,"Plane of Soul",,,,,,,,,,,,,
 biomemod_esoteric_presence,"You feel an indescribable aura...",,,,,,,,,,,,,
 biomemod_magmatic,"The air is burning",,,,,,,,,,,,,
 biomemod_necromancy,"The Dead are Restless",,,,,,,,,,,,,
 biomemod_esoteric_den,"You feel the world has indescribable shapes...",,,,,,,,,,,,,
 biomemod_alchemic,"You feel an alchemical mist in the air",,,,,,,,,,,,,
 biomemod_plane_yggdrasil,"A dense jungle with endless life, filled with monsters foreign",,,,,,,,,,,,,
+biomemod_plane_magic,"Your soul feels heavy",,,,,,,,,,,,,
 biomemod_slime_hell,"You feel strangely warm",,,,,,,,,,,,,
 material_apotheosis_bloodystone,"Bloody Stonework",,,,,,,,,,,,,
 material_apotheosis_corruptflesh,"Vacillating Flesh",,,,,,,,,,,,,
@@ -410,6 +428,7 @@ material_apotheosis_malicious_powder,"Volcanic Powder",,,,,,,,,,,,,
 material_apotheosis_milk,"Milk",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone,"Esoteric Stone",,,,,,,,,,,,,
 material_apotheosis_esoteric_stone_glowing,"Luminescent Rock",,,,,,,,,,,,,
+material_apotheosis_crystal_glow,"Glowing Crystal",,,,,,,,,,,,,
 material_apotheosis_cursed_rock_hard,"Sacred Rock",,,,,,,,,,,,,
 material_apotheosis_radioactive_liquid_strong,"Noxious Sludge",,,,,,,,,,,,,
 material_apotheosis_radioactive_mud,"Defiled Mud",,,,,,,,,,,,,
@@ -417,7 +436,7 @@ material_apotheosis_milk_powder,"Powdered Milk",,,,,,,,,,,,,
 magic_liquid_berserk_cloud_name,"Berserkium Mist",,,,,,,,,,,,,
 magic_liquid_charm_cloud_name,"Pheromone Mist",,,,,,,,,,,,,
 spell_apotheosis_spells_to_cursor_name,"Redirect",,,,,,,,,,,,,
-spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles towards your mouse cursor at a high speed",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
+spell_apotheosis_spells_to_cursor_desc,"Redirects all airborne projectiles towards your mouse cursor at a high speed",,,,,,,,,,,,,
 spell_apotheosis_status_drunk_intense_name,Intense Mass Drunk,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_drunk_intense_desc,Affects every creature in a large radius a short but intense curse of endless spirits.,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_status_wet_intense_name,Intense Mass Wet,,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
@@ -529,16 +548,20 @@ spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times, but b
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_14_desc,"Secrets of the drowning depths have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_15_desc,"Secrets of unworldly transmutation have been unlocked to you.",,,,,,,,,,,,,
+orb_apotheosis_16_desc,"Secrets of wild magic have been unlocked to you.",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
 book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware.",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_name,"Emerald Tablet - Volume XII",,,,,,,,,,,,,
-book_apotheosis_orbbook_13_description,"Our Creator pondered, standing alone in an infinitely empty field, Divinity could hear but not see any. \nDivinity assumed they would be standing within a crowd, yet they observed in solitude. \nDivinity brought preference to the world, and deemed some creations superior to others in their lone judgement \nDivinity believed the world to be better with their touch, but without contention it was improvable.",,,,,,,,,,,,,
+book_apotheosis_orbbook_13_description,"There once was a time the world froze to a halt.\nThe water didn't flow, the heart didn't beat and the box didn't fall.\nAfter a moment time flowed again as it always did, however,\nsomething was missing afterwards.\nLook around you, do you not sense it?\nIt is our pursuit to discover what that thing was.",,,,,,,,,,,,,
 book_apotheosis_orbbook_14_name,"Emerald Tablet - Volume XIII",,,,,,,,,,,,,
 book_apotheosis_orbbook_14_description,"The bird cackled and sang\nWhat good is one's time if it is without encouragement?\nTo those who dream when they feel, they know not the encouragement\nof knowing what to do before their dream and how much.\nTo those who plan their dream ahead of time, when and where,\nthey know what they can do and what time they have to do it.\nThe bird cackled once more before it flew off.\nIt's wisdom soaked into the minds of those who heard it, \nas water soaked into glass.",,,,,,,,,,,,,
+book_apotheosis_orbbook_15_name,"Emerald Tablet - Volume XIV",,,,,,,,,,,,,
+book_apotheosis_orbbook_15_description,"If only you knew how the mountains were made.\nHow the rivers flowed,\nWhy the emeralds were heavy,\nWhat creature made the eternal fire.\nOur art is not wrapped in layers of secrecy because we hide it.\nYou can know, but choose not to, and so are left with nothing to do but pray to your gods for salvation.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_workinprogress_description,"Seeker of knowledge, your nose is on the right path \nyet some secrets are yet to be revealed.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_12_description,"Evolution is forever changing.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_13_description,"Bring your friends along when you travel.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must remain pure and unintoxicated.",,,,,,,,,,,,,
+book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so and your arrow shall move faster.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
@@ -565,6 +588,8 @@ perk_apotheosis_no_recoil,"No Recoil",,,,,,,,,,,,,
 perk_apotheosis_no_recoil_description,"Your spells have no recoil.",,,,,,,,,,,,,
 perk_apotheosis_void,"Void",,,,,,,,,,,,,
 perk_apotheosis_void_description,"Gain immense power, but the void grows jealous of your options.",,,,,,,,,,,,,
+perk_apotheosis_infinite_flight,"Our Gift",,,,,,,,,,,,,
+perk_apotheosis_infinite_flight_description,"A divine blessing grants you infinite flight.",,,,,,,,,,,,,
 perk_apotheosis_copy_spells,"Copy Spells",,,,,,,,,,,,,
 perk_apotheosis_copy_spells_description,"Copy the Uncopyable.",,,,,,,,,,,,,
 perk_apotheosis_curse_mana,"Endless Mana",,,,,,,,,,,,,
@@ -577,7 +602,7 @@ perk_apotheosis_no_blood,"Smoked Corpses",,,,,,,,,,,,,
 perk_apotheosis_no_blood_description,"Enemies leave behind no corpse, and bleed no blood.",,,,,,,,,,,,,
 perk_apotheosis_god_ti,"Divine Intervention",,,,,,,,,,,,,
 perk_apotheosis_god_ti_description,"The gods will cause something sporadic to occur every 3-4 minutes.",,,,,,,,,,,,,
-perk_apotheosis_plane_radar,"Plane Radar",,,,,,,,,,,,,
+perk_apotheosis_plane_radar,"Divine Radar",,,,,,,,,,,,,
 perk_apotheosis_plane_radar_description,"You can sense otherworldy energy somewhere in the world.",,,,,,,,,,,,,
 status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
 status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
@@ -626,6 +651,7 @@ statusdesc_curse_wither_explosion,You take 100% extra damage from explosions.,В
 statusdesc_curse_wither_melee,You take 100% extra damage from melee attacks.,Вы получаете 100% дополнительного урона от рукопашных атак.,Você recebe mais 100% de dano de ataques corpo a corpo.,Recibes 100 % más de daño de ataques cuerpo a cuerpo.,Du erleidest 100 % zusätzlichen Schaden durch Nahkampfangriffe.,Vous subissez 100 % de dégâts supplémentaires des attaques de mêlée.,Subisci il 100% in più di danni da mischia.,Otrzymujesz 100% więcej obrażeń od ataków wręcz.,近战攻击额外对你造成 100% 伤害。,近接攻撃から100%の追加ダメージを受ける。,근접 공격으로부터 대미지를 100% 더 받습니다.,,,
 statusdesc_curse_wither_electricity,You take 100% extra damage from electricity.,Вы получаете 100% дополнительного урона от электричества.,Você recebe mais 100% de dano de eletricidade.,Recibes 100 % más de daño de electricidad.,Du erleidest 100 % zusätzlichen Schaden durch Elektrizität.,Vous subissez 100 % de dégâts supplémentaires de l'électricité.,Subisci il 100% in più di danni da elettricità.,Otrzymujesz 100% więcej obrażeń od elektryczności.,雷电额外对你造成 100% 伤害。,電撃から100%の追加ダメージを受ける。,전기로부터 대미지를 100% 더 받습니다.,,,
 creep_apotheosis_boss_flesh_monster_name,"Kerettiläinenhirviö",,,,,,,,,,,,,
+log_apotheosis_fish,"The red fish is real",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_desc,"The world is set in stone.",,,,,,,,,,,,,
 log_apotheosis_upgrade_alwayscast_cheater_name,"You cannot cheat the gods!",,,,,,,,,,,,,
@@ -1640,7 +1666,7 @@ do  -- Player Editor
   --Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
   local attrs = xml:first_of("DamageModelComponent").attr
   attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
-  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0009,0.001"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0002,0.001"
 
   if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
     --Adds Golden Cape if check is successful
@@ -1665,6 +1691,20 @@ do  -- Player Editor
       >
     </LuaComponent>
   ]]))
+
+  --Debug
+  --xml:add_child(nxml.parse([[
+  --  <SpriteComponent 
+  --  _tags="character" 
+  --  alpha="1" 
+  --  image_file="mods/apotheosis/files/player_gfx/perk_wings.xml"
+  --  next_rect_animation="" 
+  --  offset_x="6" 
+  --  offset_y="14" 
+  --  rect_animation="walk" 
+  --  z_index="0.61"
+  --></SpriteComponent>
+  --]]))
   ModTextFileSetContent(path, tostring(xml))
 end
 
@@ -1781,6 +1821,15 @@ function OnPlayerSpawned( player_entity )
   --Warns the player if Mo Creeps is enabled, to shut it off
   if ModIsEnabled("Mo_Creeps") then
     GamePrintImportant("WARNING: MO CREEPS IS ENABLED","Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+  end
+
+  --Debug Testing for intro scene
+  --RemoveFlagPersistent( "apotheosis_intro_cutscene_devtest" )
+
+  --Handles the intro cutscene if the player hasn't encountered it yet
+  if ModIsEnabled("Mo_Creeps") == false and HasFlagPersistent( "apotheosis_intro_cutscene_devtest" ) == false then
+    EntityLoad("mods/apotheosis/files/entities/intro/controller_scenes.xml", x, y)
+    AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
   end
 
   --Handles AprilFools related code

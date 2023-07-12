@@ -105,8 +105,16 @@ g_small_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 2,    
-		entity 	= "data/entities/animals/wizard_weaken.xml"
+		entity 	= "data/entities/animals/wizard_corrupt_weaken.xml"
 	},
+	--[[
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 2,    
+		entity 	= "data/entities/animals/wizard_corrupt_twitchy.xml"
+	},
+	]]--
 	{
 		prob   		= 0.05,
 		min_count	= 1,

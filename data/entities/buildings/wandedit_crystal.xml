@@ -1,6 +1,6 @@
 <Entity 
   name="unknown" 
-  tags="hittable,mortal,workshop" >
+  tags="hittable,mortal,teleportable_NOT,polymorphable_NOT,workshop" >
 
   <DamageModelComponent 
     _enabled="1" 

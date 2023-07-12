@@ -1093,6 +1093,12 @@
 		height_index="13"
 		color="ffffd114" >
 	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome/custom/orbroom_15.xml"
+		height_index="13"
+		color="ffffd115" >
+	</Biome>
 
 	<Biome 
 		biome_filename="data/biome/custom/empty_desert.xml"
@@ -1209,6 +1215,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/plane_magic.xml"
+		height_index="13"
+		color="ff9426bd" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/arena_boss_mid.xml" 
 		height_index="10"
 		color="ff733eee" >
@@ -1221,9 +1233,63 @@
 	</Biome>
 
 	<Biome
-		biome_filename="data/biome/custom/plane_portal_01.xml"
+		biome_filename="data/biome/custom/divine_egg_01.xml"
 		height_index="10"
 		color="ffeae85f" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/divine_egg_01.xml"
+		height_index="10"
+		color="ffeae861" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/divine_egg_02.xml"
+		height_index="10"
+		color="ffeae862" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/divine_egg_03.xml"
+		height_index="10"
+		color="ffeae863" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/divine_egg_04.xml"
+		height_index="10"
+		color="ffeae864" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/divine_egg_05.xml"
+		height_index="10"
+		color="ffeae865" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/divine_egg_06.xml"
+		height_index="10"
+		color="ffeae866" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/empty_ant.xml" 
+		height_index="0"
+		color="ff48E312" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/special_infinite_flight.xml"
+		height_index="10"
+		color="ffd59720" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/desert_pillars.xml"
+		height_index="11"
+		color="ffbc6ce1" >
 	</Biome>
 
 </BiomesToLoad>

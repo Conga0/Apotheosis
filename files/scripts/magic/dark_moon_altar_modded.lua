@@ -70,12 +70,9 @@ if essence_6 and ( #players_ == 0 ) and ( #sun == 0 ) and ( #sun2 == 0 ) then
 
         -- Spawn Statue ------------------------------------------------------
 
-        if (ModIsEnabled("nightmare") or ModIsEnabled("purgatory")) and HasFlagPersistent( "apotheosis_moon_fungus_unlock_goldmode" ) == false then
-            EntityLoad( "mods/Apotheosis/files/entities/props/goldmode/statue_essence_fungus_moon.xml", 4461, 2049 )
-            AddFlagPersistent( "apotheosis_moon_fungus_unlock_goldmode" )
-        elseif HasFlagPersistent( "apotheosis_moon_fungus_unlock" ) == false then
-            EntityLoad( "mods/Apotheosis/files/entities/props/statue_essence_fungus_moon.xml", 4461, 2049 )
-			AddFlagPersistent( "apotheosis_moon_fungus_unlock" )
+        if HasFlagPersistent( "apotheosis_card_unlocked_moon_fungus_unlock" ) == false then
+            --EntityLoad( "mods/Apotheosis/files/entities/props/statue_essence_fungus_moon.xml", 4461, 2049 )
+			AddFlagPersistent( "apotheosis_card_unlocked_moon_fungus_unlock" )
         end
 		
 		EntityKill( entity_id )

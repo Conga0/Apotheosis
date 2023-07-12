@@ -6,7 +6,7 @@
 		background_edge_right="data/weather_gfx/edges/background_crypt_right.png"
 		background_edge_top="data/weather_gfx/edges/background_crypt_top.png"
 		background_edge_bottom="data/weather_gfx/edges/background_crypt_bottom.png"
-		background_edge_priority="10"     
+		background_edge_priority="10"
 
 		lua_script="data/scripts/biomes/desert.lua"
     noise_type="SIN_CAPPED_SIMPLEX"

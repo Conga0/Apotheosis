@@ -1107,7 +1107,7 @@
 		</Ingestion>
 	</StatusEffects>
     <Graphics
-		color="44b53535"
+		color="88b53535"
 		>
     </Graphics>
 	<ParticleEffect
@@ -1151,7 +1151,7 @@
 		</Ingestion>
 	</StatusEffects>
     <Graphics
-		color="44b53535"
+		color="88b53535"
 		>
     </Graphics>
 	<ParticleEffect
@@ -2133,6 +2133,46 @@
 	</ParticleEffect>
   </CellDataChild>
 
+  <CellDataChild
+  	_parent="rock_static"
+  	_inherit_reactions="1"
+	tags="[static],[alchemy],[earth]"
+  	name="rock_static_crystal_glow"
+	ui_name="$material_apotheosis_crystal_glow"
+	wang_color="ffacf8ff"
+	gfx_glow="100"
+	hp="320000"
+	durability="14"
+	audio_physics_material_event="rock"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/crystal_tile_test.png"
+		color="ffacf8ff"
+		pixel_all_around="ffacf8ff"
+		>
+	</Graphics>
+	<ParticleEffect
+		vel.y="-13.14"
+		vel_random.min_x="-17.71"
+		vel_random.max_x="17.71"
+		vel_random.min_y="-17.18"
+		vel_random.max_y="-2.8"
+		lifetime.min="0.9"
+		lifetime.max="1.6"
+		gravity.y="60"
+		render_on_grid="1"
+		airflow_force="0.5314"
+		airflow_scale="0.1371"
+		friction="0.0002"
+		probability="0.0145"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+  </CellDataChild>
+
 
 
   <CellData
@@ -2723,6 +2763,20 @@
 	<Reaction probability="2"
 		input_cell1="apotheosis_radioactive_liquid_strong" 	input_cell2="air"
 		output_cell1="apotheosis_radioactive_liquid_strong" 	output_cell2="apotheosis_radioactive_gas_fading"
+		>
+	</Reaction>
+	
+	<!--Teleportatium + Blood = Portalium-->
+	<Reaction probability="15"
+		input_cell1="blood" 		input_cell2="magic_liquid_teleportation"
+		output_cell1="steam"	output_cell2="apotheosis_magic_liquid_rideshare"
+		>
+	</Reaction>
+	
+	<!--Wizard Stone turns blood into Portalium-->
+	<Reaction probability="50"
+		input_cell1="wizardstone" input_cell2="blood"
+		output_cell1="steam" output_cell2="apotheosis_magic_liquid_rideshare"
 		>
 	</Reaction>
 

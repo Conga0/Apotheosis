@@ -192,6 +192,8 @@ wizard_corrupt_manaeater
 wizard_corrupt_neutral
 wizard_corrupt_swapper
 wizard_corrupt_teleport
+wizard_corrupt_twitchy
+wizard_corrupt_weaken
 enlightened_alchemist
 failed_alchemist
 failed_alchemist_b
@@ -233,6 +235,7 @@ skygazer
 gazer_greater_sky
 gazer_cold_apotheosis
 gazer_greater_cold
+gazer_parasitic
 gazer_robot
 spitmonster
 sentry
@@ -273,3 +276,4 @@ boss_musical_ghost
 blob_titan
 boss_fire_lukki_phase2
 boss_flesh_monster
+forest_monolith

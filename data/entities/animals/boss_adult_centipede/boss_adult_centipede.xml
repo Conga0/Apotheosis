@@ -42,6 +42,7 @@
 		>
 	</WormAIComponent>
 
+	<!--Isn't this guy maybe a li'l too tanky for Ant Nest?-->
 	<DamageModelComponent
 		air_needed="0" 
 		falling_damages="0" 
@@ -49,8 +50,9 @@
 		fire_probability_of_ignition="0.00"
 		blood_material="apotheosis_blood_worm_centipede"
 		blood_spray_material="apotheosis_blood_worm_centipede"
-		blood_multiplier="0.25"
-		hp="880" 
+		blood_multiplier="0.01"
+		hp="600" 
+		wait_for_kill_flag_on_death="1"
 		is_on_fire="0" 
 		mAirAreWeInWater="0" 
 		mFallCount="0" 
@@ -733,7 +735,7 @@
 
 	<!-- Summon Minions -->
 	<LuaComponent
-		_tags="invincible"
+		_tags="invincible,counter"
 		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_minion_summon.lua"
 		execute_every_n_frame="1800"
 		>
@@ -763,6 +765,19 @@
 		>
 	</VariableStorageComponent>
 
+	<VariableStorageComponent
+		name="phase_brain"
+		value_int="1"
+		>
+	</VariableStorageComponent>
+		
+	<!--Handles towerclimb phase transitions-->
+	<LuaComponent
+		execute_every_n_frame="-1"
+		script_damage_received="data/entities/animals/boss_adult_centipede/boss_adult_centipede_phasetransition.lua"
+		>
+	</LuaComponent>
+
 	<!--Slow down to spit acid attack similar to the Mechanical Worms-->
 	<!--Slow chomp phase at ~half health or at each 3rd percentage; look at tower climb worms for what this means, Worm is invincible during this but can be knocked out of it by attacking the tail end or a certain thing nearby the Centipede's Nest-->
 	<!--Occasionally summon charmed ants? or Adult centipede emits mass pheromones and causes all nearby ant eggs to hatch-->
@@ -771,7 +786,18 @@
 	<!--Doesn't need to be too complicated, that's how we get burn out-->
 	<!--That goes both ways, I just don't know what's difficult for a sprite artist if you're reading this so shout if anything's up-->
 	<LuaComponent
+		_tags="counter"
 		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_basic_ai.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags="disabled_by_liquid"
+		script_damage_about_to_be_received="data/entities/animals/boss_adult_centipede/dmg_limit_1.lua"
+		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_towerclimb_ai.lua"
 		execute_every_n_frame="1"
 		execute_times="-1"
 		>

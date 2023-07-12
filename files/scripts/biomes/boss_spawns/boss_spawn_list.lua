@@ -130,19 +130,6 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
 ]]))
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
-
-
---Spawns a book hinting towards the Trophy Room Location
-local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
-local xml = nxml.parse(content)
-xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="-1167" pos_y="-1350" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_trophy_room.xml" />
-]]))
-ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
-
-
-
 --Spawns a book hinting towards which spells to use Mass Materia Conversion on
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")

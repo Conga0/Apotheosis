@@ -144,7 +144,7 @@
 
 	<DamageNearbyEntitiesComponent
     radius="20"
-	update_every_n_frame="4"
+	time_between_damaging="4"
     damage_min="0.20"
     damage_max="0.20"
     target_tag="mortal"

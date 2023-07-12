@@ -14,9 +14,10 @@
 			can_fly="1" >
 		</AnimalAIComponent>
 
-		<DamageModelComponent 
+		<DamageModelComponent
             hp="200"
 			air_needed="1"
+			fire_probability_of_ignition="0.05"
 			ragdollify_child_entity_sprites="0"
             ragdoll_material="meat_slime_green"
 		    ragdoll_fx_forced="DISINTEGRATED"
@@ -43,7 +44,8 @@
 		</SpriteComponent>
 		
 		<HitboxComponent 
-			_enabled="1" 
+			_enabled="1"
+			damage_multiplier="0.5"
 			aabb_min_x="-6" 
 			aabb_max_x="6" 
 			aabb_min_y="-6" 

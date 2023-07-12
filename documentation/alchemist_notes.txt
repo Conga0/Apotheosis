@@ -1,4 +1,5 @@
 Red Sand + Lava = Volcanic rock
+Red Sand + Blood = Red Sand
 
 Mud + Pheromone = Magic Mud
 Magic Mud + Fire = Mud Man
@@ -13,6 +14,11 @@ Attunium + Flummoxium = Veloium
 Slime + Veloium = Attunium
 Veloium + Metal = Veloium + Poison Gas
 
+Powdered Milk + Water = Milk
+
+Blood + Teleportatium = Portalium
+Wizardstone + Blood = Portalium
+
 
 Normal Potion Pool:
 Magical Mud: Creates Mud Men when exposed to fire or other sources of explosions
@@ -25,6 +31,11 @@ Nukium: Causes all airborne projectiles to transform into nukes when consumed
 Escium: Significantly increases movement speed & provides a shield when stained or consumed
 Milk: Drinking cleanses all negative effectsof liquids you've consumed
 Mimicium: After a short moment, it will change itself into any nearby liquids it touches
+Portalium: Causes nearby creatures to travel with you upon going through a portal
+
+Pouch Pool:
+Red Sand: Consume it to Creature Shift
+Powdered Milk: Liquify it into normal Milk (See Rare Potion Pool)
 
 
 

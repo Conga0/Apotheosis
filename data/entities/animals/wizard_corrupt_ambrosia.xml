@@ -35,6 +35,9 @@
 			blood_material="apotheosis_magic_liquid_protection_all_fading"
 		    blood_multiplier="2"
 			>
+			<damage_multipliers
+				physics_hit="0.0" >
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 

@@ -23,6 +23,6 @@ do local v = heretic_stones[k]
         EntityKill(v)
 		EntityLoad("mods/apotheosis/files/entities/items/pickups/stone_radar.xml",x,y)
         GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
-        GameTriggerMusicEvent( "music/oneshot/dark_03", true, pos_x, pos_y )
+        GameTriggerMusicEvent( "music/oneshot/heaven_03", true, pos_x, pos_y )
 	end
 end

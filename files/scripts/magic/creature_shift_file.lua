@@ -114,6 +114,8 @@ function creature_shift( entity, x, y, debug_no_limits )
         local target = enemy_list_from[rnd]
         table.remove(enemy_list, rnd)
 
+        print(table.concat({"Attempting to creature shift \"",target2,"\" into \"",target,"\""}))
+
 
         --Debugging shift, forces all psychic bats to be turned into Shotgunners
         --target = "shotgunner"
@@ -344,7 +346,9 @@ function creature_shift( entity, x, y, debug_no_limits )
 
         --Add a lua script to the player as an emergency backup option for creature shifting
         --Conga: Unnecessary since creature_shift_file_refresh.lua has been fixed! (Thankyou me) (Obama medal meme)
+        --Conga 03/07/2023: We might actually need this because already serialised entities can't be updated via setting contents
         --[[
+        ]]--
         do
             local player_list = EntityGetWithTag("player_unit")
             for k=1,#player_list
@@ -367,7 +371,7 @@ function creature_shift( entity, x, y, debug_no_limits )
                         {
                             execute_on_added = true,
                             script_source_file = "mods/Apotheosis/files/scripts/magic/creature_shift_new/player_shift_update.lua",
-                            execute_every_n_frame = 150,
+                            execute_every_n_frame = 240, --Updates every 4 seconds
                             remove_after_executed = false,
                             execute_times=-1
                         }
@@ -375,7 +379,6 @@ function creature_shift( entity, x, y, debug_no_limits )
                 end
             end
         end
-        ]]--
 
         if ModIsEnabled("fungal_timer") then
             local player_list = EntityGetWithTag("player_unit")

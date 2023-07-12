@@ -39,86 +39,8 @@
     _tags="enabled_in_hand,enabled_in_world"
     kill_when_finished="0"
     steps_per_frame="3"
-    from_material="sand"
-    to_material="fungi_creeping"
-    clean_stains="0"
-    is_circle="1"
-    radius="20" 
-    reaction_audio_amount="0.005"
-  >
-  </MagicConvertMaterialComponent>
-
-  <MagicConvertMaterialComponent
-    _tags="enabled_in_hand,enabled_in_world"
-    kill_when_finished="0"
-    steps_per_frame="3"
-    from_material="sand_static"
-    to_material="fungi_creeping"
-    clean_stains="0"
-    is_circle="1"
-    radius="20" 
-    reaction_audio_amount="0.005"
-  >
-  </MagicConvertMaterialComponent>
-
-  <MagicConvertMaterialComponent
-    _tags="enabled_in_hand,enabled_in_world"
-    kill_when_finished="0"
-    steps_per_frame="3"
-    from_material="sandstone_surface"
-    to_material="fungi_creeping"
-    clean_stains="0"
-    is_circle="1"
-    radius="20" 
-    reaction_audio_amount="0.005"
-  >
-  </MagicConvertMaterialComponent>
-
-  <MagicConvertMaterialComponent
-    _tags="enabled_in_hand,enabled_in_world"
-    kill_when_finished="0"
-    steps_per_frame="3"
-    from_material="sand_petrify"
-    to_material="fungi_creeping"
-    clean_stains="0"
-    is_circle="1"
-    radius="20" 
-    reaction_audio_amount="0.005"
-  >
-  </MagicConvertMaterialComponent>
-
-  <MagicConvertMaterialComponent
-    _tags="enabled_in_hand,enabled_in_world"
-    kill_when_finished="0"
-    steps_per_frame="3"
-    from_material="sand_surface"
-    to_material="fungi_creeping"
-    clean_stains="0"
-    is_circle="1"
-    radius="20" 
-    reaction_audio_amount="0.005"
-  >
-  </MagicConvertMaterialComponent>
-
-  <MagicConvertMaterialComponent
-    _tags="enabled_in_hand,enabled_in_world"
-    kill_when_finished="0"
-    steps_per_frame="3"
-    from_material="sand_blue"
-    to_material="fungi"
-    clean_stains="0"
-    is_circle="1"
-    radius="20" 
-    reaction_audio_amount="0.005"
-  >
-  </MagicConvertMaterialComponent>
-  
-  <MagicConvertMaterialComponent
-    _tags="enabled_in_hand,enabled_in_world"
-    kill_when_finished="0"
-    steps_per_frame="3"
-    from_material="blood"
-    to_material="apotheosis_redstone"
+    from_material_array="sand,sand_static,sandstone_surface,sand_petrify,sand_surface,sand_blue,blood,apotheosis_blood_infectious"
+    to_material_array="fungi_creeping,fungi_creeping,fungi_creeping,fungi_creeping,fungi_creeping,fungi,apotheosis_redstone,apotheosis_redstone"
     clean_stains="0"
     is_circle="1"
     radius="20" 

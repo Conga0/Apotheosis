@@ -30,6 +30,9 @@
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_teleport/filenames.txt"
 			blood_material="magic_liquid_teleportation"
 			>
+			<damage_multipliers
+				physics_hit="0.0" >
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 

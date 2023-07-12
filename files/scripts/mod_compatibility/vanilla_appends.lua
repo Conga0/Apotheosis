@@ -96,6 +96,9 @@ do --Vanilla Pixel Scene adjustments
   content = content:gsub("data/entities/props/music_machines/music_machine_01.xml", "")
   content = content:gsub("data/entities/props/music_machines/music_machine_02.xml", "")
   content = content:gsub("data/entities/props/music_machines/music_machine_03.xml", "")
+
+  --Move Hidden Glyph Jungle down slightly so it isn't revealed in open terrain
+  content = content:gsub("x=\"2806\" y=\"6614\"", "x=\"2806\" y=\"6714\"")
   ModTextFileSetContent(path, content)
 end
 
@@ -221,6 +224,10 @@ do
     "wizard_corrupt_manaeater",
     "wizard_corrupt_neutral",
     "wizard_corrupt_swapper",
+    "wizard_corrupt_teleport",
+    "wizard_corrupt_twitchy",
+    "wizard_corrupt_weaken",
+    "wizard_corrupt_poly",
     --"wizard_wands",
   }
 
@@ -273,14 +280,6 @@ do -- Add secret path check to portal entity
   attrpath = xml:first_of("LuaComponent").attr
   attrpath.script_portal_teleport_used = "mods/apotheosis/files/scripts/buildings/teleporter_secret_check_fail.lua"
   ModTextFileSetContent(path, tostring(xml))
-end
-
-do -- Fixes Leviathan Portal to Coral Chest
-  local path = "data/entities/buildings/teleport_teleroom_6.xml"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("7480", "7060")
-  content = content:gsub("-12288", "-12209")
-  ModTextFileSetContent(path, content)
 end
 
 do
@@ -582,7 +581,6 @@ do --Add Random Homing to Pyramid Boss loot pool
   ModTextFileSetContent(path, content)
 end
 
-
 do -- Autogenerate filepath VSCs for various items
   local paths = {
     "data/entities/items/books/book_00.xml",
@@ -861,4 +859,15 @@ do --Update Masters of Homing to be made out of attuning meat
   local xml = nxml.parse(content)
   xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_material = "apotheosis_meat_homing"
   ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb rooms into consideration, 45 for all orbs and 46+ for Red Gem
+  local path = "data/entities/animals/boss_centipede/ending/sampo_start_ending_sequence.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("( orb_count >= 33 )", "( orb_count >= 45 )")
+  content = content:gsub("( orb_count > 33 )", "( orb_count > 45 )")
+
+  --Debug data
+  --print("printing sampo_start_ending_senquence.lua\n\n" .. content)
+  ModTextFileSetContent(path, content)
 end

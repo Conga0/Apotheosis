@@ -105,7 +105,7 @@
       material_index="10" 
       material_max="1.0" 
       material_min="0.6" 
-      material_name="rock_hard" 
+      material_name="rock_hard"
       add_perlin="1"
       add_perlin_scale_y="0.01"
       add_perlin_scale_x="0.01"

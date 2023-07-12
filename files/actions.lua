@@ -1611,6 +1611,7 @@ local apotheosis_spellappends = {
     description = "$spell_apotheosis_lua_sharing_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/lua_sharing.png",
     sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+    spawn_requires_flag = "apotheosis_card_unlocked_orb_15_spell",  --Ant Hell
     type 		= ACTION_TYPE_MODIFIER,
     spawn_level                       = "2,3,4,5,6,10", -- TRANSMUTATION
     spawn_probability                 = "0.3,0.3,0.3,0.3,0.3,0.5", -- TRANSMUTATION
@@ -2012,8 +2013,8 @@ local actions_to_edit = {
 
     --Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
     ["ACCELERATING_SHOT"] = {
-        spawn_level         = "1,2,3,4,5",
-        spawn_probability   = "0.5,1,1,1,0.5"
+        spawn_level         = "1,2,3,4,5,10",
+        spawn_probability   = "0.5,1,1,1,0.5,0.1"
     },
 
     --Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
@@ -2165,8 +2166,8 @@ local actions_to_edit = {
     },
     -- Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
     ["HOMING_ROTATE"] = {
-        spawn_level         = "2,3,4,5,6",
-        spawn_probability   = "0.6,0.8,1,1,0.6",
+        spawn_level         = "2,3,4,5,6,10",
+        spawn_probability   = "0.6,0.8,1,1,0.6,0.1",
         subtype = { homing=true }
     },
     ["AUTOAIM"] = {

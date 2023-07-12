@@ -48,3 +48,65 @@ function MultiplyHPSelective(filepath,multiplier,base)
     ModTextFileSetContent(filepath, tostring(xml))
   end
 end
+
+--Split a string separated by a specific character into a table
+function SplitStringOnCharIntoTable(string, char)
+  local list = {}
+  for w in (string .. char):gmatch("([^" .. char .. "]*)" .. char) do
+      table.insert(list, w)
+  end
+  return list
+end
+
+--Assemble a table of values into a single string split by a specific character
+function TableToCharSeparatedString(list, char)
+    local string = ""
+    for i, v in ipairs(list) do
+        string = string .. v
+        if i ~= #list then
+            string = string .. char
+        end
+    end
+    return string
+end
+
+function lerp(a, b, weight)
+	return a * weight + b * (1 - weight)
+end
+
+function lerpVec(x1, y1, x2, y2, weight)
+	local x = lerp(x1, x2, weight)
+	local y = lerp(y1, y2, weight)
+	return x,y
+end
+
+function refreshSprites(entity_id)
+  local spritecomps = EntityGetComponentIncludingDisabled(entity_id,"SpriteComponent")
+  for k=1,#spritecomps
+  do local v = spritecomps[k]
+    EntityRefreshSprite(entity_id,v)
+  end
+end
+
+function ToggleUI(player_id,enabled)
+  EntitySetComponentIsEnabled(player_id,EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent"),enabled)
+  EntitySetComponentIsEnabled(player_id,EntityGetFirstComponentIncludingDisabled(player_id,"InventoryGuiComponent"),enabled)
+  EntitySetComponentIsEnabled(player_id,EntityGetFirstComponentIncludingDisabled(player_id,"CharacterDataComponent"),enabled)
+
+  local children = EntityGetAllChildren( player_id ) 
+  for k=1,#children
+  do child = children[k]
+      if EntityGetName( child ) == "inventory_quick" then 
+          local inventory_items = EntityGetAllChildren(child) 
+          if(inventory_items ~= nil) then 
+              for z=1,#inventory_items
+              do item = inventory_items[z]
+                  if EntityHasTag( item, "wand" ) then 
+                    EntitySetComponentIsEnabled(item,EntityGetFirstComponentIncludingDisabled(item,"AbilityComponent"),enabled)
+                  end 
+              end 
+          end 
+          break 
+      end 
+  end
+end

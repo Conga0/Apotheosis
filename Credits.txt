@@ -10,7 +10,7 @@ Created the Giant Whisp creature
 Creating Master of Puppetering's Sprites
 Creating Heretic's Sprites
 Creating Juvenile Fire Lukki's Sprites
-Creating Fire Ant Sprites
+Creating Fire Ant & Suffocating Ant Sprites
 Creating the glass panes & banners in Temple of Sacriligious Remains
 Creating the Flesh Material in Temple of Sacriligious Remains
 Contributed to Heretic Boss's design, code and created all sprite work related to him.
@@ -20,6 +20,7 @@ Creating Corrupt Master of Teleportation's sprite
 Helping significantly with Corrupt Master of Exchange's sprite
 Creating Wand-Stealing Crystal's Sprite
 Reflective Weirdo resprite
+Creating Colossal Fairy's sprite
 
 Copi (Human#6606) - Helping think up some enemy ideas for unused sprites I had lying around
 Creating right click icon for alt-fire spells
@@ -27,8 +28,16 @@ Creating shield sapper script
 Creating Magic Inerberation script
 Glass Cannon compatibility for Liquid Bubbles
 Various Code Contributions
+Creating the Pillar Sprites for various perk creation altar stones
 
-PickledSosig - Created the Virulent Caverns background sprite
+PickledSosig - Creating the Virulent Caverns background sprites
+Creating the Ant Nest background sprites
+Creating the Sunken Cavern background sprites
+Creating the Crystal Egg
+
+Letaali - Translating Orb Room lore to finnish
+
+SpicySpaceSnake - Recreating Orb Room glyph font
 
 Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help
 

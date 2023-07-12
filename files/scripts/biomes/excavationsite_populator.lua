@@ -421,7 +421,7 @@
     })
     ]]--
 
-RegisterSpawnFunction( 0xff876543, "spawn_nest_egg" )
+RegisterSpawnFunction( 0xff876544, "spawn_nest_egg" )
 RegisterSpawnFunction( 0xffffeedd, "init" )
 
 if init ~= nil then

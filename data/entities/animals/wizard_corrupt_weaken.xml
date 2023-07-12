@@ -1,0 +1,174 @@
+<Entity name="Korruptoitunut Turvattomuusmestari" tags="polymorphable_NOT,ui_use_raw_name" >
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="2" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			attack_melee_enabled="0"
+			creature_detection_range_x="400"
+			creature_detection_range_y="400"
+			food_material="blood"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			can_fly="1" 
+			attack_ranged_entity_file="data/entities/projectiles/orb_weaken.xml"
+			attack_ranged_action_frame="5"
+			attack_ranged_frames_between="80"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="300"
+			creature_detection_check_every_x_frames="40"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="12"
+            ragdoll_material="meat_slime"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_weaken/filenames.txt"
+			critical_damage_resistance="1.0"
+			ragdoll_fx_forced="DISINTEGRATED"
+			blood_material="slime"
+			blood_multiplier="0.2"
+			>
+			<damage_multipliers
+				physics_hit="0.0" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/apotheosis/files/enemies_gfx/wizard_corrupt_weaken.xml"
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="mage_corrupted"
+			food_chain_rank="6"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-12" 
+			swim_idle_buoyancy_coeff="1.0"
+			run_velocity="18"  >
+		</CharacterPlatformingComponent>
+		
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+		  _enabled="1" 
+		  aabb_min_x="-4.5" 
+		  aabb_max_x="4.5" 
+		  aabb_min_y="-10" 
+		  aabb_max_y="3" 
+		  >
+		</HitboxComponent>
+		
+		<CharacterDataComponent 
+			collision_aabb_min_x="-3.0" 
+			collision_aabb_max_x="3.0" 
+			collision_aabb_min_y="-7" 
+			collision_aabb_max_y="3" 
+			>
+	    </CharacterDataComponent>
+	</Base>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+	
+	<HotspotComponent
+        _tags="cape_root"
+        sprite_hotspot_name="cape" >
+    </HotspotComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wizard/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/wizard" >
+	</AudioComponent>
+
+	<Entity name="cape">  
+        <Base file="data/entities/verlet_chains/cape/cape.xml">
+        	<VerletPhysicsComponent
+        		cloth_color_edge="0xFFd4ccc6"
+        		cloth_color="0xFF595c61">
+        	</VerletPhysicsComponent>
+        </Base>  
+    </Entity>
+	
+	<SpriteComponent 
+		_tags="character" 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/apotheosis/files/enemies_gfx/wizard_corrupt_neutral_emissive.xml"
+		offset_x="0" 
+		offset_y="0"
+		emissive="1"
+		additive="1"
+		next_rect_animation="" 
+		rect_animation="walk" 
+		 >
+	</SpriteComponent>
+    
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/thundermage/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<LuaComponent
+		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name="shield_colour"
+		value_string="white"
+		value_int="-10000"
+		>
+	</VariableStorageComponent>
+</Entity>
+

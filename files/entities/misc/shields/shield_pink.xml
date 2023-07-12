@@ -1,0 +1,50 @@
+<Entity name="corrupted_shield" >
+    <InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <Base file="data/entities/misc/animal_energy_shield.xml">
+        <EnergyShieldComponent
+            _tags="enabled_in_hand,item_identified__LEGACY"
+            radius="18.0"
+            recharge_speed="0.0" 
+            max_energy="20.0"
+            energy_required_to_shield="0.1"
+            energy="20"
+		    damage_multiplier="0.05"
+            >
+        </EnergyShieldComponent>
+        
+        <ParticleEmitterComponent
+            emitted_material_name="magic_liquid_polymorph"
+            area_circle_radius.max="17"
+            >
+        </ParticleEmitterComponent>
+        
+        <ParticleEmitterComponent
+            emitted_material_name="magic_liquid_polymorph"
+            area_circle_radius.min="17"
+            area_circle_radius.max="17"
+            >
+        </ParticleEmitterComponent>
+        
+        <ParticleEmitterComponent
+            emitted_material_name="magic_liquid_polymorph"
+            area_circle_radius.min="17"
+            area_circle_radius.max="17"
+            >
+        </ParticleEmitterComponent>
+    </Base>
+
+    <SpriteComponent 
+        image_file="mods/Apotheosis/files/particles/area_indicator_40_pink.png"
+        z_index="1.2"
+        offset_x="20"
+        offset_y="20"
+        >
+    </SpriteComponent>
+
+    <LifetimeComponent
+    lifetime="420"
+    >
+    </LifetimeComponent>
+</Entity>

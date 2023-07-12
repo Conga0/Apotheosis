@@ -1,6 +1,6 @@
 <Entity 
   name="Puppetering Crystal"
-  tags="hittable,mortal" >
+  tags="hittable,mortal,enemy,teleportable_NOT,polymorphable_NOT" >
 
   <DamageModelComponent 
     _enabled="1" 

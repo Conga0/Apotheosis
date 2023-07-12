@@ -4,16 +4,16 @@ local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 pos_y = pos_y - 4 -- offset to middle of character
 
---local plane_locations = { {"50", "25"} }
+local plane_locations = { {"16646", "22790"}, {"-12538", "14125"}, {"-17146", "6445"}, {"23302", "14637"}, {"-11514", "4397"}, {"-18170", "11565"} }
 --Table of potential portal spawn locations
 
---SetRandomSeed(444,777)
---local num = Random(1,6)
---local plane_x = plane_locations[num][1]
---local plane_y = plane_locations[num][2]
+SetRandomSeed(444,777)
+local num = Random(1,6)
+local plane_x = plane_locations[num][1]
+local plane_y = plane_locations[num][2]
 
-local plane_x = -4858
-local plane_y = 1837
+--local plane_x = -4858
+--local plane_y = 1837
 
 --If the player is closer than 300 pixels to the location, remove the radar to avoid ui clutter
 if (math.abs(pos_y - plane_y) + math.abs(pos_x - plane_x)) > 300 then
@@ -28,7 +28,7 @@ if (math.abs(pos_y - plane_y) + math.abs(pos_x - plane_x)) > 300 then
     local indicator_x = pos_x + dir_x * indicator_distance
     local indicator_y = pos_y + dir_y * indicator_distance
 
-    GameCreateSpriteForXFrames( "mods/apotheosis/files/particles/radar_plane.png", indicator_x, indicator_y )
+    GameCreateSpriteForXFrames( "mods/apotheosis/files/particles/radar_plane.png", indicator_x, indicator_y, true, 0, 0, 1, true )
 
 
     --In the initial world, this will search for the location of the random plane spawn location, could be 1 of 6 places

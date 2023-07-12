@@ -1,0 +1,8 @@
+<Entity>
+  <Base file="data/entities/animals/whisp_big.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="50"
+      max_hp="50"
+     ></DamageModelComponent >
+  </Base>
+</Entity>
