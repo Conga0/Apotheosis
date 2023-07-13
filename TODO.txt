@@ -11,6 +11,7 @@ Remove _devtest from apotheosis_intro_cutscene for official release
 
 Magic Eggs feels unfinished
 Revise
+Might need TWWE to drop the sampo (though, you don't need to for the quest)
 
 Finalise Heretic
 todo: Heretical eye
@@ -19,5 +20,8 @@ Make the eye rotate towards the player while it's held in hand
 
 Finish A Message From Beyond tablet
 
-Make a more mod-compatipilled way to organise the creature list, as well as add the script to the wiki
-Use Copi code to aid with this
+Make rocks made of sandstone to support the desert pillars
+
+Finish alternative ending
+
+Revise Lukki Cruicible

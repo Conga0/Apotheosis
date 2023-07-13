@@ -512,13 +512,14 @@ end
 --Might be a good learning exercise to convert the list_override.txt file into a table?
 --mmmmmmmmmmm
 
-
+--[[
 do  --File override approach for organising animal icons
   if ModSettingGet( "Apotheosis.organised_icons" ) == true then
     local content = ModTextFileGetContent("mods/apotheosis/files/ui_gfx/animal_icons/list_override.txt")
     ModTextFileSetContent("data/ui_gfx/animal_icons/_list.txt",content)
   end
 end
+]]--
 
 do -- gsub new Creeps into Summon Egg's spawn table
   local path = "data/scripts/items/egg_hatch.lua"
@@ -528,6 +529,15 @@ do -- gsub new Creeps into Summon Egg's spawn table
   content = content:gsub([[red = { {"bat", 3}, {"tentacler_small"}, {"tentacler"} },]], [[red = { {"bat", 3}, {"fairy_big", 2}, {"tentacler_small"}, {"tentacler"} },]])
   ModTextFileSetContent(path, content)
 end
+
+--do
+--  local path = "data/scripts/item_spawnlists.lua"
+--  local content = ModTextFileGetContent(path)
+--  content = content:gsub([[egg_monster.xml]], [[apotheosis/egg_fairy.xml]])
+--  content = content:gsub([[egg_slime.xml]], [[apotheosis/egg_mud.xml]])
+--  content = content:gsub([[egg_purple.xml]], [[apotheosis/egg_robot.xml]])
+--  ModTextFileSetContent(path, content)
+--end
 
 do  -- Robots take damage from Veloium
   local path = "data/entities/base_enemy_robot.xml"
@@ -732,7 +742,6 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn
     "coalmine",         --Coal Mine, first area, goodluck on your run
     "desert",           --Desert above ground, careful not to die to any Stendari
     "crypt",            --Temple of the Arts.. who died here?
-    "fungicave",        --BUNGUS!! cave, west side of area 2 for example
     "coalmine_alt",     --Coalmine but to the west side near damp cave
     "pyramid_hallway",  --Pyramid entrance, presumably
     "excavationsite",   --Coal Pits, area 2
@@ -740,9 +749,9 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn
     "sandcave",         --Desert sand cave, I don't think it includes desert chasm
     "winter",           --Winter appears to be the snow chasm... terrifying. Also line 69!
     "rainforest",       --Jungle
-    "rainforest_dark",  --Lukki Lair.. creepy
+    --"rainforest_dark",  --Lukki Lair.. creepy
     "liquidcave",       --Abandoned Alchemy Lab
-    "the_end",          --Heaven, or Hell, your choice. Either are The Work.
+    --"the_end",          --Heaven, or Hell, your choice. Either are The Work.
     "vault",            --The Vault
     --"robot_egg",        --I'm sure you can guess
     --"robobase",         --Power Plant
@@ -778,12 +787,13 @@ end
 do --Reduces enemy spawnrates by increasing chance of a null spawn (2x)
   local biomes = {
     "wandcave",         --Magical Temple
-    "clouds",           --Cloudscapes
+    --"clouds",           --Cloudscapes
     "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
-    "pyramid",          --Presumably everything below the entrance to the pyramid
-    "fungiforest",      --Overgrowth
+    --"pyramid",          --Presumably everything below the entrance to the pyramid
+    --"fungiforest",      --Overgrowth
+    "fungicave",        --BUNGUS!! cave, west side of area 2 for example
     "snowcastle",       --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
-    "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
+    --"wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
   }
   local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_reduceenemies_x2.lua"
 
@@ -866,6 +876,23 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
   local content = ModTextFileGetContent(path)
   content = content:gsub("( orb_count >= 33 )", "( orb_count >= 45 )")
   content = content:gsub("( orb_count > 33 )", "( orb_count > 45 )")
+
+  --Debug data
+  --print("printing sampo_start_ending_senquence.lua\n\n" .. content)
+  ModTextFileSetContent(path, content)
+end
+
+do  --Insert enemies into the progress log where they belong, originally handled through an overwrite but now should be more mod-compatiable to future proof it incase any other inspiring enemy modders appear
+  if ModSettingGet( "Apotheosis.organised_icons" ) == true then
+    dofile_once("mods/apotheosis/files/scripts/mod_compatibility/enemy_list_inserts.lua")
+  end
+end
+
+do -- Make humanoids take damage from poisonous gas
+  local path = "data/entities/base_humanoid.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("acid,lava,poison", "acid,lava,poison,poison_gas")
+  content = content:gsub("0.004,0.004,0.001", "0.004,0.004,0.001,0.0008")
 
   --Debug data
   --print("printing sampo_start_ending_senquence.lua\n\n" .. content)

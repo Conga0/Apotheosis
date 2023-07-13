@@ -686,6 +686,11 @@ table.insert(ALL_ENTITIES, {
 		image="mods/Apotheosis/files/ui_gfx/items/orb_mattereater.png",
 	  },
 	  {
+		name="Affluent Orb",
+		path="mods/Apotheosis/files/entities/items/pickups/orb_affluence.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/orb_affluence.png",
+	  },
+	  {
 		name="Wand of Wonders",
 		path="mods/Apotheosis/files/entities/items/wands/custom/wand_of_wonders.xml",
 		image="data/ui_gfx/bubbles/wand_random.png",

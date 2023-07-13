@@ -16,7 +16,7 @@
   <PhysicsImageShapeComponent 
     body_id="1"
     centered="1"
-    image_file="mods/Apotheosis/files/items_gfx/orb_mattereater.png"
+    image_file="mods/Apotheosis/files/items_gfx/orb_affluence.png"
     material="metal_hard" >
   </PhysicsImageShapeComponent>
   
@@ -27,7 +27,7 @@
 	
 	<LuaComponent
 		_tags="enabled_in_world,enabled_in_hand"
-		script_kick="mods/Apotheosis/files/scripts/items/orb_mattereater.lua"
+		script_kick="mods/Apotheosis/files/scripts/items/orb_affluence.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
@@ -52,22 +52,22 @@
   
   <ItemComponent
     _tags="enabled_in_world"
-    item_name="$item_apotheosis_orb_mattereater_name"
+    item_name="$item_apotheosis_orb_affluence_name"
     max_child_items="0"
     is_pickable="1"
     is_equipable_forced="1"
-    ui_sprite="mods/Apotheosis/files/ui_gfx/items/orb_mattereater.png"
-    ui_description="$item_apotheosis_orb_mattereater_desc"
+    ui_sprite="mods/Apotheosis/files/ui_gfx/items/orb_affluence.png"
+    ui_description="$item_apotheosis_orb_affluence_desc"
     preferred_inventory="QUICK"
   ></ItemComponent>
   
   <UIInfoComponent
     _tags="enabled_in_world"
-    name="$item_apotheosis_orb_mattereater_name" >
+    name="$item_apotheosis_orb_affluence_name" >
   </UIInfoComponent>
   
   <AbilityComponent
-		ui_name="$item_apotheosis_orb_mattereater_name"
+		ui_name="$item_apotheosis_orb_affluence_name"
 		throw_as_item="1"
 		><gun_config
 			deck_capacity="0"
@@ -79,7 +79,7 @@
     _enabled="0"
     offset_x="4"
     offset_y="4"
-    image_file="mods/Apotheosis/files/items_gfx/in_hand/orb_mattereater.png"
+    image_file="mods/Apotheosis/files/items_gfx/in_hand/orb_affluence.png"
   ></SpriteComponent>
   
   <SpriteParticleEmitterComponent
@@ -161,12 +161,4 @@
 		randomize_animation_speed_coeff.max="1.0" 
 		>
 	</SpriteParticleEmitterComponent>
-	
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/items/orb_mattereater_greed.lua"
-		execute_every_n_frame="1"
-		remove_after_executed="1"
-		>
-	</LuaComponent>
-
 </Entity>

@@ -90,6 +90,23 @@
     <SimplePhysicsComponent/>
 
     <SpriteAnimatorComponent/>
+
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+        
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
 		
 	<LuaComponent
 		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_1.lua"
