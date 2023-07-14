@@ -111,7 +111,7 @@
 			execute_every_n_frame="-1"
 			script_death="mods/apotheosis/files/scripts/items/drop_money_thief.lua"
 			script_material_area_checker_success="mods/Apotheosis/files/scripts/animals/hisii_hobo_check.lua"
-			remove_after_executed="1" >
+			remove_after_executed="0" >
 		</LuaComponent>
 	</Base>
 

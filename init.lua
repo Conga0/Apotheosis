@@ -270,8 +270,6 @@ status_apotheosis_trip_red_03_name,Blazed as Hell,Чертовски сильн�
 status_apotheosis_trip_red_03_desc,Usual concepts don't apply.,Обычные понятия неприменимы.,,,,,,,,,,,,
 item_apotheosis_fungus_stone_name,Sienenkivi,Сененкиви,,,,,,,,,,,,
 item_apotheosis_fungus_stone_desc,You feel the world transforming in the palm of your hand.,"Вы чувствуете, как мир преображается у вас на ладони.",,,,,,,,,,,,
-item_apotheosis_orb_mattereater_name,Hungry Orb,Голодный шар,,,,,,,,,,,,
-item_apotheosis_orb_mattereater_desc,You feel like kicking it...,Вам хочется пнуть его...,,,,,,,,,,,,
 item_apotheosis_chest_portals,Dimensional Chest,Пространственный сундук,,,,,,,,,,,,
 item_apotheosis_chest_volcanic,Volcanic Chest,Вулканический сундук,,,,,,,,,,,,
 status_apotheosis_haste_name,Haste,Спешка,,,,,,,,,,,,
@@ -545,6 +543,8 @@ actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет ж
 spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,,,,,
+spell_apotheosis_locked_spell_name,"Faulty Magic",,,,,,,,,,,,,
+spell_apotheosis_locked_spell_desc,"It seems this magic is unusable after being afflicted by a curse.",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_14_desc,"Secrets of the drowning depths have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_15_desc,"Secrets of unworldly transmutation have been unlocked to you.",,,,,,,,,,,,,
@@ -674,10 +674,12 @@ item_apotheosis_stone_heretic_name,"Korruptoitunutkivi",,,,,,,,,,,,,
 item_apotheosis_stone_heretic_desc,"It feels drenched in blood.",,,,,,,,,,,,,
 item_apotheosis_stone_radar_name,"Opastavakivi",,,,,,,,,,,,,
 item_apotheosis_stone_radar_desc,"It pulses strangely.",,,,,,,,,,,,,
-item_apotheosis_potion_reinforced_name,"RPotion (Reinforced)",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name,"Potion (Reinforced)",,,,,,,,,,,,,
 item_apotheosis_potion_reinforced_name_with_material,"$0 Potion (Reinforced)",,,,,,,,,,,,,
+item_apotheosis_orb_mattereater_name,"Hungry Orb","Голодный шар",,,,,,,,,,,,
+item_apotheosis_orb_mattereater_desc,"You feel the matter around it being sucked in. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 item_apotheosis_orb_affluence_name,"Affluent Orb",,,,,,,,,,,,,
-item_apotheosis_orb_affluence_desc,"You feel like kicking it...",,,,,,,,,,,,,
+item_apotheosis_orb_affluence_desc,"You can see reflections of endless treasure within it. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
@@ -689,6 +691,14 @@ damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
 damage_apotheosis_toxic_sphere,"Toxic Sphere",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_name,"Yggdrasil's Curse",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to levitate.",,,,,,,,,,,,,
+curse_apotheosis_glassed_name,"Glassed Curse",,,,,,,,,,,,,
+curse_apotheosis_glassed_desc,"All creatures have glass cannon.",,,,,,,,,,,,,
+curse_apotheosis_hardcore_name,"Hardcore",,,,,,,,,,,,,
+curse_apotheosis_hardcore_desc,"Healing Spells are uncopyable.\nMost enemies have additional health depending on the biome.\nSome creatures from late game biomes may have additional attack speed.\nMost bosses have significantly increased health.\nAlt-Fire teleport bolt replaces normal teleport bolt.\nEnemies spawn 1 NG+ level earlier.",,,,,,,,,,,,,
+curse_apotheosis_missingspells_name,"Missing Spells",,,,,,,,,,,,,
+curse_apotheosis_missingspells_desc,"Half of all spells are removed from reality.",,,,,,,,,,,,,
+curse_apotheosis_towerclimb_name,"Towerclimb",,,,,,,,,,,,,
+curse_apotheosis_towerclimb_desc,"All biomes can spawn any creature.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -1835,6 +1845,10 @@ function OnPlayerSpawned( player_entity )
     EntityLoad("mods/apotheosis/files/entities/intro/controller_scenes.xml", x, y)
     --This is added when the cutscene ends to prevent a softlock
     --AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
+  end
+
+  if GameHasFlagRun("apotheosis_custom_seed") then
+    GamePrint("$sign_apotheosis_custom_seed" )
   end
 
   --Handles AprilFools related code
