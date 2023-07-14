@@ -3,6 +3,10 @@ local mm_insert = {
         material="apotheosis_magic_liquid_suffocatium",
         cost=400,
     },
+    {
+        material="apotheosis_magic_liquid_rideshare,
+        cost=400,
+    },
 }
 
 --[[

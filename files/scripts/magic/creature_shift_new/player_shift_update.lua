@@ -36,9 +36,44 @@ for id,enemy in pairs(enemy_list) do
                         ComponentSetValue2(comp, "max_hp", max_health)
                         ComponentSetValue2(comp, "hp", health)
                     end
+
+                    --Adds fungal shift particles to the creature
+                    local pcomp = EntityAddComponent2(
+                        shiftto,
+                        "ParticleEmitterComponent",
+                        {
+                            emitted_material_name="fungal_shift_particle_fx",
+                            x_pos_offset_min=-4,
+                            x_pos_offset_max=4,
+                            y_pos_offset_min=-12,
+                            y_pos_offset_max=4,
+                            x_vel_min=-5,
+                            x_vel_max=5,
+                            y_vel_min=-10,
+                            y_vel_max=-10,
+                            count_min=2,
+                            count_max=3,
+                            is_trail=false,
+                            trail_gap=1,
+                            fade_based_on_lifetime=true,
+                            lifetime_min=0.5,
+                            lifetime_max=1.2,
+                            airflow_force=0.6,
+                            airflow_time=0.401,
+                            airflow_scale=0.05,
+                            create_real_particles=false,
+                            emit_cosmetic_particles=true,
+                            render_on_grid=true,
+                            emission_interval_min_frames=4,
+                            emission_interval_max_frames=12,
+                            is_emitting=true,
+                        }
+                    )
+                    --We can't set these values inherently when creating a new component via lua, so set them here instead
+                    ComponentSetValue2(pcomp, "offset", 0, -0.5)
+                    ComponentSetValue2(pcomp, "gravity", 0, -10)
                     
                     EntityKill(enemy)
-        
                 end
 
 

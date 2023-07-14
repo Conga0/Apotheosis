@@ -46,8 +46,8 @@ Content list:
 6 new biomes
 7 new structures
 13 new materials (11 interactable, 13 total)
-12 attainable trophies
-8 new items
+A new set of pillars
+10 new items
 4 new musical curiosities
 And countless new secrets...
 

@@ -1550,7 +1550,7 @@
 	</ParticleEffect>
 	<StatusEffects>
 		<Ingestion>
-			<StatusEffect type="apotheosis_BREATH_DRAIN" amount="0.5" />
+			<StatusEffect type="apotheosis_BREATH_DRAIN" amount="0.25" />
 		</Ingestion>
 		<Stains>
 			<StatusEffect type="apotheosis_BREATH_DRAIN" />
@@ -2391,6 +2391,36 @@
 	>
   	<Graphics
 	color="ffE72850" >
+    </Graphics>
+  </CellDataChild>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	<!-- Vanilla Overrides -->
+	<!-- Make Poisonous Gas easier to spot by giving it a subtle glow-->
+  <CellDataChild
+  	_parent="acid_gas"
+	name="poison_gas"
+	ui_name="$mat_poison_gas"
+	wang_color="7fB42CFF"
+	gfx_glow="40"
+	>
+	<Graphics
+	color="7fB42CFF" >
     </Graphics>
   </CellDataChild>
 

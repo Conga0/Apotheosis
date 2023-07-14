@@ -674,6 +674,10 @@ item_apotheosis_stone_heretic_name,"Korruptoitunutkivi",,,,,,,,,,,,,
 item_apotheosis_stone_heretic_desc,"It feels drenched in blood.",,,,,,,,,,,,,
 item_apotheosis_stone_radar_name,"Opastavakivi",,,,,,,,,,,,,
 item_apotheosis_stone_radar_desc,"It pulses strangely.",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name,"RPotion (Reinforced)",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name_with_material,"$0 Potion (Reinforced)",,,,,,,,,,,,,
+item_apotheosis_orb_affluence_name,"Affluent Orb",,,,,,,,,,,,,
+item_apotheosis_orb_affluence_desc,"You feel like kicking it...",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
@@ -1666,7 +1670,7 @@ do  -- Player Editor
   --Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
   local attrs = xml:first_of("DamageModelComponent").attr
   attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
-  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0002,0.001"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0008,0.001"
 
   if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
     --Adds Golden Cape if check is successful
@@ -1829,7 +1833,8 @@ function OnPlayerSpawned( player_entity )
   --Handles the intro cutscene if the player hasn't encountered it yet
   if ModIsEnabled("Mo_Creeps") == false and HasFlagPersistent( "apotheosis_intro_cutscene_devtest" ) == false then
     EntityLoad("mods/apotheosis/files/entities/intro/controller_scenes.xml", x, y)
-    AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
+    --This is added when the cutscene ends to prevent a softlock
+    --AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
   end
 
   --Handles AprilFools related code

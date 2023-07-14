@@ -2,11 +2,7 @@
 local insert_list = {
     {
         id_matchup="elk",
-        name="cat_mocreeps",
-    },
-    {
-        id_matchup="cat_mocreeps",
-        name="cat_mocreeps_spoopy_skittle",
+        name="cat_mocreeps\ncat_mocreeps_spoopy_skittle",
     },
     {
         id_matchup="zombie",
@@ -18,15 +14,7 @@ local insert_list = {
     },
     {
         id_matchup="shotgunner",
-        name="hisii_minecart",
-    },
-    {
-        id_matchup="hiisi_minecart",
-        name="hisii_minecart_tnt",
-    },
-    {
-        id_matchup="hiisi_minecart_tnt",
-        name="hisii_giga_bomb",
+        name="hisii_minecart\nhisii_minecart_tnt\nhisii_giga_bomb",
     },
     {
         id_matchup="scavenger_glue",
@@ -38,11 +26,7 @@ local insert_list = {
     },
     {
         id_matchup="alchemist",
-        name="hisii_hobo",
-    },
-    {
-        id_matchup="hisii_hobo",
-        name="hisii_hobo_rich",
+        name="hisii_hobo\nhisii_hobo_rich",
     },
     {
         id_matchup="shaman",
@@ -54,51 +38,15 @@ local insert_list = {
     },
     {
         id_matchup="giantshooter",
-        name="slime_leaker_weak",
-    },
-    {
-        id_matchup="slime_leaker_weak",
-        name="slime_leaker",
-    },
-    {
-        id_matchup="slime_leaker",
-        name="slime_teleporter",
-    },
-    {
-        id_matchup="slime_teleporter",
-        name="goo_slug",
-    },
-    {
-        id_matchup="goo_slug",
-        name="poring",
-    },
-    {
-        id_matchup="poring",
-        name="poring_magic",
-    },
-    {
-        id_matchup="poring_magic",
-        name="poring_devil",
-    },
-    {
-        id_matchup="poring_devil",
-        name="poring_holy",
+        name="slime_leaker_weak\nslime_leaker\nslime_teleporter\ngoo_slug\nporing\nporing_magic\nporing_devil\nporing_holy",
     },
     {
         id_matchup="blob",
-        name="blob_big",
-    },
-    {
-        id_matchup="blob_big",
-        name="blob_huge",
+        name="blob_big\nblob_huge",
     },
     {
         id_matchup="ant",
-        name="ant_fire",
-    },
-    {
-        id_matchup="ant_fire",
-        name="ant_suffocate",
+        name="ant_fire\nant_suffocate",
     },
     {
         id_matchup="rat",
@@ -193,6 +141,10 @@ local insert_list = {
         name="drone_mini",
     },
     {
+        id_matchup="drone_lasership",
+        name="tesla_turret",
+    },
+    {
         id_matchup="basebot_soldier",
         name="c_basebot_speeder_apotheosis",
     },
@@ -245,20 +197,16 @@ local insert_list = {
         name="sentry\ntriangle_gem",
     },
     {
-        id_matchup="",
-        name="",
+        id_matchup="skycrystal_physics",
+        name="mimic_explosive_box",
     },
     {
-        id_matchup="",
-        name="",
+        id_matchup="dark_alchemist",
+        name="mimic_perk_twwe",
     },
     {
-        id_matchup="",
-        name="",
-    },
-    {
-        id_matchup="",
-        name="",
+        id_matchup="friend",
+        name="boss_toxic_worm\nboss_toxic_worm_minion\nboss_musical_ghost\nblob_titan\nboss_fire_lukki_phase2\nboss_flesh_monster\nforest_monolith",
     },
 }
 
@@ -269,5 +217,19 @@ for enemy in ModTextFileGetContent(path):gmatch("[^\r\n]+") do
 end
 
 -- Do your table shenanigans
+for k=1,#insert_list
+do local v = insert_list[k]
+    if v.id_matchup == nil then
+        table.insert(enemies,v)
+    else
+        for z=1,#enemies
+        do c = enemies[z]
+            if c == v.id_matchup or z == #enemies then
+                table.insert(enemies,z + 1,v.name)
+                break
+            end
+        end
+    end
+end
 
 ModTextFileSetContent(path, table.concat(enemies, "\n"))

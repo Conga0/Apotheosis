@@ -94,7 +94,26 @@ if runtime == 0 then
     local child = EntityLoad("mods/apotheosis/files/entities/misc/effect_protection_all_intro.xml")
     EntityAddChild(player_id,child)
 
+    --Disable the player's hud during the intro cutscene
     ToggleUI(player_id,false)
+
+    --Clear ingame text log
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
+end
+
+if runtime == 10 then
+    --Clear ingame text log again when the player selects their wand
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
+    GamePrint("")
 end
 
 --Pan camera downwards to the player
@@ -123,7 +142,7 @@ end
 
 --Make player stand up, timed so the animation ends perfectly with the player gaining control
 if runtime == 1260 + 189 then
-    GamePlayAnimation( player_id, "intro_stand_up", 51, "stand", 52 )
+    GamePlayAnimation( player_id, "intro_stand_up", 51 )
 end
 
 --Exit cutscene mode, reenable hud, return control to player
@@ -140,6 +159,7 @@ if runtime > 1260 + 420 then
     local worldEntity = GameGetWorldStateEntity()
     local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
     ComponentSetValue2(comp,"time_dt",1)
+    AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
 else
     GameSetCameraPos(pos_x,pos_y)
 end

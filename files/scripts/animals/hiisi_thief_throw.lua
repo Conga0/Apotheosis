@@ -12,5 +12,5 @@ function shot()
     ComponentSetValue2(animalcomp,"escape_if_damaged_probability",50)
 
     local luacomp = EntityGetFirstComponentIncludingDisabled(entity_id,"LuaComponent")
-    EntitySetComponentIsEnabled(entity_id,luacomp,false)
+    ComponentSetValue2(luacomp,"script_material_area_checker_success","")
 end

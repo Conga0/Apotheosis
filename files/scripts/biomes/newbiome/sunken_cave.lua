@@ -1066,3 +1066,7 @@ end
 function spawn_receptacle( x, y )
 	EntityLoad( "data/entities/buildings/receptacle_water.xml", x, y )
 end
+
+function spawn_potions( x, y )
+	EntityLoad("mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml",x,y)
+end

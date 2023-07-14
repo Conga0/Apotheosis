@@ -110,6 +110,7 @@
 		<LuaComponent
 			execute_every_n_frame="-1"
 			script_death="mods/apotheosis/files/scripts/items/drop_money_thief.lua"
+			script_material_area_checker_success="mods/Apotheosis/files/scripts/animals/hisii_hobo_check.lua"
 			remove_after_executed="1" >
 		</LuaComponent>
 	</Base>
@@ -178,11 +179,6 @@
 		look_for_failure="0"
 		kill_after_message="0" >
 	</MaterialAreaCheckerComponent>
-
-	<LuaComponent
-		script_material_area_checker_success="mods/Apotheosis/files/scripts/animals/hisii_hobo_check.lua"
-		>
-	</LuaComponent>
   
  	<VariableStorageComponent
 		name="thief_gold"
