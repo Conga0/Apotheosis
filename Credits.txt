@@ -48,7 +48,7 @@ Blueberry#1414 - Translating the mod to Russian
 Extol#0629 - Helping getting translation keys working, needed for custom perks to show up correctly
 Also helped make split shot significantly less game breaking
 
-Zathers - creator of nxml.lua, a file required for pixel scenes to work with mod compatability for me.
+Zathers - creator of nxml.lua, a library for easy mod compatibility & xml file editing
 
 Horscht#6086 - Helping a ton with getting code working, including the toxic worm nest structure to spawn in the world,
 and all others as a result.

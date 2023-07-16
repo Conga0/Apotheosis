@@ -16,36 +16,26 @@ local locked_spell = {
     end,
 }
 
-function BlacklistCheck(spell_id)
-    
-    local blacklist = {
-        "BOMB",
-        "TNT",
-        "MINE",
-        "GRENADE",
-        "ROCKET",
-        "LIGHT_BULLET",
-        "SPITTER",
-        "BUBBLESHOT",
-        "RUBBERBALL",
-        "ARROW",
-        "APOTHEOSIS_KNOWLEDGE_OF_KINGS",
-    }
-
-    for i=1,#blacklist do
-        if blacklist[i] == spell_id then
-            return false
-        end
-    end
-
-    return true
-
-end
+local blacklist = {
+    ["BOMB"] = true,
+    ["TNT"] = true,
+    ["MINE"] = true,
+    ["GRENADE"] = true,
+    ["ROCKET"] = true,
+    ["LIGHT_BULLET"] = true,
+    ["SPITTER"] = true,
+    ["BUBBLESHOT"] = true,
+    ["RUBBERBALL"] = true,
+    ["ARROW"] = true,
+    ["BOUNCY_ORB"] = true,
+    ["ALL_SPELLS"] = true,
+    ["APOTHEOSIS_KNOWLEDGE_OF_KINGS"] = true,
+}
 
 for k=1,#actions do -- fast as fuck boi
     local v = actions[k]
     SetRandomSeed(v.price,v.mana)
-    if Random(1,2) == 1 and BlacklistCheck(v.id) then
+    if Random(1,2) == 1 and not blacklist[v.id] then
         for key, value in pairs(locked_spell) do
             actions[k][key] = value
         end

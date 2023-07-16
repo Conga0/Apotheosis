@@ -384,7 +384,7 @@
   <CellDataChild
   	_parent="blood_worm"
   	_inherit_reactions="1"
-  	name="apotheosis_blood_worm_centipede" 
+  	name="apotheosis_blood_worm_centipede"
 	ui_name="$material_apotheosis_blood_centipede"
 	wang_color="ffca3e9d"
 	show_in_creative_mode="1"

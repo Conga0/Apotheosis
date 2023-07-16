@@ -1898,6 +1898,65 @@ local apotheosis_spellappends = {
             end
 		end,
 	},
+	{
+		id          = "APOTHEOSIS_CHI",
+        id_matchup  = "SIGMA",
+		name 		= "$spell_apotheosis_chi_name",
+		description = "$spell_apotheosis_chi_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/chi.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		spawn_requires_flag = "card_unlocked_duplicate",
+		type 		= ACTION_TYPE_OTHER,
+		recursive	= true,
+		spawn_level                       = "5,6,10", -- MANA_REDUCE
+		spawn_probability                 = "0.1,0.2,1", -- MANA_REDUCE
+		price = 500,
+		mana = 120,
+		action 		= function( recursion_level, iteration )
+			c.fire_rate_wait = c.fire_rate_wait + 50
+			
+			local firerate = c.fire_rate_wait
+			local reload = current_reload_time
+			local mana_ = mana
+			
+			if ( discarded ~= nil ) then
+				for i,data in ipairs( discarded ) do
+					local rec = check_recursion( data, recursion_level )
+					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( rec > -1 ) then
+						dont_draw_actions = true
+						data.action( rec )
+						dont_draw_actions = false
+					end
+				end
+			end
+			
+			if ( hand ~= nil ) then
+				for i,data in ipairs( hand ) do
+					local rec = check_recursion( data, recursion_level )
+					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( rec > -1 ) then
+						dont_draw_actions = true
+						data.action( rec )
+						dont_draw_actions = false
+					end
+				end
+			end
+			
+			if ( deck ~= nil ) then
+				for i,data in ipairs( deck ) do
+					local rec = check_recursion( data, recursion_level )
+					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( rec > -1 ) then
+						dont_draw_actions = true
+						data.action( rec )
+						dont_draw_actions = false
+					end
+				end
+			end
+			
+			c.fire_rate_wait = firerate
+			current_reload_time = reload
+			mana = mana_
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

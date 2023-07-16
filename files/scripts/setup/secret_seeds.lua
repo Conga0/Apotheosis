@@ -147,8 +147,9 @@ end
 
 
 local input_seed = string.lower(ModSettingGet( "Apotheosis.custom_seed" ))
+if input_seed == "" then input_seed = "0" end
 local output_seed = "0"
-local custom_seed = false
+custom_seed = false
 
 local secret_seeds = {
     {
@@ -205,9 +206,4 @@ if output_seed ~= "0" and input_seed ~= "0" then
     ModTextFileSetContent("mods/apotheosis/scripts/setup/set_seed.xml", set_seed_xml)
     ModMagicNumbersFileAdd("mods/apotheosis/scripts/setup/set_seed.xml")
     custom_seed = true
-end
-
---Remind player they're on a custom seed
-if custom_seed == true then
-    GameAddFlagRun("apotheosis_custom_seed")
 end

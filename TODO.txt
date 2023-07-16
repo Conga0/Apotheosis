@@ -26,7 +26,4 @@ Finish alternative ending
 
 Revise Lukki Cruicible
 
-Improve Reinforced Potion graphic
-Change the name to "large potion"?
-
 Rebindable keys for alt-fire

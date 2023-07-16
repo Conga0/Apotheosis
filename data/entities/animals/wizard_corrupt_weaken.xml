@@ -116,20 +116,6 @@
         	</VerletPhysicsComponent>
         </Base>  
     </Entity>
-	
-	<SpriteComponent 
-		_tags="character" 
-		_enabled="1" 
-		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/wizard_corrupt_neutral_emissive.xml"
-		offset_x="0" 
-		offset_y="0"
-		emissive="1"
-		additive="1"
-		next_rect_animation="" 
-		rect_animation="walk" 
-		 >
-	</SpriteComponent>
     
 	<Entity>
 		<InheritTransformComponent />

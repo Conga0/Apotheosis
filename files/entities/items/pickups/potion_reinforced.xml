@@ -20,7 +20,7 @@
   <PhysicsImageShapeComponent 
     body_id="1"
     centered="1"
-    image_file="data/items_gfx/potion_normals.png"
+    image_file="mods/apotheosis/files/items_gfx/potion_reinforced_normals.png"
     material="potion_glass_box2d"
   ></PhysicsImageShapeComponent>
   
@@ -90,7 +90,7 @@
     fire_damage_amount="0.2" 
     fire_probability_of_ignition="0" 
 	critical_damage_resistance="1"
-    hp="5.5" 
+    hp="1.5" 
     is_on_fire="0" 
     materials_create_messages="0" 
     materials_damage="1" 

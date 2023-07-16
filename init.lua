@@ -417,6 +417,8 @@ material_apotheosis_magic_liquid_suffocatium,"Suffocatium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_velocium,"Veloium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_mimic,"Mimicium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_rideshare,"Portalium",,,,,,,,,,,,,
+material_apotheosis_hidden_liquid_magic_catalyst,"Magic Catalyst",,,,,,,,,,,,,
+material_apotheosis_hidden_liquid_wand_essence,"Magus Elixir",,,,,,,,,,,,,
 material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,,,,,
 material_apotheosis_sunkenrock_sandy,"Sandy Rock",,,,,,,,,,,,,
 material_apotheosis_ambrosia_dull,"Infected Ambrosia",,,,,,,,,,,,,
@@ -535,6 +537,8 @@ spell_apotheosis_random_burst_name,"Random Cast",,,,,,,,,,,,,
 spell_apotheosis_random_burst_desc,"Multicasts between 4 to 8 random spells     ",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_name,"Summon Jumper Cables",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_desc,"Summon a pair of electrifying vices to shock your victims",,,,,,,,,,,,,
+spell_apotheosis_chi_name,"Chi",,,,,,,,,,,,,
+spell_apotheosis_chi_desc,"Copies every utility-type spell in the wand when cast",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Creatures hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_explosion,Creatures hit by a projectile takes 100% extra explosion damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от взрывов,O alvo atingido por um projétil recebe mais 100% de dano de explosão por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de explosiones durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Explosionsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des explosions pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da esplosione in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od wybuchów,被投射物击中的目标短时间内会受到额外的 100% 爆炸伤害,放射物が当たったターゲットが一定期間100%の追加の爆破ダメージを受ける,일정 시간 동안 폭발이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_melee,Creatures hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -674,8 +678,8 @@ item_apotheosis_stone_heretic_name,"Korruptoitunutkivi",,,,,,,,,,,,,
 item_apotheosis_stone_heretic_desc,"It feels drenched in blood.",,,,,,,,,,,,,
 item_apotheosis_stone_radar_name,"Opastavakivi",,,,,,,,,,,,,
 item_apotheosis_stone_radar_desc,"It pulses strangely.",,,,,,,,,,,,,
-item_apotheosis_potion_reinforced_name,"Potion (Reinforced)",,,,,,,,,,,,,
-item_apotheosis_potion_reinforced_name_with_material,"$0 Potion (Reinforced)",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name,"Large Potion",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name_with_material,"$0 Large Potion",,,,,,,,,,,,,
 item_apotheosis_orb_mattereater_name,"Hungry Orb","Голодный шар",,,,,,,,,,,,
 item_apotheosis_orb_mattereater_desc,"You feel the matter around it being sucked in. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 item_apotheosis_orb_affluence_name,"Affluent Orb",,,,,,,,,,,,,
@@ -753,20 +757,6 @@ ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/act
 
 ModLuaFileAppend( "data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua" )
 
-
---Custom Materials
-ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/custom_materials.xml" )
-
-
-
---Custom Potion Spawns
---[[
-]]--
-function OnMagicNumbersAndWorldSeedInitialized()
-		ModLuaFileAppend( "data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua" )
-		ModLuaFileAppend( "data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua" )
-		ModLuaFileAppend( "data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua" )
-end
 
 
 
@@ -1847,10 +1837,31 @@ function OnPlayerSpawned( player_entity )
     --AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
   end
 
-  if GameHasFlagRun("apotheosis_custom_seed") then
+  if custom_seed then
     GamePrint("$sign_apotheosis_custom_seed" )
   end
 
   --Handles AprilFools related code
   AprilFoolsPlayerSpawn()
+end
+
+
+
+--Custom Materials
+ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/secret_materials.xml" )
+ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/custom_materials.xml" )
+
+
+ModLuaFileAppend( "data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua" )
+ModLuaFileAppend( "data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua" )
+ModLuaFileAppend( "data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua" )
+
+function OnMagicNumbersAndWorldSeedInitialized()
+
+  --You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible
+  do --Setup Magic Catalyst data
+    dofile("mods/apotheosis/files/scripts/materials/secret_materials_generate.lua")
+    GenerateMagicCatalyst()
+  end
+
 end
