@@ -9,33 +9,19 @@
     	resting_distance="4" 
     	simulate_gravity="1"
 	animation_target_offset.y="1.0"
-	animation_energy="0.02"
-	animation_amount="3"
+	animation_energy="0.08"
     	constrain_stretching="1" >
     </VerletPhysicsComponent>
 
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_1.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_1.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_1.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_2.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_2.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_2.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_2.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_3.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_3.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_3.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_3.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_3.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_4.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_4.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_4.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_4.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_4.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_4.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_5.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_5.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_5.xml" />
-	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_6.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_6.xml" />
 	<Base file="data/entities/verlet_chains/devourer_mana/tentacle_verlet_7.xml" />
   

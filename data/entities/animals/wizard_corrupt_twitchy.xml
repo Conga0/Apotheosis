@@ -39,18 +39,10 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="data/enemies_gfx/wizard_twitchy.xml" 
-			offset_x="0"
-			offset_y="0">
-		</SpriteComponent>
-
-		<!--
-		<SpriteComponent 
 			image_file="mods/apotheosis/files/enemies_gfx/wizard_corrupt_twitchy.xml"
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
-		-->
 
 		<PathFindingComponent
 			can_jump="1" >

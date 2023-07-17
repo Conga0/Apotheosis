@@ -7,7 +7,7 @@ default_animation="stand" >
 <!-- animation -->
 	<RectAnimation
 		name="stand"
-		pos_x="12"
+		pos_x="19"
 		pos_y="0"
 		frame_count="1"
 		frame_width="3"
