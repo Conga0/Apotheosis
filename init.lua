@@ -270,8 +270,6 @@ status_apotheosis_trip_red_03_name,Blazed as Hell,Чертовски сильн�
 status_apotheosis_trip_red_03_desc,Usual concepts don't apply.,Обычные понятия неприменимы.,,,,,,,,,,,,
 item_apotheosis_fungus_stone_name,Sienenkivi,Сененкиви,,,,,,,,,,,,
 item_apotheosis_fungus_stone_desc,You feel the world transforming in the palm of your hand.,"Вы чувствуете, как мир преображается у вас на ладони.",,,,,,,,,,,,
-item_apotheosis_orb_mattereater_name,Hungry Orb,Голодный шар,,,,,,,,,,,,
-item_apotheosis_orb_mattereater_desc,You feel like kicking it...,Вам хочется пнуть его...,,,,,,,,,,,,
 item_apotheosis_chest_portals,Dimensional Chest,Пространственный сундук,,,,,,,,,,,,
 item_apotheosis_chest_volcanic,Volcanic Chest,Вулканический сундук,,,,,,,,,,,,
 status_apotheosis_haste_name,Haste,Спешка,,,,,,,,,,,,
@@ -419,6 +417,8 @@ material_apotheosis_magic_liquid_suffocatium,"Suffocatium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_velocium,"Veloium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_mimic,"Mimicium",,,,,,,,,,,,,
 material_apotheosis_magic_liquid_rideshare,"Portalium",,,,,,,,,,,,,
+material_apotheosis_hidden_liquid_magic_catalyst,"Magic Catalyst",,,,,,,,,,,,,
+material_apotheosis_hidden_liquid_wand_essence,"Magus Elixir",,,,,,,,,,,,,
 material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,,,,,
 material_apotheosis_sunkenrock_sandy,"Sandy Rock",,,,,,,,,,,,,
 material_apotheosis_ambrosia_dull,"Infected Ambrosia",,,,,,,,,,,,,
@@ -537,6 +537,8 @@ spell_apotheosis_random_burst_name,"Random Cast",,,,,,,,,,,,,
 spell_apotheosis_random_burst_desc,"Multicasts between 4 to 8 random spells     ",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_name,"Summon Jumper Cables",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_desc,"Summon a pair of electrifying vices to shock your victims",,,,,,,,,,,,,
+spell_apotheosis_chi_name,"Chi",,,,,,,,,,,,,
+spell_apotheosis_chi_desc,"Copies every utility-type spell in the wand when cast",,,,,,,,,,,,,
 actiondesc_curse_wither_projectile,Creatures hit by a projectile takes 100% extra projectile damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от снарядов,O alvo atingido por um projétil recebe mais 100% de dano do projétil por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de proyectiles durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Projektilschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des projectiles pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da proiettile in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od pocisków,被投射物击中的目标短时间内会受到额外的 100% 投射物伤害,放射物が当たったターゲットが一定期間100%の追加の放射物ダメージを受ける,일정 시간 동안 발사체가 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_explosion,Creatures hit by a projectile takes 100% extra explosion damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от взрывов,O alvo atingido por um projétil recebe mais 100% de dano de explosão por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño de explosiones durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Explosionsschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des explosions pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da esplosione in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od wybuchów,被投射物击中的目标短时间内会受到额外的 100% 爆炸伤害,放射物が当たったターゲットが一定期間100%の追加の爆破ダメージを受ける,일정 시간 동안 폭발이 명중한 대상이 대미지를 100% 더 받습니다.,,,
 actiondesc_curse_wither_melee,Creatures hit by a projectile takes 100% extra melee damage for a time,Пораженная снарядом цель временно получает 100% дополнительного урона от рукопашной,O alvo atingido por um projétil recebe mais 100% de dano de ataques corpo a corpo por um tempo.,El objetivo golpeado por el proyectil recibe un 100 % más de daño cuerpo a cuerpo durante un tiempo,"Bewirkt, dass von Projektilen getroffene Ziele eine Zeit lang 100 % zusätzlichen Nahkampfschaden erleiden",La cible touchée par un projectile subit 100 % de dégâts supplémentaires des attaques de mêlée pendant un moment,Il bersaglio colpito dal proiettile subisce il 100% di danni da mischia in più per un certo periodo,Cel trafiony pociskiem przez pewien czas otrzymuje 100% więcej obrażeń od ataków wręcz,被投射物击中的目标短时间内会受到额外的 100% 近战伤害,放射物が当たったターゲットが一定期間100%の追加の近接ダメージを受ける,일정 시간 동안 근접 공격이 명중한 대상이 대미지를 100% 더 받습니다.,,,
@@ -545,6 +547,8 @@ actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет ж
 spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,,,,,
+spell_apotheosis_locked_spell_name,"Faulty Magic",,,,,,,,,,,,,
+spell_apotheosis_locked_spell_desc,"It seems this magic is unusable after being afflicted by a curse.",,,,,,,,,,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_14_desc,"Secrets of the drowning depths have been unlocked to you.",,,,,,,,,,,,,
 orb_apotheosis_15_desc,"Secrets of unworldly transmutation have been unlocked to you.",,,,,,,,,,,,,
@@ -674,10 +678,12 @@ item_apotheosis_stone_heretic_name,"Korruptoitunutkivi",,,,,,,,,,,,,
 item_apotheosis_stone_heretic_desc,"It feels drenched in blood.",,,,,,,,,,,,,
 item_apotheosis_stone_radar_name,"Opastavakivi",,,,,,,,,,,,,
 item_apotheosis_stone_radar_desc,"It pulses strangely.",,,,,,,,,,,,,
-item_apotheosis_potion_reinforced_name,"RPotion (Reinforced)",,,,,,,,,,,,,
-item_apotheosis_potion_reinforced_name_with_material,"$0 Potion (Reinforced)",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name,"Large Potion",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name_with_material,"$0 Large Potion",,,,,,,,,,,,,
+item_apotheosis_orb_mattereater_name,"Hungry Orb","Голодный шар",,,,,,,,,,,,
+item_apotheosis_orb_mattereater_desc,"You feel the matter around it being sucked in. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 item_apotheosis_orb_affluence_name,"Affluent Orb",,,,,,,,,,,,,
-item_apotheosis_orb_affluence_desc,"You feel like kicking it...",,,,,,,,,,,,,
+item_apotheosis_orb_affluence_desc,"You can see reflections of endless treasure within it. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
@@ -689,6 +695,14 @@ damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
 damage_apotheosis_toxic_sphere,"Toxic Sphere",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_name,"Yggdrasil's Curse",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to levitate.",,,,,,,,,,,,,
+curse_apotheosis_glassed_name,"Glassed Curse",,,,,,,,,,,,,
+curse_apotheosis_glassed_desc,"All creatures have glass cannon.",,,,,,,,,,,,,
+curse_apotheosis_hardcore_name,"Hardcore",,,,,,,,,,,,,
+curse_apotheosis_hardcore_desc,"Healing Spells are uncopyable.\nMost enemies have additional health depending on the biome.\nSome creatures from late game biomes may have additional attack speed.\nMost bosses have significantly increased health.\nAlt-Fire teleport bolt replaces normal teleport bolt.\nEnemies spawn 1 NG+ level earlier.",,,,,,,,,,,,,
+curse_apotheosis_missingspells_name,"Missing Spells",,,,,,,,,,,,,
+curse_apotheosis_missingspells_desc,"Half of all spells are removed from reality.",,,,,,,,,,,,,
+curse_apotheosis_towerclimb_name,"Towerclimb",,,,,,,,,,,,,
+curse_apotheosis_towerclimb_desc,"All biomes can spawn any creature.",,,,,,,,,,,,,
 ]])
 
 --Yggdrasil's Knowledge (The knowledge of life)
@@ -743,20 +757,6 @@ ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/act
 
 ModLuaFileAppend( "data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua" )
 
-
---Custom Materials
-ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/custom_materials.xml" )
-
-
-
---Custom Potion Spawns
---[[
-]]--
-function OnMagicNumbersAndWorldSeedInitialized()
-		ModLuaFileAppend( "data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua" )
-		ModLuaFileAppend( "data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua" )
-		ModLuaFileAppend( "data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua" )
-end
 
 
 
@@ -1837,6 +1837,31 @@ function OnPlayerSpawned( player_entity )
     --AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
   end
 
+  if custom_seed then
+    GamePrint("$sign_apotheosis_custom_seed" )
+  end
+
   --Handles AprilFools related code
   AprilFoolsPlayerSpawn()
+end
+
+
+
+--Custom Materials
+ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/secret_materials.xml" )
+ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/custom_materials.xml" )
+
+
+ModLuaFileAppend( "data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua" )
+ModLuaFileAppend( "data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua" )
+ModLuaFileAppend( "data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua" )
+
+function OnMagicNumbersAndWorldSeedInitialized()
+
+  --You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible
+  do --Setup Magic Catalyst data
+    dofile("mods/apotheosis/files/scripts/materials/secret_materials_generate.lua")
+    GenerateMagicCatalyst()
+  end
+
 end

@@ -81,6 +81,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/bubbles/bubble_liquid_acid.png",
 	  },
 	  {
+		name="Magic Catalyst Bubble",
+		path="data/entities/animals/bubbles/magic_catalyst/bubble_liquid.xml",
+		image="data/ui_gfx/bubbles/bubble_liquid_magic_catalyst.png",
+	  },
+	  {
 		name="Alchemic Precursor Bubble",
 		path="data/entities/animals/bubbles/alchemicprecursor/bubble_liquid.xml",
 		image="data/ui_gfx/bubbles/bubble_liquid_alchemic_precursor.png",

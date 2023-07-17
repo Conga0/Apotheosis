@@ -5,7 +5,7 @@ Sorako Hinoguchi - Voicing Cats
 Spoopy (The One The Only Spoopy Boi#7859) - Creating fluffy cat sprites
 Creating Size 3 Blob Sprites, Creating Size 4 Blob Sprite, Creating Size 5 Sprite and barf attack
 Creating Aesthete of Heat Sprites
-Creating alternate Esoteric Being graphic
+Creating Esoteric Being Sprites
 Created the Giant Whisp creature
 Creating Master of Puppetering's Sprites
 Creating Heretic's Sprites
@@ -48,7 +48,7 @@ Blueberry#1414 - Translating the mod to Russian
 Extol#0629 - Helping getting translation keys working, needed for custom perks to show up correctly
 Also helped make split shot significantly less game breaking
 
-Zathers - creator of nxml.lua, a file required for pixel scenes to work with mod compatability for me.
+Zathers - creator of nxml.lua, a library for easy mod compatibility & xml file editing
 
 Horscht#6086 - Helping a ton with getting code working, including the toxic worm nest structure to spawn in the world,
 and all others as a result.

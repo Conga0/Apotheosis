@@ -17,7 +17,7 @@ local aim_x, aim_y = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled
 local manacost = 10
 
 if GameGetFrameNum() >= cooldown_frame then
-    if ComponentGetValue2(controlscomp, "mButtonDownRightClick") then
+    if ComponentGetValue2(controlscomp, "mButtonDownRightClick") or InputIsJoystickButtonDown(0, 26) then
         local mana = wand.mana
         if (mana > manacost) then
 

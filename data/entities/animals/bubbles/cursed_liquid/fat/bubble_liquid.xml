@@ -1,4 +1,4 @@
-<Entity name="Kirottu nestekupla">
+<Entity name="Nestemäinen kupla">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

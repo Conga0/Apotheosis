@@ -19,7 +19,7 @@ local aim_x, aim_y = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled
 local manacost = 80
 
 if GameGetFrameNum() >= cooldown_frame then
-    if ComponentGetValue2(controlscomp, "mButtonDownRightClick") then
+    if ComponentGetValue2(controlscomp, "mButtonDownRightClick") or InputIsJoystickButtonDown(0, 26) then
         local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
         local uses = ComponentGetValue2(comp,"uses_remaining")
         if uses >= 1 or uses == -1 or alwayscast then

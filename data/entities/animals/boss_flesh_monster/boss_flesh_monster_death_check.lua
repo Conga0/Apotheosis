@@ -72,7 +72,7 @@ function check_death(phase_boss)
             ComponentSetValue2(comp_pathing, "frames_between_searches", 60)
             ComponentSetValue2(comp_pathing, "frames_to_get_stuck", 60)
 
-			local eid = EntityLoad( "data/entities/animals/boss_fire_lukki/misc/death_helper.xml", pos_x, pos_y )
+			local eid = EntityLoad( "data/entities/animals/boss_flesh_monster/misc/death_helper.xml", pos_x, pos_y )
 			EntityAddChild( entity_id, eid )
 
             --Disable matter eater component so gunpowder can go pop~! pop~!

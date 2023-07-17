@@ -587,7 +587,14 @@ end
 do --Add Random Homing to Pyramid Boss loot pool
   local path = "data/entities/animals/boss_limbs/boss_limbs_death.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM" }]], [[	local opts = { "NOLLA", "DAMAGE_RANDOM", "RANDOM_SPELL", "RANDOM_PROJECTILE", "RANDOM_MODIFIER", "RANDOM_STATIC_PROJECTILE", "DRAW_RANDOM", "DRAW_RANDOM_X3", "DRAW_3_RANDOM", "APOTHEOSIS_RANDOM_HOMING", "APOTHEOSIS_RANDOM_BURST" }]])
+  content = content:gsub("\"DRAW_RANDOM_X3\", \"DRAW_3_RANDOM\"", "\"DRAW_RANDOM_X3\", \"DRAW_3_RANDOM\", \"APOTHEOSIS_RANDOM_HOMING\", \"APOTHEOSIS_RANDOM_BURST\"")
+  ModTextFileSetContent(path, content)
+end
+
+do --Add Chi to High Alchemist loot pool
+  local path = "data/entities/animals/boss_alchemist/death.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"PHI\", \"TAU\", \"SIGMA\"","\"PHI\", \"TAU\", \"SIGMA\", \"APOTHEOSIS_CHI\"")
   ModTextFileSetContent(path, content)
 end
 

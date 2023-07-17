@@ -3,13 +3,13 @@ local player_id = EntityGetParent( entity_id )
 
 if player_id ~= 0 then
 
+    local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
+
     --Disables Suffocatium if target has Breathless
-	if GameGetGameEffectCount( player_id, "BREATH_UNDERWATER" ) >= 1 and (EntityHasTag(player_id,"vulnerable") ~= true) then
-        local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
+	if (GameGetGameEffectCount( player_id, "BREATH_UNDERWATER" ) >= 1 or ComponentGetValue2(dmgcomp, "air_needed") == false) and (EntityHasTag(player_id,"vulnerable") ~= true) then
         ComponentSetValue2(dmgcomp,"air_in_lungs",ComponentGetValue2(dmgcomp,"air_in_lungs_max"))
     return end
 
-    local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
     local air = ComponentGetValue2(dmgcomp, "air_in_lungs")
 
     if air > 0.1 then

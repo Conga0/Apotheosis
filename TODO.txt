@@ -25,3 +25,5 @@ Make rocks made of sandstone to support the desert pillars
 Finish alternative ending
 
 Revise Lukki Cruicible
+
+Rebindable keys for alt-fire

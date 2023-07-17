@@ -4,6 +4,18 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
+function AddUI(filename)
+    local path = "data/entities/player_base.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    
+    xml:add_child(nxml.parse([[
+        <Entity>  <Base file="mods/apotheosis/files/scripts/setup/]] .. filename .. [[_ui.xml" />  </Entity>
+    ]]))
+
+    ModTextFileSetContent(path, tostring(xml))
+end
+
 
 function towerclimb()
 
@@ -55,6 +67,8 @@ function towerclimb()
     do biomepath = biomes[k]
         ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
     end
+
+    AddUI("towerclimb")
 end
 
 
@@ -66,6 +80,34 @@ function hardcore()
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
 
     dofile_once("mods/apotheosis/files/scripts/setup/hardmode_setup.lua")
+
+    AddUI("hardcore")
+
+end
+
+function glassed()
+
+    GameAddFlagRun("apotheosis_glassed")
+    
+    local path = "data/entities/player_base.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    
+    xml:add_child(nxml.parse([[
+        <Entity>  <Base file="mods/apotheosis/files/scripts/setup/glassed_handler.xml" />  </Entity>
+    ]]))
+
+    xml:first_of("DamageModelComponent"):first_of("damage_multipliers").attr.explosion = "0.05"
+
+    ModTextFileSetContent(path, tostring(xml))
+
+end
+
+function missingmagic()
+
+    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic.lua" )
+
+    AddUI("missingmagic")
 
 end
 
@@ -105,8 +147,9 @@ end
 
 
 local input_seed = string.lower(ModSettingGet( "Apotheosis.custom_seed" ))
+if input_seed == "" then input_seed = "0" end
 local output_seed = "0"
-local custom_seed = false
+custom_seed = false
 
 local secret_seeds = {
     {
@@ -116,6 +159,18 @@ local secret_seeds = {
     {
         ID = "hardcore",
         func = hardcore
+    },
+    --[[
+    --Conga: kind of boring, either you one shot everything or you get one shot
+    --The glassed challenge perk visual looks nice though
+    {
+        ID = "glassed",
+        func = glassed
+    },
+    ]]--
+    {
+        ID = "missingmagic",
+        func = missingmagic
     },
     --[[
     --Vanilla enemy-perk integration is.. "functional", at best.
@@ -147,19 +202,8 @@ end
 
 --Set Custom Seed
 if output_seed ~= "0" and input_seed ~= "0" then
-    local set_seed_xml = '<MagicNumbers WORLD_SEED="' .. output_seed .. '" _DEBUG_DONT_SAVE_MAGIC_NUMBERS="1"/>'
+    local set_seed_xml = table.concat({'<MagicNumbers WORLD_SEED="',output_seed,'" _DEBUG_DONT_SAVE_MAGIC_NUMBERS="1"/>'})
     ModTextFileSetContent("mods/apotheosis/scripts/setup/set_seed.xml", set_seed_xml)
     ModMagicNumbersFileAdd("mods/apotheosis/scripts/setup/set_seed.xml")
     custom_seed = true
 end
-
---Remind player they're on a custom seed
-if custom_seed == true then
-    function OnPlayerSpawned()
-        if #ModSettingGet( "Apotheosis.custom_seed" ) > 0 then
-            GamePrint("$sign_apotheosis_custom_seed" )
-            --GamePrint(ModSettingGet( "Apotheosis.custom_seed" ))
-        end
-     end
-end
-
