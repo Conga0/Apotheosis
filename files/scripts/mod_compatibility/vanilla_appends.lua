@@ -883,6 +883,7 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
   local content = ModTextFileGetContent(path)
   content = content:gsub("( orb_count >= 33 )", "( orb_count >= 45 )")
   content = content:gsub("( orb_count > 33 )", "( orb_count > 45 )")
+  content = content:gsub("if( orb_count < 33", "if( orb_count < 45")
 
   --Debug data
   --print("printing sampo_start_ending_senquence.lua\n\n" .. content)

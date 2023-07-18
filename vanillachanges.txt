@@ -39,7 +39,7 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-111 new enemies (+3 Pylon variants)
+112 new enemies (+3 Pylon variants)
 6 new bosses
 70 new spells
 8 new perks

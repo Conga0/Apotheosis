@@ -62,7 +62,7 @@ g_small_enemies =
 		prob   		= 0.09,
 		min_count	= 1,
 		max_count	= 1,
-		ngpluslevel	= 2,
+		ngpluslevel	= 1,
 		entity 	= "data/entities/animals/thundermage_big.xml"
 	},
 	{

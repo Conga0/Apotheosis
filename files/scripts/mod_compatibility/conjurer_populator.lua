@@ -166,6 +166,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/devourer_magic.png",
 	  },
 	  {
+		name="Awakened Magic Devourer",
+		path="data/entities/animals/planes/devourer_magic.xml",
+		image="data/ui_gfx/animal_icons/devourer_magic.png",
+	  },
+	  {
 		name="Appreciator of Wands",
 		path="data/entities/animals/miniboss_pit_02.xml",
 		image="data/ui_gfx/animal_icons/miniboss_pit_02.png",

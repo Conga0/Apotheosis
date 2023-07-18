@@ -35,7 +35,7 @@ local blacklist = {
 for k=1,#actions do -- fast as fuck boi
     local v = actions[k]
     SetRandomSeed(v.price,v.mana)
-    if Random(1,2) == 1 and not blacklist[v.id] then
+    if not blacklist[v.id] and Random(1,2) == 1 then
         for key, value in pairs(locked_spell) do
             actions[k][key] = value
         end

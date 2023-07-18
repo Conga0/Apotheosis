@@ -32,10 +32,10 @@
 		can_swim_on_surface="0" 
 		can_walk="0" 
 		cost_of_flying="500" 
-		distance_to_reach_node_x="20" 
-		distance_to_reach_node_y="20" 
-		frames_between_searches="20" 
-		frames_to_get_stuck="120" 
+		distance_to_reach_node_x="2000"
+		distance_to_reach_node_y="2000"
+		frames_between_searches="10"
+		frames_to_get_stuck="10"
 		initial_jump_lob="1" 
 		initial_jump_max_distance_x="100" 
 		initial_jump_max_distance_y="60" 
@@ -56,13 +56,13 @@
 	</PathFindingGridMarkerComponent>
 
 	<PhysicsAIComponent
-		target_vec_max_len="75.0"
-		force_coeff="50.0"
+		target_vec_max_len="150.0"
+		force_coeff="70.0"
 		force_balancing_coeff="0.8"
-		force_max="500"
+		force_max="4000"
 		torque_coeff="50"
 		torque_balancing_coeff="4"
-		torque_max="40.0"
+		torque_max="100.0"
 		damage_deactivation_probability="0"
 		damage_deactivation_time_min="2"
 		damage_deactivation_time_max="10" >
@@ -173,9 +173,13 @@
 
 	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle.xml"> <InheritTransformComponent><Transform position.x="-3"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle.xml"> <InheritTransformComponent><Transform position.x="-4"  position.y="2" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle_medium.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle_medium.xml"> <InheritTransformComponent><Transform position.x="-4"  position.y="2" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle_small.xml"> <InheritTransformComponent><Transform position.x="-6"  position.y="-2" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle_small.xml"> <InheritTransformComponent><Transform position.x="-7"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle_small.xml"> <InheritTransformComponent><Transform position.x="6"  position.y="-1" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/devourer_mana/tentacle_small.xml"> <InheritTransformComponent><Transform position.x="7"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
 
 	<MagicConvertMaterialComponent
       kill_when_finished="0"
@@ -253,5 +257,12 @@
 		remove_after_executed = "1"
 		>
 	</LuaComponent>
+
+	<CellEaterComponent
+		radius="15"
+		eat_probability="3"
+		ignored_material_tag="[indestructible]"
+		>
+	</CellEaterComponent>
 
 </Entity>
