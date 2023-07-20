@@ -133,6 +133,7 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME,
   },
+  --[[
   {
     id = "particle_reduction",
     ui_name = particle_reduction_name,
@@ -141,6 +142,7 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME,
   },
+  ]]--
   --[[
   {
     id = "spoopy_graphics",

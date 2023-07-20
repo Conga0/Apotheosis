@@ -4,9 +4,11 @@ local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 local r = 512
 local particlePath = "mods/Apotheosis/files/entities/misc/effect_status_fire.xml"
+--[[
 if ModSettingGet( "Apotheosis.particle_reduction" ) then
 	particlePath = "mods/Apotheosis/files/entities/misc/effect_status_fire_lowparticles.xml"
 end
+]]--
 
 -- check that we're only shooting every 10 frames
 if script_wait_frames( entity_id, 10 ) then  return  end

@@ -65,6 +65,12 @@ g_small_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/animals/lukki_tentacle_hungry.xml"
 	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/crypt/waterskull.xml"
+	},
 }
 
 g_stash =

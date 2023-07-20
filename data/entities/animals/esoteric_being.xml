@@ -125,6 +125,15 @@
 		image_file="mods/Apotheosis/files/projectiles_gfx/beam_holy_warning.xml" >
 	</SpriteComponent>
 
+	<SpriteComponent 
+		_tags="character"
+		offset_x="0"
+		offset_y="0"
+		additive="1"
+		emissive="1"
+		image_file="mods/Apotheosis/files/enemies_gfx/esoteric_being_alt_emissive.xml" >
+	</SpriteComponent>
+
 	<ParticleEmitterComponent 
 		emitted_material_name="spark_white"
 		x_pos_offset_min="-8"

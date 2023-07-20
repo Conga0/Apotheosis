@@ -42,3 +42,11 @@
         max_count    = 1,
         entity     = "data/entities/animals/desert/locust_swarm.xml"
     })
+
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.10,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/waterskull.xml"
+    })

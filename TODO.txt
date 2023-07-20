@@ -1,4 +1,6 @@
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
+Fix Esoteric Being divine light audio being desynced from the actual visual occuring (most noticable when the game is lagging)
+Fix Esoteric Being divine light visual being slightly desynced from the damage
 
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
@@ -20,10 +22,6 @@ Make the eye rotate towards the player while it's held in hand
 
 Finish A Message From Beyond tablet
 
-Make rocks made of sandstone to support the desert pillars
-
 Finish alternative ending
 
 Revise Lukki Cruicible
-
-Rebindable keys for alt-fire

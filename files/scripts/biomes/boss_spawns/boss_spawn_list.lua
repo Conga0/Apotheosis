@@ -121,16 +121,16 @@ ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
 
 
---Spawns a book hinting towards Materia Converting Fungal Shift
+--Spawns a book hinting towards Materia Converting Spells (Dragon Cave)
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
 local xml = nxml.parse(content)
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="2515" pos_y="7428" just_load_an_entity="data/entities/buildings/materia_conversion_book_spawner.xml" />
+    <PixelScene pos_x="2515" pos_y="7511" just_load_an_entity="data/entities/buildings/materia_conversion_book_spawner.xml" />
 ]]))
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
---Spawns a book hinting towards which spells to use Mass Materia Conversion on
+--Spawns a book hinting towards which spells to use Mass Materia Conversion on (Eye Room)
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
 local xml = nxml.parse(content)
@@ -207,9 +207,9 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="-2256" pos_y="5512" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_book_spawner_stoneonly.xml" />
 ]]))
---This location is inside the Lake bunker
+--This location is inside the Blob Cavern
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="-12530" pos_y="394" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_book_spawner.xml" />
+    <PixelScene pos_x="3495" pos_y="8945" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_book_spawner.xml" />
 ]]))
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 

@@ -3,10 +3,6 @@
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>
 
-	<LimbBossComponent
-		state = "1">
-	</LimbBossComponent>
-
 	<LuaComponent
 	    execute_every_n_frame="-1"
 	    script_death="data/scripts/items/drop_money.lua"
@@ -36,10 +32,10 @@
 		can_swim_on_surface="0" 
 		can_walk="0" 
 		cost_of_flying="500" 
-		distance_to_reach_node_x="2000" 
-		distance_to_reach_node_y="2000" 
-		frames_between_searches="10" 
-		frames_to_get_stuck="10" 
+		distance_to_reach_node_x="2000"
+		distance_to_reach_node_y="2000"
+		frames_between_searches="10"
+		frames_to_get_stuck="10"
 		initial_jump_lob="1" 
 		initial_jump_max_distance_x="100" 
 		initial_jump_max_distance_y="60" 
