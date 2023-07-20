@@ -80,6 +80,12 @@ g_small_enemies =
 		max_count	= 6,    
 		entity 	= "data/entities/animals/fairy_cheap.xml"
 	},
+	{
+		prob   		= 0.1,
+		min_count	= 3,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/waterskull.xml"
+	},
 }
 
 

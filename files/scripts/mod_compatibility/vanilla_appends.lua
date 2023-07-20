@@ -747,7 +747,6 @@ end
 do --Reduces enemy spawnrates by increasing chance of a null spawn
   local biomes = {
     "coalmine",         --Coal Mine, first area, goodluck on your run
-    "desert",           --Desert above ground, careful not to die to any Stendari
     "crypt",            --Temple of the Arts.. who died here?
     "coalmine_alt",     --Coalmine but to the west side near damp cave
     "pyramid_hallway",  --Pyramid entrance, presumably
@@ -793,6 +792,7 @@ end
 
 do --Reduces enemy spawnrates by increasing chance of a null spawn (2x)
   local biomes = {
+    "desert",           --Desert above ground & below, careful not to die to any Stendari
     "wandcave",         --Magical Temple
     --"clouds",           --Cloudscapes
     "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming

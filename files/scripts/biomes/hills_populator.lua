@@ -16,3 +16,11 @@
         entity     = "data/entities/animals/hisii_hobo.xml",
         ngpluslevel = 1
     })
+
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.10,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/waterskull.xml",
+    })

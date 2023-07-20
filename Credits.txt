@@ -17,6 +17,8 @@ Contributed to Heretic Boss's design, code and created all sprite work related t
 Unintentionally significantly helping create the Liquid Sphere sprites
 Creating the Liquid Sphere spell set UI Icons
 Creating Corrupt Master of Teleportation's sprite
+Creating Corrupt Master of Vulnerability's sprite
+Creating Corrupt Master of Twitching's sprite
 Helping significantly with Corrupt Master of Exchange's sprite
 Creating Wand-Stealing Crystal's Sprite
 Reflective Weirdo resprite

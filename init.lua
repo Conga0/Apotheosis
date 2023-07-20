@@ -695,7 +695,7 @@ motd_apotheosis_description_017,"Message of the Day \nMusical Beings fear more t
 motd_apotheosis_description_018,"Message of the Day \nKnowledge is scattered around the world.. find it.","Сообщение дня \nЗнания разбросаны по всему миру... найдите их.",,,,,,,,,,,,
 motd_apotheosis_description_019,"Message of the Day \nTry as you might, some creatures take all but a single chip from your attacks.",,,,,,,,,,,,,
 motd_apotheosis_description_020,"Message of the Day \nThe coldest Magical temple may hold vital treasure. \nJust don't descend.","Сообщение дня \nСамый холодный магический храм может содержать жизненно важные сокровища. \nПросто не спускайтесь.",,,,,,,,,,,,
-motd_apotheosis_description_021,"Message of the Day \nRed sand is delicious",,,,,,,,,,,,,
+motd_apotheosis_description_021,"Message of the Day \nRed sand is delicious!",,,,,,,,,,,,,
 motd_apotheosis_description_022,"Message of the Day \nThankyou for helping us get this far!",,,,,,,,,,,,,
 motd_apotheosis_description_023,"Message of the Day \nPerhaps not every creep is a hostile. \nPerhaps not every crystal is a threat.","Сообщение дня \nПожалуй, не каждый гад - враг. \Возможно, не каждый кристалл является угрозой.",,,,,,,,,,,,
 motd_apotheosis_description_024,"Message of the Day \nAlso try Conga's Cats! ...Just not with Apotheosis enabled. \nApotheosis cats override Conga's Cats' cats... Update your settings!!!","Сообщение дня \nТакже попробуйте мод Congas Cats! ...только не с включенным модом Apotheosis. \nКошки из мода Apotheosis будут конфликтовать с кошками мода Congas Cats... Обновите настройки!!!",,,,,,,,,,,,
@@ -715,7 +715,14 @@ motd_apotheosis_description_alt_006,"Message of the Day \nEver have one of those
 motd_apotheosis_description_alt_007,"Message of the Day \nApotheosis\nmade by Conga & Friends",,,,,,,,,,,,,
 motd_apotheosis_description_alt_008,"Message of the Day \nWelcome Back\nI'm sure your wand seemed more intuitive in the design docs.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_009,"Message of the Day \nWan Wan!",,,,,,,,,,,,,
+motd_apotheosis_description_alt_010,"Message of the Day \nRobin was a fool.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_011,"Message of the Day \nBe honest with your feelings.\nBe honest with yourself.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_012,"Message of the Day \nYou are not a clown, you are the entire circus.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_013,"Message of the Day \nFriendship is a step on the path to success.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_014,"Message of the Day \nPortalium is my favourite liquid.\nWhat's yours?",,,,,,,,,,,,,
 motd_apotheosis_description_alt_015,"Message of the Day \nAlso try More Stuff!",,,,,,,,,,,,,
+motd_apotheosis_description_alt_016,"Message of the Day \n1432",,,,,,,,,,,,,
+motd_apotheosis_description_alt_017,"Message of the Day \nIf fighting is sure to result in victory,\nthen you must FIGHT!",,,,,,,,,,,,,
 motd_apotheosis_description_alt_031,"Message of the Day \nDon't visit the Toxic Worm Nest at 3 am.","Сообщение дня \nНе посещайте гнездо токсичных червей в 3 часа ночи.",,,,,,,,,,,,
 ]])
 
@@ -895,18 +902,8 @@ ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apothe
 --Spawns all the above spawns in a single file and appends to pixel scenes to prevent double spawning
 -- If Conjurer is enabled, disable this for a fix.
 if ModIsEnabled("raksa") == false then
-  if ModIsEnabled("purgatory") then
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/boss_spawn_list.lua" )
-    --dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/boss_spawn_list_NGPLUS.lua" )
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/blob_cave_spawn_list.lua" )
-    --dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/blob_cave_spawn_list_NGPlus.lua" )
-  elseif ModIsEnabled("noitavania") then
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list_noitavania.lua" )
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list_noitavania.lua" )
-  else
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua" )
-    dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua" )
-  end
+  dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua" )
+  dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua" )
 end
 
 
@@ -1857,6 +1854,12 @@ function OnPlayerSpawned( player_entity )
 
   --Handles AprilFools related code
   AprilFoolsPlayerSpawn()
+
+  --Calculate RNG
+  SetRandomSeed(111,222)
+  if Random(1,10000) == 1 then
+    GameAddFlagRun(table.concat({"apothe","osis_","div","ine_red_fi","sh"}))
+  end
 end
 
 

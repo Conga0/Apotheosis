@@ -275,14 +275,13 @@ function init(x, y, w, h)
 		LoadPixelScene( "data/biome_impl/pillars/pillar_part_material.png", "", px, py, "data/biome_impl/pillars/desert/" .. opts[opt] .. ".png", true )
 	end
 
-	SetRandomSeed(111,222)
 	local world = GetParallelWorldPosition(x,y)
-	if (Random(1,10000) == 1 and world == 0) then
+	if (GameHasFlagRun(table.concat({"apothe","osis_","div","ine_red_fi","sh"})) and world == 0) then
 		AddFlagPersistent(table.concat({"apothe","osis_card","_unlocked_div","ine_red_fi","sh_unl","ocked"}))
 		local data = ModTextFileGetContent(table.concat({"data/entities","/animals/fi","sh_re","d.xml"}))
 		ModTextFileSetContent(table.concat({"data/entities/animals/","mini","bos","s_pi","t.xml"}),data)
 		EntityLoad("data/entities/animals/miniboss_pit.xml",6900,-105)
-		print("$log_apotheosis_fish")
+		print(GameTextGetTranslatedOrNot("$log_apotheosis_fish"))
 	end
 end
 

@@ -1,14 +1,13 @@
 local entity_id = GetUpdatedEntityID()
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id, "InteractableComponent")
+
 if comp then
-    --Calculate RNG
-    SetRandomSeed(111,222)
     
     --Sets MOTD message depending on date & time, automatically updates between days
     local year, month, day, hour = GameGetDateAndTimeLocal()
     --This should never appear under any circumstances.. Unless you did something really, *really* bad
     local motd = "$motd_apotheosis_description"
-    if Random(1,10000) == 1 then
+    if GameHasFlagRun(table.concat({"apothe","osis_","div","ine_red_fi","sh"})) then
         --Reed Feesh
         motd = motd .. "_red_fish"
     elseif (month == 1) and (day == 1) then

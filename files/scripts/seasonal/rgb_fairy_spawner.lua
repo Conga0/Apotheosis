@@ -18,10 +18,10 @@ local target = fairy_list[rnd]
 
 if (rainbowCatSeed == 30) then
 	if ambrosiaCats then
-		EntityLoad( "data/entities/animals/cat_immortal/cat_apotheosis_sorako.xml", pos_x, pos_y )
+		EntityLoad( "data/entities/animals/cat_immortal/cat_mocreeps_sorako.xml", pos_x, pos_y )
 		valid = false
 	else
-		EntityLoad( "data/entities/animals/cat_apotheosis_sorako.xml", pos_x, pos_y )
+		EntityLoad( "data/entities/animals/cat_mocreeps_sorako.xml", pos_x, pos_y )
 		valid = false
 	end
 end

@@ -521,6 +521,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_transmutation.png",
 	  },
 	  {
+		name="Water Spirit",
+		path="data/entities/animals/waterskull.xml",
+		image="data/ui_gfx/animal_icons/waterskull.png",
+	  },
+	  {
 		name="Suur Stendari",
 		path="data/entities/animals/wizard_firemage_greater.xml",
 		image="data/ui_gfx/animal_icons/wizard_firemage_greater.png",

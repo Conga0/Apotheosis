@@ -68,6 +68,12 @@ g_small_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/animals/hiisi_thief.xml"
 	},
+	{
+		prob   		= 0.01,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/waterskull.xml"
+	},
 }
 
 g_big_enemies =

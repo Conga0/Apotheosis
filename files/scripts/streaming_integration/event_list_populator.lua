@@ -169,7 +169,7 @@ local ModEnabledCTEP = ModIsEnabled("Conga_Twitch_mod")
             
                 pool = {
                     "blob_big",
-                    "cat_apotheosis_sorako",
+                    "cat_mocreeps_sorako",
                     "devourer_ghost",
                     "devourer_magic",
                     "fairy_cheap",

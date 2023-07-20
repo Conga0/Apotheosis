@@ -94,35 +94,7 @@ local insert_list = {
     },
     {
         id_matchup="lukki_dark",
-        name="sunken_creature",
-    },
-    {
-        id_matchup="sunken_creature",
-        name="lukki_fire_miniboss_phase2",
-    },
-    {
-        id_matchup="lukki_fire_miniboss_phase2",
-        name="giant_centipede",
-    },
-    {
-        id_matchup="giant_centipede",
-        name="locust_swarm",
-    },
-    {
-        id_matchup="locust_swarm",
-        name="devourer_magic",
-    },
-    {
-        id_matchup="devourer_magic",
-        name="seeker",
-    },
-    {
-        id_matchup="seeker",
-        name="miniboss_pit_02",
-    },
-    {
-        id_matchup="miniboss_pit_02",
-        name="star_child",
+        name="sunken_creature\nlukki_fire_miniboss_phase2\ngiant_centipede\nlocust_swarm\ndevourer_magic\nseeker\nminiboss_pit_02\nstar_child",
     },
     {
         id_matchup="worm_big",
@@ -134,11 +106,7 @@ local insert_list = {
     },
     {
         id_matchup="drone_physics",
-        name="drone_status_ailment",
-    },
-    {
-        id_matchup="drone_status_ailment",
-        name="drone_mini",
+        name="drone_status_ailment\ndrone_mini",
     },
     {
         id_matchup="drone_lasership",
@@ -153,16 +121,16 @@ local insert_list = {
         name="tank_flame_apotheosis",
     },
     {
+        id_matchup="thunderskull",
+        name="waterskull",
+    },
+    {
         id_matchup="firemage",
         name="wizard_firemage_greater",
     },
     {
         id_matchup="wizard_firemage_greater",
-        name="watermage",
-    },
-    {
-        id_matchup="watermage",
-        name="watermage_greater",
+        name="watermage\nwatermage_greater",
     },
     {
         id_matchup="wizard_twitchy",    --Behold! 19 consecutive appends
