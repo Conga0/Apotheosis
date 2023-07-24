@@ -1,4 +1,4 @@
-dofile_once("data/scripts/lib/utilities.lua")
+
 local EZWand = dofile_once("mods/Apotheosis/lib/EZWand/EZWand.lua")
 local entity_id = GetUpdatedEntityID()
 local root = EntityGetRootEntity(entity_id)

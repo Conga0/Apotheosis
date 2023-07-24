@@ -723,6 +723,7 @@ motd_apotheosis_description_alt_014,"Message of the Day \nPortalium is my favour
 motd_apotheosis_description_alt_015,"Message of the Day \nAlso try More Stuff!",,,,,,,,,,,,,
 motd_apotheosis_description_alt_016,"Message of the Day \n1432",,,,,,,,,,,,,
 motd_apotheosis_description_alt_017,"Message of the Day \nIf fighting is sure to result in victory,\nthen you must FIGHT!",,,,,,,,,,,,,
+motd_apotheosis_description_alt_018,"Message of the Day \nBlue fire doesn't always mean cold fire...",,,,,,,,,,,,,
 motd_apotheosis_description_alt_031,"Message of the Day \nDon't visit the Toxic Worm Nest at 3 am.","Сообщение дня \nНе посещайте гнездо токсичных червей в 3 часа ночи.",,,,,,,,,,,,
 ]])
 
@@ -1681,7 +1682,7 @@ do  -- Player Editor
   --Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
   local attrs = xml:first_of("DamageModelComponent").attr
   attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
-  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.004,0.004,0.0008,0.001"
+  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.003,0.003,0.0008,0.001"
 
   if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
     --Adds Golden Cape if check is successful

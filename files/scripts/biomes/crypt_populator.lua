@@ -174,7 +174,7 @@
 
     table.insert(g_small_enemies,
     {
-        prob           = 0.08,
+        prob           = 0.12,
         min_count    = 1,
         max_count    = 2,
         entity     = "data/entities/animals/crypt/watermage.xml",

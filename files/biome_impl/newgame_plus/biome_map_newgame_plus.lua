@@ -307,14 +307,14 @@ local x = 0
 local y = 0
 -- vault 2 
 local orb_vault2 = 0xFFFFD102
-x = 6 + Random( 0, 7 )
-y = 17 + Random( 0, 6 )
+x = 28 + Random( 0, 6 )
+y = 15 + Random( 0, 4 )
 BiomeMapSetPixel( x, y, orb_vault2 )
 orb_list[3] = {x,y}
 
 -- inside pyramid
 local orb_inside_pyramid = 0xFFFFD104
-BiomeMapSetPixel( 31, 19, orb_inside_pyramid )
+BiomeMapSetPixel( 10, 18, orb_inside_pyramid )
 orb_list[4] = {x,y}
 
 -- hell
