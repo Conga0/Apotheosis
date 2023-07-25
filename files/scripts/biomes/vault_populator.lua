@@ -306,10 +306,11 @@
     
     table.insert(g_big_enemies,
     {
-        prob           = 0.08,
+        prob           = 0.15,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/animals/worm_mechanical.xml",
+        entity     = "data/entities/animals/power_plant/worm_mechanical.xml",
+        ng_exclusive = true,
         ngpluslevel = 1
     })
 

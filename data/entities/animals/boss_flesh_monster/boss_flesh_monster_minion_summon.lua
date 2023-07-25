@@ -23,7 +23,7 @@ if count < 4 then
 	GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/spells/teleport_alt", x, y );
 	for k=1,7 do
 		SetRandomSeed(x + k,y)
-		list = {"hearty","manaeater","neutral",}
+		list = {"hearty","manaeater","neutral","weaken",}
 		rnd = Random(-60,60)
 		rnd2 = Random(1,#list)
 		EntityLoad("data/entities/animals/boss_flesh_monster/minions/wizard_corrupt_" .. list[rnd2] .. ".xml", x + rnd, y + rnd)

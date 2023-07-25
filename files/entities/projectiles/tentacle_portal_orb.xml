@@ -146,9 +146,11 @@
 		auto_play="1">
 	</AudioLoopComponent>
 	
+	<!--
 	<VariableStorageComponent
 		name="projectile_file"
 		value_string="mods/Apotheosis/files/entities/projectiles/tentacle_portal_orb.xml"
 		>
 	</VariableStorageComponent>
+	-->
 </Entity>

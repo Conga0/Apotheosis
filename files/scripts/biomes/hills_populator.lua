@@ -19,7 +19,7 @@
 
     table.insert(g_small_enemies,
     {
-        prob           = 0.10,
+        prob           = 0.05,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/waterskull.xml",

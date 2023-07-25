@@ -32,6 +32,8 @@ function GenerateMagicCatalyst()
     "gold",
     "diamond",
     "snow",
+    --"sand",
+    --"mud",
     --[[
     "magic_liquid_unstable_teleportation",
     "magic_liquid_polymorph",
