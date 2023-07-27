@@ -30,7 +30,8 @@
   </GenomeDataComponent>
 
   <HitboxComponent 
-    _enabled="1" 
+    _enabled="1"
+	damage_multiplier="0.40"
     aabb_min_x="-14" 
     aabb_max_x="13" 
     aabb_min_y="-38" 

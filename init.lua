@@ -490,6 +490,8 @@ spell_apotheosis_mind_vision_name,"Mind Vision",,,,,,,,,,,,,
 spell_apotheosis_mind_vision_desc,"Creatures hit by a projectile are temporarily revealed through fog of war",,,,,,,,,,,,,
 spell_apotheosis_water_power_name,"Hydromancy",,,,,,,,,,,,,
 spell_apotheosis_water_power_desc,"Reduce mana cost by 30 and increase fire rate when wet",,,,,,,,,,,,,
+spell_apotheosis_blood_power_name,"Hemomancy",,,,,,,,,,,,,
+spell_apotheosis_blood_power_desc,"Projectiles will pierce 2 times when bloody",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_name,"Formation - Wall",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_desc,"Casts 5 spells in a wall-shaped pattern",,,,,,,,,,,,,
 spell_apotheosis_summon_star_child_name,"Summon Star Child",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
@@ -759,6 +761,7 @@ ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/
 ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/snowcastle_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua" )
+ModLuaFileAppend( "data/scripts/biomes/meat.lua", "mods/Apotheosis/files/scripts/biomes/meat_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/vault_populator.lua" )
 --ModLuaFileAppend( "data/scripts/biomes/tower.lua", "mods/Apotheosis/files/scripts/biomes/tower_populator.lua" )
@@ -1104,13 +1107,7 @@ if ModIsEnabled("raksa") == false then
   if motdSetting == true then
     dofile_once( "mods/Apotheosis/files/scripts/misc/motd_list.lua" )
   elseif flag_status == false then
-    if ModIsEnabled("purgatory") then
-      dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint_purgatory.lua" )
-    elseif ModIsEnabled("noitavania") then
-      dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint_noitavania.lua" )
-    else
-      dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
-    end
+    --dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
   end
 end
 

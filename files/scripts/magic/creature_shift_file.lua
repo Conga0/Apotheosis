@@ -247,6 +247,9 @@ function creature_shift( entity, x, y, debug_no_limits )
         end
 
         local icon_name = target2
+        if icon_name == "bubbles/freezing_liquid/bubble_liquid" then
+            icon_name = "bubble_liquid"
+        end
 
         --[[
         if creature_ragdoll_get then

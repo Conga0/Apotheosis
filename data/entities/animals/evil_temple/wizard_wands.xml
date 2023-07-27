@@ -9,5 +9,10 @@
 			herd_id="mage_corrupted"
       >
 		</GenomeDataComponent>
+		
+		<HitboxComponent 
+		  damage_multiplier="0.33"
+		  >
+		</HitboxComponent>
   </Base>
 </Entity>

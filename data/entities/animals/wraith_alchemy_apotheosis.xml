@@ -11,7 +11,7 @@
 		</AnimalAIComponent>
 
 		<DamageModelComponent
-            hp="14.75"
+            hp="30"
             fire_probability_of_ignition="0" 
 			ragdoll_fx_forced="DISINTEGRATED"
 			ragdoll_material="rock_static_glow"
@@ -53,7 +53,8 @@
 		</GenomeDataComponent>
 
 		<HitboxComponent 
-			_enabled="1" 
+			_enabled="1"
+			damage_multiplier="0.10"
 			aabb_min_x="-7.0" 
 			aabb_max_x="7.0" 
 			aabb_min_y="-7" 

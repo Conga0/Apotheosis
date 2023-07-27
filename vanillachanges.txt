@@ -29,6 +29,7 @@ Unstable Crystal can now be affected by Larpa
 Playerghosts can now "parry" tablets
 Friendship quest now is now slightly more involved
 Masters of Homing are now made of a slightly tastier meat than slime
+Necklace & Gemmed necklace cosmetics require 45 and 46 orbs respectively
 
 
 New Biome Modifiers:
@@ -39,7 +40,7 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-113 new enemies (+3 Pylon variants)
+114 new enemies (+3 Pylon variants)
 6 new bosses
 70 new spells
 8 new perks

@@ -1957,6 +1957,40 @@ local apotheosis_spellappends = {
 			mana = mana_
 		end,
 	},
+    --[[
+    --Can't name anything specific, I just don't like it, maybe it's because the ui icon is janky as hell
+    --Also feels like it isn't very thought provoking, I mean, I guess if you have access to blood you may as well put it on for x2 damage, right?
+    --It doesn't radically change your wand setup, it's just a switch of "I have blood" or "I don't have blood"
+    --Hydromancy can make or break your wand if you're wet
+	{
+		id          = "APOTHEOSIS_BLOOD_POWER",
+        id_matchup  = "APOTHEOSIS_WATER_POWER",
+        name 		= "$spell_apotheosis_blood_power_name",
+        description = "$spell_apotheosis_blood_power_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hemomancy.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,3,4,5,6", -- MANA_REDUCE
+		spawn_probability                 = "0.7,0.9,1,1,1,1", -- MANA_REDUCE
+		price = 180,
+		mana = 30,
+		-- max_uses = 20,
+		action 		= function()
+            draw_actions( 1, true )
+            if reflecting then
+                --Stops the game from getting angry
+            else
+                local entity_id = GetUpdatedEntityID()
+                if GameGetGameEffectCount( entity_id, "BLOODY" ) > 0 then
+                    if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
+                        c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+                    end
+                    c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_shot_2.xml,"
+                end
+            end
+		end,
+	},
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

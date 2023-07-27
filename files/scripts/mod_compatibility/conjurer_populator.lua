@@ -331,6 +331,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/hiisi_thief.png",
 	  },
 	  {
+		name="Devil Chef",
+		path="data/entities/animals/hiisi_chef_hell.xml",
+		image="data/ui_gfx/animal_icons/hiisi_chef_hell.png",
+	  },
+	  {
 		name="Locust Swarm",
 		path="data/entities/animals/locust_swarm.xml",
 		image="data/ui_gfx/animal_icons/locust_swarm.png",
