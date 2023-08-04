@@ -41,6 +41,7 @@ end
 --Angel doesn't need to be done here and it's handled by the above function
 --filepath   multiplier   base check
 MultiplyHPSelective("boss_flesh_monster/boss_flesh_monster",10,false)
+MultiplyHPSelective("boss_flesh_monster/phase3/boss_flesh_monster",10,false)
 MultiplyHPSelective("boss_fire_lukki/boss_fire_lukki",10,false)
 MultiplyHPSelective("boss_flesh_monster/boss_flesh_monster",10,false)
 MultiplyHPSelective("boss_musical_ghost/boss_musical_ghost",10,false)

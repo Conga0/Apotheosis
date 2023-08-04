@@ -1,0 +1,97 @@
+<Entity name="Fishing Rod Apotheosis" tags="teleportable_NOT,item">
+
+	<!-- item -->
+
+	<VelocityComponent
+		_tags="enabled_in_world"
+		gravity_y="400"
+		air_friction="0.55"
+		terminal_velocity="1000" >
+	</VelocityComponent>
+		
+	<SimplePhysicsComponent
+		_tags="enabled_in_world" >
+	</SimplePhysicsComponent>
+	
+	<HitboxComponent 
+		_tags="enabled_in_world"
+		aabb_max_x="4" 
+		aabb_max_y="4" 
+		aabb_min_x="-4" 
+		aabb_min_y="-4" 
+		is_enemy="0" 
+		is_item="0" 
+		is_player="0" >
+	</HitboxComponent>
+
+	<SpriteComponent
+    	_tags="enabled_in_world,enabled_in_hand" 
+		_enabled="1"
+		offset_x="2"
+		offset_y="15"
+		image_file="mods/Apotheosis/files/items_gfx/wands/custom/fishing_rod.xml"
+		z_index="-1.5" 
+	></SpriteComponent>
+
+	<ItemComponent
+		_tags="enabled_in_world"
+		item_name="$item_apotheosis_fishing_rod_name"
+		ui_description="$item_apotheosis_fishing_rod_desc"
+		ui_sprite="mods/apotheosis/files/ui_gfx/items/fishing_rod.png"
+		max_child_items="1"
+		is_pickable="1"
+		is_equipable_forced="1"
+		preferred_inventory="QUICK"
+	></ItemComponent>
+	
+	<AbilityComponent
+		ui_name="$item_apotheosis_fishing_rod_name"
+		throw_as_item="0"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+
+	<UIInfoComponent
+		_tags="enabled_in_world"
+		name="$item_apotheosis_fishing_rod_name">
+	</UIInfoComponent>
+  
+	<LightComponent
+		_tags="enabled_in_world"
+		radius="64" >
+	</LightComponent>
+	
+	<!--Actually handles the fishing-->
+	<LuaComponent
+		_tags="enabled_in_hand"
+		script_source_file="mods/apotheosis/files/scripts/items/fishing_rod.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<HotspotComponent
+		_tags="shoot_pos,enabled_in_hand"
+		sprite_hotspot_name="cape"
+		transform_with_scale="1"
+		offset.x="22"
+		offset.y="0"
+		>
+	</HotspotComponent>
+
+	<VariableStorageComponent
+		name="fishing_data"
+		value_int="-10000"
+	>
+	</VariableStorageComponent>
+
+	<Entity>
+		<InheritTransformComponent
+			_tags="enabled_in_world,enabled_in_hand"
+			parent_sprite_id="1"
+			always_use_immediate_parent_rotation="1"
+			parent_hotspot_tag="shoot_pos" >
+		</InheritTransformComponent>
+	</Entity>
+
+</Entity>

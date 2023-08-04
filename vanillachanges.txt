@@ -28,6 +28,7 @@ Piercing Shot is reworked
 Unstable Crystal can now be affected by Larpa
 Playerghosts can now "parry" tablets
 Friendship quest now is now slightly more involved
+Toxic Immunity now grants immunity to toxic damage
 Masters of Homing are now made of a slightly tastier meat than slime
 Necklace & Gemmed necklace cosmetics require 45 and 46 orbs respectively
 
@@ -42,7 +43,7 @@ Alchemical Mists
 Content list:
 114 new enemies (+3 Pylon variants)
 6 new bosses
-70 new spells
+71 new spells
 8 new perks
 6 new biomes
 7 new structures

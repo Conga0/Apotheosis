@@ -1991,6 +1991,50 @@ local apotheosis_spellappends = {
 		end,
 	},
     ]]--
+	{
+		id          = "APOTHEOSIS_SHOT_WALL",
+		id_matchup  = "PENTA_SHOT",
+        name 		= "$spell_apotheosis_shot_wall_name",
+        description = "$spell_apotheosis_shot_wall_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/wall_shot.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
+		type 		= ACTION_TYPE_DRAW_MANY,
+		spawn_level                       = "3,4,5,6,10", -- I_SHAPE
+		spawn_probability                 = "0.1,0.2,0.5,0.5,0.2", -- I_SHAPE
+		price = 180,
+		mana = 5,
+		max_uses = 20,
+		action 		= function()
+			local data
+			
+			if ( #deck > 0 ) then
+				data = deck[1]
+			end
+			
+			if ( data ~= nil ) and ( ( data.type == ACTION_TYPE_PROJECTILE ) or ( data.type == ACTION_TYPE_STATIC_PROJECTILE ) ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+				local count = 5
+				for i=1,count-1 do
+					if ( mana >= data.mana ) then
+						local proj = data.related_projectiles[1]
+						local proj_count = data.related_projectiles[2] or 1
+						
+						for a=1,proj_count do
+							add_projectile(proj)
+						end
+						
+						mana = mana - data.mana
+					else
+						OnNotEnoughManaForAction()
+						break
+					end
+				end
+			end
+
+			c.pattern_degrees = 5
+			
+			draw_actions(1, true)
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

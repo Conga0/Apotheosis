@@ -49,7 +49,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	{ 
 		execute_every_n_frame = "-1",
 		script_death = "data/scripts/items/drop_money4x.lua",
-		script_death = "data/scripts/items/drop_money" .. combo_count * 2 .. "x.lua",
+		script_death = "data/scripts/items/drop_money" .. (math.min(64,combo_count * 2)) .. "x.lua",
 		remove_after_executed = "1",
 	} )
 

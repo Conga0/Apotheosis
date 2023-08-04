@@ -544,4 +544,17 @@ do  --Spawn Forest Monolith
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 end
 
+
+--local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+--local xml = nxml.parse(content)
+--xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
+--<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="23829" pos_y="79532" skip_biome_checks="1" skip_edge_textures="0"
+--    material_filename="mods/Apotheosis/files/pixel_scenes/test_01/test_01.png"
+--    background_filename="mods/Apotheosis/files/pixel_scenes/test_01/test_01_background.png"
+--    colors_filename=""
+--></PixelScene>
+--]]})))
+--ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
+
 end
