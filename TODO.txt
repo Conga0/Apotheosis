@@ -1,7 +1,6 @@
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 Fix Esoteric Being divine light audio being desynced from the actual visual occuring (most noticable when the game is lagging)
 Fix Esoteric Being divine light visual being slightly desynced from the damage
-Fix cart combo no worky worky
 
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
