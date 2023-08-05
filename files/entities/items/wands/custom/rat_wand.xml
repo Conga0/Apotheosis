@@ -11,7 +11,7 @@
         max_amount_in_inventory="1" 
         reload_time_frames="0" 
         shooting_reduces_amount_in_inventory="0" 
-        sprite_file="mods/Apotheosis/files/items_gfx/wands/custom/rat_wand.xml" 
+        sprite_file="mods/Apotheosis/files/items_gfx/wands/custom/rat_wand.xml"
         swim_propel_amount="0" 
         throw_as_item="0" 
         ui_name="Rat" 
@@ -44,11 +44,11 @@
 			>
         </ItemComponent>
 		
-		<SpriteComponent 
-			_tags="item,enabled_in_world,enabled_in_hand" 
-			alpha="1" 
-			image_file="mods/Apotheosis/files/items_gfx/wands/custom/rat_wand.xml" 
-			next_rect_animation="default" 
+		<SpriteComponent
+			_tags="item,enabled_in_world,enabled_in_hand"
+			alpha="1"
+			image_file="mods/Apotheosis/files/items_gfx/wands/custom/rat_wand.xml"
+			next_rect_animation="default"
 			rect_animation="default"
 			z_index="-1.5" >
 		</SpriteComponent>
@@ -58,11 +58,11 @@
         </SimplePhysicsComponent>
     </Base>
     
-    <LuaComponent 
-        _enabled="1" 
+    <LuaComponent
+        _enabled="1"
         execute_on_added="1"
         remove_after_executed="1"
-        script_source_file="mods/Apotheosis/files/entities/items/wands/custom/rat_wand.lua" 
+        script_source_file="mods/Apotheosis/files/entities/items/wands/custom/rat_wand.lua"
 	>
     </LuaComponent>
 

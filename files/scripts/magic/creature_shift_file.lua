@@ -12,7 +12,8 @@ local entity = EntityGetWithTag( "player_unit" )
 local entity_id = EntityGetWithTag( "player_unit" )
 local x, y = EntityGetTransform( entity )
 local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
-SetRandomSeed( second + minute, second + minute + 3 )
+--SetRandomSeed( second + minute, second + minute + 3 )
+--Seeded RNG
 
 --Top list is modded enemies + vanilla; bottom is only modded enemies
 --ModFileSetContent doesn't work on vanilla enemies past initiation stages of the game.. but works perfectly fine on modded creatures? Sure thing, whatever you say dude
@@ -84,6 +85,9 @@ function creature_shift( entity, x, y, debug_no_limits )
     else
         shift_check_2 = true
     end
+
+    
+    SetRandomSeed( 8888 + iter, 7777 + iter )
 
     --debug to spam it
     --[[
@@ -247,6 +251,9 @@ function creature_shift( entity, x, y, debug_no_limits )
         end
 
         local icon_name = target2
+        if icon_name == "bubbles/freezing_liquid/bubble_liquid" then
+            icon_name = "bubble_liquid"
+        end
 
         --[[
         if creature_ragdoll_get then

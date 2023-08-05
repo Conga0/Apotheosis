@@ -175,7 +175,7 @@ spell_apotheosis_musical_proj_desc,"Fires a powerful musical attack, careful not
 spell_apotheosis_musical_proj_trig_name,Musical Strike with trigger,Музыкальный удар с активацией,,,,,,,,,,,,
 spell_apotheosis_musical_proj_trig_desc,"Fires a powerful musical attack, casts another spell upon collision","Стреляет мощной музыкальной атакой, при столкновении вызывает другое заклинание",,,,,,,,,,,,
 spell_apotheosis_reverberation_name,Reverberation,Реверберация,,,,,,,,,,,,
-spell_apotheosis_reverberation_desc,"Creates a reverberation of sound in the air, slicing anything nearby to pieces.","Создаёт отзвук в воздухе, разрывая на куски всё, что находится поблизости.",,,,,,,,,,,,
+spell_apotheosis_reverberation_desc,"Creates a reverberating sound in the air, slicing anything nearby to pieces.","Создаёт отзвук в воздухе, разрывая на куски всё, что находится поблизости.",,,,,,,,,,,,
 spell_apotheosis_bite_name,Bite,Укус,,,,,,,,,,,,
 spell_apotheosis_bite_desc,...Magic?,...Волшебство?,,,,,,,,,,,,
 spell_apotheosis_bungal_shift_hyper_name,Hyper Fungal Shift,Супергрибковое смещение,,,,,,,,,,,,
@@ -339,7 +339,7 @@ credits_apotheosis_line_43,"And finally.. you, for giving Apotheosis a try and m
 credits_apotheosis_line_44,I hope you enjoyed playing it as much as I enjoyed making it <3,"Надеюсь, вам понравилось играть в него так же, как мне понравилось его создавать <3",,,,,,,,,,,,
 credits_apotheosis_line_45,Best of luck in your future adventures - Conga Lyne,Желаю удачи в ваших будущих приключениях - Conga Lyne,,,,,,,,,,,,
 credits_apotheosis_line_horscht,Provided a ton of help in the mod support channel during development and let me use his credits script.,Оказал тонну помощи в канале поддержки мода во время разработки и позволил мне использовать его скрипт для этого меню.,,,,,,,,,,,,
-Apotheosis content below,"=====================================================================================================================================================================================================================================================Below here are 1.1.0 translation keys",,,,,,,,,,,,,
+Apotheosis content below,"=====================================================================================================================================================================================================================================================Below here are Apotheosis translation keys",,,,,,,,,,,,,
 teleport_portal_alternate,"Portal Elsewhere",,,,,,,,,,,,,
 biome_slime_hell,"Virulent Caverns",,,,,,,,,,,,,
 biome_toxic_worm_cave,"Toxic Nest",,,,,,,,,,,,,
@@ -490,8 +490,12 @@ spell_apotheosis_mind_vision_name,"Mind Vision",,,,,,,,,,,,,
 spell_apotheosis_mind_vision_desc,"Creatures hit by a projectile are temporarily revealed through fog of war",,,,,,,,,,,,,
 spell_apotheosis_water_power_name,"Hydromancy",,,,,,,,,,,,,
 spell_apotheosis_water_power_desc,"Reduce mana cost by 30 and increase fire rate when wet",,,,,,,,,,,,,
+spell_apotheosis_blood_power_name,"Hemomancy",,,,,,,,,,,,,
+spell_apotheosis_blood_power_desc,"Projectiles will pierce 2 times when bloody",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_name,"Formation - Wall",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_desc,"Casts 5 spells in a wall-shaped pattern",,,,,,,,,,,,,
+spell_apotheosis_shot_wall_name,"Wallplicate",,,,,,,,,,,,,
+spell_apotheosis_shot_wall_desc,"Casts 5 copies of a projectile in a wall-shaped pattern",,,,,,,,,,,,,
 spell_apotheosis_summon_star_child_name,"Summon Star Child",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_summon_star_child_desc,"Summons a celestial familiar",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_fire_wall_name,"Wall of Fire",,,,,,,,,,,,,
@@ -530,7 +534,7 @@ book_apotheosis_orbbook_stone_13_description,"Bring your friends along when you 
 book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must remain pure and unintoxicated.",,,,,,,,,,,,,
 book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so and your arrow shall move faster.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
-book_apotheosis_playerghost_description,"Stake your eyes on these glyphs. \nFor in time, they too shall change.",,,,,,,,,,,,,
+book_apotheosis_playerghost_description,"Seek knowledge not true, but divine.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
 book_apotheosis_material_spells_name,"Lost Alchemy",,,,,,,,,,,,,
 book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nTurn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
@@ -637,6 +641,8 @@ item_apotheosis_egg_mud_name,"Muddy Egg",,,,,,,,,,,,,
 item_apotheosis_egg_mud_desc,"The egg feels amorphous",,,,,,,,,,,,,
 item_apotheosis_money_1,Gold nugget (1),Золотой самородок (1),Pepita de ouro (1),Pepita de oro (1),Goldklumpen (1),Pépite d'or (1),Pepita d'oro (1),Grudka złota (1),金块 (1),金塊 (1),황금 덩어리(1),,,
 item_apotheosis_bloodmoney_1,Bloody gold nugget (1),Кровавый золотой самородок (1),Pepita de ouro ensanguentada (1),Pepita de oro sangrienta (1),Blutiger Goldklumpen (1),Pépite d'or ensanglantée (1),Pepita d'oro insanguinata (1),Krwaw grudka złota (1),染血金块 (1),ブラッディー金塊 (1),피투성이 황금 덩어리(1),,,
+item_apotheosis_heretical_eye_name,"Heretical Eye",,,,,,,,,,,,,
+item_apotheosis_heretical_eye_desc,"It pulses like a beating heart.",,,,,,,,,,,,,
 item_apotheosis_stone_heretic_name,"Korruptoitunutkivi",,,,,,,,,,,,,
 item_apotheosis_stone_heretic_desc,"It feels drenched in blood.",,,,,,,,,,,,,
 item_apotheosis_stone_radar_name,"Opastavakivi",,,,,,,,,,,,,
@@ -647,6 +653,8 @@ item_apotheosis_orb_mattereater_name,"Hungry Orb","Голодный шар",,,,,
 item_apotheosis_orb_mattereater_desc,"You feel the matter around it being sucked in. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 item_apotheosis_orb_affluence_name,"Affluent Orb",,,,,,,,,,,,,
 item_apotheosis_orb_affluence_desc,"You can see reflections of endless treasure within it. What happens if you kick it, you wonder...",,,,,,,,,,,,,
+item_apotheosis_fishing_rod_name,"Fishing Rod",,,,,,,,,,,,,
+item_apotheosis_fishing_rod_desc,"Go fish..?\nLeft click to cast a line.\nLeft click again when a fish bites to reel it in.",,,,,,,,,,,,,
 item_apotheosis_sampo_33_name,"Heretical Knowledge",,,,,,,,,,,,,
 item_apotheosis_sampo_34_name,"Our Gift",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
@@ -696,7 +704,7 @@ motd_apotheosis_description_018,"Message of the Day \nKnowledge is scattered aro
 motd_apotheosis_description_019,"Message of the Day \nTry as you might, some creatures take all but a single chip from your attacks.",,,,,,,,,,,,,
 motd_apotheosis_description_020,"Message of the Day \nThe coldest Magical temple may hold vital treasure. \nJust don't descend.","Сообщение дня \nСамый холодный магический храм может содержать жизненно важные сокровища. \nПросто не спускайтесь.",,,,,,,,,,,,
 motd_apotheosis_description_021,"Message of the Day \nRed sand is delicious!",,,,,,,,,,,,,
-motd_apotheosis_description_022,"Message of the Day \nThankyou for helping us get this far!",,,,,,,,,,,,,
+motd_apotheosis_description_022,"Message of the Day \nApotheosis, played by many, including yourself!",,,,,,,,,,,,,
 motd_apotheosis_description_023,"Message of the Day \nPerhaps not every creep is a hostile. \nPerhaps not every crystal is a threat.","Сообщение дня \nПожалуй, не каждый гад - враг. \Возможно, не каждый кристалл является угрозой.",,,,,,,,,,,,
 motd_apotheosis_description_024,"Message of the Day \nAlso try Conga's Cats! ...Just not with Apotheosis enabled. \nApotheosis cats override Conga's Cats' cats... Update your settings!!!","Сообщение дня \nТакже попробуйте мод Congas Cats! ...только не с включенным модом Apotheosis. \nКошки из мода Apotheosis будут конфликтовать с кошками мода Congas Cats... Обновите настройки!!!",,,,,,,,,,,,
 motd_apotheosis_description_025,"Message of the Day \nFun Fact, Despite this mod releasing on 24/10/2022, \nthe birthday event occurs in July to avoid clashing with Halloween.","Сообщение дня \nПрикольный факт, несмотря на то, что этот мод вышел 10.24.2022, \n праздник дня рождения происходит в ноябре, чтобы избежать столкновения с Хэллоуином.",,,,,,,,,,,,
@@ -710,9 +718,9 @@ motd_apotheosis_description_alt_001,"Message of the Day \nAlso try Grahams Thing
 motd_apotheosis_description_alt_002,"Message of the Day \nBe weary when travelling to other worlds.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_003,"Message of the Day \nStay inside.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_004,"Message of the Day \nDid you eat your powerballs today?",,,,,,,,,,,,,
-motd_apotheosis_description_alt_005,"Message of the Day \nSourcream with Polish Sausage is delicious.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_005,"Message of the Day \nSour cream with Polish Sausage is delicious.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_006,"Message of the Day \nEver have one of those days?",,,,,,,,,,,,,
-motd_apotheosis_description_alt_007,"Message of the Day \nApotheosis\nmade by Conga & Friends",,,,,,,,,,,,,
+motd_apotheosis_description_alt_007,"Message of the Day \nApotheosis\nmade by Conga & Friends.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_008,"Message of the Day \nWelcome Back\nI'm sure your wand seemed more intuitive in the design docs.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_009,"Message of the Day \nWan Wan!",,,,,,,,,,,,,
 motd_apotheosis_description_alt_010,"Message of the Day \nRobin was a fool.",,,,,,,,,,,,,
@@ -724,6 +732,18 @@ motd_apotheosis_description_alt_015,"Message of the Day \nAlso try More Stuff!",
 motd_apotheosis_description_alt_016,"Message of the Day \n1432",,,,,,,,,,,,,
 motd_apotheosis_description_alt_017,"Message of the Day \nIf fighting is sure to result in victory,\nthen you must FIGHT!",,,,,,,,,,,,,
 motd_apotheosis_description_alt_018,"Message of the Day \nBlue fire doesn't always mean cold fire...",,,,,,,,,,,,,
+motd_apotheosis_description_alt_019,"Message of the Day \nBe careful of sewer mermaids.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_020,"Message of the Day \nFish should say blub blub blub.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_021,"Message of the Day \nApotheosis, started 21/07/2022.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_022,"Message of the Day \nThat chest is a spy!",,,,,,,,,,,,,
+motd_apotheosis_description_alt_023,"Message of the Day \nMagic Inebriation is ambivalently akin to Chaotic Transmutation.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_024,"Message of the Day \nAlways remember to eat healthy, you can't buy your health back.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_025,"Message of the Day \nDo you remember games coming in boxes as a kid? \nIt was sick as hell having physical memorabilia.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_026,"Message of the Day \n3DS street pass was so damn cool. \nYou can still use it today if you know how.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_027,"Message of the Day \nRemember to exercise. \nHow about 5 pushups right now?",,,,,,,,,,,,,
+motd_apotheosis_description_alt_028,"Message of the Day \nSome creatures drop loot extremely rarely. \nfeeling lucky?",,,,,,,,,,,,,
+motd_apotheosis_description_alt_029,"Message of the Day \nThe dragon is an awesome boss, especially when he's draggon dez nuts.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_030,"Message of the Day \nThere's worms inside the walls who bare heavy armor. \nCareful not to awaken them unprepared, they're very hungry.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_031,"Message of the Day \nDon't visit the Toxic Worm Nest at 3 am.","Сообщение дня \nНе посещайте гнездо токсичных червей в 3 часа ночи.",,,,,,,,,,,,
 ]])
 
@@ -759,6 +779,7 @@ ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/
 ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/snowcastle_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua" )
+ModLuaFileAppend( "data/scripts/biomes/meat.lua", "mods/Apotheosis/files/scripts/biomes/meat_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua" )
 ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/vault_populator.lua" )
 --ModLuaFileAppend( "data/scripts/biomes/tower.lua", "mods/Apotheosis/files/scripts/biomes/tower_populator.lua" )
@@ -1104,13 +1125,7 @@ if ModIsEnabled("raksa") == false then
   if motdSetting == true then
     dofile_once( "mods/Apotheosis/files/scripts/misc/motd_list.lua" )
   elseif flag_status == false then
-    if ModIsEnabled("purgatory") then
-      dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint_purgatory.lua" )
-    elseif ModIsEnabled("noitavania") then
-      dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint_noitavania.lua" )
-    else
-      dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
-    end
+    --dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
   end
 end
 

@@ -510,6 +510,9 @@ do local v = appends[k];
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
   ]]))
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene pos_x="-17611" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
+  ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
   --Fixing Music Machines not spawning in PWs properly
@@ -543,5 +546,18 @@ do  --Spawn Forest Monolith
   ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 end
+
+
+--local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+--local xml = nxml.parse(content)
+--xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
+--<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="23829" pos_y="79532" skip_biome_checks="1" skip_edge_textures="0"
+--    material_filename="mods/Apotheosis/files/pixel_scenes/test_01/test_01.png"
+--    background_filename="mods/Apotheosis/files/pixel_scenes/test_01/test_01_background.png"
+--    colors_filename=""
+--></PixelScene>
+--]]})))
+--ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+
 
 end

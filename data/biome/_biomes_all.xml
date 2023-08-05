@@ -1020,6 +1020,12 @@
 		height_index="0"
 		color="ff5f8fab" >
 	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome/meat.xml" 
+		height_index="0"
+		color="ff572828" >
+	</Biome>
 
 	<!-- Apotheosis biomes below ======================================================================================================================================= -->
 	<Biome 

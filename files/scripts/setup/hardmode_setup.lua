@@ -26,7 +26,7 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("wizardcave", 10, 1.5)
     MultiplyHPOnBiome("liquidcave", 4, 1)
     MultiplyHPOnBiome("custom/ant_hell", 2, 1.5)
-    MultiplyHPOnBiome("custom/slime_hell", 10, 1.2)
+    MultiplyHPOnBiome("custom/slime_hell", 5, 1.2)
     MultiplyHPOnBiome("custom/sunken_cave", 10, 1.5)
     MultiplyHPOnBiome("custom/evil_temple", 10, 1.5)
     MultiplyHPOnBiome("fungicave", 4, 1)
@@ -41,6 +41,7 @@ end
 --Angel doesn't need to be done here and it's handled by the above function
 --filepath   multiplier   base check
 MultiplyHPSelective("boss_flesh_monster/boss_flesh_monster",10,false)
+MultiplyHPSelective("boss_flesh_monster/phase3/boss_flesh_monster",10,false)
 MultiplyHPSelective("boss_fire_lukki/boss_fire_lukki",10,false)
 MultiplyHPSelective("boss_flesh_monster/boss_flesh_monster",10,false)
 MultiplyHPSelective("boss_musical_ghost/boss_musical_ghost",10,false)

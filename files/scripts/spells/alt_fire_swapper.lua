@@ -13,7 +13,7 @@ local cooldown_frames = 25
 local cooldown_frame
 local variablecomp = EntityGetFirstComponentIncludingDisabled( entity_id, "VariableStorageComponent" )
 cooldown_frame = ComponentGetValue2( variablecomp, "value_int" )
-local aim_x, aim_y = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(root, "ControlsComponent"), "mAimingVectorNormalized")
+local aim_x, aim_y = ComponentGetValue2(controlscomp, "mAimingVectorNormalized")
 local manacost = 10
 
 if GameGetFrameNum() >= cooldown_frame then

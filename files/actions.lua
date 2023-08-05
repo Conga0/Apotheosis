@@ -1953,6 +1953,84 @@ local apotheosis_spellappends = {
 			mana = mana_
 		end,
 	},
+    --[[
+    --Can't name anything specific, I just don't like it, maybe it's because the ui icon is janky as hell
+    --Also feels like it isn't very thought provoking, I mean, I guess if you have access to blood you may as well put it on for x2 damage, right?
+    --It doesn't radically change your wand setup, it's just a switch of "I have blood" or "I don't have blood"
+    --Hydromancy can make or break your wand if you're wet
+	{
+		id          = "APOTHEOSIS_BLOOD_POWER",
+        id_matchup  = "APOTHEOSIS_WATER_POWER",
+        name 		= "$spell_apotheosis_blood_power_name",
+        description = "$spell_apotheosis_blood_power_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hemomancy.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "1,2,3,4,5,6", -- MANA_REDUCE
+		spawn_probability                 = "0.7,0.9,1,1,1,1", -- MANA_REDUCE
+		price = 180,
+		mana = 30,
+		-- max_uses = 20,
+		action 		= function()
+            draw_actions( 1, true )
+            if reflecting then
+                --Stops the game from getting angry
+            else
+                local entity_id = GetUpdatedEntityID()
+                if GameGetGameEffectCount( entity_id, "BLOODY" ) > 0 then
+                    if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
+                        c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+                    end
+                    c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_shot_2.xml,"
+                end
+            end
+		end,
+	},
+    ]]--
+	{
+		id          = "APOTHEOSIS_SHOT_WALL",
+		id_matchup  = "PENTA_SHOT",
+        name 		= "$spell_apotheosis_shot_wall_name",
+        description = "$spell_apotheosis_shot_wall_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/wall_shot.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
+		type 		= ACTION_TYPE_UTILITY,
+		spawn_level                       = "3,4,5,6,10", -- I_SHAPE
+		spawn_probability                 = "0.1,0.2,0.5,0.5,0.2", -- I_SHAPE
+		price = 180,
+		mana = 5,
+		max_uses = 20,
+		action 		= function()
+			local data
+			
+			if ( #deck > 0 ) then
+				data = deck[1]
+			end
+			
+			if ( data ~= nil ) and ( ( data.type == ACTION_TYPE_PROJECTILE ) or ( data.type == ACTION_TYPE_STATIC_PROJECTILE ) ) and ( data.related_projectiles ~= nil ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+				local count = 5
+				for i=1,count-1 do
+					if ( mana >= data.mana ) then
+						local proj = data.related_projectiles[1]
+						local proj_count = data.related_projectiles[2] or 1
+						
+						for a=1,proj_count do
+							add_projectile(proj)
+						end
+						
+						mana = mana - data.mana
+					else
+						OnNotEnoughManaForAction()
+						break
+					end
+				end
+			end
+
+			c.pattern_degrees = 5
+			
+			draw_actions(1, true)
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

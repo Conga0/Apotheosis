@@ -163,6 +163,7 @@
 			ice="0.3"
 			curse="0.7"
 			drill="0.3"
+			holy="0.3"
 			>
 		</damage_multipliers>
 	</DamageModelComponent>

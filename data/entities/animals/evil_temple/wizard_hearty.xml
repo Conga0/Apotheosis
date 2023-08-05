@@ -4,5 +4,10 @@
       hp="24"
       max_hp="24"
      ></DamageModelComponent >
+		
+		<HitboxComponent 
+		  damage_multiplier="0.33"
+		  >
+		</HitboxComponent>
   </Base>
 </Entity>

@@ -68,7 +68,8 @@
 		</CameraBoundComponent>
 		
 		<HitboxComponent 
-		  _enabled="1" 
+		  _enabled="1"
+		  damage_multiplier="0.33"
 		  aabb_min_x="-4.5" 
 		  aabb_max_x="4.5" 
 		  aabb_min_y="-10" 
