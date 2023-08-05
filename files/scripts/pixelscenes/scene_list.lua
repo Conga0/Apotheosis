@@ -510,6 +510,9 @@ do local v = appends[k];
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
   ]]))
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene pos_x="-17611" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
+  ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
   --Fixing Music Machines not spawning in PWs properly

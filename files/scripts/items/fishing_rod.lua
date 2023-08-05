@@ -16,6 +16,7 @@ if GameGetFrameNum() >= cooldown_frame then
         if activebobber ~= 0 then
             --Reel existing bobber in
             EntityKill(activebobber)
+            ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + 10 )
         else
             --Cast new bobber
             local proj_id = EntityLoad("mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber.xml", x, y)

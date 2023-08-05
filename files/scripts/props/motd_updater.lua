@@ -24,8 +24,13 @@ if comp then
         motd = motd .. "_smissmass"
     else
         -- Regular MOTD values
+        -- MOTD switches between original & alt list every month
         if day <= 31 then
-            motd = table.concat { motd, "_", string.format("%03d", day) }
+            if month % 2 == 0 then
+                motd = table.concat { motd, "_alt_", string.format("%03d", day) }
+            else
+                motd = table.concat { motd, "_", string.format("%03d", day) }
+            end
         end
     end
     -- Set updated motd

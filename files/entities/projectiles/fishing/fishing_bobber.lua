@@ -12,7 +12,8 @@ end
 
 -- Particle logic
 local vsccomp = EntityGetFirstComponentIncludingDisabled(entity_id,"VariableStorageComponent")
-local line_target = EntityGetAllChildren(ComponentGetValue2(vsccomp,"value_int"))[1]
+local line_target = EntityGetAllChildren(ComponentGetValue2(vsccomp,"value_int"))[1] or 0
+if line_target == 0 then return end
 
 if ComponentGetIsEnabled(EntityGetFirstComponentIncludingDisabled(ComponentGetValue2(vsccomp,"value_int"),"LuaComponent")) == false then
     EntityKill(entity_id)

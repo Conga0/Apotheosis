@@ -94,9 +94,21 @@ function polytest()
         "wraith_weirdo_shield",
     }
 
-    for k=1,#options do
-        --PolymorphTableAddEntity( entity_xml:string, is_rare:bool = false, add_only_one_copy:bool = true ) [Adds the entity to the polymorph random table]
-        PolymorphTableAddEntity( "data/entities/animals/" .. options[k] .. ".xml", false, true)
+    if ModSettingGet( "Apotheosis.congacat_cat_immortal" )
+        for k=1,#options do
+            --PolymorphTableAddEntity( entity_xml:string, is_rare:bool = false, add_only_one_copy:bool = true ) [Adds the entity to the polymorph random table]
+            --Remove cats from the chaotic polymorph pool if they're immortal
+            --It'd be too confusing to have cats be immortal but people polymorph into mortal cats otherwise
+            local cat_check = string.find(options[k],"cat_")
+            if ModSettingGet( "Apotheosis.congacat_cat_immortal" ) and cat_check == false then
+                PolymorphTableAddEntity( "data/entities/animals/" .. options[k] .. ".xml", false, true)
+            end
+        end
+    else
+        for k=1,#options do
+            --PolymorphTableAddEntity( entity_xml:string, is_rare:bool = false, add_only_one_copy:bool = true ) [Adds the entity to the polymorph random table]
+            PolymorphTableAddEntity( "data/entities/animals/" .. options[k] .. ".xml", false, true)
+        end
     end
 
     --PolymorphTableAddEntity( "data/entities/animals/boss_pit/boss_pit.xml", false)
