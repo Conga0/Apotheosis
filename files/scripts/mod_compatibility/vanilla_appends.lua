@@ -884,6 +884,10 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
   content = content:gsub("( orb_count >= 33 )", "( orb_count >= 45 )")
   content = content:gsub("( orb_count > 33 )", "( orb_count > 45 )")
   content = content:gsub("if( orb_count < 33", "if( orb_count < 45")
+  
+  --Add Challenge mode win flags
+  --Conga: This doesn't work, no clue why
+  --content = content:gsub("local essence_1 = GameHasFlagRun( \"essence_fire\" )", "local essence_1 = GameHasFlagRun( \"essence_fire\" ) if GameHasFlagRun(\"apotheosis_towerclimb\") then AddFlagPersistent(\"apotheosis_card_unlocked_challenge_towerclimb_win\") elseif GameHasFlagRun(\"apotheosis_hardcore\") then AddFlagPersistent(\"apotheosis_card_unlocked_challenge_hardcore_win\") elseif GameHasFlagRun(\"apotheosis_missingmagic\") then AddFlagPersistent(\"apotheosis_card_unlocked_challenge_missingmagic_win\") end")
 
   --Debug data
   --print("printing sampo_start_ending_senquence.lua\n\n" .. content)

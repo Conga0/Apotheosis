@@ -5,7 +5,7 @@ if ModIsEnabled("nightmare") or ModIsEnabled("purgatory") then
 end
 
 ---Hell enemies 
-
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies,
     {
@@ -23,6 +23,7 @@ else
         entity     = "data/entities/animals/angel.xml"
     })
 end
+]]--
 
 table.insert(g_small_enemies,
 {
@@ -35,7 +36,7 @@ table.insert(g_small_enemies,
 
 
 ---Heaven enemies
-
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies_sky,
     {
@@ -53,7 +54,7 @@ else
         entity     = "data/entities/animals/angel.xml"
     })
 end
-
+]]--
 table.insert(g_small_enemies_sky,
 {
     prob           = 0.12,
@@ -83,7 +84,7 @@ table.insert(g_small_enemies_sky,
 
 
 --New Game ++ (2)
-
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies,
     {
@@ -103,11 +104,12 @@ else
         ngpluslevel = 2
     })
 end
+]]--
 
 
 
 --New Game ++++ (4)
-
+--[[
 if apotheosis_HardmodeCheck then 
     table.insert(g_big_enemies_sky,
     {
@@ -127,3 +129,4 @@ else
         ngpluslevel = 4
     })
 end
+]]--

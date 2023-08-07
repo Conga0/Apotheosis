@@ -205,7 +205,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HOLYORB_SHOTGUN",
-        id_matchup  = "LANCE",
+        id_matchup  = "LANCE_HOLY",
         name 		= "$spell_apotheosis_holy_orb_barrage_name",
         description = "$spell_apotheosis_holy_orb_barrage_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",

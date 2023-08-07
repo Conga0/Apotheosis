@@ -189,7 +189,12 @@ function spawn_teleporter(x, y)
 end
 
 function spawn_potions(x, y)
-	EntityLoad("data/entities/items/pickup/potion.xml", x, y)
+	math.randomseed(x + y)
+	if math.random(1,100) == 1 then
+		EntityLoad( "mods/Apotheosis/files/entities/items/pickups/runestones/runestone_alchemy.xml", x, y )
+	else
+		EntityLoad("data/entities/items/pickup/potion.xml", x, y)
+	end
 end
 
 function spawn_spells(x, y)

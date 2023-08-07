@@ -9,10 +9,9 @@ end
 
 ---Hell enemies 
 
---[[
-]]--
+
 --Divine Being only spawns during April Fools
-if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then 
+if (ModSettingGet( "Apotheosis.seasonal_events" ) and ( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools == true then 
     table.insert(g_big_enemies,
     {
         prob           = 0.08,
@@ -94,9 +93,8 @@ table.insert(g_small_enemies_sky,
     entity     = "data/entities/animals/the_end/fairy_big_discord.xml"
 })
 
---[[
-]]--
-if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then 
+
+if (ModSettingGet( "Apotheosis.seasonal_events" ) and ( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools == true then 
     table.insert(g_big_enemies_sky,
     {
         prob           = 0.04,
@@ -105,6 +103,7 @@ if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then
         entity     = "data/entities/animals/angel.xml"
     })
 end
+
 
 
 table.insert(g_small_enemies_sky,
