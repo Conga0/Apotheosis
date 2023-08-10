@@ -10,7 +10,7 @@ local essence_2 = GameHasFlagRun( "essence_air" )
 local essence_3 = GameHasFlagRun( "essence_water" )
 local essence_4 = GameHasFlagRun( "essence_laser" )
 
-local essence_6 = GameHasFlagRun( "apotheosis_essence_fungus" )
+local essence_6 = GameHasFlagRun( "apotheosis_card_unlocked_essence_fungus" )
 
 local players = EntityGetWithTag( "player_unit" )
 local players_ = EntityGetWithTag( test )

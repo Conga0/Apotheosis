@@ -183,6 +183,10 @@ local secret_seeds = {
         func = perkedup
     },
     ]]--
+    {
+        ID = "brokenbad",
+        func = brokenbad
+    },
 }
 
 

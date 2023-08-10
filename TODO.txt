@@ -1,10 +1,9 @@
 Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 Fix Esoteric Being divine light audio being desynced from the actual visual occuring (most noticable when the game is lagging)
-Fix Esoteric Being divine light visual being slightly desynced from the damage
+Might be good to update the "summoning sigil" for divine light since everything else got reworked to look prettier, it feels almost out of place now, could rotate the sprite for a smoother visual effect?
 
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
-Finish or Remove Corrupt Master of Twitching
 
 "New mod Apotheosis is out now!"
 MoCreeps

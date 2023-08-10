@@ -886,6 +886,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_AUTOFIRE",
+        id_matchup  = "TINY_GHOST",
         name 		= "$spell_apotheosis_autofire_name",
         description = "$spell_apotheosis_autofire_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/autofire.png",
@@ -1033,6 +1034,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_AFFLUENCE",
+        id_matchup  = "LIGHT",
         name 		= "$spell_apotheosis_affluence_name",
         description = "$spell_apotheosis_affluence_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/affluence.png",
@@ -1052,6 +1054,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_LIQUIDSPHERE_ACID",
+        id_matchup  = "INFESTATION",
         name 		= "$spell_apotheosis_liquidsphere_acid_name",
         description = "$spell_apotheosis_liquidsphere_acid_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_acid.png",
@@ -1072,6 +1075,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_LIQUIDSPHERE_WATER",
+        id_matchup  = "APOTHEOSIS_LIQUIDSPHERE_ACID",
         name 		= "$spell_apotheosis_liquidsphere_water_name",
         description = "$spell_apotheosis_liquidsphere_water_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_water.png",
@@ -1092,6 +1096,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM",
+        id_matchup  = "APOTHEOSIS_LIQUIDSPHERE_WATER",
         name 		= "$spell_apotheosis_liquidsphere_teleportatium_name",
         description = "$spell_apotheosis_liquidsphere_teleportatium_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_teleportatium.png",
@@ -1132,6 +1137,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_HEX_WATER",
+        id_matchup  = "APOTHEOSIS_HITFX_AFFLUENCE",
         name 		= "$spell_apotheosis_hex_water_name",
         description = "$spell_apotheosis_hex_water_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_water.png",
@@ -1151,6 +1157,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_HEX_OIL",
+        id_matchup  = "APOTHEOSIS_HITFX_HEX_WATER",
         name 		= "$spell_apotheosis_hex_oil_name",
         description = "$spell_apotheosis_hex_oil_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_oil.png",
@@ -1170,6 +1177,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_HEX_BLOOD",
+        id_matchup  = "APOTHEOSIS_HITFX_HEX_OIL",
         name 		= "$spell_apotheosis_hex_blood_name",
         description = "$spell_apotheosis_hex_blood_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_blood.png",
@@ -2002,7 +2010,7 @@ local apotheosis_spellappends = {
 		spawn_level                       = "3,4,5,6,10", -- I_SHAPE
 		spawn_probability                 = "0.1,0.2,0.5,0.5,0.2", -- I_SHAPE
 		price = 180,
-		mana = 5,
+		mana = 140,
 		max_uses = 20,
 		action 		= function()
 			local data

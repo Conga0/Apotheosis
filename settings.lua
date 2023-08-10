@@ -211,7 +211,7 @@ if HasFlagPersistent( "apotheosis_card_unlocked_cat_secret" ) then
 end
 
 --1.1.0
-if HasFlagPersistent( "apotheosis_essence_fungus" ) then
+if HasFlagPersistent( "apotheosis_card_unlocked_essence_fungus" ) then
   statue_count = statue_count + 1
 end
 if HasFlagPersistent( "apotheosis_moon_fungus_unlock" ) then

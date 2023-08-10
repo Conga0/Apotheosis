@@ -130,7 +130,7 @@ do local v = appends[k];
   local apotheosis_cat_secret_unlocked = HasFlagPersistent( "apotheosis_card_unlocked_cat_secret" )
 
   --1.1.0 unlocks
-  local apotheosis_essence_fungus = HasFlagPersistent( "apotheosis_essence_fungus" )
+  local apotheosis_essence_fungus = HasFlagPersistent( "apotheosis_card_unlocked_essence_fungus" )
   local apotheosis_essence_fungus_moon = HasFlagPersistent( "apotheosis_moon_fungus_unlock" )
   local apotheosis_pandora_rain = HasFlagPersistent( "apotheosis_misc_pandora_chest_rain" )
   local apotheosis_fire_lukki_dead = HasFlagPersistent( "apotheosis_card_unlocked_fire_lukki" )

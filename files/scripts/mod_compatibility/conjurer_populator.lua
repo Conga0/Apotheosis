@@ -526,14 +526,14 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_transmutation.png",
 	  },
 	  {
-		name="Water Spirit",
-		path="data/entities/animals/waterskull.xml",
-		image="data/ui_gfx/animal_icons/waterskull.png",
-	  },
-	  {
 		name="Suur Stendari",
 		path="data/entities/animals/wizard_firemage_greater.xml",
 		image="data/ui_gfx/animal_icons/wizard_firemage_greater.png",
+	  },
+	  {
+		name="Water Spirit",
+		path="data/entities/animals/waterskull.xml",
+		image="data/ui_gfx/animal_icons/waterskull.png",
 	  },
 	  {
 		name="Watermage",
@@ -696,6 +696,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/building_icons/chest_volcanic.png",
 	  },
 	  {
+		name="Runestone of Alchemy",
+		path="mods/Apotheosis/files/entities/items/pickups/runestones/runestone_alchemy.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/runestone_alchemy.png",
+	  },
+	  {
 		name="Sienenkivi",
 		path="mods/Apotheosis/files/entities/items/pickups/stone_fungus.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/stone_fungus.png",
@@ -746,27 +751,27 @@ table.insert(ALL_ENTITIES, {
 		image="mods/Apotheosis/files/ui_gfx/essences/fungus.png",
 	  },
 	  {
-		name="Nightmare Divine Being",
+		name="Nightmare Divine Being (Deprecated)",
 		path="data/entities/animals/gold_bosses/angel/angel.xml",
 		image="data/ui_gfx/gold_boss/angel.png",
 	  },
 	  {
-		name="Nightmare Colossal Blob",
+		name="Nightmare Colossal Blob (Deprecated)",
 		path="data/entities/animals/gold_bosses/boss_blob/blob_titan.xml",
 		image="data/ui_gfx/gold_boss/blob_titan.png",
 	  },
 	  {
-		name="Nightmare Abandoned Orchestra",
+		name="Nightmare Abandoned Orchestra (Deprecated)",
 		path="data/entities/animals/gold_bosses/boss_musical_ghost.xml",
 		image="data/ui_gfx/gold_boss/boss_musical_ghost.png",
 	  },
 	  {
-		name="Nightmare Giant Toxic Worm",
+		name="Nightmare Giant Toxic Worm (Deprecated)",
 		path="data/entities/animals/gold_bosses/toxic_worm/boss_toxic_worm.xml",
 		image="data/ui_gfx/gold_boss/boss_toxic_worm.png",
 	  },
 	  {
-		name="Nightmare Asthete of Heat",
+		name="Nightmare Asthete of Heat (Deprecated)",
 		path="data/entities/animals/gold_bosses/boss_fire_lukki/boss_fire_lukki.xml",
 		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
 	  },

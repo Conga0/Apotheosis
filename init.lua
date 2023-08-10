@@ -250,11 +250,11 @@ spell_apotheosis_firecharge_desc,"Imbues a projectile with a fiery charge, that 
 spell_apotheosis_knowledge_of_kings_name,The Knowledge of Kings,Знание королей,,,,,,,,,,,,
 spell_apotheosis_knowledge_of_kings_desc,Casting this spell causes something irreversibly permanent to occur,Использовании этого заклинания происходит нечто необратимо постоянное,,,,,,,,,,,,
 spell_apotheosis_portal_lukki_red_portal_name,Summon Red Portal,Призыв красного портала,,,,,,,,,,,,
-spell_apotheosis_portal_lukki_red_portal_desc,"Summons a red tinted portal where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с красным оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
+spell_apotheosis_portal_lukki_red_portal_desc,"Summons a red tinted portal to where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с красным оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
 spell_apotheosis_portal_lukki_blue_portal_name,Summon Blue Portal,Призыв синего портала,,,,,,,,,,,,
-spell_apotheosis_portal_lukki_blue_portal_desc,"Summons a blue tinted portal where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с синим оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
+spell_apotheosis_portal_lukki_blue_portal_desc,"Summons a blue tinted portal to where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с синим оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
 spell_apotheosis_portal_lukki_green_portal_name,Summon Green Portal,Призыв зелёного портала,,,,,,,,,,,,
-spell_apotheosis_portal_lukki_green_portal_desc,"Summons a green tinted portal where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с зелёным оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
+spell_apotheosis_portal_lukki_green_portal_desc,"Summons a green tinted portal to where it is focused, Right Click to mark a location for the portal to focus on.","Призыв портала с зелёным оттенком. Щёлкните правой кнопкой мыши, чтобы отметить место, на котором будет сфокусирован портал.",,,,,,,,,,,,
 spell_apotheosis_alt_fire_teleport_name,"Alt Fire Teleport Bolt",Телепортирующая молния (ПКМ),,,,,,,,,,,,
 spell_apotheosis_alt_fire_teleport_desc,"Right Click to fire a magical bolt that moves you wherever it ends up flying","Щёлкните правой кнопкой мыши, чтобы запустить телепортационную молнию.",,,,,,,,,,,,
 spell_apotheosis_alt_fire_teleport_short_name,"Alt Fire Small Teleport Bolt",Малая телепортирующая молния (ПКМ),,,,,,,,,,,,
@@ -495,7 +495,7 @@ spell_apotheosis_blood_power_desc,"Projectiles will pierce 2 times when bloody",
 spell_apotheosis_shape_wall_name,"Formation - Wall",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_desc,"Casts 5 spells in a wall-shaped pattern",,,,,,,,,,,,,
 spell_apotheosis_shot_wall_name,"Wallplicate",,,,,,,,,,,,,
-spell_apotheosis_shot_wall_desc,"Casts 5 copies of a projectile in a wall-shaped pattern",,,,,,,,,,,,,
+spell_apotheosis_shot_wall_desc,"Casts 5 copies of a projectile in a wall-shaped pattern, but the copies still cost mana",,,,,,,,,,,,,
 spell_apotheosis_summon_star_child_name,"Summon Star Child",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_summon_star_child_desc,"Summons a celestial familiar",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_fire_wall_name,"Wall of Fire",,,,,,,,,,,,,
@@ -697,7 +697,7 @@ motd_apotheosis_description_010,"Message of the Day \nEat crayons for divine kno
 motd_apotheosis_description_011,"Message of the Day \nRemember to check your wand before firing!",,,,,,,,,,,,,
 motd_apotheosis_description_012,"Message of the Day \nI have 7 very important lore related questions.",,,,,,,,,,,,,
 motd_apotheosis_description_013,"Message of the Day \nToday's magic numbers are: 78 40 28 59 20 13",,,,,,,,,,,,,
-motd_apotheosis_description_014,"Message of the Day \nEsoteric Beings fear curses.",,,,,,,,,,,,,
+motd_apotheosis_description_014,"Message of the Day \nThis sign will never lie to you.\nEspecially about matters concerning fish.",,,,,,,,,,,,,
 motd_apotheosis_description_015,"Message of the Day \nCan you hear ghosts? \nWithout assistance?",,,,,,,,,,,,,
 motd_apotheosis_description_016,"Message of the Day \nMasters of Trolling like red outlines. \nThey'll fit right in","Сообщение дня \nМастера троллинга любят красные контуры. \nОни отлично впишутся",,,,,,,,,,,,
 motd_apotheosis_description_017,"Message of the Day \nMusical Beings fear more than just stones....","Сообщение дня \nМузыкальные существа боятся больше, чем просто камней....",,,,,,,,,,,,
@@ -997,23 +997,11 @@ if ModIsEnabled("biome-plus") then
 end
 
 
---Flesh Biome
-if ModIsEnabled("flesh_biome") then
-
-    --Normal Spawns
-	ModLuaFileAppend( "mods/flesh_biome/files/scripts/flesh_biome.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/flesh_biome_populator.lua" )
-
-    --Global Spawns
-	ModLuaFileAppend( "mods/flesh_biome/files/scripts/flesh_biome.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-
-end
-
-
 --New Enemies, boosts ghost spawnrate in sandcave so they aren't flushed out by the quantity of other creatures.
 --Also boosts Divine Being & Divine Poring spawnrates in Heaven & Hell for unlocks
 if ModIsEnabled("new_enemies") then
 	ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/the_end_angelboost_populator.lua" )
+	--ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/the_end_angelboost_populator.lua" )
 end
 
 --New Enemies, boosts ghost spawnrate in sandcave so they aren't flushed out by the quantity of other creatures, compatibility for alt biomes.
@@ -1874,7 +1862,7 @@ function OnPlayerSpawned( player_entity )
 
   --Calculate RNG
   SetRandomSeed(111,222)
-  if Random(1,10000) == 1 then
+  if Random(1,2000) == 1 then
     GameAddFlagRun(table.concat({"apothe","osis_","div","ine_red_fi","sh"}))
   end
 end
