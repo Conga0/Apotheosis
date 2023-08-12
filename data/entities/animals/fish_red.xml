@@ -1,6 +1,6 @@
 <Entity name="$animal_fish_large" 
     tags="mortal,hittable,helpless_animal,prey,ui_use_raw_name" >
-
+    
     <AdvancedFishAIComponent
         move_check_range_min="8"
         >
