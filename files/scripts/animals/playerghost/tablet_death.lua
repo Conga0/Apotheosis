@@ -7,7 +7,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
     for k=1,#comps
     do local v = comps[k]
         if ComponentGetValue2(v,"name") == "tablet_path" then
-            path = ComponentSetValue2(v,"value_string")
+            path = ComponentGetValue2(v,"value_string")
             break
         end
     end

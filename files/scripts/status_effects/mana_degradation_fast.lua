@@ -1,6 +1,5 @@
 --Written by Squirrelly
 
-dofile("data/scripts/lib/utilities.lua")
 local entity_id = GetUpdatedEntityID() 
 local player = EntityGetRootEntity( entity_id ) 
 local children = EntityGetAllChildren( player ) 

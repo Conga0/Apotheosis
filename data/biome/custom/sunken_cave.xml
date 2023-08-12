@@ -2,11 +2,11 @@
   <Topology 
     name="$biome_underwater"
     type="BIOME_WANG_TILE"
-    background_image="data/weather_gfx/background_snowcave.png"
-    background_edge_left="data/weather_gfx/edges/background_snowcave_left.png"
-    background_edge_right="data/weather_gfx/edges/background_snowcave_right.png"
-    background_edge_top="data/weather_gfx/edges/background_snowcave_top.png"
-    background_edge_bottom="data/weather_gfx/edges/background_snowcave_bottom.png"
+    background_image="mods/apotheosis/files/weather_gfx/sunken_cavern_background.png"
+    background_edge_left="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_left.png"
+    background_edge_right="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_right.png"
+    background_edge_top="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_top.png"
+    background_edge_bottom="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_bottom.png"
     background_edge_priority="10"     
     limit_background_image="0"
     

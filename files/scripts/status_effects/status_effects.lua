@@ -135,6 +135,13 @@ local apotheosis_status_list = {
         ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/clear_status.png",
         effect_entity="mods/apotheosis/files/entities/misc/effect_clear_status.xml",
     },
+    {
+        id="apotheosis_RIDESHARE",
+        ui_name="$status_apotheosis_rideshare_name",
+        ui_description="$status_apotheosis_rideshare_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/teleport_rideshare.png",
+        effect_entity="mods/apotheosis/files/entities/misc/effect_teleport_rideshare.xml",
+    },
 }
 
 for k=1,#apotheosis_status_list

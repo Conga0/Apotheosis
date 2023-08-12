@@ -1,4 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local targets = EntityGetWithTag( "player_unit" )
 

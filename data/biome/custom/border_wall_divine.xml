@@ -44,7 +44,7 @@
   <Materials 
     name="solid_wall" 
      >
-  
+
     <MaterialComponent 
       _enabled="1" 
       is_rare="0" 
@@ -54,7 +54,7 @@
       material_index="10" 
       material_max="3.95" 
       material_min="-100.0" 
-      material_name="rock_static_cursed_hard" 
+      material_name="rock_static_cursed_hard_soft" 
       rare_polka_is_boxed="1" 
       rare_polka_probability="0.2" 
       rare_polka_radius_high="0.65" 

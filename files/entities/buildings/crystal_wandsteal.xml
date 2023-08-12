@@ -4,6 +4,7 @@
 
   <DamageModelComponent 
     _enabled="1" 
+	create_ragdoll="1"
     air_needed="0"  
     falling_damages="0" 
     fire_damage_amount="0.2" 

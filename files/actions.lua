@@ -39,6 +39,7 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    --[[
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY",
         id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY",
@@ -59,9 +60,10 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    ]]--
     {
         id          = "APOTHEOSIS_ICEBALL_RAY",
-        id_matchup  = "APOTHEOSIS_DYNAMITE_RAY",
+        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY",
         name 		= "$spell_apotheosis_thrower_ice_ball_name",
         description = "$spell_apotheosis_thrower_ice_ball_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray.png",
@@ -139,6 +141,7 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    --[[
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
         id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
@@ -159,9 +162,10 @@ local apotheosis_spellappends = {
             draw_actions( 1, true )
         end,
     },
+    ]]--
     {
         id          = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
-        id_matchup  = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
+        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_ice_ball_enemy_name",
         description = "$spell_apotheosis_thrower_ice_ball_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray_enemy.png",
@@ -715,30 +719,6 @@ local apotheosis_spellappends = {
         end,
     },
     {
-        id          = "APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL",
-        name 		= "$spell_apotheosis_portal_lukki_blue_portal_name",
-        description = "$spell_apotheosis_portal_lukki_blue_portal_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/portal_blue_portal.png",
-        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
-        spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
-        spawn_manual_unlock = true,
-        never_unlimited		= false,
-        type 		= ACTION_TYPE_OTHER,
-        recursive	= true,
-        ai_never_uses = true,
-        spawn_level                       = "10", -- MANA_REDUCE
-        spawn_probability                 = "0", -- MANA_REDUCE
-        price = 4300,
-        mana = 300,
-        --max_uses    = 1,
-        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_blue_marker.xml",
-        action 		= function()
-            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_blue_portal.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 100
-            current_reload_time = current_reload_time + 100
-        end,
-    },
-    {
         id          = "APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL",
         name 		= "$spell_apotheosis_portal_lukki_green_portal_name",
         description = "$spell_apotheosis_portal_lukki_green_portal_desc",
@@ -758,6 +738,30 @@ local apotheosis_spellappends = {
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_green_marker.xml",
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_green_portal.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 100
+            current_reload_time = current_reload_time + 100
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL",
+        name 		= "$spell_apotheosis_portal_lukki_blue_portal_name",
+        description = "$spell_apotheosis_portal_lukki_blue_portal_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/portal_blue_portal.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+        spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        spawn_manual_unlock = true,
+        never_unlimited		= false,
+        type 		= ACTION_TYPE_OTHER,
+        recursive	= true,
+        ai_never_uses = true,
+        spawn_level                       = "10", -- MANA_REDUCE
+        spawn_probability                 = "0", -- MANA_REDUCE
+        price = 4300,
+        mana = 300,
+        --max_uses    = 1,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_blue_marker.xml",
+        action 		= function()
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_blue_portal.xml")
             c.fire_rate_wait = c.fire_rate_wait + 100
             current_reload_time = current_reload_time + 100
         end,
@@ -1082,7 +1086,7 @@ local apotheosis_spellappends = {
         spawn_probability = "0.7,0.8,0.8,0.7,0.6,0.4,0.2", -- X_RAY
         price = 120,
         mana = 120,
-        --max_uses    = 30, 
+        max_uses    = 30, 
         never_unlimited = false,
         action 		= function()
             add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml")
@@ -1859,7 +1863,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_burst.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
 		spawn_requires_flag = "card_unlocked_pyramid",
-		type 		= ACTION_TYPE_MODIFIER,
+		type 		= ACTION_TYPE_DRAW_MANY,
 		recursive	= true,
 		spawn_level                       = "2,3,4,5,6", -- BURST_4
 		spawn_probability                 = "0.4,0.5,0.6,0.6,0.6", -- BURST_4
