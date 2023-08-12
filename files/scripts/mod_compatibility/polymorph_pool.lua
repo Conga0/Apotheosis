@@ -94,7 +94,7 @@ function polytest()
         "wraith_weirdo_shield",
     }
 
-    if ModSettingGet( "Apotheosis.congacat_cat_immortal" )
+    if ModSettingGet( "Apotheosis.congacat_cat_immortal" ) then
         for k=1,#options do
             --PolymorphTableAddEntity( entity_xml:string, is_rare:bool = false, add_only_one_copy:bool = true ) [Adds the entity to the polymorph random table]
             --Remove cats from the chaotic polymorph pool if they're immortal

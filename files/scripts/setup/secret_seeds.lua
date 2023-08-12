@@ -19,6 +19,8 @@ end
 
 function towerclimb()
 
+    GameAddFlagRun("apotheosis_towerclimb")
+
     --Appends Tower Spawns to All vanilla biomes
     local populator_path = "mods/apotheosis/files/scripts/biomes/global_everything_populator_towerclimb.lua"
     local biomes = {
@@ -105,6 +107,8 @@ end
 
 function missingmagic()
 
+    GameAddFlagRun("apotheosis_missingmagic")
+
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic.lua" )
 
     AddUI("missingmagic")
@@ -179,6 +183,10 @@ local secret_seeds = {
         func = perkedup
     },
     ]]--
+    {
+        ID = "brokenbad",
+        func = brokenbad
+    },
 }
 
 

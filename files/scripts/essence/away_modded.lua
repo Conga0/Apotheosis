@@ -42,7 +42,7 @@ function death( )
 		EntityLoad( v, x, y - (i-1) * 12 )
 	end
 	
-	GameRemoveFlagRun( "apotheosis_essence_fungus" )
+	GameRemoveFlagRun( "apotheosis_card_unlocked_essence_fungus" )
 	
 	if doit then
 		EntityLoad( "data/entities/particles/image_emitters/perk_effect.xml", x, y )
