@@ -56,7 +56,7 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/wizard_wands.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_wands.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>

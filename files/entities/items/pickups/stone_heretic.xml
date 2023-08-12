@@ -22,6 +22,14 @@
 		image_file="mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png"
 		material="apotheosis_gem_box2d_red_hard"
 	></PhysicsImageShapeComponent>
+
+	<SpriteComponent
+		_tags="enabled_in_world"
+		_enabled="1"
+		offset_x="5"
+		offset_y="5"
+		image_file="mods/apotheosis/files/items_gfx/heretic_symbol.png"
+	></SpriteComponent>
 	
 	<PhysicsThrowableComponent
 		max_throw_speed="180"
@@ -43,6 +51,7 @@
 	></SpriteComponent>
 	
 	<SpriteParticleEmitterComponent
+		_tags="enabled_in_world,enabled_in_hand"
 		sprite_file="data/particles/darkflame_red.xml"
 		delay="0"
 		lifetime="2"

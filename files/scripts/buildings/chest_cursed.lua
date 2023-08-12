@@ -100,10 +100,10 @@ local pool = {
     "wizard_jackofalltrades",
     "wizard_manaeater",
     "wizard_transmutation",
-    "wizard_wands",
+    "wizard_corrupt_wands",
     "watermage",
     "watermage_greater",
-    "wizard_wands",
+    "wizard_corrupt_wands",
     --"wizard_watermage_greater", --Early unused version of Greater Watermage who shoots out aquamines, visually it's a coloured Suur Stendari
     "wraith_returner_apotheosis",
     "wraith_weirdo_shield",

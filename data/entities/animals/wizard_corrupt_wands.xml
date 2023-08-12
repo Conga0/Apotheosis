@@ -27,7 +27,7 @@
 		
 		<DamageModelComponent 
             hp="16"
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_wands/filenames.txt"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_wands/filenames.txt"
             ragdoll_material="apotheosis_meat_mana"
 			blood_material="magic_liquid_mana_regeneration"
 			blood_spray_material="magic_liquid_mana_regeneration"
@@ -36,7 +36,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/wizard_wands.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_wands.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -124,7 +124,7 @@
 		_tags="character" 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/wizard_wands_emissive.xml"
+		image_file="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_wands_emissive.xml"
 		offset_x="0" 
 		offset_y="0"
 		emissive="1"

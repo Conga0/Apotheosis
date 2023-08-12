@@ -43,3 +43,5 @@ function do_newgame_plus()
 		end
 	end
 end
+
+do_newgame_plus()

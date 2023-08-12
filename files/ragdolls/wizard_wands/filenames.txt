@@ -1,4 +1,0 @@
-mods/Apotheosis/files/ragdolls/wizard_wands/torso.png
-mods/Apotheosis/files/ragdolls/wizard_wands/hand.png
-mods/Apotheosis/files/ragdolls/wizard_wands/feet.png
-mods/Apotheosis/files/ragdolls/wizard_wands/head.png
