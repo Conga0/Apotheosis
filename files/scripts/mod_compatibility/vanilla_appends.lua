@@ -228,7 +228,7 @@ do
     "wizard_corrupt_twitchy",
     "wizard_corrupt_weaken",
     "wizard_corrupt_poly",
-    --"wizard_wands",
+    --"wizard_corrupt_wands",
   }
 
   MultiplyHP("data/entities/animals/",enemy_list,multiplier,true)

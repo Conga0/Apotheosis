@@ -1,5 +1,5 @@
 <Sprite 
-  filename="mods/Apotheosis/files/enemies_gfx/wizard_wands_emissive.png" 
+  filename="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_wands_emissive.png" 
   offset_x="8" 
   offset_y="14"
   default_animation="stand" >

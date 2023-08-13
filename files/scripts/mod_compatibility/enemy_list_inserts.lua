@@ -134,7 +134,7 @@ local insert_list = {
     },
     {
         id_matchup="wizard_twitchy",    --Behold! 19 consecutive appends
-        name="wizard_ambrosia\nwizard_copeseethmald\nwizard_duck\nenchanted_duck\nwizard_explosive\nwizard_jackofalltrades\nwizard_manaeater\nwizard_transmutation\nwizard_wands\nwizard_z_poly_miniboss\nwizard_corrupt_ambrosia\nwizard_corrupt_hearty\nwizard_corrupt_manaeater\nwizard_corrupt_neutral\nwizard_corrupt_swapper\nwizard_corrupt_teleport\nwizard_corrupt_twitchy\nwizard_corrupt_weaken",
+        name="wizard_ambrosia\nwizard_copeseethmald\nwizard_duck\nenchanted_duck\nwizard_explosive\nwizard_jackofalltrades\nwizard_manaeater\nwizard_transmutation\nwizard_corrupt_wands\nwizard_z_poly_miniboss\nwizard_corrupt_ambrosia\nwizard_corrupt_hearty\nwizard_corrupt_manaeater\nwizard_corrupt_neutral\nwizard_corrupt_swapper\nwizard_corrupt_teleport\nwizard_corrupt_twitchy\nwizard_corrupt_weaken",
     },
     {
         id_matchup="wraith_glowing",

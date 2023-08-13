@@ -134,7 +134,7 @@ g_big_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/sunken_cave/wizard_wands.xml"
+		entity 	= "data/entities/animals/sunken_cave/wizard_corrupt_wands.xml"
 	},
 	{
 		prob   		= 0.05,

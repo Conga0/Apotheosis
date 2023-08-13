@@ -437,7 +437,7 @@ local apotheosis_creatures = {
         name="Master of Transmutation",
     },
     {
-        file="wizard_wands",
+        file="wizard_corrupt_wands",
         name="Master of Puppetering",
     },
     {
@@ -624,7 +624,7 @@ local apotheosis_creatures_default = {
     "wizard_jackofalltrades",
     "wizard_manaeater",
     "wizard_transmutation",
-    "wizard_wands",
+    "wizard_corrupt_wands",
     "wizard_z_poly_miniboss",
     "worm_wall",
     "wraith_alchemy_apotheosis",

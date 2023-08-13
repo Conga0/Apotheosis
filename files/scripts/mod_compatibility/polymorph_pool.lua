@@ -86,7 +86,7 @@ function polytest()
         "wizard_jackofalltrades",
         "wizard_manaeater",
         "wizard_transmutation",
-        "wizard_wands",
+        "wizard_corrupt_wands",
         "wizard_z_poly_miniboss",
         "worm_wall",
         "wraith_alchemy_apotheosis",

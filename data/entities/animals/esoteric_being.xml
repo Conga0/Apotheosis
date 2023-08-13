@@ -230,5 +230,14 @@
 	    remove_after_executed="1" >
 	</LuaComponent>
 
+		<SpriteComponent 
+			_tags="character"
+			offset_x="0"
+			offset_y="0"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/enemies_gfx/esoteric_being_alt_emissive.xml" >
+		</SpriteComponent>
+
 </Entity>
 

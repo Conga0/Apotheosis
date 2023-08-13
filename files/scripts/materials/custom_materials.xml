@@ -2373,7 +2373,7 @@
 	show_in_creative_mode="1"
 	>
     <Graphics 
-	texture_file="mods/apotheosis/files/materials_gfx/vines.png" 
+	texture_file="data/materials_gfx/badroot.png" 
 	color="ff526F36" >
     </Graphics>
   </CellData>

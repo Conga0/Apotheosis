@@ -42,7 +42,7 @@ g_small_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/planes/wizard_wands.xml"
+		entity 	= "data/entities/animals/planes/wizard_corrupt_wands.xml"
 	},
 	{
 		prob   		= 0.05,

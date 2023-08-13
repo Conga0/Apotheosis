@@ -83,6 +83,7 @@
 		</SpriteComponent>
 		
 		<SpriteComponent 
+			_tags="character"
 			alpha="0.55"
 			image_file="data/particles/fog_of_war_hole_256.xml"
 			smooth_filtering="1"
