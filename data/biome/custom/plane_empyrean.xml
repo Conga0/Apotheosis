@@ -1,0 +1,52 @@
+<Biome>
+  <Topology 
+    name="$biome_empyrean"
+    background_image="data/weather_gfx/background_cave_02.png"
+    background_use_neighbor="0"
+    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/plane_empyrean.lua"
+    mBiomeMaterialsFile="data/materials/biome_forest.xml" 
+    mExtraPerlinScaleX="0.05" 
+    mExtraPerlinScaleY="0.0342857" 
+    mGradientAddNoise="1" 
+    mGradientEndY="1024" 
+    mGradientHighNoise="234.057" 
+    mGradientLowNoise="-292.571" 
+    mGradientMaxY="0.17" 
+    mGradientMinY="0.25" 
+    mGradientNoiseScale="0.00128571" 
+    mGradientSinMultipleMax="0.005153" 
+    mGradientSinMultipleMin="0.0021" 
+    mGradientStartY="-1024" 
+    mGradientType="1" 
+    mInsidePerlinClamped="0" 
+    mInsidePerlinScaleMax="2" 
+    mInsidePerlinScaleMin="0.057143" 
+    mInsidePerlinScaleX="1" 
+    mInsidePerlinScaleY="1" 
+    mInsidePerlinScaled="1" 
+    mInsidePerlinSquared="0" 
+    mMultiplierExtraPerlin="1" 
+    mMultiplierGradient="0.871429" 
+    mMultiplierPerlin="0.642857" 
+    mPerlinScale_x="0" 
+    mPerlinScale_y="105" 
+    mWaterLevel="1000"
+    limit_background_image="1"
+    fat_biome_edges="0"
+    audio_music_2="tower"
+    audio_ambience="cave"
+    background_edge_priority="9"
+    background_use_neighbor="1"
+    background_image_height="99999"
+    limit_background_image="true"
+     >
+
+  </Topology>
+
+  <Materials 
+    name="solid_wall" 
+     >
+  
+  </Materials>
+
+</Biome>

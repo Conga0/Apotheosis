@@ -14,6 +14,7 @@ if ( comp ~= nil ) then
 	ComponentObjectSetValue2( comp, "damage_multipliers", "ice", 0.8 )
 	ComponentObjectSetValue2( comp, "damage_multipliers", "curse", 0.7 )
 	ComponentObjectSetValue2( comp, "damage_multipliers", "drill", 0.3 )
+	ComponentObjectSetValue2( comp, "damage_multipliers", "holy", 0.3 )
 end
 
 local sprite_comps = EntityGetComponent(root_id, "SpriteComponent") or {}

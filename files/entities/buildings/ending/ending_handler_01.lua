@@ -6,6 +6,8 @@ local runtime = GameGetFrameNum() - initframe
 --local pos_x, pos_y = (225 -700)
 local pos_x, pos_y = EntityGetTransform(entity_id)
 local player_id = EntityGetWithTag("player_unit")[1]
+local plyr_x, plyr_y = EntityGetTransform(player_id)
+local sheep_plyr = EntityGetWithTag("polymorphed_player")[1]
 
 function set_controls_enabled(enabled)
     local player = EntityGetWithTag("player_unit")[1]
@@ -26,6 +28,16 @@ function PlayerCamControls(enabled)   --Disables camera locking onto player
     ComponentSetValue2(comp,"center_camera_on_this_entity",enabled)
 end
 
+function permapolymorph_entity( entity_id )
+	local comp_poly = GameGetGameEffect( entity_id, "POLYMORPH" )
+	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_RANDOM" ) end
+	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_UNSTABLE" ) end
+	
+	-- forever polymorph!
+	if( comp_poly ) then ComponentSetValue2( comp_poly, "frames", -1 ) end
+end
+
+--[[
 local entityEvents = {
     --{lifetime_to_run_at,entity_filepath_to_load,frame_runtime (leave at 0 if default of 60)},
     {0,"mods/apotheosis/files/entities/intro/1_1.xml"},
@@ -62,104 +74,54 @@ do local v = entityEvents[k]
         break
     end
 end
+]]--
 
 --Cutscene Initialization
 if runtime == 0 then
-    --Gather world entity data
-    local worldEntity = GameGetWorldStateEntity()
-    local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
-
-    --Set weather up to be nice
-    ComponentSetValue2(comp,"intro_weather",true)
-    ComponentSetValue2(comp,"time",0.55)
-    ComponentSetValue2(comp,"time_dt",0.5)
-    ComponentSetValue2(comp,"fog",0)
-    ComponentSetValue2(comp,"rain",0)
-
-    --Prepare camera for cutscene
-    GameSetCameraFree(true)
-    set_controls_enabled(false)
-    EntitySetTransform(entity_id, 225, -700)
-    PlayerCamControls(false)
-    pos_x, pos_y = (225 -700)
-
-    --Kill mountain music & play intro music
-    EntityKill(EntityGetWithName( "intro_start_music_trigger" ))
-    EntityKill(EntityGetWithName( "intro_start_music_trigger_left" ))
-    GamePlaySound( "data/audio/Desktop/music.bank", "music/intro/00", pos_x, pos_y )
-
-    --Spawn intro brazier
-    EntityLoad("data/entities/props/physics_torch_stand_intro.xml", 275, -90)
-
-    local child = EntityLoad("mods/apotheosis/files/entities/misc/effect_protection_all_intro.xml")
-    EntityAddChild(player_id,child)
-
-    --Disable the player's hud during the intro cutscene
-    ToggleUI(player_id,false)
-
-    --Clear ingame text log
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
+    EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_01.xml", pos_x, pos_y)
 end
 
-if runtime == 10 then
-    --Clear ingame text log again when the player selects their wand
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
-    GamePrint("")
-end
+--Shake the screen & accelerate time
+if runtime < 420 then
+    --Shake the screen
+    GameScreenshake( 1, plyr_x, plyr_y )
 
---Pan camera downwards to the player
-if runtime > 1260 then
-
-    local lerp_amount = 0.993
-
-    local entity_id = GetUpdatedEntityID()
-    local pos_x, pos_y = EntityGetTransform( entity_id )
-        
-    -- lerp towards target
-    local target_x, target_y = EntityGetTransform(player_id)
-    --local target_x, target_y = (227 -85)
-    if target_x == nil then return end
-    
-    -- move towards target
-    pos_x,pos_y = lerpVec(pos_x, pos_y, target_x, target_y + 30, lerp_amount)
-    EntitySetTransform( entity_id, pos_x, pos_y, 0, 1, 1)
-    
-    --Fast forward time to midday
+    --Fast forward time
     local worldEntity = GameGetWorldStateEntity()
     local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
     local time = ComponentGetValue2(comp,"time")
     ComponentSetValue2(comp,"time",time + 0.001)
 end
 
---Make player stand up, timed so the animation ends perfectly with the player gaining control
-if runtime == 1260 + 189 then
-    GamePlayAnimation( player_id, "intro_stand_up", 51 )
+
+if runtime > 420 and runtime < 430 then
+    --permanently polymorph the player, get laughed at nerd
+    --print("found player, trying to polymorph")
+    if player_id then
+        --Conga: Make this a custom sheep with very high hp so the game stops with the red flashing, also would stop the player from killing themselves prematurely
+        EntityAddRandomStains(player_id,CellFactory_GetType("magic_liquid_polymorph"),1000)
+    elseif sheep_plyr then
+        permapolymorph_entity(sheep_plyr)
+    end
 end
 
---Exit cutscene mode, reenable hud, return control to player
---Else, update the camera position each frame
-if runtime > 1260 + 420 then
-    GameSetCameraFree(false)
-    set_controls_enabled(true)
-    PlayerCamControls(true)
-    EntityKill(entity_id)
-    --EntitySetTransform(player_id, 227, -85)
-    refreshSprites(player_id)
-    ToggleUI(player_id,true)
 
-    local worldEntity = GameGetWorldStateEntity()
-    local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
-    ComponentSetValue2(comp,"time_dt",1)
-    AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
-else
-    GameSetCameraPos(pos_x,pos_y)
+if runtime == 600 then
+    --Begin Apotheosis credits screen
+    EntityLoad("mods/apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
+    GameAddFlagRun("ending_game_completed")
 end
+
+if runtime == 600 + 3800 then
+    --Declare run as victorious, begin Noita credits screen
+    GameOnCompleted()
+    local plyr_x, plyr_y = EntityGetTransform(sheep_plyr)
+    EntityLoad("data/entities/animals/sheep.xml", plyr_x, plyr_y)
+    EntityKill(sheep_plyr)
+    GameAddFlagRun("ending_game_completed")
+    --EntityKill(player_id)
+    --EntityAddRandomStains(player_id,CellFactory_GetType("magic_liquid_polymorph"),1000)
+    --permapolymorph_entity(player_id)
+end
+
+

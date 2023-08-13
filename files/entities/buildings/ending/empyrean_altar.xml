@@ -1,0 +1,19 @@
+<Entity serialize="1">
+
+	<!--It's been a long ride, huh? Well we're close to the end of it!-->
+	<!--Let's push to the final hurdle!!-->
+
+	 <!--Press $0 to undergo apotheosis.-->
+	<ItemComponent
+		custom_pickup_string="$building_apotheosis_interact"
+	/>
+	</ItemComponent>
+  
+  <LuaComponent 
+	script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/apotheosis.lua"
+	execute_times="-1"
+	execute_every_n_frame="-1"
+	>
+  </LuaComponent>
+
+</Entity>

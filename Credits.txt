@@ -31,6 +31,7 @@ Creating Magic Inerberation script
 Glass Cannon compatibility for Liquid Bubbles
 Various Code Contributions
 Creating the Pillar Sprites for various perk creation altar stones
+Created glyph graphics for Toxic Worm Nest & Earth Essence room
 
 PickledSosig - Creating the Virulent Caverns background sprites
 Creating the Ant Nest background sprites
@@ -42,6 +43,8 @@ Letaali - Translating Orb Room lore to finnish
 SpicySpaceSnake - Recreating Orb Room glyph font
 
 Squirrelly#6472 - Created the mana drain effect lua script, your mana wouldn't be stolen without their help
+
+Evasia - Created the item list appends script
 
 Y🍵 - Creator of More Musical Magic, implemented into this mod to allow for new musical songs
 

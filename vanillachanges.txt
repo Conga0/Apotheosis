@@ -30,7 +30,7 @@ Playerghosts can now "parry" tablets
 Friendship quest now is now slightly more involved
 Toxic Immunity now grants immunity to toxic damage
 Masters of Homing are now made of a slightly tastier meat than slime
-Necklace & Gemmed necklace cosmetics require 45 and 46 orbs respectively
+Gemmed necklace cosmetic now requires 46 orbs
 
 
 New Biome Modifiers:

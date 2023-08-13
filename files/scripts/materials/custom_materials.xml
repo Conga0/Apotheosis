@@ -2809,6 +2809,13 @@
 		output_cell1="steam" output_cell2="apotheosis_magic_liquid_rideshare"
 		>
 	</Reaction>
+	
+	<!--Worm Blood + Chaotic Poly = Centipede Blood-->
+	<Reaction probability="50"
+		input_cell1="blood_worm" input_cell2="magic_liquid_random_polymorph"
+		output_cell1="apotheosis_blood_worm_centipede" output_cell2="magic_liquid_random_polymorph"
+		>
+	</Reaction>
 
 </Materials>
 

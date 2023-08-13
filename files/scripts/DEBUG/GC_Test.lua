@@ -1,6 +1,6 @@
 local entity_id = GetUpdatedEntityID()
 
-GamePrint("trying to add GC to bubble")
+--GamePrint("trying to add GC to bubble")
 
 dofile_once("data/scripts/perks/perk.lua")
 dofile( "data/scripts/perks/perk_pickup.lua" )

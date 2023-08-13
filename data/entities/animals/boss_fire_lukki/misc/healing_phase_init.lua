@@ -18,6 +18,7 @@ if ( comp ~= nil ) then
 		ComponentObjectSetValue2( comp, "damage_multipliers", "slice", -0.25 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "ice", -1.0 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "curse", -1.0 )
+		ComponentObjectSetValue2( comp, "damage_multipliers", "holy", -1.0 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "drill", -1.0 )
 	else
 		ComponentObjectSetValue2( comp, "damage_multipliers", "melee", -0.4 )
@@ -27,6 +28,7 @@ if ( comp ~= nil ) then
 		ComponentObjectSetValue2( comp, "damage_multipliers", "slice", -0.1 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "ice", -0.4 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "curse", -0.4 )
+		ComponentObjectSetValue2( comp, "damage_multipliers", "holy", -0.4 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "drill", -0.4 )
 	end
 end

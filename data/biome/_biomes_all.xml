@@ -1227,6 +1227,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/plane_empyrean.xml"
+		height_index="13"
+		color="ffc9f484" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/arena_boss_mid.xml" 
 		height_index="10"
 		color="ff733eee" >

@@ -312,21 +312,6 @@ do
   ModTextFileSetContent(path, tostring(xml))
 end
 
-do -- Add a 1% chance for potions to be replaced with a potion from the rare pool
-  local path = "data/entities/items/pickup/potion.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  xml:add_child(nxml.parse([[
-    <LuaComponent 
-    execute_on_added="1"
-    remove_after_executed="1"
-    call_init_function="1"
-    script_source_file="mods/apotheosis/files/scripts/potions/potion_rare_spawninjector.lua" 
-  ></LuaComponent>
-  ]]))
-  ModTextFileSetContent(path, tostring(xml))
-end
-
 do -- Add lua script to vulnerability effect which applies "vulnerable" tag to afflicted creature (allows for lua scripts to detect for vulnerability)
   local path = "data/entities/misc/effect_weaken.xml"
   local content = ModTextFileGetContent(path)
@@ -881,9 +866,9 @@ end
 do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb rooms into consideration, 45 for all orbs and 46+ for Red Gem
   local path = "data/entities/animals/boss_centipede/ending/sampo_start_ending_sequence.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("( orb_count >= 33 )", "( orb_count >= 45 )")
+  --content = content:gsub("( orb_count >= 33 )", "( orb_count >= 45 )")
   content = content:gsub("( orb_count > 33 )", "( orb_count > 45 )")
-  content = content:gsub("if( orb_count < 33", "if( orb_count < 45")
+  --content = content:gsub("if( orb_count < 33", "if( orb_count < 45")
   
   --Add Challenge mode win flags
   --Conga: This doesn't work, no clue why
@@ -901,7 +886,7 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
   ]])
 
   --Debug data
-  print("printing sampo_start_ending_senquence.lua\n\n" .. content)
+  --print("printing sampo_start_ending_senquence.lua\n\n" .. content)
   ModTextFileSetContent(path, content)
 end
 
@@ -917,7 +902,31 @@ do -- Make humanoids take damage from poisonous gas
   content = content:gsub("acid,lava,poison", "acid,lava,poison,poison_gas")
   content = content:gsub("0.004,0.004,0.001", "0.004,0.004,0.001,0.0008")
 
-  --Debug data
-  --print("printing sampo_start_ending_senquence.lua\n\n" .. content)
   ModTextFileSetContent(path, content)
 end
+
+do -- Insert rare potion spawns into potion.lua
+  local path = "data/scripts/items/potion.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal()]], [[if Random(1,100) == 1 then
+		local opts = {
+			"apotheosis_magic_liquid_nukes",
+			"apotheosis_magic_liquid_escapium",
+			"apotheosis_milk",
+			"apotheosis_magic_liquid_mimic",
+		}
+
+		potion_material = opts[Random(1,#opts)]
+	end
+	
+	local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal]])
+
+  ModTextFileSetContent(path, content)
+end
+
+ModLuaFileAppend( "data/scripts/item_spawnlists.lua", "mods/Apotheosis/files/scripts/items/item_list_appends.lua" )
+
+--Debug data
+--local path = "data/scripts/item_spawnlists.lua"
+--local content = ModTextFileGetContent(path)
+--print(content)

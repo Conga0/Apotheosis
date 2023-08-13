@@ -4,6 +4,8 @@ Red Sand + Blood = Red Sand
 Mud + Pheromone = Magic Mud
 Magic Mud + Fire = Mud Man
 
+Worm Blood + Chaotic Polymorphine = Centipede Blood
+
 Soarium + Alcohol = Levitatium
 Levitatium + Concentrated Mana = Soarium
 Feathery Meat + Concentrated Mana = Soarium

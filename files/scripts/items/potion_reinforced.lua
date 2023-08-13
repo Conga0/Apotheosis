@@ -24,6 +24,17 @@ function init( entity_id )
 
 	-- load the material from VariableStorageComponent
 	
+	if Random(1,100) == 1 then
+		local opts = {
+			"apotheosis_magic_liquid_nukes",
+			"apotheosis_magic_liquid_escapium",
+			"apotheosis_milk",
+			"apotheosis_magic_liquid_mimic",
+		}
+
+		potion_material = opts[Random(1,#opts)]
+	end
+	
 	local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal()
 
 	

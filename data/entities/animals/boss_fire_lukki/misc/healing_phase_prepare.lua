@@ -33,5 +33,6 @@ else
 		ComponentObjectSetValue2( comp, "damage_multipliers", "ice", 0 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "curse", 0 )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "drill", 0 )
+		ComponentObjectSetValue2( comp, "damage_multipliers", "holy", 0 )
 	end
 end

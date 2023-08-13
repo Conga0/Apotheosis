@@ -54,6 +54,7 @@
 				ice="0.01"
 				radioactive="0.01"
 				curse="2.2"
+				holy="2.2"
 				>
 			</damage_multipliers>
 		</DamageModelComponent>
