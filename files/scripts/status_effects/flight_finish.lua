@@ -20,7 +20,7 @@ do v = children[k]
 end
 
 if permitted == true then
-    local charactercomp = EntityGetFirstComponentIncludingDisabled(player,"CharacterDataComponent")
+    local charactercomp = EntityGetFirstComponentIncludingDisabled(player,"CharacterDataComponent") --[[@cast charactercomp number]]
 
     if balance == false then
 

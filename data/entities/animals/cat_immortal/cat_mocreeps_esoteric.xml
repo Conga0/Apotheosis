@@ -4,7 +4,6 @@
 
         <AnimalAIComponent 
         	preferred_job="Escaping"
-			attack_melee_enabled="0"
 			attack_ranged_entity_file=""
 			attack_ranged_predict="1"
 			attack_ranged_enabled="0"
@@ -166,4 +165,3 @@
 	</Entity>
 
 </Entity>
-

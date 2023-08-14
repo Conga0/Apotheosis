@@ -1501,7 +1501,7 @@ local apotheosis_spellappends = {
 		end,
 	},
 	{
-		id          = "APOTHEOSIS_LARPA_DELAYED",
+		id          = "APOTHEOSIS_LARPA_DELAYED",   -- It slightly bothers me that the extra entity name and the ID are inconsistent
         id_matchup  = "LARPA_DEATH",
         name 		= "$spell_apotheosis_larpa_delayed_name",
         description = "$spell_apotheosis_larpa_delayed_desc",
@@ -1728,7 +1728,9 @@ local apotheosis_spellappends = {
 		mana = 40,
 		-- max_uses = 20,
 		action 		= function()
-            local targets = EntityGetWithTag("mortal")
+            local shooter = GetUpdatedEntityID()
+            local x, y = EntityGetTransform(shooter)
+            local targets = EntityGetInRadiusWithTag(x, y, 512, "mortal")
             local hotness = 1
             for k=1,#targets
             do local v = targets[k]
@@ -1776,20 +1778,13 @@ local apotheosis_spellappends = {
 		mana = -30,
 		-- max_uses = 20,
 		action 		= function()
-            draw_actions( 1, true )
-            if reflecting then
-                --Stops the game from getting angry
+            if reflecting or GameGetGameEffectCount( GetUpdatedEntityID(), "WET" )>0 then
                 c.fire_rate_wait    = c.fire_rate_wait - 10
                 current_reload_time = current_reload_time - 20
             else
-                local entity_id = GetUpdatedEntityID()
-                if GameGetGameEffectCount( entity_id, "WET" ) > 0 then
-                    c.fire_rate_wait    = c.fire_rate_wait - 10
-                    current_reload_time = current_reload_time - 20
-                else
-                    mana = mana - 30
-                end
+                mana = mana - 30
             end
+            draw_actions( 1, true )
 		end,
 	},
 	{
@@ -1806,8 +1801,8 @@ local apotheosis_spellappends = {
 		mana = 5,
 		--max_uses = 100,
 		action 		= function()
-			draw_actions(5, true)
 			c.pattern_degrees = 5
+			draw_actions(5, true)
 		end,
 	},
     --[[
@@ -1870,8 +1865,7 @@ local apotheosis_spellappends = {
 		price = 120,
 		mana = 5,
 		action 		= function( recursion_level, iteration )
-			SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
-			draw_actions( Random(4,8), true )
+			draw_actions( math.random(4,8), true )
         end
 	},
 	{

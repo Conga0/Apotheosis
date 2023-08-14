@@ -144,7 +144,7 @@ local apotheosis_status_list = {
     },
 }
 
-for k=1,#apotheosis_status_list
-do v = apotheosis_status_list[k]
-    table.insert(status_effects,v)
+local len = #status_effects
+for i=1, #apotheosis_status_list do
+    status_effects[len+i]=apotheosis_status_list[i]
 end

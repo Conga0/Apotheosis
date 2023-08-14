@@ -8,9 +8,9 @@ for k=1, #targets
 do local v = targets[k];
 	local found = false
 
-	local children = EntityGetAllChildren(v)
+	local children = EntityGetAllChildren(v) or {}
 	for z=1,#children
-	do c = children[z]
+	do local c = children[z]
 		if EntityGetName(c) == "apotheosis_hex_water" then
 			found = true
 		end

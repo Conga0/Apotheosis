@@ -16,7 +16,6 @@
 		    wait_for_kill_flag_on_death="0"
             fire_probability_of_ignition="0" 
 			ragdoll_fx_forced="DISINTEGRATED"
-			ragdoll_material="magic_liquid_hp_regeneration_unstable"
 			blood_material="magic_liquid_hp_regeneration_unstable"
 			blood_spray_material="magic_liquid_hp_regeneration_unstable"
 		    blood_multiplier="30"
@@ -127,4 +126,3 @@
 	</MaterialInventoryComponent>
 
 </Entity>
-

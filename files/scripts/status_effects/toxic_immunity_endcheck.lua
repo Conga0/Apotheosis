@@ -19,7 +19,7 @@ end
 if c_check ~= true then
     local valid = true
 
-    s= EntityGetComponent( target, "GameEffectComponent" )
+    local s = EntityGetComponent( target, "GameEffectComponent" )
     if ( s ~= nil ) then
         for i,v in ipairs( s ) do
             local name = ComponentGetValue2( v, "effect" )

@@ -18,7 +18,6 @@
 			materials_that_damage="acid,lava,magic_liquid_mana_regeneration,poison,blood_cold,blood_cold_vapour" 
 			materials_how_much_damage="0.005,0.024,0.024,0.003,0.0024,0.0021"
 			ragdoll_fx_forced="DISINTEGRATED"
-			ragdoll_material="water"
 			blood_material="water"
 			blood_spray_material="water"
 		    blood_multiplier="2"
@@ -121,4 +120,3 @@
 	</MaterialInventoryComponent>
 
 </Entity>
-

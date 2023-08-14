@@ -27,8 +27,8 @@
 		emission_interval_max_frames="1"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1" >
-	</ParticleEmitterComponent>
+		is_emitting="1"
+    />
 
 	<ParticleEmitterComponent
 		emitted_material_name="apotheosis_spark_orange"
@@ -89,11 +89,10 @@
 		emission_interval_max_frames="1"
 		emit_cosmetic_particles="1"
 		create_real_particles="0"
-		is_emitting="1" >
-	</ParticleEmitterComponent>
+		is_emitting="1"
+    />
 	
 	<LifetimeComponent
 		lifetime="2"
-		>
-	</LifetimeComponent>
+    />
 </Entity>
