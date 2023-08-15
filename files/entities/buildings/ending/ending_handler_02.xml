@@ -1,0 +1,15 @@
+<Entity serialize="0">
+
+	<LuaComponent
+        execute_on_added="1"
+		script_source_file="mods/apotheosis/files/entities/buildings/ending/ending_handler_02.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<LifetimeComponent
+		lifetime="6000" >
+	</LifetimeComponent>
+	
+</Entity>

@@ -3,31 +3,31 @@ dofile_once("data/scripts/lib/utilities.lua")
 local lines = {
   "",
   "$credits_apotheosis_line_01",
-  "",
+  " ",
   "Conga Lyne",
   "$credits_apotheosis_line_04",
-  "",
+  " ",
   "HinoGuchi Sorako",
   "$credits_apotheosis_line_07",
-  "",
+  " ",
   "Spoopy",
   "Various Enemy Sprites & Biome graphical design",
   " ",
   "PickledSosig",
-  "Virulent Caverns background sprites",
-  "",
+  "Various Sprites for biome background & structures",
+  " ",
   "Squirrelly",
   "$credits_apotheosis_line_14",
   "",
   "Blueberry",
   "$credits_apotheosis_line_17",
-  "",
+  " ",
   "Horscht",
   "$credits_apotheosis_line_horscht",
-  "",
+  " ",
   "Copi",
   "$credits_apotheosis_line_20",
-  "",
+  " ",
   "$credits_apotheosis_line_22",
   "Freakstritch",
   "Moriko Yumi",
@@ -47,9 +47,9 @@ local lines = {
   "Vexilus_",
   "Xytio",
   "$credits_apotheosis_line_39",
-  "",
-  "",
-  "",
+  " ",
+  " ",
+  " ",
   "$credits_apotheosis_line_43",
   "$credits_apotheosis_line_44",
   "$credits_apotheosis_line_45",
@@ -77,22 +77,19 @@ local lines = {
 
 
 --[[
+  ]]--
 --This acclerates the credits sequence when the player jumps
 --Issue 1: Easy for the player to accidentally trigger by wanting to fly around
 --Issue 2: Desyncs the main game credits sequence follow up as it occurs on a timer, not when these credits 'finish'
-local sheep_plyr = EntityGetWithTag("polymorphed_player")[1]
-local controls_comp = EntityGetFirstComponentIncludingDisabled(sheep_plyr, "ControlsComponent")
-local jump_down = ComponentGetValue2(controls_comp, "mButtonDownFly")
-local player = EntityGetWithTag("player_unit")[1]
-local accelerate = jump_down and (player == nil)
-]]--
+local accelerate = InputIsKeyDown( 44 )
+
 
 local entity_id = GetUpdatedEntityID()
 local player = EntityGetWithTag("player_unit")[1]
 
 gui = gui or GuiCreate()
 GuiStartFrame(gui)
-roll_credits_progress = (roll_credits_progress or -1) - 0.250 * (accelerate and 15 or 1)
+roll_credits_progress = (roll_credits_progress or -1) - 0.325 * (accelerate and 15 or 1)
 
 if not do_once and roll_credits_progress <= 0 then
   do_once = true
@@ -105,9 +102,31 @@ end
 
 
 --Noooo I don't want the Noita to die in these credits!
-if roll_credits_progress < -3800 then
-    EntityKill(GetUpdatedEntityID())
+if roll_credits_progress < -700 then
+    --EntityKill(GetUpdatedEntityID())
+
+    --Probably handle diff effects by scanning for a game flag to detect which ending is currently ongoing
+    if GameHasFlagRun("apotheosis_ending_sheep") then
+      local sheep_plyr = EntityGetWithTag("polymorphed_player")[1]
+      local plyr_x, plyr_y = EntityGetTransform(sheep_plyr)
+      EntityLoad("data/entities/animals/sheep.xml", plyr_x, plyr_y)
+      EntityKill(sheep_plyr)
+    else
+      local player_id = EntityGetWithTag("player_unit")[1]
+      EntityKill(player_id)
+    end
+    GameOnCompleted()
+    GameAddFlagRun("ending_game_completed")
 end
+
+--Noooo I don't want the Noita to die in these credits!
+if roll_credits_progress < -1500 then
+  --Cleanup
+  EntityKill(GetUpdatedEntityID())
+end
+
+--Debug Data
+--GamePrint("roll_credits_progress is " .. roll_credits_progress)
 
 GuiLayoutBeginVertical(gui, 50, 100)
 GuiOptionsAddForNextWidget(gui, GUI_OPTION.Align_HorizontalCenter)

@@ -18,7 +18,7 @@ local lines = {
   "",
   "Squirrelly",
   "$credits_apotheosis_line_14",
-  "",
+  " ",
   "Blueberry",
   "$credits_apotheosis_line_17",
   "",

@@ -10,7 +10,7 @@ local plyr_x, plyr_y = EntityGetTransform(player_id)
 local sheep_plyr = EntityGetWithTag("polymorphed_player")[1]
 
 function set_controls_enabled(enabled)
-    local player = EntityGetWithTag("polymorphed_player")[1]
+    local player = EntityGetWithTag("player_unit")[1]
     if player then
         local controls_component = EntityGetFirstComponentIncludingDisabled(player, "ControlsComponent")
         ComponentSetValue2(controls_component, "enabled", enabled)
@@ -23,18 +23,9 @@ function set_controls_enabled(enabled)
 end
 
 function PlayerCamControls(enabled)   --Disables camera locking onto player
-    local player = EntityGetWithTag("polymorphed_player")[1]
+    local player = EntityGetWithTag("player_unit")[1]
     local comp = EntityGetFirstComponentIncludingDisabled(player,"PlatformShooterPlayerComponent")
     ComponentSetValue2(comp,"center_camera_on_this_entity",enabled)
-end
-
-function permapolymorph_entity( entity_id )
-	local comp_poly = GameGetGameEffect( entity_id, "POLYMORPH" )
-	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_RANDOM" ) end
-	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_UNSTABLE" ) end
-	
-	-- forever polymorph!
-	if( comp_poly ) then ComponentSetValue2( comp_poly, "frames", -1 ) end
 end
 
 --[[
@@ -79,6 +70,7 @@ end
 --Cutscene Initialization
 if runtime == 0 then
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_01.xml", pos_x, pos_y)
+    
 end
 
 --Shake the screen & accelerate time
@@ -93,42 +85,39 @@ if runtime < 420 then
     ComponentSetValue2(comp,"time",time + 0.001)
 end
 
+--Prepare for player to be teleported offscreen by removing their control ability & power to control the camera
+if runtime == 420 then
+    set_controls_enabled(false)
+    PlayerCamControls(false)
+    local cam_x, cam_y = GameGetCameraPos()
+    GlobalsSetValue("apotheosis_ending_cam_x",tostring(cam_x))
+    GlobalsSetValue("apotheosis_ending_cam_y",tostring(cam_y))
+end
 
-if runtime > 420 and runtime < 423 then
-    --permanently polymorph the player, get laughed at nerd
-    --print("found player, trying to polymorph")
-    if player_id then
-        --Conga: Make this a custom sheep with very high hp so the game stops with the red flashing, also would stop the player from killing themselves prematurely
-        --EntityAddRandomStains(player_id,CellFactory_GetType("magic_liquid_polymorph"),1000)
-        LoadGameEffectEntityTo(player_id,"mods/apotheosis/files/entities/buildings/ending/effect_polymorph_sheep.xml")
-    elseif sheep_plyr then
-        permapolymorph_entity(sheep_plyr)
-        set_controls_enabled(false)
-        --PlayerCamControls(false)
-    end
+if runtime > 420 then
+    local cam_x = tonumber(GlobalsGetValue("apotheosis_ending_cam_x"))
+    local cam_y = tonumber(GlobalsGetValue("apotheosis_ending_cam_y"))
+    GameSetCameraPos(cam_x,cam_y)
+end
+
+--Spawn vanishing Particles
+--Teleport player downwards
+--Disable their need for oxygen incase it isn't already done
+if runtime == 421 then
+    EntityLoad("data/entities/particles/image_emitters/player_disappear_effect_right.xml", plyr_x, plyr_y)
+    EntitySetTransform(player_id, plyr_x, plyr_y + 300)
+    ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent"),"air_needed",false)
+end
+
+--Enable Mina's symbols in the skybox
+if runtime == 600 then
+    --Do Mina's Symbols
 end
 
 
-if runtime == 740 then
+if runtime == 900 then
     --Begin Apotheosis credits screen
-    --Adds the sheep flag so the script knows which ending sequence to prepare for
-    GameAddFlagRun("apotheosis_ending_sheep")
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
     GameAddFlagRun("ending_game_completed")
 end
-
---[[
---Moved over to credits screen script
-if runtime == 600 + 3600 then
-    --Declare run as victorious, begin Noita credits screen
-    GameOnCompleted()
-    local plyr_x, plyr_y = EntityGetTransform(sheep_plyr)
-    EntityLoad("data/entities/animals/sheep.xml", plyr_x, plyr_y)
-    EntityKill(sheep_plyr)
-    GameAddFlagRun("ending_game_completed")
-    --EntityKill(player_id)
-    --EntityAddRandomStains(player_id,CellFactory_GetType("magic_liquid_polymorph"),1000)
-    --permapolymorph_entity(player_id)
-end
-]]--
 

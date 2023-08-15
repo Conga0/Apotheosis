@@ -30,11 +30,14 @@ function item_pickup( entity_item, entity_who_picked, name )
     --Conga: None of the 3 entities below currently exist, please keep track of whether they're taken care of or not IN FULL future me and/or other inspiring coders
     if orb_count < 33 then
         --Ending 1
-        --Unfinished
+        --Finished Functionally
+        --Could be spruced up visually after the Empyrean set piece is made to have interaction with it
         EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_01.xml", pos_x, pos_y)
     elseif heretic_id == false then
         --Ending 2
-        --Unfinished
+        --Finished Functionally
+        --Missing visual effects of mina turning into god & symbols appearing in the background
+        --Could be spruced up visually after the Empyrean set piece is made to have interaction with it
         EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_02.xml", pos_x, pos_y)
     else
         --Ending 3

@@ -9,17 +9,18 @@ local comp = EntityGetComponentIncludingDisabled(entity_id,"PhysicsImageShapeCom
 local image = ComponentGetValue2(comp,"image_file")
 
 local inputlist = {
-    "data/items_gfx/brimstone.png",
-    "data/items_gfx/stonestone.png",
-    "data/items_gfx/smallgem_03.png",
-    "data/items_gfx/waterstone.png",
-    "data/items_gfx/kakke.png",
-    "mods/Apotheosis/files/items_gfx/stone_fungus.png",
-    "data/items_gfx/goldnugget_01.png",
-    "data/items_gfx/beamstone.png",
-    "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png",
-    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png",
-    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png",
+    "data/items_gfx/brimstone.png", --Fire Stone
+    "data/items_gfx/stonestone.png",    --Earth Stone
+    "data/items_gfx/smallgem_03.png",   --Lightning Stone
+    "data/items_gfx/waterstone.png",    --Water Stone
+    "data/items_gfx/kakke.png", --Spirit Stone
+    "mods/Apotheosis/files/items_gfx/stone_fungus.png", --Fungus Stone
+    "data/items_gfx/goldnugget_01.png", --Wand Stone
+    "data/items_gfx/beamstone.png", --Beam Stone
+    "data/items_gfx/goldnugget_9px.png",    --Sun Stone
+    "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png", --Sun Seed
+    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png", --Heretic Stone
+    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png", --Guiding Stone
 }
 
 local outputlist = {
@@ -31,6 +32,7 @@ local outputlist = {
     "APOTHEOSIS_TRIP_IMMUNITY",
     "EDIT_WANDS_EVERYWHERE",
     "MEGA_BEAM_STONE",
+    "REMOVE_FOG_OF_WAR",
     "REMOVE_FOG_OF_WAR",
     "GLOBAL_GORE",
     "APOTHEOSIS_PLANE_RADAR",

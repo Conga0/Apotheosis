@@ -471,14 +471,7 @@ local apotheosis_spellappends = {
                 -- I don't want it to though, because it only does the degree increase if it makes a split
                 --c.spread_degrees = c.spread_degrees + 10.0  
             else
-                -- this is run *after* reflection
-                local iter = 1
-                local iter = tonumber(GlobalsGetValue("APOTHEOSIS_global_splitseed", "0"))
-                if iter == 0 then
-                    SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() - 523 )
-                    GlobalsSetValue("APOTHEOSIS_global_splitseed", "1")
-                end
-                local rnd_num = Random( 1, 2 )
+                local rnd_num = math.random(1,2)
                 if ( hand ~= nil ) and ( rnd_num == 1 ) then
                     for i,data in ipairs( hand ) do
                         if ( data.type ~= ACTION_TYPE_OTHER and data.type ~= ACTION_TYPE_MODIFIER ) then
@@ -2230,6 +2223,7 @@ local actions_to_edit = {
         subtype = {
             bounce=true,
         },
+        mandatory_addition = true
     },
 
     -- Copi:    change this to reflect the changes better
@@ -2288,7 +2282,8 @@ local actions_to_edit = {
             local types = {"egg_monster","egg_slime","egg_red","egg_fire","apotheosis/egg_fairy","apotheosis/egg_mud","apotheosis/egg_robot"}
             local rnd = Random(1, #types)
             add_projectile(table.concat{"data/entities/items/pickup/", types[rnd], ".xml"})
-        end
+        end,
+        mandatory_addition = true
     },
 
     --Arrow doesn't have increased recoil
@@ -2302,28 +2297,35 @@ local actions_to_edit = {
 
     -- Homing subtype data
     ["HOMING"] = {
-        subtype = { homing=true }
+        subtype = { homing=true },
+        mandatory_addition = true
     },
     ["HOMING_SHORT"] = {
-        subtype = { homing=true }
+        subtype = { homing=true },
+        mandatory_addition = true
     },
     -- Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
     ["HOMING_ROTATE"] = {
         spawn_level         = "2,3,4,5,6,10",
         spawn_probability   = "0.6,0.8,1,1,0.6,0.1",
-        subtype = { homing=true }
+        subtype = { homing=true },
+        mandatory_addition = true
     },
     ["AUTOAIM"] = {
-        subtype = { homing=true }
+        subtype = { homing=true },
+        mandatory_addition = true
     },
     ["HOMING_ACCELERATING"] = {
-        subtype = { homing=true }
+        subtype = { homing=true },
+        mandatory_addition = true
     },
     ["HOMING_CURSOR"] = {
-        subtype = { homing=true }
+        subtype = { homing=true },
+        mandatory_addition = true
     },
     ["HOMING_AREA"] = {
-        subtype = { homing=true }
+        subtype = { homing=true },
+        mandatory_addition = true
     },
 
     --Conga: Actually, this was unneccessary, bastard still worms it's way in
@@ -2344,3 +2346,16 @@ for i=1,#actions do -- fast as fuck boi
         actions[i]['apotheosis_reworked'] = true
     end
 end
+
+--[[
+--Script should scan through each item, and if rebalances are enabled, it'll do all of them; otherwise only do mandatory additions
+--Not currently enabled, but would just need to be uncommented in theory.
+for i=1,#actions do -- fast as fuck boi
+    if actions_to_edit[actions[i].id] and (ModSettingGet( "spellrebalances" ) or actions_to_edit[mandatory_addition]) then
+        for key, value in pairs(actions_to_edit[actions[i].id]) do
+            actions[i][key] = value
+        end
+        actions[i]['apotheosis_reworked'] = true
+    end
+end
+]]

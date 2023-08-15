@@ -43,6 +43,10 @@ local secret_golden_cape_desc = "Is the Golden Cape cosmetic enabled? \nSome peo
 local exp_poly_name = "Expanded Polymorph Pool"
 local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph pool? \n \nThis is under a mod setting temporarily \nuntil this feature is added to the base game (non-beta branch)"
 
+--Conga: I suppose at the end of the day I'm OK with having this be an option, but want to make sure the mod is designed around having this being enabled
+local spellrebalances_name = "Spell Reworks"
+local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical\nAlso reworks piercing, chainsaw, music note spells & Weakening Curses to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
+
 
   --Russian Translations
 if currentLang == "русский" then
@@ -179,6 +183,16 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
+  --[[
+  {
+    id = "spellrebalances",
+    ui_name = spellrebalances_name,
+    ui_description = spellrebalances_desc,
+    value_default = false,
+    ---@diagnostic disable-next-line: undefined-global
+    scope = MOD_SETTING_SCOPE_NEW_GAME,
+  },
+  ]]--
 }
 
 --statue settings unlocks

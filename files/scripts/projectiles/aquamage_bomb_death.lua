@@ -1,6 +1,6 @@
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
-local r = 25
+local r = 30
 
 local targets = EntityGetInRadiusWithTag( x, y, r, "mortal" )
 

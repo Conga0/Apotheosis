@@ -10,6 +10,7 @@ local convertlist = {
     "waterstone",
     "poopstone",
     "seed_a",
+    "seed_b",
 }
 
 -- abort if conversion already in progress

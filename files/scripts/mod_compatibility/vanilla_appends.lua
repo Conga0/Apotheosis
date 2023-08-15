@@ -546,7 +546,7 @@ do  -- Fix monks not taking damage from concentrated mana or Veloium
   ModTextFileSetContent(path, tostring(xml))
 end
 
-
+-- SEARCH TAG SPELLREWORK
 do -- Piercing only hit 5 times per modifier
   local path = "data/entities/misc/piercing_shot.xml"
   local content = ModTextFileGetContent(path)
@@ -562,6 +562,12 @@ do -- Piercing only hit 5 times per modifier
   ]]))
   ModTextFileSetContent(path, tostring(xml))
 end
+
+--[[
+if (ModSettingGet( "spellrebalances" ) then
+  --Put piercing rework code here
+end
+]]--
 
 --Anvil of Destiny Compatibility
 if ModIsEnabled("anvil_of_destiny") then
