@@ -20,6 +20,6 @@
 		fade_based_on_lifetime="0"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		is_emitting="1" >
-	</ParticleEmitterComponent>
+		is_emitting="1"
+    />
 </Entity>

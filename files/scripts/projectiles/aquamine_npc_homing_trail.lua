@@ -9,6 +9,7 @@ local angle = math.rad(Random(0,359))
 local length = 40
 
 local vel_x = math.cos( angle ) * length
-local vel_y = 0 - math.sin( angle ) * length
+local vel_y = -math.sin( angle ) * length
 
+---@diagnostic disable-next-line: undefined-global
 shoot_projectile_from_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/aquamine_npc.xml", pos_x, pos_y, vel_x, vel_y )

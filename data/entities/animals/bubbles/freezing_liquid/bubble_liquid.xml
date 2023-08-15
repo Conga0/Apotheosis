@@ -16,7 +16,6 @@
 		    wait_for_kill_flag_on_death="0"
             fire_probability_of_ignition="0" 
 			ragdoll_fx_forced="DISINTEGRATED"
-			ragdoll_material="blood_cold"
 			blood_material="blood_cold"
 			blood_spray_material="blood_cold"
 		    blood_multiplier="2"
@@ -127,4 +126,3 @@
 	</MaterialInventoryComponent>
 
 </Entity>
-

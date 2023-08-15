@@ -1,5 +1,5 @@
 <Entity name="Nestemäinen kupla">
-  
+  <!-- This enemy is EVIL. -->
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>
 
@@ -16,7 +16,6 @@
 		    wait_for_kill_flag_on_death="0"
             fire_probability_of_ignition="0" 
 			ragdoll_fx_forced="DISINTEGRATED"
-			ragdoll_material="AA_UNSTABLE_LIQUID_SPELL"
 			blood_material="AA_UNSTABLE_LIQUID_SPELL"
 			blood_spray_material="AA_UNSTABLE_LIQUID_SPELL"
 		    blood_multiplier="2"
@@ -119,4 +118,3 @@
 	</MaterialInventoryComponent>
 
 </Entity>
-
