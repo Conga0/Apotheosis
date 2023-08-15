@@ -1,0 +1,20 @@
+<Sprite
+	default_animation="spin"
+	filename="mods/apotheosis/files/ui_gfx/gun_actions/knowledge_extras/knowledge_of_kings_crown_1.png"
+	offset_x="5.5"
+	offset_y="4.5"
+	>
+	<!-- Frame 1 -->
+	<RectAnimation
+		frame_count			= "1"
+		frame_wait			= "0.1"
+		frame_height		= "9"
+		frame_width			= "11"
+		frames_per_row		= "1"
+		loop				= "1"
+		name				= "1"
+		pos_x				= "0"
+		pos_y				= "0"
+		shrink_by_one_pixel	= "1"
+	/>
+</Sprite>
