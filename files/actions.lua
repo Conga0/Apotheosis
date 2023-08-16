@@ -760,23 +760,24 @@ local apotheosis_spellappends = {
         end,
     },
     {
-        id          = "APOTHEOSIS_KNOWLEDGE_OF_KINGS",
-        name 		= "$spell_apotheosis_knowledge_of_kings_name",
-        description = "$spell_apotheosis_knowledge_of_kings_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/knowledge_of_kings.png",
-        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
-        spawn_requires_flag = "apotheosis_card_unlocked_secret_knowledge_of_kings_spell",
-        spawn_manual_unlock = true,
+        id          		= "APOTHEOSIS_KNOWLEDGE_OF_KINGS",
+        name 				= "$spell_apotheosis_knowledge_of_kings_name",
+        description 		= "$spell_apotheosis_knowledge_of_kings_desc",
+        sprite 				= "mods/Apotheosis/files/ui_gfx/gun_actions/knowledge_of_kings.png",
+        sprite_unidentified	= "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+        spawn_requires_flag	= "apotheosis_card_unlocked_secret_knowledge_of_kings_spell",
+        spawn_manual_unlock	= true,
         never_unlimited		= true,
-        type 		= ACTION_TYPE_OTHER,
-        recursive	= true,
-        ai_never_uses = true,
-        spawn_level                       = "10", -- MANA_REDUCE
-        spawn_probability                 = "0.0001", -- MANA_REDUCE
-        price = 2000,
-        mana = 600,
-        max_uses    = 1,
-        action 		= function()
+        type 				= ACTION_TYPE_OTHER,
+        recursive			= true,
+        ai_never_uses 		= true,
+        spawn_level			= "10",
+        spawn_probability	= "0.0001",
+        price				= 2000,
+        mana				= 600,
+        max_uses    		= 1,
+        custom_xml_file		= "mods/Apotheosis/files/entities/misc/custom_cards/knowledge_of_kings.xml",
+        action 				= function()
             local players = EntityGetWithTag( "player_unit" )
             for i,v in ipairs( players ) do
                 local x,y = EntityGetTransform( v )
@@ -786,8 +787,6 @@ local apotheosis_spellappends = {
             current_reload_time = current_reload_time + 100
         end,
     },
-
-
 
     -------------------------------------------- Apotheosis New Content Below ------------------------------------------------------------------------------
 
@@ -1881,15 +1880,10 @@ local apotheosis_spellappends = {
             c.spread_degrees = c.spread_degrees + 30.0
             if reflecting then
                 --Stops the game from getting angry
-			    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
+			    Reflection_RegisterProjectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
             else
-                if math.random(1,2) == 1 then
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
-                else
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
-                end
+				add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
+				add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
             end
 		end,
 	},

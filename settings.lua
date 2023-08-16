@@ -197,48 +197,28 @@ mod_settings =
 
 --statue settings unlocks
 local statue_count = 0
+local flags_statues = {
+	--1.0.0
+	"apotheosis_card_unlocked_divinebeing",
+	"apotheosis_card_unlocked_boss_toxic_worm",
+	"apotheosis_card_unlocked_musical_boss",
+	"apotheosis_card_unlocked_blob_boss",
+	"apotheosis_card_unlocked_divine_liquid",
+	"apotheosis_card_unlocked_donated_beggar",
+	"apotheosis_card_unlocked_rage_aura",
+	"apotheosis_card_unlocked_cat_secret",
+	--1.1.0
+	"apotheosis_card_unlocked_essence_fungus",
+	"apotheosis_moon_fungus_unlock",
+	"apotheosis_misc_pandora_chest_rain",
+	"apotheosis_card_unlocked_boss_fire_lukki",
+	"apotheosis_card_unlocked_secret_knowledge_of_kings",
+}
 
---1.0.0
-if HasFlagPersistent( "apotheosis_card_unlocked_divinebeing" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_boss_toxic_worm" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_musical_boss" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_blob_boss" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_divine_liquid" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_donated_beggar" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_rage_aura" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_cat_secret" ) then
-  statue_count = statue_count + 1
-end
-
---1.1.0
-if HasFlagPersistent( "apotheosis_card_unlocked_essence_fungus" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_moon_fungus_unlock" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_misc_pandora_chest_rain" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_boss_fire_lukki" ) then
-  statue_count = statue_count + 1
-end
-if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) then
-  statue_count = statue_count + 1
+for i=1, #flags_statues do
+    if HasFlagPersistent(flags_statues[i]) then
+        statue_count = statue_count + 1
+    end
 end
 
 
