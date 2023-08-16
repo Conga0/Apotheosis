@@ -1227,6 +1227,18 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/plane_mechanical.xml"
+		height_index="13"
+		color="ff3e67ed" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/plane_mechanical_border.xml"
+		height_index="13"
+		color="ff16328e" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/plane_empyrean.xml"
 		height_index="13"
 		color="ffc9f484" >

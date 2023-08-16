@@ -65,5 +65,21 @@
 		execute_every_n_frame="10"
 		>
 	</LuaComponent>
+
+	<ItemComponent
+		_enabled="0"
+		_tags="lurker_data"
+		custom_pickup_string="$building_portal_interact"
+	/>
+	</ItemComponent>
+
+	<LuaComponent 
+	_enabled="0"
+	_tags="lurker_data"
+	script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/apotheosis.lua"
+	execute_times="-1"
+	execute_every_n_frame="-1"
+	>
+	</LuaComponent>
 </Entity>
 

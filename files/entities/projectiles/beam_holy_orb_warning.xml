@@ -21,7 +21,7 @@
 	explosion_dont_damage_shooter="1"
     damage="0.0"
     on_collision_die="0"
-    lifetime="300"
+    lifetime="290"
 	die_on_liquid_collision="0"
   dont_collide_with_tag="mortal"
     spawn_entity="mods/Apotheosis/files/entities/projectiles/beam_holy_orb_big.xml"
@@ -119,11 +119,19 @@
 		>
 	</VariableStorageComponent>
    
+   <!--Could loop it?-->
   <LuaComponent 
 		_enabled="1" 
 		script_source_file="mods/Apotheosis/files/scripts/projectiles/beam_holy_warning_audio.lua" 
-        execute_every_n_frame="1"
+    execute_every_n_frame="1"
 		remove_after_executed="1">
+   </LuaComponent>
+   
+  <LuaComponent 
+		_enabled="1" 
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/beam_holy_warning_audio_finish.lua" 
+    execute_every_n_frame="-1"
+		execute_on_removed="1">
    </LuaComponent>
    
 </Entity>

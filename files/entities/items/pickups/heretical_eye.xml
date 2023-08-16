@@ -1,9 +1,9 @@
-<Entity tags="hittable,teleportable_NOT,item_physics,item_pickup,heretic" >
+<Entity names="apotheosis_heretic_eye_pickup" tags="hittable,teleportable_NOT,item_physics,item_pickup,heretic" >
 	<Base file="data/entities/base_item_projectile.xml" />
 
 	<!-- physical presence -->
 	
-	<PhysicsBodyComponent 
+	<PhysicsBodyComponent
 		_tags="enabled_in_world"
 		uid="1" 
 		allow_sleep="1" 
@@ -14,14 +14,33 @@
 		auto_clean="0"
 		on_death_leave_physics_body="1"
 		hax_fix_going_through_ground="1"
+		force_add_update_areas="1"
 	></PhysicsBodyComponent>
+
+	<SpriteComponent
+		_tags="enabled_in_world"
+		offset_x="9"
+		offset_y="9"
+		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
+	></SpriteComponent>
 	
 	<PhysicsImageShapeComponent 
 		body_id="1"
 		centered="1"
-		image_file="mods/apotheosis/files/items_gfx/heretical_eye_allinone.png"
-		material="meat"
+		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
+		material="apotheosis_meat_heretic_eye"
 	></PhysicsImageShapeComponent>
+
+	<!--
+	<PhysicsShapeComponent
+		_tags="enabled_in_world"
+		is_circle="1"
+		radius_x="8"
+		radius_y="8"
+		friction="0.3"
+		restitution="0.3" >
+	</PhysicsShapeComponent>
+	-->
 	
 	<PhysicsThrowableComponent
 		max_throw_speed="180"
@@ -38,20 +57,43 @@
 		_tags="enabled_in_hand"
 		_enabled="0"
 		offset_x="4"
-		offset_y="4"
+		offset_y="8"
 		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
 	></SpriteComponent>
 
 	<SpriteComponent
 		_tags="enabled_in_hand"
 		_enabled="0"
-		offset_x="4"
-		offset_y="4"
+		emissive="1"
+		offset_x="0"
+		offset_y="8"
 		image_file="mods/apotheosis/files/items_gfx/heretical_eye_pupil.png"
 		z_index="-2"
 	></SpriteComponent>
+
+	<!--This doesn't enable after being thrown, needs to be handled via a lua script-->
+	<Entity>
+		<SpriteComponent
+			_tags="enabled_in_world"
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			emissive="1"
+			offset_x="8.5"
+			offset_y="8.5"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			_tags="enabled_in_world"
+			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
 	
 	<SpriteParticleEmitterComponent
+		_tags="enabled_in_world,enabled_in_hand"
 		sprite_file="data/particles/darkflame_red.xml"
 		delay="0"
 		lifetime="2"
@@ -108,13 +150,13 @@
 	</AbilityComponent>
 	
 	<!--
+	-->
 	<LuaComponent
-		_tags="enabled_in_world,enabled_in_hand"
-		script_source_file="mods/apotheosis/files/scripts/items/stone_heretic.lua"
+		_tags="enabled_in_world"
+		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye.lua"
 		execute_every_n_frame="5"
 		>
 	</LuaComponent>
-	-->
 	
 	<ParticleEmitterComponent 
 		_tags="enabled_in_world,enabled_in_hand"
@@ -150,8 +192,4 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 	
-	<CameraBoundComponent
-	  max_count="5"
-	  distance="2000">
-	</CameraBoundComponent>
 </Entity>

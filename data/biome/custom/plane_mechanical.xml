@@ -12,8 +12,8 @@
 
     wang_template_file="data/wang_tiles/robobase.png" 
     lua_script="data/scripts/biomes/robobase.lua"
-    wang_map_width="256"
-    wang_map_height="256"
+    wang_map_width="512"
+    wang_map_height="512"
     limit_background_image="0"
     audio_music_2="vault"
     audio_music_energy_coeff="1"
@@ -22,7 +22,7 @@
   >
   <BitmapCaves 
       size_x="512"
-      size_y="256"
+      size_y="512"
       spawn_percent="0"
       blob_caves_count_min="1"
       blob_caves_count_max="4"

@@ -104,4 +104,12 @@
 		direction_random_deg="360"
 	/>
 
+	<AudioLoopComponent
+		_tags="enabled_in_world"
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/firemage/burning_loop"
+		set_speed_parameter="1"
+		auto_play="1"
+	/>
+
 </Entity>

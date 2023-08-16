@@ -1,0 +1,46 @@
+<Entity name="knowledge_of_kings_fx">
+
+	<ParticleEmitterComponent
+		_tags="enabled_in_world"
+		emitted_material_name="gold"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-1"
+		x_pos_offset_max="1"
+		y_pos_offset_min="-9"
+		y_pos_offset_max="-7"
+		gravity.y="100"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="-50"
+		y_vel_max="-10"
+		count_min="2"
+		count_max="5"
+		lifetime_min="0.75"
+		lifetime_max="0.85"
+		airflow_force="0.1"
+		airflow_time="0.1"
+		airflow_scale="0.25"
+		is_trail="0"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		fade_based_on_lifetime="1"
+		is_emitting="1"
+		draw_as_long="1"
+		image_animation_file="mods/Apotheosis/files/ui_gfx/gun_actions/knowledge_extras/item_bg_knowledge_of_kings_emitter.png"
+		image_animation_speed="5"
+		image_animation_loop="1"
+		image_animation_raytrace_from_center="0"
+		velocity_always_away_from_center="100"
+		direction_random_deg="360"
+	/>
+
+	<LifetimeComponent
+		lifetime="30" >
+	</LifetimeComponent>
+
+</Entity>
+

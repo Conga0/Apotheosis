@@ -159,7 +159,7 @@
 			explosion="0.3"
 			electricity="0.3"
 			fire="0.3" 
-			slice="0.00"
+			slice="0.0"
 			ice="0.3"
 			curse="0.7"
 			drill="0.3"

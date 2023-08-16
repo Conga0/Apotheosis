@@ -1380,7 +1380,7 @@ local apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mudman_slimy.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/electric_charge_unidentified.png",
         related_extra_entities = { "mods/Apotheosis/files/entities/misc/hitfx_mudman_slimy.xml" },
-        --spawn_requires_flag = "apotheosis_card_unlocked_orb_15_spell",  --Divine Rock
+        spawn_requires_flag = "apotheosis_card_unlocked_orb_15_spell",  --Divine Rock
         type 		= ACTION_TYPE_MODIFIER,
         spawn_level                       = "1,3,4,5", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
         spawn_probability                 = "0.05,0.05,0.02,0.02", -- APOTHEOSIS_HITFX_MUDMAN_SLIMY
@@ -1821,7 +1821,7 @@ local apotheosis_spellappends = {
     ]]--
 	{
 		id          = "APOTHEOSIS_FIRE_WALL",
-		id_matchup  = "INFESTATION",
+		id_matchup  = "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM",
         name 		= "$spell_apotheosis_fire_wall_name",
         description = "$spell_apotheosis_fire_wall_desc",
 		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/fire_wall.png",
@@ -2332,6 +2332,7 @@ local actions_to_edit = {
     ]]--
 }
 
+--[[
 for i=1,#actions do -- fast as fuck boi
     if actions_to_edit[actions[i].id] then
         for key, value in pairs(actions_to_edit[actions[i].id]) do
@@ -2340,16 +2341,15 @@ for i=1,#actions do -- fast as fuck boi
         actions[i]['apotheosis_reworked'] = true
     end
 end
+]]--
 
---[[
 --Script should scan through each item, and if rebalances are enabled, it'll do all of them; otherwise only do mandatory additions
 --Not currently enabled, but would just need to be uncommented in theory.
 for i=1,#actions do -- fast as fuck boi
-    if actions_to_edit[actions[i].id] and (ModSettingGet( "spellrebalances" ) or actions_to_edit[mandatory_addition]) then
+    if actions_to_edit[actions[i].id] and (ModSettingGet( "Apotheosis.spellrebalances" ) or actions_to_edit[actions[i].id].mandatory_addition) then
         for key, value in pairs(actions_to_edit[actions[i].id]) do
             actions[i][key] = value
         end
         actions[i]['apotheosis_reworked'] = true
     end
 end
-]]

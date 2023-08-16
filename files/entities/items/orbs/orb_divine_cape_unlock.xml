@@ -84,7 +84,7 @@
     </LuaComponent>
 	-->
 
-	<LuaComponent 
+	<LuaComponent
 		script_item_picked_up="mods/Apotheosis/files/scripts/items/orbs/orb_king_knowledge_pickup.lua" >
 	</LuaComponent>
 

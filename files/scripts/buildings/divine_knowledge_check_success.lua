@@ -13,15 +13,21 @@ function material_area_checker_success( pos_x, pos_y )
 	GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", pos_x, pos_y)
     
     --Spawn the orb of Divine Knowledge
-    if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) ~= true then
-        EntityLoad( "mods/Apotheosis/files/entities/items/orbs/orb_divine_cape_unlock.xml", pos_x - 1, pos_y )
-        EntitySetComponentsWithTagEnabled(entity_id, "enabled_by_liquid", true)
-        EntitySetComponentsWithTagEnabled(entity_id, "disabled_by_liquid", false)
-    else
-        EntityLoad( "mods/Apotheosis/files/entities/items/orbs/orb_divine_heart.xml", pos_x - 1, pos_y )
-        EntitySetComponentsWithTagEnabled(entity_id, "enabled_by_liquid", true)
-        EntitySetComponentsWithTagEnabled(entity_id, "disabled_by_liquid", false)
+    --if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) ~= true then
+
+    local orb_id = EntityLoad( "mods/Apotheosis/files/entities/items/orbs/orb_divine_cape_unlock.xml", pos_x - 1, pos_y )
+    EntitySetComponentsWithTagEnabled(entity_id, "enabled_by_liquid", true)
+    EntitySetComponentsWithTagEnabled(entity_id, "disabled_by_liquid", false)
+    if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) then
+        local comp = EntityGetFirstComponentIncludingDisabled(orb_id,"LuaComponent")
+        ComponentSetValue2(comp,"script_item_picked_up","mods/Apotheosis/files/scripts/items/orbs/orb_king_knowledge_pickup_subsequent.lua")
     end
+    
+    --else
+    --    EntityLoad( "mods/Apotheosis/files/entities/items/orbs/orb_divine_heart.xml", pos_x - 1, pos_y )
+    --    EntitySetComponentsWithTagEnabled(entity_id, "enabled_by_liquid", true)
+    --    EntitySetComponentsWithTagEnabled(entity_id, "disabled_by_liquid", false)
+    --end
 
     --Unnecessary to kill after finishing as the material conversion components will kill it after we're finished anyways
     --EntityKill( entity_id )

@@ -1,13 +1,14 @@
-dofile_once("data/scripts/lib/utilities.lua")
+
+local entity_id = GetUpdatedEntityID()
+local pos_x,pos_y = EntityGetTransform(entity_id)
+EntityLoad("mods/apotheosis/files/entities/particles/circle_king.xml", pos_x, pos_y)
 
 if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) or GameHasFlagRun( "apotheosis_card_unlocked_secret_knowledge_of_kings_complete_2" ) then
     GamePrint("$secretmessage_apotheosis_kingly_alreadydone")
 elseif GameHasFlagRun( "apotheosis_card_unlocked_secret_knowledge_of_kings_complete" ) == false then
     GamePrint("$secretmessage_apotheosis_kingly_cheater")
 else
-    local entity_id = GetUpdatedEntityID()
-    local pos_x,pos_y = EntityGetTransform(entity_id)
-
+    
     -- flag to make sure it doesn't appear in future runs
     AddFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" )
     AddFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings_spell" )
@@ -35,10 +36,11 @@ else
 	local message_title = "$secretmessage_apotheosis_capeget_name"
 	local message_desc = "$secretmessage_apotheosis_capeget_desc"
 
-    local player_id = EntityGetWithTag("player_unit")[1]
-    local x,y = EntityGetTransform(player_id)
-	local credits = EntityLoad("mods/Apotheosis/files/entities/the_end/credits_horscht_wait.xml", x, y)
-    EntityAddChild(player_id,credits)
+    --Previously this rolled the credits, but this has been moved into to the "Ascension" ending
+    --local player_id = EntityGetWithTag("player_unit")[1]
+    --local x,y = EntityGetTransform(player_id)
+	--local credits = EntityLoad("mods/Apotheosis/files/entities/the_end/credits_horscht_wait.xml", x, y)
+    --EntityAddChild(player_id,credits)
 	
 	GamePrintImportant( message_title, message_desc )
 

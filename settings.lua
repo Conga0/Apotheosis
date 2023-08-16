@@ -45,7 +45,7 @@ local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph p
 
 --Conga: I suppose at the end of the day I'm OK with having this be an option, but want to make sure the mod is designed around having this being enabled
 local spellrebalances_name = "Spell Reworks"
-local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical\nAlso reworks piercing, chainsaw, music note spells & Weakening Curses to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
+local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled.\n \nThis setting is experimental."
 
 
   --Russian Translations
@@ -184,22 +184,24 @@ mod_settings =
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
   --[[
+  ]]--
+  -- Conga: Maybe this could be handled via config file in the mods folder?
+  -- Would allow for people who really want the reworks disabled or need them to turn them off while maintaining unity everywhere else
   {
     id = "spellrebalances",
     ui_name = spellrebalances_name,
     ui_description = spellrebalances_desc,
-    value_default = false,
+    value_default = true,
     ---@diagnostic disable-next-line: undefined-global
-    scope = MOD_SETTING_SCOPE_NEW_GAME,
+    scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
   },
-  ]]--
 }
 
 --statue settings unlocks
 local statue_count = 0
 local flags_statues = {
 	--1.0.0
-	"apotheosis_card_unlocked_divinebeing",
+	"apotheosis_card_unlocked_divinebeing", --Never forget o7
 	"apotheosis_card_unlocked_boss_toxic_worm",
 	"apotheosis_card_unlocked_musical_boss",
 	"apotheosis_card_unlocked_blob_boss",
@@ -213,6 +215,13 @@ local flags_statues = {
 	"apotheosis_misc_pandora_chest_rain",
 	"apotheosis_card_unlocked_boss_fire_lukki",
 	"apotheosis_card_unlocked_secret_knowledge_of_kings",
+  --Apotheosis
+  "apotheosis_card_unlocked_boss_monolith",
+  "apotheosis_card_unlocked_boss_flesh_monster",
+  "apotheosis_card_unlocked_challenge_towerclimb_win",
+  "apotheosis_card_unlocked_challenge_missingmagic_win",
+  "apotheosis_card_unlocked_challenge_hardcore_win",
+  
 }
 
 for i=1, #flags_statues do

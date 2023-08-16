@@ -243,27 +243,28 @@ do -- Add some new magical liquids to the Ancient Laboratory
 end
 
 
-do -- Rework Vulnerability Curses.. hmm..
-  local path = "data/scripts/projectiles/curse_wither_start.lua"
-  local path_2 = "data/scripts/projectiles/curse_wither_end.lua"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub([[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
-	
-	if ( comp ~= nil ) then]], [[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
-	
-    if ( comp ~= nil )and ComponentObjectGetValue2( comp, "damage_multipliers", name ) > 0 then]])
-  content = content:gsub("mult = mult + 0.25", "mult = mult * 2")
-  ModTextFileSetContent(path, content)
+--do -- Rework Vulnerability Curses.. hmm..
+--  local path = "data/scripts/projectiles/curse_wither_start.lua"
+--  local path_2 = "data/scripts/projectiles/curse_wither_end.lua"
+--  local content = ModTextFileGetContent(path)
+--  content = content:gsub([[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+--	
+--	if ( comp ~= nil ) then]], [[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+--	
+--    if ( comp ~= nil )and ComponentObjectGetValue2( comp, "damage_multipliers", name ) > 0 then]])
+--  content = content:gsub("mult = mult + 0.25", "mult = mult * 2")
+--  ModTextFileSetContent(path, content)
+--
+--  local content = ModTextFileGetContent(path_2)
+--  content = content:gsub([[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+--	
+--	if ( comp ~= nil ) then]], [[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
+--	
+--    if ( comp ~= nil ) and ComponentObjectGetValue2( comp, "damage_multipliers", name ) > 0 then]])
+--  content = content:gsub("mult = mult - 0.25", "mult = mult * 0.5")
+--  ModTextFileSetContent(path2, content)
+--end
 
-  local content = ModTextFileGetContent(path_2)
-  content = content:gsub([[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
-	
-	if ( comp ~= nil ) then]], [[	comp = EntityGetFirstComponent( root_id, "DamageModelComponent" )
-	
-    if ( comp ~= nil ) and ComponentObjectGetValue2( comp, "damage_multipliers", name ) > 0 then]])
-  content = content:gsub("mult = mult - 0.25", "mult = mult * 0.5")
-  ModTextFileSetContent(path2, content)
-end
 
 
 do -- Add projectile tag to pit boss wands so they can be cleaned up too
@@ -366,7 +367,7 @@ do -- Limit enemies to dropping 300k gold at any given time, prevents lag in NG+
   ModTextFileSetContent(path, content)
 end
 
-do -- Nerf Kantele & Ocarina notes to only hit once very 15 frames instead of once every 1 frame
+if ModSettingGet( "spellrebalances" ) then -- Nerf Kantele & Ocarina notes to only hit once very 15 frames instead of once every 1 frame
   local pathprefix = "data/entities/projectiles/deck/"
   local notes = {
     "kantele/kantele_a.xml",
@@ -394,7 +395,7 @@ do -- Nerf Kantele & Ocarina notes to only hit once very 15 frames instead of on
   end
 end
 
-do -- Nerf Plasma beams to hit every 10 frames instead of every 1 frame
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Plasma beams to hit every 10 frames instead of every 1 frame
   local pathprefix = "data/entities/projectiles/deck/"
   local notes = {
     "orb_laseremitter.xml",
@@ -547,7 +548,13 @@ do  -- Fix monks not taking damage from concentrated mana or Veloium
 end
 
 -- SEARCH TAG SPELLREWORK
+--[[
 do -- Piercing only hit 5 times per modifier
+
+end
+]]--
+
+if ModSettingGet( "Apotheosis.spellrebalances" ) then
   local path = "data/entities/misc/piercing_shot.xml"
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
@@ -562,12 +569,6 @@ do -- Piercing only hit 5 times per modifier
   ]]))
   ModTextFileSetContent(path, tostring(xml))
 end
-
---[[
-if (ModSettingGet( "spellrebalances" ) then
-  --Put piercing rework code here
-end
-]]--
 
 --Anvil of Destiny Compatibility
 if ModIsEnabled("anvil_of_destiny") then
@@ -931,6 +932,14 @@ do -- Insert rare potion spawns into potion.lua
 end
 
 ModLuaFileAppend( "data/scripts/item_spawnlists.lua", "mods/Apotheosis/files/scripts/items/item_list_appends.lua" )
+
+do -- Add Alchemic runestone to the runestone pool
+  local path = "data/scripts/item_spawnlists.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"disc\", \"metal\"", "\"disc\", \"metal\", \"alchemy\"")
+
+  ModTextFileSetContent(path, content)
+end
 
 --Debug data
 --local path = "data/scripts/item_spawnlists.lua"
