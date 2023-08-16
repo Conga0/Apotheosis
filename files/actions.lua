@@ -1880,15 +1880,10 @@ local apotheosis_spellappends = {
             c.spread_degrees = c.spread_degrees + 30.0
             if reflecting then
                 --Stops the game from getting angry
-			    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
+			    Reflection_RegisterProjectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
             else
-                if math.random(1,2) == 1 then
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
-                else
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
-                    add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
-                end
+				add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
+				add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
             end
 		end,
 	},
