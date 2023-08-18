@@ -22,6 +22,7 @@
 		offset_x="9"
 		offset_y="9"
 		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
+		z_index="-1"
 	></SpriteComponent>
 	
 	<PhysicsImageShapeComponent 
@@ -155,6 +156,14 @@
 		_tags="enabled_in_world"
 		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye.lua"
 		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world, enabled_in_hand, enabled_in_inventory"
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua"
+		execute_every_n_frame="30"
 		>
 	</LuaComponent>
 	
