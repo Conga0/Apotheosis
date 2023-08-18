@@ -1125,6 +1125,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/evil_prison_spot.xml"
+		height_index="0"
+		color="ff731515" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/lava_excavation.xml"
 		height_index="13"
 		color="ffff7428" >
