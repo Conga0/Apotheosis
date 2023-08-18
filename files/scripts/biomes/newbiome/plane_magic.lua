@@ -408,7 +408,14 @@ function spawn_persistent_teleport( x, y ) end
 function spawn_candles( x, y ) end
 
 function init( x, y, w, h )
-	EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_magic.xml", x + 256, y + 256 )
+	--EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_magic.xml", x + 256, y + 256 )
+
+	--Conga: Might be better to just parent particle effects to the player when they use the portal to enter this biome
+	
+	EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_magic_small.xml", x + 128, y + 128 )
+	EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_magic_small.xml", x + 128, y + (128 * 3) )
+	EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_magic_small.xml", x + (128 * 3), y + 128 )
+	EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_magic_small.xml", x + (128 * 3), y + (128 * 3) )
 end
 
 function load_pixel_scene( x, y )

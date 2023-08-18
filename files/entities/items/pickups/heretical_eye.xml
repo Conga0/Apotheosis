@@ -17,6 +17,7 @@
 		force_add_update_areas="1"
 	></PhysicsBodyComponent>
 
+	<!--
 	<SpriteComponent
 		_tags="enabled_in_world"
 		offset_x="9"
@@ -24,6 +25,7 @@
 		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
 		z_index="-1"
 	></SpriteComponent>
+	-->
 	
 	<PhysicsImageShapeComponent 
 		body_id="1"
@@ -163,12 +165,12 @@
 		_tags="enabled_in_world, enabled_in_hand, enabled_in_inventory"
 		_enabled="1"
 		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua"
-		execute_every_n_frame="30"
+		execute_every_n_frame="300"
 		>
 	</LuaComponent>
 	
 	<ParticleEmitterComponent 
-		_tags="enabled_in_world,enabled_in_hand"
+		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
 		emitted_material_name="apotheosis_blood_infectious"
 		fade_based_on_lifetime="0"
 		x_pos_offset_min="0"

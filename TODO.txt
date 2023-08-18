@@ -13,12 +13,3 @@ Remove _devtest from apotheosis_intro_cutscene for official release
 Magic Eggs feels unfinished
 Revise
 Finish alternative ending
-
-Finalise Heretic
-todo: Heretical eye
-"It pulses like a beating heart"
-Make the eye rotate towards the player while it's held in hand
-
-Finish A Message From Beyond tablet
-
-Revise Lukki Cruicible

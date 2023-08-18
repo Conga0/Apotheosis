@@ -933,10 +933,27 @@ end
 
 ModLuaFileAppend( "data/scripts/item_spawnlists.lua", "mods/Apotheosis/files/scripts/items/item_list_appends.lua" )
 
-do -- Add Alchemic runestone to the runestone pool
+do -- Add Alchemic runestone to the runestone pool (item pedestals)
   local path = "data/scripts/item_spawnlists.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"disc\", \"metal\"", "\"disc\", \"metal\", \"alchemy\"")
+
+  ModTextFileSetContent(path, content)
+end
+
+do -- Add Alchemic runestone to the runestone pool (chests)
+  local path = "data/scripts/items/chest_random.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"disc\", \"metal\"", "\"disc\", \"metal\", \"alchemy\"")
+
+  ModTextFileSetContent(path, content)
+end
+
+do -- Add death check to MoM for the run
+  local path = "data/entities/animals/boss_wizard/death.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("material_str = \"\"", "material_str = \"\" GameAddFlagRun(\"apotheosis_mom_dead\")")
+  print(content)
 
   ModTextFileSetContent(path, content)
 end
