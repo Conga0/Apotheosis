@@ -1029,28 +1029,28 @@ biome_modifiers =
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/pylon_escium_lowhp.xml",
 			})
-			inject_spawn( g_small_enemies, 0.5, {
+			inject_spawn( g_small_enemies, 0.2, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_attunium.xml",
 			})
-			inject_spawn( g_small_enemies, 0.5, {
+			inject_spawn( g_small_enemies, 0.2, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml",
 			})
-			inject_spawn( g_small_enemies, 0.5, {
+			inject_spawn( g_small_enemies, 0.2, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_berserkium.xml",
 			})
-			inject_spawn( g_small_enemies, 0.5, {
+			inject_spawn( g_small_enemies, 0.2, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,

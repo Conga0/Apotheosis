@@ -13,3 +13,6 @@ Remove _devtest from apotheosis_intro_cutscene for official release
 Magic Eggs feels unfinished
 Revise
 Finish alternative ending
+
+imeplement NO_HEAL enum into Wounded debuff
+NOTE: Only do this after letting petri/arvi cook and see what happens to it)

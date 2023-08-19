@@ -157,7 +157,7 @@ function fungal_shift( entity, x, y, debug_no_limits )
 
 	-- apply effects
 	for i,it in ipairs(from.materials) do
-		local from_material = CellFactory_GetType( it )
+		local from_material = CellFactory_GetType( "apotheosis_cursed_liquid_red_static" )
 		local to_material = CellFactory_GetType( to.material )
 		from_material_name = string.upper( GameTextGetTranslatedOrNot( CellFactory_GetUIName( from_material ) ) )
 		if from.name_material then
@@ -169,6 +169,13 @@ function fungal_shift( entity, x, y, debug_no_limits )
 			print(CellFactory_GetUIName(from_material) .. " -> " .. CellFactory_GetUIName(to_material))
 			ConvertMaterialEverywhere( from_material, to_material )
 			converted_any = true
+
+			if from_material_name == "CURSED LIQUID" then
+				local mat = CellFactory_GetType( "apotheosis_cursed_liquid_red_static" )
+				ConvertMaterialEverywhere( mat, to_material )
+				local mat = CellFactory_GetType( "apotheosis_cursed_liquid_red" )
+				ConvertMaterialEverywhere( mat, to_material )
+			end
 
 			-- shoot particles of new material
 			GameCreateParticle( CellFactory_GetName(from_material), x-10, y-10, 20, rand(-100,100), rand(-100,-30), true, true )

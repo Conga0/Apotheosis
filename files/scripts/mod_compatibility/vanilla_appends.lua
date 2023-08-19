@@ -953,7 +953,6 @@ do -- Add death check to MoM for the run
   local path = "data/entities/animals/boss_wizard/death.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("material_str = \"\"", "material_str = \"\" GameAddFlagRun(\"apotheosis_mom_dead\")")
-  print(content)
 
   ModTextFileSetContent(path, content)
 end
