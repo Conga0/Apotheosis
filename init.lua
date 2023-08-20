@@ -43,6 +43,65 @@ end
 
 
 
+if not GameIsBetaBuild() then -- Beta file creation, see apotheosis/betatemp/folder_desc.txt for more details
+  local files = {
+    {
+      "meat.lua",
+      "data/scripts/biomes/meat.lua"
+    },
+    {
+      "meat.xml",
+      "data/biome/meat.xml"
+    },
+    {
+      "miner_hell.xml",
+      "data/entities/animals/miner_hell.xml"
+    },
+    {
+      "shotgunner_hell.xml",
+      "data/entities/animals/shotgunner_hell.xml"
+    },
+    {
+      "sniper_hell.xml",
+      "data/entities/animals/sniper_hell.xml"
+    },
+    {
+      "gfx/miner_hell.xml",
+      "data/enemies_gfx/miner_hell.xml"
+    },
+    {
+      "gfx/shotgunner_hell.xml",
+      "data/enemies_gfx/shotgunner_hell.xml"
+    },
+    {
+      "gfx/sniper_hell.xml",
+      "data/enemies_gfx/sniper_hell.xml"
+    },
+    {
+      "gfx/sniper_hell_overlay.xml",
+      "data/enemies_gfx/sniper_hell_overlay.xml"
+    },
+    {
+      "sniperbullet_hell.xml",
+      "data/entities/projectiles/sniperbullet_hell.xml"
+    },
+    {
+      "tnt_hell.xml",
+      "data/entities/projectiles/tnt_hell.xml"
+    }
+  }
+
+  for k=1,#files do
+    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/betatemp/",files[k][1]}))
+    ModTextFileSetContent(files[k][2],content)
+  end
+
+  --Adds in meat biome materials
+  ModMaterialsFileAdd( "mods/Apotheosis/betatemp/materials.xml" )
+end
+
+
+
 
 -- Spell Unlock Fixes
 -- If someone attains a spell through another mod, twitch integration, etc, this is just to make sure they aren't getting unlocks they shouldn't.

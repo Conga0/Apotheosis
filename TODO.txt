@@ -15,4 +15,7 @@ Revise
 Finish alternative ending
 
 imeplement NO_HEAL enum into Wounded debuff
-NOTE: Only do this after letting petri/arvi cook and see what happens to it)
+NOTE: After it goes to main
+
+Remove ABBC anti-cheese
+NOTE: After it goes to main
