@@ -5,8 +5,11 @@ If you're interested in discussing the mod, there is a *[Discord Server](https:/
 
 # Credits
 Lead Developer - Conga Lyne
+
 Sprite Artists - Spoopy, Conga Lyne, PickledSosig, Copi
+
 Programmers - Conga Lyne, Copi
+
 Audio - Hinoguchi Sorako, Spoopy
 
 Other contributors:
