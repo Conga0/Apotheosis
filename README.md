@@ -13,7 +13,8 @@ Programmers - Conga Lyne, Copi
 Audio - Hinoguchi Sorako, Spoopy
 
 Other contributors:
-Y🍵, Evasia, Squirrelly, SpicySpaceSnake, Letalli, Zathers, Horscht, Extol, Rib and you playing
+Y🍵, Evasia, Squirrelly, SpicySpaceSnake, Letalli, Zathers, Horscht, Extol, Rib and you for playing
+
 More detailed credits are available inside credits.txt
 
 
