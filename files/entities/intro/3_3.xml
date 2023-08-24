@@ -8,6 +8,22 @@
 			image_animation_colors_file="mods/apotheosis/files/entities/intro/3_3_colour.png" 
 			>
 		</ParticleEmitterComponent>
+
+		<LifetimeComponent
+			lifetime="600" >
+		</LifetimeComponent>
 	</Base>
+
+	<!--
+  -->
+  <SpriteComponent 
+    alpha="0.2" 
+    image_file="mods/Apotheosis/files/entities/intro/3_3_backup.png" 
+    next_rect_animation="" 
+    offset_x="128" 
+    offset_y="38" 
+    rect_animation="" 
+    >
+  </SpriteComponent>
 
 </Entity>

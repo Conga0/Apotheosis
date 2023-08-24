@@ -1,4 +1,3 @@
-Fix Seekers permanently stunning you to death with electric damage if they sit on top of you
 Remove Weakening Curse rework if weakening curse change goes to main build
 Might be good to update the "summoning sigil" for divine light since everything else got reworked to look prettier, it feels almost out of place now, could rotate the sprite for a smoother visual effect?
 
@@ -14,8 +13,26 @@ Magic Eggs feels unfinished
 Revise
 Finish alternative ending
 
-imeplement NO_HEAL enum into Wounded debuff
-NOTE: After it goes to main
-
 Remove ABBC anti-cheese
 NOTE: After it goes to main
+
+
+
+
+
+How the hell is plane of mech going to work?
+One giant mechanical worm boss fight inside a whole factory?
+Killing it opens a portal to the exit portal
+Could reuse most of Mechanical Worm for this, but make it significantly larger
+
+Plane of magic is an endless battle ground
+Go for a mystical garden feel?
+
+Plane of nature is a jungle, relatively chill, introductory to the planes of gods.
+Jungle you go through, no magical teleport/levitation powers
+Just go find the exit
+Maybe be shorter than the other planesas it's meant to introduce you to them?
+
+100% playtest these, should accelerate development a ton, provide context for what needs to be worked on next.
+
+Side note, ever since they were made, my head canon for Juvenile Centipede was they transcended to another plane of reality after maturing, they only come back to the world of Noita to lay new eggs.

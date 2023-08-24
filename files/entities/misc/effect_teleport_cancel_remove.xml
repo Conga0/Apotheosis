@@ -10,4 +10,10 @@
 		>
 	</LuaComponent>
 
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="8"
+    >
+	</GameEffectComponent >
+
 </Entity>
