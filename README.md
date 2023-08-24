@@ -3,6 +3,20 @@ Apotheosis is a continuation of the More Creeps project, planning to expand heav
 
 If you're interested in discussing the mod, there is a *[Discord Server](https://discord.gg/gtyGnv8Pxk)*
 
+# Credits
+Lead Developer - Conga Lyne
+
+Sprite Artists - Spoopy, Conga Lyne, PickledSosig, Copi
+
+Programmers - Conga Lyne, Copi
+
+Audio - Hinoguchi Sorako, Spoopy
+
+Other contributors:
+Y🍵, Evasia, Squirrelly, SpicySpaceSnake, Letalli, Zathers, Horscht, Extol, Rib and you for playing
+
+More detailed credits are available inside credits.txt
+
 
 # Install Instructions
 
