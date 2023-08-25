@@ -23,6 +23,8 @@ if GameGetFrameNum() >= cooldown_frame then
             GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+(aim_y - 0.1)*20, proj_id)
             ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(proj_id,"VariableStorageComponent"),"value_int",entity_id)
             ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
+            
+            GamePlaySound( "data/audio/Desktop/animals.bank", "animals/generic/jump", x, y )
         end
     end
 end

@@ -1322,4 +1322,10 @@
 		color="ffbc6ce1" >
 	</Biome>
 
+	<Biome
+		biome_filename="data/biome/custom/fishing_cave.xml"
+		height_index="10"
+		color="ff224cd4" >
+	</Biome>
+
 </BiomesToLoad>

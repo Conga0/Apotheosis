@@ -41,7 +41,7 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-114 new enemies (+3 Pylon variants)
+115 new enemies (+3 Pylon variants)
 6 new bosses
 71 new spells
 8 new perks
@@ -54,17 +54,17 @@ A new set of pillars
 And countless new secrets...
 
 
-Custom tag count: [6]
+Custom tag count: [7]
 musical_stone
 vulnerable
 watermage
 apotheosis_blob_boss
 weaken_NOT
 cast_share
+heretic
 
 Note: Readthrough vanilla changes and remove any notes before release
 
 Enemies not yet added to enemy count:
 Red Tentacle Eye (lukki hungry)
 Abyssum Monster (I would like if there was some sort of Abyssum creature, where if it's completely docile, but if you get too close to it, it notices you)
-Corrupt Master of Twitching

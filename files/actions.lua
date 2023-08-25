@@ -902,6 +902,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_upgrade_alwayscast_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/upgrade_alwayscast.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+        custom_xml_file		= "mods/Apotheosis/files/entities/misc/custom_cards/spell_infusion.xml",
         --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
         type    = ACTION_TYPE_UTILITY,
         spawn_level = "0",
@@ -1991,7 +1992,7 @@ local apotheosis_spellappends = {
 		spawn_level                       = "3,4,5,6,10", -- I_SHAPE
 		spawn_probability                 = "0.1,0.2,0.5,0.5,0.2", -- I_SHAPE
 		price = 180,
-		mana = 140,
+		mana = 110,
 		max_uses = 20,
 		action 		= function()
 			local data

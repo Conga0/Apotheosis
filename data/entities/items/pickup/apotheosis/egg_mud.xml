@@ -106,7 +106,7 @@
     max_child_items="0"
     is_pickable="1"
     is_equipable_forced="1"
-    ui_sprite="mods/apotheosis/files/items_gfx/egg_mud.png"
+    ui_sprite="mods/apotheosis/files/ui_gfx/items/egg_mud.png"
     ui_description="$item_apotheosis_egg_mud_desc"
     preferred_inventory="QUICK"
   ></ItemComponent>

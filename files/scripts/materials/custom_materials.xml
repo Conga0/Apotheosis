@@ -2506,6 +2506,20 @@
     </Graphics>
   </CellData>
 
+  <CellData
+	name="apotheosis_templebrick_static_invincible"
+  	_parent="templebrick_static"
+	ui_name="$mat_templebrick_static"
+  	tags="[indestructible]"
+	burnable="0"
+	wang_color="ffd7dc47"
+	hp="10000000"
+	fire_hp="60000"
+	durability="20"
+	show_in_creative_mode="1"
+	>
+  </CellData>
+
 
 
 

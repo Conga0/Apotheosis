@@ -718,6 +718,8 @@ item_apotheosis_fishing_rod_desc,"Go fish..?\nLeft click to cast a line.\nLeft c
 item_apotheosis_sampo_33_name,"Heretical Knowledge",,,,,,,,,,,,,
 item_apotheosis_sampo_34_name,"Our Gift",,,,,,,,,,,,,
 item_apotheosis_runestone_alchemy_name,"Runestone of Alchemy",,,,,,,,,,,,,
+item_apotheosis_skill_angler_name,"Angler Skill",,,,,,,,,,,,,
+item_apotheosis_skill_angler_desc,"Increase your fishing skill level by 1.",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,,,,,
