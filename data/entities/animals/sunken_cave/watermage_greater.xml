@@ -4,8 +4,8 @@
 			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/aquamage_pylon_pentashot_fast.xml"
      ></AnimalAIComponent >
     <DamageModelComponent 
-      hp="100"
-      max_hp="100"
+      hp="160"
+      max_hp="160"
      ></DamageModelComponent >
   </Base>
 </Entity>

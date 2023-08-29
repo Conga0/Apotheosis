@@ -19,7 +19,7 @@
 	durability="9"
 	>
   	<Graphics
-	texture_file="data/materials_gfx/meat_static.png"
+	texture_file="mods/apotheosis/betatemp/gfx/meat_static.png"
 	color="ff9a5149" >
 	<Edge>
 			<EdgeGraphics 
@@ -34,31 +34,31 @@
 					<Image 
 						do_only_horizontal_stripe="1" 
 						do_only_vertical_stripe="0" 
-						filename="mods/apotheosis/betatemp/edge_meat_hor.png" 
+						filename="mods/apotheosis/betatemp/gfx/edge_meat_hor.png" 
 						min_angle="45" 
 						max_angle="135" />
 					<Image 
 						do_only_horizontal_stripe="1" 
 						do_only_vertical_stripe="0" 
-						filename="mods/apotheosis/betatemp/edge_meat_hor.png" 
+						filename="mods/apotheosis/betatemp/gfx/edge_meat_hor.png" 
 						min_angle="235" 
 						max_angle="315" />
 					<Image 
 						do_only_horizontal_stripe="0" 
 						do_only_vertical_stripe="1" 
-						filename="mods/apotheosis/betatemp/edge_meat_ver.png" 
+						filename="mods/apotheosis/betatemp/gfx/edge_meat_ver.png" 
 						min_angle="135" 
 						max_angle="235" />
 					  <Image 
 						do_only_horizontal_stripe="0" 
 						do_only_vertical_stripe="1" 
-						filename="mods/apotheosis/betatemp/edge_meat_ver.png" 
+						filename="mods/apotheosis/betatemp/gfx/edge_meat_ver.png" 
 						min_angle="315" 
 						max_angle="360" />
 					  <Image 
 						do_only_horizontal_stripe="0" 
 						do_only_vertical_stripe="1" 
-						filename="mods/apotheosis/betatemp/edge_meat_ver.png" 
+						filename="mods/apotheosis/betatemp/gfx/edge_meat_ver.png" 
 						min_angle="0" 
 						max_angle="45" />
 				</Images>
@@ -83,7 +83,7 @@
 	liquid_stains_self="1"
 	>
     <Graphics
-		texture_file="mods/apotheosis/betatemp/pus.png"
+		texture_file="mods/apotheosis/betatemp/gfx/pus.png"
 		color="aa695642"
 		>
     </Graphics>

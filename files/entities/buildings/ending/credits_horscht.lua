@@ -57,7 +57,7 @@ local lines = {
   " ",
   " ",
   " ",
-  "Secret Codes:"
+  "Secret Codes:",
   "hardcore",
   "towerclimb",
   "missingmagic",
@@ -90,11 +90,12 @@ local player = EntityGetWithTag("player_unit")[1]
 
 gui = gui or GuiCreate()
 GuiStartFrame(gui)
-roll_credits_progress = (roll_credits_progress or -1) - 0.325 * (accelerate and 15 or 1)
+roll_credits_progress = (roll_credits_progress or -1) - 0.350 * (accelerate and 15 or 1)
 
+local do_once = GameHasFlagRun("apotheosis_endingsequence_do_once")
 if not do_once and roll_credits_progress <= 0 then
-  do_once = true
-  local player = EntityGetWithTag("player_unit")[1]
+  GameAddFlagRun("apotheosis_endingsequence_do_once")
+  local player = EntityGetWithTag("player_unit")
   if player then
     GameTriggerMusicFadeOutAndDequeueAll()
     GamePlaySound( "data/audio/Desktop/music.bank", "music/credits/02", pos_x, pos_y );
@@ -102,7 +103,7 @@ if not do_once and roll_credits_progress <= 0 then
 end
 
 
---Noooo I don't want the Noita to die in these credits!
+--Trigger the true run victory & vanilla noita credits
 if roll_credits_progress < -700 then
     --EntityKill(GetUpdatedEntityID())
 
@@ -120,7 +121,7 @@ if roll_credits_progress < -700 then
     GameAddFlagRun("ending_game_completed")
 end
 
---Noooo I don't want the Noita to die in these credits!
+--Kill the Apotheosis credits entity
 if roll_credits_progress < -1500 then
   --Cleanup
   EntityKill(GetUpdatedEntityID())

@@ -1,4 +1,4 @@
-<Entity name="$animal_fish_large" 
+<Entity name="Punainenkala" 
     tags="mortal,hittable,helpless_animal,prey,ui_use_raw_name" >
     
     <AdvancedFishAIComponent
@@ -97,7 +97,7 @@
     <SpriteComponent 
         _tags="character" 
         alpha="1" 
-        image_file="data/enemies_gfx/fish_02.xml" 
+        image_file="mods/apotheosis/files/enemies_gfx/fish_red.xml" 
         next_rect_animation="" 
         rect_animation="walk" 
         >

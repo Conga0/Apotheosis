@@ -7,7 +7,7 @@ local runtime = GameGetFrameNum() - initframe
 local pos_x, pos_y = EntityGetTransform(entity_id)
 local player_id = EntityGetWithTag("player_unit")[1]
 
-function set_controls_enabled(enabled)
+function set_controls_enabled(enabled) --Disable's player's controls
     local player = EntityGetWithTag("player_unit")[1]
     if player then
         local controls_component = EntityGetFirstComponentIncludingDisabled(player, "ControlsComponent")

@@ -24,9 +24,13 @@ function spawn_potions( x, y ) end
 function spawn_wands( x, y ) end
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
+	LoadPixelScene( "mods/apotheosis/files/biome_impl/gone_fishing.png", "", x, y, "", true )
 end
 
 function spawn_gate(x, y)
 	EntityLoad("mods/apotheosis/files/entities/items/pickups/perk_angler.xml", x, y - 12)
+
+	for k=1,7 do
+		EntityLoad("data/entities/animals/fish.xml", x, y + 30)
+	end
 end

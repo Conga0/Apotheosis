@@ -157,5 +157,12 @@
 		value_int="-10000"
 		>
 	</VariableStorageComponent>
+	
+	<!--Buff nearby creatures with Vulnerability Infusion-->
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/wizard_corrupt_weaken_aura.lua"
+		execute_every_n_frame="901"
+		>
+	</LuaComponent>
 </Entity>
 

@@ -5,15 +5,16 @@
 
 	 <!--Press $0 to undergo apotheosis.-->
 	<ItemComponent
+		_enabled="1"
 		custom_pickup_string="$building_apotheosis_interact"
+		item_pickup_radius="20"
+		is_pickable="1"
+		play_spinning_animation="0"
 	/>
-	</ItemComponent>
-  
-  <LuaComponent 
+
+	<LuaComponent
 	script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/apotheosis.lua"
-	execute_times="-1"
-	execute_every_n_frame="-1"
 	>
-  </LuaComponent>
+	</LuaComponent>
 
 </Entity>

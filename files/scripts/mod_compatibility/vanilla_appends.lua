@@ -395,12 +395,13 @@ if ModSettingGet( "spellrebalances" ) then -- Nerf Kantele & Ocarina notes to on
   end
 end
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Plasma beams to hit every 10 frames instead of every 1 frame
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Plasma beams & Omega Disc Projectile to hit every 15 frames instead of every 1 frame
   local pathprefix = "data/entities/projectiles/deck/"
   local notes = {
     "orb_laseremitter.xml",
     "orb_laseremitter_four.xml",
     "orb_laseremitter_cutter.xml",
+    "disc_bullet_bigger.xml",
   }
 
   for k=1,#notes do

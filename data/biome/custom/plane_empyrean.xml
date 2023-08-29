@@ -39,6 +39,7 @@
     background_use_neighbor="1"
     background_image_height="99999"
     limit_background_image="true"
+    has_rain="0"
      >
 
   </Topology>

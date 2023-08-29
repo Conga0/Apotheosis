@@ -11,19 +11,19 @@
 		</ParticleEmitterComponent>
 
 		<UIInfoComponent
-			name="$book_apotheosis_materia_conversion_spell"
+			name="$book_apotheosis_materia_conversion"
 			>
 		</UIInfoComponent>
 		
 		<ItemComponent
 			ui_sprite="data/items_gfx/book.png"
-			item_name="$book_apotheosis_materia_conversion_spell"
+			item_name="$book_apotheosis_materia_conversion_"
 			ui_description="$book_apotheosis_materia_conversion_spell_description_new"
 			>
 		</ItemComponent>
 		
 		<AbilityComponent
-			ui_name="$book_apotheosis_materia_conversion_spell"
+			ui_name="$book_apotheosis_materia_conversion"
 			>
 		</AbilityComponent>
 		

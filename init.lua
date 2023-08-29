@@ -161,9 +161,7 @@ perk_apotheosis_rage_aura,Enraging Aura,Раздражающая аура,,,,,,,
 perk_apotheosis_rage_aura_description,Creatures are sent into a blind rage by your presence.,От вашего присутствия существа впадают в слепую ярость.,,,,,,,,,,,,
 book_apotheosis_divine_liquid,Tablet of Apotheosis,Скрижаль Апофеоза,,,,,,,,,,,,
 book_apotheosis_divine_liquid_description,"Long have been the days since the universe was in union. \nWhen Slime was no different from above and below was no different from slime. \nSome species have adapted to these changes however, excessively, and became attuned to the pinnacles and depths of this world. \nThey must distance themselves with truly divine purpose.","Давно прошли те дни, когда вселенная была в единстве. \nКогда слизь не отличалась от верха, а низ не отличался от слизи. \nНекоторые виды, однако, чрезмерно приспособились к этим изменениям и стали сонастроены с вершинами и глубинами этого мира. \nОни должны отдаляться с истинно божественной целью.",,,,,,,,,,,,
-book_apotheosis_materia_conversion,Alchemist's Notes,Записи алхимика,,,,,,,,,,,,
 book_apotheosis_materia_conversion_description,"Transmutation.. Materia Conversion. \nFor years I've dedicated my life to this art, only to foolishly trick myself. \nFor years I thought Materia Conversion could only be used on solid matter, \nBut only now in my last few days I've come to learn it can be harnessed on magic as well. \nI can only hope the fruits of my labour will not be forgotten.","Трансмутация. Превращение материи. \nГодами я посвящал свою жизнь этому искусству, но только для того, чтобы обмануть самого себя. \nДолгие годы я думал, что преобразование материи можно использовать только в твёрдой материи, \nНо только теперь, в последние дни, я узнал, что его можно использовать и в магии. \nОстаётся надеяться, что плоды моего труда не будут забыты.",,,,,,,,,,,,
-book_apotheosis_materia_conversion_spell,Alchemist's Notes,Записи алхимика,,,,,,,,,,,,
 book_apotheosis_trophy_room,Alchemist's Notes,Записи алхимика,,,,,,,,,,,,
 book_apotheosis_trophy_room_description,"I have come to learn this Tree was deemed unfitting of.. certain.. accomplishments by the gods. \nCross the lava, descend where you would not normal. \nThere they will humour you.","Я узнал, что боги сочли это Дерево непригодным для... определённых... свершений. \nПересеките лаву, спуститесь туда, куда обычно не спускаются. \nТам они будут над вами насмехаться.",,,,,,,,,,,,
 book_apotheosis_trophy_room_description_purgatory,"I have come to learn this Tree was deemed unfitting of.. certain.. accomplishments by the gods. \nSpelunk east before you visit their place of worship, cross the fungus, holding the ceiling dear. \nThere they will humour you.","Я узнал, что боги сочли это Дерево непригодным для... определённых... свершений. \nСпешите на Восток, прежде чем посетить место их поклонения, перейдите по грибку, держась за потолок. \nТам они будут над вами насмехаться.",,,,,,,,,,,,
@@ -606,6 +604,7 @@ book_apotheosis_realquest_alt_name,"Day 297",,,,,,,,,,,,,
 book_apotheosis_realquest_alt_description,"Remember.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real\nThe red fish is reall\nThe red f",,,,,,,,,,,,,
 book_apotheosis_realquest_tale_name,"Gone Fishing",,,,,,,,,,,,,
 book_apotheosis_realquest_tale_description,"The grand red fish is divine bait, only with it will one catch \nthe grandest of beasts lying at the ocean's trench.\nFinding such a specimen often requires one's entire life however, \nand those who have tried often return without fruit or holding defeat.\nTales speak of the red fish coming to those who wait patiently at the water, \nbut only if your palm holds the right blessing.",,,,,,,,,,,,,
+book_apotheosis_materia_conversion,"Materialist's Notes",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_name,"Oversized Shield",,,,,,,,,,,,,
 perk_apotheosis_shield_oversized_description,"You gain a very large, permanent shield.",,,,,,,,,,,,,
 perk_apotheosis_haste_name,"Haste",,,,,,,,,,,,,
@@ -741,6 +740,8 @@ curse_apotheosis_towerclimb_name,"Towerclimb",,,,,,,,,,,,,
 curse_apotheosis_towerclimb_desc,"All biomes can spawn any creature.",,,,,,,,,,,,,
 curse_apotheosis_alchemistdream_name,"Alchemist's Dream",,,,,,,,,,,,,
 curse_apotheosis_alchemistdream_desc,"All potions are replaced with Large Potions.\nAll liquid bubbles are blessed with glass cannon.\nAlchemists & Liquid bubble appear much more frequently.\nNew Liquid Bubbles appear.",,,,,,,,,,,,,
+curse_apotheosis_weaken_name,"Vulnerable Curse",,,,,,,,,,,,,
+curse_apotheosis_weaken_desc,"Your resistances and protective perks are disabled until the leave the Sunken Cavern.",,,,,,,,,,,,,
 building_apotheosis_interact,"Press $0 to undergo apotheosis.",,,,,,,,,,,,,
 building_portal_interact,"Press $0 to enter.",,,,,,,,,,,,,
 motd_apotheosis,Message of the Day,Сообщение дня,,,,,,,,,,,,
@@ -1778,6 +1779,14 @@ do  -- Player Editor
     </LuaComponent>
   ]]))
 
+  --Adds Biome Check to the player
+  xml:add_child(nxml.parse([[
+    <Entity>
+      <Base file="mods/apotheosis/files/scripts/magic/biome_effects.xml" >
+      </Base>
+    </Entity>
+  ]]))
+
   --Debug
   --xml:add_child(nxml.parse([[
   --  <SpriteComponent 
@@ -1792,6 +1801,8 @@ do  -- Player Editor
   --></SpriteComponent>
   --]]))
   ModTextFileSetContent(path, tostring(xml))
+
+  print(tostring(xml))
 end
 
 
@@ -1852,6 +1863,10 @@ ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the bio
 --ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
 
 --More Musical Magic implementation, coded by Y🍵
+if ModTextFileGetContent("data/moremusicalmagic/musicmagic.lua") == nil then
+  local data = ModTextFileGetContent("data/moremusicalmagic/compatibility/musicmagic.lua")
+  ModTextFileSetContent("data/moremusicalmagic/musicmagic.lua",data)
+end
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_apotheosis.lua")
 

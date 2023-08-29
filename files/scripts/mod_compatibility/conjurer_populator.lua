@@ -1,15 +1,10 @@
 table.insert(ALL_ENTITIES, {
   name="Apotheosis",
   desc="Enemies, Buildings & Wands from the Apotheosis mod",
-  icon="data/ui_gfx/animal_icons/wizard_duck.png",
-  icon_off="data/ui_gfx/bubbles/wizard_duck_dim.png",
+  icon="data/ui_gfx/animal_icons/fairy_giant.png",
+  icon_off="data/ui_gfx/animal_icons/hidden/fairy_giant_dim.png",
   grid_size=12,
   entities={
-	  {
-		name="Divine Being",
-		path="data/entities/animals/angel.xml",
-		image="data/ui_gfx/animal_icons/hidden/angel.png",
-	  },
 	  {
 		name="Blind Gazer",
 		path="data/entities/animals/blindgazer.xml",
@@ -751,6 +746,11 @@ table.insert(ALL_ENTITIES, {
 		image="mods/Apotheosis/files/ui_gfx/essences/fungus.png",
 	  },
 	  {
+		name="Divine Being (Deprecated)",
+		path="data/entities/animals/angel.xml",
+		image="data/ui_gfx/animal_icons/hidden/angel.png",
+	  },
+	  {
 		name="Nightmare Divine Being (Deprecated)",
 		path="data/entities/animals/gold_bosses/angel/angel.xml",
 		image="data/ui_gfx/gold_boss/angel.png",
@@ -787,3 +787,110 @@ table.insert(ALL_ENTITIES, {
 	  },
   },
 })
+
+
+
+
+
+
+-- Thank you Coper and Conger
+
+-- Set up self
+local this = {
+    id = GetUpdatedEntityID(),
+    x = nil,
+    y = nil
+}
+this.x, this.y = EntityGetTransform(this.id)
+
+-- Set up victims
+local victim_max = 5
+local victims = {}
+for i = 1, victim_max do
+    victims[#victims + 1] = {
+        id = nil,
+        distance = math.huge
+    }
+end
+
+-- Locate victims
+local enemies = EntityGetInRadiusWithTag(this.x, this.y, 250, "mortal") or {}
+for i = 1, #enemies do
+    -- Build enemy table
+    local enemy = {
+        id = enemies[i],
+        x = nil,
+        y = nil,
+        distance = nil
+    }
+    -- Check if self and if relations are good
+    if enemy.id ~= this.id and (EntityGetHerdRelation(this.id, enemy.id) > 40) then
+        -- Set enemy table data
+        enemy.x, enemy.y = EntityGetTransform(enemy.id)
+        enemy.distance = (this.x - enemy.x) ^ 2 + (this.y - enemy.y) ^ 2
+        -- Extra stuff for checking if robot
+        local genomecomp = EntityGetFirstComponentIncludingDisabled( enemy.id, "GenomeDataComponent" )
+		local faction = 0
+
+        if ( genomecomp ~= nil ) then
+            faction = ComponentGetValue2( genomecomp, "herd_id" )
+        end
+        -- Iterate over victims, smallest to largest
+        for j = 1, #victims do
+            -- If enemy distance is lesser or robot:
+            if ( faction == 4 ) or victims[j].distance > enemy.distance then
+                -- Insert enemy before the target (smallest to largest)
+                table.insert(victims, j, {
+                    id = enemy.id,
+                    distance = enemy.distance
+                })
+                -- Delete 4th index, which the old 3rd closest has been pushed to
+                victims[victim_max+1] = nil
+                break
+            end
+        end
+    end
+end
+
+if #victims > 0 then
+    for k=1,#victims
+    do target = victims[k].id
+        if victims[k].id ~= nil then 
+	    if EntityHasTag(victims[k].id,"player_unit") == true then
+                local beam = EntityLoad("data/entities/misc/healerdrone_heal_beam_weak.xml")
+                local comp = EntityGetFirstComponentIncludingDisabled(beam,"VariableStorageComponent")
+                ComponentSetValue2(comp,"value_int",this.id)
+
+                EntityAddChild(target, beam)
+
+                --Particle Effects at Healer's location
+                EntityLoad("data/entities/particles/wand_pickup.xml", this.x, this.x)
+                local targ_x, targ_y = EntityGetTransform(target)
+
+                --Particle Effects at Target's location
+                EntityLoad("data/entities/particles/wand_pickup.xml", targ_x, targ_y)
+                GamePlaySound("data/audio/Desktop/projectiles.bank", "projectiles/bullet_heal_robot/destroy", targ_x, targ_y);
+
+                local comp = EntityGetFirstComponentIncludingDisabled(this.id,"VariableStorageComponent")
+                ComponentSetValue2(comp,"value_int",target)
+	    else
+                local beam = EntityLoad("data/entities/misc/healerdrone_heal_beam.xml")
+                local comp = EntityGetFirstComponentIncludingDisabled(beam,"VariableStorageComponent")
+                ComponentSetValue2(comp,"value_int",this.id)
+
+                EntityAddChild(target, beam)
+
+                --Particle Effects at Healer's location
+                EntityLoad("data/entities/particles/wand_pickup.xml", this.x, this.x)
+                local targ_x, targ_y = EntityGetTransform(target)
+
+                --Particle Effects at Target's location
+                EntityLoad("data/entities/particles/wand_pickup.xml", targ_x, targ_y)
+                GamePlaySound("data/audio/Desktop/projectiles.bank", "projectiles/bullet_heal_robot/destroy", targ_x, targ_y);
+
+                local comp = EntityGetFirstComponentIncludingDisabled(this.id,"VariableStorageComponent")
+                ComponentSetValue2(comp,"value_int",target)
+	    end
+        end
+    end
+end
