@@ -6,6 +6,10 @@ dofile_once("data/scripts/perks/perk.lua")
 
 RegisterSpawnFunction( 0xffffeedd, "init" )
 RegisterSpawnFunction( 0xff2d59e7, "spawn_altar")
+RegisterSpawnFunction( 0xffcf1046, "spawn_constellation_01")
+RegisterSpawnFunction( 0xffff00de, "spawn_constellation_02")
+RegisterSpawnFunction( 0xff00ff72, "spawn_constellation_03")
+RegisterSpawnFunction( 0xffffbc06, "spawn_constellation_04")
 
 function spawn_small_enemies( x, y ) end
 function spawn_big_enemies( x, y ) end
@@ -36,4 +40,20 @@ function spawn_altar(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
 	EntityLoad("mods/apotheosis/files/entities/buildings/ending/empyrean_altar.xml", x, y)
+end
+
+function spawn_constellation_01(x, y)
+	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/weather_01.xml", x, y)
+end
+
+function spawn_constellation_02(x, y)
+	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/sparks_01.xml", x, y)
+end
+
+function spawn_constellation_03(x, y)
+	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/gears_01.xml", x, y)
+end
+
+function spawn_constellation_04(x, y)
+	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/feathers_01.xml", x, y)
 end

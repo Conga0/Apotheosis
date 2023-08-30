@@ -18,7 +18,7 @@ local lines = {
   " ",
   "Squirrelly",
   "$credits_apotheosis_line_14",
-  "",
+  " ",
   "Blueberry",
   "$credits_apotheosis_line_17",
   " ",
@@ -26,7 +26,7 @@ local lines = {
   "$credits_apotheosis_line_horscht",
   " ",
   "Copi",
-  "$credits_apotheosis_line_20",
+  "$credits_apotheosis_line_20_new",
   " ",
   "$credits_apotheosis_line_22",
   "Freakstritch",
@@ -46,6 +46,7 @@ local lines = {
   "Zolkarn",
   "Vexilus_",
   "Xytio",
+  "NollaGames",
   "$credits_apotheosis_line_39",
   " ",
   " ",
@@ -71,18 +72,22 @@ local lines = {
   --"Seeker of Knowledge",
   --"Some Secrets are yet to be revealed",
   --"Stake your eyes on these glyphs, for in time, it too shall change",
-  "",
-  "",
-  "",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
+  " ",
 }
 
 
 --[[
   ]]--
---This acclerates the credits sequence when the player jumps
---Issue 1: Easy for the player to accidentally trigger by wanting to fly around
---Issue 2: Desyncs the main game credits sequence follow up as it occurs on a timer, not when these credits 'finish'
-local accelerate = InputIsKeyDown( 44 )
+--This acclerates the credits sequence when the player holds down spacebar or the A button on controller
+local accelerate = InputIsKeyDown( 44 ) or InputIsJoystickButtonDown(0, 23)
 
 
 local entity_id = GetUpdatedEntityID()
@@ -91,16 +96,6 @@ local player = EntityGetWithTag("player_unit")[1]
 gui = gui or GuiCreate()
 GuiStartFrame(gui)
 roll_credits_progress = (roll_credits_progress or -1) - 0.350 * (accelerate and 15 or 1)
-
-local do_once = GameHasFlagRun("apotheosis_endingsequence_do_once")
-if not do_once and roll_credits_progress <= 0 then
-  GameAddFlagRun("apotheosis_endingsequence_do_once")
-  local player = EntityGetWithTag("player_unit")
-  if player then
-    GameTriggerMusicFadeOutAndDequeueAll()
-    GamePlaySound( "data/audio/Desktop/music.bank", "music/credits/02", pos_x, pos_y );
-  end
-end
 
 
 --Trigger the true run victory & vanilla noita credits

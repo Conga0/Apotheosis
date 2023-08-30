@@ -1328,13 +1328,11 @@
 		color="ff224cd4" >
 	</Biome>
 
-	<!--
 	<Biome
 		biome_filename="data/biome/custom/empyrean_altar_01.xml"
 		height_index="10"
 		color="ffeff621" >
 	</Biome>
-	-->
 
 	<Biome
 		biome_filename="data/biome/custom/empyrean_altar_02.xml"
@@ -1354,18 +1352,28 @@
 		color="ffeff624" >
 	</Biome>
 
-	<!--
 	<Biome
 		biome_filename="data/biome/custom/empyrean_altar_05.xml"
 		height_index="10"
 		color="ffeff625" >
 	</Biome>
-	-->
 
 	<Biome
 		biome_filename="data/biome/custom/empyrean_altar_06.xml"
 		height_index="10"
 		color="ffeff626" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/empyrean_altar_bot_left.xml"
+		height_index="10"
+		color="ffeff627" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/empyrean_altar_bot_right.xml"
+		height_index="10"
+		color="ffeff628" >
 	</Biome>
 
 </BiomesToLoad>

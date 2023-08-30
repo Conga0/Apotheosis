@@ -2470,7 +2470,7 @@
   <CellData
 	name="apotheosis_meat_heretic_eye"
 	ui_name="$mat_meat"
-  	tags="[box2d],[corrodible],[alchemy],[meat],[solid],[earth],[food],[indestructible]"
+  	tags="[box2d],[alchemy],[meat],[solid],[earth],[food],[indestructible]"
 	burnable="1"
 	density="8"
 	solid_friction="1"
@@ -2516,7 +2516,7 @@
   	_parent="templebrick_static"
 	name="apotheosis_templebrick_static_invincible"
 	ui_name="$mat_templebrick_static"
-  	tags="[static],[corrodible],[alchemy],[solid],[earth],[indestructible]"
+  	tags="[static],[alchemy],[solid],[earth],[indestructible]"
 	burnable="0"
 	wang_color="ffd7dc47"
 	hp="10000000"

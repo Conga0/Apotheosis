@@ -1,0 +1,9 @@
+<Entity serialize="0">
+
+	<Base file="mods/apotheosis/files/entities/buildings/ending/constellations/constellation_base.xml">
+	  	<ParticleEmitterComponent 
+			image_animation_file="mods/apotheosis/files/entities/buildings/ending/constellations/gears_01.png" >
+		</ParticleEmitterComponent>
+	</Base>
+
+</Entity>

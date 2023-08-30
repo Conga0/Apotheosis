@@ -1,0 +1,25 @@
+<Entity >
+    <InheritTransformComponent
+		only_position="1"
+		>
+	</InheritTransformComponent>
+	
+	<SpriteComponent 
+        _enabled="1"
+		emissive="1"
+		image_file="mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.png"
+		emissive="0"
+        z_index="10"
+		alpha="0.0"
+		offset_x="256"
+		offset_y="256"
+		>
+	</SpriteComponent>
+	
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.lua"
+		execute_every_n_frame="10"
+		execute_times="-1"
+		>
+	</LuaComponent>
+</Entity>

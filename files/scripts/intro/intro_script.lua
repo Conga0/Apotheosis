@@ -7,25 +7,6 @@ local runtime = GameGetFrameNum() - initframe
 local pos_x, pos_y = EntityGetTransform(entity_id)
 local player_id = EntityGetWithTag("player_unit")[1]
 
-function set_controls_enabled(enabled) --Disable's player's controls
-    local player = EntityGetWithTag("player_unit")[1]
-    if player then
-        local controls_component = EntityGetFirstComponentIncludingDisabled(player, "ControlsComponent")
-        ComponentSetValue2(controls_component, "enabled", enabled)
-        for prop, val in pairs(ComponentGetMembers(controls_component) or {}) do
-            if prop:sub(1, 11) == "mButtonDown" then
-                ComponentSetValue2(controls_component, prop, false)
-            end
-        end
-    end
-end
-
-function PlayerCamControls(enabled)   --Disables camera locking onto player
-    local player = EntityGetWithTag("player_unit")[1]
-    local comp = EntityGetFirstComponentIncludingDisabled(player,"PlatformShooterPlayerComponent")
-    ComponentSetValue2(comp,"center_camera_on_this_entity",enabled)
-end
-
 local entityEvents = {
     --{lifetime_to_run_at,entity_filepath_to_load,frame_runtime (leave at 0 if default of 60)},
     {0,"mods/apotheosis/files/entities/intro/1_1.xml"},

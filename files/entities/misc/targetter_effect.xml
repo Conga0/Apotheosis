@@ -43,6 +43,7 @@
 		>
 	</LuaComponent>
 	
+	<!--Is... Is it meant to be like this..?-->
 	<LuaComponent
 		script_source_file="mods/apotheosis/files/scripts/projectiles/targetter_herd_changer_revert.lua"
 		execute_every_n_frame="3590"

@@ -744,6 +744,7 @@ curse_apotheosis_weaken_name,"Vulnerable Curse",,,,,,,,,,,,,
 curse_apotheosis_weaken_desc,"Your resistances and protective perks are disabled until the leave the Sunken Cavern.",,,,,,,,,,,,,
 building_apotheosis_interact,"Press $0 to undergo apotheosis.",,,,,,,,,,,,,
 building_portal_interact,"Press $0 to enter.",,,,,,,,,,,,,
+credits_apotheosis_line_20_new,"Helped with programming, some creature design & mod direction.",,,,,,,,,,,,,
 motd_apotheosis,Message of the Day,Сообщение дня,,,,,,,,,,,,
 motd_apotheosis_description,"Message of the Day \nYou shouldn't be reading this.","Сообщение дня \nВы не должны были это прочесть.",,,,,,,,,,,,
 motd_apotheosis_description_birthday,"Message of the Day \nHappy Birthday Apotheosis","Сообщение дня \nПоздравлем с днём рождения, Apotheosis",,,,,,,,,,,,
@@ -1802,7 +1803,7 @@ do  -- Player Editor
   --]]))
   ModTextFileSetContent(path, tostring(xml))
 
-  print(tostring(xml))
+  --print(tostring(xml))
 end
 
 

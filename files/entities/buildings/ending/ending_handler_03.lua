@@ -69,9 +69,15 @@ end
 
 --Cutscene Initialization
 if runtime == 0 then
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_01.xml", pos_x, pos_y)
+    EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_02.xml", pos_x, pos_y)
 
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
+end
+
+--Gradually turn the sky red
+if runtime == 240 then
+    local sky = EntityLoad("mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.xml", pos_x, pos_y)
+    EntityAddChild(player_id,sky)
 end
 
 --Shake the screen & accelerate time
@@ -86,19 +92,12 @@ if runtime < 420 then
     ComponentSetValue2(comp,"time",time + 0.0025)
 end
 
---Prepare for player to be teleported offscreen by removing their control ability & power to control the camera
-if runtime == 420 then
-    set_controls_enabled(false)
-    PlayerCamControls(false)
-    local cam_x, cam_y = GameGetCameraPos()
-    GlobalsSetValue("apotheosis_ending_cam_x",tostring(cam_x))
-    GlobalsSetValue("apotheosis_ending_cam_y",tostring(cam_y))
-end
-
 if runtime > 420 then
-    local cam_x = tonumber(GlobalsGetValue("apotheosis_ending_cam_x"))
-    local cam_y = tonumber(GlobalsGetValue("apotheosis_ending_cam_y"))
-    GameSetCameraPos(cam_x,cam_y)
+    --local cam_x = tonumber(GlobalsGetValue("apotheosis_ending_cam_x"))
+    --local cam_y = tonumber(GlobalsGetValue("apotheosis_ending_cam_y"))
+    --GameSetCameraPos(cam_x,cam_y)
+
+    GameScreenshake( 2, plyr_x, plyr_y )
 end
 
 --Spawn vanishing Particles
@@ -117,9 +116,14 @@ if runtime == 421 then
     GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use", pos_x, pos_y )
 end
 
---Enable Mina's symbols in the skybox
+--Convert world to flesh
+if runtime == 600 then
+    ConvertEverythingToGold("apotheosis_corrupt_flesh_static", "apotheosis_corrupt_flesh_static")
+end
+
+--Enable Heretic's symbols in the skybox
 if runtime == 840 then
-    --Do Mina's Symbols
+    --Do Heretic's Symbols
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/mina_02.xml", pos_x, pos_y - 90)
 
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", pos_x, pos_y )
@@ -136,6 +140,6 @@ if runtime == 1260 then
     --Begin Apotheosis credits screen
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
     GameAddFlagRun("ending_game_completed")
-    AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02")
+    AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_03")
 end
 

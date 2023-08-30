@@ -79,6 +79,8 @@ end
 --Cutscene Initialization
 if runtime == 0 then
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_01.xml", pos_x, pos_y)
+
+    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
 end
 
 --Shake the screen & accelerate time
@@ -109,12 +111,20 @@ if runtime > 420 and runtime < 423 then
 end
 
 
+if runtime == 620 then
+    --Begin playing music slightly beforehand as it starts muted
+    --5 seconds to start up (300 frames)
+    GameTriggerMusicFadeOutAndDequeueAll()
+    GamePlaySound( "data/audio/Desktop/music.bank", "music/credits/02", pos_x, pos_y )
+end
+
 if runtime == 740 then
     --Begin Apotheosis credits screen
     --Adds the sheep flag so the script knows which ending sequence to prepare for
     GameAddFlagRun("apotheosis_ending_sheep")
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
     GameAddFlagRun("ending_game_completed")
+    AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_01")
 end
 
 --[[

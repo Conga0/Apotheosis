@@ -10,7 +10,7 @@ function do_newgame_plus()
 	local players = EntityGetWithTag("player_unit")
 	for k=1,#players
 	do local v = players[k]
-		EntitySetTransform(v,-940,-5600)
+		EntitySetTransform(v,-1120,-5545)
 	end
 
 	-- Load the actual biome map
@@ -27,6 +27,18 @@ function do_newgame_plus()
 	--local text = GameTextGetTranslatedOrNot("$new_game_for_newgame_plus")
 
 	--GamePrintImportant( text, "" )
+
+    local worldEntity = GameGetWorldStateEntity()
+    local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
+
+    --Set weather up to be nice
+    ComponentSetValue2(comp,"intro_weather",true)
+    ComponentSetValue2(comp,"time",0.55)
+    ComponentSetValue2(comp,"time_dt",0.5)
+    ComponentSetValue2(comp,"fog",0)
+    ComponentSetValue2(comp,"fog_target",0)
+    ComponentSetValue2(comp,"rain",0)
+
 end
 
 
