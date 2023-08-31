@@ -110,6 +110,19 @@ if runtime > 420 and runtime < 423 then
     end
 end
 
+if runtime == 420 then
+    local opts = EntityGetWithTag("apotheosis_blob_boss")
+    for k=1,#opts
+    do local v = opts[k]
+        local con_x, con_y = EntityGetTransform(v)
+        if EntityGetName(v) == "i_love_you" then
+            CreateItemActionEntity( "MATERIAL_WATER", con_x, con_y )
+        else
+            CreateItemActionEntity( "AIR_BULLET", con_x, con_y )
+        end
+    end
+end
+
 
 if runtime == 620 then
     --Begin playing music slightly beforehand as it starts muted

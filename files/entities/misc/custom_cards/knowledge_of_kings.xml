@@ -1,4 +1,4 @@
-<Entity>
+<Entity tags="temple_door">
 
 	<Base file="data/entities/base_custom_card.xml">
 		<!-- this gets replaced automagically, so we need to use a luacomp -->

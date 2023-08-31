@@ -1,6 +1,6 @@
 <Entity serialize="0">
 
-  	<ParticleEmitterComponent 
+  	<ParticleEmitterComponent
 		emitted_material_name="spark_white_bright"
 		gravity.y="0.0"
 		lifetime_min="0.0"

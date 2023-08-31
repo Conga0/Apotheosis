@@ -428,9 +428,12 @@ function init(x, y, w, h)
 
         if pos_x >= x and pos_x <= x+w
         and pos_y >= y and pos_y <= y+h then
-            -- spawn
-            --print("spawned statue " .. i .. " at " .. pos_x .. ", " .. pos_y)
+            -- Generate Fire Lukki Nests
             LoadPixelScene( "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", true )
+            
+            --Debug Data
+            --GamePrint("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
+            --print("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
         end	
     end
 end

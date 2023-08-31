@@ -1,0 +1,30 @@
+<Entity >
+
+	<SpriteComponent
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_sealed.png"
+		offset_x="56.5"
+		offset_y="56.5"
+		>
+	</SpriteComponent>
+
+	<!-- Decorative Chains -->
+	
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+	
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+	<Entity name="chain_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_chain/tentacle_limb_chain_long.xml"> </Base></Entity>
+
+   	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animators/flesh_boss_inert_chains.lua"
+		execute_on_added="1"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>
+

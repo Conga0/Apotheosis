@@ -45,7 +45,7 @@ local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph p
 
 --Conga: I suppose at the end of the day I'm OK with having this be an option, but want to make sure the mod is designed around having this being enabled
 local spellrebalances_name = "Spell Reworks"
-local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled.\n \nThis setting is experimental."
+local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
 
 
   --Russian Translations

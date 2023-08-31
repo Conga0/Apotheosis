@@ -72,6 +72,9 @@ if runtime == 0 then
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_02.xml", pos_x, pos_y)
 
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
+    ConvertMaterialEverywhere(CellFactory_GetType( "spark_white_bright" ),CellFactory_GetType( "spark_red_bright" ))
+
+    GamePlaySound( "data/audio/Desktop/music.bank", "music_reverb", pos_x, pos_y )
 end
 
 --Gradually turn the sky red
@@ -86,10 +89,10 @@ if runtime < 420 then
     GameScreenshake( 1, plyr_x, plyr_y )
 
     --Fast forward time
-    local worldEntity = GameGetWorldStateEntity()
-    local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
-    local time = ComponentGetValue2(comp,"time")
-    ComponentSetValue2(comp,"time",time + 0.0025)
+    --local worldEntity = GameGetWorldStateEntity()
+    --local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
+    --local time = ComponentGetValue2(comp,"time")
+    --ComponentSetValue2(comp,"time",time + 0.0025)
 end
 
 if runtime > 420 then
@@ -104,42 +107,94 @@ end
 --Teleport player downwards
 --Disable their need for oxygen incase it isn't already done
 if runtime == 421 then
+    --Vanish the Heretic
+    local heretic_id = EntityGetWithTag("heretic")[1]
+    local h_x, h_y = EntityGetTransform(heretic_id)
+    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", h_x, h_y)
+    EntityKill(heretic_id)
+    --GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use", pos_x, pos_y )
+end
+
+--Hide the God's contellations in the skybox (gradual)
+if runtime < 700 and runtime > 400 then
+    local opts = EntityGetWithTag("apotheosis_blob_boss")
+    for k=1,#opts
+    do local v = opts[k]
+        if math.random(1,300) == 1 then
+            local comp = EntityGetFirstComponentIncludingDisabled(v,"ParticleEmitterComponent")
+            EntitySetComponentIsEnabled(v,comp,false)
+            GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use_end", pos_x, pos_y )
+        end
+    end
+end
+
+--Hide the God's contellations in the skybox (hard)
+if runtime == 700 then
+    local opts = EntityGetWithTag("apotheosis_blob_boss")
+    for k=1,#opts
+    do local v = opts[k]
+        local comp = EntityGetFirstComponentIncludingDisabled(v,"ParticleEmitterComponent")
+        EntitySetComponentIsEnabled(v,comp,false)
+    end
+    --GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use_end", pos_x, pos_y )
+end
+
+--Convert the constellations into Heretic Symbols
+if runtime == 820 then
+    local opts = EntityGetWithTag("apotheosis_blob_boss")
+    for k=1,#opts
+    do local v = opts[k]
+        local con_x, con_y = EntityGetTransform(v)
+        EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_02.xml", con_x, con_y)
+        EntityKill(v)
+    end
+
+    ConvertMaterialEverywhere(CellFactory_GetType( "apotheosis_templebrick_static_invincible" ),CellFactory_GetType( "apotheosis_corrupt_flesh_static" ))
+    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/greed_curse/create", pos_x, pos_y )
+end
+
+if runtime == 1120 then
+    local particle_id = EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_02.xml", pos_x, pos_y)
+    local comp = EntityGetFirstComponentIncludingDisabled(particle_id,"HomingComponent")
+    ComponentSetValue2(comp,"target_tag","player_unit")
+    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
+end
+
+if runtime == 1540 then
+    --make the red sky no longer parent to the player just before teleporting them off-screen
+    local children = EntityGetAllChildren(player_id)
+    for k=1,#children
+    do local v = children[k]
+        if EntityGetName(v) == "apotheosis_ending_red_sky" then
+            EntityRemoveFromParent(v)
+            break
+        end
+    end
+
     --Vanish the player (teleport them downwards offscreen)
     EntityLoad("data/entities/particles/image_emitters/player_disappear_effect_right.xml", plyr_x, plyr_y)
     EntitySetTransform(player_id, plyr_x, plyr_y + 300)
     ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent"),"air_needed",false)
+    LoadRagdoll( "data/ragdolls/player/filenames.txt", plyr_x, plyr_y - 4, "meat", 1, 0, 0 )
+    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/game_over/create", plyr_x, plyr_y )
 
     --Hide the player's UI
     ToggleUI(player_id,false)
-
-    --Play sound effect
-    GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use", pos_x, pos_y )
 end
 
---Convert world to flesh
-if runtime == 600 then
-    ConvertEverythingToGold("apotheosis_corrupt_flesh_static", "apotheosis_corrupt_flesh_static")
-end
-
---Enable Heretic's symbols in the skybox
-if runtime == 840 then
-    --Do Heretic's Symbols
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/mina_02.xml", pos_x, pos_y - 90)
-
-    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", pos_x, pos_y )
-end
-
-if runtime == 960 then
+if runtime == 1780 then
     --Begin playing music slightly beforehand as it starts muted
     --5 seconds to start up (300 frames)
     GameTriggerMusicFadeOutAndDequeueAll()
     GamePlaySound( "data/audio/Desktop/music.bank", "music/credits/02", pos_x, pos_y )
 end
 
-if runtime == 1260 then
+if runtime == 2080 then
     --Begin Apotheosis credits screen
+    GameAddFlagRun("apotheosis_ending_heretic")
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
     GameAddFlagRun("ending_game_completed")
     AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_03")
 end
+
 

@@ -31,6 +31,6 @@ function spawn_orb(x, y)
 end
 
 function spawn_check(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/animals/boss_flesh_monster/dormant.xml", x, y )
+	EntityLoad( "data/entities/animals/boss_flesh_monster/inert/flesh_boss_inert.xml", x, y )
  -- this does not exist yet, sorry :p
 end

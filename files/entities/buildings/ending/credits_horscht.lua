@@ -81,6 +81,9 @@ local lines = {
   " ",
   " ",
   " ",
+  " ",
+  " ",
+  " ",
 }
 
 
@@ -95,7 +98,7 @@ local player = EntityGetWithTag("player_unit")[1]
 
 gui = gui or GuiCreate()
 GuiStartFrame(gui)
-roll_credits_progress = (roll_credits_progress or -1) - 0.350 * (accelerate and 15 or 1)
+roll_credits_progress = (roll_credits_progress or -1) - 0.375 * (accelerate and 15 or 1)
 
 
 --Trigger the true run victory & vanilla noita credits
@@ -110,6 +113,12 @@ if roll_credits_progress < -700 then
       EntityKill(sheep_plyr)
     else
       local player_id = EntityGetWithTag("player_unit")[1]
+      --[[
+      if GameHasFlagRun("apotheosis_ending_heretic") then
+        local plyr_x, plyr_y = EntityGetTransform(player_id)
+        LoadRagdoll( "data/ragdolls/player/filenames.txt", plyr_x, plyr_y, "meat", 1, 0, 0 )
+      end
+      ]]--
       EntityKill(player_id)
     end
     GameOnCompleted()

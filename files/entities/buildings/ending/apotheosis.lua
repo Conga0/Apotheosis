@@ -4,6 +4,7 @@ function item_pickup( entity_item, entity_who_picked, name )
     local orb_count = GameGetOrbCountThisRun()
     local heretic_id = EntityGetWithTag("heretic") or false --Could probably optimise this using a name, reuse fishing rod data
     local pos_x, pos_y = EntityGetTransform(entity_item)
+    local knowledge = EntityGetWithTag("temple_door") or false
 
     --Uhhh, do stuff
 
@@ -28,20 +29,20 @@ function item_pickup( entity_item, entity_who_picked, name )
     --Maybe reduce true orb knowledge requirement to 15? (maximum orbs possible in world 1, doesn't include corrupt orbs, forces player to stay in main world)
 
     --Conga: None of the 3 entities below currently exist, please keep track of whether they're taken care of or not IN FULL future me and/or other inspiring coders
-    if orb_count < 33 then
+    if not knowledge then
         --Ending 1
-        --Finished Functionally
-        --Could be spruced up visually after the Empyrean set piece is made to have interaction with it
+        --No kingly knowledge
+        --Finished
         EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_01.xml", pos_x, pos_y)
     elseif heretic_id == false then
         --Ending 2
-        --Finished Functionally
-        --Missing visual effects of mina turning into god & symbols appearing in the background
-        --Could be spruced up visually after the Empyrean set piece is made to have interaction with it
+        --Kingly knowledge but no heretic
+        --Finished
         EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_02.xml", pos_x, pos_y)
     else
         --Ending 3
-        --Unfinished
+        --Kingly knowledge and heretic
+        --Probably Finished
         EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_03.xml", pos_x, pos_y)
     end
 

@@ -1,4 +1,4 @@
-<Entity >
+<Entity name="apotheosis_ending_red_sky">
     <InheritTransformComponent
 		only_position="1"
 		>
@@ -18,7 +18,7 @@
 	
 	<LuaComponent
 		script_source_file="mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.lua"
-		execute_every_n_frame="10"
+		execute_every_n_frame="20"
 		execute_times="-1"
 		>
 	</LuaComponent>

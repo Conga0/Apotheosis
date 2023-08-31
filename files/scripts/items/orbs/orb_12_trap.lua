@@ -1,6 +1,7 @@
 
 function item_pickup( entity_item, entity_who_picked, item_name )
     GamePrint("$log_apotheosis_flesh_boss_warning")
+    GameAddFlagRun("apotheosis_flesh_boss_released")
 
     local targets = EntityGetWithTag( "pitcheck_b" )
 	
