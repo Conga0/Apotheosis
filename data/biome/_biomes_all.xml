@@ -1376,4 +1376,40 @@
 		color="ffeff628" >
 	</Biome>
 
+	<Biome
+		biome_filename="data/biome/custom/plane_portal_nature.xml"
+		height_index="10"
+		color="ff29e7af" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/plane_portal_magic.xml"
+		height_index="10"
+		color="ff29e7bf" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/plane_portal_technology.xml"
+		height_index="10"
+		color="ff29e7cf" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/plane_portal_enter_nature.xml"
+		height_index="10"
+		color="ff29e7df" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/plane_portal_enter_magic.xml"
+		height_index="10"
+		color="ff29e7ef" >
+	</Biome>
+
+	<Biome
+		biome_filename="data/biome/custom/plane_portal_enter_technology.xml"
+		height_index="10"
+		color="ff29e7ff" >
+	</Biome>
+
 </BiomesToLoad>

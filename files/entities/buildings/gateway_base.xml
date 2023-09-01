@@ -1,4 +1,4 @@
-<Entity tags="">
+<Entity tags="apotheosis_portal">
 
 	<SpriteComponent
 		_tags="invincible"
@@ -9,7 +9,7 @@
 		is_text_sprite="0"
 		next_rect_animation=""
 		offset_x="69"
-		offset_y="92"
+		offset_y="122"
 		rect_animation="stand"
 		visible="1"
 		>
@@ -24,7 +24,7 @@
 		is_text_sprite="0"
 		next_rect_animation=""
 		offset_x="69"
-		offset_y="92"
+		offset_y="122"
 		rect_animation="stand"
 		visible="1"
 		>
@@ -38,8 +38,8 @@
 		image_file="mods/Apotheosis/files/biome_impl/magicegg/portal_open.xml"
 		is_text_sprite="0"
 		next_rect_animation=""
-		offset_x="0"
-		offset_y="0"
+		offset_x="69"
+		offset_y="122"
 		rect_animation="stand"
 		visible="1"
 		>
@@ -70,7 +70,8 @@
 		_enabled="0"
 		_tags="lurker_data"
 		custom_pickup_string="$building_portal_interact"
-		item_pickup_radius="20"
+		custom_pickup_string="$building_portal_use"
+		item_pickup_radius="50"
 		is_pickable="1"
 		play_spinning_animation="0"
 	/>
@@ -78,7 +79,7 @@
 	<LuaComponent 
 	_enabled="0"
 	_tags="lurker_data"
-	script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/apotheosis.lua"
+	script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_nature.lua"
 	execute_times="-1"
 	execute_every_n_frame="-1"
 	>

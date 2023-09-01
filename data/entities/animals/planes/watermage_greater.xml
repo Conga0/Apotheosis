@@ -1,0 +1,15 @@
+<Entity >
+  <Base file="data/entities/animals/watermage_greater.xml" include_children="1" >
+    <AnimalAIComponent 
+			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/aquamage_pylon_pentashot_fast.xml"
+     ></AnimalAIComponent >
+    <DamageModelComponent 
+      hp="640"
+      max_hp="640"
+     ></DamageModelComponent >
+  </Base>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+</Entity>

@@ -2,16 +2,41 @@ function biome_entered( new_biome_name, old_biome_name )
 	-- print( "new_biome_name: " .. new_biome_name )
 	local entity_id = GetUpdatedEntityID()
     local player = EntityGetParent(entity_id)
+    local underwater = ( new_biome_name == "$biome_underwater" )
+    local plane_yggdrasil = ( new_biome_name == "$biome_plane_yggdrasil" ) or ( new_biome_name == "$biome_plane_yggdrasil_border" )
+    local plane_magic = ( new_biome_name == "$biome_plane_magic" )
+    local plane_technology = ( new_biome_name == "$biome_plane_technology" )
+    --local empyrean = ( new_biome_name == "$biome_empyrean" )
 
-	if( new_biome_name == "$biome_underwater" ) then
-        local pos_x, pos_y = EntityGetTransform(player)
-        local child = EntityLoad("mods/apotheosis/files/entities/misc/curse_weaken.xml", pos_x, pos_y)
-        EntityAddChild(player,child)
-	else
-        local children = EntityGetAllChildren(player)
+    function loadCurse(player_id,filepath)
+        if not player_id then return end
+        local children = EntityGetAllChildren(player_id) or {}
         for k=1,#children do
             local v = children[k]
-            if EntityGetName(v) == "apotheosis_curse_weaken" then
+            if EntityHasTag(v,"curse") then
+                return
+            end
+        end
+        local pos_x, pos_y = EntityGetTransform(player_id)
+        local child = EntityLoad(filepath, pos_x, pos_y)
+        EntityAddChild(player_id,child)
+    end
+
+	if underwater then
+        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_weaken.xml")
+    elseif plane_yggdrasil then
+        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_yggdrasil.xml")
+    elseif plane_magic then
+        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_magic.xml")
+    --elseif plane_technology then
+        --loadCurse(player,"mods/apotheosis/files/entities/misc/curse_yggdrasil.xml")
+    --elseif empyrean then
+    --    loadCurse(player,"mods/apotheosis/files/entities/misc/curse_empyrean.xml")
+	else
+        local children = EntityGetAllChildren(player) or {}
+        for k=1,#children do
+            local v = children[k]
+            if EntityHasTag(v,"curse") then
                 local comp = EntityGetFirstComponentIncludingDisabled(v,"LifetimeComponent")
                 ComponentSetValue2(comp,"lifetime",3)
                 break

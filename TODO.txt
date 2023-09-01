@@ -1,6 +1,3 @@
-Remove Weakening Curse rework if weakening curse change goes to main build
-Might be good to update the "summoning sigil" for divine light since everything else got reworked to look prettier, it feels almost out of place now, could rotate the sprite for a smoother visual effect?
-
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
@@ -9,18 +6,15 @@ MoCreeps
 Congas Cats
 Remove _devtest from apotheosis_intro_cutscene for official release
 
-Magic Eggs feels unfinished
-Revise
-Finish alternative ending
-
-Remove ABBC anti-cheese
-NOTE: After it goes to main
-
+Add Hints for how to activate portal via new method
 
 Good thumbnail graphic for the mod workshop
 Would like a nice border around it to make it look esteemed.
 Title should be easy to see from a glance, but;
 Most importantly it needs to stand out.
+
+Remove ABBC anti-cheese after it goes to main
+Remove Weakening Curse rework if weakening curse change goes to main build
 
 
 

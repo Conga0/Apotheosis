@@ -215,7 +215,7 @@ do local v = appends[k];
       <PixelScene pos_x="-8480" pos_y="16906" just_load_an_entity="mods/Apotheosis/files/entities/buildings/divine_knowledge_particles.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-      <PixelScene pos_x="-8483" pos_y="16913" just_load_an_entity="mods/Apotheosis/files/entities/buildings/divine_knowledge_check.xml" />
+      <PixelScene pos_x="-8484" pos_y="16913" just_load_an_entity="mods/Apotheosis/files/entities/buildings/divine_knowledge_check.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
       <PixelScene pos_x="-8539" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/alchemy_centipede_blood.xml" />
@@ -227,19 +227,16 @@ do local v = appends[k];
       <PixelScene pos_x="-8429" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/alchemy_insecthusk.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-      <PixelScene pos_x="-8564" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_toxic_worm.xml" />
+      <PixelScene pos_x="-8544" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_toxic_worm.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-      <PixelScene pos_x="-8524" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_divine_being.xml" />
+      <PixelScene pos_x="-8509" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_fire_lukki.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-      <PixelScene pos_x="-8484" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_fire_lukki.xml" />
+      <PixelScene pos_x="-8459" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_musical_boss.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-      <PixelScene pos_x="-8444" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_musical_boss.xml" />
-  ]]))
-  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-      <PixelScene pos_x="-8404" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_blob_titan.xml" />
+      <PixelScene pos_x="-8424" pos_y="16843" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/boss_blob_titan.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
       <PixelScene pos_x="2239" pos_y="2165" just_load_an_entity="mods/Apotheosis/files/entities/props/alchemy/hidden/alchemy_pinksand.xml" />

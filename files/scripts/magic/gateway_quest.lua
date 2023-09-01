@@ -25,29 +25,19 @@ end
 if tonumber(GlobalsGetValue("apotheosis_plane_fail",0)) == 1 then
     EntitySetComponentsWithTagEnabled(entity_id,"invincible",false)
     EntitySetComponentsWithTagEnabled(entity_id,"counter",true)
-elseif #EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") > 0 then
-    local targets = EntityGetInRadius(pos_x, pos_y, 36)
-    for k=1,#targets
-    do local v = targets[k]
-        if EntityGetName(v) == "knowledge_of_kings_fx" then
-            EntityKill(v)
-            Activate(entity_id)
-            GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet_lightning/create", pos_x, pos_y )
-            GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )
-            GameTriggerMusicEvent( "music/oneshot/dark_03", true, pos_x, pos_y )
-
-            --Disables this script from triggering again
-            --Note: Replace this with a script that makes it so pressing E on the portal teleports you to another plane of existence
-            --Only enable said script after a second or so, to make sure the player doesn't butter fingers E and accidentally enter
-            local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"LuaComponent")
-            EntitySetComponentIsEnabled(entity_id,comp,false)
-
-            --Enable Press E to enter interaction
-            --Note: Only enable this when the Planes are finished, or if you're testing
-            --EntitySetComponentsWithTagEnabled(entity_id,"lurker_data",true)
-            break
-        end
+else
+    --Detect Sampo's presence & enable helper entity if it's found
+    --[[
+    local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") or {}
+    if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 then
+        --Enable press e to sampo?
+        local helper = EntityGetWithTag("apotheosis_portal_helper")[1]
+        EntitySetComponentsWithTagEnabled(helper,"lurker_data",true)
+    else
+        local helper = EntityGetWithTag("apotheosis_portal_helper")[1]
+        EntitySetComponentsWithTagEnabled(helper,"lurker_data",false)
     end
+    ]]--
 end
 
 --[[

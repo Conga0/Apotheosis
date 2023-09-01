@@ -1,0 +1,20 @@
+<Entity tags="apotheosis_portal_helper" >
+	<ItemComponent
+		_enabled="0"
+		_tags="lurker_data"
+		custom_pickup_string="$building_portal_activate"
+		item_pickup_radius="50"
+		is_pickable="1"
+		play_spinning_animation="0"
+	/>
+
+	<LuaComponent 
+		_enabled="0"
+		_tags="lurker_data"
+		script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/portals/activate_mainworld_portal.lua"
+		execute_times="-1"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+</Entity>
+

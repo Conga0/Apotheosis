@@ -1,4 +1,4 @@
-<Entity names="apotheosis_heretic_eye_pickup" tags="hittable,teleportable_NOT,item_physics,item_pickup,heretic" >
+<Entity names="apotheosis_heretic_eye_pickup" tags="hittable,teleportable_NOT,item_physics,item_pickup,apotheosis_heretic" >
 	<Base file="data/entities/base_item_projectile.xml" />
 
 	<!-- physical presence -->

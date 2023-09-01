@@ -1,0 +1,20 @@
+<Entity tags="curse">
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<!--Not so much a curse as much as making sure the player doesn't fall out of reality-->
+	
+	<LifetimeComponent
+		lifetime="-1"
+		>
+	</LifetimeComponent>
+    
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/magic/empyrean_net.lua"
+		execute_every_n_frame="30"
+		remove_after_executed="0"
+		>
+	</LuaComponent>
+	
+</Entity>

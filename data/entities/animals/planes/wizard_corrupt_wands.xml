@@ -5,4 +5,8 @@
       max_hp="160"
      ></DamageModelComponent >
   </Base>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 </Entity>

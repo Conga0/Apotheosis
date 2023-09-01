@@ -7,6 +7,12 @@ function do_newgame_plus()
 	newgame_n = newgame_n + 1
 	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
 
+	local players = EntityGetWithTag("player_unit")
+	for k=1,#players
+	do local v = players[k]
+		EntitySetTransform(v,-746,6005)
+	end
+
 	-- Load the actual biome map
 
 	BiomeMapLoad_KeepPlayer( "mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_nature_biome_map.lua", "mods/apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
@@ -41,11 +47,36 @@ function do_newgame_plus()
 
 			end
 		end
+
+		--Update Radars to point to the correct location inside of planes
+		--Disable no longer relevent ones & change the direction of plane radar to the exit portal
+		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
+		for k=1,#comps do
+			if ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/perks/plane_radar.lua" then
+				ComponentSetValue2(comps[k],"script_source_file","mods/apotheosis/files/scripts/perks/plane_radar_inside.lua")
+			--elseif ComponentGetValue2(comps[k],"script_source_file") == "data/scripts/perks/radar_moon.lua" then
+			--	EntitySetComponentIsEnabled(v,comps[k],false)
+			end
+		end
+
+		--Disable Spatial Awareness
+		--[[
+		local children = EntityGetAllChildren(v) or {}
+		for z=1,#children do
+			local comps = EntityGetComponentIncludingDisabled(children[z],"LuaComponent")
+			for k=1,#comps do
+				if ComponentGetValue2(comps[k],"script_source_file") == "data/scripts/perks/map.lua" then
+					EntitySetComponentIsEnabled(children[z],comps[k],false)
+					break
+				end
+			end
+		end
+		]]--
 	end
 end
 
 
 function item_pickup( entity_item, entity_who_picked, name )
-	GamePrint("You feel you are no longer in the world you came from.")
+	--GamePrint("You feel you are no longer in the world you came from.")
 	do_newgame_plus()
 end

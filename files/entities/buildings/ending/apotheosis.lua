@@ -2,9 +2,9 @@
 function item_pickup( entity_item, entity_who_picked, name )
 	local player_id = EntityGetWithTag("player_unit")[1]
     local orb_count = GameGetOrbCountThisRun()
-    local heretic_id = EntityGetWithTag("heretic") or false --Could probably optimise this using a name, reuse fishing rod data
+    local heretic_id = EntityGetWithTag("apotheosis_heretic") or {}
     local pos_x, pos_y = EntityGetTransform(entity_item)
-    local knowledge = EntityGetWithTag("temple_door") or false
+    local knowledge = EntityGetWithTag("apotheosis_knowledge") or {}
 
     --Uhhh, do stuff
 
@@ -29,12 +29,12 @@ function item_pickup( entity_item, entity_who_picked, name )
     --Maybe reduce true orb knowledge requirement to 15? (maximum orbs possible in world 1, doesn't include corrupt orbs, forces player to stay in main world)
 
     --Conga: None of the 3 entities below currently exist, please keep track of whether they're taken care of or not IN FULL future me and/or other inspiring coders
-    if not knowledge then
+    if #knowledge < 1 then
         --Ending 1
         --No kingly knowledge
         --Finished
         EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_01.xml", pos_x, pos_y)
-    elseif heretic_id == false then
+    elseif #heretic_id < 1 then
         --Ending 2
         --Kingly knowledge but no heretic
         --Finished

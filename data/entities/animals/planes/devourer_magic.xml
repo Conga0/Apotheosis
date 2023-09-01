@@ -268,5 +268,9 @@
 		ignored_material_tag="[indestructible]"
 		>
 	</CellEaterComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>

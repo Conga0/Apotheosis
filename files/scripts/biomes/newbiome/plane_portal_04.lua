@@ -37,7 +37,8 @@ end
 function spawn_gate(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
-	EntityLoad("mods/apotheosis/files/entities/buildings/gateway_base.xml", x, y)
+	EntityLoad("mods/apotheosis/files/entities/buildings/gateway_base.xml", x, y + 30)
+	EntityLoad("mods/apotheosis/files/entities/buildings/gateway_base_helper.xml", x, y + 30)
 end
 
 function spawn_perk(x, y)

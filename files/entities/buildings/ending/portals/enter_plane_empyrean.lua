@@ -43,6 +43,6 @@ end
 
 
 function item_pickup( entity_item, entity_who_picked, name )
-	GamePrint("You feel you are no longer in the world you came from.")
+	--GamePrint("You feel you are no longer in the world you came from.")
 	do_newgame_plus()
 end

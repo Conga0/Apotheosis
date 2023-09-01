@@ -48,7 +48,7 @@ g_small_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/fairy_giant.xml"
+		entity 	= "data/entities/animals/planes/fairy_giant.xml"
 	},
 	{
 		prob   		= 0.05,
@@ -408,7 +408,7 @@ function spawn_persistent_teleport( x, y ) end
 function spawn_candles( x, y ) end
 
 function init( x, y, w, h )
-	EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_yggdrasil.xml", x + 256, y + 256 )
+	--EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_yggdrasil.xml", x + 256, y + 256 )
 end
 
 function load_pixel_scene( x, y )

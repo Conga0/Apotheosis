@@ -7,6 +7,12 @@ function do_newgame_plus()
 	newgame_n = newgame_n + 1
 	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
 
+	local players = EntityGetWithTag("player_unit")
+	for k=1,#players
+	do local v = players[k]
+		EntitySetTransform(v,-5910,6005)
+	end
+
 	-- Load the actual biome map
 
 	BiomeMapLoad_KeepPlayer( "mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_magic_biome_map.lua", "mods/apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
@@ -46,6 +52,6 @@ end
 
 
 function item_pickup( entity_item, entity_who_picked, name )
-	GamePrint("You feel you are no longer in the world you came from.")
+	--GamePrint("You feel you are no longer in the world you came from.")
 	do_newgame_plus()
 end

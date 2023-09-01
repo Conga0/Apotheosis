@@ -1,4 +1,4 @@
-<Entity name="workshop_altar" tags="" >
+<Entity name="workshop_altar" tags="no_swap" >
 
 	<AreaDamageComponent
 		aabb_min.x="-250" 

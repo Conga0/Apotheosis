@@ -30,7 +30,7 @@ g_small_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/planes/ant.xml"
+		entity 	= "data/entities/animals/planes/watermage_greater.xml"
 	},
 	{
 		prob   		= 0.1,
