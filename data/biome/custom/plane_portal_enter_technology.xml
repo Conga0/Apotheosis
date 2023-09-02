@@ -39,8 +39,10 @@
     fat_biome_edges="0"
     has_rain="0"
     
-    audio_music_2="smokecave"
-    audio_ambience="snowcave"
+    audio_music_2="vault"
+    audio_music_energy_coeff="1"
+    audio_music_forced_quietness_duration_seconds="4"
+    audio_ambience="vault"
      >
 
   </Topology>

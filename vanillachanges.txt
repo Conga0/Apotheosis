@@ -1,5 +1,4 @@
 Music note spells only hit every 15 frames instead of every 1 frame
-Circle of Vigour & Healing Bolt can not be copied by greek spells (perk to make the uncopyable copyable? Spell Master?) (note: only applies to hardcore mode)
 Some spells have had their mana cost drastically reduced to become competitive with other spells again
 Bubbly Bounce no longer does self damage
 Projectile Repulsion Field is removed and replaced with Oversized Shield
@@ -41,7 +40,7 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-115 new enemies (+3 Pylon variants)
+115 new enemies
 6 new bosses
 71 new spells
 8 new perks
