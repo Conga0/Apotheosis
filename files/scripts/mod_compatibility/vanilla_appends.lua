@@ -958,6 +958,14 @@ do -- Add death check to MoM for the run
   ModTextFileSetContent(path, content)
 end
 
+do -- Lets you drink directly from pouches
+  local path = "data/entities/items/pickup/powder_stash.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("drinkable=\"0\"", "drinkable=\"1\"")
+
+  ModTextFileSetContent(path, content)
+end
+
 --Debug data
 --local path = "data/scripts/item_spawnlists.lua"
 --local content = ModTextFileGetContent(path)

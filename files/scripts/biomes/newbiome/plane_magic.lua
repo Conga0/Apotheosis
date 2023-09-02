@@ -36,7 +36,13 @@ g_small_enemies =
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 3,    
-		entity 	= "data/entities/animals/planes/ant_fire.xml"
+		entity 	= "data/entities/animals/planes/wizard_firemage_greater.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 3,    
+		entity 	= "data/entities/animals/planes/slime_teleporter.xml"
 	},
 	{
 		prob   		= 0.1,

@@ -11,7 +11,27 @@ function do_newgame_plus()
 	for k=1,#players
 	do local v = players[k]
 		EntitySetTransform(v,-1120,-5545)
+
+		--Hide the Plane Radar as it's no longer needed.
+		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
+		for k=1,#comps do
+			if ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/perks/plane_radar_inside.lua" then
+				EntitySetComponentIsEnabled(v,comps[k],false)
+				break
+			end
+		end
 	end
+
+	--Reset RGB portal locations
+	GlobalsSetValue( "apotheosis_markerportal_red_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_red_y", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_green_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_green_y", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_blue_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_blue_y", "0" )
+
+	--Deque & Fadeout current music so the new biome music can take over
+    GameTriggerMusicFadeOutAndDequeueAll()
 
 	-- Load the actual biome map
 
@@ -44,5 +64,6 @@ end
 
 function item_pickup( entity_item, entity_who_picked, name )
 	--GamePrint("You feel you are no longer in the world you came from.")
+	EntityKill(GetUpdatedEntityID())
 	do_newgame_plus()
 end

@@ -24,7 +24,7 @@ function spawn_potions( x, y ) end
 function spawn_wands( x, y ) end
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/prison_spot.png", "mods/Apotheosis/files/biome_impl/special_scenes/prison_spot_visual.png", x, y, "mods/Apotheosis/files/biome_impl/special_scenes/prison_spot_background.png", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/prison_spot.png", "mods/Apotheosis/files/biome_impl/special_scenes/prison_spot_visual.png", x, y, "", true )
 end
 
 function spawn_orb(x, y)

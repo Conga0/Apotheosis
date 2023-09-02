@@ -7,6 +7,7 @@
 	<ItemComponent
 		_enabled="1"
 		custom_pickup_string="$building_apotheosis_interact"
+		custom_pickup_string=""
 		item_pickup_radius="20"
 		is_pickable="1"
 		play_spinning_animation="0"

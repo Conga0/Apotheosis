@@ -40,7 +40,7 @@ function Stage2()
     UpdateLaserData( "object", "damage_to_entities", 0 )
     UpdateLaserData( "object", "damage_to_cells", 10 )
     UpdateLaserData( "object", "max_cell_durability_to_destroy", 2 )
-    UpdateLaserData( "object", "beam_particle_type", 228 )                  --Spark Blue Dark
+    UpdateLaserData( "object", "beam_particle_type", CellFactory_GetType("spark_blue_dark") )                  --Spark Blue Dark
     UpdateLaserData( "object", "audio_enabled", false )
 
 	ComponentSetValue2( wormAiComp, "speed", 4 )
@@ -54,7 +54,7 @@ function Stage3()
     UpdateLaserData( "object", "damage_to_entities", 0.20 )
     UpdateLaserData( "object", "damage_to_cells", 100000 )
     UpdateLaserData( "object", "max_cell_durability_to_destroy", 15 )
-    UpdateLaserData( "object", "beam_particle_type", 230 )                --Spark Red Bright
+    UpdateLaserData( "object", "beam_particle_type", CellFactory_GetType("spark_red_bright") )                --Spark Red Bright
     UpdateLaserData( "object", "audio_enabled", true )
 
 	ComponentSetValue2( wormAiComp, "speed", 1 )
@@ -116,22 +116,25 @@ end
 -- 3. 0.5-1 seconds later, unleash a massive powerful laser beam
 -- 4. after 2-3 seconds pass, disable the laser beam and give the worm it's normal movement back
 
+--Is the player inside the powerplant? If not, don't chase them down, instead disengage
+--Could probably be optimised by running this check only once every 60-120 seconds and saving the data to a VSC, then reading it here? Not sure if grabbing VSC data or biomename data is more resource intensive.
+if BiomeMapGetName( pos_x, pos_y ) == "$biome_robobase" then
 
-
---Keeps worm focused on the player if they're their target
-if ComponentGetValue2( variablecomp, "value_string" ) == "player" then
-    local player_id = EntityGetWithTag("player_unit")[1]
-    if EntityHasTag(player_id,"mortal") then
-        ComponentSetValue2(wormAiComp,"mTargetEntityId",player_id)
-        --GamePrint("Test 1")
+    --Keeps worm focused on the player if they're their target
+    if ComponentGetValue2( variablecomp, "value_string" ) == "player" then
+        local player_id = EntityGetWithTag("player_unit")[1]
+        if EntityHasTag(player_id,"mortal") then
+            ComponentSetValue2(wormAiComp,"mTargetEntityId",player_id)
+            --GamePrint("Test 1")
+        else
+            ComponentSetValue2( variablecomp, "value_string", "null" )
+            --GamePrint("Test 2")
+        end
     else
-        ComponentSetValue2( variablecomp, "value_string", "null" )
-        --GamePrint("Test 2")
-    end
-else
-    local target_id = ComponentGetValue2(wormAiComp,"mTargetEntityId")
-    if EntityHasTag(target_id,"player_unit") then
-        ComponentSetValue2( variablecomp, "value_string", "player" )
-        --GamePrint("Test 3")
+        local target_id = ComponentGetValue2(wormAiComp,"mTargetEntityId")
+        if EntityHasTag(target_id,"player_unit") then
+            ComponentSetValue2( variablecomp, "value_string", "player" )
+            --GamePrint("Test 3")
+        end
     end
 end

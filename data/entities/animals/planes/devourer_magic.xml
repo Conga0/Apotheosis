@@ -103,7 +103,7 @@
 
 
 	<DamageModelComponent 
-		hp="5" 
+		hp="50" 
 		air_needed="0" 
 		falling_damages="0"
 		fire_probability_of_ignition="0" 
@@ -139,7 +139,7 @@
 	
 	<HitboxComponent 
 		_enabled="1"
-		damage_multiplier="0.18"
+		damage_multiplier="0.15"
 		aabb_max_x="8" 
 		aabb_max_y="8" 
 		aabb_min_x="-8" 

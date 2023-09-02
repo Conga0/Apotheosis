@@ -10,8 +10,19 @@ function do_newgame_plus()
 	local players = EntityGetWithTag("player_unit")
 	for k=1,#players
 	do local v = players[k]
-		EntitySetTransform(v,-746,6005)
+		EntitySetTransform(v,746,6005)
 	end
+
+	--Reset RGB portal locations
+	GlobalsSetValue( "apotheosis_markerportal_red_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_red_y", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_green_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_green_y", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_blue_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_blue_y", "0" )
+
+	--Deque & Fadeout current music so the new biome music can take over
+    GameTriggerMusicFadeOutAndDequeueAll()
 
 	-- Load the actual biome map
 
@@ -78,5 +89,6 @@ end
 
 function item_pickup( entity_item, entity_who_picked, name )
 	--GamePrint("You feel you are no longer in the world you came from.")
+	EntityKill(GetUpdatedEntityID())
 	do_newgame_plus()
 end

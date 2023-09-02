@@ -75,6 +75,14 @@
 		is_pickable="1"
 		play_spinning_animation="0"
 	/>
+	
+	<AudioLoopComponent
+		_enabled="0"
+		_tags="lurker_data"
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_orb/loop"
+		auto_play="1">
+	</AudioLoopComponent>
 
 	<LuaComponent 
 	_enabled="0"

@@ -1,0 +1,12 @@
+<Entity >
+  <Base file="data/entities/animals/wizard_firemage_greater.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="640"
+      max_hp="640"
+     ></DamageModelComponent >
+  </Base>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+</Entity>

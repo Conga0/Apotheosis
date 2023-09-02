@@ -1,3 +1,19 @@
+
+Mandatory tasks remaining:
+* Mechanical plane (Currently just a powerplant clone)
+* Hints for how to activate the planes portal
+* And an attention grabbing thumbnail for the workshop page
+
+*1: No god damn clue how to handle this plane.
+I do like the mech worm boss idea but that's a significant amount of resource investment and I sort of want the mod done at this point.
+
+*2: Maybe the hints could remain as orb room lore glyphs? Previously I was concerned they'd be wayyyy too hard for the average player to find, especially when it involves translating to finnish, but maybe it's fine..?
+Alternative idea I had were "crystal tablets" with hints on how to activate the portal, unsure how they'd be made though.
+Can't involve the magic egg or plane radar perk since those are only told how to be acquired after having read the hints.
+
+*3: See workshop_preview_image_rc.png for current candidate.
+
+
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
@@ -5,13 +21,6 @@ Finish or Remove mini-heretics
 MoCreeps
 Congas Cats
 Remove _devtest from apotheosis_intro_cutscene for official release
-
-Add Hints for how to activate portal via new method
-
-Good thumbnail graphic for the mod workshop
-Would like a nice border around it to make it look esteemed.
-Title should be easy to see from a glance, but;
-Most importantly it needs to stand out.
 
 Remove ABBC anti-cheese after it goes to main
 Remove Weakening Curse rework if weakening curse change goes to main build
@@ -33,14 +42,3 @@ One giant mechanical worm boss fight inside a whole factory?
 Killing it opens a portal to the exit portal
 Could reuse most of Mechanical Worm for this, but make it significantly larger
 
-Plane of magic is an endless battle ground
-Go for a mystical garden feel?
-
-Plane of nature is a jungle, relatively chill, introductory to the planes of gods.
-Jungle you go through, no magical teleport/levitation powers
-Just go find the exit
-Maybe be shorter than the other planesas it's meant to introduce you to them?
-
-100% playtest these, should accelerate development a ton, provide context for what needs to be worked on next.
-
-Side note, ever since they were made, my head canon for Juvenile Centipede was they transcended to another plane of reality after maturing, they only come back to the world of Noita to lay new eggs.

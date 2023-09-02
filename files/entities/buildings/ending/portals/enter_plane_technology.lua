@@ -13,6 +13,17 @@ function do_newgame_plus()
 		EntitySetTransform(v,-5910,6005)
 	end
 
+	--Reset RGB portal locations
+	GlobalsSetValue( "apotheosis_markerportal_red_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_red_y", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_green_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_green_y", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_blue_x", "0" )
+	GlobalsSetValue( "apotheosis_markerportal_blue_y", "0" )
+
+	--Deque & Fadeout current music so the new biome music can take over
+    GameTriggerMusicFadeOutAndDequeueAll()
+
 	-- Load the actual biome map
 
 	BiomeMapLoad_KeepPlayer( "mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_technology_biome_map.lua", "mods/apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
@@ -53,5 +64,6 @@ end
 
 function item_pickup( entity_item, entity_who_picked, name )
 	--GamePrint("You feel you are no longer in the world you came from.")
+	EntityKill(GetUpdatedEntityID())
 	do_newgame_plus()
 end

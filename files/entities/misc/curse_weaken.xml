@@ -1,7 +1,7 @@
 <Entity name="apotheosis_curse_weaken" tags="curse" >
 	<InheritTransformComponent 
 		_enabled="1" >
-    </InheritTransformComponent>	
+    </InheritTransformComponent>
     
     <LuaComponent
 		script_source_file="data/scripts/status_effects/weaken_start.lua"

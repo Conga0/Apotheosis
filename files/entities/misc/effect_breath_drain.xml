@@ -10,6 +10,13 @@
 		>
 	</LuaComponent>
 
+	<LuaComponent
+		execute_on_removed="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/breath_drain_remove.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
     <GameEffectComponent
     	effect="NONE"
     	frames="300"
