@@ -27,7 +27,9 @@ if tonumber(GlobalsGetValue("apotheosis_plane_fail",0)) == 1 then
     EntitySetComponentsWithTagEnabled(entity_id,"counter",true)
 else
     --Detect Sampo's presence & enable helper entity if it's found
+    --Conga: Leave this disabled until it's time for release
     --[[
+    ]]--
     local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") or {}
     if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 then
         --Enable press e to sampo?
@@ -37,7 +39,6 @@ else
         local helper = EntityGetWithTag("apotheosis_portal_helper")[1]
         EntitySetComponentsWithTagEnabled(helper,"lurker_data",false)
     end
-    ]]--
 end
 
 --[[

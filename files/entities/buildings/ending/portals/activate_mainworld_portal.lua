@@ -28,6 +28,7 @@ function item_pickup( entity_item, entity_who_picked, name )
         --Enable Press E to enter interaction
         --Note: Only enable this when the Planes are finished, or if you're testing
         EntitySetComponentsWithTagEnabled(portal_id,"lurker_data",true)
+        EntityKill(entity_id)
         break
     end
 end

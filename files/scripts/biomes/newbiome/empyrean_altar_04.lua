@@ -28,7 +28,7 @@ function init( x, y, w, h )
 	SetRandomSeed(444,777)
 	local pw = GetParallelWorldPosition(x,y)
 	if pw == 0 then
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04.png", "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04_visual.png", x, y, "", true )
+		LoadPixelScene( "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04.png", "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04_visual.png", x, y, "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04_background.png", true )
 	end
 end
 

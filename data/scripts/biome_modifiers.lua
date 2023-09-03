@@ -1156,7 +1156,37 @@ biome_modifier_plane_yggdrasil = {
 	action = function( biome_name, biome_filename )
 		BiomeSetValue( biome_filename, "color_grading_r", 0.70 )
 		BiomeSetValue( biome_filename, "color_grading_g", 1.00 )
-		BiomeSetValue( biome_filename, "color_grading_b", 0.9 )
+		BiomeSetValue( biome_filename, "color_grading_b", 0.90 )
+		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.050 )
+		BiomeObjectSetValue( biome_filename, "modifiers", "dust_amount", 0.60 )
+	end,
+}
+
+biome_modifier_plane_magic = {
+	id = "PLANE_MAGIC",
+	ui_description="$biomemod_plane_magic",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/plane_magic.png",
+	probability=0.0,
+	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
+	action = function( biome_name, biome_filename )
+		BiomeSetValue( biome_filename, "color_grading_r", 1.00 )
+		BiomeSetValue( biome_filename, "color_grading_g", 0.60 )
+		BiomeSetValue( biome_filename, "color_grading_b", 1.00 )
+		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.050 )
+		BiomeObjectSetValue( biome_filename, "modifiers", "dust_amount", 0.60 )
+	end,
+}
+
+biome_modifier_plane_technology = {
+	id = "PLANE_MECHANICAL",
+	ui_description="$biomemod_plane_mechanical",
+	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/plane_mechanical.png",
+	probability=0.0,
+	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
+	action = function( biome_name, biome_filename )
+		BiomeSetValue( biome_filename, "color_grading_r", 1.00 )
+		BiomeSetValue( biome_filename, "color_grading_g", 0.80 )
+		BiomeSetValue( biome_filename, "color_grading_b", 0.80 )
 		BiomeSetValue( biome_filename, "color_grading_grayscale", 0.050 )
 		BiomeObjectSetValue( biome_filename, "modifiers", "dust_amount", 0.60 )
 	end,
@@ -1400,6 +1430,11 @@ function get_modifier_mappings()
 	result["custom/lava_excavation"] = biome_modifier_magmatic
 	result["custom/esoteric_den"] = biome_modifier_esoteric_den
 	result["custom/plane_yggdrasil"] = biome_modifier_plane_yggdrasil
+	result["custom/plane_portal_enter_nature"] = biome_modifier_plane_yggdrasil
+	result["custom/plane_magic"] = biome_modifier_plane_magic
+	result["custom/plane_portal_enter_magic"] = biome_modifier_plane_magic
+	result["custom/plane_mechanical"] = biome_modifier_plane_technology
+	result["custom/plane_portal_enter_technology"] = biome_modifier_plane_technology
 	set_modifier_if_has_none( "custom/ant_hell", "FOG_OF_WAR_REAPPEARS" )
 	set_modifier_if_has_none( "custom/sunken_cave", "MOIST" )
 	--apply_modifier_if_has_none( "snowcave", "FREEZING" )

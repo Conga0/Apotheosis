@@ -28,8 +28,8 @@ function biome_entered( new_biome_name, old_biome_name )
         loadCurse(player,"mods/apotheosis/files/entities/misc/curse_yggdrasil.xml")
     elseif plane_magic then
         loadCurse(player,"mods/apotheosis/files/entities/misc/curse_magic.xml")
-    --elseif plane_technology then
-        --loadCurse(player,"mods/apotheosis/files/entities/misc/curse_yggdrasil.xml")
+    elseif plane_technology then
+        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_technology.xml")
     --elseif empyrean then
     --    loadCurse(player,"mods/apotheosis/files/entities/misc/curse_empyrean.xml")
 	else

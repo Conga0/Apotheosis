@@ -1,17 +1,8 @@
 
 Mandatory tasks remaining:
-* Mechanical plane (Currently just a powerplant clone)
-* Hints for how to activate the planes portal
-* And an attention grabbing thumbnail for the workshop page
+* An attention grabbing thumbnail for the workshop page
 
-*1: No god damn clue how to handle this plane.
-I do like the mech worm boss idea but that's a significant amount of resource investment and I sort of want the mod done at this point.
-
-*2: Maybe the hints could remain as orb room lore glyphs? Previously I was concerned they'd be wayyyy too hard for the average player to find, especially when it involves translating to finnish, but maybe it's fine..?
-Alternative idea I had were "crystal tablets" with hints on how to activate the portal, unsure how they'd be made though.
-Can't involve the magic egg or plane radar perk since those are only told how to be acquired after having read the hints.
-
-*3: See workshop_preview_image_rc.png for current candidate.
+*1: See workshop_preview_image_rc.png for current candidate.
 
 
 Finish or Remove Spine Worm
@@ -23,7 +14,6 @@ Congas Cats
 Remove _devtest from apotheosis_intro_cutscene for official release
 
 Remove ABBC anti-cheese after it goes to main
-Remove Weakening Curse rework if weakening curse change goes to main build
 
 
 
@@ -32,13 +22,3 @@ Ending Desertchievement pillars
 --Ascension ending (Succeeded apotheosis & became a god)
 --Heretical takeover (Succeeded apotheosis.. but someone stole the reins from you, or you voluntarily handed him over)
 (Would like Copi to cook something up for these similar to what he did for the other ones, but I fear he isn't long for this world) (Of Noita mod development over the upcoming few weeks)
-
-
-
-
-
-How the hell is plane of mech going to work?
-One giant mechanical worm boss fight inside a whole factory?
-Killing it opens a portal to the exit portal
-Could reuse most of Mechanical Worm for this, but make it significantly larger
-
