@@ -363,7 +363,7 @@ end
 do -- Limit enemies to dropping 300k gold at any given time, prevents lag in NG+ runs
   local path = "data/scripts/items/drop_money.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 100000 then money = 100000 end local x, y = EntityGetTransform( entity )")
+  content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 250000 then money = 250000 end local x, y = EntityGetTransform( entity )")
   ModTextFileSetContent(path, content)
 end
 

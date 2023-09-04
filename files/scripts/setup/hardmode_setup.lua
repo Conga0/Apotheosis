@@ -122,3 +122,9 @@ do --Reduces the NG+ count of each biome's enemy pool by 1 (modded)
     ModLuaFileAppend(biomepath, appendpath)
   end
 end
+
+do --Override the drop_money.lua file with the nightmare one
+  local path = "data/scripts/items/drop_money.lua"
+  local override_content = ModTextFileGetContent("mods/apotheosis/files/scripts/setup/hardcore_money.lua")
+  ModTextFileSetContent(path, override_content)
+end

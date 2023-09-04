@@ -4,33 +4,35 @@ NOTE(COPI): [HR][/HR] makes for nice separators/borders to section off banners a
 =================================================================================================================================
 
 
-[img]https://i.imgur.com/Ko6YxFl.png[/img]
+[img]https://i.imgur.com/S6OzhJT.png[/img]
 
 Apotheosis is a massive content mod which expands upon [b]EVERYTHING.[/b]
-108 new enemies!
-5 new bosses!
-69 new spells!
+115 new enemies!
+6 new bosses!
+71 new spells!
 6 new biomes!
-Perks, Items, materials, structures, Secrets, and more!
+15 new materials!
+A New Ending!
+Perks, Items, structures, Secrets, Music, and more!
 
-[img banner seperation here]
+[img]https://i.imgur.com/rYbK0bD.png[/img]
 
 Explore a massively expanded world map with smooth gameplay containing bug fixes, rebalances and optimisations.
 Alchemic Curiosities, Musical Wonders, you want it? we have!
 
-[gif of core mines here]
+[img]https://i.imgur.com/d8d9KH6.mp4[/img]
 
 New player or seasones veteran? No worries!
 Apotheosis is built for skill levels of all types, with brutal endgame content to early game quests you can complete for fun unlocks and optional areas you can visit to fast track your progress to the harder content, if you're a ready for it.
 Just be aware Apotheosis is it's own world, so not everything may be the same world you're familiar with.
 
-[gif of random bossfight/secret portal here]
+[img]https://i.imgur.com/4n1vFlS.mp4[/img]
 
 If you're a seasoned veteran, you may prefer the seed "hardcore" also for a little extra challenge in your journey.
 
 With all that aside, go nuts, have fun and goodluck out there!
 
-[img banner seperation here]
+[img]https://i.imgur.com/jGdk4on.png[/img]
 
 Seasonal events include:
 April Fools April 1st to 3rd
@@ -38,25 +40,27 @@ apotheosis Birthday July 20th to 22nd
 Halloween October 15th to 31st
 Smissmass December 15th to 31st
 
-World Map: 
-Documentation: 
-Discord Server (for discussion:
+World Map: (Map Capture is not currently rendered at this time)
+Documentation: https://noita.wiki.gg/wiki/Mod:Apotheosis
+Discord Server: https://discord.gg/gtyGnv8Pxk
 
 This mod is compatiable with:
 Copi's Things
 Graham's Things
 More Stuff [Must disable More Stuff's custom biomemap]
+And should be compatiable with most content mods
 
 This mod is [b]not[/b] compatiable with:
 Any and all biome map mods (noitavania, purgatory, more stuff, etc)
-Potentially NE as they override a large amount of files
+Ride Minecarts
+NE has also has issues breaking some structures in this mod.
 
 This mod already contains:
-More Musical Magic built in
+More Musical Magic
 More Creeps & Weirdos
 Conga's Cats
 
-[img banner seperation here]
+[img]https://i.imgur.com/yvzCtok.png[/img]
 
 
 If you wish to support my work in a tangiable manner, you can donate here:

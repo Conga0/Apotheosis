@@ -1,3 +1,8 @@
 Cursed Orb Barrage (Higher damage explosive holy orb barrage which could only be found by openning a pandoras box after killing a divine being, reasons for removal: Meta Progression, Not distinct from other spells, overpowered, uninteresting concept)
 Curse of Mana (Curse of Abyssal Hex would be much more interesting)
 Divine Being (didn't fit in with the artstyle or quality expectations I now have for the mod, it was by all means a wonderful first boss when I made it; but now it's time to lay it to rest... Until april fools comes around)
+
+Content which just never got around to being implemented:
+A creature who when you eat their meat, it teleports you to a new biome
+Library biome with "ritual books" with long lasting buffs or debuffs
+A crystal biome
