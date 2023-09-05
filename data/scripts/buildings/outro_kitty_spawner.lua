@@ -18,9 +18,9 @@ function collision_trigger()
 	if seasonalSetting == true then
 		local year, month, day = GameGetDateAndTimeLocal()
 		
-		if ( month == 10 ) and ( day >= 1 ) then -- Halloween Event
+		if ( month == 10 ) and ( day >= 15 ) then -- Halloween Event
 			cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
-		elseif ( month == 12 ) and ( day >= 22 ) then --Smissmass Event
+		elseif ( month == 12 ) and ( day >= 15 ) then --Smissmass Event
 			cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
 		end
 	end

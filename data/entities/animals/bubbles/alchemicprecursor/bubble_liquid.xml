@@ -116,5 +116,9 @@
 		<Material material="midas_precursor" count="1200"  />
 		</count_per_material_type>
 	</MaterialInventoryComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>

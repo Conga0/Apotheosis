@@ -33,6 +33,37 @@
 		z_index="-1.5" 
 	></SpriteComponent>
 
+	<SpriteParticleEmitterComponent
+		_enabled="1"
+		sprite_file="data/particles/ray.xml" 
+		delay="0"
+		lifetime="1.5"
+		color.r="1" color.g="1" color.b="1" color.a="0.5"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-0.5"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		scale.x="1" scale.y="0"
+		scale_velocity.x="-0.2" scale_velocity.y="4"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="6"
+		emissive="1"
+		additive="1"
+		count_min="1" count_max="1"
+		use_velocity_as_rotation="1"
+		randomize_position.min_x="-5"
+		randomize_position.max_x="5"
+		randomize_position.min_y="-5"
+		randomize_position.max_y="5"
+		randomize_velocity.min_x="-30"
+		randomize_velocity.max_x="30"
+		randomize_velocity.min_y="-30"
+		randomize_velocity.max_y="30"
+		velocity_always_away_from_center="1">
+	</SpriteParticleEmitterComponent>
+
 	<ItemComponent
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_fishing_rod_name"
@@ -42,6 +73,8 @@
 		is_pickable="1"
 		is_equipable_forced="1"
 		preferred_inventory="QUICK"
+		play_spinning_animation="0"
+		play_hover_animation="1"
 	></ItemComponent>
 	
 	<AbilityComponent
@@ -66,6 +99,7 @@
 	<LuaComponent
 		_tags="enabled_in_hand"
 		script_source_file="mods/apotheosis/files/scripts/items/fishing_rod.lua"
+        script_item_picked_up="mods/apotheosis/files/scripts/items/fishing_rod_pickup.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>

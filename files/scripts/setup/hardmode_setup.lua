@@ -123,8 +123,10 @@ do --Reduces the NG+ count of each biome's enemy pool by 1 (modded)
   end
 end
 
-do --Override the drop_money.lua file with the nightmare one
+do --Reduce gold dropped in hardcore by 50%
   local path = "data/scripts/items/drop_money.lua"
-  local override_content = ModTextFileGetContent("mods/apotheosis/files/scripts/setup/hardcore_money.lua")
-  ModTextFileSetContent(path, override_content)
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("local health = tonumber%(ComponentGetValue%( comp, \"max_hp\"%)%)", "local health = tonumber(ComponentGetValue( comp, \"max_hp\")) * 0.50")
+  print(content)
+  ModTextFileSetContent(path, content)
 end

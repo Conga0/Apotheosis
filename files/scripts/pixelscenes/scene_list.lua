@@ -508,7 +508,7 @@ do local v = appends[k];
     <PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="-17640" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
+    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
   ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 

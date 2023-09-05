@@ -18,7 +18,7 @@ function do_money_drop( amount_multiplier, trick_kill )
 	local amount = 1
 
 	edit_component( entity, "DamageModelComponent", function(comp,vars)
-		local health = tonumber(ComponentGetValue( comp, "max_hp")) * 0.25
+		local health = tonumber(ComponentGetValue( comp, "max_hp")) * 0.50
 
 		if health > 1.0 then
 			amount = math.floor(health)

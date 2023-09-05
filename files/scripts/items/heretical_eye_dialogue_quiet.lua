@@ -2,4 +2,3 @@ local textComponent = EntityGetFirstComponentIncludingDisabled(GetUpdatedEntityI
 if textComponent then EntityRemoveComponent(GetUpdatedEntityID(), textComponent) end
 EntityRemoveTag(GetUpdatedEntityID(), "graham_speaking")
 
-ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(GetUpdatedEntityID(),"VariableStorageComponent"),"value_bool",false)

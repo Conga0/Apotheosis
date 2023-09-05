@@ -201,5 +201,12 @@
 		value_int="-10000"
 		>
 	</VariableStorageComponent>
+	
+	<!--Zap away the shield of nearby players, disabling them temporarily-->
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/wizard_corrupt_neutral_aura.lua"
+		execute_every_n_frame="601"
+		>
+	</LuaComponent>
 </Entity>
 

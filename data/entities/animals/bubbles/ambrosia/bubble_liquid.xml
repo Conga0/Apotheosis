@@ -132,5 +132,9 @@
 		<Material material="magic_liquid_protection_all" count="1200"  />
 		</count_per_material_type>
 	</MaterialInventoryComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>

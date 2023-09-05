@@ -116,5 +116,9 @@
 		<Material material="cursed_liquid" count="2500"  />
 		</count_per_material_type>
 	</MaterialInventoryComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>

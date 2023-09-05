@@ -134,7 +134,7 @@
 
 
 	<DamageModelComponent 
-		hp="13" 
+		hp="50" 
 		air_needed="0" 
 		falling_damages="0" 
 		fire_probability_of_ignition="20" 
@@ -251,5 +251,9 @@
 	    >
 		</GameEffectComponent >
 	</Entity>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>

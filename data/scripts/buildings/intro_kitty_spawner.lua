@@ -19,9 +19,9 @@ function collision_trigger()
 	if seasonalSetting == true then
 		local year, month, day = GameGetDateAndTimeLocal()
 		
-		if ( month == 10 ) and ( day >= 1 ) then -- Halloween Event
+		if ( month == 10 ) and ( day >= 15 ) then -- Halloween Event
 			cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
-		elseif ( month == 12 ) and ( day >= 22 ) then --Smissmass Event
+		elseif ( month == 12 ) and ( day >= 15 ) then --Smissmass Event
 			cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
 		end
 	end
@@ -39,7 +39,7 @@ function collision_trigger()
 	repeat
 		
 		pos_x, pos_y = EntityGetTransform( entity_id )
-		pos_x = pos_x + Random(-60, 80)
+		pos_x = pos_x + (Random(-3, 4) * 20) ---60 to 80, in intervals of 20
 		pos_y = pos_y + Random(-40, -30)
 
 		local rnd = Random( 1, #cat_list )

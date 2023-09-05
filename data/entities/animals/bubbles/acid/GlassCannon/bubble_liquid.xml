@@ -122,5 +122,9 @@
 		remove_after_executed="1"
 		>
 	</LuaComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>

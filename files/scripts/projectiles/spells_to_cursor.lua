@@ -1,4 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local length = 500
 local player = EntityGetWithTag( "player_unit" )[1]

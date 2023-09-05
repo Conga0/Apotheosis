@@ -165,7 +165,7 @@
 		_tags="enabled_in_world, enabled_in_hand, enabled_in_inventory"
 		_enabled="1"
 		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua"
-		execute_every_n_frame="600"
+		execute_every_n_frame="300"
 		>
 	</LuaComponent>
 	
@@ -202,10 +202,5 @@
 		render_ultrabright="0"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
-
-	<VariableStorageComponent
-		name="heretic_status"
-		value_bool="0"
-	/>
 	
 </Entity>

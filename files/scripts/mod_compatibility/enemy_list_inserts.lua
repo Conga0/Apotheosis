@@ -5,7 +5,7 @@ local insert_list = {
         name="cat_mocreeps\ncat_mocreeps_spoopy_skittle",
     },
     {
-        id_matchup="zombie",
+        id_matchup="eel",
         name="bubble_liquid",
     },
     {

@@ -122,5 +122,9 @@
 		script_source_file="mods/Apotheosis/files/scripts/animals/bubble_slicing_liquid_blades.lua" 
 		execute_every_n_frame="60">
    </LuaComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>

@@ -22,7 +22,7 @@ end
 
 --ugh...
 local target_x , target_y, rotation = EntityGetTransform(line_target)
-if rotation > -1.5 and rotation < 1.5 then
+if rotation > -1.57 and rotation < 1.57 then
     rotation = rotation + 0.19
 else
     rotation = rotation - 0.19

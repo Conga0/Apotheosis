@@ -1,6 +1,6 @@
 <Sprite 
   default_animation="stand" 
-  filename="mods/Apotheosis/files/enemies_gfx/summons/fungus_minion.png" 
+  filename="mods/Apotheosis/files/enemies_gfx/summons/fungus_minion.png"
   offset_x="5" 
   offset_y="10" >
 

@@ -116,5 +116,9 @@
 		<Material material="AA_MAT_HITSELF" count="1200"  />
 		</count_per_material_type>
 	</MaterialInventoryComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
 
 </Entity>
