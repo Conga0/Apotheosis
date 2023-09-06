@@ -39,12 +39,12 @@
 			>
 		</PathFindingComponent>
 
-		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/bubble_liquid_acid.xml" 
+		<SpriteComponent
+			image_file="mods/Apotheosis/files/enemies_gfx/bubble_liquid_acid.xml"
             alpha="0.8"
 			offset_x="11"
 			offset_y="11">
-		</SpriteComponent>   
+		</SpriteComponent>
 		
 		<GenomeDataComponent 
 			herd_id="mage"

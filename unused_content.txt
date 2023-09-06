@@ -7,3 +7,4 @@ A creature who when you eat their meat, it teleports you to a new biome
 Library biome with "ritual books" with long lasting buffs or debuffs
 A crystal biome
 A creature who tried to force you inside a portal, which teleports you to a "prison biome"
+Adult Centipede Boss (Never quite felt right or notably unique and ran out of time to develop it before real life obligations started to get in the way, would've appeared in the Ant Nest biome)

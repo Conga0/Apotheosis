@@ -190,17 +190,17 @@
 	</ParticleEmitterComponent>
 	
 	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/projectiles/liquidsphere_stain_enable.lua"
-		execute_every_n_frame="10"
-		execute_times="1"
-		>
-	</LuaComponent>
-	
-	<LuaComponent
 		_enabled="0"
 		_tags="enabled_by_liquid"
 		script_source_file="mods/apotheosis/files/scripts/projectiles/liquidsphere_stain_water.lua"
 		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/liquidsphere_stain_enable.lua"
+		execute_every_n_frame="10"
+		execute_times="1"
 		>
 	</LuaComponent>
 

@@ -2,7 +2,7 @@ function biome_entered( new_biome_name, old_biome_name )
 	-- print( "new_biome_name: " .. new_biome_name )
 	local entity_id = GetUpdatedEntityID()
     local player = EntityGetParent(entity_id)
-    local underwater = ( new_biome_name == "$biome_underwater" )
+    --local underwater = ( new_biome_name == "$biome_underwater" )
     local plane_yggdrasil = ( new_biome_name == "$biome_plane_yggdrasil" ) or ( new_biome_name == "$biome_plane_yggdrasil_border" )
     local plane_magic = ( new_biome_name == "$biome_plane_magic" )
     local plane_technology = ( new_biome_name == "$biome_plane_technology" )
@@ -22,9 +22,9 @@ function biome_entered( new_biome_name, old_biome_name )
         EntityAddChild(player_id,child)
     end
 
-	if underwater then
-        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_weaken.xml")
-    elseif plane_yggdrasil then
+	--if underwater then
+    --    loadCurse(player,"mods/apotheosis/files/entities/misc/curse_weaken.xml")
+    if plane_yggdrasil then
         loadCurse(player,"mods/apotheosis/files/entities/misc/curse_yggdrasil.xml")
     elseif plane_magic then
         loadCurse(player,"mods/apotheosis/files/entities/misc/curse_magic.xml")

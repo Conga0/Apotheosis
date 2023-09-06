@@ -89,6 +89,13 @@
 			mass="2.4"
 			>
 		</CharacterDataComponent>
+		
+		<GenomeDataComponent
+			_enabled="1"
+			herd_id="curse"
+			food_chain_rank="1"
+			is_predator="1" >
+		</GenomeDataComponent>
 
 		<CameraBoundComponent
 			max_count="20"

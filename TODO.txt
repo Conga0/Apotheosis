@@ -1,10 +1,3 @@
-
-Mandatory tasks remaining:
-* An attention grabbing thumbnail for the workshop page
-
-*1: See workshop_preview_image_rc.png for current candidate.
-
-
 Finish or Remove Spine Worm
 Finish or Remove mini-heretics
 
@@ -17,6 +10,8 @@ Remove ABBC anti-cheese after it goes to main
 Remove artifically adding meat realm to the biome list when the meat biome goes to main
 
 
+Mandatory Tasks:
+* Ending Desertcheivement pillars
 
 Ending Desertchievement pillars
 --Turned into a Sheep ending (failed apotheosis)

@@ -84,13 +84,13 @@ g_small_enemies =
 		entity		= "data/entities/animals/scavenger_grenade.xml"
 	},
 	--[[
+	]]--
 	{
-		prob   		= 0.10,
+		prob   		= 0.15,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 		= "data/entities/animals/wizard_weaken.xml"
 	},
-	]]--
 	{
 		prob   		= 0.04,
 		min_count	= 1,
@@ -266,13 +266,13 @@ g_pylon =
 	},
 	-- 
 	--[[
+	]]--
 	{
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "mods/apotheosis/files/entities/buildings/pylon_vulnerability.xml"
 	},
-	]]--
 	{
 		prob   		= 1.0,
 		min_count	= 1,

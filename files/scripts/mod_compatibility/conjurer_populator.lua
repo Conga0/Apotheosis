@@ -56,7 +56,7 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/boss_flesh_monster.png",
 	  },
 	  {
-		name="Adult Centipede",
+		name="Adult Centipede (Unused)",
 		path="data/entities/animals/boss_adult_centipede/boss_adult_centipede.xml",
 		image="data/ui_gfx/animal_icons/giant_centipede.png",
 	  },
@@ -341,6 +341,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/longleg_pillar.png",
 	  },
 	  {
+		name="Cursed Creature",
+		path="data/entities/animals/lukki_tentacle_hungry.xml",
+		image="data/ui_gfx/animal_icons/lukki_tentacle_hungry.png",
+	  },
+	  {
 		name="Uprooted Fungus",
 		path="data/entities/animals/lukki_fungus.xml",
 		image="data/ui_gfx/animal_icons/lukki_fungus.png",
@@ -616,6 +621,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/worm_mechanical.png",
 	  },
 	  {
+		name="Cursed Spine",
+		path="data/entities/animals/worm_spine.xml",
+		image="data/ui_gfx/animal_icons/hidden/worm_spine.png",
+	  },
+	  {
 		name="Hämis Nest",
 		path="data/entities/buildings/hamis_nest.xml",
 		image="data/ui_gfx/building_icons/hamis_nest.png",
@@ -701,6 +711,11 @@ table.insert(ALL_ENTITIES, {
 		image="mods/Apotheosis/files/ui_gfx/items/stone_fungus.png",
 	  },
 	  {
+		name="Korruptoitunutkivi",
+		path="mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/stone_heretic.png",
+	  },
+	  {
 		name="Hungry Orb",
 		path="mods/Apotheosis/files/entities/items/pickups/orb_mattereater.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/orb_mattereater.png",
@@ -709,6 +724,11 @@ table.insert(ALL_ENTITIES, {
 		name="Affluent Orb",
 		path="mods/Apotheosis/files/entities/items/pickups/orb_affluence.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/orb_affluence.png",
+	  },
+	  {
+		name="Heretical Eye",
+		path="mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/heretical_eye.png",
 	  },
 	  {
 		name="Wand of Wonders",

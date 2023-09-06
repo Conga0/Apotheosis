@@ -94,7 +94,7 @@ local insert_list = {
     },
     {
         id_matchup="lukki_dark",
-        name="sunken_creature\nlukki_fire_miniboss_phase2\ngiant_centipede\nlocust_swarm\ndevourer_magic\nseeker\nminiboss_pit_02\nstar_child",
+        name="sunken_creature\nlukki_fire_miniboss_phase2\ngiant_centipede\nlocust_swarm\ndevourer_magic\nseeker\nminiboss_pit_02\nlukki_tentacle_hungry\nstar_child",
     },
     {
         id_matchup="worm_big",

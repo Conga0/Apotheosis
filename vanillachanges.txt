@@ -40,7 +40,7 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-115 new enemies
+116 new enemies
 6 new bosses
 71 new spells
 8 new perks
@@ -66,5 +66,4 @@ heretic
 Note: Readthrough vanilla changes and remove any notes before release
 
 Enemies not yet added to enemy count:
-Red Tentacle Eye (lukki hungry)
 Abyssum Monster (I would like if there was some sort of Abyssum creature, where if it's completely docile, but if you get too close to it, it notices you)

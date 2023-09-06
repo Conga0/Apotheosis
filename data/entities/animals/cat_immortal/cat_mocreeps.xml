@@ -76,6 +76,13 @@
 		freeze_on_distance_kill="1"
 		freeze_on_max_count_kill="1" >
 		</CameraBoundComponent>
+		
+		<GenomeDataComponent
+			_enabled="1"
+			herd_id="curse"
+			food_chain_rank="1"
+			is_predator="1" >
+		</GenomeDataComponent>
 	</Base>
 	
 	<AudioComponent
