@@ -17,6 +17,7 @@ function collision_trigger()
 	end
 
 	EntityLoad( "data/entities/items/pickup/powder_stash.xml", pos_x + 16, pos_y )
+	EntityLoad( "data/entities/items/pickup/runestones/runestone_alchemy.xml", pos_x + 48, pos_y )
 	EntityLoad( "data/entities/particles/poof_green.xml", pos_x + 16, pos_y )
 
 	EntityLoad( "data/entities/animals/sandcave/poring.xml", pos_x + 8, pos_y )

@@ -2392,7 +2392,7 @@
 	gfx_glow_color="0xFFFF0000"
 	wang_color="fffd2d9e"
 	show_in_creative_mode="1"
-	durability="15"
+	durability="20"
 	hp="360000"
 	>
   	<Graphics

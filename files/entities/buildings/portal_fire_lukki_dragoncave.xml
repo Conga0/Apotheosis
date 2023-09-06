@@ -5,7 +5,7 @@
 	<TeleportComponent
 		_tags="enabled_by_liquid"
 		target.x="10756"
-		target.y="-9406" 
+		target.y="-9316" 
 	></TeleportComponent>
 
 	<HitboxComponent 
