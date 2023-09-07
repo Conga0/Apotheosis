@@ -84,9 +84,9 @@
 
 	<PhysicsAIComponent
 		target_vec_max_len="24.0"
-		force_coeff="16.0"
+		force_coeff="32.0"
 		force_balancing_coeff="0.9"
-		force_max="200"
+		force_max="800"
 		torque_coeff="50"
 		torque_balancing_coeff="1"
 		torque_max="50.0"
@@ -432,7 +432,7 @@
 	<LuaComponent
 		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_deathlaser_setup.lua"
-		execute_every_n_frame="3600"
+		execute_every_n_frame="1800"
 		execute_times="-1"
 		>
 	</LuaComponent>

@@ -224,12 +224,15 @@ g_big_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/animals/lukki_tentacle_hungry.xml"
 	},
+	--Conga: Temporarily disabled until resprited, afterwards give it a blood-hex on hit effect
+	--[[
 	{
 		prob   		= 0.1,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/worm_spine.xml" --Not sure how to make you look badass
 	},
+	]]--
 	{
 		prob   		= 0.25,
 		min_count	= 1,
