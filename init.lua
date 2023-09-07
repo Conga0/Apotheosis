@@ -1937,13 +1937,13 @@ function OnPlayerSpawned( player_entity )
   end
 
   --Debug Testing for intro scene
-  --RemoveFlagPersistent( "apotheosis_intro_cutscene_devtest" )
+  --RemoveFlagPersistent( "apotheosis_intro_cutscene" )
 
   --Handles the intro cutscene if the player hasn't encountered it yet
-  if ModIsEnabled("Mo_Creeps") == false and HasFlagPersistent( "apotheosis_intro_cutscene_devtest" ) == false then
+  if ModIsEnabled("Mo_Creeps") == false and HasFlagPersistent( "apotheosis_intro_cutscene" ) == false then
     EntityLoad("mods/apotheosis/files/entities/intro/controller_scenes.xml", x, y)
     --This is added when the cutscene ends to prevent a softlock
-    --AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
+    --AddFlagPersistent( "apotheosis_intro_cutscene" )
   end
 
   if custom_seed then

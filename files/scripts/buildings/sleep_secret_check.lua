@@ -1,7 +1,7 @@
 
 --GamePrint("time is " .. GameGetRealWorldTimeSinceStarted())
 
-if GameGetRealWorldTimeSinceStarted() < 60 then
+if GameGetRealWorldTimeSinceStarted() < 120 then
     local entity_id = GetUpdatedEntityID()
     local pos_x, pos_y = EntityGetTransform(entity_id)
     local players = EntityGetInRadiusWithTag(pos_x, pos_y, 72, "player_unit") or {}

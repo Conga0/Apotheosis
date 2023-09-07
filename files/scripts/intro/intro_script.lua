@@ -140,7 +140,7 @@ if runtime > 1260 + 420 then
     local worldEntity = GameGetWorldStateEntity()
     local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
     ComponentSetValue2(comp,"time_dt",1)
-    AddFlagPersistent( "apotheosis_intro_cutscene_devtest" )
+    AddFlagPersistent( "apotheosis_intro_cutscene" )
 else
     GameSetCameraPos(pos_x,pos_y)
 end
