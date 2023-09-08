@@ -105,7 +105,7 @@ local events = {
             local currbiome = BiomeMapGetName( x, y )
             currbiome = tostring(currbiome)
             if currbiome ~= "$biome_evil_temple" and currbiome ~= "???" then
-                local d_opts = {"Don't humiliate me like this. Take me home.","HEY! Where are you taking me?","I'm not even allowed to rest in my own home.","HEU! I'M BEING KIDNAPPED! HELP ME!","You're a sicko, you know that?","This place is filthy."}
+                local d_opts = {"Don't humiliate me like this. Take me home.","HEY! Where are you taking me?","I'm not even allowed to rest in my own home.","HEY! I'M BEING KIDNAPPED! HELP ME!","You're a sicko, you know that?","This place is filthy."}
                 local dialogue = d_opts[math.random(1,#d_opts)]
                 return true, dialogue
             else

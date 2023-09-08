@@ -741,7 +741,6 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn
   local biomes = {
     "coalmine",         --Coal Mine, first area, goodluck on your run
     "crypt",            --Temple of the Arts.. who died here?
-    "coalmine_alt",     --Coalmine but to the west side near damp cave
     "pyramid_hallway",  --Pyramid entrance, presumably
     "excavationsite",   --Coal Pits, area 2
     "snowcave",         --Snowy Depths
@@ -786,6 +785,7 @@ end
 do --Reduces enemy spawnrates by increasing chance of a null spawn (2x)
   local biomes = {
     "desert",           --Desert above ground & below, careful not to die to any Stendari
+    "coalmine_alt",     --Coalmine but to the west side near damp cave
     "wandcave",         --Magical Temple
     --"clouds",           --Cloudscapes
     "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
@@ -957,6 +957,26 @@ do -- Add death check to MoM for the run
 
   ModTextFileSetContent(path, content)
 end
+
+--[[
+--Conga: Doesn't work because the orbs are children of MoM and the EntityGetInRadiusWithTag function only targets non-children
+--Whoever made this function is from Bethesda
+do -- Give MoM orbs the "mortal" tag
+  local path = "data/entities/animals/boss_wizard/wizard_orb_blood.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("hittable,touchmagic_immunity,polymorphable_NOT", "hittable,touchmagic_immunity,polymorphable_NOT,mortal,hittable")
+
+  ModTextFileSetContent(path, content)
+end
+
+do -- Give MoM orbs the "mortal" tag
+  local path = "data/entities/animals/boss_wizard/wizard_orb_death.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("hittable,touchmagic_immunity,polymorphable_NOT", "hittable,touchmagic_immunity,polymorphable_NOT,mortal,hittable")
+
+  ModTextFileSetContent(path, content)
+end
+]]--
 
 do -- Lets you drink directly from pouches
   local path = "data/entities/items/pickup/powder_stash.xml"

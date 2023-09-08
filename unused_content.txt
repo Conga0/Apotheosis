@@ -1,3 +1,4 @@
+Removed Content:
 Cursed Orb Barrage (Higher damage explosive holy orb barrage which could only be found by openning a pandoras box after killing a divine being, reasons for removal: Meta Progression, Not distinct from other spells, overpowered, uninteresting concept)
 Curse of Mana (Curse of Abyssal Hex would be much more interesting)
 Divine Being (didn't fit in with the artstyle or quality expectations I now have for the mod, it was by all means a wonderful first boss when I made it; but now it's time to lay it to rest... Until april fools comes around)
@@ -8,3 +9,4 @@ Library biome with "ritual books" with long lasting buffs or debuffs
 A crystal biome
 A creature who tried to force you inside a portal, which teleports you to a "prison biome"
 Adult Centipede Boss (Never quite felt right or notably unique and ran out of time to develop it before real life obligations started to get in the way, would've appeared in the Ant Nest biome)
+Pyramid/Tower biome inside a giant cavern (concept sounded metal as hell, never made it into development)

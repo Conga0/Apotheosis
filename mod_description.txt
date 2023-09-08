@@ -18,15 +18,16 @@ Perks, Items, structures, Secrets, Music, and more!
 [img]https://i.imgur.com/rYbK0bD.png[/img]
 
 Explore a massively expanded world map with smooth gameplay containing bug fixes, rebalances and optimisations.
-Alchemic Curiosities, Musical Wonders, you want it? we have!
+Alchemic Curiosities, Musical Wonders, you want it? we have it!
 
-[img]https://i.imgur.com/d8d9KH6.mp4[/img]
+[img]https://i.imgur.com/d8d9KH6.gif[/img]
 
 New player or seasones veteran? No worries!
 Apotheosis is built for skill levels of all types, with brutal endgame content to early game quests you can complete for fun unlocks and optional areas you can visit to fast track your progress to the harder content, if you're a ready for it.
+
 Just be aware Apotheosis is it's own world, so not everything may be the same world you're familiar with.
 
-[img]https://i.imgur.com/4n1vFlS.mp4[/img]
+[img]https://i.imgur.com/4n1vFlS.gif[/img]
 
 If you're a seasoned veteran, you may prefer the seed "hardcore" also for a little extra challenge in your journey.
 
@@ -36,7 +37,7 @@ With all that aside, go nuts, have fun and goodluck out there!
 
 Seasonal events include:
 April Fools April 1st to 3rd
-apotheosis Birthday July 20th to 22nd
+Apotheosis Birthday July 20th to 22nd
 Halloween October 15th to 31st
 Smissmass December 15th to 31st
 
@@ -55,7 +56,7 @@ Any and all biome map mods (noitavania, purgatory, more stuff, etc)
 Ride Minecarts
 NE has also has issues breaking some structures in this mod.
 
-This mod already contains:
+This mod already contains the following mods built in:
 More Musical Magic
 More Creeps & Weirdos
 Conga's Cats
