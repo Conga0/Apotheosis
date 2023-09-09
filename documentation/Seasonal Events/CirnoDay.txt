@@ -1,0 +1,6 @@
+All Dates are in day/month format and occur every year
+Date 9/9
+
+Effects:
+A rare Freezing Orb might be found on item pedestals
+Frozen Frogs may appear throughout the collapsed mines and snowy depths

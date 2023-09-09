@@ -726,6 +726,11 @@ table.insert(ALL_ENTITIES, {
 		image="mods/Apotheosis/files/ui_gfx/items/orb_affluence.png",
 	  },
 	  {
+		name="Freezing Orb",
+		path="mods/Apotheosis/files/entities/items/pickups/orb_cirno.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/orb_cirno.png",
+	  },
+	  {
 		name="Heretical Eye",
 		path="mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/heretical_eye.png",

@@ -2581,6 +2581,18 @@
     </Graphics>
   </CellData>
 
+<CellDataChild
+	_parent="metal_hard"
+	name="apotheosis_ice_b2_hard"
+	ui_name="$mat_ice_b2"
+	wang_color="ff3df03d"
+	electrical_conductivity="10"
+	solid_friction="0.05"
+	audio_physics_material_wall="snow"
+	audio_physics_material_solid="ice"
+	>
+</CellDataChild>
+
 
 
 

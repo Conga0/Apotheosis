@@ -20,7 +20,7 @@ if ComponentGetIsEnabled(EntityGetFirstComponentIncludingDisabled(ComponentGetVa
     EntityKill(entity_id)
 end
 
---ugh...
+--Draws a fishing line from the bobber to the rod
 local target_x , target_y, rotation = EntityGetTransform(line_target)
 if rotation > -1.57 and rotation < 1.57 then
     rotation = rotation + 0.19
@@ -88,6 +88,7 @@ if isfishing then
         GameShootProjectile( player_id, x, y, plyr_x, plyr_y, fish_id )
 
         GamePrintImportant( "You caught a fish!", table.concat({"Rarity: ",rarity}) )
+        EntityKill(entity_id)
     end
 
 --Fish Caught!
