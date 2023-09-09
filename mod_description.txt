@@ -10,8 +10,8 @@ Apotheosis is a massive content mod which expands upon [b]EVERYTHING.[/b]
 116 new enemies!
 6 new bosses!
 71 new spells!
-6 new biomes!
-15 new materials!
+6+ new biomes!
+15+ new materials!
 A New Ending!
 Perks, Items, structures, Secrets, Music, and more!
 
@@ -22,26 +22,26 @@ Alchemic Curiosities, Musical Wonders, you want it? we have it!
 
 [img]https://i.imgur.com/d8d9KH6.gif[/img]
 
-New player or seasones veteran? No worries!
+New player or seasoned veteran? No worries!
 Apotheosis is built for skill levels of all types, with brutal endgame content to early game quests you can complete for fun unlocks and optional areas you can visit to fast track your progress to the harder content, if you're a ready for it.
 
 Just be aware Apotheosis is it's own world, so not everything may be the same world you're familiar with.
 
 [img]https://i.imgur.com/4n1vFlS.gif[/img]
 
-If you're a seasoned veteran, you may prefer the seed "hardcore" also for a little extra challenge in your journey.
+If you're a seasoned veteran, you may also prefer the seed "hardcore" for a little extra challenge in your journey.
 
 With all that aside, go nuts, have fun and goodluck out there!
 
 [img]https://i.imgur.com/jGdk4on.png[/img]
 
 Seasonal events include:
-April Fools April 1st to 3rd
+April Fools April 1st
 Apotheosis Birthday July 20th to 22nd
 Halloween October 15th to 31st
 Smissmass December 15th to 31st
+9Ball Day September 9th
 
-World Map: (Map Capture is not currently rendered at this time)
 Documentation: https://noita.wiki.gg/wiki/Mod:Apotheosis
 Discord Server: https://discord.gg/gtyGnv8Pxk
 
@@ -54,12 +54,14 @@ And should be compatiable with most content mods
 This mod is [b]not[/b] compatiable with:
 Any and all biome map mods (noitavania, purgatory, more stuff, etc)
 Ride Minecarts
-NE has also has issues breaking some structures in this mod.
+NE has also has issues with the perkele & abyssum bosses enabled.
 
 This mod already contains the following mods built in:
 More Musical Magic
 More Creeps & Weirdos
 Conga's Cats
+
+It is also [b]strongly recommended to play on the beta build[/b] for maximum mod stability.
 
 [img]https://i.imgur.com/yvzCtok.png[/img]
 
@@ -67,3 +69,4 @@ Conga's Cats
 If you wish to support my work in a tangiable manner, you can donate here:
 https://ko-fi.com/congalyne
 I don't expect you to under any circumstances and appreciate you playing donated or not, thankyou for playing everyone
+

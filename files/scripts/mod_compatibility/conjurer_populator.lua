@@ -526,7 +526,7 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_transmutation.png",
 	  },
 	  {
-		name="Suur Stendari",
+		name="Suur-Stendari",
 		path="data/entities/animals/wizard_firemage_greater.xml",
 		image="data/ui_gfx/animal_icons/wizard_firemage_greater.png",
 	  },
@@ -699,6 +699,11 @@ table.insert(ALL_ENTITIES, {
 		name="Volcanic Chest",
 		path="mods/Apotheosis/files/entities/items/pickups/chest_volcanic.xml",
 		image="data/ui_gfx/building_icons/chest_volcanic.png",
+	  },
+	  {
+		name="Large Potion",
+		path="mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/potion_reinforced.png",
 	  },
 	  {
 		name="Runestone of Alchemy",

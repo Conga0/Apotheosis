@@ -83,6 +83,7 @@
   ></SpriteComponent>
   
 	<SpriteParticleEmitterComponent
+    _tags="enabled_in_hand,enabled_in_world"
 		sprite_file="data/particles/snowflake_$[1-2].xml"
 		delay="0"
 		lifetime="2"

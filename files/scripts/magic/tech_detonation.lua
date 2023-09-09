@@ -88,7 +88,7 @@ local opts = {
                 local ex = pos_x + math.cos( angle ) * length
                 local ey = pos_y - math.sin( angle ) * length
 
-                EntityLoad( "data/entities/items/pickup/potion_aggressive.xml", ex, ey )
+                EntityLoad( "mods/apotheosis/files/entities/items/pickups/potion_aggressive_tech.xml", ex, ey )
             end
         end,
     },
