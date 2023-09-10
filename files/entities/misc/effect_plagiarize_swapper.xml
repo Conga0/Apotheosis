@@ -12,7 +12,7 @@
 	</LuaComponent>
 
 	<LuaComponent
-		execute_on_removed="0"
+		execute_on_removed="1"
 		script_source_file="mods/Apotheosis/files/scripts/status_effects/plagiarize_swapper_end.lua"
 		execute_every_n_frame="1800"
 		>

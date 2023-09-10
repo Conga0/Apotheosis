@@ -1771,7 +1771,7 @@ local apotheosis_spellappends = {
 		mana = -30,
 		-- max_uses = 20,
 		action 		= function()
-            if reflecting or GameGetGameEffectCount( GetUpdatedEntityID(), "WET" )>0 then
+            if reflecting or GameGetGameEffectCount( GetUpdatedEntityID(), "WET" ) > 0 then
                 c.fire_rate_wait    = c.fire_rate_wait - 10
                 current_reload_time = current_reload_time - 20
             else
@@ -2142,6 +2142,11 @@ local actions_to_edit = {
         mana = 20
     },
 
+    --Reduce mana cost of Chaotic Transmutation so it's more feasible to use for lua disabling
+    ["TRANSMUTATION"] = {
+        mana = 40
+    },
+
     --Increase frequency of acceleration/Rotate towards foes appearing, makes acceleration builds more accessible
     ["ACCELERATING_SHOT"] = {
         spawn_level         = "1,2,3,4,5,10",
@@ -2246,7 +2251,8 @@ local actions_to_edit = {
     --[[ COPI: I think it's alright :^) ]]
     ["REGENERATION_FIELD"] = {
         spawn_level         = "1,2,3,4,10",
-        spawn_probability   = "0.2,0.2,0.2,0.2,0.1"
+        spawn_probability   = "0.2,0.2,0.2,0.2,1.2",
+        mandatory_addition = true
     },
 
     --Makes Giant Explosion Spells infinite use, they're extremely rare, conditional & mana hungry, so why make them limited use too? Seems a bit overkill for something that's just a slightly weaker holy bomb; plus material spell + gigaexplosion is a crazy fun spell combo

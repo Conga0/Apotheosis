@@ -47,7 +47,7 @@ local items = {
 local year, month, day, hour, minute = GameGetDateAndTimeLocal()
 if ((( month == 9 ) and ( day == 9 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_cirno" ) then
     table.insert(items,{
-        weight = 10,
+        weight = 3,
         entity = "mods/apotheosis/files/entities/items/pickups/orb_cirno.xml",
         offset = -2
     })

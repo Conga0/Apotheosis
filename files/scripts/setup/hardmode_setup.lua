@@ -34,6 +34,11 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("clouds", 6, 2)
     MultiplyHPOnBiome("pyramid", 3, 1.2)
     MultiplyHPOnBiome("robobase", 10, 2)
+
+    --Secret Biomes
+    MultiplyHPOnBiome("custom/plane_yggdrasil", 10, 1.5)
+    MultiplyHPOnBiome("custom/plane_magic", 10, 1.5)
+    MultiplyHPOnBiome("custom/plane_mechanical", 10, 1.5)
 end
 
 

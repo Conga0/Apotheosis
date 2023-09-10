@@ -208,15 +208,14 @@ function init(x, y, w, h)
 	--Count how many of the new orbs the player has attained
 	for k=13,16 do
 	if k == 13 then k = 12 end
-		if HasFlagPersistent(table.concat({"apotheosis_card_unlocked_orb_",v})) then
+		if HasFlagPersistent(table.concat({"apotheosis_card_unlocked_orb_",k})) then
 			new_orb_count = new_orb_count + 1
+			AddFlagPersistent("apotheosis_card_unlocked_foundneworb")
 		end
 	end
 
 	if new_orb_count > 3 then
 		AddFlagPersistent("apotheosis_card_unlocked_foundallneworbs")
-	elseif new_orb_count > 0 then
-		AddFlagPersistent("apotheosis_card_unlocked_foundneworb")
 	end
 	
 	local under = 2

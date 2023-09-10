@@ -63,6 +63,8 @@ function towerclimb()
         "lava_excavation",       --Core Mines, Volcanic lava filled land in the desert with plenty of loot but plenty of death
         "evil_temple",           --Temple of Sacriligious Remains
         "sunken_cave",           --Sunken Cavern, aquamages be ware!
+        "slime_hell",            --Virulent Caverns, Slime Hell
+        "desert_pit",            --Desert Sinkhole
     }
 
     for k=1,#biomes
@@ -288,7 +290,7 @@ local secret_seeds = {
         func = perkedup
     },
     ]]--
-    --Unfinished, all liquid bubbles gain the Glass Cannon perk & all potions become large potions, alchemists & liquid bubbles appear much more frequently
+    --All liquid bubbles gain the Glass Cannon perk & all potions become large potions, alchemists & liquid bubbles appear much more frequently
     {
         ID = "alchemistdream",
         func = alchemistdream
