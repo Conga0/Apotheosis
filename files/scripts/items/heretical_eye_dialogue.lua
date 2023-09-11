@@ -1,3 +1,4 @@
+dofile_once("data/scripts/lib/utilities.lua") --Tired Sinning
 --Hello yes thank you Graham for letting me "borrow" this :) - Spoop
 
 if #EntityGetWithTag("player_unit") < 1 then 
