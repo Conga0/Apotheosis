@@ -81,6 +81,9 @@ if isfishing then
             fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_red.xml"
             AddFlagPersistent(table.concat({"apothe","osis_card","_unlocked_div","ine_red_fi","sh_unl","ocked"}))
             print(GameTextGetTranslatedOrNot("$log_apotheosis_fish"))
+
+            --Load perk particle effects & audio on fish location if rarity >= 10
+            EntityLoad( "data/entities/particles/image_emitters/perk_effect_pacifist.xml", x, y )
         elseif (rarity % 2 == 0) then
             fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
         end
@@ -92,7 +95,7 @@ if isfishing then
     end
 
 --Fish Caught!
-elseif math.random(1,1000) <= math.max((fish_max),4) then
+elseif math.random(1,2000) <= math.max((fish_max),4) then
     ComponentSetValue2(vsccomp,"value_bool",true)
 
     local velcomp = EntityGetFirstComponent(entity_id, "VelocityComponent") --[[@cast velcomp number]]

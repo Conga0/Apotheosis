@@ -26,6 +26,7 @@
 		
 		<DamageModelComponent 
             hp="24"
+			blood_material="blood"
             ragdoll_material="meat_confusion"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_hearty/filenames.txt"
 			critical_damage_resistance="1.0"

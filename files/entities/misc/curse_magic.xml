@@ -8,6 +8,7 @@
 	</LifetimeComponent>
 
 	<!--
+	-->
 	<UIIconComponent
 		name="$curse_apotheosis_magic_name"
 		description="$curse_apotheosis_magic_desc"
@@ -17,11 +18,9 @@
 		display_in_hud="0"
 		>
 	</UIIconComponent>
-	-->
 
 
     
-	<!--
     <LuaComponent
 		script_source_file="data/scripts/status_effects/weaken_start.lua"
 		execute_every_n_frame="4"
@@ -64,6 +63,7 @@
     >
     </LuaComponent>
     
+	<!--
 	<LuaComponent
 		execute_on_added="0"
 		script_source_file="mods/Apotheosis/files/scripts/status_effects/portal_summons.lua"

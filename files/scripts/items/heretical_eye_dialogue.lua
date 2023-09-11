@@ -116,7 +116,9 @@ local events = {
     {
         --Being brought to the perk creation altar
         trigger = function()
-            if EntityGetWithName( "apotheosis_perk_creation_altar" ) ~= 0 then
+            local altar = EntityGetWithName( "apotheosis_perk_creation_altar" )
+            local a_x, a_y = EntityGetTransform(altar)
+            if get_distance(x,y,a_x,a_y) < 300 then
                 local d_opts = {"My pride and joy"}
                 local dialogue = d_opts[math.random(1,#d_opts)]
                 return true, dialogue
@@ -159,6 +161,38 @@ local events = {
                     dialogue = "This place.. Where'd he run off to?"
                     return true, dialogue
                 end
+            else
+                return false
+            end
+        end
+    },
+    {
+        --Being taken into the Plane of Yggdrasil
+        trigger = function()
+            local entity_id = GetUpdatedEntityID()
+            local pos_x, pos_y = EntityGetTransform(entity_id)
+            local currbiome = BiomeMapGetName( x, y )
+            currbiome = tostring(currbiome)
+            if currbiome == "biome_plane_yggdrasil" then
+                local d_opts = {"This isn't what I expected","This is the last place I thought you'd take me","What the hell?"}
+                local dialogue = d_opts[math.random(1,#d_opts)]
+                return true, dialogue
+            else
+                return false
+            end
+        end
+    },
+    {
+        --Being taken into the Empyrean
+        trigger = function()
+            local entity_id = GetUpdatedEntityID()
+            local pos_x, pos_y = EntityGetTransform(entity_id)
+            local currbiome = BiomeMapGetName( x, y )
+            currbiome = tostring(currbiome)
+            if currbiome == "$biome_empyrean" then
+                local d_opts = {"Is this...?","Finally...","...","I feel sorry"}
+                local dialogue = d_opts[math.random(1,#d_opts)]
+                return true, dialogue
             else
                 return false
             end

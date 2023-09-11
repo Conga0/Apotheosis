@@ -26,21 +26,6 @@ local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
 --Note: This has been moved lower down for cleaner organisation & implementing mod compatibility
 --Note: 16/06/2023 Some boss spawns may be moved into biome files as well
 
---Retroactively add flags under new name if the player has the previous ones
-local flags = {
-  { "apotheosis_misc_pandora_chest_rain", "apotheosis_card_unlocked_pandora_chest_rain" },
-  { "apotheosis_essence_fungus", "apotheosis_card_unlocked_essence_fungus" },
-  { "apotheosis_moon_fungus_unlock", "apotheosis_card_unlocked_moon_fungus_unlock" }
-}
-
-for k=1,#flags
-do local v = flags[k]
-  if HasFlagPersistent(v[1]) then
-    AddFlagPersistent(v[2])
-    RemoveFlagPersistent(v[1])
-  end
-end
-
 
 
 if not GameIsBetaBuild() then -- Beta file creation, see apotheosis/betatemp/folder_desc.txt for more details
@@ -732,7 +717,9 @@ wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
 damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
 damage_apotheosis_toxic_sphere,"Toxic Sphere",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_name,"Yggdrasil's Curse",,,,,,,,,,,,,
-curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to levitate.",,,,,,,,,,,,,
+curse_apotheosis_yggdrasil_desc,"You can no longer teleport.\nYou are unable to levitate.",,,,,,,,,,,,,
+curse_apotheosis_magic_name,"Wild Magic Curse",,,,,,,,,,,,,
+curse_apotheosis_magic_desc,"Your resistances and protective perks are disabled.",,,,,,,,,,,,,
 curse_apotheosis_technology_name,"Ground Zero",,,,,,,,,,,,,
 curse_apotheosis_technology_desc,"Experimental magic will periodically be detonated around your being.",,,,,,,,,,,,,
 curse_apotheosis_glassed_name,"Glassed Curse",,,,,,,,,,,,,

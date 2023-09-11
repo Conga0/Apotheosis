@@ -2276,6 +2276,11 @@ local actions_to_edit = {
         spawn_probability   = "1.0"
     },
 
+    ["HEAVY_SHOT"] = {
+		spawn_level                       = "2,3,4,10", -- HEAVY_SHOT
+		spawn_probability                 = "0.4,0.4,0.5,0.1" -- HEAVY_SHOT
+    },
+
     --Changes Summon Egg to implement modded Apotheosis eggs in
     ["SUMMON_EGG"] = {
         action = function()

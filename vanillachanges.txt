@@ -30,6 +30,7 @@ Toxic Immunity now grants immunity to toxic damage
 Masters of Homing are now made of a slightly tastier meat than slime
 Gemmed necklace cosmetic now requires 46 orbs
 You can now eat from pouches in the inventory
+Chaotic Transmutation now costs 40 mana
 
 
 New Biome Modifiers:
