@@ -1,4 +1,5 @@
 Remove ABBC anti-cheese after it goes to main
 Remove artifically adding meat realm to the biome list when the meat biome goes to main
 
-Remove MoCreeps & Congas Cats announcement code after the 10th
+Investigate and see if any streamers/youtubers can be encountered naturally encountering the volcanic egg puzzle. (every one I've found so far has either had it spoiled or gone immediately to the right, missing the snowy depths nest outright)
+Received numerous reports of the nest puzzle feeling out of place & mistaking it for a bug, difficult to determine what the core issue is without seeing a live player reaction.

@@ -101,6 +101,7 @@ do
     "musical_boss",
     "blob_boss",
     "fire_lukki",
+    "boss_flesh_monster",
     "cat_secret",
     "orb_12",
     "orb_14",
@@ -120,7 +121,6 @@ end
 
 --Ensure this flag is never enabled, so spells can properly be disabled in hardcore mode while still appearing in the progress log
 RemoveFlagPersistent("this_should_never_spawn")
-
 
 
 
@@ -285,8 +285,8 @@ material_apotheosis_meat_fire_lukki,Infernal Meat,Адское мясо,,,,,,,,,
 material_apotheosis_meat_fire_lukki_rock,Brimstone,Сера,,,,,,,,,,,,
 material_apotheosis_mudman_mud,Magical Mud,Волшебный ил,,,,,,,,,,,,
 material_apotheosis_knowledge_of_kings,"Yggdrasil's Knowledge","Знания Иггдрасиля",,,,,,,,,,,,
-spell_apotheosis_targetter_name,Targetter,Целеуказатель,,,,,,,,,,,,
-spell_apotheosis_targetter_desc,Fire a projectile which causes irresistable hatred towards anything it hits,"Выпускает снаряд, который вызывает непреодолимую ненависть ко всему, во что попадает",,,,,,,,,,,,
+spell_apotheosis_targetter_name,"Targetter","Целеуказатель",,,,,,,,,,,,
+spell_apotheosis_targetter_desc,"Fire a projectile which causes irresistible hatred towards anything it hits","Выпускает снаряд, который вызывает непреодолимую ненависть ко всему, во что попадает",,,,,,,,,,,,
 spell_apotheosis_firecharge_name,Fire Charge,Огненный заряд,,,,,,,,,,,,
 spell_apotheosis_firecharge_desc,"Imbues a projectile with a fiery charge, that it will release on impact","Наделяет снаряд огненным зарядом, который он выпустит при ударе",,,,,,,,,,,,
 spell_apotheosis_knowledge_of_kings_name,The Knowledge of Kings,Знание королей,,,,,,,,,,,,
@@ -465,6 +465,8 @@ spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_desc,"Right Click to fire a projectile that swaps your position with the target's",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_desc,"Right Click to cast a field of regenerative magic",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_targetter_name,"Alt Fire Targetter",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_targetter_desc,"Right Click to fire a projectile which causes irresistible hatred towards anything it hits",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_alpha_name,"Alt Fire Alpha",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_alt_fire_alpha_desc,"Right Click to cast a copy of the first spell in your wand for 40 mana",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_critical_drunk_name,"Critical on Drunk",,,,,,,,,,,,,
@@ -547,6 +549,8 @@ spell_apotheosis_jumper_cables_name,"Summon Jumper Cables",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_desc,"Summon a pair of electrifying vices to shock your victims",,,,,,,,,,,,,
 spell_apotheosis_chi_name,"Chi",,,,,,,,,,,,,
 spell_apotheosis_chi_desc,"Copies every utility-type spell in the wand when cast",,,,,,,,,,,,,
+spell_apotheosis_kappa_name,"Kappa",,,,,,,,,,,,,
+spell_apotheosis_kappa_desc,"Copies every alt fire-type spell in the wand when cast",,,,,,,,,,,,,
 actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет жезлу 30 ед           . маны,Adiciona 30 de mana à varinha           ,Añade 30 maná a la varita           ,Fügt dem Zauberstab 30 Mana hinzu           ,Ajoute 30 points de mana à la baguette           ,Aggiunge 30 punti mana alla bacchetta.           ,Dodaje do różdżki 30 pkt. many           ,向魔杖增加 30 法力           ,30マナを杖に追加する,완드에 마나 30을 추가합니다.           ,,,
 spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,,,,,

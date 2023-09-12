@@ -454,6 +454,7 @@ local apotheosis_spellappends = {
     },
     {
         id                = "APOTHEOSIS_SPLIT_SPELL",
+        id_matchup        = "CHAIN_SHOT",
         name              = "$spell_apotheosis_split_shot_name",
         description       = "$spell_apotheosis_split_shot_desc",
         sprite            = "mods/Apotheosis/files/ui_gfx/gun_actions/split_spell.png",
@@ -585,6 +586,7 @@ local apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_TARGETTER",
+        id_matchup  = "LASER_LUMINOUS_DRILL",
         name 		= "$spell_apotheosis_targetter_name",
         description = "$spell_apotheosis_targetter_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/targetter.png",
@@ -608,10 +610,12 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_alt_fire_teleport_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_teleport_projectile.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/teleport_projectile.xml"},
         --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
         type    = ACTION_TYPE_PASSIVE,
         spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
         spawn_probability                 = "0.45,0.45,0.45,0.3,0.3,0.3,0.8", -- TELEPORT_PROJECTILE
+        subtype     = { altfire = true },
         price = 130,
         mana = 40,
         --max_uses    = 1,
@@ -628,10 +632,12 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_alt_fire_teleport_short_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_teleport_projectile_short.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/teleport_projectile_short.xml"},
         --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
         type    = ACTION_TYPE_PASSIVE,
         spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
         spawn_probability                 = "0.45,0.45,0.45,0.3,0.3,0.3,0.8", -- TELEPORT_PROJECTILE
+        subtype     = { altfire = true },
         price = 130,
         mana = 20,
         --max_uses    = 1,
@@ -648,10 +654,12 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_alt_fire_swapper_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_swapper_projectile.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/swapper.xml"},
         --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
         type    = ACTION_TYPE_PASSIVE,
         spawn_level                       = "0,1,2,4,5,6,10", -- TELEPORT_PROJECTILE
         spawn_probability                 = "0.2,0.2,0.2,0.1,0.1,0.1,0.05", -- TELEPORT_PROJECTILE
+        subtype     = { altfire = true },
         price = 130,
         mana = 10,
         --max_uses    = 1,
@@ -961,10 +969,12 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_alt_fire_cov_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_cov_projectile.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/regeneration_field.xml"},
         --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
         type    = ACTION_TYPE_PASSIVE,
         spawn_level                       = "1,2,3,4,10", -- REGENERATION_FIELD
         spawn_probability                 = "0.2,0.2,0.2,0.2,0.7", -- REGENERATION_FIELD
+        subtype     = { altfire = true },
         price = 250,
         mana = 80,
         max_uses = 2,
@@ -975,6 +985,31 @@ local apotheosis_spellappends = {
             -- Go to the next card
             draw_actions(1, true)
             mana = mana + 80
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_ALT_FIRE_TARGETTER",
+        id_matchup  = "APOTHEOSIS_ALT_FIRE_COV",
+        name 		= "$spell_apotheosis_alt_fire_targetter_name",
+        description = "$spell_apotheosis_alt_fire_targetter_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_targetter.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/targetter.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_boss_flesh_monster_spell",    --Alt fire varient can't spawn until you've slain the Heretic, no need to introduce multiple new mechanics at once to a new player and overwhelm them; this will also help keep the game fresh for veterened players by continuing to introduce new spells as they defeat later game bosses
+        type    = ACTION_TYPE_PASSIVE,
+        spawn_level                       = "1,2,3,4,5,6", -- HEAVY_BULLET
+        spawn_probability                 = "0.25,0.5,0.5,0.5,0.5,0.5", -- HEAVY_BULLET
+        subtype     = { altfire = true },
+        price = 250,
+        mana = 40,
+        max_uses = 8,
+        never_unlimited = true,
+        custom_uses_logic = true,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_targetter.xml",
+        action            = function()
+            -- Go to the next card
+            draw_actions(1, true)
+            mana = mana + 40
         end,
     },
 
@@ -1947,6 +1982,49 @@ local apotheosis_spellappends = {
 			mana = mana_
 		end,
 	},
+    --[[
+    --Grab related projectiles after confirming spell is an alt-fire
+    --This can't find subtype data in the wand for some reason?
+    --Might be able to use EzWand..?
+	{
+		id          = "APOTHEOSIS_KAPPA",
+        id_matchup  = "APOTHEOSIS_CHI",
+		name 		= "$spell_apotheosis_kappa_name",
+		description = "$spell_apotheosis_kappa_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/kappa.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		spawn_requires_flag = "card_unlocked_duplicate",
+		type 		= ACTION_TYPE_OTHER,
+		recursive	= true,
+		spawn_level                       = "5,6,10", -- MANA_REDUCE
+		spawn_probability                 = "0.1,0.2,1", -- MANA_REDUCE
+		price = 500,
+		mana = 120,
+		action 		= function( recursion_level, iteration )
+			c.fire_rate_wait = c.fire_rate_wait + 50
+
+			
+			if ( hand ~= nil ) then
+                print("#hand is " .. #hand)
+                for k=1,#hand
+                do local v = hand[k]
+                    print(#v)
+                    for z=1,#v do
+                        print(v.z)
+                    end
+                    if v.id_matchup then
+                        print("v.id_matchup is " .. v.id_matchup)
+                    end
+                    if ( v.subtype ) then
+                        print("v.subtype.altfire 2 is " .. v.subtype.altfire)
+                    end
+                end
+            end
+			
+		end,
+	},
+    ]]--
+
     --[[
     --Can't name anything specific, I just don't like it, maybe it's because the ui icon is janky as hell
     --Also feels like it isn't very thought provoking, I mean, I guess if you have access to blood you may as well put it on for x2 damage, right?

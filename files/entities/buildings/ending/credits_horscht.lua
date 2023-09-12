@@ -112,7 +112,7 @@ roll_credits_progress = (roll_credits_progress or -1) - 0.375 * (accelerate and 
 
 
 --Trigger the true run victory & vanilla noita credits
-if roll_credits_progress < -700 then
+if roll_credits_progress < -750 then
     --EntityKill(GetUpdatedEntityID())
 
     --Probably handle diff effects by scanning for a game flag to detect which ending is currently ongoing
