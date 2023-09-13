@@ -23,6 +23,15 @@ local inputspells =  {
     "LIFETIME_DOWN",
     "BULLET",
     "BOMB",
+    "ALPHA",
+    "GAMMA",
+    "TAU",
+    "OMEGA",
+    "MU",
+    "PHI",
+    "SIGMA",
+    "APOTHEOSIS_CHI",
+    "ZETA",
 }
 
 --Spells we're converting them into
@@ -43,6 +52,15 @@ local outputspells = {
     "LIFETIME",
     "BULLET_TRIGGER",
     "APOTHEOSIS_BOMB_GIGA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
 }
 
 local effecttype = {
@@ -60,6 +78,15 @@ local effecttype = {
     "magical_symbol_materia_blue",
     "magical_symbol_hobo_money",
     "magical_symbol_materia_red",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
 }
 
 for k=1, #targets

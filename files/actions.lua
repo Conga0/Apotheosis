@@ -618,6 +618,7 @@ local apotheosis_spellappends = {
         subtype     = { altfire = true },
         price = 130,
         mana = 40,
+        custom_uses_logic = true,
         --max_uses    = 1,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_teleport.xml",
         action            = function()
@@ -640,6 +641,7 @@ local apotheosis_spellappends = {
         subtype     = { altfire = true },
         price = 130,
         mana = 20,
+        custom_uses_logic = true,
         --max_uses    = 1,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_teleport_short.xml",
         action            = function()
@@ -662,6 +664,7 @@ local apotheosis_spellappends = {
         subtype     = { altfire = true },
         price = 130,
         mana = 10,
+        custom_uses_logic = true,
         --max_uses    = 1,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_swapper.xml",
         action            = function()
@@ -1947,7 +1950,7 @@ local apotheosis_spellappends = {
 			if ( discarded ~= nil ) then
 				for i,data in ipairs( discarded ) do
 					local rec = check_recursion( data, recursion_level )
-					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( rec > -1 ) then
+					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( data.id ~= "RESET" ) and ( rec > -1 ) then
 						dont_draw_actions = true
 						data.action( rec )
 						dont_draw_actions = false
@@ -1958,7 +1961,7 @@ local apotheosis_spellappends = {
 			if ( hand ~= nil ) then
 				for i,data in ipairs( hand ) do
 					local rec = check_recursion( data, recursion_level )
-					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( rec > -1 ) then
+					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( data.id ~= "RESET" ) and ( rec > -1 ) then
 						dont_draw_actions = true
 						data.action( rec )
 						dont_draw_actions = false
@@ -1969,7 +1972,7 @@ local apotheosis_spellappends = {
 			if ( deck ~= nil ) then
 				for i,data in ipairs( deck ) do
 					local rec = check_recursion( data, recursion_level )
-					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( rec > -1 ) then
+					if ( data ~= nil ) and ( data.type == ACTION_TYPE_UTILITY ) and ( data.id ~= "RESET" ) and ( rec > -1 ) then
 						dont_draw_actions = true
 						data.action( rec )
 						dont_draw_actions = false
@@ -1983,6 +1986,7 @@ local apotheosis_spellappends = {
 		end,
 	},
     --[[
+    ]]--
     --Grab related projectiles after confirming spell is an alt-fire
     --This can't find subtype data in the wand for some reason?
     --Might be able to use EzWand..?
@@ -1996,34 +2000,45 @@ local apotheosis_spellappends = {
 		spawn_requires_flag = "card_unlocked_duplicate",
 		type 		= ACTION_TYPE_OTHER,
 		recursive	= true,
-		spawn_level                       = "5,6,10", -- MANA_REDUCE
-		spawn_probability                 = "0.1,0.2,1", -- MANA_REDUCE
+        spawn_level                       = "10", -- Conversion spell
+        spawn_probability                 = "0.01", -- Conversion spell
 		price = 500,
 		mana = 120,
 		action 		= function( recursion_level, iteration )
 			c.fire_rate_wait = c.fire_rate_wait + 50
 
 			
+			if ( discarded ~= nil ) then
+                for k=1,#discarded
+                do local v = discarded[k]
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) then
+                        add_projectile(v.related_projectiles[1])
+                    end
+                end
+            end
+
+			
+			if ( deck ~= nil ) then
+                for k=1,#deck
+                do local v = deck[k]
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) then
+                        add_projectile(v.related_projectiles[1])
+                    end
+                end
+            end
+
+			
 			if ( hand ~= nil ) then
-                print("#hand is " .. #hand)
                 for k=1,#hand
                 do local v = hand[k]
-                    print(#v)
-                    for z=1,#v do
-                        print(v.z)
-                    end
-                    if v.id_matchup then
-                        print("v.id_matchup is " .. v.id_matchup)
-                    end
-                    if ( v.subtype ) then
-                        print("v.subtype.altfire 2 is " .. v.subtype.altfire)
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) then
+                        add_projectile(v.related_projectiles[1])
                     end
                 end
             end
 			
 		end,
 	},
-    ]]--
 
     --[[
     --Can't name anything specific, I just don't like it, maybe it's because the ui icon is janky as hell

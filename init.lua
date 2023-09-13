@@ -576,7 +576,7 @@ book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must r
 book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so and your arrow shall move faster.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"To those who seek knowledge not true, but divine.\nOne should stand at the altar alone.",,,,,,,,,,,,,
-book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
+book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass \nLetter,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая \nПисьмо,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
 book_apotheosis_material_spells_name,"Lost Alchemy",,,,,,,,,,,,,
 book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nturn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
 book_apotheosis_omegadeath_name,"Death",,,,,,,,,,,,,
@@ -675,7 +675,7 @@ log_apotheosis_upgrade_alwayscast_success_name,"A permanent enchantment sinks in
 log_apotheosis_upgrade_alwayscast_success_desc,"Some things can never be undone...",,,,,,,,,,,,,
 log_apotheosis_flesh_boss_warning,"Something wicked this way comes...",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_name,"Volcanic Egg",,,,,,,,,,,,,
-item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.",,,,,,,,,,,,,
+item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.\nYou feel it yerns for a new home.",,,,,,,,,,,,,
 item_apotheosis_chest_death_cross,"Deathly Chest",,,,,,,,,,,,,
 item_apotheosis_egg_fairy_name,"Glowing Egg",,,,,,,,,,,,,
 item_apotheosis_egg_fairy_desc,"The egg looks luminescent",,,,,,,,,,,,,
@@ -869,6 +869,7 @@ ModLuaFileAppend( "data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/sc
 
 ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
 
+-- Could this be gsubbed?
 ModLuaFileAppend( "data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua" )
 
 

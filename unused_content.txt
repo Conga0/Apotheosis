@@ -12,3 +12,4 @@ Adult Centipede Boss (Never quite felt right or notably unique and ran out of ti
 Pyramid/Tower biome inside a giant cavern (concept sounded metal as hell, never made it into development)
 Sleep Debuff/Circle of Drowsiness (Clashes with sleep altar unlock puzzle, that could've been worked around, but ultimately it was something that justn ever got around to being implemented)
 Corrupt Master of Return (Would've made itself invincible, flashed red & start a warning sound upon taking damage, shortly before turning fully red and blood-linking all damage back to the entity hurting them; similar to "Max Pain" from ragnarok online if you're familiar with it)
+Modifier which converts all spell damage into a single type (ie, all spell damage to fire damage)
