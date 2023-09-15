@@ -83,6 +83,9 @@ do local v = targets[k]
                 if EntityHasTag(v,"robot") == false and GameGetGameEffectCount( v, "STUN_PROTECTION_FREEZE" ) < 1 and GameGetGameEffectCount( v, "PROTECTION_FREEZE" ) < 1 then
                     local child = EntityLoad("data/entities/misc/effect_frozen.xml",pos_x,pos_y)
                     EntityAddChild(v,child)
+                else
+                    local child = EntityLoad("data/entities/misc/effect_frozen_speed_up.xml",pos_x,pos_y)
+                    EntityAddChild(v,child)
                 end
             end
         end

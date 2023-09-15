@@ -1,4 +1,4 @@
-<Entity name="Esoteerinen keiju" tags="ui_use_raw_name">
+<Entity name="Esoteerinenkeiju" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent

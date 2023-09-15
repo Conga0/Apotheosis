@@ -1,4 +1,4 @@
-<Entity  name="Pieni Lennokki" tags="ui_use_raw_name">
+<Entity  name="Pienilennokki" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<AnimalAIComponent 

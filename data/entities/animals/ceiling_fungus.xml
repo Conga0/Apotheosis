@@ -1,4 +1,4 @@
-<Entity name="Katon sieni" tags="standard_gravity,ui_use_raw_name">
+<Entity name="Kattosieni" tags="standard_gravity,ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_ceiling_creep.xml" >
 		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>

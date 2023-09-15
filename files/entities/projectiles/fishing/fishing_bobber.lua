@@ -57,7 +57,7 @@ if isfishing then
     local controlscomp = EntityGetFirstComponent(player_id, "ControlsComponent")
 
     --Reel a fish in
-    if ComponentGetValue2(controlscomp, "mButtonDownLeftClick") then
+    if ComponentGetValue2(controlscomp, "mButtonDownLeftClick") or InputIsJoystickButtonDown(0, 48) then
         GamePlaySound( "data/audio/Desktop/materials.bank", "materials/liquid_splash_player", x, y )
         GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/mana_fully_recharged", x, y )
         GamePlaySound( "data/audio/Desktop/animals.bank", "animals/generic/jump", x, y )

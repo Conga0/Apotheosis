@@ -1,4 +1,4 @@
-<Entity name="Lukki Hyytelö" tags="ui_use_raw_name">
+<Entity name="Lukkihyytelö" tags="ui_use_raw_name">
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="1" > </ItemChestComponent>

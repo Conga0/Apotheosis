@@ -14,7 +14,7 @@ local fairy_immortality_desc = "Are Keiju immortal?"
 local motd_setting_name = "Message of the Day"
 local motd_setting_desc = "Will a MOTD be displayed at the start of each run? \nMay contain bonus hints for various secrets."
 local seasonal_events_name = "Seasonal Events"
-local seasonal_events_desc = "Are seasonal events enabled? \nFor example, Halloween, More Creep's Birthday, etc."
+local seasonal_events_desc = "Are seasonal events enabled? \nFor example, Halloween, Apotheosis's Birthday, etc."
 local boss_health_multiplayer_name = "Boss Health Multiplier"
 local boss_health_multiplayer_formatting = " $0% HP"
 local boss_health_multiplayer_desc = "Multiply all Bosses health by this much. \nFor those who seek extra durable opponents. \nDoes not affect Kolmisilma \nMinibosses will also have their health boosted by a partial amount. \n \nFor Modders: \nIf your mod isn't listed in the compatibility section of the mod page, \nthis likely won't boost it, you'll need to add a lua component to your bosses. \nDo not hesitate to contact me for instructions or help if needed. \nIt would be easiest for me to respond to you on discord, Conga Lyne#2452"
@@ -233,10 +233,14 @@ for i=1, #flags_statues do
 end
 
 
+--Forced Seasonal Event Settings, only unlocked after beating the game
+--if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_01") or HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") or HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_03") then
+--Conga: Haven't gone through with this change as it'd screw over people who left them forcefully enabled before the change was enacted, could force reset all of them to be turned off but, not sure.
+
 --Forced Seasonal Event Settings, only unlocked after attaining at least 8 statues
 
 if statue_count >= 8 then
-  table.insert(mod_settings,
+table.insert(mod_settings,
   {
     category_id = "seasonal_events_forced",
     ui_name = seasonal_forced_name,

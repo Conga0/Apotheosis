@@ -1,4 +1,4 @@
-<Entity name="Psyykkinen lepakko" tags="cube_fx,ui_use_raw_name" >
+<Entity name="Psyykkinenlepakko" tags="cube_fx,ui_use_raw_name" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

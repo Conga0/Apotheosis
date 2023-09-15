@@ -238,7 +238,7 @@
 	status_effects="POISONED"
 	>
 	<Graphics
-		color="37c5447d"
+		color="37B42CFF"
 		>
     </Graphics>
 	<StatusEffects>

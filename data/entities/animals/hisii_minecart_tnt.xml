@@ -1,4 +1,4 @@
-<Entity name="Kaivoskärry Tappura Haulikkohiisi" tags="ui_use_raw_name" >
+<Entity name="Kaivoskärrytappurahaulikkohiisi" tags="ui_use_raw_name" >
   
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<ItemChestComponent level="1" >

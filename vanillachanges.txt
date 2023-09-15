@@ -44,7 +44,7 @@ Content list:
 116 new enemies
 6 new bosses
 71 new spells
-8 new perks
+10 new perks
 6 new biomes (+ 4 secret biomes)
 7 new structures
 15 new materials (13 interactable, 15 total)

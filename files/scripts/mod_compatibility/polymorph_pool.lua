@@ -89,9 +89,12 @@ function polytest()
         "wizard_corrupt_wands",
         "wizard_z_poly_miniboss",
         "worm_wall",
+        "worm_mechanical",
+        "worm_esoteric",
         "wraith_alchemy_apotheosis",
         "wraith_returner_apotheosis",
         "wraith_weirdo_shield",
+        --"mimic_perk_twwe",  --Should he be here?
     }
 
     if ModSettingGet( "Apotheosis.congacat_cat_immortal" ) then

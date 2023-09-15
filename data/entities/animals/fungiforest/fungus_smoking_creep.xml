@@ -1,4 +1,4 @@
-<Entity name="Tupakointi Sieni">
+<Entity name="Tupakointisieni">
   
 	<Base file="data/entities/animals/fungus_smoking_creep.xml" include_children="1" >
 

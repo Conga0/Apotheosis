@@ -368,7 +368,7 @@ perk_apotheosis_revenge_reflective,Revenge Reflection,Отражение мес�
 perk_apotheosis_revenge_reflective_description,"Reflect copies of enemy projectiles upon taking damage, with a steep damage boost as payback.",Отражение копий вражеских снарядов при получении урона с резким увеличением урона в качестве расплаты.,,,,,,,,,,,,
 biomemod_apotheosis_smoke_dense,The air feels unusually dense,Воздух кажется необычайно плотным,,,,,,,,,,,,
 credits_apotheosis_line_01,a mod made by,"мод, созданный",,,,,,,,,,,,
-credits_apotheosis_line_04,Main Developer of Apotheosis,Главный разработчик Apotheosis,,,,,,,,,,,,
+credits_apotheosis_line_04,Lead Developer of Apotheosis,Главный разработчик Apotheosis,,,,,,,,,,,,
 credits_apotheosis_line_07,Voice Actor of the Cats,Актёр озвучивания кошек,,,,,,,,,,,,
 credits_apotheosis_line_14,Creator of the Mana Drain Script,Создатель скрипта расхода маны,,,,,,,,,,,,
 credits_apotheosis_line_17,Russian Translator,Перевод на русский,,,,,,,,,,,,

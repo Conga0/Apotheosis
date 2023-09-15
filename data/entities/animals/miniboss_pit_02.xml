@@ -1,4 +1,4 @@
-<Entity tags="enemy,mortal,human,hittable,homing_target,teleportable_NOT,touchmagic_immunity,polymorphable_NOT,necrobot_NOT,glue_NOT" name="Wandsin Arvostelija">
+<Entity tags="enemy,mortal,human,hittable,homing_target,teleportable_NOT,touchmagic_immunity,polymorphable_NOT,necrobot_NOT,glue_NOT" name="Wandsinarvostelija">
 	<!-- Placeholder, confirm before final release -->
 	
 	<!-- art - main body  -->
