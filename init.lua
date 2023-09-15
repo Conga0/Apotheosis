@@ -1870,6 +1870,8 @@ if ModTextFileGetContent("data/moremusicalmagic/musicmagic.lua") == nil then
 end
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_apotheosis.lua")
+--Chemical curiosities patch - requires Apotheosis to be loaded after Chemical Curiosities.
+ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_chemical_curiosities.lua")
 
 
 --Set Custom Seed (And Check for Secret Seeds)
