@@ -70,6 +70,7 @@ local lines = {
   "towerclimb",
   "missingmagic",
   "alchemistdream",
+  "addict",
   " ",
   " ",
   " ",

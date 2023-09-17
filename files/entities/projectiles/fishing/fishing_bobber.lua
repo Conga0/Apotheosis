@@ -95,7 +95,7 @@ if isfishing then
     end
 
 --Fish Caught!
-elseif math.random(1,2000) <= math.max((fish_max),4) then
+elseif math.random(1,2000) <= math.max((fish_max),8) then
     ComponentSetValue2(vsccomp,"value_bool",true)
 
     local velcomp = EntityGetFirstComponent(entity_id, "VelocityComponent") --[[@cast velcomp number]]

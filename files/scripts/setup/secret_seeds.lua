@@ -222,6 +222,24 @@ function alchemistdream()
 
 end
 
+function addict()
+
+    GameAddFlagRun("apotheosis_addict")
+    
+    local path = "data/entities/player_base.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    
+    xml:add_child(nxml.parse([[
+        <Entity>  <Base file="mods/apotheosis/files/scripts/setup/addict_handler.xml" />  </Entity>
+    ]]))
+
+    ModTextFileSetContent(path, tostring(xml))
+
+    AddUI("addict")
+
+end
+
 
 
 --function perkedup()
@@ -294,6 +312,10 @@ local secret_seeds = {
     {
         ID = "alchemistdream",
         func = alchemistdream
+    },
+    {
+        ID = "addict",
+        func = addict
     },
 }
 

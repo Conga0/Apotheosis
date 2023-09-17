@@ -1,7 +1,7 @@
 
 local entity_id = GetUpdatedEntityID()
 local player_id = EntityGetRootEntity(entity_id)
-local pos_x, pos_y = player_id
+local pos_x, pos_y = EntityGetTransform(player_id)
 local owner_id = 0
 
 --This function changes the thief into "flee" mode after successfully stealing your gold

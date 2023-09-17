@@ -1,0 +1,28 @@
+<Entity>
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/setup/addict_setup.lua"
+		execute_every_n_frame="5"
+		execute_times="20"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/setup/addict_finalise.lua"
+		execute_every_n_frame="105"
+		execute_times="1"
+		>
+	</LuaComponent>
+    
+    <GameEffectComponent
+        effect="PROTECTION_ALL"
+        frames="110"
+    >
+	</GameEffectComponent >
+
+</Entity>

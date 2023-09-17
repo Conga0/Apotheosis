@@ -1,4 +1,4 @@
-<Entity name="Varas Hiisi" >
+<Entity name="Varashiisi" >
 
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

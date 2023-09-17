@@ -764,13 +764,14 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn
   end
 end
 
+--[[
 do --Reduces enemy spawnrates by increasing chance of a null spawn (modded)
   local biomes = {
     --"ant_hell", --Ant Nest
     --"desert_pit", --Sink Hole
     --"esoteric_den", --Esoteric Den
     --"evil_temple", --Temple of Sacriligious Remains
-    "lava_excavation", --Core Mines
+    --"lava_excavation", --Core Mines
     --"sunken_cave", --Sunken Cavern
   }
   local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_reduceenemies_x2.lua"
@@ -781,6 +782,7 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn (modded)
     ModLuaFileAppend(biomepath, appendpath)
   end
 end
+]]--
 
 do --Reduces enemy spawnrates by increasing chance of a null spawn (2x)
   local biomes = {
@@ -982,6 +984,22 @@ do -- Lets you drink directly from pouches
   local path = "data/entities/items/pickup/powder_stash.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("drinkable=\"0\"", "drinkable=\"1\"")
+
+  ModTextFileSetContent(path, content)
+end
+
+do -- Fixes CEOs to spawn in the correct entity when creature shifted
+  local path = "data/scripts/animals/leader_damage.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("EntityLoad%( \"data/entities/animals/scavenger_grenade.xml\", x, y %)", "local filepath = GlobalsGetValue( \"apotheosis_scavgrenader_filepath\", \"data/entities/animals/scavenger_grenade.xml\" ) EntityLoad( filepath, x, y )")
+
+  ModTextFileSetContent(path, content)
+end
+
+do -- Fixes Blobs to spawn in the correct entity when creature shifted
+  local path = "data/scripts/animals/blob_damage.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("local e %= EntityLoad%( \"data/entities/animals/miniblob.xml\", pos_x, pos_y %)", "local filepath = GlobalsGetValue( \"apotheosis_miniblob_filepath\", \"data/entities/animals/miniblob.xml\" ) local e = EntityLoad( filepath, pos_x, pos_y )")
 
   ModTextFileSetContent(path, content)
 end

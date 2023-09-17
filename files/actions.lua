@@ -2385,6 +2385,16 @@ local actions_to_edit = {
         mandatory_addition = true
     },
 
+    --Changes Summon Taikasauva to allow proper creature shift functionality
+    ["SUMMON_WANDGHOST"] = {
+        action = function()
+            local filepath = GlobalsGetValue( "apotheosis_wandghost_filepath", "data/entities/projectiles/deck/wand_ghost_player.xml" )
+			add_projectile(filepath)
+			add_projectile("data/entities/particles/image_emitters/wand_effect.xml")
+        end,
+        mandatory_addition = true
+    },
+
     --Arrow doesn't have increased recoil
     ["ARROW"] = {
         action = function()
