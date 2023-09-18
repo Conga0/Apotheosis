@@ -2118,6 +2118,50 @@ local apotheosis_spellappends = {
 			draw_actions(1, true)
 		end,
 	},
+	{
+		id          = "APOTHEOSIS_POLLEN_TRIGGER",
+		id_matchup  = "POLLEN",
+		name 		= "$spell_apotheosis_pollen_trigger_name",
+		description = "$spell_apotheosis_pollen_trigger_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/pollen_trigger.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/arrow_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/pollen.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",   --These are only unlocked after killing the blob boss to not interfere with the new player experience, don't want people's first impression with new spells to be. "Oh, it's vanilla spells but rebranded, bruh"
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "0,1,3,4", -- ARROW
+		spawn_probability                 = "0.4,0.8,0.8,0.4", -- ARROW
+		price = 110,
+		mana = 20,
+		--max_uses = 40,
+		action 		= function()
+			add_projectile_trigger_hit_world("data/entities/projectiles/deck/pollen.xml", 1)
+			-- damage = 0.3
+			c.fire_rate_wait = c.fire_rate_wait + 2
+			c.spread_degrees = c.spread_degrees + 20
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_RUBBER_BALL_TRIGGER",
+		id_matchup  = "RUBBER_BALL",
+		name 		= "$spell_apotheosis_rubberball_trigger_name",
+		description = "$spell_apotheosis_rubberball_trigger_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/rubber_ball_trigger.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/rubber_ball_unidentified.png",
+		related_projectiles	= {"data/entities/projectiles/deck/rubber_ball.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",   --These are only unlocked after killing the blob boss to not interfere with the new player experience, don't want people's first impression with new spells to be. "Oh, it's vanilla spells but rebranded, bruh"
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "1,2,10", -- RUBBER_BALL
+		spawn_probability                 = "0.8,0.8,0.1", -- RUBBER_BALL
+		price = 60,
+		mana = 10,
+		--max_uses = 150,
+		action 		= function()
+			add_projectile_trigger_death("mods/apotheosis/files/entities/projectiles/deck/rubber_ball_trigger.xml", 1)
+			-- damage = 0.3
+			c.fire_rate_wait = c.fire_rate_wait - 2
+			c.spread_degrees = c.spread_degrees - 1.0
+		end,
+	},
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

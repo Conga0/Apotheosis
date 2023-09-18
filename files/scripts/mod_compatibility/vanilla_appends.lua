@@ -1004,6 +1004,31 @@ do -- Fixes Blobs to spawn in the correct entity when creature shifted
   ModTextFileSetContent(path, content)
 end
 
+--Conga: HM Portals sound weird when used with this, eye glass doesn't work, don't have the time to debug it
+do --Fix Some teleportation related structures not being powered by portallium
+  local path = "data/entities/buildings/teleport_hourglass.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+
+  xml:add_child(nxml.parse([[
+    <MaterialAreaCheckerComponent
+		_tags="disabled_by_liquid"
+		area_aabb.min_x="-16" 
+		area_aabb.max_x="16" 
+		area_aabb.min_y="110"   
+		area_aabb.max_y="115"
+		update_every_x_frame="1"
+		material="apotheosis_magic_liquid_rideshare"
+		material2=""
+		look_for_failure="0"
+		kill_after_message="0">
+	</MaterialAreaCheckerComponent>
+  ]]))
+
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+
 --Debug data
 --local path = "data/scripts/item_spawnlists.lua"
 --local content = ModTextFileGetContent(path)
