@@ -1,6 +1,6 @@
 <Entity
 	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,lukki,glue_NOT,ui_use_raw_name" 
-	name="Kauhea pääkallo" >
+	name="Kauheapääkallo" >
   <Base file="data/entities/animals/hideous_mass_red.xml" include_children="1" >
     <DamageModelComponent 
       hp="30"

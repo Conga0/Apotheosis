@@ -1,14 +1,19 @@
-<Entity name="$projectile_default">
+<Entity name="$projectile_default" tags="teleportable_NOT">
 
-	<Base file="data/entities/base_projectile.xml" >
-		<VelocityComponent
-			air_friction="0.0"
-			mass="0.06"
-      gravity_y="300"
-      liquid_drag="0"
-			>
-		</VelocityComponent>
-	</Base>
+  <VelocityComponent
+    air_friction="0.0"
+    mass="0.06"
+    gravity_y="300"
+    liquid_drag="0"
+    affect_physics_bodies="1"
+    >
+  </VelocityComponent>
+
+  <AudioComponent
+    file="data/audio/Desktop/projectiles.bank"
+    audio_physics_material="projectile"
+    event_root="projectiles/hit" >
+  </AudioComponent>
 
   <ProjectileComponent
     lob_min="0.9"

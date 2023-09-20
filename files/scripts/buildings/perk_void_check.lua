@@ -2,7 +2,6 @@ dofile_once("data/scripts/perks/perk.lua")
 
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
---Conga: keep this on the github build until the run has confirmed to have started
 
 local void_count = tonumber(GlobalsGetValue( "APOTHEOSIS_VOID_COUNT", "0" ))
 

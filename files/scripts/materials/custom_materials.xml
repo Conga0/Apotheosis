@@ -288,7 +288,7 @@
 	ui_name="$material_apotheosis_milk_powder"
   	tags="[sand_ground],[corrodible],[alchemy]"
 	burnable="0"
-	density="6"
+	density="4.0"
 	cell_type="liquid"
 	wang_color="aaf6f7fe"
 	generates_smoke="0"

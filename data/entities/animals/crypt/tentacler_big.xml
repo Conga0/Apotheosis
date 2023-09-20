@@ -1,4 +1,4 @@
-<Entity >
+<Entity name="Isoturso" tags="ui_use_raw_name" >
   <Base file="data/entities/animals/tentacler_big.xml" include_children="1" >
     <DamageModelComponent 
       hp="34"

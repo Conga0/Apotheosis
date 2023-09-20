@@ -580,6 +580,7 @@ book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must r
 book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so and your arrow shall move faster.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"To those who seek knowledge not true, but divine.\nOne should stand at the altar alone.",,,,,,,,,,,,,
+book_apotheosis_playerghost_description_temp,"To those who seek knowledge not true, but divine.\nOne should turn emerald knowledge to stone.",,,,,,,,,,,,,
 book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass \nLetter,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая \nПисьмо,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
 book_apotheosis_material_spells_name,"Lost Alchemy",,,,,,,,,,,,,
 book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nturn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
@@ -669,6 +670,8 @@ status_apotheosis_creature_shifted_name,"The evolution has shifted",,,,,,,,,,,,,
 status_apotheosis_creature_shifted_desc,"You sense life is no longer what it used to be.",,,,,,,,,,,,,
 status_apotheosis_shielddrain_name,"Shield Instability",,,,,,,,,,,,,
 status_apotheosis_shielddrain_desc,"Your plasma shields are neutralized and unable to defend you.",,,,,,,,,,,,,
+status_apotheosis_mindvision_name,"Mind Vision",,,,,,,,,,,,,
+status_apotheosis_mindvision_desc,"You can see... yourself. Well done.",,,,,,,,,,,,,
 creep_apotheosis_boss_flesh_monster_name,"Kerettiläinenhirviö",,,,,,,,,,,,,
 log_apotheosis_fish,"The red fish is real",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
@@ -779,7 +782,7 @@ motd_apotheosis_description_016,"Message of the Day \nMasters of Trolling like r
 motd_apotheosis_description_017,"Message of the Day \nMusical Beings fear more than just stones....","Сообщение дня \nМузыкальные существа боятся больше, чем просто камней....",,,,,,,,,,,,
 motd_apotheosis_description_018,"Message of the Day \nKnowledge is scattered around the world.. find it.","Сообщение дня \nЗнания разбросаны по всему миру... найдите их.",,,,,,,,,,,,
 motd_apotheosis_description_019,"Message of the Day \nTry as you might, some creatures take all but a single chip from your attacks.",,,,,,,,,,,,,
-motd_apotheosis_description_020,"Message of the Day \nThe coldest Magical temple may hold vital treasure. \nJust don't descend.","Сообщение дня \nСамый холодный магический храм может содержать жизненно важные сокровища. \nПросто не спускайтесь.",,,,,,,,,,,,
+motd_apotheosis_description_020,"Message of the Day \nDescend into the drowning depths, the water awaits.",,,,,,,,,,,,,
 motd_apotheosis_description_021,"Message of the Day \nRed sand is delicious!",,,,,,,,,,,,,
 motd_apotheosis_description_022,"Message of the Day \nApotheosis, played by many, including yourself!",,,,,,,,,,,,,
 motd_apotheosis_description_023,"Message of the Day \nPerhaps not every creep is a hostile. \nPerhaps not every crystal is a threat.","Сообщение дня \nПожалуй, не каждый гад - враг. \Возможно, не каждый кристалл является угрозой.",,,,,,,,,,,,
@@ -1925,6 +1928,21 @@ function OnPlayerSpawned( player_entity )
   --[[if ModIsEnabled("Ride Minecart") == true then
     GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
   end]]--
+
+  --Temp
+  --[[
+  if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed") == false day == 21 and month == 9 and year == 2023 then
+    --Eat it Albino
+    EntityLoad("mods/Apotheosis/files/entities/special/powder_stash_redsand.xml", 1050, 140)
+
+    --Maybe this'll help him get at least one good run going, if he blows it, he blows it
+    local hbcomp = EntityGetComponentIncludingDisabled(player_entity,"HitboxComponent")[1]
+    ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
+    local hbcomp = EntityGetComponentIncludingDisabled(player_entity,"HitboxComponent")[2]
+    ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
+    AddFlagPersistent( "apotheosis_temp_redsandspawnintroguaranteed" )
+  end
+  ]]--
 
   --Warns the player if Mo Creeps is enabled, to shut it off
   if ModIsEnabled("Mo_Creeps") then
