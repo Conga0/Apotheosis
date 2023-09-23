@@ -587,7 +587,7 @@ book_apotheosis_material_spells_description,"I used to commit alchemy here a lon
 book_apotheosis_omegadeath_name,"Death",,,,,,,,,,,,,
 book_apotheosis_omegadeath_description,"Follow my exact path only. I detailed it in the land containing the diamond. \nOnly the uninitiated will bare usefulness to this knowledge to avoid corruption among our ranks, \nso teach the right way to teleport only to those pure. \nThose who have strayed from my pathway will not be rewarded with death.",,,,,,,,,,,,,
 book_apotheosis_realquest_name,"Day 7",,,,,,,,,,,,,
-book_apotheosis_realquest_description,"I've come here in search of the legendary Red Fish, I remember it's name on the tip of my tongue..\nSomething starting with H.. yet I can't recall it\nNo matter, I'll name it after myself after I become the first to discover it.\nThen I'll never forget it's name again!",,,,,,,,,,,,,
+book_apotheosis_realquest_description,"I've come here in search of the legendary Red Fish, I remember it's name on the tip of my tongue..\nSomething starting with H.. yet I can't recall it\nNo matter, I'll name it after myself after I become the first to discover it.\nThen I'll never forget its name again!",,,,,,,,,,,,,
 book_apotheosis_realquest_alt_name,"Day 297",,,,,,,,,,,,,
 book_apotheosis_realquest_alt_description,"Remember.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real\nThe red fish is reall\nThe red f",,,,,,,,,,,,,
 book_apotheosis_realquest_tale_name,"Gone Fishing",,,,,,,,,,,,,
