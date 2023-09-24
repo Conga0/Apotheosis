@@ -3023,6 +3023,24 @@
 		>
 	</Reaction>
 
+	<!--Cursed Liquid + Lava = Cursed Rock-->
+   <Reaction probability="70"
+	input_cell1="[lava]" 						input_cell2="apotheosis_cursed_liquid_red"
+	output_cell1="rock_static_cursed"			output_cell2="steam"
+	blob_radius1="4"							blob_radius2="4"
+	blob_restrict_to_input_material1="1" 		blob_restrict_to_input_material2="1" 
+	audio_fx_volume_1="100.0" >
+  </Reaction>
+
+   <Reaction probability="70"
+	input_cell1="[lava]" 						input_cell2="apotheosis_cursed_liquid_red_static"
+	output_cell1="rock_static_cursed"			output_cell2="steam"
+	blob_radius1="4"							blob_radius2="4"
+	blob_restrict_to_input_material1="1" 		blob_restrict_to_input_material2="1" 
+	audio_fx_volume_1="100.0" >
+  </Reaction>
+
+
 </Materials>
 
 

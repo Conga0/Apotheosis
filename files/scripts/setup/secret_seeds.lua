@@ -148,7 +148,8 @@ function alchemistdream()
             "voidliquid",
             "water",
             "berserkium",
-            "milk"
+            "milk",
+            "soarium"
         }
 
         for k=1,#opts

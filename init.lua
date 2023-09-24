@@ -587,7 +587,7 @@ book_apotheosis_material_spells_description,"I used to commit alchemy here a lon
 book_apotheosis_omegadeath_name,"Death",,,,,,,,,,,,,
 book_apotheosis_omegadeath_description,"Follow my exact path only. I detailed it in the land containing the diamond. \nOnly the uninitiated will bare usefulness to this knowledge to avoid corruption among our ranks, \nso teach the right way to teleport only to those pure. \nThose who have strayed from my pathway will not be rewarded with death.",,,,,,,,,,,,,
 book_apotheosis_realquest_name,"Day 7",,,,,,,,,,,,,
-book_apotheosis_realquest_description,"I've come here in search of the legendary Red Fish, I remember it's name on the tip of my tongue..\nSomething starting with H.. yet I can't recall it\nNo matter, I'll name it after myself after I become the first to discover it.\nThen I'll never forget it's name again!",,,,,,,,,,,,,
+book_apotheosis_realquest_description,"I've come here in search of the legendary Red Fish, I remember its name on the tip of my tongue..\nSomething starting with H.. yet I can't recall it\nNo matter, I'll name it after myself after I become the first to discover it.\nThen I'll never forget its name again!",,,,,,,,,,,,,
 book_apotheosis_realquest_alt_name,"Day 297",,,,,,,,,,,,,
 book_apotheosis_realquest_alt_description,"Remember.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real\nThe red fish is reall\nThe red f",,,,,,,,,,,,,
 book_apotheosis_realquest_tale_name,"Gone Fishing",,,,,,,,,,,,,
@@ -782,12 +782,12 @@ motd_apotheosis_description_016,"Message of the Day \nMasters of Trolling like r
 motd_apotheosis_description_017,"Message of the Day \nMusical Beings fear more than just stones....","Сообщение дня \nМузыкальные существа боятся больше, чем просто камней....",,,,,,,,,,,,
 motd_apotheosis_description_018,"Message of the Day \nKnowledge is scattered around the world.. find it.","Сообщение дня \nЗнания разбросаны по всему миру... найдите их.",,,,,,,,,,,,
 motd_apotheosis_description_019,"Message of the Day \nTry as you might, some creatures take all but a single chip from your attacks.",,,,,,,,,,,,,
-motd_apotheosis_description_020,"Message of the Day \nDescend into the drowning depths, the water awaits.",,,,,,,,,,,,,
+motd_apotheosis_description_020,"Message of the Day \nIt's someone's birthday today! Happy Birthday!",,,,,,,,,,,,,
 motd_apotheosis_description_021,"Message of the Day \nRed sand is delicious!",,,,,,,,,,,,,
 motd_apotheosis_description_022,"Message of the Day \nApotheosis, played by many, including yourself!",,,,,,,,,,,,,
 motd_apotheosis_description_023,"Message of the Day \nPerhaps not every creep is a hostile. \nPerhaps not every crystal is a threat.","Сообщение дня \nПожалуй, не каждый гад - враг. \Возможно, не каждый кристалл является угрозой.",,,,,,,,,,,,
-motd_apotheosis_description_024,"Message of the Day \nAlso try Conga's Cats! ...Just not with Apotheosis enabled. \nApotheosis cats override Conga's Cats' cats... Update your settings!!!","Сообщение дня \nТакже попробуйте мод Congas Cats! ...только не с включенным модом Apotheosis. \nКошки из мода Apotheosis будут конфликтовать с кошками мода Congas Cats... Обновите настройки!!!",,,,,,,,,,,,
-motd_apotheosis_description_025,"Message of the Day \nFun Fact, Despite this mod releasing on 24/10/2022, \nthe birthday event occurs in July to avoid clashing with Halloween.","Сообщение дня \nПрикольный факт, несмотря на то, что этот мод вышел 10.24.2022, \n праздник дня рождения происходит в ноябре, чтобы избежать столкновения с Хэллоуином.",,,,,,,,,,,,
+motd_apotheosis_description_024,"Message of the Day \nAlso try Conga's Cats!",,,,,,,,,,,,,
+motd_apotheosis_description_025,"Message of the Day \nDescend into the drowning depths, the water awaits.",,,,,,,,,,,,,
 motd_apotheosis_description_026,"Message of the Day \nGoodluck and have fun!. \nIf you're feeling frustrated or stressed, remember to take a break.","Сообщение дня \nУдачи и веселья! \nЕсли вы чувствуете разочарование или стресс, не забудьте сделать перерыв.",,,,,,,,,,,,
 motd_apotheosis_description_027,"Message of the Day \nI believe in you.","Сообщение дня \nЯ верю в вас.",,,,,,,,,,,,
 motd_apotheosis_description_028,"Message of the Day \nFor a fun time: pour the densest liquid in the overgrowth",,,,,,,,,,,,,
@@ -1929,9 +1929,9 @@ function OnPlayerSpawned( player_entity )
     GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
   end]]--
 
-  --Temp
   --[[
-  if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed") == false day == 21 and month == 9 and year == 2023 then
+  ]]--
+  if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed2") == false and day == 23 and month == 9 and year == 2023 then
     --Eat it Albino
     EntityLoad("mods/Apotheosis/files/entities/special/powder_stash_redsand.xml", 1050, 140)
 
@@ -1940,9 +1940,8 @@ function OnPlayerSpawned( player_entity )
     ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
     local hbcomp = EntityGetComponentIncludingDisabled(player_entity,"HitboxComponent")[2]
     ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
-    AddFlagPersistent( "apotheosis_temp_redsandspawnintroguaranteed" )
+    AddFlagPersistent( "apotheosis_temp_redsandspawnintroguaranteed2" )
   end
-  ]]--
 
   --Warns the player if Mo Creeps is enabled, to shut it off
   if ModIsEnabled("Mo_Creeps") then

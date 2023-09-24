@@ -143,6 +143,10 @@
 		offset.x="0" 
 		offset.y="0">
 	</HotspotComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
 	
 	<MaterialAreaCheckerComponent
 		area_aabb.min_x="0"

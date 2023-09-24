@@ -71,6 +71,12 @@ g_small_enemies =
 		max_count	= 1,    
 		entity 	= "data/entities/animals/crypt/waterskull.xml"
 	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/wizard_corrupt_neutral.xml"
+	},
 }
 
 g_stash =

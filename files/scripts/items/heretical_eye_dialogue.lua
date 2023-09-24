@@ -204,7 +204,7 @@ local events = {
 --Cycles through events table and runs their trigger function, will skip an entry if it's already been spoken
 --Conga: No fucking way this is optimised lmao
 for k=1,#events do
-    if not GameHasFlagRun(table.concat({"apotheosis_heretalk_id_",k})) and events[k].trigger() == true then
+    if not GameHasFlagRun(table.concat({"apotheosis_heretalk_id_",k})) and events[k].trigger() == true and EntityHasTag(entity_id,"graham_speaking") == false then
         local bool, dialogue = events[k].trigger()
         Speak(entity_id, dialogue)
         GameAddFlagRun(table.concat({"apotheosis_heretalk_id_",k}))
