@@ -1931,7 +1931,7 @@ function OnPlayerSpawned( player_entity )
 
   --[[
   ]]--
-  if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed2") == false and day == 23 and month == 9 and year == 2023 then
+  if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed2") == false and month == 9 and year == 2023 then
     --Eat it Albino
     EntityLoad("mods/Apotheosis/files/entities/special/powder_stash_redsand.xml", 1050, 140)
 

@@ -8,8 +8,8 @@
   <LightComponent 
     _enabled="1" 
     radius="200" 
-	r="255"
-	g="20"
-	b="20">
+	r="200"
+	g="200"
+	b="200">
   </LightComponent>
 </Entity>

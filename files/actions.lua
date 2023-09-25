@@ -1769,8 +1769,8 @@ local apotheosis_spellappends = {
                     hotness = hotness + 1
                 end
             end
-            if c.damage_critical_chance < 20 and hotness > 1 then
-                c.damage_critical_chance = 20
+            if c.damage_critical_chance < 50 and hotness > 1 then
+                c.damage_critical_chance = 50
             end
 			c.damage_critical_chance = (c.damage_critical_chance * hotness)
 			draw_actions( 1, true )

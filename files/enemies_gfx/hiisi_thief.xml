@@ -1,6 +1,6 @@
 <Sprite 
   filename="mods/Apotheosis/files/enemies_gfx/hiisi_thief.png"
-  hotspots_filename="data/enemies_gfx/miner_fire_hotspots.png"
+  hotspots_filename="mods/Apotheosis/files/enemies_gfx/hiisi_thief_hotspots.png"
   offset_x="7" 
   offset_y="14"
   default_animation="stand" >

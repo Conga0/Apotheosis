@@ -4,6 +4,7 @@ local last_frame = ComponentGetValue2(projcomp,"mLastFrameDamaged") --Extol's Id
 --GamePrint("Last frame hit was " .. last_frame)
 
 if last_frame > 0 then
+    ComponentSetValue2(projcomp,"mLastFrameDamaged",0)
     --GamePrint("Hit Target")
     local comps = EntityGetComponentIncludingDisabled(entity_id,"VariableStorageComponent")
     if comps then
