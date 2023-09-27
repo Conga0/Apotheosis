@@ -177,6 +177,7 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
+  --[[
   {
     id = "exp_poly",
     ui_name = exp_poly_name,
@@ -185,7 +186,6 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
-  --[[
   ]]--
   -- Conga: Maybe this could be handled via config file in the mods folder?
   -- Would allow for people who really want the reworks disabled or need them to turn them off while maintaining unity everywhere else

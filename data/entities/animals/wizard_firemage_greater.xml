@@ -219,6 +219,35 @@
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent
+			effect="PROTECTION_FREEZE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="PROTECTION_FIRE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
 
 </Entity>
 

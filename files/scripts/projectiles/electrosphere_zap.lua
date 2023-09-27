@@ -37,6 +37,9 @@ local damagetypes = {
     "curse",
     "drill",
     "fire",
+    "radioactive",
+    "healing",
+    "holy",
 }
 
 for k=1,#damagetypes

@@ -36,7 +36,7 @@ do local v = targets[k];
 		local valid = true
 		
 		local comp = EntityGetFirstComponentIncludingDisabled(v,"DamageModelComponent")
-		if ComponentGetValue2(comp,"fire_probability_of_ignition") < 0.1 then valid = false end
+		if (ComponentGetValue2(comp,"fire_probability_of_ignition") or 0) < 0.1 then valid = false end
 		
 		if children ~= nil then
 			for z=1, #children

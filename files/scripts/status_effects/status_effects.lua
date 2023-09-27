@@ -142,6 +142,15 @@ local apotheosis_status_list = {
         ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/teleport_rideshare.png",
         effect_entity="mods/apotheosis/files/entities/misc/effect_teleport_rideshare.xml",
     },
+    --[[
+    {
+        id="apotheosis_ANTHATCHING",
+        ui_name="$status_apotheosis_anthatching_name",
+        ui_description="$status_apotheosis_anthatching_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/anthatching.png",
+        effect_entity="mods/apotheosis/files/entities/misc/effect_anthatching.xml",
+    },
+    ]]--
 }
 
 local len = #status_effects

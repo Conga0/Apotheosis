@@ -283,10 +283,53 @@ local apotheosis_spellappends = {
         price = 250,
         mana = 200,
         max_uses = 3,
-        action 		= function()
-            add_projectile("data/entities/misc/forced_bungal_shift.xml")
+        pandorium_ignore = true,
+        action 		= function( recursion_level, iteration )
+            if reflecting then
+                c.fire_rate_wait = c.fire_rate_wait + 60
+                current_reload_time = current_reload_time + 30
+                return
+            end
+            --add_projectile("data/entities/misc/forced_bungal_shift.xml")
             c.fire_rate_wait = c.fire_rate_wait + 60
             current_reload_time = current_reload_time + 30
+
+            --Fungal Shift
+            do
+                dofile_once("data/scripts/lib/utilities.lua")
+                dofile_once("mods/Apotheosis/files/scripts/magic/fungal_shift.lua")
+                
+                local entity_id    = GetUpdatedEntityID()
+                local pos_x, pos_y = EntityGetTransform( entity_id )
+                
+                SetRandomSeed(pos_x + GameGetFrameNum(), pos_y)
+                
+                -- spawn random eye particles
+                if ( rand(0,1) > 0.5 ) then
+                    function spawn( x,y )
+                        EntityLoad( "data/entities/particles/treble_eye.xml", x,y )
+                    end
+                
+                    local x,y = pos_x + rand(-100,100), pos_y + rand(-80,80)
+                    local rad = rand(0,30)
+                
+                    spawn(x,y)
+                    spawn( x + 40 + rad, y + 30 + rad )
+                    spawn( x - 40 - rad, y + 30 + rad )
+                end
+
+                --Timer check
+                local frame = GameGetFrameNum()
+	            local last_frame = tonumber( GlobalsGetValue( "fungal_shift_last_frame", "-1000000" ) )
+                local fungal_iter = tonumber( GlobalsGetValue( "fungal_shift_iteration", "0" ) )
+                
+                -- shift materials
+                if iteration > 0 and frame > last_frame + 60*60*5 and fungal_iter < 20 then
+                    fungal_shift( entity_id, pos_x, pos_y, true )
+                else
+                    fungal_shift( entity_id, pos_x, pos_y, false )
+                end
+            end
         end,
     },
     {
@@ -405,10 +448,44 @@ local apotheosis_spellappends = {
         price = 250,
         mana = 200,
         max_uses = 3,
-        action 		= function()
-            add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
+        pandorium_ignore = true,
+        action 		= function( recursion_level, iteration )
+            if reflecting then
+                c.fire_rate_wait = c.fire_rate_wait + 60
+                current_reload_time = current_reload_time + 30
+                return
+            end
+            --add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
             c.fire_rate_wait = c.fire_rate_wait + 60
             current_reload_time = current_reload_time + 30
+
+            --Fungal Shift
+            do
+                dofile_once("data/scripts/lib/utilities.lua")
+                dofile_once("mods/Apotheosis/files/scripts/magic/fungal_shift_spam.lua")
+                
+                local entity_id    = GetUpdatedEntityID()
+                local pos_x, pos_y = EntityGetTransform( entity_id )
+                
+                SetRandomSeed(pos_x + GameGetFrameNum(), pos_y)
+                
+                -- spawn random eye particles
+                if ( rand(0,1) > 0.5 ) then
+                    function spawn( x,y )
+                        EntityLoad( "data/entities/particles/treble_eye.xml", x,y )
+                    end
+                
+                    local x,y = pos_x + rand(-100,100), pos_y + rand(-80,80)
+                    local rad = rand(0,30)
+                
+                    spawn(x,y)
+                    spawn( x + 40 + rad, y + 30 + rad )
+                    spawn( x - 40 - rad, y + 30 + rad )
+                end
+                
+                -- shift materials
+                fungal_shift( entity_id, pos_x, pos_y, true )
+            end
         end,
     },
     {
@@ -578,6 +655,7 @@ local apotheosis_spellappends = {
         price = 240,
         max_uses    = 20,
         mana = 120,
+        pandorium_ignore = true,
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_polymorph.xml")
             c.fire_rate_wait = c.fire_rate_wait + 100
@@ -715,6 +793,7 @@ local apotheosis_spellappends = {
         price = 4300,
         mana = 300,
         --max_uses    = 1,
+        pandorium_ignore = true,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_red_marker.xml",
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_red_portal.xml")
@@ -739,6 +818,7 @@ local apotheosis_spellappends = {
         price = 4300,
         mana = 300,
         --max_uses    = 1,
+        pandorium_ignore = true,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_green_marker.xml",
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_green_portal.xml")
@@ -763,6 +843,7 @@ local apotheosis_spellappends = {
         price = 4300,
         mana = 300,
         --max_uses    = 1,
+        pandorium_ignore = true,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/portal_blue_marker.xml",
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_blue_portal.xml")
@@ -788,6 +869,7 @@ local apotheosis_spellappends = {
         mana				= 600,
         max_uses    		= 1,
         custom_xml_file		= "mods/Apotheosis/files/entities/misc/custom_cards/knowledge_of_kings.xml",
+        pandorium_ignore = true,
         action 				= function()
             local players = EntityGetWithTag( "player_unit" )
             for i,v in ipairs( players ) do
@@ -837,6 +919,7 @@ local apotheosis_spellappends = {
         price = 240,
         max_uses    = 20,
         mana = 120,
+        pandorium_ignore = true,
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_polymorph_intense.xml")
             c.fire_rate_wait = c.fire_rate_wait + 100
@@ -2160,6 +2243,31 @@ local apotheosis_spellappends = {
 			-- damage = 0.3
 			c.fire_rate_wait = c.fire_rate_wait - 2
 			c.spread_degrees = c.spread_degrees - 1.0
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_FIRE_POWER",
+        id_matchup  = "APOTHEOSIS_WATER_POWER",
+        name 		= "$spell_apotheosis_fire_power_name",
+        description = "$spell_apotheosis_fire_power_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/pyromancy.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+        spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",  --Requires Aesthete of Heat to be slain
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "0,4,5,6", -- CHAIN_BOLT
+		spawn_probability                 = "0.75,1,0.8,0.6", -- CHAIN_BOLT
+		price = 180,
+		mana = 10,
+		-- max_uses = 20,
+		action 		= function()
+            if not reflecting and GameGetGameEffectCount( GetUpdatedEntityID(), "ON_FIRE" ) > 0 then
+                --Conga: Handle this with an entity on the projectile itself to catch inherent damage
+                c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/fire_power_handler.xml,"
+                c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
+                c.extra_entities = c.extra_entities .. "data/entities/misc/burn_wide.xml,"
+            end
+            c.fire_rate_wait    = c.fire_rate_wait + 10
+            draw_actions( 1, true )
 		end,
 	},
 }
