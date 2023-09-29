@@ -1,4 +1,5 @@
 float conga_effect_global_scale = conga_red_sand_effect_amount.x;
+conga_effect_global_scale = max(0.0,conga_effect_global_scale - 0.01);
 float conga_noise_perlin = texture2D(tex_perlin_noise, world_pos * 0.0006 + vec2(0.4, noise_time * 0.005 + 0.12)).x;
 vec2 conga_centred = tex_coord - vec2(0.5);	
 float conga_effect_local_scale_2 = length(conga_centred);

@@ -1,5 +1,5 @@
 vec2 conga_uv = tex_coord - vec2(0.5); // center at center
-conga_uv *= 3.0; // make effect less chaos
+conga_uv /= 2.0; // make effect less chaos
 vec2 conga_uvo = conga_uv;
 vec3 conga_add = vec3(0.0);
 float conga_global_noise = texture2D( tex_perlin_noise, vec2(noise_time * 0.0041246, noise_time * 0.00523541)).x;
@@ -23,7 +23,8 @@ for (int i = 0; i < 5; i++) // repeatedly mutate
 }
 
 conga_add *= vec3(1.0,0.7,0.7);
-conga_add = 1.0-1.0/(conga_add+1.0);
+conga_add = normalize(conga_add) * (1.0 - 1.0 / (length(conga_add) + 1.0));
+//conga_add = normalize(conga_add) * pow(length(conga_add) / length(vec3(1.0)), 5.0) * length(vec3(1.0));
 float conga_effect_local_scale = length(conga_uvo) * 1.0;
 vec3 conga_oc = color;
 color = color + conga_add * conga_effect_global_scale;
