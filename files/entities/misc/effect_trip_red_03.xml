@@ -8,15 +8,11 @@
         custom_effect_id="TRIP_RED_00"
         frames="600"
     ></GameEffectComponent >
-
-	<DrugEffectModifierComponent>
-		<fx_add
-			distortion_amount="0.0"
-			color_amount="0.0"
-			fractals_amount="2.0"
-			fractals_size="8.0"
-		/>
-	</DrugEffectModifierComponent>
+	
+	<LuaComponent
+		execute_every_n_frame = "1"
+		script_source_file="mods/apotheosis/files/scripts/misc/effect_trip_red.lua"
+	></LuaComponent>
 
 	<LuaComponent 
 	    execute_every_n_frame="600"
