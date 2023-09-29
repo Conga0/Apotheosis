@@ -1,4 +1,4 @@
-<Entity  name="Kolossaali Möykky" tags="ui_use_raw_name">
+<Entity  name="Kolossaalimöykky" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

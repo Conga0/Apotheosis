@@ -1,4 +1,4 @@
-<Entity tags="shaman,ui_use_raw_name" name="Suur Märkiäinen">
+<Entity tags="shaman,ui_use_raw_name" name="Suurmärkiäinen">
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>
 

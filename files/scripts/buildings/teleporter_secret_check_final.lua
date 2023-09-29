@@ -8,7 +8,6 @@ local flag_05 = GameHasFlagRun(path .. "jungle")
 local flag_06 = GameHasFlagRun(path .. "vault")
 local flag_fail = GameHasFlagRun(path .. "failed")
 
-
 if flag_01 and flag_02 and flag_03 and flag_04 and flag_05 and flag_06 then
     if flag_fail ~= true then
         local entity_id = GetUpdatedEntityID()

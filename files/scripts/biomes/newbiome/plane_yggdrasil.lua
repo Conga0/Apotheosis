@@ -22,44 +22,44 @@ g_small_enemies =
 	{
 		prob   		= 0.2,
 		min_count	= 0,
-		max_count	= 0,    
+		max_count	= 0,
 		entity 	= ""
 	},
 	-- add Aesthete of Heat after this step
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 3,    
+		max_count	= 3,
 		entity 	= "data/entities/animals/planes/ant.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 3,    
+		max_count	= 3,
 		entity 	= "data/entities/animals/planes/ant_fire.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 3,    
+		max_count	= 3,
 		entity 	= "data/entities/animals/planes/ant_suffocate.xml"
 	},
 	{
 		prob   		= 0.05,
 		min_count	= 1,
-		max_count	= 1,    
+		max_count	= 1,
 		entity 	= "data/entities/animals/planes/fairy_giant.xml"
 	},
 	{
 		prob   		= 0.05,
 		min_count	= 2,
-		max_count	= 4,    
+		max_count	= 4,
 		entity 	= "data/entities/animals/rat.xml"
 	},
 	{
 		prob   		= 0.05,
 		min_count	= 1,
-		max_count	= 1,    
+		max_count	= 1,
 		entity 	= "data/entities/animals/giant_centipede.xml"
 	},
 }
@@ -371,6 +371,10 @@ end
 
 function spawn_small_enemies(x, y)
 	spawn(g_small_enemies,x,y)
+	math.randomseed(x + y)
+	if y > 7500 and math.random(1,20) == 1 then
+		EntityLoad("data/entities/animals/bubbles/soarium/bubble_liquid.xml", x, y)
+	end
 end
 
 function spawn_big_enemies(x, y)

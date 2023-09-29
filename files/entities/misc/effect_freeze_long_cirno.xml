@@ -1,0 +1,27 @@
+<Entity>
+    <InheritTransformComponent>
+    </InheritTransformComponent>    
+    
+    <GameEffectComponent 
+        effect="FROZEN"
+        frames="540"
+        disable_movement="1"
+        ragdoll_effect="FROZEN"
+        ragdoll_material="ice_glass_b2"
+    >
+	</GameEffectComponent >
+
+    <AudioComponent
+        file="data/audio/Desktop/misc.bank"
+        event_root="game_effect/frozen" >
+    </AudioComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/cirno_freeze_check.lua"
+		execute_every_n_frame="1"
+        remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>

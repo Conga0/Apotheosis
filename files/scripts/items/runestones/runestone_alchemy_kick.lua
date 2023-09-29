@@ -59,6 +59,11 @@ function runestone_activate( entity_id, forcestatus )
 	local x,y = EntityGetTransform(entity_id)
 	SetRandomSeed(x,y)
 	local rng = Random(1,#options)
+    local mat = options[rng]
+
+    if Random(1,10000) == 1 then
+        mat = "magic_liquid_hp_regeneration_unstable"
+    end
 
 	--local particlecomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ParticleEmitterComponent")
 	--ComponentSetValue2(particlecomp,"emitted_material_name",options[rng])
@@ -75,7 +80,7 @@ function runestone_activate( entity_id, forcestatus )
 				end
 				
 				ComponentSetValue2( storage_id, "value_int", status )
-				ComponentSetValue2( storage_id, "value_string", options[rng] )
+				ComponentSetValue2( storage_id, "value_string", mat )
 				
 				if ( status == 1 ) then
 					EntitySetComponentsWithTagEnabled( entity_id, "activate", true )

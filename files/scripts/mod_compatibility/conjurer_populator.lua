@@ -286,42 +286,42 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/hidden/hideous_mass_red.png",
 	  },
 	  {
-		name="Hisii Engineer",
+		name="Hiisi Engineer",
 		path="data/entities/animals/hisii_engineer.xml",
 		image="data/ui_gfx/animal_icons/hisii_engineer.png",
 	  },
 	  {
-		name="Psychopath Hisii",
+		name="Psychopath Hiisi",
 		path="data/entities/animals/hisii_giga_bomb.xml",
 		image="data/ui_gfx/animal_icons/hisii_giga_bomb.png",
 	  },
 	  {
-		name="Homeless Hisii",
+		name="Homeless Hiisi",
 		path="data/entities/animals/hisii_hobo.xml",
 		image="data/ui_gfx/animal_icons/hisii_hobo.png",
 	  },
 	  {
-		name="Rich Hisii",
+		name="Rich Hiisi",
 		path="data/entities/animals/hisii_hobo_rich.xml",
 		image="data/ui_gfx/animal_icons/hisii_hobo_rich.png",
 	  },
 	  {
-		name="Minecart Rider Hisii",
+		name="Minecart Rider Hiisi",
 		path="data/entities/animals/hisii_minecart.xml",
 		image="data/ui_gfx/animal_icons/hisii_minecart.png",
 	  },
 	  {
-		name="TNT Minecart Rider Hisii",
+		name="TNT Minecart Rider Hiisi",
 		path="data/entities/animals/hisii_minecart_tnt.xml",
 		image="data/ui_gfx/animal_icons/hisii_minecart_tnt.png",
 	  },
 	  {
-		name="Rocket Shotgun Hisii",
+		name="Rocket Shotgun Hiisi",
 		path="data/entities/animals/hisii_rocketshotgun.xml",
 		image="data/ui_gfx/animal_icons/hisii_rocketshotgun.png",
 	  },
 	  {
-		name="Hisii Thief",
+		name="Hiisi Thief",
 		path="data/entities/animals/hiisi_thief.xml",
 		image="data/ui_gfx/animal_icons/hiisi_thief.png",
 	  },
@@ -526,7 +526,7 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_transmutation.png",
 	  },
 	  {
-		name="Suur Stendari",
+		name="Suur-Stendari",
 		path="data/entities/animals/wizard_firemage_greater.xml",
 		image="data/ui_gfx/animal_icons/wizard_firemage_greater.png",
 	  },
@@ -701,6 +701,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/building_icons/chest_volcanic.png",
 	  },
 	  {
+		name="Large Potion",
+		path="mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/potion_reinforced.png",
+	  },
+	  {
 		name="Runestone of Alchemy",
 		path="mods/Apotheosis/files/entities/items/pickups/runestones/runestone_alchemy.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/runestone_alchemy.png",
@@ -724,6 +729,11 @@ table.insert(ALL_ENTITIES, {
 		name="Affluent Orb",
 		path="mods/Apotheosis/files/entities/items/pickups/orb_affluence.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/orb_affluence.png",
+	  },
+	  {
+		name="Freezing Orb",
+		path="mods/Apotheosis/files/entities/items/pickups/orb_cirno.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/orb_cirno.png",
 	  },
 	  {
 		name="Heretical Eye",

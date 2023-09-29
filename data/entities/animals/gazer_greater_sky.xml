@@ -1,4 +1,4 @@
-<Entity name="Suur Taivaankatse" tags="touchmagic_immunity,ui_use_raw_name,polymorphable_NOT">
+<Entity name="Suur-Taivaankatse" tags="touchmagic_immunity,ui_use_raw_name,polymorphable_NOT">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

@@ -15,7 +15,6 @@ Kantele Bomb Song is fixed
 Chainsaw now costs 12 mana
 Giga Death Cross now does much, much more damage
 Giga Death Cross now uses green wand particles instead of blue
-Weakening Curses now cause a target to take double damage instead of a flat 25% vulnerability against a certain damage type, the concept is in late game Noita, it's very easy to put projectile or explosive weakening curse on a wand and ignore all damage resistances enemies has, it doesn't force you to build wands outside of your comfort zone for certain environments and I feel it restricts wand creativity by allowing you, borderline making the best strategy to stick to one damage type, rather than needing to mix it up for endgame areas of the game. This change should also hopefully make weakening curses significantly more impactful in normal builds for optimising damage output than simply being a means to bypass damage resistances with little gain to overall damage output
 Low Recoil is replaced with No Recoil
 Pit Boss now has a projectile failsafe incase it spawns too many wands (over 1k with high boss health multipliers)
 Individual Enemies can now drop a maximum of 300k gold at any given time to prevent crashes in high NG+ runs (high NG+ runs usually become unplayable at a certain point otherwise if enemies start dying, flooding the screen with hundreds, sometimes thousands of gigantic physics objects)
@@ -30,6 +29,8 @@ Friendship quest now is now slightly more involved
 Toxic Immunity now grants immunity to toxic damage
 Masters of Homing are now made of a slightly tastier meat than slime
 Gemmed necklace cosmetic now requires 46 orbs
+You can now eat from pouches in the inventory
+Chaotic Transmutation now costs 40 mana
 
 
 New Biome Modifiers:
@@ -42,8 +43,8 @@ Alchemical Mists
 Content list:
 116 new enemies
 6 new bosses
-71 new spells
-8 new perks
+75 new spells
+10 new perks
 6 new biomes (+ 4 secret biomes)
 7 new structures
 15 new materials (13 interactable, 15 total)
@@ -67,3 +68,4 @@ Note: Readthrough vanilla changes and remove any notes before release
 
 Enemies not yet added to enemy count:
 Abyssum Monster (I would like if there was some sort of Abyssum creature, where if it's completely docile, but if you get too close to it, it notices you)
+Spine Worm

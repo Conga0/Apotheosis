@@ -1,5 +1,29 @@
 <Entity>
 	<InheritTransformComponent />
+  
+	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_purple"
+		gravity.y="0.0"
+		lifetime_min="2.01"
+		lifetime_max="2.1"
+		count_min="40"
+		count_max="40"
+		render_on_grid="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="16"
+		area_circle_radius.max="16"
+		cosmetic_force_create="1"
+		airflow_force="0.251"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="40"
+		emission_interval_max_frames="40"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="10"
+		collide_with_grid="0"
+		>
+	</ParticleEmitterComponent>
 	
 	<SpriteComponent
 		alpha="0.55"
@@ -13,5 +37,15 @@
 		lifetime="600"
 		>
 	</LifetimeComponent>
+	
+	<UIIconComponent
+		icon_sprite_file="mods/apotheosis/files/ui_gfx/status_indicators/mindvision.png"
+		name="$status_apotheosis_mindvision_name"
+		description="$status_apotheosis_mindvision_desc"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
 </Entity>
 

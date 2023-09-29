@@ -19,6 +19,9 @@
 			attack_melee_damage_min="0"
 			attack_melee_damage_max="0"
 			can_fly="0"
+			food_material="apotheosis_milk"
+			food_particle_effect_material="apotheosis_milk"
+			food_eating_create_particles="0"
             >
         </AnimalAIComponent >
 		

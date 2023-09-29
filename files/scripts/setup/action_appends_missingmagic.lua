@@ -17,19 +17,25 @@ local locked_spell = {
 }
 
 local blacklist = {
-    ["BOMB"] = true,
-    ["TNT"] = true,
-    ["MINE"] = true,
-    ["GRENADE"] = true,
-    ["ROCKET"] = true,
-    ["LIGHT_BULLET"] = true,
-    ["SPITTER"] = true,
-    ["BUBBLESHOT"] = true,
-    ["RUBBERBALL"] = true,
-    ["ARROW"] = true,
-    ["BOUNCY_ORB"] = true,
-    ["ALL_SPELLS"] = true,
-    ["APOTHEOSIS_KNOWLEDGE_OF_KINGS"] = true,
+    ["BOMB"] = true,             --Starting Spell
+    ["TNT"] = true,              --Starting Spell
+    ["MINE"] = true,             --Starting Spell
+    ["GRENADE"] = true,          --Starting Spell
+    ["ROCKET"] = true,           --Starting Spell
+    ["LIGHT_BULLET"] = true,     --Starting Spell
+    ["SPITTER"] = true,          --Starting Spell
+    ["BUBBLESHOT"] = true,       --Starting Spell
+    ["RUBBERBALL"] = true,       --Starting Spell
+    ["ARROW"] = true,            --Starting Spell
+    ["BOUNCY_ORB"] = true,       --Starting Spell
+    ["ALL_SPELLS"] = true,       --Starting Spe- I mean, Quest spell
+    ["ALPHA"] = true,                       --At least some form of infinite spell casting is available
+    ["TELEPORT_PROJECTILE_SHORT"] = true,   --It just sucks to move around without TP, want to guarantee at least one spawns
+    ["REGENERATION_FIELD"] = true,          --There's so few healing spells in the game I want to guarantee at least one spawns
+    ["APOTHEOSIS_PORTAL_LUKKI_RED_PORTAL"] = true,      --One of a kind 
+    ["APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL"] = true,     --One of a kind 
+    ["APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL"] = true,    --One of a kind 
+    ["APOTHEOSIS_KNOWLEDGE_OF_KINGS"] = true,           --Quest spell
 }
 
 for k=1,#actions do -- fast as fuck boi

@@ -1,4 +1,4 @@
-<Entity name="Liiman etana" tags="ui_use_raw_name,glue_NOT">
+<Entity name="Liimanetana" tags="ui_use_raw_name,glue_NOT">
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="1" > </ItemChestComponent>

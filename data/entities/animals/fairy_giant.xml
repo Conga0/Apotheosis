@@ -17,7 +17,7 @@
 		<DamageModelComponent
             hp="200"
 			air_needed="1"
-			fire_probability_of_ignition="0.05"
+			fire_probability_of_ignition="0.00"
 			ragdollify_child_entity_sprites="0"
             ragdoll_material="meat_slime_green"
 		    ragdoll_fx_forced="DISINTEGRATED"
@@ -113,6 +113,29 @@
         script_death="data/scripts/items/drop_money.lua"
         remove_after_executed="1" >
     </LuaComponent>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent
+			effect="PROTECTION_FREEZE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
 	
 </Entity>
 

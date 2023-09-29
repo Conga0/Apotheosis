@@ -107,8 +107,7 @@
 	</ParticleEmitterComponent>
 	
 	<LuaComponent
-		_tags="activate"
-		script_source_file="data/scripts/items/runestones/runestone_slow.lua"
+		script_source_file=""
 		execute_every_n_frame="10"
 		_enabled="0"
 		>

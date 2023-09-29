@@ -31,9 +31,10 @@ function GenerateMagicCatalyst()
     "silver",
     "gold",
     "diamond",
+    "brass",
     "snow",
-    --"sand",
-    --"mud",
+    "sand",
+    "mud",
     --[[
     "magic_liquid_unstable_teleportation",
     "magic_liquid_polymorph",
@@ -56,6 +57,10 @@ function GenerateMagicCatalyst()
     "apotheosis_blood_worm_centipede",
     "apotheosis_insect_husk",
     "apotheosis_redstone",
+    "apotheosis_milk",
+    "apotheosis_sand_pink",
+    "apotheosis_magic_liquid_pure_light",
+    "apotheosis_radioactive_liquid_strong",
     }
 
     --local rng = math.random(1,#options)

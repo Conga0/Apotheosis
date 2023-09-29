@@ -1,4 +1,4 @@
-<Entity name="Suur Jäänkatse" tags="touchmagic_immunity,ui_use_raw_name">
+<Entity name="Suur-Jäänkatse" tags="touchmagic_immunity,ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

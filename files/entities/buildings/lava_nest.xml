@@ -4,4 +4,12 @@
 		execute_every_n_frame="60"
 		>
 	</LuaComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="200" 
+	r="200"
+	g="200"
+	b="200">
+  </LightComponent>
 </Entity>

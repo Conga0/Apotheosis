@@ -20,7 +20,7 @@ if ComponentGetIsEnabled(EntityGetFirstComponentIncludingDisabled(ComponentGetVa
     EntityKill(entity_id)
 end
 
---ugh...
+--Draws a fishing line from the bobber to the rod
 local target_x , target_y, rotation = EntityGetTransform(line_target)
 if rotation > -1.57 and rotation < 1.57 then
     rotation = rotation + 0.19
@@ -57,7 +57,7 @@ if isfishing then
     local controlscomp = EntityGetFirstComponent(player_id, "ControlsComponent")
 
     --Reel a fish in
-    if ComponentGetValue2(controlscomp, "mButtonDownLeftClick") then
+    if ComponentGetValue2(controlscomp, "mButtonDownLeftClick") or InputIsJoystickButtonDown(0, 48) then
         GamePlaySound( "data/audio/Desktop/materials.bank", "materials/liquid_splash_player", x, y )
         GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/mana_fully_recharged", x, y )
         GamePlaySound( "data/audio/Desktop/animals.bank", "animals/generic/jump", x, y )
@@ -81,6 +81,9 @@ if isfishing then
             fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_red.xml"
             AddFlagPersistent(table.concat({"apothe","osis_card","_unlocked_div","ine_red_fi","sh_unl","ocked"}))
             print(GameTextGetTranslatedOrNot("$log_apotheosis_fish"))
+
+            --Load perk particle effects & audio on fish location if rarity >= 10
+            EntityLoad( "data/entities/particles/image_emitters/perk_effect_pacifist.xml", x, y )
         elseif (rarity % 2 == 0) then
             fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
         end
@@ -88,10 +91,11 @@ if isfishing then
         GameShootProjectile( player_id, x, y, plyr_x, plyr_y, fish_id )
 
         GamePrintImportant( "You caught a fish!", table.concat({"Rarity: ",rarity}) )
+        EntityKill(entity_id)
     end
 
 --Fish Caught!
-elseif math.random(1,1000) <= math.max((fish_max),4) then
+elseif math.random(1,2000) <= math.max((fish_max),8) then
     ComponentSetValue2(vsccomp,"value_bool",true)
 
     local velcomp = EntityGetFirstComponent(entity_id, "VelocityComponent") --[[@cast velcomp number]]

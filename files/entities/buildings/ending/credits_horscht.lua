@@ -18,9 +18,9 @@ local lines = {
   " ",
   "HinoGuchi Sorako",
   "$credits_apotheosis_line_07",
-  " ",
-  "Slack",
-  "$credits_apotheosis_line_slack",
+  --" ",
+  --"Slack",
+  --"$credits_apotheosis_line_slack",
   " ",
   "Blueberry",
   "$credits_apotheosis_line_17",
@@ -28,7 +28,7 @@ local lines = {
   "$credits_apotheosis_line_extrahelp",
   "Letaali",
   "Squirrelly",
-  "Y🍵",
+  "YTea",
   "Evasia",
   "Zathers",
   "Extol",
@@ -70,6 +70,7 @@ local lines = {
   "towerclimb",
   "missingmagic",
   "alchemistdream",
+  "addict",
   " ",
   " ",
   " ",
@@ -79,6 +80,9 @@ local lines = {
   --"Seeker of Knowledge",
   --"Some Secrets are yet to be revealed",
   --"Stake your eyes on these glyphs, for in time, it too shall change",
+  " ",
+  " ",
+  " ",
   " ",
   " ",
   " ",
@@ -109,7 +113,7 @@ roll_credits_progress = (roll_credits_progress or -1) - 0.375 * (accelerate and 
 
 
 --Trigger the true run victory & vanilla noita credits
-if roll_credits_progress < -700 then
+if roll_credits_progress < -750 then
     --EntityKill(GetUpdatedEntityID())
 
     --Probably handle diff effects by scanning for a game flag to detect which ending is currently ongoing

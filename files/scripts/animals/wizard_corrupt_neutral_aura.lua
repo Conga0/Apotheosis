@@ -1,6 +1,7 @@
 
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
+local found = false
 
 local targets = EntityGetInRadiusWithTag(pos_x,pos_y,130,"player_unit")
 for k=1,#targets

@@ -1,6 +1,6 @@
 <Entity 
 	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name" 
-	name="Esoteerinen mato"
+	name="Esoteerinenmato"
 	>
 	<_Transform 
 		position.x="0" 

@@ -1,4 +1,4 @@
-<Entity name="Varas Hiisi" >
+<Entity name="Varashiisi" >
 
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>
@@ -143,6 +143,10 @@
 		offset.x="0" 
 		offset.y="0">
 	</HotspotComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
 	
 	<MaterialAreaCheckerComponent
 		area_aabb.min_x="0"

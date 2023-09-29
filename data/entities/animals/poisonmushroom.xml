@@ -1,4 +1,4 @@
-<Entity name="Myrkyllinen sieni" tags="mortal,hittable,homing_target,enemy" >
+<Entity name="Myrkyllinensieni" tags="mortal,hittable,homing_target,enemy" >
 
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 

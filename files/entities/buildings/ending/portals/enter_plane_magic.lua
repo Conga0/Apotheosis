@@ -2,11 +2,6 @@ function do_newgame_plus()
 	-- GameDoEnding2()
 	-- BiomeMapLoad( "mods/nightmare/files/biome_map.lua" )
 
-	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
-	-- print( newgame_n )
-	newgame_n = newgame_n + 1
-	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
-
 	local players = EntityGetWithTag("player_unit")
 	for k=1,#players
 	do local v = players[k]

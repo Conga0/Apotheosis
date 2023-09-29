@@ -127,7 +127,7 @@
 			projectile="0.1"
 			explosion="0.7"
 			electricity="-0.5"
-			fire="0.3"
+			fire="0.0"
 			ice="1.2"
 			drill="0.7"
 			>

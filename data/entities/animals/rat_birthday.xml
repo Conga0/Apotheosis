@@ -1,4 +1,4 @@
-<Entity name="Juhla rotta" tags="ui_use_raw_name" >
+<Entity name="Juhlarotta" tags="ui_use_raw_name" >
   <Base file="data/entities/animals/rat.xml">
 		<DamageModelComponent 
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/rat_birthday/filenames.txt" 

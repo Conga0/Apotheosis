@@ -63,6 +63,8 @@ function towerclimb()
         "lava_excavation",       --Core Mines, Volcanic lava filled land in the desert with plenty of loot but plenty of death
         "evil_temple",           --Temple of Sacriligious Remains
         "sunken_cave",           --Sunken Cavern, aquamages be ware!
+        "slime_hell",            --Virulent Caverns, Slime Hell
+        "desert_pit",            --Desert Sinkhole
     }
 
     for k=1,#biomes
@@ -146,7 +148,8 @@ function alchemistdream()
             "voidliquid",
             "water",
             "berserkium",
-            "milk"
+            "milk",
+            "soarium"
         }
 
         for k=1,#opts
@@ -220,6 +223,24 @@ function alchemistdream()
 
 end
 
+function addict()
+
+    GameAddFlagRun("apotheosis_addict")
+    
+    local path = "data/entities/player_base.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    
+    xml:add_child(nxml.parse([[
+        <Entity>  <Base file="mods/apotheosis/files/scripts/setup/addict_handler.xml" />  </Entity>
+    ]]))
+
+    ModTextFileSetContent(path, tostring(xml))
+
+    AddUI("addict")
+
+end
+
 
 
 --function perkedup()
@@ -288,10 +309,14 @@ local secret_seeds = {
         func = perkedup
     },
     ]]--
-    --Unfinished, all liquid bubbles gain the Glass Cannon perk & all potions become large potions, alchemists & liquid bubbles appear much more frequently
+    --All liquid bubbles gain the Glass Cannon perk & all potions become large potions, alchemists & liquid bubbles appear much more frequently
     {
         ID = "alchemistdream",
         func = alchemistdream
+    },
+    {
+        ID = "addict",
+        func = addict
     },
 }
 

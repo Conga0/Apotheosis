@@ -26,22 +26,6 @@ local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
 --Note: This has been moved lower down for cleaner organisation & implementing mod compatibility
 --Note: 16/06/2023 Some boss spawns may be moved into biome files as well
 
---Retroactively add flags under new name if the player has the previous ones
-local flags = {
-	{ "apotheosis_misc_pandora_chest_rain", "apotheosis_card_unlocked_pandora_chest_rain" },
-	{ "apotheosis_essence_fungus",          "apotheosis_card_unlocked_essence_fungus" },
-	{ "apotheosis_moon_fungus_unlock",      "apotheosis_card_unlocked_moon_fungus_unlock" }
-}
-
-for k = 1, #flags
-do
-	local v = flags[k]
-	if HasFlagPersistent(v[1]) then
-		AddFlagPersistent(v[2])
-		RemoveFlagPersistent(v[1])
-	end
-end
-
 
 
 if not GameIsBetaBuild() then -- Beta file creation, see apotheosis/betatemp/folder_desc.txt for more details
@@ -111,32 +95,32 @@ end
 
 -- Protect spell progress in case of accidental unlocks
 do
-	for _, entry in ipairs({
-		"divinebeing",
-		"boss_toxic_worm",
-		"musical_boss",
-		"blob_boss",
-		"fire_lukki",
-		"cat_secret",
-		"orb_12",
-		"orb_14",
-		"orb_15",
-		"orb_16",
-		"lost_alchemy",
-		"omega_cross",
-	}) do
-		local progressflag = "apotheosis_card_unlocked_" .. entry
-		if HasFlagPersistent(progressflag) then
-			AddFlagPersistent(progressflag .. "_spell")
-		else
-			RemoveFlagPersistent(progressflag .. "_spell")
-		end
-	end
+  for _, entry in ipairs({
+    "divinebeing",
+    "boss_toxic_worm",
+    "musical_boss",
+    "blob_boss",
+    "fire_lukki",
+    "boss_flesh_monster",
+    "cat_secret",
+    "orb_12",
+    "orb_14",
+    "orb_15",
+    "orb_16",
+    "lost_alchemy",
+    "omega_cross",
+  }) do
+    local progressflag = "apotheosis_card_unlocked_" .. entry
+    if HasFlagPersistent( progressflag ) then
+      AddFlagPersistent( progressflag .. "_spell" )
+    else
+      RemoveFlagPersistent( progressflag .. "_spell" )
+    end
+  end
 end
 
 --Ensure this flag is never enabled, so spells can properly be disabled in hardcore mode while still appearing in the progress log
 RemoveFlagPersistent("this_should_never_spawn")
-
 
 
 
@@ -301,8 +285,8 @@ material_apotheosis_meat_fire_lukki,Infernal Meat,Адское мясо,,,,,,,,,
 material_apotheosis_meat_fire_lukki_rock,Brimstone,Сера,,,,,,,,,,,,
 material_apotheosis_mudman_mud,Magical Mud,Волшебный ил,,,,,,,,,,,,
 material_apotheosis_knowledge_of_kings,"Yggdrasil's Knowledge","Знания Иггдрасиля",,,,,,,,,,,,
-spell_apotheosis_targetter_name,Targetter,Целеуказатель,,,,,,,,,,,,
-spell_apotheosis_targetter_desc,Fire a projectile which causes irresistable hatred towards anything it hits,"Выпускает снаряд, который вызывает непреодолимую ненависть ко всему, во что попадает",,,,,,,,,,,,
+spell_apotheosis_targetter_name,"Targetter","Целеуказатель",,,,,,,,,,,,
+spell_apotheosis_targetter_desc,"Fire a projectile which causes irresistible hatred towards anything it hits","Выпускает снаряд, который вызывает непреодолимую ненависть ко всему, во что попадает",,,,,,,,,,,,
 spell_apotheosis_firecharge_name,Fire Charge,Огненный заряд,,,,,,,,,,,,
 spell_apotheosis_firecharge_desc,"Imbues a projectile with a fiery charge, that it will release on impact","Наделяет снаряд огненным зарядом, который он выпустит при ударе",,,,,,,,,,,,
 spell_apotheosis_knowledge_of_kings_name,The Knowledge of Kings,Знание королей,,,,,,,,,,,,
@@ -384,7 +368,7 @@ perk_apotheosis_revenge_reflective,Revenge Reflection,Отражение мес�
 perk_apotheosis_revenge_reflective_description,"Reflect copies of enemy projectiles upon taking damage, with a steep damage boost as payback.",Отражение копий вражеских снарядов при получении урона с резким увеличением урона в качестве расплаты.,,,,,,,,,,,,
 biomemod_apotheosis_smoke_dense,The air feels unusually dense,Воздух кажется необычайно плотным,,,,,,,,,,,,
 credits_apotheosis_line_01,a mod made by,"мод, созданный",,,,,,,,,,,,
-credits_apotheosis_line_04,Main Developer of Apotheosis,Главный разработчик Apotheosis,,,,,,,,,,,,
+credits_apotheosis_line_04,Lead Developer of Apotheosis,Главный разработчик Apotheosis,,,,,,,,,,,,
 credits_apotheosis_line_07,Voice Actor of the Cats,Актёр озвучивания кошек,,,,,,,,,,,,
 credits_apotheosis_line_14,Creator of the Mana Drain Script,Создатель скрипта расхода маны,,,,,,,,,,,,
 credits_apotheosis_line_17,Russian Translator,Перевод на русский,,,,,,,,,,,,
@@ -473,8 +457,6 @@ spell_apotheosis_mass_burrow_name,"Kaivossade",,,,,,,,,,,,
 spell_apotheosis_mass_burrow_desc,"Rapidly excavate a large amount of terrain",,,,,,,,,,,,,
 spell_apotheosis_status_dry_name,"Mass Infiltration",,,,,,,,,,,,,
 spell_apotheosis_status_dry_desc,"Freezes the stains on every creature in a large radius with a magical spell",,,,,,,,,,,,,
-status_apotheosis_teleport_cancel_name,"Teleport Nullification",,,,,,,,,,,,,
-status_apotheosis_teleport_cancel_desc,"You can no longer teleport",,,,,,,,,,,,,
 spell_apotheosis_autofire_name,"Auto-Fire",,,,,,,,,,,,,
 spell_apotheosis_autofire_desc,"Causes the wand to automatically shoot if there's nearby enemies",,,,,,,,,,,,,
 spell_apotheosis_upgrade_alwayscast_name,"Spell Infusion",,,,,,,,,,,,,
@@ -483,6 +465,8 @@ spell_apotheosis_alt_fire_swapper_name,"Alt Fire Swapper Bolt",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_swapper_desc,"Right Click to fire a projectile that swaps your position with the target's",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_name,"Alt Fire Circle of Vigour",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_cov_desc,"Right Click to cast a field of regenerative magic",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_targetter_name,"Alt Fire Targetter",,,,,,,,,,,,,
+spell_apotheosis_alt_fire_targetter_desc,"Right Click to fire a projectile which causes irresistible hatred towards anything it hits",,,,,,,,,,,,,
 spell_apotheosis_alt_fire_alpha_name,"Alt Fire Alpha",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_alt_fire_alpha_desc,"Right Click to cast a copy of the first spell in your wand for 40 mana",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 spell_apotheosis_critical_drunk_name,"Critical on Drunk",,,,,,,,,,,,,
@@ -549,6 +533,8 @@ spell_apotheosis_mind_vision_name,"Mind Vision",,,,,,,,,,,,,
 spell_apotheosis_mind_vision_desc,"Creatures hit by a projectile are temporarily revealed through fog of war",,,,,,,,,,,,,
 spell_apotheosis_water_power_name,"Hydromancy",,,,,,,,,,,,,
 spell_apotheosis_water_power_desc,"Reduce mana cost by 30 and increase fire rate when wet",,,,,,,,,,,,,
+spell_apotheosis_fire_power_name,"Pyromancy",,,,,,,,,,,,,
+spell_apotheosis_fire_power_desc,"Amplify and convert all damage to fire damage when burning",,,,,,,,,,,,,
 spell_apotheosis_blood_power_name,"Hemomancy",,,,,,,,,,,,,
 spell_apotheosis_blood_power_desc,"Projectiles will pierce 2 times when bloody",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_name,"Formation - Wall",,,,,,,,,,,,,
@@ -565,6 +551,12 @@ spell_apotheosis_jumper_cables_name,"Summon Jumper Cables",,,,,,,,,,,,,
 spell_apotheosis_jumper_cables_desc,"Summon a pair of electrifying vices to shock your victims",,,,,,,,,,,,,
 spell_apotheosis_chi_name,"Chi",,,,,,,,,,,,,
 spell_apotheosis_chi_desc,"Copies every utility-type spell in the wand when cast",,,,,,,,,,,,,
+spell_apotheosis_kappa_name,"Kappa",,,,,,,,,,,,,
+spell_apotheosis_kappa_desc,"Copies every alt fire-type spell in the wand when cast",,,,,,,,,,,,,
+spell_apotheosis_pollen_trigger_name,"Pollen with Trigger",,,,,,,,,,,,,
+spell_apotheosis_pollen_trigger_desc,"A small, floating projectile that casts another spell upon collison",,,,,,,,,,,,,
+spell_apotheosis_rubberball_trigger_name,"Bouncing Burst with Death Trigger",,,,,,,,,,,,,
+spell_apotheosis_rubberball_trigger_desc,"A very bouncy projectile that casts another spell upon expiration",,,,,,,,,,,,,
 actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет жезлу 30 ед           . маны,Adiciona 30 de mana à varinha           ,Añade 30 maná a la varita           ,Fügt dem Zauberstab 30 Mana hinzu           ,Ajoute 30 points de mana à la baguette           ,Aggiunge 30 punti mana alla bacchetta.           ,Dodaje do różdżki 30 pkt. many           ,向魔杖增加 30 法力           ,30マナを杖に追加する,완드에 마나 30을 추가합니다.           ,,,
 spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,,,,,
@@ -590,13 +582,14 @@ book_apotheosis_orbbook_stone_14_description,"To gain true knowledge, one must r
 book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your goals;\nDo so and your arrow shall move faster.",,,,,,,,,,,,,
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,,,,,
 book_apotheosis_playerghost_description,"To those who seek knowledge not true, but divine.\nOne should stand at the altar alone.",,,,,,,,,,,,,
-book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
+book_apotheosis_playerghost_description_temp,"To those who seek knowledge not true, but divine.\nOne should turn emerald knowledge to stone.",,,,,,,,,,,,,
+book_apotheosis_materia_conversion_spell_description_new,Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass \nLetter,Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая \nПисьмо,,,,,,,,Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nSutētasu,,,,
 book_apotheosis_material_spells_name,"Lost Alchemy",,,,,,,,,,,,,
-book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nTurn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
+book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nturn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
 book_apotheosis_omegadeath_name,"Death",,,,,,,,,,,,,
 book_apotheosis_omegadeath_description,"Follow my exact path only. I detailed it in the land containing the diamond. \nOnly the uninitiated will bare usefulness to this knowledge to avoid corruption among our ranks, \nso teach the right way to teleport only to those pure. \nThose who have strayed from my pathway will not be rewarded with death.",,,,,,,,,,,,,
 book_apotheosis_realquest_name,"Day 7",,,,,,,,,,,,,
-book_apotheosis_realquest_description,"I've come here in search of the legendary Red Fish, I remember it's name on the tip of my tongue..\nSomething starting with H.. yet I can't recall it\nNo matter, I'll name it after myself after I become the first to discover it.\nThen I'll never forget it's name again!",,,,,,,,,,,,,
+book_apotheosis_realquest_description,"I've come here in search of the legendary Red Fish, I remember its name on the tip of my tongue..\nSomething starting with H.. yet I can't recall it\nNo matter, I'll name it after myself after I become the first to discover it.\nThen I'll never forget its name again!",,,,,,,,,,,,,
 book_apotheosis_realquest_alt_name,"Day 297",,,,,,,,,,,,,
 book_apotheosis_realquest_alt_description,"Remember.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real.\nThe red fish is real\nThe red fish is reall\nThe red f",,,,,,,,,,,,,
 book_apotheosis_realquest_tale_name,"Gone Fishing",,,,,,,,,,,,,
@@ -633,6 +626,8 @@ perk_apotheosis_plane_radar,"Divine Radar",,,,,,,,,,,,,
 perk_apotheosis_plane_radar_description,"You can sense otherworldy energy somewhere in the world.",,,,,,,,,,,,,
 status_apotheosis_nohealing_name,"Wounded",,,,,,,,,,,,,
 status_apotheosis_nohealing_desc,"You can not be healed.",,,,,,,,,,,,,
+status_apotheosis_teleport_cancel_name,"Teleport Nullification",,,,,,,,,,,,,
+status_apotheosis_teleport_cancel_desc,"You can no longer teleport",,,,,,,,,,,,,
 status_apotheosis_magicwet_intense_ui,"Intense Wetness",,,,,,,,,,,,,
 status_drunk_intense_ui,"Aura of Spirits",,,,,,,,,,,,,
 status_apotheosis_magicurine_intense_ui,"Magic Incontinence",,,,,,,,,,,,,
@@ -669,16 +664,18 @@ status_apotheosis_infusion_vulnerability_name,"Vulnerable Infusion",,,,,,,,,,,,,
 status_apotheosis_infusion_vulnerability_desc,"Your attacks inflict vulnerability.",,,,,,,,,,,,,
 status_apotheosis_infusion_hex_water_name,"Water Hex Infusion",,,,,,,,,,,,,
 status_apotheosis_infusion_hex_water_desc,"Your attacks inflict Abyssal Hex.",,,,,,,,,,,,,
+status_apotheosis_infusion_freeze_name,"Freezing Infusion",,,,,,,,,,,,,
+status_apotheosis_infusion_freeze_desc,"Your attacks inflict Freeze.",,,,,,,,,,,,,
 status_apotheosis_no_flight_name,"Grounded",,,,,,,,,,,,,
 status_apotheosis_no_flight_desc,"You are unable to levitate.",,,,,,,,,,,,,
 status_apotheosis_creature_shifted_name,"The evolution has shifted",,,,,,,,,,,,,
 status_apotheosis_creature_shifted_desc,"You sense life is no longer what it used to be.",,,,,,,,,,,,,
 status_apotheosis_shielddrain_name,"Shield Instability",,,,,,,,,,,,,
 status_apotheosis_shielddrain_desc,"Your plasma shields are neutralized and unable to defend you.",,,,,,,,,,,,,
-statusdesc_curse_wither_projectile,You take 100% extra damage from projectiles.,Вы получаете 100% дополнительного урона от снарядов.,Você recebe mais 100% de dano de projéteis.,Recibes 100 % más de daño de proyectiles.,Du erleidest 100 % zusätzlichen Schaden durch Projektile.,Vous subissez 100 % de dégâts supplémentaires des projectiles.,Subisci il 100% in più di danni da proiettili.,Otrzymujesz 100% więcej obrażeń od pocisków.,投射物额外对你造成 100% 伤害。,放射物から100%の追加ダメージを受ける。,발사체로부터 대미지를 100% 더 받습니다.,,,
-statusdesc_curse_wither_explosion,You take 100% extra damage from explosions.,Вы получаете 100% дополнительного урона от взрывов.,Você recebe mais 100% de dano de explosões.,Recibes 100 % más de daño de explosiones.,Du erleidest 100 % zusätzlichen Schaden durch Explosionen.,Vous subissez 100 % de dégâts supplémentaires des explosions.,Subisci il 100% in più di danni da esplosioni.,Otrzymujesz 100% więcej obrażeń od wybuchów.,爆炸额外对你造成 100% 伤害。,爆破から100%の追加ダメージを受ける。,폭발로부터 대미지를 100% 더 받습니다.,,,
-statusdesc_curse_wither_melee,You take 100% extra damage from melee attacks.,Вы получаете 100% дополнительного урона от рукопашных атак.,Você recebe mais 100% de dano de ataques corpo a corpo.,Recibes 100 % más de daño de ataques cuerpo a cuerpo.,Du erleidest 100 % zusätzlichen Schaden durch Nahkampfangriffe.,Vous subissez 100 % de dégâts supplémentaires des attaques de mêlée.,Subisci il 100% in più di danni da mischia.,Otrzymujesz 100% więcej obrażeń od ataków wręcz.,近战攻击额外对你造成 100% 伤害。,近接攻撃から100%の追加ダメージを受ける。,근접 공격으로부터 대미지를 100% 더 받습니다.,,,
-statusdesc_curse_wither_electricity,You take 100% extra damage from electricity.,Вы получаете 100% дополнительного урона от электричества.,Você recebe mais 100% de dano de eletricidade.,Recibes 100 % más de daño de electricidad.,Du erleidest 100 % zusätzlichen Schaden durch Elektrizität.,Vous subissez 100 % de dégâts supplémentaires de l'électricité.,Subisci il 100% in più di danni da elettricità.,Otrzymujesz 100% więcej obrażeń od elektryczności.,雷电额外对你造成 100% 伤害。,電撃から100%の追加ダメージを受ける。,전기로부터 대미지를 100% 더 받습니다.,,,
+status_apotheosis_mindvision_name,"Mind Vision",,,,,,,,,,,,,
+status_apotheosis_mindvision_desc,"You can see... yourself. Well done.",,,,,,,,,,,,,
+status_apotheosis_anthatching_name,"Ant Pheromones",,,,,,,,,,,,,
+status_apotheosis_anthatching_desc,"Ant eggs will prematurely hatch in your presence.",,,,,,,,,,,,,
 creep_apotheosis_boss_flesh_monster_name,"Kerettiläinenhirviö",,,,,,,,,,,,,
 log_apotheosis_fish,"The red fish is real",,,,,,,,,,,,,
 log_apotheosis_shift_blocked_name,"Shift Blocked",,,,,,,,,,,,,
@@ -689,7 +686,7 @@ log_apotheosis_upgrade_alwayscast_success_name,"A permanent enchantment sinks in
 log_apotheosis_upgrade_alwayscast_success_desc,"Some things can never be undone...",,,,,,,,,,,,,
 log_apotheosis_flesh_boss_warning,"Something wicked this way comes...",,,,,,,,,,,,,
 item_apotheosis_egg_fire_lukki_name,"Volcanic Egg",,,,,,,,,,,,,
-item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.",,,,,,,,,,,,,
+item_apotheosis_egg_fire_lukki_desc,"It feels warm to the touch.\nYou feel it yerns for a new home.",,,,,,,,,,,,,
 item_apotheosis_chest_death_cross,"Deathly Chest",,,,,,,,,,,,,
 item_apotheosis_egg_fairy_name,"Glowing Egg",,,,,,,,,,,,,
 item_apotheosis_egg_fairy_desc,"The egg looks luminescent",,,,,,,,,,,,,
@@ -706,11 +703,13 @@ item_apotheosis_stone_heretic_desc,"It feels drenched in blood.",,,,,,,,,,,,,
 item_apotheosis_stone_radar_name,"Opastavakivi",,,,,,,,,,,,,
 item_apotheosis_stone_radar_desc,"It pulses strangely.",,,,,,,,,,,,,
 item_apotheosis_potion_reinforced_name,"Large Potion",,,,,,,,,,,,,
-item_apotheosis_potion_reinforced_name_with_material,"$0 Large Potion",,,,,,,,,,,,,
+item_apotheosis_potion_reinforced_name_with_material,"Large $0 Potion",,,,,,,,,,,,,
 item_apotheosis_orb_mattereater_name,"Hungry Orb","Голодный шар",,,,,,,,,,,,
 item_apotheosis_orb_mattereater_desc,"You feel the matter around it being sucked in. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 item_apotheosis_orb_affluence_name,"Affluent Orb",,,,,,,,,,,,,
 item_apotheosis_orb_affluence_desc,"You can see reflections of endless treasure within it. What happens if you kick it, you wonder...",,,,,,,,,,,,,
+item_apotheosis_orb_cirno_name,"Freezing Orb",,,,,,,,,,,,,
+item_apotheosis_orb_cirno_desc,"Holding it makes you feel stupid. What happens if you kick it, you wonder...",,,,,,,,,,,,,
 item_apotheosis_fishing_rod_name,"Fishing Rod",,,,,,,,,,,,,
 item_apotheosis_fishing_rod_desc,"Go fish..?\nLeft click to cast a line.\nLeft click again when a fish bites to reel it in.",,,,,,,,,,,,,
 item_apotheosis_sampo_33_name,"Heretical Knowledge",,,,,,,,,,,,,
@@ -733,7 +732,9 @@ wand_apotheosis_wand_of_wonders_name,"Wand of Wonders",,,,,,,,,,,,,
 damage_apotheosis_reverberation,"Sound Waves",,,,,,,,,,,,,
 damage_apotheosis_toxic_sphere,"Toxic Sphere",,,,,,,,,,,,,
 curse_apotheosis_yggdrasil_name,"Yggdrasil's Curse",,,,,,,,,,,,,
-curse_apotheosis_yggdrasil_desc,"You can no longer teleport. \nYou are unable to levitate.",,,,,,,,,,,,,
+curse_apotheosis_yggdrasil_desc,"You can no longer teleport.\nYou are unable to levitate.",,,,,,,,,,,,,
+curse_apotheosis_magic_name,"Wild Magic Curse",,,,,,,,,,,,,
+curse_apotheosis_magic_desc,"Your resistances and protective perks are disabled.",,,,,,,,,,,,,
 curse_apotheosis_technology_name,"Ground Zero",,,,,,,,,,,,,
 curse_apotheosis_technology_desc,"Experimental magic will periodically be detonated around your being.",,,,,,,,,,,,,
 curse_apotheosis_glassed_name,"Glassed Curse",,,,,,,,,,,,,
@@ -746,6 +747,8 @@ curse_apotheosis_towerclimb_name,"Towerclimb",,,,,,,,,,,,,
 curse_apotheosis_towerclimb_desc,"All biomes can spawn any creature.",,,,,,,,,,,,,
 curse_apotheosis_alchemistdream_name,"Alchemist's Dream",,,,,,,,,,,,,
 curse_apotheosis_alchemistdream_desc,"All potions are replaced with Large Potions.\nAll liquid bubbles are blessed with glass cannon.\nAlchemists & Liquid bubble appear much more frequently.\nNew Liquid Bubbles appear.",,,,,,,,,,,,,
+curse_apotheosis_addict_name,"Addict",,,,,,,,,,,,,
+curse_apotheosis_addict_desc,"20 Fungal & Creature shifts occur at the start of the run.",,,,,,,,,,,,,
 curse_apotheosis_weaken_name,"Sunken Curse",,,,,,,,,,,,,
 curse_apotheosis_weaken_desc,"Your resistances and protective perks are disabled.",,,,,,,,,,,,,
 building_apotheosis_interact,"Press $0 to undergo apotheosis.",,,,,,,,,,,,,
@@ -783,12 +786,12 @@ motd_apotheosis_description_016,"Message of the Day \nMasters of Trolling like r
 motd_apotheosis_description_017,"Message of the Day \nMusical Beings fear more than just stones....","Сообщение дня \nМузыкальные существа боятся больше, чем просто камней....",,,,,,,,,,,,
 motd_apotheosis_description_018,"Message of the Day \nKnowledge is scattered around the world.. find it.","Сообщение дня \nЗнания разбросаны по всему миру... найдите их.",,,,,,,,,,,,
 motd_apotheosis_description_019,"Message of the Day \nTry as you might, some creatures take all but a single chip from your attacks.",,,,,,,,,,,,,
-motd_apotheosis_description_020,"Message of the Day \nThe coldest Magical temple may hold vital treasure. \nJust don't descend.","Сообщение дня \nСамый холодный магический храм может содержать жизненно важные сокровища. \nПросто не спускайтесь.",,,,,,,,,,,,
+motd_apotheosis_description_020,"Message of the Day \nIt's someone's birthday today! Happy Birthday!",,,,,,,,,,,,,
 motd_apotheosis_description_021,"Message of the Day \nRed sand is delicious!",,,,,,,,,,,,,
 motd_apotheosis_description_022,"Message of the Day \nApotheosis, played by many, including yourself!",,,,,,,,,,,,,
 motd_apotheosis_description_023,"Message of the Day \nPerhaps not every creep is a hostile. \nPerhaps not every crystal is a threat.","Сообщение дня \nПожалуй, не каждый гад - враг. \Возможно, не каждый кристалл является угрозой.",,,,,,,,,,,,
-motd_apotheosis_description_024,"Message of the Day \nAlso try Conga's Cats! ...Just not with Apotheosis enabled. \nApotheosis cats override Conga's Cats' cats... Update your settings!!!","Сообщение дня \nТакже попробуйте мод Congas Cats! ...только не с включенным модом Apotheosis. \nКошки из мода Apotheosis будут конфликтовать с кошками мода Congas Cats... Обновите настройки!!!",,,,,,,,,,,,
-motd_apotheosis_description_025,"Message of the Day \nFun Fact, Despite this mod releasing on 24/10/2022, \nthe birthday event occurs in July to avoid clashing with Halloween.","Сообщение дня \nПрикольный факт, несмотря на то, что этот мод вышел 10.24.2022, \n праздник дня рождения происходит в ноябре, чтобы избежать столкновения с Хэллоуином.",,,,,,,,,,,,
+motd_apotheosis_description_024,"Message of the Day \nAlso try Conga's Cats!",,,,,,,,,,,,,
+motd_apotheosis_description_025,"Message of the Day \nDescend into the drowning depths, the water awaits.",,,,,,,,,,,,,
 motd_apotheosis_description_026,"Message of the Day \nGoodluck and have fun!. \nIf you're feeling frustrated or stressed, remember to take a break.","Сообщение дня \nУдачи и веселья! \nЕсли вы чувствуете разочарование или стресс, не забудьте сделать перерыв.",,,,,,,,,,,,
 motd_apotheosis_description_027,"Message of the Day \nI believe in you.","Сообщение дня \nЯ верю в вас.",,,,,,,,,,,,
 motd_apotheosis_description_028,"Message of the Day \nFor a fun time: pour the densest liquid in the overgrowth",,,,,,,,,,,,,
@@ -814,7 +817,7 @@ motd_apotheosis_description_alt_016,"Message of the Day \n1432",,,,,,,,,,,,,
 motd_apotheosis_description_alt_017,"Message of the Day \nIf fighting is sure to result in victory,\nthen you must FIGHT!",,,,,,,,,,,,,
 motd_apotheosis_description_alt_018,"Message of the Day \nBlue fire doesn't always mean cold fire...",,,,,,,,,,,,,
 motd_apotheosis_description_alt_019,"Message of the Day \nBe careful of sewer mermaids.",,,,,,,,,,,,,
-motd_apotheosis_description_alt_020,"Message of the Day \nHello, Mr Turnip.",,,,,,,,,,,,,
+motd_apotheosis_description_alt_020,"Message of the Day \nHello, Deranged Maniac.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_021,"Message of the Day \nApotheosis, founded 21/07/2022.",,,,,,,,,,,,,
 motd_apotheosis_description_alt_022,"Message of the Day \nThat chest is a spy!",,,,,,,,,,,,,
 motd_apotheosis_description_alt_023,"Message of the Day \nMagic Inebriation is ambivalently akin to Chaotic Transmutation.",,,,,,,,,,,,,
@@ -884,6 +887,7 @@ ModLuaFileAppend("data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/scr
 
 ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua")
 
+-- Could this be gsubbed?
 ModLuaFileAppend("data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua")
 
 dofile_once("mods/apotheosis/lib/injection.lua")
@@ -1812,11 +1816,7 @@ ModLuaFileAppend("data/scripts/biomes/vault_frozen.lua", "mods/Apotheosis/files/
 ModLuaFileAppend("data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")        --Power Plant
 ModLuaFileAppend("data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")         --Heaven & Hell, but for this specific lua file append I'm only adding to hell
 
-ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/evil_temple.lua",
-	"mods/Apotheosis/files/scripts/biomes/suspicious.lua") --The Vault
-
---ModLuaFileAppend( "data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/weather/weather_wet_append.lua" ) --Attempt to insert shaman into biome wet modifier spawn additions. Started eating up too much time.
---If you know how to do this, please let me know. -Conga Lyne
+ModLuaFileAppend( "mods/apotheosis/files/scripts/biomes/newbiome/evil_temple.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Temple of Sacrilegious Remains
 
 
 --Secret
@@ -2007,8 +2007,21 @@ function OnPlayerSpawned(player_entity)
 	--Previously a game print to warn against Ride Minecarts
 	--[[if ModIsEnabled("Ride Minecart") == true then
     GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
-  end]]
-	--
+  end]]--
+
+  --[[
+  ]]--
+  if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed2") == false and month == 9 and year == 2023 then
+    --Eat it Albino
+    EntityLoad("mods/Apotheosis/files/entities/special/powder_stash_redsand.xml", 1050, 140)
+
+    --Maybe this'll help him get at least one good run going, if he blows it, he blows it
+    local hbcomp = EntityGetComponentIncludingDisabled(player_entity,"HitboxComponent")[1]
+    ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
+    local hbcomp = EntityGetComponentIncludingDisabled(player_entity,"HitboxComponent")[2]
+    ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
+    AddFlagPersistent( "apotheosis_temp_redsandspawnintroguaranteed2" )
+  end
 
 	--Warns the player if Mo Creeps is enabled, to shut it off
 	if ModIsEnabled("Mo_Creeps") then

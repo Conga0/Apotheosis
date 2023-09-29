@@ -1,4 +1,4 @@
-<Entity  name="Iso Möykky" tags="ui_use_raw_name">
+<Entity  name="Isomöykky" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

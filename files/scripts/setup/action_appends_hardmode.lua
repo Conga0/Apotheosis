@@ -21,7 +21,7 @@ local actions_to_edit = {
     ["REGENERATION_FIELD"] = {
         description = "$spell_apotheosis_cov_desc",
         spawn_level = "1,2,3,4,10",
-        spawn_probability = "0.2,0.2,0.2,0.2,0.5",
+        spawn_probability = "0.2,0.2,0.2,0.2,2.0",
         action = function(recursion_level)
             if (recursion_level) ~= nil then return; end
             --if disablecopying(recursion_level) then return; end

@@ -1,6 +1,6 @@
 <Entity
 	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,lukki,glue_NOT,ui_use_raw_name" 
-	name="Hirvittävä liha"> 
+	name="Hirvittäväliha"> 
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>

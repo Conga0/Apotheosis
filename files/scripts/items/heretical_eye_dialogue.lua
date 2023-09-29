@@ -1,3 +1,4 @@
+dofile_once("data/scripts/lib/utilities.lua") --Tired Sinning
 --Hello yes thank you Graham for letting me "borrow" this :) - Spoop
 
 if #EntityGetWithTag("player_unit") < 1 then 
@@ -105,7 +106,7 @@ local events = {
             local currbiome = BiomeMapGetName( x, y )
             currbiome = tostring(currbiome)
             if currbiome ~= "$biome_evil_temple" and currbiome ~= "???" then
-                local d_opts = {"Don't humiliate me like this. Take me home.","HEY! Where are you taking me?","I'm not even allowed to rest in my own home.","HEU! I'M BEING KIDNAPPED! HELP ME!","You're a sicko, you know that?","This place is filthy."}
+                local d_opts = {"Don't humiliate me like this. Take me home.","HEY! Where are you taking me?","I'm not even allowed to rest in my own home.","HEY! I'M BEING KIDNAPPED! HELP ME!","You're a sicko, you know that?","This place is filthy."}
                 local dialogue = d_opts[math.random(1,#d_opts)]
                 return true, dialogue
             else
@@ -116,7 +117,9 @@ local events = {
     {
         --Being brought to the perk creation altar
         trigger = function()
-            if EntityGetWithName( "apotheosis_perk_creation_altar" ) ~= 0 then
+            local altar = EntityGetWithName( "apotheosis_perk_creation_altar" )
+            local a_x, a_y = EntityGetTransform(altar)
+            if get_distance(x,y,a_x,a_y) < 300 then
                 local d_opts = {"My pride and joy"}
                 local dialogue = d_opts[math.random(1,#d_opts)]
                 return true, dialogue
@@ -164,12 +167,44 @@ local events = {
             end
         end
     },
+    {
+        --Being taken into the Plane of Yggdrasil
+        trigger = function()
+            local entity_id = GetUpdatedEntityID()
+            local pos_x, pos_y = EntityGetTransform(entity_id)
+            local currbiome = BiomeMapGetName( x, y )
+            currbiome = tostring(currbiome)
+            if currbiome == "biome_plane_yggdrasil" then
+                local d_opts = {"This isn't what I expected","This is the last place I thought you'd take me","What the hell?"}
+                local dialogue = d_opts[math.random(1,#d_opts)]
+                return true, dialogue
+            else
+                return false
+            end
+        end
+    },
+    {
+        --Being taken into the Empyrean
+        trigger = function()
+            local entity_id = GetUpdatedEntityID()
+            local pos_x, pos_y = EntityGetTransform(entity_id)
+            local currbiome = BiomeMapGetName( x, y )
+            currbiome = tostring(currbiome)
+            if currbiome == "$biome_empyrean" then
+                local d_opts = {"Is this...?","Finally...","...","I feel sorry"}
+                local dialogue = d_opts[math.random(1,#d_opts)]
+                return true, dialogue
+            else
+                return false
+            end
+        end
+    },
 }
 
 --Cycles through events table and runs their trigger function, will skip an entry if it's already been spoken
 --Conga: No fucking way this is optimised lmao
 for k=1,#events do
-    if not GameHasFlagRun(table.concat({"apotheosis_heretalk_id_",k})) and events[k].trigger() == true then
+    if not GameHasFlagRun(table.concat({"apotheosis_heretalk_id_",k})) and events[k].trigger() == true and EntityHasTag(entity_id,"graham_speaking") == false then
         local bool, dialogue = events[k].trigger()
         Speak(entity_id, dialogue)
         GameAddFlagRun(table.concat({"apotheosis_heretalk_id_",k}))

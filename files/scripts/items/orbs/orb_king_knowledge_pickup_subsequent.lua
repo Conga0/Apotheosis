@@ -6,7 +6,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 	GameAddFlagRun( "apotheosis_card_unlocked_secret_knowledge_of_kings_complete" )
 	
 	local message_title = "$secretmessage_apotheosis_divineorb_heart_name"
-	local message_desc = "$itempickupdesc_orb_discovered"
+	local message_desc = "$secretmessage_apotheosis_divineorb_desc"
 	
 	GamePrintImportant( message_title, message_desc )
 	

@@ -1,0 +1,7 @@
+<Mod
+	name="Apotheosis"
+	description=""
+	tags="creatures,perks,spells,gameplay,audio,biomes,bosses,perks,graphics,items,funny,alchemy,total conversions"
+	dont_upload_folders="FOLDER_TO_IGNORE1|FOLDER_TO_IGNORE2"
+	dont_upload_files="FILE_TO_IGNORE1|FILE_TO_IGNORE2"
+/> 

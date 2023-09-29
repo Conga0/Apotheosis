@@ -7,6 +7,8 @@ local r = 160
 
 local targets = EntityGetInRadiusWithTag( x, y, r, "card_action" )
 
+--Conga: Could be cleaned up into a single table, but unless there's a lot more work planned to be done here, it shouldn't be necessary work
+
 --Spells which can be converted
 local inputspells =  {
     "APOTHEOSIS_BUNGAL_SHIFT",
@@ -23,6 +25,17 @@ local inputspells =  {
     "LIFETIME_DOWN",
     "BULLET",
     "BOMB",
+    "ALPHA",
+    "GAMMA",
+    "TAU",
+    "OMEGA",
+    "MU",
+    "PHI",
+    "SIGMA",
+    "APOTHEOSIS_CHI",
+    "ZETA",
+    "POLLEN",
+    "RUBBER_BALL",
 }
 
 --Spells we're converting them into
@@ -43,6 +56,17 @@ local outputspells = {
     "LIFETIME",
     "BULLET_TRIGGER",
     "APOTHEOSIS_BOMB_GIGA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_KAPPA",
+    "APOTHEOSIS_POLLEN_TRIGGER",
+    "APOTHEOSIS_RUBBER_BALL_TRIGGER",
 }
 
 local effecttype = {
@@ -60,6 +84,17 @@ local effecttype = {
     "magical_symbol_materia_blue",
     "magical_symbol_hobo_money",
     "magical_symbol_materia_red",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
 }
 
 for k=1, #targets

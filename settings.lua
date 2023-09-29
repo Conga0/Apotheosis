@@ -14,7 +14,7 @@ local fairy_immortality_desc = "Are Keiju immortal?"
 local motd_setting_name = "Message of the Day"
 local motd_setting_desc = "Will a MOTD be displayed at the start of each run? \nMay contain bonus hints for various secrets."
 local seasonal_events_name = "Seasonal Events"
-local seasonal_events_desc = "Are seasonal events enabled? \nFor example, Halloween, More Creep's Birthday, etc."
+local seasonal_events_desc = "Are seasonal events enabled? \nFor example, Halloween, Apotheosis's Birthday, etc."
 local boss_health_multiplayer_name = "Boss Health Multiplier"
 local boss_health_multiplayer_formatting = " $0% HP"
 local boss_health_multiplayer_desc = "Multiply all Bosses health by this much. \nFor those who seek extra durable opponents. \nDoes not affect Kolmisilma \nMinibosses will also have their health boosted by a partial amount. \n \nFor Modders: \nIf your mod isn't listed in the compatibility section of the mod page, \nthis likely won't boost it, you'll need to add a lua component to your bosses. \nDo not hesitate to contact me for instructions or help if needed. \nIt would be easiest for me to respond to you on discord, Conga Lyne#2452"
@@ -37,6 +37,8 @@ local seasonal_forced_halloween_name = "Forced Halloween"
 local seasonal_forced_halloween_desc = "Is Halloween forcefully enabled?"
 local seasonal_forced_smissmass_name = "Forced Smissmass"
 local seasonal_forced_smissmass_desc = "Is the Smissmass holiday forcefully enabled?"
+local seasonal_forced_cirno_name = "Forced 9Ball Day"
+local seasonal_forced_cirno_desc = "Is the 9Ball holiday forcefully enabled?"
 local secret_golden_cape_name = "Golden Cape"
 local secret_golden_cape_desc = "Is the Golden Cape cosmetic enabled? \nSome people may want to disable this if using custom character mods."
 
@@ -45,7 +47,7 @@ local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph p
 
 --Conga: I suppose at the end of the day I'm OK with having this be an option, but want to make sure the mod is designed around having this being enabled
 local spellrebalances_name = "Spell Reworks"
-local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled.\n \nThis setting is experimental."
+local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
 
 
   --Russian Translations
@@ -175,6 +177,7 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
+  --[[
   {
     id = "exp_poly",
     ui_name = exp_poly_name,
@@ -183,7 +186,6 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },
-  --[[
   ]]--
   -- Conga: Maybe this could be handled via config file in the mods folder?
   -- Would allow for people who really want the reworks disabled or need them to turn them off while maintaining unity everywhere else
@@ -231,10 +233,14 @@ for i=1, #flags_statues do
 end
 
 
+--Forced Seasonal Event Settings, only unlocked after beating the game
+--if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_01") or HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") or HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_03") then
+--Conga: Haven't gone through with this change as it'd screw over people who left them forcefully enabled before the change was enacted, could force reset all of them to be turned off but, not sure.
+
 --Forced Seasonal Event Settings, only unlocked after attaining at least 8 statues
 
 if statue_count >= 8 then
-  table.insert(mod_settings,
+table.insert(mod_settings,
   {
     category_id = "seasonal_events_forced",
     ui_name = seasonal_forced_name,
@@ -270,6 +276,14 @@ if statue_count >= 8 then
         id = "seasonal_events_forced_smissmass",
         ui_name = seasonal_forced_smissmass_name,
         ui_description = seasonal_forced_smissmass_desc,
+        value_default = false,
+        ---@diagnostic disable-next-line: undefined-global
+        scope = MOD_SETTING_SCOPE_NEW_GAME,
+      },
+      {
+        id = "seasonal_events_forced_cirno",
+        ui_name = seasonal_forced_cirno_name,
+        ui_description = seasonal_forced_cirno_desc,
         value_default = false,
         ---@diagnostic disable-next-line: undefined-global
         scope = MOD_SETTING_SCOPE_NEW_GAME,

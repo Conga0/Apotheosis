@@ -1,5 +1,5 @@
 <Entity 
-	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,worm,robot,weaken_NOT,necrobot_NOT" 
+	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,worm,robot,weaken_NOT,necrobot_NOT,mechanical_worm_miniboss" 
 	name="Mekaaninenmato"
 	>
 	<_Transform 

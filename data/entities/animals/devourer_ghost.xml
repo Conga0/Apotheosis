@@ -1,4 +1,4 @@
-<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT,destruction_target,ui_use_raw_name" name="Nälkäinen aave">
+<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT,destruction_target,ui_use_raw_name" name="Nälkäinenaave">
 	
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>

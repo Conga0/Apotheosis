@@ -1,4 +1,4 @@
-<Entity name="Teslan torni" tags="ui_use_raw_name">
+<Entity name="Teslatötterö" tags="ui_use_raw_name">
 	<_Transform 
 		scale.x="1" 
 		>
@@ -25,7 +25,7 @@
 			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/railcannon_delayed_attack_warning.xml"
 			attack_ranged_entity_count_min="1"
 			attack_ranged_entity_count_max="1"
-			attack_ranged_frames_between="45" 
+			attack_ranged_frames_between="50" 
 			attack_ranged_offset_y="-17"
 			attack_ranged_offset_x="0"
 			aggressiveness_min="80"

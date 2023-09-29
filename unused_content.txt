@@ -1,3 +1,4 @@
+Removed Content:
 Cursed Orb Barrage (Higher damage explosive holy orb barrage which could only be found by openning a pandoras box after killing a divine being, reasons for removal: Meta Progression, Not distinct from other spells, overpowered, uninteresting concept)
 Curse of Mana (Curse of Abyssal Hex would be much more interesting)
 Divine Being (didn't fit in with the artstyle or quality expectations I now have for the mod, it was by all means a wonderful first boss when I made it; but now it's time to lay it to rest... Until april fools comes around)
@@ -8,3 +9,7 @@ Library biome with "ritual books" with long lasting buffs or debuffs
 A crystal biome
 A creature who tried to force you inside a portal, which teleports you to a "prison biome"
 Adult Centipede Boss (Never quite felt right or notably unique and ran out of time to develop it before real life obligations started to get in the way, would've appeared in the Ant Nest biome)
+Pyramid/Tower biome inside a giant cavern (concept sounded metal as hell, never made it into development)
+Sleep Debuff/Circle of Drowsiness (Clashes with sleep altar unlock puzzle, that could've been worked around, but ultimately it was something that justn ever got around to being implemented)
+Corrupt Master of Return (Would've made itself invincible, flashed red & start a warning sound upon taking damage, shortly before turning fully red and blood-linking all damage back to the entity hurting them; similar to "Max Pain" from ragnarok online if you're familiar with it)
+Modifier which converts all spell damage into a single type (ie, all spell damage to fire damage)

@@ -115,8 +115,8 @@
 	<LightComponent 
 		_enabled="1" 
 		radius="150" 
-		r="30"
-		g="90"
+		r="90"
+		g="30"
 		b="30">
 	</LightComponent>
 	

@@ -73,6 +73,11 @@
 			audio_event_name="explosions/magic_small" >
 		</config_explosion>
 	</ProjectileComponent>
+
+    <LifetimeComponent
+    	lifetime="1200"
+    >
+	</LifetimeComponent>
 	
 	<SpriteComponent 
 		_enabled="1" 

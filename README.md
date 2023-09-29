@@ -3,6 +3,8 @@ Apotheosis is a continuation of the More Creeps project, planning to expand heav
 
 If you're interested in discussing the mod, there is a *[Discord Server](https://discord.gg/gtyGnv8Pxk)*
 
+Additionally, the mod is now available on *[Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3032128572)*
+
 # Credits
 Lead Developer - Conga Lyne
 

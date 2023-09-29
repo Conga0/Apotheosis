@@ -238,7 +238,7 @@
 	status_effects="POISONED"
 	>
 	<Graphics
-		color="37c5447d"
+		color="37B42CFF"
 		>
     </Graphics>
 	<StatusEffects>
@@ -288,7 +288,7 @@
 	ui_name="$material_apotheosis_milk_powder"
   	tags="[sand_ground],[corrodible],[alchemy]"
 	burnable="0"
-	density="6"
+	density="4.0"
 	cell_type="liquid"
 	wang_color="aaf6f7fe"
 	generates_smoke="0"
@@ -2581,6 +2581,18 @@
     </Graphics>
   </CellData>
 
+<CellDataChild
+	_parent="metal_hard"
+	name="apotheosis_ice_b2_hard"
+	ui_name="$mat_ice_b2"
+	wang_color="ff3df03d"
+	electrical_conductivity="10"
+	solid_friction="0.05"
+	audio_physics_material_wall="snow"
+	audio_physics_material_solid="ice"
+	>
+</CellDataChild>
+
 
 
 
@@ -3010,6 +3022,24 @@
 		output_cell1="apotheosis_insect_husk" output_cell2="apotheosis_insect_husk"
 		>
 	</Reaction>
+
+	<!--Cursed Liquid + Lava = Cursed Rock-->
+   <Reaction probability="70"
+	input_cell1="[lava]" 						input_cell2="apotheosis_cursed_liquid_red"
+	output_cell1="rock_static_cursed"			output_cell2="steam"
+	blob_radius1="4"							blob_radius2="4"
+	blob_restrict_to_input_material1="1" 		blob_restrict_to_input_material2="1" 
+	audio_fx_volume_1="100.0" >
+  </Reaction>
+
+   <Reaction probability="70"
+	input_cell1="[lava]" 						input_cell2="apotheosis_cursed_liquid_red_static"
+	output_cell1="rock_static_cursed"			output_cell2="steam"
+	blob_radius1="4"							blob_radius2="4"
+	blob_restrict_to_input_material1="1" 		blob_restrict_to_input_material2="1" 
+	audio_fx_volume_1="100.0" >
+  </Reaction>
+
 
 </Materials>
 

@@ -163,13 +163,13 @@ g_big_enemies =
 		entity 	= "data/entities/animals/drone_status_ailment.xml"
 	},
 	--[[
+	]]--
 	{
-		prob   		= 0.05,
+		prob   		= 0.002,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/gazer_MVP.xml"
 	},
-	]]--
 }
 
 

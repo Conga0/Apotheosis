@@ -21,10 +21,10 @@ local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
 --enemy_list = { "bubbles/freezing_liquid/bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "forsaken_eye", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "fairy_big_discord", "fairy_esoteric", "hideous_mass", "hisii_engineer", "hisii_giga_bomb", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_magic", "rat_birthday", "sentry", "star_child", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "triangle_gem", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "miniblob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "scavenger_smg", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", }
 
 
-enemy_list = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "blindgazer", "forsaken_eye", "fungus_smoking_creep", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_fungus", "lukki_swarmling", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "star_child", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wizard_manaeater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "wand_ghost" }
+enemy_list = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "forsaken_eye", "fungus_smoking_creep", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield",  "scavenger_grenade", "scavenger_smg", "wand_ghost", "miniblob", }
 
 
-enemy_list_from = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "blindgazer", "forsaken_eye", "fungus_smoking_creep", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_fungus", "lukki_swarmling", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "star_child", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wizard_manaeater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", "acidshooter", "wand_ghost", "wizard_explosive", "waterskull", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "miniblob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "scavenger_smg", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", "hideous_mass_red", "tree_tall", "hisii_giga_bomb", "mimic_explosive_box", "bubbles/ambrosia/bubble_liquid", "watermage", "watermage_greater", }
+enemy_list_from = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "forsaken_eye", "fungus_smoking_creep", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield", "scavenger_grenade", "scavenger_smg", "wand_ghost", "miniblob", "lukki_fungus", "star_child", "wizard_manaeater", "blindgazer", "wizard_z_poly_miniboss", "wizard_explosive", "waterskull", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "blob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", "hideous_mass_red", "tree_tall", "hisii_giga_bomb", "mimic_explosive_box", "bubbles/ambrosia/bubble_liquid", "watermage", "watermage_greater", "wizard_copeseethmald", "miniboss_pit_02", }
 
 
 local shift_check = false
@@ -45,8 +45,6 @@ log_messages =
 
 --for minidrones shifting because they have an attack different from their base one.. maybe use a variable storage component in it's base to check if
 --it's a real minidrone or a shifted creature?
-
-
 
 
 
@@ -110,9 +108,8 @@ function creature_shift( entity, x, y, debug_no_limits )
         table.remove(enemy_list, rnd)
         --Conga: I don't know why I'm only removing from the table if NE is enabled.. autocorrect typo?
         --Maybe some attempt to reduce likelyhood of clones? I genuinely don't know
-        if ModIsEnabled("new_enemies") == false then
-            table.remove(enemy_list_from, rnd)
-        end
+        table.remove(enemy_list_from, rnd)
+
 
         local rnd = Random(1, #enemy_list_from)
         local target = enemy_list_from[rnd]
@@ -121,9 +118,9 @@ function creature_shift( entity, x, y, debug_no_limits )
         print(table.concat({"Attempting to creature shift \"",target2,"\" into \"",target,"\""}))
 
 
-        --Debugging shift, forces all psychic bats to be turned into Shotgunners
-        --target = "shotgunner"
-        --target2 = "slime_leaker"
+        --Debugging shift, forces all wand ghosts to be turned into blobs
+        --target = "blob"
+        --target2 = "wand_ghost"
 
         --target2 = "esoteric_being"
         --Debugging helper
@@ -140,14 +137,14 @@ function creature_shift( entity, x, y, debug_no_limits )
         --"can't you just unload the entities and load the shift target in their place instead of swapping their file contents?"
         --"I could.. but that'd require rewriting everything I have from the base up, unless you mean unloading the entity from the game's memory?"
         --"no just a script on the entity that kills itself and spawns the other entity in it's place"
-        local content = ModTextFileGetContent("data/entities/animals/" .. target2 .. ".xml")
+        local content = ModTextFileGetContent(table.concat({"data/entities/animals/",target2,".xml"}))
         local xml = nxml.parse(content)
         local creature_name_get = xml.attr.name
 
 
 
 
-        local content = ModTextFileGetContent("data/entities/animals/" .. target .. ".xml")
+        local content = ModTextFileGetContent(table.concat({"data/entities/animals/",target,".xml"}))
         local xml = nxml.parse(content)
         if xml.attr.tags ~= nil then
             xml.attr.tags = xml.attr.tags .. ",acid" --Prevents the player updater script from needlessly updating creatures
@@ -179,6 +176,7 @@ function creature_shift( entity, x, y, debug_no_limits )
         </ParticleEmitterComponent>
         ]]))
 
+        --If the creature being shifted away is an Esoteric Being, add a smoke effect for when it awakens
         if target2 == "esoteric_being" then
             xml:add_child(nxml.parse([[
             <LuaComponent
@@ -188,6 +186,21 @@ function creature_shift( entity, x, y, debug_no_limits )
                 >
             </LuaComponent>
             ]]))
+        end
+
+        --If the creature being shifted away is a Wand Ghost, update the summon taikasauva filepath with the new data
+        if target2 == "wand_ghost" then
+            GlobalsSetValue( "apotheosis_wandghost_filepath", table.concat({"data/entities/animals/",target,".xml"}) )
+        end
+
+        --If the creature being shifted away is a Hisii Grenader, update the leader damage filepath with the new data
+        if target2 == "scavenger_grenade" then
+            GlobalsSetValue( "apotheosis_scavgrenader_filepath", table.concat({"data/entities/animals/",target,".xml"}) )
+        end
+
+        --If the creature being shifted away is a MiniBlob, update the leader damage filepath with the new data
+        if target2 == "miniblob" then
+            GlobalsSetValue( "apotheosis_miniblob_filepath", table.concat({"data/entities/animals/",target,".xml"}) )
         end
 
         ModTextFileSetContent("data/entities/animals/" .. target2 .. ".xml", tostring(xml))
@@ -368,6 +381,7 @@ function creature_shift( entity, x, y, debug_no_limits )
                 do local c = luacomps[z]
                     if ComponentGetValue2(c,"script_source_file") == "mods/Apotheosis/files/scripts/magic/creature_shift_new/player_shift_update.lua" then
                         valid = false
+                        break
                     end
                 end
 
@@ -378,7 +392,7 @@ function creature_shift( entity, x, y, debug_no_limits )
                         {
                             execute_on_added = true,
                             script_source_file = "mods/Apotheosis/files/scripts/magic/creature_shift_new/player_shift_update.lua",
-                            execute_every_n_frame = 240, --Updates every 4 seconds
+                            execute_every_n_frame = 180, --Updates every 3 seconds
                             remove_after_executed = false,
                             execute_times=-1
                         }

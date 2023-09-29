@@ -140,6 +140,29 @@
 
 
     
+    --Cirno Day Frogs
+    local year, month, day, hour, minute = GameGetDateAndTimeLocal()
+    if ((( month == 9 ) and ( day == 9 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_cirno" ) then
+        table.insert(g_small_enemies,
+        {
+            prob           = 0.12,
+            min_count    = 1,
+            max_count    = 1,    
+            entity     = "data/entities/animals/seasonal/frog.xml"
+        })
+
+        table.insert(g_small_enemies,
+        {
+            prob           = 0.5,
+            min_count    = 1,
+            max_count    = 1,    
+            entity     = "data/entities/animals/seasonal/frog_big.xml"
+        })
+    end
+
+
+
+    
 
     table.insert(g_props,
     {

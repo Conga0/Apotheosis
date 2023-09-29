@@ -19,17 +19,9 @@ end
 if c_check ~= true then
     local valid = true
 
-    local s = EntityGetComponent( target, "GameEffectComponent" )
-    if ( s ~= nil ) then
-        for i,v in ipairs( s ) do
-            local name = ComponentGetValue2( v, "effect" )
-            
-            if ( name == "PROTECTION_RADIOACTIVITY" ) then
-                valid = false
-            end
-        end
+    if GameGetGameEffectCount( target, "PROTECTION_RADIOACTIVITY" ) > 0 then
+        valid = false
     end
-
 
     if target ~= nil then
         if valid == true then

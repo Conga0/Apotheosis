@@ -733,7 +733,7 @@ end
 do --Tower creature appends
   local path = "data/scripts/biomes/tower.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[local enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
   ModTextFileSetContent(path, content)
 end
 
@@ -741,7 +741,6 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn
   local biomes = {
     "coalmine",         --Coal Mine, first area, goodluck on your run
     "crypt",            --Temple of the Arts.. who died here?
-    "coalmine_alt",     --Coalmine but to the west side near damp cave
     "pyramid_hallway",  --Pyramid entrance, presumably
     "excavationsite",   --Coal Pits, area 2
     "snowcave",         --Snowy Depths
@@ -765,13 +764,14 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn
   end
 end
 
+--[[
 do --Reduces enemy spawnrates by increasing chance of a null spawn (modded)
   local biomes = {
     --"ant_hell", --Ant Nest
     --"desert_pit", --Sink Hole
     --"esoteric_den", --Esoteric Den
     --"evil_temple", --Temple of Sacriligious Remains
-    "lava_excavation", --Core Mines
+    --"lava_excavation", --Core Mines
     --"sunken_cave", --Sunken Cavern
   }
   local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_reduceenemies_x2.lua"
@@ -782,10 +782,12 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn (modded)
     ModLuaFileAppend(biomepath, appendpath)
   end
 end
+]]--
 
 do --Reduces enemy spawnrates by increasing chance of a null spawn (2x)
   local biomes = {
     "desert",           --Desert above ground & below, careful not to die to any Stendari
+    "coalmine_alt",     --Coalmine but to the west side near damp cave
     "wandcave",         --Magical Temple
     --"clouds",           --Cloudscapes
     "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
@@ -958,6 +960,26 @@ do -- Add death check to MoM for the run
   ModTextFileSetContent(path, content)
 end
 
+--[[
+--Conga: Doesn't work because the orbs are children of MoM and the EntityGetInRadiusWithTag function only targets non-children
+--Whoever made this function is from Bethesda
+do -- Give MoM orbs the "mortal" tag
+  local path = "data/entities/animals/boss_wizard/wizard_orb_blood.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("hittable,touchmagic_immunity,polymorphable_NOT", "hittable,touchmagic_immunity,polymorphable_NOT,mortal,hittable")
+
+  ModTextFileSetContent(path, content)
+end
+
+do -- Give MoM orbs the "mortal" tag
+  local path = "data/entities/animals/boss_wizard/wizard_orb_death.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("hittable,touchmagic_immunity,polymorphable_NOT", "hittable,touchmagic_immunity,polymorphable_NOT,mortal,hittable")
+
+  ModTextFileSetContent(path, content)
+end
+]]--
+
 do -- Lets you drink directly from pouches
   local path = "data/entities/items/pickup/powder_stash.xml"
   local content = ModTextFileGetContent(path)
@@ -965,6 +987,47 @@ do -- Lets you drink directly from pouches
 
   ModTextFileSetContent(path, content)
 end
+
+do -- Fixes CEOs to spawn in the correct entity when creature shifted
+  local path = "data/scripts/animals/leader_damage.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("EntityLoad%( \"data/entities/animals/scavenger_grenade.xml\", x, y %)", "local filepath = GlobalsGetValue( \"apotheosis_scavgrenader_filepath\", \"data/entities/animals/scavenger_grenade.xml\" ) EntityLoad( filepath, x, y )")
+
+  ModTextFileSetContent(path, content)
+end
+
+do -- Fixes Blobs to spawn in the correct entity when creature shifted
+  local path = "data/scripts/animals/blob_damage.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("local e %= EntityLoad%( \"data/entities/animals/miniblob.xml\", pos_x, pos_y %)", "local filepath = GlobalsGetValue( \"apotheosis_miniblob_filepath\", \"data/entities/animals/miniblob.xml\" ) local e = EntityLoad( filepath, pos_x, pos_y )")
+
+  ModTextFileSetContent(path, content)
+end
+
+--Conga: HM Portals sound weird when used with this, eye glass doesn't work, don't have the time to debug it
+do --Fix Some teleportation related structures not being powered by portallium
+  local path = "data/entities/buildings/teleport_hourglass.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+
+  xml:add_child(nxml.parse([[
+    <MaterialAreaCheckerComponent
+		_tags="disabled_by_liquid"
+		area_aabb.min_x="-16" 
+		area_aabb.max_x="16" 
+		area_aabb.min_y="110"   
+		area_aabb.max_y="115"
+		update_every_x_frame="1"
+		material="apotheosis_magic_liquid_rideshare"
+		material2=""
+		look_for_failure="0"
+		kill_after_message="0">
+	</MaterialAreaCheckerComponent>
+  ]]))
+
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 
 --Debug data
 --local path = "data/scripts/item_spawnlists.lua"

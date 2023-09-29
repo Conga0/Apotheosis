@@ -89,7 +89,7 @@ g_small_enemies =
 		prob   		= 0.15,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 		= "data/entities/animals/wizard_weaken.xml"
+		entity 		= "data/entities/animals/wizard_corrupt_weaken.xml"
 	},
 	{
 		prob   		= 0.04,

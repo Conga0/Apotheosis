@@ -10,7 +10,7 @@ local variablecomp = EntityGetFirstComponentIncludingDisabled( entity_id, "Varia
 cooldown_frame = ComponentGetValue2( variablecomp, "value_int" )
 
 if GameGetFrameNum() >= cooldown_frame then
-    if ComponentGetValue2(controlscomp, "mButtonDownLeftClick") then
+    if ComponentGetValue2(controlscomp, "mButtonDownLeftClick") or InputIsJoystickButtonDown(0, 48) then
         --Detected cast/reel attempt
         local activebobber = EntityGetWithName("Fishing Hook")
         if activebobber ~= 0 then
