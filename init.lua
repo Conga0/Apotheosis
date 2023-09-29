@@ -1,19 +1,19 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 --local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
-local modCompatibilitySpellEvolutions = ModSettingGet( "Apotheosis.mod_compat_mode_spell_evolution" )
-local motdSetting = ModSettingGet( "Apotheosis.motd_setting" )
-local seasonalSetting = ModSettingGet( "Apotheosis.seasonal_events" )
-local spoopyGFXSetting = ModSettingGet( "Apotheosis.spoopy_graphics" )
+local modCompatibilitySpellEvolutions = ModSettingGet("Apotheosis.mod_compat_mode_spell_evolution")
+local motdSetting = ModSettingGet("Apotheosis.motd_setting")
+local seasonalSetting = ModSettingGet("Apotheosis.seasonal_events")
+local spoopyGFXSetting = ModSettingGet("Apotheosis.spoopy_graphics")
 
-local seasonalForced_AprilFools = ModSettingGet( "Apotheosis.seasonal_events_forced_april_fools" )
-local seasonalForced_Birthday = ModSettingGet( "Apotheosis.seasonal_events_forced_birthday" )
-local seasonalForced_Halloween = ModSettingGet( "Apotheosis.seasonal_events_forced_halloween" )
-local seasonalForced_Smissmass = ModSettingGet( "Apotheosis.seasonal_events_forced_smissmass" )
+local seasonalForced_AprilFools = ModSettingGet("Apotheosis.seasonal_events_forced_april_fools")
+local seasonalForced_Birthday = ModSettingGet("Apotheosis.seasonal_events_forced_birthday")
+local seasonalForced_Halloween = ModSettingGet("Apotheosis.seasonal_events_forced_halloween")
+local seasonalForced_Smissmass = ModSettingGet("Apotheosis.seasonal_events_forced_smissmass")
 
-local experimental_biomemap = ModSettingGet( "Apotheosis.exp_biomemap" )
+local experimental_biomemap = ModSettingGet("Apotheosis.exp_biomemap")
 
-local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
+local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
 
 --Debug flag removals, be sure to remove before release!!!
 --RemoveFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" )
@@ -29,60 +29,60 @@ local capeSetting = ModSettingGet( "Apotheosis.secret_golden_cape" )
 
 
 if not GameIsBetaBuild() then -- Beta file creation, see apotheosis/betatemp/folder_desc.txt for more details
-  local files = {
-    {
-      "meat.lua",
-      "data/scripts/biomes/meat.lua"
-    },
-    {
-      "meat.xml",
-      "data/biome/meat.xml"
-    },
-    {
-      "miner_hell.xml",
-      "data/entities/animals/miner_hell.xml"
-    },
-    {
-      "shotgunner_hell.xml",
-      "data/entities/animals/shotgunner_hell.xml"
-    },
-    {
-      "sniper_hell.xml",
-      "data/entities/animals/sniper_hell.xml"
-    },
-    {
-      "gfx/miner_hell.xml",
-      "data/enemies_gfx/miner_hell.xml"
-    },
-    {
-      "gfx/shotgunner_hell.xml",
-      "data/enemies_gfx/shotgunner_hell.xml"
-    },
-    {
-      "gfx/sniper_hell.xml",
-      "data/enemies_gfx/sniper_hell.xml"
-    },
-    {
-      "gfx/sniper_hell_overlay.xml",
-      "data/enemies_gfx/sniper_hell_overlay.xml"
-    },
-    {
-      "sniperbullet_hell.xml",
-      "data/entities/projectiles/sniperbullet_hell.xml"
-    },
-    {
-      "tnt_hell.xml",
-      "data/entities/projectiles/tnt_hell.xml"
-    }
-  }
+	local files = {
+		{
+			"meat.lua",
+			"data/scripts/biomes/meat.lua"
+		},
+		{
+			"meat.xml",
+			"data/biome/meat.xml"
+		},
+		{
+			"miner_hell.xml",
+			"data/entities/animals/miner_hell.xml"
+		},
+		{
+			"shotgunner_hell.xml",
+			"data/entities/animals/shotgunner_hell.xml"
+		},
+		{
+			"sniper_hell.xml",
+			"data/entities/animals/sniper_hell.xml"
+		},
+		{
+			"gfx/miner_hell.xml",
+			"data/enemies_gfx/miner_hell.xml"
+		},
+		{
+			"gfx/shotgunner_hell.xml",
+			"data/enemies_gfx/shotgunner_hell.xml"
+		},
+		{
+			"gfx/sniper_hell.xml",
+			"data/enemies_gfx/sniper_hell.xml"
+		},
+		{
+			"gfx/sniper_hell_overlay.xml",
+			"data/enemies_gfx/sniper_hell_overlay.xml"
+		},
+		{
+			"sniperbullet_hell.xml",
+			"data/entities/projectiles/sniperbullet_hell.xml"
+		},
+		{
+			"tnt_hell.xml",
+			"data/entities/projectiles/tnt_hell.xml"
+		}
+	}
 
-  for k=1,#files do
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/betatemp/",files[k][1]}))
-    ModTextFileSetContent(files[k][2],content)
-  end
+	for k = 1, #files do
+		local content = ModTextFileGetContent(table.concat({ "mods/apotheosis/betatemp/", files[k][1] }))
+		ModTextFileSetContent(files[k][2], content)
+	end
 
-  --Adds in meat biome materials
-  ModMaterialsFileAdd( "mods/Apotheosis/betatemp/materials.xml" )
+	--Adds in meat biome materials
+	ModMaterialsFileAdd("mods/Apotheosis/betatemp/materials.xml")
 end
 
 
@@ -843,133 +843,143 @@ motd_apotheosis_description_alt_031,"Message of the Day \nDon't visit the Toxic 
 
 --Regular Spawns
 
-ModLuaFileAppend( "data/scripts/biomes/wizardcave.lua", "mods/Apotheosis/files/scripts/biomes/wizardcave_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/tower_end.lua", "mods/Apotheosis/files/scripts/biomes/tower_end_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/coalmine_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/the_end_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/desert.lua", "mods/Apotheosis/files/scripts/biomes/desert_populator.lua" )
+ModLuaFileAppend("data/scripts/biomes/wizardcave.lua", "mods/Apotheosis/files/scripts/biomes/wizardcave_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/tower_end.lua", "mods/Apotheosis/files/scripts/biomes/tower_end_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/coalmine_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/the_end_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/desert.lua", "mods/Apotheosis/files/scripts/biomes/desert_populator.lua")
 
-ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/crypt_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/pyramid_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/fungicave_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/coalmine_alt_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/pyramid_hallway.lua", "mods/Apotheosis/files/scripts/biomes/pyramid_hallway_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/liquidcave.lua", "mods/Apotheosis/files/scripts/biomes/liquidcave_populator.lua" )
+ModLuaFileAppend("data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/crypt_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/pyramid_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/fungicave_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
+	"mods/Apotheosis/files/scripts/biomes/coalmine_alt_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/pyramid_hallway.lua",
+	"mods/Apotheosis/files/scripts/biomes/pyramid_hallway_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/liquidcave.lua", "mods/Apotheosis/files/scripts/biomes/liquidcave_populator.lua")
 
 
-ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/vault_frozen.lua", "mods/Apotheosis/files/scripts/biomes/vault_frozen_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/scripts/biomes/fungiforest_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/snowcastle_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/meat.lua", "mods/Apotheosis/files/scripts/biomes/meat_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/vault_populator.lua" )
+ModLuaFileAppend("data/scripts/biomes/excavationsite.lua",
+	"mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/vault_frozen.lua",
+	"mods/Apotheosis/files/scripts/biomes/vault_frozen_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/scripts/biomes/fungiforest_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/snowcastle_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/meat.lua", "mods/Apotheosis/files/scripts/biomes/meat_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/vault_populator.lua")
 --ModLuaFileAppend( "data/scripts/biomes/tower.lua", "mods/Apotheosis/files/scripts/biomes/tower_populator.lua" )
-ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/rainforest_populator.lua" ) --Jungle
-ModLuaFileAppend( "data/scripts/biomes/rainforest_dark.lua", "mods/Apotheosis/files/scripts/biomes/rainforest_dark_populator.lua" ) --Lukki Lair
-ModLuaFileAppend( "data/scripts/biomes/winter.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua" ) --Snow Chasm
-ModLuaFileAppend( "data/scripts/biomes/clouds.lua", "mods/Apotheosis/files/scripts/biomes/clouds_populator.lua" ) --Cloud Scape, for example coral chest area & essence of air area
-ModLuaFileAppend( "data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/robobase_populator.lua" ) --Power Plant
-ModLuaFileAppend( "data/scripts/biomes/lake_statue.lua", "mods/Apotheosis/files/scripts/biomes/lake_statue_populator.lua" ) --Lake Island
-ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/hills_populator.lua" ) --Hills and shallow caves
-ModLuaFileAppend( "data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/scripts/biomes/robot_egg_populator.lua" ) --End of Everything Robotic Egg
+ModLuaFileAppend("data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/rainforest_populator.lua")   --Jungle
+ModLuaFileAppend("data/scripts/biomes/rainforest_dark.lua",
+	"mods/Apotheosis/files/scripts/biomes/rainforest_dark_populator.lua")                                                 --Lukki Lair
+ModLuaFileAppend("data/scripts/biomes/winter.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua")           --Snow Chasm
+ModLuaFileAppend("data/scripts/biomes/clouds.lua", "mods/Apotheosis/files/scripts/biomes/clouds_populator.lua")           --Cloud Scape, for example coral chest area & essence of air area
+ModLuaFileAppend("data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/robobase_populator.lua")       --Power Plant
+ModLuaFileAppend("data/scripts/biomes/lake_statue.lua", "mods/Apotheosis/files/scripts/biomes/lake_statue_populator.lua") --Lake Island
+ModLuaFileAppend("data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/hills_populator.lua")             --Hills and shallow caves
+ModLuaFileAppend("data/scripts/biomes/robot_egg.lua", "mods/Apotheosis/files/scripts/biomes/robot_egg_populator.lua")     --End of Everything Robotic Egg
 
 --Not looking quite as good as the statues, might need a different art approach
 --ModLuaFileAppend( "data/scripts/biomes/mountain_tree.lua", "mods/Apotheosis/files/scripts/biomes/mountain_tree_populator.lua" ) --Treechievements
 
 
-ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua" )
+ModLuaFileAppend("data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/actions.lua")
 
 -- Could this be gsubbed?
-ModLuaFileAppend( "data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua" )
+ModLuaFileAppend("data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua")
 
+dofile_once("mods/apotheosis/lib/injection.lua")
 
+inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "// liquid distortion",
+	"mods/apotheosis/files/scripts/shader/trip_red_pre.frag")
+inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "gl_FragColor",
+	"mods/apotheosis/files/scripts/shader/trip_red_post.frag")
+inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "varying vec2 tex_coord_fogofwar;",
+	"mods/apotheosis/files/scripts/shader/trip_red_global.frag")
 
-
-
-
+GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
 
 --Appends Global Spawns to vanilla biome
-do  -- Global Spawns
-  --DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
-  for _, append in ipairs({
-    { -- General
-      script = "global_populator",
-      biomes = {
-        "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
-        "coalmine",         --Coal Mine, first area, goodluck on your run
-        "desert",           --Desert above ground, careful not to die to any Stendari
-        "crypt",            --Temple of the Arts.. who died here?
-        "pyramid",          --Presumably everything below the entrance to the pyramid
-        "fungicave",        --BUNGUS!! cave, west side of area 2 for example
-        "coalmine_alt",     --Coalmine but to the west side near damp cave
-        "pyramid_hallway",  --Pyramid entrance, presumably
-        "excavationsite",   --Coal Pits, area 2
-        "fungiforest",      --Overgrowth
-        "snowcave",         --Snowy Depths
-        "wandcave",         --Magical temple.. huh
-        "sandcave",         --Desert sand cave, I don't think it includes desert chasm
-        "winter",           --Winter appears to be the snow chasm... terrifying. Also line 69!
-        "rainforest",       --Jungle
-        "rainforest_dark",  --Lukki Lair.. creepy
-        "liquidcave",       --Abandoned Alchemy Lab
-      }
-    },
-    { -- No Magic
-      script = "global_populator_no_magic",
-      biomes = {
-        "the_end",          --Heaven, or Hell, your choice. Either are The Work.
-        "vault",            --The Vault
-        "robot_egg",        --I'm sure you can guess
-        "vault_frozen",     --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
-        "snowcastle",       --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
-        "robobase",         --Power Plant
-      }
-    },
-    { -- Small Only
-      script = "global_populator_smallonly",
-      biomes = {
-        "clouds",           --Cloudscapes
-        "hills",            --Hills, aka forest.
-      }
-    },
-  }) do
-    -- Generate append script file path
-    local appendpath = table.concat({"mods/apotheosis/files/scripts/biomes/", append.script, ".lua"})
-    -- Iterate over all biomes for the path
-    for _, biome in ipairs(append.biomes) do
-      -- Generate biome file path
-      local biomepath = table.concat({"data/scripts/biomes/", biome, ".lua"})
-      -- Add the stuff
-      ModLuaFileAppend(biomepath, appendpath)
-    end
-  end
+do -- Global Spawns
+	--DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
+	for _, append in ipairs({
+		{ -- General
+			script = "global_populator",
+			biomes = {
+				"wizardcave", --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
+				"coalmine", --Coal Mine, first area, goodluck on your run
+				"desert", --Desert above ground, careful not to die to any Stendari
+				"crypt", --Temple of the Arts.. who died here?
+				"pyramid", --Presumably everything below the entrance to the pyramid
+				"fungicave", --BUNGUS!! cave, west side of area 2 for example
+				"coalmine_alt", --Coalmine but to the west side near damp cave
+				"pyramid_hallway", --Pyramid entrance, presumably
+				"excavationsite", --Coal Pits, area 2
+				"fungiforest", --Overgrowth
+				"snowcave", --Snowy Depths
+				"wandcave", --Magical temple.. huh
+				"sandcave", --Desert sand cave, I don't think it includes desert chasm
+				"winter", --Winter appears to be the snow chasm... terrifying. Also line 69!
+				"rainforest", --Jungle
+				"rainforest_dark", --Lukki Lair.. creepy
+				"liquidcave", --Abandoned Alchemy Lab
+			}
+		},
+		{ -- No Magic
+			script = "global_populator_no_magic",
+			biomes = {
+				"the_end", --Heaven, or Hell, your choice. Either are The Work.
+				"vault", --The Vault
+				"robot_egg", --I'm sure you can guess
+				"vault_frozen", --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
+				"snowcastle", --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
+				"robobase", --Power Plant
+			}
+		},
+		{ -- Small Only
+			script = "global_populator_smallonly",
+			biomes = {
+				"clouds", --Cloudscapes
+				"hills", --Hills, aka forest.
+			}
+		},
+	}) do
+		-- Generate append script file path
+		local appendpath = table.concat({ "mods/apotheosis/files/scripts/biomes/", append.script, ".lua" })
+		-- Iterate over all biomes for the path
+		for _, biome in ipairs(append.biomes) do
+			-- Generate biome file path
+			local biomepath = table.concat({ "data/scripts/biomes/", biome, ".lua" })
+			-- Add the stuff
+			ModLuaFileAppend(biomepath, appendpath)
+		end
+	end
 end
 
 --Appends Global Spawns to new biome files
-do  -- Global Spawns
-  --DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
-  for _, append in ipairs({
-    { -- General
-      script = "global_populator",
-      biomes = {
-        "lava_excavation",       --Core Mines, Volcanic lava filled land in the desert with plenty of loot but plenty of death
-        "evil_temple",       --Temple of Sacriligious Remains
-      }
-    },
-  }) do
-    -- Generate append script file path
-    local appendpath = table.concat({"mods/apotheosis/files/scripts/biomes/", append.script, ".lua"})
-    -- Iterate over all biomes for the path
-    for _, biome in ipairs(append.biomes) do
-      -- Generate biome file path
-      local biomepath = table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/", biome, ".lua"})
-      -- Add the stuff
-      ModLuaFileAppend(biomepath, appendpath)
-    end
-  end
+do -- Global Spawns
+	--DO NOT INCLUDE ANYTHING TOWER RELATED HERE, they're... "special" and need to be done in their own unique way
+	for _, append in ipairs({
+		{ -- General
+			script = "global_populator",
+			biomes = {
+				"lava_excavation", --Core Mines, Volcanic lava filled land in the desert with plenty of loot but plenty of death
+				"evil_temple", --Temple of Sacriligious Remains
+			}
+		},
+	}) do
+		-- Generate append script file path
+		local appendpath = table.concat({ "mods/apotheosis/files/scripts/biomes/", append.script, ".lua" })
+		-- Iterate over all biomes for the path
+		for _, biome in ipairs(append.biomes) do
+			-- Generate biome file path
+			local biomepath = table.concat({ "mods/apotheosis/files/scripts/biomes/newbiome/", biome, ".lua" })
+			-- Add the stuff
+			ModLuaFileAppend(biomepath, appendpath)
+		end
+	end
 end
 
 
@@ -993,24 +1003,25 @@ ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apothe
 
 
 --Spawns a wand editting crystal inside the pyramid, this will provide people incentive to go there and wander around the actual pyramid part for a bit before rushing either the boss or the orb.
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/pyramid_wandedit_crystal_populator.lua" ) 
+ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/pyramid_wandedit_crystal_populator.lua" )
 
 
 --Deletes polymorph crystal surrounding the entrance to the Temple of the Art. Wouldn't want to get cockblocked by a poly crystal covering the entrance and a tentacler camping right behind the wall.
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/crypt_polycrystal_deletion_populator.lua" ) 
+ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/crypt_polycrystal_deletion_populator.lua" )
 
 
 --Spawns a Hisii Beggar near the essence of earth, hopefully demonstrates or at least hints towards how to interact with them
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/hisii_beggar_populator.lua" ) 
+ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/hisii_beggar_populator.lua" )
 
-]]--
+]]
+--
 
 
 --Spawns all the above spawns in a single file and appends to pixel scenes to prevent double spawning
 -- If Conjurer is enabled, disable this for a fix.
 if ModIsEnabled("raksa") == false then
-  dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua" )
-  dofile_once( "mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua" )
+	dofile_once("mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua")
+	dofile_once("mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua")
 end
 
 
@@ -1020,11 +1031,12 @@ end
 
 --[[
 if ModIsEnabled("purgatory") then
-  ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/statue_room_populator.lua" ) 
+  ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/purgatory/statue_room_populator.lua" )
 else
-  ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/statue_room_populator.lua" ) 
+  ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/statue_room_populator.lua" )
 end
-]]--
+]]
+--
 
 
 
@@ -1035,64 +1047,87 @@ end
 --Alternate Biomes
 --Remember to make specific files for these at some point.. it'd be weird if there were totally normal guys spawning in irridiated mines, or magical people in the robotics factory
 if ModIsEnabled("biome-plus") then
+	--Normal Spawns
+	ModLuaFileAppend("data/scripts/biomes/mod/floodcave.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/aquifer_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/the_void.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/void_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/floating_mountain.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/floating_mountain_populator.lua")
 
-    --Normal Spawns
-    ModLuaFileAppend( "data/scripts/biomes/mod/floodcave.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/aquifer_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/the_void.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/void_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/floating_mountain.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/floating_mountain_populator.lua" )
-    
-    ModLuaFileAppend( "data/scripts/biomes/mod/holy_temple.lua", "mods/Apotheosis/files/scripts/biomes/crypt_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/collapsed_lab.lua", "mods/Apotheosis/files/scripts/biomes/fungicave_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/irradiated_mines.lua", "mods/Apotheosis/files/scripts/biomes/coalmine_alt_populator.lua" )
-    
-    ModLuaFileAppend( "data/scripts/biomes/mod/blast_pit.lua", "mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/snowvillage.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hisiivillage_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/frozen_passages.lua", "mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/catacombs.lua", "mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/robofactory.lua", "mods/Apotheosis/files/scripts/biomes/vault_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/swamp.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/swamp_populator.lua" ) --Jungle, could probably include bonus fungus here
-    ModLuaFileAppend( "data/scripts/biomes/mod/rainforest_wormy.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/wormtunnels_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/sulfur_cave.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hiddengrove_populator.lua" ) --Hidden Grove, Overgrowth populator
+	ModLuaFileAppend("data/scripts/biomes/mod/holy_temple.lua",
+		"mods/Apotheosis/files/scripts/biomes/crypt_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/collapsed_lab.lua",
+		"mods/Apotheosis/files/scripts/biomes/fungicave_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua",
+		"mods/Apotheosis/files/scripts/biomes/coalmine_alt_populator.lua")
 
-    --Global Spawns
-    ModLuaFileAppend( "data/scripts/biomes/mod/irradiated_mines.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/blast_pit.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/frozen_passages.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/the_void.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/collapsed_lab.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/catacombs.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/swamp.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/robofactory.lua", "mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/holy_temple.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/snowvillage.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/rainforest_wormy.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/sulfur_cave.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua" )
-    
-    --Dark Areas
-    ModLuaFileAppend( "data/scripts/biomes/mod/irradiated_mines.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/mod/the_void.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" )
+	ModLuaFileAppend("data/scripts/biomes/mod/blast_pit.lua",
+		"mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/snowvillage.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hisiivillage_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/frozen_passages.lua",
+		"mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/catacombs.lua",
+		"mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/robofactory.lua",
+		"mods/Apotheosis/files/scripts/biomes/vault_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/swamp.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/swamp_populator.lua") --Jungle, could probably include bonus fungus here
+	ModLuaFileAppend("data/scripts/biomes/mod/rainforest_wormy.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/wormtunnels_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/sulfur_cave.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hiddengrove_populator.lua") --Hidden Grove, Overgrowth populator
 
+	--Global Spawns
+	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/blast_pit.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/frozen_passages.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/the_void.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/collapsed_lab.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/catacombs.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/swamp.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/robofactory.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/holy_temple.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/snowvillage.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/rainforest_wormy.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/sulfur_cave.lua",
+		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+
+	--Dark Areas
+	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua",
+		"mods/Apotheosis/files/scripts/biomes/suspicious.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/the_void.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")
 end
 
 
 --New Enemies, boosts ghost spawnrate in sandcave so they aren't flushed out by the quantity of other creatures.
 --Also boosts Divine Being & Divine Poring spawnrates in Heaven & Hell for unlocks
 if ModIsEnabled("new_enemies") then
-	ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua" )
+	ModLuaFileAppend("data/scripts/biomes/sandcave.lua",
+		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua")
 	--ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/the_end_angelboost_populator.lua" )
 end
 
 --New Enemies, boosts ghost spawnrate in sandcave so they aren't flushed out by the quantity of other creatures, compatibility for alt biomes.
 if ModIsEnabled("new_enemies") then
-  if ModIsEnabled("biome-plus") then
-    ModLuaFileAppend( "data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua" )
-  end
+	if ModIsEnabled("biome-plus") then
+		ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua",
+			"mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua")
+	end
 end
 
 
@@ -1100,57 +1135,63 @@ end
 
 -- Conjurer Mod, adds enemies, buildings and wands to a custom tab
 if ModIsEnabled("raksa") then
-  ModLuaFileAppend( "mods/raksa/files/scripts/lists/entity_categories.lua", "mods/Apotheosis/files/scripts/mod_compatibility/conjurer_populator.lua" )
+	ModLuaFileAppend("mods/raksa/files/scripts/lists/entity_categories.lua",
+		"mods/Apotheosis/files/scripts/mod_compatibility/conjurer_populator.lua")
 end
 
 
 
 --Worse Enemies, Overrides Hisii Minecart visuals & attacks to match those from the mod
 if ModIsEnabled("worse_enemies") then
+	local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+	local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_tnt.xml")
+	local xml = nxml.parse(content)
+	xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+	"mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_tnt.xml"
+	xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file =
+	"data/entities/projectiles/cocktail_gunpowder.xml"
+	ModTextFileSetContent("data/entities/animals/hisii_minecart_tnt.xml", tostring(xml))
 
-  local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-  local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_tnt.xml")
-  local xml = nxml.parse(content)
-  xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_tnt.xml"
-  xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file = "data/entities/projectiles/cocktail_gunpowder.xml"
-  ModTextFileSetContent("data/entities/animals/hisii_minecart_tnt.xml", tostring(xml))
-
-  local content = ModTextFileGetContent("data/entities/animals/hisii_minecart.xml")
-  local xml = nxml.parse(content)
-  xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse.xml"
-  xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file = "data/entities/projectiles/meteor_green.xml"
-  xml:first_of("Base"):first_of("DamageModelComponent").attr.hp = "1.0"
-  xml:add_child(nxml.parse([[
-    <SpriteComponent 
-      _tags="character" 
+	local content = ModTextFileGetContent("data/entities/animals/hisii_minecart.xml")
+	local xml = nxml.parse(content)
+	xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+	"mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse.xml"
+	xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file =
+	"data/entities/projectiles/meteor_green.xml"
+	xml:first_of("Base"):first_of("DamageModelComponent").attr.hp = "1.0"
+	xml:add_child(nxml.parse([[
+    <SpriteComponent
+      _tags="character"
       image_file="mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_emissive.xml"
       offset_x="0"
       offset_y="0"
-      alpha="1" 
+      alpha="1"
       emissive="1"
       additive="1">
 	</SpriteComponent>
   ]]))
-  ModTextFileSetContent("data/entities/animals/hisii_minecart.xml", tostring(xml))
+	ModTextFileSetContent("data/entities/animals/hisii_minecart.xml", tostring(xml))
 
-  local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_weak.xml")
-  local xml = nxml.parse(content)
-  xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_weak.xml"
-  xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file = "data/entities/projectiles/fireball_buckshot.xml"
-  ModTextFileSetContent("data/entities/animals/hisii_minecart_weak.xml", tostring(xml))
+	local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_weak.xml")
+	local xml = nxml.parse(content)
+	xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+	"mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_weak.xml"
+	xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file =
+	"data/entities/projectiles/fireball_buckshot.xml"
+	ModTextFileSetContent("data/entities/animals/hisii_minecart_weak.xml", tostring(xml))
 
-  --Bat Illusion Fix
-  local content = ModTextFileGetContent("data/entities/animals/psychotic/bat.xml")
-  local xml = nxml.parse(content)
-  xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "data/enemies_gfx/worse/bat.xml"
-  ModTextFileSetContent("data/entities/animals/psychotic/bat.xml", tostring(xml))
+	--Bat Illusion Fix
+	local content = ModTextFileGetContent("data/entities/animals/psychotic/bat.xml")
+	local xml = nxml.parse(content)
+	xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "data/enemies_gfx/worse/bat.xml"
+	ModTextFileSetContent("data/entities/animals/psychotic/bat.xml", tostring(xml))
 
-  --Illusion Shotgunner Hisii Fix
-  local content = ModTextFileGetContent("data/entities/animals/psychotic/shotgunner.xml")
-  local xml = nxml.parse(content)
-  xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file = "mods/Apotheosis/files/entities/projectiles/psychotic/meteor_green.xml"
-  ModTextFileSetContent("data/entities/animals/psychotic/shotgunner.xml", tostring(xml))
-
+	--Illusion Shotgunner Hisii Fix
+	local content = ModTextFileGetContent("data/entities/animals/psychotic/shotgunner.xml")
+	local xml = nxml.parse(content)
+	xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file =
+	"mods/Apotheosis/files/entities/projectiles/psychotic/meteor_green.xml"
+	ModTextFileSetContent("data/entities/animals/psychotic/shotgunner.xml", tostring(xml))
 end
 
 -- Noita Toether compatibility, allows items like the new tablets, Fungus Stone & Hungry Orb to be added to the item bank
@@ -1159,17 +1200,19 @@ end
 if ModIsEnabled("noita-together") then
   ModLuaFileAppend( "mods/noita-together/files/scripts/item_list.lua", "mods/Apotheosis/files/scripts/mod_compatibility/nt_itemlist_populator.lua" )
 end
-]]--
+]]
+--
 
 
 
 
 -- Custom Perk support injection
-ModLuaFileAppend( "data/scripts/perks/perk_list.lua", "mods/Apotheosis/files/scripts/perks/custom_perks.lua" )
+ModLuaFileAppend("data/scripts/perks/perk_list.lua", "mods/Apotheosis/files/scripts/perks/custom_perks.lua")
 
 
 -- Custom Status support injection
-ModLuaFileAppend( "data/scripts/status_effects/status_list.lua", "mods/Apotheosis/files/scripts/status_effects/status_effects.lua" )
+ModLuaFileAppend("data/scripts/status_effects/status_list.lua",
+	"mods/Apotheosis/files/scripts/status_effects/status_effects.lua")
 
 
 -- Custom Audio Support
@@ -1186,30 +1229,30 @@ ModRegisterAudioEventMappings("mods/Apotheosis/files/audio/GUIDs.txt")
 
 
 --Musicstone tag addition
-dofile_once( "mods/Apotheosis/files/scripts/magic/music_magic_tag_nxml.lua" )
+dofile_once("mods/Apotheosis/files/scripts/magic/music_magic_tag_nxml.lua")
 
-if HasFlagPersistent( "action_apotheosis_aqua_mine" ) or HasFlagPersistent( "action_apotheosis_bomb_giga" ) then
-  AddFlagPersistent( "apotheosis_card_unlocked_welcome_hint" )
+if HasFlagPersistent("action_apotheosis_aqua_mine") or HasFlagPersistent("action_apotheosis_bomb_giga") then
+	AddFlagPersistent("apotheosis_card_unlocked_welcome_hint")
 end
 
 --MOTD & Welcome Hint
 if ModIsEnabled("raksa") == false then
-  local flag_status = HasFlagPersistent( "apotheosis_card_unlocked_welcome_hint" )
-  if motdSetting == true then
-    dofile_once( "mods/Apotheosis/files/scripts/misc/motd_list.lua" )
-  elseif flag_status == false then
-    --dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
-  end
+	local flag_status = HasFlagPersistent("apotheosis_card_unlocked_welcome_hint")
+	if motdSetting == true then
+		dofile_once("mods/Apotheosis/files/scripts/misc/motd_list.lua")
+	elseif flag_status == false then
+		--dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
+	end
 end
 
 --Allows hisii to jump into minecarts
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 if ModIsEnabled("Ride Minecart") == false then
-  local content = ModTextFileGetContent("data/entities/props/physics_minecart.xml")
-  local xml = nxml.parse(content)
-  xml.attr.name = "minecart_hisii_hopin"
-  ModTextFileSetContent("data/entities/props/physics_minecart.xml", tostring(xml))
-  ModTextFileSetContent("data/entities/props/physics/minecart.xml", tostring(xml))
+	local content = ModTextFileGetContent("data/entities/props/physics_minecart.xml")
+	local xml = nxml.parse(content)
+	xml.attr.name = "minecart_hisii_hopin"
+	ModTextFileSetContent("data/entities/props/physics_minecart.xml", tostring(xml))
+	ModTextFileSetContent("data/entities/props/physics/minecart.xml", tostring(xml))
 end
 
 --local content = ModTextFileGetContent("data/entities/props/physics/minecart.xml")
@@ -1305,10 +1348,10 @@ ModTextFileSetContent("data/entities/buildings/essence_eater.xml", tostring(xml)
 local content = ModTextFileGetContent("data/entities/buildings/moon_altar.xml")
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
-	<LuaComponent 
-    _enabled="1" 
+	<LuaComponent
+    _enabled="1"
     execute_every_n_frame="70"
-    script_source_file="mods/Apotheosis/files/scripts/magic/moon_altar_modded.lua" 
+    script_source_file="mods/Apotheosis/files/scripts/magic/moon_altar_modded.lua"
     >
   </LuaComponent>
 ]]))
@@ -1318,10 +1361,10 @@ ModTextFileSetContent("data/entities/buildings/moon_altar.xml", tostring(xml))
 local content = ModTextFileGetContent("data/entities/buildings/dark_moon_altar.xml")
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
-	<LuaComponent 
-    _enabled="1" 
+	<LuaComponent
+    _enabled="1"
     execute_every_n_frame="70"
-    script_source_file="mods/Apotheosis/files/scripts/magic/dark_moon_altar_modded.lua" 
+    script_source_file="mods/Apotheosis/files/scripts/magic/dark_moon_altar_modded.lua"
     >
   </LuaComponent>
 ]]))
@@ -1401,18 +1444,20 @@ if ModIsEnabled("purgatory") or ModIsEnabled("nightmare") then
   local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
   attrs.blood_multiplier = "10"
   ModTextFileSetContent("data/entities/animals/bubbles/sliceLiquid/bubble_liquid.xml", tostring(xml))
-  
+
 end
-]]--
+]]
+--
 
 --Resets Blob Boss kill reward to prevent cheesing multiple "reward events" per kill
-ModLuaFileAppend( "data/scripts/newgame_plus.lua", "mods/Apotheosis/files/scripts/newgame_plus_appends.lua" )
+ModLuaFileAppend("data/scripts/newgame_plus.lua", "mods/Apotheosis/files/scripts/newgame_plus_appends.lua")
 --GameRemoveFlagRun( "apotheosis_blob_boss_slain" )
 
 --Adds custom enlightened alchemist types
 --Could instead have a script that has a 2 in 6 chance to occur, and if it does make the alchemist one of the new variants, and append all this as a script on the englightened alch entity that runs after the vanilla init occurs
-local content = ModTextFileGetContent("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua")
-ModTextFileSetContent( "data/scripts/animals/enlightened_alchemist_init.lua", tostring(content) )
+local content = ModTextFileGetContent(
+	"mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua")
+ModTextFileSetContent("data/scripts/animals/enlightened_alchemist_init.lua", tostring(content))
 --ModLuaFileAppend( "data/scripts/animals/enlightened_alchemist_init.lua", "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua" )
 
 -- Adds musical_stone tag to the worm projectile, not to make musical ghosts appear but rather to make it double for a "spells to worms" effect
@@ -1425,7 +1470,8 @@ ModTextFileSetContent("data/entities/projectiles/deck/worm_shot.xml", tostring(x
 local content = ModTextFileGetContent("data/entities/misc/perks/dissolve_powders.xml")
 local xml = nxml.parse(content)
 local attrs = xml:first_of("CellEaterComponent").attr
-attrs.materials = attrs.materials .. ",apotheosis_insect_husk,apotheosis_sand_pink,templebrick_static_broken_apotheosisoft"
+attrs.materials = attrs.materials ..
+	",apotheosis_insect_husk,apotheosis_sand_pink,templebrick_static_broken_apotheosisoft"
 ModTextFileSetContent("data/entities/misc/perks/dissolve_powders.xml", tostring(xml))
 
 -- Adds various liquids to freeze charge modifier
@@ -1471,19 +1517,19 @@ ModTextFileSetContent("data/entities/misc/perks/freeze_field.xml", tostring(xml)
 
 
 --Boss health multiplier insertion
-dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_health_multiplier_plug.lua" )
+dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/boss_health_multiplier_plug.lua")
 
 --Boss vulnerability immunity insertion
-dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability_immune_plug.lua" )
+dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability_immune_plug.lua")
 
 --Modifies vanilla entity data
 --Try not to tinker with base noita too much, the main goal to this mod is to be an expansion pack, not a rebalance.
-dofile_once( "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua" )
+dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua")
 
 -- If Conjurer is enabled, disable this for a fix.
 -- Adds custom Pixel Scenes in
 if ModIsEnabled("raksa") == false then
-  dofile_once( "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua" )
+	dofile_once("mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua")
 end
 
 --Overrides some creep's settings for spoopy's alternate graphics
@@ -1509,14 +1555,15 @@ if spoopyGFXSetting == true then
   ModTextFileSetContent("mods/Apotheosis/files/scripts/animals/angel_holy_beam_calldown.lua", content)
 
 end
-]]--
+]]
+--
 
 
 
 
 
 
-  
+
 
 
 
@@ -1545,46 +1592,54 @@ local year, month, day, hour, minute = GameGetDateAndTimeLocal()
 
 
 if seasonalSetting == true then
+	-- Halloween Event
+	if ((month == 10) and (day >= 15)) or seasonalForced_Halloween then
+		ModLuaFileAppend("data/scripts/biomes/coalmine.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coal Mine, first area, goodluck on your run
+		ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coalmine but to the west side near damp cave
+		ModLuaFileAppend("data/scripts/biomes/excavationsite.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coal Pits, area 2
+		ModLuaFileAppend("data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua") --Presumably everything below the entrance to the pyramid
 
-  -- Halloween Event
-  if (( month == 10 ) and ( day >= 15 )) or seasonalForced_Halloween then
-    ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua" ) --Coal Mine, first area, goodluck on your run
-    ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua" ) --Coalmine but to the west side near damp cave
-    ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua" ) --Coal Pits, area 2
-    ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua" ) --Presumably everything below the entrance to the pyramid
+		local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+		local content = ModTextFileGetContent("data/entities/animals/poring.xml")
+		local xml = nxml.parse(content)
+		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+		"mods/Apotheosis/files/enemies_gfx/poring_halloween.xml"
+		xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_filenames_file =
+		"mods/Apotheosis/files/ragdolls/poring_halloween/filenames.txt"
+		ModTextFileSetContent("data/entities/animals/poring.xml", tostring(xml))
 
-    local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-    local content = ModTextFileGetContent("data/entities/animals/poring.xml")
-    local xml = nxml.parse(content)
-    xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/poring_halloween.xml"
-    xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_filenames_file = "mods/Apotheosis/files/ragdolls/poring_halloween/filenames.txt"
-    ModTextFileSetContent("data/entities/animals/poring.xml", tostring(xml))
+		local content = ModTextFileGetContent("data/entities/animals/coal_mines/poring.xml")
+		local xml = nxml.parse(content)
+		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+		"mods/Apotheosis/files/enemies_gfx/poring_halloween_weak.xml"
+		xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_filenames_file =
+		"mods/Apotheosis/files/ragdolls/poring_halloween_weak/filenames.txt"
+		ModTextFileSetContent("data/entities/animals/coal_mines/poring.xml", tostring(xml))
 
-    local content = ModTextFileGetContent("data/entities/animals/coal_mines/poring.xml")
-    local xml = nxml.parse(content)
-    xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/poring_halloween_weak.xml"
-    xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_filenames_file = "mods/Apotheosis/files/ragdolls/poring_halloween_weak/filenames.txt"
-    ModTextFileSetContent("data/entities/animals/coal_mines/poring.xml", tostring(xml))
-
-    local content = ModTextFileGetContent("data/entities/animals/psychotic/poring.xml")
-    local xml = nxml.parse(content)
-    xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/poring_halloween.xml"
-    xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_filenames_file = "mods/Apotheosis/files/ragdolls/poring_halloween/filenames.txt"
-    ModTextFileSetContent("data/entities/animals/psychotic/poring.xml", tostring(xml))
-
-  end
+		local content = ModTextFileGetContent("data/entities/animals/psychotic/poring.xml")
+		local xml = nxml.parse(content)
+		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+		"mods/Apotheosis/files/enemies_gfx/poring_halloween.xml"
+		xml:first_of("Base"):first_of("DamageModelComponent").attr.ragdoll_filenames_file =
+		"mods/Apotheosis/files/ragdolls/poring_halloween/filenames.txt"
+		ModTextFileSetContent("data/entities/animals/psychotic/poring.xml", tostring(xml))
+	end
 
 
 
-  -- Smissmass Event
-  if (( month == 12 ) and ( day >= 15 )) or seasonalForced_Smissmass then
-
-    local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-    local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_tnt.xml")
-    local xml = nxml.parse(content)
-    xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_tnt_santa.xml"
-    xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file = "data/entities/projectiles/present.xml"
-    xml:add_child(nxml.parse([[
+	-- Smissmass Event
+	if ((month == 12) and (day >= 15)) or seasonalForced_Smissmass then
+		local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+		local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_tnt.xml")
+		local xml = nxml.parse(content)
+		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+		"mods/Apotheosis/files/enemies_gfx/hisii_minecart_tnt_santa.xml"
+		xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_entity_file =
+		"data/entities/projectiles/present.xml"
+		xml:add_child(nxml.parse([[
       <LuaComponent
           script_source_file="mods/Apotheosis/files/scripts/animals/esoteric_being_shifted_smoke.lua"
           execute_every_n_frame="1"
@@ -1592,125 +1647,143 @@ if seasonalSetting == true then
           >
       </LuaComponent>
       ]]))
-    ModTextFileSetContent("data/entities/animals/hisii_minecart_tnt.xml", tostring(xml))
+		ModTextFileSetContent("data/entities/animals/hisii_minecart_tnt.xml", tostring(xml))
 
-    if ModIsEnabled("worse_enemies") then
-      local content = ModTextFileGetContent("data/entities/animals/hisii_minecart.xml")
-      local xml = nxml.parse(content)
-      xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_smissmass.xml"
-      ModTextFileSetContent("data/entities/animals/hisii_minecart.xml", tostring(xml))
-    else
-      local content = ModTextFileGetContent("data/entities/animals/hisii_minecart.xml")
-      local xml = nxml.parse(content)
-      xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_smissmass.xml"
-      ModTextFileSetContent("data/entities/animals/hisii_minecart.xml", tostring(xml))
-    end
+		if ModIsEnabled("worse_enemies") then
+			local content = ModTextFileGetContent("data/entities/animals/hisii_minecart.xml")
+			local xml = nxml.parse(content)
+			xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+			"mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_smissmass.xml"
+			ModTextFileSetContent("data/entities/animals/hisii_minecart.xml", tostring(xml))
+		else
+			local content = ModTextFileGetContent("data/entities/animals/hisii_minecart.xml")
+			local xml = nxml.parse(content)
+			xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+			"mods/Apotheosis/files/enemies_gfx/hisii_minecart_smissmass.xml"
+			ModTextFileSetContent("data/entities/animals/hisii_minecart.xml", tostring(xml))
+		end
 
-    if ModIsEnabled("worse_enemies") then
-      local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_weak.xml")
-      local xml = nxml.parse(content)
-      xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_weak_smissmass.xml"
-      ModTextFileSetContent("data/entities/animals/hisii_minecart_weak.xml", tostring(xml))
-    else
-      local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_weak.xml")
-      local xml = nxml.parse(content)
-      xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/hisii_minecart_weak_smissmass.xml"
-      ModTextFileSetContent("data/entities/animals/hisii_minecart_weak.xml", tostring(xml))
-    end
+		if ModIsEnabled("worse_enemies") then
+			local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_weak.xml")
+			local xml = nxml.parse(content)
+			xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+			"mods/Apotheosis/files/enemies_gfx/hisii_minecart_worse_weak_smissmass.xml"
+			ModTextFileSetContent("data/entities/animals/hisii_minecart_weak.xml", tostring(xml))
+		else
+			local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_weak.xml")
+			local xml = nxml.parse(content)
+			xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+			"mods/Apotheosis/files/enemies_gfx/hisii_minecart_weak_smissmass.xml"
+			ModTextFileSetContent("data/entities/animals/hisii_minecart_weak.xml", tostring(xml))
+		end
 
-    local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-    local content = ModTextFileGetContent("data/entities/animals/poring.xml")
-    local xml = nxml.parse(content)
-    xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/poring_santa.xml"
-    ModTextFileSetContent("data/entities/animals/poring.xml", tostring(xml))
+		local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+		local content = ModTextFileGetContent("data/entities/animals/poring.xml")
+		local xml = nxml.parse(content)
+		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+		"mods/Apotheosis/files/enemies_gfx/poring_santa.xml"
+		ModTextFileSetContent("data/entities/animals/poring.xml", tostring(xml))
 
-    local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-    local content = ModTextFileGetContent("data/entities/animals/coal_mines/poring.xml")
-    local xml = nxml.parse(content)
-    xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/poring_santa_weak.xml"
-    ModTextFileSetContent("data/entities/animals/coal_mines/poring.xml", tostring(xml))
-
-  end
-
-
-  -- Birthday Event
-  -- Update to be centered on 21/07/2022, this is when the first enemy was created and development officially began. Should be a fair trade off between not being the official release date but also not clashing with Halloween
-  --Remember Update global_populator & global_populator_small too, wand tinkering crystal spawns are inside.
-  if (( month == 7 ) and (( day >= 20 ) and ( day <= 22 ))) or seasonalForced_Birthday then
-    ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua" ) --Hills slightly below ground
-    ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua" ) --Coal Mine, first area, goodluck on your run
-    ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua" ) --Coalmine but to the west side near damp cave
-    ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua" ) --Coal Pits, area 2
-    ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua" ) --Hiisi Base
-    ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/desert.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua" )
-    ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua" )
-  end
+		local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+		local content = ModTextFileGetContent("data/entities/animals/coal_mines/poring.xml")
+		local xml = nxml.parse(content)
+		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
+		"mods/Apotheosis/files/enemies_gfx/poring_santa_weak.xml"
+		ModTextFileSetContent("data/entities/animals/coal_mines/poring.xml", tostring(xml))
+	end
 
 
-  -- April Fools Event
-  if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then
-
-    --Replace all hisii hobos with clowns.
-    local content = ModTextFileGetContent("data/entities/animals/seasonal/hisii_hobo.xml")
-    ModTextFileSetContent("data/entities/animals/hisii_hobo.xml", content)
-
-    --Replace small fairies with lethal versions.
-    local content = ModTextFileGetContent("data/entities/animals/seasonal/fairy_cheap.xml")
-    ModTextFileSetContent("data/entities/animals/fairy_cheap.xml", content)
-
-    --Replace big fairies with non-lethal versions.
-    local content = ModTextFileGetContent("data/entities/animals/seasonal/fairy_big.xml")
-    ModTextFileSetContent("data/entities/animals/fairy_big.xml", content)
-    
-    local randomCap = 10
-
-    SetRandomSeed( hour + minute, hour + day )
-    --10% chance for any main path biome to become weird in April Fools
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      ModLuaFileAppend( "mods/apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-    if Random(1,randomCap) == 1 then
-      ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
-      randomCap = randomCap + 1
-    end
-
-    --100% chance for the Temple of the Art to be spawn everything
-    ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua" )
+	-- Birthday Event
+	-- Update to be centered on 21/07/2022, this is when the first enemy was created and development officially began. Should be a fair trade off between not being the official release date but also not clashing with Halloween
+	--Remember Update global_populator & global_populator_small too, wand tinkering crystal spawns are inside.
+	if ((month == 7) and ((day >= 20) and (day <= 22))) or seasonalForced_Birthday then
+		ModLuaFileAppend("data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua") --Hills slightly below ground
+		ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua") --Coal Mine, first area, goodluck on your run
+		ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua")                                            --Coalmine but to the west side near damp cave
+		ModLuaFileAppend("data/scripts/biomes/excavationsite.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua")                                            --Coal Pits, area 2
+		ModLuaFileAppend("data/scripts/biomes/snowcave.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua")                                       --Hiisi Base
+		ModLuaFileAppend("data/scripts/biomes/snowcastle.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua")
+		ModLuaFileAppend("data/scripts/biomes/desert.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua")
+		ModLuaFileAppend("data/scripts/biomes/rainforest.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua")
+		ModLuaFileAppend("data/scripts/biomes/vault.lua",
+			"mods/Apotheosis/files/scripts/biomes/seasonal/birthday_rare.lua")
+	end
 
 
+	-- April Fools Event
+	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+		--Replace all hisii hobos with clowns.
+		local content = ModTextFileGetContent("data/entities/animals/seasonal/hisii_hobo.xml")
+		ModTextFileSetContent("data/entities/animals/hisii_hobo.xml", content)
 
-    --Remember to check global spawn files, pandora's chest spawnrate boost is managed there
+		--Replace small fairies with lethal versions.
+		local content = ModTextFileGetContent("data/entities/animals/seasonal/fairy_cheap.xml")
+		ModTextFileSetContent("data/entities/animals/fairy_cheap.xml", content)
 
-  end
+		--Replace big fairies with non-lethal versions.
+		local content = ModTextFileGetContent("data/entities/animals/seasonal/fairy_big.xml")
+		ModTextFileSetContent("data/entities/animals/fairy_big.xml", content)
 
+		local randomCap = 10
+
+		SetRandomSeed(hour + minute, hour + day)
+		--10% chance for any main path biome to become weird in April Fools
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/vault.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/fungicave.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/rainforest.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/snowcastle.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/snowcave.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/excavationsite.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+		if Random(1, randomCap) == 1 then
+			ModLuaFileAppend("data/scripts/biomes/coalmine.lua",
+				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			randomCap = randomCap + 1
+		end
+
+		--100% chance for the Temple of the Art to be spawn everything
+		ModLuaFileAppend("data/scripts/biomes/crypt.lua",
+			"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+
+
+
+		--Remember to check global spawn files, pandora's chest spawnrate boost is managed there
+	end
 end
 
 
@@ -1726,52 +1799,53 @@ end
 
 
 --Dark Areas
-ModLuaFileAppend( "data/scripts/biomes/wizardcave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
+ModLuaFileAppend("data/scripts/biomes/wizardcave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")      --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
 
-ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Temple of the Arts.. who died here?
-ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Presumably everything below the entrance to the pyramid
-ModLuaFileAppend( "data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --BUNGUS!! cave, west side of area 2 for example
+ModLuaFileAppend("data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")           --Temple of the Arts.. who died here?
+ModLuaFileAppend("data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")         --Presumably everything below the entrance to the pyramid
+ModLuaFileAppend("data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")       --BUNGUS!! cave, west side of area 2 for example
 
-ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Overgrowth
-ModLuaFileAppend( "data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Magical temple.. huh
-ModLuaFileAppend( "data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Desert sand cave, I don't think it includes desert chasm
-ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --The Vault
+ModLuaFileAppend("data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")     --Overgrowth
+ModLuaFileAppend("data/scripts/biomes/wandcave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")        --Magical temple.. huh
+ModLuaFileAppend("data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")        --Desert sand cave, I don't think it includes desert chasm
+ModLuaFileAppend("data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")           --The Vault
 
-ModLuaFileAppend( "data/scripts/biomes/winter.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Winter appears to be the snow chasm... terrifying.
-ModLuaFileAppend( "data/scripts/biomes/rainforest_dark.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Lukki Lair.. creepy
-ModLuaFileAppend( "data/scripts/biomes/vault_frozen.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
-ModLuaFileAppend( "data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Power Plant
-ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Heaven & Hell, but for this specific lua file append I'm only adding to hell
+ModLuaFileAppend("data/scripts/biomes/winter.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")          --Winter appears to be the snow chasm... terrifying.
+ModLuaFileAppend("data/scripts/biomes/rainforest_dark.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua") --Lukki Lair.. creepy
+ModLuaFileAppend("data/scripts/biomes/vault_frozen.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")    --Like the vault, but way colder, worse, more hisii and with a really rude welcoming
+ModLuaFileAppend("data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")        --Power Plant
+ModLuaFileAppend("data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")         --Heaven & Hell, but for this specific lua file append I'm only adding to hell
 
 ModLuaFileAppend( "mods/apotheosis/files/scripts/biomes/newbiome/evil_temple.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua" ) --Temple of Sacrilegious Remains
 
 
 --Secret
 
-do  -- Player Editor
-  local path = "data/entities/player_base.xml"
-  local xml = nxml.parse(ModTextFileGetContent(path))
-  --Adds Biome tracker script to the player character, it will update their current biome difficulty and save the highest one they've ever achieved, maxing out at 7 in Heaven/Hell
-  --This is currently only used for twitch integration so is disabled if TI is turned off, can be changed if needed elsewhere
---  xml:add_child(nxml.parse([[
---    <LuaComponent
---      script_source_file="mods/apotheosis/files/scripts/magic/biome_difficulty_tracker.lua"
---      execute_every_n_frame="600"
---      execute_times="-1"
---      remove_after_executed="0"
---      >
---    </LuaComponent>
---  ]]))
+do -- Player Editor
+	local path = "data/entities/player_base.xml"
+	local xml = nxml.parse(ModTextFileGetContent(path))
+	--Adds Biome tracker script to the player character, it will update their current biome difficulty and save the highest one they've ever achieved, maxing out at 7 in Heaven/Hell
+	--This is currently only used for twitch integration so is disabled if TI is turned off, can be changed if needed elsewhere
+	--  xml:add_child(nxml.parse([[
+	--    <LuaComponent
+	--      script_source_file="mods/apotheosis/files/scripts/magic/biome_difficulty_tracker.lua"
+	--      execute_every_n_frame="600"
+	--      execute_times="-1"
+	--      remove_after_executed="0"
+	--      >
+	--    </LuaComponent>
+	--  ]]))
 
-  --Makes player take contact damage from cursed liquid, poisonous gas, and other materials added by Apotheosis
-  --Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
-  local attrs = xml:first_of("DamageModelComponent").attr
-  attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
-  attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.003,0.003,0.0008,0.001"
+	--Makes player take contact damage from cursed liquid, poisonous gas, and other materials added by Apotheosis
+	--Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
+	local attrs = xml:first_of("DamageModelComponent").attr
+	attrs.materials_that_damage = attrs.materials_that_damage ..
+		",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
+	attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.003,0.003,0.0008,0.001"
 
-  if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) and capeSetting then
-    --Adds Golden Cape if check is successful
-    xml:add_child(nxml.parse([[
+	if HasFlagPersistent("apotheosis_card_unlocked_secret_knowledge_of_kings") and capeSetting then
+		--Adds Golden Cape if check is successful
+		xml:add_child(nxml.parse([[
       <LuaComponent
         script_source_file="data/apotheosis_gfx/player_cape_colour_append.lua"
         execute_every_n_frame="2"
@@ -1780,10 +1854,10 @@ do  -- Player Editor
         >
       </LuaComponent>
     ]]))
-  end
+	end
 
-  --Adds Parallel World checker to the player
-  xml:add_child(nxml.parse([[
+	--Adds Parallel World checker to the player
+	xml:add_child(nxml.parse([[
     <LuaComponent
       script_source_file="mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
       execute_every_n_frame="1800"
@@ -1793,67 +1867,67 @@ do  -- Player Editor
     </LuaComponent>
   ]]))
 
-  --Adds Biome Check to the player
-  xml:add_child(nxml.parse([[
+	--Adds Biome Check to the player
+	xml:add_child(nxml.parse([[
     <Entity>
       <Base file="mods/apotheosis/files/scripts/magic/biome_effects.xml" >
       </Base>
     </Entity>
   ]]))
 
-  --Debug
-  --xml:add_child(nxml.parse([[
-  --  <SpriteComponent 
-  --  _tags="character" 
-  --  alpha="1" 
-  --  image_file="mods/apotheosis/files/player_gfx/perk_wings.xml"
-  --  next_rect_animation="" 
-  --  offset_x="6" 
-  --  offset_y="14" 
-  --  rect_animation="walk" 
-  --  z_index="0.61"
-  --></SpriteComponent>
-  --]]))
-  ModTextFileSetContent(path, tostring(xml))
+	--Debug
+	--xml:add_child(nxml.parse([[
+	--  <SpriteComponent
+	--  _tags="character"
+	--  alpha="1"
+	--  image_file="mods/apotheosis/files/player_gfx/perk_wings.xml"
+	--  next_rect_animation=""
+	--  offset_x="6"
+	--  offset_y="14"
+	--  rect_animation="walk"
+	--  z_index="0.61"
+	--></SpriteComponent>
+	--]]))
+	ModTextFileSetContent(path, tostring(xml))
 
-  --print(tostring(xml))
+	--print(tostring(xml))
 end
 
 
 
 --Guarantees Dense Smoke modifier to appear in the coalpits for your first run when playing with Apotheosis
 if ModIsEnabled("raksa") == false then
-  if (HasFlagPersistent( "apotheosis_card_unlocked_coalpits_dense_smoke" ) ~= true)then
-    
-    local filepc = "data/biome/_pixel_scenes.xml"
-    if ModIsEnabled("purgatory") then
-      filepc = "mods/purgatory/files/biome/_pixel_scenes.xml"
-      local content = ModTextFileGetContent(filepc)
-      local xml = nxml.parse(content)
-      xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+	if (HasFlagPersistent("apotheosis_card_unlocked_coalpits_dense_smoke") ~= true) then
+		local filepc = "data/biome/_pixel_scenes.xml"
+		if ModIsEnabled("purgatory") then
+			filepc = "mods/purgatory/files/biome/_pixel_scenes.xml"
+			local content = ModTextFileGetContent(filepc)
+			local xml = nxml.parse(content)
+			xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
           <PixelScene pos_x="1003" pos_y="111" just_load_an_entity="data/entities/buildings/smoke_dense_creator_apotheosis_message.xml" />
       ]]))
-      ModTextFileSetContent(filepc, tostring(xml))
-    elseif ModIsEnabled("noitavania") then
-      filepc = "mods/noitavania/data/biome/_pixel_scenes.xml"
-      local content = ModTextFileGetContent(filepc)
-      local xml = nxml.parse(content)
-      xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+			ModTextFileSetContent(filepc, tostring(xml))
+		elseif ModIsEnabled("noitavania") then
+			filepc = "mods/noitavania/data/biome/_pixel_scenes.xml"
+			local content = ModTextFileGetContent(filepc)
+			local xml = nxml.parse(content)
+			xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
           <PixelScene pos_x="192" pos_y="1635" just_load_an_entity="data/entities/buildings/smoke_dense_creator_apotheosis_message.xml" />
       ]]))
-      ModTextFileSetContent(filepc, tostring(xml))
-    else
-      local content = ModTextFileGetContent(filepc)
-      local xml = nxml.parse(content)
-      xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+			ModTextFileSetContent(filepc, tostring(xml))
+		else
+			local content = ModTextFileGetContent(filepc)
+			local xml = nxml.parse(content)
+			xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
           <PixelScene pos_x="192" pos_y="1635" just_load_an_entity="data/entities/buildings/smoke_dense_creator_apotheosis_message.xml" />
       ]]))
-      ModTextFileSetContent(filepc, tostring(xml))
-    end
+			ModTextFileSetContent(filepc, tostring(xml))
+		end
 
 
-    ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/excavationsite_populator_densesmoke.lua" )
-  end
+		ModLuaFileAppend("data/scripts/biomes/excavationsite.lua",
+			"mods/Apotheosis/files/scripts/biomes/excavationsite_populator_densesmoke.lua")
+	end
 end
 
 -- Sets biome map to the new one
@@ -1869,7 +1943,8 @@ else
   ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
   side note: maybe in that new world enemies could drop wands directly instead of finding them on pedestals
 end
-]]--
+]]
+--
 
 ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
 
@@ -1878,8 +1953,8 @@ ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the bio
 
 --More Musical Magic implementation, coded by Y🍵
 if ModTextFileGetContent("data/moremusicalmagic/musicmagic.lua") == nil then
-  local data = ModTextFileGetContent("data/moremusicalmagic/compatibility/musicmagic.lua")
-  ModTextFileSetContent("data/moremusicalmagic/musicmagic.lua",data)
+	local data = ModTextFileGetContent("data/moremusicalmagic/compatibility/musicmagic.lua")
+	ModTextFileSetContent("data/moremusicalmagic/musicmagic.lua", data)
 end
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_apotheosis.lua")
@@ -1889,47 +1964,48 @@ ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/
 dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
 
 --Appending extra modiifers
-ModLuaFileAppend( "data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
+ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua",
+	"mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
 
 --Polymorph pool addition preperation
 --Will be controlled via mod settings until it's pushed to main
 --If you want to enable it, you can toggle "Expanded Polymorph Pool" in the mod settings
-if ModSettingGet( "Apotheosis.exp_poly" ) == true then
-  if ModIsEnabled("Global_Poly") then
-    ModLuaFileAppend( "mods/global_poly/files/scripts/poly_pool.lua", "mods/apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
-  else
-    function OnWorldInitialized()
-      dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
-    end
-  end
+if ModSettingGet("Apotheosis.exp_poly") == true then
+	if ModIsEnabled("Global_Poly") then
+		ModLuaFileAppend("mods/global_poly/files/scripts/poly_pool.lua",
+			"mods/apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
+	else
+		function OnWorldInitialized()
+			dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+		end
+	end
 end
 
 --Randomly cause a fungal shift/creature shift at any time, at random.
 --And print Happy April Fools at the start of the run
 --Happy april fools <3
 function AprilFoolsPlayerSpawn()
-  if (( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools then
-    local x, y = EntityGetTransform( player_entity )
-    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
-    EntityAddChild( player_entity, cid )
-    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_creature_curse_slow.xml", x, y)
-    EntityAddChild( player_entity, cid )
-    local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/creature_shift_april_fools_bootup.xml", x, y) --20 random creature shifts at the start of the run
-    EntityAddChild( player_entity, cid )
+	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+		local x, y = EntityGetTransform(player_entity)
+		local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
+		EntityAddChild(player_entity, cid)
+		local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_creature_curse_slow.xml", x, y)
+		EntityAddChild(player_entity, cid)
+		local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/creature_shift_april_fools_bootup.xml", x, y) --20 random creature shifts at the start of the run
+		EntityAddChild(player_entity, cid)
 
-    GamePrint("$sign_apotheosis_aprilfools_intro")
-  end
+		GamePrint("$sign_apotheosis_aprilfools_intro")
+	end
 end
-
 
 -- Creature shift fix upon reloading world
 -- Keep this at the bottom of the file, and only let one of this function exist, silly
-function OnPlayerSpawned( player_entity )
-	local x, y = EntityGetTransform( player_entity ) --This was just "player" by default but I feel like something broke.. I hope not
+function OnPlayerSpawned(player_entity)
+	local x, y = EntityGetTransform(player_entity) --This was just "player" by default but I feel like something broke.. I hope not
 	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
 
-  --Previously a game print to warn against Ride Minecarts
-  --[[if ModIsEnabled("Ride Minecart") == true then
+	--Previously a game print to warn against Ride Minecarts
+	--[[if ModIsEnabled("Ride Minecart") == true then
     GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
   end]]--
 
@@ -1947,52 +2023,50 @@ function OnPlayerSpawned( player_entity )
     AddFlagPersistent( "apotheosis_temp_redsandspawnintroguaranteed2" )
   end
 
-  --Warns the player if Mo Creeps is enabled, to shut it off
-  if ModIsEnabled("Mo_Creeps") then
-    GamePrintImportant("WARNING: MO CREEPS IS ENABLED","Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
-  end
+	--Warns the player if Mo Creeps is enabled, to shut it off
+	if ModIsEnabled("Mo_Creeps") then
+		GamePrintImportant("WARNING: MO CREEPS IS ENABLED",
+			"Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+	end
 
-  --Debug Testing for intro scene
-  --RemoveFlagPersistent( "apotheosis_intro_cutscene" )
+	--Debug Testing for intro scene
+	--RemoveFlagPersistent( "apotheosis_intro_cutscene" )
 
-  --Handles the intro cutscene if the player hasn't encountered it yet
-  if ModIsEnabled("Mo_Creeps") == false and HasFlagPersistent( "apotheosis_intro_cutscene" ) == false then
-    EntityLoad("mods/apotheosis/files/entities/intro/controller_scenes.xml", x, y)
-    --This is added when the cutscene ends to prevent a softlock
-    --AddFlagPersistent( "apotheosis_intro_cutscene" )
-  end
+	--Handles the intro cutscene if the player hasn't encountered it yet
+	if ModIsEnabled("Mo_Creeps") == false and HasFlagPersistent("apotheosis_intro_cutscene") == false then
+		EntityLoad("mods/apotheosis/files/entities/intro/controller_scenes.xml", x, y)
+		--This is added when the cutscene ends to prevent a softlock
+		--AddFlagPersistent( "apotheosis_intro_cutscene" )
+	end
 
-  if custom_seed then
-    GamePrint("$sign_apotheosis_custom_seed" )
-  end
+	if custom_seed then
+		GamePrint("$sign_apotheosis_custom_seed")
+	end
 
-  --Handles AprilFools related code
-  AprilFoolsPlayerSpawn()
+	--Handles AprilFools related code
+	AprilFoolsPlayerSpawn()
 
-  --Calculate RNG
-  SetRandomSeed(111,222)
-  if Random(1,2000) == 1 then
-    GameAddFlagRun(table.concat({"apothe","osis_","div","ine_red_fi","sh"}))
-  end
+	--Calculate RNG
+	SetRandomSeed(111, 222)
+	if Random(1, 2000) == 1 then
+		GameAddFlagRun(table.concat({ "apothe", "osis_", "div", "ine_red_fi", "sh" }))
+	end
 end
 
-
-
 --Custom Materials
-ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/secret_materials.xml" )
-ModMaterialsFileAdd( "mods/Apotheosis/files/scripts/materials/custom_materials.xml" )
+ModMaterialsFileAdd("mods/Apotheosis/files/scripts/materials/secret_materials.xml")
+ModMaterialsFileAdd("mods/Apotheosis/files/scripts/materials/custom_materials.xml")
 
 
-ModLuaFileAppend( "data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua" )
-ModLuaFileAppend( "data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua" )
-ModLuaFileAppend( "data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua" )
+ModLuaFileAppend("data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua")
+ModLuaFileAppend("data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua")
+ModLuaFileAppend("data/scripts/items/potion_aggressive.lua",
+	"mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
 
 function OnMagicNumbersAndWorldSeedInitialized()
-
-  --You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible
-  do --Setup Magic Catalyst data
-    dofile("mods/apotheosis/files/scripts/materials/secret_materials_generate.lua")
-    GenerateMagicCatalyst()
-  end
-
+	--You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible
+	do --Setup Magic Catalyst data
+		dofile("mods/apotheosis/files/scripts/materials/secret_materials_generate.lua")
+		GenerateMagicCatalyst()
+	end
 end
