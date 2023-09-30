@@ -4,7 +4,7 @@ ocarina_songs["spawnpotion"]  = { "d", "d", "e", "e" }            --Hinted at in
 ocarina_songs["krittycats"]  = { "a", "b", "d", "c" }             --Hinted at in Tree Top (Above achievement pillars)
 
 kantele_songs["fullhp"]  = { "d", "e", "a", "d" }
-kantele_songs["spawnpouch"]  = { "g", "dis", "e", "a" }
+kantele_songs["spawnpouch"]  = { "g", "dis", "a", "e" }
 kantele_songs["spawnpotion"]  = { "dis", "dis", "e", "e" }
 kantele_songs["krittycats"]  = { "a", "d", "e", "g" }      
 
