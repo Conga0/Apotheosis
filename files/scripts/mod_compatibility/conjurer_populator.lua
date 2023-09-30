@@ -171,6 +171,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/miniboss_pit_02.png",
 	  },
 	  {
+		name="Mud-Man",
+		path="data/entities/animals/mudman_friendly.xml",
+		image="data/ui_gfx/animal_icons/mudman_friendly.png",
+	  },
+	  {
 		name="Mini Drone",
 		path="data/entities/animals/drone_mini.xml",
 		image="data/ui_gfx/animal_icons/drone_mini.png",

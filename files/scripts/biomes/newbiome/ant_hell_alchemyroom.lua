@@ -190,8 +190,11 @@ end
 
 function spawn_potions(x, y)
 	math.randomseed(x + y)
-	if math.random(1,100) == 1 then
+	local rng = math.random(1,100)
+	if rng == 1 then
 		EntityLoad( "mods/Apotheosis/files/entities/items/pickups/runestones/runestone_alchemy.xml", x, y )
+	elseif rng == 2 then
+		EntityLoad("mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml", x , y )
 	else
 		EntityLoad("data/entities/items/pickup/potion.xml", x, y)
 	end

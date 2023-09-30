@@ -3,7 +3,7 @@ local entity_id = GetUpdatedEntityID()
 local parent_id = EntityGetRootEntity(entity_id)
 local projcomp = EntityGetFirstComponentIncludingDisabled(parent_id,"ProjectileComponent")
 
-local dmg = (ComponentGetValue2(projcomp,"damage") or 0) * 2
+local dmg = (ComponentGetValue2(projcomp,"damage") or 0) * 3
 ComponentSetValue2(projcomp,"damage",0)
 
 local damagetypes = {
@@ -22,7 +22,7 @@ local damagetypes = {
 
 for k=1,#damagetypes
 do  local v = damagetypes[k]
-    local multiplier = 2
+    local multiplier = 3
     if v == "fire" then
         multiplier = 1.25
     end

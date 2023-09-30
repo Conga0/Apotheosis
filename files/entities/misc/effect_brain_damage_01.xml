@@ -1,0 +1,38 @@
+<Entity name="effect_tripping_balls" tags="tripping_extreme">
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent 
+        effect="DRUNK"
+        frames="600"
+    ></GameEffectComponent >
+
+	<DrugEffectModifierComponent>
+		<fx_add
+			distortion_amount="0.2"
+			color_amount="1.5"
+			fractals_amount="1.5"
+			fractals_size="1.0"
+		/>
+	</DrugEffectModifierComponent>
+	
+	<Base file="data/entities/particles/drunk.xml" >
+		<SpriteParticleEmitterComponent
+    		emission_interval_min_frames="20"
+    		emission_interval_max_frames="50"
+			randomize_position_inside_hitbox="0"  >
+		</SpriteParticleEmitterComponent>
+	</Base>
+	
+	<LuaComponent
+		execute_every_n_frame = "1"
+		script_source_file="mods/apotheosis/files/scripts/misc/effect_brain_damage_effect.lua"
+	></LuaComponent>
+	
+	<LuaComponent
+		execute_every_n_frame = "60"
+		script_source_file="mods/apotheosis/files/scripts/status_effects/brain_damage_01.lua"
+	></LuaComponent>
+
+</Entity>

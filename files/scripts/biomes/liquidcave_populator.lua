@@ -34,6 +34,32 @@
     })
 
 
+    --Liquid bubbles
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.001,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/bubbles/ambrosia/bubble_liquid.xml"
+    })
+
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.001,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/bubbles/berserkium/bubble_liquid.xml"
+    })
+
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.001,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/bubbles/soarium/bubble_liquid.xml"
+    })
+
+
 
     ---Small enemies
 

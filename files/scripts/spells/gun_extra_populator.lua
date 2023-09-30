@@ -20,3 +20,7 @@ end
 extra_modifiers["apotheosis_speedup"] = function()
     c.speed_multiplier = c.speed_multiplier * 2.5
 end
+
+extra_modifiers["apotheosis_braindamage"] = function()
+    c.spread_degrees = c.spread_degrees + 30
+end

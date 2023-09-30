@@ -12,3 +12,4 @@ do local v = status_effects[k]
         --GamePrint("EntityID is " .. entity_id)
     end
 end
+

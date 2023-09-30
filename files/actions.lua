@@ -327,7 +327,8 @@ local apotheosis_spellappends = {
                 if iteration > 0 and frame > last_frame + 60*60*5 and fungal_iter < 20 then
                     fungal_shift( entity_id, pos_x, pos_y, true )
                 else
-                    fungal_shift( entity_id, pos_x, pos_y, false )
+                    --fungal_shift( entity_id, pos_x, pos_y, false )
+                    add_projectile("data/entities/misc/forced_bungal_shift.xml")
                 end
             end
         end,
@@ -484,7 +485,11 @@ local apotheosis_spellappends = {
                 end
                 
                 -- shift materials
-                fungal_shift( entity_id, pos_x, pos_y, true )
+                if iteration > 0 then
+                    fungal_shift( entity_id, pos_x, pos_y, true )
+                else
+                    add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
+                end
             end
         end,
     },
@@ -967,7 +972,7 @@ local apotheosis_spellappends = {
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mass_status_dry.xml")
             c.fire_rate_wait = c.fire_rate_wait + 100
-            current_reload_time = current_reload_time + 1800
+            current_reload_time = current_reload_time + 60
         end,
     },
     {
@@ -1883,7 +1888,7 @@ local apotheosis_spellappends = {
         id_matchup  = "MANA_REDUCE",
         name 		= "$spell_apotheosis_water_power_name",
         description = "$spell_apotheosis_water_power_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hydromancy.png",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hydromancy_s.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "1,2,3,4,5,6", -- MANA_REDUCE
@@ -2246,18 +2251,44 @@ local apotheosis_spellappends = {
 		end,
 	},
 	{
-		id          = "APOTHEOSIS_FIRE_POWER",
+		id          = "APOTHEOSIS_BLOOD_POWER",
         id_matchup  = "APOTHEOSIS_WATER_POWER",
+        name 		= "$spell_apotheosis_blood_power_name",
+        description = "$spell_apotheosis_blood_power_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hemomancy_s.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+        spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",  --Requires Colossal Blob to be slain
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "0,4,5,6", -- CHAIN_BOLT
+		spawn_probability                 = "0.75,1,0.8,0.6", -- CHAIN_BOLT
+		price = 180,
+		mana = 20,
+		-- max_uses = 20,
+		action 		= function()
+            if not reflecting and GameGetGameEffectCount( GetUpdatedEntityID(), "BLOODY" ) > 0 then
+                c.friendly_fire		= true
+                if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
+                    c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+                end
+                c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_blood.xml,data/entities/misc/piercing_shot.xml,"
+            end
+            c.fire_rate_wait    = c.fire_rate_wait + 20
+            draw_actions( 1, true )
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_FIRE_POWER",
+        id_matchup  = "APOTHEOSIS_BLOOD_POWER",
         name 		= "$spell_apotheosis_fire_power_name",
         description = "$spell_apotheosis_fire_power_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/pyromancy.png",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/pyromancy_s.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",  --Requires Aesthete of Heat to be slain
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "0,4,5,6", -- CHAIN_BOLT
 		spawn_probability                 = "0.75,1,0.8,0.6", -- CHAIN_BOLT
 		price = 180,
-		mana = 10,
+		mana = 20,
 		-- max_uses = 20,
 		action 		= function()
             if not reflecting and GameGetGameEffectCount( GetUpdatedEntityID(), "ON_FIRE" ) > 0 then
@@ -2396,6 +2427,12 @@ local actions_to_edit = {
     ["ACCELERATING_SHOT"] = {
         spawn_level         = "1,2,3,4,5,10",
         spawn_probability   = "0.5,1,1,1,0.5,0.1"
+    },
+
+    --Allow Path of Darkflame to spawn in lower tier spell pools, it's a great early game spell but you only ever find it mid-late game, by then it's garbage
+    ["DARKFLAME"] = {
+        spawn_level         = "1,2,3,5,6",
+        spawn_probability   = "0.8,0.8,1,0.9,0.8"
     },
 
     --Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
@@ -2540,9 +2577,11 @@ local actions_to_edit = {
     --Changes Summon Taikasauva to allow proper creature shift functionality
     ["SUMMON_WANDGHOST"] = {
         action = function()
-            local filepath = GlobalsGetValue( "apotheosis_wandghost_filepath", "data/entities/projectiles/deck/wand_ghost_player.xml" )
-			add_projectile(filepath)
-			add_projectile("data/entities/particles/image_emitters/wand_effect.xml")
+            if not reflecting then
+                local filepath = GlobalsGetValue( "apotheosis_wandghost_filepath", "data/entities/projectiles/deck/wand_ghost_player.xml" )
+                add_projectile(filepath)
+                add_projectile("data/entities/particles/image_emitters/wand_effect.xml")
+            end
         end,
         mandatory_addition = true
     },

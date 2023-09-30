@@ -5,7 +5,7 @@ local x,y = EntityGetTransform(player_entity)
 if stomach == nil then return end
 local red_sand_num
 for k, v in ipairs(ComponentGetValue2(stomach, "ingestion_effect_causes")) do
-	if v == CellFactory_GetType("apotheosis_redstone") then
+	if v == CellFactory_GetType("apotheosis_unholy_concoction") then
 		red_sand_num = k
 	end
 end

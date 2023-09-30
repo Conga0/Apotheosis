@@ -29,6 +29,7 @@ local blacklist = {
     ["ARROW"] = true,            --Starting Spell
     ["BOUNCY_ORB"] = true,       --Starting Spell
     ["ALL_SPELLS"] = true,       --Starting Spe- I mean, Quest spell
+    ["SUMMON_PORTAL"] = true,       --Starting Spe- I mean, Quest spell
     ["ALPHA"] = true,                       --At least some form of infinite spell casting is available
     ["TELEPORT_PROJECTILE_SHORT"] = true,   --It just sucks to move around without TP, want to guarantee at least one spawns
     ["REGENERATION_FIELD"] = true,          --There's so few healing spells in the game I want to guarantee at least one spawns
@@ -36,6 +37,12 @@ local blacklist = {
     ["APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL"] = true,     --One of a kind 
     ["APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL"] = true,    --One of a kind 
     ["APOTHEOSIS_KNOWLEDGE_OF_KINGS"] = true,           --Quest spell
+
+    --Grahams Things Compatibility
+    ["GRAHAM_GLOW_DART"] = true,       --Starting Spell
+    ["GRAHAM_BRAMBALL"] = true,       --Starting Spell
+    ["GRAHAM_BARREL"] = true,       --Starting Spell
+    ["GRAHAM_PANIC_BOMB"] = true,       --Starting Spell
 }
 
 for k=1,#actions do -- fast as fuck boi

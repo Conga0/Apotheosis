@@ -152,7 +152,7 @@
     })
 
 
-    --Firemage Spawns
+    --Watermage Spawns
     table.insert(g_unique_enemy3,
     {
         prob           = 0.05,
@@ -206,6 +206,15 @@ table.insert(g_small_enemies,
     entity     = "data/entities/animals/poring_magic.xml",
     ngpluslevel = 1,
     ng_exclusive = true,
+})
+
+table.insert(g_small_enemies,
+{
+    prob           = 0.07,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/bubbles/acid/bubble_liquid.xml",
+    ngpluslevel = 1,
 })
 
 

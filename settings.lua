@@ -213,8 +213,8 @@ local flags_statues = {
 	"apotheosis_card_unlocked_cat_secret",
 	--1.1.0
 	"apotheosis_card_unlocked_essence_fungus",
-	"apotheosis_moon_fungus_unlock",
-	"apotheosis_misc_pandora_chest_rain",
+	"apotheosis_card_unlocked_moon_fungus_unlock",
+	"apotheosis_card_unlocked_pandora_chest_rain",
 	"apotheosis_card_unlocked_boss_fire_lukki",
 	"apotheosis_card_unlocked_secret_knowledge_of_kings",
   --Apotheosis
@@ -223,6 +223,11 @@ local flags_statues = {
   "apotheosis_card_unlocked_challenge_towerclimb_win",
   "apotheosis_card_unlocked_challenge_missingmagic_win",
   "apotheosis_card_unlocked_challenge_hardcore_win",
+  "apotheosis_card_unlocked_musical_magic_played",
+  --Endings
+  "apotheosis_card_unlocked_ending_apotheosis_01",
+  "apotheosis_card_unlocked_ending_apotheosis_02",
+  "apotheosis_card_unlocked_ending_apotheosis_03",
   
 }
 

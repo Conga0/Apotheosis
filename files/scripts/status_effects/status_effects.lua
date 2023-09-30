@@ -151,6 +151,29 @@ local apotheosis_status_list = {
         effect_entity="mods/apotheosis/files/entities/misc/effect_anthatching.xml",
     },
     ]]--
+    {
+        id="apotheosis_BRAIN_DAMAGE",
+        ui_name="$status_apotheosis_brain_damage_00_name",
+        ui_description="$status_apotheosis_brain_damage_00_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/brain_rot.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_brain_damage_00.xml",
+    },
+    {
+        id="apotheosis_BRAIN_DAMAGE",
+        ui_name="$status_apotheosis_brain_damage_01_name",
+        ui_description="$status_apotheosis_brain_damage_01_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/brain_rot.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_brain_damage_01.xml",
+        min_threshold_normalized="0.5",
+    },
+    {
+        id="apotheosis_BRAIN_DAMAGE",
+        ui_name="$status_apotheosis_brain_damage_02_name",
+        ui_description="$status_apotheosis_brain_damage_02_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/brain_rot.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_brain_damage_02.xml",
+        min_threshold_normalized="1.5",
+    },
 }
 
 local len = #status_effects

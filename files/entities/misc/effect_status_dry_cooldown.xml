@@ -1,0 +1,20 @@
+<Entity name="apotheosis_dry_magic" >
+    <InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<LifetimeComponent
+		lifetime="600"
+		>
+	</LifetimeComponent>
+	
+	<UIIconComponent
+		name="$status_apotheosis_dry_spell_cooldown_name"
+		description="$status_apotheosis_dry_spell_cooldown_desc"
+		icon_sprite_file="mods/apotheosis/files/ui_gfx/status_indicators/dry_spell_disabled.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>

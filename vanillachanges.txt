@@ -31,6 +31,7 @@ Masters of Homing are now made of a slightly tastier meat than slime
 Gemmed necklace cosmetic now requires 46 orbs
 You can now eat from pouches in the inventory
 Chaotic Transmutation now costs 40 mana
+Path of Dark Flame can appear in lower tier spell pools
 
 
 New Biome Modifiers:
@@ -43,7 +44,7 @@ Alchemical Mists
 Content list:
 116 new enemies
 6 new bosses
-75 new spells
+76 new spells
 10 new perks
 6 new biomes (+ 4 secret biomes)
 7 new structures

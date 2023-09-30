@@ -198,7 +198,7 @@ function creature_shift( entity, x, y, debug_no_limits )
             GlobalsSetValue( "apotheosis_scavgrenader_filepath", table.concat({"data/entities/animals/",target,".xml"}) )
         end
 
-        --If the creature being shifted away is a MiniBlob, update the leader damage filepath with the new data
+        --If the creature being shifted away is a MiniBlob, update the angry blob damage filepath with the new data
         if target2 == "miniblob" then
             GlobalsSetValue( "apotheosis_miniblob_filepath", table.concat({"data/entities/animals/",target,".xml"}) )
         end

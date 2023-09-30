@@ -31,6 +31,8 @@
 		
 		<DamageModelComponent 
             hp="3.5"
+			air_needed="1"
+			air_lack_of_damage="0.8"
             materials_create_messages="1"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hisii_minecart/filenames.txt" 
 			fire_probability_of_ignition="5"
@@ -148,6 +150,7 @@
 
 	<LuaComponent
 		_tags="death_reward"
+		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/hiisi_minecart_tnt_drown.lua"
 		script_death="mods/Apotheosis/files/scripts/animals/hisii_minecart_tnt_death.lua"
 		>
 	</LuaComponent>

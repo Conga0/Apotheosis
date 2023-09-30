@@ -12,8 +12,13 @@ if player_id ~= 0 then
 
     local air = ComponentGetValue2(dmgcomp, "air_in_lungs")
 
+    --Drain air slower if user has breathless effect
     if air > 0.1 then
-        ComponentSetValue2(dmgcomp,"air_in_lungs",air - 0.1)
+        --if GameGetGameEffectCount( player_id, "BREATH_UNDERWATER" ) > 0 then
+        --    ComponentSetValue2(dmgcomp,"air_in_lungs",air - 0.03)
+        --else
+            ComponentSetValue2(dmgcomp,"air_in_lungs",air - 0.1)
+        --end
     end
 
     if EntityHasTag(player_id,"player_unit") and air < 0.11 then

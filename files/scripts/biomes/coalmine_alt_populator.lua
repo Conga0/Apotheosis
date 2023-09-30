@@ -247,6 +247,15 @@ table.insert(g_props,
     ngpluslevel = 1,
 })
 
+table.insert(g_small_enemies,
+{
+    prob           = 0.02,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/bubbles/acid/GlassCannon/bubble_liquid.xml",
+    ngpluslevel = 1,
+})
+
 
 
     --New Game ++
