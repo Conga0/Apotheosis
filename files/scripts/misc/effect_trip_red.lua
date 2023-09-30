@@ -20,7 +20,8 @@ if last_frame + 10 < frame then
 	amount = 0
 	GlobalsSetValue("apotheosis_trip_red_frame",tostring(frame))
 	GameTriggerMusicFadeOutAndDequeueAll( 0.5 )
-elseif stomachamount <= 1 then
+	GameRemoveFlagRun("apotheosis_tripping_balls_red")
+elseif stomachamount <= 1 and not GameHasFlagRun("apotheosis_tripping_balls_red") then
 	amount = 0
 	GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
 	GlobalsSetValue("conga_red_sand_effect_amount",0)
@@ -45,6 +46,6 @@ end
 --Trip fx (originally 200)
 local tripmultiplier = 6000
 GameSetPostFxParameter("conga_red_sand_effect_amount", amount / tripmultiplier, 0, 0, 0)
-if amount > 100 then
-	GlobalsSetValue("conga_red_sand_effect_amount",amount / tripmultiplier)
+if amount > 600 then
+	GlobalsSetValue("conga_red_sand_effect_amount",amount)
 end

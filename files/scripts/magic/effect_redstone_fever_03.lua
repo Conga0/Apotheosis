@@ -5,6 +5,7 @@ local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
 
 SetRandomSeed(pos_x + GameGetFrameNum(), pos_y)
+GameAddFlagRun("apotheosis_tripping_balls_red")
 
 -- spawn random eye particles
 if (rand(0, 1) > 0.5) then

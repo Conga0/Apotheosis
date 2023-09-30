@@ -45,6 +45,6 @@ end
 --Trip fx (originally 200)
 local tripmultiplier = 6000
 GameSetPostFxParameter("conga_red_sand_effect_amount", amount / tripmultiplier, 0, 0, 0)
-if amount > 100 then
-	GlobalsSetValue("conga_red_sand_effect_amount",amount / tripmultiplier)
+if amount > 600 then
+	GlobalsSetValue("conga_red_sand_effect_amount",amount)
 end
