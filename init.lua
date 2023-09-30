@@ -2021,6 +2021,10 @@ function OnPlayerSpawned(player_entity)
     GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
   end]]--
 
+	--Fix Red Sand fx
+	GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
+	GlobalsSetValue("conga_red_sand_effect_amount",0)
+
   --[[
   ]]--
   if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed2") == false and month == 9 and year == 2023 then
