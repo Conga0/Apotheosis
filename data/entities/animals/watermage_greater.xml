@@ -379,6 +379,12 @@
 			frames="-1"
 			>
 		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="WET"
+			frames="-1"
+			>
+		</GameEffectComponent >
 	</Entity>
 
     <MusicEnergyAffectorComponent

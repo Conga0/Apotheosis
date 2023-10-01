@@ -205,6 +205,17 @@
     	energy_target="1">
     </MusicEnergyAffectorComponent>
 
+	<!--Permanently Wet-->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent 
+			effect="WET"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/aquamage_pylon.lua"
 		execute_every_n_frame="5"
