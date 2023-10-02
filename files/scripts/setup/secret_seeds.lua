@@ -89,6 +89,19 @@ function hardcore()
 
 end
 
+function nightcore()
+
+    GameAddFlagRun("apotheosis_hardmode")
+
+    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
+
+    dofile_once("mods/apotheosis/files/scripts/setup/hardmode_setup.lua")
+    dofile_once("mods/apotheosis/files/scripts/setup/nightcore_setup.lua")
+
+    AddUI("nightcore")
+
+end
+
 function glassed()
 
     GameAddFlagRun("apotheosis_glassed")
@@ -289,6 +302,10 @@ local secret_seeds = {
     {
         ID = "hardcore",
         func = hardcore
+    },
+    {
+        ID = "nightcore",   --Conga: Anyone else remember this? I remember listening to this a ton when I was younger
+        func = nightcore
     },
     --[[
     --Conga: kind of boring, either you one shot everything or you get one shot

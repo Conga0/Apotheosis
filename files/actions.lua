@@ -2266,7 +2266,7 @@ local apotheosis_spellappends = {
 		-- max_uses = 20,
 		action 		= function()
             if not reflecting and GameGetGameEffectCount( GetUpdatedEntityID(), "BLOODY" ) > 0 then
-                c.friendly_fire		= true
+                --c.friendly_fire		= true
                 if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
                     c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
                 end

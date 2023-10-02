@@ -311,6 +311,7 @@
     </Graphics>
 	<StatusEffects>
 		<Ingestion>
+			<StatusEffect type="apotheosis_CLEAR_STATUS" amount="0.01" />
 		</Ingestion>
 	</StatusEffects>
   </CellData>

@@ -71,6 +71,7 @@ local lines = {
   "missingmagic",
   "alchemistdream",
   "addict",
+  "nightcore",
   " ",
   " ",
   " ",

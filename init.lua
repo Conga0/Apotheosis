@@ -537,7 +537,7 @@ spell_apotheosis_water_power_desc,"Reduce mana cost by 30 and increase fire rate
 spell_apotheosis_fire_power_name,"Pyromancy",,,,,,,,,,,,,
 spell_apotheosis_fire_power_desc,"Amplify and convert all damage to fire damage when burning",,,,,,,,,,,,,
 spell_apotheosis_blood_power_name,"Hemomancy",,,,,,,,,,,,,
-spell_apotheosis_blood_power_desc,"Projectiles will pierce 5 times but become harmful to the caster when bloody",,,,,,,,,,,,,
+spell_apotheosis_blood_power_desc,"Projectiles will pierce 5 times when bloody",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_name,"Formation - Wall",,,,,,,,,,,,,
 spell_apotheosis_shape_wall_desc,"Casts 5 spells in a wall-shaped pattern",,,,,,,,,,,,,
 spell_apotheosis_shot_wall_name,"Wallplicate",,,,,,,,,,,,,
@@ -753,6 +753,8 @@ curse_apotheosis_glassed_name,"Glassed Curse",,,,,,,,,,,,,
 curse_apotheosis_glassed_desc,"All creatures have glass cannon.",,,,,,,,,,,,,
 curse_apotheosis_hardcore_name,"Hardcore",,,,,,,,,,,,,
 curse_apotheosis_hardcore_desc,"Healing Spells are uncopyable.\nMost enemies have additional health depending on the biome.\nSome creatures from late game biomes may have additional attack speed.\nMost bosses have significantly increased health.\nEnemies drop 50% less gold.\nAlt-Fire teleport bolt replaces normal teleport bolt.\nEnemies spawn 1 NG+ level earlier.",,,,,,,,,,,,,
+curse_apotheosis_nightcore_name,"Nightcore",,,,,,,,,,,,,
+curse_apotheosis_nightcore_desc,"Healing Spells are uncopyable.\nMost enemies have additional health depending on the biome.\nSome creatures from late game biomes may have additional attack speed.\nMost bosses have significantly increased health.\nEnemies drop 50% less gold.\nAlt-Fire teleport bolt replaces normal teleport bolt.\nEnemies spawn 1 NG+ level earlier.\nPlayer suffers from nightmare damage increases.",,,,,,,,,,,,,
 curse_apotheosis_missingspells_name,"Missing Spells",,,,,,,,,,,,,
 curse_apotheosis_missingspells_desc,"Half of all spells are removed from reality.",,,,,,,,,,,,,
 curse_apotheosis_towerclimb_name,"Towerclimb",,,,,,,,,,,,,
@@ -1147,8 +1149,7 @@ end
 
 -- Conjurer Mod, adds enemies, buildings and wands to a custom tab
 if ModIsEnabled("raksa") then
-	ModLuaFileAppend("mods/raksa/files/scripts/lists/entity_categories.lua",
-		"mods/Apotheosis/files/scripts/mod_compatibility/conjurer_populator.lua")
+	ModLuaFileAppend("mods/raksa/files/scripts/lists/entity_categories.lua", "mods/Apotheosis/files/scripts/mod_compatibility/conjurer_populator.lua")
 end
 
 
@@ -1851,8 +1852,7 @@ do -- Player Editor
 	--Makes player take contact damage from cursed liquid, poisonous gas, and other materials added by Apotheosis
 	--Cursed Liquid, Cursed Liquid (Static), Poisonous Gas, Radioactive Gas (Fading)
 	local attrs = xml:first_of("DamageModelComponent").attr
-	attrs.materials_that_damage = attrs.materials_that_damage ..
-		",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
+	attrs.materials_that_damage = attrs.materials_that_damage .. ",apotheosis_cursed_liquid_red,apotheosis_cursed_liquid_red_static,poison_gas,apotheosis_radioactive_gas_fading"
 	attrs.materials_how_much_damage = attrs.materials_how_much_damage .. ",0.003,0.003,0.0008,0.001"
 
 	if HasFlagPersistent("apotheosis_card_unlocked_secret_knowledge_of_kings") and capeSetting then

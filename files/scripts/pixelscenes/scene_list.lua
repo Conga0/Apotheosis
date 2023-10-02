@@ -544,6 +544,7 @@ do  --Spawn Forest Monolith
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 end
 
+
 if HasFlagPersistent("apotheosis_tablet_ghost_encounter") == false and HasFlagPersistent("apotheosis_card_unlocked_fire_lukki") == true then --Guarantee tablet hint ghost encounter after killing fire lukki
   local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
   local xml = nxml.parse(content)
