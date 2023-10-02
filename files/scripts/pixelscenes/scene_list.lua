@@ -544,6 +544,15 @@ do  --Spawn Forest Monolith
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 end
 
+if HasFlagPersistent("apotheosis_tablet_ghost_encounter") == false and HasFlagPersistent("apotheosis_card_unlocked_fire_lukki") == true then --Guarantee tablet hint ghost encounter after killing fire lukki
+  local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+  local xml = nxml.parse(content)
+  xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene pos_x="195" pos_y="6678" just_load_an_entity="data/entities/animals/playerghost_apotheosis/temp/playerghost_spawner.xml" />
+  ]]))
+  ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+end
+
 
 --local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 --local xml = nxml.parse(content)

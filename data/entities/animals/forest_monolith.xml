@@ -116,6 +116,13 @@
 		execute_times="-1"
 		>
 	</LuaComponent>
+		
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animals/monolith_heal.lua"
+		execute_every_n_frame="600"
+		execute_times="-1"
+		>
+	</LuaComponent>
 
 </Entity>
 

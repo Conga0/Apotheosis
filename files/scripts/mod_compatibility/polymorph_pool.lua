@@ -89,7 +89,7 @@ function polytest()
         "wizard_corrupt_wands",
         "wizard_z_poly_miniboss",
         "worm_wall",
-        "worm_mechanical",
+        --"worm_mechanical", --Let's not be a maggot
         "worm_esoteric",
         "wraith_alchemy_apotheosis",
         "wraith_returner_apotheosis",
