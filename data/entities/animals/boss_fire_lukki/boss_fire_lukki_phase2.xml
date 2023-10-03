@@ -107,7 +107,7 @@
 		is_on_fire="0" 
 		materials_damage="1" 
 		materials_that_damage="acid,water,poison,blood_cold,blood_cold_vapour,mud,water_swamp,water_salt,swamp,snow,water_ice,water_static,apotheosis_water_fading_fast,water_fading" 
-		materials_how_much_damage="0.06,0.1,0.003,0.16,0.16,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1"
+		materials_how_much_damage="0.06,0.1,0.03,0.16,0.16,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1"
 		ragdoll_filenames_file=""
 		ragdoll_material="apotheosis_meat_fire_lukki"
 		ragdoll_offset_y="-6"
