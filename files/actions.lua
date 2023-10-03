@@ -319,12 +319,13 @@ local apotheosis_spellappends = {
                 end
 
                 --Timer check
+                local iter = iteration or 0
                 local frame = GameGetFrameNum()
 	            local last_frame = tonumber( GlobalsGetValue( "fungal_shift_last_frame", "-1000000" ) )
                 local fungal_iter = tonumber( GlobalsGetValue( "fungal_shift_iteration", "0" ) )
                 
                 -- shift materials
-                if iteration > 0 and frame > last_frame + 60*60*5 and fungal_iter < 20 then
+                if iter > 0 and frame > last_frame + 60*60*5 and fungal_iter < 20 then
                     fungal_shift( entity_id, pos_x, pos_y, true )
                 else
                     --fungal_shift( entity_id, pos_x, pos_y, false )
