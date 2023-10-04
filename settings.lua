@@ -17,11 +17,7 @@ local seasonal_events_name = "Seasonal Events"
 local seasonal_events_desc = "Are seasonal events enabled? \nFor example, Halloween, Apotheosis's Birthday, etc."
 local boss_health_multiplayer_name = "Boss Health Multiplier"
 local boss_health_multiplayer_formatting = " $0% HP"
-local boss_health_multiplayer_desc = "Multiply all Bosses health by this much. \nFor those who seek extra durable opponents. \nDoes not affect Kolmisilma \nMinibosses will also have their health boosted by a partial amount. \n \nFor Modders: \nIf your mod isn't listed in the compatibility section of the mod page, \nthis likely won't boost it, you'll need to add a lua component to your bosses. \nDo not hesitate to contact me for instructions or help if needed. \nIt would be easiest for me to respond to you on discord, Conga Lyne#2452"
-local particle_reduction_name = "Minimal Particles"
-local particle_reduction_desc = "Reduce the number of particles spawned by certain spells. \nThis should help reduce lag if your computer's reaching it's limit."
-local spoopy_graphics_name = "Alternate Graphics"
-local spoopy_graphics_desc = "This setting toggles the alternate graphics of some creeps made by Spoopy. \nThis setting is turned off by default but can be enabled here."
+local boss_health_multiplayer_desc = "Multiply all Bosses health by this much. \nFor those who seek extra durable opponents. \nDoes not affect Kolmisilma \nMinibosses will also have their health boosted by a partial amount."
 local custom_seed_name = "Set Custom Seed"
 local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or hardcore" --Sneak in some secret seeds here "PuppyDogs"? --Hardmode? Towerclimb?
 local organised_icons_name = "Organise Icons"
@@ -64,10 +60,6 @@ if currentLang == "русский" then
   boss_health_multiplayer_name = "Множитель здоровья босса"
   boss_health_multiplayer_formatting = " $0% ОЗ"
   boss_health_multiplayer_desc = "Умножает здоровье всех боссов на это количество. \nДля тех, кто ищет особо стойких противников. \nНе влияет на Колмисильмяна \nМини-боссы также будут иметь частичное увеличение здоровья. \nЭто можно изменить в середине игры, но не для всех боссов, \n не забудьте перезапустить игру после обновления множителя.\n \nДля создателей модов: \nЕсли ваш мод не указан в разделе совместимости на странице \n модов, это скорее всего не поможет, вам придётся добавить \n lua-компонент кода к вашим боссам. \nНе стесняйтесь обращаться ко мне за инструкциями или \n помощью, если это необходимо. \nМне будет проще всего ответить вам в \n Discord, Conga Lyne#2452. [ТОЛЬКО НА АНГЛИЙСКОМ]"
-  particle_reduction_name = "Минимум частиц"
-  particle_reduction_desc = "Уменьшить количество частиц, создаваемых некоторыми заклинаниями. \nЭто поможет уменьшить задержку, если ваш компьютер достигает предела."
-  spoopy_graphics_name = "Альтернативная графика"
-  spoopy_graphics_desc = "Эта настройка включает альтернативную графику некоторых существ, созданных Spoopy. \nЭта настройка выключена по умолчанию, но может быть включена здесь."
 
   seasonal_forced_name = "Запустить сезонные праздники"
   seasonal_forced_desc = "Список сезонных праздников, которые можно принудительно запустить"
@@ -139,26 +131,6 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME,
   },
-  --[[
-  {
-    id = "particle_reduction",
-    ui_name = particle_reduction_name,
-    ui_description = particle_reduction_desc,
-    value_default = false,
-    ---@diagnostic disable-next-line: undefined-global
-    scope = MOD_SETTING_SCOPE_RUNTIME,
-  },
-  ]]--
-  --[[
-  {
-    id = "spoopy_graphics",
-    ui_name = spoopy_graphics_name,
-    ui_description = spoopy_graphics_desc,
-    value_default = false,
-    ---@diagnostic disable-next-line: undefined-global
-    scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
-  },
-  ]]--
   {
     id = "organised_icons",
     ui_name = organised_icons_name,

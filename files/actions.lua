@@ -486,7 +486,8 @@ local apotheosis_spellappends = {
                 end
                 
                 -- shift materials
-                if iteration > 0 then
+                local iter = iteration or 0
+                if iter > 0 then
                     fungal_shift( entity_id, pos_x, pos_y, true )
                 else
                     add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
@@ -1621,7 +1622,7 @@ local apotheosis_spellappends = {
 		end,
 	},
 	{
-		id          = "APOTHEOSIS_LARPA_DELAYED",   -- It slightly bothers me that the extra entity name and the ID are inconsistent
+		id          = "APOTHEOSIS_LARPA_DELAYED",   --Copi: It slightly bothers me that the extra entity name and the ID are inconsistent
         id_matchup  = "LARPA_DEATH",
         name 		= "$spell_apotheosis_larpa_delayed_name",
         description = "$spell_apotheosis_larpa_delayed_desc",
@@ -2298,10 +2299,33 @@ local apotheosis_spellappends = {
                 c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
                 c.extra_entities = c.extra_entities .. "data/entities/misc/burn_wide.xml,"
             end
-            c.fire_rate_wait    = c.fire_rate_wait + 10
             draw_actions( 1, true )
 		end,
 	},
+    --[[
+	{
+		id          = "APOTHEOSIS_SUMMON_POTION",
+        name 		= "$spell_apotheosis_potion_name",
+        description = "$spell_apotheosis_potion_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/potion.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+        spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
+		type 		= ACTION_TYPE_OTHER,
+		spawn_level                       = "0,1,2,10", -- CHAIN_BOLT
+		spawn_probability                 = "0.05,0.05,0.05,0.1", -- CHAIN_BOLT
+		price = 250,
+		mana = 200,
+		max_uses = 1,
+        never_unlimited = true,
+		action 		= function()
+            if not reflecting then
+                local x,y = EntityGetTransform(GetUpdatedEntityID())
+                EntityLoad("data/entities/items/pickup/potion.xml", x + math.random(-2,2), y + math.random(-2,2))
+                GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/potion/create", x, y )
+            end
+		end,
+	},
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

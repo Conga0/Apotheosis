@@ -274,12 +274,6 @@
 	<Entity>
 		<InheritTransformComponent />
 
-		<GameEffectComponent
-			effect="PROTECTION_FREEZE"
-			frames="-1"
-			>
-		</GameEffectComponent >
-
 		<GameEffectComponent 
 			effect="PROTECTION_FIRE"
 			frames="-1"

@@ -82,8 +82,8 @@
 		>
 		<damage_multipliers
 			projectile="0.0"
-			fire="1.0"
-			ice="1.0"
+			fire="0" 
+			ice="0"
 			>
 		</damage_multipliers>
 	</DamageModelComponent>
@@ -377,23 +377,6 @@
     <MusicEnergyAffectorComponent
     	energy_target="1">
     </MusicEnergyAffectorComponent>
-	
-	<!-- Protections  -->
-	<Entity>
-		<InheritTransformComponent />
-		
-	    <GameEffectComponent 
-	        effect="STUN_PROTECTION_FREEZE"
-	        frames="-1"
-	    >
-		</GameEffectComponent >
-
-		<GameEffectComponent 
-			effect="STUN_PROTECTION_ELECTRICITY"
-			frames="-1"
-			>
-		</GameEffectComponent >
-	</Entity>
 
 	<LuaComponent
 		_tags="death_reward"

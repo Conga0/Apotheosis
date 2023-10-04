@@ -1028,6 +1028,17 @@ do --Fix Some teleportation related structures not being powered by portallium
   ModTextFileSetContent(path, tostring(xml))
 end
 
+--Post Ascension reward
+--[[
+if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("action_apotheosis_summon_potion") == false then
+  local path = "data/scripts/biomes/mountain/mountain_floating_island.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("spawn_sampo_spot%(x, y%)", "spawn_sampo_spot(x, y) \nCreateItemActionEntity( \"APOTHEOSIS_SUMMON_POTION\", x, y ) \nEntityLoad(\"mods/apotheosis/files/entities/particles/upwards_trail.xml\", x, y)")
+
+  ModTextFileSetContent(path, content)
+end
+]]--
+
 
 --Debug data
 --local path = "data/scripts/item_spawnlists.lua"

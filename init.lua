@@ -119,6 +119,13 @@ do
   end
 end
 
+--Ending Reward
+if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") then
+	AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02_spell")
+else
+	RemoveFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02_spell")
+end
+
 --Ensure this flag is never enabled, so spells can properly be disabled in hardcore mode while still appearing in the progress log
 RemoveFlagPersistent("this_should_never_spawn")
 
@@ -558,6 +565,8 @@ spell_apotheosis_pollen_trigger_name,"Pollen with Trigger",,,,,,,,,,,,,
 spell_apotheosis_pollen_trigger_desc,"A small, floating projectile that casts another spell upon collison",,,,,,,,,,,,,
 spell_apotheosis_rubberball_trigger_name,"Bouncing Burst with Expiration Trigger",,,,,,,,,,,,,
 spell_apotheosis_rubberball_trigger_desc,"A very bouncy projectile that casts another spell upon expiration",,,,,,,,,,,,,
+spell_apotheosis_potion_name,"Summon Potion",,,,,,,,,,,,,
+spell_apotheosis_potion_desc,"Summon a potion at the caster's position",,,,,,,,,,,,,
 actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет жезлу 30 ед           . маны,Adiciona 30 de mana à varinha           ,Añade 30 maná a la varita           ,Fügt dem Zauberstab 30 Mana hinzu           ,Ajoute 30 points de mana à la baguette           ,Aggiunge 30 punti mana alla bacchetta.           ,Dodaje do różdżki 30 pkt. many           ,向魔杖增加 30 法力           ,30マナを杖に追加する,완드에 마나 30을 추가합니다.           ,,,
 spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,,,,,
@@ -866,17 +875,16 @@ ModLuaFileAppend("data/scripts/biomes/desert.lua", "mods/Apotheosis/files/script
 ModLuaFileAppend("data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/crypt_populator.lua")
 ModLuaFileAppend("data/scripts/biomes/pyramid.lua", "mods/Apotheosis/files/scripts/biomes/pyramid_populator.lua")
 ModLuaFileAppend("data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/fungicave_populator.lua")
-ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
-	"mods/Apotheosis/files/scripts/biomes/coalmine_alt_populator.lua")
-ModLuaFileAppend("data/scripts/biomes/pyramid_hallway.lua",
-	"mods/Apotheosis/files/scripts/biomes/pyramid_hallway_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua","mods/Apotheosis/files/scripts/biomes/coalmine_alt_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/pyramid_hallway.lua","mods/Apotheosis/files/scripts/biomes/pyramid_hallway_populator.lua")
 ModLuaFileAppend("data/scripts/biomes/liquidcave.lua", "mods/Apotheosis/files/scripts/biomes/liquidcave_populator.lua")
 
 
-ModLuaFileAppend("data/scripts/biomes/excavationsite.lua",
-	"mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua")
-ModLuaFileAppend("data/scripts/biomes/vault_frozen.lua",
-	"mods/Apotheosis/files/scripts/biomes/vault_frozen_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/snowcastle_cavern.lua", "mods/Apotheosis/files/scripts/biomes/hiisi_shop_populator.lua")
+
+
+ModLuaFileAppend("data/scripts/biomes/excavationsite.lua","mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua")
+ModLuaFileAppend("data/scripts/biomes/vault_frozen.lua","mods/Apotheosis/files/scripts/biomes/vault_frozen_populator.lua")
 ModLuaFileAppend("data/scripts/biomes/fungiforest.lua", "mods/Apotheosis/files/scripts/biomes/fungiforest_populator.lua")
 ModLuaFileAppend("data/scripts/biomes/snowcastle.lua", "mods/Apotheosis/files/scripts/biomes/snowcastle_populator.lua")
 ModLuaFileAppend("data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua")
@@ -886,8 +894,7 @@ ModLuaFileAppend("data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scri
 ModLuaFileAppend("data/scripts/biomes/vault.lua", "mods/Apotheosis/files/scripts/biomes/vault_populator.lua")
 --ModLuaFileAppend( "data/scripts/biomes/tower.lua", "mods/Apotheosis/files/scripts/biomes/tower_populator.lua" )
 ModLuaFileAppend("data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/rainforest_populator.lua")   --Jungle
-ModLuaFileAppend("data/scripts/biomes/rainforest_dark.lua",
-	"mods/Apotheosis/files/scripts/biomes/rainforest_dark_populator.lua")                                                 --Lukki Lair
+ModLuaFileAppend("data/scripts/biomes/rainforest_dark.lua","mods/Apotheosis/files/scripts/biomes/rainforest_dark_populator.lua")                                                 --Lukki Lair
 ModLuaFileAppend("data/scripts/biomes/winter.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua")           --Snow Chasm
 ModLuaFileAppend("data/scripts/biomes/clouds.lua", "mods/Apotheosis/files/scripts/biomes/clouds_populator.lua")           --Cloud Scape, for example coral chest area & essence of air area
 ModLuaFileAppend("data/scripts/biomes/robobase.lua", "mods/Apotheosis/files/scripts/biomes/robobase_populator.lua")       --Power Plant
@@ -1062,66 +1069,44 @@ end
 --Remember to make specific files for these at some point.. it'd be weird if there were totally normal guys spawning in irridiated mines, or magical people in the robotics factory
 if ModIsEnabled("biome-plus") then
 	--Normal Spawns
-	ModLuaFileAppend("data/scripts/biomes/mod/floodcave.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/aquifer_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/the_void.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/void_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/floating_mountain.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/floating_mountain_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/floodcave.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/aquifer_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/the_void.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/void_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/floating_mountain.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/floating_mountain_populator.lua")
 
-	ModLuaFileAppend("data/scripts/biomes/mod/holy_temple.lua",
-		"mods/Apotheosis/files/scripts/biomes/crypt_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/collapsed_lab.lua",
-		"mods/Apotheosis/files/scripts/biomes/fungicave_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/holy_temple.lua","mods/Apotheosis/files/scripts/biomes/crypt_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/collapsed_lab.lua","mods/Apotheosis/files/scripts/biomes/fungicave_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua",
 		"mods/Apotheosis/files/scripts/biomes/coalmine_alt_populator.lua")
 
-	ModLuaFileAppend("data/scripts/biomes/mod/blast_pit.lua",
-		"mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/snowvillage.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hisiivillage_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/frozen_passages.lua",
-		"mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/catacombs.lua",
-		"mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/blast_pit.lua","mods/Apotheosis/files/scripts/biomes/excavationsite_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/snowvillage.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hisiivillage_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/frozen_passages.lua","mods/Apotheosis/files/scripts/biomes/snowcave_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/catacombs.lua","mods/Apotheosis/files/scripts/biomes/wandcave_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/sandcave_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/robofactory.lua",
-		"mods/Apotheosis/files/scripts/biomes/vault_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/swamp.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/swamp_populator.lua") --Jungle, could probably include bonus fungus here
-	ModLuaFileAppend("data/scripts/biomes/mod/rainforest_wormy.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/wormtunnels_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/robofactory.lua","mods/Apotheosis/files/scripts/biomes/vault_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/swamp.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/swamp_populator.lua") --Jungle, could probably include bonus fungus here
+	ModLuaFileAppend("data/scripts/biomes/mod/rainforest_wormy.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/wormtunnels_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/winter_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/sulfur_cave.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hiddengrove_populator.lua") --Hidden Grove, Overgrowth populator
+	ModLuaFileAppend("data/scripts/biomes/mod/sulfur_cave.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hiddengrove_populator.lua") --Hidden Grove, Overgrowth populator
 
 	--Global Spawns
-	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/blast_pit.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/frozen_passages.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/frozen_passages.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/the_void.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/collapsed_lab.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/collapsed_lab.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/catacombs.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/swamp.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/robofactory.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/holy_temple.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/snowvillage.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/robofactory.lua","mods/Apotheosis/files/scripts/biomes/global_populator_no_magic.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/holy_temple.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/snowvillage.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/rainforest_wormy.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/rainforest_wormy.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
-	ModLuaFileAppend("data/scripts/biomes/mod/sulfur_cave.lua",
-		"mods/Apotheosis/files/scripts/biomes/global_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/sulfur_cave.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 
 	--Dark Areas
-	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua",
-		"mods/Apotheosis/files/scripts/biomes/suspicious.lua")
+	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua","mods/Apotheosis/files/scripts/biomes/suspicious.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/conduit.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/the_void.lua", "mods/Apotheosis/files/scripts/biomes/suspicious.lua")
@@ -1483,8 +1468,7 @@ ModTextFileSetContent("data/entities/projectiles/deck/worm_shot.xml", tostring(x
 local content = ModTextFileGetContent("data/entities/misc/perks/dissolve_powders.xml")
 local xml = nxml.parse(content)
 local attrs = xml:first_of("CellEaterComponent").attr
-attrs.materials = attrs.materials ..
-	",apotheosis_insect_husk,apotheosis_sand_pink,templebrick_static_broken_apotheosisoft"
+attrs.materials = attrs.materials .. ",apotheosis_insect_husk,apotheosis_sand_pink,templebrick_static_broken_apotheosisoft,sand_blue"
 ModTextFileSetContent("data/entities/misc/perks/dissolve_powders.xml", tostring(xml))
 
 -- Adds various liquids to freeze charge modifier
@@ -2020,6 +2004,26 @@ function OnPlayerSpawned(player_entity)
 	--[[if ModIsEnabled("Ride Minecart") == true then
     GamePrint("Error, could not initialise hopping into minecarts because of [Ride Minecarts], Apotheosis should function as normal otherwise though.")
   end]]--
+
+	--Post Ascension scenery
+	--[[
+	if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("action_apotheosis_summon_potion") == false then
+
+		--Gather world entity data
+		local worldEntity = GameGetWorldStateEntity()
+		local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
+
+		--Set weather up to be nice
+		ComponentSetValue2(comp,"intro_weather",true)
+		ComponentSetValue2(comp,"time",0.55)
+		ComponentSetValue2(comp,"time_dt",0.5)
+		ComponentSetValue2(comp,"fog",0)
+		ComponentSetValue2(comp,"rain",0)
+
+		EntityLoad("mods/apotheosis/files/entities/particles/upwards_trail.xml", 239, -229)
+		EntityLoad("mods/apotheosis/files/entities/particles/upwards_trail.xml", 764, -860)
+	end
+	]]--
 
 	--Fix Red Sand fx
 	GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)

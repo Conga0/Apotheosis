@@ -555,6 +555,7 @@ if HasFlagPersistent("apotheosis_tablet_ghost_encounter") == false and HasFlagPe
 end
 
 
+
 --local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
 --local xml = nxml.parse(content)
 --xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
