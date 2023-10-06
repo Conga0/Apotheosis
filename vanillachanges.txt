@@ -65,8 +65,6 @@ weaken_NOT
 cast_share
 heretic
 
-Note: Readthrough vanilla changes and remove any notes before release
-
 Enemies not yet added to enemy count:
 Abyssum Monster (I would like if there was some sort of Abyssum creature, where if it's completely docile, but if you get too close to it, it notices you)
 Spine Worm

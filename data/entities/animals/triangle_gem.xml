@@ -22,7 +22,7 @@
 		on_death_leave_physics_body="1" >
 	</PhysicsBodyComponent>
 
-	<PhysicsImageShapeComponent 
+	<PhysicsImageShapeComponent
 		image_file="mods/Apotheosis/files/enemies_gfx/triangle_gem.png"
 		centered="0"
 		material="apotheosis_crystal_green" 

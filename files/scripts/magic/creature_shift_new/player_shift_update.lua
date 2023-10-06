@@ -5,7 +5,7 @@ local entity_id = GetUpdatedEntityID()
 local enemy_list = EntityGetWithTag( "mortal" )
 
 for id,enemy in pairs(enemy_list) do
-    if EntityHasTag(enemy, "acid") ~= true then
+    if EntityHasTag(enemy, "c_shifted") ~= true then
 
         local iter_count = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
 

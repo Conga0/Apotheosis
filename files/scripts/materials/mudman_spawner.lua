@@ -3,8 +3,14 @@ dofile_once("data/scripts/lib/utilities.lua")
 local entity_id    = GetUpdatedEntityID()
 local x, y = EntityGetTransform( entity_id )
 
+local filepath = GlobalsGetValue( "apotheosis_mudman_filepath", "data/entities/animals/mudman_friendly.xml" )
+eid = EntityLoad( filepath, x, y )
 
-eid = EntityLoad( "data/entities/animals/mudman_friendly.xml", x, y )
+--Fix to not remove charm effect
+if filepath ~= "data/entities/animals/mudman_friendly.xml" then
+	EntityAddTag(eid,"c_shifted")
+end
+
 local charm_component = GetGameEffectLoadTo( eid, "CHARM", true )
 if( charm_component ~= nil ) then
 	ComponentSetValue( charm_component, "frames", -1 )

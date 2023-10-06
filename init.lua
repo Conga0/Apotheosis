@@ -1116,16 +1116,14 @@ end
 --New Enemies, boosts ghost spawnrate in sandcave so they aren't flushed out by the quantity of other creatures.
 --Also boosts Divine Being & Divine Poring spawnrates in Heaven & Hell for unlocks
 if ModIsEnabled("new_enemies") then
-	ModLuaFileAppend("data/scripts/biomes/sandcave.lua",
-		"mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua")
+	ModLuaFileAppend("data/scripts/biomes/sandcave.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua")
 	--ModLuaFileAppend( "data/scripts/biomes/the_end.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/the_end_angelboost_populator.lua" )
 end
 
 --New Enemies, boosts ghost spawnrate in sandcave so they aren't flushed out by the quantity of other creatures, compatibility for alt biomes.
 if ModIsEnabled("new_enemies") then
 	if ModIsEnabled("biome-plus") then
-		ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua",
-			"mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua")
+		ModLuaFileAppend("data/scripts/biomes/mod/tomb.lua", "mods/Apotheosis/files/scripts/biomes/mod_compatibility/sandcave_ghostbooster_populator.lua")
 	end
 end
 
@@ -2029,24 +2027,9 @@ function OnPlayerSpawned(player_entity)
 	GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
 	GlobalsSetValue("conga_red_sand_effect_amount",0)
 
-  --[[
-  ]]--
-  if HasFlagPersistent("apotheosis_temp_redsandspawnintroguaranteed2") == false and month == 9 and year == 2023 then
-    --Eat it Albino
-    EntityLoad("mods/Apotheosis/files/entities/special/powder_stash_redsand.xml", 1050, 140)
-
-    --Maybe this'll help him get at least one good run going, if he blows it, he blows it
-    local hbcomp = EntityGetComponentIncludingDisabled(player_entity,"HitboxComponent")[1]
-    ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
-    local hbcomp = EntityGetComponentIncludingDisabled(player_entity,"HitboxComponent")[2]
-    ComponentSetValue2(hbcomp,"damage_multiplier",0.7)
-    AddFlagPersistent( "apotheosis_temp_redsandspawnintroguaranteed2" )
-  end
-
 	--Warns the player if Mo Creeps is enabled, to shut it off
 	if ModIsEnabled("Mo_Creeps") then
-		GamePrintImportant("WARNING: MO CREEPS IS ENABLED",
-			"Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+		GamePrintImportant("WARNING: MO CREEPS IS ENABLED", "Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
 	end
 
 	--Debug Testing for intro scene

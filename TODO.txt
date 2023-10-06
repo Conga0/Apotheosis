@@ -1,3 +1,5 @@
 Remove ABBC anti-cheese after it goes to main
 Remove artifically adding meat realm to the biome list when the meat biome goes to main
 
+ending cheese
+note: description is intentionally vague so the snoopers don't know

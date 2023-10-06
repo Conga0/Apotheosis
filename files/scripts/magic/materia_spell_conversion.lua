@@ -36,6 +36,7 @@ local inputspells =  {
     "ZETA",
     "POLLEN",
     "RUBBER_BALL",
+    "APOTHEOSIS_MUSICAL_STRIKE",
 }
 
 --Spells we're converting them into
@@ -67,6 +68,7 @@ local outputspells = {
     "APOTHEOSIS_KAPPA",
     "APOTHEOSIS_POLLEN_TRIGGER",
     "APOTHEOSIS_RUBBER_BALL_TRIGGER",
+    "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
 }
 
 local effecttype = {
@@ -84,6 +86,7 @@ local effecttype = {
     "magical_symbol_materia_blue",
     "magical_symbol_hobo_money",
     "magical_symbol_materia_red",
+    "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
