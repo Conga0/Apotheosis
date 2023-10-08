@@ -110,7 +110,7 @@ g_nest =
 -- actual functions that get called from the wang generator
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/Apotheosis/files/pixel_scenes/toxic_worm_nest_old/toxic_worm_nest.png", "mods/Apotheosis/files/pixel_scenes/toxic_worm_nest_old/toxic_worm_nest_visual.png", x - 50, y, "mods/Apotheosis/files/pixel_scenes/toxic_worm_nest_old/toxic_worm_nest_background.png", true )
+	LoadPixelScene( "mods/Apotheosis/files/pixel_scenes/toxic_worm_nest_old/toxic_worm_nest.png", "mods/Apotheosis/files/pixel_scenes/toxic_worm_nest_old/toxic_worm_nest_visual.png", x - 50, y, "mods/Apotheosis/files/pixel_scenes/toxic_worm_nest_old/toxic_worm_nest_background_backup.png", true )
 end
 
 function spawn_small_enemies(x, y)

@@ -1050,6 +1050,23 @@ do --Adds a special script to big bats so their bat projectiles accurately refle
   ModTextFileSetContent("data/entities/animals/bigbat.xml", tostring(xml))
 end
 
+do --Rework ants to behave like Apotheosis Ants for consistency
+  local content = ModTextFileGetContent("data/entities/animals/ant.xml")
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("Base"):first_of("DamageModelComponent").attr
+  attrpath.hp = "0.8"
+  attrpath.max_hp = "0.8"
+
+  xml:add_child(nxml.parse([[
+	<LuaComponent
+		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_1.lua"
+		script_death="data/entities/animals/secret/ant_death.lua"
+		>
+	</LuaComponent>
+  ]]))
+  ModTextFileSetContent("data/entities/animals/ant.xml", tostring(xml))
+end
+
 --Post Ascension reward
 --[[
 if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("action_apotheosis_summon_potion") == false then

@@ -30,7 +30,7 @@ local enemy_list_full = { "ant", "ant_fire", "ant_suffocate", "bubbles/freezing_
 enemy_list = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "fish", "forsaken_eye", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield",  "scavenger_grenade", "scavenger_smg", "wand_ghost", "miniblob", }
 
 --"Shift into" list to randomly pick from
-enemy_list_from = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "forsaken_eye", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield", "scavenger_grenade", "scavenger_smg", "wand_ghost", "miniblob", "lukki_fungus", "star_child", "wizard_manaeater", "blindgazer", "wizard_z_poly_miniboss", "wizard_explosive", "waterskull", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "blob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", "hideous_mass_red", "tree_tall", "hisii_giga_bomb", "mimic_explosive_box", "bubbles/ambrosia/bubble_liquid", "watermage", "watermage_greater", "wizard_copeseethmald", "miniboss_pit_02", }
+enemy_list_from = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "fish", "forsaken_eye", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield", "scavenger_grenade", "scavenger_smg", "wand_ghost", "miniblob", "lukki_fungus", "star_child", "wizard_manaeater", "blindgazer", "wizard_z_poly_miniboss", "wizard_explosive", "waterskull", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "blob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", "hideous_mass_red", "tree_tall", "hisii_giga_bomb", "mimic_explosive_box", "bubbles/ambrosia/bubble_liquid", "watermage", "watermage_greater", "wizard_copeseethmald", "miniboss_pit_02", }
 
 
 local shift_check = false
@@ -122,19 +122,23 @@ function creature_shift( entity, x, y, debug_no_limits )
         table.remove(enemy_list, rnd)
 
         --Prioritise an enemy if the player is mousing over them, only applies to valid shift targets
-        local controls = EntityGetFirstComponentIncludingDisabled(player_id, "ControlsComponent")  --[[@cast controls number]]
-        local cursor_x, cursor_y = ComponentGetValue2(controls, "mMousePosition")
-        local cursor_tab = EntityGetInRadiusWithTag(cursor_x, cursor_y, 30, "mortal") or {"null"}
+        --75% Chance
+        local frng = Random(1,4)
+        if frng > 1 then
+            local controls = EntityGetFirstComponentIncludingDisabled(player_id, "ControlsComponent")  --[[@cast controls number]]
+            local cursor_x, cursor_y = ComponentGetValue2(controls, "mMousePosition")
+            local cursor_tab = EntityGetInRadiusWithTag(cursor_x, cursor_y, 30, "mortal") or {"null"}
 
-        --Cycle through enemy shift list and see if targetted enemy is valid (has ui portrait)
-        if cursor_tab[1] ~= "null" then
-            for z=1,#cursor_tab do
-                if EntityHasTag(cursor_tab[z],"player_unit") == false then
-                    local filename = EntityGetFilename(cursor_tab[1])
-                    for k=1,#enemy_list_full do
-                        if string.find(filename,enemy_list_full[k]) then
-                            target2 = enemy_list_full[k]
-                            break
+            --Cycle through enemy shift list and see if targetted enemy is valid (has ui portrait)
+            if cursor_tab[1] ~= "null" then
+                for z=1,#cursor_tab do
+                    if EntityHasTag(cursor_tab[z],"player_unit") == false then
+                        local filename = EntityGetFilename(cursor_tab[z])
+                        for k=1,#enemy_list_full do
+                            if string.find(filename,table.concat({enemy_list_full[k],".xml"})) then 
+                                target2 = enemy_list_full[k]
+                                break
+                            end
                         end
                     end
                 end
@@ -312,27 +316,7 @@ function creature_shift( entity, x, y, debug_no_limits )
             icon_name = "bubble_liquid"
         end
 
-        --[[
-        if creature_ragdoll_get then
-            local player_id_ragdoll = EntityGetWithTag("player_unit")[1]
-            local pos_x, pos_y = EntityGetTransform(player_id_ragdoll)
-            LoadRagdoll(creature_ragdoll_get, pos_x, pos_y - 60, creature_ragdoll_material_get, 1, 0, 0 )
-        end
-
-        --Experimental setting to use the default creature shift icon (red sand) but spawn the creature's ragdoll above the player
-        --Feels weird, unintuitive (even when I knew how it functioned)
-        --Having the creature in the hud ui is a lot more intuitive, even if it'll require a ton of manually generated icons to look 'proper'
-        --Which.. is still on the todo.. bleh
-        --A ton of work whether it's automated or not
-        --And honestly, it'd probably be less work doing it manually
-        --
-        --Hey, you, yeah you from the future
-        --I know you're reading this
-        --Cleanup these unnecessary variables!
-        --Past me didn't do it because someone else might wanna snoop the code and give a golden idea
-        --
-        --Note to past me from slightly less past me, screw you man
-        ]]--
+        -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         local desc_1 = GameTextGetTranslatedOrNot("$status_apotheosis_creature_shifted_desc")
         local creature_shift_description = table.concat({desc_1,"\n",from_creature_name})

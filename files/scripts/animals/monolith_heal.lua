@@ -10,10 +10,17 @@ end
 
 --Conga: no worky, too eepy seepy to fix
 --Some issue with healthbar components not liking being disabled
+--Could reduce alpha instead?
 --[[
-if hp < 3920 then
-	EntitySetComponentsWithTagEnabled( entity_id, "ui", true )
-else
-	EntitySetComponentsWithTagEnabled( entity_id, "ui", false )
-end
 ]]--
+if hp < 3880 then
+	local tbl = EntityGetComponentIncludingDisabled( entity_id, "SpriteComponent", "ui" )
+	for k=1,#tbl do
+		ComponentSetValue2(tbl[k],"alpha",1)
+	end
+else
+	local tbl = EntityGetComponentIncludingDisabled( entity_id, "SpriteComponent", "ui" )
+	for k=1,#tbl do
+		ComponentSetValue2(tbl[k],"alpha",0)
+	end
+end
