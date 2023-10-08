@@ -26,3 +26,5 @@ More detailed credits are available inside credits.txt
  - Extract into your noita mod folder (`C:/Program Files (x86)/Steam/steamapps/common/Noita/mods/` for steam users)
  - Rename `Apotheosis-main` to `Apotheosis`
 
+ - Note: It is strongly recommended to play on the Beta Branch of Noita, otherwise you may experience crashes
+
