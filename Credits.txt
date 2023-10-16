@@ -42,6 +42,8 @@ Creating the Ant Nest background sprites
 Creating the Sunken Cavern background sprites
 Creating the Crystal Egg
 
+Slack - Japanese Translator
+
 Nathan - Created Red Sand trip visual effects
 
 Letaali - Translating Orb Room lore to finnish

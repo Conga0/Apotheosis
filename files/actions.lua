@@ -2326,6 +2326,29 @@ local apotheosis_spellappends = {
 		end,
 	},
     ]]--
+    --[[
+	{
+		id          = "APOTHEOSIS_TOUCH_GRASS",
+        --name 		= "$spell_apotheosis_touch_grass_name",
+        --description = "$spell_apotheosis_touch_grass_desc",
+        name 		= "Touch of Grass",
+        description = "Transmutes everything in a short radius into grass, including walls, creatures... and you",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/touch_grass.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/rocket_unidentified.png",
+		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/touch_grass.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
+		type 		= ACTION_TYPE_MATERIAL,
+		spawn_level                       = "1,2,3,4,5,6,7,10", -- TOUCH_GOLD
+		spawn_probability                 = "0,0,0,0,0.1,0.1,0.1,0.5", -- TOUCH_GOLD
+		price = 480,
+		mana = 300,
+		max_uses    = 1,
+		never_unlimited = true,
+		action 		= function()
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/touch_grass.xml")
+		end,
+	},
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -2684,3 +2707,112 @@ for i=1,#actions do -- fast as fuck boi
         actions[i]['apotheosis_reworked'] = true
     end
 end
+
+
+
+
+
+
+
+
+
+
+
+--Something Special
+--[[
+if HasFlagPersistent( "apotheosis_card_unlocked_ending_apotheosis_02_spell" ) then
+    local v = 
+	{
+		id          = "APOTHEOSIS_POTION_TO_SEA",
+        name 		= "$spell_apotheosis_potion_to_sea_name",
+        description = "$spell_apotheosis_potion_to_sea_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/potion.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+        spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
+		type 		= ACTION_TYPE_OTHER,
+		spawn_level                       = "0,1,2,10", -- CHAIN_BOLT
+		spawn_probability                 = "0.05,0.05,0.05,0.1", -- CHAIN_BOLT
+		price = 250,
+		mana = 200,
+		max_uses = 1,
+        never_unlimited = true,
+		action 		= function()
+            if not reflecting then
+                local x,y = EntityGetTransform(GetUpdatedEntityID())
+                local e = EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/sea_any.xml", x, y)
+                GamePlaySound( "data/audio/Desktop/materials.bank", "collision/glass_potion/destroy", x, y )
+
+                --Get material
+                local potion = nil
+                local inventories = EntityGetAllChildren(GetUpdatedEntityID()) or {}
+                for inventory_index = 1, #inventories do
+                    if EntityGetName(inventories[inventory_index]) == "inventory_quick" then
+                        -- Find last potion tagged item
+                        local children = EntityGetAllChildren(inventories[inventory_index]) or {}
+                        for i = 1, #children do
+                            if EntityHasTag(children[i], "potion") then
+                                potion = children[i]
+                                break
+                            end
+                        end
+                        break
+                    end
+                end
+
+
+                
+                local mat = GetMaterialInventoryMainMaterial(potion) or nil
+
+                if mat ~= nil then
+                    local comp = EntityAddComponent2(
+                        e,
+                        "MaterialSeaSpawnerComponent",
+                        {
+                            speed=10,
+                            noise_threshold=0.0,
+                            material=mat,
+                        }
+                    )
+                    ComponentSetValue2(comp, "size", 300, 256)
+                    ComponentSetValue2(comp, "offset", 0, 158)
+
+                    local comp = EntityAddComponent2(
+                        e,
+                        "ParticleEmitterComponent",
+                        {
+                            emitted_material_name=CellFactory_GetName(mat),
+                            lifetime_min=6,
+                            lifetime_max=8,
+                            count_min=8,
+                            count_max=8,
+                            render_on_grid=true,
+                            fade_based_on_lifetime=true,
+                            cosmetic_force_create=false,
+                            airflow_force=0.51,
+                            airflow_time=1.01,
+                            airflow_scale=0.05,
+                            x_pos_offset_min=0,
+                            x_pos_offset_max=0,
+                            y_pos_offset_min=0,
+                            y_pos_offset_max=0,
+                            emission_interval_min_frames=1,
+                            emission_interval_max_frames=1,
+                            emit_cosmetic_particles=true,
+                            image_animation_file="mods/apotheosis/files/particles/image_emitters/sea_any.png",
+                            image_animation_speed=5,
+                            image_animation_loop=false,
+                            is_emitting=true,
+                        }
+                    )
+                    ComponentSetValue2(comp, "gravity", 0, 0)
+                    ComponentSetValue2(comp, "area_circle_radius", 0, 0)
+                    EntityKill(potion)
+                end
+            end
+		end,
+	}
+    v.author    = v.author  or "Conga Lyne"
+    v.mod       = v.mod     or "Apotheosis"
+    table.insert(actions,v)
+end
+]]--

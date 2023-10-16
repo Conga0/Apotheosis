@@ -61,7 +61,7 @@ if isfishing then
         GamePlaySound( "data/audio/Desktop/materials.bank", "materials/liquid_splash_player", x, y )
         GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/mana_fully_recharged", x, y )
         GamePlaySound( "data/audio/Desktop/animals.bank", "animals/generic/jump", x, y )
-        GamePrint("You caught a fish!")
+        GamePrint("$log_apotheosis_fishing_caught_name")
         local exit = false
         local rarity = 1
 
@@ -90,7 +90,7 @@ if isfishing then
         local fish_id = EntityLoad(fish_path, x, y)
         GameShootProjectile( player_id, x, y, plyr_x, plyr_y, fish_id )
 
-        GamePrintImportant( "You caught a fish!", table.concat({"Rarity: ",rarity}) )
+        GamePrintImportant( "$log_apotheosis_fishing_caught_name", table.concat({GameTextGetTranslatedOrNot("$log_apotheosis_fishing_caught_desc"),rarity}) )
         EntityKill(entity_id)
     end
 

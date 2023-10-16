@@ -169,7 +169,7 @@ function fungal_shift( entity, x, y, debug_no_limits )
 			ConvertMaterialEverywhere( from_material, to_material )
 			converted_any = true
 
-			if from_material_name == "CURSED LIQUID" then
+			if from_material == CellFactory_GetType( "apotheosis_cursed_liquid_red_static" ) or from_material == CellFactory_GetType( "apotheosis_cursed_liquid_red" )then
 				local mat = CellFactory_GetType( "apotheosis_cursed_liquid_red_static" )
 				ConvertMaterialEverywhere( mat, to_material )
 				local mat = CellFactory_GetType( "apotheosis_cursed_liquid_red" )

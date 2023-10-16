@@ -76,6 +76,47 @@ if currentLang == "русский" then
 
 end
 
+--Japanese Translations
+if currentLang == "日本語" then
+  congacat_cat_immortal_name = "ネコの当たり判定無効化"
+  congacat_cat_immortal_desc = "オンにすると、ネコが無敵になります。"
+  fairy_immortality_name = "妖精の当たり判定無効化"
+  fairy_immortality_desc = "オンにすると、妖精が無敵になります。"
+  motd_setting_name = "今日のひとこと"
+  motd_setting_desc = "オンにすると、ゲーム開始時にヒントが表示されるようになります。"
+  seasonal_events_name = "季節イベント"
+  seasonal_events_desc = "季節イベントを有効にしますか？\nハロウィンやMODのリリース記念日など、追加イベントがたくさん！"
+  boss_health_multiplayer_name = "ボスのHP増加"
+  boss_health_multiplayer_formatting = " $0% HP"
+  boss_health_multiplayer_desc = "ボスのHPに倍率補正をかける上級者向けの設定です。\nコルミシルマには効果がありません。\nまた、ピットボスなどの中ボスにも一定程度効果が適用されます。\nプレイ中に設定を変更することも可能ですが、変更時はゲームを再起動してください。\nなお、ワークショップの対応MOD欄に記載されていないMODのボスには効果が適用されません。\nMOD製作者の方へ:適用させるためには専用のスクリプトが必要です。\n詳しくはDiscordでConga Lyne#2452にDMしてください。"
+  particle_reduction_name = "パーティクル数減少"
+  particle_reduction_desc = "一部のスペルから発生するパーティクルの数を減らします。\nPCが耐えられない場合はここを変更してください。"
+  spoopy_graphics_name = "グラフィック差し替え"
+  spoopy_graphics_desc = "オンにすると、一部のモブのグラフィックを差し替えます。\nデフォルトではオフになっています。"
+  custom_seed_name = "カスタムシードの設定"
+  custom_seed_desc = "指定したシード値でゲームを開始します。また、「hardcore」と入力すると、特殊なモードに入ることができます。"  --Conga: "hardcore" is the name of an actual secret seed in the mod so should probably be left as hardcore, but everything else can be translated
+  organised_icons_name = "進捗画面での表示順変更"
+  organised_icons_desc = "オンにすると、進捗画面での追加スペル・パークの表示順が変更されます。"
+  
+  seasonal_forced_name = "季節イベント"
+  seasonal_forced_desc = "指定した季節イベントを発生させることができる設定です。"
+  seasonal_forced_april_fools_name = "エイプリルフール"
+  seasonal_forced_april_fools_desc = "エイプリルフールのイベント"
+  seasonal_forced_birthday_name = "Apotheosis Modデー"
+  seasonal_forced_birthday_desc = "本MODの記念日イベント"
+  seasonal_forced_halloween_name = "ハロウィン"
+  seasonal_forced_halloween_desc = "ハロウィンのイベント"
+  seasonal_forced_smissmass_name = "Smissmass"
+  seasonal_forced_smissmass_desc = "Smissmassイベント"
+  seasonal_forced_cirno_name = "9Ball Day"
+  seasonal_forced_cirno_desc = "9Ball Dayのイベント"
+  secret_golden_cape_name = "ゴールデンNoita"
+  secret_golden_cape_desc = "Noitaくんをゴールデンにする設定です。\nスキンMODを導入している場合は非推奨。"
+  
+  spellrebalances_name = "バランス調整"
+  spellrebalances_desc = "オンにすると一部のスペルのマナ消費が低下し、より使いやすくなります。\nまた、貫通呪文、チェーンソー、音符など一部の強力なスペルは弱体化されます。\nこのMODのゲームバランスは、この設定がオンであることを前提に調整されています。"
+end
+
 local mod_id = "Apotheosis"
 ---@diagnostic disable-next-line: lowercase-global
 mod_settings_version = 1

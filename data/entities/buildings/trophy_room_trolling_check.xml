@@ -4,7 +4,7 @@
       width="9"
       height="14" 
       radius="16"
-      required_tag="apotheosis_polymorphcrystal"
+      required_tag="apotheosis_angrymage"
       destroy_this_entity_when_triggered="0" >
   	</CollisionTriggerComponent>
 

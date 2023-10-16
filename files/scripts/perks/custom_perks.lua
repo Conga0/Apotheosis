@@ -862,6 +862,7 @@ local perks_to_edit = {
     ["CONTACT_DAMAGE"] = {
         ui_description = "$perk_apotheosis_contactdamage_description",
         game_effect = "PROTECTION_MELEE",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/contact_damage_new.png", --Conga: It feels too modded, too much noise going on in the graphic
     },
 
     ["PROTECTION_RADIOACTIVITY"] = {

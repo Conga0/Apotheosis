@@ -1,37 +1,44 @@
-Music note spells only hit every 15 frames instead of every 1 frame
-Some spells have had their mana cost drastically reduced to become competitive with other spells again
-Bubbly Bounce no longer does self damage
-Projectile Repulsion Field is removed and replaced with Oversized Shield
-Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing a 60% movement speed boost in all directions per stack
-Contact Damage now grants melee immunity
-Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with you for too long
-Arrow Now longer has increased recoil
-Relocated Friend Cave 1 & 2
-Relocated Eye Room
-Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
-Wandstone now lets you tinker while in your inventory
-Parrallel worlds are now harder to break into
-Kantele Bomb Song is fixed
-Chainsaw now costs 12 mana
-Giga Death Cross now does much, much more damage
-Giga Death Cross now uses green wand particles instead of blue
-Low Recoil is replaced with No Recoil
-Pit Boss now has a projectile failsafe incase it spawns too many wands (over 1k with high boss health multipliers)
-Individual Enemies can now drop a maximum of 300k gold at any given time to prevent crashes in high NG+ runs (high NG+ runs usually become unplayable at a certain point otherwise if enemies start dying, flooding the screen with hundreds, sometimes thousands of gigantic physics objects)
-Giant Explosion on Drunk Enemies now has unlimited charges
-Giant Explosion on Slimy Enemies now has unlimited charges
-Summon Egg spell features new eggs it can roll
-Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations, the goal behind this is StP is a very endgame spell capable of insanely high Damage output, if you want endgame damage spells, you need to visit endgame biomes
-Piercing Shot is reworked
-Unstable Crystal can now be affected by Larpa
-Playerghosts can now "parry" tablets
-Friendship quest now is now slightly more involved
-Toxic Immunity now grants immunity to toxic damage
-Masters of Homing are now made of a slightly tastier meat than slime
-Gemmed necklace cosmetic now requires 46 orbs
-You can now eat from pouches in the inventory
-Chaotic Transmutation now costs 40 mana
-Path of Dark Flame can appear in lower tier spell pools
+This is a list of all changes this mod introduces which may affect vanilla content in some way.
+If you're confused why something feels different, this list may help you identify what's new.
+
+** Omega disc, plasma &  music note spells only hit every 15 frames instead of every 1 frame
+** Some spells have had their mana cost drastically reduced to become competitive with other spells again, which includes but is not limited to: Death Cross, Chaotic Transmutation, Intense Concentrated Light, Tier 2&3 spitterbolts, and various other spells
+** Bubbly Bounce no longer does self damage
+** Arrow no longer has increased recoil
+** Chainsaw now costs 12 mana
+** Giant Explosion on Drunk Enemies now has unlimited charges
+** Giant Explosion on Slimy Enemies now has unlimited charges
+** Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations, the goal behind this is StP is a very endgame spell capable of insanely high Damage output, if you want endgame damage spells, you need to visit endgame biomes
+** Piercing Shot is reworked, it now costs less mana, no longer reduces projectile damage but hits 5 times per modifier, becoming infinite at 50 pierces
+** Path of Dark Flame can appear in lower tier spell pools
+* Projectile Repulsion Field is removed and replaced with Oversized Shield
+* Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing a 40% movement speed boost in all directions per stack
+* Contact Damage now grants melee immunity
+* Sauvojen Tuntija now summons blackhole wands if it can't make line of sight with you for too long
+* Relocated Friend Cave 1 & 2
+* Relocated Eye Room
+* Fixed Weakening Curse spells not showing remaining time on their effect and showing in the perk list instead of the status effect list
+* Wandstone now lets you tinker while in your inventory
+* Parrallel worlds are now harder to break into
+* Kantele Bomb Song is fixed
+* Giga Death Cross now does much, much more damage
+* Giga Death Cross now uses green wand particles instead of blue
+* Low Recoil is replaced with No Recoil
+* Pit Boss now has a projectile failsafe incase it spawns too many wands (over 1k with high boss health multipliers)
+* Individual Enemies can now drop a maximum of 250k gold at any given time to prevent crashes in high NG+ runs (high NG+ runs usually become unplayable at a certain point otherwise if enemies start dying, flooding the screen with hundreds, sometimes thousands of gigantic physics objects)
+* Summon Egg spell features new eggs it can roll
+* Unstable Crystal can now be affected by Larpa
+* Playerghosts can now "parry" tablets
+* Friendship quest now is now slightly more involved
+* Toxic Immunity now grants immunity to toxic damage
+* Masters of Homing are now made of a slightly tastier meat than slime
+* You can now eat from pouches in the inventory
+** Chaotic Transmutation now costs 40 mana (down from 80, goal is to become more practical in lua-disabling wands)
+* Ants now only take 1 damage per hit, for consistency with apotheosis ants
+* Gemmed necklace cosmetic now requires 46 orbs
+
+* Vanilla rework or change
+** Vanilla spell rework or change that can be disabled in mod settings.
 
 
 New Biome Modifiers:

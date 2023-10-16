@@ -1097,7 +1097,7 @@
   <CellDataChild
   	_parent="radioactive_liquid"
 	_inherit_reactions="0"
-	tags="[corrodible],[soluble],[impure],[liquid]"
+	tags="[corrodible],[soluble],[impure],[liquid],[liquid_common]"
 	name="apotheosis_cursed_liquid_red"
 	ui_name="$material_apotheosis_cursed_liquid"
 	wang_color="44b53535"
@@ -1140,7 +1140,7 @@
   <CellDataChild
   	_parent="radioactive_liquid"
 	_inherit_reactions="0"
-	tags="[corrodible],[soluble],[impure],[liquid]"
+	tags="[corrodible],[soluble],[impure],[liquid],[liquid_common]"
 	name="apotheosis_cursed_liquid_red_static"
 	ui_name="$material_apotheosis_cursed_liquid"
 	wang_color="44b53536"

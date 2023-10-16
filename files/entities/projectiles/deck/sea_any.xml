@@ -1,0 +1,18 @@
+<Entity name="$projectile_default" tags="projectile_player" >
+
+	<LifetimeComponent
+		lifetime="300">
+	</LifetimeComponent>
+
+	<MusicEnergyAffectorComponent
+		energy_target="1.0">
+	</MusicEnergyAffectorComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="player_projectiles/sea_of_water"
+		set_latest_event_position="1" >
+	</AudioComponent>
+
+</Entity>
+

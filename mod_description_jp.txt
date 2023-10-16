@@ -1,0 +1,65 @@
+[img]https://i.imgur.com/S6OzhJT.png[/img]
+
+[b]超・大規模[/b]拡張MOD、Apotheosisにようこそ！このMODでは、
+116体のモブ
+6体のボス
+76個のスペル
+6+種のバイオーム
+15+種の物質
+新エンディング
+さらにパークやアイテム、構造物、隠し要素、音楽など、たくさんの要素が追加されます！
+
+[img]https://i.imgur.com/rYbK0bD.png[/img]
+
+マップを大拡張、バグフィックス、バランス調整、最適化、錬金、音楽……このMODにはすべてがある！
+
+[img]https://i.imgur.com/d8d9KH6.gif[/img]
+
+Noitaは初心者？大丈夫！
+Apotheosisは初心者から上級者まで、誰でも遊べるように設計されています。超高難度のエンドコンテンツから、ゆかいな隠し要素、ショートカットまで！
+
+マップ全体に変更点がたくさん！知らない場所に迷い込んじゃうかも？
+
+[img]https://i.imgur.com/4n1vFlS.gif[/img]
+
+腕に自信があるなら、設定からシード値を"hardcore"に設定してみましょう。高難易度のコンテンツで遊ぶことができます。
+
+百聞は一見にしかず、早速遊んでみましょう！
+
+[img]https://i.imgur.com/jGdk4on.png[/img]
+
+季節イベント一覧:
+April Fools April 1st
+Apotheosis Birthday July 20th to 22nd
+Halloween October 15th to 31st
+Smissmass December 15th to 31st
+9Ball Day September 9th
+
+解説(noita wiki): https://noita.wiki.gg/wiki/Mod:Apotheosis
+Discord Server: https://discord.gg/gtyGnv8Pxk
+
+対応MOD一覧
+Copi's Things
+Graham's Things
+Alternate Biomes
+More Stuff [More Stuff側の設定から、マップ改変を無効化してください]
+その他のMODもだいたい対応している……はず？
+
+非対応のMOD
+マップ改変系MOD(noitavania, purgatory, more stuff, etc)
+Ride Minecarts
+
+内蔵MOD一覧:
+More Musical Magic
+More Creeps & Weirdos
+Conga's Cats
+
+補足
+このMODはBeta版で開発されています。Stable版で遊んだ場合、不具合が発生することがあります。
+
+[img]https://i.imgur.com/yvzCtok.png[/img]
+
+
+作者を支援したい方は、ここから寄付してください！:
+https://ko-fi.com/congalyne
+遊んでくれるだけでも作者は喜びます。無理してお金を払うなんてだめ！

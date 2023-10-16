@@ -1069,16 +1069,16 @@ end
 
 --Post Ascension reward
 --[[
-if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("action_apotheosis_summon_potion") == false then
+if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("apotheosis_card_unlocked_sea_to_potion") == false then
   local path = "data/scripts/biomes/mountain/mountain_floating_island.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("spawn_sampo_spot%(x, y%)", "spawn_sampo_spot(x, y) \nEntityLoad(\"data/entities/items/pickup/potion_water.xml\", x, y) \nEntityLoad(\"mods/apotheosis/files/entities/particles/upwards_trail.xml\", x, y)")
+  content = content:gsub("spawn_sampo_spot%(x, y%)", "spawn_sampo_spot(x, y) \nCreateItemActionEntity( \"APOTHEOSIS_POTION_TO_SEA\", x, y ) \nEntityLoad(\"mods/apotheosis/files/entities/particles/upwards_trail.xml\", x, y)")
 
   ModTextFileSetContent(path, content)
 end
 ]]--
 
---CreateItemActionEntity( \"APOTHEOSIS_SUMMON_POTION\", x, y )
+--CreateItemActionEntity( \"APOTHEOSIS_POTION_TO_SEA\", x, y )
 --EntityLoad(\"data/entities/items/pickup/potion_water.xml\", x, y)
 
 --Debug data

@@ -1,12 +1,12 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile_once("data/scripts/perks/perk.lua")
 
-local entity_id = GetUpdatedEntityID()
-local x,y = EntityGetTransform( entity_id )
-local r = 256
-
 function collision_trigger()
-	local targets = EntityGetInRadiusWithTag( x, y, r, "apotheosis_polymorphcrystal" )
+	local entity_id = GetUpdatedEntityID()
+	local x,y = EntityGetTransform( entity_id )
+	local r = 256
+
+	local targets = EntityGetInRadiusWithTag( x, y, r, "apotheosis_angrymage" )
 
 	for i,v in ipairs( targets ) do
 		EntityKill( v )
