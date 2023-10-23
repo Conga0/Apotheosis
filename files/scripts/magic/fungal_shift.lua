@@ -141,7 +141,7 @@ function fungal_shift( entity, x, y, debug_no_limits )
 	local rnd = random_create(9123,58925+iter ) -- TODO: store for next change
 	local from = pick_random_from_table_weighted( rnd, materials_from )
 	local to = pick_random_from_table_weighted( rnd, materials_to )
-	local held_material = get_held_item_material( entity )
+	local held_material = get_held_item_material( EntityGetWithTag("player_unit")[1] ) 
 	local from_material_name = ""
 
 	-- if a potion is equipped, randomly use main material from potion as one of the materials

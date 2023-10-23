@@ -55,7 +55,7 @@
 	emissive="0"
     is_text_sprite="0" 
     next_rect_animation="" 
-    offset_x="0" 
+    offset_x="0"
     offset_y="0" 
     rect_animation="stand" 
     visible="1" 
@@ -162,6 +162,16 @@
 		y_vel_max="1"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
+	
+	<SpriteComponent 
+        alpha="0.55"
+		offset_y="32"
+    	offset_x="16"
+        image_file="data/particles/fog_of_war_hole.xml"
+        smooth_filtering="1"
+        fog_of_war_hole="1"
+		>
+    </SpriteComponent>
 
 	<LuaComponent
 		script_death="mods/Apotheosis/files/scripts/animals/polymorph_crystal_death.lua"
