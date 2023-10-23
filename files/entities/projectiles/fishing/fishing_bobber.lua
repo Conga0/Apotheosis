@@ -68,17 +68,25 @@ if isfishing then
         repeat
             --Debug Data
             --GamePrint("RNG max is " .. (10 - fish_max + rarity))
-            if rarity >= fish_max or math.random(1,(10 - fish_max + rarity)) > 1 then
+            if rarity >= fish_max or math.random(1,(8 - fish_max + rarity)) > 1 then
                 exit = true
             else
                 rarity = rarity + 1
             end
         until(exit)
 
+        --1 = normal fish
+        --2 = large fish
+        --3 = special fish
+
+        --Stock Fish
         local fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish.xml"
+        local fish_type = 1
+
         if rarity >= 10 then
             --The [REDACTED] is real
             fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_red.xml"
+            fish_type = 3
             AddFlagPersistent(table.concat({"apothe","osis_card","_unlocked_div","ine_red_fi","sh_unl","ocked"}))
             print(GameTextGetTranslatedOrNot("$log_apotheosis_fish"))
 
@@ -86,9 +94,42 @@ if isfishing then
             EntityLoad( "data/entities/particles/image_emitters/perk_effect_pacifist.xml", x, y )
         elseif (rarity % 2 == 0) then
             fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
+            fish_type = 2
         end
+
         local fish_id = EntityLoad(fish_path, x, y)
         GameShootProjectile( player_id, x, y, plyr_x, plyr_y, fish_id )
+
+        local fishdatatbl = {
+            {
+                GlobalsGetValue( "apotheosis_fish_filepath", "data/entities/animals/fish.xml" ),
+                GlobalsGetValue( "apotheosis_fishgfx_filepath", "data/enemies_gfx/fish_01.xml" )
+            },
+            {
+                GlobalsGetValue( "apotheosis_fish_large_filepath", "data/entities/animals/fish_large.xml" ),
+                GlobalsGetValue( "apotheosis_fish_largegfx_filepath", "data/enemies_gfx/fish_02.xml" )
+            },
+            {
+                "data/entities/animals/fish_red.xml",
+                "mods/apotheosis/files/enemies_gfx/fish_red.xml"
+            }
+        }
+        
+        do --Prepare fish projectile for fishing
+            local comp = EntityGetFirstComponentIncludingDisabled(fish_id, "ProjectileComponent")
+            ComponentSetValue2(comp,"spawn_entity",fishdatatbl[fish_type][1])
+
+            EntityAddComponent2(
+                fish_id,
+                "SpriteComponent",
+                {
+                    _tags="character",
+                    alpha=1,
+                    image_file=fishdatatbl[fish_type][2],
+                    rect_animation="walk"
+                }
+            )
+        end
 
         GamePrintImportant( "$log_apotheosis_fishing_caught_name", table.concat({GameTextGetTranslatedOrNot("$log_apotheosis_fishing_caught_desc"),rarity}) )
         EntityKill(entity_id)

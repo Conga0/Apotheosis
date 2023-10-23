@@ -92,8 +92,6 @@
     pos_y="40" 
     shrink_by_one_pixel="1" >
 
-  </RectAnimation>
-
     <Event 
       check_physics_material="0" 
       frame="1" 

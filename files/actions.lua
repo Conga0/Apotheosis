@@ -2565,7 +2565,7 @@ local actions_to_edit = {
     --If a projectile pierces more than 50 times, it gains infinite piercing, still allowing for infiniwisps to exist
     ["PIERCING_SHOT"] = {
         description = "$spell_apotheosis_piercing_shot_desc",
-        mana = 80,
+        mana = 60,
         action = function()
             --c.damage_projectile_add = c.damage_projectile_add - 0.6
             c.friendly_fire		= true

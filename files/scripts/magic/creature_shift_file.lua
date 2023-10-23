@@ -227,7 +227,9 @@ function creature_shift( entity, x, y, debug_no_limits )
             {"miniblob", "miniblob"},
             {"blob", "blob"},
             {"mudman_friendly", "mudman"},
-            {"bat","bat"}
+            {"bat","bat"},
+            {"fish","fish"},
+            {"fish_large","fish_large"}
         }
 
         for k=1,#spec_tab do
@@ -253,6 +255,28 @@ function creature_shift( entity, x, y, debug_no_limits )
                 gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
             end
             GlobalsSetValue( "apotheosis_batgfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Fish specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "fish" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_fishgfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Fish Large specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "fish_large" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_fish_largegfx_filepath", gfx )
             EntityKill(eid)
         end
 

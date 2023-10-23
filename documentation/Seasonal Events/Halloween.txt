@@ -2,6 +2,6 @@ All Dates are in day/month format and occur every year
 Date 11/10 to 31/10
 
 Effects:
-Jacko Lanterns spawn in the Mines, Coal Pits, Pyramid & Sand Caves
+Jacko Lanterns spawn in the Mines, Coal Pits & Pyramid
 Porings attain a ghostly appearance
 Black Cats have a higher spawn rate

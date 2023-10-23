@@ -34,4 +34,4 @@ end
 
 
 
-EntityLoad("mods/Apotheosis/files/entities/props/statue_master_of_trolling.xml", 4288, 2169)
+--EntityLoad("mods/Apotheosis/files/entities/props/statue_master_of_trolling.xml", 4288, 2169)
