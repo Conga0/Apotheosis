@@ -1,0 +1,15 @@
+<Entity>
+    <InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<UIIconComponent
+		name="$perk_apotheosis_copy_spells"
+		description="$perk_apotheosis_copy_spells_description"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/perk_icons/copyspells_ui.png"
+		is_perk="1"
+		display_above_head="0"
+		display_in_hud="0"
+		>
+	</UIIconComponent>
+
+</Entity>

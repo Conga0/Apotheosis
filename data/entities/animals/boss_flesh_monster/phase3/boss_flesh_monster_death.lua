@@ -30,8 +30,10 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		GameAddFlagRun( "apotheosis_miniboss_boss_flesh_monster" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_spell" )
-		if GameHasFlagRun("apotheosis_hardmode") then
+		local seed = string.lower(ModSettingGet( "Apotheosis.custom_seed" ))
+		if seed == "hardcore" or seed == "nightcore" then
 			AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_goldmode" )
+			EntityLoad( "mods/apotheosis/files/entities/items/pickups/perk_copyspells.xml", pos_x, pos_y)
 		end
 	end
 	

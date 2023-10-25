@@ -29,6 +29,7 @@ function PlayerCamControls(enabled)   --Disables camera locking onto player
 end
 
 function permapolymorph_entity( entity_id )
+    EntityRemoveTag(entity_id, "polymorphable_NOT")
 	local comp_poly = GameGetGameEffect( entity_id, "POLYMORPH" )
 	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_RANDOM" ) end
 	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_UNSTABLE" ) end

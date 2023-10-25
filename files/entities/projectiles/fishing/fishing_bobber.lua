@@ -92,6 +92,10 @@ if isfishing then
 
             --Load perk particle effects & audio on fish location if rarity >= 10
             EntityLoad( "data/entities/particles/image_emitters/perk_effect_pacifist.xml", x, y )
+            if GameHasFlagRun("apotheosis_red_flag_angler") == false then
+                GameAddFlagRun("apotheosis_red_flag_angler")
+                GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/orb/create", x, y )
+            end
         elseif (rarity % 2 == 0) then
             fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
             fish_type = 2

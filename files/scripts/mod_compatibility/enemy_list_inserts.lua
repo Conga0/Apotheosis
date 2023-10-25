@@ -9,6 +9,10 @@ local insert_list = {
         name="bubble_liquid",
     },
     {
+        id_matchup="fish_large",
+        name="fish_red",
+    },
+    {
         id_matchup="miner_chef",
         name="hiisi_thief",
     },

@@ -22,7 +22,7 @@
 	<LuaComponent
 		execute_on_added="0"
 		script_source_file="mods/Apotheosis/files/scripts/magic/tech_detonation.lua"
-		execute_every_n_frame="600"
+		execute_every_n_frame="720"
 		remove_after_executed="0"
 		>
 	</LuaComponent>

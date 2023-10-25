@@ -2,6 +2,14 @@
 -- Conga note: Should be done now, hopefully this prevents them from ever spawning
 -- Copi note: I just manually set the fields in this update to the file
 
+function disablecopying(recursion_level)
+    if (recursion_level) ~= nil and GameHasFlagRun("apotheosis_flag_copy_spells") == false then return true
+    else return false
+    end
+end
+
+--spell_apotheosis_alt_fire_cov_hardcore_name
+
 local actions_to_edit = {
 
     --Fix Healing Bolt & Circle of Vigour to have updated spell descriptions
@@ -10,8 +18,8 @@ local actions_to_edit = {
     ["HEAL_BULLET"] = {
         description = "$spell_apotheosis_healing_bolt_desc",
         action = function(recursion_level)
-            if (recursion_level) ~= nil then return; end
-            --if disablecopying(recursion_level) then return; end
+            --if (recursion_level) ~= nil then return; end
+            if disablecopying(recursion_level) then return; end
             add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
             c.fire_rate_wait = c.fire_rate_wait + 4
             c.spread_degrees = c.spread_degrees + 2.0
@@ -23,11 +31,15 @@ local actions_to_edit = {
         spawn_level = "1,2,3,4,10",
         spawn_probability = "0.2,0.2,0.2,0.2,2.0",
         action = function(recursion_level)
-            if (recursion_level) ~= nil then return; end
-            --if disablecopying(recursion_level) then return; end
+            --if (recursion_level) ~= nil then return; end
+            if disablecopying(recursion_level) then return; end
             add_projectile("data/entities/projectiles/deck/regeneration_field.xml")
             c.fire_rate_wait = c.fire_rate_wait + 15
         end
+    },
+
+    ["APOTHEOSIS_ALT_FIRE_COV"] = {
+        description = "$spell_apotheosis_alt_fire_cov_hardcore_desc",
     },
 
     --Remove Teleport Bolts from the spell pool
@@ -62,7 +74,8 @@ local actions_to_edit = {
     ["COPIS_THINGS_OPHIUCHUS"] = {
         description = "All your damage is halved, then converted to healing, and your projectile can hit you. The next spell costs twice as much mana. Uncopiable.",
         action = function(recursion_level)
-			if (recursion_level) ~= nil then return; end
+			--if (recursion_level) ~= nil then return; end
+            if disablecopying(recursion_level) then return; end
             copi_state.mana_multiplier = copi_state.mana_multiplier * 2.0
             c.extra_entities =
                 c.extra_entities ..
@@ -79,7 +92,8 @@ local actions_to_edit = {
     ["COPIS_THINGS_CLOUD_MAGIC_LIQUID_HP_REGENERATION"] = {
         description = "Creates a soothing rain that cures your wounds. Uncopiable.",
         action =  function(recursion_level)
-			if (recursion_level) ~= nil then return; end
+			--if (recursion_level) ~= nil then return; end
+            if disablecopying(recursion_level) then return; end
             add_projectile("mods/copis_things/files/entities/projectiles/cloud_magic_liquid_hp_regeneration.xml")
             c.fire_rate_wait = c.fire_rate_wait + 15
 		end,

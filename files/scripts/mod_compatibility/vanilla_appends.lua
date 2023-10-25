@@ -1000,7 +1000,7 @@ do -- Fixes Blobs to spawn in the correct entity when creature shifted
   local path = "data/scripts/animals/blob_damage.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("local e %= EntityLoad%( \"data/entities/animals/miniblob.xml\", pos_x, pos_y %)", "local filepath = GlobalsGetValue( \"apotheosis_miniblob_filepath\", \"data/entities/animals/miniblob.xml\" ) local e = EntityLoad( filepath, pos_x, pos_y )")
-
+  
   ModTextFileSetContent(path, content)
 end
 

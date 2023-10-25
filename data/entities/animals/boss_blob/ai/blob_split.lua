@@ -37,7 +37,8 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		
 		pos_x = pos_x + Random(-4, 4)
 		pos_y = pos_y + Random(-4, 4)
-		local e = EntityLoad( "data/entities/animals/boss_blob/blob_mini.xml", pos_x, pos_y )
+		local filepath = GlobalsGetValue( "apotheosis_miniblob_filepath", "data/entities/animals/boss_blob/blob_mini.xml" )
+		local e = EntityLoad( filepath, pos_x, pos_y )
 		
 		nearest_interval = nearest_interval - minion_interval
 		
