@@ -8,10 +8,12 @@ local insert_list = {
         id_matchup="eel",
         name="bubble_liquid",
     },
+    --[[
     {
         id_matchup="fish_large",
         name="fish_red",
     },
+    ]]--
     {
         id_matchup="miner_chef",
         name="hiisi_thief",

@@ -23,7 +23,7 @@ local apotheosis_perkappends = {
                 end
             end
         end,
-        func_remove = function( entity_who_picked )
+        func_remove = function( entity_id )
             local apotheosis_targets = EntityGetAllChildren(entity_id)
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_ghostly_vision" ) then
@@ -119,7 +119,7 @@ local apotheosis_perkappends = {
                 }
             )
         end,
-        _remove = function(entity_id)
+        _remove = function(player)
             local comp_lua = EntityGetComponentIncludingDisabled( player, "LuaComponent" )
             if ( comp_lua ~= nil ) then
                 for i,v in ipairs( comp_lua ) do
@@ -131,7 +131,7 @@ local apotheosis_perkappends = {
                 end
             end        
         end,
-        func_remove = function( entity_who_picked )
+        func_remove = function( player )
             local comp_lua = EntityGetComponentIncludingDisabled( player, "LuaComponent" )
             if ( comp_lua ~= nil ) then
                 for i,v in ipairs( comp_lua ) do
@@ -354,7 +354,7 @@ local apotheosis_perkappends = {
                 end
             end
         end,
-        func_remove = function( entity_who_picked )
+        func_remove = function( entity_id )
             local apotheosis_targets = EntityGetAllChildren(entity_id)
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_alcohol_immunity" ) then
@@ -406,7 +406,7 @@ local apotheosis_perkappends = {
                 end
             end
         end,
-        func_remove = function( entity_who_picked )
+        func_remove = function( entity_id )
             local apotheosis_targets = EntityGetAllChildren(entity_id)
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_recoil" ) then
@@ -637,7 +637,7 @@ local apotheosis_perkappends = {
                 end
             end
         end,
-        func_remove = function( entity_who_picked )
+        func_remove = function( entity_id )
             local apotheosis_targets = EntityGetAllChildren(entity_id)
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_no_blood" ) then

@@ -108,7 +108,7 @@ end
 --Disable their need for oxygen incase it isn't already done
 if runtime == 421 then
     --Vanish the Heretic
-    local heretic_id = EntityGetWithTag("heretic")[1]
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", h_x, h_y)
     EntityKill(heretic_id)
