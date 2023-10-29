@@ -13,7 +13,7 @@
 
     table.insert(g_small_enemies,
     {
-        prob           = 0.0003,
+        prob           = 0.0002,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/bubbles/magic_catalyst/bubble_liquid.xml"
@@ -21,7 +21,7 @@
 
     table.insert(g_small_enemies,
     {
-        prob           = 0.0003,
+        prob           = 0.0002,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/bubbles/alchemicprecursor/bubble_liquid.xml"
@@ -29,7 +29,7 @@
 
     table.insert(g_small_enemies,
     {
-        prob           = 0.0004,
+        prob           = 0.0003,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/bubbles/healthium/bubble_liquid.xml"

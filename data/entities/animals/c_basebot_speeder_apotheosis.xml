@@ -1,4 +1,4 @@
-<Entity  name="Johto" tags="ui_use_raw_name">
+<Entity  name="Johtaja" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<AnimalAIComponent 

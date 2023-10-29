@@ -316,7 +316,7 @@ status_apotheosis_protection_lava_name,Lava Immunity,Стойкость к ла�
 status_apotheosis_protection_lava_desc,You take no direct damage from lava or fire.,Вы не получаете прямого урона от лавы или огня.,,,,,,,,溶岩と炎によるダメージが無効化される。,,,,
 status_apotheosis_explosive_orb_name,Explosive,Взрывчатка,,,,,,,,爆発,,,,
 status_apotheosis_explosive_orb_desc,You're transmuting magic into explosives!,Вы превращаете магию во взрывчатку!,,,,,,,,魔法が爆発に変わっている！,,,,
-creep_apotheosis_boss_fire_lukki_name,"Lämmön Esteetikko",,,,,,,,,ラーモン・エステーティッコ,,,,
+creep_apotheosis_boss_fire_lukki_name,"Tulen Esteetikko",,,,,,,,,ラーモン・エステーティッコ,,,,
 integration_apotheosis_RANDOM_CATS_name,Kitty Cats!!,Кошечки!!!,,,,,,,,ねこ！,,,,
 integration_apotheosis_RANDOM_CATS_desc,Cat! I'm a kitty cat! And I dance dance dance! And I dance dance dance!!,Кошка!! Я кошечка!! И я танцую туц-туц!! И я танцую танцую танцую танцую!!!,,,,,,,,ねこです。ねこはいます。,,,,
 integration_apotheosis_RANDOM_CREEPS_name,Random Creeps & Weirdos,Случайные твари и чудики,,,,,,,,ランダム生物召喚,,,,

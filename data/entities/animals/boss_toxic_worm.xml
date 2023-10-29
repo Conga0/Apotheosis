@@ -1,6 +1,6 @@
 <Entity 
 	tags="enemy,mortal,hittable,teleportable_NOT,boss_dragon,homing_target,glue_NOT,necrobot_NOT,polymorphable_NOT,music_energy_100,ui_use_raw_name"
-	name="Jättimyrkyllinenmato">
+	name="Jättimäinenmyrkkymato">
 
 	<_Transform 
 		position.x="0" 

@@ -35,6 +35,8 @@ function GenerateMagicCatalyst()
     "snow",
     "sand",
     "mud",
+    "acid",
+    "lava",
     --[[
     "magic_liquid_unstable_teleportation",
     "magic_liquid_polymorph",
@@ -78,12 +80,15 @@ function GenerateMagicCatalyst()
     local mat_3 = options[rng]
     table.remove(options,rng)
 
+    local chance = Random(1,100)
+
     do -- Apply random materials to the recipe file
         local path = "mods/apotheosis/files/scripts/materials/secret_materials.xml"
         local content = ModTextFileGetContent(path)
-        content = content:gsub("random_material_01", mat_1)
-        content = content:gsub("random_material_02", mat_2)
-        content = content:gsub("random_material_03", mat_3)
+        content = content:gsub("random_material_01",mat_1)
+        content = content:gsub("random_material_02",mat_2)
+        content = content:gsub("random_material_03",mat_3)
+        content = content:gsub("elixir_reaction_chance",chance)
         ModTextFileSetContent(path, content)
     end
 
@@ -91,6 +96,7 @@ function GenerateMagicCatalyst()
     if DebugGetIsDevBuild() then
         for k=1,3 do
             print("Magic Catalyst recipe is: " .. mat_1 .. " " .. mat_2 .. " " .. mat_3)
+            print("With a chance of " .. chance)
         end
     end
     ]]--

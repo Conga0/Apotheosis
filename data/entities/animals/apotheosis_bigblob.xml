@@ -1,4 +1,4 @@
-<Entity  name="$animal_blob">
+<Entity  name="Isomöykky">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

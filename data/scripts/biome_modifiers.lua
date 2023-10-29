@@ -1019,7 +1019,7 @@ biome_modifiers =
 		ui_description="$biomemod_alchemic",
 		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/alchemic.png",
 		probability=0.5,
-		does_not_apply_to_biome={"mountain_hall","coalmine"},
+		does_not_apply_to_biome={"mountain_hall","coalmine","snowcastle"},
 		action = function( biome_name, biome_filename )	end,
 		inject_spawns_action = function()
 			inject_spawn( g_small_enemies, 0.5, {
@@ -1029,28 +1029,28 @@ biome_modifiers =
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/pylon_escium_lowhp.xml",
 			})
-			inject_spawn( g_small_enemies, 0.2, {
+			inject_spawn( g_small_enemies, 0.12, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_attunium.xml",
 			})
-			inject_spawn( g_small_enemies, 0.2, {
+			inject_spawn( g_small_enemies, 0.12, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml",
 			})
-			inject_spawn( g_small_enemies, 0.2, {
+			inject_spawn( g_small_enemies, 0.12, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_berserkium.xml",
 			})
-			inject_spawn( g_small_enemies, 0.2, {
+			inject_spawn( g_small_enemies, 0.12, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,

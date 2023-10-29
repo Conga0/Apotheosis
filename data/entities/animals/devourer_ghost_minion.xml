@@ -1,5 +1,5 @@
 <Entity 
-  name="Nälkäinen kirous" 
+  name="Syömisen kirous" 
   tags="mortal,hittable,music_energy_000_near,glue_NOT,ui_use_raw_name" 
   serialize="0" >
 

@@ -1,0 +1,119 @@
+Fire Ant - Palomurkku
+Nursing Ant - Sairaanhoitajamurkku
+Suffocating Ant - Tukahduttajamurkku
+Blind Gazer - Sokeakatselija
+Big Blob - Isomöykky
+Creepy Blob - Kammottavamöykky
+Colossal Blob - Kolossaalimöykky
+Aesthete of Heat - Lämmön Esteetikko
+Heretical Monster - Kerettiläinenhirviö
+Abandoned Orchestra - Hylätty orkesteri
+Giant Toxic Worm - Jättimyrkyllinenmato
+Toxic Worm - Myrkyllinenmato
+Liquid Bubble - Nestemäinen kupla
+Manager - Johto
+Cat - Kissa
+Psychic Bat - Psyykkinenlepakko
+Ceiling Fungus - Kattosieni
+Small Fungus - Pieni räjähtävä sieni
+Devouring Phantom - Nälkäinenaave
+Devouring Curse - Nälkäinenkirous
+Magic Devourer - Taikuudensyöjä
+Mini Drone - Pieni Lennokki
+Status Ailment Drone - Parannuskeinot Lennokki
+Enchanted Duck - Lumottu ankka
+Esoteric Being - Esoteerinenolento
+Fairy - Keiju
+Giant Fairy - Jättikeiju
+Colossal Fairy - Kolossaalinenkeiju
+Giant Discord Fairy - Jättiristiriitakeiju
+Esoteric Fairy - Esoteerinenkeiju
+Red Fish - Punainenkala
+Monolith - Monoliitti
+Forsaken Eye - Hylättysilmä
+Smoking Fungus - Tupakointisieni
+Cold Gazer - Jäänkatse
+Greater Cold Gazer - Suur-Jäänkatse
+Greater Hell Gazer - Suur-Helvetinkatse
+Greater Sky Gazer - Suur-Taivaankatse
+Divine Cold Gazer - Jumalallinenjäänkatse
+Parasitic Gazer - Parasiittinenkatse
+Zoner - Aluebotti
+Phantom Bow - Haamujousi
+Juvenile Centipede - Nuori Tuhatjalkainen
+Glue Slug - Liimanetana
+Hideous Mass - Kauheapääkallo
+Hideous Meat - Hirvittäväliha
+Hell Chef - Hornakokkihiisi
+Thief Hiisi - Varashiisi
+Engineer Hiisi - Insinöörihiisi
+Psychopath Hiisi - Isopommihiisi
+Homeless Hiisi - Asunnotonhiisi
+Rich Hiisi - Rikashiisi
+Minecart Rider Shotgunner Hiisi - Kaivoskärryhaulikkohiisi
+Minecart Rider Miner Hiisi - Kaivoskärrytappurahaulikkohiisi
+Rocket Shotgun Hiisi - Rakettihaulikkohiisi
+Locust Swarm - Heinäsirkka
+Towering Pillar of Hamis - Kohoava pilari hämis
+Juvenile Fire Spider - Nuori Tulihämähäkki
+Uprooted Fungus - Revitty sieni
+Swarmling Lukki - Nopealukki
+Cursed Creature - Kirottuolento
+Explosive Mimic - Räjähdysherkkämatkija
+Bastard - Paskiainen
+Appreciator of Wands - Wandsinarvostelija
+Mudman - Mutamies
+Unheard - Kuulumaton
+Quiet - Hiljainen
+Obsessive Phantom - Pakkomielteinenkalma
+Poisonous Mushroom - Myrkyllinensieni
+Jelly - Hyytelö
+Unholy Jelly -Epäpyhähyytelö
+Divine Jelly - Jumalallinenhyytelö
+Spider Jelly - Lukkihyytelö
+Magic Jelly - Lumottuhyytelö
+Birthday Rat - Juhlarotta
+Seeker - Etsijä
+Sentry - Vartiomies
+Greater Shaman - Suurmärkiäinen
+Leaking Slime - Vuotavajaska
+Weak Leaking Slime - Heikko Vuotavajaska
+Warping Slime - Säröilevä limanuljaska
+Star Child - Tähtilapsi
+Diving Bell - Sukelluskello (https://en.wikipedia.org/wiki/Diving_bell_spider)
+Ignition Tank - Sytytystankki
+Big Tentacler - Isoturso
+Tesla Turret - Teslatötterö
+Triangular Gem - Kolmionmuotoinenkristalli
+Water Spirit - Vesiö
+Water Mage - Vesimagi
+Greater Water Mage - Suur-Vesimagi
+Will o' the whisp - Palavakeiju
+Giant Will o' the whisp - Jättipalavakeiju
+Master of Immortality - Kuolemattomuudenmestari
+Master of Trolling - Uistelunmestari
+Master of Puppetry - Nukketeatterinmestari
+Master of Mallards - Sinisorsienmestari
+Master of Explosives- Räjähteidenmestari
+Master of None - Eimitäänmestari
+Master of Mana - Mananmestari
+Master of Transmutation - Transmutaatioidenmestari
+Overzealous Master of Polymorphing - Yli-innokas Muudonmuutosmestari
+Corrupt Master of Immortality - Korruptoitunut Kuolemattomuudenmestari
+Corrupt Master of Wounding - Korruptoitunut Haavoittajamestari
+Corrupt Master of Mana - Korruptoitunut Mananmestari
+Corrupt Master of Grounding - Korruptoitunut Maadoittajamestari
+Corrupt Master of Polymorphing - Korruptoitunut Muodonmuutosmestari
+Corrupt Master of Exchange - Korruptoitunut Vaihdosmestari
+Corrupt Master of Teleportation - Korruptoitunut Siirtäjämestari
+Corrupt Master of Twitching - Korruptoitunut Sätkymestari
+Corrupt Master of Vulnerability - Korruptoitunut Turvattomuusmestari
+Greater Firemage - Suur-Stendari
+Esoteric Worm - Esoteerinenmato
+Mechanical Worm - Mekaaninenmato
+Wall Worm - Rajoitettumato
+Alchemic Weirdo - Alkeeminen Outo
+Reflective Weirdo - Heijastava Outo
+Weirdo - Outo
+
+
