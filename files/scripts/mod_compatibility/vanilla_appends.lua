@@ -35,18 +35,42 @@ ModTextFileSetContent("data/entities/animals/boss_pit/boss_pit.xml", tostring(xm
 
 --Adds tag to wandstone so perk creation altar can detect it.. technically you can throw it into the sun because of this but, eh, nobody would ever do that.. right? I just wanna save on tags whenever possible
 --Let Wand Stone enable tinkering regardless of if you have it held or not
-local content = ModTextFileGetContent("data/entities/items/pickup/wandstone.xml")
-local xml = nxml.parse(content)
-xml.attr.tags = xml.attr.tags .. ",poopstone"
-local attrs = xml:first_of("GameEffectComponent").attr
-attrs._tags = attrs._tags .. ",enabled_in_inventory"
-ModTextFileSetContent("data/entities/items/pickup/wandstone.xml", tostring(xml))
+do
+  local content = ModTextFileGetContent("data/entities/items/pickup/wandstone.xml")
+  local xml = nxml.parse(content)
+  xml.attr.tags = xml.attr.tags .. ",poopstone"
+  local attrs = xml:first_of("GameEffectComponent").attr
+  attrs._tags = attrs._tags .. ",enabled_in_inventory"
+  ModTextFileSetContent("data/entities/items/pickup/wandstone.xml", tostring(xml))
+end
+
+--Lets sun seed provide ASE while passively inside the player's inventory
+do
+  local path = "data/entities/items/pickup/sun/sunseed.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  local attrs = xml:first_of("GameEffectComponent").attr
+  attrs._tags = attrs._tags .. ",enabled_in_inventory"
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+--Lets sun stone provide ASE while passively inside the player's inventory
+do
+  local path = "data/entities/items/pickup/sun/sunstone.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  local attrs = xml:first_of("GameEffectComponent").attr
+  attrs._tags = attrs._tags .. ",enabled_in_inventory"
+  ModTextFileSetContent(path, tostring(xml))
+end
 
 --Adds tag to beamstone so perk creation altar can detect it.. technically you can throw it into the sun because of this but, eh, nobody would ever do that.. right? I just wanna save on tags whenever possible
-local content = ModTextFileGetContent("data/entities/items/pickup/beamstone.xml")
-local xml = nxml.parse(content)
-xml.attr.tags = xml.attr.tags .. ",poopstone"
-ModTextFileSetContent("data/entities/items/pickup/beamstone.xml", tostring(xml))
+do
+  local content = ModTextFileGetContent("data/entities/items/pickup/beamstone.xml")
+  local xml = nxml.parse(content)
+  xml.attr.tags = xml.attr.tags .. ",poopstone"
+  ModTextFileSetContent("data/entities/items/pickup/beamstone.xml", tostring(xml))
+end
 
 --Adds Vulnerability immunity check to Master of Vulnerability's attack
 local content = ModTextFileGetContent("data/entities/misc/effect_weaken.xml")
@@ -367,7 +391,7 @@ do -- Limit enemies to dropping 300k gold at any given time, prevents lag in NG+
   ModTextFileSetContent(path, content)
 end
 
-if ModSettingGet( "spellrebalances" ) then -- Nerf Kantele & Ocarina notes to only hit once very 15 frames instead of once every 1 frame
+if ModSettingGet( "spellrebalances" ) then -- Nerf Kantele, Ocarina, Plasma & Omega Disc Projectile to only hit once very 15 frames instead of once every 1 frame
   local pathprefix = "data/entities/projectiles/deck/"
   local notes = {
     "kantele/kantele_a.xml",
@@ -383,10 +407,14 @@ if ModSettingGet( "spellrebalances" ) then -- Nerf Kantele & Ocarina notes to on
     "ocarina/ocarina_e.xml",
     "ocarina/ocarina_f.xml",
     "ocarina/ocarina_gsharp.xml",
+    "orb_laseremitter.xml",
+    "orb_laseremitter_four.xml",
+    "orb_laseremitter_cutter.xml",
+    "disc_bullet_bigger.xml",
   }
 
   for k=1,#notes do
-    local path = pathprefix .. notes[k]
+    local path = table.concat({pathprefix,notes[k]})
     local content = ModTextFileGetContent(path)
     local xml = nxml.parse(content)
     attrpath = xml:first_of("ProjectileComponent").attr
@@ -395,23 +423,13 @@ if ModSettingGet( "spellrebalances" ) then -- Nerf Kantele & Ocarina notes to on
   end
 end
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Plasma beams & Omega Disc Projectile to hit every 15 frames instead of every 1 frame
-  local pathprefix = "data/entities/projectiles/deck/"
-  local notes = {
-    "orb_laseremitter.xml",
-    "orb_laseremitter_four.xml",
-    "orb_laseremitter_cutter.xml",
-    "disc_bullet_bigger.xml",
-  }
-
-  for k=1,#notes do
-    local path = pathprefix .. notes[k]
-    local content = ModTextFileGetContent(path)
-    local xml = nxml.parse(content)
-    attrpath = xml:first_of("ProjectileComponent").attr
-    attrpath.damage_every_x_frames = "15"
-    ModTextFileSetContent(path, tostring(xml))
-  end
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to hit once every 10 frames instead of once every 1 frame
+  local path = "data/entities/projectiles/deck/ball_lightning.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("ProjectileComponent").attr
+  attrpath.damage_every_x_frames = "10"
+  ModTextFileSetContent(path, tostring(xml))
 end
 
 do -- Change sunseed sprite filepath for Perk Creation Anvil
@@ -1065,6 +1083,18 @@ do --Rework ants to behave like Apotheosis Ants for consistency
 	</LuaComponent>
   ]]))
   ModTextFileSetContent("data/entities/animals/ant.xml", tostring(xml))
+end
+
+do --Fix Tower Portal not working in Parallel worlds
+  local path = "data/scripts/biomes/tower_end.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("mystery_teleport_back", "mystery_teleport_back_apotheosis")
+
+  ModTextFileSetContent(path, content)
+end
+
+if ModIsEnabled("cheatgui") then  --Add Apotheosis items to CheatGUI
+  ModLuaFileAppend("data/hax/special_spawnables.lua","mods/apotheosis/files/scripts/mod_compatibility/cheat_gui_list.lua")
 end
 
 --Post Ascension reward

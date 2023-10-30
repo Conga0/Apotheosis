@@ -54,6 +54,7 @@ local lines = {
   "Vexilus_",
   "Xytio",
   "42oblaze_it",
+  "Albino",
   "NollaGames",
   "$credits_apotheosis_line_39",
   " ",

@@ -410,10 +410,13 @@ RegisterSpawnFunction( 0xff876544, "spawn_nest_egg" )
 RegisterSpawnFunction( 0xffffeedd, "init" )
 
 if init ~= nil then
-    local previousinit = init
+    previousinit = init
 end
 
 function init(x, y, w, h)
+    if previousinit ~= nil then
+        previousinit(x, y, w, h)
+    end
     -- figure out positions for 4 fire lukki eggs within the biome
     -- and spawn them if a position is within the bounds of this function call
     -- NOTE: only 1 egg is needed to complete the nest portal
