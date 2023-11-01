@@ -2101,7 +2101,7 @@ local apotheosis_spellappends = {
 			if ( discarded ~= nil ) then
                 for k=1,#discarded
                 do local v = discarded[k]
-                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) and (v.id ~= "APOTHEOSIS_ALT_FIRE_COV" or GameHasFlagRun("apotheosis_flag_copy_spells")) then
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) then
                         add_projectile(v.related_projectiles[1])
                     end
                 end
@@ -2111,7 +2111,7 @@ local apotheosis_spellappends = {
 			if ( deck ~= nil ) then
                 for k=1,#deck
                 do local v = deck[k]
-                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) and (v.id ~= "APOTHEOSIS_ALT_FIRE_COV" or GameHasFlagRun("apotheosis_flag_copy_spells")) then
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) then
                         add_projectile(v.related_projectiles[1])
                     end
                 end
@@ -2121,7 +2121,7 @@ local apotheosis_spellappends = {
 			if ( hand ~= nil ) then
                 for k=1,#hand
                 do local v = hand[k]
-                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) and (v.id ~= "APOTHEOSIS_ALT_FIRE_COV" or GameHasFlagRun("apotheosis_flag_copy_spells")) then
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) then
                         add_projectile(v.related_projectiles[1])
                     end
                 end

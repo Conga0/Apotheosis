@@ -42,6 +42,43 @@ local actions_to_edit = {
         description = "$spell_apotheosis_alt_fire_cov_hardcore_desc",
     },
 
+    ["APOTHEOSIS_KAPPA"] = {
+        action = function(recursion_level)
+            c.fire_rate_wait = c.fire_rate_wait + 50
+
+			
+			if ( discarded ~= nil ) then
+                for k=1,#discarded
+                do local v = discarded[k]
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) and (v.id ~= "APOTHEOSIS_ALT_FIRE_COV" or GameHasFlagRun("apotheosis_flag_copy_spells")) then
+                        add_projectile(v.related_projectiles[1])
+                    end
+                end
+            end
+
+			
+			if ( deck ~= nil ) then
+                for k=1,#deck
+                do local v = deck[k]
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) and (v.id ~= "APOTHEOSIS_ALT_FIRE_COV" or GameHasFlagRun("apotheosis_flag_copy_spells")) then
+                        add_projectile(v.related_projectiles[1])
+                    end
+                end
+            end
+
+			
+			if ( hand ~= nil ) then
+                for k=1,#hand
+                do local v = hand[k]
+                    if ( v.type == ACTION_TYPE_PASSIVE ) and ( v.custom_uses_logic ) and (v.id ~= "APOTHEOSIS_ALT_FIRE_COV" or GameHasFlagRun("apotheosis_flag_copy_spells")) then
+                        add_projectile(v.related_projectiles[1])
+                    end
+                end
+            end
+			
+        end
+    },
+
     --Remove Teleport Bolts from the spell pool
     ["TELEPORT_PROJECTILE"] = {
         spawn_level = "0",
