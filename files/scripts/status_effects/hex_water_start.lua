@@ -1,7 +1,7 @@
 local entity_id = GetUpdatedEntityID()
 entity_id = EntityGetRootEntity(entity_id)
 
-local dmg = 0.0006
+local dmg = 0.0005
 --Original amount was 0.003, no MHP scaling
 
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")

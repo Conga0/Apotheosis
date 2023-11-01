@@ -2272,7 +2272,7 @@ local apotheosis_spellappends = {
                 if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
                     c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
                 end
-                c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_blood.xml,data/entities/misc/piercing_shot.xml,"
+                c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_blood.xml,data/entities/misc/piercing_shot_hemomancy.xml,"
             end
             c.fire_rate_wait    = c.fire_rate_wait + 20
             draw_actions( 1, true )
@@ -2348,6 +2348,100 @@ local apotheosis_spellappends = {
 			add_projectile("mods/apotheosis/files/entities/projectiles/deck/touch_grass.xml")
 		end,
 	},
+    ]]--
+    --[[
+	{
+        --Conga: Extremely easy to infinitely dupe Ambrosia, is it that bad though? You can only actively carry so much at once
+        --Spell is fully functional, just unsure if I want to implement it, sort of has the same problem summon potion has where you could "somewhat" afk farm for materials that are meant to force you to adventure to collect
+		id          = "APOTHEOSIS_POTION_TO_SEA",
+        --id_matchup  = "APOTHEOSIS_BLOOD_POWER",
+        name 		= "$spell_apotheosis_potion_to_sea_name",
+        description = "$spell_apotheosis_potion_to_sea_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/potion.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
+        --spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension --Previously this required ending 2 to appear, but considering how it'd change daily RNG as well as most people likely not  going throuh the work to unlock it, I ultiamtely decided to keep it as a "regular" spell
+		type 		= ACTION_TYPE_OTHER,
+		spawn_level                       = "0,1,2,3,10", -- CHAIN_BOLT
+		spawn_probability                 = "0.05,0.05,0.05,0.05,0.1", -- CHAIN_BOLT
+		price = 250,
+		mana = 200,
+		max_uses = 1,
+        never_unlimited = true,
+		action 		= function()
+            if not reflecting then
+                local x,y = EntityGetTransform(GetUpdatedEntityID())
+
+                --Get material
+                local potion = nil
+                local inventories = EntityGetAllChildren(GetUpdatedEntityID()) or {}
+                for inventory_index = 1, #inventories do
+                    if EntityGetName(inventories[inventory_index]) == "inventory_quick" then
+                        -- Find last potion tagged item
+                        local children = EntityGetAllChildren(inventories[inventory_index]) or {}
+                        for i = 1, #children do
+                            if EntityHasTag(children[i], "potion") then
+                                potion = children[i]
+                                break
+                            end
+                        end
+                        break
+                    end
+                end
+
+
+                
+                if potion ~= nil then
+                    local e = EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/sea_any.xml", x, y)
+                    GamePlaySound( "data/audio/Desktop/materials.bank", "collision/glass_potion/destroy", x, y )
+                    local mat = GetMaterialInventoryMainMaterial(potion)
+
+                    local comp = EntityAddComponent2(
+                        e,
+                        "MaterialSeaSpawnerComponent",
+                        {
+                            speed=10,
+                            noise_threshold=0.0,
+                            material=mat,
+                        }
+                    )
+                    ComponentSetValue2(comp, "size", 300, 256)
+                    ComponentSetValue2(comp, "offset", 0, 158)
+
+                    local comp = EntityAddComponent2(
+                        e,
+                        "ParticleEmitterComponent",
+                        {
+                            emitted_material_name=CellFactory_GetName(mat),
+                            lifetime_min=6,
+                            lifetime_max=8,
+                            count_min=8,
+                            count_max=8,
+                            render_on_grid=true,
+                            fade_based_on_lifetime=true,
+                            cosmetic_force_create=false,
+                            airflow_force=0.51,
+                            airflow_time=1.01,
+                            airflow_scale=0.05,
+                            x_pos_offset_min=0,
+                            x_pos_offset_max=0,
+                            y_pos_offset_min=0,
+                            y_pos_offset_max=0,
+                            emission_interval_min_frames=1,
+                            emission_interval_max_frames=1,
+                            emit_cosmetic_particles=true,
+                            image_animation_file="mods/apotheosis/files/particles/image_emitters/sea_any.png",
+                            image_animation_speed=5,
+                            image_animation_loop=false,
+                            is_emitting=true,
+                        }
+                    )
+                    ComponentSetValue2(comp, "gravity", 0, 0)
+                    ComponentSetValue2(comp, "area_circle_radius", 0, 0)
+                    EntityKill(potion)
+                end
+            end
+		end,
+	}
     ]]--
 }
 
@@ -2730,8 +2824,8 @@ if HasFlagPersistent( "apotheosis_card_unlocked_ending_apotheosis_02_spell" ) th
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
 		type 		= ACTION_TYPE_OTHER,
-		spawn_level                       = "0,1,2,10", -- CHAIN_BOLT
-		spawn_probability                 = "0.05,0.05,0.05,0.1", -- CHAIN_BOLT
+		spawn_level                       = "0,1,2,3,10", -- CHAIN_BOLT
+		spawn_probability                 = "0.05,0.05,0.05,0.05,0.1", -- CHAIN_BOLT
 		price = 250,
 		mana = 200,
 		max_uses = 1,

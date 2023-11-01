@@ -1059,6 +1059,29 @@ biome_modifiers =
 			})
 		end,
 	},
+	--[[
+	--Requires ending 3
+	--Replace all biome liquid with blood, add way to be afflicted by Lively Hex?
+	--Behave similarly to the unused corruption modifier, but with flesh?
+	{
+		id = "HERETICAL",
+		ui_description="$biomemod_heretical",
+		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/3piece_heretical.png",
+		probability=0.2,
+		requires_flag = "apotheosis_card_unlocked_ending_apotheosis_03",
+		does_not_apply_to_biome={"mountain_hall","coalmine","excavationsite"},
+		action = function( biome_name, biome_filename )	end,
+		inject_spawns_action = function()
+			inject_spawn( g_small_enemies, 0.05, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "mods/apotheosis/files/entities/animals/planes/devourer_magic.xml",
+			})
+		end,
+	},
+	]]--
 	--[[-- dry - fire spreads faster than usually, fire demons spawn
 	-- bouncy - projectiles and physics bodies bounce from surfaces
 	-- corrupted - corruption grows everywhere. corruption = some sort of easily destructible static material
