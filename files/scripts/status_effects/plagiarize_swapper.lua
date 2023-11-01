@@ -12,7 +12,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		local lua_list = EntityGetComponent(entity_id, "LuaComponent")
 		for i,v in ipairs(lua_list) do
 			local scriptpath = ComponentGetValue2(v, "script_damage_received")
-			if (scriptpath == "mods/conga_twitch_mod/files/scripts/status_effects/plagiarize_swapper.lua") then
+			if (scriptpath == "mods/Apotheosis/files/scripts/status_effects/plagiarize_swapper.lua") then
 				EntityRemoveComponent(entity_id, v)
 			end
 		end
@@ -25,7 +25,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local entity_b = entity_who_caused
 	local xb,yb = EntityGetTransform( entity_b )
 
-	if not EntityHasTag(entity_b,"mortal") or EntityHasTag(entity_b,"no_swap") or EntityHasTag(entity_a,"no_swap") then return end
+	if not EntityHasTag(entity_b,"mortal") or EntityHasTag(entity_b,"no_swap") or EntityHasTag(entity_a,"no_swap") or damage < 0 then return end
 
 	EntitySetTransform( entity_a, xb, yb )
 	EntitySetTransform( entity_b, xa, ya )
