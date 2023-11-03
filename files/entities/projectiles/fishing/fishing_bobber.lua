@@ -64,11 +64,11 @@ if isfishing then
         GamePrint("$log_apotheosis_fishing_caught_name")
         local exit = false
         local rarity = 1
+        local randomfish = 8
+        if randomfish < fish_max then
+                randomfish = fishmax
 
         repeat
-            local randomfish = 8
-            if randomfish < fish_max then
-                randomfish = fishmax
             --Debug Data
             --GamePrint("RNG max is " .. (10 - fish_max + rarity))
             if rarity >= fish_max or math.random(1,(randomfish - fish_max + rarity)) > 1 then
