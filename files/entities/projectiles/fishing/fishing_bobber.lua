@@ -68,7 +68,7 @@ if isfishing then
         repeat
             --Debug Data
             --GamePrint("RNG max is " .. (10 - fish_max + rarity))
-            if rarity >= fish_max or math.random(1,(8 - fish_max + rarity)) > 1 then
+            if rarity >= fish_max or math.random(1,(16 - fish_max + rarity)) > 1 then
                 exit = true
             else
                 rarity = rarity + 1
