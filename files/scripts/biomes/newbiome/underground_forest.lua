@@ -75,6 +75,20 @@ g_small_enemies =
 		entity 	= "data/entities/animals/fairy_big.xml"
 	},
 	{
+		prob   		= 1.0,
+		min_count	= 1,
+		max_count	= 2,
+		ngpluslevel	= 1,
+		entity 	= "data/entities/animals/fairy_giant.xml"
+	},
+	{
+		prob   		= 1.0,
+		min_count	= 2,
+		max_count	= 3,
+		ngpluslevel	= 1,
+		entity 	= "data/entities/animals/watermage_greater.xml"
+	},
+	{
 		prob   		= 0.1,
 		min_count	= 4,
 		max_count	= 6,    
