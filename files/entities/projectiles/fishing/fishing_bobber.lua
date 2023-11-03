@@ -66,14 +66,19 @@ if isfishing then
         local rarity = 1
 
         repeat
+            local randomfish = 8
+            if randomfish < fish_max then
+                randomfish = fishmax
             --Debug Data
             --GamePrint("RNG max is " .. (10 - fish_max + rarity))
-            if rarity >= fish_max or math.random(1,(16 - fish_max + rarity)) > 1 then
+            if rarity >= fish_max or math.random(1,(randomfish - fish_max + rarity)) > 1 then
                 exit = true
             else
                 rarity = rarity + 1
+                if randomfish > 8 then
+                    randomfish = randomfish - 1
             end
-        until(exit)
+       until(exit)
 
         --1 = normal fish
         --2 = large fish
