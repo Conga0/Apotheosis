@@ -67,6 +67,7 @@ if isfishing then
         local randomfish = 8
         if randomfish < fish_max then
                 randomfish = fishmax
+        end
 
         repeat
             --Debug Data
@@ -77,6 +78,7 @@ if isfishing then
                 rarity = rarity + 1
                 if randomfish > 8 then
                     randomfish = randomfish - 1
+                end
             end
        until(exit)
 
