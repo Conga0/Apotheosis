@@ -80,7 +80,7 @@ if isfishing then
                     randomfish = randomfish - 1
                 end
             end
-       until(exit)
+        until(exit)
 
         --1 = normal fish
         --2 = large fish
