@@ -34,7 +34,7 @@ end
 function collision_trigger( player_id )
     
     local entity_id = GetUpdatedEntityID()
-    EntityGetTransform(entity_id)
+    local old_x, old_y = EntityGetTransform(entity_id)
     GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use_end", pos_x, pos_y );
 
     local pos_x = tonumber( GlobalsGetValue( "apotheosis_markerportal_green_x", "0" ) )

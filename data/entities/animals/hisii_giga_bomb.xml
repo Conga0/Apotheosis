@@ -27,7 +27,7 @@
 		</AnimalAIComponent>
 		
 		<DamageModelComponent 
-            hp="3"
+            hp="1.5"
             materials_create_messages="1"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hisii_giga_bomb/filenames.txt" 
 			fire_probability_of_ignition="5"

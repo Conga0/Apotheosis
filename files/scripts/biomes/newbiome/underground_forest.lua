@@ -78,7 +78,7 @@ g_small_enemies =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 2,
-		ngpluslevel	= 1,
+		ngpluslevel	= 2,
 		entity 	= "data/entities/animals/fairy_giant.xml"
 	},
 	{
