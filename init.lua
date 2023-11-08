@@ -595,7 +595,7 @@ book_apotheosis_orbbook_stone_15_description,"Attune with and home in on your go
 book_apotheosis_playerghost_name,"A Message From Beyond",,,,,,,,,彼方からのメッセージ,,,,
 book_apotheosis_playerghost_description,"To those who seek knowledge not true, but divine.\nOne should stand at the altar alone.",,,,,,,,,,,,,
 book_apotheosis_playerghost_description_temp,"To those who seek knowledge not true, but divine.\nOne should turn emerald knowledge to stone.",,,,,,,,,,,,,
-book_apotheosis_materia_conversion_spell_description_new,"Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass \nLetter \nLifetime","Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая \nПисьмо",,,,,,,,,"Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nフィールド",,,,
+book_apotheosis_materia_conversion_spell_description_new,"Conversion.. \nRemember these words.... \nFungus \nWorm \nRat \nSpark \nMass \nLetter \nLifetime","Превращение... \nЗапомните эти слова.... \nГрибок \nЧервь \nКрыса \nИскровая \nМассовая \nБуква \nВремя",,,,,,,,,"Kono kotoba wo oboete oku youni...\nKinoko \nWorm \nNezumi \nHibana \nフィールド",,,,
 book_apotheosis_material_spells_name,"Lost Alchemy",,,,,,,,,失われた秘術,,,,
 book_apotheosis_material_spells_description,"I used to commit alchemy here a long time ago, it was a safe hideaway where my brothers wouldn't bother me. \nHowever.. it seems these ants have taking a liking to it. \n..Never the matter, to my future self, the master of alchemy, \nturn this metal into a material which aids with flight, and your vault will be unlocked to you. \nIf you're someone who isn't me and you found this place, please leave what you found untouched.",,,,,,,,,,,,,
 book_apotheosis_omegadeath_name,"Death",,,,,,,,,死神の言葉,,,,
