@@ -65,6 +65,15 @@ function do_newgame_plus()
 			end
 		end
 
+		--Disables Spatial Awareness
+		local children = EntityGetAllChildren(v)
+		for m=1,#children do
+			local lcomp = EntityGetFirstComponentIncludingDisabled(children[m],"LuaComponent")
+			if ComponentGetValue2(lcomp,"script_source_file") == "data/scripts/perks/map.lua" then
+				ComponentSetValue2(lcomp,"script_source_file","")
+			end
+		end
+
 		--Disable Spatial Awareness
 		--[[
 		local children = EntityGetAllChildren(v) or {}
