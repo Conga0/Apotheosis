@@ -197,6 +197,7 @@ function item_pickup( entity_item, entity_who_picked, name )
         loot_level = 8
     end
 
+    --Make this based on x,y position? -Conga
     SetRandomSeed( GameGetFrameNum(), x, calcVar )
     local rnd = Random(1, #pool)
 

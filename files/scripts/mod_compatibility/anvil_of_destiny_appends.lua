@@ -71,7 +71,7 @@ append_effect("apotheosis_magic_liquid_attunium", function(wand)
 
     for k=1,#actions
     do local v = actions[k]
-        if v.subtype == "homing" then
+        if v.subtype and v.subtype.homing then
             table.insert(IDTable,k)
         end
     end
