@@ -103,7 +103,7 @@ Corrupt Master of Immortality - Korruptoitunut Kuolemattomuudenmestari
 Corrupt Master of Wounding - Korruptoitunut Haavoittajamestari
 Corrupt Master of Mana - Korruptoitunut Mananmestari
 Corrupt Master of Grounding - Korruptoitunut Maadoittajamestari
-Corrupt Master of Polymorphing - Korruptoitunut Muodonmuutosmestari
+Corrupt Master of Puppetry - Korruptoitunut Nukketeatterinmestari
 Corrupt Master of Exchange - Korruptoitunut Vaihdosmestari
 Corrupt Master of Teleportation - Korruptoitunut Siirtäjämestari
 Corrupt Master of Twitching - Korruptoitunut Sätkymestari
