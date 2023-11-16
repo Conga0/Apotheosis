@@ -1855,10 +1855,12 @@ do -- Player Editor
 	end
 
 	--Adds Parallel World checker to the player
+	--Adds vampirism HP scaling
+	--Previously every 30 seconds, now every 10 seconds after vampirism buff
 	xml:add_child(nxml.parse([[
     <LuaComponent
       script_source_file="mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
-      execute_every_n_frame="1800"
+      execute_every_n_frame="600"
       execute_times="-1"
       remove_after_executed="0"
       >

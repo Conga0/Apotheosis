@@ -11,6 +11,7 @@ If you're confused why something feels different, this list may help you identif
 ** Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations, the goal behind this is StP is a very endgame spell capable of insanely high Damage output, if you want endgame damage spells, you need to visit endgame biomes
 ** Piercing Shot is reworked, it now costs less mana, no longer reduces projectile damage but hits 5 times per modifier, becoming infinite at 50 pierces
 ** Path of Dark Flame can appear in lower tier spell pools
+** Chaotic Transmutation now costs 40 mana (down from 80, goal is to become more practical in lua-disabling wands)
 * Matter Eater can now dig through cursed rock
 * Projectile Repulsion Field is removed and replaced with Oversized Shield
 * Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing a 40% movement speed boost in all directions per stack
@@ -34,8 +35,8 @@ If you're confused why something feels different, this list may help you identif
 * Toxic Immunity now grants immunity to toxic damage
 * Masters of Homing are now made of a slightly tastier meat than slime
 * You can now eat from pouches in the inventory
-** Chaotic Transmutation now costs 40 mana (down from 80, goal is to become more practical in lua-disabling wands)
 * Ants now only take 1 damage per hit, for consistency with apotheosis ants
+* Vampirism is now buffed to scale off of the player's maximum hp
 * Gemmed necklace cosmetic now requires 46 orbs
 
 * Vanilla rework or change
