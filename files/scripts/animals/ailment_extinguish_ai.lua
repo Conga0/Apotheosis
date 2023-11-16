@@ -17,7 +17,7 @@ do local v = targets[k];
 		for i,b in ipairs( s ) do
 			local name = ComponentGetValue2( b, "is_on_fire" )
 			
-			if ( name == true ) then
+			if ( name == true ) or GameGetGameEffectCount(v, "RADIOACTIVE") > 0 or GameGetGameEffectCount(v, "POISON") > 0 or GameGetGameEffectCount(v, "OILED") > 0 or GameGetGameEffectCount(v, "SLIMY") > 0 then
 				isBurning = true
 			end
 		end
@@ -47,6 +47,7 @@ if isBurning then
 		if EntityHasTag(v, "hittable") then
 			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_status_wet_ailment.xml", pos_x, pos_y )
 			EntityAddChild( v, eid )
+			EntityAddRandomStains( v, CellFactory_GetType("water"), 400 )
 		end
 	end
 end

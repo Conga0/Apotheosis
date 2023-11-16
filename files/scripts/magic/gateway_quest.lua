@@ -31,7 +31,7 @@ else
     --[[
     ]]--
     local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") or {}
-    if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 then
+    if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 and HasFlagPersistent("apotheosis_card_unlocked_radarfound") then
         --Enable press e to sampo?
         local helper = EntityGetWithTag("apotheosis_portal_helper")[1]
         EntitySetComponentsWithTagEnabled(helper,"lurker_data",true)

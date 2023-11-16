@@ -16,3 +16,5 @@ if g_small_enemies ~= 0 then
         end
     end
 end
+
+GameAddFlagRun("apotheosis_hardmode")

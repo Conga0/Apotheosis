@@ -117,7 +117,7 @@
 		</SpriteParticleEmitterComponent>
 		
 		<ParticleEmitterComponent 
-			emitted_material_name="spark_purple"
+			emitted_material_name="spark_purple_bright"
 			gravity.y="0.0"
 			lifetime_min="5.5"
 			lifetime_max="15.5"
@@ -130,8 +130,8 @@
 			airflow_force="0.5"
 			airflow_time="1.9"
 			airflow_scale="0.15"
-			emission_interval_min_frames="1"
-			emission_interval_max_frames="4"
+			emission_interval_min_frames="2"
+			emission_interval_max_frames="8"
 			emit_cosmetic_particles="1"
 			x_vel_min="-1"
 			x_vel_max="1"
@@ -141,7 +141,7 @@
 		</ParticleEmitterComponent>
 		
 		<ParticleEmitterComponent 
-			emitted_material_name="spark_purple"
+			emitted_material_name="spark_purple_bright"
 			gravity.y="0.0"
 			lifetime_min="0.3"
 			lifetime_max="0.5"

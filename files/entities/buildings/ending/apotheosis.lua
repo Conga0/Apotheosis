@@ -5,6 +5,7 @@ function item_pickup( entity_item, entity_who_picked, name )
     local heretic_id = EntityGetWithTag("apotheosis_heretic") or {}
     local pos_x, pos_y = EntityGetTransform(entity_item)
     local knowledge = EntityGetWithTag("apotheosis_knowledge") or {}
+	local time_in_seconds = tonumber( StatsGetValue("playtime") )
 
     --Uhhh, do stuff
 
@@ -23,6 +24,16 @@ function item_pickup( entity_item, entity_who_picked, name )
     --After a short moment, Mina dies
     --Heretic symbols appear in the sky afterwards, and then roll credits
 
+
+    --Ascending in less than 5 hours (or at least trying to)
+    if time_in_seconds < 60 * 60 * 5 then
+        AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_speedrun")
+    end
+
+    --Winning in hardcore or nightcore mode
+    if GameHasFlagRun("apotheosis_hardmode") then
+        AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_hardcore")
+    end
 
 
     --Let's just make 3 seperate ents to handle it

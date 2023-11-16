@@ -391,7 +391,7 @@ do -- Limit enemies to dropping 300k gold at any given time, prevents lag in NG+
   ModTextFileSetContent(path, content)
 end
 
-if ModSettingGet( "spellrebalances" ) then -- Nerf Kantele, Ocarina, Plasma & Omega Disc Projectile to only hit once very 15 frames instead of once every 1 frame
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, Plasma & Omega Disc Projectile to only hit once very 15 frames instead of once every 1 frame
   local pathprefix = "data/entities/projectiles/deck/"
   local notes = {
     "kantele/kantele_a.xml",

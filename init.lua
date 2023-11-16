@@ -404,6 +404,7 @@ biome_plane_yggdrasil_border,"Outer Plane of Yggdrasil",,,,,,,,,世界樹の大�
 biome_plane_magic,"Plane of Soul",,,,,,,,,魂の在処,,,,
 biome_plane_technology,"Plane of Experimentation",,,,,,,,,実験者の住処,,,,
 biome_empyrean,"Empyrean",,,,,,,,,天界,,,,
+biome_challenge_zone,"Sealed Library",,,,,,,,,,,,,
 biomemod_esoteric_presence,"You feel an indescribable aura...",,,,,,,,,言葉に表せないような力を感じる,,,,
 biomemod_magmatic,"The air is burning",,,,,,,,,空気が燃えるように熱い,,,,
 biomemod_necromancy,"The Dead are Restless",,,,,,,,,死霊が騒ぐ声が聞こえる,,,,
@@ -2049,6 +2050,11 @@ function OnPlayerSpawned(player_entity)
 
 	if custom_seed then
 		GamePrint("$sign_apotheosis_custom_seed")
+
+		local seed = string.lower(ModSettingGet( "Apotheosis.custom_seed" ))
+		if seed == "hardcore" or seed == "nightcore" then
+			GameAddFlagRun("apotheosis_hardmode")
+		end
 	end
 
 	--Handles AprilFools related code

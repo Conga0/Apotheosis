@@ -702,6 +702,8 @@ local apotheosis_perkappends = {
 				script_source_file = "mods/apotheosis/files/scripts/perks/plane_radar.lua",
 				execute_every_n_frame = "1",
 			} )
+            --This forces the player to pick up the perk for the very first time they enter, but afterwards they can enter willy nilly
+            AddFlagPersistent("apotheosis_card_unlocked_radarfound")
 		end,
 	},
     --[[

@@ -11,6 +11,7 @@ If you're confused why something feels different, this list may help you identif
 ** Spells to Power can only spawn in Heaven, Hell & other high-tier spell locations, the goal behind this is StP is a very endgame spell capable of insanely high Damage output, if you want endgame damage spells, you need to visit endgame biomes
 ** Piercing Shot is reworked, it now costs less mana, no longer reduces projectile damage but hits 5 times per modifier, becoming infinite at 50 pierces
 ** Path of Dark Flame can appear in lower tier spell pools
+* Matter Eater can now dig through cursed rock
 * Projectile Repulsion Field is removed and replaced with Oversized Shield
 * Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing a 40% movement speed boost in all directions per stack
 * Contact Damage now grants melee immunity

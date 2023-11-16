@@ -210,6 +210,8 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
   },
+  --Conga 16/11/2023: While I was enthusiastic to jump into finishing off the keybind code, I struggle to understand how it worked fundamentally; and do not see myself having the hours required to reverse engineer it's functionality unfortunately. I feel bad for controller users..
+  --Might be possible to see how other mods handle it though? I know Noita Emotes has some stuff going on
 }
 
 --statue settings unlocks

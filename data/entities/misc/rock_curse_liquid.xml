@@ -39,6 +39,11 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 	
+	<MagicXRayComponent
+		radius="512"
+		steps_per_frame="8" >
+	</MagicXRayComponent>
+	
 	<CameraBoundComponent
 	  max_count="10"
 	  distance="2000">
