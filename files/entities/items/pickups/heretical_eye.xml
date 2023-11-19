@@ -155,7 +155,7 @@
 	<!--
 	-->
 	<LuaComponent
-		_tags="enabled_in_world"
+		_tags="enabled_in_world, enabled_in_hand, enabled_in_inventory"
 		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye.lua"
 		execute_every_n_frame="5"
 		>
@@ -168,10 +168,17 @@
 		execute_every_n_frame="300"
 		>
 	</LuaComponent>
+
+	<VariableStorageComponent
+		name="dialogue_timer"
+		value_float="0"
+		value_int="0"
+		>
+	</VariableStorageComponent>
 	
 	<ParticleEmitterComponent 
 		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
-		emitted_material_name="apotheosis_blood_infectious"
+		emitted_material_name="apotheosis_blood_infectious_fading_slow"
 		fade_based_on_lifetime="0"
 		x_pos_offset_min="0"
 		x_pos_offset_max="0"
@@ -202,5 +209,10 @@
 		render_ultrabright="0"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
+
+	<Entity>
+	-- I can seee everything! Muahahahaha!
+		<Base file="mods/Apotheosis/files/entities/misc/perks/ghostly_vision_perk.xml" />
+	</Entity>
 	
 </Entity>

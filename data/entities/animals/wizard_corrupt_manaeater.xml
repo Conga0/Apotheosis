@@ -32,6 +32,9 @@
 			blood_spray_material="magic_liquid_mana_regeneration"
 			blood_multiplier="0.07"
 			>
+			<damage_multipliers
+				holy="1.5" >
+			</damage_multipliers>
 			</DamageModelComponent>
 
 		<SpriteComponent 
@@ -172,6 +175,11 @@
 	<LuaComponent
 		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
 		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
 		>
 	</LuaComponent>
 	

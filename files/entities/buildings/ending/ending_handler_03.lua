@@ -75,6 +75,20 @@ if runtime == 0 then
     ConvertMaterialEverywhere(CellFactory_GetType( "spark_white_bright" ),CellFactory_GetType( "spark_red_bright" ))
 
     GamePlaySound( "data/audio/Desktop/music.bank", "music_reverb", pos_x, pos_y )
+
+    --Speed talking -Spoop
+
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
+    local h_x, h_y = EntityGetTransform(heretic_id)
+
+    local luacomps = EntityGetComponent(heretic_id, "LuaComponent") or {}
+    for i = 1, #luacomps do
+ 	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
+    	    ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
+	end
+    end
+
+    GameAddFlagRun("apotheosis_heretalk_end_1")
 end
 
 --Gradually turn the sky red
@@ -93,6 +107,7 @@ if runtime < 420 then
     --local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
     --local time = ComponentGetValue2(comp,"time")
     --ComponentSetValue2(comp,"time",time + 0.0025)
+    GameAddFlagRun("apotheosis_heretalk_end_2")
 end
 
 if runtime > 420 then
@@ -106,7 +121,7 @@ end
 --Spawn vanishing Particles
 --Teleport player downwards
 --Disable their need for oxygen incase it isn't already done
-if runtime == 421 then
+if runtime == 1535 then
     --Vanish the Heretic
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
@@ -149,7 +164,12 @@ if runtime == 820 then
         EntityKill(v)
     end
 
-    ConvertMaterialEverywhere(CellFactory_GetType( "apotheosis_templebrick_static_invincible" ),CellFactory_GetType( "apotheosis_corrupt_flesh_static" ))
+    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_01.xml", pos_x, pos_y - 175)
+
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
+    local h_x, h_y = EntityGetTransform(heretic_id)
+
+    EntityLoad("mods/apotheosis/files/entities/buildings/ending/brick_convert.xml", h_x, h_y)
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/greed_curse/create", pos_x, pos_y )
 end
 
@@ -158,6 +178,7 @@ if runtime == 1120 then
     local comp = EntityGetFirstComponentIncludingDisabled(particle_id,"HomingComponent")
     ComponentSetValue2(comp,"target_tag","player_unit")
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
+    GameAddFlagRun("apotheosis_heretalk_end_3")
 end
 
 if runtime == 1540 then
@@ -180,6 +201,11 @@ if runtime == 1540 then
 
     --Hide the player's UI
     ToggleUI(player_id,false)
+
+    --Heretic Line
+    GamePrintImportant( "Farewell", "Knower to be", "mods/Apotheosis/files/ui_gfx/decorations/3piece_heretic_important.png" )
+    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )
+    GameScreenshake( 150 )
 end
 
 if runtime == 1780 then

@@ -1,4 +1,4 @@
-<Entity  name="Orbitting silmä" tags="ui_use_raw_name">
+<Entity  name="Orbitting silmä" tags="ui_use_raw_name,evil_eye">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent 
@@ -92,6 +92,15 @@
 			>
 		</CharacterDataComponent>
 	</Base>
+
+	<LightComponent
+		_tags="enabled_in_world,enabled_in_hand,magic_eye_check"
+		radius="60"
+		r="255"
+		g="94"
+		b="94"
+		>
+	</LightComponent>
 
 	<ParticleEmitterComponent 
 		emitted_material_name="spark_red"

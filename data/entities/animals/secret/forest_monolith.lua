@@ -7,4 +7,5 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	AddFlagPersistent("apotheosis_card_unlocked_boss_monolith")
 
 	EntityLoad("data/entities/items/pickup/chest_random_super.xml", pos_x, pos_y - 400)
+	EntityLoad("data/entities/animals/secret/forest_monolith_dead.xml", pos_x, pos_y)
 end

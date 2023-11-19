@@ -29,6 +29,9 @@
             ragdoll_material="meat_confusion"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/filenames.txt"
 			>
+			<damage_multipliers
+				holy="1.5" >
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<LuaComponent 
@@ -134,6 +137,11 @@
 	<LuaComponent
 		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
 		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
 		>
 	</LuaComponent>
 	

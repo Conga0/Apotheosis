@@ -20,7 +20,7 @@
 		target_kill_radius="17"
 		target_kill_ragdoll_force="8"
 		ragdoll_filename=""
-		eat_anim_wait_mult="0.05"
+		eat_anim_wait_mult="0.3"
 		jump_cam_shake="12" 
 		bite_damage="3"
 		>
@@ -84,7 +84,7 @@
 
 	<GenomeDataComponent 
 		_enabled="1"
-		herd_id="worm"
+		herd_id="ant"
 		food_chain_rank="4"
 		is_predator="1" >
 	</GenomeDataComponent>
@@ -93,7 +93,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_head.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_head_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -105,7 +105,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_1.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_1.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -117,7 +117,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_2.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_2.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -129,7 +129,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_3.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_3.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -141,7 +141,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_4.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_4.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -153,7 +153,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_5.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_5.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -165,7 +165,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_6.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_6.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -177,7 +177,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_7.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_7.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -189,7 +189,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_8.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_8.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -201,7 +201,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_9.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_9.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -213,7 +213,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_10.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_10.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -225,7 +225,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_11.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_11.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -237,7 +237,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_12.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_12.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -249,7 +249,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_1.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_1.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -261,7 +261,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_2.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_2.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -273,7 +273,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_3.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_3.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -285,7 +285,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_4.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_4.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -297,7 +297,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_5.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_5.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -309,7 +309,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_6.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_6.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -321,7 +321,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_7.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_7.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -333,7 +333,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_8.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_8.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -345,7 +345,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_9.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_9.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -357,7 +357,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_10.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_10.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -369,7 +369,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_11.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_11.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -381,7 +381,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_12.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_12.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -393,7 +393,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_1.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_1.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -405,7 +405,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_2.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_2.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -417,7 +417,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_3.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_3.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -429,7 +429,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_4.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_4.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -441,7 +441,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_5.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_5.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -453,7 +453,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_6.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_body_alt_6.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -464,8 +464,9 @@
 
 	<SpriteComponent 
 		_enabled="1" 
+		_tags="character"
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_tail.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_tail_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -633,6 +634,37 @@
 		sprite_id="31">
 	</SpriteStainsComponent>
 
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="31"
+			>
+			<Transform
+			position.x="12"
+			position.y="0"
+			>
+			</Transform>
+		</InheritTransformComponent>
+
+	<GenomeDataComponent 
+		_enabled="1"
+		herd_id="ant"
+		food_chain_rank="4"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+	<AreaDamageComponent
+		aabb_min.x="-12" 
+		aabb_min.y="-12" 
+		aabb_max.x="12" 
+		aabb_max.y="12" 
+		damage_per_frame="0.24"
+		update_every_n_frame="20"
+		entities_with_tag="prey"
+		damage_type="DAMAGE_MELEE"
+		>
+	</AreaDamageComponent>
+
+	</Entity>
 
 	<StatusEffectDataComponent>
 	</StatusEffectDataComponent>

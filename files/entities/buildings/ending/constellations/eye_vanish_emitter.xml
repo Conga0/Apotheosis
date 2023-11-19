@@ -4,6 +4,8 @@
 		_enabled="1"
 		emitted_material_name="spark_red_bright"
 		image_animation_file="mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.png"
+		offset.x="0"
+		offset.y="0"
 		gravity.y="0.0"
 		lifetime_min="3"
 		lifetime_max="4"

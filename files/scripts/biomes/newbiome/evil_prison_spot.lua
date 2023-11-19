@@ -32,5 +32,6 @@ end
 
 function spawn_check(x, y)
 	EntityLoad( "data/entities/animals/boss_flesh_monster/inert/flesh_boss_inert.xml", x, y )
- -- this does not exist yet, sorry :p
+	EntityLoad( "data/entities/animals/boss_flesh_monster/inert/prison_check.xml", x, y )
+ -- this does exist!
 end

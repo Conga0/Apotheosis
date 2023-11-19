@@ -24,5 +24,6 @@ do local v = heretic_stones[k]
 		EntityLoad("mods/apotheosis/files/entities/items/pickups/stone_radar.xml",x,y)
         GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
         GameTriggerMusicEvent( "music/oneshot/heaven_03", true, pos_x, pos_y )
+        GameAddFlagRun("apotheosis_heretalk_guiding_stone")
 	end
 end

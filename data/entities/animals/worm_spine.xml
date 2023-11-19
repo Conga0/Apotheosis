@@ -21,7 +21,7 @@
     target_kill_radius="10"
     target_kill_ragdoll_force="10"
     ragdoll_filename="data/ragdolls/worm_skull/filenames.txt"
-    eat_anim_wait_mult="0.05"
+    eat_anim_wait_mult="0.3"
     jump_cam_shake="2" >
   </WormComponent>
   
@@ -105,7 +105,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_head.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_head_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat"
     emissive="0"
@@ -118,7 +118,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -131,7 +131,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -144,7 +144,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -157,7 +157,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -170,7 +170,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml"  
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml"  
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -183,7 +183,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -196,7 +196,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat"
     emissive="0"
@@ -209,7 +209,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -222,7 +222,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -235,7 +235,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -248,7 +248,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -261,7 +261,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     emissive="0"
@@ -274,7 +274,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_body_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat"
     emissive="0"
@@ -287,7 +287,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_tail.xml" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/worm_spine_tail_alt.xml" 
     rect_animation="eat" 
     next_rect_animation="eat"
     emissive="0"

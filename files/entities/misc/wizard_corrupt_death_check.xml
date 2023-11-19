@@ -1,0 +1,7 @@
+<Entity name="wizard_corrupt_death_check" tags="curse">
+
+	<LifetimeComponent
+		lifetime="120"
+	></LifetimeComponent>
+
+</Entity>

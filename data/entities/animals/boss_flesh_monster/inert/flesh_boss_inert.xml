@@ -1,4 +1,4 @@
-<Entity >
+<Entity name="apotheosis_flesh_boss_inert" tags="gate_monster">
 
 	<SpriteComponent
 		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_sealed.png"

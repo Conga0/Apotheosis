@@ -25,6 +25,13 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	EntityLoad( "data/entities/animals/boss_flesh_monster/boss_flesh_monster_explosion.xml", pos_x, pos_y )
 	EntityLoad( "data/entities/animals/boss_flesh_monster/phase3/phase3_stone_portal_quiet.xml", pos_x, pos_y )
 	--EntityLoad( "mods/apotheosis/files/entities/items/pickups/stone_heretic.xml", pos_x, pos_y )
+
+	local year, month, day, hour, minute = GameGetDateAndTimeLocal()
+	local seasonalForced_AprilFools = ModSettingGet("Apotheosis.seasonal_events_forced_april_fools")
+
+	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+		GamePrint("The ancient spirits of light and dark have been released.")
+	end
 	
 	if ModIsEnabled("raksa") == false then
 		GameAddFlagRun( "apotheosis_miniboss_boss_flesh_monster" )

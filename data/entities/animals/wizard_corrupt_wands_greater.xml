@@ -132,6 +132,11 @@
 		event_root="animals/wizard" >
 	</AudioComponent>
 
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
+		>
+	</LuaComponent>
+
     <LuaComponent
         script_source_file="mods/apotheosis/files/scripts/animals/aura_shield_sap.lua"
 	>

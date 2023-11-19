@@ -33,6 +33,9 @@
 			blood_spray_material="magic_liquid_mana_regeneration"
 			blood_multiplier="0.1"
 			>
+			<damage_multipliers
+				holy="1.7" >
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 
@@ -150,6 +153,11 @@
 		file="data/audio/Desktop/animals.bank"
 		event_root="animals/wizard" >
 	</AudioComponent>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
+		>
+	</LuaComponent>
 
 	<Entity name="cape">  
         <Base file="data/entities/verlet_chains/cape/cape.xml">

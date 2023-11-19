@@ -35,20 +35,20 @@
 	</LightComponent>
 
 	<SpriteComponent 
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_eye_only.png"
-		offset_x="56.5"
-		offset_y="56.5"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/fleshling.png"
+		offset_x="18"
+		offset_y="17"
 		>
 	</SpriteComponent>
 	
 	<Entity>
 		<SpriteComponent
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
-			emissive="1"
-			offset_x="8.5"
-			offset_y="8.5"
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupiling.png"
+			offset_x="5"
+			offset_y="5"
 			has_special_scale="1"
 			special_scale_x="1"
+			emissive="1"
 			>
 		</SpriteComponent>
 		
@@ -142,7 +142,7 @@
 		blood_spray_material="apotheosis_blood_infectious"
 		is_on_fire="0" 
 		ragdoll_filenames_file=""
-        ragdoll_material="meat"
+        ragdoll_material="apotheosis_meat_heretic"
 		ragdoll_offset_y="-6"
 		ragdollify_child_entity_sprites="1"
 		ragdollify_root_angular_damping="2"
@@ -152,6 +152,7 @@
 		minimum_knockback_force="100000"
 		>
 		<damage_multipliers
+			holy="1.7"
 			explosion="0.0"
 			electricity="0.6"
 			melee="1.2"
@@ -251,6 +252,11 @@
 	    >
 		</GameEffectComponent >
 	</Entity>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
+		>
+	</LuaComponent>
   
  	<VariableStorageComponent
 		_tags="no_gold_drop">

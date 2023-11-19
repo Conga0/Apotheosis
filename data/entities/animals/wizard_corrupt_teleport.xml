@@ -31,6 +31,7 @@
 			blood_material="magic_liquid_teleportation"
 			>
 			<damage_multipliers
+				holy="1.5"
 				physics_hit="0.0" >
 			</damage_multipliers>
 		</DamageModelComponent>
@@ -188,6 +189,11 @@
 	<LuaComponent
 		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
 		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
 		>
 	</LuaComponent>
 	
