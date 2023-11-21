@@ -16,12 +16,28 @@ else
 end
 
 --Should rubberband if player is further than 200 units away, could be refined, still unsure what to do with this gooper
-local targ EntityGetInRadiusWithTag(pos_x, pos_y, 200, "player_unit")
-if #targ < 1 then
-    ComponentSetValue2( wormAiComp, "speed", 6 )
-    ComponentSetValue2( wormAiComp, "speed_hunt", 8 )
+--Changin it up so it's a bit more dynamic so it checks for distances instead of just being a get in radius - Spoop
+-- local targ = EntityGetInRadiusWithTag(pos_x, pos_y, 200, "player_unit")
+
+local targ = EntityGetClosestWithTag(pos_x, pos_y, "player_unit")
+
+local targ_x, targ_y = EntityGetTransform(targ)
+
+if targ ~= nil and (math.abs(pos_y - targ_y) + math.abs(pos_x - targ_x)) > 500 then
+    ComponentSetValue2( wormAiComp, "speed", 10 )
+    ComponentSetValue2( wormAiComp, "speed_hunt", 10 )
     ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.25 )
     ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.55 )
+elseif targ ~= nil and (math.abs(pos_y - targ_y) + math.abs(pos_x - targ_x)) > 350 then
+    ComponentSetValue2( wormAiComp, "speed", 5 )
+    ComponentSetValue2( wormAiComp, "speed_hunt", 6 )
+    ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.25 )
+    ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.55 )
+elseif targ ~= nil and (math.abs(pos_y - targ_y) + math.abs(pos_x - targ_x)) > 200 then
+    ComponentSetValue2( wormAiComp, "speed", 3 )
+    ComponentSetValue2( wormAiComp, "speed_hunt", 4 )
+    ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.2 )
+    ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.5 )
 else
     ComponentSetValue2( wormAiComp, "speed", 1 )
     ComponentSetValue2( wormAiComp, "speed_hunt", 3 )

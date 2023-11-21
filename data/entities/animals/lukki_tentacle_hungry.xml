@@ -142,7 +142,7 @@
 		blood_spray_material="apotheosis_blood_infectious"
 		is_on_fire="0" 
 		ragdoll_filenames_file=""
-        ragdoll_material="meat"
+        ragdoll_material="apotheosis_meat_heretic"
 		ragdoll_offset_y="-6"
 		ragdollify_child_entity_sprites="1"
 		ragdollify_root_angular_damping="2"
@@ -251,6 +251,11 @@
 	    >
 		</GameEffectComponent >
 	</Entity>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
+		>
+	</LuaComponent>
   
  	<VariableStorageComponent
 		_tags="no_gold_drop">

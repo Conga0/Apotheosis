@@ -443,6 +443,10 @@ do --Softcap heart spawns at 1,000 hp
   ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/Apotheosis/files/scripts/biome_scripts_appends.lua" )
 end
 
+do --Visiting Parallel worlds is the same as incrementing the NG+ counter for the director
+  ModLuaFileAppend( "data/scripts/director_helpers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/director_helpers_appends.lua" )
+end
+
 do --Spawn entity for perk manipulation at holy mountains
   ModLuaFileAppend( "data/scripts/biomes/temple_altar.lua", "mods/Apotheosis/files/scripts/biomes/temple_altar_populator.lua" )
   ModLuaFileAppend( "data/scripts/biomes/boss_arena.lua", "mods/Apotheosis/files/scripts/biomes/temple_altar_populator.lua" )
@@ -751,7 +755,7 @@ end
 do --Tower creature appends
   local path = "data/scripts/biomes/tower.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[local enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[local enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
   ModTextFileSetContent(path, content)
 end
 
@@ -1095,6 +1099,38 @@ end
 
 if ModIsEnabled("cheatgui") then  --Add Apotheosis items to CheatGUI
   ModLuaFileAppend("data/hax/special_spawnables.lua","mods/apotheosis/files/scripts/mod_compatibility/cheat_gui_list.lua")
+end
+
+do --Increase Parallel World Boss hp depending on PW count
+  local path = "data/entities/animals/parallel/alchemist/parallel_alchemist.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_parallels.lua"
+      execute_every_n_frame="5"
+      execute_times="1"
+      remove_after_executed="1"
+      >
+	  </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do --Increase Parallel World Boss hp depending on PW count
+  local path = "data/entities/animals/parallel/tentacles/parallel_tentacles.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_parallels.lua"
+      execute_every_n_frame="5"
+      execute_times="1"
+      remove_after_executed="1"
+      >
+	  </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
 end
 
 --Post Ascension reward

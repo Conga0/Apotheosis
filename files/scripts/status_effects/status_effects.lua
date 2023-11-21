@@ -174,6 +174,13 @@ local apotheosis_status_list = {
         effect_entity="mods/Apotheosis/files/entities/misc/effect_brain_damage_02.xml",
         min_threshold_normalized="1.5",
     },
+    {
+        id="apotheosis_FLESH_CURSE",
+        ui_name="$status_apotheosis_flesh_curse_name",
+        ui_description="$status_apotheosis_flesh_curse_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/extreme_growth.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_flesh_curse.xml",
+    },
 }
 
 local len = #status_effects

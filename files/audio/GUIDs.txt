@@ -24,6 +24,12 @@
 {974e4a72-7160-49be-b55f-118b6695b427} event:/mocreeps_audio/animals/fairy_giga/damage/projectile
 {2d5891c3-5b16-4928-bce9-751caa14d91b} event:/mocreeps_audio/animals/fairy_giga/death
 {8bf95da9-30b1-4fb9-9c40-8d637ed746ae} event:/mocreeps_audio/animals/fairy_giga/voc_shoot
+{879f7927-9514-439e-a285-3d569aa7f762} event:/mocreeps_audio/heretical_eye/speech_gossip
+{b0613ed4-49ba-4b46-a656-5d7c9d9102db} event:/mocreeps_audio/heretical_eye/speech_long
+{6a8a3cc4-5335-4c8e-a5ba-e4588c1fe7f5} event:/mocreeps_audio/heretical_eye/speech_norm
+{7eab0032-af18-4773-b116-7c8673a3d1b0} event:/mocreeps_audio/heretical_eye/speech_power
+{f45ccf17-c5e5-4f2e-8611-9e45b8228dfe} event:/mocreeps_audio/heretical_eye/speech_quiet
+{a1cc63f6-d169-465f-b375-fb3321051b58} event:/mocreeps_audio/heretical_eye/speech_yell
 {a16b29b2-f6ca-4152-94e4-e2975761674e} event:/mocreeps_audio/kittycat/meow_01
 {4490ae24-a5c7-47b3-a633-d8123ff0b9b6} event:/mocreeps_audio/kittycat/meow_02
 {c266f1c5-0e3c-4d6a-a3b6-24b26716a3bb} event:/mocreeps_audio/kittycat/meow_03

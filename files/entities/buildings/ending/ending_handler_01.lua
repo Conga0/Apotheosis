@@ -82,6 +82,19 @@ if runtime == 0 then
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_01.xml", pos_x, pos_y)
 
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
+
+    --Speed talking -Spoop
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
+    local h_x, h_y = EntityGetTransform(heretic_id)
+
+    local luacomps = EntityGetComponent(heretic_id, "LuaComponent") or {}
+    for i = 1, #luacomps do
+ 	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
+    	    ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
+	end
+    end
+
+    GameAddFlagRun("apotheosis_heretalk_end_sheep_1")
 end
 
 --Shake the screen & accelerate time
@@ -121,7 +134,19 @@ if runtime == 420 then
         else
             CreateItemActionEntity( "AIR_BULLET", con_x, con_y )
         end
+        if EntityGetName(v) == "i_love_you" then
+            EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_divine.xml", con_x, con_y)
+        elseif EntityGetName(v) == "i_love_myworld" then
+            EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_nature.xml", con_x, con_y)
+        elseif EntityGetName(v) == "i_love_magic" then
+            EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_magic.xml", con_x, con_y)
+        elseif EntityGetName(v) == "i_love_work" then
+            EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_tech.xml", con_x, con_y)
+        else
+            EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_nature.xml", con_x, con_y)
+        end
     end
+    EntityLoad("mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml", plyr_x+12, plyr_y)
 end
 
 
@@ -130,6 +155,7 @@ if runtime == 620 then
     --5 seconds to start up (300 frames)
     GameTriggerMusicFadeOutAndDequeueAll()
     GamePlaySound( "data/audio/Desktop/music.bank", "music/credits/02", pos_x, pos_y )
+    GameAddFlagRun("apotheosis_heretalk_end_sheep_2")
 end
 
 if runtime == 740 then

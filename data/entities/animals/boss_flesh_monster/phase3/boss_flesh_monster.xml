@@ -136,7 +136,7 @@
 		materials_how_much_damage="0.1" 
 		materials_that_damage="acid" 
 		ragdoll_filenames_file=""
-        ragdoll_material="meat"
+        ragdoll_material="apotheosis_meat_heretic"
 		ragdoll_offset_y="-6"
 		ragdollify_child_entity_sprites="1" 
 		ragdollify_root_angular_damping="2"

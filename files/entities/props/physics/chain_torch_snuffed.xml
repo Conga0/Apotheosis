@@ -1,0 +1,18 @@
+<Entity tags="hittable" >
+
+  	<Base file="data/entities/base_chain_torch.xml" /> 
+
+  	<Entity>
+		<InheritTransformComponent>
+			<Transform 
+				position.x="0"
+				position.y="0" 
+			></Transform>
+		</InheritTransformComponent>
+
+		<SpriteAnimatorComponent>
+		</SpriteAnimatorComponent>
+		
+	</Entity>
+
+</Entity>

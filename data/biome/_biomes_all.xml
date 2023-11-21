@@ -1119,6 +1119,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/evil_temple_sand.xml"
+		height_index="13"
+		color="ff887209" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/perk_creation.xml"
 		height_index="0"
 		color="ff57ead7" >

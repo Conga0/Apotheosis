@@ -1,4 +1,4 @@
-<Entity serialize="0" tags="apotheosis_blob_boss">
+<Entity serialize="0" tags="apotheosis_blob_boss" name="i_love_work">
 
 	<Base file="mods/apotheosis/files/entities/buildings/ending/constellations/constellation_base.xml">
 	  	<ParticleEmitterComponent

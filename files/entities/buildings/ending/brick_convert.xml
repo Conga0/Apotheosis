@@ -1,0 +1,54 @@
+<Entity>
+	
+    <MagicConvertMaterialComponent
+      kill_when_finished="1"
+      from_material="apotheosis_templebrick_static_invincible"
+      steps_per_frame="6"
+      to_material="apotheosis_corrupt_flesh_static"
+      clean_stains="0"
+      is_circle="1"
+      radius="600" 
+      convert_same_material="0"
+	></MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material="apotheosis_templebrick_static_invincible"
+      steps_per_frame="5"
+      to_material="apotheosis_corrupt_flesh_static"
+      clean_stains="0"
+      is_circle="1"
+      radius="600" 
+      convert_same_material="0"
+	></MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material="apotheosis_templebrick_static_invincible"
+      steps_per_frame="4"
+      to_material="apotheosis_corrupt_flesh_static"
+      clean_stains="0"
+      is_circle="1"
+      radius="600" 
+      convert_same_material="0"
+	></MagicConvertMaterialComponent>
+
+    <MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material="apotheosis_templebrick_static_invincible"
+      steps_per_frame="3"
+      to_material="apotheosis_corrupt_flesh_static"
+      clean_stains="0"
+      is_circle="1"
+      radius="600" 
+      convert_same_material="0"
+	></MagicConvertMaterialComponent>
+
+    <LuaComponent
+      execute_on_removed="1"
+      execute_every_n_frame="-1"
+      remove_after_executed="1"
+      script_source_file="mods/apotheosis/files/entities/buildings/ending/brick_convert.lua"
+    ></LuaComponent>
+
+</Entity>
