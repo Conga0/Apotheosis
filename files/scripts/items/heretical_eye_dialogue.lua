@@ -113,7 +113,7 @@ local events = {
     {
         --2 Just after being slain
         trigger = function()
-            local d_opts = {"Kirottu!","Röyhkeä-!"}
+            local d_opts = {"Kirottu!","Royhkea!"}
             local dialogue = d_opts[math.random(1,#d_opts)]
 	    tone = "power"
             rate = 2
@@ -367,7 +367,7 @@ local events = {
             	GameRemoveFlagRun("apotheosis_heretalk_id_17")
             	GameRemoveFlagRun("apotheosis_heretalk_id_18")
             	GameRemoveFlagRun("apotheosis_heretalk_id_19")
-            	local d_opts = {"STOP!","TAKE ME OFF OF THIS ALTAR!","I BEG OF YOU!"}
+            	local d_opts = {"STOP!","TAKE ME OFF OF THIS ALTAR!","I BEG OF YOU!","YOU PATHETIC HUSK"}
             	local dialogue = d_opts[math.random(1,#d_opts)]
 		tone = "yell"
             	return true, dialogue
@@ -621,7 +621,7 @@ local events = {
             local currbiome = BiomeMapGetName( x, y )
             currbiome = tostring(currbiome)
             if currbiome == "$biome_orbroom" then
-                local d_opts = {"I was never very fond of these...","I believe more in finding your own knowledge."}
+                local d_opts = {"I was never very fond of these...","I believe more in finding your own knowledge.","I remember these tablets being made of stone."}
                 local dialogue = d_opts[math.random(1,#d_opts)]
                 return true, dialogue
             else

@@ -495,13 +495,6 @@ g_pixel_scene_03 =
 		background_file	= "data/biome_impl/snowcave/tinyobservatory2_background.png",
 		is_unique		= 0
 	},
-	{
-		prob   			= 0.2,
-		material_file 	= "data/biome_impl/snowcave/buried_eye.png",
-		visual_file		= "",
-		background_file	= "",
-		is_unique		= 0
-	},
 }
 
 g_acidtank_right =

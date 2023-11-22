@@ -909,7 +909,7 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
   
   if GameHasFlagRun("apotheosis_towerclimb") then
     AddFlagPersistent("apotheosis_card_unlocked_challenge_towerclimb_win")
-  elseif GameHasFlagRun("apotheosis_hardcore") then
+  elseif GameHasFlagRun("apotheosis_hardmode") then
     AddFlagPersistent("apotheosis_card_unlocked_challenge_hardcore_win")
   elseif GameHasFlagRun("apotheosis_missingmagic") then
     AddFlagPersistent("apotheosis_card_unlocked_challenge_missingmagic_win")
@@ -919,6 +919,69 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
 
   --Debug data
   --print("printing sampo_start_ending_senquence.lua\n\n" .. content)
+  ModTextFileSetContent(path, content)
+end
+
+do -- Modify Kolmi to gain a water hexing attack at 9 orbs, Kolmi's Minions gain the ability to disable shields at 15 orbs
+  local path = "data/entities/animals/boss_centipede/boss_centipede_update.lua"
+  local content = ModTextFileGetContent(path)
+  content, count = content:gsub([[-- polymorph shots]], [[-- hex shots
+  if orbcount >= 9 then phases[#phases+1] = { phase_hex, 0 } end
+  
+  -- polymorph shots]])
+
+  content, count = content:gsub([[function phase_polymorph%(%)]], [[function phase_hex()
+    open_eye()
+    boss_wait(30)
+  
+    hexshot()
+    GameEntityPlaySound( GetUpdatedEntityID(), "shoot_homingshot" )
+    boss_wait(5)
+    hexshot()
+    GameEntityPlaySound( GetUpdatedEntityID(), "shoot_homingshot" )
+    boss_wait(5)
+    hexshot()
+    GameEntityPlaySound( GetUpdatedEntityID(), "shoot_homingshot" )
+    boss_wait(5)
+    hexshot()
+    GameEntityPlaySound( GetUpdatedEntityID(), "shoot_homingshot" )
+    boss_wait(5)
+    boss_wait(20)
+  
+    close_eye()
+    next_phase()
+  end
+  
+  function phase_polymorph()]])
+  
+  content, count = content:gsub([[function polymorphshot%(%)]], [[function hexshot()
+    local this         = GetUpdatedEntityID()
+    local pos_x, pos_y = EntityGetTransform( this )
+  
+    shoot_projectile( this, "data/entities/animals/boss_centipede/projectiles/orb_water_circle.xml", pos_x, pos_y - 10, 0, math.random(-50,50) )
+    shoot_projectile( this, "data/entities/animals/boss_centipede/projectiles/orb_water_hex.xml", pos_x - 5, pos_y, -30, math.random(-50,50) )
+    shoot_projectile( this, "data/entities/animals/boss_centipede/projectiles/orb_water_hex.xml", pos_x - 5, pos_y, -30, math.random(-50,50) )
+  end
+  
+  function polymorphshot()]])
+  
+  content, count = content:gsub([[EntityLoad%( "data/entities/animals/boss_centipede/boss_centipede_minion.xml", x, y %)]], [[local minionpath = "data/entities/animals/boss_centipede/boss_centipede_minion.xml"
+	if orbcount >= 15 then
+		minionpath = "data/entities/animals/boss_centipede/minion_sapping/boss_centipede_minion.xml"
+	end
+	EntityLoad( minionpath, x, y )]])
+
+  --Debug data
+  --print("printing boss_centipede_update.lua\n\n" .. content)
+  ModTextFileSetContent(path, content)
+end
+
+do --Lets Kolmisilma clear slime when using his clear materials ability
+  local path = "data/entities/animals/boss_centipede/clear_materials.xml"
+  local content = ModTextFileGetContent(path)
+  content, count = content:gsub([[lava,radioactive_liquid,acid,poison]], [[lava,radioactive_liquid,acid,poison,slime,water]])
+  content, count = content:gsub([[air,air,air,air]], [[air,air,air,air,air,air]])
+
   ModTextFileSetContent(path, content)
 end
 
@@ -1099,6 +1162,10 @@ end
 
 if ModIsEnabled("cheatgui") then  --Add Apotheosis items to CheatGUI
   ModLuaFileAppend("data/hax/special_spawnables.lua","mods/apotheosis/files/scripts/mod_compatibility/cheat_gui_list.lua")
+end
+
+do  --Fix Guiding Powder to work with new map layout
+  ModLuaFileAppend("data/scripts/lib/utilities.lua","mods/apotheosis/files/scripts/mod_compatibility/utilities_lua_appends.lua")
 end
 
 do --Increase Parallel World Boss hp depending on PW count

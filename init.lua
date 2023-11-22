@@ -582,7 +582,7 @@ orb_apotheosis_14_desc,"Secrets of the drowning depths have been unlocked to you
 orb_apotheosis_15_desc,"Secrets of unworldly transmutation have been unlocked to you.",,,,,,,,,世界を作りかえる力が解放された。,,,,
 orb_apotheosis_16_desc,"Secrets of wild magic have been unlocked to you.",,,,,,,,,ワイルドな魔法の力が解放された。,,,,
 book_apotheosis_orbbook_12_name,"Emerald Tablet - Volume XI",,,,,,,,,,,,,
-book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy. \nnor anger nor sadness, nor any \nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware.",,,,,,,,,,,,,
+book_apotheosis_orbbook_12_description,"The world shook asunder and cried in neither fear nor joy,\nnor anger nor sadness, nor any.\nnor the tears flew above or below, but to the east and west. \nThe world birth itself anew as it grew and took on new forms \nSome creatures were weary \nSome intrigued \nOthers excited \nMany unaware.",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_name,"Emerald Tablet - Volume XII",,,,,,,,,,,,,
 book_apotheosis_orbbook_13_description,"There once was a time the world froze to a halt.\nThe water didn't flow, the heart didn't beat and the box didn't fall.\nAfter a moment time flowed again as it always did, however,\nsomething was missing afterwards.\nLook around you, do you not sense it?\nIt is our pursuit to discover what that thing was.",,,,,,,,,,,,,
 book_apotheosis_orbbook_14_name,"Emerald Tablet - Volume XIII",,,,,,,,,,,,,

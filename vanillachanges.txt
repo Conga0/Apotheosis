@@ -39,6 +39,8 @@ If you're confused why something feels different, this list may help you identif
 * Vampirism is now buffed to scale off of the player's maximum hp
 * Parallel worlds can now spawn NG+ enemies
 * Parallel world bosses can now appear below ground
+* Kolmisilma and his minions gain new abilities at high orb counts
+* Kolmisilma can now clear slime and water
 * Gemmed necklace cosmetic now requires 46 orbs
 
 * Vanilla rework or change
