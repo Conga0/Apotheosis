@@ -367,7 +367,7 @@ local events = {
             	GameRemoveFlagRun("apotheosis_heretalk_id_17")
             	GameRemoveFlagRun("apotheosis_heretalk_id_18")
             	GameRemoveFlagRun("apotheosis_heretalk_id_19")
-            	local d_opts = {"STOP!","TAKE ME OFF OF THIS ALTAR!","I BEG OF YOU!","YOU PATHETIC HUSK"}
+            	local d_opts = {"STOP!","TAKE ME OFF OF THIS ALTAR!","I BEG OF YOU!"}
             	local dialogue = d_opts[math.random(1,#d_opts)]
 		tone = "yell"
             	return true, dialogue
