@@ -209,7 +209,6 @@
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
-
 	
 	<VariableStorageComponent
 		name="shield_colour"

@@ -30,7 +30,6 @@
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/filenames.txt"
 			>
 			<damage_multipliers
-				holy="1.5"
 				physics_hit="0.0" >
 			</damage_multipliers>
 		</DamageModelComponent>
