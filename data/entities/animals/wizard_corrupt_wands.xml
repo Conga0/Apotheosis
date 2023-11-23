@@ -33,9 +33,6 @@
 			blood_spray_material="magic_liquid_mana_regeneration"
 			blood_multiplier="0.1"
 			>
-			<damage_multipliers
-				holy="1.7" >
-			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 

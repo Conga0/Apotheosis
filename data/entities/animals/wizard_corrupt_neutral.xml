@@ -32,7 +32,6 @@
 			ragdoll_fx_forced="DISINTEGRATED"
 			>
 			<damage_multipliers
-				holy="1.5"
 				physics_hit="0.0" >
 			</damage_multipliers>
 		</DamageModelComponent>
@@ -195,11 +194,6 @@
 		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
 		script_source_file="mods/Apotheosis/files/scripts/animals/wizard_corrupt_neutral_aura.lua"
 		execute_every_n_frame="601"
-		>
-	</LuaComponent>
-
-	<LuaComponent
-		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
 		>
 	</LuaComponent>
 	

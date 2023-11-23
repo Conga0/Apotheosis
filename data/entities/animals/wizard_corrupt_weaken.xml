@@ -34,7 +34,6 @@
 			blood_multiplier="0.2"
 			>
 			<damage_multipliers
-				holy="1.5"
 				physics_hit="0.0" >
 			</damage_multipliers>
 		</DamageModelComponent>
@@ -159,11 +158,6 @@
 		value_int="-10000"
 		>
 	</VariableStorageComponent>
-
-	<LuaComponent
-		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
-		>
-	</LuaComponent>
 	
 	<!--Buff nearby creatures with Vulnerability Infusion-->
 	<LuaComponent

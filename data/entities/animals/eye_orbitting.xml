@@ -1,4 +1,4 @@
-<Entity  name="Orbitting silmä" tags="ui_use_raw_name,evil_eye">
+<Entity  name="Orbitting silmä" tags="ui_use_raw_name">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent 

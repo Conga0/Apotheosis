@@ -136,11 +136,6 @@
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
-
-	<LuaComponent
-		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
-		>
-	</LuaComponent>
 	
 	<VariableStorageComponent
 		name="shield_colour"

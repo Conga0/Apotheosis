@@ -15,7 +15,7 @@
     wang_map_width="256"
     wang_map_height="256"
     audio_music_2="the_end"
-    audio_ambience="crypt"
+    audio_ambience="snowcave"
   >
   <BitmapCaves 
       size_x="516"

@@ -210,9 +210,4 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 
-	<Entity>
-	-- I can seee everything! Muahahahaha!
-		<Base file="mods/Apotheosis/files/entities/misc/perks/ghostly_vision_perk.xml" />
-	</Entity>
-	
 </Entity>

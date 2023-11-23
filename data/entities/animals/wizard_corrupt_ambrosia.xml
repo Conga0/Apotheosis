@@ -36,7 +36,6 @@
 		    blood_multiplier="2"
 			>
 			<damage_multipliers
-				holy="1.5"
 				physics_hit="0.0" >
 			</damage_multipliers>
 		</DamageModelComponent>
@@ -211,10 +210,6 @@
 		>
 	</LuaComponent>
 
-	<LuaComponent
-		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
-		>
-	</LuaComponent>
 	
 	<VariableStorageComponent
 		name="shield_colour"
