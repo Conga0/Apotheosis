@@ -35,20 +35,20 @@
 	</LightComponent>
 
 	<SpriteComponent 
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_eye_only.png"
-		offset_x="56.5"
-		offset_y="56.5"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/fleshling.png"
+		offset_x="18"
+		offset_y="17"
 		>
 	</SpriteComponent>
 	
 	<Entity>
 		<SpriteComponent
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
-			emissive="1"
-			offset_x="8.5"
-			offset_y="8.5"
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupiling.png"
+			offset_x="5"
+			offset_y="5"
 			has_special_scale="1"
 			special_scale_x="1"
+			emissive="1"
 			>
 		</SpriteComponent>
 		
@@ -152,6 +152,7 @@
 		minimum_knockback_force="100000"
 		>
 		<damage_multipliers
+			holy="1.7"
 			explosion="0.0"
 			electricity="0.6"
 			melee="1.2"
@@ -217,13 +218,13 @@
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
 
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
 
    	<LuaComponent
 		script_source_file="mods/apotheosis/files/scripts/animators/tentacle_verlet_limb_animator.lua"

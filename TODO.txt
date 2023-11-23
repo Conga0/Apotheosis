@@ -2,7 +2,6 @@ Remove ABBC anti-cheese after it goes to main
 Remove artifically adding meat realm to the biome list when the meat biome goes to main
 
 Check if the crypt ambience would be more fitting for ToSR
-Heretic is strangely silent during his special ending, investigate & fix so he speaks properly
 
 Kindly ask spoop to update the monolith & toxic worm achievement pillars (They look out of place when placed next to the other 4's updated graphics)
 
