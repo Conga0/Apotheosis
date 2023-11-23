@@ -77,15 +77,14 @@ if runtime == 0 then
     GamePlaySound( "data/audio/Desktop/music.bank", "music_reverb", pos_x, pos_y )
 
     --Speed talking -Spoop
-
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
 
     local luacomps = EntityGetComponent(heretic_id, "LuaComponent") or {}
     for i = 1, #luacomps do
- 	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
-    	    ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
-	end
+        if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
+                ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
+        end
     end
 
     GameAddFlagRun("apotheosis_heretalk_end_1")
@@ -121,7 +120,7 @@ end
 --Spawn vanishing Particles
 --Teleport player downwards
 --Disable their need for oxygen incase it isn't already done
-if runtime == 1535 then
+if runtime == 421 then
     --Vanish the Heretic
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
@@ -164,13 +163,15 @@ if runtime == 820 then
         EntityKill(v)
     end
 
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_01.xml", pos_x, pos_y - 175)
+    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/greed_curse/create", pos_x, pos_y )
+
+    --Conga 21/11/2023: This looks goofy
+    --EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_01.xml", pos_x, pos_y - 175)
 
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
 
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/brick_convert.xml", h_x, h_y)
-    GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/greed_curse/create", pos_x, pos_y )
 end
 
 if runtime == 1120 then
@@ -179,6 +180,8 @@ if runtime == 1120 then
     ComponentSetValue2(comp,"target_tag","player_unit")
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
     GameAddFlagRun("apotheosis_heretalk_end_3")
+
+    --ConvertMaterialEverywhere(CellFactory_GetType( "apotheosis_templebrick_static_invincible" ),CellFactory_GetType( "apotheosis_corrupt_flesh_static" ))
 end
 
 if runtime == 1540 then

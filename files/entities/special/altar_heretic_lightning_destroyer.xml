@@ -34,7 +34,7 @@
   <!-- fx -->
 
   <ParticleEmitterComponent 
-    emitted_material_name="spark_red_bright"
+    emitted_material_name="spark_blue"
     gravity.y="-1"
     lifetime_min="1"
     lifetime_max="2"
@@ -90,7 +90,7 @@
   <ParticleEmitterComponent 
     _enabled="0"
     _tags="enabled_in_world"
-    emitted_material_name="spark_red_bright"
+    emitted_material_name="spark_white"
     gravity.y="-1"
     lifetime_min="1"
     lifetime_max="2"

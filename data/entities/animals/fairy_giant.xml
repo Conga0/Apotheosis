@@ -6,7 +6,7 @@
 			attack_ranged_enabled="1"
 			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_fairy_colossal.xml"
 			attack_ranged_action_frame="5"
-			attack_ranged_state_duration_frames="48" 
+			attack_ranged_state_duration_frames="48"
 			attack_ranged_frames_between="360" 
 			attack_ranged_max_distance="250"
 			attack_ranged_offset_y="4.5"

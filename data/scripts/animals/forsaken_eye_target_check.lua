@@ -20,3 +20,7 @@ if ( comp ~= nil ) then
 		ComponentSetValue2( comp, "attack_ranged_predict", false )
 	end
 end
+
+if GameGetGameEffectCount( entity_id, "CHARM" ) > 0 then
+	EntityAddTag(entity_id,"evil_eye")
+end

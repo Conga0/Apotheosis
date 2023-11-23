@@ -59,13 +59,16 @@ do local v = heretic_stones[k]
 	end
 end
 
+--Conga 21/11/2023:
+--Double Solution problem is present here, eye can be redeemed both at the altar and somewhere else, and is very easy to interpret as being corrupt
+--$200 says someone gets mad when doing this doesn't count as "purifying corruption"
 if not GameHasFlagRun("heretic_near_death") then
-local heretic_eyes = EntityGetInRadiusWithTag(x,y,48,"apotheosis_heretic")
-for k=1,#heretic_eyes
-do local v = heretic_eyes[k]
-	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
-		EntityLoad("mods/apotheosis/files/entities/special/altar_heretic_lightning_destroyer.xml",x,y)
+	local heretic_eyes = EntityGetInRadiusWithTag(x,y,48,"apotheosis_heretic")
+	for k=1,#heretic_eyes
+	do local v = heretic_eyes[k]
+		local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
+		if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
+			EntityLoad("mods/apotheosis/files/entities/special/altar_heretic_lightning_destroyer.xml",x,y)
+		end
 	end
-end
 end

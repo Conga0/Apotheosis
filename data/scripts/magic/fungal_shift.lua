@@ -18,7 +18,7 @@ materials_from =
 	{ probability = 0.2, materials = { "steam", "smoke" } },
 	{ probability = 0.4, materials = { "sand" } },
 	{ probability = 0.4, materials = { "snow_sticky" } },
-	{ probability = 0.2, materials = { "apotheosis_cursed_liquid_red_static", "apotheosis_cursed_liquid_red" }, name_material = "apotheosis_cursed_liquid_red_static" },
+	{ probability = 0.2, materials = { "apotheosis_cursed_liquid_red_static", "apotheosis_cursed_liquid_red" }, name_material = "apotheosis_cursed_liquid_red" },
 	{ probability = 0.05, materials = { "rock_static" } },
 	{ probability = 0.0003, materials = { "gold", "gold_box2d" }, name_material = "gold" },
 }

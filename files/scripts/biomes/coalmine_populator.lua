@@ -231,7 +231,17 @@ table.insert(g_small_enemies,
 })
 
 
+    --New Game +++
 
+table.insert(g_small_enemies,
+{
+    prob           = 1.2,
+    min_count    = 7,
+    max_count    = 7,    
+    entity     = "data/entities/animals/poring_holy.xml",
+    ngpluslevel = 3,
+    ng_exclusive = true,
+})
 
 
 
