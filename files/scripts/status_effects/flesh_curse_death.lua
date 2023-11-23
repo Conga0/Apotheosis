@@ -4,9 +4,6 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local entity_id    = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( entity_id )
 
-	local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
-	ComponentSetValue2(comp,"ragdoll_fx_forced","DISINTEGRATED")
-
 	-- do some kind of an effect? throw some particles into the air?
 
 		

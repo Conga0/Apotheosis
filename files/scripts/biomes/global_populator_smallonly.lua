@@ -199,38 +199,3 @@ table.insert(g_small_enemies,
         end
     end,
 })
-
-
-
-
-
-
-
-
---Parallel World Bosses
-table.insert(g_small_enemies,
-{
-    prob           = 0.01,
-    min_count    = 1,
-    max_count    = 1,
-    parallel     = true,
-    entity     = "data/entities/animals/parallel/alchemist/parallel_alchemist.xml"
-})
-
-table.insert(g_small_enemies,
-{
-    prob           = 0.01,
-    min_count    = 1,
-    max_count    = 1,
-    parallel     = true,
-    entity     = "data/entities/animals/parallel/tentacles/parallel_tentacles.xml"
-})
-
-table.insert(g_small_enemies,
-{
-    prob           = 0.01,
-    min_count    = 1,
-    max_count    = 1,
-    parallel     = true,
-    entity     = "data/entities/animals/parallel_apotheosis/boss_toxic_worm/boss_toxic_worm.xml"
-})

@@ -293,32 +293,31 @@ local orb_1 = 0xFFFFD105
 local orb_2 = 0xFFFFD106
 local orb_3 = 0xFFFFD107
 
---Top of the Pyramid
+-- pyramid at 51,11
 local orb_pyramid = 0xFFC88F5F
 BiomeMapSetPixel( 10, 11, orb_pyramid )
 orb_list[1] = {10,11}
 
---Floating Island
+-- floating island
 local orb_floating_island = 0xFFC08082
-BiomeMapSetPixel( 52, 11, orb_floating_island )
+BiomeMapSetPixel( 33, 11, orb_floating_island )
 orb_list[2] = {52,11}
 
 local x = 0
 local y = 0
-
---Sub terrain woodland
+-- vault 2 
 local orb_vault2 = 0xFFFFD102
 x = 28 + Random( 0, 6 )
 y = 15 + Random( 0, 4 )
 BiomeMapSetPixel( x, y, orb_vault2 )
 orb_list[3] = {x,y}
 
---Bottom of the Pyramid (sandcave)
+-- inside pyramid
 local orb_inside_pyramid = 0xFFFFD104
 BiomeMapSetPixel( 10, 18, orb_inside_pyramid )
 orb_list[4] = {x,y}
 
---Wizard's Den
+-- hell
 local orb_hell = 0xFFFFD108
 x = Random( 0, 11 ) + 44
 y = Random( 0, 3 ) + 43
@@ -326,14 +325,14 @@ if( newgame_n == 3 or newgame_n >= 25 ) then y = 47 end
 BiomeMapSetPixel( x, y, orb_hell )
 orb_list[5] = {x,y}
 
---Snowy Chasm
+-- snowcave bottom
 local orb_snowcave_bottom = 0xFFFFD109
 x = Random( 0, 12 ) + 77
 y = Random( 0, 7 ) + 39
 BiomeMapSetPixel( x, y, orb_snowcave_bottom )
 orb_list[6] = {x,y}
 
---Temple of the Art
+-- desert bottom
 local orb_desert_bottom = 0xFFFFD110
 x = Random( 0, 6 ) + 67
 y = Random( 0, 9 ) + 36
@@ -341,43 +340,30 @@ BiomeMapSetPixel( x, y, orb_desert_bottom )
 orb_list[7] = {x,y}
 
 
---Sink Hole
+-- TODO (nuke)
 local orb_room_nuke = 0xFFFFD103
-x = Random( 0, 6 ) + 75
-y = Random( 0, 7 ) + 16
+x = Random( 0, 34 ) + 58
+y = Random( 0, 6 ) + 6
 BiomeMapSetPixel( x, y, orb_room_nuke )
 orb_list[8] = {x,y}
 
---Sink Hole
---[[
 x = Random( 0, 6 ) + 75
 y = Random( 0, 7 ) + 16
 BiomeMapSetPixel( x, y, orb_1 )
 orb_list[9] = {x,y}
-]]--
 
---Fungal Caverns
 x = Random( 0, 7 ) + 87
 y = Random( 0, 2 ) + 17
 BiomeMapSetPixel( x, y, orb_2 )
 orb_list[10] = {x,y}
 
---The Lake
 x = Random( 0, 4 ) + 21
 y = Random( 0, 20 ) + 17
 BiomeMapSetPixel( x, y, orb_3 )
 orb_list[11] = {x,y}
 
-
---Updates other orb locations
-orb_list[12] = {92,32}	--ToSR
-orb_list[13] = {9,32}	--Sunken Cavern
-orb_list[14] = {33,42}	--Virulent Caverns
-orb_list[15] = {69,16}	--Forest Chasm
-
-
 for i,v in pairs(orb_list) do
-	local x2 = v[1] - 51
+	local x2 = v[1] - 32
 	local y2 = v[2] - 14
 	
 	v[1] = x2
@@ -391,9 +377,9 @@ local color_boss_arena = 0xFF14EED7
 
 BiomeMapSetPixel( 44, 43, color_end_room )
 
---paint_biome_area( 35, 38, 5, 2, color_boss_arena )
---BiomeMapSetPixel( 37, 40, color_boss_arena )
---BiomeMapSetPixel( 38, 40, color_boss_arena )
+paint_biome_area( 35, 38, 5, 2, color_boss_arena )
+BiomeMapSetPixel( 37, 40, color_boss_arena )
+BiomeMapSetPixel( 38, 40, color_boss_arena )
 
 local world_state_entity = GameGetWorldStateEntity()
 local comp = EntityGetComponent( world_state_entity, "WorldStateComponent" )

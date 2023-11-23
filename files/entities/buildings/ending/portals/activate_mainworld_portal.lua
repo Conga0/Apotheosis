@@ -15,7 +15,7 @@ function item_pickup( entity_item, entity_who_picked, name )
     do local v = sampo[k]
         EntityKill(v)
         Activate(portal_id)
-        GameAddFlagRun("apotheosis_heretalk_portal_complete")
+	GameAddFlagRun("apotheosis_heretalk_portal_complete")
         GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet_lightning/create", pos_x, pos_y )
         GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )
         GameTriggerMusicEvent( "music/oneshot/dark_03", true, pos_x, pos_y )

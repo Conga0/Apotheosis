@@ -23,7 +23,7 @@
       is_circle="1"
       radius="150" 
 	  loop="1"
-      from_material="apotheosis_meat_heretic"
+      from_material="meat"
       to_material="blood"
 	  >
     </MagicConvertMaterialComponent>

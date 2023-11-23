@@ -277,10 +277,6 @@ end)
 ---------------------------Add Modded spells to vanilla liquids below------------------------------------------------------------------------------------------------------------------------------------
 
 add_spells_to_effect("water", { "APOTHEOSIS_LIQUIDSPHERE_WATER" })
-add_spells_to_effect("water", { "APOTHEOSIS_WATER_POWER" })
-add_spells_to_effect("fire", { "APOTHEOSIS_FIRE_POWER" })
-add_spells_to_effect("lava", { "APOTHEOSIS_FIRE_POWER" })
-add_spells_to_effect("blood", { "APOTHEOSIS_BLOOD_POWER" })
 add_spells_to_effect("acid", { "APOTHEOSIS_LIQUIDSPHERE_ACID" })
 add_spells_to_effect("magic_liquid_teleportation", { "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM" })
 add_spells_to_effect("magic_liquid_unstable_teleportation", { "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM" })

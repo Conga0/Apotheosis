@@ -442,6 +442,13 @@ g_pixel_scene_02 =
 {
 	total_prob = 0,
 	{
+		prob   			= 0.4,
+		material_file 	= "data/biome_impl/snowcave/crater.png",
+		visual_file		= "data/biome_impl/snowcave/crater_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
 		prob   			= 0.5,
 		material_file 	= "data/biome_impl/snowcave/horizontalobservatory.png",
 		visual_file		= "data/biome_impl/snowcave/horizontalobservatory_visual.png",
@@ -460,6 +467,13 @@ g_pixel_scene_02 =
 		material_file 	= "data/biome_impl/snowcave/horizontalobservatory3.png",
 		visual_file		= "data/biome_impl/snowcave/horizontalobservatory3_visual.png",
 		background_file	= "data/biome_impl/snowcave/horizontalobservatory3_background.png",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/snowcave/icepillar.png",
+		visual_file		= "",
+		background_file	= "",
 		is_unique		= 0
 	},
 	{
@@ -493,6 +507,13 @@ g_pixel_scene_03 =
 		material_file 	= "data/biome_impl/snowcave/tinyobservatory2.png",
 		visual_file		= "data/biome_impl/snowcave/tinyobservatory2_visual.png",
 		background_file	= "data/biome_impl/snowcave/tinyobservatory2_background.png",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.2,
+		material_file 	= "data/biome_impl/snowcave/buried_eye.png",
+		visual_file		= "",
+		background_file	= "",
 		is_unique		= 0
 	},
 }

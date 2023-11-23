@@ -113,7 +113,7 @@ local events = {
     {
         --2 Just after being slain
         trigger = function()
-            local d_opts = {"Kirottu!","Royhkea!"}
+            local d_opts = {"Kirottu!","Röyhkeä-!"}
             local dialogue = d_opts[math.random(1,#d_opts)]
 	    tone = "power"
             rate = 2
@@ -621,7 +621,7 @@ local events = {
             local currbiome = BiomeMapGetName( x, y )
             currbiome = tostring(currbiome)
             if currbiome == "$biome_orbroom" then
-                local d_opts = {"I was never very fond of these...","I believe more in finding your own knowledge.","I remember these tablets being made of stone."}
+                local d_opts = {"I was never very fond of these...","I believe more in finding your own knowledge."}
                 local dialogue = d_opts[math.random(1,#d_opts)]
                 return true, dialogue
             else
@@ -1944,7 +1944,7 @@ local events = {
             local corrupt_death = EntityGetInRadiusWithTag( x, y, 175, "curse" ) or {}
             for cd=1,#corrupt_death do
                 if EntityGetName(corrupt_death[cd]) == "wizard_corrupt_death_check" then
-                    local d_opts = {"You couldn't stop at me, could you?", "How humane of you...", "They're undeserving of this.", "Have you no honor for the pained?", "Was their current punishment not enough to you?"}
+                    local d_opts = {"You couldn't stop at me, could you?", "How humane of you...", "They’re undeserving of this.", "Have you no honor for the pained?", "Was their current punishment not enough to you?"}
                     local dialogue = d_opts[math.random(1,#d_opts)]
                     GameRemoveFlagRun("apotheosis_heretalk_id_105")
                     return true, dialogue
@@ -1959,7 +1959,7 @@ local events = {
             local corrupt_death = EntityGetInRadiusWithTag( x, y, 175, "curse" ) or {}
             for cd=1,#corrupt_death do
                 if EntityGetName(corrupt_death[cd]) == "wizard_corrupt_death_check" then
-                    local d_opts = {"You couldn't stop at me, could you?", "How humane of you...", "They're undeserving of this.", "Have you no honor for the pained?", "Was their current punishment not enough to you?"}
+                    local d_opts = {"You couldn't stop at me, could you?", "How humane of you...", "They’re undeserving of this.", "Have you no honor for the pained?", "Was their current punishment not enough to you?"}
                     local dialogue = d_opts[math.random(1,#d_opts)]
                     GameRemoveFlagRun("apotheosis_heretalk_id_105")
                     return true, dialogue

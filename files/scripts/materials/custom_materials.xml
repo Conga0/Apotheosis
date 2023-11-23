@@ -851,7 +851,7 @@
 	>
   </CellDataChild>
 
-<CellDataChild
+  <CellDataChild
   	_parent="apotheosis_blood_infectious"
   	_inherit_reactions="1"
   	tags="[corrodible],[soluble],[blood],[impure],[liquid_common],[food]"
@@ -2055,9 +2055,9 @@
 	>
 	</Graphics>
 	<StatusEffects>
-			<Ingestion>
-				<StatusEffect type="apotheosis_FLESH_CURSE" amount="0.3" />
-			</Ingestion>
+		<Ingestion>
+			<StatusEffect type="apotheosis_FLESH_CURSE" amount="0.3" />
+		</Ingestion>
 	</StatusEffects>
   </CellDataChild>
 
@@ -2607,19 +2607,19 @@
 	audio_is_soft="1"
 	show_in_creative_mode="1"
 	>
-     <Graphics
+    <Graphics
 	texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh.png"
 	color="ffcc4c4c"
 	pixel_all_around="ffcc4c4c"
-
+	
 	pixel_lonely="ffcc4c4c"
 	pixel_top_right="ffcc4c4c"
 	pixel_bottom_left="ffcc4c4c"
-
+	
 	pixel_left="ffc996e6"
 	pixel_top_left="ffc996e6"
 	pixel_top="ffc996e6"
-
+	
 	pixel_right="ff8f4d53"
 	pixel_bottom_right="ff8f4d53"
 	pixel_bottom="ff8f4d53"
@@ -2627,7 +2627,7 @@
     </Graphics>
   </CellData>
 
-<CellData
+  <CellData
 	name="apotheosis_meat_heretic"
 	ui_name="$material_apotheosis_corruptflesh"
   	tags="[box2d],[solid],[food],[meat]"
@@ -2657,7 +2657,7 @@
 	texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh.png"
 	color="ffcc4c4c"
 	pixel_all_around="ffcc4c4c"
-
+	
 	pixel_lonely="ffcc4c4c"
 	pixel_top_right="ffcc4c4c"
 	pixel_bottom_left="ffcc4c4c"

@@ -2542,7 +2542,7 @@ local actions_to_edit = {
     },
 
     -- Copi: describe this
-    -- Reduced mana cost of Intense Concentrated Light to be more appropriate for it's functionality & spell tier
+    -- Reduced mana cost of Concentrated Light to be more appropriate for it's functionality & spell tier
     ["MEGALASER"] = {
         mana = 80
     },
