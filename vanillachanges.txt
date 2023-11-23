@@ -37,6 +37,10 @@ If you're confused why something feels different, this list may help you identif
 * You can now eat from pouches in the inventory
 * Ants now only take 1 damage per hit, for consistency with apotheosis ants
 * Vampirism is now buffed to scale off of the player's maximum hp
+* Parallel worlds can now spawn NG+ enemies
+* Parallel world bosses can now appear below ground
+* Kolmisilma and his minions gain new abilities at high orb counts
+* Kolmisilma can now clear slime and water
 * Gemmed necklace cosmetic now requires 46 orbs
 
 * Vanilla rework or change

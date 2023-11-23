@@ -192,6 +192,7 @@
 	
 	<LuaComponent
 		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
 		script_source_file="mods/Apotheosis/files/scripts/animals/wizard_corrupt_neutral_aura.lua"
 		execute_every_n_frame="601"
 		>

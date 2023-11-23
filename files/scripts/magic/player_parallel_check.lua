@@ -12,10 +12,10 @@ if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" then
     do local v = comps[k]
         GlobalsSetValue("apotheosis_plane_fail", "1")
         GameScreenshake( 200 )
-        if ComponentGetValue2(v,"script_source_file") == "mods/apotheosis/files/scripts/magic/player_parallel_check.lua" then   --Turn self off
-            EntitySetComponentIsEnabled(entity_id,v,false)
-            break
-        end
+        --if ComponentGetValue2(v,"script_source_file") == "mods/apotheosis/files/scripts/magic/player_parallel_check.lua" then   --Turn self off
+        --    EntitySetComponentIsEnabled(entity_id,v,false)
+        --    break
+        --end
     end
 end
 

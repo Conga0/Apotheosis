@@ -58,6 +58,15 @@
         entity     = "data/entities/animals/eye_forsaken_orbit.xml"
     })
 
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.02,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/eye_forsaken_orbit.xml",
+        ngpluslevel = 1
+    })
+
 
 
     --Small enemies

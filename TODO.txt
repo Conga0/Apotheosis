@@ -1,5 +1,13 @@
 Remove ABBC anti-cheese after it goes to main
 Remove artifically adding meat realm to the biome list when the meat biome goes to main
 
-ending cheese
-note: description is intentionally vague so the snoopers don't know
+Check if the crypt ambience would be more fitting for ToSR
+Heretic is strangely silent during his special ending, investigate & fix so he speaks properly
+
+Kindly ask spoop to update the monolith & toxic worm achievement pillars (They look out of place when placed next to the other 4's updated graphics)
+
+Attain updated Fmod folder so Heretic's talk doesn't disappear if the audio needs to be updated again in the future
+Make the Esoteric Beam explosion sound quieter, abnormally loud in it's current state
+
+Fix Forsaken Eyes not being stainable
+Fixed healing being infinite with wand refresh in hardcore

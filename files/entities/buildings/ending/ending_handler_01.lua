@@ -84,7 +84,6 @@ if runtime == 0 then
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
 
     --Speed talking -Spoop
-
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
 
@@ -137,7 +136,7 @@ if runtime == 420 then
         end
         if EntityGetName(v) == "i_love_you" then
             EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_divine.xml", con_x, con_y)
-        elseif EntityGetName(v) == "i_love_growth" then
+        elseif EntityGetName(v) == "i_love_myworld" then
             EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_nature.xml", con_x, con_y)
         elseif EntityGetName(v) == "i_love_magic" then
             EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_magic.xml", con_x, con_y)
