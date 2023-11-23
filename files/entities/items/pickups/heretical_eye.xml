@@ -209,5 +209,5 @@
 		render_ultrabright="0"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
-	
+
 </Entity>

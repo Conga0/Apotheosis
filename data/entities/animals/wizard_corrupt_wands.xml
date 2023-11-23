@@ -151,6 +151,11 @@
 		event_root="animals/wizard" >
 	</AudioComponent>
 
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
+		>
+	</LuaComponent>
+
 	<Entity name="cape">  
         <Base file="data/entities/verlet_chains/cape/cape.xml">
 			<VerletPhysicsComponent

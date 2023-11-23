@@ -120,7 +120,7 @@ end
 --Spawn vanishing Particles
 --Teleport player downwards
 --Disable their need for oxygen incase it isn't already done
-if runtime == 421 then
+if runtime == 1535 then
     --Vanish the Heretic
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
