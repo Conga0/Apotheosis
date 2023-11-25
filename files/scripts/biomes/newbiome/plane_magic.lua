@@ -66,7 +66,7 @@ g_small_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/planes/devourer_magic.xml"
+		entity 	= "data/entities/animals/planes/devourer_planes.xml"
 	},
 }
 
@@ -75,12 +75,18 @@ g_big_enemies =
 	total_prob = 0,
 	-- this is air, so nothing spawns at 0.6
 	{
-		prob   		= 0.2,
+		prob   		= 0.15,
 		min_count	= 0,
 		max_count	= 0,    
 		entity 	= ""
 	},
 	-- add Aesthete of Heat after this step
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/planes/whisp_giga.xml"
+	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,

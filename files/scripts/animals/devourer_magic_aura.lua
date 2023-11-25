@@ -27,7 +27,7 @@ if frozenTest <= 0 then
 		if EntityGetParent(v) == 0 then
 			if ComponentGetValue2(comp,"image_file") == "data/items_gfx/goldnugget_01.png" and converted == false then
 				converted = true
-					EntityLoad("data/entities/animals/planes/devourer_magic.xml",x,y)
+					EntityLoad("data/entities/animals/planes/devourer_planes.xml",x,y)
 					EntityKill(entity_id)
 				break
 			end

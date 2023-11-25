@@ -1077,7 +1077,7 @@ biome_modifiers =
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/animals/planes/devourer_magic.xml",
+				entity 	=  "mods/apotheosis/files/entities/animals/planes/devourer_planes.xml",
 			})
 		end,
 	},

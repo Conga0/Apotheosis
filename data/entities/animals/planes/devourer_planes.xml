@@ -1,0 +1,8 @@
+<Entity>
+  <Base file="data/entities/animals/devourer_planes.xml" include_children="1" >
+  </Base>
+
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+</Entity>

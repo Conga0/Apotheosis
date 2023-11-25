@@ -25,4 +25,4 @@ function damage_about_to_be_received(damage, x, y, entity_thats_responsible, cri
       EntityLoad(fairy_version, x, y)
     end
     return damage, critical_hit_chance
-  end
+end

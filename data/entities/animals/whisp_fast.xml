@@ -1,0 +1,20 @@
+<Entity>
+  <Base file="data/entities/animals/whisp.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="10"
+      max_hp="10"
+     ></DamageModelComponent >
+  </Base>
+
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent
+			effect="MOVEMENT_FASTER_2X"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+
+</Entity>
+

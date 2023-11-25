@@ -1974,10 +1974,14 @@ local events = {
             local currbiome = BiomeMapGetName( x, y )
             currbiome = tostring(currbiome)
             local heretic_body = EntityGetFirstComponentIncludingDisabled(entity_id,"PhysicsBodyComponent")
-            if currbiome == "$biome_plane_yggdrasil" or currbiome == "$biome_plane_magic" or currbiome == "$biome_plane_technology" and EntityGetParent(entity_id) == 0 and ComponentGetIsEnabled( heretic_body ) == true then
-            	local d_opts = {"Hm? What is it?"}
-            	local dialogue = d_opts[math.random(1,#d_opts)]
-            	return true, dialogue
+            if EntityGetParent(entity_id) == 0 and ComponentGetIsEnabled( heretic_body ) == true then
+                if currbiome == "$biome_plane_yggdrasil" or currbiome == "$biome_plane_magic" or currbiome == "$biome_plane_technology" then
+            	    local d_opts = {"Hm? What is it?"}
+            	    local dialogue = d_opts[math.random(1,#d_opts)]
+                    return true, dialogue
+		else
+                    return false
+		end
             else
                 return false
             end
@@ -1990,11 +1994,14 @@ local events = {
             local currbiome = BiomeMapGetName( x, y )
             currbiome = tostring(currbiome)
             local heretic_body = EntityGetFirstComponentIncludingDisabled(entity_id,"PhysicsBodyComponent")
-            if currbiome == "$biome_plane_yggdrasil" or currbiome == "$biome_plane_magic" or currbiome == "$biome_plane_technology" and EntityGetParent(entity_id) == 0 and ComponentGetIsEnabled( heretic_body ) == true then
-            	local d_opts = {"I would prefer not being left under the will of the gods."}
-            	local dialogue = d_opts[math.random(1,#d_opts)]
-		tone = "power"
-            	return true, dialogue
+            if EntityGetParent(entity_id) == 0 and ComponentGetIsEnabled( heretic_body ) == true then
+                if currbiome == "$biome_plane_yggdrasil" or currbiome == "$biome_plane_magic" or currbiome == "$biome_plane_technology" then
+            	    local d_opts = {"I would prefer not being left under the will of the gods."}
+            	    local dialogue = d_opts[math.random(1,#d_opts)]
+                    return true, dialogue
+		else
+                    return false
+		end
             else
                 return false
             end

@@ -853,7 +853,6 @@
 
 <CellDataChild
   	_parent="apotheosis_blood_infectious"
-  	_inherit_reactions="1"
   	tags="[corrodible],[soluble],[blood],[impure],[liquid_common],[food]"
   	name="apotheosis_blood_infectious_fading_slow" 
 	ui_name="$material_apotheosis_blood_infectous"
@@ -2898,6 +2897,18 @@
 	<Reaction probability="100"
 		input_cell1="apotheosis_blood_infectious" 		input_cell2="[slime]"
 		output_cell1="apotheosis_blood_infectious"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+
+	<Reaction probability="100"
+		input_cell1="apotheosis_blood_infectious_fading_slow" 		input_cell2="[liquid]"
+		output_cell1="apotheosis_blood_infectious_fading_slow"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+
+	<Reaction probability="100"
+		input_cell1="apotheosis_blood_infectious_fading_slow" 		input_cell2="[slime]"
+		output_cell1="apotheosis_blood_infectious_fading_slow"	output_cell2="apotheosis_blood_infectious"
 		>
 	</Reaction>
 
