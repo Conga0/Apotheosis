@@ -220,7 +220,7 @@
 		death_throw_particle_velocity_coeff="0.5"
 		>
 		<count_per_material_type>
-		<Material material="magic_liquid_protection_all" count="1200"  />
+		<Material material="apotheosis_magic_liquid_divine" count="1200"  />
 		</count_per_material_type>
 	</MaterialInventoryComponent>
 
