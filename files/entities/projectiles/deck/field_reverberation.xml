@@ -48,12 +48,9 @@
 		<SpriteComponent 
 			image_file="mods/Apotheosis/files/projectiles_gfx/blast_reverberation.xml" >
 		</SpriteComponent>
-		
-		<LifetimeComponent
-			lifetime="110" >
-		</LifetimeComponent>
 
 	<SpriteParticleEmitterComponent
+		_tags="invincible"
 		sprite_file="data/particles/note_$[1-4].xml"
 		delay="0"
 		lifetime="1.5"
@@ -87,6 +84,7 @@
 		<ProjectileComponent 
 			damage_game_effect_entities=""
 			friendly_fire="1"
+			lifetime="110"
 			collide_with_shooter_frames="0" >
 			<config_explosion
 				explosion_sprite="data/particles/blast_out_regeneration.xml" >
@@ -101,6 +99,7 @@
 	</Base>
 
 	<SpriteParticleEmitterComponent
+		_tags="invincible"
 		sprite_file="data/particles/note_$[1-4].xml"
 		delay="0"
 		lifetime="1.5"
@@ -136,6 +135,7 @@
 	</SpriteParticleEmitterComponent>
 
 	<SpriteParticleEmitterComponent
+		_tags="invincible"
 		sprite_file="data/particles/note_$[1-4].xml"
 		delay="0"
 		lifetime="1.5"
@@ -179,16 +179,24 @@
 
 	<LightComponent 
 		_tags="musical_stone"
-	_enabled="1" 
-	radius="0" 
-	r="30"
-	g="30"
-	b="60">
+		_enabled="1" 
+		radius="0" 
+		r="30"
+		g="30"
+		b="60">
 	</LightComponent>
+	
+	<LuaComponent
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/projectiles/reverberation_check.lua"
+		execute_every_n_frame="1"
+		execute_times="1"
+		>
+	</LuaComponent>
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/Apotheosis/files/entities/projectiles/deck/reverberation.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/field_reverberation.xml"
 		>
 	</VariableStorageComponent>
 

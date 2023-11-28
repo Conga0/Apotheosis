@@ -1200,6 +1200,15 @@ do --Increase Parallel World Boss hp depending on PW count
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do --Add Steve & Skoude creature shifting compatibility
+  local path = "data/scripts/animals/necromancer_shop_spawn.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_shop.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_steve_filepath\", \"data/entities/animals/necromancer_shop.xml\" ), pos_x, pos_y)")
+  content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_super.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_skoude_filepath\", \"data/entities/animals/necromancer_super.xml\" ), pos_x, pos_y)")
+
+  ModTextFileSetContent(path, content)
+end
+
 --Post Ascension reward
 --[[
 if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("apotheosis_card_unlocked_sea_to_potion") == false then

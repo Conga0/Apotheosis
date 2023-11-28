@@ -1,0 +1,300 @@
+<Entity name="Kolossaalinenpalavakeiju" tags="ui_use_raw_name">
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent
+			attack_melee_enabled="0"
+			attack_ranged_enabled="1"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/whisp_giga_dash.xml"
+			attack_ranged_action_frame="11"
+			attack_ranged_state_duration_frames="90" 
+			attack_ranged_frames_between="130" 
+			attack_ranged_max_distance="250"
+			attack_ranged_offset_y="4.5"
+			escape_if_damaged_probability="0"
+			needs_food="0"
+			can_fly="1"
+			aggressiveness_min="1"
+			aggressiveness_max="100" >
+		</AnimalAIComponent>
+
+		<DamageModelComponent 
+		_tags="lurker_data"
+            hp="200"
+			air_needed="1"
+			ragdollify_child_entity_sprites="0"
+            ragdoll_material="fire"
+            ragdoll_filenames_file="" 
+			fire_probability_of_ignition="0"
+			blood_material="fire"
+			blood_spray_material="fire"
+			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_green_$[1-3].xml"
+			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_green_$[1-3].xml"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,water,water_swamp,water_salt,mud,water_ice,snow,slime,slime_green,acid,water_fading" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005,0.005"
+			>
+			<damage_multipliers
+				explosion="0.0"
+				fire="0.0" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+		_tags="lurker_data"
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+		_tags="lurker_data"
+			image_file="mods/Apotheosis/files/enemies_gfx/whisp_giga.xml"
+			offset_x="0"
+			offset_y="0" >
+		</SpriteComponent>
+		
+		<HitboxComponent 
+            	_tags="lurker_data"
+			_enabled="1" 
+			aabb_min_x="-6" 
+			aabb_max_x="6" 
+			aabb_min_y="-6" 
+			aabb_max_y="6" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>		
+		
+		<GenomeDataComponent 
+			herd_id="ghost_whisp" >
+		</GenomeDataComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-9" 
+			collision_aabb_max_x="9" 
+			collision_aabb_min_y="-9" 
+			collision_aabb_max_y="9" 
+			mass="0.3"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<AIAttackComponent
+		min_distance="0"
+		max_distance="250"
+		frames_between="130"
+		frames_between_global="130"
+		state_duration_frames="90"
+		attack_ranged_action_frame="11"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/whisp_giga_dash.xml"
+		animation_name="attack_ranged"
+		attack_ranged_entity_count_min="1"
+		attack_ranged_entity_count_max="1"
+		attack_ranged_offset_y="0"
+		attack_ranged_offset_x="0"
+		>
+	</AIAttackComponent>
+
+	<AIAttackComponent
+		min_distance="20"
+		max_distance="300"
+		frames_between="1110"
+		frames_between_global="130"
+		state_duration_frames="78"
+		attack_ranged_action_frame="14"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/whisp_giga_sawblade.xml"
+		animation_name="attack_spin"
+		attack_ranged_entity_count_min="1"
+		attack_ranged_entity_count_max="1"
+		attack_ranged_offset_y="0"
+		attack_ranged_offset_x="0"
+		>
+	</AIAttackComponent>
+
+	<SpriteComponent
+		_tags="character,lurker_data" 
+		alpha="0.8" 
+		image_file="mods/Apotheosis/files/enemies_gfx/whisp_giga_emissive.xml"
+		emissive="1"
+		additive="1"
+		offset_x="0"
+		offset_y="0"
+		next_rect_animation="" 
+		rect_animation="stand" 
+		>
+	</SpriteComponent>
+	
+	<SpriteComponent 
+		_tags="character,lurker_data" 
+		alpha="0.55"
+		image_file="data/particles/fog_of_war_hole_128.xml"
+		smooth_filtering="1"
+		fog_of_war_hole="1"
+		>
+	</SpriteComponent>
+
+	<LuaComponent
+		script_shot="data/scripts/animals/lurkershot_start.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<LightComponent 
+	    _tags="lurker_data" 
+	    _enabled="1" 
+	    radius="650" 
+		r="255"
+		g="126"
+		b="53"
+		fade_out_time="2.5"
+		>
+    </LightComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/fireskull/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+  <AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="player_projectiles/meteor/loop"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	    <AudioComponent
+        file="mods/Apotheosis/mocreeps_audio.bank"
+        event_root="mocreeps_audio/animals/whisp_giga" >
+    </AudioComponent>
+
+    <LuaComponent
+        execute_every_n_frame="-1"
+        script_death="data/scripts/items/drop_money.lua"
+        remove_after_executed="1" >
+    </LuaComponent>
+
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="[burnable]"
+      steps_per_frame="20"
+      to_material="fire"
+      is_circle="1"
+      radius="30" >
+    </MagicConvertMaterialComponent>
+
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      from_material_tag="[corrodible]"
+      steps_per_frame="2"
+      reaction_audio_amount="0.005"
+      to_material="fire"
+      is_circle="1"
+      radius="25" >
+    </MagicConvertMaterialComponent>
+
+	<DamageNearbyEntitiesComponent
+		radius="15"
+		time_between_damaging="4"
+		damage_max="0.13"
+		damage_max="0.13"
+		target_tag="mortal"
+		damage_description="Kolossaalinenpalavakeiju fire"
+		damage_type="DAMAGE_FIRE"
+		ragdoll_fx="NONE">
+	</DamageNearbyEntitiesComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="lurker_data"
+		emitted_material_name="fire"
+		count_min="3"
+		count_max="7"
+		offset.x="0"
+		offset.y="-0.5"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		count_min="8"
+		count_max="8"
+		lifetime_min="0.4"
+		lifetime_max="1.0"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="3"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+  
+	<ParticleEmitterComponent 
+		_tags="lurker_data"
+		emitted_material_name="fire"
+		custom_style="FIRE"
+		count_min="3"
+		count_max="7"
+		offset.x="0"
+		offset.y="-0.5"
+		x_pos_offset_min="-4"
+		y_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_max="4"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		count_min="8"
+		count_max="8"
+		lifetime_min="0.4"
+		lifetime_max="1.0"
+		create_real_particles="1"
+		emit_cosmetic_particles="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LuaComponent
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/fairy_kill.lua"
+        	script_death="mods/Apotheosis/files/scripts/animals/whisp_giga_death.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="fairy_version"
+		value_string="data/entities/animals/fairy_giant.xml"
+	></VariableStorageComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent
+			effect="PROTECTION_FREEZE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+
+	    <GameEffectComponent 
+	    	effect="KNOCKBACK_IMMUNITY"
+	    	frames="-1"
+	    >
+	    </GameEffectComponent>
+	</Entity>
+	
+</Entity>
+

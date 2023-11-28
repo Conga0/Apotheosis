@@ -1,0 +1,84 @@
+<Sprite
+ filename="mods/Apotheosis/files/enemies_gfx/whisp_giga.png"
+ offset_x="45"
+ offset_y="46"
+ default_animation="stand" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="8"
+  frame_width="91"
+  frame_height="87"
+  frame_wait="0.1"
+  frames_per_row="8"
+  loop="1"   >
+ </RectAnimation>
+
+  <RectAnimation 
+    frame_count="15" 
+    frame_height="87" 
+    frame_wait="0.075" 
+    frame_width="91" 
+    frames_per_row="15" 
+    loop="0" 
+    name="attack_ranged"
+    pos_x="0" 
+    pos_y="88" >
+
+	<Event 
+      check_physics_material="0" 
+      frame="1" 
+      max_distance="500" 
+      name="voc_shoot" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+    <Event 
+      check_physics_material="0" 
+      frame="11" 
+      max_distance="500" 
+      name="shoot_laser" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="17" 
+    frame_height="87" 
+    frame_wait="0.075" 
+    frame_width="91" 
+    frames_per_row="17" 
+    loop="0" 
+    name="attack_spin"
+    pos_x="0" 
+    pos_y="264" >
+
+	<Event 
+      check_physics_material="0" 
+      frame="1" 
+      max_distance="500" 
+      name="voc_shoot" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+    <Event 
+      check_physics_material="0" 
+      frame="15" 
+      max_distance="500" 
+      name="shoot_laser" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+</Sprite>

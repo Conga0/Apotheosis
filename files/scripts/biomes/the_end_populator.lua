@@ -106,6 +106,17 @@ end
 
 
 
+table.insert(g_big_enemies_sky,
+{
+    prob           = 0.03,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/poring_holy_arch.xml"
+})
+
+
+--Too difficult to see, bight pixels on bright background
+--[[
 table.insert(g_small_enemies_sky,
 {
     prob           = 0.01,
@@ -121,6 +132,7 @@ table.insert(g_small_enemies_sky,
     max_count    = 1,
     entity     = "data/entities/buildings/the_end/polymorph_crystal.xml"
 })
+]]--
 
 
 

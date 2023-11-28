@@ -1,0 +1,66 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/poring_holy_arch.png" 
+  offset_x="14" 
+  offset_y="20"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="5" 
+    frame_height="24" 
+    frame_wait="0.2" 
+    frame_width="30" 
+    frames_per_row="8" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="5" 
+    frame_height="24" 
+    frame_wait="0.1" 
+    frame_width="30" 
+    frames_per_row="8" 
+    loop="0" 
+    name="attack" 
+    pos_x="0" 
+    pos_y="75"  >
+
+    <Event 
+      check_physics_material="0" 
+      frame="3" 
+      max_distance="500" 
+      name="bite" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+    <Event 
+      check_physics_material="0" 
+      frame="0" 
+      max_distance="500" 
+      name="voc_attack" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="5" 
+    frame_height="24" 
+    frame_wait="0.10" 
+    frame_width="30" 
+    frames_per_row="8" 
+    loop="0" 
+    name="attack_ranged" 
+    pos_x="0" 
+    pos_y="100"  >
+
+  </RectAnimation>
+
+</Sprite>
+

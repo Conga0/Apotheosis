@@ -146,7 +146,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/entities/projectiles/deck/disc_bullet_big.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/field_reverberation_visual.xml"
 		>
 	</VariableStorageComponent>
 

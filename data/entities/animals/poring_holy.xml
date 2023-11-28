@@ -19,7 +19,7 @@
 			attack_dash_distance="80"
 			attack_melee_enabled="1"
 			attack_ranged_enabled="1"
-			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_holy_shotgun_small.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_holy_shotgun_small_noff.xml"
 			attack_ranged_action_frame="2"
 			attack_ranged_frames_between="30"
 			attack_ranged_entity_count_min="5"
@@ -82,7 +82,7 @@
 
         <GenomeDataComponent 
             herd_id="ghost"
-			food_chain_rank="3"
+			food_chain_rank="1"
 			is_predator="1" >
         </GenomeDataComponent>
 

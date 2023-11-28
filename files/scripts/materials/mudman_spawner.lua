@@ -10,6 +10,7 @@ if filepath ~= "data/entities/animals/mudman_friendly.xml" then
 	EntityAddTag(eid,"c_shifted")
 end
 
+
 local charm_component = GetGameEffectLoadTo( eid, "CHARM", true )
 if( charm_component ~= nil ) then
 	ComponentSetValue( charm_component, "frames", -1 )

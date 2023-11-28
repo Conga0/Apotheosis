@@ -416,6 +416,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/poring_holy.png",
 	  },
 	  {
+		name="Arch Angeling",
+		path="data/entities/animals/poring_holy_arch.xml",
+		image="data/ui_gfx/animal_icons/poring_holy_arch.png",
+	  },
+	  {
 		name="Magic Poring",
 		path="data/entities/animals/poring_magic.xml",
 		image="data/ui_gfx/animal_icons/poring_magic.png",
@@ -494,6 +499,11 @@ table.insert(ALL_ENTITIES, {
 		name="Giant Will O' the Whisp",
 		path="data/entities/animals/whisp_big.xml",
 		image="data/ui_gfx/animal_icons/whisp_big.png",
+	  },
+	  {
+		name="Colossal Will O' the Whisp",
+		path="data/entities/animals/whisp_giga.xml",
+		image="data/ui_gfx/animal_icons/whisp_giga.png",
 	  },
 	  {
 		name="Master of Immortality",

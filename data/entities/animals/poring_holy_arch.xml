@@ -1,0 +1,234 @@
+<Entity name="Korkeajumalallinenhyytelö" tags="ui_use_raw_name">
+  
+    <Base file="data/entities/base_enemy_basic.xml" >
+        <ItemChestComponent level="1" > </ItemChestComponent>
+        
+        <AnimalAIComponent
+			_enabled="1" 
+			preferred_job="JobDefault"
+            sense_creatures="1"
+            attack_melee_max_distance="22"
+			attack_melee_action_frame="3"
+			attack_melee_damage_min="2" 
+			attack_melee_damage_max="2.2"
+			can_fly="1"
+			creature_detection_range_x="300"
+			creature_detection_range_y="400"
+			sense_creatures="1"
+			attack_dash_enabled="1"
+			attack_dash_distance="80"
+			attack_melee_enabled="1"
+			attack_ranged_enabled="1"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_holy_shotgun_small_noff.xml"
+			attack_ranged_action_frame="2"
+			attack_ranged_frames_between="30"
+			attack_ranged_entity_count_min="5"
+			attack_ranged_entity_count_max="7"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="40"
+			attack_ranged_max_distance="300" >
+        </AnimalAIComponent>
+        
+        <SpriteComponent 
+            image_file="mods/Apotheosis/files/enemies_gfx/poring_holy_arch.xml"
+            alpha="0.8" 
+            offset_x="0" 
+            offset_y="0" >
+        </SpriteComponent>
+
+        <DamageModelComponent
+            hp="300"
+            air_needed="0"
+            ragdoll_filenames_file=""
+			ragdoll_fx_forced="DISINTEGRATED"
+			blood_material="magic_liquid_random_polymorph"
+			blood_spray_material="magic_liquid_random_polymorph"
+			blood_multiplier="0.01"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid,poison"
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
+			>
+			<damage_multipliers
+				projectile="0.2"
+				explosive="0.5"
+				slice="0.5"
+				fire="0.5" 
+				ice="1.2"
+				>
+			</damage_multipliers>
+        </DamageModelComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="1" 
+			can_walk="0"
+			can_dive="1" 
+            cost_of_flying="500" 
+			can_swim_on_surface="0" 
+			jump_speed="150"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="90"
+			initial_jump_max_distance_y="90"
+			>
+		</PathFindingComponent>
+        
+        <CharacterPlatformingComponent 
+			jump_velocity_y="-15"
+			jump_velocity_x="-10"
+			run_velocity="0"
+			swim_idle_buoyancy_coeff="2.0"
+			swim_up_buoyancy_coeff="2.0"
+			swim_down_buoyancy_coeff="2.0" >
+        </CharacterPlatformingComponent>
+
+        <GenomeDataComponent 
+            herd_id="ghost"
+			food_chain_rank="3"
+			is_predator="1" >
+        </GenomeDataComponent>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+        
+        <HitboxComponent 
+            _enabled="1"
+			damage_multiplier="0.15"
+			aabb_min_x="-13" 
+            aabb_min_y="-14" 
+            aabb_max_x="13" 
+            aabb_max_y="4" 
+			>
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-13" 
+			collision_aabb_min_y="-14" 
+			collision_aabb_max_x="13" 
+			collision_aabb_max_y="4"
+			mass="1"
+			>
+		</CharacterDataComponent>
+    </Base>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/enemies_gfx/poring_angelring_accessories_nohalo.xml"
+		offset_x="27" 
+		offset_y="26" >
+	</SpriteComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="110" 
+    r="255"
+    g="252"
+    b="161"
+    fade_out_time="1.5"
+	offset_x="-4" 
+	offset_y="-5"
+    >
+  </LightComponent>
+
+	<SpriteComponent 
+		_tags="health_bar_back,ui,no_hitbox" 
+		_enabled="1" 
+		alpha="1" 
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_back.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="12" 
+		offset_y="22" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		z_index="-9000"
+		never_ragdollify_on_death="1"
+		 >
+	</SpriteComponent>
+
+	<SpriteComponent 
+		_tags="health_bar,ui,no_hitbox" 
+		_enabled="1" 
+		alpha="1" 
+		has_special_scale="1" 
+		image_file="data/ui_gfx/health_slider_front.png" 
+		is_text_sprite="0" 
+		next_rect_animation="" 
+		offset_x="11" 
+		offset_y="22" 
+		rect_animation="" 
+		special_scale_x="1" 
+		special_scale_y="1" 
+		ui_is_parent="0" 
+		update_transform="1" 
+		visible="1" 
+		z_index="-9000"
+		never_ragdollify_on_death="1"
+		 >
+	</SpriteComponent>
+
+	<HealthBarComponent>
+	</HealthBarComponent>
+
+    <AIAttackComponent
+    min_distance="50"
+    max_distance="150"
+    frames_between="92"
+    frames_between_global="0"
+    attack_ranged_action_frame="2"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_holy_shotgun_small_noff.xml"
+    attack_ranged_offset_y="0"
+    attack_ranged_offset_x="0"
+    attack_ranged_entity_count_min="6"
+    attack_ranged_entity_count_max="8"
+    >
+	</AIAttackComponent>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/longleg" >
+	</AudioComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<MaterialInventoryComponent
+		_enabled="1" 
+		drop_as_item="0"
+		on_death_spill="1"
+		kill_when_empty="0"
+		leak_on_damage_percent="0.0" 
+		leak_pressure_min="0.4"
+		leak_pressure_max="0.6"
+		death_throw_particle_velocity_coeff="0.5"
+		>
+		<count_per_material_type>
+		<Material material="magic_liquid_protection_all" count="1200"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/poring_MVP_minion_summon.lua"
+		execute_every_n_frame="300"
+		script_death="data/entities/animals/secret/poring_death.lua"
+		>
+	</LuaComponent>
+
+</Entity>

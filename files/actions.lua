@@ -2350,20 +2350,17 @@ local apotheosis_spellappends = {
 		end,
 	},
     ]]--
-    --[[
 	{
-        --Conga: Extremely easy to infinitely dupe Ambrosia, is it that bad though? You can only actively carry so much at once
-        --Spell is fully functional, just unsure if I want to implement it, sort of has the same problem summon potion has where you could "somewhat" afk farm for materials that are meant to force you to adventure to collect
 		id          = "APOTHEOSIS_POTION_TO_SEA",
-        --id_matchup  = "APOTHEOSIS_BLOOD_POWER",
+        id_matchup  = "APOTHEOSIS_SEA_BERSERK",
         name 		= "$spell_apotheosis_potion_to_sea_name",
         description = "$spell_apotheosis_potion_to_sea_desc",
 		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/potion.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         --spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension --Previously this required ending 2 to appear, but considering how it'd change daily RNG as well as most people likely not  going throuh the work to unlock it, I ultiamtely decided to keep it as a "regular" spell
-		type 		= ACTION_TYPE_OTHER,
+		type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "0,1,2,3,10", -- CHAIN_BOLT
-		spawn_probability                 = "0.05,0.05,0.05,0.05,0.1", -- CHAIN_BOLT
+		spawn_probability                 = "0.05,0.05,0.05,0.1,0.1", -- CHAIN_BOLT
 		price = 250,
 		mana = 200,
 		max_uses = 1,
@@ -2443,7 +2440,6 @@ local apotheosis_spellappends = {
             end
 		end,
 	}
-    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then

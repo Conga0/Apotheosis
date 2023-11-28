@@ -44,7 +44,7 @@ local insert_list = {
     },
     {
         id_matchup="giantshooter",
-        name="slime_leaker_weak\nslime_leaker\nslime_teleporter\ngoo_slug\nporing\nporing_magic\nporing_devil\nporing_holy",
+        name="slime_leaker_weak\nslime_leaker\nslime_teleporter\ngoo_slug\nporing\nporing_magic\nporing_devil\nporing_holy\nporing_holy_arch",
     },
     {
         id_matchup="blob",
@@ -148,7 +148,7 @@ local insert_list = {
     },
     {
         id_matchup="hpcrystal",
-        name="whisp\nwhisp_big\nfairy_cheap\nfairy_big\nfairy_giant\nfairy_big_discord\nfairy_esoteric\nesoteric_being\nworm_esoteric",
+        name="whisp\nwhisp_big\nwhisp_giga\nfairy_cheap\nfairy_big\nfairy_giant\nfairy_big_discord\nfairy_esoteric\nesoteric_being\nworm_esoteric",
     },
     {
         id_matchup="ethereal_being",

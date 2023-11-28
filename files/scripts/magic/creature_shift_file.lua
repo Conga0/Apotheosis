@@ -23,7 +23,7 @@ local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
 
 --Full enemy list, specifically for "focused shift" victims
 --Includes creatures that wouldn't be exciting to be creature shifted normally, but the player can choose to focus on when shifting to change them
-local enemy_list_full = { "ant", "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "miniblob", "blob", "drone_status_ailment", "enchanted_duck", "eel", "firebug", "bigfirebug", "fairy_big_discord", "fairy_esoteric", "fish", "fish_large", "forsaken_eye", "frog", "frog_big", "fungus", "fungus_big", "fungus_giga", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hiisi_thief", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "poring", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_small", "tentacler", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield",  "scavenger_grenade", "scavenger_smg", "tank", "tank_rocket", "tank_super", "wand_ghost", "ultimate_killer", "miner_weak", "miner", "shotgunner_weak", "shotgunner", "slime_leaker_weak", "slime_leaker", "seeker", "wraith_alchemy_apotheosis", "rat", "plague_rat", "bat", "bigbat", "zombie_weak", "zombie", "firemage_weak", "firemage", "giant", "miner_fire", "fireskull", "fly" }
+local enemy_list_full = { "ant", "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "miniblob", "blob", "drone_status_ailment", "enchanted_duck", "eel", "firebug", "bigfirebug", "fairy_big_discord", "fairy_esoteric", "fish", "fish_large", "forsaken_eye", "frog", "frog_big", "fungus", "fungus_big", "fungus_giga", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hiisi_thief", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "poring", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_small", "tentacler", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield",  "scavenger_grenade", "scavenger_smg", "tank", "tank_rocket", "tank_super", "wand_ghost", "ultimate_killer", "miner_weak", "miner", "shotgunner_weak", "shotgunner", "slime_leaker_weak", "slime_leaker", "seeker", "wraith_alchemy_apotheosis", "rat", "plague_rat", "bat", "bigbat", "zombie_weak", "zombie", "firemage_weak", "firemage", "giant", "miner_fire", "fireskull", "fly", "necromancer_shop", "necromancer_super" }
 
 
 --"Shift from" list to randomly pick from
@@ -229,7 +229,9 @@ function creature_shift( entity, x, y, debug_no_limits )
             {"mudman_friendly", "mudman"},
             {"bat","bat"},
             {"fish","fish"},
-            {"fish_large","fish_large"}
+            {"fish_large","fish_large"},
+            {"necromancer_shop","steve"},
+            {"necromancer_super","skoude"}
         }
 
         for k=1,#spec_tab do

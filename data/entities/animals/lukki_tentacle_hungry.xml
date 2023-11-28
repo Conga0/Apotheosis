@@ -152,7 +152,6 @@
 		minimum_knockback_force="100000"
 		>
 		<damage_multipliers
-			holy="1.7"
 			explosion="0.0"
 			electricity="0.6"
 			melee="1.2"
