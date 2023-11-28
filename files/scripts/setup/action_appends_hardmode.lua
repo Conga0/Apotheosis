@@ -2,21 +2,69 @@
 -- Conga note: Should be done now, hopefully this prevents them from ever spawning
 -- Copi note: I just manually set the fields in this update to the file
 
+-- Copi note 11/28/23: Not aware of any better way to manually decrement uses as of now, interfacing with hand[1] or current_action.uses_remaining seems to return -1 when MCd with reset
+
 function disablecopying(recursion_level)
-    if (recursion_level) ~= nil and GameHasFlagRun("apotheosis_flag_copy_spells") == false then return true
-    else return false
+    if (recursion_level) ~= nil and GameHasFlagRun("apotheosis_flag_copy_spells") then
+		return true
+	elseif not reflecting then
+		local inventory = EntityGetFirstComponent( GetUpdatedEntityID(), "Inventory2Component" ) --[[@cast inventory number]]
+		local spells = EntityGetAllChildren(ComponentGetValue2( inventory, "mActiveItem" )) or {}
+		for i=1, #spells do
+			local itemcomp = EntityGetFirstComponentIncludingDisabled(spells[i], "ItemComponent") --[[@cast itemcomp number]]
+			if current_action.inventoryitem_id == ComponentGetValue2(itemcomp, "mItemUid") then
+				local uses_remaining = ComponentGetValue2(itemcomp, "uses_remaining")
+				-- Decrement uses remaining manually
+				ComponentSetValue2(itemcomp, "uses_remaining", uses_remaining - 1)
+				current_action.uses_remaining = uses_remaining - 1
+				goto quit
+			end
+		end
+		::quit::
     end
+	return false
 end
 
 --spell_apotheosis_alt_fire_cov_hardcore_name
 
 local actions_to_edit = {
 
+	--[[
+	-- Shitty workaround
+	["RESET"] = {
+		action = function ( )
+			current_reload_time = current_reload_time - 25
+
+			for i,v in ipairs( hand ) do
+				-- print( "removed " .. v.id .. " from hand" )
+				if GameHasFlagRun("apotheosis_flag_copy_spells") and v.id == "HEAL_BULLET" or v.id == "REGENERATION_FIELD" or v.id == "COPIS_THINGS_CLOUD_MAGIC_LIQUID_HP_REGENERATION" then
+					
+				end
+				table.insert( discarded, v )
+			end
+
+			for i,v in ipairs( deck ) do
+				-- print( "removed " .. v.id .. " from deck" )
+				table.insert( discarded, v )
+			end
+
+			hand = {}
+			deck = {}
+
+			if ( force_stop_draws == false ) then
+				force_stop_draws = true
+				move_discarded_to_deck()
+				order_deck()
+			end
+		end
+	},]]
+
     --Fix Healing Bolt & Circle of Vigour to have updated spell descriptions
     --Make CoV spawn in Above & Below
     --Healing bolt & CoV can no longer be used by greek letters/splitshot
     ["HEAL_BULLET"] = {
         description = "$spell_apotheosis_healing_bolt_desc",
+		custom_uses_logic = true,
         action = function(recursion_level)
             --if (recursion_level) ~= nil then return; end
             if disablecopying(recursion_level) then return; end
@@ -30,6 +78,7 @@ local actions_to_edit = {
         description = "$spell_apotheosis_cov_desc",
         spawn_level = "1,2,3,4,10",
         spawn_probability = "0.2,0.2,0.2,0.2,2.0",
+		custom_uses_logic = true,
         action = function(recursion_level)
             --if (recursion_level) ~= nil then return; end
             if disablecopying(recursion_level) then return; end
@@ -46,7 +95,7 @@ local actions_to_edit = {
         action = function(recursion_level)
             c.fire_rate_wait = c.fire_rate_wait + 50
 
-			
+
 			if ( discarded ~= nil ) then
                 for k=1,#discarded
                 do local v = discarded[k]
@@ -56,7 +105,7 @@ local actions_to_edit = {
                 end
             end
 
-			
+
 			if ( deck ~= nil ) then
                 for k=1,#deck
                 do local v = deck[k]
@@ -66,7 +115,7 @@ local actions_to_edit = {
                 end
             end
 
-			
+
 			if ( hand ~= nil ) then
                 for k=1,#hand
                 do local v = hand[k]
@@ -75,7 +124,7 @@ local actions_to_edit = {
                     end
                 end
             end
-			
+
         end
     },
 
@@ -133,6 +182,7 @@ local actions_to_edit = {
 	--Update Healthy Cloud description to match the new functionality
     ["COPIS_THINGS_CLOUD_MAGIC_LIQUID_HP_REGENERATION"] = {
         description = "Creates a soothing rain that cures your wounds. Uncopiable.",
+		custom_uses_logic = true,
         action =  function(recursion_level)
 			--if (recursion_level) ~= nil then return; end
             if disablecopying(recursion_level) then return; end
