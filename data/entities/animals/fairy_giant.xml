@@ -137,17 +137,6 @@
 			>
 		</GameEffectComponent >
 	</Entity>
-
-	<LuaComponent
-		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/whisp_kill.lua"
-		execute_every_n_frame="-1"
-		>
-	</LuaComponent>
-
-	<VariableStorageComponent
-		name="flamed_version"
-		value_string="data/entities/animals/whisp_giga.xml"
-	></VariableStorageComponent>
 	
 </Entity>
 

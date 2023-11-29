@@ -1,9 +1,5 @@
 <Entity>
   <Base file="data/entities/animals/whisp_big.xml" include_children="1" >
-	<AnimalAIComponent
-		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/whisp_big_dash_planes.xml">
-	</AnimalAIComponent>
-
     <DamageModelComponent 
       hp="100"
       max_hp="100"

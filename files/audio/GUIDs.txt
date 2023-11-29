@@ -24,11 +24,6 @@
 {974e4a72-7160-49be-b55f-118b6695b427} event:/mocreeps_audio/animals/fairy_giga/damage/projectile
 {2d5891c3-5b16-4928-bce9-751caa14d91b} event:/mocreeps_audio/animals/fairy_giga/death
 {8bf95da9-30b1-4fb9-9c40-8d637ed746ae} event:/mocreeps_audio/animals/fairy_giga/voc_shoot
-{dd66e9e5-4829-44e2-943e-1b4acb778332} event:/mocreeps_audio/animals/whisp_giga/damage/explosion
-{34042d34-5460-444b-8ab1-d48fcfa36336} event:/mocreeps_audio/animals/whisp_giga/damage/physics_hit
-{9a4a12d2-3a0d-4b3f-b02a-6a69e8528de7} event:/mocreeps_audio/animals/whisp_giga/damage/projectile
-{a19b7318-9b65-4918-a5bd-93db8f0537b1} event:/mocreeps_audio/animals/whisp_giga/death
-{cc1d47e9-4602-4558-977b-7227ba2475c6} event:/mocreeps_audio/animals/whisp_giga/voc_shoot
 {879f7927-9514-439e-a285-3d569aa7f762} event:/mocreeps_audio/heretical_eye/speech_gossip
 {b0613ed4-49ba-4b46-a656-5d7c9d9102db} event:/mocreeps_audio/heretical_eye/speech_long
 {6a8a3cc4-5335-4c8e-a5ba-e4588c1fe7f5} event:/mocreeps_audio/heretical_eye/speech_norm

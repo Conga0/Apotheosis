@@ -181,17 +181,6 @@
     emission_interval_max_frames="2"
     is_emitting="1" >
   </ParticleEmitterComponent>
-
-	<LuaComponent
-		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/fairy_kill.lua"
-		execute_every_n_frame="-1"
-		>
-	</LuaComponent>
-
-	<VariableStorageComponent
-	  name="fairy_version"
-	  value_string="data/entities/animals/fairy.xml"
-	></VariableStorageComponent>
 	
 </Entity>
 

@@ -1,8 +1,0 @@
-<Entity>
-  <Base file="data/entities/animals/whisp_giga.xml" include_children="1" >
-  </Base>
-  
- 	<VariableStorageComponent
-		_tags="no_gold_drop">
-	</VariableStorageComponent>
-</Entity>

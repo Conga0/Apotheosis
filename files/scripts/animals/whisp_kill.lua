@@ -7,7 +7,7 @@ function damage_about_to_be_received(damage, x, y, entity_thats_responsible, cri
     end
   
     -- Somehow check if entity_thats_responsible is the entity that should do the turning, for instance by name:
-    if EntityGetName(entity_thats_responsible) == "Jättipalavakeiju" or EntityGetName(entity_thats_responsible) == "Kolossaalinenpalavakeiju" then
+    if EntityGetName(entity_thats_responsible) == "Jättipalavakeiju" then
       local entity_id = GetUpdatedEntityID()
       local damage_model_comp = EntityGetFirstComponentIncludingDisabled(entity_id, "DamageModelComponent")
       ComponentSetValue2(damage_model_comp, "create_ragdoll", false)
@@ -25,4 +25,4 @@ function damage_about_to_be_received(damage, x, y, entity_thats_responsible, cri
       EntityLoad(flamed_version, x, y)
     end
     return damage, critical_hit_chance
-end
+  end
