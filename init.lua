@@ -833,7 +833,7 @@ motd_apotheosis_description_028,"Message of the Day \nFor a fun time: pour the d
 motd_apotheosis_description_029,"Message of the Day \nVenture into the desert. \nThere I will humour you.",,,,,,,,,今日のひとこと\n砂漠を探索してみよう。面白いものがあるかも？,,,,
 motd_apotheosis_description_030,"Message of the Day \nHappy today! Good Now, be happy you're still here!","Сообщение дня \nСчастливый день! Счастливо, будьте счастливы, что вы ещё здесь!",,,,,,,,今日のひとこと\n今日はハッピーデー！生きててえらい！,,,,
 motd_apotheosis_description_031,"Message of the Day \nDon't visit the Toxic Worm Nest at 3 am.","Сообщение дня \nНе посещайте гнездо токсичных червей в 3 часа ночи.",,,,,,,,今日のひとこと\n夜中の3時に行かない方がいい場所:毒虫の巣,,,,
-motd_apotheosis_description_alt_001,"Message of the Day \nAlso try Grahams Things!",,,,,,,,,今日のひとこと\n今日のおすすめMOD: Grahams Things,,,,
+motd_apotheosis_description_alt_001,"Message of the Day \nAlso try Stray Pixel Cleanup!",,,,,,,,,今日のひとこと\n今日のおすすめMOD: Stray Pixel Cleanup,,,,
 motd_apotheosis_description_alt_002,"Message of the Day \nBe weary when travelling to other worlds.",,,,,,,,,今日のひとこと\n異世界に行くときは注意しよう。,,,,
 motd_apotheosis_description_alt_003,"Message of the Day \nStay inside.",,,,,,,,,今日のひとこと\n今日は外に出ない方がいいかも。,,,,
 motd_apotheosis_description_alt_004,"Message of the Day \nDid you eat your powerballs today?",,,,,,,,,今日のひとこと\nガチャは悪い文明,,,,

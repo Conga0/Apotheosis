@@ -118,13 +118,7 @@ g_items =
 		prob   		= 2,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_level_02.xml"
-	},
-	{
-		prob   		= 2,
-		min_count	= 1,
-		max_count	= 1,    
-		entity 	= "data/entities/items/wand_level_03_better.xml"
+		entity 	= "data/entities/items/wand_unshuffle_03.xml"
 	},
 	{
 		prob   		= 0.02,

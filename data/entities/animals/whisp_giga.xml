@@ -191,17 +191,6 @@
       is_circle="1"
       radius="25" >
     </MagicConvertMaterialComponent>
-
-	<DamageNearbyEntitiesComponent
-		radius="15"
-		time_between_damaging="4"
-		damage_max="0.13"
-		damage_max="0.13"
-		target_tag="mortal"
-		damage_description="Kolossaalinenpalavakeiju fire"
-		damage_type="DAMAGE_FIRE"
-		ragdoll_fx="NONE">
-	</DamageNearbyEntitiesComponent>
 	
 	<ParticleEmitterComponent 
 		_tags="lurker_data"
