@@ -29,43 +29,49 @@ g_small_enemies =
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 3,    
+		max_count	= 1,
+		entity 	= "data/entities/animals/planes/whisp_giga.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 3,
 		entity 	= "data/entities/animals/planes/watermage_greater.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 3,    
+		max_count	= 3,
 		entity 	= "data/entities/animals/planes/wizard_firemage_greater.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 3,    
+		max_count	= 3,
 		entity 	= "data/entities/animals/planes/slime_teleporter.xml"
 	},
 	{
 		prob   		= 0.1,
 		min_count	= 1,
-		max_count	= 3,    
+		max_count	= 3,
 		entity 	= "data/entities/animals/planes/wizard_corrupt_wands.xml"
 	},
 	{
 		prob   		= 0.05,
 		min_count	= 1,
-		max_count	= 1,    
+		max_count	= 1,
 		entity 	= "data/entities/animals/planes/whisp_big.xml"
 	},
 	{
 		prob   		= 0.05,
 		min_count	= 2,
-		max_count	= 4,    
+		max_count	= 4,
 		entity 	= "data/entities/animals/rat.xml"
 	},
 	{
 		prob   		= 0.05,
 		min_count	= 1,
-		max_count	= 1,    
+		max_count	= 1,
 		entity 	= "data/entities/animals/planes/devourer_magic.xml"
 	},
 }

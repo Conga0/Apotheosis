@@ -1,12 +1,30 @@
 Remove ABBC anti-cheese after it goes to main
 Remove artifically adding meat realm to the biome list when the meat biome goes to main
+Add warning icon to meat realm if it goes to main without one (God, I'd hope it doesn't come to this)
 
 Check if the crypt ambience would be more fitting for ToSR
 
-Kindly ask spoop to update the monolith & toxic worm achievement pillars (They look out of place when placed next to the other 4's updated graphics)
+Kindly ask spoop to update the toxic worm achievement pillar (They look out of place when placed next to the other 4's updated graphics)
 
-Attain updated Fmod folder so Heretic's talk doesn't disappear if the audio needs to be updated again in the future
 Make the Esoteric Beam explosion sound quieter, abnormally loud in it's current state
 
 Fix Forsaken Eyes not being stainable
-Fixed healing being infinite with wand refresh in hardcore
+Fix healing being infinite with wand refresh in hardcore
+Fix creatures from eggs not retaining their charm when creature shifted (ie mudmen from muddy eggs)
+Fix tentacler portal hitting itself (so it doesn't need melee immunity)
+Fix shifted hamis behaving weirdly when spawning from nests/purple vases
+
+Add more NG+ enemies to jungle and beyond
+
+
+
+
+
+
+Ideas:
+Giant Mages in challenge zone
+Books which grant temporary buffs, healing, berserk, poem of serville, etc
+Portal stabilization area in center
+"You did it!" trophy for "winning" the biome
+Surrounded by cursed rock, can only enter via a portal
+Eldritch Library?

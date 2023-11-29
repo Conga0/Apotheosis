@@ -22,5 +22,6 @@ if count < 4 then
 		EntityLoad("data/entities/animals/AI/gazer_cold_apotheosis.xml", x + rnd, y + rnd)
 		EntityLoad( "data/entities/particles/teleportation_target.xml", x + rnd, y + rnd )
 		--RO teleport sound
+		GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/spells/teleport_alt", x, y );
 	end
 end

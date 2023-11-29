@@ -90,6 +90,11 @@ local actions_to_edit = {
         spawn_probability = "0",
         spawn_requires_flag = "this_should_never_spawn",
     },
+    ["TELEPORT_PROJECTILE_STATIC"] = {
+        spawn_level = "0",
+        spawn_probability = "0",
+        spawn_requires_flag = "this_should_never_spawn",
+    },
     ["GRAHAM_TELEPORT"] = {
         spawn_level = "0",
         spawn_probability = "0",
@@ -98,10 +103,10 @@ local actions_to_edit = {
 
     --Increases the spawnrate of alt-fire teleport spells to compensate
     ["APOTHEOSIS_ALT_FIRE_TELEPORT"] = {
-        spawn_probability = "1.0,0.8,0.8,0.6,0.6,0.6,1.6"
+        spawn_probability = "1.0,1.0,1.0,0.8,0.8,0.8,1.6"
     },
     ["APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT"] = {
-        spawn_probability = "1.0,0.8,0.8,0.6,0.6,0.6,1.6"
+        spawn_probability = "1.0,1.0,1.0,0.8,0.8,0.8,1.6"
     },
 
     --Copis Things compatibility for finite healing spells

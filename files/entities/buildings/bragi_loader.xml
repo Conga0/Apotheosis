@@ -1,0 +1,11 @@
+<Entity >
+
+	<LuaComponent 
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/magic/bragi.lua"
+		execute_times="1"
+		execute_every_n_frame="2"
+		>
+	</LuaComponent>
+</Entity>
+

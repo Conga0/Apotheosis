@@ -292,6 +292,7 @@
         min_count    = 5,
         max_count    = 7,    
         entity     = "data/entities/animals/power_plant/drone_mini.xml",
+        ng_exclusive = true,
         ngpluslevel = 1
     })
 
@@ -312,6 +313,15 @@
         entity     = "data/entities/animals/power_plant/worm_mechanical.xml",
         ng_exclusive = true,
         ngpluslevel = 1
+    })
+
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.15,
+        min_count    = 1,
+        max_count    = 3, 
+        ngpluslevel  = 1,   
+        entity     = "data/entities/animals/slime_teleporter.xml"
     })
 
 

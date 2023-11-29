@@ -1,0 +1,5 @@
+All Dates are in day/month format and occur every year
+Date 31/08
+
+Effects:
+Poem of Serville lasts twice as long

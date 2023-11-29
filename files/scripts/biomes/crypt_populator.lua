@@ -33,14 +33,6 @@
 
     table.insert(g_big_enemies,
     {
-        prob           = 0.08,
-        min_count    = 1,
-        max_count    = 1,    
-        entity     = "data/entities/animals/fairy_esoteric.xml"
-    })
-
-    table.insert(g_big_enemies,
-    {
         prob           = 0.1,
         min_count    = 1,
         max_count    = 1,
@@ -235,6 +227,27 @@ table.insert(g_big_enemies,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/wizard_firemage_greater.xml",
+    ngpluslevel = 1
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.1,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/watermage_greater.xml",
+    ngpluslevel = 1
+})
+
+--In hindsight, having a nigh-invincible enemy which relies on using another enemy (esoteric being) to kill it which isn't always around, isn't the best design wise
+--It was originally supposed to be so slow you could easily outrun it and see it in rooms ahead of time via it's glow effect, but ended up consistently moving faster than intended and the glow did little to help in a panic
+--Therefore, it's now restricted to NG+ & Hardcore mode
+table.insert(g_big_enemies,
+{
+    prob           = 0.08,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/fairy_esoteric.xml",
     ngpluslevel = 1
 })
 

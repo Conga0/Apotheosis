@@ -106,7 +106,7 @@ append_effect("apotheosis_milk", function(wand)
     elseif rnd == 4 then
         wand.speedMultiplier = wand.speedMultiplier * 5
     elseif rnd == 5 then
-        wand.spread = wand.spread - 30
+        wand.spread = wand.spread - 100
     elseif rnd == 6 then
         wand.rechargeTime = math.min(wand.rechargeTime * 0.33, wand.rechargeTime - 0.20)
     elseif rnd == 7 then
@@ -140,7 +140,7 @@ do
         copi and "COPIS_THINGS_LEVITY_SHOT" or nil
     }
 
-    add_spells_to_effect("blood", spells)
+    add_spells_to_effect("apotheosis_magic_liquid_infinite_flight", spells)
 end
 
 
@@ -158,9 +158,9 @@ end)
 --Turns wand into a burst-fire
 -- 60 = 1 second
 -- 45 = 0.75 seconds
-append_effect("apotheosis_magic_liquid_escium", function(wand)
+append_effect("apotheosis_magic_liquid_escapium", function(wand)
     wand.spellsPerCast = wand.spellsPerCast + Random(1, 3)
-    wand.manaMax = wand.manaMax * 8
+    wand.manaMax = math.min(wand.manaMax * 8,20000)
     wand.manaChargeSpeed = wand.manaChargeSpeed * 0.5
     wand.rechargeTime = math.max(wand.rechargeTime * 2, 0.45)
     wand.castDelay = math.max(wand.castDelay * 0.25, 0.15)
@@ -176,6 +176,18 @@ append_effect("apotheosis_magic_liquid_suffocatium", function(wand)
     wand.castDelay = wand.castDelay - math.max(Random(1, 2), wand.castDelay * Randomf(0.05, 0.1))
 
     local options = { "CIRCLE_WATER", "MATERIAL_WATER", "TOUCH_WATER", "SEA_WATER", "CLOUD_WATER", "HITFX_CRITICAL_WATER", "WATER_TRAIL", "APOTHEOSIS_LIQUIDSPHERE_WATER" }
+    wand:AttachSpells(options[math.random(1,#options)])
+end)
+
+
+--Portalium
+append_effect("apotheosis_magic_liquid_rideshare", function(wand)
+
+    wand.manaMax = wand.manaMax + Random(80, 200)
+    wand.rechargeTime = wand.rechargeTime - math.max(Random(1, 2), wand.rechargeTime * Randomf(0.05, 0.1))
+    wand.castDelay = wand.castDelay - math.max(Random(1, 2), wand.castDelay * Randomf(0.05, 0.1))
+
+    local options = { "TELEPORT_PROJECTILE_CLOSER", "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM" }
     wand:AttachSpells(options[math.random(1,#options)])
 end)
 
@@ -196,6 +208,59 @@ end)
 --Divine Liquid
 --2 Random stats gets super boosted
 append_effect("apotheosis_magic_liquid_divine", function(wand)
+    for k=1,2 do
+        SetRandomSeed(k * GameGetFrameNum(), k * 666)
+        local rnd = Random(1,8)
+
+        if rnd == 1 then
+            wand.spellsPerCast = math.min(wand.capacity, wand.spellsPerCast + 11)
+        elseif rnd == 2 then
+            wand.manaChargeSpeed = math.max(wand.manaChargeSpeed * 3, wand.manaChargeSpeed + 300)
+        elseif rnd == 3 then
+            wand.manaMax = math.max(wand.manaMax * 3, wand.manaMax + 400)
+        elseif rnd == 4 then
+            wand.speedMultiplier = wand.speedMultiplier * 5
+        elseif rnd == 5 then
+            wand.spread = wand.spread - 30
+        elseif rnd == 6 then
+            wand.rechargeTime = math.min(wand.rechargeTime * 0.33, wand.rechargeTime - 0.20)
+        elseif rnd == 7 then
+            wand.rechargeTime = math.min(wand.castDelay * 0.33, wand.castDelay - 0.20)
+        else
+            wand.capacity = math.min(math.max(wand.capacity * 2, wand.capacity + 6), 30)
+        end
+    end
+end)
+
+
+--Magic Catalyst & Magic Exlixir
+--2 Random stats gets super boosted
+append_effect("apotheosis_hidden_liquid_magic_catalyst", function(wand)
+    for k=1,2 do
+        SetRandomSeed(k * GameGetFrameNum(), k * 666)
+        local rnd = Random(1,8)
+
+        if rnd == 1 then
+            wand.spellsPerCast = math.min(wand.capacity, wand.spellsPerCast + 11)
+        elseif rnd == 2 then
+            wand.manaChargeSpeed = math.max(wand.manaChargeSpeed * 3, wand.manaChargeSpeed + 300)
+        elseif rnd == 3 then
+            wand.manaMax = math.max(wand.manaMax * 3, wand.manaMax + 400)
+        elseif rnd == 4 then
+            wand.speedMultiplier = wand.speedMultiplier * 5
+        elseif rnd == 5 then
+            wand.spread = wand.spread - 30
+        elseif rnd == 6 then
+            wand.rechargeTime = math.min(wand.rechargeTime * 0.33, wand.rechargeTime - 0.20)
+        elseif rnd == 7 then
+            wand.rechargeTime = math.min(wand.castDelay * 0.33, wand.castDelay - 0.20)
+        else
+            wand.capacity = math.min(math.max(wand.capacity * 2, wand.capacity + 6), 30)
+        end
+    end
+end)
+
+append_effect("apotheosis_hidden_liquid_wand_essence", function(wand)
     for k=1,2 do
         SetRandomSeed(k * GameGetFrameNum(), k * 666)
         local rnd = Random(1,8)

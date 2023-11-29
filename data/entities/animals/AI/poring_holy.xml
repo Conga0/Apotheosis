@@ -1,0 +1,22 @@
+<Entity  name="Jumalallinenhyytelö" tags="ui_use_raw_name,poring_holy">
+  <Base file="data/entities/animals/poring_holy.xml" include_children="1" >
+    <DamageModelComponent 
+      hp="400"
+      max_hp="400"
+			blood_multiplier="0.01"
+     ></DamageModelComponent >
+        
+      <AnimalAIComponent attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_holy_shotgun_small_noff.xml"/>
+      <AIAttackComponent attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_holy_shotgun_small_noff.xml"/>
+
+      <GenomeDataComponent 
+        herd_id="ghost"
+        food_chain_rank="1"
+        is_predator="1" >
+      </GenomeDataComponent>
+  </Base>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+</Entity>

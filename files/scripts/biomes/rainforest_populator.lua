@@ -152,11 +152,39 @@
 
     table.insert(g_big_enemies,
     {
-        prob           = 0.1,
+        prob         = 0.1,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/animals/fungicave/lukki_fungus.xml",
-        ngpluslevel = 1
+        entity       = "data/entities/animals/fungicave/lukki_fungus.xml",
+        ngpluslevel  = 1
+    })
+
+    table.insert(g_big_enemies,
+    {
+        prob         = 0.1,
+        min_count    = 1,
+        max_count    = 1,    
+        entity       = "data/entities/animals/wizard_corrupt_manaeater.xml",
+        ngpluslevel  = 1
+    })
+
+    table.insert(g_big_enemies,
+    {
+        prob         = 0.1,
+        min_count    = 1,
+        max_count    = 2,    
+        entity       = "data/entities/animals/wizard_hearty.xml",
+        parallel     = false,
+        ngpluslevel  = 1
+    })
+
+    table.insert(g_big_enemies,
+    {
+        prob         = 0.005,
+        min_count    = 1,
+        max_count    = 1,    
+        entity       = "data/entities/animals/tree_tall.xml",
+        ngpluslevel  = 1
     })
 
 

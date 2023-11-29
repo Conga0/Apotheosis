@@ -24,3 +24,11 @@ end
 extra_modifiers["apotheosis_braindamage"] = function()
     c.spread_degrees = c.spread_degrees + 30
 end
+
+extra_modifiers["apotheosis_bragi"] = function()
+    if not c.extra_entities:find("mods/apotheosis/files/entities/misc/bragi_fx.xml,") then
+        c.extra_entities = table.concat({c.extra_entities,"mods/apotheosis/files/entities/misc/bragi_fx.xml,"})
+        c.fire_rate_wait = c.fire_rate_wait - 30
+        current_reload_time = current_reload_time - 30
+    end
+end

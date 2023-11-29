@@ -1,0 +1,19 @@
+<Sprite
+ filename="mods/Apotheosis/files/enemies_gfx/whisp_giga.png"
+ offset_x="45"
+ offset_y="46"
+ default_animation="fireball" >
+
+ <!-- animation -->
+  <RectAnimation 
+    frame_count="8" 
+    frame_height="87" 
+    frame_wait="0.05" 
+    frame_width="91" 
+    frames_per_row="8" 
+    loop="1" 
+    name="fireball"
+    pos_x="0" 
+    pos_y="352" >
+  </RectAnimation>
+</Sprite>
