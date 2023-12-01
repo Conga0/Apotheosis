@@ -22,7 +22,11 @@ if GameGetFrameNum() >= cooldown_frame then
         if (mana > manacost) then
 
             GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("data/entities/projectiles/deck/teleport_projectile.xml", x, y))
-            wand.mana = mana - manacost
+			if not HasFlagPersistent("action_apotheosis_alt_fire_teleport") then
+				GameAddFlagRun("new_action_apotheosis_alt_fire_teleport")
+				AddFlagPersistent("action_apotheosis_alt_fire_teleport")
+			end
+			wand.mana = mana - manacost
             ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
         else
             GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", x, y );

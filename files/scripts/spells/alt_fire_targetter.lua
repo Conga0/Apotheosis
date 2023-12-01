@@ -27,6 +27,10 @@ if GameGetFrameNum() >= cooldown_frame then
             if (mana > manacost) then
 
                 GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("mods/apotheosis/files/entities/projectiles/deck/targetter.xml", x, y))
+				if not HasFlagPersistent("action_apotheosis_alt_fire_targetter") then
+					GameAddFlagRun("new_action_apotheosis_alt_fire_targetter")
+					AddFlagPersistent("action_apotheosis_alt_fire_targetter")
+				end
                 wand.mana = mana - manacost
                 ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
                 if alwayscast == false then
