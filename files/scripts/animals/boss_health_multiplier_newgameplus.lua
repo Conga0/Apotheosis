@@ -8,7 +8,7 @@ local max_health = 0
 local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
 
 if newgame_n >= 1 then 
-    newgame_n = 2 ^ (newgame_n + 1)
+    newgame_n = newgame_n + 1 --Conga: Previously this formula was: "2 ^ (newgame_n + 1)", however, I feel this was too harsh for the poor NG+ players out there; Heretic would have 32x hp by the time NG+3 rolls around, how would you fight him by then without requiring an exponential damage wand?
     local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
 
     local health = ComponentGetValue2( comp, "hp" )

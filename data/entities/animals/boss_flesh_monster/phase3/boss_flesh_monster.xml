@@ -320,6 +320,14 @@
 		</GameEffectComponent >
 	</Entity>
 
+	<Entity>
+		<GameEffectComponent 
+			effect="PROTECTION_ALL"
+			frames="30"
+		>
+		</GameEffectComponent >
+	</Entity>
+
 
 	<!-- Phase Brain -->
 	

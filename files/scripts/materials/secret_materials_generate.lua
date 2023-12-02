@@ -92,6 +92,15 @@ function GenerateMagicCatalyst()
         ModTextFileSetContent(path, content)
     end
 
+    if HasFlagPersistent("moon_is_sun") then -- Going to put this in here too, updates the Moon Portal Potion's data if the sun exists
+        local path = "mods/apotheosis/files/scripts/materials/custom_materials.xml"
+        local content = ModTextFileGetContent(path)
+        content = content:gsub("mods/Apotheosis/files/materials_gfx/material_sky.png","mods/Apotheosis/files/materials_gfx/material_sun.png")
+        content = content:gsub("80aabfcd","80f1a329")
+        content = content:gsub("input_cell2=\"%[dairy]\"","input_cell2=\"lava\"")
+        ModTextFileSetContent(path, content)
+    end
+
     --[[
     if DebugGetIsDevBuild() then
         for k=1,3 do

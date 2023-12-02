@@ -298,6 +298,14 @@
 
 	<Entity>
 		<GameEffectComponent 
+			effect="PROTECTION_ALL"
+			frames="30"
+		>
+		</GameEffectComponent >
+	</Entity>
+
+	<Entity>
+		<GameEffectComponent 
 			effect="SAVING_GRACE"
 			frames="6"
 		>

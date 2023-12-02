@@ -49,6 +49,28 @@ function MultiplyHPSelective(filepath,multiplier,base)
   end
 end
 
+
+function MultiplyHPSelectiveBuilding(filepath,multiplier,base)
+  filepath = "data/entities/buildings/" .. filepath .. ".xml"
+  local content = ModTextFileGetContent(filepath)
+  if content ~= nil then
+    local xml = nxml.parse(content)
+    local max_hp
+    attrpath = ""
+    if base then
+      attrpath = xml:first_of("Base"):first_of("DamageModelComponent").attr
+    else
+      attrpath = xml:first_of("DamageModelComponent").attr
+    end
+    max_hp = attrpath.hp
+    max_hp = max_hp * multiplier
+    attrpath.max_hp = tostring(max_hp)
+    attrpath.hp = tostring(max_hp)
+    attrpath.blood_multiplier = tostring(1 / multiplier)
+    ModTextFileSetContent(filepath, tostring(xml))
+  end
+end
+
 --Split a string separated by a specific character into a table
 function SplitStringOnCharIntoTable(string, char)
   local list = {}

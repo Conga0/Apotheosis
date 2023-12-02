@@ -28,7 +28,7 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("custom/ant_hell", 2, 1.5)
     MultiplyHPOnBiome("custom/slime_hell", 5, 1.2)
     MultiplyHPOnBiome("custom/sunken_cave", 10, 1.5)
-    MultiplyHPOnBiome("custom/evil_temple", 10, 1.5)
+    MultiplyHPOnBiome("custom/evil_temple", 20, 1.5)
     MultiplyHPOnBiome("fungicave", 4, 1)
     MultiplyHPOnBiome("fungiforest", 6, 1)
     MultiplyHPOnBiome("clouds", 6, 2)
@@ -45,11 +45,11 @@ end
 ----Boosts the health of various boss monsters
 --Angel doesn't need to be done here and it's handled by the above function
 --filepath   multiplier   base check
-MultiplyHPSelective("boss_flesh_monster/boss_flesh_monster",10,false)
-MultiplyHPSelective("boss_flesh_monster/phase3/boss_flesh_monster",10,false)
+MultiplyHPSelective("boss_flesh_monster/boss_flesh_monster",20,false)
+MultiplyHPSelective("boss_flesh_monster/phase3/boss_flesh_monster",20,false)
 MultiplyHPSelective("boss_fire_lukki/boss_fire_lukki",10,false)
-MultiplyHPSelective("boss_flesh_monster/boss_flesh_monster",10,false)
-MultiplyHPSelective("boss_musical_ghost/boss_musical_ghost",10,false)
+MultiplyHPSelective("boss_fire_lukki/boss_fire_lukki_phase2",10,false)
+MultiplyHPSelective("boss_musical_ghost/boss_musical_ghost",20,false)
 MultiplyHPSelective("boss_blob/blob_titan",10,true)
 MultiplyHPSelective("boss_blob/blob_huge",10,true)
 MultiplyHPSelective("boss_blob/blob_big",5,true)
@@ -65,11 +65,14 @@ MultiplyHPSelective("boss_toxic_worm/boss_toxic_worm",4,false)
 MultiplyHPSelective("boss_dragon",4,false)
 MultiplyHPSelective("boss_fish/fish_giga",2,false)
 
+--Boosts Health of Wand Tinkering Crystals by x10
+MultiplyHPSelectiveBuilding("wandedit_crystal",10,false)
+
 --Note(Conga): This isn't working, no clue why
 do -- Buff Final Boss's HP as if you grabed 10 orbs
   local path = "data/entities/animals/boss_centipede/boss_centipede_update.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("local boss_hp = 46.0 + ( 2.0 ^ (orbcount + 1.3) ) + (orbcount*15.5)", "local boss_hp = 46.0 + ( 2.0 ^ ((orbcount + 10) + 1.3) ) + ((orbcount + 10)*15.5)")
+  content = content:gsub("%(orbcount %+ 1.3%) %) %+ %(orbcount%*15%.5%)", "((orbcount + 11) + 1.3) ) + ((orbcount + 11)*15.5)")
   ModTextFileSetContent(path, content)
 end
 
@@ -77,11 +80,11 @@ do --Reduces the NG+ count of each biome's enemy pool by 1
   local biomes = {
     "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
     "coalmine",         --Coal Mine, first area, goodluck on your run
+    "coalmine_alt",     --Coalmine but to the west side near damp cave
     "desert",           --Desert above ground, careful not to die to any Stendari
     "crypt",            --Temple of the Arts.. who died here?
     "pyramid",          --Presumably everything below the entrance to the pyramid
     "fungicave",        --BUNGUS!! cave, west side of area 2 for example
-    "coalmine_alt",     --Coalmine but to the west side near damp cave
     "pyramid_hallway",  --Pyramid entrance, presumably
     "excavationsite",   --Coal Pits, area 2
     "fungiforest",      --Overgrowth
@@ -132,6 +135,5 @@ do --Reduce gold dropped in hardcore by 50%
   local path = "data/scripts/items/drop_money.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("local health = tonumber%(ComponentGetValue%( comp, \"max_hp\"%)%)", "local health = tonumber(ComponentGetValue( comp, \"max_hp\")) * 0.50")
-  print(content)
   ModTextFileSetContent(path, content)
 end

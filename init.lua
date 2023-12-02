@@ -388,6 +388,8 @@ credits_apotheosis_line_45,Best of luck in your future adventures - Conga Lyne,�
 credits_apotheosis_line_horscht,Provided a ton of help in the mod support channel during development and let me use his credits script.,Оказал тонну помощи в канале поддержки мода во время разработки и позволил мне использовать его скрипт для этого меню.,,,,,,,,,,,,
 Apotheosis content below,"=====================================================================================================================================================================================================================================================Below here are Apotheosis translation keys",,,,,,,,,,,,,
 teleport_portal_alternate,"Portal Elsewhere",,,,,,,,,彼方へのポータル,,,,
+teleport_portal_moon,"Portal to the Moon",,,,,,,,,月への扉,,,,
+teleport_portal_sun,"Portal to the Sun",,,,,,,,,太陽への扉,,,,
 biome_slime_hell,"Virulent Caverns",,,,,,,,,猛毒洞窟,,,,
 biome_toxic_worm_cave,"Toxic Nest",,,,,,,,,毒虫の巣穴,,,,
 biome_abandoned_assembly,"Sandy Assembly",,,,,,,,,砂の遺跡,,,,
@@ -433,6 +435,7 @@ material_apotheosis_magic_liquid_suffocatium,"Suffocatium",,,,,,,,,窒息の魔�
 material_apotheosis_magic_liquid_velocium,"Veloium",,,,,,,,,速度の魔薬,,,,
 material_apotheosis_magic_liquid_mimic,"Mimicium",,,,,,,,,ミミックの魔薬,,,,
 material_apotheosis_magic_liquid_rideshare,"Portalium",,,,,,,,,ポータルの魔薬,,,,
+material_apotheosis_magic_liquid_moon_portal,"Solunarium",,,,,,,,,宇宙魔薬,,,,
 material_apotheosis_hidden_liquid_magic_catalyst,"Magic Catalyst",,,,,,,,,魔法の結晶体,,,,
 material_apotheosis_hidden_liquid_wand_essence,"Magus Elixir",,,,,,,,,エリクサー,,,,
 material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,水底の岩,,,,
@@ -2037,7 +2040,7 @@ function OnPlayerSpawned(player_entity)
 	end
 	]]--
 
-	--Fix Red Sand fx
+	--Reset Red Sand fx
 	GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
 	GlobalsSetValue("conga_red_sand_effect_amount",0)
 
@@ -2045,6 +2048,14 @@ function OnPlayerSpawned(player_entity)
 	if ModIsEnabled("Mo_Creeps") then
 		GamePrintImportant("WARNING: MO CREEPS IS ENABLED", "Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
 	end
+
+	--[[
+	--Warns the player if Nightmare is enabled, that the hardcore seed exists
+	if ModIsEnabled("Nightmare") and HasFlagPersistent("apotheosis_card_unlocked_nightmarewarning") == false then
+		GamePrintImportant("WARNING: MO CREEPS IS ENABLED", "Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+		AddFlagPersistent("apotheosis_card_unlocked_nightmarewarning")
+	end
+	]]--
 
 	--Debug Testing for intro scene
 	--RemoveFlagPersistent( "apotheosis_intro_cutscene" )
@@ -2082,8 +2093,7 @@ ModMaterialsFileAdd("mods/Apotheosis/files/scripts/materials/custom_materials.xm
 
 ModLuaFileAppend("data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua")
 ModLuaFileAppend("data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua")
-ModLuaFileAppend("data/scripts/items/potion_aggressive.lua",
-	"mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
+ModLuaFileAppend("data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
 
 function OnMagicNumbersAndWorldSeedInitialized()
 	--You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible

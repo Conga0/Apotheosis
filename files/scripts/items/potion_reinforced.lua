@@ -34,6 +34,10 @@ function init( entity_id )
 
 		potion_material = opts[Random(1,#opts)]
 	end
+
+	if Random(1,1000) == 1 then
+		potion_material = "apotheosis_unholy_concoction"
+	end
 	
 	local year,month,day,temp1,temp2,temp3,jussi = GameGetDateAndTimeLocal()
 

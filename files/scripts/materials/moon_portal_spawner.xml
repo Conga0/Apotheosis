@@ -1,0 +1,7 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/materials/moon_portal_spawner.lua"
+		execute_on_added="1"
+		>
+	</LuaComponent>
+</Entity>

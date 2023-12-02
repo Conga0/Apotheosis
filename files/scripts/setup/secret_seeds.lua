@@ -341,7 +341,7 @@ local secret_seeds = {
 
 for k=1,#secret_seeds
 do local v = secret_seeds[k]
-    if (v.ID == input_seed) then
+    if (v.ID == input_seed) or (v.ID == "hardcore" and GameHasFlagRun("apotheosis_hardmode")) then
         input_seed = "0"
         v.func()
         custom_seed = true

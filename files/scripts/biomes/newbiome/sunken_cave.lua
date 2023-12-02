@@ -391,7 +391,7 @@ g_items =
 		prob   		= 5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/items/wand_level_04.xml"
+		entity 	= "mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml"
 	},
 	-- debug tests
 	{

@@ -286,7 +286,7 @@
   <CellData
 	name="apotheosis_milk_powder"
 	ui_name="$material_apotheosis_milk_powder"
-  	tags="[sand_ground],[corrodible],[alchemy]"
+  	tags="[sand_ground],[corrodible],[alchemy],[dairy]"
 	burnable="0"
 	density="4.0"
 	cell_type="liquid"
@@ -2064,7 +2064,7 @@
   <CellData
 	name="apotheosis_milk"
 	ui_name="$material_apotheosis_milk"
-  	tags="[liquid],[corrodible],[soluble],[liquid_common],[food]"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common],[food],[dairy]"
 	burnable="0"
 	density="4.1"
 	cell_type="liquid"
@@ -2116,6 +2116,32 @@
 			<StatusEffect type="apotheosis_BRAIN_DAMAGE" amount="0.3" />
 		</Ingestion>
 	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_magic_liquid_moon_portal"
+	ui_name="$material_apotheosis_magic_liquid_moon_portal"
+  	tags="[liquid],[corrodible],[soluble],[liquid_common],[food]"
+	burnable="0"
+	density="1.1"
+	cell_type="liquid"
+	wang_color="80aabfcd"
+	generates_smoke="0"
+	liquid_gravity="0.7"
+	liquid_sand="0"
+	liquid_stains="2"
+	liquid_stains_self="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10" 
+	gfx_glow="255"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/material_sky.png"
+		color="80aabfcd"
+		fire_colors_index="2" >
+    </Graphics>
   </CellData>
 
   <CellDataChild
@@ -2789,6 +2815,30 @@
     </Graphics>
   </CellDataChild>
 
+	<!-- Give cheese the [dairy] tag-->
+  <CellData
+	name="cheese_static"
+	ui_name="$mat_cheese_static"
+	tags="[static],[corrodible],[meltable_to_lava],[alchemy],[solid],[earth],[dairy]"
+	burnable="0"
+	density="5"
+	cell_type="liquid"
+	wang_color="ffF3CD67"
+	liquid_gravity="1.2"
+	liquid_sand="1"
+	liquid_static="1"
+	solid_static_type="1"
+	durability="5"
+	on_fire="0"
+	hp="1000" 
+	platform_type="1"
+	audio_physics_material_event="slime"
+	audio_physics_material_wall="slime"
+	audio_physics_material_solid="slime"
+	show_in_creative_mode="1"
+	>
+  </CellData>
+
 
 
 
@@ -3221,6 +3271,37 @@
 		output_cell1="apotheosis_insect_husk" output_cell2="apotheosis_insect_husk"
 		>
 	</Reaction>
+	
+	<!--Levitatium + Soarium = Skyium-->
+	<Reaction probability="20"
+		input_cell1="magic_liquid_faster_levitation" input_cell2="apotheosis_magic_liquid_infinite_flight"
+		output_cell1="apotheosis_magic_liquid_moon_portal" output_cell2="apotheosis_magic_liquid_moon_portal"
+		>
+	</Reaction>
+
+	<!--Generate Moon Portal-->
+	<Reaction probability="5"
+		input_cell1="apotheosis_magic_liquid_moon_portal" input_cell2="[dairy]"
+		output_cell1="air" output_cell2="air"
+		entity="mods/Apotheosis/files/scripts/materials/moon_portal_spawner.xml"
+		blob_radius1="48"
+		blob_restrict_to_input_material1="1"
+		req_lifetime="540"
+		>
+	</Reaction>
+
+	<!--Generate Sun Portal-->
+	<!--
+	<Reaction probability="5"
+		input_cell1="apotheosis_magic_liquid_moon_portal" input_cell2="lava"
+		output_cell1="air" output_cell2="air"
+		entity="mods/Apotheosis/files/scripts/materials/moon_portal_spawner.xml"
+		blob_radius1="48"
+		blob_restrict_to_input_material1="1"
+		req_lifetime="540"
+		>
+	</Reaction>
+	-->
 
 	<!--Cursed Liquid + Lava = Cursed Rock-->
    <Reaction probability="70"

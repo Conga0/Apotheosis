@@ -24,6 +24,10 @@ Wizardstone + Blood = Portalium
 Magic Catalyst = ??? ??? ???
 Magus Extract = Magic Catalyst + Any magical liquid
 
+Solunarium = Soarium + Levitatium
+Moon Portal = Solunarium + Any Dairy material
+Sun Portal = Solunarium + Lava
+
 
 Normal Potion Pool:
 Magical Mud: Creates Mud Men when exposed to fire or other sources of explosions
