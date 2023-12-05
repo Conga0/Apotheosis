@@ -2659,7 +2659,7 @@ local actions_to_edit = {
         mana = 60,
         action = function()
             --c.damage_projectile_add = c.damage_projectile_add - 0.6
-            c.friendly_fire		= true
+            --c.friendly_fire		= true
             if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
                 c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
             end
@@ -2732,6 +2732,33 @@ local actions_to_edit = {
             c.fire_rate_wait = c.fire_rate_wait + 10
             c.spread_degrees = c.spread_degrees - 20
         end
+    },
+
+    --Wand Refresh won't consume mana as an always cast
+    ["RESET"] = {
+		action 		= function()
+            if playing_permanent_card then mana = mana + 20 end
+			current_reload_time = current_reload_time - 25
+			
+			for i,v in ipairs( hand ) do
+				-- print( "removed " .. v.id .. " from hand" )
+				table.insert( discarded, v )
+			end
+			
+			for i,v in ipairs( deck ) do
+				-- print( "removed " .. v.id .. " from deck" )
+				table.insert( discarded, v )
+			end
+			
+			hand = {}
+			deck = {}
+			
+			if ( force_stop_draws == false ) then
+				force_stop_draws = true
+				move_discarded_to_deck()
+				order_deck()
+			end
+		end,
     },
 
     -- Homing subtype data

@@ -577,7 +577,8 @@ spell_apotheosis_potion_to_sea_desc,"The first flask in your inventory is shatte
 actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет жезлу 30 ед           . маны,Adiciona 30 de mana à varinha           ,Añade 30 maná a la varita           ,Fügt dem Zauberstab 30 Mana hinzu           ,Ajoute 30 points de mana à la baguette           ,Aggiunge 30 punti mana alla bacchetta.           ,Dodaje do różdżki 30 pkt. many           ,向魔杖增加 30 法力           ,30マナを杖に追加する,완드에 마나 30을 추가합니다.           ,,,
 spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,回復魔法のフィールド。文字呪文でコピーできない。,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,触れた者を回復する魔法弾。文字呪文でコピーできない。,,,,
-spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,放射物が敵に5ヒットするが、自傷効果を持つようになる。,,,,
+spell_apotheosis_piercing_shot_desc_old,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,放射物が敵に5ヒットするが、自傷効果を持つようになる。,,,,
+spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times",,,,,,,,,放射物が敵に5ヒットする。,,,,
 spell_apotheosis_locked_spell_name,"Faulty Magic",,,,,,,,,封印されたスペル,,,,
 spell_apotheosis_locked_spell_desc,"It seems this magic is unusable after being afflicted by a curse.",,,,,,,,,このスペルは呪いによって使用できない。,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,アルカナを操る技が解放された。,,,,
@@ -752,6 +753,9 @@ item_apotheosis_sampo_34_name,"Our Gift",,,,,,,,,神の恩寵,,,,
 item_apotheosis_runestone_alchemy_name,"Runestone of Alchemy",,,,,,,,,錬金術師のルーンストーン,,,,
 item_apotheosis_skill_angler_name,"Angler Skill",,,,,,,,,釣り名人のギフト,,,,
 item_apotheosis_skill_angler_desc,"Increase your fishing skill level by 1.",,,,,,,,,釣りレベルが1上昇する。,,,,
+item_apotheosis_essence_polymorphine_name,"Essence of Polymorphine...?",,,,,,,,,,,,,
+item_apotheosis_essence_polymorphine_reveal_name,"Essence of Polymorphine",,,,,,,,,,,,,
+item_apotheosis_essence_polymorphine_desc,"Wait...What?",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,カスタムシードを取得した。,,,,
 sign_apotheosis_heretic_hint_name,"Sealed Note",,,,,,,,,封印されたメモ,,,,
 sign_apotheosis_heretic_hint_desc_01,"To those who seek knowledge not true, but divine.\nOne must have corruption purified by the gods.",,,,,,,,,,,,,
@@ -787,6 +791,10 @@ curse_apotheosis_alchemistdream_name,"Alchemist's Dream",,,,,,,,錬金術師の�
 curse_apotheosis_alchemistdream_desc,"All potions are replaced with Large Potions.\nAll liquid bubbles are blessed with glass cannon.\nAlchemists & Liquid bubble appear much more frequently.\nNew Liquid Bubbles appear.",,,,,,,,,全ポーションがメガポーションになる。\n泡系モブがガラスキャノンパークの効果を得る。\nアルケミスティと泡系の敵の出現頻度が上がる。\n新たな種類の泡系モブが出現する。,,,,
 curse_apotheosis_addict_name,"Addict",,,,,,,,,薬物依存,,,,
 curse_apotheosis_addict_desc,"20 Fungal & Creature shifts occur at the start of the run.",,,,,,,,,20個のシフト効果がゲーム開始時から発動する。,,,,
+curse_apotheosis_poverty_name,"Poverty",,,,,,,,,貧困,,,,
+curse_apotheosis_poverty_desc,"You're Affluen't\nMost enemies drop no gold.",,,,,,,,,ほとんどのモンスターは倒してもゴールドを落とさない。,,,,
+curse_apotheosis_downunder_name,"Down Under",,,,,,,,,,,,,
+curse_apotheosis_downunder_desc,"The world is flipped upsidedown.\nBest of luck!",,,,,,,,,,,,,
 curse_apotheosis_weaken_name,"Sunken Curse",,,,,,,,,水底の呪い,,,,
 curse_apotheosis_weaken_desc,"Your resistances and protective perks are disabled.",,,,,,,,,防御系パークの効果がなくなる。,,,,
 building_apotheosis_interact,"Press $0 to undergo apotheosis.",,,,,,,,,$0 を押して効果を得る。,,,,
@@ -805,6 +813,7 @@ motd_apotheosis_description_halloween,"Message of the Day \nHappy Halloween!","�
 motd_apotheosis_description_smissmass,"Message of the Day \nHappy Noitmass!","Сообщение дня \nСчастливого Нойтждества!",,,,,,,,今日のひとこと\nnHappy Noitmass!,,,,
 motd_apotheosis_description_new_year,"Happy new year! \nThankyou for playing, although you'll only read this once a year, I mean it every time you play. \nI'm happy seeing people enjoy my projects, and I'm happy making them myself, so sincerely, thankyou. - Conga Lyne.",,,,,,,,,,,,,
 motd_apotheosis_description_red_fish,"Message of the Day \nThe Red Fish is real.",,,,,,,,,今日のひとこと\n赤いさかなはいます,,,,
+motd_apotheosis_description_painpeko,"Warning: Apotheosis is designed to be played on the Beta Branch of Noita.\nGame crashes may occur by playing on the main branch.\nYou can enable the Noita beta from steam via right-clicking Noita > Properties > Betas.",,,,,,,,,,,,,
 motd_apotheosis_description_001,"Message of the Day \nAlso try Worse Enemies!","Сообщение дня \nТакже попробуйте мод Worse Enemies!",,,,,,,,今日のひとこと\nWorse Enemiesもプレイしてね。,,,,
 motd_apotheosis_description_002,"Message of the Day \nHomeless Hiisi love Material Donations","Сообщение дня \nБродяги любят пожертвования в виде денег",,,,,,,,今日のひとこと\n顔色が悪い人にお金をあげると、いいことがあるかも。,,,,
 motd_apotheosis_description_003,"Message of the Day \nBlood is Fuel.","Сообщение дня \nКровь - это топливо.",,,,,,,,今日のひとこと\n血は力なり。,,,,
@@ -1955,7 +1964,6 @@ end
 ]]
 --
 
-ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
 
 --Custom biome modifiers
 --ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
@@ -1971,6 +1979,10 @@ ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/
 
 --Set Custom Seed (And Check for Secret Seeds)
 dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
+
+--Set the biome map
+--This is handled underneath the custom seed check as the earliest biomemap append gets priority it seems
+ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml")
 
 --Appending extra modiifers
 ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua",
@@ -2056,6 +2068,22 @@ function OnPlayerSpawned(player_entity)
 		AddFlagPersistent("apotheosis_card_unlocked_nightmarewarning")
 	end
 	]]--
+
+	--Conga 04/12/2023
+	--Warns the player to get off the god damn main branch, I'm tired of getting crash reports just for it to end up being this, man.
+	--I know someone's going to stumble across this tired exhausted message one day, and I just want to say, I wanted to have faith in people, and believe that they would have read the multiple warnings on the mod page to play on the beta branch.
+	--I was HOPING people would see the pinned thread called "Game Crashes" and take interest in it if they're experiencing problems, but that's asking too much I suppose.
+	--I feel like I'm running a daycare sometimes, God Dammit.
+	--urgh, alright, tired rant over
+	--Thankyou for playing
+	if GameIsBetaBuild() == false and HasFlagPersistent("apotheosis_card_unlocked_painpeko_warning_02") == false then
+		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",760,-90)
+
+		if HasFlagPersistent("apotheosis_card_unlocked_painpeko_warning_01") then
+			AddFlagPersistent("apotheosis_card_unlocked_painpeko_warning_02")
+		end
+		AddFlagPersistent("apotheosis_card_unlocked_painpeko_warning_01")
+	end
 
 	--Debug Testing for intro scene
 	--RemoveFlagPersistent( "apotheosis_intro_cutscene" )

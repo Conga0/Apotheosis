@@ -41,7 +41,7 @@
 		explosion_dont_damage_shooter="1"
 		damage="0.8"
 		on_collision_die="1"
-		lifetime="1200" 
+		lifetime="600" 
 		knockback_force="0.5"
 		>
 		<config_explosion

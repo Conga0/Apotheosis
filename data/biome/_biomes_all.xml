@@ -1069,6 +1069,12 @@
 		height_index="13"
 		color="ff7c38d0" >
 	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome/custom/essenceroom_fire.xml"
+		height_index="13"
+		color="ff7c38d1" >
+	</Biome>
 
 	<Biome 
 		biome_filename="data/biome/custom/evil_temple.xml"
@@ -1179,6 +1185,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/sunken_cave_entrance_lake_alt_lava.xml"
+		height_index="13"
+		color="ff1191b3" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/ant_hell.xml"
 		height_index="13"
 		color="ffa01515" >
@@ -1188,6 +1200,12 @@
 		biome_filename="data/biome/custom/ant_hell_alchemyroom.xml"
 		height_index="13"
 		color="ffbcb137" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/special_spawnroom.xml"
+		height_index="13"
+		color="ffdc3625" >
 	</Biome>
 
 	<Biome 
@@ -1416,6 +1434,12 @@
 		biome_filename="data/biome/custom/plane_portal_enter_technology.xml"
 		height_index="10"
 		color="ff29e7ff" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/pyramid_cave_empty.xml" 
+		height_index="13"
+		color="ff41c114" >
 	</Biome>
 
 </BiomesToLoad>

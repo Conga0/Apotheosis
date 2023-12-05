@@ -61,7 +61,7 @@ Content list:
 10 new perks
 6 new biomes (+ 4 secret biomes)
 7 new structures
-16 new materials (14 interactable, 15 total, probably some more that I lost count of along the way)
+16 new materials (14 interactable, 16 total, probably some more that I lost count of along the way)
 A new set of pillars
 11 new items
 5 new musical curiosities

@@ -48,6 +48,7 @@ local actions_to_edit = {
     --Conga 02/12/2023: This happens in vanilla too, but heavy spread, octuple cast, heal bolt, heal bolt, heal bolt, wand refresh causes the bolts to cast twice. Whatever you say Nolla
 	["RESET"] = {
 		action = function ( )
+            if playing_permanent_card then mana = mana + 20 end
 			current_reload_time = current_reload_time - 25
 
 			local copyspells = GameHasFlagRun("apotheosis_flag_copy_spells")

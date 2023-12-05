@@ -254,6 +254,53 @@ function addict()
 
 end
 
+function poverty()
+
+    GameAddFlagRun("apotheosis_poverty")
+
+    AddUI("poverty")
+
+    do --Reduce gold dropped in poverty by 100%
+        local path = "data/scripts/items/drop_money.lua"
+        local content = ModTextFileGetContent(path)
+        content = content:gsub("local money = 10 %* amount", "local money = 0")
+        ModTextFileSetContent(path, content)
+    end
+
+end
+
+--[[
+]]--
+--04/12/2023 Conga: Currently unfinished, uncomment if you want to try it out
+function downunder()
+
+    GameAddFlagRun("apotheosis_downunder")
+
+    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup.lua")
+
+    AddUI("downunder")
+
+end
+
+--[[
+--04/12/2023 Conga: Placeholder, I would like a "Everything" seed for psychopaths (myself included)
+function apotheosis()
+
+    GameAddFlagRun("apotheosis_hardcore")
+    GameAddFlagRun("apotheosis_everything")
+
+    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
+    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic.lua" )
+
+    dofile_once("mods/apotheosis/files/scripts/setup/hardmode_setup.lua")
+    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup.lua")
+    dofile_once("mods/apotheosis/files/scripts/setup/nightcore_setup.lua")
+
+    AddUI("apotheosis")
+
+end
+]]--
+
 
 
 --function perkedup()
@@ -335,6 +382,14 @@ local secret_seeds = {
         ID = "addict",
         func = addict
     },
+    {
+        ID = "poverty",
+        func = poverty
+    },
+    {
+        ID = "downunder",
+        func = downunder
+    },
 }
 
 
@@ -345,6 +400,7 @@ do local v = secret_seeds[k]
         input_seed = "0"
         v.func()
         custom_seed = true
+        break
     end
 end
 

@@ -27,6 +27,7 @@ do local v = targets[k];
 	if ( v ~= entity_id ) then
 		local children = EntityGetAllChildren( v )
 		local valid = true
+		EntityAddRandomStains( v, CellFactory_GetType("apotheosis_urine_fading"), 400 )
 		
 		if children ~= nil then
 			for z=1, #children
@@ -42,7 +43,6 @@ do local v = targets[k];
 			local comp = EntityGetFirstComponentIncludingDisabled(v,"SpriteStainsComponent")
 			if comp ~= nil then
 				local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_status_urine.xml", pos_x, pos_y)
-				EntityAddRandomStains( v, CellFactory_GetType("apotheosis_urine_fading"), 400 )
 				EntityAddChild(v,c)
 			end
 		end
