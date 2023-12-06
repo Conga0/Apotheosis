@@ -427,16 +427,6 @@ for z=1,2 do
     end
 end
 
-for k=1,#secret_seeds
-do local v = secret_seeds[k]
-    if (v.ID == input_seed) or (v.ID == "hardcore" and GameHasFlagRun("apotheosis_hardmode")) or (v.ID == "downunder" and GameHasFlagRun("apotheosis_downunder")) then
-        input_seed = "0"
-        v.func()
-        custom_seed = true
-        break
-    end
-end
-
 
 
 if input_seed == "0" then
