@@ -214,7 +214,7 @@ function init( x, y, w, h )
 
 	local pw = GetParallelWorldPosition(x,y)
 	local sampo_x = 212
-	local sampo_y = -82
+	local sampo_y = -85
 	if pw == 0 then
 		EntityLoad("data/entities/animals/boss_centipede/boss_centipede.xml", sampo_x, sampo_y - 80)
 		EntityLoad("data/entities/animals/boss_centipede/sampo.xml", sampo_x, sampo_y)

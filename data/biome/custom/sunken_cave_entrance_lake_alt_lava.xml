@@ -1,6 +1,6 @@
 <Biome>
   <Topology 
-    name="$biome_lake"
+    name="$biome_lava"
     background_image="data/weather_gfx/background_cave_01.png" 
     background_edge_left="data/weather_gfx/edges/background_cave_01_left.png"
     background_edge_right="data/weather_gfx/edges/background_cave_01_right.png"

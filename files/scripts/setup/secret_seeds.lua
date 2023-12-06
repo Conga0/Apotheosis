@@ -258,8 +258,6 @@ function poverty()
 
     GameAddFlagRun("apotheosis_poverty")
 
-    AddUI("poverty")
-
     do --Reduce gold dropped in poverty by 100%
         local path = "data/scripts/items/drop_money.lua"
         local content = ModTextFileGetContent(path)
@@ -267,11 +265,18 @@ function poverty()
         ModTextFileSetContent(path, content)
     end
 
+    do --Fools gold the gold room
+        local path = "data/biome/gold.xml"
+        local content = ModTextFileGetContent(path)
+        content = content:gsub("\"gold\"", "\"templebrick_golden_static\"")
+        content = content:gsub("\"$biome_gold\"", "\"$mat_templebrick_golden_static\"")
+        ModTextFileSetContent(path, content)
+    end
+
+    AddUI("poverty")
+
 end
 
---[[
-]]--
---04/12/2023 Conga: Currently unfinished, uncomment if you want to try it out
 function downunder()
 
     GameAddFlagRun("apotheosis_downunder")
@@ -282,24 +287,23 @@ function downunder()
 
 end
 
---[[
---04/12/2023 Conga: Placeholder, I would like a "Everything" seed for psychopaths (myself included)
-function apotheosis()
+--I don't expect anyone to beat this, but to quote Sisyphus.
+--The struggle itself towards the heights is enough to fill a man's heart. One must imagine Sisyphus happy.
+function everything()
 
-    GameAddFlagRun("apotheosis_hardcore")
     GameAddFlagRun("apotheosis_everything")
 
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic.lua" )
 
-    dofile_once("mods/apotheosis/files/scripts/setup/hardmode_setup.lua")
-    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup.lua")
+    dofile_once("mods/apotheosis/files/scripts/setup/everything_misc_setup.lua")
+    dofile_once("mods/apotheosis/files/scripts/setup/everything_setup.lua")
+    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup_noflag.lua")
     dofile_once("mods/apotheosis/files/scripts/setup/nightcore_setup.lua")
 
-    AddUI("apotheosis")
+    AddUI("everything")
 
 end
-]]--
 
 
 
@@ -343,15 +347,15 @@ custom_seed = false
 
 local secret_seeds = {
     {
-        ID = "towerclimb",
+        IDs = {"towerclimb"},
         func = towerclimb
     },
     {
-        ID = "hardcore",
+        IDs = {"hardcore"},
         func = hardcore
     },
     {
-        ID = "nightcore",   --Conga: Anyone else remember this? I remember listening to this a ton when I was younger
+        IDs = {"nightcore"},   --Conga: Anyone else remember this? I remember listening to this a ton when I was younger
         func = nightcore
     },
     --[[
@@ -363,7 +367,7 @@ local secret_seeds = {
     },
     ]]--
     {
-        ID = "missingmagic",
+        IDs = {"missingmagic"},
         func = missingmagic
     },
     --[[
@@ -375,28 +379,57 @@ local secret_seeds = {
     ]]--
     --All liquid bubbles gain the Glass Cannon perk & all potions become large potions, alchemists & liquid bubbles appear much more frequently
     {
-        ID = "alchemistdream",
+        IDs = {"alchemistdream"},
         func = alchemistdream
     },
     {
-        ID = "addict",
+        IDs = {"addict"},
         func = addict
     },
     {
-        ID = "poverty",
+        IDs = {"poverty"},
         func = poverty
     },
     {
-        ID = "downunder",
+        IDs = {"downunder","sisoehtopa","upsidedown"},
         func = downunder
+    },
+    {
+        IDs = {"everything","getfixedboi","sisyphus"},
+        func = everything
     },
 }
 
-
+--First scans if a custom seed is already loaded, if so, load their necessary data
+--Secondly if one isn't, it'll compare the current seed to possible secret seeds and apply one if it's valid
+for z=1,2 do
+    for k=1,#secret_seeds do
+        local v = secret_seeds[k]
+        if z == 1 and not custom_seed then
+            for l=1,#v.IDs do
+                if v.IDs[l] == GameHasFlagRun(table.concat({"apotheosis_",v.ID})) then
+                    input_seed = "0"
+                    v.func()
+                    custom_seed = true
+                    break
+                end
+            end
+        else
+            for l=1,#v.IDs do
+                if (v.IDs[l] == input_seed) and not custom_seed then
+                    input_seed = "0"
+                    v.func()
+                    custom_seed = true
+                    break
+                end
+            end
+        end
+    end
+end
 
 for k=1,#secret_seeds
 do local v = secret_seeds[k]
-    if (v.ID == input_seed) or (v.ID == "hardcore" and GameHasFlagRun("apotheosis_hardmode")) then
+    if (v.ID == input_seed) or (v.ID == "hardcore" and GameHasFlagRun("apotheosis_hardmode")) or (v.ID == "downunder" and GameHasFlagRun("apotheosis_downunder")) then
         input_seed = "0"
         v.func()
         custom_seed = true

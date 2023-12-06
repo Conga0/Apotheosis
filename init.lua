@@ -757,11 +757,12 @@ item_apotheosis_essence_polymorphine_name,"Essence of Polymorphine...?",,,,,,,,,
 item_apotheosis_essence_polymorphine_reveal_name,"Essence of Polymorphine",,,,,,,,,,,,,
 item_apotheosis_essence_polymorphine_desc,"Wait...What?",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,カスタムシードを取得した。,,,,
-sign_apotheosis_heretic_hint_name,"Sealed Note",,,,,,,,,封印されたメモ,,,,
-sign_apotheosis_heretic_hint_desc_01,"To those who seek knowledge not true, but divine.\nOne must have corruption purified by the gods.",,,,,,,,,,,,,
-sign_apotheosis_heretic_hint_desc_02,"To those who seek knowledge not true, but divine.\nOne must not enter lands which do not contain our salt.",,,,,,,,,,,,,
-sign_apotheosis_heretic_hint_desc_03,"To those who seek knowledge not true, but divine.\nOne must offer that which brings excessive wealth, and the gate will come to life.",,,,,,,,,,,,,
-sign_apotheosis_heretic_hint_desc_04,"To those who seek knowledge not true, but divine.\nOne must hold Kingly knowledge for proper ascension, lest they ruin their form.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_name,"Sealed Note",,,,,,,,,封印されたメモ,,,,
+sign_apotheosis_divinity_hint_desc_00,"To those who seek knowledge not true, but divine.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_01,"One must have corruption purified by the gods.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_02,"One must not enter lands which do not contain our salt.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_03,"One must offer that which brings excessive wealth, and the gate will come to life.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_04,"One must hold Kingly knowledge for proper ascension, lest they ruin their form.",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,照準の杖,,,,
 wand_apotheosis_rat_name,"Rat",,,,,,,,,ロッタ,,,,
@@ -795,6 +796,8 @@ curse_apotheosis_poverty_name,"Poverty",,,,,,,,,貧困,,,,
 curse_apotheosis_poverty_desc,"You're Affluen't\nMost enemies drop no gold.",,,,,,,,,ほとんどのモンスターは倒してもゴールドを落とさない。,,,,
 curse_apotheosis_downunder_name,"Down Under",,,,,,,,,,,,,
 curse_apotheosis_downunder_desc,"The world is flipped upsidedown.\nBest of luck!",,,,,,,,,,,,,
+curse_apotheosis_everything_name,"Canto XXXIV",,,,,,,,,,,,,
+curse_apotheosis_everything_desc,"All seeds are applied at once.\nEnemies drop significantly less gold.\nThe world is upsidedown.\nHardcore changes apply.\nNightcore damage increases apply.\nYou are blessed with additional health.\nYou can only win by Ascension, but are allowed to visit parallel worlds.\n\nThere is no escape.\nThere is no freedom.\nThis is your purgatory now.",,,,,,,,,,,,,
 curse_apotheosis_weaken_name,"Sunken Curse",,,,,,,,,水底の呪い,,,,
 curse_apotheosis_weaken_desc,"Your resistances and protective perks are disabled.",,,,,,,,,防御系パークの効果がなくなる。,,,,
 building_apotheosis_interact,"Press $0 to undergo apotheosis.",,,,,,,,,$0 を押して効果を得る。,,,,
@@ -1475,8 +1478,7 @@ ModLuaFileAppend("data/scripts/newgame_plus.lua", "mods/Apotheosis/files/scripts
 
 --Adds custom enlightened alchemist types
 --Could instead have a script that has a 2 in 6 chance to occur, and if it does make the alchemist one of the new variants, and append all this as a script on the englightened alch entity that runs after the vanilla init occurs
-local content = ModTextFileGetContent(
-	"mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua")
+local content = ModTextFileGetContent("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua")
 ModTextFileSetContent("data/scripts/animals/enlightened_alchemist_init.lua", tostring(content))
 --ModLuaFileAppend( "data/scripts/animals/enlightened_alchemist_init.lua", "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua" )
 

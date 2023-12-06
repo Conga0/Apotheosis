@@ -35,6 +35,11 @@ function item_pickup( entity_item, entity_who_picked, name )
         AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_hardcore")
     end
 
+    --Winning in everything mode
+    if GameHasFlagRun("apotheosis_everything") then
+        AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_everything")
+    end
+
 
     --Let's just make 3 seperate ents to handle it
     --Maybe reduce true orb knowledge requirement to 15? (maximum orbs possible in world 1, doesn't include corrupt orbs, forces player to stay in main world)

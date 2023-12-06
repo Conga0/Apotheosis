@@ -539,16 +539,16 @@ ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
   local xml = nxml.parse(content)
   xml:first_of("mBufferedPixelScenes"):add_children(nxml.parse_many([[
     <PixelScene pos_x="14698" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
-    <PixelScene pos_x="]] .. (10868 + worldsize)  .. [[" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
-    <PixelScene pos_x="]] .. (10868 - worldsize)  .. [[" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+    <PixelScene pos_x="]] .. (14698 + worldsize)  .. [[" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+    <PixelScene pos_x="]] .. (14698 - worldsize)  .. [[" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
 
     <PixelScene pos_x="-1905" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
     <PixelScene pos_x="]] .. (-1905 + worldsize)  .. [[" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
     <PixelScene pos_x="]] .. (-1905 - worldsize)  .. [[" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
 
-    <PixelScene pos_x="24166" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
-    <PixelScene pos_x="]] .. (24166 + worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
-    <PixelScene pos_x="]] .. (24166 - worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+    <PixelScene pos_x="12187" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+    <PixelScene pos_x="]] .. (12187 + worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+    <PixelScene pos_x="]] .. (12187 - worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
 
     <PixelScene pos_x="2800" pos_y="250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
     <PixelScene pos_x="]] .. (2800 + worldsize)  .. [[" pos_y="-550" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />

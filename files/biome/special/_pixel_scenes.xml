@@ -17,9 +17,9 @@
     <File>data/biome_impl/spliced/watercave.xml</File>
 	-->
     <File>data/biome_impl/spliced/mountain_lake.xml</File>
-	
+	<!--
     <File>data/biome_impl/spliced/lake_statue.xml</File>
-
+	-->
     <File>data/biome_impl/spliced/moon.xml</File>
 	
     <File>data/biome_impl/spliced/moon_dark.xml</File>
@@ -92,7 +92,7 @@
 		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="data/biome_impl/pyramid/reward_visual.png" material_filename="data/biome_impl/pyramid/boss_limbs.png" pos_x="9726" pos_y="11776" skip_biome_checks="1" skip_edge_textures="0" >
 		</PixelScene>
 
-		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/snowcastle/forge_background.png" clean_area_before="0" colors_filename="data/biome_impl/snowcastle/forge_visual.png" material_filename="data/biome_impl/snowcastle/forge.png" pos_x="1976" pos_y="8024" skip_biome_checks="1" skip_edge_textures="0" >
+		<PixelScene DEBUG_RELOAD_ME="0" background_filename="data/biome_impl/snowcastle/forge_background.png" clean_area_before="0" colors_filename="data/biome_impl/snowcastle/forge_visual.png" material_filename="data/biome_impl/snowcastle/forge.png" pos_x="1946" pos_y="8024" skip_biome_checks="1" skip_edge_textures="0" >
 		</PixelScene>
 		
 		<PixelScene DEBUG_RELOAD_ME="0" background_filename="" clean_area_before="0" colors_filename="" material_filename="data/biome_impl/tower_start.png" pos_x="9676" pos_y="9086" skip_biome_checks="1" skip_edge_textures="0" >
@@ -149,19 +149,20 @@
 		
 		<!-- music machines have copies on both directly adjacent parallel worlds -->
 		<PixelScene pos_x="14698" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
-		<PixelScene pos_x="51050" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
-		<PixelScene pos_x="-21654" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
-		
+		<PixelScene pos_x="66922" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+		<PixelScene pos_x="-37526" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
+
 		<PixelScene pos_x="-1905" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
-		<PixelScene pos_x="34447" pos_y="-300" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
-		<PixelScene pos_x="-38257" pos_y="-300" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
-		
-		<PixelScene pos_x="24166" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
-		<PixelScene pos_x="-48538" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
-		
+		<PixelScene pos_x="50,19" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
+		<PixelScene pos_x="-54129" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
+
+		<PixelScene pos_x="12187" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+		<PixelScene pos_x="64411" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+		<PixelScene pos_x="52224" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+
 		<PixelScene pos_x="2800" pos_y="250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
-		<PixelScene pos_x="39252" pos_y="-150" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
-		<PixelScene pos_x="-33652" pos_y="-150" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+		<PixelScene pos_x="55024" pos_y="-550" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
+		<PixelScene pos_x="-49424" pos_y="-550" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
 
 		<!-- these need to be spawned with a delay for the attachments to work, because the pixel scenes take their time -->
 		<PixelScene pos_x="-1824" pos_y="-1270" just_load_an_entity="data/entities/props/physics_fungus.xml" />    
@@ -224,7 +225,7 @@
 		
 		<PixelScene pos_x="15965" pos_y="3142" just_load_an_entity="data/entities/buildings/maggotspot.xml" />
 		
-		<PixelScene pos_x="-14500" pos_y="3000" just_load_an_entity="data/entities/animals/boss_fish/fish_giga.xml" />
+		<PixelScene pos_x="-14500" pos_y="3600" just_load_an_entity="data/entities/animals/boss_fish/fish_giga.xml" />
 
 		<!--Apotheosis scenes manually inserted below-->
 		<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="3032" pos_y="3145" skip_biome_checks="1" skip_edge_textures="0"
@@ -269,7 +270,7 @@
 	<!--Spawns a book hinting towards Materia Converting Spells (Dragon Cave)-->
     <PixelScene pos_x="3027" pos_y="5975" just_load_an_entity="data/entities/buildings/materia_conversion_book_spawner.xml" />
 	<!--Spawns a book hinting towards which spells to use Mass Materia Conversion on (Eye Room)-->
-    <PixelScene pos_x="-3810" pos_y="4914" just_load_an_entity="data/entities/buildings/materia_conversion_spell_book_spawner.xml" />
+    <PixelScene pos_x="3360" pos_y="8512" just_load_an_entity="data/entities/buildings/materia_conversion_spell_book_spawner.xml" />
 
 	<!--Spawns a book hinting towards bringing a brimstone to the Lava Lake-->
     <PixelScene pos_x="4007" pos_y="3313" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_book_spawner.xml" />
@@ -288,14 +289,6 @@
 
 
     <PixelScene pos_x="-19100" pos_y="-160" just_load_an_entity="mods/apotheosis/files/entities/buildings/forest_monolith_spawner.xml" />
-
-
-	  <!--Safe entrance in the Core Mines-->
-	<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-21519" pos_y="3036" skip_biome_checks="1" skip_edge_textures="0"
-	material_filename="mods/Apotheosis/files/biome_impl/lava_excavation/intro.png"
-	background_filename=""
-	colors_filename=""
-	></PixelScene>
 
 	<!--Cruicible-->
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-8739" pos_y="16381" skip_biome_checks="1" skip_edge_textures="0"
@@ -317,6 +310,87 @@
 	<PixelScene pos_x="-8648" pos_y="16708" just_load_an_entity="mods/Apotheosis/files/entities/buildings/portal_fire_lukki_tower.xml" />
 	<PixelScene pos_x="-8337" pos_y="16554" just_load_an_entity="mods/Apotheosis/files/entities/buildings/portal_fire_lukki_lavalake.xml" />
 	<PixelScene pos_x="-8624" pos_y="16547" just_load_an_entity="mods/Apotheosis/files/entities/buildings/portal_fire_lukki_musicstone.xml" />
+
+	<!--Aesthete of Heat spawners-->
+	<PixelScene pos_x="-2557" pos_y="12900" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml" />
+	<PixelScene pos_x="-2989" pos_y="12900" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml" />
+	<PixelScene pos_x="-3421" pos_y="12900" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml" />
+	<PixelScene pos_x="-3853" pos_y="12900" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml" />
+
+
+	<!--True Gods-->
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17150" pos_y="4292" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/pixel_scenes/true_gods/true_gods.png"
+      background_filename="mods/Apotheosis/files/pixel_scenes/true_gods/true_gods_background.png"
+      colors_filename=""
+    ></PixelScene>
+
+	<!--Tower Glyphs-->
+    <PixelScene pos_x="9740" pos_y="8787" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_mines.xml" />
+    <PixelScene pos_x="9740" pos_y="8403" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_excavation_site.xml" />
+    <PixelScene pos_x="9740" pos_y="8013" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_snowy_depths.xml" />
+    <PixelScene pos_x="9740" pos_y="7468" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_hiisi_base.xml" />
+    <PixelScene pos_x="9740" pos_y="6406" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_jungle.xml" />
+    <PixelScene pos_x="9740" pos_y="5896" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_vault.xml" />
+    <PixelScene pos_x="9740" pos_y="5397" just_load_an_entity="mods/Apotheosis/files/entities/props/background/teleport_puzzle_crypt.xml" />
+
+	<!--Core Mines-->
+	<!--Safe entrance in the Core Mines-->
+	<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-21519" pos_y="9692" skip_biome_checks="1" skip_edge_textures="0"
+	material_filename="mods/Apotheosis/files/biome_impl/lava_excavation/intro.png"
+	background_filename=""
+	colors_filename=""
+	></PixelScene>
+
+	<!--Alchemy Room Area in Ant Nest-->
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17340" pos_y="8885" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_entry.png"
+      background_filename="mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_entry_background.png"
+      colors_filename="mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_entry_visual.png"
+    ></PixelScene>
+
+	<!--Musical Note Hints-->
+    <PixelScene pos_x="-19131" pos_y="8995" just_load_an_entity="mods/Apotheosis/files/entities/buildings/musichints/hint_coremines.xml" />
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-19211" pos_y="8915" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/biome_impl/musicspot.png"
+      background_filename=""
+      colors_filename="mods/Apotheosis/files/biome_impl/musicspot_visual.png"
+    ></PixelScene>
+
+	<!--Le Fishe-->
+    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
+
+	<!--Grave 1-->
+	<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="4660" pos_y="-100" skip_biome_checks="1" skip_edge_textures="0"
+		material_filename="mods/Apotheosis/files/biome_impl/forest/realquest.png"
+		background_filename=""
+		colors_filename="mods/Apotheosis/files/biome_impl/forest/realquest_visual.png"
+	></PixelScene>
+	<PixelScene pos_x="4863" pos_y="260" just_load_an_entity="data/entities/props/physics_skull_03.xml" />
+	<PixelScene pos_x="4863" pos_y="255" just_load_an_entity="data/entities/props/physics_bone_01.xml" />
+	<PixelScene pos_x="4883" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest.xml" />
+	<PixelScene pos_x="4843" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_alt.xml" />
+
+	<!--Graave 2-->
+	<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17860" pos_y="-100" skip_biome_checks="1" skip_edge_textures="0"
+		material_filename="mods/Apotheosis/files/biome_impl/forest/realquest.png"
+		background_filename=""
+		colors_filename="mods/Apotheosis/files/biome_impl/forest/realquest_visual.png"
+	></PixelScene>
+	<PixelScene pos_x="-17657" pos_y="260" just_load_an_entity="data/entities/props/physics_skull_03.xml" />
+	<PixelScene pos_x="-17657" pos_y="255" just_load_an_entity="data/entities/props/physics_bone_01.xml" />
+	<PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
+
+	<!--Volcanic Nest in Snowy-->
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="269" pos_y="10087" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/biome_impl/snowcave/lava_nest.png"
+      background_filename="mods/Apotheosis/files/biome_impl/snowcave/lava_nest_background.png"
+      colors_filename="mods/Apotheosis/files/biome_impl/snowcave/lava_nest_visual.png"
+    ></PixelScene>
+    <PixelScene pos_x="307" pos_y="10122" just_load_an_entity="mods/Apotheosis/files/entities/buildings/lava_nest.xml" />
+
+	<!--Artifical Lava Lake Tablet-->
+	<PixelScene pos_x="-2300" pos_y="12750" just_load_an_entity="data/entities/items/books/book_corpse.xml" />
 
 	</mBufferedPixelScenes>
 </PixelScenes>

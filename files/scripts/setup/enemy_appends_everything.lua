@@ -26,4 +26,4 @@ if g_props then
     end
 end
 
-GameAddFlagRun("apotheosis_hardmode")
+GameAddFlagRun("apotheosis_everything")

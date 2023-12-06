@@ -32,6 +32,11 @@ local apoth_items = {
     {path="mods/apotheosis/files/entities/items/wands/custom/aimbot_wand.xml", name="$wand_apotheosis_aimbot_name", xml="aimbot_wand.xml"},
 }
 
-for k=1,#apoth_items do
-    table.insert(special_spawnables,apoth_items[k])
+local valid = true
+
+if valid then
+    for k=1,#apoth_items do
+        table.insert(special_spawnables,apoth_items[k])
+    end
+    valid = false
 end

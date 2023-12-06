@@ -1,5 +1,0 @@
-Fire lukki spawn code needs adjustment
-Force NG+ map to always use the upsidedown world while in upsidedown world
-Remove BG in hell
-
-Seed removal protection (similar to what hardcore has)

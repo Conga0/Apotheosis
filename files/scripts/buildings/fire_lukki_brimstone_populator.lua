@@ -27,9 +27,9 @@ function collision_trigger(brimstone_id)
             end
 
             if ModIsEnabled("nightmare") or ModIsEnabled("purgatory") then
-                local eid = EntityLoad( "data/entities/animals/gold_bosses/boss_fire_lukki/boss_fire_lukki.xml", pos_x, pos_y + 150 )
+                EntityLoad( "data/entities/animals/gold_bosses/boss_fire_lukki/boss_fire_lukki.xml", pos_x, pos_y + 150 )
             else
-                local eid = EntityLoad( "data/entities/animals/boss_fire_lukki/boss_fire_lukki.xml", pos_x, pos_y + 150 )
+                EntityLoad( "data/entities/animals/boss_fire_lukki/boss_fire_lukki.xml", pos_x, pos_y + 150 )
             end
             
             GameAddFlagRun("apotheosis_fire_lukki_boss_summoned")
