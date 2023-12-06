@@ -8,6 +8,7 @@ local controlscomp = EntityGetFirstComponent(root, "ControlsComponent")
 local itemcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
 local alwayscast = ComponentGetValue2(itemcomp,"permanently_attached")
 local cooldown_frames = 45
+local actionid = "action_apotheosis_alt_fire_targetter"
 --I didn't like the inconsistency felt when cooldown scaled off of the wand recharge speed. I prefer the feeling of a consistent right click to teleport every 0.75 seconds
 --local cooldown_frames = wand.rechargeTime
 --if cooldown_frames <= 20 then cooldown_frames = 20 end
@@ -29,6 +30,10 @@ if GameGetFrameNum() >= cooldown_frame then
                 GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("mods/apotheosis/files/entities/projectiles/deck/targetter.xml", x, y))
                 wand.mana = mana - manacost
                 ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
+                if HasFlagPersistent(actionid) == false then
+                    GameAddFlagRun(table.concat({"new_",actionid}))
+                    AddFlagPersistent(actionid)
+                end
                 if alwayscast == false then
                     uses = uses - 1
                     ComponentSetValue2(comp,"uses_remaining",uses)

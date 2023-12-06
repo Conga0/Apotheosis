@@ -5,7 +5,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 --worldsize = worldsize * 0.5
 local parallel = GetParallelWorldPosition(pos_x, pos_y)
 
-if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" then
+if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" and GameHasFlagRun("apotheosis_everything") == false then
 
     local comps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")
     for k=1,#comps

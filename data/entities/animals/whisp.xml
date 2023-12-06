@@ -42,10 +42,10 @@
 		
 		<HitboxComponent 
 			_enabled="1" 
-			aabb_min_x="-3" 
-			aabb_max_x="3" 
-			aabb_min_y="-3" 
-			aabb_max_y="3" 
+			aabb_min_x="-4" 
+			aabb_max_x="4" 
+			aabb_min_y="-4" 
+			aabb_max_y="4" 
 			is_enemy="1" 
 			is_item="0" 
 			is_player="0" >

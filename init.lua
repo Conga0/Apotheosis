@@ -388,6 +388,8 @@ credits_apotheosis_line_45,Best of luck in your future adventures - Conga Lyne,�
 credits_apotheosis_line_horscht,Provided a ton of help in the mod support channel during development and let me use his credits script.,Оказал тонну помощи в канале поддержки мода во время разработки и позволил мне использовать его скрипт для этого меню.,,,,,,,,,,,,
 Apotheosis content below,"=====================================================================================================================================================================================================================================================Below here are Apotheosis translation keys",,,,,,,,,,,,,
 teleport_portal_alternate,"Portal Elsewhere",,,,,,,,,彼方へのポータル,,,,
+teleport_portal_moon,"Portal to the Moon",,,,,,,,,月への扉,,,,
+teleport_portal_sun,"Portal to the Sun",,,,,,,,,太陽への扉,,,,
 biome_slime_hell,"Virulent Caverns",,,,,,,,,猛毒洞窟,,,,
 biome_toxic_worm_cave,"Toxic Nest",,,,,,,,,毒虫の巣穴,,,,
 biome_abandoned_assembly,"Sandy Assembly",,,,,,,,,砂の遺跡,,,,
@@ -433,6 +435,7 @@ material_apotheosis_magic_liquid_suffocatium,"Suffocatium",,,,,,,,,窒息の魔�
 material_apotheosis_magic_liquid_velocium,"Veloium",,,,,,,,,速度の魔薬,,,,
 material_apotheosis_magic_liquid_mimic,"Mimicium",,,,,,,,,ミミックの魔薬,,,,
 material_apotheosis_magic_liquid_rideshare,"Portalium",,,,,,,,,ポータルの魔薬,,,,
+material_apotheosis_magic_liquid_moon_portal,"Solunarium",,,,,,,,,宇宙魔薬,,,,
 material_apotheosis_hidden_liquid_magic_catalyst,"Magic Catalyst",,,,,,,,,魔法の結晶体,,,,
 material_apotheosis_hidden_liquid_wand_essence,"Magus Elixir",,,,,,,,,エリクサー,,,,
 material_apotheosis_sunkenrock,"Sunken Rock",,,,,,,,,水底の岩,,,,
@@ -574,7 +577,8 @@ spell_apotheosis_potion_to_sea_desc,"The first flask in your inventory is shatte
 actiondesc_mana_reduce,Adds 30 mana to the wand           ,Добавляет жезлу 30 ед           . маны,Adiciona 30 de mana à varinha           ,Añade 30 maná a la varita           ,Fügt dem Zauberstab 30 Mana hinzu           ,Ajoute 30 points de mana à la baguette           ,Aggiunge 30 punti mana alla bacchetta.           ,Dodaje do różdżki 30 pkt. many           ,向魔杖增加 30 法力           ,30マナを杖に追加する,완드에 마나 30을 추가합니다.           ,,,
 spell_apotheosis_cov_desc,"A field of regenerative magic; Uncopyable.",,,,,,,,,回復魔法のフィールド。文字呪文でコピーできない。,,,,
 spell_apotheosis_healing_bolt_desc,"A magical bolt that heals other beings; Uncopyable.",,,,,,,,,触れた者を回復する魔法弾。文字呪文でコピーできない。,,,,
-spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,放射物が敵に5ヒットするが、自傷効果を持つようになる。,,,,
+spell_apotheosis_piercing_shot_desc_old,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,放射物が敵に5ヒットするが、自傷効果を持つようになる。,,,,
+spell_apotheosis_piercing_shot_desc,"Makes a projectile penetrate 5 times",,,,,,,,,放射物が敵に5ヒットする。,,,,
 spell_apotheosis_locked_spell_name,"Faulty Magic",,,,,,,,,封印されたスペル,,,,
 spell_apotheosis_locked_spell_desc,"It seems this magic is unusable after being afflicted by a curse.",,,,,,,,,このスペルは呪いによって使用できない。,,,,
 orb_apotheosis_12_desc,"Secrets of controlling the arcane have been unlocked to you.",,,,,,,,,アルカナを操る技が解放された。,,,,
@@ -749,12 +753,16 @@ item_apotheosis_sampo_34_name,"Our Gift",,,,,,,,,神の恩寵,,,,
 item_apotheosis_runestone_alchemy_name,"Runestone of Alchemy",,,,,,,,,錬金術師のルーンストーン,,,,
 item_apotheosis_skill_angler_name,"Angler Skill",,,,,,,,,釣り名人のギフト,,,,
 item_apotheosis_skill_angler_desc,"Increase your fishing skill level by 1.",,,,,,,,,釣りレベルが1上昇する。,,,,
+item_apotheosis_essence_polymorphine_name,"Essence of Polymorphine...?",,,,,,,,,,,,,
+item_apotheosis_essence_polymorphine_reveal_name,"Essence of Polymorphine",,,,,,,,,,,,,
+item_apotheosis_essence_polymorphine_desc,"Wait...What?",,,,,,,,,,,,,
 sign_apotheosis_custom_seed,"Custom Seed successfully set",,,,,,,,,カスタムシードを取得した。,,,,
-sign_apotheosis_heretic_hint_name,"Sealed Note",,,,,,,,,封印されたメモ,,,,
-sign_apotheosis_heretic_hint_desc_01,"To those who seek knowledge not true, but divine.\nOne must have corruption purified by the gods.",,,,,,,,,,,,,
-sign_apotheosis_heretic_hint_desc_02,"To those who seek knowledge not true, but divine.\nOne must not enter lands which do not contain our salt.",,,,,,,,,,,,,
-sign_apotheosis_heretic_hint_desc_03,"To those who seek knowledge not true, but divine.\nOne must offer that which brings excessive wealth, and the gate will come to life.",,,,,,,,,,,,,
-sign_apotheosis_heretic_hint_desc_04,"To those who seek knowledge not true, but divine.\nOne must hold Kingly knowledge for proper ascension, lest they ruin their form.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_name,"Sealed Note",,,,,,,,,封印されたメモ,,,,
+sign_apotheosis_divinity_hint_desc_00,"To those who seek knowledge not true, but divine.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_01,"One must have corruption purified by the gods.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_02,"One must not enter lands which do not contain our salt.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_03,"One must offer that which brings excessive wealth, and the gate will come to life.",,,,,,,,,,,,,
+sign_apotheosis_divinity_hint_desc_04,"One must hold Kingly knowledge for proper ascension, lest they ruin their form.",,,,,,,,,,,,,
 wand_apotheosis_deck_of_cards_name,"Korttipakka",,,,,,,,,,,,"DOESN'T NEED TO BE TRANSLATED",
 wand_apotheosis_aimbot_name,"Wand of Aiming",,,,,,,,,照準の杖,,,,
 wand_apotheosis_rat_name,"Rat",,,,,,,,,ロッタ,,,,
@@ -784,6 +792,12 @@ curse_apotheosis_alchemistdream_name,"Alchemist's Dream",,,,,,,,錬金術師の�
 curse_apotheosis_alchemistdream_desc,"All potions are replaced with Large Potions.\nAll liquid bubbles are blessed with glass cannon.\nAlchemists & Liquid bubble appear much more frequently.\nNew Liquid Bubbles appear.",,,,,,,,,全ポーションがメガポーションになる。\n泡系モブがガラスキャノンパークの効果を得る。\nアルケミスティと泡系の敵の出現頻度が上がる。\n新たな種類の泡系モブが出現する。,,,,
 curse_apotheosis_addict_name,"Addict",,,,,,,,,薬物依存,,,,
 curse_apotheosis_addict_desc,"20 Fungal & Creature shifts occur at the start of the run.",,,,,,,,,20個のシフト効果がゲーム開始時から発動する。,,,,
+curse_apotheosis_poverty_name,"Poverty",,,,,,,,,貧困,,,,
+curse_apotheosis_poverty_desc,"You're Affluen't\nMost enemies drop no gold.",,,,,,,,,ほとんどのモンスターは倒してもゴールドを落とさない。,,,,
+curse_apotheosis_downunder_name,"Down Under",,,,,,,,,,,,,
+curse_apotheosis_downunder_desc,"The world is flipped upsidedown.\nBest of luck!",,,,,,,,,,,,,
+curse_apotheosis_everything_name,"Canto XXXIV",,,,,,,,,,,,,
+curse_apotheosis_everything_desc,"All seeds are applied at once.\nEnemies drop significantly less gold.\nThe world is upsidedown.\nHardcore changes apply.\nNightcore damage increases apply.\nYou are blessed with additional health.\nYou can only win by Ascension, but are allowed to visit parallel worlds.\n\nThere is no escape.\nThere is no freedom.\nThis is your purgatory now.",,,,,,,,,,,,,
 curse_apotheosis_weaken_name,"Sunken Curse",,,,,,,,,水底の呪い,,,,
 curse_apotheosis_weaken_desc,"Your resistances and protective perks are disabled.",,,,,,,,,防御系パークの効果がなくなる。,,,,
 building_apotheosis_interact,"Press $0 to undergo apotheosis.",,,,,,,,,$0 を押して効果を得る。,,,,
@@ -802,6 +816,7 @@ motd_apotheosis_description_halloween,"Message of the Day \nHappy Halloween!","�
 motd_apotheosis_description_smissmass,"Message of the Day \nHappy Noitmass!","Сообщение дня \nСчастливого Нойтждества!",,,,,,,,今日のひとこと\nnHappy Noitmass!,,,,
 motd_apotheosis_description_new_year,"Happy new year! \nThankyou for playing, although you'll only read this once a year, I mean it every time you play. \nI'm happy seeing people enjoy my projects, and I'm happy making them myself, so sincerely, thankyou. - Conga Lyne.",,,,,,,,,,,,,
 motd_apotheosis_description_red_fish,"Message of the Day \nThe Red Fish is real.",,,,,,,,,今日のひとこと\n赤いさかなはいます,,,,
+motd_apotheosis_description_painpeko,"Warning: Apotheosis is designed to be played on the Beta Branch of Noita.\nGame crashes may occur by playing on the main branch.\nYou can enable the Noita beta from steam via right-clicking Noita > Properties > Betas.",,,,,,,,,,,,,
 motd_apotheosis_description_001,"Message of the Day \nAlso try Worse Enemies!","Сообщение дня \nТакже попробуйте мод Worse Enemies!",,,,,,,,今日のひとこと\nWorse Enemiesもプレイしてね。,,,,
 motd_apotheosis_description_002,"Message of the Day \nHomeless Hiisi love Material Donations","Сообщение дня \nБродяги любят пожертвования в виде денег",,,,,,,,今日のひとこと\n顔色が悪い人にお金をあげると、いいことがあるかも。,,,,
 motd_apotheosis_description_003,"Message of the Day \nBlood is Fuel.","Сообщение дня \nКровь - это топливо.",,,,,,,,今日のひとこと\n血は力なり。,,,,
@@ -833,7 +848,7 @@ motd_apotheosis_description_028,"Message of the Day \nFor a fun time: pour the d
 motd_apotheosis_description_029,"Message of the Day \nVenture into the desert. \nThere I will humour you.",,,,,,,,,今日のひとこと\n砂漠を探索してみよう。面白いものがあるかも？,,,,
 motd_apotheosis_description_030,"Message of the Day \nHappy today! Good Now, be happy you're still here!","Сообщение дня \nСчастливый день! Счастливо, будьте счастливы, что вы ещё здесь!",,,,,,,,今日のひとこと\n今日はハッピーデー！生きててえらい！,,,,
 motd_apotheosis_description_031,"Message of the Day \nDon't visit the Toxic Worm Nest at 3 am.","Сообщение дня \nНе посещайте гнездо токсичных червей в 3 часа ночи.",,,,,,,,今日のひとこと\n夜中の3時に行かない方がいい場所:毒虫の巣,,,,
-motd_apotheosis_description_alt_001,"Message of the Day \nAlso try Grahams Things!",,,,,,,,,今日のひとこと\n今日のおすすめMOD: Grahams Things,,,,
+motd_apotheosis_description_alt_001,"Message of the Day \nAlso try Stray Pixel Cleanup!",,,,,,,,,今日のひとこと\n今日のおすすめMOD: Stray Pixel Cleanup,,,,
 motd_apotheosis_description_alt_002,"Message of the Day \nBe weary when travelling to other worlds.",,,,,,,,,今日のひとこと\n異世界に行くときは注意しよう。,,,,
 motd_apotheosis_description_alt_003,"Message of the Day \nStay inside.",,,,,,,,,今日のひとこと\n今日は外に出ない方がいいかも。,,,,
 motd_apotheosis_description_alt_004,"Message of the Day \nDid you eat your powerballs today?",,,,,,,,,今日のひとこと\nガチャは悪い文明,,,,
@@ -1463,8 +1478,7 @@ ModLuaFileAppend("data/scripts/newgame_plus.lua", "mods/Apotheosis/files/scripts
 
 --Adds custom enlightened alchemist types
 --Could instead have a script that has a 2 in 6 chance to occur, and if it does make the alchemist one of the new variants, and append all this as a script on the englightened alch entity that runs after the vanilla init occurs
-local content = ModTextFileGetContent(
-	"mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua")
+local content = ModTextFileGetContent("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua")
 ModTextFileSetContent("data/scripts/animals/enlightened_alchemist_init.lua", tostring(content))
 --ModLuaFileAppend( "data/scripts/animals/enlightened_alchemist_init.lua", "mods/Apotheosis/files/scripts/mod_compatibility/vanilla_enlightened_alchemist_init_append.lua" )
 
@@ -1952,7 +1966,6 @@ end
 ]]
 --
 
-ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml") --Sets the biome map
 
 --Custom biome modifiers
 --ModTextFileSetContent("data/scripts/biome_modifiers.lua", ModTextFileGetContent("mods/apotheosis/files/scripts/biome_modifiers/biome_modifiers.lua"))
@@ -1968,6 +1981,10 @@ ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/
 
 --Set Custom Seed (And Check for Secret Seeds)
 dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
+
+--Set the biome map
+--This is handled underneath the custom seed check as the earliest biomemap append gets priority it seems
+ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml")
 
 --Appending extra modiifers
 ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua",
@@ -2037,13 +2054,37 @@ function OnPlayerSpawned(player_entity)
 	end
 	]]--
 
-	--Fix Red Sand fx
+	--Reset Red Sand fx
 	GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
 	GlobalsSetValue("conga_red_sand_effect_amount",0)
 
 	--Warns the player if Mo Creeps is enabled, to shut it off
 	if ModIsEnabled("Mo_Creeps") then
 		GamePrintImportant("WARNING: MO CREEPS IS ENABLED", "Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+	end
+
+	--[[
+	--Warns the player if Nightmare is enabled, that the hardcore seed exists
+	if ModIsEnabled("Nightmare") and HasFlagPersistent("apotheosis_card_unlocked_nightmarewarning") == false then
+		GamePrintImportant("WARNING: MO CREEPS IS ENABLED", "Apotheosis & More Creeps should not be enabled at the same time, Mo Creeps content is already inside apotheosis.")
+		AddFlagPersistent("apotheosis_card_unlocked_nightmarewarning")
+	end
+	]]--
+
+	--Conga 04/12/2023
+	--Warns the player to get off the god damn main branch, I'm tired of getting crash reports just for it to end up being this, man.
+	--I know someone's going to stumble across this tired exhausted message one day, and I just want to say, I wanted to have faith in people, and believe that they would have read the multiple warnings on the mod page to play on the beta branch.
+	--I was HOPING people would see the pinned thread called "Game Crashes" and take interest in it if they're experiencing problems, but that's asking too much I suppose.
+	--I feel like I'm running a daycare sometimes, God Dammit.
+	--urgh, alright, tired rant over
+	--Thankyou for playing
+	if GameIsBetaBuild() == false and HasFlagPersistent("apotheosis_card_unlocked_painpeko_warning_02") == false then
+		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",760,-90)
+
+		if HasFlagPersistent("apotheosis_card_unlocked_painpeko_warning_01") then
+			AddFlagPersistent("apotheosis_card_unlocked_painpeko_warning_02")
+		end
+		AddFlagPersistent("apotheosis_card_unlocked_painpeko_warning_01")
 	end
 
 	--Debug Testing for intro scene
@@ -2082,8 +2123,7 @@ ModMaterialsFileAdd("mods/Apotheosis/files/scripts/materials/custom_materials.xm
 
 ModLuaFileAppend("data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts/potions/potion_appends.lua")
 ModLuaFileAppend("data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua")
-ModLuaFileAppend("data/scripts/items/potion_aggressive.lua",
-	"mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
+ModLuaFileAppend("data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
 
 function OnMagicNumbersAndWorldSeedInitialized()
 	--You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible

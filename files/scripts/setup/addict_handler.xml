@@ -21,7 +21,13 @@
     
     <GameEffectComponent
         effect="PROTECTION_ALL"
-        frames="110"
+        frames="250"
+    >
+	</GameEffectComponent >
+    
+    <GameEffectComponent
+        effect="PROTECTION_POLYMORPH"
+        frames="250"
     >
 	</GameEffectComponent >
 

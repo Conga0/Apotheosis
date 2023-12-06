@@ -79,6 +79,7 @@
 	<SpriteComponent
 		_tags="character,lurker_data" 
 		alpha="0.8" 
+		never_ragdollify_on_death="1"
 		image_file="mods/Apotheosis/files/enemies_gfx/whisp_big_emissive.xml"
 		emissive="1"
 		additive="1"
@@ -92,6 +93,7 @@
 	<SpriteComponent 
 		_tags="character,lurker_data" 
 		alpha="0.55"
+		never_ragdollify_on_death="1"
 		image_file="data/particles/fog_of_war_hole_128.xml"
 		smooth_filtering="1"
 		fog_of_war_hole="1"
@@ -131,17 +133,6 @@
         script_death="data/scripts/items/drop_money.lua"
         remove_after_executed="1" >
     </LuaComponent>
-
-	<DamageNearbyEntitiesComponent
-		radius="15"
-		time_between_damaging="4"
-		damage_max="0.02"
-		damage_max="0.02"
-		target_tag="prey"
-		damage_description="Jättipalavakeiju fire"
-		damage_type="DAMAGE_FIRE"
-		ragdoll_fx="NONE">
-	</DamageNearbyEntitiesComponent>
 	
 	<ParticleEmitterComponent 
 		_tags="lurker_data"

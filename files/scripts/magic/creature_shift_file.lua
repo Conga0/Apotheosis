@@ -434,6 +434,11 @@ function creature_shift( entity, x, y, debug_no_limits )
                 for z=1,#luacomps
                 do local c = luacomps[z]
                     if ComponentGetValue2(c,"script_source_file") == "mods/Apotheosis/files/scripts/magic/creature_shift_new/player_shift_update.lua" then
+                        local x,y = EntityGetTransform(v)
+                        local pp = EntityGetInRadiusWithTag(x,y,512,"c_shifted") or {}
+                        for h=1,#pp do
+                            EntityRemoveTag(pp[h]"c_shifted")
+                        end
                         valid = false
                         break
                     end
@@ -455,7 +460,7 @@ function creature_shift( entity, x, y, debug_no_limits )
             end
         end
 
-        if ModIsEnabled("fungal_timer") then
+        if ModIsEnabled("fungal_timer") and not debug_no_limits then
             local player_list = EntityGetWithTag("player_unit")
             for i,v in ipairs(player_list) do
                 

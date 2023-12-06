@@ -1497,7 +1497,7 @@ local events = {
             currbiome = tostring(currbiome)
             local heretic_unstashed = EntityGetFirstComponentIncludingDisabled( entity_id, "PhysicsBodyComponent" )
             if #EntityGetInRadiusWithTag( x, y, 30, "black_hole" ) ~= 0 and ComponentGetIsEnabled(heretic_unstashed) == true then
-                local d_opts = {"Really now?"}
+                local d_opts = {"Really now?","You'll have to try harder than that."}
                 local dialogue = d_opts[math.random(1,#d_opts)]
 		tone = "gossip"
                 return true, dialogue

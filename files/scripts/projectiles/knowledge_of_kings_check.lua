@@ -3,8 +3,29 @@ local entity_id = GetUpdatedEntityID()
 local pos_x,pos_y = EntityGetTransform(entity_id)
 EntityLoad("mods/apotheosis/files/entities/particles/circle_king.xml", pos_x, pos_y)
 
+function HintCheck(x,y)
+    local optsx = {21250,-21250,18690,-20735}
+    local optsy = {7520,9570,16735,1355}
+
+    for k=1,#optsx do
+        local ox = optsx[k]
+        local oy = optsy[k]
+
+		local distance = math.abs(oy - y) + math.abs(ox - x)
+		
+		if (distance < 256) then
+			GamePrint("$sign_apotheosis_divinity_hint_desc_00")
+			GamePrint(table.concat({"$sign_apotheosis_divinity_hint_desc_0",k}))
+            return true
+		end
+    end
+    return false
+end
+
 if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) or GameHasFlagRun( "apotheosis_card_unlocked_secret_knowledge_of_kings_complete_2" ) then
-    GamePrint("$secretmessage_apotheosis_kingly_alreadydone")
+    if not HintCheck(pos_x,pos_y) then
+        GamePrint("$secretmessage_apotheosis_kingly_alreadydone")
+    end
 elseif GameHasFlagRun( "apotheosis_card_unlocked_secret_knowledge_of_kings_complete" ) == false then
     GamePrint("$secretmessage_apotheosis_kingly_cheater")
 else

@@ -14,10 +14,16 @@ Fix creatures from eggs not retaining their charm when creature shifted (ie mudm
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
 Fix shifted hamis behaving weirdly when spawning from nests/purple vases
 
-Add more NG+ enemies to jungle and beyond
+Fix Polymorph crystals being able to spawn camp TotA's entrance
+
+Add in spine worm to the spawn pool, apply blood hex on hit (Is this unique mechanically?)
 
 
-
+Add more dangerous bubbles to the Liquid Bubble seed
+Lava Bubble
+Poison Bubble
+Slime Bubble
+Suffocatium Bubble
 
 
 

@@ -198,6 +198,16 @@ table.insert(g_small_enemies,
     ng_exclusive = true,
 })
 
+table.insert(g_big_enemies,
+{
+    prob           = 0.05,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/poring_holy_arch.xml",
+    ngpluslevel = 1,
+    ng_exclusive = true,
+})
+
 table.insert(g_small_enemies,
 {
     prob           = 0.2,
@@ -235,7 +245,7 @@ table.insert(g_small_enemies,
 
 table.insert(g_small_enemies,
 {
-    prob           = 1.2,
+    prob           = 2.2,
     min_count    = 7,
     max_count    = 7,    
     entity     = "data/entities/animals/poring_holy.xml",

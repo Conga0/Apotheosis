@@ -153,17 +153,6 @@
 		randomize_velocity.max_y="30"
 		velocity_always_away_from_center="1">
 	</SpriteParticleEmitterComponent>
-
-	<LightComponent 
-    _enabled="1" 
-    _tags="enabled_in_hand"
-    radius="300" 
-		r="233"
-		g="227"
-		b="68"
-		fade_out_time="1.5"
-		>
-    </LightComponent>
 	
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"

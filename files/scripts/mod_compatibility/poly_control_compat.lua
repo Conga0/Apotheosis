@@ -146,6 +146,10 @@ local apotheosis_creatures = {
         name="Giant Will'o The Wisp",
     },
     {
+        file="whisp_giga",
+        name="Colossal Will'o The Wisp",
+    },
+    {
         file="fairy_esoteric",
         name="Esoteric Fairy",
     },
@@ -280,10 +284,10 @@ local apotheosis_creatures = {
         file="lukki_swarmling",
         name="Swarmling Spider",
     },
-    --{
-    --    file="lukki_tentacle_hungry",
-    --    name="Unnamed Heretic Monster",
-    --},
+    {
+        file="lukki_tentacle_hungry",
+        name="Cursed Creature",
+    },
     {
         file="mimic_explosive_box",
         name="Explosive Box Mimic",
@@ -338,6 +342,10 @@ local apotheosis_creatures = {
     {
         file="poring_holy",
         name="Angelring",
+    },
+    {
+        file="poring_holy_arch",
+        name="Arch Angelring",
     },
     {
         file="poring_devil",
@@ -610,7 +618,9 @@ local apotheosis_creatures_default = {
     "tesla_turret",
     "watermage",
     "watermage_greater",
+    "whisp",
     "whisp_big",
+    "whisp_giga",
     "wizard_ambrosia",
     "wizard_copeseethmald",
     "wizard_corrupt_ambrosia",

@@ -8,6 +8,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 local player_id = EntityGetWithTag("player_unit")[1]
 local plyr_x, plyr_y = EntityGetTransform(player_id)
 local sheep_plyr = EntityGetWithTag("polymorphed_player")[1]
+local hereticfound = false
 
 function set_controls_enabled(enabled)
     local player = EntityGetWithTag("polymorphed_player")[1]
@@ -84,14 +85,17 @@ if runtime == 0 then
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
 
     --Speed talking -Spoop
-    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1] or nil
+    if heretic_id ~= nil then
+        hereticfound = true
+    end
     local h_x, h_y = EntityGetTransform(heretic_id)
 
     local luacomps = EntityGetComponent(heretic_id, "LuaComponent") or {}
     for i = 1, #luacomps do
- 	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
-    	    ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
-	end
+        if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
+            ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
+        end
     end
 
     GameAddFlagRun("apotheosis_heretalk_end_sheep_1")
@@ -146,7 +150,9 @@ if runtime == 420 then
             EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_nature.xml", con_x, con_y)
         end
     end
-    EntityLoad("mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml", plyr_x+12, plyr_y)
+    if hereticfound == true then
+        EntityLoad("mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml", plyr_x+12, plyr_y)
+    end
 end
 
 
