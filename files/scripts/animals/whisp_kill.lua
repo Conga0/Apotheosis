@@ -3,7 +3,7 @@ function damage_about_to_be_received(damage, x, y, entity_thats_responsible, cri
     local damage_model_comp = EntityGetFirstComponentIncludingDisabled(entity_id, "DamageModelComponent")
     local hp = ComponentGetValue2(damage_model_comp, "hp")
     if hp - damage > 0 then
-      return damage, x, y, entity_thats_responsible, critical_hit_chance
+      return damage, critical_hit_chance
     end
   
     -- Somehow check if entity_thats_responsible is the entity that should do the turning, for instance by name:
@@ -24,5 +24,5 @@ function damage_about_to_be_received(damage, x, y, entity_thats_responsible, cri
       end
       EntityLoad(flamed_version, x, y)
     end
-    return damage, x, y, entity_thats_responsible, critical_hit_chance
+    return damage, critical_hit_chance
   end

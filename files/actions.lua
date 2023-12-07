@@ -2093,7 +2093,7 @@ local apotheosis_spellappends = {
         spawn_level                       = "10", -- Conversion spell
         spawn_probability                 = "0.01", -- Conversion spell
 		price = 500,
-		mana = 120,
+		mana = 40,
 		action 		= function( recursion_level, iteration )
 			c.fire_rate_wait = c.fire_rate_wait + 50
 

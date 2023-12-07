@@ -29,11 +29,17 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("custom/slime_hell", 5, 1.2)
     MultiplyHPOnBiome("custom/sunken_cave", 10, 1.5)
     MultiplyHPOnBiome("custom/evil_temple", 20, 1.5)
+    MultiplyHPOnBiome("custom/evil_temple_sand", 20, 1.5)
     MultiplyHPOnBiome("fungicave", 4, 1)
     MultiplyHPOnBiome("fungiforest", 6, 1)
     MultiplyHPOnBiome("clouds", 6, 2)
     MultiplyHPOnBiome("pyramid", 3, 1.2)
     MultiplyHPOnBiome("robobase", 10, 2)
+
+    --Increase health of PW bosses
+    MultiplyHPSelective("parallel/tentacles/parallel_tentacles",4,false)
+    MultiplyHPSelective("parallel/alchemist/parallel_alchemist",4,true)
+    MultiplyHPSelective("parallel_apotheosis/boss_toxic_worm/boss_toxic_worm",4,false)
 
     --Secret Biomes
     MultiplyHPOnBiome("custom/plane_yggdrasil", 10, 1.5)
@@ -135,5 +141,12 @@ do --Reduce gold dropped in hardcore by 50%
   local path = "data/scripts/items/drop_money.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("local health = tonumber%(ComponentGetValue%( comp, \"max_hp\"%)%)", "local health = tonumber(ComponentGetValue( comp, \"max_hp\")) * 0.50")
+  ModTextFileSetContent(path, content)
+end
+
+do --Artifically secret seed game flag is added
+  local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_hardcore\"%)")
   ModTextFileSetContent(path, content)
 end

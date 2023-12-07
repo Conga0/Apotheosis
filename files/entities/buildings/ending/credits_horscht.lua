@@ -76,7 +76,7 @@ local lines = {
   "poverty",
   "downunder",
   "nightcore",
-  "everything",
+  "getfixedboi",
   " ",
   " ",
   " ",

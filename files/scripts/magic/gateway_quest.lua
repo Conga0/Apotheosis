@@ -22,6 +22,15 @@ end
 -- Maybe you could use mass materia conversion of the Knowledge of Kings to turn it into something to open the portal? The Knowledge of Gods? /shrug
 -- Special song needs to be played you learn from visiting an apotheosis biome?
 
+--Debug Data
+--[[
+local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") or {}
+if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 then GamePrint("Found Sampo") end
+if HasFlagPersistent("apotheosis_card_unlocked_radarfound") then GamePrint("Found Radar Park Permanent") end
+if GameHasFlagRun("apotheosis_radar_perk_taken") then GamePrint("Found Radar Park") end
+if GameHasFlagRun("apotheosis_everything") ==false then GamePrint("Found Everything absent") end
+]]--
+
 if tonumber(GlobalsGetValue("apotheosis_plane_fail",0)) == 1 then
     EntitySetComponentsWithTagEnabled(entity_id,"invincible",false)
     EntitySetComponentsWithTagEnabled(entity_id,"counter",true)
@@ -32,7 +41,7 @@ else
     --[[
     ]]--
     local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") or {}
-    if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 and HasFlagPersistent("apotheosis_card_unlocked_radarfound") then
+    if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 and HasFlagPersistent("apotheosis_card_unlocked_radarfound") and (GameHasFlagRun("apotheosis_radar_perk_taken") == true or GameHasFlagRun("apotheosis_everything") == false) then
         --Enable press e to sampo?
         local helper = EntityGetWithTag("apotheosis_portal_helper")[1]
         EntitySetComponentsWithTagEnabled(helper,"lurker_data",true)
