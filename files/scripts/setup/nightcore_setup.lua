@@ -11,12 +11,12 @@ do -- Player Editor
 	attrs.explosion = 0.66
 	attrs.projectile = 2.0
 	attrs.fire = 2.0
-	attrs.melee = 3.0
+	attrs.melee = 2.0
 	attrs.material = 2.0
 	attrs.electricity = 2.0
 	attrs.slice = 2.0
 	attrs.healing = 2.0
-	attrs.poison = 3.0
+	attrs.poison = 2.0
 	attrs.radioactive = 2.0
 	attrs.drill = 2.0
 	attrs.ice = 2.0

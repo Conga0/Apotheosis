@@ -29,3 +29,5 @@ local hpcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelCo
 local hp = ComponentGetValue2(hpcomp,"max_hp")
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"IngestionComponent")
 ComponentSetValue2(comp,"blood_healing_speed",math.max(0.0024 * (hp / 4), 0.0024))
+
+--Placeholder

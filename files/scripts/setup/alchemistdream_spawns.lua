@@ -7,8 +7,9 @@ local pools = {
 
 local path = "data/entities/animals/"
 local opts = {
+    "bubbles/stophittingyourself/bubble_liquid.xml", --Conga: This is attunium
     "bubbles/acid/bubble_liquid.xml",
-    "bubbles/ambrosia/bubble_liquid.xml",
+    --"bubbles/ambrosia/bubble_liquid.xml",
     "bubbles/blood/bubble_liquid.xml",
     "bubbles/cursed_liquid/bubble_liquid.xml",
     "bubbles/freezing_liquid/bubble_liquid.xml",
@@ -23,7 +24,7 @@ if ModIsEnabled("Hydroxide") then
         "deceleratium",
         "pandorium",
         "sliceLiquid",
-        "stophittingyourself"
+        --"stophittingyourself"
     }
     for k=1,#mats do
         table.insert(opts,mats[k])
@@ -33,6 +34,7 @@ end
 for k=1,#pools do
     if pools[k] then
         for z=1,#opts do
+            --All bubbles
             table.insert(pools[k],
             {
                 prob           = 0.01,
@@ -41,5 +43,15 @@ for k=1,#pools do
                 entity     = table.concat({path,opts[z]})
             })
         end
+
+        --Ambrosia
+        table.insert(pools[k],
+        {
+            prob           = 0.001,
+            min_count    = 1,
+            max_count    = 1,
+            entity     = "data/entities/animals/bubbles/ambrosia/bubble_liquid.xml"
+        })
     end
 end
+

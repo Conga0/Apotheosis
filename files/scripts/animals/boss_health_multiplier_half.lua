@@ -17,3 +17,5 @@ health_max = health_max * (healthMultiplier / 200)
 
 ComponentSetValue( comp, "max_hp", tostring(health_max) )
 ComponentSetValue( comp, "hp", tostring(health) )
+
+--Conga: Technically this is bugged and reduces enemies to 50% of their intended HP, but it seems to work fine in terms of gameplay balance so, /shrug

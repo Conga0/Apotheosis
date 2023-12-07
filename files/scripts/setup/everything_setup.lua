@@ -29,6 +29,7 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("custom/slime_hell", 5, 1.2)
     MultiplyHPOnBiome("custom/sunken_cave", 10, 1.5)
     MultiplyHPOnBiome("custom/evil_temple", 20, 1.5)
+    MultiplyHPOnBiome("custom/evil_temple_sand", 20, 1.5)
     MultiplyHPOnBiome("fungicave", 4, 1)
     MultiplyHPOnBiome("fungiforest", 6, 1)
     MultiplyHPOnBiome("clouds", 6, 2)
@@ -64,6 +65,11 @@ MultiplyHPSelective("boss_limbs/boss_limbs",10,false)
 MultiplyHPSelective("boss_toxic_worm/boss_toxic_worm",4,false)
 MultiplyHPSelective("boss_dragon",4,false)
 MultiplyHPSelective("boss_fish/fish_giga",2,false)
+
+--Increase health of PW bosses
+MultiplyHPSelective("parallel/tentacles/parallel_tentacles",6,false)
+MultiplyHPSelective("parallel/alchemist/parallel_alchemist",6,true)
+MultiplyHPSelective("parallel_apotheosis/boss_toxic_worm/boss_toxic_worm",6,false)
 
 --Boosts Health of Wand Tinkering Crystals by x10
 MultiplyHPSelectiveBuilding("wandedit_crystal",10,false)
@@ -145,11 +151,20 @@ do --Remove fungal & creature shift icons to avoid ui clog
   content = content:gsub("apotheosis_redstone", "apotheosis_unholy_concoction")
   content = content:gsub("apotheosis_insect_husk", "apotheosis_magic_liquid_divine")
   content = content:gsub("\"water\"", "\"magic_liquid_hp_regeneration\"")
+  content = content:gsub("\"copper\"", "\"apotheosis_milk_powder\"")
+  content = content:gsub("\"material_confusion\"", "\"apotheosis_radioactive_mud\"")
+  content = content:gsub("\"rock_hard\"", "\"apotheosis_radioactive_mud\"")
+  content = content:gsub("\"rock_hard_border\"", "\"apotheosis_radioactive_mud\"")
+  content = content:gsub("\"rock_hard_border\"", "\"apotheosis_radioactive_mud\"")
+  content = content:gsub("\"templebrick_static\"", "\"apotheosis_radioactive_mud\"")
+  content = content:gsub("\"snow_static\"", "\"apotheosis_magic_liquid_mimic\"")
+  content = content:gsub("\"steel_static\"", "\"apotheosis_magic_liquid_pure_light\"")
   ModTextFileSetContent(path, content)
 
   local path = "mods/apotheosis/files/scripts/magic/creature_shift_file.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("if add_icon then", "if add_icon and 1 == 2 then")
+  content = content:gsub("\"bubbles/freezing_liquid/bubble_liquid\", \"fish\", \"forsaken_eye\"", "\"bubbles/freezing_liquid/bubble_liquid\", \"forsaken_eye\"")
   content = content:gsub("%( EntityGetName%( v %) == \"creature_shift_ui_icon\" %)", "%( EntityGetName%( v %) == \"creature_shift_ui_icon\" %) and 1 == 2")
   ModTextFileSetContent(path, content)
 end
@@ -177,3 +192,21 @@ do --Disable winning at mountain altar & the work
   content = content:gsub("\"data/entities/buildings/teleport_ending_victory_delay%.xml\"", "\"mods/apotheosis/files/entities/spawners/everything_kolmiloot.xml\"")
   ModTextFileSetContent(path, content)
 end
+
+do --Portal displays the Divine Radar icon to indicate the perk is required to progress
+  local path = "mods/apotheosis/files/entities/buildings/gateway_base.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("portal.png", "portal_everything.png")
+  ModTextFileSetContent(path, content)
+end
+
+do --Artifically secret seed game flag is added
+  local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_everything\"%)")
+  ModTextFileSetContent(path, content)
+end
+
+--Preconvert Empyrean to flesh
+--ConvertMaterialEverywhere(CellFactory_GetType( "apotheosis_templebrick_static_invincible" ),CellFactory_GetType( "apotheosis_corrupt_flesh_static" ))
+

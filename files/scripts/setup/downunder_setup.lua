@@ -259,3 +259,31 @@ do --Add downunder flag to the game
     ModLuaFileAppend(biomepath, appendpath)
   end
 end
+
+do --Orbmap corrections
+  local path = "mods/apotheosis/files/scripts/mod_compatibility/utilities_lua_appends.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("{8,1", "{-9,24")    --Pitboss Orb
+  content = content:gsub("{1,%-3", "{1,-3")   --Mountain Temple Orb
+  content = content:gsub("{%-9,7", "{-9,17")   --Magical Temple Orb
+  content = content:gsub("{%-8,19", "{-7,6")  --Lukki Lair Orb
+  content = content:gsub("{%-18,2", "{-18,28")  --Snow Chasm Orb
+  content = content:gsub("{%-20,5", "{-20,25")  --Frozen Vault Orb
+  content = content:gsub("{%-1,31", "{-1,-13")  --Hell Orb
+  content = content:gsub("{20,31", "{25,2")   --Wizard's Den Orb
+  content = content:gsub("{19,5", "{19,30")    --Sandcave's Orb
+  content = content:gsub("{6,3", "{-9,26")     --Nuke Orb
+  content = content:gsub("{19,%-3", "{19,22")  --Pyramid Top Orb
+  content = content:gsub("{41,14", "{41,14")   --Temple of Sacriligeous Remanins Orb
+  content = content:gsub("{%-42,18", "{-42,18") --Sunken Cavern Orb
+  content = content:gsub("{36,32", "{36,32")   --Virulent Caverns Orb
+  content = content:gsub("{%-41,2", "{-41,2")  --Forest Chasm Orb
+  ModTextFileSetContent(path, content)
+end
+
+do --Artifically secret seed game flag is added
+  local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_downunder\"%)")
+  ModTextFileSetContent(path, content)
+end

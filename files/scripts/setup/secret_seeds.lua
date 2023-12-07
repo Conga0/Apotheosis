@@ -232,6 +232,13 @@ function alchemistdream()
         end
     end
 
+    do --Update alchemy room to use large potions
+        local path = "mods/apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
+        local content = ModTextFileGetContent(path)
+        content = content:gsub("\"data/entities/items/pickup/potion%.xml\"", "\"mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
+        ModTextFileSetContent(path, content)
+    end
+
     AddUI("alchemistdream")
 
 end
@@ -294,7 +301,7 @@ function everything()
     GameAddFlagRun("apotheosis_everything")
 
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
-    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic.lua" )
+    ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic_everything.lua" )
 
     dofile_once("mods/apotheosis/files/scripts/setup/everything_misc_setup.lua")
     dofile_once("mods/apotheosis/files/scripts/setup/everything_setup.lua")
@@ -395,7 +402,7 @@ local secret_seeds = {
         func = downunder
     },
     {
-        IDs = {"everything","getfixedboi","sisyphus"},
+        IDs = {"everything","getfixedboi","junglejuice","tuonela","jared"},
         func = everything
     },
 }

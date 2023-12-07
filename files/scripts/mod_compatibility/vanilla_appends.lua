@@ -3,35 +3,86 @@ dofile("data/scripts/lib/utilities.lua")
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 
 --Pitboss can shoot blackholes if she fails a line of sight check too many times in a row, prevents tablet cheese
-local content = ModTextFileGetContent("data/entities/animals/boss_pit/boss_pit.xml")
-local xml = nxml.parse(content)
-xml:add_child(nxml.parse([[
-    <LuaComponent
-    script_source_file="data/entities/animals/boss_pit/boss_pit_apotheosis_blackhole_check.lua"
-    execute_times="-1"
-    execute_every_n_frame="300"
-    remove_after_executed="0"
-    >
-    </LuaComponent>
-]]))
-xml:add_child(nxml.parse([[
+do
+  local path = "data/entities/animals/boss_pit/boss_pit.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+      <LuaComponent
+      script_source_file="data/entities/animals/boss_pit/boss_pit_apotheosis_blackhole_check.lua"
+      execute_times="-1"
+      execute_every_n_frame="300"
+      remove_after_executed="0"
+      >
+      </LuaComponent>
+  ]]))
+  xml:add_child(nxml.parse([[
+      <VariableStorageComponent
+          name="apotheosis_blackhole_count"
+          value_int="0"
+          >
+      </VariableStorageComponent>
+  ]]))
+  xml:add_child(nxml.parse([[
+      <LuaComponent
+      script_damage_received="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+      script_death="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+      execute_times="-1"
+      execute_every_n_frame="-1"
+      remove_after_executed="0"
+      >
+      </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+--PW Pitboss gains the projectile failsafe as well incase of lag
+do
+  local path = "data/entities/animals/parallel/tentacles/parallel_tentacles.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+      <LuaComponent
+      script_damage_received="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+      script_death="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+      execute_times="-1"
+      execute_every_n_frame="-1"
+      remove_after_executed="0"
+      >
+      </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+--Prevents High Alchemist from creating an unnecessarily high amount of shields by giving him a 3 second cooldown between creating a new shield from taking damage
+do
+  local path = "data/entities/animals/boss_alchemist/boss_alchemist.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
     <VariableStorageComponent
-        name="apotheosis_blackhole_count"
-        value_int="0"
-        >
+      name="shield_cd_data"
+      value_int="-10000"
+      >
     </VariableStorageComponent>
-]]))
-xml:add_child(nxml.parse([[
-    <LuaComponent
-    script_damage_received="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
-    script_death="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
-    execute_times="-1"
-    execute_every_n_frame="-1"
-    remove_after_executed="0"
-    >
-    </LuaComponent>
-]]))
-ModTextFileSetContent("data/entities/animals/boss_pit/boss_pit.xml", tostring(xml))
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+--Prevents PW High Alchemist from creating an unnecessarily high amount of shields by giving him a 3 second cooldown between creating a new shield from taking damage
+do
+  local path = "data/entities/animals/parallel/alchemist/parallel_alchemist.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+	<VariableStorageComponent
+		name="shield_cd_data"
+		value_int="-10000"
+		>
+	</VariableStorageComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
 
 --Adds tag to wandstone so perk creation altar can detect it.. technically you can throw it into the sun because of this but, eh, nobody would ever do that.. right? I just wanna save on tags whenever possible
 --Let Wand Stone enable tinkering regardless of if you have it held or not

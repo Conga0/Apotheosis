@@ -47,6 +47,12 @@ local blacklist = {
     ["APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL"] = true,     --One of a kind 
     ["APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL"] = true,    --One of a kind 
     ["APOTHEOSIS_KNOWLEDGE_OF_KINGS"] = true,           --Quest spell
+    ["DIVIDE_2"] = true,                --Important DPS spell
+    ["DIVIDE_3"] = true,                --Important DPS spell
+    ["DIVIDE_4"] = true,                --Important DPS spell
+    ["DIVIDE_10"] = true,               --Important DPS spell
+    ["PIERCING_SHOT"] = true,           --Important DPS spell
+    ["APOTHEOSIS_BLOOD_POWER"] = true,  --Important DPS spell
 
     --Notes
     ["OCARINA_A"] = true,
@@ -74,7 +80,7 @@ local blacklist = {
 for k=1,#actions do -- fast as fuck boi
     local v = actions[k]
     SetRandomSeed(v.price,v.mana)
-    if not blacklist[v.id] and Random(1,2) == 1 then
+    if not blacklist[v.id] and Random(1,3) == 1 then
         for key, value in pairs(locked_spell) do
             actions[k][key] = value
         end

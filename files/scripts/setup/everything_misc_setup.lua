@@ -10,7 +10,7 @@ do --Addict Changes
   local max_hp
   attrpath = xml:first_of("DamageModelComponent").attr
   max_hp = attrpath.hp
-  max_hp = max_hp * 3
+  max_hp = max_hp * 2
   attrpath.max_hp = tostring(max_hp)
   attrpath.hp = tostring(max_hp)
 
@@ -125,6 +125,13 @@ do --Alchemist Dream changes
           ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
       end
   end
+
+  do --Update alchemy room to use large potions
+      local path = "mods/apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("\"data/entities/items/pickup/potion%.xml\"", "\"mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
+      ModTextFileSetContent(path, content)
+  end
 end
 
 
@@ -184,4 +191,18 @@ do --Towerclimb setup (significantly reduced spawnrates on most creatures)
   do biomepath = biomes[k]
       ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
   end
+end
+
+
+
+
+
+
+
+do --Poverty Setup
+    local path = "data/biome/gold.xml"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("\"gold\"", "\"templebrick_golden_static\"")
+    content = content:gsub("\"$biome_gold\"", "\"$mat_templebrick_golden_static\"")
+    ModTextFileSetContent(path, content)
 end

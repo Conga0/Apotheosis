@@ -703,6 +703,7 @@ local apotheosis_perkappends = {
 				execute_every_n_frame = "1",
 			} )
             --This forces the player to pick up the perk for the very first time they enter, but afterwards they can enter willy nilly
+            GameAddFlagRun("apotheosis_radar_perk_taken")
             AddFlagPersistent("apotheosis_card_unlocked_radarfound")
 		end,
 	},

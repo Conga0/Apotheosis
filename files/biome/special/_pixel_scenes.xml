@@ -392,6 +392,28 @@
 	<!--Artifical Lava Lake Tablet-->
 	<PixelScene pos_x="-2300" pos_y="12750" just_load_an_entity="data/entities/items/books/book_corpse.xml" />
 
+	<!--Guaranteed Tinkering Room-->
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="10868" pos_y="12650" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/pixel_scenes/pyramid_wand_crystal/pyramid_wand_crystal.png"
+      background_filename=""
+      colors_filename=""
+    ></PixelScene>
+    <PixelScene pos_x="11036" pos_y="12774" just_load_an_entity="data/entities/buildings/wandedit_crystal.xml" />
+
+	<!--Wand Cave Secret-->
+    <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="20255" pos_y="-4376" skip_biome_checks="1" skip_edge_textures="0"
+      material_filename="mods/Apotheosis/files/pixel_scenes/wand_cave/wand_cave.png"
+      background_filename="mods/Apotheosis/files/pixel_scenes/wand_cave/wand_cave_background.png"
+      colors_filename=""
+    ></PixelScene>
+    <PixelScene pos_x="20380" pos_y="-4202" just_load_an_entity="data/entities/buildings/wand_cave_populator.xml" />
+
+	<!--Rat-->
+    <PixelScene pos_x="-4060" pos_y="11325" just_load_an_entity="mods/apotheosis/files/entities/items/wands/custom/rat_wand.xml" />
+
+	<!--Cats-->
+    <PixelScene pos_x="676" pos_y="-106" just_load_an_entity="data/entities/buildings/intro_kitty_populator.xml" />
+
 	</mBufferedPixelScenes>
 </PixelScenes>
 
