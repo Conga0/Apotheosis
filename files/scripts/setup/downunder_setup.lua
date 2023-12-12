@@ -208,6 +208,13 @@ do --Divine Radar Adjustment
   ModTextFileSetContent(path, content)
 end
 
+do --Adjust which sun Solunarium searches for
+  local path = "mods/apotheosis/files/scripts/materials/secret_materials_generate.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"moon_is_sun\"", "\"darkmoon_is_darksun\"")
+  ModTextFileSetContent(path, content)
+end
+
 do --Metal Egg return portal
   local path = "data/entities/buildings/teleport_robot_egg_return.xml"
   local content = ModTextFileGetContent(path)
@@ -281,9 +288,14 @@ do --Orbmap corrections
   ModTextFileSetContent(path, content)
 end
 
-do --Artifically secret seed game flag is added
-  local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_downunder\"%)")
-  ModTextFileSetContent(path, content)
+do --Name the surface to "The Surface"
+    local path = "data/biome/mountain_hall.xml"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("\"_EMPTY_\"", "\"$biome_surface\"")
+    ModTextFileSetContent(path, content)
+
+    local path = "data/biome/hills.xml"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("\"_EMPTY_\"", "\"$biome_surface\"")
+    ModTextFileSetContent(path, content)
 end

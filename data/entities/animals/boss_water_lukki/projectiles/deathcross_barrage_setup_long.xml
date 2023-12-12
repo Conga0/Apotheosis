@@ -1,0 +1,15 @@
+<Entity name="$creep_apotheosis_boss_fire_lukki_name" >
+
+	<LifetimeComponent
+		lifetime="240"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/boss_fire_lukki_deathcross_barrage.lua"
+		execute_every_n_frame="15"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+</Entity>

@@ -12,7 +12,7 @@ local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 pos_y = pos_y - 4 -- offset to middle of character
 
-local plane_locations = { {"22790", "2400"}, {"-12538", "14125"}, {"-17146", "6445"}, {"23302", "14637"}, {"-11514", "4397"}, {"-18170", "11565"} }
+local plane_locations = { {"22790", "2400"}, {"-12538", "13613"}, {"-17146", "6445"}, {"23302", "14637"}, {"-11514", "4397"}, {"-18170", "11565"} }
 --Table of potential portal spawn locations
 
 SetRandomSeed(444,777)

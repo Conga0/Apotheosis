@@ -51,6 +51,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/lukki_fire_miniboss_phase2.png",
 	  },
 	  {
+		name="Aesthete of Water",
+		path="data/entities/animals/boss_water_lukki/boss_fire_lukki.xml",
+		image="data/ui_gfx/animal_icons/hidden/boss_water_lukki.png",
+	  },
+	  {
 		name="Heretic",
 		path="data/entities/animals/boss_flesh_monster/boss_flesh_monster.xml",
 		image="data/ui_gfx/animal_icons/boss_flesh_monster.png",
@@ -638,7 +643,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Cursed Spine",
 		path="data/entities/animals/worm_spine.xml",
-		image="data/ui_gfx/animal_icons/hidden/worm_spine.png",
+		image="data/ui_gfx/animal_icons/worm_spine.png",
 	  },
 	  {
 		name="Hämis Nest",

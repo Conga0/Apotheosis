@@ -2543,6 +2543,11 @@ local actions_to_edit = {
         mana = 80
     },
 
+    -- Reduced mana cost of Concentrated Light to be more appropriate for it's functionality & spell tier
+    ["MEGALASER"] = {
+        mana = 20
+    },
+
     --Spitter Bolt Tier 2 & 3 becomes cheaper
     ["SPITTER_TIER_2"] = {
         mana = 10

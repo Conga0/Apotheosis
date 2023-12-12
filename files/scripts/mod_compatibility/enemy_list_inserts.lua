@@ -108,7 +108,7 @@ local insert_list = {
     },
     {
         id_matchup="worm_end",
-        name="worm_mechanical",
+        name="worm_mechanical\nworm_spine",
     },
     {
         id_matchup="drone_physics",

@@ -21,9 +21,9 @@ local opts = {
 
 if ModIsEnabled("Hydroxide") then
     local mats = {
-        "deceleratium",
-        "pandorium",
-        "sliceLiquid",
+        "bubbles/deceleratium/bubble_liquid.xml",
+        "bubbles/pandorium/bubble_liquid.xml",
+        "bubbles/sliceLiquid/bubble_liquid.xml",
         --"stophittingyourself"
     }
     for k=1,#mats do
