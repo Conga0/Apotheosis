@@ -4,6 +4,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileComponent")
 local shooter_id = ComponentGetValue2(projcomp,"mWhoShot") or 0
 local sound = false
+local particletype = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"ParticleEmitterComponent"),"emitted_material_name")
 
 --Handles if it should attack a target or not
 function friendlyfireCheck(target_id,projectilecomponent,caster_id)
@@ -73,6 +74,9 @@ do local v = targets[k]
         local child = EntityLoad("mods/apotheosis/files/entities/animators/electrosphere_fx.xml", targ_x, targ_y)
         local comp = EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent")
         ComponentSetValue2(comp, "mExPosition", pos_x, pos_y)
+        if particletype ~= "plasma_fading" then
+            ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent"),"emitted_material_name",particletype)
+        end
 
         --Damage
         --Here we deal damage equal to what the main projectile has

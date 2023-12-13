@@ -24,7 +24,7 @@ for k=1,#damagetypes
 do  local v = damagetypes[k]
     local multiplier = 5
     if v == "fire" then
-        multiplier = 1.25
+        multiplier = 1.35
     end
     dmg = dmg + ((ComponentObjectGetValue2( projcomp, "damage_by_type", v ) or 0) * multiplier)
 

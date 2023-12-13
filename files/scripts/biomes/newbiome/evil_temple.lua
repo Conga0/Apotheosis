@@ -149,6 +149,12 @@ g_small_enemies =
 		max_count	= 2,    
 		entity 	= "data/entities/animals/wraith_alchemy_apotheosis.xml"
 	},
+	{
+		prob   		= 0.05,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/worm_spine.xml"
+	},
 }
 
 g_stash =

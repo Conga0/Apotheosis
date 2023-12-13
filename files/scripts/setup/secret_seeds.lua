@@ -290,6 +290,13 @@ function downunder()
 
     dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup.lua")
 
+    do --Artifically secret seed game flag is added
+      local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_downunder\"%)")
+      ModTextFileSetContent(path, content)
+    end
+
     AddUI("downunder")
 
 end
@@ -305,7 +312,7 @@ function everything()
 
     dofile_once("mods/apotheosis/files/scripts/setup/everything_misc_setup.lua")
     dofile_once("mods/apotheosis/files/scripts/setup/everything_setup.lua")
-    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup_noflag.lua")
+    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup.lua")
     dofile_once("mods/apotheosis/files/scripts/setup/nightcore_setup.lua")
 
     AddUI("everything")
@@ -435,11 +442,42 @@ for z=1,2 do
 end
 
 
+function generateNormalSeed(input_seed)
+    local biggest_seed_possible = 2147483645
+    local conversion_number = 0
+    
+    --Check to see if inputted seed contains only numeric characters
+    local is_number = tonumber(input_seed)
+    if is_number == nil then
+        is_number = false
+    else
+        if is_number > biggest_seed_possible then input_seed = is_number % biggest_seed_possible end
+        is_number = true
+    end
+
+    if is_number then
+        return input_seed
+    else
+        for char in input_seed:gmatch "." do
+            conversion_number = conversion_number + string.byte(char)
+            conversion_number = conversion_number * string.byte(char) ^ 2
+            conversion_number = conversion_number % biggest_seed_possible
+        end
+        input_seed = conversion_number
+    end
+
+    for k=1,10 do
+        print("input_seed is " .. input_seed)
+    end
+    return input_seed
+end
+
+
 
 if input_seed == "0" then
     output_seed = "0"
 else
-    output_seed = input_seed
+    output_seed = generateNormalSeed(input_seed)
 end
 
 --Set Custom Seed

@@ -2,13 +2,23 @@
 
 	<!-- teleport logic -->
 
-	<TeleportComponent
+	<!-- teleport logic -->
+	
+	<CollisionTriggerComponent
+		_enabled="1"
 		_tags="enabled_by_liquid"
-		target_x_is_absolute_position="1"
-		target_y_is_absolute_position="1"
-		target.x="-680" 
-		target.y="620" 
-	></TeleportComponent>
+		width="30"
+		height="30" 
+		radius="30"
+		required_tag="player_unit"
+		destroy_this_entity_when_triggered="0" >
+	</CollisionTriggerComponent>
+
+	<LuaComponent
+		script_collision_trigger_hit="mods/Apotheosis/files/scripts/magic/markerportals/portal_use_red_test.lua"
+		execute_every_n_frame="-1"
+		execute_times="1" >
+	</LuaComponent>
 
 	<HitboxComponent 
 		_tags="enabled_by_liquid"

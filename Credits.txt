@@ -48,6 +48,7 @@ Creating the Crystal Egg
 Slack - Japanese Translator
 
 Nathan - Created Red Sand trip visual effects
+Helped significantly with Aesthete of Water whirlpool particles
 
 Letaali - Translating Orb Room lore to finnish
 
@@ -63,6 +64,8 @@ Blueberry#1414 - Translating the mod to Russian
 
 Extol#0629 - Helping getting translation keys working, needed for custom perks to show up correctly
 Also helped make split shot significantly less game breaking
+
+Priskip - Helping with fixing set custom seed functionality
 
 Zathers - creator of nxml.lua, a library for easy mod compatibility & xml file editing
 

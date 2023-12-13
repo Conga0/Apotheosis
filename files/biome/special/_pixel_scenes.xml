@@ -17,9 +17,9 @@
     <File>data/biome_impl/spliced/watercave.xml</File>
 	-->
     <File>data/biome_impl/spliced/mountain_lake.xml</File>
-	<!--
-    <File>data/biome_impl/spliced/lake_statue.xml</File>
-	-->
+
+    <File>mods/apotheosis/files/biome_impl/spliced/lake_statue_lava.xml</File>
+
     <File>data/biome_impl/spliced/moon.xml</File>
 	
     <File>data/biome_impl/spliced/moon_dark.xml</File>
@@ -153,7 +153,7 @@
 		<PixelScene pos_x="-37526" pos_y="-90" just_load_an_entity="data/entities/props/music_machines/music_machine_00.xml" />
 
 		<PixelScene pos_x="-1905" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
-		<PixelScene pos_x="50,19" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
+		<PixelScene pos_x="50319" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
 		<PixelScene pos_x="-54129" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
 
 		<PixelScene pos_x="12187" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
@@ -173,15 +173,6 @@
 		
 		<PixelScene pos_x="3608" pos_y="934" just_load_an_entity="data/entities/props/physics/bridge_spawner.xml" />
 		<PixelScene pos_x="-9980" pos_y="-30" just_load_an_entity="data/entities/props/physics/bridge_spawner.xml" />
-		
-		<PixelScene pos_x="-6883" pos_y="-170" just_load_an_entity="data/entities/buildings/essence_eater.xml" />
-		<PixelScene pos_x="12569" pos_y="15" just_load_an_entity="data/entities/buildings/essence_eater.xml" />
-		
-		<PixelScene pos_x="29469" pos_y="-170" just_load_an_entity="data/entities/buildings/essence_eater.xml" />
-		<PixelScene pos_x="48921" pos_y="15" just_load_an_entity="data/entities/buildings/essence_eater.xml" />
-		
-		<PixelScene pos_x="-43235" pos_y="-170" just_load_an_entity="data/entities/buildings/essence_eater.xml" />
-		<PixelScene pos_x="-23783" pos_y="15" just_load_an_entity="data/entities/buildings/essence_eater.xml" />
 		
 		<PixelScene pos_x="-2434" pos_y="-207" just_load_an_entity="data/entities/items/pickup/evil_eye.xml" />
 		
@@ -310,6 +301,9 @@
 	<PixelScene pos_x="-8648" pos_y="16708" just_load_an_entity="mods/Apotheosis/files/entities/buildings/portal_fire_lukki_tower.xml" />
 	<PixelScene pos_x="-8337" pos_y="16554" just_load_an_entity="mods/Apotheosis/files/entities/buildings/portal_fire_lukki_lavalake.xml" />
 	<PixelScene pos_x="-8624" pos_y="16547" just_load_an_entity="mods/Apotheosis/files/entities/buildings/portal_fire_lukki_musicstone.xml" />
+
+	<!--Volcanic Chest-->
+    <PixelScene pos_x="-8500" pos_y="16752" just_load_an_entity="mods/Apotheosis/files/entities/items/pickups/chest_volcanic.xml" />
 
 	<!--Aesthete of Heat spawners-->
 	<PixelScene pos_x="-2557" pos_y="12900" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml" />

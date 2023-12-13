@@ -1,0 +1,216 @@
+<Entity >
+
+	<InheritTransformComponent
+	only_position="1" />
+
+	<LifetimeComponent
+		lifetime="470"
+		>
+	</LifetimeComponent>
+	
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_spin.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		_enabled="0"
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_wet.lua"
+		execute_every_n_frame="20"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_prepare.lua"
+		execute_every_n_frame="2"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_animation_start.lua"
+		execute_every_n_frame="80"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_init.lua"
+		execute_every_n_frame="90"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_animation_idle.lua"
+		execute_every_n_frame="123"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_reset.lua"
+		execute_every_n_frame="420"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_animation_end.lua"
+		execute_every_n_frame="463"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<!-- Audio Effect -->
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith_glowing/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith/vortex_loop"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<!-- Suction -->
+	
+	<LuaComponent
+		_enabled="0"
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_water_lukki/misc/healing_phase_projectile_suction.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<!-- FX -->
+	<ParticleEmitterComponent 
+        emitted_material_name="spark_blue_dark"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-10"
+        x_vel_max="10"
+        y_vel_min="-10"
+        y_vel_max="10"
+        count_min="15"
+        count_max="15"
+        lifetime_min="0.1"
+        lifetime_max="0.3"
+        create_real_particles="1"
+        emit_cosmetic_particles="0"
+        emission_interval_min_frames="60"
+        emission_interval_max_frames="250"
+        is_emitting="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent 
+        emitted_material_name="spark_blue"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="14"
+        count_max="16"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="1"
+        emit_cosmetic_particles="0"
+        emission_interval_min_frames="1"
+        emission_interval_max_frames="3"
+        is_emitting="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+  
+    <ParticleEmitterComponent 
+        emitted_material_name="spark_blue"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="6"
+        count_max="9"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="1"
+        emit_cosmetic_particles="0"
+        emission_interval_min_frames="2"
+        emission_interval_max_frames="6"
+        is_emitting="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+      
+    <ParticleEmitterComponent 
+        emitted_material_name="spark_blue_dark"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="6"
+        count_max="9"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="1"
+        emit_cosmetic_particles="0"
+        emission_interval_min_frames="2"
+        emission_interval_max_frames="6"
+        fire_cells_dont_ignite_damagemodel="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="mods/Apotheosis/files/particles/protection_all_water.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="20"
+		count_min="1" count_max="1"
+		randomize_rotation.min="0"
+		randomize_rotation.max="0"
+		randomize_angular_velocity.min="0"
+		randomize_angular_velocity.max="0"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-10"
+		randomize_position.max_x="10"
+		randomize_position.min_y="-10"
+		randomize_position.max_y="10"
+		>
+	</SpriteParticleEmitterComponent>
+
+	<!-- Healing FX -->
+	<Entity>  <Base file="data/entities/animals/boss_water_lukki/misc/whirlpool_fx_base.xml" /> <InheritTransformComponent><Transform rotation="-1.57" ></Transform></InheritTransformComponent> </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_water_lukki/misc/whirlpool_fx_base.xml" /> <InheritTransformComponent><Transform rotation="0" ></Transform></InheritTransformComponent> </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_water_lukki/misc/whirlpool_fx_base.xml" /> <InheritTransformComponent><Transform rotation="1.57" ></Transform></InheritTransformComponent> </Entity>
+	<Entity>  <Base file="data/entities/animals/boss_water_lukki/misc/whirlpool_fx_base.xml" /> <InheritTransformComponent><Transform rotation="3.14" ></Transform></InheritTransformComponent> </Entity>
+
+</Entity>

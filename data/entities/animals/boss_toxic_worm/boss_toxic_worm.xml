@@ -1,6 +1,6 @@
 <Entity 
 	tags="enemy,mortal,hittable,teleportable_NOT,boss_dragon,homing_target,glue_NOT,necrobot_NOT,polymorphable_NOT,music_energy_100,miniboss,ui_use_raw_name"
-	name="Jättiläinen myrkyllinen mato">
+	name="Jättiläinenmyrkyllinenmato">
 
 	<_Transform 
 		position.x="0" 
@@ -81,7 +81,7 @@
 		fire_probability_of_ignition="0" 
 		hp="120" 
 		materials_damage="1" 
-		materials_how_much_damage="0.3,0.2,0.02,0.1,0.1" 
+		materials_how_much_damage="0.3,0.2,0.02,0.01,0.01" 
 		materials_that_damage="purifying_powder,cursed_liquid,blood_cold,lava,acid" 
 		blood_material="radioactive_liquid"
 		blood_spray_material="radioactive_liquid"

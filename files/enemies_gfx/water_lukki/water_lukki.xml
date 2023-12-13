@@ -1,0 +1,60 @@
+<Sprite
+filename="mods/Apotheosis/files/enemies_gfx/water_lukki/water_lukki.png"
+offset_x="20"
+offset_y="20.5" 
+default_animation="stand"
+>
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="6"
+  frame_width="40"
+  frame_height="41"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="1"   >
+ </RectAnimation>
+
+ <!-- Healing Phase Into -->
+ <RectAnimation
+  name="healing_enter"
+  pos_x="0"
+  pos_y="41"
+  frame_count="5"
+  frame_width="40"
+  frame_height="41"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="0"   >
+ </RectAnimation>
+
+ <!-- Healing Phase Idle -->
+ <RectAnimation
+  name="healing_idle"
+  pos_x="0"
+  pos_y="82"
+  frame_count="4"
+  frame_width="40"
+  frame_height="41"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="0"   >
+ </RectAnimation>
+
+ <!-- Healing Phase Ending -->
+ <RectAnimation
+  name="healing_exit"
+  pos_x="0"
+  pos_y="123"
+  frame_count="3"
+  frame_width="40"
+  frame_height="41"
+  frame_wait="0.12"
+  frames_per_row="12"
+  loop="0"   >
+ </RectAnimation>
+
+</Sprite>

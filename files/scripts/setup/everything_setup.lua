@@ -159,6 +159,12 @@ do --Remove fungal & creature shift icons to avoid ui clog
   content = content:gsub("\"templebrick_static\"", "\"apotheosis_radioactive_mud\"")
   content = content:gsub("\"snow_static\"", "\"apotheosis_magic_liquid_mimic\"")
   content = content:gsub("\"steel_static\"", "\"apotheosis_magic_liquid_pure_light\"")
+  content = content:gsub("\"rock_static\"", "\"corruption_static\"")
+  content = content:gsub("\"rock_static_wet\"", "\"apotheosis_smoke_static_slowburn\"")
+  content = content:gsub("\"rock_static_cursed\"", "\"concrete_static\"")
+  content = content:gsub("\"templeslab_static\"", "\"concrete_static\"")
+  content = content:gsub("\"templeslab_crumbling_static\"", "\"apotheosis_radioactive_liquid_strong\"")
+  content = content:gsub("\"lava\"", "\"apotheosis_magic_liquid_moon_portal\"")
   ModTextFileSetContent(path, content)
 
   local path = "mods/apotheosis/files/scripts/magic/creature_shift_file.lua"
@@ -207,6 +213,85 @@ do --Artifically secret seed game flag is added
   ModTextFileSetContent(path, content)
 end
 
+do --Update the Hiisi Shop to always spawn a water stone & update the aesthete spawner to look for a water stone, and also remove the Volcanic Chest from the teleporter room so you HAVE to kill aesthete for them
+  local path = "mods/apotheosis/files/scripts/biomes/hiisi_shop_populator.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("brimstone", "waterstone")
+  ModTextFileSetContent(path, content)
+
+  local path = "mods/apotheosis/files/scripts/buildings/fire_lukki_brimstone_populator.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("/boss_fire_lukki/", "/boss_water_lukki/")
+  ModTextFileSetContent(path, content)
+
+  local path = "mods/apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"brimstone\"", "\"waterstone\"")
+  ModTextFileSetContent(path, content)
+
+  local path = "mods/apotheosis/files/biome/special/_pixel_scenes.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("mods/Apotheosis/files/entities/items/pickups/chest_volcanic%.xml", "")
+  ModTextFileSetContent(path, content)
+end
+
+do --Change all lukkis in the red jungle into Heretics & Clear foliage
+  local path = "data/scripts/biomes/rainforest.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("lukki/lukki_longleg%.xml", "lukki_tentacle_hungry.xml")
+  content = content:gsub("lukki/lukki%.xml", "lukki_tentacle_hungry.xml")
+  content = content:gsub("load_random_pixel_scene%( g_pixel_scene_04, x, y %)", "--disabled")
+  content = content:gsub("spawn%(g_trees,x%+5,y%+5%)", "--disabled")
+  content = content:gsub("spawn%(g_vines,x%+5,y%+5%)", "--disabled")
+  content = content:gsub("spawn%(g_vines,x,y%+5%)", "--disabled")
+  content = content:gsub("EntityLoad%( \"data/entities/props/root_grower%.xml\", x%+5, y%+5 %)", "--disabled")
+  ModTextFileSetContent(path, content)
+end
+
+do --Swaps the lake into a lava lake
+  local path = "mods/Apotheosis/files/scripts/biomes/newbiome/sunken_cave_entrance_lake_alt_lava.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("entrance_lake_alt_lava", "entrance_lake_lava")
+  ModTextFileSetContent(path, content)
+
+  local path = "mods/Apotheosis/files/scripts/biomes/newbiome/essenceroom_fire.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("essenceroom_submerged", "essenceroom_submerged_lava")
+  ModTextFileSetContent(path, content)
+
+  local path = "data/scripts/biomes/essenceroom_alc.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("essenceroom_submerged", "essenceroom_submerged_lava")
+  ModTextFileSetContent(path, content)
+end
+
 --Preconvert Empyrean to flesh
 --ConvertMaterialEverywhere(CellFactory_GetType( "apotheosis_templebrick_static_invincible" ),CellFactory_GetType( "apotheosis_corrupt_flesh_static" ))
 
+
+--Some fun biome changes to keep things interesting
+do
+  local overrides = {
+    "rainforest.xml",
+    "rainforest_open.xml",
+    "lake_deep.xml",
+    "lake.xml",
+    "lava.xml",
+    "lava_90percent.xml",
+    "custom/sunken_cave_entrance_lake_alt.xml",
+    "custom/sunken_cave_entrance_lake_alt_lava.xml",
+  }
+
+  for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
+    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/biome/special/",overrides[k]}))
+    ModTextFileSetContent(table.concat({"data/biome/",overrides[k]}),content)
+    --[[
+    if k == 2 then
+      for l=1,10 do
+        print("We are about to print pixel scene data")
+      end
+      print(content)
+    end
+    ]]--
+  end
+end

@@ -1,0 +1,22 @@
+<Entity >
+
+	<LifetimeComponent
+		lifetime="180"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_fire_lukki/gore/cell_eater_disable.lua"
+		execute_every_n_frame="3"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_fire_lukki/gore/cell_eater_enable.lua"
+		execute_every_n_frame="175"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+</Entity>
