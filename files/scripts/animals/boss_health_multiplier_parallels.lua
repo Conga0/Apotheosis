@@ -5,7 +5,7 @@ local x = EntityGetTransform(entity_id)
 
 local health = 0
 local max_health = 0
-local healthMultiplier = math.max(1, 1 + math.abs(GetParallelWorldPosition( x, 0 )))
+local healthMultiplier = math.max(1, 1 + (math.abs(GetParallelWorldPosition( x, 0 ) * 0.20)))
 
 local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
 

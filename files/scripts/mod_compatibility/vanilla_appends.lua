@@ -462,6 +462,7 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, 
     "orb_laseremitter_four.xml",
     "orb_laseremitter_cutter.xml",
     "disc_bullet_bigger.xml",
+    "duck.xml",
   }
 
   for k=1,#notes do
@@ -476,6 +477,15 @@ end
 
 if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to hit once every 10 frames instead of once every 1 frame
   local path = "data/entities/projectiles/deck/ball_lightning.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("ProjectileComponent").attr
+  attrpath.damage_every_x_frames = "10"
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to hit once every 10 frames instead of once every 1 frame
+  local path = "data/entities/projectiles/deck/fish.xml"
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
   attrpath = xml:first_of("ProjectileComponent").attr
