@@ -1,4 +1,4 @@
-<Entity  name="Jumalallinenhyytelö" tags="ui_use_raw_name,poring_holy">
+<Entity tags="poring_holy">
   <Base file="data/entities/animals/poring_holy.xml" include_children="1" >
     <DamageModelComponent 
       hp="400"

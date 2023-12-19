@@ -1,4 +1,4 @@
-<Entity name="Lumottu ankka" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_enchanted_duck">
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="1" > </ItemChestComponent>

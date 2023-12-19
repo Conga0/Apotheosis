@@ -1,4 +1,4 @@
-<Entity name="Jumalallinenhyytelö" tags="ui_use_raw_name,poring_holy">
+<Entity name="$enemy_apotheosis_poring_holy" tags="poring_holy">
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="1" > </ItemChestComponent>

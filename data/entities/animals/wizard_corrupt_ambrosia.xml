@@ -1,4 +1,4 @@
-<Entity name="Korruptoitunut Kuolemattomuudenmestari" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_wizard_corrupt_ambrosia" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

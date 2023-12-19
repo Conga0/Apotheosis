@@ -140,3 +140,12 @@ table.insert(g_small_enemies,
     parallel     = true,
     entity     = "data/entities/animals/parallel_apotheosis/boss_toxic_worm/boss_toxic_worm.xml"
 })
+
+table.insert(g_small_enemies,
+{
+    prob           = 1,
+    min_count    = 1,
+    max_count    = 1,
+    parallel     = true,
+    entity     = "data/entities/animals/forest_monolith.xml"
+})

@@ -1,4 +1,4 @@
-<Entity name="Vesimagi" tags="watermage,ui_use_raw_name" >
+<Entity tags="watermage" >
   <Base file="data/entities/animals/watermage.xml" include_children="1" >
     <DamageModelComponent 
       hp="12"

@@ -1,6 +1,6 @@
 <Entity 
-	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,ui_use_raw_name,worm" 
-	name="Seinämato"
+	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,worm" 
+	name="$enemy_apotheosis_worm_wall"
 	>
 	<_Transform 
 		position.x="0" 

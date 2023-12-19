@@ -1,4 +1,4 @@
-<Entity name="Kuulumaton" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT" >	
+<Entity name="$enemy_apotheosis_musical_being" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT" >	
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 
 	<!-- art main body -->

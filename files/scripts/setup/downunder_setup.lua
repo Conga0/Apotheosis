@@ -96,6 +96,18 @@ do
   end
 end
 
+do
+  local overrides = {
+    "teleport_puzzle_return.xml"  --le skull
+  }
+
+  for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
+    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/entities/downunder/buildings/",overrides[k]}))
+    ModTextFileSetContent(table.concat({"mods/apotheosis/files/entities/buildings/",overrides[k]}),content)
+  end
+end
+
+
 --Fixes Hiisi not being in Hiisi base
 ModLuaFileAppend("data/scripts/biomes/snowcastle.lua","mods/apotheosis/files/entities/downunder/scripts/biomes/snowcastle_appends.lua")
 
@@ -227,6 +239,13 @@ do --Newgame Plus alteration
   local path = "data/scripts/newgame_plus.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("BiomeMapLoad_KeepPlayer%( \"mods/apotheosis/files/biome_impl/newgame_plus/biome_map_newgame_plus%.lua\", \"data/biome/_pixel_scenes_newgame_plus%.xml\" %)", "BiomeMapLoad_KeepPlayer( \"mods/Apotheosis/files/scripts/setup/downunder_biome_map.lua\", \"data/biome/_pixel_scenes.xml\" )")
+  ModTextFileSetContent(path, content)
+end
+
+do --Updates Water stone from the essence of Polymorphine to be pink
+  local path = "data/scripts/essences/away.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"data/entities/items/pickup/waterstone%.xml\"", "\"mods/apotheosis/files/entities/items/pickups/waterstone_pink.xml\"")
   ModTextFileSetContent(path, content)
 end
 

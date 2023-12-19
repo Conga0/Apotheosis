@@ -1,4 +1,4 @@
-<Entity name="Jäänkatse" tags="touchmagic_immunity,ui_use_raw_name">
+<Entity tags="touchmagic_immunity">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

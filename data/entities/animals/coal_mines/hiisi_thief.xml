@@ -1,4 +1,4 @@
-<Entity name="Varas Hiisi" >
+<Entity >
   
 	<Base file="data/entities/animals/hiisi_thief.xml" include_children="1" >
         <DamageModelComponent

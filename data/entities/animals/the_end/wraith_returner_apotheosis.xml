@@ -1,4 +1,4 @@
-<Entity name="Heijastava Outo" tags="firemage,touchmagic_immunity,ui_use_raw_name" >
+<Entity tags="firemage,touchmagic_immunity" >
   <Base file="data/entities/animals/wraith_returner_apotheosis.xml" include_children="1" >
     <DamageModelComponent 
       hp="67"

@@ -55,7 +55,7 @@
       hole_destroy_liquid="0" 
       hole_enabled="1" 
       ray_energy="2050000"
-	  max_durability_to_destroy="11"
+	  max_durability_to_destroy="14"
       particle_effect="0" 
       damage_mortals="1"
 	  physics_explosion_power.min="0.15"

@@ -1,4 +1,4 @@
-<Entity  name="Tukahduttajamurkku" tags="ui_use_raw_name">
+<Entity  name="$enemy_apotheosis_ant_suffocate">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

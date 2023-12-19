@@ -1,4 +1,4 @@
-<Entity name="Liimanetana" tags="ui_use_raw_name,glue_NOT">
+<Entity tags="glue_NOT">
   <Base file="data/entities/animals/goo_slug.xml" include_children="1" >
     <DamageModelComponent 
       hp="9"

@@ -1,4 +1,4 @@
-<Entity name="Psykopaattihiisi" tags="ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_hisii_giga_bomb"  >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

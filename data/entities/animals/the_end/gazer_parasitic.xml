@@ -1,4 +1,4 @@
-<Entity name="Parasiittinenkatse" tags="ui_use_raw_name" >
+<Entity >
   <Base file="data/entities/animals/gazer_parasitic.xml" include_children="1" >
     <DamageModelComponent 
       hp="12"

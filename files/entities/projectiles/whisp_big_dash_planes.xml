@@ -1,6 +1,6 @@
 <Entity 
-  name="Jättipalavakeiju" 
-  tags="enemy,mortal,hittable,homing_target,destruction_target,ui_use_raw_name"
+  name="$enemy_apotheosis_whisp_big" 
+  tags="enemy,mortal,hittable,homing_target,destruction_target"
    >
 
 	<Base file="data/entities/base_projectile.xml" >

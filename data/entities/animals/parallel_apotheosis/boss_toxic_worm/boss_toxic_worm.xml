@@ -1,6 +1,6 @@
 <Entity 
-	tags="enemy,mortal,hittable,teleportable_NOT,boss_dragon,homing_target,glue_NOT,necrobot_NOT,polymorphable_NOT,ui_use_raw_name"
-	name="Madon Muisti">
+	tags="enemy,mortal,hittable,teleportable_NOT,boss_dragon,homing_target,glue_NOT,necrobot_NOT,polymorphable_NOT"
+	name="$enemy_apotheosis_boss_toxic_worm_parallel">
 
 	<_Transform 
 		position.x="0" 

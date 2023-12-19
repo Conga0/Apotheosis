@@ -1,4 +1,4 @@
-<Entity name="Palavakeiju" >
+<Entity >
   <Base file="data/entities/animals/whisp.xml" include_children="1" >
 
     <DamageModelComponent 

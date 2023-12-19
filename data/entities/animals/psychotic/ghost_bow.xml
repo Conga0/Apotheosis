@@ -1,4 +1,4 @@
-<Entity name="Harhaluulo" tags="ui_use_raw_name,monk_hand,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
+<Entity name="$enemy_apotheosis_ghost_bow" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

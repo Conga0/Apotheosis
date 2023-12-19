@@ -1,4 +1,4 @@
-<Entity tags="shaman,ui_use_raw_name" name="Suurmärkiäinen">
+<Entity tags="shaman" name="$enemy_apotheosis_shaman_greater_apotheosis">
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>
 

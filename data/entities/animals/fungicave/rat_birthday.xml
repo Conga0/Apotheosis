@@ -1,4 +1,4 @@
-<Entity name="Juhla rotta" tags="ui_use_raw_name,glue_NOT">
+<Entity tags="glue_NOT">
   <Base file="data/entities/animals/rat_birthday.xml" include_children="1" >
     <DamageModelComponent 
       hp="12"

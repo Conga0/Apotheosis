@@ -1,4 +1,4 @@
-<Entity name="Haamujousi" tags="ui_use_raw_name,monk_hand">
+<Entity name="$ghost_bow" tags="monk_hand">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

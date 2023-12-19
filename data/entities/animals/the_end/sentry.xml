@@ -1,4 +1,4 @@
-<Entity name="Vartiomies" tags="ui_use_raw_name" >
+<Entity >
   <Base file="data/entities/animals/sentry.xml" include_children="1" >
     <DamageModelComponent 
       hp="45"

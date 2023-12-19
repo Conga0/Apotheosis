@@ -1,4 +1,4 @@
-<Entity tags="mortal,prey,ui_use_raw_name,acid" name="Esoteric Sorako">
+<Entity tags="mortal,prey,acid" name="$enemy_apotheosis_cat_mocreeps_sorako_esoteric">
   
 	<Base file="data/entities/base_helpless_animal.xml" >
 

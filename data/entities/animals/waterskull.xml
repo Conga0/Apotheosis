@@ -1,4 +1,4 @@
-<Entity name="Vesiö" tags="watermage,ui_use_raw_name">
+<Entity name="$enemy_apotheosis_waterskull" tags="watermage">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

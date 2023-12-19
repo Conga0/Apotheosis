@@ -1,4 +1,4 @@
-<Entity name="Nukketeatterinmestari" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_wizard_corrupt_wands">
 	<!-- Placeholder, confirm before final release -->
   
 	<Base file="data/entities/base_enemy_basic.xml" >

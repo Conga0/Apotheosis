@@ -1,4 +1,4 @@
-<Entity name="Savuavasieni" tags="ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_fungus_smoking_creep" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" enemy_drop="1" > </ItemChestComponent>

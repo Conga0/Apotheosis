@@ -1,4 +1,4 @@
-<Entity name="Korruptoitunut Maadoittajamestari" tags="polymorphable_NOT,ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_wizard_corrupt_neutral" tags="polymorphable_NOT" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

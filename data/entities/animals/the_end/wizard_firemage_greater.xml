@@ -1,4 +1,4 @@
-<Entity name="Suur Stendari" tags="firemage,touchmagic_immunity,ui_use_raw_name" >
+<Entity tags="firemage,touchmagic_immunity" >
   <Base file="data/entities/animals/wizard_firemage_greater.xml" include_children="1" >
     <DamageModelComponent 
       hp="45"

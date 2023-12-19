@@ -1,4 +1,4 @@
-<Entity name="Jättiristiriitakeiju" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_fairy_big_discord" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent

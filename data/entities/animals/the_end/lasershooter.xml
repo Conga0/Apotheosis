@@ -1,8 +1,8 @@
 <Entity >
   <Base file="data/entities/animals/lasershooter.xml" include_children="1" >
     <DamageModelComponent 
-      hp="9"
-      max_hp="9"
+      hp="90"
+      max_hp="90"
      >
 		<damage_multipliers
 			radioactive="0.0"

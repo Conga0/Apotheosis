@@ -1,4 +1,4 @@
-<Entity name="Hyytelö">
+<Entity >
   
 	<Base file="data/entities/animals/poring.xml" include_children="1" >
         <AnimalAIComponent

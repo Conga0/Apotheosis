@@ -1,4 +1,4 @@
-<Entity name="Pieni Lennokki" tags="ui_use_raw_name" >
+<Entity >
   <Base file="data/entities/animals/drone_mini.xml" include_children="1" >
     <DamageModelComponent 
       hp="4"

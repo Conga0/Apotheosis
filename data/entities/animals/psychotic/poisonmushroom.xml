@@ -1,4 +1,4 @@
-<Entity name="Harhaluulo" tags="mortal,hittable,homing_target,enemy,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
+<Entity name="$enemy_apotheosis_poisonmushroom" tags="mortal,hittable,homing_target,enemy,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
 
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 

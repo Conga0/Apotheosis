@@ -1,4 +1,4 @@
-<Entity name="Liimanetana" tags="ui_use_raw_name,glue_NOT">
+<Entity name="$enemy_apotheosis_goo_slug" tags="glue_NOT">
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="1" > </ItemChestComponent>

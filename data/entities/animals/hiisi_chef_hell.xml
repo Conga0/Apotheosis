@@ -1,4 +1,4 @@
-<Entity name="Hornakokkihiisi" tags="ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_hiisi_chef_hell"  >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

@@ -1,4 +1,4 @@
-<Entity name="Vartiomies" tags="ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_sentry" >
 
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

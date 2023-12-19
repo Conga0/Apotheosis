@@ -1,4 +1,4 @@
-<Entity tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,glue_NOT,ui_use_raw_name" name="Kirottuolento" >
+<Entity tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,glue_NOT" name="$enemy_apotheosis_lukki_tentacle_hungry" >
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 	
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->

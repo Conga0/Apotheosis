@@ -1,4 +1,4 @@
-<Entity name="Suur-Vesimagi" tags="watermage,ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_watermage_greater" tags="watermage" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

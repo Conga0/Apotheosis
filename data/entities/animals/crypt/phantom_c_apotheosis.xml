@@ -1,4 +1,4 @@
-<Entity tags="glue_NOT,ui_use_raw_name" name="Pakkomielteinenkalma" >
+<Entity tags="glue_NOT" >
   <Base file="data/entities/animals/phantom_c_apotheosis.xml" include_children="1" >
     <DamageModelComponent 
       hp="12"

@@ -1,4 +1,4 @@
-<Entity name="Kohoava pilari hämis" tags="ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_longleg_pillar" >
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="1" > </ItemChestComponent>

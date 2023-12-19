@@ -9,7 +9,7 @@ if g_small_enemies then
     do enemy = towerclimb_enemies[k]
         table.insert(g_small_enemies,
         {
-            prob           = 0.1,
+            prob           = 0.005,
             min_count    = 1,
             max_count    = 1,    
             entity     = "data/entities/animals/" .. enemy .. ".xml"
@@ -24,7 +24,7 @@ if g_big_enemies then
     do enemy = towerclimb_enemies[k]
         table.insert(g_big_enemies,
         {
-            prob           = 0.1,
+            prob           = 0.005,
             min_count    = 1,
             max_count    = 1,    
             entity     = "data/entities/animals/" .. enemy .. ".xml"

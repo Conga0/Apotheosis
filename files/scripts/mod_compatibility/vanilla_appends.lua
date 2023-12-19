@@ -1270,6 +1270,14 @@ do --Add Steve & Skoude creature shifting compatibility
   ModTextFileSetContent(path, content)
 end
 
+do --Slip Book of Kings in the Meditation Cube, only in the main world
+  local path = "data/scripts/biomes/excavationsite_cube_chamber.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("spawn_teleporter%(x, y%)", "spawn_teleporter(x, y) local pw = GetParallelWorldPosition(x,y) if pw == 0 then EntityLoad(\"mods/apotheosis/files/entities/items/books/book_kings.xml\", x - 50, y + 50) end")
+
+  ModTextFileSetContent(path, content)
+end
+
 --Post Ascension reward
 --[[
 if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("apotheosis_card_unlocked_sea_to_potion") == false then

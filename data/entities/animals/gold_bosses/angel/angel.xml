@@ -1,4 +1,4 @@
-<Entity name="Jumalallinen olento" tags="polymorphable_NOT,touchmagic_immunity,ui_use_raw_name,boss,necrobot_NOT,glue_NOT,teleportable_NOT,miniboss,music_energy_100,curse_NOT,homing_target" >
+<Entity name="$enemy_apotheosis_angel" tags="polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,teleportable_NOT,miniboss,music_energy_100,curse_NOT,homing_target" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="3" > </ItemChestComponent>

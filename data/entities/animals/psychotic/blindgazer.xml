@@ -1,4 +1,4 @@
-<Entity name="Harhaluulo" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
+<Entity name="$enemy_apotheosis_blindgazer" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent

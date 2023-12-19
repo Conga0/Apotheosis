@@ -1,4 +1,4 @@
-<Entity tags="glue_NOT,ui_use_raw_name" name="Parannuskeinolennokki">
+<Entity tags="glue_NOT" name="$enemy_apotheosis_drone_status_ailment">
   
 	<PhysicsAIComponent
 		target_vec_max_len="15.0"

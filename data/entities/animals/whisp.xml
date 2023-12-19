@@ -1,4 +1,4 @@
-<Entity name="Palavakeiju" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_whisp">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent

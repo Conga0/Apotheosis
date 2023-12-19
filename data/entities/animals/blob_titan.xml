@@ -1,4 +1,4 @@
-<Entity  name="Kolossaalimöykky" tags="ui_use_raw_name">
+<Entity  name="$enemy_apotheosis_blob_titan">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

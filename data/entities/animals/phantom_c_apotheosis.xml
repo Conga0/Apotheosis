@@ -1,4 +1,4 @@
-<Entity tags="glue_NOT,ui_use_raw_name" name="Pakkomielteinenkalma" >
+<Entity tags="glue_NOT" name="$enemy_apotheosis_phantom_c_apotheosis" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>

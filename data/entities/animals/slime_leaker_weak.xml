@@ -1,4 +1,4 @@
-<Entity name="Heikko Vuotavajaska">
+<Entity name="$enemy_apotheosis_slime_leaker_weak">
   
 	<Base file="data/entities/animals/slime_leaker.xml" include_children="0" >
 		<DamageModelComponent

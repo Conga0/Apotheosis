@@ -1721,7 +1721,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 200, "miniboss" ) or nil
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "Jättiläinen myrkyllinen mato" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_toxic_worm" then
                     local d_opts = {"This large vermiform seems to excrete large amounts of radioactivity as it undergoes its metamorphosis."}
                     local dialogue = d_opts[math.random(1,#d_opts)]
 		    tone = "long"
@@ -1736,7 +1736,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 200, "miniboss" ) or nil
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "Jättiläinen myrkyllinen mato" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_toxic_worm" then
                     local d_opts = {"You've caught it at an inopportune moment."}
 		    if GameHasFlagRun("apotheosis_heretalk_cynical") then
             	        d_opts = {"It seems upset at your inopportune timing."}
@@ -1767,7 +1767,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 175, "boss_ghost_helper" ) or nil
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "Hylätty orkesteri" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_musical_ghost" then
                     local d_opts = {"A symphony that will forever remain unheard."}
                     local dialogue = d_opts[math.random(1,#d_opts)]
 		    tone = "gossip"
@@ -1782,7 +1782,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 175, "miniboss" ) or nil
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "Jumalallinen olento" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_angel" then
                     local d_opts = {"Ugh."}
                     local dialogue = d_opts[math.random(1,#d_opts)]
 		    tone = "power"
@@ -1797,7 +1797,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 175, "touchmagic_immunity" ) or nil
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "Monoliitti" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_forest_monolith" then
                     local d_opts = {"...?"}
                     local dialogue = d_opts[math.random(1,#d_opts)]
 		    tone = "quiet"
@@ -1856,7 +1856,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 175, "touchmagic_immunity" ) or {}
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "Abyssaalinenolento" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_abyssum_monster" then
                     local d_opts = {"...?"}
                     local dialogue = d_opts[math.random(1,#d_opts)]
 		    tone = "quiet"
@@ -2228,6 +2228,20 @@ local events = {
             else
                 return false
             end
+        end
+    },
+    {
+        --120 Being shown Aesthete of Water
+        trigger = function()
+            local boss = EntityGetInRadiusWithTag( x, y, 175, "miniboss" ) or nil
+            for bp=1,#boss do
+                if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_water_lukki_name" then
+                    local d_opts = {"Is that the grand beast..?","Something feels wrong.."}
+                    local dialogue = d_opts[math.random(1,#d_opts)]
+                    return true, dialogue
+                end
+            end
+            return false
         end
     },
 }

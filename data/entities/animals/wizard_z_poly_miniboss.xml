@@ -1,4 +1,4 @@
-<Entity name="Yli-innokas Muudonmuutosmestari" tags="polymorphable_NOT,touchmagic_immunity,ui_use_raw_name,music_energy_100,necrobot_NOT,glue_NOT,teleportable_NOT" >
+<Entity name="$enemy_apotheosis_wizard_z_poly_miniboss" tags="polymorphable_NOT,touchmagic_immunity,music_energy_100,necrobot_NOT,glue_NOT,teleportable_NOT" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
