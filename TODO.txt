@@ -16,9 +16,6 @@ Fix shifted hamis behaving weirdly when spawning from nests/purple vases
 
 Fix Polymorph crystals being able to spawn camp TotA's entrance
 
-Add in spine worm to the spawn pool, apply blood hex on hit (Is this unique mechanically?) (Could apply sacreligous effect to nearby creatures so they revive on death)
-Nerf Ducks & Fish hit rate
-
 
 
 Add more dangerous bubbles to the Liquid Bubble seed
