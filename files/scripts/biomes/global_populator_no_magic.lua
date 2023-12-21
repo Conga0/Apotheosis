@@ -144,7 +144,7 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,
     parallel     = true,
-    entity     = "data/entities/animals/parallel/alchemist/parallel_alchemist.xml"
+    entity     = "data/entities/buildings/apotheosis_parallel_boss_spawner_alchemist.xml"
 })
 
 table.insert(g_small_enemies,
@@ -153,7 +153,7 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,
     parallel     = true,
-    entity     = "data/entities/animals/parallel/tentacles/parallel_tentacles.xml"
+    entity     = "data/entities/buildings/apotheosis_parallel_boss_spawner_tentacles.xml"
 })
 
 table.insert(g_small_enemies,
@@ -162,5 +162,5 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,
     parallel     = true,
-    entity     = "data/entities/animals/parallel_apotheosis/boss_toxic_worm/boss_toxic_worm.xml"
+    entity     = "data/entities/buildings/apotheosis_parallel_boss_spawner_worm.xml"
 })

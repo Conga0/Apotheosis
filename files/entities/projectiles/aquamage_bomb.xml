@@ -201,7 +201,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/aquamage_bomb.xml"
+		value_string="mods/apotheosis/files/entities/projectiles/aquamage_bomb.xml"
 		>
 	</VariableStorageComponent>
   

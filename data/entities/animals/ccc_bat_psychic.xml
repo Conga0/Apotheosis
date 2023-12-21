@@ -1,4 +1,4 @@
-<Entity name="$ccc_bat_psychic" tags="cube_fx" >
+<Entity name="$enemy_apotheosis_ccc_bat_psychic" tags="cube_fx" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

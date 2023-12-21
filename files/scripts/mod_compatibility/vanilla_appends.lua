@@ -1261,6 +1261,22 @@ do --Increase Parallel World Boss hp depending on PW count
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do --Hopefully, fixes an extremely rare bug where the sampo disappears under certain circumstances
+  local path = "data/entities/animals/boss_centipede/reference_point.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/Apotheosis/files/scripts/buildings/kolmi_missing_check.lua"
+      execute_every_n_frame="120"
+      execute_times="-1"
+      remove_after_executed="0"
+      >
+	  </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 do --Add Steve & Skoude creature shifting compatibility
   local path = "data/scripts/animals/necromancer_shop_spawn.lua"
   local content = ModTextFileGetContent(path)

@@ -56,6 +56,7 @@
 		ragdoll_filenames_file=""
 		ragdoll_material="apotheosis_meat_toxic_worm_cure"
 		ragdoll_offset_y="-6"
+		ragdoll_fx_forced="DISINTEGRATED"
 		>
 		<damage_multipliers
 			explosion="0.9"

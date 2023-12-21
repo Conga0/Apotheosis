@@ -31,6 +31,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/boss_musical_ghost.png",
 	  },
 	  {
+		name="Memory of the Worm",
+		path="data/entities/animals/parallel_apotheosis/boss_toxic_worm/boss_toxic_worm.xml",
+		image="data/ui_gfx/animal_icons/hidden/boss_toxic_worm_parallel.png",
+	  },
+	  {
 		name="Giant Toxic Worm",
 		path="data/entities/animals/boss_toxic_worm/boss_toxic_worm.xml",
 		image="data/ui_gfx/animal_icons/boss_toxic_worm.png",
