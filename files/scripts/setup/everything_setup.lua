@@ -35,6 +35,7 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("clouds", 6, 2)
     MultiplyHPOnBiome("pyramid", 3, 1.2)
     MultiplyHPOnBiome("robobase", 10, 2)
+    MultiplyHPOnBiome("meat", 1, 4)
 
     --Secret Biomes
     MultiplyHPOnBiome("custom/plane_yggdrasil", 10, 1.5)
@@ -67,9 +68,9 @@ MultiplyHPSelective("boss_dragon",4,false)
 MultiplyHPSelective("boss_fish/fish_giga",2,false)
 
 --Increase health of PW bosses
-MultiplyHPSelective("parallel/tentacles/parallel_tentacles",6,false)
-MultiplyHPSelective("parallel/alchemist/parallel_alchemist",6,true)
-MultiplyHPSelective("parallel_apotheosis/boss_toxic_worm/boss_toxic_worm",6,false)
+MultiplyHPSelective("parallel/tentacles/parallel_tentacles",2,false)
+MultiplyHPSelective("parallel/alchemist/parallel_alchemist",2,true)
+MultiplyHPSelective("parallel_apotheosis/boss_toxic_worm/boss_toxic_worm",4,false)
 
 --Boosts Health of Wand Tinkering Crystals by x10
 MultiplyHPSelectiveBuilding("wandedit_crystal",10,false)

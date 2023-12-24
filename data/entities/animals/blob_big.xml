@@ -1,4 +1,4 @@
-<Entity  name="Isomöykky" tags="ui_use_raw_name">
+<Entity  name="$enemy_apotheosis_blob_big">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

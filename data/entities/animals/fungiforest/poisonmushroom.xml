@@ -1,4 +1,4 @@
-<Entity name="Myrkyllinen sieni">
+<Entity >
   
 	<Base file="data/entities/animals/poisonmushroom.xml" include_children="1" >
 

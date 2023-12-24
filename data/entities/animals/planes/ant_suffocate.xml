@@ -1,4 +1,4 @@
-<Entity  name="Tukahduttavamurkku" tags="ui_use_raw_name">
+<Entity >
   <Base file="data/entities/animals/ant_suffocate.xml" include_children="1" >
     <DamageModelComponent 
       hp="10"

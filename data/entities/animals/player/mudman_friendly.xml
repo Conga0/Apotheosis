@@ -1,4 +1,4 @@
-<Entity name="Mutamies" tags="ui_use_raw_name" >
+<Entity >
   
 	<Base file="data/entities/animals/mudman_friendly.xml" >
 	</Base>

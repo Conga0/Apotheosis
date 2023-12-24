@@ -1,4 +1,4 @@
-<Entity name="Nestemäinen kupla">
+<Entity name="$enemy_apotheosis_bubble_liquid" >
   <!-- This enemy is EVIL. -->
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

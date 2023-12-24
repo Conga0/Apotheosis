@@ -1261,11 +1261,35 @@ do --Increase Parallel World Boss hp depending on PW count
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do --Hopefully, fixes an extremely rare bug where the sampo disappears under certain circumstances
+  local path = "data/entities/animals/boss_centipede/reference_point.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/Apotheosis/files/scripts/buildings/kolmi_missing_check.lua"
+      execute_every_n_frame="120"
+      execute_times="-1"
+      remove_after_executed="0"
+      >
+	  </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 do --Add Steve & Skoude creature shifting compatibility
   local path = "data/scripts/animals/necromancer_shop_spawn.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_shop.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_steve_filepath\", \"data/entities/animals/necromancer_shop.xml\" ), pos_x, pos_y)")
   content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_super.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_skoude_filepath\", \"data/entities/animals/necromancer_super.xml\" ), pos_x, pos_y)")
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Slip Book of Kings in the Meditation Cube, only in the main world
+  local path = "data/scripts/biomes/excavationsite_cube_chamber.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("spawn_teleporter%(x, y%)", "spawn_teleporter(x, y) local pw = GetParallelWorldPosition(x,y) if pw == 0 then EntityLoad(\"mods/apotheosis/files/entities/items/books/book_kings.xml\", x - 50, y + 50) end")
 
   ModTextFileSetContent(path, content)
 end

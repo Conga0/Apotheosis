@@ -1,4 +1,4 @@
-<Entity name="Suur-Stendari" tags="firemage,touchmagic_immunity,ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_wizard_firemage_greater" tags="firemage,touchmagic_immunity" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

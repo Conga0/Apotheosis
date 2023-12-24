@@ -1,4 +1,4 @@
-<Entity  name="Iso Möykky" tags="polymorphable_NOT,touchmagic_immunity,ui_use_raw_name,boss,necrobot_NOT,glue_NOT,teleportable_NOT,miniboss,music_energy_100,curse_NOT,homing_target,apotheosis_blob_boss">
+<Entity  name="$enemy_apotheosis_blob_big" tags="polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,teleportable_NOT,miniboss,music_energy_100,curse_NOT,homing_target,apotheosis_blob_boss">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<AnimalAIComponent 

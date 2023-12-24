@@ -1,4 +1,4 @@
-<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT" name="Etsijä">
+<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT" name="$enemy_apotheosis_seeker">
 	
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>

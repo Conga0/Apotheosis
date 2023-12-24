@@ -1,4 +1,4 @@
-<Entity name="Kolossaalinenkeiju" tags="ui_use_raw_name">
+<Entity >
   <Base file="data/entities/animals/fairy_giant.xml" include_children="1" >
   </Base>
   

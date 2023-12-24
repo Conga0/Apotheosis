@@ -1,4 +1,4 @@
-<Entity name="Klovni" >
+<Entity name="$enemy_apotheosis_hisii_clown" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

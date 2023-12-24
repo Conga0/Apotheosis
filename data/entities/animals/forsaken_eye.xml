@@ -1,4 +1,4 @@
-<Entity  name="Hylättysilmä" tags="ui_use_raw_name">
+<Entity  name="$enemy_apotheosis_forsaken_eye" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent 

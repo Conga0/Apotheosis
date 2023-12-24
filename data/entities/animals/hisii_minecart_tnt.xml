@@ -1,4 +1,4 @@
-<Entity name="Kaivoskärrytappurahaulikkohiisi" tags="ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_hisii_minecart_tnt" >
   
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<ItemChestComponent level="1" >

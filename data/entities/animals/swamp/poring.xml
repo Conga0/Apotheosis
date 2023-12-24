@@ -1,4 +1,4 @@
-<Entity name="Suohyytelö" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_poring_swamp" >
   
     <Base file="data/entities/animals/poring.xml" >
         <ItemChestComponent level="2" > </ItemChestComponent>

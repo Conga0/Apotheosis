@@ -405,7 +405,7 @@ local secret_seeds = {
         func = poverty
     },
     {
-        IDs = {"downunder","sisoehtopa","upsidedown"},
+        IDs = {"downunder","sisoehtopa","upsidedown","australia","australian"},
         func = downunder
     },
     {

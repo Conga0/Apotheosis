@@ -1,4 +1,4 @@
-<Entity name="Mananmestari" tags="ui_use_raw_name,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
+<Entity name="$enemy_apotheosis_wizard_manaeater" tags="polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT">
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

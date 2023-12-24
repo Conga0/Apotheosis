@@ -1,4 +1,4 @@
-<Entity name="Räjähdysherkkämatkija" tags="ui_use_raw_name"> 
+<Entity > 
   <Base file="data/entities/animals/mimic_explosive_box.xml" include_children="1" >
     <DamageModelComponent 
       hp="8"

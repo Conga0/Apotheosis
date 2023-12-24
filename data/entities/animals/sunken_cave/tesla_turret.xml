@@ -1,4 +1,4 @@
-<Entity name="Teslatötterö" tags="ui_use_raw_name" >
+<Entity >
   <Base file="data/entities/animals/tesla_turret.xml" include_children="1" >
     <DamageModelComponent 
       hp="20"

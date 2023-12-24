@@ -1,4 +1,4 @@
-<Entity name="Hiljainen" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT,homing_target" >	
+<Entity name="$enemy_apotheosis_musical_being_weak" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT,homing_target" >	
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 
 	<!-- art main body -->

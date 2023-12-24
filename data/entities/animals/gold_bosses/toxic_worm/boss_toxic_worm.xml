@@ -1,6 +1,6 @@
 <Entity 
-	tags="enemy,mortal,hittable,teleportable_NOT,boss_dragon,homing_target,glue_NOT,necrobot_NOT,polymorphable_NOT,music_energy_100,miniboss,ui_use_raw_name"
-	name="Jättiläinen myrkyllinen mato">
+	tags="enemy,mortal,hittable,teleportable_NOT,boss_dragon,homing_target,glue_NOT,necrobot_NOT,polymorphable_NOT,music_energy_100,miniboss"
+	name="$enemy_apotheosis_boss_toxic_worm">
 
 	<_Transform 
 		position.x="0" 

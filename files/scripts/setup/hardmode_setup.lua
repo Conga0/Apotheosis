@@ -35,6 +35,7 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("clouds", 6, 2)
     MultiplyHPOnBiome("pyramid", 3, 1.2)
     MultiplyHPOnBiome("robobase", 10, 2)
+    MultiplyHPOnBiome("meat", 1, 4)
 
     --Increase health of PW bosses
     MultiplyHPSelective("parallel/tentacles/parallel_tentacles",4,false)

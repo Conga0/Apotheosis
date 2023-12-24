@@ -1,4 +1,4 @@
-<Entity name="Teslatötterö" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_tesla_turret" >
 	<_Transform 
 		scale.x="1" 
 		>

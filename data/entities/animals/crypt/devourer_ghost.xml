@@ -1,4 +1,4 @@
-<Entity tags="enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT" name="Nälkäinen aave">
+<Entity tags="enemy,human,hittable,homing_target,polymorphable_NOT,glue_NOT" >
   <Base file="data/entities/animals/devourer_ghost.xml" include_children="1" >
     <DamageModelComponent 
       hp="9"

@@ -1,6 +1,6 @@
 <Entity 
-  name="Monoliitti"
-  tags="hittable,mortal,teleportable_NOT,homing_target,enemy,polymorphable_NOT,touchmagic_immunity,ui_use_raw_name" >
+  name="$enemy_apotheosis_forest_monolith"
+  tags="hittable,mortal,teleportable_NOT,homing_target,enemy,polymorphable_NOT,touchmagic_immunity" >
 
     <AnimalAIComponent 
         _enabled="1" 

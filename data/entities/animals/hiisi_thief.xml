@@ -1,4 +1,4 @@
-<Entity name="Varashiisi" >
+<Entity name="$hiisi_thief" >
 
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

@@ -1,4 +1,4 @@
-<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT" name="Wandsin Arvostelija">
+<Entity tags="mortal,enemy,human,hittable,homing_target,polymorphable_NOT" name="$enemy_apotheosis_miniboss_pit">
 	
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>

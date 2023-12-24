@@ -1,4 +1,4 @@
-<Entity name="Säröilevä limanuljaska" tags="touchmagic_immunity,ui_use_raw_name" >
+<Entity tags="touchmagic_immunity" >
   <Base file="data/entities/animals/slime_teleporter.xml" include_children="1" >
     <DamageModelComponent 
       hp="18"

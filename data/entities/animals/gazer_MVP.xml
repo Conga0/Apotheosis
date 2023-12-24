@@ -1,4 +1,4 @@
-<Entity name="Jumalallinenjäänkatse" tags="touchmagic_immunity,ui_use_raw_name">
+<Entity name="$enemy_apotheosis_gazer_MVP" tags="touchmagic_immunity">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

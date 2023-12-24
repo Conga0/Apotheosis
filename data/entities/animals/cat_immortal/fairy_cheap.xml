@@ -1,4 +1,4 @@
-<Entity name="Keiju" tags="mortal,human,hittable,teleportable_NOT,flying,polymorphable_NOT" >
+<Entity name="$enemy_apotheosis_fairy" tags="mortal,human,hittable,teleportable_NOT,flying,polymorphable_NOT" >
 	
 	<ItemChestComponent
 		_enabled="0"

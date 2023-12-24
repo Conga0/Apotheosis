@@ -1,4 +1,4 @@
-<Entity  name="Esoteerinenolento" tags="ui_use_raw_name">
+<Entity  name="$enemy_apotheosis_esoteric_being" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="3" > </ItemChestComponent>

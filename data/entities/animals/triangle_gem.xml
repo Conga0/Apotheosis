@@ -1,4 +1,4 @@
-<Entity tags="glue_NOT,monk_hand,ui_use_raw_name" name="Kolmionmuotoinenkristalli" >
+<Entity tags="glue_NOT,monk_hand" name="$enemy_apotheosis_triangle_gem" >
   
   <PhysicsAIComponent
 		target_vec_max_len="20.0"

@@ -1,4 +1,4 @@
-<Entity name="Uistelunmestari" tags="ui_use_raw_name,apotheosis_angrymage" >
+<Entity name="$enemy_apotheosis_wizard_copeseethmald" tags="apotheosis_angrymage" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

@@ -1,4 +1,4 @@
-<Entity name="Räjähdysherkkämatkija" tags="ui_use_raw_name"> 
+<Entity name="$enemy_apotheosis_mimic_explosive_box"> 
 	<Base file="data/entities/base_enemy_basic.xml" >		
 		<AnimalAIComponent 
 			_enabled="1" 

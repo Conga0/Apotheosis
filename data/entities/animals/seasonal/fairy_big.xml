@@ -1,4 +1,4 @@
-<Entity name="Jättikeiju">
+<Entity name="$enemy_apotheosis_fairy_big">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<AnimalAIComponent

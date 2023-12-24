@@ -1,4 +1,4 @@
-<Entity name="Sytytystankki" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_tank_flame_apotheosis">
   
 	<Base file="data/entities/base_enemy_robot.xml" >
 		<ItemChestComponent level="2" >

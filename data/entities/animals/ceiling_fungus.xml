@@ -1,4 +1,4 @@
-<Entity name="Kattosieni" tags="standard_gravity,ui_use_raw_name">
+<Entity name="$enemy_apotheosis_ceiling_fungus" tags="standard_gravity">
   
 	<Base file="data/entities/base_enemy_ceiling_creep.xml" >
 		<ItemChestComponent level="5" enemy_drop="1" > </ItemChestComponent>

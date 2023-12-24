@@ -1,4 +1,4 @@
-<Entity name="Hylätty orkesteri" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT,boss,touchmagic_immunity,music_energy_100,miniboss,homing_target,necrobot_NOT,weaken_NOT,ui_use_raw_name" >	
+<Entity name="$enemy_apotheosis_boss_musical_ghost" tags="enemy,teleportable_NOT,polymorphable_NOT,hittable,mortal,boss_ghost_helper,glue_NOT,boss,touchmagic_immunity,music_energy_100,miniboss,homing_target,necrobot_NOT,weaken_NOT" >	
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 
 	<!-- art main body -->

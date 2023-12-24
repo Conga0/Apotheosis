@@ -1,4 +1,4 @@
-<Entity name="Myrkyllinenmato" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_boss_toxic_worm_minion">
   
 		<Base file="data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml">
 		</Base>

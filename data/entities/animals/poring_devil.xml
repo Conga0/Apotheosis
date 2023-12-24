@@ -1,4 +1,4 @@
-<Entity name="Epäpyhähyytelö" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_poring_devil" >
   
     <Base file="data/entities/base_enemy_basic.xml" >
         <ItemChestComponent level="4" > </ItemChestComponent>

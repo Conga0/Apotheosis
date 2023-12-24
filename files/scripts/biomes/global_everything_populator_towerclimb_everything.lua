@@ -116,27 +116,36 @@ end
 --Parallel World Bosses with amped up spawnrates
 table.insert(g_small_enemies,
 {
-    prob           = 10,
+    prob           = 3,
     min_count    = 1,
     max_count    = 1,
     parallel     = true,
-    entity     = "data/entities/animals/parallel/alchemist/parallel_alchemist.xml"
+    entity     = "data/entities/buildings/apotheosis_parallel_boss_spawner_alchemist.xml"
 })
 
 table.insert(g_small_enemies,
 {
-    prob           = 10,
+    prob           = 3,
     min_count    = 1,
     max_count    = 1,
     parallel     = true,
-    entity     = "data/entities/animals/parallel/tentacles/parallel_tentacles.xml"
+    entity     = "data/entities/buildings/apotheosis_parallel_boss_spawner_tentacles.xml"
 })
 
 table.insert(g_small_enemies,
 {
-    prob           = 10,
+    prob           = 1,
     min_count    = 1,
     max_count    = 1,
     parallel     = true,
-    entity     = "data/entities/animals/parallel_apotheosis/boss_toxic_worm/boss_toxic_worm.xml"
+    entity     = "data/entities/buildings/apotheosis_parallel_boss_spawner_worm.xml"
+})
+
+table.insert(g_small_enemies,
+{
+    prob           = 0.2,
+    min_count    = 1,
+    max_count    = 1,
+    parallel     = true,
+    entity     = "data/entities/animals/forest_monolith.xml"
 })

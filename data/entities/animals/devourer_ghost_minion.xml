@@ -1,6 +1,6 @@
 <Entity 
-  name="Syömisen kirous" 
-  tags="mortal,hittable,music_energy_000_near,glue_NOT,ui_use_raw_name" 
+  name="$enemy_apotheosis_devourer_ghost_minion" 
+  tags="mortal,hittable,music_energy_000_near,glue_NOT" 
   serialize="0" >
 
   <_Transform 

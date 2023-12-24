@@ -1,4 +1,4 @@
-<Entity name="Pieni räjähtävä sieni" tags="fungus_tiny_bad,ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_ceiling_fungus_minion" tags="fungus_tiny_bad" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" enemy_drop="1" > </ItemChestComponent>

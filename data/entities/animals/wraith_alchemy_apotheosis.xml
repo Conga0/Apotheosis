@@ -1,4 +1,4 @@
-<Entity name="Alkeeminen Outo" tags="ui_use_raw_name">
+<Entity name="$enemy_apotheosis_wraith_alchemy_apotheosis" >
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

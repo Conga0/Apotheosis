@@ -1,5 +1,5 @@
-<Entity name="Punainenkala" 
-    tags="mortal,hittable,helpless_animal,prey,ui_use_raw_name" >
+<Entity name="$enemy_apotheosis_fish_red" 
+    tags="mortal,hittable,helpless_animal,prey" >
     
     <AdvancedFishAIComponent
         move_check_range_min="8"

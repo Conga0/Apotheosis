@@ -1,4 +1,4 @@
-<Entity name="Uistelunmestari" tags="ui_use_raw_name,apotheosis_angrymage" >
+<Entity tags="apotheosis_angrymage" >
   <Base file="data/entities/animals/wizard_copeseethmald.xml" include_children="1" >
   </Base>
 </Entity>
