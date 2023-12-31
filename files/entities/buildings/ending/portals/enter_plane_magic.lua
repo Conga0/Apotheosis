@@ -5,7 +5,7 @@ function do_newgame_plus()
 	local players = EntityGetWithTag("player_unit")
 	for k=1,#players
 	do local v = players[k]
-		EntitySetTransform(v,-5910,6005)
+		EntitySetTransform(v,-5910,2421)
 	end
 
 	--Reset RGB portal locations

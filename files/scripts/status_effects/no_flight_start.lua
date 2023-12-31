@@ -1,6 +1,6 @@
 
 local child_id = GetUpdatedEntityID()
-entity_id = EntityGetRootEntity(child_id)
+local entity_id = EntityGetRootEntity(child_id)
 local balance = false
 
 local jump_vel = -55
