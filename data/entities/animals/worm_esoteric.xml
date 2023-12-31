@@ -1,6 +1,6 @@
 <Entity 
 	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT" 
-	name="$worm_esoteric"
+	name="$enemy_apotheosis_worm_esoteric"
 	>
 	<_Transform 
 		position.x="0" 
@@ -78,8 +78,8 @@
 				drill="0.01"
 				ice="0.01"
 				radioactive="0.01"
-				curse="2.2"
-				holy="2.2"
+				curse="3.3"
+				holy="3.3"
 				>
 			</damage_multipliers>
 	</DamageModelComponent>

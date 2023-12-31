@@ -56,7 +56,8 @@ do --Alchemist Dream changes
           "water",
           "berserkium",
           "milk",
-          "soarium"
+          "soarium",
+          "slime"
       }
 
       for k=1,#opts

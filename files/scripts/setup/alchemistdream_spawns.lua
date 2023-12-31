@@ -16,6 +16,7 @@ local opts = {
     "bubbles/water/bubble_liquid.xml",
     "bubbles/berserkium/bubble_liquid.xml",
     "bubbles/milk/bubble_liquid.xml",
+    "bubbles/slime/bubble_liquid.xml",
     "alchemist.xml"
 }
 

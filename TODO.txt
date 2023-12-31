@@ -1,3 +1,12 @@
+
+Maybe the portals are crashing because too many entities are loaded?
+Still can't replicate consistently, so it could be something related to RNG... like the enemy spawn amount?
+Unsure
+
+
+
+
+
 Remove ABBC anti-cheese after it goes to main
 Remove artifically adding meat realm to the biome list when the meat biome goes to main
 Add warning icon to meat realm if it goes to main without one (God, I'd hope it doesn't come to this)
@@ -13,15 +22,25 @@ Fix healing being infinite with wand refresh in hardcore
 Fix creatures from eggs not retaining their charm when creature shifted (ie mudmen from muddy eggs)
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
 Fix shifted hamis behaving weirdly when spawning from nests/purple vases
-
 Fix Polymorph crystals being able to spawn camp TotA's entrance
+Fix Player being immune to ending 1 polymorph via the Enum
+Fix Magic Devourers not turning super saiyan when touching a mana stone
 
+Convert translation data to an excel spreadsheet for easier translating
+Update downunder "portal deeper" text to say "portal higher"
+
+
+Reimplement Weakening Curse rework
+Roll of TP spell (funny)
+Consider nerfing weakening ghost
+Rework Elk & Meat Boss to be more interesting
+Add Elk boss spawner to Tuonela lake island
 
 
 Add more dangerous bubbles to the Liquid Bubble seed
+Oil Bubble
 Lava Bubble
 Poison Bubble
-Slime Bubble
 Suffocatium Bubble
 
 

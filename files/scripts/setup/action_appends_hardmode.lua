@@ -99,7 +99,7 @@ local actions_to_edit = {
 	["HEAL_BULLET"] = {
 		description = "$spell_apotheosis_healing_bolt_desc",
         spawn_level                       = "2,3,4,5,6,10",
-        spawn_probability                 = "1,1,1,2,2,0.2",
+        spawn_probability                 = "0.6,0.6,0.6,1.2,1.2,0.2",
 		custom_uses_logic = true,
 		hardcore_copylock = true,
 		action = function(recursion_level)
@@ -108,6 +108,23 @@ local actions_to_edit = {
 			add_projectile("data/entities/projectiles/deck/heal_bullet.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 4
 			c.spread_degrees = c.spread_degrees + 2.0
+		end,
+	},
+
+	["ANTIHEAL"] = {
+		description = "$spell_apotheosis_antiheal_desc",
+        spawn_level                       = "2,3,4,5,6,10",
+        spawn_probability                 = "0.6,0.6,0.6,1.2,1.2,0.2",
+		custom_uses_logic = true,
+		hardcore_copylock = true,
+		action = function(recursion_level)
+			--if (recursion_level) ~= nil then return; end
+			if disablecopying(recursion_level) then return; end
+			add_projectile("data/entities/projectiles/deck/healhurt.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 8
+			c.screenshake = c.screenshake + 2
+			c.spread_degrees = c.spread_degrees + 3.0
+			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 12.0
 		end,
 	},
 

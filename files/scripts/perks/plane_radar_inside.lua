@@ -13,7 +13,7 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 pos_y = pos_y - 4 -- offset to middle of character
 
 local plane_x = 5866
-local plane_y = 6005
+local plane_y = 2421
 
 --local plane_x = -4858
 --local plane_y = 1837

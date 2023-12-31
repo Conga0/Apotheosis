@@ -21,6 +21,14 @@ biomes =
 	{"rainforest","rainforest_open"},
 	{"vault"},
 	{"crypt"},
+
+	--Mid-Game Biomes
+	{"sandcave"},
+	{"pyramid","pyramid_hallway"},
+	{"meat"},
+	
+	--Endgame Biomes
+	{"custom/slime_hell"},
 }
 
 rnd = nil
@@ -509,6 +517,41 @@ biome_modifiers =
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/props/furniture_tombstone_03.xml",
+			})
+			inject_spawn( g_small_enemies, 0.2, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/confusespirit.xml",
+			})
+			inject_spawn( g_small_enemies, 0.2, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/berserkspirit.xml",
+			})
+			inject_spawn( g_small_enemies, 0.2, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/weakspirit.xml",
+			})
+			inject_spawn( g_small_enemies, 0.2, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/slimespirit.xml",
+			})
+			inject_spawn( g_small_enemies, 0.02, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/spirit_healing.xml",
 			})
 		end,
 	},
@@ -1056,6 +1099,27 @@ biome_modifiers =
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_pheromone.xml",
+			})
+			inject_spawn( g_small_enemies, 0.10, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/bubbles/slime/bubble_liquid.xml",
+			})
+			inject_spawn( g_small_enemies, 0.10, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/bubbles/soarium/bubble_liquid.xml",
+			})
+			inject_spawn( g_small_enemies, 0.01, {
+				prob   		= 0,
+				min_count	= 1,
+				max_count	= 1,
+				offset_y 	= 0,    
+				entity 	=  "data/entities/animals/bubbles/ambrosia/bubble_liquid.xml",
 			})
 		end,
 	},

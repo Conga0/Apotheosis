@@ -106,7 +106,7 @@
 
     <DamageModelComponent 
         _enabled="1" 
-        hp="10"
+        hp="500"
         fire_probability_of_ignition="0" 
         falling_damages="0" 
         air_needed="0" 
