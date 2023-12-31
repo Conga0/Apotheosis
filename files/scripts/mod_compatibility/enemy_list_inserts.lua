@@ -159,6 +159,10 @@ local insert_list = {
         name="phantom_c_apotheosis\ndevourer_ghost\nghost_bow\nforsaken_eye",
     },
     {
+        id_matchup="slimespirit",
+        name="spirit_healing",
+    },
+    {
         id_matchup="gazer",
         name="gazer_greater",
     },
