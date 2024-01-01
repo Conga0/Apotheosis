@@ -64,5 +64,10 @@
 		extra_modifier="apotheosis_use_no_charges"
 		>
 	</ShotEffectComponent>
+	
+	<LifetimeComponent
+		lifetime="1200"
+		>
+	</LifetimeComponent>
 
 </Entity>

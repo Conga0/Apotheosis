@@ -18,7 +18,6 @@ Kindly ask spoop to update the toxic worm achievement pillar (They look out of p
 Make the Esoteric Beam explosion sound quieter, abnormally loud in it's current state
 
 Fix Forsaken Eyes not being stainable
-Fix healing being infinite with wand refresh in hardcore
 Fix creatures from eggs not retaining their charm when creature shifted (ie mudmen from muddy eggs)
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
 Fix shifted hamis behaving weirdly when spawning from nests/purple vases

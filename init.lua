@@ -1388,9 +1388,8 @@ ModRegisterAudioEventMappings("mods/Apotheosis/files/audio/GUIDs.txt")
 -- Misc
 
 --Twitch Integration
---Conga: This has been disabled as I don't feel comfortable maintaining Twitch Integration, vanilla TI is also really.. extreme.
---It's it's own discussion, but I feel if I want more TI integration, it's best to make it as a seperate mod.
---ModLuaFileAppend( "data/scripts/streaming_integration/event_list.lua", "mods/Apotheosis/files/scripts/streaming_integration/event_list_populator.lua" )
+--01/01/2023 Conga: I will only add creature shifting as an event as it's functionality is exclusive to Apotheosis.
+ModLuaFileAppend( "data/scripts/streaming_integration/event_list.lua", "mods/Apotheosis/files/scripts/streaming_integration/event_list_populator_apoth.lua" )
 
 
 --Musicstone tag addition
@@ -2220,13 +2219,8 @@ function OnPlayerSpawned(player_entity)
 	--I feel like I'm running a daycare sometimes, God Dammit.
 	--urgh, alright, tired rant over
 	--Thankyou for playing
-	if GameIsBetaBuild() == false and HasFlagPersistent("apotheosis_card_unlocked_painpeko_warning_02") == false then
+	if GameIsBetaBuild() == false then
 		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",760,-90)
-
-		if HasFlagPersistent("apotheosis_card_unlocked_painpeko_warning_01") then
-			AddFlagPersistent("apotheosis_card_unlocked_painpeko_warning_02")
-		end
-		AddFlagPersistent("apotheosis_card_unlocked_painpeko_warning_01")
 	end
 
 	--Debug Testing for intro scene
