@@ -22,7 +22,9 @@ extra_modifiers["apotheosis_speedup"] = function()
 end
 
 extra_modifiers["apotheosis_braindamage"] = function()
-    c.spread_degrees = c.spread_degrees + 30
+    if c.spread_degrees < 20 then
+        c.spread_degrees = 20
+    end
 end
 
 extra_modifiers["apotheosis_bragi"] = function()

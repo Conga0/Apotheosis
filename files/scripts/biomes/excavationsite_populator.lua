@@ -73,6 +73,14 @@
         max_count    = 1,
         entity     = "data/entities/animals/spirit_healing.xml"
     })
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.002,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/bubbles/milk/glasscannon/bubble_liquid.xml"
+    })
 
     table.insert(g_big_enemies,
     {

@@ -1294,6 +1294,55 @@ do --Slip Book of Kings in the Meditation Cube, only in the main world
   ModTextFileSetContent(path, content)
 end
 
+do --Make glimmer spells work with plasma emitters
+  local path = "data/scripts/projectiles/colour_spell.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("comps %= EntityGetComponent%( entity_id, \"ParticleEmitterComponent\" %)", "comps = EntityGetComponent( entity_id, \"LaserEmitterComponent\" ) for k=1,#comps do local v = comps[k] ComponentObjectSetValue2( v, \"laser\", \"beam_particle_type\", CellFactory_GetType(particle)) end comps = EntityGetComponent( entity_id, \"ParticleEmitterComponent\" )")
+
+  ModTextFileSetContent(path, content)
+end
+
+if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make antiheal do innate self-damage
+  local path = "data/entities/projectiles/deck/healhurt.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("knockback_force%=\"1.8\"", "knockback_force=\"1.8\" friendly_fire=\"1\" collide_with_shooter_frames=\"4\"")
+  print(content)
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Necrobots & Super Necrobots can give the player a temporary one-up effect
+  local path = "data/entities/animals/necrobot.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/Apotheosis/files/scripts/animals/necrobot_charmed.lua"
+      execute_every_n_frame="180"
+      execute_times="-1"
+      remove_after_executed="0"
+      >
+	  </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do --Necrobots & Super Necrobots can give the player a temporary one-up effect
+  local path = "data/entities/animals/necrobot_super.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/Apotheosis/files/scripts/animals/necrobot_charmed.lua"
+      execute_every_n_frame="180"
+      execute_times="-1"
+      remove_after_executed="0"
+      >
+	  </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 --Post Ascension reward
 --[[
 if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("apotheosis_card_unlocked_sea_to_potion") == false then
@@ -1312,3 +1361,17 @@ end
 --local path = "data/scripts/item_spawnlists.lua"
 --local content = ModTextFileGetContent(path)
 --print(content)
+
+--[[
+if ModIsEnabled("Apotheosis") then
+  local path = "mods/apotheosis/files/scripts/biomes/newbiome/orbroom_15.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("EntityLoad%( \"mods/apotheosis/files/entities/items/orbs/custom/orb_15.xml\", x, y %)", "if not HasFlagPersistent(\"nee_ear_boss\") then EntityLoad( \"mods/apotheosis/files/entities/items/orbs/custom/orb_15.xml\", x, y ) else EntityLoad( \"data/entities/buildings/ear_boss_spot.xml\", x, y ) end")
+  content = content:gsub("EntityLoad%( \"mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml\", x %- 30, y %- 30 %)", "if not HasFlagPersistent(\"nee_ear_boss\") then EntityLoad( \"mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml\", x - 30, y - 30 ) end")
+
+  ModTextFileSetContent(path, content)
+end
+]]--
+
+--if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/apotheosis/files/entities/items/orbs/custom/orb_15.xml", x, y ) else EntityLoad( "data/entities/buildings/ear_boss_spot.xml", x, y ) end
+--if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml", x - 30, y - 30 ) end

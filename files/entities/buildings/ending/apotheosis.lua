@@ -38,6 +38,7 @@ function item_pickup( entity_item, entity_who_picked, name )
     --Winning in everything mode
     if GameHasFlagRun("apotheosis_everything") then
         AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_everything")
+        AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_hardcore")
     end
 
 

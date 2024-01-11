@@ -1297,6 +1297,33 @@
 	</StatusEffects>
   </CellData>
 
+   <CellData
+	name="apotheosis_magic_liquid_infinite_flight_gas"
+	ui_name="$material_apotheosis_magic_liquid_infinite_flight_gas"
+	tags="[gas],[vapour]"
+	burnable="0"
+	density="2"
+	cell_type="gas"
+	lifetime="410"
+	wang_color="8059FDDA"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="0"
+	autoignition_temperature="99" 
+	gfx_glow="0"
+	show_in_creative_mode="1"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.25"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="apotheosis_INFINITE_FLIGHT"
+	audio_materialaudio_type="MAGICAL" 
+	liquid_sprite_stains_check_offset="1"
+	>
+  </CellData>
+
   <CellData
 	name="apotheosis_magic_liquid_nukes"
 	ui_name="$material_apotheosis_magic_liquid_nukes"
@@ -1343,6 +1370,37 @@
 	</StatusEffects>
   </CellData>
 
+   <CellData
+	name="apotheosis_magic_liquid_nukes_gas"
+	ui_name="$material_apotheosis_magic_liquid_nukes_gas"
+	tags="[gas],[vapour]"
+	burnable="0"
+	density="2"
+	cell_type="gas"
+	lifetime="410"
+	wang_color="7Ff6cbaf"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="0"
+	autoignition_temperature="99" 
+	gfx_glow="0"
+	show_in_creative_mode="1"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.25"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="apotheosis_NUKES"
+	audio_materialaudio_type="MAGICAL" 
+	liquid_sprite_stains_check_offset="1"
+	>
+    <Graphics 
+	texture_file="mods/Apotheosis/files/materials_gfx/magic_liquid_nukes.png" 
+	color="80d5cd4c" >
+    </Graphics>
+  </CellData>
+
   <CellData
 	name="apotheosis_magic_liquid_escapium"
 	ui_name="$material_apotheosis_magic_liquid_escapium"
@@ -1386,6 +1444,33 @@
 	</StatusEffects>
   </CellData>
 
+   <CellData
+	name="apotheosis_magic_liquid_escapium_gas"
+	ui_name="$material_apotheosis_magic_liquid_escapium_gas"
+	tags="[gas],[vapour]"
+	burnable="0"
+	density="2"
+	cell_type="gas"
+	lifetime="410"
+	wang_color="80e72526"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="0"
+	autoignition_temperature="99" 
+	gfx_glow="0"
+	show_in_creative_mode="1"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.25"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="apotheosis_ESCAPIUM"
+	audio_materialaudio_type="MAGICAL" 
+	liquid_sprite_stains_check_offset="1"
+	>
+  </CellData>
+
   <CellData
 	name="apotheosis_magic_liquid_attunium"
 	ui_name="$material_apotheosis_magic_liquid_attunium"
@@ -1426,6 +1511,33 @@
 			<StatusEffect type="apotheosis_HOMING" />
 		</Stains>
 	</StatusEffects>
+  </CellData>
+
+   <CellData
+	name="apotheosis_magic_liquid_attunium_gas"
+	ui_name="$material_apotheosis_magic_liquid_attunium_gas"
+	tags="[gas],[vapour]"
+	burnable="0"
+	density="2"
+	cell_type="gas"
+	lifetime="410"
+	wang_color="7Ff6cbaf"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="0"
+	autoignition_temperature="99" 
+	gfx_glow="0"
+	show_in_creative_mode="1"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.25"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="apotheosis_HOMING"
+	audio_materialaudio_type="MAGICAL" 
+	liquid_sprite_stains_check_offset="1"
+	>
   </CellData>
 
   <CellData
@@ -1691,6 +1803,33 @@
 	</StatusEffects>
   </CellData>
 
+   <CellData
+	name="apotheosis_magic_liquid_velocium_gas"
+	ui_name="$material_apotheosis_magic_liquid_velocium_gas"
+	tags="[gas],[vapour]"
+	burnable="0"
+	density="2"
+	cell_type="gas"
+	lifetime="410"
+	wang_color="804848e9"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="0"
+	autoignition_temperature="99" 
+	gfx_glow="0"
+	show_in_creative_mode="1"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.25"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="apotheosis_SPEEDUP"
+	audio_materialaudio_type="MAGICAL" 
+	liquid_sprite_stains_check_offset="1"
+	>
+  </CellData>
+
   <CellData
 	name="apotheosis_magic_liquid_rideshare"
 	ui_name="$material_apotheosis_magic_liquid_rideshare"
@@ -1731,6 +1870,33 @@
 			<StatusEffect type="apotheosis_RIDESHARE" />
 		</Stains>
 	</StatusEffects>
+  </CellData>
+
+   <CellData
+	name="apotheosis_magic_liquid_rideshare_gas"
+	ui_name="$material_apotheosis_magic_liquid_rideshare_gas"
+	tags="[gas],[vapour]"
+	burnable="0"
+	density="2"
+	cell_type="gas"
+	lifetime="410"
+	wang_color="8091e8e4"
+	generates_smoke="0"
+	liquid_gravity="0.5"
+	liquid_sand="0"
+	on_fire="0"
+	requires_oxygen="0"
+	temperature_of_fire="0"
+	autoignition_temperature="99" 
+	gfx_glow="0"
+	show_in_creative_mode="1"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.25"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="apotheosis_RIDESHARE"
+	audio_materialaudio_type="MAGICAL" 
+	liquid_sprite_stains_check_offset="1"
+	>
   </CellData>
 
   <CellDataChild
@@ -3334,6 +3500,96 @@
 	>
   </Reaction>
 
+  <Reaction probability="70"
+	input_cell1="[lava]" input_cell2="apotheosis_milk"
+	output_cell1="[lava]" output_cell2="cheese_static"
+	>
+  </Reaction>
+
+  <Reaction probability="70"
+	input_cell1="[lava]" input_cell2="apotheosis_milk_powder"
+	output_cell1="[lava]" output_cell2="cheese_static"
+	>
+  </Reaction>
+
+  <Reaction probability="3"
+	input_cell1="[lava]" input_cell2="cheese_static"
+	output_cell1="[lava]" output_cell2="fire"
+	>
+  </Reaction>
+  
+  <!--Gas Reactions-->
+  <!--Attunium-->
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_magic_liquid_attunium"
+	output_cell1="[lava]"					output_cell2="apotheosis_magic_liquid_attunium_gas"
+	>
+  </Reaction>
+
+  <Reaction probability="70"
+	input_cell1="apotheosis_magic_liquid_attunium_gas" 	input_cell2="steam"
+	output_cell1="apotheosis_magic_liquid_attunium"			output_cell2="apotheosis_magic_liquid_attunium"
+	 >
+  </Reaction>
+  
+  <!--Veloium-->
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_magic_liquid_velocium"
+	output_cell1="[lava]"					output_cell2="apotheosis_magic_liquid_velocium_gas"
+	>
+  </Reaction>
+
+  <Reaction probability="70"
+	input_cell1="apotheosis_magic_liquid_velocium_gas" 	input_cell2="steam"
+	output_cell1="apotheosis_magic_liquid_velocium"			output_cell2="apotheosis_magic_liquid_velocium"
+	 >
+  </Reaction>
+  
+  <!--Nukium-->
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_magic_liquid_nukes"
+	output_cell1="[lava]"					output_cell2="apotheosis_magic_liquid_nukes_gas"
+	>
+  </Reaction>
+
+  <Reaction probability="70"
+	input_cell1="apotheosis_magic_liquid_nukes_gas" 	input_cell2="steam"
+	output_cell1="apotheosis_magic_liquid_nukes"			output_cell2="apotheosis_magic_liquid_nukes"
+	 >
+  </Reaction>
+  
+  <!--Portalium-->
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_magic_liquid_rideshare"
+	output_cell1="[lava]"					output_cell2="apotheosis_magic_liquid_rideshare_gas"
+	>
+  </Reaction>
+
+  <Reaction probability="70"
+	input_cell1="apotheosis_magic_liquid_rideshare_gas" 	input_cell2="steam"
+	output_cell1="apotheosis_magic_liquid_rideshare"			output_cell2="apotheosis_magic_liquid_rideshare"
+	 >
+  </Reaction>
+  
+  <!--Soarium-->
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_magic_liquid_infinite_flight"
+	output_cell1="[lava]"					output_cell2="apotheosis_magic_liquid_infinite_flight_gas"
+	>
+  </Reaction>
+
+  <Reaction probability="70"
+	input_cell1="apotheosis_magic_liquid_infinite_flight_gas" 	input_cell2="steam"
+	output_cell1="apotheosis_magic_liquid_infinite_flight"			output_cell2="apotheosis_magic_liquid_infinite_flight"
+	 >
+  </Reaction>
+  
+  <!--Centipede Blood to Wormy Gas-->
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_blood_worm_centipede"
+	output_cell1="[lava]"					output_cell2="magic_gas_worm_blood"
+	>
+  </Reaction>
 
 </Materials>
 

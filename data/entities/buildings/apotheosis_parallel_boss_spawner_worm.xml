@@ -1,6 +1,6 @@
 <Entity>
     <VariableStorageComponent
-        value_string="data/entities/animals/parallel_apotheosis/boss_toxic_worm/boss_toxic_worm.xml"
+        value_string="data/entities/animals/parallel_apotheosis/boss_toxic_worm/boss_toxic_worm_parallel.xml"
     >
     </VariableStorageComponent>
 
