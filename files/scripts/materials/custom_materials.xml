@@ -1378,7 +1378,7 @@
 	density="2"
 	cell_type="gas"
 	lifetime="410"
-	wang_color="7Ff6cbaf"
+	wang_color="80d5cd4d"
 	generates_smoke="0"
 	liquid_gravity="0.5"
 	liquid_sand="0"
