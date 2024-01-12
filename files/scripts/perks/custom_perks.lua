@@ -934,7 +934,7 @@ do  --Allow glass cannon to function with Liquid Bubbles
             -- Monkey patch
             local fn_old = perk_list[i].func_enemy ---@type function
             perk_list[i].func_enemy = function(entity_perk_item, entity_who_picked)
-                if EntityGetName(entity_who_picked) == "Nestemäinen kupla" then
+                if EntityGetName(entity_who_picked) == "$enemy_apotheosis_bubble_liquid" then
                     local inv = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "MaterialInventoryComponent")
                     if inv then
                         -- Pentuple(?) material count

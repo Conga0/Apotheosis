@@ -187,6 +187,10 @@ local insert_list = {
         name="hiisi_chef_hell",
     },
     {
+        id_matchup="parallel_tentacles",
+        name="boss_toxic_worm_parallel",
+    },
+    {
         id_matchup="friend",
         name="boss_toxic_worm\nboss_toxic_worm_minion\nboss_musical_ghost\nblob_titan\nboss_fire_lukki_phase2\nboss_flesh_monster\nforest_monolith",
     },

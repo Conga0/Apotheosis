@@ -2,7 +2,7 @@
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
 local r = 105
---local converted = false
+local converted = false
 
 --I feel this frozen check could be optimised somehow.. but I am unsure how
 
@@ -19,7 +19,9 @@ if frozenTest <= 0 then
 	end
 
 	--[[
+	]]--
 	--Would perform better if put on the wandstone itself
+	--11/01/2023 Conga: too troubled to optimise right now.. ugh..
 	local stones = EntityGetInRadiusWithTag(x,y,20,"poopstone")
 	for k=1,#stones
 	do local v = stones[k]
@@ -33,5 +35,4 @@ if frozenTest <= 0 then
 			end
 		end
 	end
-	]]--
 end

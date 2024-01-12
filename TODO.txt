@@ -18,13 +18,11 @@ Kindly ask spoop to update the toxic worm achievement pillar (They look out of p
 Make the Esoteric Beam explosion sound quieter, abnormally loud in it's current state
 
 Fix Forsaken Eyes not being stainable
-Fix healing being infinite with wand refresh in hardcore
 Fix creatures from eggs not retaining their charm when creature shifted (ie mudmen from muddy eggs)
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
 Fix shifted hamis behaving weirdly when spawning from nests/purple vases
 Fix Polymorph crystals being able to spawn camp TotA's entrance
 Fix Player being immune to ending 1 polymorph via the Enum
-Fix Magic Devourers not turning super saiyan when touching a mana stone
 
 Convert translation data to an excel spreadsheet for easier translating
 Update downunder "portal deeper" text to say "portal higher"
@@ -35,6 +33,8 @@ Roll of TP spell (funny)
 Consider nerfing weakening ghost
 Rework Elk & Meat Boss to be more interesting
 Add Elk boss spawner to Tuonela lake island
+Music Boss rework
+Give anti-heal a JP translation when vanilla gets it
 
 
 Add more dangerous bubbles to the Liquid Bubble seed
@@ -52,3 +52,4 @@ Portal stabilization area in center
 "You did it!" trophy for "winning" the biome
 Surrounded by cursed rock, can only enter via a portal
 Eldritch Library?
+Very rare chance for hiisi base to be empty during herobrine hours

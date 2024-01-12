@@ -220,46 +220,49 @@ if ModIsEnabled("Hydroxide") then
     })
 end
 
-
---Tablet Ghost
-table.insert(g_small_enemies,
-{
-    prob           = 0.002,
-    min_count    = 1,
-    max_count    = 1,
-    entity     = "data/entities/animals/playerghost_apotheosis/playerghost.xml",
-    spawn_check = function() 
-
-        local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
-        
-        if ghost_count >= 3 then
-            return false
-        else
-            GlobalsSetValue("apotheosis_tabletghost_count", tostring(ghost_count + 1) )
-            return true 
-        end
-    end,
-})
-
---Tablet Ghost 2
-table.insert(g_small_enemies,
-{
-    prob           = 0.002,
-    min_count    = 1,
-    max_count    = 1,
-    entity     = "data/entities/animals/playerghost_apotheosis/temp/playerghost.xml",
-    spawn_check = function() 
-
-        local ghost_count_2 = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
-        
-        if ghost_count_2 >= 3 then
-            return false
-        else
-            GlobalsSetValue("apotheosis_tabletghost_count", tostring(ghost_count_2 + 1) )
-            return true 
-        end
-    end,
-})
+--Inserts tablet ghosts, changes their tablet description based on day rather than random chance, had problems with one ghost overriding the other
+local year, month, day, hour = GameGetDateAndTimeLocal()
+if (day % 2 == 0) then
+    --Tablet Ghost
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.002,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/playerghost_apotheosis/playerghost.xml",
+        spawn_check = function()
+    
+            local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
+            
+            if ghost_count >= 3 then
+                return false
+            else
+                GlobalsSetValue("apotheosis_tabletghost_count", tostring(ghost_count + 1) )
+                return true 
+            end
+        end,
+    })
+else
+    --Tablet Ghost 2
+    table.insert(g_small_enemies,
+    {
+        prob           = 0.002,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/playerghost_apotheosis/temp/playerghost.xml",
+        spawn_check = function()
+    
+            local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
+            
+            if ghost_count >= 3 then
+                return false
+            else
+                GlobalsSetValue("apotheosis_tabletghost_count", tostring(ghost_count + 1) )
+                return true 
+            end
+        end,
+    })
+end
 
 
 
