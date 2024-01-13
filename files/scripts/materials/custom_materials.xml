@@ -3584,6 +3584,19 @@
 	 >
   </Reaction>
   
+  <!--Escium-->
+  <Reaction probability="70"
+	input_cell1="[lava]" 					input_cell2="apotheosis_magic_liquid_escapium"
+	output_cell1="[lava]"					output_cell2="apotheosis_magic_liquid_escapium_gas"
+	>
+  </Reaction>
+
+  <Reaction probability="70"
+	input_cell1="apotheosis_magic_liquid_escapium_gas" 	input_cell2="steam"
+	output_cell1="apotheosis_magic_liquid_escapium"			output_cell2="apotheosis_magic_liquid_escapium"
+	 >
+  </Reaction>
+  
   <!--Centipede Blood to Wormy Gas-->
   <Reaction probability="70"
 	input_cell1="[lava]" 					input_cell2="apotheosis_blood_worm_centipede"

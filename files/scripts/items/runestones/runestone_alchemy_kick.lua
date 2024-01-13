@@ -54,19 +54,33 @@ local options = {
     "apotheosis_redstone",
 }
 
+local optionsrare = {
+    "apotheosis_unholy_concoction",
+    "apotheosis_magic_liquid_moon_portal",
+    "apotheosis_magic_liquid_mimic",
+    "apotheosis_corrupt_flesh_static",
+    "apotheosis_magic_liquid_nukes",
+    "apotheosis_magic_liquid_escapium",
+    "apotheosis_milk",
+}
+
 function runestone_activate( entity_id, forcestatus )
 	local status = forcestatus or 0
 	local x,y = EntityGetTransform(entity_id)
+    local targetpool = options
 	SetRandomSeed(x,y)
-	local rng = Random(1,#options)
-    local mat = options[rng]
+    if Random(1,100) == 1 then
+        targetpool = optionsrare
+    end
+	local rng = Random(1,#targetpool)
+    local mat = targetpool[rng]
 
-    if Random(1,10000) == 1 then
+    if Random(1,2000) == 1 then
         mat = "magic_liquid_hp_regeneration_unstable"
     end
 
 	--local particlecomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ParticleEmitterComponent")
-	--ComponentSetValue2(particlecomp,"emitted_material_name",options[rng])
+	--ComponentSetValue2(particlecomp,"emitted_material_name",targetpool[rng])
 	
 	local variablestorages = EntityGetComponent( entity_id, "VariableStorageComponent" )
 	if ( variablestorages ~= nil ) then

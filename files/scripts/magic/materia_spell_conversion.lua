@@ -38,6 +38,8 @@ local inputspells =  {
     "RUBBER_BALL",
     "APOTHEOSIS_MUSICAL_STRIKE",
     "BUBBLESHOT",
+    "MINE",
+    "PIPE_BOMB",
 }
 
 --Spells we're converting them into
@@ -71,6 +73,8 @@ local outputspells = {
     "APOTHEOSIS_RUBBER_BALL_TRIGGER",
     "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
     "BUBBLESHOT_TRIGGER",
+    "MINE_DEATH_TRIGGER",
+    "PIPE_BOMB_DEATH_TRIGGER",
 }
 
 local effecttype = {
@@ -88,6 +92,8 @@ local effecttype = {
     "magical_symbol_materia_blue",
     "magical_symbol_hobo_money",
     "magical_symbol_materia_red",
+    "magical_symbol_hobo_money",
+    "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
