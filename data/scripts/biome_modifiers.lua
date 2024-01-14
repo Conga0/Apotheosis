@@ -525,19 +525,20 @@ biome_modifiers =
 				offset_y 	= 0,    
 				entity 	=  "data/entities/animals/confusespirit.xml",
 			})
-			inject_spawn( g_small_enemies, 0.2, {
+			inject_spawn( g_small_enemies, 0.1, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/animals/berserkspirit.xml",
 			})
-			inject_spawn( g_small_enemies, 0.2, {
+			inject_spawn( g_small_enemies, 0.05, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
 				entity 	=  "data/entities/animals/weakspirit.xml",
+				ngpluslevel = 1,
 			})
 			inject_spawn( g_small_enemies, 0.2, {
 				prob   		= 0,
