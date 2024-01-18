@@ -971,7 +971,7 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
   if GameHasFlagRun("apotheosis_towerclimb") then
     AddFlagPersistent("apotheosis_card_unlocked_challenge_towerclimb_win")
   elseif GameHasFlagRun("apotheosis_hardmode") then
-    AddFlagPersistent("apotheosis_card_unlocked_challenge_hardcore_win")
+    AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_hardcore")
   elseif GameHasFlagRun("apotheosis_missingmagic") then
     AddFlagPersistent("apotheosis_card_unlocked_challenge_missingmagic_win")
   end

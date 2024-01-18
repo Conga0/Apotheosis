@@ -3,6 +3,12 @@ Maybe the portals are crashing because too many entities are loaded?
 Still can't replicate consistently, so it could be something related to RNG... like the enemy spawn amount?
 Unsure
 
+Inspect data/curse_wither_start.lua
+Inspect nohealing on nightcore
+Alt-Fire Keybinds, ask noita emotes mod to allow code-reuse
+Make kolmi affected by max hp multiplier
+Buff chainbolt to be better at targetting 1 enemy
+
 
 
 
@@ -35,6 +41,7 @@ Rework Elk & Meat Boss to be more interesting
 Add Elk boss spawner to Tuonela lake island
 Music Boss rework
 Give anti-heal a JP translation when vanilla gets it
+Nerf white hole spawnrates in hardcore
 
 
 Add more dangerous bubbles to the Liquid Bubble seed

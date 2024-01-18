@@ -76,6 +76,7 @@ MultiplyHPSelective("parallel_apotheosis/boss_toxic_worm/boss_toxic_worm",4,fals
 MultiplyHPSelectiveBuilding("wandedit_crystal",10,false)
 
 --Note(Conga): This isn't working, no clue why
+--14/01/2024: Fixed
 do -- Buff Final Boss's HP as if you grabed 10 orbs
   local path = "data/entities/animals/boss_centipede/boss_centipede_update.lua"
   local content = ModTextFileGetContent(path)
