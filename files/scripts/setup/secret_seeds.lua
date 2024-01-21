@@ -16,6 +16,21 @@ function AddUI(filename)
     ModTextFileSetContent(path, tostring(xml))
 end
 
+--[[
+function OnModInit()
+    newrun = false
+    if SessionNumbersGetValue("is_biome_map_initialized") == "0" then
+        newrun = true
+    end
+    for j=1,20 do
+        print("newrun is " .. tostring(newrun))
+    end
+end
+]]--
+
+--if v.IDs[l] == GameHasFlagRun(table.concat({"apotheosis_",v.ID})) and newrun == false then
+--This code coooould be useful if the game is struggling to update/remove special seeds?
+--Hard to say, results are inconclusive and janky as hell
 
 function towerclimb()
 

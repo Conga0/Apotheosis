@@ -76,6 +76,7 @@ MultiplyHPSelective("boss_fish/fish_giga",2,false)
 MultiplyHPSelectiveBuilding("wandedit_crystal",10,false)
 
 --Note(Conga): This isn't working, no clue why
+--14/01/2024: Fixed
 do -- Buff Final Boss's HP as if you grabed 10 orbs
   local path = "data/entities/animals/boss_centipede/boss_centipede_update.lua"
   local content = ModTextFileGetContent(path)

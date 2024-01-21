@@ -484,7 +484,7 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to 
   ModTextFileSetContent(path, tostring(xml))
 end
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to hit once every 10 frames instead of once every 1 frame
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Fish to hit once every 10 frames instead of once every 1 frame
   local path = "data/entities/projectiles/deck/fish.xml"
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
@@ -1306,7 +1306,6 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make antiheal do innate 
   local path = "data/entities/projectiles/deck/healhurt.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("knockback_force%=\"1.8\"", "knockback_force=\"1.8\" friendly_fire=\"1\" collide_with_shooter_frames=\"4\"")
-  print(content)
 
   ModTextFileSetContent(path, content)
 end

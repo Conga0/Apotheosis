@@ -179,7 +179,7 @@ local insert_list = {
         name="mimic_explosive_box",
     },
     {
-        id_matchup="dark_alchemist",
+        id_matchup="shaman_wind",
         name="mimic_perk_twwe",
     },
     {

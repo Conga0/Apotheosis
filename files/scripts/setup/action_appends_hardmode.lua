@@ -206,6 +206,11 @@ local actions_to_edit = {
 		spawn_requires_flag = "this_should_never_spawn",
 	},
 
+	["WHITE_HOLE"] = {
+		spawn_level = "0,2,4,6,10",
+		spawn_probability = "0.01,0.01,0.05,0.05,0.05",
+	},
+
 	--Increases the spawnrate of alt-fire teleport spells to compensate
 	["APOTHEOSIS_ALT_FIRE_TELEPORT"] = {
 		spawn_probability = "2.0,2.0,2.0,1.6,1.6,1.6,1.6"

@@ -21,7 +21,10 @@ do -- Player Editor
 	attrs.drill = 2.0
 	attrs.ice = 2.0
 	attrs.drowning = 2.0
-	attrs.material_with_flash = 2.0
+	attrs.overeating = 2.0
+	attrs.physics_hit = 2.0
+	attrs.curse = 2.0
+	attrs.holy = 2.0
 
 	ModTextFileSetContent(path, tostring(xml))
 end
