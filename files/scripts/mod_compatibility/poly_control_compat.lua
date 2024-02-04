@@ -171,6 +171,10 @@ local apotheosis_creatures = {
         name="Forsaken Eye",
     },
     {
+        file="spirit_healing",
+        name="Healing Spirit",
+    },
+    {
         file="fungus_smoking_creep",
         name="Smoking Fungus",
     },
@@ -579,6 +583,7 @@ local apotheosis_creatures_default = {
     "fairy_big_discord",
     "fairy_esoteric",
     "forsaken_eye",
+    "spirit_healing",
     "fungus_smoking_creep",
     "gazer_cold_apotheosis",
     "gazer_greater",

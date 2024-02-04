@@ -28,66 +28,6 @@ local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
 
 
 
-if not GameIsBetaBuild() then -- Beta file creation, see apotheosis/betatemp/folder_desc.txt for more details
-	local files = {
-		{
-			"meat.lua",
-			"data/scripts/biomes/meat.lua"
-		},
-		{
-			"meat.xml",
-			"data/biome/meat.xml"
-		},
-		{
-			"miner_hell.xml",
-			"data/entities/animals/miner_hell.xml"
-		},
-		{
-			"shotgunner_hell.xml",
-			"data/entities/animals/shotgunner_hell.xml"
-		},
-		{
-			"sniper_hell.xml",
-			"data/entities/animals/sniper_hell.xml"
-		},
-		{
-			"gfx/miner_hell.xml",
-			"data/enemies_gfx/miner_hell.xml"
-		},
-		{
-			"gfx/shotgunner_hell.xml",
-			"data/enemies_gfx/shotgunner_hell.xml"
-		},
-		{
-			"gfx/sniper_hell.xml",
-			"data/enemies_gfx/sniper_hell.xml"
-		},
-		{
-			"gfx/sniper_hell_overlay.xml",
-			"data/enemies_gfx/sniper_hell_overlay.xml"
-		},
-		{
-			"sniperbullet_hell.xml",
-			"data/entities/projectiles/sniperbullet_hell.xml"
-		},
-		{
-			"tnt_hell.xml",
-			"data/entities/projectiles/tnt_hell.xml"
-		}
-	}
-
-	for k = 1, #files do
-		local content = ModTextFileGetContent(table.concat({ "mods/apotheosis/betatemp/", files[k][1] }))
-		ModTextFileSetContent(files[k][2], content)
-	end
-
-	--Adds in meat biome materials
-	ModMaterialsFileAdd("mods/Apotheosis/betatemp/materials.xml")
-end
-
-
-
-
 -- Spell Unlock Fixes
 -- If someone attains a spell through another mod, twitch integration, etc, this is just to make sure they aren't getting unlocks they shouldn't.
 -- They'll still get the spell, it just won't be added to their permanent record
@@ -2135,20 +2075,19 @@ dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
 ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml")
 
 --Appending extra modiifers
-ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua",
-	"mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
+ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
 
 --Polymorph pool addition preperation
 --Will be controlled via mod settings until it's pushed to main
 --If you want to enable it, you can toggle "Expanded Polymorph Pool" in the mod settings
-if ModSettingGet("Apotheosis.exp_poly") == true then
-	if ModIsEnabled("Global_Poly") then
-		ModLuaFileAppend("mods/global_poly/files/scripts/poly_pool.lua",
-			"mods/apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
-	else
-		function OnWorldInitialized()
-			dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
-		end
+
+if ModIsEnabled("Global_Poly") then
+	ModLuaFileAppend("mods/global_poly/files/scripts/poly_pool.lua", "mods/apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
+else
+	local old_on_world_init = OnWorldInitialized
+	function OnWorldInitialized()
+		dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+		old_on_world_init()
 	end
 end
 
@@ -2172,6 +2111,17 @@ end
 -- Creature shift fix upon reloading world
 -- Keep this at the bottom of the file, and only let one of this function exist, silly
 function OnPlayerSpawned(player_entity)
+	--Conga 04/12/2023
+	--Warns the player to get off the god damn main branch, I'm tired of getting crash reports just for it to end up being this, man.
+	--I know someone's going to stumble across this tired exhausted message one day, and I just want to say, I wanted to have faith in people, and believe that they would have read the multiple warnings on the mod page to play on the beta branch.
+	--I was HOPING people would see the pinned thread called "Game Crashes" and take interest in it if they're experiencing problems, but that's asking too much I suppose.
+	--I feel like I'm running a daycare sometimes, God Dammit.
+	--urgh, alright, tired rant over
+	--Thankyou for playing
+	if GameIsBetaBuild() == false then
+		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",260,-85)
+	end
+
 	local x, y = EntityGetTransform(player_entity) --This was just "player" by default but I feel like something broke.. I hope not
 	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
 
@@ -2218,17 +2168,6 @@ function OnPlayerSpawned(player_entity)
 		AddFlagPersistent("apotheosis_card_unlocked_nightmarewarning")
 	end
 	]]--
-
-	--Conga 04/12/2023
-	--Warns the player to get off the god damn main branch, I'm tired of getting crash reports just for it to end up being this, man.
-	--I know someone's going to stumble across this tired exhausted message one day, and I just want to say, I wanted to have faith in people, and believe that they would have read the multiple warnings on the mod page to play on the beta branch.
-	--I was HOPING people would see the pinned thread called "Game Crashes" and take interest in it if they're experiencing problems, but that's asking too much I suppose.
-	--I feel like I'm running a daycare sometimes, God Dammit.
-	--urgh, alright, tired rant over
-	--Thankyou for playing
-	if GameIsBetaBuild() == false then
-		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",760,-90)
-	end
 
 	--Debug Testing for intro scene
 	--RemoveFlagPersistent( "apotheosis_intro_cutscene" )

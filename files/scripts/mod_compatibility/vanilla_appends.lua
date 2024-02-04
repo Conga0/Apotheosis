@@ -1310,6 +1310,22 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make antiheal do innate 
   ModTextFileSetContent(path, content)
 end
 
+if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make chainbolt better at hitting single targets
+  local path = "data/scripts/projectiles/chain_bolt.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("%( target_id ~= prev_entity_id %) and %( target_id ~= prev_prev_entity_id %)", "(( target_id ~= prev_entity_id ) and ( target_id ~= prev_prev_entity_id ) or #targets == 1)")
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Reduce the duration of the blindness status effect by 25%
+  local path = "data/entities/misc/effect_blindness.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"1200\"", "\"900\"")
+
+  ModTextFileSetContent(path, content)
+end
+
 do --Necrobots & Super Necrobots can give the player a temporary one-up effect
   local path = "data/entities/animals/necrobot.xml"
   local content = ModTextFileGetContent(path)

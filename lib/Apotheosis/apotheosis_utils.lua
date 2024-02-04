@@ -23,7 +23,7 @@ end
 
 --Technically buggy, but way faster to implement & maintain
 function MultiplyHPOnBiome(biome_name, hp_scale, attack_speed)
-	local biome_name = "data/biome/" .. biome_name .. ".xml"
+	local biome_name = table.concat({"data/biome/",biome_name,".xml"})
   local attack_speed = 1 / attack_speed
   BiomeSetValue(biome_name, "game_enemy_hp_scale", hp_scale)
   BiomeSetValue(biome_name, "game_enemy_attack_speed", attack_speed)

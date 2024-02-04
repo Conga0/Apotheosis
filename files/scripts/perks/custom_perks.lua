@@ -195,6 +195,29 @@ local apotheosis_perkappends = {
         func_enemy = function( entity_perk_item, entity_who_picked )
             local x,y = EntityGetTransform( entity_who_picked )
             local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/shield_oversized.xml", x, y )
+            local comps = EntityGetComponent( child_id, "EnergyShieldComponent" )
+            if( comps ~= nil ) then
+                for i,comp in ipairs( comps ) do
+                    ComponentSetValue2( comp, "radius", 64 )
+                    ComponentSetValue2( comp, "recharge_speed", 0.02 )
+                end
+            end
+            
+            comps = EntityGetComponent( child_id, "ParticleEmitterComponent" )
+            if( comps ~= nil ) then
+                for i,comp in ipairs( comps ) do
+                    local minradius,maxradius = ComponentGetValue2( comp, "area_circle_radius" )
+                    
+                    if ( minradius ~= nil ) and ( maxradius ~= nil ) then
+                        if ( minradius == 0 ) then
+                            ComponentSetValue2( comp, "area_circle_radius", 0, 64 )
+                        elseif ( minradius == 10 ) then
+                            ComponentSetValue2( comp, "area_circle_radius", 64, 64 )
+                        end
+                    end
+                end
+            end
+
             EntityAddChild( entity_who_picked, child_id )
         end,
         _remove = function( entity_who_picked )

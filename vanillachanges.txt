@@ -13,6 +13,7 @@ If you're confused why something feels different, this list may help you identif
 ** Path of Dark Flame can appear in lower tier spell pools
 ** Chaotic Transmutation now costs 40 mana (down from 80, goal is to become more practical in lua-disabling wands)
 ** AntiHeal can now innately do self-damage
+** Chainbolt is now better at hitting single targets
 * Matter Eater can now dig through cursed rock
 * Projectile Repulsion Field is removed and replaced with Oversized Shield
 * Faster Movement is removed, Faster Levitation is removed, Haste replaces both of these perks and combines them into one, providing a 40% movement speed boost in all directions per stack
