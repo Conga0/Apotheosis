@@ -18,7 +18,7 @@
 	-->
     <File>data/biome_impl/spliced/mountain_lake.xml</File>
 
-    <File>mods/apotheosis/files/biome_impl/spliced/lake_statue_lava.xml</File>
+    <File>data/biome_impl/spliced/lake_statue.xml</File>
 
     <File>data/biome_impl/spliced/moon.xml</File>
 	

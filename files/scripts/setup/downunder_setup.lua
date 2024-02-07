@@ -318,3 +318,6 @@ do --Name the surface to "The Surface"
     content = content:gsub("\"_EMPTY_\"", "\"$biome_surface\"")
     ModTextFileSetContent(path, content)
 end
+
+--Fixes Island Spirit not spawning properly on Downunder & Tuonela
+ModLuaFileAppend("data/scripts/biomes/lake.lua", "mods/Apotheosis/files/scripts/setup/lake_downunder_fix.lua")

@@ -2087,7 +2087,24 @@ else
 	local old_on_world_init = OnWorldInitialized
 	function OnWorldInitialized()
 		dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
-		old_on_world_init()
+
+		if old_on_world_init then old_on_world_init() end
+	end
+end
+
+--Makes the Creature Shift Icon available to be editted during run-time
+do
+	ModImageMakeEditable( "data/ui_gfx/animal_icons/creature_shift/creature_shift_ui.png", 16, 16 )
+
+	local path, csi_enemies = "data/ui_gfx/animal_icons/_list.txt", {}
+	for enemy in ModTextFileGetContent(path):gmatch("[^\r\n]+") do
+		csi_enemies[#csi_enemies+1] = enemy
+	end
+	for k=1,#csi_enemies do
+		ModImageMakeEditable( table.concat({"data/ui_gfx/animal_icons/",csi_enemies[k],".png"}), 16, 16 )
+		ModImageMakeEditable( table.concat({"data/ui_gfx/animal_icons/creature_shift/",csi_enemies[k],".png"}), 16, 16 )
+		--Debug Data
+		--print(table.concat({"making image writable: ",table.concat({"data/ui_gfx/animal_icons/",csi_enemies[k],".png"})}))
 	end
 end
 
