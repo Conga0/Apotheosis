@@ -1047,9 +1047,7 @@ do --Lets Kolmisilma clear slime when using his clear materials ability
 end
 
 do  --Insert enemies into the progress log where they belong, originally handled through an overwrite but now should be more mod-compatiable to future proof it incase any other inspiring enemy modders appear
-  if ModSettingGet( "Apotheosis.organised_icons" ) == true then
-    dofile_once("mods/apotheosis/files/scripts/mod_compatibility/enemy_list_inserts.lua")
-  end
+  dofile_once("mods/apotheosis/files/scripts/mod_compatibility/enemy_list_inserts.lua")
 end
 
 do -- Make humanoids take damage from poisonous gas

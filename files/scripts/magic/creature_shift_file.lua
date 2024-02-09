@@ -5,14 +5,17 @@ dofile("data/scripts/lib/utilities.lua")
 --I don't think I documented everything, but you should be able to fill in the gaps, it's a pretty simple system.
 --Just replace creature's xml data with the one you want and add a lua script to the player so any already-spawned cretins get transformed too
 
+--10/02/2024 Conga: If you want your creature from another mod to be focus shiftable, simply add it to the vanilla _list.txt file.
+--If you want it to be added to the random pool, I recommend gsubbing into the enemy_list for shift victims,
+--and enemy_list_from for shift-to targets
+
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local enemy_list
 local enemy_list_from
 local entity = EntityGetWithTag( "player_unit" )
-local entity_id = EntityGetWithTag( "player_unit" )
-local player_id = EntityGetWithTag( "player_unit" )[1]
 local x, y = EntityGetTransform( entity )
 local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
+
 --SetRandomSeed( second + minute, second + minute + 3 )
 --Seeded RNG
 
@@ -52,12 +55,48 @@ log_messages =
 --for minidrones shifting because they have an attack different from their base one.. maybe use a variable storage component in it's base to check if
 --it's a real minidrone or a shifted creature?
 
+--This function generates ui images when they're needed during runtime.
+--Look for "--Makes the Creature Shift Icon available to be editted during run-time" in init.lua for the setup functions necessary for this to function.
+function update_ui_graphic( ui_name, offset_y )
+    --print("ui name is " .. ui_name)
+	local csi_id = ModImageIdFromFilename( "data/ui_gfx/animal_icons/creature_shift/creature_shift_ui.png")
+    local csi_from_id = ModImageIdFromFilename( table.concat({"data/ui_gfx/animal_icons/",ui_name,".png"}))
+    local csi_from_id_output = ModImageIdFromFilename( table.concat({"data/ui_gfx/animal_icons/creature_shift/",ui_name,".png"}))
+    --print("csi_from_id path is " .. table.concat({"data/ui_gfx/animal_icons/",ui_name,".png"}))
+    --print("csi_from_id_output path is " .. table.concat({"data/ui_gfx/animal_icons/creature_shift/",ui_name,".png"}))
+    if csi_from_id == 0 then print("Invalid image ID") return false end
+    for x=1,16 do
+        for y=1,16 do
+            --Paint the base layer for the ui portrait
+            ModImageSetPixel( csi_from_id_output, x, y, ModImageGetPixel( csi_id, x, y ) )
+            --Paint the ui icon over the base layer
+            if (x > 3 and y > 2) and (x < 13 and y < 12) then
+                local colour = ModImageGetPixel( csi_from_id, x, y )
+                if colour ~= 0 then
+                    ModImageSetPixel( csi_from_id_output, x, y + offset_y, colour )
+                end
+            end
+        end
+    end
 
+    --Clean up the border to look pretty
+    local border_colour = ModImageGetPixel(csi_id, 5,2)
+    ModImageSetPixel( csi_from_id_output, 4, 3, border_colour )
+    ModImageSetPixel( csi_from_id_output, 12, 3, border_colour )
+    ModImageSetPixel( csi_from_id_output, 4, 11, border_colour )
+    ModImageSetPixel( csi_from_id_output, 12, 11, border_colour )
+    return true
+end
 
+function get_distance( x1, y1, x2, y2 )
+	local result = math.sqrt( ( x2 - x1 ) ^ 2 + ( y2 - y1 ) ^ 2 )
+	return result
+end
 
 
 
 function creature_shift( entity, x, y, debug_no_limits )
+    local player_id = EntityGetWithTag( "player_unit" )[1]
 
     if GameHasFlagRun("apotheosis_flag_no_tripping") then
         local frame = GameGetFrameNum()
@@ -124,29 +163,50 @@ function creature_shift( entity, x, y, debug_no_limits )
         --Prioritise an enemy if the player is mousing over them, only applies to valid shift targets
         --75% Chance
         local frng = Random(1,4)
-        if frng > 1 then
+        print("frng is " .. frng)
+        if frng > 0 then
+            print("player id is " .. player_id)
             local controls = EntityGetFirstComponentIncludingDisabled(player_id, "ControlsComponent")  --[[@cast controls number]]
             local cursor_x, cursor_y = ComponentGetValue2(controls, "mMousePosition")
-            local cursor_tab = EntityGetInRadiusWithTag(cursor_x, cursor_y, 30, "mortal") or {"null"}
+            local cursor_tab = EntityGetInRadiusWithTag(cursor_x, cursor_y, 35, "mortal") or {"null"}
+            local temp_cursor_data = {"enemyfilename",100}
 
-            --Cycle through enemy shift list and see if targetted enemy is valid (has ui portrait)
+            --Cycle through enemy shift list and see if targetted enemy isn't a boss, if not, choose the closest enemy to the mouse cursor
             if cursor_tab[1] ~= "null" then
                 for z=1,#cursor_tab do
-                    if EntityHasTag(cursor_tab[z],"player_unit") == false then
+                    if EntityHasTag(cursor_tab[z],"player_unit") == false and EntityHasTag(cursor_tab[z],"boss") == false and EntityHasTag(cursor_tab[z],"miniboss") == false and EntityHasTag(cursor_tab[z],"boss_dragon") == false then
                         local filename = EntityGetFilename(cursor_tab[z])
-                        for k=1,#enemy_list_full do
-                            if string.find(filename,table.concat({enemy_list_full[k],".xml"})) then 
-                                target2 = enemy_list_full[k]
-                                break
-                            end
+                        local cursor_tx, cursor_ty = EntityGetTransform(cursor_tab[z])
+
+                        local dist = get_distance(cursor_x,cursor_y,cursor_tx,cursor_ty)
+                        --Remember data
+                        if dist < temp_cursor_data[2] then
+                            temp_cursor_data[1] = filename
+                            temp_cursor_data[2] = dist
                         end
                     end
                 end
+            end
+
+            --Make the targetted enemy the shift victim
+            if temp_cursor_data[1] ~= "enemyfilename" then
+                local temp_filepath = temp_cursor_data[1]
+                local temp_filename = temp_filepath:match("([^/]*)$")
+                temp_filename = temp_filename:gsub(".xml", "")
+
+                target2 = temp_filename
             end
         end
 
 
         print(table.concat({"Attempting to creature shift \"",target2,"\" into \"",target,"\""}))
+
+        local ui_offset_y = 0
+        if target2 == "miniblob" then
+            ui_offset_y = -4
+        end
+
+        local successful_image_update = update_ui_graphic( target2, ui_offset_y )
 
 
         --Debugging shift, forces all bats to be turned into triangular gems
@@ -346,20 +406,26 @@ function creature_shift( entity, x, y, debug_no_limits )
 
         local desc_1 = GameTextGetTranslatedOrNot("$status_apotheosis_creature_shifted_desc")
         local creature_shift_description = table.concat({desc_1,"\n",from_creature_name})
+        local ui_sprite_path = "data/ui_gfx/animal_icons/creature_shift/creature_shift_ui_backup.png"
+
+        if successful_image_update then
+            ui_sprite_path = table.concat({"data/ui_gfx/animal_icons/creature_shift/",icon_name,".png"})
+        end
 
         if add_icon then
             local icon_entity = EntityCreateNew( "creature_shift_ui_icon" )
+            local spritepath = 
             EntityAddComponent( icon_entity, "UIIconComponent", 
             { 
                 name = "$status_apotheosis_creature_shifted_name",
                 description = "$status_apotheosis_creature_shifted_desc",
                 --icon_sprite_file = "mods/Apotheosis/files/ui_gfx/status_indicators/creature_shift_perk.png"
-                icon_sprite_file = "data/ui_gfx/animal_icons/creature_shift/" .. icon_name .. ".png"
+                icon_sprite_file = ui_sprite_path
             })
             local targets = EntityGetWithTag( "player_unit" )
 
             for i,v in ipairs( targets ) do
-                if ( v ~= entity_id ) then
+                if ( v ~= player__id ) then
                     EntityAddChild( v, icon_entity )
                 end
             end
@@ -379,16 +445,18 @@ function creature_shift( entity, x, y, debug_no_limits )
         --  Updates Creature icon to the new creature icon
         local targets = EntityGetInRadius( x, y, 30 )
         for i,v in ipairs( targets ) do
-            if ( v ~= entity_id ) and ( EntityGetName( v ) == "creature_shift_ui_icon" ) then
+            if ( v ~= player_id ) and ( EntityGetName( v ) == "creature_shift_ui_icon" ) then
                 local comp = EntityGetFirstComponent( v, "UIIconComponent" )
-                ComponentSetValue2( comp, "icon_sprite_file", "data/ui_gfx/animal_icons/creature_shift/" .. icon_name .. ".png" )
+                ComponentSetValue2( comp, "icon_sprite_file", ui_sprite_path )
                 x, y = EntityGetTransform( v )
             end
         end
 
         local iter_glob = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
-        GlobalsSetValue("apotheosis_global_Cshift_" .. iter_glob .. "_targ1", tostring(target) )
-        GlobalsSetValue("apotheosis_global_Cshift_" .. iter_glob .. "_targ2", tostring(target2) )
+        GlobalsSetValue(table.concat({"apotheosis_global_Cshift_",iter_glob,"_targ1"}), tostring(target) )
+        GlobalsSetValue(table.concat({"apotheosis_global_Cshift_",iter_glob,"_targ2"}), tostring(target2) )
+
+        
 
 
         --Debugging

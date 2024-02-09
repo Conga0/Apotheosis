@@ -203,18 +203,25 @@ for enemy in ModTextFileGetContent(path):gmatch("[^\r\n]+") do
 end
 
 -- Do your table shenanigans
-for k=1,#insert_list
-do local v = insert_list[k]
-    if v.id_matchup == nil then
-        table.insert(enemies,v)
-    else
-        for z=1,#enemies
-        do c = enemies[z]
-            if c == v.id_matchup or z == #enemies then
-                table.insert(enemies,z + 1,v.name)
-                break
+if ModSettingGet( "Apotheosis.organised_icons" ) == true then
+    for k=1,#insert_list
+    do local v = insert_list[k]
+        if v.id_matchup == nil then
+            table.insert(enemies,v.name)
+        else
+            for z=1,#enemies
+            do c = enemies[z]
+                if c == v.id_matchup or z == #enemies then
+                    table.insert(enemies,z + 1,v.name)
+                    break
+                end
             end
         end
+    end
+else
+    for k=1,#insert_list
+    do local v = insert_list[k]
+        table.insert(enemies,v.name)
     end
 end
 

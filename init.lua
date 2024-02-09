@@ -308,7 +308,7 @@ book_apotheosis_symbol_fungus_description,"Two circles, these are specks of dust
 book_apotheosis_fire_lukki,Scorched Notes,Опалённые записки,,,,,,,,,,,,
 book_apotheosis_fire_lukki_description,"I remember finding a stone, blazing with fire but nothing more than a gentle touch in my hand. \nIt belonged to those fire cretins who hunted me I bet. \n \nWanting to get back at them I threw the stone into the deepest body of lava I could find in those wretched mines.. \nBut that was my fatal mistake. \n \nThe stone seemed to attract... something. \nI dared not look back after hearing the lava stir violently behind me, I feel lucky to be alive. \n \nMy robes were scorched by it's mere presence. \nMy pride reduced to burn marks of what it once was. \nI hope I need never return to that place.","Я помню, как нашёл камень, пылающий огнём, но не более чем легкое прикосновение моей руки. \nНаверняка он принадлежал тем огненным кретинам, которые охотились на меня. \nЖелая отомстить им, я бросил камень в самую глубокую лаву, которую смог найти в этих жалких шахтах. \nНо это была моя роковая ошибка. \n \n Камень, казалось, притягивал... что-то. \nЯ не смел оглянуться, когда услышал, как за спиной яростно зашипела лава. Мне повезло, что я остался жив. \nМоя одежда опалилась от одного его присутствия. \nМоя гордость превратилась в ожоги от того, чем она когда-то была. Надеюсь, я никогда не вернусь в это место.",,,,,,,,,,,,
 status_apotheosis_plagiarize_swapper_name,Curse of Swapping,Проклятие подмены,,,,,,,,スワッパーの呪い,,,,
-status_apotheosis_plagiarize_swapper_desc,Taking damage makes you swap places with the attacker,,,,,,,,,ダメージを受けると、攻撃してきた敵の位置にワープする。,,,,
+status_apotheosis_plagiarize_swapper_desc,Taking damage makes you swap places with the attacker.,,,,,,,,,ダメージを受けると、攻撃してきた敵の位置にワープする。,,,,
 status_apotheosis_delusional_name,Delusional,Галлюцинации,,,,,,,,幻覚,,,,
 status_apotheosis_delusional_desc,Your senses deceive you.,Ваши чувства обманывают вас.,,,,,,,,自分の感覚がアテにならない。,,,,
 status_apotheosis_creatureshift_cd_name,Unshiftable,Несдвигаемый,,,,,,,,きのこシフト無効化,,,,
@@ -663,6 +663,8 @@ status_apotheosis_flesh_curse_desc,You feel your flesh growing uncontrollably.,,
 status_apotheosis_flesh_curse_death,Corrupted.,,,,,,,,,堕落,,,,
 status_apotheosis_bragi_name,Poem of Seville,,,,,,,,,セビリアの抒情詩,,,,
 status_apotheosis_bragi_desc,You feel more fluent in spell casting!\nCast delay and reload time is significantly reduced on all wands.,,,,,,,,,より滑らかに呪文を詠唱できるようになった！\n詠唱遅延、リチャージ時間が大きく減少する。,,,,
+status_apotheosis_slow_name,Slow,Замедленное движение,Movimento lento,Movimiento lento,Langsamere Bewegungen,Mouvements réduits,Movimenti più lenti,Wolniejszy ruch,更慢移动,移動速度低下,느린 이동,,,
+status_apotheosis_slow_desc,You feel sluggish.,Вы некоторое время движетесь медленнее.,Sua movimentação se torna mais lenta por um tempo.,Te mueves más lento durante un tiempo.,Du bewegst dich eine Zeit lang langsamer.,Vous bougez plus lentement pendant un moment.,I tuoi movimenti sono rallentati per un certo periodo.,Przez jakiś czas poruszasz się wolniej.,一段时间内移动速度变慢。,一定期間、移動速度が低下する。,잠시 동안 느리게 움직입니다.,,,
 creep_apotheosis_boss_flesh_monster_name,Kerettiläinenhirviö,,,,,,,,,ケレッティレイネンヒルヴィオ,,,,
 log_apotheosis_fish,The red fish is real,,,,,,,,,あかいさかな,,,,
 log_apotheosis_shift_blocked_name,Shift Blocked,,,,,,,,,きのこシフトが無効化された,,,,
@@ -2074,7 +2076,7 @@ dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
 --This is handled underneath the custom seed check as the earliest biomemap append gets priority it seems
 ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml")
 
---Appending extra modiifers
+--Appending extra modifiers
 ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
 
 --Polymorph pool addition preperation
@@ -2087,6 +2089,7 @@ else
 	local old_on_world_init = OnWorldInitialized
 	function OnWorldInitialized()
 		dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+		dofile_once("mods/apotheosis/files/scripts/magic/creature_shift_file_image_refresh.lua")
 
 		if old_on_world_init then old_on_world_init() end
 	end
@@ -2095,6 +2098,7 @@ end
 --Makes the Creature Shift Icon available to be editted during run-time
 do
 	ModImageMakeEditable( "data/ui_gfx/animal_icons/creature_shift/creature_shift_ui.png", 16, 16 )
+	ModImageMakeEditable( "data/ui_gfx/animal_icons/creature_shift/skullfly.png", 16, 16 )
 
 	local path, csi_enemies = "data/ui_gfx/animal_icons/_list.txt", {}
 	for enemy in ModTextFileGetContent(path):gmatch("[^\r\n]+") do
