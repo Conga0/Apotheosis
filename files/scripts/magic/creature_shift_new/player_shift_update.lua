@@ -16,7 +16,10 @@ for id,enemy in pairs(enemy_list) do
 
                 local target1 = (GlobalsGetValue("apotheosis_global_Cshift_" .. targ_count .. "_targ1", "failed") )
                 local target2 = (GlobalsGetValue("apotheosis_global_Cshift_" .. targ_count .. "_targ2", "failed") )
-                if (EntityGetFilename(enemy) == "data/entities/animals/" .. target2 .. ".xml") then
+
+                local temp_filepath = EntityGetFilename(enemy)
+                local temp_filename = temp_filepath:match("([^/]*)$")
+                if temp_filename == table.concat({target2,".xml"}) then
 
                     local health = 0
                     local max_health = 0
