@@ -1,4 +1,5 @@
 <Entity 
+  serialize="1"
   name="$enemy_apotheosis_forest_monolith"
   tags="hittable,mortal,teleportable_NOT,homing_target,enemy,polymorphable_NOT,touchmagic_immunity" >
 
@@ -136,7 +137,7 @@
 		visible="1" 
 		emissive="1"
 		never_ragdollify_on_death="1"
-		z_index="-9000" >
+		z_index="-9001" >
 	</SpriteComponent>
 	
 	<HealthBarComponent

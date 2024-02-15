@@ -49,7 +49,7 @@ function do_newgame_plus()
 
 				curse = curse + 1
 
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", tostring(curse) )
+				ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", curse )
 
 			end
 		end

@@ -42,10 +42,16 @@ function MultiplyHPSelective(filepath,multiplier,base)
     else
       attrpath = xml:first_of("DamageModelComponent").attr
     end
-    max_hp = attrpath.hp
-    max_hp = max_hp * multiplier
+    hp = attrpath.hp
+    hp = hp * multiplier
+    max_hp = attrpath.max_hp or false
+    if max_hp then
+      max_hp = max_hp * multiplier
+      attrpath.max_hp = tostring(max_hp)
+    else
+      attrpath.max_hp = tostring(hp)
+    end
     attrpath.max_hp = tostring(max_hp)
-    attrpath.hp = tostring(max_hp)
     attrpath.blood_multiplier = tostring(1 / multiplier)
     set_content(filepath, tostring(xml))
   end

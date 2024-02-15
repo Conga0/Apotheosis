@@ -1,0 +1,573 @@
+<Entity 
+  tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,music_energy_100,curse_NOT,weaken_NOT,no_swap" 
+  name="$enemy_apotheosis_worm_end_big_apotheosis"
+  >
+  <_Transform 
+    position.x="0" 
+    position.y="0" 
+    rotation="0" 
+    scale.x="1" 
+    scale.y="1" >
+  </_Transform>
+
+  <!--Dedicated to you Teo-->
+  <!--Enjoy your new god-->
+  <!-- -C -->
+  
+  <WormComponent
+    acceleration="0.5"
+    gravity="0"
+    tail_gravity="0"
+    part_distance="28"
+    ground_check_offset="8"
+    hitbox_radius="18"
+    bite_damage="4"
+    target_kill_radius="20"
+    target_kill_ragdoll_force="10"
+    ragdoll_filename="data/ragdolls/worm_skull/filenames.txt"
+    eat_anim_wait_mult="0.05 "
+    jump_cam_shake="2" >
+  </WormComponent>
+  
+  <WormAIComponent
+    speed="5"
+    speed_hunt="8"
+    direction_adjust_speed="0.005"
+    direction_adjust_speed_hunt="0.04"
+    hunt_box_radius="256"
+    random_target_box_radius="128"
+    new_hunt_target_check_every="240"
+    new_random_target_check_every="240"
+    give_up_area_radius="150"
+    give_up_time_frames="250"
+     >
+  </WormAIComponent>
+  
+  <DamageModelComponent 
+    _enabled="1"
+    air_needed="0"
+    falling_damages="0"
+    fire_damage_amount="0.2"
+     
+    fire_probability_of_ignition="0"
+    hp="2500"
+    is_on_fire="0"
+    mAirAreWeInWater="0"
+    mFallCount="0"
+    mFallHighestY="3.40282e+038"
+    mFallIsOnGround="0"
+    mFireProbability="100"
+    mIsOnFire="0"
+    mLastCheckTime="0"
+    mLastCheckX="0"
+    mLastCheckY="0"
+    materials_damage="1"
+    materials_how_much_damage="0.1"
+    materials_that_damage="acid"
+    ragdoll_filenames_file=""
+    ragdoll_offset_y="-6"
+		ragdoll_material="apotheosis_meat_fire_lukki"
+    blood_material="lava"
+    blood_spray_material="lava"
+    blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_orange_$[1-3].xml"
+    blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_orange_$[1-3].xml"
+    >
+		<damage_multipliers
+			melee="0.3"
+			projectile="0.1"
+			explosion="0.3"
+			electricity="0.3"
+			fire="0.0"
+			slice="0.0"
+			ice="0.3"
+			curse="0.5"
+			drill="0.3"
+			holy="0.7"
+			>
+		</damage_multipliers>
+  </DamageModelComponent>
+  
+  <PathFindingGridMarkerComponent
+    marker_offset_y="0"
+    marker_work_flag="16" >
+  </PathFindingGridMarkerComponent>
+
+  <GenomeDataComponent 
+    _enabled="1"
+    herd_id="worm"
+    food_chain_rank="20"
+    is_predator="1" >
+  </GenomeDataComponent>
+  
+	<CellEaterComponent
+		_tags="cell_eater"
+		radius="18" >
+	</CellEaterComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_head.xml" 
+    rect_animation="eat" 
+    next_rect_animation="eat"
+    offset_x="46" 
+    offset_y="32.5" 
+    update_transform="0"
+    z_index="-4" 
+	>
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml" 
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+	update_transform="0"
+	z_index="-3.9" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.8" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.7" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.6" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.5" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.4" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.3" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.2" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.1" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.0" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-2.9" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-2.8" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-2.7" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-2.8" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-2.9" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.0" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.1" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.2" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.3" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.4" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.5" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.6" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.7" 
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_tail.xml"
+    rect_animation="eat" 
+    next_rect_animation="eat"	
+    offset_x="26.5" 
+    offset_y="33"
+    update_transform="0"
+	z_index="-3.8" 
+     >
+  </SpriteComponent>
+
+	<HealthBarComponent>
+	</HealthBarComponent>
+
+  <MusicEnergyAffectorComponent
+    energy_target="1">
+  </MusicEnergyAffectorComponent>
+
+	<!-- Limit boss to taking only 1% health damage maximum with each instance of damage, additionally grants temporary invulnerable upon being hurt -->
+  <!-- Additionally has death script to say it died -->
+	<LuaComponent
+		script_damage_about_to_be_received="data/entities/animals/worm_hell_big/dmg_limit_1_percent.lua"
+		script_death="data/entities/animals/worm_hell_big/death.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/worm_hell_big/worm_ai.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+    _enabled="0"
+    _tags="invincible"
+		script_source_file="data/entities/animals/worm_hell_big/worm_barrage.lua"
+		execute_every_n_frame="5"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<!-- Mass Last Requiem all entities in a large radius -->
+	<!-- Disables Healing -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/worm_hell_big/mass_debuff.lua"
+		execute_every_n_frame="1230"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<!-- Boss Health Multiplier Script -->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<!-- Boss Health Scaling based off NG+ level-->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_newgameplus.lua"
+		execute_every_n_frame="6"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+  <VariableStorageComponent
+    name="iframes"
+		value_int="0"
+  >
+  </VariableStorageComponent>
+
+	<!--Keep the worm focused on the player-->
+	<VariableStorageComponent
+		name="basic_ai"
+		value_int="-10000"
+		value_float="1"
+		value_string="player"
+		>
+	</VariableStorageComponent>
+
+	<Entity tags="foot">
+		
+		<InheritTransformComponent
+			parent_sprite_id="10"
+			>
+		</InheritTransformComponent>
+		
+		<GenomeDataComponent 
+			_enabled="1"
+			herd_id="worm"
+			food_chain_rank="20"
+			is_predator="1" >
+		</GenomeDataComponent>
+
+	</Entity>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent 
+			effect="PROTECTION_FIRE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+
+  <!-- Drops sphere of lava on death? -->
+
+	<CameraBoundComponent
+	  max_count="10"
+	  distance="2000">
+	</CameraBoundComponent>
+
+  <MusicEnergyAffectorComponent
+    energy_target="1">
+  </MusicEnergyAffectorComponent>
+
+  <AudioComponent
+    file="data/audio/Desktop/animals.bank"
+    event_root="animals">
+  </AudioComponent>
+
+  <AudioComponent
+    file="data/audio/Desktop/animals.bank"
+    event_root="animals/worm">
+  </AudioComponent>
+
+  <AudioLoopComponent
+    file="data/audio/Desktop/animals.bank"
+    event_name="animals/worm/movement_loop_big"
+    set_speed_parameter="1"
+    auto_play="1">
+  </AudioLoopComponent>
+
+</Entity>

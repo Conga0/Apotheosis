@@ -4,8 +4,10 @@ function shot( entity_id )
 
     --Sets homing strength to 40 for monsters, 100 for the player
     local homingspeed=40
+    local tag = "prey"
     if EntityHasTag(entity_id,"projectile_player") then
         homingspeed=100
+        tag = "homing_target"
     end
 
     --Adds homing to a projectile using designated values
@@ -13,6 +15,7 @@ function shot( entity_id )
         entity_id,
         "HomingComponent",
         {
+            target_tag=tag,
             homing_targeting_coeff=homingspeed,
             homing_velocity_multiplier=0.86,
         }

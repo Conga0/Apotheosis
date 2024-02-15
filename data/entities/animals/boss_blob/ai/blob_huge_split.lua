@@ -15,8 +15,8 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local max_health = 0
 	
 	edit_component( entity_id, "DamageModelComponent", function(comp,vars)
-		health = tonumber(ComponentGetValue( comp, "hp"))
-		max_health = tonumber(ComponentGetValue( comp, "max_hp"))
+		health = tonumber(ComponentGetValue2( comp, "hp"))
+		max_health = tonumber(ComponentGetValue2( comp, "max_hp"))
 	end)
 	
 	local minion_count = 4

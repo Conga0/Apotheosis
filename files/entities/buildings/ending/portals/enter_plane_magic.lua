@@ -45,11 +45,11 @@ function do_newgame_plus()
 		if( damagemodels ~= nil ) then
 			for i,damagemodel in ipairs(damagemodels) do
 				
-				local curse = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "curse" ) )
+				local curse = tonumber(ComponentObjectGetValue2( damagemodel, "damage_multipliers", "curse" ) )
 
 				curse = curse + 1
 
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", tostring(curse) )
+				ComponentObjectSetValue2( damagemodel, "damage_multipliers", "curse", curse )
 
 			end
 		end

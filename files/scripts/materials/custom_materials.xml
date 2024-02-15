@@ -2886,7 +2886,7 @@
 	wang_color="ffd7dc47"
 	hp="10000000"
 	fire_hp="60000"
-	durability="20"
+	durability="50"
 	density="30"
 	liquid_gravity="1.2"
 	liquid_sand="1"

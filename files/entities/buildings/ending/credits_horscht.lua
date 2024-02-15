@@ -38,6 +38,7 @@ local lines = {
   "$credits_apotheosis_line_22",
   "Freakstritch",
   "Moriko Yumi",
+  "TeoUltika",
   "Voksivs",
   "Tanksy Plays",
   "Clemfandongo",

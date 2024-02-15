@@ -65,7 +65,7 @@ MultiplyHPSelective("boss_alchemist/boss_alchemist",10,true)
 MultiplyHPSelective("boss_ghost/boss_ghost",10,false)
 MultiplyHPSelective("boss_limbs/boss_limbs",10,false)
 MultiplyHPSelective("boss_toxic_worm/boss_toxic_worm",4,false)
-MultiplyHPSelective("boss_spirit/islandspirit",4,true)
+--MultiplyHPSelective("boss_spirit/islandspirit",4,true)
 MultiplyHPSelective("boss_dragon",4,false)
 MultiplyHPSelective("boss_fish/fish_giga",2,false)
 

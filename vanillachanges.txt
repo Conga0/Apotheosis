@@ -57,7 +57,7 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-120 new enemies
+121 new enemies
 6 new bosses
 77 new spells
 10 new perks

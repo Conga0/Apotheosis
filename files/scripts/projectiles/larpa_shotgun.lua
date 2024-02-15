@@ -5,6 +5,8 @@ local pos_x, pos_y, rot = EntityGetTransform( entity_id )
 local vel_x, vel_y = 0,0
 local amount = 7
 
+if EntityHasTag(entity_id,"projectile_cloned") then return end
+
 local variablestorages = EntityGetComponent( entity_id, "VariableStorageComponent" )
 local projectile_file = ""
 
@@ -22,16 +24,17 @@ edit_component( entity_id, "VelocityComponent", function(comp,vars)
 	vel_x,vel_y = ComponentGetValueVector2( comp, "mVelocity")
 end)
 
-for k=1,amount
-do
+for k=1,amount do
 
     local length = 400 * math.random(0.70,1.30)
 
     --3.12 * 0.15 / 2 = 0.234
     --GamePrint("rot is " .. rot)
+    local offset_x = vel_x * 0.3
+    local offset_y = vel_x * 0.3
 
-    vel_x = math.cos(rot + math.random(-0.234,0.234)) * length
-    vel_y = math.sin(rot + math.random(-0.234,0.234)) * length
+    vel_x = vel_x + math.random(offset_x * -1,offset_x)
+    vel_y = vel_y + math.random(offset_y * -1,offset_y)
 
 
     if ( #projectile_file > 0 ) then
