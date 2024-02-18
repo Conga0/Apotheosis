@@ -247,9 +247,9 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 
+	<!-- This should have the follow script, but said lua file doesn't exist script_death="mods/Apotheosis/files/scripts/animals/whisp_giga_death.lua"-->
 	<LuaComponent
 		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/fairy_kill.lua"
-        	script_death="mods/Apotheosis/files/scripts/animals/whisp_giga_death.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>

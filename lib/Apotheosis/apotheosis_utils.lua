@@ -51,7 +51,7 @@ function MultiplyHPSelective(filepath,multiplier,base)
     else
       attrpath.max_hp = tostring(hp)
     end
-    attrpath.max_hp = tostring(max_hp)
+    attrpath.hp = tostring(hp)
     attrpath.blood_multiplier = tostring(1 / multiplier)
     set_content(filepath, tostring(xml))
   end

@@ -274,6 +274,7 @@ do --Boosts Health of various creatures (THE_END)
     "gazer_greater",
     "gazer_greater_cold",
     "gazer_greater_sky",
+    "gazer_parasitic",
     "ghost_bow",
     "musical_being",
     "sentry",

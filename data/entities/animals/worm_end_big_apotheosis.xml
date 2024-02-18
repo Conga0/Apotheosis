@@ -1,6 +1,6 @@
 <Entity 
   tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT" 
-  name="$animal_worm_end"
+  name="$enemy_apotheosis_worm_end_big_apotheosis"
   >
   <_Transform 
     position.x="0" 

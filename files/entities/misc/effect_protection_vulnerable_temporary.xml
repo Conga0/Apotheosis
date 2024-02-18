@@ -1,0 +1,27 @@
+<Entity name="apotheosis_protection_vulnerable" >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="3600"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/vulnerable_immunity_start.lua"
+		execute_every_n_frame="2"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_removed="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/vulnerable_immunity_end.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+</Entity>

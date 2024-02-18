@@ -58,6 +58,8 @@ log_messages =
 --This function generates ui images when they're needed during runtime.
 --Look for "--Makes the Creature Shift Icon available to be editted during run-time" in init.lua for the setup functions necessary for this to function.
 function update_ui_graphic( ui_name, offset_y )
+    --print(table.concat({"ui_name is ",ui_name}))
+    --GamePrint(table.concat({"ui_name is ",ui_name}))
     --Quick test to see if the requested entity has been prepared by the virtual file system.
     if ModImageDoesExist(table.concat({"data/ui_gfx/animal_icons/creature_shift/",ui_name,".png"})) == false then return false end
 

@@ -403,6 +403,7 @@ material_apotheosis_cursed_rock_hard,Sacred Rock,,,,,,,,,聖なる岩,,,,
 material_apotheosis_radioactive_liquid_strong,Noxious Sludge,,,,,,,,,激毒ヘドロ,,,,
 material_apotheosis_radioactive_mud,Defiled Mud,,,,,,,,,汚染された泥,,,,
 material_apotheosis_milk_powder,Powdered Milk,,,,,,,,,粉ミルク,,,,
+material_apotheosis_meat_vulnerable_protection,Ancient Meat,,,,,,,,,古代の肉,,,,
 magic_liquid_berserk_cloud_name,Berserkium Mist,,,,,,,,,バーサキアムのミスト,,,,
 magic_liquid_charm_cloud_name,Pheromone Mist,,,,,,,,,フェロモンのミスト,,,,
 spell_apotheosis_spells_to_cursor_name,Redirect,,,,,,,,,繰気弾,,,,
@@ -667,6 +668,8 @@ status_apotheosis_slow_name,Slow,Замедленное движение,Movimen
 status_apotheosis_slow_desc,You feel sluggish.,Вы некоторое время движетесь медленнее.,Sua movimentação se torna mais lenta por um tempo.,Te mueves más lento durante un tiempo.,Du bewegst dich eine Zeit lang langsamer.,Vous bougez plus lentement pendant un moment.,I tuoi movimenti sono rallentati per un certo periodo.,Przez jakiś czas poruszasz się wolniej.,一段时间内移动速度变慢。,一定期間、移動速度が低下する。,잠시 동안 느리게 움직입니다.,,,
 status_apotheosis_end_debuff_name,Final Requiem,,,,,,,,,最後のレクイエム,,,,
 status_apotheosis_end_debuff_desc,Protective Perks are disabled.\nYou can not be healed.,,,,,,,,,防御系パークの効果がなくなる。\n回復魔法の効果がない。,,,,
+status_apotheosis_protection_vulnerable_name,Vulnerable Immunity,,,,,,,,,,,,,
+status_apotheosis_protection_vulnerable_desc,"You can not have your immunities disabled.",,,,,,,,,,,,,
 creep_apotheosis_boss_flesh_monster_name,Kerettiläinenhirviö,,,,,,,,,ケレッティレイネンヒルヴィオ,,,,
 log_apotheosis_fish,The red fish is real,,,,,,,,,あかいさかな,,,,
 log_apotheosis_shift_blocked_name,Shift Blocked,,,,,,,,,きのこシフトが無効化された,,,,
@@ -2099,9 +2102,8 @@ else
 end
 
 --Makes the Creature Shift Icon available to be editted during run-time
-do
+function OnModInit()
 	ModImageMakeEditable( "data/ui_gfx/animal_icons/creature_shift/creature_shift_ui.png", 16, 16 )
-	ModImageMakeEditable( "data/ui_gfx/animal_icons/creature_shift/skullfly.png", 16, 16 )
 
 	local path, csi_enemies = "data/ui_gfx/animal_icons/_list.txt", {}
 	for enemy in ModTextFileGetContent(path):gmatch("[^\r\n]+") do

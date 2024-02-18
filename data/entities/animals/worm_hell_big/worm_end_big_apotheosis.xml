@@ -83,6 +83,7 @@
 			curse="0.5"
 			drill="0.3"
 			holy="0.7"
+      radioactive="0.1"
 			>
 		</damage_multipliers>
   </DamageModelComponent>

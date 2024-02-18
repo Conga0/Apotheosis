@@ -646,6 +646,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/worm_wall.png",
 	  },
 	  {
+		name="Greater Hell Worm",
+		path="data/entities/animals/worm_hell_big/worm_end_big_apotheosis.xml",
+		image="data/ui_gfx/animal_icons/worm_end_big_apotheosis.png",
+	  },
+	  {
 		name="Mechanical Worm",
 		path="data/entities/animals/worm_mechanical.xml",
 		image="data/ui_gfx/animal_icons/worm_mechanical.png",

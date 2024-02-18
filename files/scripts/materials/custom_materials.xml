@@ -148,6 +148,27 @@
   </CellData>
 
   <CellDataChild
+  	_parent="meat_slime"
+	name="apotheosis_meat_big_hell_worm"
+	ui_name="$material_apotheosis_meat_vulnerable_protection"
+  	tags="[box2d],[corrodible],[meltable_to_lava],[alchemy],[solid],[earth],[food]"
+	solid_break_to_type="lava"
+	solid_restitution="0.4"
+	wang_color="ffed3d3f"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="lava" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_PROTECTION_VULNERABLE" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
   	_parent="meat"
 	name="apotheosis_meat_duck"
 	ui_name="$material_apotheosis_meat_feathery"

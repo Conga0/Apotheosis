@@ -1,4 +1,4 @@
-<Entity tags="touchmagic_immunity">
+<Entity name="$enemy_apotheosis_gazer_cold_apotheosis" tags="touchmagic_immunity">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

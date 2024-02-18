@@ -85,6 +85,12 @@ do -- Buff Final Boss's HP as if you grabed 10 orbs
   content = content:gsub("%(orbcount %+ 1.3%) %) %+ %(orbcount%*15%.5%)", "((orbcount + 11) + 1.3) ) + ((orbcount + 11)*15.5)")
   ModTextFileSetContent(path, content)
 end
+do -- Buff Mecha Kolmi's healing droid healing by x100
+  local path = "data/entities/animals/boss_robot/boss_robot.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("slice=\"0.6\"", "slice=\"0.6\" healing=\"100\"")
+  ModTextFileSetContent(path, content)
+end
 
 do --Reduces the NG+ count of each biome's enemy pool by 1
   local biomes = {

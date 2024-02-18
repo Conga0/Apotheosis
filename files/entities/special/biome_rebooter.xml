@@ -1,0 +1,20 @@
+<Entity>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>
+    
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/magic/biome_rebooter.lua"
+		execute_on_added="0"
+		execute_every_n_frame="5"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="10"
+	>
+	</LifetimeComponent>
+
+</Entity>
