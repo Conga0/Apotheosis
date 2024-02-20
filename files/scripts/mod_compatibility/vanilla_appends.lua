@@ -274,6 +274,7 @@ do --Boosts Health of various creatures (THE_END)
     "gazer_greater",
     "gazer_greater_cold",
     "gazer_greater_sky",
+    "gazer_parasitic",
     "ghost_bow",
     "musical_being",
     "sentry",
@@ -484,7 +485,7 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to 
   ModTextFileSetContent(path, tostring(xml))
 end
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to hit once every 10 frames instead of once every 1 frame
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Fish to hit once every 10 frames instead of once every 1 frame
   local path = "data/entities/projectiles/deck/fish.xml"
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
@@ -971,7 +972,7 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
   if GameHasFlagRun("apotheosis_towerclimb") then
     AddFlagPersistent("apotheosis_card_unlocked_challenge_towerclimb_win")
   elseif GameHasFlagRun("apotheosis_hardmode") then
-    AddFlagPersistent("apotheosis_card_unlocked_challenge_hardcore_win")
+    AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_hardcore")
   elseif GameHasFlagRun("apotheosis_missingmagic") then
     AddFlagPersistent("apotheosis_card_unlocked_challenge_missingmagic_win")
   end
@@ -1047,9 +1048,7 @@ do --Lets Kolmisilma clear slime when using his clear materials ability
 end
 
 do  --Insert enemies into the progress log where they belong, originally handled through an overwrite but now should be more mod-compatiable to future proof it incase any other inspiring enemy modders appear
-  if ModSettingGet( "Apotheosis.organised_icons" ) == true then
-    dofile_once("mods/apotheosis/files/scripts/mod_compatibility/enemy_list_inserts.lua")
-  end
+  dofile_once("mods/apotheosis/files/scripts/mod_compatibility/enemy_list_inserts.lua")
 end
 
 do -- Make humanoids take damage from poisonous gas
@@ -1297,7 +1296,7 @@ end
 do --Make glimmer spells work with plasma emitters
   local path = "data/scripts/projectiles/colour_spell.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("comps %= EntityGetComponent%( entity_id, \"ParticleEmitterComponent\" %)", "comps = EntityGetComponent( entity_id, \"LaserEmitterComponent\" ) for k=1,#comps do local v = comps[k] ComponentObjectSetValue2( v, \"laser\", \"beam_particle_type\", CellFactory_GetType(particle)) end comps = EntityGetComponent( entity_id, \"ParticleEmitterComponent\" )")
+  content = content:gsub("comps %= EntityGetComponent%( entity_id, \"ParticleEmitterComponent\" %)", "comps = EntityGetComponent( entity_id, \"LaserEmitterComponent\" ) or {} for k=1,#comps do local v = comps[k] ComponentObjectSetValue2( v, \"laser\", \"beam_particle_type\", CellFactory_GetType(particle)) end comps = EntityGetComponent( entity_id, \"ParticleEmitterComponent\" )")
 
   ModTextFileSetContent(path, content)
 end
@@ -1306,7 +1305,22 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make antiheal do innate 
   local path = "data/entities/projectiles/deck/healhurt.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("knockback_force%=\"1.8\"", "knockback_force=\"1.8\" friendly_fire=\"1\" collide_with_shooter_frames=\"4\"")
-  print(content)
+
+  ModTextFileSetContent(path, content)
+end
+
+if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make chainbolt better at hitting single targets
+  local path = "data/scripts/projectiles/chain_bolt.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("%( target_id ~= prev_entity_id %) and %( target_id ~= prev_prev_entity_id %)", "(( target_id ~= prev_entity_id ) and ( target_id ~= prev_prev_entity_id ) or #targets == 1)")
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Reduce the duration of the blindness status effect by 25%
+  local path = "data/entities/misc/effect_blindness.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"1200\"", "\"900\"")
 
   ModTextFileSetContent(path, content)
 end

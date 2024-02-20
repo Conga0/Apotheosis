@@ -148,6 +148,27 @@
   </CellData>
 
   <CellDataChild
+  	_parent="meat_slime"
+	name="apotheosis_meat_big_hell_worm"
+	ui_name="$material_apotheosis_meat_vulnerable_protection"
+  	tags="[box2d],[corrodible],[meltable_to_lava],[alchemy],[solid],[earth],[food]"
+	solid_break_to_type="lava"
+	solid_restitution="0.4"
+	wang_color="ffed3d3f"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="lava" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_PROTECTION_VULNERABLE" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
   	_parent="meat"
 	name="apotheosis_meat_duck"
 	ui_name="$material_apotheosis_meat_feathery"
@@ -2310,18 +2331,20 @@
     </Graphics>
   </CellData>
 
+  <!--08/02/2024 Conga: This used to have a durability of 15 but I'm lowering it down to 12 so people can break out of the abyss incase the game bugs out, no clue why this is happening, too late for me to figure it out right now-->
+  <!--Also had the [matter_eater_ignore_list],[indestructible] tags and didn't have [solid]-->
   <CellDataChild
   	_parent="templerock_static"
   	_inherit_reactions="1"
   	name="apotheosis_esoteric_stone" 
 	ui_name="$material_apotheosis_esoteric_stone"
-	tags="[static],[corrodible],[alchemy],[earth],[matter_eater_ignore_list],[indestructible]"
+	tags="[static],[corrodible],[alchemy],[earth],[solid]"
 	wang_color="ff490b0c"
 	wang_noise_percent="0.33"
 	hp="240000"
 	wang_curvature="0.5"
 	wang_noise_type="2"
-	durability="15"
+	durability="12"  
 	audio_physics_material_wall="rock"
 	audio_physics_material_solid="rock"
 	>
@@ -2369,16 +2392,18 @@
     </Graphics>
   </CellDataChild>
 
+  <!--08/02/2024 Conga: This used to have a durability of 16 but I'm lowering it down to 12 so people can break out of the abyss incase the game bugs out, no clue why this is happening, too late for me to figure it out right now-->
+  <!--Also had the [matter_eater_ignore_list],[indestructible] tags and didn't have [solid]-->
   <CellDataChild
   	_parent="rock_static"
   	_inherit_reactions="1"
-	tags="[static],[alchemy],[earth],[matter_eater_ignore_list],[indestructible]"
+	tags="[static],[alchemy],[earth],[solid]"
   	name="rock_static_cursed_esoteric" 
 	ui_name="$material_apotheosis_esoteric_stone_glowing"
 	wang_color="ffe6f4bf"
 	gfx_glow="255"
 	hp="320000"
-	durability="16"
+	durability="13"
 	audio_physics_material_event="rock"
 	audio_physics_material_wall="rock"
 	audio_physics_material_solid="rock"
@@ -2664,10 +2689,12 @@
 	>
   </CellDataChild>
 
+  <!--08/02/2024 Conga: This used to have a durability of 15 but I'm lowering it down to 12 so people can break out of the abyss incase the game bugs out, no clue why this is happening, too late for me to figure it out right now-->
+  <!--Also had the [matter_eater_ignore_list],[indestructible] tags and didn't have [solid]-->
   <CellData 
 	name="apotheosis_vine_yggdrasil"
 	ui_name="$mat_vine"
-  	tags="[static],[sand_ground],[corrodible],[alchemy],[matter_eater_ignore_list],[indestructible]"
+  	tags="[static],[sand_ground],[corrodible],[alchemy],[solid]"
 	burnable="0"  
 	density="12"
 	cell_type="liquid" 
@@ -2682,7 +2709,7 @@
 	autoignition_temperature="60"
 	temperature_of_fire="90"
 	hp="360000"
-	durability="15"
+	durability="13"
 	show_in_creative_mode="1"
 	>
     <Graphics 
@@ -2708,7 +2735,8 @@
   </CellDataChild>
 
 
-  
+  <!--08/02/2024 Conga: This used to have a durability of 14 but I'm lowering it down to 12 so people can break out of the abyss incase the game bugs out, no clue why this is happening, too late for me to figure it out right now-->
+  <!--Also had the [matter_eater_ignore_list],[indestructible] tags and didn't have [solid]-->
   <CellDataChild
   	_parent="steelmoss_static"
   	_inherit_reactions="1"
@@ -2719,7 +2747,7 @@
 	wang_curvature="0.5"
 	solid_friction="0.9"
 	electrical_conductivity="1"
-	durability="14"
+	durability="12"
 	show_in_creative_mode="1"
 	cell_holes_in_texture="0"
 	hp="900000"
@@ -2879,7 +2907,7 @@
 	wang_color="ffd7dc47"
 	hp="10000000"
 	fire_hp="60000"
-	durability="20"
+	durability="50"
 	density="30"
 	liquid_gravity="1.2"
 	liquid_sand="1"

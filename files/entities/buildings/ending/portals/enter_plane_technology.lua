@@ -6,6 +6,18 @@ function do_newgame_plus()
 	for k=1,#players
 	do local v = players[k]
 		EntitySetTransform(v,-5910,2421)
+
+		--18/02/2024 Conga: Temp Fix until Nolla fixes the CompLoadOrder bug
+		local children = EntityGetAllChildren(v) or {}
+		for l=1,#children do
+			local comps = EntityGetComponentIncludingDisabled(children[l],"BiomeTrackerComponent") or {}
+			for i=1,#comps do
+				EntitySetComponentIsEnabled(children[l],i,false)
+			end
+		end
+
+		local biome_rebooter = EntityLoad("mods/apotheosis/files/entities/special/biome_rebooter.xml",5910,2421)
+		EntityAddChild(v,biome_rebooter)
 	end
 
 	--Reset RGB portal locations
@@ -49,7 +61,7 @@ function do_newgame_plus()
 
 				curse = curse + 1
 
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", tostring(curse) )
+				ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", curse )
 
 			end
 		end

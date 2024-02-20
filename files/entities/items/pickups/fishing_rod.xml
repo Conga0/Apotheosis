@@ -97,10 +97,18 @@
 	
 	<!--Actually handles the fishing-->
 	<LuaComponent
+		_enabled="0"
 		_tags="enabled_in_hand"
 		script_source_file="mods/apotheosis/files/scripts/items/fishing_rod.lua"
-        script_item_picked_up="mods/apotheosis/files/scripts/items/fishing_rod_pickup.lua"
 		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+	
+	<!--Handles pickup particles & transitioning into a spinning animation-->
+	<LuaComponent
+		_enabled="1"
+        script_item_picked_up="mods/apotheosis/files/scripts/items/fishing_rod_pickup.lua"
+		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
 

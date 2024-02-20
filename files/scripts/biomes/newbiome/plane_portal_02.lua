@@ -28,7 +28,7 @@ function spawn_wands( x, y ) end
 function init( x, y, w, h )
 	SetRandomSeed(444,777)
 	local pw = GetParallelWorldPosition(x,y)
-	if Random(1,6) == 2 and pw == 0 then
+	if Random(1,6) == 2 and pw == 0 and ModIsEnabled("noita-mapcap") == false then
 		--LoadPixelScene( "mods/apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
 		LoadPixelScene( "mods/apotheosis/files/biome_impl/magicegg/magicegg.png", "mods/apotheosis/files/biome_impl/magicegg/magicegg_visual.png", x, y, "mods/apotheosis/files/biome_impl/magicegg/magicegg_background.png", true )
 	end

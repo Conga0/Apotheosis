@@ -2544,7 +2544,7 @@ local actions_to_edit = {
     },
 
     -- Reduced mana cost of Concentrated Light to be more appropriate for it's functionality & spell tier
-    ["MEGALASER"] = {
+    ["LASER"] = {
         mana = 20
     },
 

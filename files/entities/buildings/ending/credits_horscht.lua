@@ -38,6 +38,7 @@ local lines = {
   "$credits_apotheosis_line_22",
   "Freakstritch",
   "Moriko Yumi",
+  "TeoUltika",
   "Voksivs",
   "Tanksy Plays",
   "Clemfandongo",
@@ -120,7 +121,7 @@ roll_credits_progress = (roll_credits_progress or -1) - 0.375 * (accelerate and 
 
 
 --Trigger the true run victory & vanilla noita credits
-if roll_credits_progress < -850 then
+if roll_credits_progress < -900 then --If anything breaks in the future, this was originally -850 (Conga Lyne 22/01/2024)
     --EntityKill(GetUpdatedEntityID())
 
     --Probably handle diff effects by scanning for a game flag to detect which ending is currently ongoing

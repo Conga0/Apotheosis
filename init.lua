@@ -28,66 +28,6 @@ local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
 
 
 
-if not GameIsBetaBuild() then -- Beta file creation, see apotheosis/betatemp/folder_desc.txt for more details
-	local files = {
-		{
-			"meat.lua",
-			"data/scripts/biomes/meat.lua"
-		},
-		{
-			"meat.xml",
-			"data/biome/meat.xml"
-		},
-		{
-			"miner_hell.xml",
-			"data/entities/animals/miner_hell.xml"
-		},
-		{
-			"shotgunner_hell.xml",
-			"data/entities/animals/shotgunner_hell.xml"
-		},
-		{
-			"sniper_hell.xml",
-			"data/entities/animals/sniper_hell.xml"
-		},
-		{
-			"gfx/miner_hell.xml",
-			"data/enemies_gfx/miner_hell.xml"
-		},
-		{
-			"gfx/shotgunner_hell.xml",
-			"data/enemies_gfx/shotgunner_hell.xml"
-		},
-		{
-			"gfx/sniper_hell.xml",
-			"data/enemies_gfx/sniper_hell.xml"
-		},
-		{
-			"gfx/sniper_hell_overlay.xml",
-			"data/enemies_gfx/sniper_hell_overlay.xml"
-		},
-		{
-			"sniperbullet_hell.xml",
-			"data/entities/projectiles/sniperbullet_hell.xml"
-		},
-		{
-			"tnt_hell.xml",
-			"data/entities/projectiles/tnt_hell.xml"
-		}
-	}
-
-	for k = 1, #files do
-		local content = ModTextFileGetContent(table.concat({ "mods/apotheosis/betatemp/", files[k][1] }))
-		ModTextFileSetContent(files[k][2], content)
-	end
-
-	--Adds in meat biome materials
-	ModMaterialsFileAdd("mods/Apotheosis/betatemp/materials.xml")
-end
-
-
-
-
 -- Spell Unlock Fixes
 -- If someone attains a spell through another mod, twitch integration, etc, this is just to make sure they aren't getting unlocks they shouldn't.
 -- They'll still get the spell, it just won't be added to their permanent record
@@ -368,7 +308,7 @@ book_apotheosis_symbol_fungus_description,"Two circles, these are specks of dust
 book_apotheosis_fire_lukki,Scorched Notes,Опалённые записки,,,,,,,,,,,,
 book_apotheosis_fire_lukki_description,"I remember finding a stone, blazing with fire but nothing more than a gentle touch in my hand. \nIt belonged to those fire cretins who hunted me I bet. \n \nWanting to get back at them I threw the stone into the deepest body of lava I could find in those wretched mines.. \nBut that was my fatal mistake. \n \nThe stone seemed to attract... something. \nI dared not look back after hearing the lava stir violently behind me, I feel lucky to be alive. \n \nMy robes were scorched by it's mere presence. \nMy pride reduced to burn marks of what it once was. \nI hope I need never return to that place.","Я помню, как нашёл камень, пылающий огнём, но не более чем легкое прикосновение моей руки. \nНаверняка он принадлежал тем огненным кретинам, которые охотились на меня. \nЖелая отомстить им, я бросил камень в самую глубокую лаву, которую смог найти в этих жалких шахтах. \nНо это была моя роковая ошибка. \n \n Камень, казалось, притягивал... что-то. \nЯ не смел оглянуться, когда услышал, как за спиной яростно зашипела лава. Мне повезло, что я остался жив. \nМоя одежда опалилась от одного его присутствия. \nМоя гордость превратилась в ожоги от того, чем она когда-то была. Надеюсь, я никогда не вернусь в это место.",,,,,,,,,,,,
 status_apotheosis_plagiarize_swapper_name,Curse of Swapping,Проклятие подмены,,,,,,,,スワッパーの呪い,,,,
-status_apotheosis_plagiarize_swapper_desc,Taking damage makes you swap places with the attacker,,,,,,,,,ダメージを受けると、攻撃してきた敵の位置にワープする。,,,,
+status_apotheosis_plagiarize_swapper_desc,Taking damage makes you swap places with the attacker.,,,,,,,,,ダメージを受けると、攻撃してきた敵の位置にワープする。,,,,
 status_apotheosis_delusional_name,Delusional,Галлюцинации,,,,,,,,幻覚,,,,
 status_apotheosis_delusional_desc,Your senses deceive you.,Ваши чувства обманывают вас.,,,,,,,,自分の感覚がアテにならない。,,,,
 status_apotheosis_creatureshift_cd_name,Unshiftable,Несдвигаемый,,,,,,,,きのこシフト無効化,,,,
@@ -463,6 +403,7 @@ material_apotheosis_cursed_rock_hard,Sacred Rock,,,,,,,,,聖なる岩,,,,
 material_apotheosis_radioactive_liquid_strong,Noxious Sludge,,,,,,,,,激毒ヘドロ,,,,
 material_apotheosis_radioactive_mud,Defiled Mud,,,,,,,,,汚染された泥,,,,
 material_apotheosis_milk_powder,Powdered Milk,,,,,,,,,粉ミルク,,,,
+material_apotheosis_meat_vulnerable_protection,Ancient Meat,,,,,,,,,古代の肉,,,,
 magic_liquid_berserk_cloud_name,Berserkium Mist,,,,,,,,,バーサキアムのミスト,,,,
 magic_liquid_charm_cloud_name,Pheromone Mist,,,,,,,,,フェロモンのミスト,,,,
 spell_apotheosis_spells_to_cursor_name,Redirect,,,,,,,,,繰気弾,,,,
@@ -723,6 +664,12 @@ status_apotheosis_flesh_curse_desc,You feel your flesh growing uncontrollably.,,
 status_apotheosis_flesh_curse_death,Corrupted.,,,,,,,,,堕落,,,,
 status_apotheosis_bragi_name,Poem of Seville,,,,,,,,,セビリアの抒情詩,,,,
 status_apotheosis_bragi_desc,You feel more fluent in spell casting!\nCast delay and reload time is significantly reduced on all wands.,,,,,,,,,より滑らかに呪文を詠唱できるようになった！\n詠唱遅延、リチャージ時間が大きく減少する。,,,,
+status_apotheosis_slow_name,Slow,Замедленное движение,Movimento lento,Movimiento lento,Langsamere Bewegungen,Mouvements réduits,Movimenti più lenti,Wolniejszy ruch,更慢移动,移動速度低下,느린 이동,,,
+status_apotheosis_slow_desc,You feel sluggish.,Вы некоторое время движетесь медленнее.,Sua movimentação se torna mais lenta por um tempo.,Te mueves más lento durante un tiempo.,Du bewegst dich eine Zeit lang langsamer.,Vous bougez plus lentement pendant un moment.,I tuoi movimenti sono rallentati per un certo periodo.,Przez jakiś czas poruszasz się wolniej.,一段时间内移动速度变慢。,一定期間、移動速度が低下する。,잠시 동안 느리게 움직입니다.,,,
+status_apotheosis_end_debuff_name,Final Requiem,,,,,,,,,最後のレクイエム,,,,
+status_apotheosis_end_debuff_desc,Protective Perks are disabled.\nYou can not be healed.,,,,,,,,,防御系パークの効果がなくなる。\n回復魔法の効果がない。,,,,
+status_apotheosis_protection_vulnerable_name,Vulnerable Immunity,,,,,,,,,,,,,
+status_apotheosis_protection_vulnerable_desc,"You can not have your immunities disabled.",,,,,,,,,,,,,
 creep_apotheosis_boss_flesh_monster_name,Kerettiläinenhirviö,,,,,,,,,ケレッティレイネンヒルヴィオ,,,,
 log_apotheosis_fish,The red fish is real,,,,,,,,,あかいさかな,,,,
 log_apotheosis_shift_blocked_name,Shift Blocked,,,,,,,,,きのこシフトが無効化された,,,,
@@ -983,7 +930,7 @@ enemy_apotheosis_poring_swamp,Suohyytelö,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_rat_birthday,Juhlarotta,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_seeker,Etsijä,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_sentry,Vartiomies,,,,,,,,,,,,DO NOT TRANSLATE,
-enemy_apotheosis_shaman_greater_apotheosis,Suurmärkiäinen,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_shaman_greater_apotheosis,Suur-Märkiäinen,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_slime_leaker,Vuotavajaska,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_slime_leaker_weak,Heikko Vuotavajaska,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_slime_teleporter,Säröilevä limanuljaska,,,,,,,,,,,,DO NOT TRANSLATE,
@@ -1020,6 +967,7 @@ enemy_apotheosis_wizard_jackofalltrades,Eimitäänmestari,,,,,,,,,,,,DO NOT TRAN
 enemy_apotheosis_wizard_manaeater,Mananmestari,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_transmutation,Transmutaatioidenmestari,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_z_poly_miniboss,Yli-innokas Muudonmuutosmestari,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_worm_end_big_apotheosis,Suur-Helvetinmato,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_worm_esoteric,Esoteerinenmato,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_worm_mechanical,Mekaaninenmato,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_worm_spine,Kirottuselkäranka,,,,,,,,,,,,DO NOT TRANSLATE,
@@ -2134,21 +2082,38 @@ dofile_once("mods/apotheosis/files/scripts/setup/secret_seeds.lua")
 --This is handled underneath the custom seed check as the earliest biomemap append gets priority it seems
 ModMagicNumbersFileAdd("mods/Apotheosis/files/magic_numbers.xml")
 
---Appending extra modiifers
-ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua",
-	"mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
+--Appending extra modifiers
+ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua", "mods/apotheosis/files/scripts/spells/gun_extra_populator.lua")
 
 --Polymorph pool addition preperation
 --Will be controlled via mod settings until it's pushed to main
 --If you want to enable it, you can toggle "Expanded Polymorph Pool" in the mod settings
-if ModSettingGet("Apotheosis.exp_poly") == true then
-	if ModIsEnabled("Global_Poly") then
-		ModLuaFileAppend("mods/global_poly/files/scripts/poly_pool.lua",
-			"mods/apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
-	else
-		function OnWorldInitialized()
-			dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
-		end
+
+if ModIsEnabled("Global_Poly") then
+	ModLuaFileAppend("mods/global_poly/files/scripts/poly_pool.lua", "mods/apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
+else
+	local old_on_world_init = OnWorldInitialized
+	function OnWorldInitialized()
+		dofile_once("mods/apotheosis/files/scripts/mod_compatibility/polymorph_pool.lua")
+		dofile_once("mods/apotheosis/files/scripts/magic/creature_shift_file_image_refresh.lua")
+
+		if old_on_world_init then old_on_world_init() end
+	end
+end
+
+--Makes the Creature Shift Icon available to be editted during run-time
+function OnModInit()
+	ModImageMakeEditable( "data/ui_gfx/animal_icons/creature_shift/creature_shift_ui.png", 16, 16 )
+
+	local path, csi_enemies = "data/ui_gfx/animal_icons/_list.txt", {}
+	for enemy in ModTextFileGetContent(path):gmatch("[^\r\n]+") do
+		csi_enemies[#csi_enemies+1] = enemy
+	end
+	for k=1,#csi_enemies do
+		ModImageMakeEditable( table.concat({"data/ui_gfx/animal_icons/",csi_enemies[k],".png"}), 16, 16 )
+		ModImageMakeEditable( table.concat({"data/ui_gfx/animal_icons/creature_shift/",csi_enemies[k],".png"}), 16, 16 )
+		--Debug Data
+		--print(table.concat({"making image writable: ",table.concat({"data/ui_gfx/animal_icons/",csi_enemies[k],".png"})}))
 	end
 end
 
@@ -2172,6 +2137,17 @@ end
 -- Creature shift fix upon reloading world
 -- Keep this at the bottom of the file, and only let one of this function exist, silly
 function OnPlayerSpawned(player_entity)
+	--Conga 04/12/2023
+	--Warns the player to get off the god damn main branch, I'm tired of getting crash reports just for it to end up being this, man.
+	--I know someone's going to stumble across this tired exhausted message one day, and I just want to say, I wanted to have faith in people, and believe that they would have read the multiple warnings on the mod page to play on the beta branch.
+	--I was HOPING people would see the pinned thread called "Game Crashes" and take interest in it if they're experiencing problems, but that's asking too much I suppose.
+	--I feel like I'm running a daycare sometimes, God Dammit.
+	--urgh, alright, tired rant over
+	--Thankyou for playing
+	if GameIsBetaBuild() == false then
+		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",260,-85)
+	end
+
 	local x, y = EntityGetTransform(player_entity) --This was just "player" by default but I feel like something broke.. I hope not
 	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
 
@@ -2218,17 +2194,6 @@ function OnPlayerSpawned(player_entity)
 		AddFlagPersistent("apotheosis_card_unlocked_nightmarewarning")
 	end
 	]]--
-
-	--Conga 04/12/2023
-	--Warns the player to get off the god damn main branch, I'm tired of getting crash reports just for it to end up being this, man.
-	--I know someone's going to stumble across this tired exhausted message one day, and I just want to say, I wanted to have faith in people, and believe that they would have read the multiple warnings on the mod page to play on the beta branch.
-	--I was HOPING people would see the pinned thread called "Game Crashes" and take interest in it if they're experiencing problems, but that's asking too much I suppose.
-	--I feel like I'm running a daycare sometimes, God Dammit.
-	--urgh, alright, tired rant over
-	--Thankyou for playing
-	if GameIsBetaBuild() == false then
-		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",760,-90)
-	end
 
 	--Debug Testing for intro scene
 	--RemoveFlagPersistent( "apotheosis_intro_cutscene" )

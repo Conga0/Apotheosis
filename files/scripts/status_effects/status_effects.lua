@@ -182,6 +182,13 @@ local apotheosis_status_list = {
 	    is_harmful=true,
         effect_entity="mods/Apotheosis/files/entities/misc/effect_flesh_curse.xml",
     },
+    {
+        id="apotheosis_PROTECTION_VULNERABLE",
+        ui_name="$status_apotheosis_protection_vulnerable_name",
+        ui_description="$status_apotheosis_protection_vulnerable_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/protection_vulnerable.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_protection_vulnerable_temporary.xml",
+    },
 }
 
 local len = #status_effects

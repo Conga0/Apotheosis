@@ -67,6 +67,7 @@ function polytest()
         "shaman_greater_apotheosis",
         "slime_leaker",
         "slime_teleporter",
+        "spirit_healing",
         "star_child",
         "tentacler_big",
         "tesla_turret",
@@ -102,8 +103,8 @@ function polytest()
             --PolymorphTableAddEntity( entity_xml:string, is_rare:bool = false, add_only_one_copy:bool = true ) [Adds the entity to the polymorph random table]
             --Remove cats from the chaotic polymorph pool if they're immortal
             --It'd be too confusing to have cats be immortal but people polymorph into mortal cats otherwise
-            local cat_check = string.find(options[k],"cat_")
-            if ModSettingGet( "Apotheosis.congacat_cat_immortal" ) and cat_check == false then
+            local cat_check = string.find(options[k],"cat_") or false
+            if cat_check == false then
                 PolymorphTableAddEntity( "data/entities/animals/" .. options[k] .. ".xml", false, true)
             end
         end
@@ -118,6 +119,7 @@ function polytest()
 
     --I don't know how table.concat works and it's 12am
     --Good night :congasleep:
+    
 end
 
 polytest()

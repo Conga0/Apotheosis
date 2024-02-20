@@ -1,5 +1,0 @@
-This folder contains copies of files from data.wak from the beta build for content apotheosis relies on*
-This folder was created for the upcoming Nolla games mod showcase
-
-Currently includes:
-Meat biome

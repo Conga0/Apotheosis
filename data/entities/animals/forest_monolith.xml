@@ -1,4 +1,5 @@
 <Entity 
+  serialize="1"
   name="$enemy_apotheosis_forest_monolith"
   tags="hittable,mortal,teleportable_NOT,homing_target,enemy,polymorphable_NOT,touchmagic_immunity" >
 
@@ -100,7 +101,7 @@
 		transform_offset.y="-15"
 		alpha="0" 
 		has_special_scale="1" 
-		image_file="data/ui_gfx/health_slider_back.png" 
+		image_file="mods/apotheosis/files/ui_gfx/health_bars/health_slider_back_stone.png"
 		is_text_sprite="0" 
 		next_rect_animation="" 
 		offset_x="12" 
@@ -126,8 +127,8 @@
 		image_file="data/ui_gfx/health_slider_front.png" 
 		is_text_sprite="0" 
 		next_rect_animation="" 
-		offset_x="12" 
-		offset_y="42" 
+		offset_x="11" 
+		offset_y="41" 
 		rect_animation="" 
 		special_scale_x="1" 
 		special_scale_y="1" 
@@ -136,10 +137,12 @@
 		visible="1" 
 		emissive="1"
 		never_ragdollify_on_death="1"
-		z_index="-9000" >
+		z_index="-9001" >
 	</SpriteComponent>
 	
-	<HealthBarComponent>
+	<HealthBarComponent
+		gui="0"
+		in_world="1">
 	</HealthBarComponent>
 
 	<!-- Protections  -->

@@ -30,7 +30,8 @@ function PlayerCamControls(enabled)   --Disables camera locking onto player
 end
 
 function permapolymorph_entity( entity_id )
-    EntityRemoveTag(entity_id, "polymorphable_NOT")
+
+    --Perma Poly the player
 	local comp_poly = GameGetGameEffect( entity_id, "POLYMORPH" )
 	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_RANDOM" ) end
 	if( comp_poly == 0 or comp_poly == nil ) then comp_poly = GameGetGameEffect( entity_id, "POLYMORPH_UNSTABLE" ) end
@@ -120,6 +121,19 @@ if runtime > 420 and runtime < 423 then
     if player_id then
         --Conga: Make this a custom sheep with very high hp so the game stops with the red flashing, also would stop the player from killing themselves prematurely
         --EntityAddRandomStains(player_id,CellFactory_GetType("magic_liquid_polymorph"),1000)
+        
+        --Disable The player's Polymorph Immunity
+        EntityRemoveTag(player_id, "polymorphable_NOT")
+        EntityRemoveIngestionStatusEffect( player_id, "PROTECTION_POLYMORPH" )
+        local PolyimTest = GameGetGameEffectCount( player_id, "PROTECTION_POLYMORPH" )
+        if PolyimTest ~= 0 then
+            local comp = GameGetGameEffect( player_id, "PROTECTION_POLYMORPH" )
+            if comp ~= 0 then
+                ComponentSetValue2( comp, "effect", "NONE")
+            end
+        end
+
+        --Polymorph player into a sheep
         LoadGameEffectEntityTo(player_id,"mods/apotheosis/files/entities/buildings/ending/effect_polymorph_sheep.xml")
     elseif sheep_plyr then
         permapolymorph_entity(sheep_plyr)

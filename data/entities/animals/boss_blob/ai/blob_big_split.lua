@@ -15,8 +15,8 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local max_health = 0
 	
 	edit_component( entity_id, "DamageModelComponent", function(comp,vars)
-		health = tonumber(ComponentGetValue( comp, "hp"))
-		max_health = tonumber(ComponentGetValue( comp, "max_hp"))
+		health = tonumber(ComponentGetValue2( comp, "hp"))
+		max_health = tonumber(ComponentGetValue2( comp, "max_hp"))
 	end)
 	
 	local minion_count = 3
@@ -36,7 +36,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		local e = EntityLoad( "data/entities/animals/boss_blob/blob.xml", pos_x, pos_y )
 
 		edit_component( entity_id, "ControlsComponent", function(comp,vars)
-			ComponentSetValueVector2( comp, "mJumpVelocity", Random(-35, 35), Random(-75, -150))
+			ComponentSetValue2( comp, "mJumpVelocity", Random(-35, 35), Random(-75, -150))
 		end)
 		
 		nearest_interval = nearest_interval - minion_interval

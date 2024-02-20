@@ -52,6 +52,7 @@ MultiplyHPSelective("boss_flesh_monster/phase3/boss_flesh_monster",20,false)
 MultiplyHPSelective("boss_fire_lukki/boss_fire_lukki",10,false)
 MultiplyHPSelective("boss_fire_lukki/boss_fire_lukki_phase2",10,false)
 MultiplyHPSelective("boss_musical_ghost/boss_musical_ghost",20,false)
+MultiplyHPSelective("boss_meat/boss_meat",20,false)
 MultiplyHPSelective("boss_blob/blob_titan",10,true)
 MultiplyHPSelective("boss_blob/blob_huge",10,true)
 MultiplyHPSelective("boss_blob/blob_big",5,true)
@@ -64,6 +65,7 @@ MultiplyHPSelective("boss_alchemist/boss_alchemist",10,true)
 MultiplyHPSelective("boss_ghost/boss_ghost",10,false)
 MultiplyHPSelective("boss_limbs/boss_limbs",10,false)
 MultiplyHPSelective("boss_toxic_worm/boss_toxic_worm",4,false)
+--MultiplyHPSelective("boss_spirit/islandspirit",4,true)
 MultiplyHPSelective("boss_dragon",4,false)
 MultiplyHPSelective("boss_fish/fish_giga",2,false)
 
@@ -76,6 +78,7 @@ MultiplyHPSelective("parallel_apotheosis/boss_toxic_worm/boss_toxic_worm",4,fals
 MultiplyHPSelectiveBuilding("wandedit_crystal",10,false)
 
 --Note(Conga): This isn't working, no clue why
+--14/01/2024: Fixed
 do -- Buff Final Boss's HP as if you grabed 10 orbs
   local path = "data/entities/animals/boss_centipede/boss_centipede_update.lua"
   local content = ModTextFileGetContent(path)
@@ -263,6 +266,11 @@ do --Swaps the lake into a lava lake
   local path = "data/scripts/biomes/essenceroom_alc.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("essenceroom_submerged", "essenceroom_submerged_lava")
+  ModTextFileSetContent(path, content)
+
+  local path = "mods/apotheosis/files/biome/special/_pixel_scenes.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("data/biome_impl/spliced/lake_statue%.xml", "mods/apotheosis/files/biome_impl/spliced/lake_statue_lava.xml")
   ModTextFileSetContent(path, content)
 end
 

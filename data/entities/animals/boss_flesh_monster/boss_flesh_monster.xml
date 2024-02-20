@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT,no_swap" >
+<Entity serialize="1" name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT,no_swap" >
 		
 	<!--NOTE, Deathcross sfx will be added when it's time to implement Heretic Death Loot And/Or Phase 3, already have death loot in mind, just waiting for right time to implement it.-->
 	<!--Check TODO.txt for link to sound effect-->

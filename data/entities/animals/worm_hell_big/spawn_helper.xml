@@ -1,0 +1,91 @@
+<Entity name="$enemy_apotheosis_worm_end_big_apotheosis" >
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent
+			attack_melee_enabled="0"
+			attack_ranged_enabled="0"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_fairy.xml"
+			attack_ranged_action_frame="1"
+			attack_ranged_frames_between="130" 
+			attack_ranged_max_distance="250"
+			attack_ranged_offset_y="4.5"
+			escape_if_damaged_probability="0"
+			needs_food="0"
+			can_fly="1" >
+		</AnimalAIComponent>
+
+		<DamageModelComponent 
+            hp="2500"
+			air_needed="1"
+			ragdollify_child_entity_sprites="0"
+            ragdoll_material="meat_slime_green"
+		    ragdoll_fx_forced="DISINTEGRATED"
+            ragdoll_filenames_file="" 
+			blood_material="plasma_fading"
+			blood_spray_material="plasma_fading"
+			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_green_$[1-3].xml"
+			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_green_$[1-3].xml"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005"
+			>
+			<damage_multipliers
+				melee="0.3"
+				projectile="0.1"
+				explosion="0.3"
+				electricity="0.3"
+				fire="0.0"
+				slice="0.0"
+				ice="0.3"
+				curse="0.5"
+				drill="0.3"
+				holy="0.7"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			_enabled="0"
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big.xml"
+			offset_x="12"
+			offset_y="12" >
+		</SpriteComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-6" 
+			aabb_max_x="6" 
+			aabb_min_y="-6" 
+			aabb_max_y="6" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>		
+		
+		<GenomeDataComponent 
+			herd_id="ghost" >
+		</GenomeDataComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-6" 
+			collision_aabb_max_x="6" 
+			collision_aabb_min_y="-6" 
+			collision_aabb_max_y="6" 
+			mass="0.3"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/spawner/hell_worm_spawner.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>
+

@@ -5,5 +5,5 @@ local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"IngestionCompon
 
 if comp then
     local stomach = ComponentGetValue2(comp, "ingestion_size")
-    ComponentSetValue2(comp, "ingestion_size", stomach + 2000)
+    ComponentSetValue2(comp, "ingestion_size", stomach + 3000)
 end

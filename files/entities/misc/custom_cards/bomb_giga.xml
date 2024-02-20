@@ -21,7 +21,7 @@
 		_enabled="0"
 		offset_x="3.5"
 		offset_y="6"
-    	image_file="mods/mo_creeps/files/items_gfx/in_hand/bomb_giga.png" >
+    	image_file="mods/apotheosis/files/items_gfx/in_hand/bomb_giga.png" >
 	</SpriteComponent>
 
 	<AbilityComponent

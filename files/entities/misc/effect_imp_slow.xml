@@ -15,8 +15,8 @@
 	</GameEffectComponent >
 
 	<UIIconComponent
-		name="Slow"
-		description="You feel sluggish."
+		name="$status_apotheosis_slow_name"
+		description="$status_apotheosis_slow_desc"
 		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/movement_slow.png"
 		is_perk="0"
 		display_above_head="1"
