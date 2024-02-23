@@ -1,4 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local target = EntityGetRootEntity(entity_id)
@@ -10,7 +9,7 @@ local children = EntityGetAllChildren(target)
 if children then
     for k=1,#children
     do v = children[k]
-        if EntityGetName(v) == "apotheosis_protection_lava" then
+        if EntityGetName(v) == "apotheosis_protection_vulnerable" then
             c_check = true
         end
     end

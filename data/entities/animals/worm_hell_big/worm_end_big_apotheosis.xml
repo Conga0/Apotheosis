@@ -50,7 +50,7 @@
     fire_damage_amount="0.2"
      
     fire_probability_of_ignition="0"
-    hp="2500"
+    hp="25000"
     is_on_fire="0"
     mAirAreWeInWater="0"
     mFallCount="0"
@@ -66,7 +66,7 @@
     materials_that_damage="acid"
     ragdoll_filenames_file=""
     ragdoll_offset_y="-6"
-		ragdoll_material="apotheosis_meat_fire_lukki"
+		ragdoll_material="apotheosis_meat_big_hell_worm"
     blood_material="lava"
     blood_spray_material="lava"
     blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_orange_$[1-3].xml"
@@ -469,23 +469,6 @@
 		script_source_file="data/entities/animals/worm_hell_big/mass_debuff.lua"
 		execute_every_n_frame="1230"
 		execute_times="-1"
-		>
-	</LuaComponent>
-	
-	<!-- Boss Health Multiplier Script -->
-  	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
-		execute_times="1"
-		remove_after_executed="1"
-		>
-	</LuaComponent>
-	
-	<!-- Boss Health Scaling based off NG+ level-->
-  	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_newgameplus.lua"
-		execute_every_n_frame="6"
-		execute_times="1"
-		remove_after_executed="1"
 		>
 	</LuaComponent>
 
