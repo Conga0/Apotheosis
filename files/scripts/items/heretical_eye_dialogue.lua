@@ -2252,6 +2252,7 @@ for k=1,#events do
     if not GameHasFlagRun(table.concat({"apotheosis_heretalk_id_",k})) and events[k].trigger() == true and EntityHasTag(entity_id,"graham_speaking") == false then
         local bool, dialogue = events[k].trigger()
         Speak(entity_id, dialogue)
+        GamePrint(table.concat({GameTextGetTranslatedOrNot("$item_apotheosis_heretical_eye_name"),": ",dialogue}))
 	if (tone == "norm") then
             GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/heretical_eye/speech_norm", x, y );
 	elseif (tone == "power") then

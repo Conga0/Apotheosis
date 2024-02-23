@@ -15,7 +15,7 @@
 		</AnimalAIComponent>
 
 		<DamageModelComponent 
-            hp="2500"
+            hp="25000"
 			air_needed="1"
 			ragdollify_child_entity_sprites="0"
             ragdoll_material="meat_slime_green"

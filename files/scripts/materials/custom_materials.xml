@@ -163,7 +163,7 @@
 	>
 	<StatusEffects>
 		<Ingestion>
-			<StatusEffect type="apotheosis_PROTECTION_VULNERABLE" amount="0.1" />
+			<StatusEffect type="apotheosis_PROTECTION_VULNERABLE" amount="0.25" />
 		</Ingestion>
 	</StatusEffects>
   </CellDataChild>
