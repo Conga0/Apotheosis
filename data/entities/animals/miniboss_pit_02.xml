@@ -323,11 +323,25 @@
 	    >
 		</GameEffectComponent >
 	</Entity>
+
+	<CameraBoundComponent
+		max_count="20"
+		distance="160000">
+	</CameraBoundComponent>
 	
   	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_half.lua"
 		execute_times="1"
 		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_damage_received="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+		script_death="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
+		execute_times="-1"
+		execute_every_n_frame="-1"
+		remove_after_executed="0"
 		>
 	</LuaComponent>
 

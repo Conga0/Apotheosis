@@ -13,10 +13,13 @@ if newgame_n >= 1 then
 
     local health = ComponentGetValue2( comp, "hp" )
     local health_max = ComponentGetValue2( comp, "max_hp" )
+    local blood_mult = ComponentGetValue2( comp, "blood_multiplier" )
 
     health = health * newgame_n
     health_max = health_max * newgame_n
+    blood_mult = blood_mult / newgame_n
 
     ComponentSetValue( comp, "max_hp", tostring(health_max) )
     ComponentSetValue( comp, "hp", tostring(health) )
+    ComponentSetValue( comp, "blood_multiplier", tostring(blood_mult) )
 end
