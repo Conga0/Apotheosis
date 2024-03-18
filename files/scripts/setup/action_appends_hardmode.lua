@@ -224,7 +224,7 @@ local actions_to_edit = {
 	--Ophiuchus Arts can no longer be used by greek letters/splitshot
 	--Update Ophiuchus Arts description to match the new functionality
 	-- Copi: does this break disablecopying haxx? I may add alt custom strings to my own mod for the desc so it isn't hardcoded, unless the translations are done in apo
-	["COPIS_THINGS_OPHIUCHUS"] = {
+	["COPITH_OPHIUCHUS"] = {
 		description = "All your damage is halved, then converted to healing, and your projectile can hit you. The next spell costs twice as much mana. Uncopiable.",
 		custom_uses_logic = true,
 		hardcore_copylock = true,
@@ -245,7 +245,7 @@ local actions_to_edit = {
 	--Healthy Cloud can no longer be used by greek letters/splitshot
 	--Update Healthy Cloud description to match the new functionality
 	-- Copi: I may add alt custom strings to my own mod for the desc so it isn't hardcoded, unless the translations are done in apo
-	["COPIS_THINGS_CLOUD_MAGIC_LIQUID_HP_REGENERATION"] = {
+	["COPITH_CLOUD_MAGIC_LIQUID_HP_REGENERATION"] = {
 		description = "Creates a soothing rain that cures your wounds. Uncopiable.",
 		custom_uses_logic = true,
 		hardcore_copylock = true,
