@@ -19,7 +19,7 @@
 
 		<DamageModelComponent 
 		_tags="lurker_data"
-            hp="200"
+            hp="500"
 			air_needed="1"
 			ragdollify_child_entity_sprites="0"
             ragdoll_material="fire"

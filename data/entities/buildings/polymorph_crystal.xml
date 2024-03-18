@@ -85,6 +85,16 @@
 		execute_every_n_frame="40"
 		>
 	</LuaComponent>
+	
+	<!--
+	Don't want to deal with weird edge cases causes more bugs than bug fixes right now, investigate later
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/base_scripts/enemy_wallunstuck_kill.lua"
+		execute_every_n_frame="60"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	-->
 
 	<SpriteParticleEmitterComponent
 		sprite_file="mods/Apotheosis/files/particles/shine_03_long.xml"

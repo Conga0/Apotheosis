@@ -17,12 +17,6 @@ local charactercomp = EntityGetFirstComponentIncludingDisabled(player, "Characte
 
 if balance == false then
     ComponentSetValue2(charactercomp, "flying_needs_recharge", false)
-
-    local charactercomp = EntityGetFirstComponentIncludingDisabled(player, "PathFindingComponent")
-    if charactercomp ~= nil then
-        local cost = ComponentGetValue2(charactercomp, "cost_of_flying")
-        ComponentSetValue2(charactercomp, "cost_of_flying", cost / 20)
-    end
 else
     if charactercomp ~= nil then
         ComponentSetValue2(charactercomp, "flying_needs_recharge", true)

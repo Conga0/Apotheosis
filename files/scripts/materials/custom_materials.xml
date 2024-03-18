@@ -78,6 +78,28 @@
   </CellDataChild>
 
   <CellDataChild
+  	_parent="meat"
+	name="apotheosis_meat_worm_strong"
+	ui_name="$material_apotheosis_meat_worm_strong"
+	wang_color="ffebcda4"
+	solid_on_collision_material="blood_worm"
+	solid_break_to_type="blood_worm"
+	hp="200000"
+	durability="12"
+	gfx_glow="50"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+	texture_file="data/materials_gfx/wormmeat.png"
+	color="ffebcd00"
+	>
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
   	_parent="meat_slime"
 	name="apotheosis_meat_fire_lukki"
 	ui_name="$material_apotheosis_meat_fire_lukki"
