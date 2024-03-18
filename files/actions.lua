@@ -1671,7 +1671,7 @@ local apotheosis_spellappends = {
 
             --[[ Demo code for new subtypes system 
             for i = 1, #actions do
-                if actions[i].subtypes["homing"] and actions[i].id ~= "COPIS_THINGS_HOMING_MACROSS" then
+                if actions[i].subtypes["homing"] and actions[i].id ~= "COPITH_HOMING_MACROSS" then
                     IDTable[#IDTable+1] = actions[i]
                 end
             end
