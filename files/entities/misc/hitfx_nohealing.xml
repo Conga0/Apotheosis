@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="apotheosis_wounded">
 	<InheritTransformComponent>
     </InheritTransformComponent>
 	
@@ -16,7 +16,7 @@
 	</LuaComponent>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/immunity_temp_end.lua"
+		script_source_file="mods/apotheosis/files/scripts/projectiles/noheal_end.lua"
 		execute_every_n_frame="-1"
 		execute_on_removed="1"
 		>

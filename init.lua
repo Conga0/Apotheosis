@@ -404,6 +404,7 @@ material_apotheosis_radioactive_liquid_strong,Noxious Sludge,,,,,,,,,激毒ヘ�
 material_apotheosis_radioactive_mud,Defiled Mud,,,,,,,,,汚染された泥,,,,
 material_apotheosis_milk_powder,Powdered Milk,,,,,,,,,粉ミルク,,,,
 material_apotheosis_meat_vulnerable_protection,Ancient Meat,,,,,,,,,古代の肉,,,,
+material_apotheosis_meat_worm_strong,Worm Plating,,,,,,,,,ウォームメッキ,,,,
 magic_liquid_berserk_cloud_name,Berserkium Mist,,,,,,,,,バーサキアムのミスト,,,,
 magic_liquid_charm_cloud_name,Pheromone Mist,,,,,,,,,フェロモンのミスト,,,,
 spell_apotheosis_spells_to_cursor_name,Redirect,,,,,,,,,繰気弾,,,,

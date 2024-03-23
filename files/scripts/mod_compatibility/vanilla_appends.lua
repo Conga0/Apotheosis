@@ -1301,6 +1301,8 @@ do --Make glimmer spells work with plasma emitters
   ModTextFileSetContent(path, content)
 end
 
+--[[
+--18/03/2024 Conga: Removed this functionality, original concern is it was too difficult to obtain self-damaging damage in Apotheosis but this proved unnecessary in hindsight
 if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make antiheal do innate self-damage
   local path = "data/entities/projectiles/deck/healhurt.xml"
   local content = ModTextFileGetContent(path)
@@ -1308,6 +1310,7 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make antiheal do innate 
 
   ModTextFileSetContent(path, content)
 end
+]]--
 
 if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make chainbolt better at hitting single targets
   local path = "data/scripts/projectiles/chain_bolt.lua"

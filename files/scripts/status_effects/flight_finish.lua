@@ -23,13 +23,8 @@ if permitted == true then
     local charactercomp = EntityGetFirstComponentIncludingDisabled(player,"CharacterDataComponent") --[[@cast charactercomp number]]
 
     if balance == false then
-
-        ComponentSetValue2(charactercomp, "flying_needs_recharge", true)
-
-        local comp = EntityGetFirstComponentIncludingDisabled(player, "PathFindingComponent")
-        if comp ~= nil then
-            local cost = ComponentGetValue2(comp, "cost_of_flying")
-            ComponentSetValue2(comp, "cost_of_flying", cost * 20)
+        if EntityHasTag(player,"player_unit") then
+            ComponentSetValue2(charactercomp, "flying_needs_recharge", true)
         end
     else
         ComponentSetValue2(charactercomp, "flying_needs_recharge", true)

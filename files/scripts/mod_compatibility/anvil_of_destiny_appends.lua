@@ -137,7 +137,7 @@ do
     local copi = ModIsEnabled("copis_things")
     local spells = {
         "GRAVITY_ANTI",
-        copi and "COPIS_THINGS_LEVITY_SHOT" or nil
+        copi and "COPITH_LEVITY_SHOT" or nil
     }
 
     add_spells_to_effect("apotheosis_magic_liquid_infinite_flight", spells)

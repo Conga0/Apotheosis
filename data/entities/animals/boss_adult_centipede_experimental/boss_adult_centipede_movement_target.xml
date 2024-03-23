@@ -1,0 +1,74 @@
+<Entity name="movement_target" tags="movement_target">
+	
+	<VariableStorageComponent
+		name="target_data"
+		value_int="0"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<!--
+	value_int = Delay time
+	value_float = What movement phase are we currently in?
+	-->
+	
+	<VariableStorageComponent
+		name="position_data1"
+		value_int="0"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="position_data2"
+		value_int="0"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_movement_target.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<_Transform 
+		rotation="0" 
+		scale.x="1" 
+		scale.y="1" >
+	</_Transform>
+
+	<VelocityComponent
+		updates_velocity="0"
+		gravity_y="0"
+		mass="0"
+		air_friction="100"
+		liquid_drag="0"
+		displace_liquid="0" >
+	</VelocityComponent>
+
+	<SpriteComponent 
+		_enabled="1"
+		alpha="1" 
+		emissive="1" 
+		additive="1" 
+		image_file="data/buildings_gfx/lukki_eggs.xml" 
+		next_rect_animation="" 
+		rect_animation="" 
+		emissive="0"
+		offset_x="0"
+		offset_y="0"
+		z_index="-1" 
+		 >
+	</SpriteComponent>
+
+	<SpriteAnimatorComponent>
+	</SpriteAnimatorComponent>
+	
+	<!--60 seconds-->
+  	<LifetimeComponent
+		lifetime="430"
+		>
+	</LifetimeComponent>
+
+</Entity>

@@ -13,11 +13,12 @@ end
 --Could reduce alpha instead?
 --[[
 ]]--
-if hp < 3880 then
+if hp < 3880 or EntityHasTag(entity_id,"health_activated") then
 	local tbl = EntityGetComponentIncludingDisabled( entity_id, "SpriteComponent", "ui" )
 	for k=1,#tbl do
 		ComponentSetValue2(tbl[k],"alpha",1)
 	end
+	EntityAddTag(entity_id,"health_activated")
 else
 	local tbl = EntityGetComponentIncludingDisabled( entity_id, "SpriteComponent", "ui" )
 	for k=1,#tbl do

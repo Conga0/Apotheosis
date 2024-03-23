@@ -1,0 +1,25 @@
+<Entity >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<VariableStorageComponent
+		_tags="effect_curse_wither_type"
+		value_string="healing"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/immunity_temp_endcheck.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="8"
+    >
+	</GameEffectComponent >
+
+</Entity>

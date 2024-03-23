@@ -26,6 +26,7 @@ local lines = {
   "$credits_apotheosis_line_17",
   " ",
   "$credits_apotheosis_line_extrahelp",
+  "Nathan",
   "Letaali",
   "Squirrelly",
   "YTea",

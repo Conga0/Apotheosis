@@ -1,23 +1,23 @@
 <Entity>
 
 	<SpriteComponent
-		image_file="mods/Apotheosis/files/particles/heal_600.png"
-		offset_x="21"
+		image_file="mods/Apotheosis/files/particles/heal_100000.png"
+		offset_x="30"
 		offset_y="19">
 	</SpriteComponent>
 
 	<SpriteComponent
-		image_file="mods/Apotheosis/files/particles/heal_600.png"
+		image_file="mods/Apotheosis/files/particles/heal_100000.png"
 		emissive="1"
-		offset_x="21"
+		offset_x="30"
 		offset_y="19">
 	</SpriteComponent>
 
 	<SpriteComponent
-		image_file="mods/Apotheosis/files/particles/heal_600.png"
+		image_file="mods/Apotheosis/files/particles/heal_100000.png"
 		emissive="1"
 		additive="1"
-		offset_x="21"
+		offset_x="30"
 		offset_y="19">
 	</SpriteComponent>
 	
