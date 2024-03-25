@@ -14,12 +14,12 @@
 			sense_creatures="1"
 			attack_ranged_enabled="1"
 			can_fly="1" 
-			attack_ranged_entity_file="data/entities/projectiles/radioactive_liquid.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_radiocurse.xml"
 			attack_ranged_action_frame="5"
 			attack_ranged_frames_between="100"
 			attack_ranged_offset_y="0"
 			attack_ranged_min_distance="0"
-			attack_ranged_max_distance="300"
+			attack_ranged_max_distance="500"
 			>
 		</AnimalAIComponent>
 		
@@ -124,7 +124,7 @@
 	<!--Attacks-->
 	<AIAttackComponent
 		min_distance="0"
-		max_distance="100"
+		max_distance="150"
 		frames_between="60"
 		frames_between_global="60"
 		attack_ranged_offset_x="0"
@@ -147,6 +147,19 @@
 		attack_ranged_action_frame="5"
 		>
 	</AIAttackComponent>
+	
+	<AIAttackComponent
+		min_distance="200"
+		max_distance="300"
+		frames_between="600"
+		frames_between_global="120"
+		attack_ranged_offset_x="0"
+		attack_ranged_offset_y="0"
+		animation_name="attack_ranged"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/toxic_gas_maker.xml"
+		attack_ranged_action_frame="5"
+		>
+	</AIAttackComponent>
 
 	<!-- Limit boss to taking only 1% health damage maximum with each instance of damage, additionally grants temporary invulnerable upon being hurt -->
 	<!-- Additionally has death script to say it died -->
@@ -154,6 +167,13 @@
 		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_miniboss.lua"
 		script_death="mods/apotheosis/files/scripts/animals/barfer_greater_death.lua"
 		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
+		execute_times="1"
+		remove_after_executed="1"
 		>
 	</LuaComponent>
 
