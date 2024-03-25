@@ -121,6 +121,12 @@ if currentLang == "日本語" then
   
   spellrebalances_name = "バランス調整"
   spellrebalances_desc = "オンにすると一部のスペルのマナ消費が低下し、より使いやすくなります。\nまた、貫通呪文、チェーンソー、音符など一部の強力なスペルは弱体化されます。\nこのMODのゲームバランスは、この設定がオンであることを前提に調整されています。"
+
+  keybind_name = "操作設定"
+  keybind_desc = "Apotheosisで使用するキーを設定できます。"
+  keybind_tutorial = "ALT魔法の発動に使用するキーの設定です。下のボタンを押してから、設定したいキーを入力してください。\n初期設定は、マウス右クリックです。"
+  keybind_newbinding = "キーを入力"
+  keybind_current = "現在の設定: "
 end
 
 --Key binding data
