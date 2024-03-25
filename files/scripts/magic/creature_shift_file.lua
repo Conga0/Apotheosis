@@ -168,9 +168,9 @@ function creature_shift( entity, x, y, debug_no_limits )
         --Prioritise an enemy if the player is mousing over them, only applies to valid shift targets
         --75% Chance
         local frng = Random(1,4)
-        print("frng is " .. frng)
+        --print("frng is " .. frng)
         if frng > 0 then
-            print("player id is " .. player_id)
+            --print("player id is " .. player_id)
             local controls = EntityGetFirstComponentIncludingDisabled(player_id, "ControlsComponent")  --[[@cast controls number]]
             local cursor_x, cursor_y = ComponentGetValue2(controls, "mMousePosition")
             local cursor_tab = EntityGetInRadiusWithTag(cursor_x, cursor_y, 35, "mortal") or {"null"}
@@ -286,25 +286,9 @@ function creature_shift( entity, x, y, debug_no_limits )
 
         --If the creature being shifted away is a creature who's spawned by other means (onscreen) then update their filepath here
         --Conga: I wanted the bat to have their projectile graphic updated too, but it ended up being a really deep rabbit hole to grab the necessary data
-        local spec_tab = {
-            {"wand_ghost", "wandghost"},
-            {"scavenger_grenade", "scavgrenader"},
-            {"miniblob", "miniblob"},
-            {"blob", "blob"},
-            {"mudman_friendly", "mudman"},
-            {"bat","bat"},
-            {"fish","fish"},
-            {"fish_large","fish_large"},
-            {"necromancer_shop","steve"},
-            {"necromancer_super","skoude"}
-        }
 
-        for k=1,#spec_tab do
-            if target2 == spec_tab[k][1] then
-                GlobalsSetValue( table.concat({"apotheosis_",spec_tab[k][2],"_filepath"}), table.concat({"data/entities/animals/",target,".xml"}) )
-                break
-            end
-        end
+        --Updates filepath data dynamically to use in edge cases (fishing up shifted fish, spawning shifted mudmen from mud, etc)
+        GlobalsSetValue( table.concat({"apotheosis_cs_",target2,"_filepath"}), table.concat({"data/entities/animals/",target,".xml"}) )
 
         ModTextFileSetContent("data/entities/animals/" .. target2 .. ".xml", tostring(xml))
 

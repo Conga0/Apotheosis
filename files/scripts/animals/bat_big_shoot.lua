@@ -2,7 +2,7 @@
 
 function shot( proj_id )
     local entity_id = GetUpdatedEntityID()
-    local filepath = GlobalsGetValue( "apotheosis_bat_filepath", "data/entities/animals/bat.xml" )
+    local filepath = GlobalsGetValue( "apotheosis_cs_bat_filepath", "data/entities/animals/bat.xml" )
     if filepath ~= "data/entities/animals/bat.xml" then
         local comp = EntityGetFirstComponentIncludingDisabled(proj_id, "ProjectileComponent")
         ComponentSetValue2(comp,"spawn_entity",filepath)

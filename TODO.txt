@@ -1,11 +1,5 @@
 
-Maybe the portals are crashing because too many entities are loaded?
-Still can't replicate consistently, so it could be something related to RNG... like the enemy spawn amount?
-Unsure
-
 Inspect data/curse_wither_start.lua
-Alt-Fire Keybinds, ask noita emotes mod to allow code-reuse
-Make kolmi affected by max hp multiplier
 Update heart softcap appends to be more cross mod compatiable (gsub it)
 
 
@@ -19,12 +13,9 @@ Add warning icon to meat realm if it goes to main without one (God, I'd hope it 
 Kindly ask spoop to update the toxic worm achievement pillar (They look out of place when placed next to the other 4's updated graphics)
 
 Fix Forsaken Eyes not being stainable
-Fix creatures from eggs not retaining their charm when creature shifted (ie mudmen from muddy eggs)
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
 Fix shifted hamis behaving weirdly when spawning from nests/purple vases
 Fix Polymorph crystals being able to spawn camp TotA's entrance
-
-Update downunder "portal deeper" text to say "portal higher"
 
 
 Reimplement Weakening Curse rework
@@ -51,4 +42,3 @@ Portal stabilization area in center
 "You did it!" trophy for "winning" the biome
 Surrounded by cursed rock, can only enter via a portal
 Eldritch Library?
-Very rare chance for hiisi base to be empty during herobrine hours

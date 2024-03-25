@@ -1057,6 +1057,12 @@
 		height_index="1" 
 		color="ff00bd28" >
 	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/slime_hell_outpost.xml"
+		height_index="1" 
+		color="ffaee31d" >
+	</Biome>
 	
 	<Biome 
 		biome_filename="data/biome/custom/toxic_worm_cave.xml"
@@ -1446,6 +1452,12 @@
 		biome_filename="data/biome/custom/pyramid_cave_empty.xml" 
 		height_index="13"
 		color="ff41c114" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/sealed_library.xml"
+		height_index="13"
+		color="ff7621de" >
 	</Biome>
 
 </BiomesToLoad>

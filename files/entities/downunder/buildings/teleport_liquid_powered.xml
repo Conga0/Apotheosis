@@ -20,7 +20,7 @@
 	
 	<UIInfoComponent
 		_tags="enabled_by_liquid"
-		name="$teleport_deeper"
+		name="$teleport_portal_up"
 		>
 	</UIInfoComponent>
 

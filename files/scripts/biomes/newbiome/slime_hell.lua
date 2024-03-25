@@ -31,6 +31,20 @@ RegisterSpawnFunction( 0xff876543, "spawn_statue_hand" )
 RegisterSpawnFunction( 0xff00855c, "spawn_receptacle" )
 RegisterSpawnFunction( 0xfff48942, "spawn_heart_random" )
 
+RegisterSpawnFunction( 0xffBE8246, "spawn_pipes_hor" )
+RegisterSpawnFunction( 0xffBE8264, "spawn_pipes_turn_right" )
+RegisterSpawnFunction( 0xffBE8282, "spawn_pipes_turn_left" )
+RegisterSpawnFunction( 0xffBE82A0, "spawn_pipes_ver" )
+RegisterSpawnFunction( 0xffBE82BE, "spawn_pipes_cross" )
+RegisterSpawnFunction( 0xff2E8246, "spawn_pipes_big_hor" )
+RegisterSpawnFunction( 0xff2E8264, "spawn_pipes_big_turn_right" )
+RegisterSpawnFunction( 0xff2E8282, "spawn_pipes_big_turn_left" )
+RegisterSpawnFunction( 0xff2E82A0, "spawn_pipes_big_ver" )
+
+RegisterSpawnFunction( 0xff4a107d, "load_pillar" )
+RegisterSpawnFunction( 0xff7b59ab, "load_pillar_base" )
+RegisterSpawnFunction( 0xff40ffce, "load_catwalk" )
+
 
 ------------ SMALL ENEMIES ----------------------------------------------------
 
@@ -857,6 +871,244 @@ function safe( x, y )
 	return result
 end
 
+
+--------------------------------------------------------------
+---------------------------Pipes------------------------------
+--------------------------------------------------------------
+
+g_pipes_hor =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_hor_1.png",
+		visual_file		= "data/biome_impl/vault/pipe_hor_1_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_hor_2.png",
+		visual_file		= "data/biome_impl/vault/pipe_hor_2_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.05,
+		material_file 	= "data/biome_impl/vault/pipe_hor_3.png",
+		visual_file		= "data/biome_impl/vault/pipe_hor_3_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pipes_ver =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_ver_1.png",
+		visual_file		= "data/biome_impl/vault/pipe_ver_1_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_ver_2.png",
+		visual_file		= "data/biome_impl/vault/pipe_ver_2_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.05,
+		material_file 	= "data/biome_impl/vault/pipe_ver_3.png",
+		visual_file		= "data/biome_impl/vault/pipe_ver_3_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.1,
+		material_file 	= "data/biome_impl/vault/pipe_ver_4.png",
+		visual_file		= "data/biome_impl/vault/pipe_ver_4_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pipes_turn_right =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_turn_right.png",
+		visual_file		= "data/biome_impl/vault/pipe_turn_right_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pipes_turn_left =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_turn_left.png",
+		visual_file		= "data/biome_impl/vault/pipe_turn_left_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pipes_cross =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_cross.png",
+		visual_file		= "data/biome_impl/vault/pipe_cross_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+
+g_pipes_big_hor =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_big_hor_1.png",
+		visual_file		= "data/biome_impl/vault/pipe_big_hor_1_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_big_hor_2.png",
+		visual_file		= "data/biome_impl/vault/pipe_big_hor_2_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pipes_big_ver =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_big_ver_1.png",
+		visual_file		= "data/biome_impl/vault/pipe_big_ver_1_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_big_ver_2.png",
+		visual_file		= "data/biome_impl/vault/pipe_big_ver_2_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pipes_big_turn_right =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_big_turn_right.png",
+		visual_file		= "data/biome_impl/vault/pipe_big_turn_right_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pipes_big_turn_left =
+{
+	total_prob = 0,
+	{
+		prob   			= 0.5,
+		material_file 	= "data/biome_impl/vault/pipe_big_turn_left.png",
+		visual_file		= "data/biome_impl/vault/pipe_big_turn_left_visual.png",
+		background_file	= "",
+		is_unique		= 0
+	},
+}
+
+g_pillars =
+{
+	total_prob = 0,
+	{
+		prob   			= 1.0,
+		sprite_file 	= "data/biome_impl/vault/pillar_01_background.png",
+		z_index			= 40,
+	},
+	{
+		prob   			= 0.2,
+		sprite_file 	= "data/biome_impl/vault/pillar_02_background.png",
+		z_index			= 40,
+	},
+	{
+		prob   			= 0.2,
+		sprite_file 	= "data/biome_impl/vault/pillar_03_background.png",
+		z_index			= 40,
+	},
+	{
+		prob   			= 0.3,
+		sprite_file 	= "data/biome_impl/vault/pillar_04_background.png",
+		z_index			= 40,
+	},
+	{
+		prob   			= 0.2,
+		sprite_file 	= "data/biome_impl/vault/pillar_05_background.png",
+		z_index			= 40,
+	},
+}
+
+g_pillar_bases =
+{
+	total_prob = 0,
+	{
+		prob   			= 1.0,
+		sprite_file 	= "data/biome_impl/vault/pillar_base_01_background.png",
+		z_index			= 40,
+	},
+	{
+		prob   			= 1.0,
+		sprite_file 	= "data/biome_impl/vault/pillar_base_02_background.png",
+		z_index			= 40,
+	},
+}
+
+g_background_01 =
+{
+	total_prob = 0,
+	{
+		prob   			= 1.0,
+		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_01_background.png",
+		z_index			= 41,
+	},
+	{
+		prob   			= 1.0,
+		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_01_background_alt.png",
+		z_index			= 41,
+	},
+}
+
+g_background_02 =
+{
+	total_prob = 0,
+	{
+		prob   			= 1.0,
+		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_02_background.png",
+		z_index			= 41,
+	},
+	{
+		prob   			= 1.0,
+		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_02_background_alt.png",
+		z_index			= 41,
+	},
+}
+
 -- actual functions that get called from the wang generator
 
 function init(x, y, w, h)
@@ -1039,3 +1291,60 @@ function spawn_heart_random( x, y )
 end
 
 --Maybe soft cap these heart like normal heartspawns get? unsure
+
+-----------------------------------------
+-- PIPES
+-----------------------------------------
+
+function spawn_pipes_hor( x, y )
+	load_random_pixel_scene( g_pipes_hor, x, y)
+end
+
+function spawn_pipes_ver( x, y )
+	load_random_pixel_scene( g_pipes_ver, x, y)
+end
+
+function spawn_pipes_turn_right( x, y )
+	load_random_pixel_scene( g_pipes_turn_right, x, y)
+end
+
+function spawn_pipes_turn_left( x, y )
+	load_random_pixel_scene( g_pipes_turn_left, x, y)
+end
+
+function spawn_pipes_cross( x, y )
+	load_random_pixel_scene( g_pipes_cross, x, y)
+end
+
+function spawn_pipes_big_hor( x, y )
+	load_random_pixel_scene( g_pipes_big_hor, x, y)
+end
+
+function spawn_pipes_big_ver( x, y )
+	load_random_pixel_scene( g_pipes_big_ver, x, y)
+end
+
+function spawn_pipes_big_turn_right( x, y )
+	load_random_pixel_scene( g_pipes_big_turn_right, x, y)
+end
+
+function spawn_pipes_big_turn_left( x, y )
+	load_random_pixel_scene( g_pipes_big_turn_left, x, y)
+end
+
+function load_pillar( x, y )
+	load_random_background_sprite( g_pillars, x, y+3 )
+end
+
+function load_pillar_base( x, y )
+	load_random_background_sprite( g_pillar_bases, x, y+3)
+end
+
+function load_background_01( x, y )
+	load_random_background_sprite( g_background_01, x-10, y-10 )
+end
+
+function load_background_02( x, y )
+	load_random_background_sprite( g_background_02, x-10, y-10 )
+end
+

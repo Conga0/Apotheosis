@@ -1,0 +1,373 @@
+<Entity name="$enemy_apotheosis_watermage_toxic" tags="watermage" >
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="1" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			attack_melee_damage_min="0.4" 
+			attack_melee_damage_max="0.7"
+			creature_detection_range_x="300"
+			creature_detection_range_y="300"
+			food_material="blood"
+			needs_food="0"
+            attack_only_if_attacked="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			can_fly="0"  
+			attack_ranged_action_frame="3"
+			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/aquamage_toxic_pylon.xml"
+			attack_ranged_frames_between="220"
+			attack_ranged_min_distance="10" 
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="3"
+			air_needed="0"
+			ragdoll_filenames_file="mods/apotheosis/files/ragdolls/watermage/filenames.txt"
+			fire_probability_of_ignition="0" 
+			materials_that_damage="acid,lava,magic_liquid_mana_regeneration,poison,blood_cold,blood_cold_vapour"
+			materials_how_much_damage="0.004,0.008,0.008,0.001,0.0008,0.0007,-0.005"
+			ragdoll_material="apotheosis_radioactive_liquid_strong"
+			blood_material="apotheosis_radioactive_liquid_strong"
+			blood_spray_material="apotheosis_radioactive_liquid_strong"
+			blood_multiplier="0.4"
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
+			>
+			<damage_multipliers
+				explosion="1.2"
+				fire="1.3"
+				electricity="0.1"
+				ice="2.0"
+				radioactive="-2"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/apotheosis/files/enemies_gfx/watermage_toxic.xml"
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0" 
+			jump_speed="130"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="90"
+			initial_jump_max_distance_y="90"
+			>
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="mage"
+			food_chain_rank="15"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-6" 
+			run_velocity="18"  >
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+		  max_count="30"
+		  distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+		  _enabled="1" 
+		  aabb_min_x="-4.5" 
+		  aabb_max_x="4.5" 
+		  aabb_min_y="-14" 
+		  aabb_max_y="3" 
+		  >
+		</HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-2.5" 
+			collision_aabb_max_x="3.0" 
+			collision_aabb_min_y="-16" 
+			collision_aabb_max_y="3" 
+			mass="1.6"
+			>
+		</CharacterDataComponent>
+	</Base>
+		
+  <LightComponent 
+    _enabled="1" 
+    radius="100" 
+    fade_out_time="1.5"
+    >
+  </LightComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+	
+	<Entity>
+
+		<InheritTransformComponent>
+			<Transform 
+				position.x="0"
+				position.y="-12" 
+				>
+			</Transform>
+		</InheritTransformComponent>
+		
+  <ParticleEmitterComponent 
+		emitted_material_name="apotheosis_radioactive_liquid_strong"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-8"
+		x_pos_offset_max="8"
+		y_pos_offset_min="-8"
+		y_pos_offset_max="8"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="-1"
+		y_vel_max="2"
+		gravity.y="0.0"
+		count_min="1"
+		count_max="3"
+		lifetime_min="1.3"
+		lifetime_max="3.5"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		airflow_force="1.1"
+		airflow_time="0.901"
+		airflow_scale="0.1833"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="5"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		is_emitting="1"
+    >
+	</ParticleEmitterComponent>
+  
+	<ParticleEmitterComponent 
+			emitted_material_name="apotheosis_radioactive_liquid_strong"
+			offset.x="0"
+			offset.y="0"
+			x_pos_offset_min="-8"
+			x_pos_offset_max="8"
+			y_pos_offset_min="-8"
+			y_pos_offset_max="8"
+			x_vel_min="-2"
+			x_vel_max="2"
+			y_vel_min="-2"
+			y_vel_max="2"
+			gravity.y="0.0"
+			count_min="40"
+			count_max="60"
+			lifetime_min="1.3"
+			lifetime_max="3.5"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			airflow_force="1.1"
+			airflow_time="0.901"
+			airflow_scale="0.1833"
+			emission_interval_min_frames="30"
+			emission_interval_max_frames="60"
+			emit_cosmetic_particles="1"
+			create_real_particles="0"
+			is_emitting="1"
+		>
+		</ParticleEmitterComponent>
+
+		<!-- drops -->
+		<SpriteParticleEmitterComponent
+			_tags="enabled_in_world,enabled_in_hand"
+			sprite_file="mods/apotheosis/files/particles/waterstone_drop_green.xml"
+			delay="0"
+			lifetime="0.5"
+			color.r="1" color.g="1" color.b="1" color.a="1"
+			color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-0.5"
+			render_back="0"
+			velocity.x="0" velocity.y="0"
+			velocity_always_away_from_center="10"
+			gravity.x="0" gravity.y="0"
+			velocity_slowdown="0"
+			rotation="0"
+			angular_velocity="0"
+			use_velocity_as_rotation="0"
+			scale.x="1" scale.y="1"
+			scale_velocity.x="0" scale_velocity.y="0"
+			emission_interval_min_frames="2"
+			emission_interval_max_frames="4"
+			count_min="1" count_max="1"
+			randomize_rotation.min="-3.14"
+			randomize_rotation.max="3.14"
+			randomize_position.min_x="-1.5"
+			randomize_position.max_x="1.5"
+			randomize_position.min_y="-1.5"
+			randomize_position.max_y="1.5"
+			>
+		</SpriteParticleEmitterComponent>
+	</Entity>
+	
+	<HotspotComponent
+		_tags="hand_l"
+		sprite_hotspot_name="hand"
+		transform_with_scale="1" >
+	</HotspotComponent>
+	<Entity name="hand_l">
+		
+		<Base file="data/entities/base_torch_particle.xml" >
+
+			<ParticleEmitterComponent 
+				count_min="2"
+				count_max="3"
+				x_pos_offset_min="-1"
+				x_pos_offset_max="1" 
+				y_pos_offset_min="-1"
+				y_pos_offset_max="2"
+				>
+			</ParticleEmitterComponent>
+	  
+			<ParticleEmitterComponent 
+				color="FF2F554C"
+				count_min="2"
+				count_max="3"
+				x_pos_offset_min="-1"
+				x_pos_offset_max="1" 
+				y_pos_offset_min="-1"
+				y_pos_offset_max="2">
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent 
+				emitted_material_name="spark_green"
+				x_pos_offset_min="-1"
+				x_pos_offset_max="1" 
+				y_pos_offset_min="-3"
+				y_pos_offset_max="2">
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent 
+				emitted_material_name="apotheosis_radioactive_liquid_strong"
+				>
+			</ParticleEmitterComponent>
+
+		</Base>
+
+		<SpriteParticleEmitterComponent
+			sprite_file="mods/Apotheosis/files/particles/bubble.xml"
+			delay="0"
+			lifetime="30"
+			color.r="1" color.g="1" color.b="1" color.a="1"
+			color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+			velocity.x="0" velocity.y="0"
+			gravity.x="0" gravity.y="30"
+			velocity_slowdown="0"
+			rotation="0"
+			angular_velocity="0"
+			use_velocity_as_rotation="0"
+			scale.x="1" scale.y="1"
+			scale_velocity.x="0" scale_velocity.y="0"
+			emission_interval_min_frames="10"
+			emission_interval_max_frames="15"
+			count_min="1" count_max="1"
+			randomize_rotation.min="-3.1415"
+			randomize_rotation.max="3.1415"
+			randomize_angular_velocity.min="-15"
+			randomize_angular_velocity.max="15"
+			randomize_velocity.min_x="-5"
+			randomize_velocity.max_x="5"
+			randomize_velocity.min_y="-30"
+			randomize_velocity.max_y="-10"
+			randomize_position.min_x="-2"
+			randomize_position.max_x="2"
+			randomize_position.min_y="-2"
+			randomize_position.max_y="2"
+			>
+		</SpriteParticleEmitterComponent>
+		
+		<InheritTransformComponent
+			parent_hotspot_tag="hand_l"
+			only_position="1" >
+		</InheritTransformComponent>
+
+	</Entity>
+
+	<SpriteParticleEmitterComponent
+		sprite_file="mods/Apotheosis/files/particles/bubble.xml"
+		delay="0"
+		lifetime="30"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="15"
+		emission_interval_max_frames="35"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-30"
+		randomize_velocity.max_y="-10"
+		randomize_position.min_x="-8"
+		randomize_position.max_x="8"
+		randomize_position.min_y="-8"
+		randomize_position.max_y="6"
+		>
+	</SpriteParticleEmitterComponent>
+
+
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="WET"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+
+    <MusicEnergyAffectorComponent
+    	energy_target="1">
+    </MusicEnergyAffectorComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/firemage" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_orb/loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>
+

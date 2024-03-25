@@ -1,0 +1,42 @@
+<Entity name="apotheosis_toilet_trail" tags="projectile_player"
+   >
+
+	<LifetimeComponent
+	lifetime="7200"
+	/>
+
+	<VerletPhysicsComponent
+		num_points="150"
+		num_links="2"
+		width="6"
+		type="CLOTH"
+		stiffness="1.5"
+		velocity_dampening="0.55"
+		resting_distance="1.0"
+		simulate_wind="1"
+		constrain_stretching="1"
+		collide_with_cells="0"
+		mass_min="0.1"
+		mass_max="0.2"
+		cloth_sprite_z_index="0.7"
+		cloth_color_edge="0xFFcdcdcd"
+		cloth_color="0xFFf4f4f4"
+		>
+	</VerletPhysicsComponent>
+
+	<MoveToSurfaceOnCreateComponent
+		lookup_radius="20"
+		verlet_min_joint_distance="10"
+		type="VERLET_ROPE_ONE_JOINT" >
+	</MoveToSurfaceOnCreateComponent>
+
+	<LuaComponent
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/projectiles/toilet_paper_trail_check.lua"
+		execute_every_n_frame="1"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+</Entity>
+

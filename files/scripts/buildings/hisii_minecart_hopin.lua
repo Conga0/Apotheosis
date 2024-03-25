@@ -16,7 +16,13 @@ if #player >= 1 then
 			--GamePrint("HISII MINECART LUA CHECK")
 			local target_x,target_y = EntityGetTransform( v )
 			GameDropAllItems( entity_id )
-			local eid = EntityLoad( "data/entities/animals/hisii_minecart.xml", target_x, target_y - 2 )
+
+			local path = "data/entities/animals/hisii_minecart.xml"
+			local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"MusicEnergyAffectorComponent") or false
+			if comp ~= false then --Weak Hiisi
+				path = "data/entities/animals/hisii_minecart_weak.xml"
+			end
+			local eid = EntityLoad( path, target_x, target_y - 2 )
 
 
 			local VSCComps = EntityGetComponentIncludingDisabled(entity_id,"VariableStorageComponent")

@@ -17,7 +17,7 @@ local seasonal_events_name = "Seasonal Events"
 local seasonal_events_desc = "Are seasonal events enabled? \nFor example, Halloween, Apotheosis's Birthday, etc."
 local boss_health_multiplayer_name = "Boss Health Multiplier"
 local boss_health_multiplayer_formatting = " $0% HP"
-local boss_health_multiplayer_desc = "Multiply all Bosses health by this much. \nFor those who seek extra durable opponents. \nDoes not affect Kolmisilma \nMinibosses will also have their health boosted by a partial amount."
+local boss_health_multiplayer_desc = "Multiply all Bosses health by this much.\nFor those who seek extra durable opponents.\nMinibosses will also have their health boosted by a partial amount."
 local custom_seed_name = "Set Custom Seed"
 local custom_seed_desc = "Set a custom seed for the run. \nFor example: 0948274926, or hardcore" --Sneak in some secret seeds here "PuppyDogs"? --Hardmode? Towerclimb?
 local organised_icons_name = "Organise Icons"
@@ -45,6 +45,12 @@ local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph p
 local spellrebalances_name = "Spell Reworks"
 local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
 
+--Keybinds
+local keybind_name = "Key Binds"
+local keybind_desc = "Edit your Apotheosis keybinds"
+local keybind_tutorial = "Hit the prompt below to input a new alt-fire binding.\nThe default setting is right mouse button."
+local keybind_newbinding = "SET NEW BINDING"
+local keybind_current = "Current alt-fire binding: "
 
   --Russian Translations
 if currentLang == "русский" then
@@ -116,6 +122,18 @@ if currentLang == "日本語" then
   spellrebalances_name = "バランス調整"
   spellrebalances_desc = "オンにすると一部のスペルのマナ消費が低下し、より使いやすくなります。\nまた、貫通呪文、チェーンソー、音符など一部の強力なスペルは弱体化されます。\nこのMODのゲームバランスは、この設定がオンであることを前提に調整されています。"
 end
+
+--Key binding data
+local listening = false
+local there_has_been_input = false
+local key_inputs ={}
+local mouse_inputs = {}
+local joystick_inputs = {}
+local old_binding = ModSettingGet("Apotheosis.bind_altfire")
+dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_keycodes.lua")
+
+
+
 
 local mod_id = "Apotheosis"
 ---@diagnostic disable-next-line: lowercase-global
@@ -212,6 +230,81 @@ mod_settings =
   },
   --Conga 16/11/2023: While I was enthusiastic to jump into finishing off the keybind code, I struggle to understand how it worked fundamentally; and do not see myself having the hours required to reverse engineer it's functionality unfortunately. I feel bad for controller users..
   --Might be possible to see how other mods handle it though? I know Noita Emotes has some stuff going on
+  {
+    category_id = "keybinds",
+    ui_name = keybind_name,
+    ui_description = keybind_desc,
+    foldable = true,
+    _folded = true,
+    settings = {
+      {
+        id = "bind_altfire",
+        ui_name = "",
+        value_default = "key_code,mouse_code,2,joystick_code",
+        ui_fn = function(mod_id, gui, in_main_menu, im_id, setting)
+          if listening then
+            input_listen(key_inputs,mouse_inputs,joystick_inputs)
+          end
+    
+          local _id = 0
+          local function id()
+              _id = _id + 1
+              return _id
+          end
+    
+          local keybind_string = ""
+          local keybind_setting = ModSettingGet("Apotheosis.bind_altfire")
+          local mode = "key_code"
+          for code in string.gmatch(keybind_setting, "[^,]+") do
+              if code == "mouse_code" or code == "key_code" or code == "joystick_code" then
+                  mode = code
+              else
+                  if keybind_string ~= "" then
+                      keybind_string = keybind_string .. " + "
+                  end
+                  code = tonumber(code)
+                  if mode == "key_code" then
+                      for key, value in pairs(key_codes) do
+                          if value == code then
+                              keybind_string = keybind_string .. key
+                          end
+                      end
+                  elseif mode == "mouse_code" then
+                      for key, value in pairs(mouse_codes) do
+                          if value == code then
+                              keybind_string = keybind_string .. key
+                          end
+                      end
+                  elseif mode == "joystick_code" then
+                      for key, value in pairs(joystick_codes) do
+                          if value == code then
+                              keybind_string = keybind_string .. key
+                          end
+                      end
+                  end
+              end
+          end
+    
+          GuiColorSetForNextWidget(gui, 1, 1, 1, 0.5)
+          GuiText(gui, 0, 0, keybind_tutorial)
+          if listening then
+              GuiColorSetForNextWidget(gui, 1, 0, 0, 1)
+              GuiOptionsAdd(gui, GUI_OPTION.NonInteractive)
+          end
+          if GuiButton(gui, id(), 5, 5, keybind_newbinding) then
+              key_inputs = {}
+              mouse_inputs = {}
+              joystick_inputs = {}
+              listening = true
+              there_has_been_input = false
+              old_binding = ModSettingGet("Apotheosis.bind_altfire")
+          end
+          GuiText(gui, 0, 5, keybind_current .. keybind_string)
+          GuiText(gui, 0, -5, " ")
+        end
+      },
+    }
+  },
 }
 
 --statue settings unlocks
@@ -313,7 +406,7 @@ table.insert(mod_settings,
 end
 
 if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) then
-  table.insert(mod_settings,
+  table.insert(mod_settings,10,
   {
     id = "secret_golden_cape",
     ui_name = secret_golden_cape_name,
@@ -390,3 +483,85 @@ function ModSettingsGui( gui, in_main_menu )
 end
 
 -- I SILENCED THOSE ANNOYING GLOBAL WARNINGS!!!!!!!!!!!!!!! -COPI
+
+
+
+
+
+
+
+
+
+function input_listen(key_inputs,mouse_inputs,joystick_inputs)
+  local there_is_input = false
+  for _, code in pairs(key_codes) do
+      if InputIsKeyDown(code) then
+          there_is_input = true
+          there_has_been_input = true
+          if has_value(key_inputs, code) == false then
+              table.insert(key_inputs, code)
+          end
+      end
+  end
+  for _, code in pairs(mouse_codes) do
+      if InputIsMouseButtonDown(code) then
+          there_is_input = true
+          there_has_been_input = true
+          if has_value(mouse_inputs, code) == false then
+              table.insert(mouse_inputs, code)
+          end
+      end
+  end
+  for _, code in pairs(joystick_codes) do
+      if InputIsJoystickButtonDown(0, code) then
+          there_is_input = true
+          there_has_been_input = true
+          if has_value(joystick_inputs, code) == false then
+              table.insert(joystick_inputs, code)
+          end
+      end
+  end
+
+  --Decided variable forces only a single keybind for input and blocks combo inputs, can be remove to disable this limiter
+  local decided = false
+  local binding = "key_code,"
+  for _, code in pairs(key_inputs) do
+    if decided == true then break end
+    binding = table.concat({binding,tostring(code),","})
+    decided = true
+  end
+  binding = binding .. "mouse_code,"
+  for _, code in pairs(mouse_inputs) do
+    if decided == true then break end
+    binding = table.concat({binding,tostring(code),","})
+    decided = true
+  end
+  binding = binding .. "joystick_code,"
+  for _, code in pairs(joystick_inputs) do
+    if decided == true then break end
+    binding = table.concat({binding,tostring(code),","})
+    decided = true
+  end
+  binding = binding:sub(1, -2)
+  ModSettingSet("Apotheosis.bind_altfire", binding)
+
+  if there_has_been_input and not there_is_input then
+      listening = false
+      there_has_been_input = false
+      key_inputs = {}
+      mouse_inputs = {}
+      joystick_inputs = {}
+      if ModSettingGet("Apotheosis.bind_altfire") == "key_code,mouse_code,joystick_code" then
+          ModSettingSet("Apotheosis.bind_altfire", old_binding)
+      end
+  end
+end
+
+function has_value (table, value)
+  for _, v in ipairs(table) do
+      if v == value then
+          return true
+      end
+  end
+  return false
+end

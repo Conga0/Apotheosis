@@ -29,14 +29,15 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 	
 	while (nearest_interval > new_health) and (count < limit) and (nearest_interval >= 0) do
 		GameEntityPlaySound( entity_id, "duplicate" )
+		local filepath = GlobalsGetValue( "apotheosis_cs_longleg_filepath", "data/entities/animals/longleg.xml" )
 		
 		pos_x = pos_x + Random(-4, 4)
 		pos_y = pos_y + Random(-8, -2)
-		local e = EntityLoad( "data/entities/animals/longleg.xml", pos_x, pos_y )
+		local e = EntityLoad( filepath, pos_x, pos_y )
 		
 		pos_x = pos_x + Random(-4, 4)
 		pos_y = pos_y + Random(-8, -2)
-		local e = EntityLoad( "data/entities/animals/longleg.xml", pos_x, pos_y )
+		local e = EntityLoad( filepath, pos_x, pos_y )
 		
 		nearest_interval = nearest_interval - minion_interval
 		

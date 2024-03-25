@@ -35,7 +35,7 @@ end
 local entity_to_spawn = options[rnd][1] or "fairy_big"
 local entity_count = options[rnd][2] or 1
 
-local option = "data/entities/animals/" .. entity_to_spawn .. ".xml"
+local option = GlobalsGetValue( table.concat({"apotheosis_cs_",entity_to_spawn,"_filepath"}), table.concat({"data/entities/animals/",entity_to_spawn,".xml"}) )
 
 GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/egg/hatch", x, y )
 

@@ -106,11 +106,11 @@ if isfishing then
 
         local fishdatatbl = {
             {
-                GlobalsGetValue( "apotheosis_fish_filepath", "data/entities/animals/fish.xml" ),
+                GlobalsGetValue( "apotheosis_cs_fish_filepath", "data/entities/animals/fish.xml" ),
                 GlobalsGetValue( "apotheosis_fishgfx_filepath", "data/enemies_gfx/fish_01.xml" )
             },
             {
-                GlobalsGetValue( "apotheosis_fish_large_filepath", "data/entities/animals/fish_large.xml" ),
+                GlobalsGetValue( "apotheosis_cs_fish_large_filepath", "data/entities/animals/fish_large.xml" ),
                 GlobalsGetValue( "apotheosis_fish_largegfx_filepath", "data/enemies_gfx/fish_02.xml" )
             },
             {

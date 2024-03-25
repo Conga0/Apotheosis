@@ -1,0 +1,186 @@
+<Entity  name="$enemy_apotheosis_barfer_greater_apotheosis" tags="no_swap,glue_NOT,polymorphable_NOT,touchmagic_immunity">
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="2" > </ItemChestComponent>
+		
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			attack_melee_enabled="0"
+			creature_detection_range_x="400"
+			creature_detection_range_y="400"
+			food_material="apotheosis_radioactive_liquid_strong"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			can_fly="1" 
+			attack_ranged_entity_file="data/entities/projectiles/radioactive_liquid.xml"
+			attack_ranged_action_frame="5"
+			attack_ranged_frames_between="100"
+			attack_ranged_offset_y="0"
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="300"
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="40"
+			air_needed="0"
+			blood_material="apotheosis_radioactive_liquid_strong"
+            ragdoll_material="meat_confusion"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/filenames.txt" 
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007"
+			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_green_$[1-3].xml"
+			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_green_$[1-3].xml"
+			>
+			<damage_multipliers
+				slice="0.2"
+				projectile="0.5"
+				radioactive="-2.0"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/apotheosis/files/enemies_gfx/barfer_greater.xml"
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="mage"
+			food_chain_rank="3"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-12" 
+			swim_idle_buoyancy_coeff="1.0"
+			run_velocity="18"  >
+		</CharacterPlatformingComponent>
+		
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+		  _enabled="1" 
+		  aabb_min_x="-8" 
+		  aabb_max_x="8" 
+		  aabb_min_y="-15" 
+		  aabb_max_y="11"
+		  >
+		</HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-8" 
+			collision_aabb_max_x="8" 
+			collision_aabb_min_y="-15" 
+			collision_aabb_max_y="10" 
+			mass="1.8"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+
+		<GameEffectComponent 
+			effect="PROTECTION_FIRE"
+			frames="-1"
+			>
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="PROTECTION_RADIOACTIVITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+
+	<!--Attacks-->
+	<AIAttackComponent
+		min_distance="0"
+		max_distance="100"
+		frames_between="60"
+		frames_between_global="60"
+		attack_ranged_offset_x="0"
+		attack_ranged_offset_y="0"
+		animation_name="attack_ranged"
+		attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/radioactive_liquid_fast.xml"
+		attack_ranged_action_frame="5"
+		>
+	</AIAttackComponent>
+	
+	<AIAttackComponent
+		min_distance="10"
+		max_distance="300"
+		frames_between="900"
+		frames_between_global="60"
+		attack_ranged_offset_x="0"
+		attack_ranged_offset_y="0"
+		animation_name="attack_ranged"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_radiocurse.xml"
+		attack_ranged_action_frame="5"
+		>
+	</AIAttackComponent>
+
+	<!-- Limit boss to taking only 1% health damage maximum with each instance of damage, additionally grants temporary invulnerable upon being hurt -->
+	<!-- Additionally has death script to say it died -->
+	<LuaComponent
+		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_miniboss.lua"
+		script_death="mods/apotheosis/files/scripts/animals/barfer_greater_death.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="iframes"
+		value_int="0"
+	>
+	</VariableStorageComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wizard/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/wizard" >
+	</AudioComponent>
+	
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+</Entity>
+

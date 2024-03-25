@@ -35,6 +35,7 @@ local lines = {
   "Extol",
   "Ribs",
   "Horscht",
+  "InfiniteSunrise",
   " ",
   "$credits_apotheosis_line_22",
   "Freakstritch",
