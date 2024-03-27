@@ -504,6 +504,11 @@ end
 
 do --Softcap heart spawns at 1,000 hp
   ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/Apotheosis/files/scripts/biome_scripts_appends.lua" )
+
+  local path = "data/scripts/biome_scripts.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("if %(r > heart_spawn_percent%) then", "if (r > heart_spawn_percent) and player_health_check() then")
+  ModTextFileSetContent(path, content)
 end
 
 do --Visiting Parallel worlds is the same as incrementing the NG+ counter for the director

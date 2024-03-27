@@ -3,6 +3,9 @@
 -- You can't table.insert to a key, only index, so you need to do it like this
 -- -Copi
 
+-- 27/03/2024 Conga: This file is abandoned
+-- As is, there's no support for sending items through NT
+
 
 -- Books
 nt_items["mods/Apotheosis/files/entities/items/books/book_cat_rat.xml"] = {

@@ -29,7 +29,8 @@ function init( entity_id )
 			"apotheosis_magic_liquid_nukes",
 			"apotheosis_magic_liquid_escapium",
 			"apotheosis_milk",
-			"apotheosis_magic_liquid_mimic",
+			--"apotheosis_magic_liquid_mimic",
+			"mimic_liquid",
 		}
 
 		potion_material = opts[Random(1,#opts)]

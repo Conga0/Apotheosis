@@ -2295,6 +2295,56 @@
 	</StatusEffects>
   </CellData>
 
+
+
+  <CellData
+	name="apotheosis_milk_polymorph_polymorph"
+	ui_name="$material_apotheosis_milk_polymorph"
+  	tags="[liquid],[water],[magic_liquid],[magic_polymorph],[impure],[food],[dairy]"
+	burnable="0"
+	density="4.00"
+	cell_type="liquid"
+	wang_color="aaf4ccf6"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="150"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stains_status_threshold="0.25"
+	liquid_sprite_stain_shaken_drop_chance="5"
+	status_effects="POLYMORPH"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	liquid_sprite_stains_check_offset="1"
+	>
+	<ParticleEffect
+		vel.y="-2.857"
+		vel_random.min_x="-6"
+		vel_random.max_x="6"
+		vel_random.min_y="-17.18"
+		vel_random.max_y="8.914"
+		lifetime.min="5"
+		lifetime.max="10"
+		gravity.y="0"
+		render_on_grid="1"
+		draw_as_long="1"
+		airflow_force="0.8314"
+		airflow_scale="0.1371"
+		friction="3.143"
+		probability="0.0857"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="PROTECTION_POLYMORPH" amount="0.5" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
   <CellData
 	name="apotheosis_unholy_concoction"
 	ui_name="$material_apotheosis_unholy_concoction"
@@ -2534,7 +2584,9 @@
   </CellDataChild>
 
 
-
+	<!--
+	Congratulations mimicium, you made it into vanilla, you can rest easy now o7
+	??/??/2023 - 27/03/2024
   <CellData
 	name="apotheosis_magic_liquid_mimic"
 	ui_name="$material_apotheosis_magic_liquid_mimic"
@@ -2558,6 +2610,31 @@
 		color="90c2762b"
 	>
 	</Graphics>
+	<ParticleEffect
+		vel.y="-14.28"
+		vel_random.min_x="-0.285"
+		vel_random.max_x="0.285"
+		vel_random.min_y="-11.43"
+		vel_random.max_y="11.43"
+		lifetime.min="0"
+		lifetime.max="20"
+		gravity.y="0"
+		render_on_grid="1"
+		airflow_force="0.1146"
+		airflow_scale="-0.028"
+		probability="0.028"
+		count.min="0"
+	>
+	</ParticleEffect>
+  </CellData>
+  -->
+
+<!--Temporary holding data to prevent run crashes until mimicium is more or less filtered out from everyone's save files-->
+  <CellData
+  	_parent="mimic_liquid"
+	name="apotheosis_magic_liquid_mimic"
+	wang_color="8034c95f"
+	>
 	<ParticleEffect
 		vel.y="-14.28"
 		vel_random.min_x="-0.285"
@@ -3101,6 +3178,26 @@
     </Graphics>
   </CellDataChild>
 
+	<!--Milk compatibility fix-->
+  <CellData
+  	_parent="apotheosis_milk"
+	name="milk"
+	ui_name="$mat_milk"
+  	tags="[liquid],[water],[impure],[liquid_common],[food],[dairy]"
+	>
+	<Graphics
+		color="aaf6f7fd"
+	>
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_CLEAR_STATUS" amount="0.05" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  
+
 	<!-- Give cheese the [dairy] tag-->
   <CellData
 	name="cheese_static"
@@ -3467,6 +3564,20 @@
 		output_cell1="apotheosis_milk" 		output_cell2="apotheosis_milk"
 	>
 	</Reaction>
+
+	<!--Turn milk + polymorphine into pilk-->
+	<Reaction probability="20" 
+		input_cell1="apotheosis_milk" input_cell2="magic_liquid_polymorph"
+		output_cell1="apotheosis_milk_polymorph_polymorph" 		output_cell2="apotheosis_milk_polymorph_polymorph"
+	>
+	</Reaction>
+
+	<!--Vanilla Reaction-->
+	<Reaction probability="100"
+		input_cell1="beer" 			input_cell2="apotheosis_milk"
+		output_cell1="molut" 		output_cell2="molut"  
+		>
+  	</Reaction>
 
 	<Reaction probability="100" 
 		input_cell1="apotheosis_magic_liquid_mimic" 				input_cell2="[liquid]"

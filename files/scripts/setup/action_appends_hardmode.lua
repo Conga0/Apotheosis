@@ -142,6 +142,17 @@ local actions_to_edit = {
 		end
 	},
 
+	["TOUCH_GRASS"] = {
+		description = "$spell_apotheosis_touch_grass_desc",
+		custom_uses_logic = true,
+		hardcore_copylock = true,
+		action = function(recursion_level)
+			--if (recursion_level) ~= nil then return; end
+			if disablecopying(recursion_level) then return; end
+			add_projectile("data/entities/projectiles/deck/touch_grass.xml")
+		end
+	},
+
 	["APOTHEOSIS_ALT_FIRE_COV"] = {
 		description = "$spell_apotheosis_alt_fire_cov_hardcore_desc",
 	},

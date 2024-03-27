@@ -20,7 +20,8 @@ materials_rare =
 		cost=800,
 	},
 	{
-		material="apotheosis_magic_liquid_mimic",
+		--material="apotheosis_magic_liquid_mimic",
+		material="mimic_liquid",
 		cost=800, --Hey, I'll be real with you, cost changes literally nothing, even in the normal potion.lua file, I'm just keeping it here incase a mod far off in the future decides to change that
 	},
 }

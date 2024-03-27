@@ -57,7 +57,8 @@ local options = {
 local optionsrare = {
     "apotheosis_unholy_concoction",
     "apotheosis_magic_liquid_moon_portal",
-    "apotheosis_magic_liquid_mimic",
+    --"apotheosis_magic_liquid_mimic",
+    "mimic_liquid",
     "apotheosis_corrupt_flesh_static",
     "apotheosis_magic_liquid_nukes",
     "apotheosis_magic_liquid_escapium",

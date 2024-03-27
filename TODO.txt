@@ -1,30 +1,22 @@
 
 Inspect data/curse_wither_start.lua
-Update heart softcap appends to be more cross mod compatiable (gsub it)
 
 
 
 
 
 Remove ABBC anti-cheese after it goes to main
-Remove artifically adding meat realm to the biome list when the meat biome goes to main
-Add warning icon to meat realm if it goes to main without one (God, I'd hope it doesn't come to this)
+Add warning icon to meat realm if it goes to main without one 
 
 Kindly ask spoop to update the toxic worm achievement pillar (They look out of place when placed next to the other 4's updated graphics)
 
 Fix Forsaken Eyes not being stainable
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
-Fix shifted hamis behaving weirdly when spawning from nests/purple vases
 Fix Polymorph crystals being able to spawn camp TotA's entrance
 
 
 Reimplement Weakening Curse rework
-Roll of TP spell (funny)
-Consider nerfing weakening ghost
-Rework Elk & Meat Boss to be more interesting
-Add Elk boss spawner to Tuonela lake island
 Music Boss rework
-Give anti-heal a JP translation when vanilla gets it
 
 
 Add more dangerous bubbles to the Liquid Bubble seed
