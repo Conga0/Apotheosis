@@ -2439,6 +2439,28 @@ local apotheosis_spellappends = {
                 end
             end
 		end,
+	},
+	{
+		id          = "APOTHEOSIS_TOILET_PAPER",
+		id_matchup  = "FIREBOMB",
+		name 		= "$spell_apotheosis_toilet_paper_name",
+		description = "$spell_apotheosis_toilet_paper_desc",
+		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/toilet_paper.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/rubber_ball_unidentified.png",
+		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/toilet_paper.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_toiletpaper_spell",
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "6,10", -- ???
+		spawn_probability                 = "0.1,0.1", -- ???
+		price = 60,
+		mana = 10,
+		--max_uses = 150,
+		action 		= function()
+			add_projectile("mods/apotheosis/files/entities/projectiles/deck/toilet_paper.xml")
+			-- damage = 0.3
+			c.fire_rate_wait = c.fire_rate_wait - 2
+			c.gore_particles = 0
+		end,
 	}
 }
 
@@ -2722,7 +2744,7 @@ local actions_to_edit = {
     ["SUMMON_WANDGHOST"] = {
         action = function()
             if not reflecting then
-                local filepath = GlobalsGetValue( "apotheosis_wandghost_filepath", "data/entities/projectiles/deck/wand_ghost_player.xml" )
+                local filepath = GlobalsGetValue( "apotheosis_cs_wand_ghost_filepath", "data/entities/projectiles/deck/wand_ghost_player.xml" )
                 add_projectile(filepath)
                 add_projectile("data/entities/particles/image_emitters/wand_effect.xml")
             end

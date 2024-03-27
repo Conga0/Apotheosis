@@ -33,7 +33,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		
 		pos_x = pos_x + Random(-8, 8)
 		pos_y = pos_y + Random(-12, 4)
-		local filepath = GlobalsGetValue( "apotheosis_blob_filepath", "data/entities/animals/boss_blob/extra/blob.xml" )
+		local filepath = GlobalsGetValue( "apotheosis_cs_blob_filepath", "data/entities/animals/boss_blob/extra/blob.xml" )
 		local e = EntityLoad( filepath, pos_x, pos_y )
 
 		edit_component( entity_id, "ControlsComponent", function(comp,vars)

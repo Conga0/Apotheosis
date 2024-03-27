@@ -1,6 +1,7 @@
 --Appending/changing vanilla boss/creature data
 dofile("data/scripts/lib/utilities.lua")
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+local year, month, day, hour = GameGetDateAndTimeLocal()
 
 --Pitboss can shoot blackholes if she fails a line of sight check too many times in a row, prevents tablet cheese
 do
@@ -503,6 +504,11 @@ end
 
 do --Softcap heart spawns at 1,000 hp
   ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/Apotheosis/files/scripts/biome_scripts_appends.lua" )
+
+  local path = "data/scripts/biome_scripts.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("if %(r > heart_spawn_percent%) then", "if (r > heart_spawn_percent) and player_health_check() then")
+  ModTextFileSetContent(path, content)
 end
 
 do --Visiting Parallel worlds is the same as incrementing the NG+ counter for the director
@@ -598,6 +604,8 @@ do -- gsub new Creeps into Summon Egg's spawn table
   content = content:gsub([[fire = { {"firebug", 3}, {"bigfirebug"} },]], [[fire = { {"firebug", 3}, {"bigfirebug"}, {"whisp", 10} },]])
   content = content:gsub([[chilly = { {"tentacler_small"}, {"tentacler"} },]], [[chilly = { {"tentacler_small"}, {"tentacler"}, {"tentacler_big"} },]])
   content = content:gsub([[red = { {"bat", 3}, {"tentacler_small"}, {"tentacler"} },]], [[red = { {"bat", 3}, {"fairy_big", 2}, {"tentacler_small"}, {"tentacler"} },]])
+  content = content:gsub("\"data/entities/animals/\" %.%. entity_to_spawn %.%. \"%.xml\"", "GlobalsGetValue( table.concat({\"apotheosis_cs_\",entity_to_spawn,\"_filepath\"}), table.concat({\"data/entities/animals/\",entity_to_spawn,\".xml\"}) )")
+  print(content)
   ModTextFileSetContent(path, content)
 end
 
@@ -1033,6 +1041,8 @@ do -- Modify Kolmi to gain a water hexing attack at 9 orbs, Kolmi's Minions gain
 	end
 	EntityLoad( minionpath, x, y )]])
 
+  content = content:gsub("EntityGetFirstComponent%( entity, \"DamageModelComponent\" %)", "EntityGetFirstComponent( entity, \"DamageModelComponent\" ) boss_hp = boss_hp * (ModSettingGet( \"Apotheosis.boss_health_multiplayer\" ) / 100) local blood_mult = ComponentGetValue2(comp, \"blood_multiplier\") ComponentSetValue( comp, \"blood_multiplier\", tostring(blood_mult / (ModSettingGet( \"Apotheosis.boss_health_multiplayer\" ) / 100)) )")
+
   --Debug data
   --print("printing boss_centipede_update.lua\n\n" .. content)
   ModTextFileSetContent(path, content)
@@ -1136,7 +1146,7 @@ end
 do -- Fixes CEOs to spawn in the correct entity when creature shifted
   local path = "data/scripts/animals/leader_damage.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("EntityLoad%( \"data/entities/animals/scavenger_grenade.xml\", x, y %)", "local filepath = GlobalsGetValue( \"apotheosis_scavgrenader_filepath\", \"data/entities/animals/scavenger_grenade.xml\" ) EntityLoad( filepath, x, y )")
+  content = content:gsub("EntityLoad%( \"data/entities/animals/scavenger_grenade.xml\", x, y %)", "local filepath = GlobalsGetValue( \"apotheosis_cs_scavenger_grenade_filepath\", \"data/entities/animals/scavenger_grenade.xml\" ) EntityLoad( filepath, x, y )")
 
   ModTextFileSetContent(path, content)
 end
@@ -1144,7 +1154,7 @@ end
 do -- Fixes Blobs to spawn in the correct entity when creature shifted
   local path = "data/scripts/animals/blob_damage.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("local e %= EntityLoad%( \"data/entities/animals/miniblob.xml\", pos_x, pos_y %)", "local filepath = GlobalsGetValue( \"apotheosis_miniblob_filepath\", \"data/entities/animals/miniblob.xml\" ) local e = EntityLoad( filepath, pos_x, pos_y )")
+  content = content:gsub("local e %= EntityLoad%( \"data/entities/animals/miniblob.xml\", pos_x, pos_y %)", "local filepath = GlobalsGetValue( \"apotheosis_cs_miniblob_filepath\", \"data/entities/animals/miniblob.xml\" ) local e = EntityLoad( filepath, pos_x, pos_y )")
   
   ModTextFileSetContent(path, content)
 end
@@ -1279,8 +1289,8 @@ end
 do --Add Steve & Skoude creature shifting compatibility
   local path = "data/scripts/animals/necromancer_shop_spawn.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_shop.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_steve_filepath\", \"data/entities/animals/necromancer_shop.xml\" ), pos_x, pos_y)")
-  content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_super.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_skoude_filepath\", \"data/entities/animals/necromancer_super.xml\" ), pos_x, pos_y)")
+  content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_shop.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_cs_necromancer_shop_filepath\", \"data/entities/animals/necromancer_shop.xml\" ), pos_x, pos_y)")
+  content = content:gsub("EntityLoad%(\"data/entities/animals/necromancer_super.xml\", pos_x, pos_y%)", "EntityLoad(GlobalsGetValue( \"apotheosis_cs_necromancer_super_filepath\", \"data/entities/animals/necromancer_super.xml\" ), pos_x, pos_y)")
 
   ModTextFileSetContent(path, content)
 end
@@ -1358,6 +1368,44 @@ do --Necrobots & Super Necrobots can give the player a temporary one-up effect
 	  </LuaComponent>
   ]]))
   ModTextFileSetContent(path, tostring(xml))
+end
+
+do --Rare chance to make hiisi base spooked during herobrine hours
+  if (hour >= 23 or hour <= 4) and (math.random(1,200) == 1) then
+    local path = "data/scripts/biomes/snowcastle.lua"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("return true", "return false")
+    print(content)
+
+    ModTextFileSetContent(path, content)
+  end
+end
+
+do --Make vases work properly with Creature Shifts
+  local path = "data/scripts/props/physics_vase_damage.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"data/entities/animals/longleg%.xml\"", "GlobalsGetValue( \"apotheosis_cs_longleg_filepath\", \"data/entities/animals/longleg.xml\" )")
+  print(content)
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Make vases work properly with Creature Shifts
+  local path = "data/scripts/animals/mimic_damage.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"data/entities/animals/longleg%.xml\"", "GlobalsGetValue( \"apotheosis_cs_longleg_filepath\", \"data/entities/animals/longleg.xml\" )")
+  print(content)
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Make vanilla hamis nests work properly with Creature Shifts
+  local path = "data/scripts/buildings/spidernest.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"data/entities/animals/longleg%.xml\"", "GlobalsGetValue( \"apotheosis_cs_longleg_filepath\", \"data/entities/animals/longleg.xml\" )")
+  print(content)
+
+  ModTextFileSetContent(path, content)
 end
 
 --Post Ascension reward

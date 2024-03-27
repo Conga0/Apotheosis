@@ -12,7 +12,6 @@ If you're confused why something feels different, this list may help you identif
 ** Piercing Shot is reworked, it now costs less mana, no longer reduces projectile damage but hits 5 times per modifier, becoming infinite at 50 pierces
 ** Path of Dark Flame can appear in lower tier spell pools
 ** Chaotic Transmutation now costs 40 mana (down from 80, goal is to become more practical in lua-disabling wands)
-** AntiHeal can now innately do self-damage
 ** Chainbolt is now better at hitting single targets
 * Matter Eater can now dig through cursed rock
 * Projectile Repulsion Field is removed and replaced with Oversized Shield
@@ -57,11 +56,11 @@ The Dead are Restless
 Alchemical Mists
 
 Content list:
-121 new enemies
+124 new enemies
 6 new bosses
-77 new spells
+78 new spells
 10 new perks
-6 new biomes (+ 4 secret biomes)
+7 new biomes (+ 4 secret biomes)
 7 new structures
 16 new materials (14 interactable, 16 total, probably some more that I lost count of along the way)
 A new set of pillars
@@ -82,4 +81,3 @@ heretic
 
 Enemies not yet added to enemy count:
 Abyssum Monster (I would like if there was some sort of Abyssum creature, where if it's completely docile, but if you get too close to it, it notices you)
-Spine Worm

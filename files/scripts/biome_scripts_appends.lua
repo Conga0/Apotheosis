@@ -16,6 +16,7 @@ end
 
 
 ---@diagnostic disable-next-line: lowercase-global
+--[[
 function spawn_heart( x, y )
 	local r = ProceduralRandom( x, y )
 	SetRandomSeed( x, y )
@@ -52,3 +53,4 @@ function spawn_heart( x, y )
 		end
 	end
 end
+]]--

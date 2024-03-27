@@ -933,6 +933,22 @@ if g_small_enemies then
         max_count    = 1,    
         entity     = "data/entities/animals/worm_mechanical.xml"
     })
+  
+    table.insert(g_small_enemies,
+	{
+		prob   		= 0.04,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/the_end/barfer_greater_apotheosis.xml"
+	})
+  
+    table.insert(g_small_enemies,
+	{
+		prob   		= 0.2,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/the_end/watermage_toxic.xml"
+	})
 
 end
 

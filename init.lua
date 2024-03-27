@@ -332,7 +332,9 @@ Apotheosis content below,#ERROR!,,,,,,,,,,,,,
 teleport_portal_alternate,Portal Elsewhere,,,,,,,,,彼方へのポータル,,,,
 teleport_portal_moon,Portal to the Moon,,,,,,,,,月への扉,,,,
 teleport_portal_sun,Portal to the Sun,,,,,,,,,太陽への扉,,,,
+teleport_portal_up,Portal Higher,,,,,,,,,上層へのポータル,,,,
 biome_slime_hell,Virulent Caverns,,,,,,,,,猛毒洞窟,,,,
+biome_slime_hell_outpost,Contaminated Outpost,,,,,,,,,汚れた兵営,,,,
 biome_toxic_worm_cave,Toxic Nest,,,,,,,,,毒虫の巣穴,,,,
 biome_abandoned_assembly,Sandy Assembly,,,,,,,,,砂の遺跡,,,,
 biome_esoteric_den,Abyssum,,,,,,,,,アビス,,,,
@@ -395,6 +397,7 @@ material_apotheosis_meat_slime_blue,Blue Slimy Meat,,,,,,,,,青いスライム�
 material_apotheosis_meat_homing,Writhing Meat,,,,,,,,,苦悶の肉,,,,
 material_apotheosis_malicious_powder,Volcanic Powder,,,,,,,,,恐ろしい粉末,,,,
 material_apotheosis_milk,Milk,,,,,,,,,ミルク,,,,
+material_apotheosis_milk_polymorph,Pilk,,,,,,,,,多形性型ミルク,,,,
 material_apotheosis_unholy_concoction,Unholy Concoction,,,,,,,,,邪悪な調合薬,,,,
 material_apotheosis_esoteric_stone,Esoteric Stone,,,,,,,,,深遠な力のこもった石,,,,
 material_apotheosis_esoteric_stone_glowing,Luminescent Rock,,,,,,,,,謎の光を放つ石,,,,
@@ -526,10 +529,13 @@ spell_apotheosis_rubberball_trigger_name,Bouncing Burst with Expiration Trigger,
 spell_apotheosis_rubberball_trigger_desc,A very bouncy projectile that casts another spell upon expiration,,,,,,,,,消滅時に後ろの魔法を詠唱するバウンドバースト,,,,
 spell_apotheosis_potion_to_sea_name,Potion to Sea,,,,,,,,,ポーションの海,,,,
 spell_apotheosis_potion_to_sea_desc,The first flask in your inventory is shattered and converted into a sea of the same material,,,,,,,,,インベントリの最も左側にあるポーション瓶を消滅させ、中に入っていた物質の海を出現させる。,,,,
+spell_apotheosis_toilet_paper_name,Conjure Roll of Divine Purification,,,,,,,,,禊の巻紙,,,,
+spell_apotheosis_toilet_paper_desc,Summons a roll of toilet paper,,,,,,,,,トイレットペーパーを召喚する。,,,,
 actiondesc_mana_reduce,Adds 30 mana to the wand,Добавляет жезлу 30 ед           . маны,Adiciona 30 de mana à varinha,Añade 30 maná a la varita,Fügt dem Zauberstab 30 Mana hinzu,Ajoute 30 points de mana à la baguette,Aggiunge 30 punti mana alla bacchetta.,Dodaje do różdżki 30 pkt. many,向魔杖增加 30 法力,30マナを杖に追加する,완드에 마나 30을 추가합니다.,,,
 spell_apotheosis_cov_desc,A field of regenerative magic; Uncopyable.,,,,,,,,,回復魔法のフィールド。文字呪文でコピーできない。,,,,
 spell_apotheosis_healing_bolt_desc,A magical bolt that heals other beings; Uncopyable.,,,,,,,,,触れた者を回復する魔法弾。文字呪文でコピーできない。,,,,
-spell_apotheosis_antiheal_desc,"A projectile that at first deals damage, then heals over time; Uncopyable.",,,,,,,,,,,,,
+spell_apotheosis_antiheal_desc,"A projectile that at first deals damage, then heals over time; Uncopyable.",,,,,,,,,最初はダメージを与え、時間とともに回復する放射物。文字呪文でコピーできない。,,,,
+spell_apotheosis_touch_grass_desc,"Transmutes everything in a short radius into Earth, including walls, creatures... and you. Unless…; Uncopyable",,,,,,,,,周囲にあるすべてのものを土に変化させる。これには壁、生物...そしてあなた自身がふくまれる。ただし…文字呪文でコピーできない。,,,,
 spell_apotheosis_piercing_shot_desc_old,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,放射物が敵に5ヒットするが、自傷効果を持つようになる。,,,,
 spell_apotheosis_piercing_shot_desc,Makes a projectile penetrate 5 times,,,,,,,,,放射物が敵に5ヒットする。,,,,
 spell_apotheosis_locked_spell_name,Faulty Magic,,,,,,,,,封印されたスペル,,,,
@@ -598,6 +604,8 @@ perk_apotheosis_god_ti,Divine Intervention,,,,,,,,,神々の試練,,,,
 perk_apotheosis_god_ti_description,The gods will cause something sporadic to occur every 3-4 minutes.,,,,,,,,,3-4分ごとに神々が様々な試練をあなたに課す。,,,,
 perk_apotheosis_plane_radar,Divine Radar,,,,,,,,,神通力,,,,
 perk_apotheosis_plane_radar_description,You can sense otherworldy energy somewhere in the world.,,,,,,,,,世界のどこかに流れる、異界の力を感じられるようになる。,,,,
+perk_apotheosis_respawn_spent,Extra Life (Spent),,,,,,,,,追加ライフ（使用済み）,,,,
+perk_apotheosis_respawn_spent_description,This extra life has been spent and is no longer usable.,,,,,,,,,使用済みの追加ライフ。効果が消失している。,,,,
 status_apotheosis_nohealing_name,Wounded,,,,,,,,,負傷,,,,
 status_apotheosis_nohealing_desc,You can not be healed.,,,,,,,,,回復魔法の効果がない。,,,,
 status_apotheosis_teleport_cancel_name,Teleport Nullification,,,,,,,,,テレポート無効化,,,,
@@ -634,6 +642,8 @@ status_apotheosis_hex_oil_name,Industrious Hex,,,,,,,,,機械の呪い,,,,
 status_apotheosis_hex_oil_desc,You take damage from oil and other oily substances.,,,,,,,,,オイルでダメージを受けるようになった。,,,,
 status_apotheosis_hex_blood_name,Lively Hex,,,,,,,,,生命の呪い,,,,
 status_apotheosis_hex_blood_desc,You take damage from blood and other bloody substances.,,,,,,,,,血でダメージを受けるようになった。,,,,
+status_apotheosis_hex_radioactive_name,Virulent Hex,,,,,,,,,免疫弱化の呪い,,,,
+status_apotheosis_hex_radioactive_desc,You take additional damage from toxic sludge and other toxic substances.,,,,,,,,,猛毒ヘドロなどの毒性物質によって受けるダメージが増加する。,,,,
 status_apotheosis_protection_all_dull_name,Shattered Protection,,,,,,,,,無防備状態,,,,
 status_apotheosis_protection_all_dull_desc,"Provides no protection, spreads to nearby ambrosia.",,,,,,,,,防御系の効果が無効化される。周囲のアンブロシアも効果がなくなる。,,,,
 status_apotheosis_infusion_vulnerability_name,Vulnerable Infusion,,,,,,,,,弱体化属性,,,,
@@ -718,6 +728,8 @@ item_apotheosis_essence_polymorphine_name,Essence of Polymorphine...?,,,,,,,,,�
 item_apotheosis_essence_polymorphine_reveal_name,Essence of Polymorphine,,,,,,,,,ポリモルフィンのエッセンス,,,,
 item_apotheosis_essence_polymorphine_desc,Wait...What?,,,,,,,,,これは一体何だ！？,,,,
 item_apotheosis_stone_water_pink,Pink Vuoksikivi,,,,,,,,,ピンッキヴォクシキヴィ,,,,
+item_apotheosis_toiletpaper_fragment,Broken Spell of Cleanliness,,,,,,,,,壊れた魔法（浄化）,,,,
+item_apotheosis_toiletpaper_fragment_desc,"It looks broken, maybe it could be repaired?",,,,,,,,,このままでは使えそうにない。修理することは可能だろうか？,,,,
 sign_apotheosis_custom_seed,Custom Seed successfully set,,,,,,,,,カスタムシードを取得した。,,,,
 sign_apotheosis_divinity_hint_name,Sealed Note,,,,,,,,,封印されたメモ,,,,
 sign_apotheosis_divinity_hint_desc_00,"To those who seek knowledge not true, but divine.",,,,,,,,,真ならずも神聖なる智慧を追い求める者へ。,,,,
@@ -846,6 +858,7 @@ enemy_apotheosis_angel,Jumalallinen olento,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_ant_fire,Tulimurkku,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_ant_pheromone,Sairaanhoitajamurkku,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_ant_suffocate,Tukahduttajamurkku,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_barfer_greater_apotheosis,Suur-Turvonnu velho,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_blindgazer,Sokeakatselija,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_blob_big,Isomöykky,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_blob_huge,Kammottavamöykky,,,,,,,,,,,,DO NOT TRANSLATE,
@@ -945,6 +958,8 @@ enemy_apotheosis_tree_tall,Tall Tree,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_triangle_gem,Kolmionmuotoinenkristalli,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_watermage,Vesimagi,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_watermage_greater,Suur-Vesimagi,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_watermage_toxic,Myrkytetty Vesimagi,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_watermage_toxic_greater,Myrkytetty Suur-Vesimagi,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_waterskull,Vesiö,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_whisp,Palavakeiju,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_whisp_big,Jättipalavakeiju,,,,,,,,,,,,DO NOT TRANSLATE,
@@ -1392,18 +1407,6 @@ xml:add_child(nxml.parse([[
     </LuaComponent>
 ]]))
 ModTextFileSetContent("data/entities/animals/shotgunner.xml", tostring(xml))
-
---Same thing but for weak hisii
-local content = ModTextFileGetContent("data/entities/animals/shotgunner_weak.xml")
-local xml = nxml.parse(content)
-xml:add_child(nxml.parse([[
-    <LuaComponent
-        script_source_file="mods/Apotheosis/files/scripts/buildings/hisii_minecart_hopin_weak.lua"
-        execute_every_n_frame="60"
-        >
-    </LuaComponent>
-]]))
-ModTextFileSetContent("data/entities/animals/shotgunner_weak.xml", tostring(xml))
 
 --Same thing but for hisii with TNT
 local content = ModTextFileGetContent("data/entities/animals/miner_weak.xml")

@@ -96,6 +96,12 @@
 			>
 		</CharacterDataComponent>
 	</Base>
+
+    <LuaComponent
+        script_source_file="mods/Apotheosis/files/scripts/buildings/hisii_minecart_hopin_bomb.lua"
+        execute_every_n_frame="60"
+        >
+    </LuaComponent>
 		
 	<LightComponent 
 		_enabled="1" 

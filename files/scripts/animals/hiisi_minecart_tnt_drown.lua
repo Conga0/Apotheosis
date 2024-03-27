@@ -6,7 +6,17 @@ function cartGold()
 	local max_health = 0
 	local combo_count = 2
 
-	local eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
+	local eid = ""
+
+	if seasonalSetting == true then
+		if ( month == 12 ) and ( day >= 15 ) or ModSettingGet("Apotheosis.seasonal_events_forced_smissmass") then
+			eid = EntityLoad( "data/entities/animals/miner_santa.xml", pos_x, pos_y )
+		else
+			eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
+		end
+	else
+		eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
+	end
 
 	local VSCComps = EntityGetComponentIncludingDisabled(entity_id,"VariableStorageComponent")
 	if VSCComps then

@@ -1,0 +1,131 @@
+<Sprite 
+  filename="mods/apotheosis/files/enemies_gfx/barfer_greater.png" 
+  offset_x="11" 
+  offset_y="20"
+  default_animation="stand" >
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="31"
+    frame_wait="0.1" 
+    frame_width="24"
+    frames_per_row="6" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_width="24"
+    frame_wait="0.09" 
+    frame_height="31"
+    frames_per_row="6" 
+    name="walk" 
+    pos_x="0" 
+    pos_y="31" >
+
+    <Event 
+      check_physics_material="1" 
+      frame="2" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="5" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_width="24"
+    frame_wait="0.09" 
+    frame_height="31"
+    frames_per_row="6" 
+    name="run" 
+    pos_x="0" 
+    pos_y="31" >
+
+    <Event 
+      check_physics_material="1" 
+      frame="2" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="5" 
+      max_distance="500" 
+      name="step" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_width="24"
+    frame_wait="0.12" 
+    frame_height="31"
+    frames_per_row="15" 
+    name="fly_idle" 
+    pos_x="0" 
+    pos_y="62" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_width="24"
+    frame_height="31"
+    frame_wait="0.12" 
+    frames_per_row="15" 
+    name="fly_move" 
+    pos_x="0" 
+    pos_y="93" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="9" 
+    frame_width="24"
+    frames_per_row="9" 
+    frame_wait="0.10"
+    frame_height="31"
+    loop="0" 
+    name="attack_ranged" 
+    pos_x="0" 
+    pos_y="124" >
+
+    <Event 
+      check_physics_material="0" 
+      frame="4" 
+      max_distance="500" 
+      name="attack_spit_large" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+</Sprite>
+

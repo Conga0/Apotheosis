@@ -1,4 +1,5 @@
 
+dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
 local EZWand = dofile_once("mods/Apotheosis/lib/EZWand/EZWand.lua")
 local entity_id = GetUpdatedEntityID()
 local root = EntityGetRootEntity(entity_id)
@@ -18,7 +19,7 @@ local aim_x, aim_y = ComponentGetValue2(controlscomp, "mAimingVectorNormalized")
 local manacost = 20
 
 if GameGetFrameNum() >= cooldown_frame then
-    if ComponentGetValue2(controlscomp, "mButtonDownRightClick") or InputIsJoystickButtonDown(0, 26) then
+    if isButtonDown_AltFire() then
         local mana = wand.mana
         if (mana > manacost) then
 

@@ -1,4 +1,5 @@
 
+dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
 local EZWand = dofile_once("mods/Apotheosis/lib/EZWand/EZWand.lua")
 local entity_id = GetUpdatedEntityID()
 local root = EntityGetRootEntity(entity_id)
@@ -20,7 +21,7 @@ local aim_x, aim_y = ComponentGetValue2(controlscomp, "mAimingVectorNormalized")
 local manacost = 80
 
 if GameGetFrameNum() >= cooldown_frame then
-    if ComponentGetValue2(controlscomp, "mButtonDownRightClick") or InputIsJoystickButtonDown(0, 26) then
+    if isButtonDown_AltFire() then
         local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
         local uses = ComponentGetValue2(comp,"uses_remaining")
         if uses >= 1 or uses == -1 or alwayscast then

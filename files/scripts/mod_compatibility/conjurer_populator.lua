@@ -5,6 +5,11 @@ table.insert(ALL_ENTITIES, {
   icon_off="data/ui_gfx/animal_icons/hidden/fairy_giant_dim.png",
   grid_size=12,
   entities={
+	{
+	  name="Greater Bloated Wizard",
+	  path="data/entities/animals/barfer_greater_apotheosis.xml",
+	  image="data/ui_gfx/animal_icons/barfer_greater_apotheosis.png",
+	},
 	  {
 		name="Blind Gazer",
 		path="data/entities/animals/blindgazer.xml",
@@ -371,6 +376,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/lukki_swarmling.png",
 	  },
 	  {
+		name="Toxic Spider",
+		path="data/entities/animals/lukki_toxic.xml",
+		image="data/ui_gfx/animal_icons/lukki_tentacle_hungry.png",
+	  },
+	  {
 		name="Explosive Box Mimic",
 		path="data/entities/animals/mimic_explosive_box.xml",
 		image="data/ui_gfx/animal_icons/mimic_explosive_box.png",
@@ -481,6 +491,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/star_child.png",
 	  },
 	  {
+		name="Diving Bell",
+		path="data/entities/animals/sunken_creature.xml",
+		image="data/ui_gfx/animal_icons/sunken_creature.png",
+	  },
+	  {
 		name="Ignition Tank",
 		path="data/entities/animals/tank_flame_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/tank_flame_apotheosis.png",
@@ -574,6 +589,16 @@ table.insert(ALL_ENTITIES, {
 		name="Greater Watermage",
 		path="data/entities/animals/watermage_greater.xml",
 		image="data/ui_gfx/animal_icons/watermage_greater.png",
+	  },
+	  {
+		name="Toxicmage",
+		path="data/entities/animals/watermage_toxic.xml",
+		image="data/ui_gfx/animal_icons/hidden/watermage_toxic.png",
+	  },
+	  {
+		name="Greater Toxicmage",
+		path="data/entities/animals/watermage_toxic_greater.xml",
+		image="data/ui_gfx/animal_icons/hidden/watermage_toxic_greater.png",
 	  },
 	  {
 		name="Overzealous Polymaster",

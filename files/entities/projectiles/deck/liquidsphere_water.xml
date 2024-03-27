@@ -32,7 +32,7 @@
 		lifetime_randomness="7"
 		velocity_sets_rotation="0"
 		ragdoll_force_multiplier="0.0025"
-		hit_particle_force_multiplier="0.25 "
+		hit_particle_force_multiplier="0.25"
 		camera_shake_when_shot="0.4"
 		muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_small_pink.xml"
 		collide_with_shooter_frames="10"

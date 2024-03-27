@@ -54,7 +54,22 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 70, "tablet")) do
 			EntityLoad("data/entities/projectiles/explosion.xml", x, y - 10)
 			EntityKill(id)
 		end
-		converted = true
+		converted_apotheosis = true
+	end
+end
+
+local forgables = EntityGetInRadiusWithTag(pos_x, pos_y, 70, "forgeable")
+for k=1,#forgables do
+	local v = forgables[k]
+	local x,y = EntityGetTransform(v)
+
+	if EntityGetName(v) == "toiletpaper_fragment_apotheosis" then
+		CreateItemActionEntity( "APOTHEOSIS_TOILET_PAPER", x, y)
+		AddFlagPersistent( "apotheosis_card_unlocked_toiletpaper_spell" )
+
+		EntityLoad("data/entities/projectiles/explosion.xml", x, y - 10)
+		EntityKill(v)
+		converted_apotheosis = true
 	end
 end
 
