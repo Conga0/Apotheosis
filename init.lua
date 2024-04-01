@@ -790,6 +790,7 @@ motd_apotheosis_description_halloween,Message of the Day \nHappy Halloween!,Со
 motd_apotheosis_description_smissmass,Message of the Day \nHappy Noitmass!,Сообщение дня \nСчастливого Нойтждества!,,,,,,,,今日のひとこと\nnHappy Noitmass!,,,,
 motd_apotheosis_description_new_year,"Happy new year! \nThankyou for playing, although you'll only read this once a year, I mean it every time you play. \nI'm happy seeing people enjoy my projects, and I'm happy making them myself, so sincerely, thankyou. - Conga Lyne.",,,,,,,,,,,,,
 motd_apotheosis_description_red_fish,Message of the Day \nThe Red Fish is real.,,,,,,,,,今日のひとこと\n赤いさかなはいます,,,,
+motd_apotheosis_description_april_fools,Happy April Fools,Счастливого дня смеха,,,,,,,,,エイプリルフール！,,,,
 motd_apotheosis_description_painpeko,Warning: Apotheosis is designed to be played on the Beta Branch of Noita.\nGame crashes may occur by playing on the main branch.\nYou can enable the Noita beta from steam via right-clicking Noita > Properties > Betas.,,,,,,,,,,,,,
 motd_apotheosis_description_001,Message of the Day \nAlso try Worse Enemies!,Сообщение дня \nТакже попробуйте мод Worse Enemies!,,,,,,,,今日のひとこと\nWorse Enemiesもプレイしてね。,,,,
 motd_apotheosis_description_002,Message of the Day \nHomeless Hiisi love Material Donations,Сообщение дня \nБродяги любят пожертвования в виде денег,,,,,,,,今日のひとこと\n顔色が悪い人にお金をあげると、いいことがあるかも。,,,,
@@ -1373,7 +1374,7 @@ end
 --MOTD & Welcome Hint
 if ModIsEnabled("raksa") == false then
 	local flag_status = HasFlagPersistent("apotheosis_card_unlocked_welcome_hint")
-	if motdSetting == true then
+	if motdSetting == true or ((month == 4) and (day == 1)) then
 		dofile_once("mods/Apotheosis/files/scripts/misc/motd_list.lua")
 	elseif flag_status == false then
 		--dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
@@ -1853,51 +1854,41 @@ if seasonalSetting == true then
 		SetRandomSeed(hour + minute, hour + day)
 		--10% chance for any main path biome to become weird in April Fools
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/vault.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/vault.lua","mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/fungicave.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/rainforest.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/snowcastle.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/snowcastle.lua","mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/snowcave.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/excavationsite.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/coalmine.lua",
-				"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 
 		--100% chance for the Temple of the Art to be spawn everything
-		ModLuaFileAppend("data/scripts/biomes/crypt.lua",
-			"mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+		ModLuaFileAppend("data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 
 
 
