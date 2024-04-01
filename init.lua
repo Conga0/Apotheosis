@@ -2115,8 +2115,16 @@ end
 --Randomly cause a fungal shift/creature shift at any time, at random.
 --And print Happy April Fools at the start of the run
 --Happy april fools <3
-function AprilFoolsPlayerSpawn()
-	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+function AprilFoolsPlayerSpawn(plyr_id)
+
+	local comp = EntityGetFirstComponentIncludingDisabled(plyr_id,"DamageModelComponent")
+	local hp = ComponentGetValue2(comp,"hp")
+	local max_hp = ComponentGetValue2(comp,"max_hp")
+
+	if hp ~= 4 then return end
+	if max_hp ~= 4 then return end
+
+	if seasonalSetting and (((month == 4) and (day == 1)) or seasonalForced_AprilFools) then
 		local x, y = EntityGetTransform(player_entity)
 		local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
 		EntityAddChild(player_entity, cid)
@@ -2210,7 +2218,7 @@ function OnPlayerSpawned(player_entity)
 	end
 
 	--Handles AprilFools related code
-	AprilFoolsPlayerSpawn()
+	AprilFoolsPlayerSpawn(player_entity)
 
 	--Calculate RNG
 	SetRandomSeed(111, 222)
