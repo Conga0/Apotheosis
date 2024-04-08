@@ -219,12 +219,6 @@
 		</InheritTransformComponent>
 	</Entity>
 	
-	<VariableStorageComponent
-		name="projectile_file"
-		value_string="mods/Apotheosis/files/entities/projectiles/orb_micro_blackhole.xml"
-		>
-	</VariableStorageComponent>
-	
 	<LuaComponent
     script_source_file="data/scripts/projectiles/black_hole_gravity.lua"
     execute_every_n_frame="1"
