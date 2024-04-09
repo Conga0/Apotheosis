@@ -2147,9 +2147,14 @@ function OnPlayerSpawned(player_entity)
 	--I feel like I'm running a daycare sometimes, God Dammit.
 	--urgh, alright, tired rant over
 	--Thankyou for playing
+	--
+	--09/04/2024 Beta was pushed to main :')
+	--
+	--[[
 	if GameIsBetaBuild() == false then
 		EntityLoad("mods/apotheosis/files/entities/props/sign_motd/sign_motd_painpeko.xml",260,-85)
 	end
+	]]--
 
 	local x, y = EntityGetTransform(player_entity) --This was just "player" by default but I feel like something broke.. I hope not
 	EntityLoad("mods/Apotheosis/files/entities/special/entity_shift_refresh_fixer.xml", x, y)
