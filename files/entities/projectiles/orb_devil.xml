@@ -210,10 +210,4 @@
 		event_name="projectiles/magic_orb/loop"
 		auto_play="1">
 	</AudioLoopComponent>
-	
-	<VariableStorageComponent
-		name="projectile_file"
-		value_string="mods/Apotheosis/files/entities/projectiles/orb_devil.xml"
-		>
-	</VariableStorageComponent>
 </Entity>

@@ -10,6 +10,9 @@ if comp then
     if GameHasFlagRun(table.concat({"apothe","osis_","div","ine_red_fi","sh"})) then
         --Reed Feesh
         motd = motd .. "_red_fish"
+    elseif (month == 4) and (day == 1) then
+        --April Fools
+        motd = motd .. "_april_fools"
     elseif (month == 1) and (day == 1) then
         --New Year
         motd = motd .. "_new_year"

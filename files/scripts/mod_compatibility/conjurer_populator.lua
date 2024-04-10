@@ -57,7 +57,7 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Young Fire Spider",
-		path="data/entities/animals/lukki_fire_miniboss.xml",
+		path="data/entities/animals/secret/lukki_fire_miniboss.xml",
 		image="data/ui_gfx/animal_icons/lukki_fire_miniboss_phase2.png",
 	  },
 	  {
