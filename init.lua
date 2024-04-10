@@ -536,6 +536,7 @@ spell_apotheosis_cov_desc,A field of regenerative magic; Uncopyable.,,,,,,,,,回
 spell_apotheosis_healing_bolt_desc,A magical bolt that heals other beings; Uncopyable.,,,,,,,,,触れた者を回復する魔法弾。文字呪文でコピーできない。,,,,
 spell_apotheosis_antiheal_desc,"A projectile that at first deals damage, then heals over time; Uncopyable.",,,,,,,,,最初はダメージを与え、時間とともに回復する放射物。文字呪文でコピーできない。,,,,
 spell_apotheosis_touch_grass_desc,"Transmutes everything in a short radius into Earth, including walls, creatures... and you. Unless…; Uncopyable",,,,,,,,,周囲にあるすべてのものを土に変化させる。これには壁、生物...そしてあなた自身がふくまれる。ただし…文字呪文でコピーできない。,,,,
+spell_apotheosis_sea_mimic_desc,"Summons a large body of mimicium under the caster; Uncopyable",,,,,,,,,詠唱者の下にある大きなエリアをミミキウムで満たす。文字呪文でコピーできない。,,,,
 spell_apotheosis_piercing_shot_desc_old,"Makes a projectile penetrate 5 times, but become harmful to the caster",,,,,,,,,放射物が敵に5ヒットするが、自傷効果を持つようになる。,,,,
 spell_apotheosis_piercing_shot_desc,Makes a projectile penetrate 5 times,,,,,,,,,放射物が敵に5ヒットする。,,,,
 spell_apotheosis_locked_spell_name,Faulty Magic,,,,,,,,,封印されたスペル,,,,

@@ -3184,6 +3184,7 @@
 	name="milk"
 	ui_name="$mat_milk"
   	tags="[liquid],[water],[impure],[liquid_common],[food],[dairy]"
+	wang_color="90d0ffe5"
 	>
 	<Graphics
 		color="aaf6f7fd"
