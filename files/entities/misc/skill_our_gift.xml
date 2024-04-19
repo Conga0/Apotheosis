@@ -1,4 +1,4 @@
-<Entity name="flight_buff">
+<Entity name="flight_buff" tags="pseudo_perk">
     <InheritTransformComponent>
     </InheritTransformComponent>
 	
