@@ -29,6 +29,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 		description = "$item_apotheosis_skill_angler_desc",
 		icon_sprite_file = "mods/Apotheosis/files/ui_gfx/essences/skill_angler.png"
 	})
+	EntityAddTag(entity_ui,"pseudo_perk")
 	EntityAddChild( entity_who_picked, entity_ui )
 	
 	local value = tonumber(GlobalsGetValue( "APOTHEOSIS_FISHING_SKILL", "0" ))

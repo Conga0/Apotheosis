@@ -37,24 +37,6 @@ do
   ModTextFileSetContent(path, tostring(xml))
 end
 
---PW Pitboss gains the projectile failsafe as well incase of lag
-do
-  local path = "data/entities/animals/parallel/tentacles/parallel_tentacles.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  xml:add_child(nxml.parse([[
-      <LuaComponent
-      script_damage_received="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
-      script_death="data/entities/animals/boss_pit/boss_pit_apotheosis_proj_failsafe.lua"
-      execute_times="-1"
-      execute_every_n_frame="-1"
-      remove_after_executed="0"
-      >
-      </LuaComponent>
-  ]]))
-  ModTextFileSetContent(path, tostring(xml))
-end
-
 --Prevents High Alchemist from creating an unnecessarily high amount of shields by giving him a 3 second cooldown between creating a new shield from taking damage
 do
   local path = "data/entities/animals/boss_alchemist/boss_alchemist.xml"
@@ -605,7 +587,6 @@ do -- gsub new Creeps into Summon Egg's spawn table
   content = content:gsub([[chilly = { {"tentacler_small"}, {"tentacler"} },]], [[chilly = { {"tentacler_small"}, {"tentacler"}, {"tentacler_big"} },]])
   content = content:gsub([[red = { {"bat", 3}, {"tentacler_small"}, {"tentacler"} },]], [[red = { {"bat", 3}, {"fairy_big", 2}, {"tentacler_small"}, {"tentacler"} },]])
   content = content:gsub("\"data/entities/animals/\" %.%. entity_to_spawn %.%. \"%.xml\"", "GlobalsGetValue( table.concat({\"apotheosis_cs_\",entity_to_spawn,\"_filepath\"}), table.concat({\"data/entities/animals/\",entity_to_spawn,\".xml\"}) )")
-  print(content)
   ModTextFileSetContent(path, content)
 end
 
@@ -1254,22 +1235,6 @@ do --Increase Parallel World Boss hp depending on PW count
   ModTextFileSetContent(path, tostring(xml))
 end
 
-do --Increase Parallel World Boss hp depending on PW count
-  local path = "data/entities/animals/parallel/tentacles/parallel_tentacles.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  xml:add_child(nxml.parse([[
-    <LuaComponent
-      script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_parallels.lua"
-      execute_every_n_frame="5"
-      execute_times="1"
-      remove_after_executed="1"
-      >
-	  </LuaComponent>
-  ]]))
-  ModTextFileSetContent(path, tostring(xml))
-end
-
 do --Hopefully, fixes an extremely rare bug where the sampo disappears under certain circumstances
   local path = "data/entities/animals/boss_centipede/reference_point.xml"
   local content = ModTextFileGetContent(path)
@@ -1375,7 +1340,6 @@ do --Rare chance to make hiisi base spooked during herobrine hours
     local path = "data/scripts/biomes/snowcastle.lua"
     local content = ModTextFileGetContent(path)
     content = content:gsub("return true", "return false")
-    print(content)
 
     ModTextFileSetContent(path, content)
   end
@@ -1385,7 +1349,6 @@ do --Make vases work properly with Creature Shifts
   local path = "data/scripts/props/physics_vase_damage.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"data/entities/animals/longleg%.xml\"", "GlobalsGetValue( \"apotheosis_cs_longleg_filepath\", \"data/entities/animals/longleg.xml\" )")
-  print(content)
 
   ModTextFileSetContent(path, content)
 end
@@ -1394,7 +1357,6 @@ do --Make vases work properly with Creature Shifts
   local path = "data/scripts/animals/mimic_damage.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"data/entities/animals/longleg%.xml\"", "GlobalsGetValue( \"apotheosis_cs_longleg_filepath\", \"data/entities/animals/longleg.xml\" )")
-  print(content)
 
   ModTextFileSetContent(path, content)
 end
@@ -1403,7 +1365,6 @@ do --Make vanilla hamis nests work properly with Creature Shifts
   local path = "data/scripts/buildings/spidernest.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"data/entities/animals/longleg%.xml\"", "GlobalsGetValue( \"apotheosis_cs_longleg_filepath\", \"data/entities/animals/longleg.xml\" )")
-  print(content)
 
   ModTextFileSetContent(path, content)
 end

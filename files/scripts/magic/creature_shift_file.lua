@@ -403,6 +403,7 @@ function creature_shift( entity, x, y, debug_no_limits )
 
         if add_icon then
             local icon_entity = EntityCreateNew( "creature_shift_ui_icon" )
+            EntityAddTag(icon_entity,"pseudo_perk")
             local spritepath = 
             EntityAddComponent( icon_entity, "UIIconComponent", 
             { 

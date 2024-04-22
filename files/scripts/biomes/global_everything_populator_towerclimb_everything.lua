@@ -58,7 +58,8 @@ if g_props then
         prob           = 0.02,
         min_count    = 1,
         max_count    = 1,    
-        entity     = "data/entities/props/crystal_opal.xml"
+        entity     = "data/entities/props/crystal_opal.xml",
+        parallel = true
     })
 
     table.insert(g_props,

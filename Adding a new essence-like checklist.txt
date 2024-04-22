@@ -1,0 +1,1 @@
+Remember to give the child entity it's attached to the "pseudo_perk" tag so it's compatiable with OnlyWands
