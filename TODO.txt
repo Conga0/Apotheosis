@@ -1,7 +1,7 @@
 
 Inspect data/curse_wither_start.lua
 
-
+Fix creature shift icons being transparent
 
 
 
