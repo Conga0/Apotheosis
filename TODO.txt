@@ -2,7 +2,7 @@
 Inspect data/curse_wither_start.lua
 
 Fix creature shift icons being transparent
-
+Remove the limiter on cat hissing
 
 
 Remove ABBC anti-cheese after it goes to main

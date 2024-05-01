@@ -230,7 +230,7 @@ ModTextFileSetContent("data/entities/animals/parallel/tentacles/parallel_tentacl
 if ModIsEnabled("purgatory") then
 
 --Dragon Fire
-local content = ModTextFileGetContent("mods/purgatory/files/entities/animals/boss_dragons/fire_dragon.xml")
+local content = ModTextFileGetContent("mods/purgatory/files/entities/animals/boss_dragons/boss_fire_dragon.xml")
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
   <LuaComponent
@@ -241,10 +241,10 @@ xml:add_child(nxml.parse([[
     >
   </LuaComponent>
 ]]))
-ModTextFileSetContent("mods/purgatory/files/entities/animals/boss_dragons/fire_dragon.xml", tostring(xml))
+ModTextFileSetContent("mods/purgatory/files/entities/animals/boss_dragons/boss_fire_dragon.xml", tostring(xml))
 
 --Dragon Ice
-local content = ModTextFileGetContent("mods/purgatory/files/entities/animals/boss_dragons/ice_dragon.xml")
+local content = ModTextFileGetContent("mods/purgatory/files/entities/animals/boss_dragons/boss_ice_dragon.xml")
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
   <LuaComponent
@@ -255,10 +255,10 @@ xml:add_child(nxml.parse([[
     >
   </LuaComponent>
 ]]))
-ModTextFileSetContent("mods/purgatory/files/entities/animals/boss_dragons/poison_dragon.xml", tostring(xml))
+ModTextFileSetContent("mods/purgatory/files/entities/animals/boss_dragons/boss_ice_dragon.xml", tostring(xml))
 
 --Dragon Poison
-local content = ModTextFileGetContent("mods/purgatory/files/entities/animals/boss_dragons/poison_dragon.xml")
+local content = ModTextFileGetContent("mods/purgatory/files/entities/animals/boss_dragons/boss_poison_dragon.xml")
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
   <LuaComponent
@@ -269,7 +269,7 @@ xml:add_child(nxml.parse([[
     >
   </LuaComponent>
 ]]))
-ModTextFileSetContent("mods/purgatory/files/entities/animals/boss_dragons/poison_dragon.xml", tostring(xml))
+ModTextFileSetContent("mods/purgatory/files/entities/animals/boss_dragons/boss_poison_dragon.xml", tostring(xml))
 
 --Parrallel world bosses
 local content = ModTextFileGetContent("mods/purgatory/files/entities/parallel_bosses/alchemist/boss_alchemist_parallel.xml")
