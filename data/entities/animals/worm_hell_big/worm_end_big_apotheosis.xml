@@ -430,8 +430,8 @@
      >
   </SpriteComponent>
 
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 
   <MusicEnergyAffectorComponent
     energy_target="1">

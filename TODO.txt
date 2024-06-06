@@ -3,16 +3,18 @@ Inspect data/curse_wither_start.lua
 
 Fix creature shift icons being transparent
 Remove the limiter on cat hissing
+Remove extra life (spent) in the ui
 
 
 Remove ABBC anti-cheese after it goes to main
 Add warning icon to meat realm if it goes to main without one 
 
-Kindly ask spoop to update the toxic worm achievement pillar (They look out of place when placed next to the other 4's updated graphics)
-
 Fix Forsaken Eyes not being stainable
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
 Fix Polymorph crystals being able to spawn camp TotA's entrance
+
+Check if the sandy temple banners use the proper graphic, or if they use the ToSR one
+Make brimstone/ukkostone/etc work passively in the user's inventory
 
 
 Reimplement Weakening Curse rework

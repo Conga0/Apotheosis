@@ -1,17 +1,11 @@
-=================================================================================================================================
-NOTE: Having borders around the image banners would look really good
-NOTE(COPI): [HR][/HR] makes for nice separators/borders to section off banners and stuff
-=================================================================================================================================
-
-
 [img]https://i.imgur.com/S6OzhJT.png[/img]
 
 Apotheosis is a massive content mod which expands upon [b]EVERYTHING.[/b]
-116 new enemies!
+124 new enemies!
 6 new bosses!
-76 new spells!
-6+ new biomes!
-15+ new materials!
+78 new spells!
+7+ new biomes!
+18+ new materials!
 A New Ending!
 Perks, Items, structures, Secrets, Music, and more!
 
@@ -64,9 +58,4 @@ Conga's Cats
 It is also [b]strongly recommended to play on the beta build[/b] for maximum mod stability.
 
 [img]https://i.imgur.com/yvzCtok.png[/img]
-
-
-If you wish to support my work in a tangiable manner, you can donate here:
-https://ko-fi.com/congalyne
-I don't expect you to under any circumstances and appreciate you playing donated or not, thankyou for playing everyone
 
