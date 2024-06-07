@@ -230,7 +230,7 @@ local events = {
             local currbiome = BiomeMapGetName( x, y )
             currbiome = tostring(currbiome)
             if currbiome ~= "$biome_evil_temple" and currbiome ~= "???" and currbiome ~= "$biome_orbroom" then
-                local d_opts = {"Do you happen have anything interesting to show?","Do you have something to accomplish?"}
+                local d_opts = {"Do you happen to have anything interesting to show?","Do you have something to accomplish?"}
                 local dialogue = d_opts[math.random(1,#d_opts)]
             	tone = "gossip"
                 return true, dialogue
