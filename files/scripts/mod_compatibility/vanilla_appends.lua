@@ -447,6 +447,7 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, 
     "orb_laseremitter_cutter.xml",
     "disc_bullet_bigger.xml",
     "duck.xml",
+    "glowing_bolt.xml",
   }
 
   for k=1,#notes do

@@ -25,6 +25,10 @@ local lines = {
   "Blueberry",
   "$credits_apotheosis_line_17",
   " ",
+  "Shug",
+  "Kitten",
+  "$credits_apotheosis_line_ch_trans",
+  " ",
   "$credits_apotheosis_line_extrahelp",
   "Nathan",
   "Letaali",
@@ -38,6 +42,7 @@ local lines = {
   "InfiniteSunrise",
   " ",
   "$credits_apotheosis_line_22",
+  "NollaGames",
   "Freakstritch",
   "Moriko Yumi",
   "TeoUltika",
@@ -59,7 +64,6 @@ local lines = {
   "42oblaze_it",
   "Albino",
   "DarkViperAU",
-  "NollaGames",
   "$credits_apotheosis_line_39",
   " ",
   " ",
@@ -93,18 +97,6 @@ local lines = {
   " ",
   " ",
   " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
-  " ",
 }
 
 
@@ -123,7 +115,7 @@ roll_credits_progress = (roll_credits_progress or -1) - 0.375 * (accelerate and 
 
 
 --Trigger the true run victory & vanilla noita credits
-if roll_credits_progress < -900 then --If anything breaks in the future, this was originally -850 (Conga Lyne 22/01/2024)
+if roll_credits_progress < -1000 then --If anything breaks in the future, this was originally -850 (Conga Lyne 22/01/2024)
     --EntityKill(GetUpdatedEntityID())
 
     --Probably handle diff effects by scanning for a game flag to detect which ending is currently ongoing

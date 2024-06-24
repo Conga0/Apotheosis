@@ -206,8 +206,8 @@
 		 >
 	</SpriteComponent>
 
-	<HealthBarComponent>
-	</HealthBarComponent>
+	<BossHealthBarComponent>
+	</BossHealthBarComponent>
 
 	<LuaComponent
 		script_death="data/entities/animals/boss_blob/ai/boss_blob_death.lua"
