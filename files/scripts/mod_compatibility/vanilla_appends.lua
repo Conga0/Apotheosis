@@ -1393,7 +1393,7 @@ do --Modify fungal shift
   ]]
   content = content:gsub(insert_function_search, insert_function_replace)
   --Cursed liquid thing
-  content = content:gsub("from%.materials = %{ CellFactory_GetName%(held_material%) %}", "from%.materials = apotheosis_fungal_shift_check_for_cursed_liquid(held_material)")
+  content = content:gsub("from%.materials = %{ CellFactory_GetName%(held_material%) %}", "from.materials = apotheosis_fungal_shift_check_for_cursed_liquid(held_material)")
   local append_to_end = [[
     function apotheosis_fungal_shift_check_for_cursed_liquid(material)
       local material_cellname = CellFactory_GetName(material)
@@ -1406,7 +1406,7 @@ do --Modify fungal shift
     table.insert(materials_from, { probability = 0.2, materials = { "apotheosis_cursed_liquid_red_static", "apotheosis_cursed_liquid_red" }, name_material = "apotheosis_cursed_liquid_red" })
   ]]
   content = content .. append_to_end
-  
+
   ModTextFileSetContent(path, content)
 end
 
