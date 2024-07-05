@@ -1370,6 +1370,46 @@ do --Make vanilla hamis nests work properly with Creature Shifts
   ModTextFileSetContent(path, content)
 end
 
+do --Modify fungal shift
+  local path = "data/scripts/magic/fungal_shift.lua"
+  local content = ModTextFileGetContent(path)
+  --Adding water
+  local water_table_old = "\"water\", \"water_static\", \"water_salt\", \"water_ice\""
+  local water_table_new = "\"water\", \"water_static\", \"water_salt\", \"water_ice\", \"water_fading\", \"apotheosis_water_fading_fast\""
+  content = content:gsub(water_table_old, water_table_new)
+  --Inserting check for fungal shift immunity
+  local insert_function_search = "function fungal_shift%( entity, x, y, debug_no_limits %)"
+  local insert_function_replace = [[
+    function fungal_shift( entity, x, y, debug_no_limits )
+  	if GameHasFlagRun("apotheosis_flag_no_tripping") then
+		  local frame = GameGetFrameNum()
+		  local last_frame = tonumber( GlobalsGetValue( "apotheosis_shift_block_last_frame", "-1000000" ) )
+		  if frame > last_frame + 60*60*3 then --3 minute long cooldown between messages
+			  GamePrintImportant( "$log_apotheosis_shift_blocked_name", "$log_apotheosis_shift_blocked_desc" )
+			  GlobalsSetValue( "apotheosis_shift_block_last_frame", tostring(frame))
+		  end
+		  return
+	  end
+  ]]
+  content = content:gsub(insert_function_search, insert_function_replace)
+  --Cursed liquid thing
+  content = content:gsub("from%.materials = %{ CellFactory_GetName%(held_material%) %}", "from.materials = apotheosis_fungal_shift_check_for_cursed_liquid(held_material)")
+  local append_to_end = [[
+    function apotheosis_fungal_shift_check_for_cursed_liquid(material)
+      local material_cellname = CellFactory_GetName(material)
+      local result = { material_cellname }
+      if material_cellname == "apotheosis_cursed_liquid_red_static" or material_cellname == "apotheosis_cursed_liquid_red" then 
+        result = { "apotheosis_cursed_liquid_red_static", "apotheosis_cursed_liquid_red" }
+      end
+      return result
+    end
+    table.insert(materials_from, { probability = 0.2, materials = { "apotheosis_cursed_liquid_red_static", "apotheosis_cursed_liquid_red" }, name_material = "apotheosis_cursed_liquid_red" })
+  ]]
+  content = content .. append_to_end
+
+  ModTextFileSetContent(path, content)
+end
+
 --Post Ascension reward
 --[[
 if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("apotheosis_card_unlocked_sea_to_potion") == false then
