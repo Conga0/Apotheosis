@@ -182,7 +182,7 @@ end
 do --Heretic drops the plane radar perk for convinience
   local path = "data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_death.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("%-%-EntityLoad%( \"mods/apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)", "do dofile_once(\"data/scripts/perks/perk.lua\") perk_spawn( pos_x, pos_y, \"APOTHEOSIS_PLANE_RADAR\" ) end")
+  content = content:gsub("%-%-EntityLoad%( \"mods/apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)", "do dofile_once(\"data/scripts/perks/perk.lua\") perk_spawn( pos_x, pos_y, \"APOTHEOSIS_PLANE_RADAR\" ) EntityLoad( \"mods/apotheosis/files/entities/items/pickups/perk_copyspells.xml\", pos_x, pos_y - 16) end")
   ModTextFileSetContent(path, content)
 end
 
