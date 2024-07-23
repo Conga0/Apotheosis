@@ -2198,7 +2198,7 @@
   <CellData
 	name="apotheosis_malicious_powder"
 	ui_name="$material_apotheosis_malicious_powder"
-  	tags="[sand_other],[corrodible],[burnable],[alchemy]"
+  	tags="[sand_other],[corrodible],[burnable],[alchemy],[catastrophic]"
 	burnable="1"
 	density="7"
 	cell_type="liquid"

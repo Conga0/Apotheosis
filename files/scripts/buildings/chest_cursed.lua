@@ -144,6 +144,8 @@ local pool = {
 
 -- A weighted table would be great here but when I tried to find a tutorial I found someone making his tutorial using black characters on a black background. I can't see any of that.
 -- If you know how or know a decent tutorial, please let me know.
+--
+-- 29/06/2024 Conga: I've learned how to implement this but as of right now, if it functions it functions, if it ain't broke don't fix it.
 local prizePool = {
     "data/entities/items/pickup/potion_secret.xml", --1
     "data/entities/items/pickup/potion_random_material.xml",
