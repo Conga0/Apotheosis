@@ -129,6 +129,50 @@ if currentLang == "日本語" then
   keybind_current = "現在の設定: "
 end
 
+--Chinese Translations
+if currentLang == "简体中文" then
+  congacat_cat_immortal_name = "猫咪不会死亡"
+  congacat_cat_immortal_desc = "猫咪是否不会死亡？"
+  fairy_immortality_name = "精灵不会死亡"
+  fairy_immortality_desc = "精灵是否不会死亡？"
+  motd_setting_name = "每日消息"
+  motd_setting_desc = "每局游戏开始前是否显示每日信息？"
+  seasonal_events_name = "节日事件"
+  seasonal_events_desc = "是否启用节日事件？\n例如万圣节，More Creeps（译者注：本模组前身）的生日，等等"
+  boss_health_multiplayer_name = "Boss 血量倍数"
+  boss_health_multiplayer_formatting = " $0% HP"
+  boss_health_multiplayer_desc = "将所有 Boss 的血量乘以此值。\n适合那些需要 Boss 更耐打的玩家。\n不影响三眼的血量。\n小 Boss 的血量也会得到部分提升。"
+  custom_seed_name = "设定自定义种子"
+  custom_seed_desc = "为这次游戏设定自定义种子\n例如：0948274926，或者hardcore"--偷偷放点秘密种子在这“PuppyDogs”？--Hardmode？Towerclimb？
+  organised_icons_name = "图标归类"
+  organised_icons_desc = "法术和天赋是否与原版的法术和天赋放在一起? \n\n例如，如果启用该选项，在天赋图鉴中，\n免疫类天赋将排在其他免疫类天赋旁边，而不是在整个天赋列表的最后面。\n法术和生物图标同理。"
+  
+  seasonal_forced_name = "强制视为节日期间"
+  seasonal_forced_desc = "可强制视为正在发生的节日事件列表"
+  seasonal_forced_april_fools_name = "强制视为愚人节"
+  seasonal_forced_april_fools_desc = "是否强制视为愚人节期间？"
+  seasonal_forced_birthday_name = "强制视为生日"
+  seasonal_forced_birthday_desc = "是否强制视为 Apotheosis 模组生日期间？"
+  seasonal_forced_halloween_name = "强制视为万圣节"
+  seasonal_forced_halloween_desc = "是否强制视为万圣节期间？"
+  seasonal_forced_smissmass_name = "强制视为 Smissmass"
+  seasonal_forced_smissmass_desc = "是否强制视为 Smissmass 期间？"
+  seasonal_forced_cirno_name = "强制视为⑨日"
+  seasonal_forced_cirno_desc = "是否强制视为⑨日期间？"
+  secret_golden_cape_name = "黄金斗篷"
+  secret_golden_cape_desc = "是否启用黄金斗篷装饰？\n如果使用角色类模组，你可能想要关闭这个。"
+  
+  spellrebalances_name = "原版法术调整"
+  spellrebalances_desc = "调整许多法术的法力消耗，使它们更加实用。\n此外，还调整了穿刺射击、链锯、音符法术，使它们与原版的平衡性相一致。\nApotheosis 模组是基于该选项启用的情况所设计。"
+  
+  --Keybinds
+  keybind_name = "键位绑定"
+  keybind_desc = "编辑你的 Apotheosis 模组键位绑定"
+  keybind_tutorial = "点击下方提示以输入新的副法术绑定。\n默认为鼠标右键。"
+  keybind_newbinding = "设定新绑定"
+  keybind_current = "副法术释放按键绑定："
+end
+
 --Key binding data
 local listening = false
 local there_has_been_input = false
