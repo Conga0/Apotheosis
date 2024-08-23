@@ -1272,7 +1272,7 @@ end
 do --Make glimmer spells work with plasma emitters
   local path = "data/scripts/projectiles/colour_spell.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("comps %= EntityGetComponent%( entity_id, \"ParticleEmitterComponent\" %)", "comps = EntityGetComponent( entity_id, \"LaserEmitterComponent\" ) or {} for k=1,#comps do local v = comps[k] ComponentObjectSetValue2( v, \"laser\", \"beam_particle_type\", CellFactory_GetType(particle)) end comps = EntityGetComponent( entity_id, \"ParticleEmitterComponent\" )")
+  content = content:gsub("comps %= EntityGetComponent%( entity_id, \"ParticleEmitterComponent\" %)", "local plas_part = particle if particle == nil then plas_part = \"apotheosis_spark_invisible\" end comps = EntityGetComponent( entity_id, \"LaserEmitterComponent\" ) or {} for k=1,#comps do local v = comps[k] ComponentObjectSetValue2( v, \"laser\", \"beam_particle_type\", CellFactory_GetType(plas_part)) end comps = EntityGetComponent( entity_id, \"ParticleEmitterComponent\" )")
 
   ModTextFileSetContent(path, content)
 end

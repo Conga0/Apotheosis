@@ -272,7 +272,7 @@
 	</LuaComponent>
 
 	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/aquamage_pylon_audio.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/aquamage_pylon_audio_toxic.lua"
 		execute_every_n_frame="30"
 		>
 	</LuaComponent>
