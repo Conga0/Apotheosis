@@ -430,6 +430,20 @@
 	fire_colors_index="3" >
     </Graphics>
   </CellDataChild>
+  
+  <CellDataChild
+  	_parent="spark"
+  	_inherit_reactions="1"
+  	name="apotheosis_spark_invisible"
+	ui_name="$material_apotheosis_spark_orange"
+	wang_color="7fff9314"
+	gfx_glow="90"
+	>
+  	<Graphics
+	color="00ff9313"
+	fire_colors_index="3" >
+    </Graphics>
+  </CellDataChild>
 
   <CellDataChild
   	_parent="blood_worm"

@@ -84,7 +84,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/Apotheosis/files/entities/projectiles/beam_holy_warning.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/beam_holy_orb_warning.xml"
 		>
 	</VariableStorageComponent>
 </Entity>
