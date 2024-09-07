@@ -679,7 +679,7 @@ curse_apotheosis_towerclimb_desc,All biomes can spawn any creature.,Во все�
 curse_apotheosis_alchemistdream_name,Alchemist's Dream,Мечта алхимика,,,,,,,炼金术士的梦想,錬金術師の夢,,,,
 curse_apotheosis_alchemistdream_desc,All potions are replaced with Large Potions.\nAll liquid bubbles are blessed with glass cannon.\nAlchemists & Liquid bubble appear much more frequently.\nNew Liquid Bubbles appear.,Все зелья заменены на большие зелья.\nВсе жидкие пузыри наделены стеклянной пушкой.\nАлхимики и жидкие пузыри появляются гораздо чаще.\nПоявляются новые жидкие пузыри.,,,,,,,所有魔药替换为大瓶魔药。\n所有液体泡泡获得玻璃大炮天赋。\n席西炼金术士和液体泡泡出现的频率更高。\n出现新种类的液体泡泡。,全ポーションがメガポーションになる。\n泡系モブがガラスキャノンパークの効果を得る。\nアルケミスティと泡系の敵の出現頻度が上がる。\n新たな種類の泡系モブが出現する。,,,,
 curse_apotheosis_addict_name,Addict,Наркоман,,,,,,,瘾君子,薬物依存,,,,
-curse_apotheosis_addict_desc,20 Fungal & Creature shifts occur at the start of the run.,20 грибковых и существенных сдвигов происходят в начале забега.,,,,,,,每局游戏开始时，会进行 20 次真菌转换和生物转换。,20個のシフト効果がゲーム開始時から発動する。,,,,
+curse_apotheosis_addict_desc,20 Fungal & Creature shifts occur at the start of the run.,20 грибковых и разнообразных существ появляются в начале забега.,,,,,,,每局游戏开始时，会进行 20 次真菌转换和生物转换。,20個のシフト効果がゲーム開始時から発動する。,,,,
 curse_apotheosis_poverty_name,Poverty,Бедность,,,,,,,一无所有,貧困,,,,
 curse_apotheosis_poverty_desc,You're Affluen't\nMost enemies drop no gold.,Вы богаты\nБольшинство врагов не роняют золото.,,,,,,,"你很""负有""。\n大多数敌人不再会掉落黄金。",ほとんどのモンスターは倒してもゴールドを落とさない。,,,,
 curse_apotheosis_downunder_name,Down Under,Вниз головой,,,,,,,身在澳洲,逆さの呪い,,,,
