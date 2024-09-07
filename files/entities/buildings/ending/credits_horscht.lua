@@ -22,6 +22,7 @@ local lines = {
   "Slack",
   "$credits_apotheosis_line_slack",
   " ",
+  "Alex(GoD)",
   "Blueberry",
   "$credits_apotheosis_line_17",
   " ",
