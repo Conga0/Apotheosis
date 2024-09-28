@@ -65,6 +65,8 @@ Y🍵 - Creator of More Musical Magic, implemented into this mod to allow for ne
 
 Blueberry#1414 - Translating the mod to Russian
 
+Alex(GoD) - Translating the mod to Russian
+
 Extol#0629 - Helping getting translation keys working, needed for custom perks to show up correctly
 Also helped make split shot significantly less game breaking
 
