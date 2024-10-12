@@ -1,4 +1,4 @@
-<Entity name="$projectile_default" tags="projectile_player,black_hole">
+<Entity name="$projectile_default" tags="projectile_player">
 
 	<Base file="data/entities/base_projectile.xml" >
 		<VelocityComponent
