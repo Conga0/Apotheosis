@@ -716,7 +716,7 @@ table.insert(ALL_ENTITIES, {
 		name="Wall Maggot",
 		path="data/entities/animals/worm_wall.xml",
 		image="data/ui_gfx/animal_icons/worm_wall.png",
-	  },,
+	  },
 	  {
 		name="Small Slimy Maggot",
 		path="data/entities/animals/worm_maggot_big.xml",
