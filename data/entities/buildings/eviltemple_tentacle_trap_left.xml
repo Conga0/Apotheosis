@@ -60,7 +60,7 @@
 	</PathFindingComponent>
 
 	<GenomeDataComponent 
-		herd_id="trap"
+		herd_id="mage_corrupted"
 		food_chain_rank="7"
 		is_predator="1" >
 	</GenomeDataComponent>
@@ -112,7 +112,7 @@
 	</LuaComponent>
 
 	<PixelSceneComponent
-		pixel_scene="data/biome_impl/crypt/trap_frame_left.png"
+		pixel_scene="mods/apotheosis/files/biome_impl/evil_temple/trap_frame_left.png"
 		offset_x="-5"
 		offset_y="-10" >
 	</PixelSceneComponent>

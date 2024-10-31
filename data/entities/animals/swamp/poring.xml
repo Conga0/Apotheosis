@@ -26,6 +26,17 @@
 			>
         </DamageModelComponent>
 
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/poring_swamp_death_explosion.lua"
+		>
+	</LuaComponent>
+
+	<MaterialInventoryComponent>
+		<count_per_material_type>
+			<Material material="water_swamp" count="150"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
+
 	</Base>
 
     <LuaComponent

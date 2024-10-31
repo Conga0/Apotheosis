@@ -9,7 +9,7 @@
 
 	<LuaComponent
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_shadow_barrage_2.lua"
-		execute_every_n_frame="60"
+		execute_every_n_frame="12"
 		execute_times="-1"
 		>
 	</LuaComponent>

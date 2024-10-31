@@ -1,0 +1,18 @@
+<Entity tags="temple_areachecker" >
+
+	<MaterialAreaCheckerComponent
+		area_aabb.min_x="-36" 
+		area_aabb.min_y="0"		
+		area_aabb.max_x="35" 
+		area_aabb.max_y="1"		
+		material="rock_hard_border_nosoil"
+		material2="rock_hard_border_nosoil"
+		kill_after_message="1"
+		>
+	</MaterialAreaCheckerComponent>
+
+	<LuaComponent
+		script_material_area_checker_failed="mods/apotheosis/files/scripts/buildings/perk_creation_check_for_leaks.lua" >
+	</LuaComponent>
+
+</Entity>

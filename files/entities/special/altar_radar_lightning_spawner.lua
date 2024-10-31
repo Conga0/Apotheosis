@@ -3,6 +3,8 @@ dofile_once("data/scripts/lib/utilities.lua")
 local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 
+if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or HasFlagPersistent("apotheosis_stone_heretic_purified") then
+
 --Particle gfx
 EntitySetComponentsWithTagEnabled( entity_id, "enabled_in_world", true )
 component_write( EntityGetFirstComponent( entity_id, "ParticleEmitterComponent"), { count_min=200, count_max=200, cosmetic_force_create=true } ) 
@@ -23,7 +25,37 @@ do local v = heretic_stones[k]
         EntityKill(v)
 		EntityLoad("mods/apotheosis/files/entities/items/pickups/stone_radar.xml",x,y)
         GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
-        GameTriggerMusicEvent( "music/oneshot/heaven_03", true, pos_x, pos_y )
+	if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
+		GameTriggerMusicEvent( "music/oneshot/heaven_03", true, pos_x, pos_y )
+	else
+		local heretic_found = false
+		local boss = EntityGetWithTag( "miniboss" ) or {}
+		for bp=1,#boss do
+			if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+				heretic_found = true
+			end
+		end
+		if heretic_found == false then
+			local cowardness = tonumber(GlobalsGetValue("HERETIC_COWARDLY"))
+			if cowardness == nil then
+				cowardness = 0
+			end
+			GlobalsSetValue("HERETIC_COWARDLY", tostring(cowardness + 1))
+			EntityLoad("mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster_stone_convert.xml",pos_x,pos_y-100)
+		end
+		GameTriggerMusicEvent( "music/oneshot/tripping_balls_02", true, pos_x, pos_y )
+		GameScreenshake( 150 )
+	end
         GameAddFlagRun("apotheosis_heretalk_guiding_stone")
 	end
+end
+
+else
+--If heretic hasn't been killed before, then play that one gods upset sound and show a little particle effect to try and nudge people to kill him
+
+EntityLoad("data/entities/animals/boss_flesh_monster/boss_flesh_monster_hint.xml",pos_x,pos_y-50)
+GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )
+GameScreenshake( 150 )
+GamePrint("Something stops you from beyond...")
+GlobalsSetValue("HERETIC_HINT_DELAY", tostring(GameGetFrameNum()+600))
 end

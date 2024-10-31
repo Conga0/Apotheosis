@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="$enemy_apotheosis_wizard_corrupt_wands">
   <Base file="data/entities/animals/wizard_corrupt_wands.xml" include_children="1" >
     <DamageModelComponent 
       hp="160"

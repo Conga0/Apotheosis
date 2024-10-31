@@ -1,0 +1,122 @@
+<Entity name="apotheosis_heretic_eye_pickup" tags="hittable,teleportable_NOT,apotheosis_heretic" >
+	<Base file="data/entities/base_item_projectile.xml" />
+
+	<!-- physical presence -->
+	
+	<SpriteComponent
+		_tags="enabled_in_world"
+		offset_x="9"
+		offset_y="9"
+		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
+		z_index="-1"
+	></SpriteComponent>
+	
+	<VelocityComponent
+		_tags="enabled_in_world"
+	></VelocityComponent>
+
+	<Entity>
+		<SpriteComponent
+			_tags="enabled_in_world"
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.xml"
+			emissive="1"
+			offset_x="8.5"
+			offset_y="8.5"
+			has_special_scale="1"
+			special_scale_x="1"
+			>
+		</SpriteComponent>
+		
+		<LuaComponent
+			_tags="enabled_in_world"
+			script_source_file="data/entities/animals/boss_flesh_monster/eye.lua"
+			execute_every_n_frame="1"
+			>
+		</LuaComponent>
+	</Entity>
+	
+	<SpriteParticleEmitterComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		sprite_file="data/particles/darkflame_red.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="20"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-5"
+		randomize_position.max_x="5"
+		randomize_position.min_y="-5"
+		randomize_position.max_y="5"
+		>
+  </SpriteParticleEmitterComponent>
+
+	<UIInfoComponent
+		_tags="enabled_in_world"
+		name="$item_apotheosis_heretical_eye_name">
+	</UIInfoComponent>
+	
+	<LuaComponent
+		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua"
+		execute_every_n_frame="200"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="dialogue_timer"
+		value_float="0"
+		value_int="0"
+		value_string="0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="kick-o-meter"
+		value_float="0"
+		value_int="0"
+		value_string="0"
+		>
+	</VariableStorageComponent>
+
+	<HitboxComponent 
+		_tags="enabled_in_world"
+		aabb_min_x="106" 
+		aabb_max_x="-106" 
+		aabb_min_y="106" 
+		aabb_max_y="-106"
+		damage_multiplier="0"
+		>
+	</HitboxComponent>
+
+	<GenomeDataComponent 
+		_tags="enabled_in_world"
+		food_chain_rank="2"
+		herd_id="mage_corrupted"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+	<StreamingKeepAliveComponent
+		_tags="enabled_in_world"
+		>
+	</StreamingKeepAliveComponent>
+	
+</Entity>

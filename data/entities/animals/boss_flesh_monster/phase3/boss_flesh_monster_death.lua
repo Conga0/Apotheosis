@@ -14,16 +14,25 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	--ConvertMaterialEverywhere( CellFactory_GetType( "fire" ), CellFactory_GetType( "smoke" ) ) --Shifts all fire out of the world permanently.
 	--ConvertMaterialEverywhere( CellFactory_GetType( "liquid_fire" ), CellFactory_GetType( "smoke" ) ) --Shifts all "fire" out of the world permanently.
 
+	--Not sure why this was here... -S
+	--[[
 	if flag_status then
 		EntityLoad( "data/entities/items/pickup/heart_fullhp.xml",  pos_x + 16, pos_y )
 	else
 		EntityLoad( "data/entities/items/pickup/heart_fullhp.xml",  pos_x + 16, pos_y )
 		--EntityLoad( "mods/Apotheosis/files/entities/props/statue_fire_lukki.xml", 4288, 2331 )
 	end
+	]]--
+	EntityLoad( "data/entities/items/pickup/heart_fullhp.xml",  pos_x + 16, pos_y )
 
 	
 	EntityLoad( "data/entities/animals/boss_flesh_monster/boss_flesh_monster_explosion.xml", pos_x, pos_y )
-	EntityLoad( "data/entities/animals/boss_flesh_monster/phase3/phase3_stone_portal_quiet.xml", pos_x, pos_y )
+
+	if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") then
+		EntityLoad( "data/entities/animals/boss_flesh_monster/phase3/phase3_stone_portal_quiet.xml", pos_x, pos_y )
+	else
+		EntityLoad( "data/entities/animals/boss_flesh_monster/phase3/phase3_stone_portal_quiet_stoneless.xml", pos_x, pos_y )
+	end
 	--EntityLoad( "mods/apotheosis/files/entities/items/pickups/stone_heretic.xml", pos_x, pos_y )
 
 	--April Fools Print
@@ -37,6 +46,19 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		GameAddFlagRun( "apotheosis_miniboss_boss_flesh_monster" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_spell" )
+		if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_rage") then
+			AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_wrath" )
+		end
+		local children = EntityGetAllChildren( v )
+		activated = true
+		if ( children ~= nil ) then
+		for a,b in ipairs( children ) do
+			if ( EntityGetName(b) == "flesh_curse" ) then
+				AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_gourd_holy" )
+				break
+			end
+		end
+		end
 		--local seed = string.lower(ModSettingGet( "Apotheosis.custom_seed" ))
 		--if seed == "hardcore" or seed == "nightcore" then
 		if GameHasFlagRun("apotheosis_hardmode") or GameHasFlagRun("apotheosis_everything") then

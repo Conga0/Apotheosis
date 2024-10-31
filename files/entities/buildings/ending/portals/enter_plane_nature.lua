@@ -2,6 +2,11 @@ function do_newgame_plus()
 	-- GameDoEnding2()
 	-- BiomeMapLoad( "mods/nightmare/files/biome_map.lua" )
 
+	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
+	-- print( newgame_n )
+	newgame_n = newgame_n + 1
+	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
+
 	local players = EntityGetWithTag("player_unit")
 	for k=1,#players
 	do local v = players[k]
@@ -20,6 +25,8 @@ function do_newgame_plus()
 		EntityAddChild(v,biome_rebooter)
 	end
 
+	--EntityLoad("mods/apotheosis/files/entities/buildings/ending/portals/saviour_portal_nature.xml",0,0)
+
 	--Reset RGB portal locations
 	GlobalsSetValue( "apotheosis_markerportal_red_x", "0" )
 	GlobalsSetValue( "apotheosis_markerportal_red_y", "0" )
@@ -27,6 +34,12 @@ function do_newgame_plus()
 	GlobalsSetValue( "apotheosis_markerportal_green_y", "0" )
 	GlobalsSetValue( "apotheosis_markerportal_blue_x", "0" )
 	GlobalsSetValue( "apotheosis_markerportal_blue_y", "0" )
+
+	--Makes it so Heretic can no longer teleport away to his now non-existant house, he should've seen the stone anyway by now
+	GameAddFlagRun("apotheosis_heretalk_cynical")
+
+	--Planes check for Heretic to lock off certain dialogue
+	GameAddFlagRun("apotheosis_planes_entered")
 
 	--Deque & Fadeout current music so the new biome music can take over
     GameTriggerMusicFadeOutAndDequeueAll()
@@ -81,7 +94,7 @@ function do_newgame_plus()
 		local children = EntityGetAllChildren(v)
 		for m=1,#children do
 			local lcomp = EntityGetFirstComponentIncludingDisabled(children[m],"LuaComponent")
-			if ComponentGetValue2(lcomp,"script_source_file") == "data/scripts/perks/map.lua" then
+			if lcomp ~= nil and ComponentGetValue2(lcomp,"script_source_file") == "data/scripts/perks/map.lua" then
 				ComponentSetValue2(lcomp,"script_source_file","")
 			end
 		end
@@ -92,7 +105,7 @@ function do_newgame_plus()
 		for z=1,#children do
 			local comps = EntityGetComponentIncludingDisabled(children[z],"LuaComponent")
 			for k=1,#comps do
-				if ComponentGetValue2(comps[k],"script_source_file") == "data/scripts/perks/map.lua" then
+				if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "data/scripts/perks/map.lua" then
 					EntitySetComponentIsEnabled(children[z],comps[k],false)
 					break
 				end
@@ -100,11 +113,31 @@ function do_newgame_plus()
 		end
 		]]--
 	end
+
+	local targets = EntityGetWithTag("poopstone")
+	for r=1,#targets
+	do local v = targets[r]
+	    if (EntityGetName(v) == "$item_apotheosis_stone_radar_name") then
+		--Update Radars to point to the correct location inside of planes
+		--Disable no longer relevent ones & change the direction of plane radar to the exit portal
+		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
+		for k=1,#comps do
+			if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_ping.lua" then
+				ComponentSetValue2(comps[k],"script_source_file","mods/apotheosis/files/scripts/items/radar_stone_ping_inside.lua")
+			end
+		end
+	    end
+	end
+
+	--Heretic's yell echoes through the planes when you first enter
+	--This was originally a bug since the guiding stone is destroyed and reconstructed each time you travel to a new world
+	--I thought it was cool though so here it is here :p
+	if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
+	    GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/items/stone_heretic/monster_distant", pos_x, pos_y );
+	    GameScreenshake( 100 )
+	end
 end
 
-
-function item_pickup( entity_item, entity_who_picked, name )
-	GamePrint("$building_portal_use")
-	EntityKill(GetUpdatedEntityID())
-	do_newgame_plus()
-end
+GamePrint("$building_portal_use")
+do_newgame_plus()
+EntityKill(GetUpdatedEntityID())

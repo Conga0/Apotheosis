@@ -7,6 +7,20 @@ if GameHasFlagRun("apotheosis_flesh_boss_released") then
         EntityKill(children[k])
     end
     EntityKill(entity_id)
+elseif GameHasFlagRun("apotheosis_flesh_boss_stone_initiated") and not GameHasFlagRun("apotheosis_flesh_boss_released") then
+    --If for whatever insane reason someone avoids both the event trigger and Heretic portaling in, then just spawn him here
+    local children = EntityGetAllChildren(entity_id)
+    for k=1,#children do
+        EntityKill(children[k])
+    end
+    local x, y = EntityGetTransform(entity_id)
+    EntityLoad( "data/entities/animals/boss_flesh_monster/boss_flesh_monster.xml", x, y )
+    LoadPixelScene( "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_6.png", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_6.png", x-56, y-56, "", true )
+    EntityLoad( "data/entities/particles/blood_explosion.xml", x, y )
+
+    GameAddFlagRun("apotheosis_flesh_boss_released")
+
+    EntityKill(entity_id)
 else
     local entity_id = GetUpdatedEntityID()
     local x, y = EntityGetTransform(entity_id)

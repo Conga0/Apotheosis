@@ -5,11 +5,11 @@
   default_animation="stand" >
 
   <RectAnimation 
-    frame_count="1" 
+    frame_count="8" 
     frame_height="22" 
-    frame_wait="0.2" 
+    frame_wait="0.1" 
     frame_width="26" 
-    frames_per_row="4" 
+    frames_per_row="8" 
     name="stand" 
     pos_x="0" 
     pos_y="0" >
@@ -17,15 +17,15 @@
   </RectAnimation>
 
   <RectAnimation 
-    frame_count="9" 
+    frame_count="11" 
     frame_height="22" 
     frame_wait="0.12"
     frame_width="26"
-    frames_per_row="9" 
+    frames_per_row="11" 
     loop="0" 
     name="attack_ranged"
     pos_x="0" 
-    pos_y="22" >
+    pos_y="23" >
 
   </RectAnimation>
 

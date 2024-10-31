@@ -3,6 +3,10 @@
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>
 
+	<LimbBossComponent
+		state = "1">
+	</LimbBossComponent>
+
 	<LuaComponent
 	    execute_every_n_frame="-1"
 	    script_death="data/scripts/items/drop_money4x.lua"

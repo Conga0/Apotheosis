@@ -1,0 +1,55 @@
+<Entity tags="apotheosis_portal">
+
+	<SpriteComponent
+		_tags="invincible"
+		_enabled="1"
+		alpha="1"
+		has_special_scale="0"
+		image_file="mods/Apotheosis/files/biome_impl/magicegg/portal.png"
+		is_text_sprite="0"
+		next_rect_animation=""
+		offset_x="69"
+		offset_y="122"
+		rect_animation="stand"
+		visible="1"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent
+		_tags="invincible"
+		_enabled="1"
+		alpha="1"
+		has_special_scale="0"
+		image_file="mods/Apotheosis/files/biome_impl/magicegg/portal_open.xml"
+		is_text_sprite="0"
+		next_rect_animation=""
+		offset_x="69"
+		offset_y="122"
+		rect_animation="stand"
+		visible="1"
+		>
+	</SpriteComponent>
+	
+	<LightComponent 
+		_tags="invincible"
+		_enabled="1"
+		radius="256"
+		r="225"
+		g="225"
+		b="225"
+		offset_x="0"
+		offset_y="-30"
+		fade_out_time="1.5"
+		>
+	</LightComponent>
+	
+	<AudioLoopComponent
+		_enabled="1"
+		_tags="lurker_data"
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_orb/loop"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>
+

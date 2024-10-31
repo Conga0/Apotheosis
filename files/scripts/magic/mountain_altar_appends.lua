@@ -62,6 +62,7 @@ end
 --Conga 21/11/2023:
 --Double Solution problem is present here, eye can be redeemed both at the altar and somewhere else, and is very easy to interpret as being corrupt
 --$200 says someone gets mad when doing this doesn't count as "purifying corruption"
+--Hasn't seen someone get completely mad so far! :) -Spoop 4/16/2024
 if not GameHasFlagRun("heretic_near_death") then
 	local heretic_eyes = EntityGetInRadiusWithTag(x,y,48,"apotheosis_heretic")
 	for k=1,#heretic_eyes

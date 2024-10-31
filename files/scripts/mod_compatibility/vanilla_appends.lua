@@ -118,6 +118,26 @@ xml:add_child(nxml.parse([[
 ]]))
 ModTextFileSetContent("data/entities/misc/effect_weaken.xml", tostring(xml))
 
+--Makes it so bosses can't be afflicted with negative Master effects... mostly so Heretic can stop hitting himself...
+--Why is the neutralize effect not called effect_neutralize instead of neutralized...
+do
+  local effects = {"effect_hearty","effect_twitchy","neutralized"}
+  for k=1, #effects
+  do local v = effects[k];
+    local content = ModTextFileGetContent("data/entities/misc/" .. v .. ".xml")
+    local xml = nxml.parse(content)
+    xml:add_child(nxml.parse([[
+	<LuaComponent
+	    script_source_file="mods/Apotheosis/files/scripts/status_effects/boss_check.lua"
+	    execute_every_n_frame="1"
+	    remove_after_executed="1"
+	    >
+	</LuaComponent>
+    ]]))
+    ModTextFileSetContent("data/entities/misc/" .. v .. ".xml", tostring(xml))
+  end
+end
+
 do -- Fix Spatial Awareness friendcave position(s)
     local path = "data/scripts/perks/map.lua"
     local content = ModTextFileGetContent(path)
@@ -969,6 +989,19 @@ do -- Correct Mountain Altar to use the appropriate orb numbers taking new orb r
     
   ]])
 
+  --These are all so the Heretical Eye can comment on them when they occur
+  content, count = content:gsub([[AddFlagPersistent%( "progress_ending2" %)]], [[AddFlagPersistent( "progress_ending2" )
+  GameAddFlagRun( "apotheosis_vanilla_ending2" )]])
+
+  content, count = content:gsub([[AddFlagPersistent%( "progress_ending0" %)]], [[AddFlagPersistent( "progress_ending0" )
+  GameAddFlagRun( "apotheosis_vanilla_ending0" )]])
+
+  content, count = content:gsub([[AddFlagPersistent%( "progress_ending1_gold" %)]], [[AddFlagPersistent( "progress_ending1_gold" )
+  GameAddFlagRun( "apotheosis_vanilla_ending1_gold" )]])
+
+  content, count = content:gsub([[AddFlagPersistent%( "progress_ending1_toxic" %)]], [[AddFlagPersistent( "progress_ending1_toxic" )
+  GameAddFlagRun( "apotheosis_vanilla_ending1_toxic" )]])
+
   --Debug data
   --print("printing sampo_start_ending_senquence.lua\n\n" .. content)
   ModTextFileSetContent(path, content)
@@ -1442,3 +1475,46 @@ end
 
 --if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/apotheosis/files/entities/items/orbs/custom/orb_15.xml", x, y ) else EntityLoad( "data/entities/buildings/ear_boss_spot.xml", x, y ) end
 --if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml", x - 30, y - 30 ) end
+
+do -- Unique Heretical Eye interaction with the sun baby so it can get corrupted by him
+  local path = "data/scripts/buildings/sun/spot_4.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[local w]], [[local t_h = EntityGetInRadiusWithTag( x, y, radius, "apotheosis_heretic" ) 
+
+local h = (#t_h > 0)
+local w]])
+  content = content:gsub([[local ohno = false]], [[if h then 
+		if ( string.find( essences_list, "heretic" ) == nil ) then
+			local convert = EntityGetFirstComponentIncludingDisabled(entity_id, "MagicConvertMaterialComponent")
+			ComponentSetValue2( convert, "to_material", CellFactory_GetType("apotheosis_blood_infectious") )
+			ComponentSetValue2( comp2, "image_file", "mods/apotheosis/files/props_gfx/sun_small_heretic.png" )
+			EntityAddComponent2(entity_id, "LuaComponent", {
+				execute_on_added = false,
+				script_source_file = "mods/apotheosis/files/scripts/buildings/sunbaby_heretic_effect.lua",
+				execute_every_n_frame = 120,
+			})
+			essences_list = essences_list .. "heretic,"
+			EntityLoad("data/entities/projectiles/deck/explosion_giga.xml", x, y)
+			GameScreenshake( 30, x, y )
+		end
+	end
+	
+	local ohno = false
+	
+	if ( string.find( essences_list, "heretic" ) ~= nil ) then
+		ohno = true
+	end]])
+  ModTextFileSetContent(path, content)
+end
+
+--Didn't look good...
+--[[
+local comps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")	
+for k=1,#comps
+do v = comps[k]
+	local script_source = ComponentGetValue2(v,"script_source_file")
+	if script_source == "data/scripts/buildings/sun/sunbaby_air_effect.lua" then
+		ComponentSetValue2(v,"script_source_file","mods/apotheosis/files/scripts/buildings/sunbaby_air_heretic_effect.lua")
+	end
+end
+]]--

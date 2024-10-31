@@ -1,0 +1,46 @@
+<Sprite
+ filename="mods/Apotheosis/files/biome_impl/special_scenes/perk_creation_gears.png"
+ offset_x="257"
+ offset_y="287"
+ default_animation="inactive" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="inactive"
+  pos_x="0"
+  pos_y="0"
+  frame_count="1"
+  frame_width="512"
+  frame_height="512"
+  frame_wait="1.0"
+  frames_per_row="1"
+  shrink_by_one_pixel="1"
+  loop="1"   >
+ </RectAnimation>
+
+ <RectAnimation
+  name="rusty"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="512"
+  frame_height="512"
+  frame_wait="0.2"
+  frames_per_row="4"
+  shrink_by_one_pixel="1"
+  loop="1"   >
+ </RectAnimation>
+
+ <RectAnimation
+  name="active"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="512"
+  frame_height="512"
+  frame_wait="0.1"
+  frames_per_row="4"
+  shrink_by_one_pixel="1"
+  loop="1"   >
+ </RectAnimation>
+</Sprite>

@@ -1,0 +1,39 @@
+<Entity 
+	name="laserbeam_neutral_warning" 
+	>
+		<InheritTransformComponent only_position="1" >
+		</InheritTransformComponent> 
+	
+	<LightComponent 
+		_enabled="1" 
+		radius="150" 
+		r="90"
+		g="90"
+		b="90">
+	</LightComponent>
+	
+	<LaserEmitterComponent
+		is_emitting="1"
+		>
+		<laser
+			damage_to_entities="0.0"
+			max_cell_durability_to_destroy="-1"
+			damage_to_cells="10"
+			root_entity_is_responsible_for_damage="1"
+			max_length="300"
+			beam_radius="0.2"
+			hit_particle_chance="00"
+			beam_particle_chance="95"
+			beam_particle_type="spark_white"
+			audio_enabled="0"
+			>
+		</laser>
+	</LaserEmitterComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/laserbeam_flesh_neutral_warning_pointer.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>

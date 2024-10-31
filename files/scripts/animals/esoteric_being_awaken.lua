@@ -6,7 +6,8 @@ function collision_trigger()
 	local pos_x, pos_y = EntityGetTransform( entity_id )
 	
 	EntityLoad( "data/entities/animals/esoteric_being.xml", pos_x, pos_y )
-	GamePlaySound( "data/audio/Desktop/event_cues.snd", "event_cues/greed_curse/create", pos_x, pos_y)
+	--[[GamePlaySound( "data/audio/Desktop/event_cues.snd", "event_cues/greed_curse/create", pos_x, pos_y)]]--
+	GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/animals/esoteric_being/impact", pos_x, pos_y)
 
 	EntityKill( entity_id )
 end

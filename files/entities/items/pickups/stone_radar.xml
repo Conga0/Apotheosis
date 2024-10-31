@@ -1,4 +1,4 @@
-<Entity tags="hittable,teleportable_NOT,item_physics,item_pickup,poopstone" >
+<Entity name="$item_apotheosis_stone_radar_name" tags="hittable,teleportable_NOT,item_physics,item_pickup,poopstone" >
 	<Base file="data/entities/base_item_projectile.xml" />
 
 	<!-- physical presence -->
@@ -103,6 +103,8 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
   
+	<!--Replacing this with a script so the sound and particle can't desync-->
+	<!--
 	<ParticleEmitterComponent
 		_enabled="0"
 		_tags="enabled_in_world,enabled_in_inventory,enabled_in_hand"
@@ -127,6 +129,7 @@
 		collide_with_grid="0"
 		>
 	</ParticleEmitterComponent>
+	-->
 
 	<!-- item -->
 
@@ -175,9 +178,45 @@
 		execute_every_n_frame = "1"
 	>
 	</LuaComponent>
+
+	<LuaComponent
+		_enabled="1"
+		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world"
+		script_source_file = "mods/apotheosis/files/scripts/items/radar_stone_ping.lua"
+		execute_every_n_frame = "1"
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world,enabled_by_liquid"
+		script_source_file = "mods/apotheosis/files/scripts/items/radar_stone_ping_visual.lua"
+		execute_every_n_frame = "600"
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/items/radar_stone_destroyed.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<HitboxComponent 
+		_tags="enabled_in_world"
+		aabb_min_x="106" 
+		aabb_max_x="-106" 
+		aabb_min_y="106" 
+		aabb_max_y="-106"
+		damage_multiplier="0"
+		>
+	</HitboxComponent>
+
+	<StreamingKeepAliveComponent
+		_tags="enabled_in_world"
+		>
+	</StreamingKeepAliveComponent>
 	
-	<CameraBoundComponent
-	  max_count="5"
-	  distance="2000">
-	</CameraBoundComponent>
 </Entity>

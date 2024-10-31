@@ -2,4 +2,7 @@ mods/Apotheosis/files/ragdolls/tentacler_big/head.png
 mods/Apotheosis/files/ragdolls/tentacler_big/tentacle_1.png
 mods/Apotheosis/files/ragdolls/tentacler_big/tentacle_2.png
 mods/Apotheosis/files/ragdolls/tentacler_big/tentacle_3.png
+mods/Apotheosis/files/ragdolls/tentacler_big/tentacle_4.png
+mods/Apotheosis/files/ragdolls/tentacler_big/tentacle_5.png
+mods/Apotheosis/files/ragdolls/tentacler_big/tentacle_6.png
 

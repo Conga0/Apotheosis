@@ -209,6 +209,7 @@
 		</GameEffectComponent >
 	</Entity>
 
+	<!--
 	<MaterialInventoryComponent
 		_enabled="1" 
 		drop_as_item="0"
@@ -223,11 +224,12 @@
 		<Material material="apotheosis_magic_liquid_divine" count="1200"  />
 		</count_per_material_type>
 	</MaterialInventoryComponent>
+	-->
 
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/poring_MVP_minion_summon.lua"
 		execute_every_n_frame="300"
-		script_death="data/entities/animals/secret/poring_death.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/poring_holy_arch_death.lua"
 		>
 	</LuaComponent>
 

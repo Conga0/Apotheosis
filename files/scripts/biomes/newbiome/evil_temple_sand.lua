@@ -397,7 +397,7 @@ g_unique_enemy =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 1.0,
+		prob   		= 0.0,
 		min_count	= 1,
 		max_count	= 1,  
 		offset_x	= 2,		
@@ -417,7 +417,7 @@ g_large_enemies =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 1.0,
+		prob   		= 0.0,
 		min_count	= 1,
 		max_count	= 1,  
 		offset_x	= 1,

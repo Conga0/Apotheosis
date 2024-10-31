@@ -125,4 +125,9 @@
 		>
 	</LuaComponent>
 
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/poring_death_explosion.lua"
+		>
+	</LuaComponent>
+
 </Entity>

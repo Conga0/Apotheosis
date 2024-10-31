@@ -7,6 +7,8 @@
 	<AnimalAIComponent
 		creature_detection_range_x="600"
 		creature_detection_range_y="600"
+		aggressiveness_min="30"
+		aggressiveness_max="30"
 		>
 	</AnimalAIComponent>
 
@@ -34,7 +36,7 @@
 	
 	<Entity>
 		<SpriteComponent
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.xml"
 			emissive="1"
 			offset_x="8.5"
 			offset_y="8.5"
@@ -44,7 +46,7 @@
 		</SpriteComponent>
 		
 		<LuaComponent
-			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			script_source_file="data/entities/animals/boss_flesh_monster/eye.lua"
 			execute_every_n_frame="1"
 			>
 		</LuaComponent>
@@ -122,6 +124,7 @@
 	</PhysicsShapeComponent>
 	
 	<CellEaterComponent
+		ignored_material="rock_box2d_nohit_hard"
 		radius="60" 
 		eat_probability="100">
 	</CellEaterComponent>
@@ -144,7 +147,8 @@
 		materials_damage="1" 
 		materials_how_much_damage="0.1" 
 		materials_that_damage="acid" 
-		ragdoll_filenames_file=""
+		create_ragdoll="0"
+		ragdoll_filenames_file="mods/apotheosis/files/ragdolls/boss_flesh_monster/filenames.txt"
         ragdoll_material="rock_box2d_nohit_hard"
 		ragdoll_offset_y="-6"
 		ragdollify_child_entity_sprites="1" 
@@ -152,6 +156,7 @@
 		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_$[1-3].xml"
 		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_$[1-3].xml"
 		healing_particle_effect_entity="mods/Apotheosis/files/entities/particles/heal_effect_big.xml"
+		critical_damage_resistance="0.5"
 		>
 		<damage_multipliers
 			melee="0.3"
@@ -198,6 +203,11 @@
 		event_root="animals/lukki" >
 	</AudioComponent>
 
+	<AudioComponent 
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/boss_flesh_monster_armor" >
+	</AudioComponent>
+
 	<SpriteAnimatorComponent 
 		rotate_to_surface_normal="1" 
 		target_sprite_comp_name="character" >
@@ -228,10 +238,10 @@
 	</ParticleEmitterComponent>
 	
 	<AreaDamageComponent
-		aabb_min.x="-30" 
-		aabb_min.y="-30" 
-		aabb_max.x="30" 
-		aabb_max.y="30" 
+		aabb_min.x="-40" 
+		aabb_min.y="-40" 
+		aabb_max.x="40" 
+		aabb_max.y="40" 
 		damage_per_frame="0.14"
 		update_every_n_frame="4"
 		entities_with_tag="player_unit"
@@ -240,10 +250,10 @@
 	</AreaDamageComponent>
 	
 	<AreaDamageComponent
-		aabb_min.x="-30" 
-		aabb_min.y="-30" 
-		aabb_max.x="30" 
-		aabb_max.y="30" 
+		aabb_min.x="-40" 
+		aabb_min.y="-40" 
+		aabb_max.x="40" 
+		aabb_max.y="40" 
 		damage_per_frame="0.14"
 		update_every_n_frame="4"
 		entities_with_tag="player_unit"
@@ -335,6 +345,20 @@
 	<VariableStorageComponent
 		name="phase_brain"
 		value_int="1"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="incarnation_value"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="ping_convert"
+		value_int="0"
+		value_bool="0"
 		>
 	</VariableStorageComponent>
 
@@ -409,6 +433,7 @@
 		image_animation_file="mods/apotheosis/files/particles/image_emitters/boss_flesh_monster_glow.png"
 		image_animation_speed="1"
 		image_animation_loop="1"
+		image_animation_use_entity_rotation="1"
 		image_animation_raytrace_from_center="0" >
 	</ParticleEmitterComponent>
 
@@ -447,8 +472,8 @@
 	<!-- Audio -->
 
 	<AudioLoopComponent
-		file="data/audio/Desktop/animals.bank"
-		event_name="animals/wizard/movement_loop"
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_name="mocreeps_audio/animals/boss_flesh_monster_armor/movement_loop"
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>
@@ -517,6 +542,31 @@
 		>
 	</LuaComponent>
 
+	<!-- Convert nearby environment to flesh every 3 minutes if not in Sacrilegious -->
+	<!-- Also convert nearby player minions to fleshlings every 3 minutes -->
+	<LuaComponent
+		_tags = "invincible"
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_convert_ping.lua"
+		execute_every_n_frame = "1"
+	>
+	</LuaComponent>
+
+	<!-- Check for player factioned enemies to troll people with minions -->
+	<!-- Also happens to check for if Heretic is scared of someone and wants to leave -->
+	<LuaComponent
+		_tags = "invincible"
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_convert_check.lua"
+		execute_every_n_frame = "100"
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags = "invincible"
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_convert_ping_visual.lua"
+		execute_every_n_frame = "600"
+	>
+	</LuaComponent>
+
 
 	<!-- Brain AI -->
 
@@ -525,6 +575,29 @@
 	<LuaComponent
 		execute_every_n_frame="-1"
 		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_brain.lua"
+		>
+	</LuaComponent>
+
+	<!-- Target the corrupt stone if it's out and grab it, if we got stone then start portal script -->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_stone_target.lua"
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
+
+	<!-- Portal away if not in Sacrilegious, activated after grabbing the stone -->
+	<LuaComponent
+		_enabled="0"
+		_tags="angry_ghost_cooldown"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_portal_away.lua"
+		execute_every_n_frame="600"
+		>
+	</LuaComponent>
+
+	<!-- Trigger the difficult enraged mode if stone is destroyed -->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_stone_destroyed.lua"
+		execute_every_n_frame="150"
 		>
 	</LuaComponent>
 
@@ -553,11 +626,17 @@
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
+
+	<!-- Boss Armor from Graham's cool Boss Rework Mod -->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_armor_init.lua"
+		>
+	</LuaComponent>
 	
 	<!-- Boss Health Scaling based off NG+ level-->
   	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_newgameplus.lua"
-		execute_every_n_frame="6"
+		execute_every_n_frame="1"
 		execute_times="1"
 		remove_after_executed="1"
 		>
@@ -568,11 +647,34 @@
 	<!-- Condensed to save resources, it's more efficient to have 1 lua comp than 2-->
 	<!-- Fancy Death Script -->
 	<!-- Death Reward, only applies to phase 2 -->
+	<!-- Death Script no work due to death_helper so I'm removing it :) -S -->
 	<LuaComponent
 		_tags="death_reward"
-		script_death="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death.lua"
 		script_damage_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_death_check.lua"
 		enable_coroutines="1"
 		>
+	</LuaComponent>
+
+	<!-- Is this the correct incarnation of Heretic? -->
+  	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/incarnation_checker.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<!-- Stores Heretic's position occasionally -->
+	<!-- Also makes Heretic yell at you if you're close enough and broke the stone -->
+	<LuaComponent
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_position.lua"
+		execute_every_n_frame = "900"
+	>
+	</LuaComponent>
+
+	<!-- I love edgecases : ) -->
+	<LuaComponent
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_removed.lua"
+		execute_every_n_frame = "-1"
+		execute_on_removed = "1"
+	>
 	</LuaComponent>
 </Entity>

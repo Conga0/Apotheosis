@@ -74,7 +74,7 @@ function split_string(inputstr, sep)
       boss_limbs = 0,
       apparition = 50,
       bat = { 100, 90 },
-      mage_swapper = { 80, 0 },
+      mage_swapper = { 100, 0 },
       curse = 100,
       trap = 100,
       ghost_boss = 100,
@@ -84,7 +84,6 @@ function split_string(inputstr, sep)
       player = 0,
       ["-1"] = 0,
       nest = 100,
-      ghost = { 70, 90 },
       boss_limbs = 0,
       healer = 100,
       apparition = 50,
@@ -93,6 +92,22 @@ function split_string(inputstr, sep)
       curse = 100,
       trap = 100,
       ghost_boss = 100,
+      ghost_fairy = { 20, 40 },
+  })
+  content = add_new_genome(content, "ghost_fairy", 90, 90, 100, {
+      player = 0,
+      ["-1"] = 0,
+      nest = 100,
+      boss_limbs = 0,
+      healer = 100,
+      apparition = 50,
+      bat = { 100, 90 },
+      mage_swapper = { 90, 0 },
+      curse = 100,
+      trap = 100,
+      ghost_boss = 100,
+      ghost_whisp = { 40, 20 },
+      orcs = { 90, 70 },
   })
   
   ModTextFileSetContent("data/genome_relations.csv", content)

@@ -1,4 +1,4 @@
-<Entity>
+<Entity name="core_mines_portal" tags="building">
 	<UIInfoComponent
 		name="$teleport_world"
 		>

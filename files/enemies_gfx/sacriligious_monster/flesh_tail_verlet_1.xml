@@ -1,0 +1,13 @@
+<Entity >
+   
+  <SpriteComponent 
+    image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_tail_1.png" 
+    offset_x="21"
+    offset_y="38"
+    update_transform="0"
+    update_transform_rotation="0" 
+	z_index="1.2"
+	>
+  </SpriteComponent>
+  
+</Entity>

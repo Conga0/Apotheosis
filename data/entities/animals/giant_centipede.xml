@@ -676,6 +676,18 @@
 	
 	<ItemChestComponent level="3" enemy_drop="1" >
 	</ItemChestComponent>
+
+	<VariableStorageComponent
+		name="target_id"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/centipede_cue.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
 	
 	<LuaComponent
 		_tags="death_reward"
@@ -695,6 +707,11 @@
 	<AudioComponent
 		file="data/audio/Desktop/animals.bank"
 		event_root="animals/worm" >
+	</AudioComponent>
+
+	<AudioComponent
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/giant_centipede" >
 	</AudioComponent>
 
 	<AudioLoopComponent

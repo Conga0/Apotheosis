@@ -1,14 +1,14 @@
 <Sprite 
   filename="mods/Apotheosis/files/enemies_gfx/tentacler_big.png" 
-  offset_x="16" 
+  offset_x="20" 
   offset_y="32"
   default_animation="stand" >
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.09" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="8" 
     name="stand" 
     pos_x="0" 
@@ -18,9 +18,9 @@
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.09" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="8" 
     name="walk" 
     pos_x="0" 
@@ -50,9 +50,9 @@
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.09" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="8" 
     name="run" 
     pos_x="0" 
@@ -82,9 +82,9 @@
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.09" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="8" 
     name="burn" 
     pos_x="0"
@@ -114,40 +114,40 @@
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.13" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="8" 
     name="fly_move" 
     pos_x="0" 
-    pos_y="43" 
+    pos_y="0" 
     shrink_by_one_pixel="1" >
 
   </RectAnimation>
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.13" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="8" 
     name="fly_idle" 
     pos_x="0" 
-    pos_y="43" 
+    pos_y="0" 
     shrink_by_one_pixel="1" >
 
   </RectAnimation>
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.08" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="10" 
     loop="0" 
     name="attack_ranged" 
     pos_x="0" 
-    pos_y="86"  >
+    pos_y="47"  >
 
     <Event 
       check_physics_material="0" 
@@ -163,13 +163,13 @@
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="43" 
+    frame_height="46" 
     frame_wait="0.09" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="8" 
     name="attack" 
     pos_x="0" 
-    pos_y="86" >
+    pos_y="47" >
 
     <Event 
       check_physics_material="0" 
@@ -184,15 +184,38 @@
   </RectAnimation>
 
   <RectAnimation 
-    frame_count="6" 
-    frame_height="43" 
+    frame_count="7" 
+    frame_height="46" 
     frame_wait="0.1" 
-    frame_width="34" 
+    frame_width="44" 
     frames_per_row="10" 
     loop="0" 
     name="attack_stone" 
     pos_x="0" 
-    pos_y="129" >
+    pos_y="94" >
+
+    <Event 
+      check_physics_material="0" 
+      frame="4" 
+      max_distance="500" 
+      name="shoot_ice" 
+      on_finished="0" 
+      probability="1" >
+
+    </Event>
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="46" 
+    frame_wait="0.1" 
+    frame_width="44" 
+    frames_per_row="10" 
+    loop="0" 
+    name="attack_spit" 
+    pos_x="0" 
+    pos_y="141" >
 
     <Event 
       check_physics_material="0" 

@@ -1,0 +1,61 @@
+<Entity name="bloodlink">
+
+         <GameEffectComponent  
+                 effect="CUSTOM" 
+                 custom_effect_id="apotheosis_BLOODLINK" 
+                 frames="1800" 
+         > 
+         </GameEffectComponent >         
+          
+         <InheritTransformComponent /> 
+
+ <LuaComponent
+    script_source_file="mods/Apotheosis/files/scripts/status_effects/bloodlink_apply.lua" 
+    execute_every_n_frame="2"
+    execute_on_added="0"
+    remove_after_executed="1"
+    >
+  </LuaComponent>
+
+ <LuaComponent
+    script_source_file="mods/Apotheosis/files/scripts/status_effects/bloodlink_remove.lua" 
+    execute_every_n_frame="-1"
+    execute_on_removed="1"
+    >
+  </LuaComponent>
+
+	<!-- Used for visual effects and finding the bloodlinked individual -->
+	<VariableStorageComponent
+		name="parent"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+<LuaComponent
+      script_source_file="mods/apotheosis/files/scripts/animators/bloodlink_link_effect.lua"
+      execute_every_n_frame="15"
+      >
+</LuaComponent>
+
+	<!-- used for bloodlink_link_effect.lua -->
+	<Entity tags="arm_fx">
+		<Base file="mods/apotheosis/files/entities/animators/bloodlink_fx.xml" />
+	</Entity>
+	<Entity tags="arm_fx">
+		<Base file="mods/apotheosis/files/entities/animators/bloodlink_fx.xml" />
+	</Entity>
+	<Entity tags="arm_fx">
+		<Base file="mods/apotheosis/files/entities/animators/bloodlink_fx.xml" />
+	</Entity>
+
+	<UIIconComponent
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/bloodlink_returner.png"
+		name="$status_apotheosis_bloodlink_name"
+		description="$status_apotheosis_bloodlink_desc"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+</Entity>

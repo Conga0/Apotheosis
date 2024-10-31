@@ -47,7 +47,7 @@
 		target_kill_radius="17"
 		target_kill_ragdoll_force="8"
 		ragdoll_filename=""
-		eat_anim_wait_mult="0.05"
+		eat_anim_wait_mult="0.3"
 		jump_cam_shake="12" 
 		bite_damage="1"
 		>
@@ -126,7 +126,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_head.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_head_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -138,7 +138,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -150,7 +150,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -162,7 +162,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -174,7 +174,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -186,7 +186,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -198,7 +198,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -210,7 +210,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -222,7 +222,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -234,7 +234,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -246,7 +246,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -258,7 +258,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -270,7 +270,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -282,7 +282,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -294,7 +294,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -306,7 +306,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -318,7 +318,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -330,7 +330,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -342,7 +342,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -354,7 +354,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -366,7 +366,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -378,7 +378,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -390,7 +390,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -402,7 +402,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -414,7 +414,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -426,7 +426,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -438,7 +438,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -450,7 +450,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -462,7 +462,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -474,7 +474,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -486,7 +486,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -498,7 +498,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_tail.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_tail_alt.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"
@@ -669,6 +669,705 @@
 
 	<StatusEffectDataComponent>
 	</StatusEffectDataComponent>
+
+	<!--Sadly the animations don't sync up due to worm component hardcodedness, so ah well, no emissives -->
+	<!--
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="0"
+			>
+		</InheritTransformComponent>
+
+	<WormComponent
+		_enabled="1"
+		acceleration="0.75"
+		gravity="0"
+		tail_gravity="0"
+		part_distance="8"
+		ground_check_offset="8"
+		hitbox_radius="8"
+		target_kill_radius="17"
+		target_kill_ragdoll_force="8"
+		ragdoll_filename=""
+		eat_anim_wait_mult="0.05"
+		jump_cam_shake="12" 
+		bite_damage="1"
+		>
+	</WormComponent>
+
+	<GenomeDataComponent 
+		_enabled="1"
+		herd_id="worm"
+		food_chain_rank="4"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_head_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="1"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="2"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="3"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="4"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="5"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="6"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="7"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="8"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="9"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="10"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="11"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="12"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="13"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="14"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="15"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="16"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="17"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="18"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="19"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="20"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="21"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="22"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="23"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="24"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="25"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="26"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="27"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="28"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="29"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="30"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="31"
+			>
+		</InheritTransformComponent>
+
+		<SpriteComponent
+			_tags="character"
+			_enabled="1" 
+			alpha="0.5" 
+			image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_wall_tail_alt_emissive.xml" 
+			rect_animation="eat" 
+			next_rect_animation="eat" 
+			emissive="1"
+			additive="1"
+			offset_x="0" 
+			offset_y="0" 
+			 >
+		</SpriteComponent>
+	</Entity>
+	-->
 
 	<CameraBoundComponent
 		max_count="10"

@@ -8,6 +8,19 @@ EntityAddComponent( player_id, "LuaComponent",
     execute_every_n_frame="-1",
 })
 
+local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
+local old_blood = ComponentGetValue2(dmgcomp,"blood_material")
+
+--GamePrint("old_blood: " .. tostring(old_blood))
+
+EntityAddComponent( player_id, "VariableStorageComponent",
+{
+    name="sacreligious_bloody",
+    value_string=old_blood,
+})
+
+ComponentSetValue2(dmgcomp,"blood_material","apotheosis_blood_infectious_fading_slow")
+
 local comp = EntityAddComponent(
 	entity_id,
 	"ParticleEmitterComponent",
@@ -27,10 +40,10 @@ local comp = EntityAddComponent(
 	airflow_force=0.9,
 	airflow_time=0.101,
 	airflow_scale=0.81,
-	count_min=1,
-	count_max=4,
-	lifetime_min=1.0,
-	lifetime_max=5.0,
+	count_min=4,
+	count_max=6,
+	lifetime_min=8.0,
+	lifetime_max=10.0,
 	create_real_particles=true,
 	emit_cosmetic_particles=false,
 	collide_with_grid=true,

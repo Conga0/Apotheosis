@@ -17,7 +17,15 @@ if not GameHasFlagRun("heretic_near_death") then
     		ComponentSetValue2( luacomps[i], "execute_every_n_frame", 10 )
     		ComponentSetValue2( luacomps[i], "mNextExecutionTime", GameGetFrameNum() )
     	    end
+    	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
+    		EntityRemoveComponent( heretic_id, luacomps[i] )
+    	    end
 	end
+	EntityAddComponent2(heretic_id, "LuaComponent", {
+	    _tags= "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_quiet",
+	    script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
+	    execute_every_n_frame=5,
+	}) 
 	end
     end
 end

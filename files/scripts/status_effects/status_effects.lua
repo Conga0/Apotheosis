@@ -17,6 +17,14 @@ local apotheosis_status_list = {
         effect_entity="mods/Apotheosis/files/entities/misc/effect_protection_lava_temporary.xml",
     },
     {
+        id="apotheosis_PROTECTION_WATER",
+        ui_name="$status_apotheosis_protection_water_name",
+        ui_description="$status_apotheosis_protection_water_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/water_immunity_status.png",
+        protects_from_fire=false,
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_protection_water_temporary.xml",
+    },
+    {
         id="apotheosis_DUCK_CURSE",
         ui_name="$status_apotheosis_duckcurse_name",
         ui_description="$status_apotheosis_duckcurse_desc",
@@ -188,6 +196,13 @@ local apotheosis_status_list = {
         ui_description="$status_apotheosis_protection_vulnerable_desc",
         ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/protection_vulnerable.png",
         effect_entity="mods/Apotheosis/files/entities/misc/effect_protection_vulnerable_temporary.xml",
+    },
+    {
+        id="apotheosis_DIVINE_PROTECTION",
+        ui_name="$status_apotheosis_divine_protection_name",
+        ui_description="$status_apotheosis_divine_protection_desc",
+        ui_icon="mods/apotheosis/files/ui_gfx/status_indicators/divine_protection.png",
+        effect_entity="mods/apotheosis/files/entities/misc/effect_divine_protection.xml",
     },
 }
 

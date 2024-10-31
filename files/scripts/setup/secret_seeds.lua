@@ -107,6 +107,8 @@ end
 function nightcore()
 
     GameAddFlagRun("apotheosis_hardmode")
+    --Adding this just for Heretical Eye dialogue...
+    GameAddFlagRun("apotheosis_nightmode")
 
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
 

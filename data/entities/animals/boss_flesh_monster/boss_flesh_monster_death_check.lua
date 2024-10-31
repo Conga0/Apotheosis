@@ -2,7 +2,7 @@ dofile_once( "data/scripts/lib/coroutines.lua" )
 dofile_once( "data/scripts/lib/utilities.lua" )
 local entity_id = GetUpdatedEntityID()
 local is_dead = false
-local death_sound_started
+local death_sound_started = false
 
 function damage_received( damage, desc, entity_who_caused, is_fatal )
     entity_id = GetUpdatedEntityID()
@@ -48,7 +48,7 @@ function check_death(phase_boss)
             --GamePrint("IM DEAD")
 			GameTriggerMusicFadeOutAndDequeueAll()
 			if death_sound_started == false then
-                GamePlaySound( "data/audio/Desktop/animals.bank", "animals/boss_centipede/dying", pos_x, pos_y );
+                GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/animals/boss_flesh_monster_armor/dying", pos_x, pos_y );
 				death_sound_started = true
 			end
 

@@ -1,0 +1,223 @@
+<Entity name="$projectile_default" tags="teleportable_NOT">
+
+  <VelocityComponent
+    air_friction="0.0"
+    mass="0.06"
+    gravity_y="300"
+    liquid_drag="0"
+    affect_physics_bodies="1"
+    >
+  </VelocityComponent>
+
+  <AudioComponent
+    file="data/audio/Desktop/projectiles.bank"
+    audio_physics_material="projectile"
+    event_root="projectiles/hit" >
+  </AudioComponent>
+
+  <ProjectileComponent
+    lob_min="0.9"
+    lob_max="1.0"
+    speed_min="150"
+    speed_max="180"
+    friction="0.6"
+    direction_random_rad="0.05"
+    on_death_explode="0"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="0"
+    explosion_dont_damage_shooter="0" 
+    on_collision_die="1"
+    die_on_liquid_collision="0"
+    lifetime="5000"
+    damage="0.0"
+    velocity_sets_scale="1"
+    lifetime_randomness="7"
+    ragdoll_force_multiplier="0.04"
+    hit_particle_force_multiplier="5.5 "
+    bounces_left="4"
+    camera_shake_when_shot="5.0"
+    shoot_light_flash_radius="80"
+	muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_launcher.xml"
+	knockback_force="1.7"
+  spawn_entity="data/entities/animals/meatmaggot.xml"
+	>
+    <config_explosion
+      never_cache="0" 
+      camera_shake="10" 
+      explosion_radius="10"
+      explosion_sprite="data/particles/explosion_016.xml" 
+      load_this_entity="data/entities/particles/particle_explosion/main_gunpowder_tiny.xml"
+      explosion_sprite_lifetime="0" 
+      create_cell_probability="0" 
+      hole_destroy_liquid="0" 
+      hole_enabled="1" 
+      ray_energy="25000"
+      damage="0"
+      particle_effect="0"
+      damage_mortals="1"
+	  physics_explosion_power.min="0.15"
+      physics_explosion_power.max="0.35" 
+      shake_vegetation="1" 
+      sparks_count_min="4" 
+      sparks_count_max="10" 
+      sparks_enabled="1" 
+      stains_enabled="1"
+      stains_radius="12"
+      audio_event_name="explosions/grenade_small" >
+    </config_explosion>
+  </ProjectileComponent>
+
+  <LightComponent 
+    radius="40" >
+  </LightComponent>
+
+  <WormComponent
+    acceleration="0.3"
+    gravity="4"
+    tail_gravity="30"
+    part_distance="6"
+    ground_check_offset="1"
+    hitbox_radius="2"
+	bite_damage="0.4"
+    target_kill_radius="7"
+    target_kill_ragdoll_force="8"
+    ragdoll_filename="data/ragdolls/meatmaggot/filenames.txt"
+    eat_anim_wait_mult="0.05 "
+    jump_cam_shake="0" 
+    >
+  </WormComponent>
+
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_head.xml" 
+	rect_animation="eat" 
+    next_rect_animation="eat" 
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-4.0"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_body.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.9"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_body.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.8"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_body.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.7"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_body.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.6"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_body.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.5"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_body.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.4"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_body.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.3"
+     >
+  </SpriteComponent>
+  
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="data/enemies_gfx/meatmaggot_tail.xml" 
+    rect_animation="stand" 
+	next_rect_animation="stand"  
+    offset_x="9" 
+    offset_y="4.5" 
+	update_transform="0"
+	z_index="-3.2"
+     >
+  </SpriteComponent>
+
+  <AudioLoopComponent
+    file="data/audio/Desktop/animals.bank"
+    event_name="animals/worm/movement_loop_small"
+    set_speed_parameter="1"
+    auto_play="1">
+  </AudioLoopComponent>
+
+  <!--Lets the totally real fish gracefully reenter the water by enabling water collission after a few frames-->
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/entities/projectiles/fishing/fish_enter_water.lua"
+		execute_every_n_frame="45"
+    remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>
+

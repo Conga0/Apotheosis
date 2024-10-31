@@ -1,0 +1,14 @@
+<Entity>
+	
+    <MagicConvertMaterialComponent
+      kill_when_finished="1"
+      from_material_tag="[solid]"
+      steps_per_frame="3"
+      to_material="apotheosis_corrupt_flesh_static"
+      clean_stains="0"
+      is_circle="1"
+      radius="200" 
+      convert_same_material="0"
+	></MagicConvertMaterialComponent>
+
+</Entity>

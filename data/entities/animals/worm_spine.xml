@@ -309,7 +309,7 @@
 
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/worm_spine_hex.lua"
-		execute_every_n_frame="30"
+		execute_every_n_frame="20"
 		>
 	</LuaComponent>
   

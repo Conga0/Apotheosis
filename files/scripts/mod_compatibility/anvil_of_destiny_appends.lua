@@ -336,6 +336,53 @@ append_effect("apotheosis_cursed_liquid_red_static", function(wand)
 end)
 
 
+--Infectious Blood
+--Similar to blood, but includes the blood hex spell if you have it
+append_effect("apotheosis_blood_infectious", function(wand)
+
+    wand.spellsPerCast = wand.spellsPerCast + Random(1, 2)
+    wand.rechargeTime = wand.rechargeTime - math.max(Random(1, 2), wand.rechargeTime * Randomf(0.05, 0.1))
+    wand.castDelay = wand.castDelay - math.max(Random(1, 2), wand.castDelay * Randomf(0.05, 0.1))
+
+    local options = { "MIST_BLOOD", "MATERIAL_BLOOD", "TOUCH_BLOOD", "CRITICAL_HIT", "BLOOD_TO_ACID",
+      "CLOUD_BLOOD", "HITFX_CRITICAL_BLOOD", "CURSED_ORB", "BLOOD_MAGIC", "APOTHEOSIS_BLOOD_POWER" }
+    if HasFlagPersistent( "apotheosis_card_unlocked_orb_14_spell" ) then
+        options[#options+1] = "APOTHEOSIS_HITFX_HEX_BLOOD"
+    end
+
+    wand.spellsPerCast = wand.spellsPerCast + Random(1, 2)
+    wand.rechargeTime = wand.rechargeTime - math.max(Random(1, 2), wand.rechargeTime * Randomf(0.05, 0.1))
+    wand.castDelay = wand.castDelay - math.max(Random(1, 2), wand.castDelay * Randomf(0.05, 0.1))
+    add_spells_to_wand(wand, options, math.min(Random(2,4), math.floor(wand.capacity / 2)))
+end)
+
+
+--Heretical Eye
+--Fills the wand entirely with Blood
+append_effect("apotheosis_meat_heretic_eye", function(wand)
+
+    local spells, attached_spells = wand:GetSpells()
+
+    wand:RemoveSpells()
+    wand:DetachSpells()
+    local options = { "MATERIAL_BLOOD" }
+    add_spells_to_wand(wand, options, wand.capacity, true)
+
+    if #attached_spells > 1 then
+        for k=1,#attached_spells do
+            wand:AttachSpells("MATERIAL_BLOOD")
+        end
+    end
+end)
+
+register_physics_item({
+  physics_image_file = "mods/apotheosis/files/items_gfx/heretical_eye.png",
+  type = "effect",
+  effect_name = "apotheosis_meat_heretic_eye",
+  emitter_material = "apotheosis_blood_infectious",
+})
+
+
 
 
 

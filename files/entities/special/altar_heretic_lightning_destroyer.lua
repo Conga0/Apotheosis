@@ -25,7 +25,15 @@ do local v = heretic_eyes[k]
     	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
     		ComponentSetValue2( luacomps[i], "execute_every_n_frame", 300 )
     	    end
+    	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
+    		EntityRemoveComponent( v, luacomps[i] )
+    	    end
 	end
+	EntityAddComponent2(v, "LuaComponent", {
+	    _tags= "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_quiet",
+	    script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
+	    execute_every_n_frame=10,
+	}) 
 	end
 end
 

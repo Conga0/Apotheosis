@@ -1,7 +1,7 @@
 <Sprite 
   filename="mods/Apotheosis/files/enemies_gfx/sentry_emissive.png" 
   offset_x="6" 
-  offset_y="17"
+  offset_y="18"
   default_animation="stand" >
 
   <RectAnimation 

@@ -125,3 +125,4 @@ end
 polytest()
 
 --Maybe corrupt wizards shouldn't be allowed in the chaotic poly pool, since the gods forsake them?
+--Mayhaps... -S

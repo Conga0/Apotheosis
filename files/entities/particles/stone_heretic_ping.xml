@@ -1,0 +1,34 @@
+<Entity  >
+  
+	<!-- gfx -->
+	
+	<LifetimeComponent
+		lifetime="2"
+		>
+	</LifetimeComponent>
+	
+	<ParticleEmitterComponent
+		_enabled="1"
+		_tags="enabled_in_world,enabled_in_inventory,enabled_in_hand"
+		emitted_material_name="spark_red_bright"
+		gravity.y="0.0"
+		lifetime_min="2.01"
+		lifetime_max="2.1"
+		count_min="40"
+		count_max="40"
+		render_on_grid="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="16"
+		area_circle_radius.max="16"
+		cosmetic_force_create="1"
+		airflow_force="0.251"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="2"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="100"
+		collide_with_grid="0"
+		>
+	</ParticleEmitterComponent>
+</Entity>

@@ -1,4 +1,5 @@
 dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+GameAddFlagRun("apotheosis_ending_cutscene")
 
 local entity_id = GetUpdatedEntityID()
 local initframe = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"LifetimeComponent") ,"creation_frame")

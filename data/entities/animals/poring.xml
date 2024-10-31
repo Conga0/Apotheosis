@@ -106,4 +106,23 @@
 		>
 	</LuaComponent>
 
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/poring_death_explosion.lua"
+		>
+	</LuaComponent>
+
+	<MaterialInventoryComponent 
+		_enabled="1" 
+		drop_as_item="0" 
+		on_death_spill="1"
+		leak_on_damage_percent="0"
+		b2_force_on_leak="0.25"
+		kill_when_empty="1"
+		death_throw_particle_velocity_coeff="0.4"
+		>
+		<count_per_material_type>
+			<Material material="slime" count="150"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
+
 </Entity>

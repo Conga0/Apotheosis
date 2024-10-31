@@ -26,6 +26,7 @@
 		on_lifetime_out_explode="1"
 		explosion_dont_damage_shooter="1" 
 		on_collision_die="1"
+		    dont_collide_with_tag="enemy"
 		shoot_light_flash_radius="15"
 		shoot_light_flash_r="250"
 		shoot_light_flash_g="80"

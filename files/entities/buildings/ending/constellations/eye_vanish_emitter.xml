@@ -17,8 +17,6 @@
 		count_max="115"
 		render_on_grid="1"
 		fade_based_on_lifetime="0"
-		area_circle_radius.min="2"
-		area_circle_radius.max="2"
 		cosmetic_force_create="1"
 		collide_with_grid="0"
 		airflow_force="0.051"
@@ -27,7 +25,7 @@
 		emission_interval_min_frames="3"
 		emission_interval_max_frames="3"
 		emit_cosmetic_particles="1"
-		velocity_always_away_from_center="11"
+		velocity_always_away_from_center="1"
 		render_back="1"
 		is_emitting="1" >
 	</ParticleEmitterComponent>

@@ -12,5 +12,10 @@
 			offset_x="13" 
 			offset_y="17" >
     </SpriteComponent>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/poring_vault_death_explosion.lua"
+		>
+	</LuaComponent>
   </Base>
 </Entity>

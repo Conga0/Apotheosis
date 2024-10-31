@@ -82,13 +82,13 @@
 	name="apotheosis_meat_worm_strong"
 	ui_name="$material_apotheosis_meat_worm_strong"
 	wang_color="ffebcda4"
-	solid_on_collision_material="blood_worm"
+	solid_on_collision_material=""
 	solid_break_to_type="blood_worm"
 	hp="200000"
 	durability="12"
 	gfx_glow="50"
-	audio_physics_material_wall="meat"
-	audio_physics_material_solid="meat"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
 	audio_is_soft="1"
 	show_in_creative_mode="1"
 	>
@@ -126,7 +126,7 @@
 	ui_name="$material_apotheosis_meat_fire_lukki"
 	solid_break_to_type="lava"
 	solid_restitution="0.4"
-	wang_color="ffed4d6f"
+	wang_color="ffed4e6f"
 	audio_physics_material_wall="meat"
 	audio_physics_material_solid="meat"
 	audio_is_soft="1"
@@ -136,6 +136,47 @@
 	<StatusEffects>
 		<Ingestion>
 			<StatusEffect type="apotheosis_PROTECTION_LAVA" amount="0.4" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="apotheosis_meat_fire_lukki"
+	name="apotheosis_meat_fire_lukki_baby"
+	ui_name="$material_apotheosis_meat_fire_lukki"
+	solid_break_to_type="lava"
+	solid_restitution="0.4"
+	wang_color="ffed4f6f"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="lava" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_PROTECTION_LAVA" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="meat_slime"
+	name="apotheosis_meat_water_lukki"
+	ui_name="$material_apotheosis_meat_water_lukki"
+  	tags="[box2d],[corrodible],[alchemy],[solid],[earth],[food]"
+	solid_break_to_type="water"
+	solid_restitution="0.4"
+	wang_color="ff548da7"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	solid_on_collision_material="water" 
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_PROTECTION_WATER" amount="4" />
 		</Ingestion>
 	</StatusEffects>
   </CellDataChild>
@@ -167,6 +208,43 @@
 	show_in_creative_mode="1"
 	durability="6"
 	>
+  	<Graphics
+	texture_file="data/materials_gfx/meteor.png"
+	color="ffed4d5f" >
+	</Graphics>
+  </CellData>
+
+  <CellData
+	name="apotheosis_meat_water_lukki_rock"
+	ui_name="$material_apotheosis_sunkenrock"
+  	tags="[box2d],[corrodible],[alchemy],[solid],[earth]"
+	burnable="0"
+	density="3"
+	cell_type="solid"
+	wang_color="ff4a7c91"
+	generates_smoke="0"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="30"
+	autoignition_temperature="99" 
+	platform_type="0"
+	hp="100000" 
+	fire_hp="1200"
+	solid_collide_with_self="0"
+	solid_break_to_type="water"
+	solid_on_collision_splash_power="1"
+	solid_restitution="0.5"
+	audio_physics_material_event="rock"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	durability="6"
+	>
+  	<Graphics
+	texture_file="mods/Apotheosis/files/materials_gfx/sunken_rock.png"
+	color="ff4a7c91" >
+	</Graphics>
   </CellData>
 
   <CellDataChild
@@ -407,12 +485,10 @@
 	</ParticleEffect>
   	<StatusEffects>
 		<Stains>
-			<StatusEffect type="HP_REGENERATION" />
-			<StatusEffect type="PROTECTION_ALL" />
+			<StatusEffect type="apotheosis_DIVINE_PROTECTION" />
 		</Stains>
 		<Ingestion>
-			<StatusEffect type="HP_REGENERATION" amount="0.05" />
-			<StatusEffect type="PROTECTION_ALL" amount="0.05" />
+			<StatusEffect type="apotheosis_DIVINE_PROTECTION" amount="0.05" />
 		</Ingestion>
 	</StatusEffects>
   </CellData>
@@ -837,7 +913,7 @@
   	_inherit_reactions="1"
   	name="apotheosis_eviltemple_stone" 
 	ui_name="$material_apotheosis_bloodystone"
-	tags="[static],[corrodible],[alchemy],[earth],[matter_eater_ignore_list],[indestructible]"
+	tags="[static],[corrodible],[alchemy],[earth],[matter_eater_ignore_list],[indestructible],[apotheosis_bloody]"
 	wang_color="ff490b0b"
 	wang_noise_percent="0.33"
 	hp="240000"
@@ -911,7 +987,7 @@
 <CellDataChild
   	_parent="apotheosis_blood_infectious"
   	_inherit_reactions="0"
-  	tags="[corrodible],[soluble],[blood],[impure],[liquid_common],[food]"
+  	tags="[corrodible],[soluble],[impure]"
   	name="apotheosis_blood_infectious_fading_slow" 
 	ui_name="$material_apotheosis_blood_infectous"
 	wang_color="ffd53e9e"
@@ -2258,6 +2334,7 @@
   	_parent="templebrick_static"
 	name="apotheosis_corrupt_flesh_static"
 	ui_name="$material_apotheosis_corruptflesh"
+	tags="[apotheosis_bloody],[apotheosis_fleshy]"
 	wang_color="ffb13b3b"
 	wang_noise_percent="0.7"
 	hp="10000"
@@ -2276,6 +2353,80 @@
 		texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh.png"
 		color="ffb13b3b"
 	>
+	</Graphics>
+	<StatusEffects>
+			<Ingestion>
+				<StatusEffect type="apotheosis_FLESH_CURSE" amount="0.3" />
+			</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="templebrick_static"
+	name="apotheosis_corrupt_flesh_dark_static"
+	ui_name="$material_apotheosis_corruptflesh_dark"
+	tags="[apotheosis_bloody],[apotheosis_fleshy]"
+	wang_color="ffa43b3b"
+	wang_noise_percent="0.7"
+	hp="10000"
+	durability="10"
+	density="10"
+	wang_curvature="0.4"
+	wang_noise_type="2"
+	solid_on_collision_material="apotheosis_corrupt_flesh_slime"
+	solid_on_collision_splash_power="1"
+	solid_break_to_type="apotheosis_corrupt_flesh_slime"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	>
+	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh_dark.png"
+		color="ffa43b3b"
+	>
+		<Edge>
+			<EdgeGraphics 
+				color="ff4ecc43" 
+				overwrite="0" 
+				percent="1" 
+				require_same_material="0" 
+				require_same_material_type="1" 
+				type="NORMAL_BASED" 
+				z="1" >
+				<Images>
+					<Image 
+						do_only_horizontal_stripe="1" 
+						do_only_vertical_stripe="0" 
+						filename="mods/apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_hor.png" 
+						min_angle="45" 
+						max_angle="135" />
+					<Image 
+						do_only_horizontal_stripe="1" 
+						do_only_vertical_stripe="0" 
+						filename="mods/apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_hor.png" 
+						min_angle="235" 
+						max_angle="315" />
+					<Image 
+						do_only_horizontal_stripe="0" 
+						do_only_vertical_stripe="1" 
+						filename="mods/apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_ver.png" 
+						min_angle="135" 
+						max_angle="235" />
+					  <Image 
+						do_only_horizontal_stripe="0" 
+						do_only_vertical_stripe="1" 
+						filename="mods/apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_ver.png" 
+						min_angle="315" 
+						max_angle="360" />
+					  <Image 
+						do_only_horizontal_stripe="0" 
+						do_only_vertical_stripe="1" 
+						filename="mods/apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_ver.png" 
+						min_angle="0" 
+						max_angle="45" />
+				</Images>
+			</EdgeGraphics>
+		</Edge>
 	</Graphics>
 	<StatusEffects>
 			<Ingestion>
@@ -2918,7 +3069,7 @@
   <CellData
 	name="apotheosis_meat_heretic_eye"
 	ui_name="$material_apotheosis_corruptflesh"
-  	tags="[box2d],[solid],[indestructible],[matter_eater_ignore_list]"
+  	tags="[box2d],[solid],[indestructible],[matter_eater_ignore_list],[sunbaby_ignore_list]"
 	burnable="1"
 	density="8"
 	solid_friction="1"
@@ -2963,7 +3114,7 @@
 <CellData
 	name="apotheosis_meat_heretic"
 	ui_name="$material_apotheosis_corruptflesh"
-  	tags="[box2d],[solid],[food],[meat]"
+  	tags="[box2d],[solid],[food],[meat],[apotheosis_bloody],[apotheosis_fleshy]"
 	burnable="1"
 	density="8"
 	solid_friction="1"
@@ -2977,10 +3128,10 @@
 	platform_type="0"
 	hp="100000"
 	fire_hp="60000"
-	durability="18"
+	durability="9"
 	solid_on_collision_material="apotheosis_blood_infectious"
 	solid_on_collision_splash_power="0"
-	solid_break_to_type="apotheosis_blood_infectious"
+	solid_break_to_type="apotheosis_corrupt_flesh_slime"
 	audio_physics_material_wall="meat"
 	audio_physics_material_solid="meat"
 	audio_is_soft="1"
@@ -3003,6 +3154,100 @@
 	pixel_bottom_right="ff8f4d53"
 	pixel_bottom="ff8f4d53"
         >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_FLESH_CURSE" amount="0.5" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+<!-- My desperate attempt at making things work in a not janky way :( -->
+<!--
+<CellData
+	name="apotheosis_meat_heretic"
+	ui_name="$material_apotheosis_corruptflesh"
+  	tags="[solid],[food],[meat]"
+	burnable="1"
+	density="6"
+	cell_type="liquid"
+	wang_color="ffebcd00"
+	generates_smoke="0"
+	liquid_gravity="0.9"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="30"
+	autoignition_temperature="99" 
+	platform_type="0"
+	hp="100000"
+	fire_hp="60000"
+	solid_on_collision_material="apotheosis_blood_infectious"
+	solid_on_collision_splash_power="0"
+	solid_break_to_type="apotheosis_blood_infectious"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	durability="18"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+	texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh.png"
+	color="ffcc4c4c"
+	pixel_all_around="ffcc4c4c"
+
+	pixel_lonely="ffcc4c4c"
+	pixel_top_right="ffcc4c4c"
+	pixel_bottom_left="ffcc4c4c"
+	
+	pixel_left="ffc996e6"
+	pixel_top_left="ffc996e6"
+	pixel_top="ffc996e6"
+	
+	pixel_right="ff8f4d53"
+	pixel_bottom_right="ff8f4d53"
+	pixel_bottom="ff8f4d53"
+        >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_FLESH_CURSE" amount="0.5" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+-->
+
+  <CellData 
+	name="apotheosis_corrupt_flesh_slime"
+	ui_name="$material_apotheosis_corruptflesh_slime"
+  	tags="[corrodible],[meltable_to_lava],[food],[apotheosis_bloody],[apotheosis_fleshy]"
+	burnable="0"  
+	density="5"  
+	cell_type="liquid" 
+	wang_color="ffefe3d5"  
+	generates_smoke="0"  
+	liquid_gravity="0.1"  
+	liquid_sand="0"  
+	liquid_sticks_to_ceiling="40"
+	liquid_slime="1"
+	liquid_stains="2"
+	liquid_sprite_stain_shaken_drop_chance="2"
+	stickyness="0.0"
+	solid_friction="1.0"
+	on_fire="0"  
+	requires_oxygen="0"  
+	temperature_of_fire="10" 
+	cold_freezes_to_material="apotheosis_corrupt_flesh_static"
+	audio_physics_material_event="slime"
+	audio_physics_material_wall="slime"
+	audio_physics_material_solid="slime" 
+	durability="18"
+	show_in_creative_mode="1"
+	>
+    <Graphics 
+		texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh_slop.png"
+		color="ffcc4c4c"
+		>
     </Graphics>
 	<StatusEffects>
 		<Ingestion>
@@ -3161,6 +3406,146 @@
 	audio_physics_material_solid="ice"
 	>
 </CellDataChild>
+
+  <CellDataChild
+  	_parent="wood_static"
+  	_inherit_reactions="1"
+  	name="apotheosis_wood_static_bloody"
+	ui_name="$material_apotheosis_wood_static_bloody"
+	solid_friction="0.5"	
+	fire_hp="12000"
+	hp="2000"
+	electrical_conductivity="1"
+	solid_break_to_type="apotheosis_blood_infectious"
+	wang_color="ff523f3a" 
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/bloodywood.png"
+		>
+		<Edge>
+			  <EdgeGraphics 
+				color="ff233112" 
+				overwrite="0" 
+				percent="1" 
+				require_same_material="1" 
+				require_same_material_type="1" 
+				type="CARDINAL_DIRECTIONS" 
+				z="1" >
+				<Images>
+				<Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_hor.png" 
+					min_angle="45" 
+					max_angle="135" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_thin_ver.png" 
+					min_angle="135" 
+					max_angle="225" />
+				  <Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_hor.png" 
+					min_angle="225" 
+					max_angle="315" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_thin_ver.png" 
+					min_angle="315" 
+					max_angle="360" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_thin_ver.png" 
+					min_angle="0" 
+					max_angle="45" />
+				</Images>
+			  </EdgeGraphics>
+		</Edge>
+	</Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="wood_prop_durable"
+  	_inherit_reactions="1"
+  	name="apotheosis_wood_prop_bloody"
+	ui_name="$material_apotheosis_wood_static_bloody"
+	solid_friction="0.5"	
+	electrical_conductivity="1"
+	solid_break_to_type="apotheosis_blood_infectious"
+	wang_color="ffa26410" 
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/bloodywood.png"
+		>
+		<Edge>
+			  <EdgeGraphics 
+				color="ff233112" 
+				overwrite="0" 
+				percent="1" 
+				require_same_material="1" 
+				require_same_material_type="1" 
+				type="CARDINAL_DIRECTIONS" 
+				z="1" >
+				<Images>
+				<Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_hor.png" 
+					min_angle="45" 
+					max_angle="135" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_thin_ver.png" 
+					min_angle="135" 
+					max_angle="225" />
+				  <Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_hor.png" 
+					min_angle="225" 
+					max_angle="315" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_thin_ver.png" 
+					min_angle="315" 
+					max_angle="360" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/apotheosis/files/materials_gfx/edge_files/edge_bloodywood_thin_ver.png" 
+					min_angle="0" 
+					max_angle="45" />
+				</Images>
+			  </EdgeGraphics>
+		</Edge>
+	</Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="ceiling_plant_material"
+	name="apotheosis_flesh_ceiling_plant_material"
+	ui_name="$material_apotheosis_corruptflesh"
+	tags="[plant],[corrodible],[burnable]"
+	wang_color="ff37b848"
+	audio_physics_material_wall="meat"
+	audio_physics_material_solid="meat"
+	audio_is_soft="1"
+	vegetation_sprite="mods/apotheosis/files/vegetation/flesh_ceiling_vegetation_00$[2-8].png"
+	>
+	<Graphics
+		texture_file="mods/apotheosis/files/materials_gfx/corrupt_flesh.png"
+		color="ff37b848"
+	>
+	</Graphics>
+  </CellDataChild>
 
 
 
@@ -3326,14 +3711,14 @@
 
 	<!--Converts all liquid touching bloody stonework into infectious blood-->
 	<Reaction probability="100"
-		input_cell1="apotheosis_eviltemple_stone" 		input_cell2="[liquid]"
-		output_cell1="apotheosis_eviltemple_stone"	output_cell2="apotheosis_blood_infectious"
+		input_cell1="[apotheosis_bloody]" 		input_cell2="[liquid]"
+		output_cell1="[apotheosis_bloody]"	output_cell2="apotheosis_blood_infectious"
 		>
 	</Reaction>
 
 	<Reaction probability="100"
-		input_cell1="apotheosis_eviltemple_stone" 		input_cell2="[slime]"
-		output_cell1="apotheosis_eviltemple_stone"	output_cell2="apotheosis_blood_infectious"
+		input_cell1="[apotheosis_bloody]" 		input_cell2="[slime]"
+		output_cell1="[apotheosis_bloody]"	output_cell2="apotheosis_blood_infectious"
 		>
 	</Reaction>
 
@@ -3376,6 +3761,7 @@
 	</Reaction>
 
 	<!--Same thing for bloody stonework just for the corrupt flesh-->
+	<!--
 	<Reaction probability="100"
 		input_cell1="apotheosis_corrupt_flesh_static" 		input_cell2="[liquid]"
 		output_cell1="apotheosis_corrupt_flesh_static"	output_cell2="apotheosis_blood_infectious"
@@ -3384,9 +3770,10 @@
 
 	<Reaction probability="100"
 		input_cell1="apotheosis_corrupt_flesh_static" 		input_cell2="[slime]"
-		output_cell1="apotheosis_corrupt_flesh_static"	output_cell2="apotheosis_blood_infectious"
+		output_cell1=""	output_cell2="apotheosis_blood_infectious"
 		>
 	</Reaction>
+	-->
 
 	<!--Corrupt flesh likes to drip blood-->
 	<Reaction probability="10"
@@ -3420,6 +3807,126 @@
 	<Reaction probability="100"
 		input_cell1="apotheosis_sandtemple_stone" 		input_cell2="[liquid]"
 		output_cell1="apotheosis_sandtemple_stone"	output_cell2="sand"
+		>
+	</Reaction>
+
+	<!--Small chance for bloodied wood to occasionally drip blood-->
+	<Reaction probability="1"
+		input_cell1="apotheosis_wood_static_bloody" 		input_cell2="air"
+		output_cell1="apotheosis_wood_static_bloody"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+
+	<!--Small chance for bloodied wood to occasionally eat infectious blood-->
+	<Reaction probability="10"
+		input_cell1="apotheosis_wood_static_bloody" 		input_cell2="apotheosis_blood_infectious"
+		output_cell1="apotheosis_wood_static_bloody"	output_cell2="air"
+		>
+	</Reaction>
+
+	<Reaction probability="10"
+		input_cell1="apotheosis_wood_prop_bloody" 		input_cell2="apotheosis_blood_infectious"
+		output_cell1="apotheosis_wood_prop_bloody"	output_cell2="air"
+		>
+	</Reaction>
+
+	<!--Same thing for bloody stonework just for the corrupt flesh slime thing-->
+	<!--
+	<Reaction probability="100"
+		input_cell1="apotheosis_corrupt_flesh_slime" 		input_cell2="[liquid]"
+		output_cell1="apotheosis_corrupt_flesh_slime"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+
+	<Reaction probability="100"
+		input_cell1="apotheosis_corrupt_flesh_slime" 		input_cell2="[slime]"
+		output_cell1="apotheosis_corrupt_flesh_slime"	output_cell2="apotheosis_blood_infectious"
+		>
+	</Reaction>
+	-->
+
+	<!--Divine liquid vaporizes Infectious Blood because it just makes sense :p-->
+	<Reaction probability="100"
+		input_cell1="apotheosis_magic_liquid_divine" 		input_cell2="apotheosis_blood_infectious"
+		output_cell1="apotheosis_magic_liquid_divine"		output_cell2="smoke"
+  		blob_radius2="2"
+		>
+	</Reaction>
+
+	<!--Divine liquid also lightly corrodes bloody stonework but destroys itself-->
+	<Reaction probability="50"
+		input_cell1="apotheosis_magic_liquid_divine" 		input_cell2="apotheosis_eviltemple_stone"
+		output_cell1="smoke"		output_cell2="smoke"
+		>
+	</Reaction>
+
+	<!--Same for bloodied wood-->
+	<Reaction probability="50"
+		input_cell1="apotheosis_magic_liquid_divine" 		input_cell2="apotheosis_wood_static_bloody"
+		output_cell1="smoke"		output_cell2="smoke"
+		>
+	</Reaction>
+
+
+	<!--Same for bloodied wood-->
+	<Reaction probability="50"
+		input_cell1="apotheosis_magic_liquid_divine" 		input_cell2="apotheosis_wood_prop_bloody"
+		output_cell1="smoke"		output_cell2="smoke"
+		>
+	</Reaction>
+
+	<!--Divine liquid also also lightly corrodes fleshy flesh and creates more of itself-->
+	<Reaction probability="75"
+		input_cell1="apotheosis_magic_liquid_divine" 		input_cell2="[apotheosis_fleshy]"
+		output_cell1="apotheosis_magic_liquid_divine"		output_cell2="apotheosis_magic_liquid_divine"
+		>
+	</Reaction>
+
+	<!--Heretic is not amused-->
+	<Reaction probability="75"
+		input_cell1="apotheosis_meat_heretic_eye" 		input_cell2="apotheosis_magic_liquid_divine"
+		output_cell1="apotheosis_meat_heretic_eye"		output_cell2="smoke"
+		blob_radius1="3"
+		>
+	</Reaction>
+
+	<!--Corrupt flesh corpses convert into corrupt slime stuff when offscreen-->
+	<!--Nvm hardcoded, instead corrupt flesh corpses decay into corrupt slime stuff over time-->
+	<!--Nvm req_lifetime doesn't work on box2d materials :( so I'm gonna have to do some weird stuff-->
+	<!--
+	<Reaction probability="1" 
+		input_cell1="apotheosis_meat_heretic" 		input_cell2="air"
+		output_cell1="apotheosis_corrupt_flesh_slime" 		output_cell2="air"
+		>
+	</Reaction>
+	-->
+	<Reaction probability="2" 
+		input_cell1="apotheosis_meat_heretic" 		input_cell2="air"
+		output_cell1="apotheosis_meat_heretic" 		output_cell2="air"
+		entity="mods/Apotheosis/files/scripts/materials/flesh_slime_converter.xml"
+		>
+	</Reaction>
+
+	<Reaction probability="5" 
+		input_cell1="apotheosis_meat_heretic" 		input_cell2="apotheosis_corrupt_flesh_slime"
+		output_cell1="apotheosis_corrupt_flesh_slime" 		output_cell2="apotheosis_corrupt_flesh_slime"
+		blob_radius1="3" >
+	</Reaction>
+
+	<!--Corrupt slime stuff turns to solid corrupt flesh over time-->
+	<Reaction probability="5" 
+		input_cell1="apotheosis_corrupt_flesh_slime" 		input_cell2="air"
+		output_cell1="apotheosis_corrupt_flesh_static" 		output_cell2="air"
+		destroy_horizontally_lonely_pixels="1"
+		req_lifetime="600" >
+	</Reaction>
+
+	<Reaction probability="20" 
+		input_cell1="apotheosis_corrupt_flesh_slime" 		input_cell2="apotheosis_corrupt_flesh_static"
+		output_cell1="apotheosis_corrupt_flesh_static" 		output_cell2="apotheosis_corrupt_flesh_static"
+		destroy_horizontally_lonely_pixels="1"
+		blob_radius1="3"
+		req_lifetime="120"
 		>
 	</Reaction>
 	

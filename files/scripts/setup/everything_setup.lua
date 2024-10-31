@@ -242,13 +242,14 @@ end
 do --Change all lukkis in the red jungle into Heretics & Clear foliage
   local path = "data/scripts/biomes/rainforest.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("lukki/lukki_longleg%.xml", "lukki_tentacle_hungry.xml")
-  content = content:gsub("lukki/lukki%.xml", "lukki_tentacle_hungry.xml")
+  content = content:gsub("lukki/lukki_longleg%.xml", "sandcave/lukki_tentacle_hungry.xml")
+  content = content:gsub("lukki/lukki%.xml", "sandcave/lukki_tentacle_hungry.xml")
   content = content:gsub("load_random_pixel_scene%( g_pixel_scene_04, x, y %)", "--disabled")
   content = content:gsub("spawn%(g_trees,x%+5,y%+5%)", "--disabled")
   content = content:gsub("spawn%(g_vines,x%+5,y%+5%)", "--disabled")
   content = content:gsub("spawn%(g_vines,x,y%+5%)", "--disabled")
   content = content:gsub("EntityLoad%( \"data/entities/props/root_grower%.xml\", x%+5, y%+5 %)", "--disabled")
+  content = content:gsub("data/biome_impl/rainforest/", "mods/Apotheosis/files/biome_impl/rainforest_red/")
   ModTextFileSetContent(path, content)
 end
 

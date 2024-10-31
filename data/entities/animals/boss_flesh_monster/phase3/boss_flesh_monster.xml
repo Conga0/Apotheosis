@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT,no_swap" >
+<Entity serialize="1" name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT,no_swap" >
 		
 	<!--NOTE, Deathcross sfx will be added when it's time to implement Heretic Death Loot And/Or Phase 3, already have death loot in mind, just waiting for right time to implement it.-->
 	<!--Check TODO.txt for link to sound effect-->
@@ -9,6 +9,8 @@
 	<AnimalAIComponent
 		creature_detection_range_x="600"
 		creature_detection_range_y="600"
+		aggressiveness_min="35"
+		aggressiveness_max="35"
 		>
 	</AnimalAIComponent>
 
@@ -25,7 +27,7 @@
 	
 	<Entity>
 		<SpriteComponent
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.xml"
 			emissive="1"
 			offset_x="8.5"
 			offset_y="8.5"
@@ -35,7 +37,7 @@
 		</SpriteComponent>
 		
 		<LuaComponent
-			script_source_file="data/entities/animals/boss_ghost/eye.lua"
+			script_source_file="data/entities/animals/boss_flesh_monster/eye.lua"
 			execute_every_n_frame="1"
 			>
 		</LuaComponent>
@@ -83,6 +85,7 @@
 	<!-- physics  -->
 
 	<PhysicsAIComponent
+		free_if_static="1"
 		target_vec_max_len="24.0"
 		force_coeff="32.0"
 		force_balancing_coeff="0.9"
@@ -106,13 +109,14 @@
 
 	<PhysicsShapeComponent
 		is_circle="1"
-		radius_x="40"
-		radius_y="40"
+		radius_x="30"
+		radius_y="30"
 		friction="0.0"
 		restitution="0.3" >
 	</PhysicsShapeComponent>
 	
 	<CellEaterComponent
+		ignored_material="rock_box2d_nohit_hard"
 		radius="60" 
 		eat_probability="100">
 	</CellEaterComponent>
@@ -121,7 +125,7 @@
 	<!-- damage  -->
 
 	<DamageModelComponent
-		hp="170" 
+		hp="468" 
 		wait_for_kill_flag_on_death="1"
 		air_needed="0" 
 		falling_damages="0" 
@@ -133,8 +137,8 @@
 		blood_multiplier="0.05"
 		is_on_fire="0" 
 		materials_damage="1" 
-		materials_how_much_damage="0.1" 
-		materials_that_damage="acid" 
+		materials_how_much_damage="0.1,0.1"
+		materials_that_damage="acid,apotheosis_magic_liquid_divine"
 		ragdoll_filenames_file=""
         ragdoll_material="apotheosis_meat_heretic"
 		ragdoll_offset_y="-6"
@@ -143,6 +147,7 @@
 		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_$[1-3].xml"
 		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_$[1-3].xml"
 		healing_particle_effect_entity="mods/Apotheosis/files/entities/particles/heal_effect_big.xml"
+		critical_damage_resistance="0.5"
 		>
 		<damage_multipliers
 			melee="0.3"
@@ -189,6 +194,11 @@
 		event_root="animals/lukki" >
 	</AudioComponent>
 
+	<AudioComponent 
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/boss_flesh_monster" >
+	</AudioComponent>
+
 	<SpriteAnimatorComponent 
 		rotate_to_surface_normal="1" 
 		target_sprite_comp_name="character" >
@@ -218,11 +228,13 @@
 		is_emitting="1" >
 	</ParticleEmitterComponent>
 	
+	<!-- Replaced with the life drain -->
+	<!-- 
 	<AreaDamageComponent
-		aabb_min.x="-30" 
-		aabb_min.y="-30" 
-		aabb_max.x="30" 
-		aabb_max.y="30" 
+		aabb_min.x="-35" 
+		aabb_min.y="-35" 
+		aabb_max.x="35" 
+		aabb_max.y="35" 
 		damage_per_frame="0.14"
 		update_every_n_frame="4"
 		entities_with_tag="player_unit"
@@ -231,16 +243,17 @@
 	</AreaDamageComponent>
 	
 	<AreaDamageComponent
-		aabb_min.x="-30" 
-		aabb_min.y="-30" 
-		aabb_max.x="30" 
-		aabb_max.y="30" 
+		aabb_min.x="-35" 
+		aabb_min.y="-35" 
+		aabb_max.x="35" 
+		aabb_max.y="35" 
 		damage_per_frame="0.14"
 		update_every_n_frame="4"
 		entities_with_tag="player_unit"
 		damage_type="DAMAGE_MELEE"
 		>
 	</AreaDamageComponent>
+	-->
 
 
 
@@ -334,6 +347,20 @@
 	<VariableStorageComponent
 		name="phase_brain"
 		value_int="1"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="incarnation_value"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="ping_convert"
+		value_int="0"
+		value_bool="0"
 		>
 	</VariableStorageComponent>
 
@@ -353,18 +380,18 @@
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_very_long_animated.xml" />  </Entity>
 	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_very_long_animated.xml" />  </Entity>
 
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
-	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_big_meaty.xml"> </Base> </Entity>
 
 	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_leg_limb_tiny.xml"> <InheritTransformComponent><Transform position.x="43"  position.y="9" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_leg_limb_tiny.xml"> <InheritTransformComponent><Transform position.x="-36"  position.y="27" ></Transform></InheritTransformComponent> </Base></Entity>
@@ -374,6 +401,8 @@
 	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_leg_limb_tiny.xml"> <InheritTransformComponent><Transform position.x="-3"  position.y="-40" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_leg_limb_tiny.xml"> <InheritTransformComponent><Transform position.x="17"  position.y="-36" ></Transform></InheritTransformComponent> </Base></Entity>
 	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_leg_limb_tiny.xml"> <InheritTransformComponent><Transform position.x="28"  position.y="-23" ></Transform></InheritTransformComponent> </Base></Entity>
+
+	<Entity name="tail">  <Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_tail_long_grav.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
 
 	<!--Would probably be better to just have a VSC to store how many limbs we're using and determine it from there instead of having 900 indiviudal lua scripts for each time we use a different/new limb count-->
    	<LuaComponent
@@ -416,7 +445,7 @@
 		execute_times="-1"
 		>
 	</LuaComponent>
-	
+
 	<!-- Mass Wounded all entities in a large radius -->
 	<!-- Disables Healing -->
 	<LuaComponent
@@ -427,21 +456,96 @@
 		>
 	</LuaComponent>
 	
-	<!-- Fire a dangerous arc of blood-hexing orbs every 10.5 seconds seconds -->
+	<!-- Fire a dangerous arc of blood-hexing orbs every 10.5 seconds seconds seconds -->
 	<LuaComponent
 		_tags="invincible"
-		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_hex_arc.lua"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_hexskull_arc.lua"
 		execute_every_n_frame="630"
 		execute_times="-1"
 		>
 	</LuaComponent>
 	
-	<!-- Fire a dangerous kill laser every minute, after a lengthy chargeup and LoS warning indicator -->
+	<!-- Fire a dangerous kill laser every half minute, after a lengthy chargeup and LoS warning indicator -->
 	<LuaComponent
 		_tags="invincible"
 		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_deathlaser_setup.lua"
 		execute_every_n_frame="1800"
 		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<!-- Drains the lifeforce of nearby foes and heals self -->
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_life_drain.lua"
+		execute_every_n_frame="5"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<!-- Target the player and rush towards them every 45 seconds, increasing celleater to get to them faster -->
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_chase_target.lua"
+		execute_every_n_frame="3000"
+		>
+	</LuaComponent>
+
+	<!-- Convert nearby environment to flesh every 3 minutes if not in Sacrilegious -->
+	<!-- Also convert nearby player minions to fleshlings every 3 minutes -->
+	<LuaComponent
+		_tags = "invincible"
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_convert_ping.lua"
+		execute_every_n_frame = "1"
+	>
+	</LuaComponent>
+
+	<!-- Check for player factioned enemies to troll people with minions -->
+	<!-- Also happens to check for if Heretic is scared of someone and wants to leave -->
+	<LuaComponent
+		_tags = "invincible"
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_convert_check.lua"
+		execute_every_n_frame = "100"
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags = "invincible"
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_convert_ping_visual.lua"
+		execute_every_n_frame = "600"
+	>
+	</LuaComponent>
+
+
+	<!-- Brain AI -->
+
+	<!-- Triggers Phase Changes -->
+	<LuaComponent
+		execute_every_n_frame="-1"
+		script_damage_received="data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_brain.lua"
+		>
+	</LuaComponent>
+
+	<!-- Target the corrupt stone if it's out and grab it -->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_stone_target.lua"
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
+
+	<!-- Portal away if not in Sacrilegious, activated after grabbing the stone -->
+	<LuaComponent
+		_enabled="0"
+		_tags="angry_ghost_cooldown"
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_portal_away.lua"
+		execute_every_n_frame="600"
+		>
+	</LuaComponent>
+
+	<!-- Trigger the difficult enraged mode if stone is destroyed -->
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_stone_destroyed.lua"
+		execute_every_n_frame="150"
 		>
 	</LuaComponent>
 
@@ -463,11 +567,25 @@
 		>
 	</LuaComponent>
 
-	<!-- Limit boss to taking only 2% health damage maximum with each instance of damage -->
+	<!-- Summon Cursed Minions -->
 	<LuaComponent
 		_tags="invincible"
-		script_damage_about_to_be_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_dmg_limit_2_percent.lua"
+		script_source_file="data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_minion_summon_flesh.lua"
+		execute_every_n_frame="1500"
+		>
+	</LuaComponent>
+
+	<!-- Limit boss to taking only 1% health damage maximum with each instance of damage, additionally grants temporary invulnerable upon being hurt -->
+	<LuaComponent
+		_tags="invincible"
+		script_damage_about_to_be_received="data/entities/animals/boss_flesh_monster/boss_flesh_monster_dmg_limit_1_percent.lua"
 		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<!-- Boss Armor from Graham's cool Boss Rework Mod -->
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_armor_init.lua"
 		>
 	</LuaComponent>
 	
@@ -491,5 +609,28 @@
 		script_damage_received="data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_death_check.lua"
 		enable_coroutines="1"
 		>
+	</LuaComponent>
+
+	<!-- Is this the correct incarnation of Heretic? -->
+  	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/incarnation_checker.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<!-- Stores Heretic's position occasionally -->
+	<!-- Also makes Heretic yell at you if you're close enough and broke the stone -->
+	<LuaComponent
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_position.lua"
+		execute_every_n_frame = "900"
+	>
+	</LuaComponent>
+
+	<!-- I love edgecases : ) -->
+	<LuaComponent
+		script_source_file = "data/entities/animals/boss_flesh_monster/boss_flesh_monster_removed.lua"
+		execute_every_n_frame = "-1"
+		execute_on_removed = "1"
+	>
 	</LuaComponent>
 </Entity>

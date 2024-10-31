@@ -1,4 +1,3 @@
-dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id = GetUpdatedEntityID()
 local cdc_id = EntityGetFirstComponentIncludingDisabled( entity_id, "VelocityComponent" ) --or get the VelocityComp if it lacks this

@@ -136,7 +136,7 @@
 
 	<GenomeDataComponent 
 		food_chain_rank="5" 
-		herd_id="slimes" 
+		herd_id="ghost" 
 		is_predator="1" >
 	</GenomeDataComponent>
 	
@@ -205,11 +205,11 @@
 
 	<!--
 	-->
-	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="-3"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="-4"  position.y="2" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity><Base file="data/entities/verlet_chains/seeker_crystal/crystal_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/seeker_thunder/thunder_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="-3"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/seeker_thunder/thunder_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/seeker_thunder/thunder_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="4"  position.y="-4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/seeker_thunder/thunder_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="-4"  position.y="2" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity><Base file="data/entities/verlet_chains/seeker_thunder/thunder_tentacle_01.xml"> <InheritTransformComponent><Transform position.x="0"  position.y="4" ></Transform></InheritTransformComponent> </Base></Entity>
 	
 
 	<SpriteParticleEmitterComponent

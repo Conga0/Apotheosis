@@ -49,7 +49,7 @@
 	</VelocityComponent>
 	
 	<HomingComponent
-		target_tag="heretic"
+		target_tag="apotheosis_heretic"
 		homing_targeting_coeff="30"
 		detect_distance="800"
 		homing_velocity_multiplier="0.9"

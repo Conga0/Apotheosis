@@ -9,7 +9,7 @@
   name="stand"
   pos_x="0"
   pos_y="0"
-  frame_count="4"
+  frame_count="6"
   frame_width="24"
   frame_height="24"
   frame_wait="0.09"

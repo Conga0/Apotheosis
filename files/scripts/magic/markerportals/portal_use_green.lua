@@ -30,6 +30,43 @@ function portaliumCheck(plyr_id, from_x, from_y, to_x, to_y)
     end
 end
 
+--Check if Heretic or his portal is nearby, if so then turn the stone to rapid mode
+function hereticCheck(player_id, from_x, from_y, to_x, to_y)
+    local red_alert = false
+    local heretic_found = false
+    local h_x, h_y = nil
+    local boss = EntityGetInRadiusWithTag( from_x, from_y, 350, "miniboss" ) or {}
+    for bp=1,#boss do
+	if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+	    heretic_found = true
+	    h_x,h_y = EntityGetTransform(boss[bp])
+	    break
+	end
+    end
+
+    if heretic_found == true then
+	local dist_x = h_x - to_x
+	local dist_y = h_y - to_y
+	local distance = math.sqrt( dist_x ^ 2 + dist_y ^ 2 )
+	if distance >= 600 then
+	    red_alert = true
+	end
+    end
+
+    if red_alert == true then
+	local heretic_stones = EntityGetInRadiusWithTag(from_x,from_y,48,"poopstone")
+	for k=1,#heretic_stones
+	do local v = heretic_stones[k]
+	    local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
+	    if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) ~= 0 then
+		local timercomp = EntityGetFirstComponentIncludingDisabled( v, "VariableStorageComponent" )
+		ComponentSetValue2( timercomp, "value_string", "rapid")
+		break
+	    end
+	end
+    end
+end
+
 
 function collision_trigger( player_id )
     
@@ -39,6 +76,9 @@ function collision_trigger( player_id )
 
     local pos_x = tonumber( GlobalsGetValue( "apotheosis_markerportal_green_x", "0" ) )
     local pos_y = tonumber( GlobalsGetValue( "apotheosis_markerportal_green_y", "0" ) )
+
+    --For stopping Heretic baiting
+    hereticCheck(player_id, old_x, old_y, pos_x, pos_y)
 	
     if pos_x == 0 and pos_y == 0 then
         GamePrint("You feel the portal lacks focus")

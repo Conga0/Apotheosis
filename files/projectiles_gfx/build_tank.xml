@@ -1,0 +1,21 @@
+<Sprite 
+  default_animation="build" 
+  filename="mods/apotheosis/files/projectiles_gfx/build_tank.png" 
+  offset_x="14" 
+  offset_y="23" >
+
+  <RectAnimation 
+    frame_count="9" 
+    frame_height="25" 
+    frame_wait="0.15" 
+    frame_width="28" 
+    frames_per_row="12" 
+    loop="0" 
+    name="build" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+</Sprite>
+

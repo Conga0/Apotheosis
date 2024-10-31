@@ -106,7 +106,7 @@
 		materials_that_damage="acid,magic_liquid_mana_regeneration,poison,blood_cold,blood_cold_vapour,mud" 
 		materials_how_much_damage="0.06,0.5,0.03,0.16,0.16,0.1"
 		ragdoll_filenames_file=""
-		ragdoll_material="apotheosis_meat_fire_lukki_rock"
+		ragdoll_material="apotheosis_meat_water_lukki_rock"
 		ragdoll_offset_y="-6"
 		ragdollify_child_entity_sprites="1" 
 		ragdollify_root_angular_damping="2"

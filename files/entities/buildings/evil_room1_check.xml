@@ -1,0 +1,8 @@
+<Entity name="apotheosis_room1_check" tags="gate_monster">
+
+<!-- Hi! I'm just here so a certain eyeball comments on my existence :) -->
+
+<SpriteComponent image_file="data/debug/empty.png" />
+
+</Entity>
+

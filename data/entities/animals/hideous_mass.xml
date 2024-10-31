@@ -38,9 +38,9 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/bone_worm.xml"
-			offset_x="15" 
-			offset_y="13"
+			image_file="mods/Apotheosis/files/enemies_gfx/bone_worm_alt.xml"
+			offset_x="0" 
+			offset_y="0"
 			>
 		</SpriteComponent>
 		

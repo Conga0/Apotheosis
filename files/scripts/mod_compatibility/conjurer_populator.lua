@@ -5,11 +5,6 @@ table.insert(ALL_ENTITIES, {
   icon_off="data/ui_gfx/animal_icons/hidden/fairy_giant_dim.png",
   grid_size=12,
   entities={
-	{
-	  name="Greater Bloated Wizard",
-	  path="data/entities/animals/barfer_greater_apotheosis.xml",
-	  image="data/ui_gfx/animal_icons/barfer_greater_apotheosis.png",
-	},
 	  {
 		name="Blind Gazer",
 		path="data/entities/animals/blindgazer.xml",
@@ -57,8 +52,13 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Young Fire Spider",
-		path="data/entities/animals/secret/lukki_fire_miniboss.xml",
+		path="data/entities/animals/lukki_fire_miniboss.xml",
 		image="data/ui_gfx/animal_icons/lukki_fire_miniboss_phase2.png",
+	  },
+	  {
+		name="Infantile Fire Spider",
+		path="data/entities/animals/lukki_fire_tiny.xml",
+		image="data/ui_gfx/animal_icons/lukki_fire_tiny.png",
 	  },
 	  {
 		name="Aesthete of Water",
@@ -67,9 +67,16 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Heretic",
-		path="data/entities/animals/boss_flesh_monster/boss_flesh_monster.xml",
+		path="data/entities/animals/boss_flesh_monster/spawner.xml",
 		image="data/ui_gfx/animal_icons/boss_flesh_monster.png",
 	  },
+--[[
+	  {
+		name="Heretic 2",
+		path="data/entities/animals/boss_flesh_monster/spawner_phase3.xml",
+		image="data/ui_gfx/animal_icons/boss_flesh_monster.png",
+	  },
+]]--
 	  {
 		name="Adult Centipede (Unused)",
 		path="data/entities/animals/boss_adult_centipede/boss_adult_centipede.xml",
@@ -361,11 +368,6 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/longleg_pillar.png",
 	  },
 	  {
-		name="Cursed Creature",
-		path="data/entities/animals/lukki_tentacle_hungry.xml",
-		image="data/ui_gfx/animal_icons/lukki_tentacle_hungry.png",
-	  },
-	  {
 		name="Uprooted Fungus",
 		path="data/entities/animals/lukki_fungus.xml",
 		image="data/ui_gfx/animal_icons/lukki_fungus.png",
@@ -376,9 +378,9 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/lukki_swarmling.png",
 	  },
 	  {
-		name="Toxic Spider",
+		name="Toxic Spider (Unused)",
 		path="data/entities/animals/lukki_toxic.xml",
-		image="data/ui_gfx/animal_icons/lukki_tentacle_hungry.png",
+		image="data/ui_gfx/animal_icons/sunken_creature.png",
 	  },
 	  {
 		name="Explosive Box Mimic",
@@ -448,7 +450,7 @@ table.insert(ALL_ENTITIES, {
 	  {
 		name="Lukki Poring",
 		path="data/entities/animals/poring_lukki.xml",
-		image="data/ui_gfx/animal_icons/poring.png",
+		image="data/ui_gfx/animal_icons/poring_lukki.png",
 	  },
 	  {
 		name="Birthday Rat",
@@ -489,6 +491,11 @@ table.insert(ALL_ENTITIES, {
 		name="Star Child",
 		path="data/entities/animals/star_child.xml",
 		image="data/ui_gfx/animal_icons/star_child.png",
+	  },
+	  {
+		name="Seeker",
+		path="data/entities/animals/seeker.xml",
+		image="data/ui_gfx/animal_icons/seeker.png",
 	  },
 	  {
 		name="Diving Bell",
@@ -596,9 +603,14 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/hidden/watermage_toxic.png",
 	  },
 	  {
-		name="Greater Toxicmage",
+		name="Greater Toxicmage (Unused)",
 		path="data/entities/animals/watermage_toxic_greater.xml",
 		image="data/ui_gfx/animal_icons/hidden/watermage_toxic_greater.png",
+	  },
+	  {
+		name="Greater Bloated Wizard",
+		path="data/entities/animals/barfer_greater_apotheosis.xml",
+		image="data/ui_gfx/animal_icons/barfer_greater_apotheosis.png",
 	  },
 	  {
 		name="Overzealous Polymaster",
@@ -609,6 +621,11 @@ table.insert(ALL_ENTITIES, {
 		name="Corrupt Master of Immortality",
 		path="data/entities/animals/wizard_corrupt_ambrosia.xml",
 		image="data/ui_gfx/animal_icons/wizard_corrupt_ambrosia.png",
+	  },
+	  {
+		name="Corrupt Master of Returning",
+		path="data/entities/animals/wizard_corrupt_returner.xml",
+		image="data/ui_gfx/animal_icons/wizard_corrupt_returner.png",
 	  },
 	  {
 		name="Corrupt Master of Wounding",
@@ -646,9 +663,39 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wizard_corrupt_weaken.png",
 	  },
 	  {
-		name="Corrupt Master of Puppetering",
+		name="Corrupt Master of Puppetry",
 		path="data/entities/animals/wizard_corrupt_wands.xml",
 		image="data/ui_gfx/animal_icons/wizard_corrupt_wands.png",
+	  },
+	  {
+		name="Cursed Being",
+		path="data/entities/animals/secret/lukki_tentacle_hungry.xml",
+		image="data/ui_gfx/animal_icons/lukki_tentacle_hungry.png",
+	  },
+	  {
+		name="Cursed Puppeteer",
+		path="data/entities/animals/flesh_wizard_wands.xml",
+		image="data/ui_gfx/animal_icons/flesh_wizard_wands.png",
+	  },
+	  {
+		name="Cursed Swapper",
+		path="data/entities/animals/flesh_wizard_swapper.xml",
+		image="data/ui_gfx/animal_icons/flesh_wizard_swapper.png",
+	  },
+	  {
+		name="Cursed Manasucker",
+		path="data/entities/animals/flesh_wizard_manaeater.xml",
+		image="data/ui_gfx/animal_icons/flesh_wizard_manaeater.png",
+	  },
+	  {
+		name="Cursed Twitcher",
+		path="data/entities/animals/flesh_wizard_twitchy.xml",
+		image="data/ui_gfx/animal_icons/flesh_wizard_twitchy.png",
+	  },
+	  {
+		name="Cursed Grounder",
+		path="data/entities/animals/flesh_wizard_neutral.xml",
+		image="data/ui_gfx/animal_icons/flesh_wizard_neutral.png",
 	  },
 	  {
 		name="Alchemic Weirdo",
@@ -746,6 +793,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/building_icons/crystal_opal.png",
 	  },
 	  {
+		name="Restless Volcanic Egg",
+		path="mods/Apotheosis/files/entities/props/egg_volcanic_lukki_trap.xml",
+		image="data/ui_gfx/building_icons/egg_red_trap.png",
+	  },
+	  {
 		name="Dimensional Chest",
 		path="mods/Apotheosis/files/entities/items/pickups/chest_portals.xml",
 		image="data/ui_gfx/building_icons/chest_portals.png",
@@ -777,6 +829,8 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Korruptoitunutkivi",
+		--desc="Warning: Spawning and then deleting the stone in any fashion will trigger enraged Heretic (mostly) permanently for the run",
+		desc="Warning: May result in buggy unintentional scenarios when used around the Heretic",
 		path="mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/stone_heretic.png",
 	  },
@@ -796,9 +850,19 @@ table.insert(ALL_ENTITIES, {
 		image="mods/Apotheosis/files/ui_gfx/items/orb_cirno.png",
 	  },
 	  {
+		name="Volcanic Egg",
+		path="mods/Apotheosis/files/entities/items/pickups/egg_volcanic_lukki.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/egg_red.png",
+	  },
+	  {
 		name="Heretical Eye",
 		path="mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml",
 		image="mods/Apotheosis/files/ui_gfx/items/heretical_eye.png",
+	  },
+	  {
+		name="Fishing Rod",
+		path="mods/Apotheosis/files/entities/items/pickups/fishing_rod.xml",
+		image="mods/Apotheosis/files/ui_gfx/items/fishing_rod.png",
 	  },
 	  {
 		name="Wand of Wonders",
@@ -875,5 +939,12 @@ table.insert(ALL_ENTITIES, {
 		path="data/entities/animals/wizard_corrupt_poly.xml",
 		image="data/ui_gfx/animal_icons/wizard_poly.png",
 	  },
+--[[
+	  {
+		name="Cursed Being Test",
+		path="data/entities/animals/lukki_tentacle_hungry_test.xml",
+		image="data/ui_gfx/animal_icons/lukki_tentacle_hungry.png",
+	  },
+]]--
   },
 })

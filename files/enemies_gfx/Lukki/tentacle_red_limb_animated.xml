@@ -7,6 +7,8 @@
 		length="80" >
 	</IKLimbComponent>
 
+	<!-- You've served us well invisible fungus leg sprite, but it's time you retire... -->
+	<!--
 	<SpriteComponent 
 		image_file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_fungus_a_long.png" 
 		z_index="1.1"
@@ -36,5 +38,6 @@
 		update_transform="0"
 		update_transform_rotation="0" >
 	</SpriteComponent>
+	-->
 
 </Entity>

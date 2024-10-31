@@ -1197,6 +1197,30 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/evil_temple_den_left.xml"
+		height_index="0"
+		color="ffaf6565" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/evil_temple_den_mid.xml"
+		height_index="0"
+		color="ffab6363" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/evil_temple_den_right.xml"
+		height_index="0"
+		color="ffa86262" >
+	</Biome>
+
+	<Biome 
+		biome_filename="data/biome/custom/evil_temple_wall.xml"
+		height_index="0"
+		color="ff651818" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/lava_excavation.xml"
 		height_index="13"
 		color="ffff7428" >

@@ -1,0 +1,32 @@
+<Entity serialize="1">
+
+	<LightComponent 
+		_enabled="1" 
+		radius="255"
+		fade_out_time="10.5" 
+		r="222"
+		g="0"
+		b="0"
+		offset_y="-16"
+		>
+	</LightComponent>
+
+	<LoadEntitiesComponent 
+		entity_file="mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster_newgame_plus.xml"
+		count.min="1"
+        count.max="1"
+		timeout_frames="300"
+		kill_entity="1"
+		>
+	</LoadEntitiesComponent>
+
+	<AudioLoopComponent
+		_enabled="1"
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_name="mocreeps_audio/items/stone_heretic/loop"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<StreamingKeepAliveComponent/>
+
+</Entity>

@@ -2,18 +2,36 @@ dofile_once( "data/scripts/lib/coroutines.lua" )
 dofile_once( "data/scripts/lib/utilities.lua" )
 local entity_id = GetUpdatedEntityID()
 local is_dead = false
-local death_sound_started
+local death_sound_started = false
 
 function damage_received( damage, desc, entity_who_caused, is_fatal )
     entity_id = GetUpdatedEntityID()
+    local phase_boss = check_phase()
     --GamePrint("Current Phase is " .. tostring(phase_boss))
-    check_death()
+    check_death(phase_boss)
     --GamePrint("Damage Taken")
     --GamePrint("Is Dead state is currently " .. tostring(is_dead))
 end
 
+function check_phase()
+    local phase = 0
+
+    local storages = EntityGetComponent( entity_id, "VariableStorageComponent" )
+    
+    --Gets the current Boss phase
+    if ( storages ~= nil ) then
+        for i,comp in ipairs( storages ) do
+            local name = ComponentGetValue2( comp, "name" )
+            if ( name == "phase_brain" ) then
+                phase = ComponentGetValue2( comp, "value_int" )
+                return phase
+            end
+        end
+    end
+end
+
 -- The boss can't die normally; if their HP is zero, this does stuff instead
-function check_death()
+function check_death(phase_boss)
 	--if is_dead then return end
 	
 	SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
@@ -26,11 +44,11 @@ function check_death()
         local pos_x, pos_y = EntityGetTransform( entity_id )
 
 		-- check death
-		if ( hp <= 0.0 ) and (is_dead ~= true) then
+		if ( hp <= 0.0 ) and (is_dead ~= true) and (phase_boss == 4) then
             --GamePrint("IM DEAD")
 			GameTriggerMusicFadeOutAndDequeueAll()
 			if death_sound_started == false then
-                GamePlaySound( "data/audio/Desktop/animals.bank", "animals/boss_centipede/dying", pos_x, pos_y );
+                GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/animals/boss_flesh_monster/dying", pos_x, pos_y );
 				death_sound_started = true
 			end
 
@@ -40,6 +58,12 @@ function check_death()
             --Disables AI from triggering a healing phase while dying
             local storages = EntityGetComponentIncludingDisabled( entity_id, "VariableStorageComponent" )[1]
             ComponentSetValue2( storages, "value_int", 5)
+
+            --Heretic desperately attempts to chase you in a last attempt to kill you when enraged
+            if GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") then
+			local limbbosscomp = EntityGetFirstComponentIncludingDisabled( entity_id, "LimbBossComponent" )
+			ComponentSetValue2(limbbosscomp, "state", 5)
+            end
 
             --Panicked movement during death
             local comp = EntityGetComponentIncludingDisabled( entity_id, "PhysicsAIComponent")[1]
@@ -54,7 +78,7 @@ function check_death()
             ComponentSetValue2(comp_pathing, "frames_between_searches", 60)
             ComponentSetValue2(comp_pathing, "frames_to_get_stuck", 60)
 
-			local eid = EntityLoad( "data/entities/animals/boss_fire_lukki/misc/death_helper.xml", pos_x, pos_y )
+			local eid = EntityLoad( "data/entities/animals/boss_flesh_monster/misc/death_helper_phase3.xml", pos_x, pos_y )
 			EntityAddChild( entity_id, eid )
 
             --Disable matter eater component so gunpowder can go pop~! pop~!

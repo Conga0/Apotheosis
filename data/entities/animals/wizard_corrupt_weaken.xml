@@ -1,5 +1,4 @@
-<Entity name="$enemy_apotheosis_wizard_corrupt_weaken" tags="polymorphable_NOT" >
-  
+<Entity name="$enemy_apotheosis_wizard_corrupt_weaken" >
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
 		
@@ -16,7 +15,7 @@
 			can_fly="1" 
 			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/orb_corrupt_weaken.xml"
 			attack_ranged_action_frame="5"
-			attack_ranged_frames_between="80"
+			attack_ranged_frames_between="110"
 			attack_ranged_offset_y="0"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="300"
@@ -26,16 +25,13 @@
 		
 		<DamageModelComponent 
             hp="12"
+		materials_that_damage="acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_divine" 
+		materials_how_much_damage="0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.05"
             ragdoll_material="meat_slime"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_weaken/filenames.txt"
 			critical_damage_resistance="1.0"
 			ragdoll_fx_forced="DISINTEGRATED"
-			blood_material="slime"
-			blood_multiplier="0.2"
 			>
-			<damage_multipliers
-				physics_hit="0.0" >
-			</damage_multipliers>
 		</DamageModelComponent>
 
 		<SpriteComponent 
@@ -117,16 +113,6 @@
         	</VerletPhysicsComponent>
         </Base>  
     </Entity>
-    
-	<Entity>
-		<InheritTransformComponent />
-		
-	    <GameEffectComponent 
-	        effect="STUN_PROTECTION_FREEZE"
-	        frames="-1"
-	    >
-		</GameEffectComponent >
-	</Entity>
 	
 	<Entity>
 		<InheritTransformComponent />
@@ -137,13 +123,6 @@
 	    >
 		</GameEffectComponent >
 	</Entity>
-
-	<AudioLoopComponent
-		file="data/audio/Desktop/animals.bank"
-		event_name="animals/thundermage/movement_loop"
-		set_speed_parameter="1"
-		auto_play="1">
-	</AudioLoopComponent>
 	
 	<LuaComponent
 		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"

@@ -309,6 +309,7 @@ function creature_shift( entity, x, y, debug_no_limits )
             EntityKill(eid)
         end
 
+        --Well... not the most specific now :p -S
         --Fish specific projectile fix for when being reeled in from a fishing rod
         if target2 == "fish" then
             local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
@@ -328,6 +329,83 @@ function creature_shift( entity, x, y, debug_no_limits )
                 gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
             end
             GlobalsSetValue( "apotheosis_fish_largegfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Aesthete Baby specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "lukki_fire_tiny" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_lukki_fire_tinygfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Toxic Slime specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "slimeshooter" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_slimeshootergfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Eel specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "eel" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_eelgfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Meat Maggot specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "meatmaggot" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_meatmaggotgfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Liquid Bubble specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "bubble_liquid" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_bubble_liquidgfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Diving Bell specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "sunken_creature" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_sunken_creaturegfx_filepath", gfx )
+            EntityKill(eid)
+        end
+
+        --Firemage Weak specific projectile fix for when being reeled in from a fishing rod
+        if target2 == "firemage_weak" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
+            if gfx == "" then
+                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
+            end
+            GlobalsSetValue( "apotheosis_firemage_weakgfx_filepath", gfx )
             EntityKill(eid)
         end
 

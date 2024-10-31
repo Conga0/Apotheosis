@@ -57,7 +57,7 @@
 		</HitboxComponent>		
 		
 		<GenomeDataComponent 
-			herd_id="ghost" >
+			herd_id="ghost_fairy" >
 		</GenomeDataComponent>
 		
 		<CharacterDataComponent
@@ -70,11 +70,8 @@
 		</CharacterDataComponent>
 	</Base>
 
-	<Entity>
-		
-		<InheritTransformComponent />
-		
 		<SpriteComponent 
+			_tags="character"
 			image_file="mods/Apotheosis/files/enemies_gfx/fairy_giga_emissive.xml"
 			alpha="1"
 			emissive="1"
@@ -82,6 +79,10 @@
 			offset_x="0"
 			offset_y="0" >
 		</SpriteComponent>
+
+	<Entity>
+		
+		<InheritTransformComponent />
 		
 		<SpriteComponent 
 			_tags="character"

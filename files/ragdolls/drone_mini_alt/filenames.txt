@@ -1,0 +1,4 @@
+mods/Apotheosis/files/ragdolls/drone_mini_alt/head.png
+mods/Apotheosis/files/ragdolls/drone_mini_alt/legs.png
+mods/Apotheosis/files/ragdolls/drone_mini_alt/rod.png
+mods/Apotheosis/files/ragdolls/drone_mini_alt/propeller.png

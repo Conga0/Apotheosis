@@ -22,7 +22,7 @@
 		image_animation_file="data/particles/image_emitters/circle_256.png"
 		image_animation_speed="1"
 		image_animation_loop="0"
-		image_animation_raytrace_from_center="1"
+		image_animation_raytrace_from_center="0"
 		collide_with_gas_and_fire="0"
 		set_magic_creation="1"
 		is_emitting="1" >

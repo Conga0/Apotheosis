@@ -57,13 +57,14 @@ function check_death()
             local compLua = EntityGetComponentIncludingDisabled( entity_id, "LuaComponent" )
             if compLua ~= nil then
                 for i,v in ipairs(compLua) do
-                    local name = ComponentGetValue2(v, "script_source_file")
-                    if name == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_mass_status_fire.lua" or name == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_circle_explosion.lua" or name == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_meteor_barrage_setup.lua" then
+                    local sname = ComponentGetValue2(v, "script_source_file")
+                    if sname == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_mass_status_fire.lua" or sname == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_circle_explosion.lua" or sname == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_meteor_barrage_setup.lua" then
                         EntityRemoveComponent(entity_id, v)
                     end
 
-                    name = ComponentGetValue2(v, "script_damage_received")
-                    if name == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_retaliation_attack_script.lua" then
+                    --This was printing an error for whatever reason so just adding this -S
+                    local dname = ComponentGetValue2(v, "script_damage_received")
+                    if dname == "data/entities/animals/boss_fire_lukki/boss_fire_lukki_retaliation_attack_script.lua" then
                         EntityRemoveComponent(entity_id, v)
                     end
                 end

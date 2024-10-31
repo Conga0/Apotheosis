@@ -27,6 +27,27 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 60, "item_pickup")) do
                 EntityAddChild(id,c)
                 --EntityAddTag(id,"forge_item_convert")
 
+		--Restarts the end timer
+		local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
+		for i = 1, #luacomps do
+		    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/buildings/perk_creation_end.lua" then
+			EntityRemoveComponent( entity_id, luacomps[i] )
+
+                	EntityAddComponent2(
+                	    entity_id,
+                	    "LuaComponent",
+                	    {
+                	        execute_on_added = false,
+                	        script_source_file = "mods/apotheosis/files/scripts/buildings/perk_creation_end.lua",
+                	        execute_every_n_frame = 144,
+                	        remove_after_executed = true,
+                	        execute_times = 1
+                	    }
+                	)
+			break
+ 		    end
+		end
+
                 --Failsafe incase tag removal on picking up item fails
                 --[[
                 EntityAddComponent2(
