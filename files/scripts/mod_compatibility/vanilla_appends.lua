@@ -1538,6 +1538,11 @@ if ModSettingGet( "Apotheosis.meatrealmrework" ) then --Remove the vanilla meat 
   local content = ModTextFileGetContent(path)
   content = content:gsub("EntityLoad%( \"data/entities/animals/maggot_tiny/maggot_tiny%.xml\", pos_x, pos_y %)","EntityLoad( \"data/entities/animals/maggot_tiny/reworked/maggot_tiny.xml\", pos_x, pos_y ) for k=1,6 do EntityLoad( \"data/entities/animals/worm_maggot_big.xml\", pos_x, pos_y ) end")
   ModTextFileSetContent(path, content)
+
+  local path = "data/entities/animals/boss_meat/death.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("AddFlagPersistent%( \"miniboss_meat\" %)","AddFlagPersistent( \"miniboss_meat\" ) local children = EntityGetAllChildren(player) or {} for k=1,#children do local v = children[k] if EntityHasTag(v,\"curse\") then local comp = EntityGetFirstComponentIncludingDisabled(v,\"LifetimeComponent\") ComponentSetValue2(comp,\"lifetime\",3) break end end")
+  ModTextFileSetContent(path, content)
 end
 
 do --Make tiny drop the support bullet and support field spell
