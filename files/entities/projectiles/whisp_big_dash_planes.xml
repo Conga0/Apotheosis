@@ -469,6 +469,14 @@
 		>
 	</LuaComponent>
 
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/whisp_big_dash_dialogue.lua"
+		execute_every_n_frame="2"
+		execute_on_added="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
   <LuaComponent
 	_enabled="1"
 	script_source_file="mods/Apotheosis/files/scripts/projectiles/flippy_proj.lua"

@@ -250,7 +250,7 @@
 	</ParticleEmitterComponent>
 
 	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/devourer_magic_aura.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/devourer_magic_aura_planes.lua"
 		execute_every_n_frame="30"
 		>
 	</LuaComponent>

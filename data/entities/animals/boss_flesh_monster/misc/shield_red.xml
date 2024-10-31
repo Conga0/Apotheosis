@@ -1,11 +1,11 @@
-<Entity>
+<Entity name="corrupted_shield" >
     <InheritTransformComponent>
     </InheritTransformComponent>
     
     <Base file="data/entities/misc/animal_energy_shield.xml">
         <EnergyShieldComponent
             _tags="enabled_in_hand,item_identified__LEGACY"
-            radius="45.0"
+            radius="80.0"
             recharge_speed="0.0" 
             max_energy="20.0"
             energy_required_to_shield="0.1"
@@ -15,36 +15,36 @@
         </EnergyShieldComponent>
         
         <ParticleEmitterComponent
-            emitted_material_name="spark"
-            area_circle_radius.max="40"
+            emitted_material_name="spark_red_bright"
+            area_circle_radius.max="80"
             >
         </ParticleEmitterComponent>
         
         <ParticleEmitterComponent
-            emitted_material_name="spark"
-            area_circle_radius.min="40"
-            area_circle_radius.max="40"
+            emitted_material_name="spark_red_bright"
+            area_circle_radius.min="80"
+            area_circle_radius.max="80"
             >
         </ParticleEmitterComponent>
         
         <ParticleEmitterComponent
-            emitted_material_name="spark"
-            area_circle_radius.min="40"
-            area_circle_radius.max="40"
+            emitted_material_name="spark_red_bright"
+            area_circle_radius.min="80"
+            area_circle_radius.max="80"
             >
         </ParticleEmitterComponent>
     </Base>
 
     <SpriteComponent 
-        image_file="mods/Apotheosis/files/particles/area_indicator_90_red.png"
+        image_file="mods/Apotheosis/files/particles/area_indicator_160_red.png"
         z_index="1.2"
-        offset_x="45"
-        offset_y="45"
+        offset_x="90"
+        offset_y="90"
         >
     </SpriteComponent>
 
     <LifetimeComponent
-    lifetime="30"
+    lifetime="210"
     >
     </LifetimeComponent>
 </Entity>

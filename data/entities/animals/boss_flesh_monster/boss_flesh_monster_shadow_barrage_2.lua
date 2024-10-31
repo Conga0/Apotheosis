@@ -41,7 +41,9 @@ for k=1,3 do
 	local vel_x = math.cos( angle ) * length
 	local vel_y = 0- math.sin( angle ) * length
 
-	shoot_projectile( entity_id, "data/entities/animals/boss_flesh_monster/projectiles/enlightened_laser_shadow_wand.xml", pos_x, pos_y, vel_x, vel_y )
+	local pid = shoot_projectile( entity_id, "data/entities/animals/boss_flesh_monster/projectiles/enlightened_laser_shadow_wand.xml", pos_x, pos_y, vel_x, vel_y )
+	local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
+	ComponentSetValue2(projcomp, "mShooterHerdId", StringToHerdId("mage_corrupted"))
 end
 
 

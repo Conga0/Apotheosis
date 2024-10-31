@@ -1,0 +1,19 @@
+<Sprite
+ filename="mods/Apotheosis/files/projectiles_gfx/laser_flesh_neutral.png"
+ offset_x="13"
+ offset_y="5"
+ default_animation="fireball" >
+
+ <!-- animation -->
+ <RectAnimation
+  name="fireball"
+  pos_x="0"
+  pos_y="0"
+  frame_count="4"
+  frame_width="19"
+  frame_height="11"
+  frame_wait="0.1"
+  frames_per_row="4"
+  loop="1"   >
+ </RectAnimation>
+</Sprite>

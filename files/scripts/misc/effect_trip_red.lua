@@ -37,15 +37,9 @@ else
 end
 
 
-if amount >= 180 then
-	local rng = math.random(1,5)
-	GameTriggerMusicEvent( table.concat({"music/fungicave/0",rng}), false, x, y ) 
-end
-
-
 --Trip fx (originally 200)
 local tripmultiplier = 6000
-GameSetPostFxParameter("conga_red_sand_effect_amount", amount / tripmultiplier, 0, 0, 0)
+GameSetPostFxParameter("conga_red_sand_effect_amount", amount / tripmultiplier, 1, 0, 0)
 if amount > 600 then
 	GlobalsSetValue("conga_red_sand_effect_amount",amount)
 end

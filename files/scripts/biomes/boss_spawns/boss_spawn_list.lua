@@ -191,6 +191,9 @@ xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="2841" pos_y="984" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml" />
 ]]))
 xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+    <PixelScene pos_x="2841" pos_y="1640" just_load_an_entity="data/entities/animals/boss_fire_lukki/inert/boss_fire_lukki.xml" />
+]]))
+xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
     <PixelScene pos_x="3046" pos_y="984" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml" />
 ]]))
 ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))

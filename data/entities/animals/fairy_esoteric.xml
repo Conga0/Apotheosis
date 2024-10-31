@@ -155,6 +155,11 @@
 		event_root="animals/lasershooter" >
 	</AudioComponent>
 
+	<AudioComponent
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/esoteric_being" >
+	</AudioComponent>
+
     <LuaComponent
         execute_every_n_frame="-1"
         script_death="data/scripts/items/drop_money.lua"

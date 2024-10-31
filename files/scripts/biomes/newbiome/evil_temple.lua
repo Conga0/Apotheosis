@@ -3,7 +3,7 @@ CHEST_LEVEL = 3
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once("data/scripts/biome_scripts.lua")
 
-function load_random_background_sprite_with_entity( what, x, y )
+function load_random_background_sprite_with_entity( what, x, y, x2, y2 )
     if( what.total_prob == 0 ) then
         init_total_prob( what, x )
     end
@@ -21,7 +21,7 @@ function load_random_background_sprite_with_entity( what, x, y )
                     if( v.z_index ) then z_index = v.z_index end
 
                     LoadBackgroundSprite( v.sprite_file, x, y, z_index, true )
-                    EntityLoad(v.entity_file, x, y)
+                    EntityLoad(v.entity_file, x2, y2)
                     return
                 end
             else
@@ -250,6 +250,12 @@ g_big_enemies =
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/evil_temple/wizard_corrupt_wands.xml"
+	},
+	{
+		prob   		= 0.2,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/wizard_corrupt_returner.xml"
 	},
 	{
 		prob   		= 0.15,
@@ -750,11 +756,11 @@ function spawn_boss_limbs_trigger( x, y )
 end
 
 function load_background_window( x, y )
-	load_random_background_sprite_with_entity( g_background_windows, x - 89 + 5, y - 57.5 )
+	load_random_background_sprite_with_entity( g_background_windows, x - 90 + 5, y - 57.5, x + 5, y )
 end
 
 function load_background_drape( x, y )
-	load_random_background_sprite( g_background_drapes, x-18 + 5, y )
+	load_random_background_sprite( g_background_drapes, x-19 + 5, y )
 end
 
 --Ideas
@@ -764,3 +770,4 @@ end
 --Master of swapping: Inflicts you with Curse of Swapping for 30 seconds, any damage you take does the swapper mage passive effect
 --
 --Master of haste: nearby creatures gain bonus movement speed and attack speed
+--^ Wait what, where did this guy come from lol? -S

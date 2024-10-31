@@ -35,6 +35,9 @@ RegisterSpawnFunction( 0xff7600a9, "spawn_beam_steep_flipped" )
 
 RegisterSpawnFunction( 0xffe8892c, "spawn_miniboss" )
 
+RegisterSpawnFunction( 0xff876544, "spawn_nest_egg" )
+RegisterSpawnFunction( 0xffffeedd, "init" )
+
 ------------ small enemies -------------------------------
 
 g_small_enemies =
@@ -1212,4 +1215,69 @@ end
 
 function spawn_beam_steep_flipped(x,y)
 	LoadBackgroundSprite("data/biome_impl/excavationsite/beam_steep_flipped.png", x-35, y-60, 60, true)
+end
+
+-- spawning in the egg traps around the biome
+function init(x, y, w, h)
+    if previousinit ~= nil then
+        previousinit(x, y, w, h)
+    end
+    -- figure out positions for 4* fire lukki egg traps within the biome
+    -- and spawn them if a position is within the bounds of this function call
+    local egg_amount = tonumber(GlobalsGetValue("APOTHEOSIS_EGG_VOLCANIC_TRAP_AMOUNT","3")) + math.floor(0.5 * tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")))
+    if GameHasFlagRun("apotheosis_everything") then
+        egg_amount = egg_amount * 2
+    elseif GameHasFlagRun("apotheosis_hardmode") then
+        egg_amount = math.floor(egg_amount * 1.5)
+    end
+    local hatched_egg_amount = math.floor(egg_amount / 10)
+    egg_amount = egg_amount % 10
+
+    local biome_x_min = -24042
+    local biome_x_max = -19036
+    local biome_y_min = 3261
+    local biome_y_max = 4490
+    if tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) > 0 then
+        biome_x_min = -24042
+        biome_x_max = -19036
+        biome_y_min = 2562
+        biome_y_max = 4490
+    elseif GameHasFlagRun("apotheosis_downunder") or GameHasFlagRun("apotheosis_everything") then
+        biome_x_min = -24042
+        biome_x_max = -19036
+        biome_y_min = 8718
+        biome_y_max = 10223
+    end
+    for i=1,egg_amount do
+        local pos_x = ProceduralRandomi(109,i*53,biome_x_min,biome_x_max)
+        local pos_y = ProceduralRandomi(111,i*2.9,biome_y_min,biome_y_max)
+
+        if pos_x >= x and pos_x <= x+w
+        and pos_y >= y and pos_y <= y+h then
+            -- Generate Fire Lukki Nests
+            LoadPixelScene( "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", true )
+            
+            --Debug Data
+            --GamePrint("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
+            --print("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
+        end	
+    end
+    for i=1,hatched_egg_amount do
+        local pos_x = ProceduralRandomi(109,i*53,biome_x_min,biome_x_max)
+        local pos_y = ProceduralRandomi(111,i*2.9,biome_y_min,biome_y_max)
+
+        if pos_x >= x and pos_x <= x+w
+        and pos_y >= y and pos_y <= y+h then
+            -- Generate Hatched Fire Lukki Nests
+            LoadPixelScene( "mods/apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched.png", "mods/apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched_visual.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched_background.png", true )
+            
+            --Debug Data
+            --GamePrint("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
+            --print("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
+        end	
+    end
+end
+
+function spawn_nest_egg(x, y)
+	EntityLoad("mods/apotheosis/files/entities/props/egg_volcanic_lukki_trap.xml", x, y)
 end

@@ -1,0 +1,19 @@
+<Entity >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/water_immunity_endcheck.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="8"
+    >
+	</GameEffectComponent >
+
+</Entity>

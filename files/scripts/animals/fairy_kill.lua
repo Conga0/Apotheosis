@@ -7,7 +7,7 @@ function damage_about_to_be_received(damage, x, y, entity_thats_responsible, cri
     end
   
     -- Somehow check if entity_thats_responsible is the entity that should do the turning, for instance by name:
-    if EntityGetName(entity_thats_responsible) == "Jättikeiju" or EntityGetName(entity_thats_responsible) == "Kolossaalinenkeiju" then
+    if EntityGetName(entity_thats_responsible) == "$enemy_apotheosis_fairy" or EntityGetName(entity_thats_responsible) == "$enemy_apotheosis_fairy_big" or EntityGetName(entity_thats_responsible) == "$enemy_apotheosis_fairy_giant" then
       local entity_id = GetUpdatedEntityID()
       local damage_model_comp = EntityGetFirstComponentIncludingDisabled(entity_id, "DamageModelComponent")
       ComponentSetValue2(damage_model_comp, "create_ragdoll", false)

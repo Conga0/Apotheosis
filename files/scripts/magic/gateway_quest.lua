@@ -41,10 +41,25 @@ else
     --[[
     ]]--
     local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") or {}
-    if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 and HasFlagPersistent("apotheosis_card_unlocked_radarfound") and (GameHasFlagRun("apotheosis_radar_perk_taken") == true or GameHasFlagRun("apotheosis_everything") == false) then
+    local radar_stones = EntityGetInRadiusWithTag(pos_x,pos_y,512,"poopstone") or {}
+    local stone_id = 0
+    for k=1,#radar_stones
+    do local v = radar_stones[k]
+	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
+	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" then
+	    stone_id = v
+	    break
+	end
+    end
+    --No longer uses the persistent flag, meaning you need to get the planes radar
+    --If you don't have the planes perk then if you have the stone then you'll be able to be let through
+    --However if it's the everything seed then you'll be denied and have to get the perk, shouldn't matter though since Heretic gives the perk I believe
+    if #sampo > 0 and EntityGetParent(sampo[1]) ~= 0 and (GameHasFlagRun("apotheosis_radar_perk_taken") == true or (stone_id > 0 and EntityGetParent(stone_id) ~= 0 and GameHasFlagRun("apotheosis_everything") == false)) then
         --Enable press e to sampo?
         local helper = EntityGetWithTag("apotheosis_portal_helper")[1]
         EntitySetComponentsWithTagEnabled(helper,"lurker_data",true)
+	-- v This is so heretic doesn't yell through the planes each time the guiding stone is atomized and reconstructed when traveling through dimensions
+	GameAddFlagRun("apotheosis_planes_portal_completed")
     else
         local helper = EntityGetWithTag("apotheosis_portal_helper")[1]
         EntitySetComponentsWithTagEnabled(helper,"lurker_data",false)

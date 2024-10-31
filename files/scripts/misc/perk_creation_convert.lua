@@ -41,7 +41,24 @@ local outputlist = {
 for k=1, #inputlist
 do local v = inputlist[k];
 
-    if image == v then
+    if (image == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or image == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" ) and not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
+        local heretic_found = false
+        local boss = EntityGetInRadiusWithTag(pos_x,pos_y,1536,"miniboss") or {}
+        for bp=1,#boss do
+            if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+                heretic_found = true
+            	break
+            end
+        end
+        if heretic_found == false then
+	    if tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) > 0 or GameHasFlagRun("apotheosis_flesh_boss_stone_converted") then
+	        EntityLoad("mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster_newgame_plus_short.xml",pos_x,pos_y-150)
+	    else
+	        EntityLoad("mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml",pos_x,pos_y-150)
+	    end
+            GameScreenshake( 150 )
+        end
+    elseif image == v then
 		EntityLoad("data/entities/projectiles/explosion.xml", pos_x, pos_y - 10)
 		local perk_id = perk_spawn( pos_x, pos_y, outputlist[k] )
         --Perk tag is removed so other perks aren't deleted upon picking this one up

@@ -1,0 +1,17 @@
+<Entity names="apotheosis_heretic_eye_unforged" tags="teleportable_NOT" >
+
+	<!--Funny Anvil of Destiny interaction-->
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_unforged.lua"
+		execute_every_n_frame="120"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_unforged_sound.lua"
+		execute_every_n_frame="30"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>

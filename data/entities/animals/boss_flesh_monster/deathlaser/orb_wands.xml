@@ -30,6 +30,7 @@
     on_death_gfx_leave_sprite="0" 
     on_lifetime_out_explode="1"
 	explosion_dont_damage_shooter="1"
+	dont_collide_with_tag="enemy"
     damage="0.3"
     velocity_sets_scale="1"
     on_collision_die="1"

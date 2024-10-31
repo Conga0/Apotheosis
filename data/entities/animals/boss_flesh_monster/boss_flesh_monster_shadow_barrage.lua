@@ -1,6 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
 local entity_id    = GetUpdatedEntityID()
+local parent_id = EntityGetRootEntity( entity_id )
 local pos_x, pos_y = EntityGetTransform( entity_id )
 local r = 350
 
@@ -41,6 +42,6 @@ local r = 350
 	local vel_x = math.cos( angle ) * length
 	local vel_y = 0- math.sin( angle ) * length
 
-	shoot_projectile( entity_id, "data/entities/animals/boss_flesh_monster/projectiles/enlightened_laser_shadow_wand.xml", pos_x, pos_y, vel_x, vel_y )
+	shoot_projectile( parent_id, "data/entities/animals/boss_flesh_monster/projectiles/enlightened_laser_shadow_wand.xml", pos_x, pos_y, vel_x, vel_y )
 
 

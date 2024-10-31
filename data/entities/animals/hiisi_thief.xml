@@ -117,7 +117,7 @@
 
 	<AudioComponent
 		file="data/audio/Desktop/animals.bank"
-		event_root="animals/miner_fire" >
+		event_root="animals/shotgunner" >
 	</AudioComponent>
 	
 	<HitboxComponent 

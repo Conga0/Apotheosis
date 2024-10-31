@@ -1,4 +1,10 @@
 dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+GameAddFlagRun("apotheosis_ending_cutscene")
+
+function get_magnitude( x, y )
+	local result = math.sqrt( x ^ 2 + y ^ 2 )
+	return result
+end
 
 local entity_id = GetUpdatedEntityID()
 local initframe = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"LifetimeComponent") ,"creation_frame")
@@ -80,10 +86,29 @@ if runtime == 0 then
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
 
-    local luacomps = EntityGetComponent(heretic_id, "LuaComponent") or {}
+    local dist_x = pos_x - h_x
+    local dist_y = pos_y - h_y
+
+    local cam_x, cam_y, cam_w, cam_h = GameGetCameraBounds()
+
+    local distance = get_magnitude(dist_x, dist_y)
+    local range = cam_w
+
+    if ( distance > range ) then
+        --Git over 'ere! It's your special moment!
+        EntityApplyTransform( heretic_id, pos_x, pos_y - 5 )
+        local bodycomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "PhysicsBodyComponent")
+	EntitySetComponentIsEnabled(heretic_id,bodycomp,false)
+	EntitySetComponentIsEnabled(heretic_id,bodycomp,true)
+        EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", pos_x, pos_y - 5)
+        GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use", pos_x, pos_y )
+        GameAddFlagRun("apotheosis_heretalk_end_upset")
+    end
+
+    local luacomps = EntityGetComponentIncludingDisabled(heretic_id, "LuaComponent") or {}
     for i = 1, #luacomps do
         if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
-                ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
+                ComponentSetValue2( luacomps[i], "execute_every_n_frame", 150 )
         end
     end
 
@@ -91,9 +116,79 @@ if runtime == 0 then
 end
 
 --Gradually turn the sky red
+--And now also handle Heretic leaving the player's inv -S
 if runtime == 240 then
     local sky = EntityLoad("mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.xml", pos_x, pos_y)
     EntityAddChild(player_id,sky)
+
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
+    local h_x, h_y = EntityGetTransform(heretic_id)
+
+    local dist_x = pos_x - h_x
+    local dist_y = pos_y - h_y
+
+    local cam_x, cam_y, cam_w, cam_h = GameGetCameraBounds()
+
+    local distance = get_magnitude(dist_x, dist_y)
+    local range = cam_w
+
+    local luacomps = EntityGetComponentIncludingDisabled(heretic_id, "LuaComponent") or {}
+    for i = 1, #luacomps do
+        if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_destroyed.lua" then
+                EntityRemoveComponent( heretic_id, luacomps[i] )
+        elseif ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye.lua" then
+                EntityRemoveComponent( heretic_id, luacomps[i] )
+    	elseif ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
+    		EntityRemoveComponent( heretic_id, luacomps[i] )
+    	end
+    end
+    EntityAddComponent2(heretic_id, "LuaComponent", {
+	_tags= "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_quiet",
+	script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
+	execute_every_n_frame=5,
+    }) 
+
+    if EntityGetParent(heretic_id) ~= 0 then
+	GamePlaySound( "data/audio/Desktop/ui.bank", "ui/item_remove", h_x, h_y )
+        EntityApplyTransform( heretic_id, h_x, h_y - 8 )
+    end
+
+    EntityRemoveFromParent(heretic_id)
+
+    --Makes Heretic no longer a physics object so people can't just try to destroy 'em while doing their speech -S
+    EntitySetComponentsWithTagEnabled(heretic_id,"enabled_in_hand",false)
+    EntitySetComponentsWithTagEnabled(heretic_id,"enabled_in_inventory",false)
+    EntitySetComponentsWithTagEnabled(heretic_id,"enabled_in_world",true)
+
+    local bodycomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "PhysicsBodyComponent")
+    local shapecomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "PhysicsImageShapeComponent")
+    local itemcomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "ItemComponent")
+    local abilitycomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "AbilityComponent")
+    local projectilecomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "ProjectileComponent")
+    ComponentSetValue2( itemcomp, "play_spinning_animation", false )
+    EntityRemoveComponent(heretic_id,bodycomp)
+    EntityRemoveComponent(heretic_id,shapecomp)
+    EntityRemoveComponent(heretic_id,itemcomp)
+    EntityRemoveComponent(heretic_id,abilitycomp)
+    EntityRemoveComponent(heretic_id,projectilecomp)
+
+    --Hooray the eye finally doesn't bleed blood!... too bad it's only in the ending cutscene :p
+    local particlecomps = EntityGetComponentIncludingDisabled(heretic_id, "ParticleEmitterComponent") or {}
+    for i = 1, #particlecomps do
+        if ComponentGetValue2(particlecomps[i], "emitted_material_name") == "apotheosis_blood_infectious_fading_slow" then
+                EntityRemoveComponent( heretic_id, particlecomps[i] )
+        end
+    end
+
+    local eye = EntityGetAllChildren(heretic_id)[1]
+    if EntityGetComponent(eye, "SpriteComponent", "enabled_in_world") == nil then
+        EntitySetComponentsWithTagEnabled(eye,"enabled_in_world",true)
+    end
+
+    local spritecomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "SpriteComponent")
+    ComponentSetValue2( spritecomp, "offset_x", 9 )
+    ComponentSetValue2( spritecomp, "offset_y", 9 )
+    EntitySetComponentIsEnabled(heretic_id,spritecomp,true)
 end
 
 --Shake the screen & accelerate time
@@ -109,23 +204,38 @@ if runtime < 420 then
     GameAddFlagRun("apotheosis_heretalk_end_2")
 end
 
-if runtime > 420 then
+if runtime > 420 and runtime < 1480 then
     --local cam_x = tonumber(GlobalsGetValue("apotheosis_ending_cam_x"))
     --local cam_y = tonumber(GlobalsGetValue("apotheosis_ending_cam_y"))
     --GameSetCameraPos(cam_x,cam_y)
 
     GameScreenshake( 2, plyr_x, plyr_y )
+
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
+    local h_x, h_y = EntityGetTransform(heretic_id)
+
+    if h_x ~= pos_x and h_y ~= (pos_y - 90) then
+        local dist_x = pos_x - h_x
+        local dist_y = (pos_y - 90) - h_y
+
+        local mov_x = dist_x / 90
+        local mov_y = dist_y / 90
+    
+        EntityApplyTransform( heretic_id, h_x + mov_x, h_y + mov_y )
+    end
 end
 
 --Spawn vanishing Particles
 --Teleport player downwards
 --Disable their need for oxygen incase it isn't already done
-if runtime == 1535 then
+if runtime == 1480 then
     --Vanish the Heretic
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
     EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", h_x, h_y)
+    EntityLoad("data/entities/animals/boss_flesh_monster/boss_flesh_monster_portal_brief_small.xml", h_x, h_y)
     EntityKill(heretic_id)
+    GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use_end", h_x, h_y )
     --GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use", pos_x, pos_y )
 end
 
@@ -166,7 +276,8 @@ if runtime == 820 then
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/greed_curse/create", pos_x, pos_y )
 
     --Conga 21/11/2023: This looks goofy
-    --EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_01.xml", pos_x, pos_y - 175)
+    --Spoop 30/09/2024: Nuh-uh! Not anymore!
+    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_01.xml", pos_x, pos_y - 175)
 
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)

@@ -1,0 +1,9 @@
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/torso.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/arm_l.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/arm_r.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/feet.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/head_b.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/head_bl.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/head_br.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/head_tl.png
+mods/Apotheosis/files/ragdolls/wizard_corrupt_returner/head_tr.png

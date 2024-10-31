@@ -20,7 +20,7 @@
 		</HitboxComponent>
 
 		<PixelSceneComponent
-		pixel_scene="data/biome_impl/crypt/trap_frame_right.png"
+		pixel_scene="mods/apotheosis/files/biome_impl/evil_temple/trap_frame_right.png"
 			offset_x="-15"
 			offset_y="-10" >
 		</PixelSceneComponent>

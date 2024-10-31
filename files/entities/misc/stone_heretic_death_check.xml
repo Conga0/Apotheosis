@@ -1,0 +1,7 @@
+<Entity name="stone_heretic_death_check" tags="curse">
+
+	<LifetimeComponent
+		lifetime="350"
+	></LifetimeComponent>
+
+</Entity>

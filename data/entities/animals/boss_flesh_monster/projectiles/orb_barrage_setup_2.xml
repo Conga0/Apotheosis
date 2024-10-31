@@ -1,0 +1,17 @@
+<Entity name="$creep_apotheosis_boss_flesh_monster_name" >
+
+	<InheritTransformComponent/>
+
+	<LifetimeComponent
+		lifetime="140"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_orb_barrage.lua"
+		execute_every_n_frame="30"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+</Entity>

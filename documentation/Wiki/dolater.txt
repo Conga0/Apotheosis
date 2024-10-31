@@ -1,0 +1,59 @@
+Update entity icons/images on wiki to new ones
+-Seeker
+-Phantom Bow
+-Triangular Gem
+-Hideous Mass
+-Star Child
+-Esoteric Fairy
+-Will o' the whisp
+-Giant Centipede (barely noticeable tbh)
+-Thief Hiisi
+-Engineer Hiisi
+-Homeless Hiisi
+-Rich Hiisi
+-Rocket Shotgun Hiisi
+-Mini Drone
+-Master of Trolling
+-Master of Mana
+-Corrupt Master of Mana
+-Alchemic Weirdo
+-Wand Tinkering Crystal
+-Mana Drain Crystal
+-Lime Cyrstal
+-Opal Crystal
+-Wall Worm
+-Greater Barfer
+-Blind Gazer
+-Memory of the Worm
+-Wand Tinkering Crystal
+-Mana Drain Crystal
+-Lime Crystal
+-Opal Crystal
+
+Update spell icons/images on wiki to new ones
+-Bloody Bite
+-Fungal Shift
+-Hyper Fungal Shift
+
+Add entities to the wiki
+-Small Fire Spider
+-Lukki Porring
+-Corrupt Master of Returning
+-Cursed Puppeteer
+-Cursed Swapper
+-Cursed Manasucker
+-Cursed Twitcher
+-Cursed Grounder
+
+Add status effects to wiki
+-Divine Protection
+-Awfully Twitchy
+-Life Drain
+-Mind Weave
+-Bloodlinked
+
+Misc. things to update
+-Whisp rename
+-Fishing changes
+-Corrupt Stone changes
+-Heretical Eye destruction changes

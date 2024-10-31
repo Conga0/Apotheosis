@@ -1,0 +1,85 @@
+<Entity name="$animal_firemage_weak" tags="firemage" >
+  
+	<Base file="data/entities/animals/firemage_weak.xml" >
+		<DamageModelComponent
+			air_needed="0"
+			>
+		</DamageModelComponent>
+	</Base>
+	
+	<Entity>
+		<InheritTransformComponent>
+			<Transform 
+				position.x="0"
+				position.y="-12" 
+				>
+			</Transform>
+		</InheritTransformComponent>
+		
+		<Base file="data/entities/base_torch_particle.xml" >
+
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-2"
+				x_pos_offset_max="2" >
+			</ParticleEmitterComponent>
+	  
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-2"
+				x_pos_offset_max="2" >
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-2"
+				x_pos_offset_max="2" >
+			</ParticleEmitterComponent>
+
+		</Base>
+	</Entity>
+
+	<Entity name="hand_l">	
+		<Base file="data/entities/base_torch_particle.xml" >
+
+			<ParticleEmitterComponent 
+				count_min="2"
+				count_max="3"
+				x_pos_offset_min="-1"
+				x_pos_offset_max="1" 
+				y_pos_offset_min="-1"
+				y_pos_offset_max="2"
+				>
+			</ParticleEmitterComponent>
+	  
+			<ParticleEmitterComponent 
+				count_min="2"
+				count_max="3"
+				x_pos_offset_min="-1"
+				x_pos_offset_max="1" 
+				y_pos_offset_min="-1"
+				y_pos_offset_max="2">
+			</ParticleEmitterComponent>
+			
+			<ParticleEmitterComponent 
+				x_pos_offset_min="-1"
+				x_pos_offset_max="1" 
+				y_pos_offset_min="-3"
+				y_pos_offset_max="2">
+			</ParticleEmitterComponent>
+
+		</Base>
+		
+		<InheritTransformComponent
+			parent_hotspot_tag="hand_l"
+			only_position="1" >
+		</InheritTransformComponent>
+
+	</Entity>
+
+	<SpriteComponent 
+        _tags="character" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/firemage_scuba_mask.xml"
+		z_index="-1.1"
+		rect_animation="walk" >
+	</SpriteComponent>
+</Entity>
+

@@ -2,6 +2,11 @@
 	<Base file="data/entities/base_item_projectile.xml" />
 
 	<!-- physical presence -->
+
+	<PhysicsKeepInWorldComponent
+		check_whole_aabb="1"
+		predict_aabb="1" >
+	</PhysicsKeepInWorldComponent>
 	
 	<PhysicsBodyComponent 
 		_tags="enabled_in_world"
@@ -28,6 +33,7 @@
 		_enabled="1"
 		offset_x="5"
 		offset_y="5"
+		z_index="-1"
 		image_file="mods/apotheosis/files/items_gfx/heretic_symbol.png"
 	></SpriteComponent>
 	
@@ -88,8 +94,8 @@
 	<ItemComponent
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_stone_heretic_name"
-		ui_description="$item_apotheosis_stone_heretic_desc"
-		ui_sprite="mods/apotheosis/files/ui_gfx/items/stone_heretic.png"
+		ui_description="$item_apotheosis_stone_heretic_desc_alt"
+		ui_sprite="mods/apotheosis/files/ui_gfx/items/stone_heretic_aura.png"
 		max_child_items="0"
 		is_pickable="1"
 		is_equipable_forced="1"
@@ -117,8 +123,17 @@
 		>
 	</LuaComponent>
 	-->
+
+	<AudioLoopComponent
+		_enabled="1"
+		_tags="enabled_in_world"
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_name="mocreeps_audio/items/stone_heretic/loop"
+		auto_play="1">
+	</AudioLoopComponent>
 	
 	<ParticleEmitterComponent 
+		_enabled="0"
 		_tags="enabled_in_world,enabled_in_hand"
 		emitted_material_name="apotheosis_blood_infectious"
 		fade_based_on_lifetime="0"
@@ -151,11 +166,49 @@
 		render_ultrabright="0"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
-	
-	<CameraBoundComponent
-	  max_count="5"
-	  distance="2000">
-	</CameraBoundComponent>
+
+	<HitboxComponent 
+		_tags="enabled_in_world"
+		aabb_min_x="106" 
+		aabb_max_x="-106" 
+		aabb_min_y="106" 
+		aabb_max_y="-106"
+		damage_multiplier="0"
+		>
+	</HitboxComponent>
+
+	<StreamingKeepAliveComponent
+		_tags="enabled_in_world"
+		>
+	</StreamingKeepAliveComponent>
+
+	<!--Replacing this with a script so the sound and particle can't desync-->
+	<!--
+	<ParticleEmitterComponent
+		_enabled="0"
+		_tags="enabled_in_world,enabled_in_inventory,enabled_in_hand,enabled_by_liquid"
+		emitted_material_name="spark_red_bright"
+		gravity.y="0.0"
+		lifetime_min="2.01"
+		lifetime_max="2.1"
+		count_min="40"
+		count_max="40"
+		render_on_grid="0"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="16"
+		area_circle_radius.max="16"
+		cosmetic_force_create="1"
+		airflow_force="0.251"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="600"
+		emission_interval_max_frames="600"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="100"
+		collide_with_grid="0"
+		>
+	</ParticleEmitterComponent>
+	-->
   
 	<ParticleEmitterComponent
 		_enabled="1"
@@ -180,4 +233,47 @@
 		collide_with_grid="0"
 		>
 	</ParticleEmitterComponent>
+
+	<VariableStorageComponent
+		_tags="enabled_in_world,enabled_in_inventory,enabled_in_hand,enabled_by_liquid"
+		name="heretic_incoming"
+		value_int="0"
+		value_float="0"
+	>
+	</VariableStorageComponent>
+
+	<!-- Horscht's Inventory Bags mod nullifies the stone so he was nice enough to make a way around it :) -->
+	<VariableStorageComponent name="InventoryBags_not_baggable" />
+
+	<LuaComponent
+		_enabled="1"
+		script_item_picked_up = "mods/apotheosis/files/scripts/items/stone_heretic_initiate.lua"
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world,enabled_by_liquid"
+		script_source_file = "mods/apotheosis/files/scripts/items/stone_heretic_ping.lua"
+		execute_every_n_frame = "1"
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_enabled="0"
+		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world,enabled_by_liquid"
+		script_source_file = "mods/apotheosis/files/scripts/items/stone_heretic_ping_visual.lua"
+		execute_every_n_frame = "600"
+	>
+	</LuaComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
+		_enabled="1"
+		script_source_file="mods/apotheosis/files/scripts/items/stone_heretic_destroyed.lua"
+		execute_on_removed="1"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
 </Entity>

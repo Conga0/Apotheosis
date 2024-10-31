@@ -1,0 +1,16 @@
+<Entity name="heretic_spawner" tags="gate_monster">
+
+<!-- This is here so Heretic doesn't immediately disappear if he's been reincarnated before -->
+<!-- Used to be used for Conjurer spawning -->
+<!-- Twas debug to test the flesh phase easier... -->
+
+<SpriteComponent image_file="data/debug/empty.png" />
+
+	<LuaComponent 
+		script_source_file="data/entities/animals/boss_flesh_monster/spawn_safe_phase3.lua"
+		execute_every_n_frame="1"
+	>
+	</LuaComponent>
+
+</Entity>
+

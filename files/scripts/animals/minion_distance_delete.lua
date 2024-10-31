@@ -12,5 +12,7 @@ local frame = GameGetFrameNum()
 if (frame + 91) > ComponentGetValue2(comp,"kill_frame") then
 	GameDropAllItems( entity_id )
 	local comp2 = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemPickUpperComponent")
-	EntitySetComponentIsEnabled(entity_id,comp2,false)
+	if comp2 ~= nil then
+		EntitySetComponentIsEnabled(entity_id,comp2,false)
+	end
 end

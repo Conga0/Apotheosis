@@ -27,11 +27,10 @@ function init( x, y, w, h )
 	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/prison_spot.png", "mods/Apotheosis/files/biome_impl/special_scenes/prison_spot_visual.png", x, y, "", true )
 end
 
-function spawn_orb(x, y)
-end
-
 function spawn_check(x, y)
-	EntityLoad( "data/entities/animals/boss_flesh_monster/inert/flesh_boss_inert.xml", x, y )
-	EntityLoad( "data/entities/animals/boss_flesh_monster/inert/prison_check.xml", x, y )
+	if tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) <= 0 then
+		EntityLoad( "data/entities/animals/boss_flesh_monster/inert/flesh_boss_inert.xml", x, y )
+		EntityLoad( "data/entities/animals/boss_flesh_monster/inert/prison_check.xml", x, y )
+	end
  -- this does exist!
 end

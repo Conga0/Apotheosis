@@ -22,7 +22,7 @@
         </AnimalAIComponent>
         
         <SpriteComponent 
-            image_file="mods/Apotheosis/files/enemies_gfx/poring.xml"
+            image_file="mods/Apotheosis/files/enemies_gfx/poring_lukki_alt.xml"
             alpha="0.8" 
             offset_x="14" 
             offset_y="20" >
@@ -105,6 +105,25 @@
 		script_death="data/entities/animals/secret/poring_death.lua"
 		>
 	</LuaComponent>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/poring_death_explosion.lua"
+		>
+	</LuaComponent>
+
+	<MaterialInventoryComponent 
+		_enabled="1" 
+		drop_as_item="0" 
+		on_death_spill="1"
+		leak_on_damage_percent="0"
+		b2_force_on_leak="0.25"
+		kill_when_empty="1"
+		death_throw_particle_velocity_coeff="0.4"
+		>
+		<count_per_material_type>
+			<Material material="slime" count="150"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
 
 	<IKLimbsAnimatorComponent>
 	</IKLimbsAnimatorComponent>

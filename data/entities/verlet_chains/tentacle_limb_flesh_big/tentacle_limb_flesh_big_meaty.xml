@@ -1,0 +1,36 @@
+<Entity>
+	<VerletWorldJointComponent/>
+
+    <VerletPhysicsComponent
+    	num_points="15"
+    	stiffness="1.0"
+		velocity_dampening="0.9"
+    	resting_distance="2" 
+    	simulate_wind="1"
+		pixelate_sprite_transforms="1"
+        follow_entity_transform="0"
+        wind_change_speed="0.25"
+    	simulate_gravity="1" >
+    </VerletPhysicsComponent>
+
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_0.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_1.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_1.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_2.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_2.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_3.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_3.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_4.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_4.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_5.xml" />
+	<Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/smalltentacle_6.xml" />
+
+<!-- Doesn't work :p -->
+<!-- 
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine.xml"> <InheritTransformComponent parent_sprite_id="2"><Transform position.x="8"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent parent_sprite_id="2"><Transform position.x="15"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine.xml"> <InheritTransformComponent parent_sprite_id="3"><Transform position.x="7"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent parent_sprite_id="5"><Transform position.x="6"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+-->
+
+</Entity>

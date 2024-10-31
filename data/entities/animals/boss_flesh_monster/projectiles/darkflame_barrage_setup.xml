@@ -1,0 +1,22 @@
+<Entity name="$creep_apotheosis_boss_fire_lukki_name" >
+
+	<LifetimeComponent
+		lifetime="126"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_darkflame_barrage.lua"
+		execute_every_n_frame="8"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_flesh_monster/boss_flesh_monster_darkflame_barrage_hurl.lua"
+		execute_every_n_frame="125"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>

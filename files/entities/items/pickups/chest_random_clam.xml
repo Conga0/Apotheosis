@@ -1,0 +1,31 @@
+<Entity tags="teleportable_NOT,item_physics,chest,item_pickup,effectable_prop">
+  <Base file="data/entities/items/pickup/chest_random.xml">
+	<UIInfoComponent
+    		_tags="enabled_in_world"
+		>
+	</UIInfoComponent>
+
+  <PositionSeedComponent>
+    _tags="enabled_in_world"
+  </PositionSeedComponent>
+
+  <PhysicsImageShapeComponent 
+    _tags="enabled_in_world"
+    image_file="mods/apotheosis/files/buildings_gfx/chest_random_clam.png"
+    material="apotheosis_meat_water_lukki_rock"
+  ></PhysicsImageShapeComponent>
+
+  <ItemComponent
+    _tags="enabled_in_world" >
+  </ItemComponent>
+
+  <LuaComponent 
+    _tags="enabled_in_world"
+	>
+  </LuaComponent>
+
+  <LuaComponent 
+    _tags="enabled_in_world" >
+  </LuaComponent>
+  </Base>
+</Entity>

@@ -1,0 +1,342 @@
+<Entity tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,glue_NOT" name="$enemy_apotheosis_flesh_wizard_manaeater" >
+	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
+	
+	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
+	<AnimalAIComponent
+		preferred_job="JobDefault"
+		attack_ranged_enabled="0"
+		attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/orb_corrupt_manadrain.xml"
+		attack_ranged_predict="0"
+		attack_ranged_action_frame="2"
+		attack_ranged_min_distance="0"
+		attack_ranged_max_distance="300"
+		attack_ranged_frames_between="60"
+		attack_ranged_offset_y="0"
+		aggressiveness_min="80"
+		aggressiveness_max="100"
+	>
+	</AnimalAIComponent>
+
+	<LuaComponent
+	    execute_every_n_frame="-1"
+	    script_death="data/scripts/items/drop_money.lua"
+	    remove_after_executed="1" >
+	</LuaComponent>
+
+
+
+	<LightComponent 
+		_enabled="1" 
+		radius="64"
+		r="168"
+		g="65"
+		b="236"
+		offset_y="0"
+   		fade_out_time="1.5" >
+	</LightComponent>
+
+	<SpriteComponent 
+		_tags="character"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/fleshling_manaeater.xml"
+		offset_x="18"
+		offset_y="18"
+		>
+	</SpriteComponent>
+
+	<LimbBossComponent
+		state="1">
+	</LimbBossComponent>
+
+	<PathFindingComponent 
+		can_dive="1" 
+		can_fly="1" 
+		can_jump="0" 
+		can_swim_on_surface="1" 
+		can_walk="1" 
+		cost_of_flying="500" 
+		distance_to_reach_node_x="20" 
+		distance_to_reach_node_y="20" 
+		frames_between_searches="20" 
+		frames_to_get_stuck="120" 
+		initial_jump_lob="1" 
+		initial_jump_max_distance_x="100" 
+		initial_jump_max_distance_y="60" 
+		iterations_max_no_goal="9999999" 
+		iterations_max_with_goal="145000" 
+		jump_speed="200" 
+		max_jump_distance_from_camera="900" 
+		search_depth_max_no_goal="120" 
+		search_depth_max_with_goal="145000" 
+		y_walking_compensation="0" >
+	</PathFindingComponent>
+
+	<PathFindingGridMarkerComponent 
+		_enabled="1" 
+		marker_offset_x="0" 
+		marker_offset_y="-6" 
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+	<IKLimbsAnimatorComponent>
+	</IKLimbsAnimatorComponent>
+
+
+
+	<PhysicsAIComponent
+		target_vec_max_len="15.0"
+		force_coeff="10.0"
+		force_balancing_coeff="0.8"
+		force_max="100"
+		torque_coeff="50"
+		torque_balancing_coeff="4"
+		torque_max="50.0"
+		damage_deactivation_probability="0"
+		damage_deactivation_time_min="2"
+		damage_deactivation_time_max="10" >
+	</PhysicsAIComponent>
+
+	<PhysicsBodyComponent 
+		force_add_update_areas="1"
+		allow_sleep="1" 
+		angular_damping="0.02" 
+		fixed_rotation="1" 
+		is_bullet="0" 
+		linear_damping="0"  >
+	</PhysicsBodyComponent>
+
+	<PhysicsShapeComponent
+		is_circle="1"
+		radius_x="13"
+		radius_y="13"
+		friction="0.0"
+		restitution="0.3" >
+	</PhysicsShapeComponent>
+
+
+
+
+	<DamageModelComponent 
+		hp="45" 
+		air_needed="0" 
+		falling_damages="0" 
+		fire_probability_of_ignition="20" 
+		blood_material="apotheosis_blood_infectious"
+		blood_spray_material="apotheosis_blood_infectious"
+		is_on_fire="0" 
+		materials_that_damage="acid,apotheosis_magic_liquid_divine"
+		materials_how_much_damage="0.1,0.1"
+		ragdoll_filenames_file=""
+        ragdoll_material="apotheosis_meat_heretic"
+		ragdoll_offset_y="-6"
+		ragdollify_child_entity_sprites="1"
+		ragdollify_root_angular_damping="2"
+		ragdollify_disintegrate_nonroot="1"
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_$[1-3].xml"
+		minimum_knockback_force="100000"
+		>
+		<damage_multipliers
+			explosion="0.0"
+			electricity="0.6"
+			melee="1.2"
+			fire="1.4"
+			slice="1.2"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<MaterialInventoryComponent 
+		_enabled="1" 
+		drop_as_item="0" 
+		leak_on_damage_percent="0.999" 
+		>
+		<count_per_material_type>
+		<Material material="blood" count="400"  />
+		</count_per_material_type>
+	</MaterialInventoryComponent>
+
+	<GenomeDataComponent 
+		herd_id="mage_corrupted"
+		food_chain_rank="10"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+
+
+	<HitboxComponent 
+		_tags="hitbox_weak_spot"
+		aabb_min_x="-10" 
+		aabb_max_x="10" 
+		aabb_min_y="-10" 
+		aabb_max_y="10"
+		damage_multiplier="1.0" >
+	</HitboxComponent>
+
+
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/shine_blue.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="20"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-20"
+		randomize_position.max_x="20"
+		randomize_position.min_y="-20"
+		randomize_position.max_y="20"
+		>
+  </SpriteParticleEmitterComponent>
+
+	<AudioComponent 
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals" >
+	</AudioComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/fungus" >
+	</AudioComponent>
+
+	<SpriteAnimatorComponent 
+		rotate_to_surface_normal="0" 
+		target_sprite_comp_name="character" >
+	</SpriteAnimatorComponent>
+
+
+	<!-- Limbs -->
+
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+	<Entity name="tentacle_limb_leg">  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/tentacle_red_limb_long_animated.xml" />  </Entity>
+
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+	<Entity name="tentacle_verlet">	   <Base file="data/entities/verlet_chains/tentacle_limb_flesh_big/tentacle_limb_flesh_medium.xml"> </Base></Entity>
+
+	<Entity name="tentacle">	   <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent><Transform position.x="-5"  position.y="-3" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity name="tentacle">	   <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent><Transform position.x="3"  position.y="7" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity name="tentacle">	   <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent><Transform position.x="-2"  position.y="4" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity name="tentacle">	   <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent><Transform position.x="7"  position.y="-2" ></Transform></InheritTransformComponent> </Base></Entity>
+
+
+   	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/animators/tentacle_verlet_limb_animator.lua"
+		execute_on_added="1"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<DamageNearbyEntitiesComponent
+    radius="9"
+    time_between_damaging="12"
+    damage_min="0.3"
+    damage_max="0.3"
+    target_tag="prey"
+	damage_description="$enemy_apotheosis_lukki_tentacle_hungry"
+    damage_type="DAMAGE_MELEE"
+    ragdoll_fx="NONE">
+	</DamageNearbyEntitiesComponent>
+
+	<ParticleEmitterComponent 
+		emitted_material_name="spark_electric"
+		gravity.y="0.0"
+		lifetime_min="0.4"
+		lifetime_max="0.7"
+		count_min="20"
+		count_max="30"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="85"
+		area_circle_radius.max="115"
+		cosmetic_force_create="0"
+		airflow_force="1.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" 
+		velocity_always_away_from_center="-220"
+		>
+	</ParticleEmitterComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/devourer_magic_aura_planes.lua"
+		execute_every_n_frame="30"
+		>
+	</LuaComponent>
+    
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		name="frame_checker"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		execute_on_removed="0"
+		script_source_file="mods/Apotheosis/files/scripts/animals/flesh_wizard_manaeater_attack.lua"
+		execute_every_n_frame="50"
+		>
+	</LuaComponent>
+  
+ 	<VariableStorageComponent
+		_tags="no_gold_drop">
+	</VariableStorageComponent>
+
+</Entity>

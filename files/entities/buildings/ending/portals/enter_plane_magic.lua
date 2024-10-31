@@ -2,6 +2,11 @@ function do_newgame_plus()
 	-- GameDoEnding2()
 	-- BiomeMapLoad( "mods/nightmare/files/biome_map.lua" )
 
+	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
+	-- print( newgame_n )
+	newgame_n = newgame_n + 1
+	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
+
 	local players = EntityGetWithTag("player_unit")
 	for k=1,#players
 	do local v = players[k]
@@ -16,7 +21,7 @@ function do_newgame_plus()
 			end
 		end
 
-		local biome_rebooter = EntityLoad("mods/apotheosis/files/entities/special/biome_rebooter.xml",5910,2421)
+		local biome_rebooter = EntityLoad("mods/apotheosis/files/entities/special/biome_rebooter.xml",-5910,2421)
 		EntityAddChild(v,biome_rebooter)
 	end
 

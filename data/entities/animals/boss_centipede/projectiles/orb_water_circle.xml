@@ -190,7 +190,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="data/entities/animals/boss_centipede/orb_water_hex.xml"
+		value_string="data/entities/animals/boss_centipede/projectiles/orb_water_hex.xml"
 		>
 	</VariableStorageComponent>
 	

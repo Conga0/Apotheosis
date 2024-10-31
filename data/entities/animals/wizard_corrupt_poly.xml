@@ -1,4 +1,4 @@
-<Entity name="Korruptoitunut Muodonmuutosmestari" >
+<Entity name="Korruptoitunut Muodonmuutosmestari" tags="polymorphable_NOT" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -26,6 +26,8 @@
 		
 		<DamageModelComponent
             hp="12"
+		materials_that_damage="acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_divine" 
+		materials_how_much_damage="0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.05"
             ragdoll_material="meat_confusion"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_swapper/filenames.txt"
 			>
@@ -67,7 +69,6 @@
 		
 		<HitboxComponent
 		  _enabled="1"
-		  damage_multiplier="0.33"
 		  damage_multiplier="0.5"
 		  aabb_min_x="-4.5" 
 		  aabb_max_x="4.5" 
@@ -85,6 +86,38 @@
 	    </CharacterDataComponent>
 	</Base>
 	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/shine_03.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="20"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-10"
+		randomize_position.max_x="10"
+		randomize_position.min_y="-10"
+		randomize_position.max_y="10"
+		>
+  </SpriteParticleEmitterComponent>
+  
 	<ItemPickUpperComponent
     	is_in_npc="1">
     </ItemPickUpperComponent>
@@ -123,8 +156,8 @@
 	<Entity name="cape">  
         <Base file="data/entities/verlet_chains/cape/cape.xml">  
         	<VerletPhysicsComponent
-        		cloth_color_edge="0xFFe2dae0"
-        		cloth_color="0xFF624f50">
+        		cloth_color_edge="0xFFEBD1E6"
+        		cloth_color="0xFF773B3E">
         	</VerletPhysicsComponent>
         </Base>  
     </Entity>

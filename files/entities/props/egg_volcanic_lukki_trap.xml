@@ -1,0 +1,96 @@
+<Entity name="$prop_apotheosis_egg_fire_lukki_trap" tags="hittable,teleportable_NOT,item_physics" >
+  <Base file="data/entities/base_item_projectile.xml" />
+
+  <!-- physical presence -->
+  
+  <PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="0"
+    on_death_leave_physics_body="0"
+    hax_fix_going_through_ground="1"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="mods/apotheosis/files/items_gfx/egg_red.png"
+    material="meteorite_test"
+  ></PhysicsImageShapeComponent>
+  
+  <PhysicsThrowableComponent
+    max_throw_speed="180"
+    throw_force_coeff="1.5"
+  ></PhysicsThrowableComponent>
+
+  <VelocityComponent
+	affect_physics_bodies="1"
+    _tags="enabled_in_world"
+  ></VelocityComponent>
+  
+  <!-- potion logic -->
+
+	<DamageModelComponent 
+		air_needed="0" 
+		blood_material="lava" 
+		drop_items_on_death="0"  
+		fire_damage_amount="0.2" 
+		fire_probability_of_ignition="0" 
+		critical_damage_resistance="1"
+		hp="2" 
+		is_on_fire="0" 
+		materials_create_messages="0" 
+		materials_damage="0" 
+		ragdoll_filenames_file="" 
+		ragdoll_material=""
+	>
+	</DamageModelComponent>
+
+  <!-- item -->
+
+  <SpriteComponent
+    _enabled="1"
+    offset_x="25"
+    offset_y="25"
+    emissive="1"
+    additive="1"
+    alpha="0.6"
+    has_special_scale="1"
+    image_file="mods/apotheosis/files/particles/egg_volcanic_lukki_glow.png"
+  ></SpriteComponent>
+
+  <UIInfoComponent
+    _tags="enabled_in_world"
+    name="$prop_apotheosis_egg_fire_lukki_trap" >
+  </UIInfoComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		execute_every_n_frame="2" 
+		execute_times="-1" 
+		remove_after_executed="0" 
+		script_source_file="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap_light.lua" >
+	</LuaComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		execute_every_n_frame="60" 
+		execute_times="-1" 
+		remove_after_executed="0" 
+		script_source_file="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap_shift.lua" >
+	</LuaComponent>
+
+	<LuaComponent 
+		_enabled="1" 
+		execute_every_n_frame="10" 
+		execute_times="-1" 
+		script_source_file="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap.lua"
+		remove_after_executed="0" 
+		script_damage_received="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap_damage.lua" >
+	</LuaComponent>
+</Entity>

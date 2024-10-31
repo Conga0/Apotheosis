@@ -1,14 +1,14 @@
 <Sprite 
   default_animation="stand" 
   filename="mods/Apotheosis/files/enemies_gfx/hisii_engineer.png" 
-  offset_x="8" 
-  offset_y="17" >
+  offset_x="14" 
+  offset_y="24" >
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="19" 
+    frame_height="25" 
     frame_wait="0.2" 
-    frame_width="16" 
+    frame_width="28" 
     frames_per_row="6" 
     name="stand" 
     pos_x="0" 
@@ -18,13 +18,13 @@
 
   <RectAnimation 
     frame_count="6" 
-    frame_height="19" 
+    frame_height="25" 
     frame_wait="0.082" 
-    frame_width="16" 
+    frame_width="28" 
     frames_per_row="12" 
     name="walk" 
     pos_x="0" 
-    pos_y="19" >
+    pos_y="26" >
 
     <Event 
       check_physics_material="1" 
@@ -50,14 +50,14 @@
 
   <RectAnimation 
     frame_count="3" 
-    frame_height="19" 
+    frame_height="25" 
     frame_wait="0.082" 
-    frame_width="16" 
+    frame_width="28" 
     frames_per_row="12" 
     loop="0" 
     name="jump_up" 
     pos_x="0" 
-    pos_y="38" >
+    pos_y="52" >
 
     <Event 
       check_physics_material="1" 
@@ -73,40 +73,114 @@
 
   <RectAnimation 
     frame_count="2" 
-    frame_height="19" 
+    frame_height="25" 
     frame_wait="0.082" 
-    frame_width="20" 
+    frame_width="28" 
     frames_per_row="15" 
     loop="0" 
     name="jump_fall" 
     pos_x="0" 
-    pos_y="57" >
+    pos_y="78" >
 
   </RectAnimation>
 
   <RectAnimation 
     frame_count="3" 
-    frame_height="19" 
+    frame_height="25" 
     frame_wait="0.15" 
-    frame_width="16" 
+    frame_width="28" 
     frames_per_row="12" 
     loop="0" 
     name="attack" 
     pos_x="0" 
-    pos_y="76" >
+    pos_y="104" >
+
+    <Event 
+      check_physics_material="1" 
+      frame="2" 
+      name="attack_melee" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
 
   </RectAnimation>
 
   <RectAnimation 
     frame_count="3" 
-    frame_height="19" 
+    frame_height="25" 
     frame_wait="0.15" 
-    frame_width="16" 
+    frame_width="28" 
     frames_per_row="12" 
     loop="0" 
     name="attack_ranged" 
     pos_x="0" 
-    pos_y="76" >
+    pos_y="104" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="11" 
+    frame_height="25" 
+    frame_wait="0.15" 
+    frame_width="28" 
+    frames_per_row="12" 
+    loop="0" 
+    name="attack_build" 
+    pos_x="0" 
+    pos_y="130" >
+
+    <Event 
+      check_physics_material="1" 
+      frame="2" 
+      name="attack_melee" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="2" 
+      max_distance="500" 
+      name="attack_build" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="4" 
+      max_distance="500" 
+      name="attack_build" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="6" 
+      max_distance="500" 
+      name="attack_build" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="8" 
+      max_distance="500" 
+      name="attack_build" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
+
+    <Event 
+      check_physics_material="1" 
+      frame="10" 
+      max_distance="500" 
+      name="attack_build" 
+      on_finished="0" 
+      probability="1" >
+    </Event>
 
   </RectAnimation>
 

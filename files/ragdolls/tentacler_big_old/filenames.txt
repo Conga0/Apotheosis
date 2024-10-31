@@ -1,0 +1,5 @@
+mods/Apotheosis/files/ragdolls/tentacler_big_old/head.png
+mods/Apotheosis/files/ragdolls/tentacler_big_old/tentacle_1.png
+mods/Apotheosis/files/ragdolls/tentacler_big_old/tentacle_2.png
+mods/Apotheosis/files/ragdolls/tentacler_big_old/tentacle_3.png
+

@@ -1,0 +1,235 @@
+<Entity >
+
+	<InheritTransformComponent />
+
+	<LifetimeComponent
+		lifetime="530"
+		>
+	</LifetimeComponent>
+
+	<!-- Audio Effect -->
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith_glowing/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/misc.bank"
+		event_name="misc/sun/size_3_loop"
+		auto_play="1"
+		m_volume="4">
+	</AudioLoopComponent>
+
+	<!-- Death Cross appears to break ground a bit before the barrage -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/deathcross_spawn_phase3.lua"
+		execute_every_n_frame="340"
+		>
+	</LuaComponent>
+
+	<!-- Death. -->
+	<LuaComponent
+		_enabled="1"
+		_tags="invincible"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/warning_start.lua"
+		execute_every_n_frame="440"
+		>
+	</LuaComponent>
+
+	<!-- Death. -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/barrage_start.lua"
+		execute_every_n_frame="470"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<!-- Death. -->
+	<LuaComponent
+		_enabled="0"
+		_tags="magic_music"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/barrage.lua"
+		execute_every_n_frame="3"
+		>
+	</LuaComponent>
+
+	<!--Phase 4 finale orb bursts -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/barrage_circle_skull.lua"
+		execute_every_n_frame="60"
+		execute_times="7"
+		>
+	</LuaComponent>
+
+	<!-- Phase 4 transition into -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/phase_4_transition_flesh.lua"
+		execute_every_n_frame="528"
+		execute_times="1"
+		>
+	</LuaComponent>
+    
+    <GameEffectComponent
+		_tags="protection_all_short,effect_protection_all"
+        effect="PROTECTION_ALL"
+        frames="-1"
+    >
+	</GameEffectComponent >
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/protection_all_evil.xml"
+		delay="0"
+		lifetime="1.0"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="-20"
+		gravity.x="0" gravity.y="10"
+		velocity_slowdown="2"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="2"
+		emission_interval_max_frames="10"
+		count_min="1" count_max="1"
+		randomize_position.min_x="-40"
+		randomize_position.max_x="40"
+		randomize_position.min_y="-40"
+		randomize_position.max_y="40"
+		randomize_velocity.min_y="-40"
+		randomize_velocity.max_y="-10"
+		>
+    </SpriteParticleEmitterComponent>
+
+	<!-- FX -->
+	<ParticleEmitterComponent 
+		_tags="invincible"
+        emitted_material_name="spark_purple"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-10"
+        x_vel_max="10"
+        y_vel_min="-10"
+        y_vel_max="10"
+        count_min="15"
+        count_max="15"
+		lifetime_min="0.7"
+		lifetime_max="1.2"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="60"
+        emission_interval_max_frames="250"
+        is_emitting="1"
+		gravity.y="0"
+		gravity.x="0"
+		velocity_always_away_from_center="-100"
+		>
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent 
+		_tags="invincible"
+        emitted_material_name="spark_purple_bright"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="40"
+        count_max="50"
+		lifetime_min="0.7"
+		lifetime_max="1.2"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="30"
+        emission_interval_max_frames="40"
+        is_emitting="1"
+		gravity.y="0"
+		gravity.x="0"
+		render_ultrabright="1"
+		velocity_always_away_from_center="-100"
+		>
+    </ParticleEmitterComponent>
+  
+    <ParticleEmitterComponent 
+		_tags="invincible"
+        emitted_material_name="spark_purple"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="3"
+        count_max="4"
+		lifetime_min="0.7"
+		lifetime_max="1.2"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="10"
+        emission_interval_max_frames="12"
+        is_emitting="1"
+		gravity.y="0"
+		gravity.x="0"
+		velocity_always_away_from_center="-100"
+		>
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent
+		_tags="invincible"
+        emitted_material_name="spark_purple_bright"
+		area_circle_radius.min="0"
+		area_circle_radius.max="20"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="5"
+        count_max="10"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="5"
+        emission_interval_max_frames="10"
+        is_emitting="1"
+		gravity.y="0"
+		gravity.x="0"
+		render_ultrabright="1"
+		velocity_always_away_from_center="-10"
+		>
+    </ParticleEmitterComponent>
+  
+    <ParticleEmitterComponent 
+		_enabled="0"
+		_tags="enabled_by_liquid"
+        emitted_material_name="spark_purple"
+		area_circle_radius.min="45"
+		area_circle_radius.max="95"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="30"
+        count_max="35"
+		lifetime_min="0.7"
+		lifetime_max="1.2"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="1"
+        emission_interval_max_frames="3"
+        is_emitting="1"
+		gravity.y="0"
+		gravity.x="0"
+		render_ultrabright="1"
+		velocity_always_away_from_center="100"
+		>
+    </ParticleEmitterComponent>
+</Entity>

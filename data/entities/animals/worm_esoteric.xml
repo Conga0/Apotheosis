@@ -992,6 +992,11 @@
 		event_root="animals/worm" >
 	</AudioComponent>
 
+	<AudioComponent
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/esoteric_being" >
+	</AudioComponent>
+
 	<AudioLoopComponent
 		file="data/audio/Desktop/animals.bank"
 		event_name="animals/worm/movement_loop"

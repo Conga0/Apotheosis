@@ -30,6 +30,8 @@
 		<Base file="data/entities/items/orbs/orb_particles_base.xml" />
 	</Entity>
 
+	<!-- Forgot that _enabled doesn't work on script_item_picked_up scripts :p -->
+	<!-- Nevermind actually, has to be enabled for the poor folks in old runs -->
 	<LuaComponent 
 		script_item_picked_up="mods/apotheosis/files/scripts/items/orbs/orb_12_trap.lua" >
 	</LuaComponent>

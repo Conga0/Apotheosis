@@ -170,4 +170,12 @@ end
 
 function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
 	do_money_drop( 1, false )
+
+	local entity_id    = GetUpdatedEntityID()
+	local pos_x, pos_y = EntityGetTransform( entity_id )
+
+	SetRandomSeed( GameGetFrameNum(), pos_x + pos_y + entity_id )
+	if Random(1,100) == 1 then
+		GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/animals/hiisi_thief/death", pos_x, pos_y );
+	end
 end

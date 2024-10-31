@@ -157,10 +157,15 @@
 		fade_based_on_lifetime="1"
 		is_emitting="1" >
 	</ParticleEmitterComponent>
-	
+
 	<AudioComponent
 		file="data/audio/Desktop/animals.bank"
 		event_root="animals/drone_lasership" >
+	</AudioComponent>
+	
+	<AudioComponent
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/esoteric_being" >
 	</AudioComponent>
 
 	<AudioLoopComponent

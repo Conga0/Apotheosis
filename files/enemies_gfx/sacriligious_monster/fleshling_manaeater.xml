@@ -1,0 +1,21 @@
+<Sprite
+filename="mods/apotheosis/files/enemies_gfx/sacriligious_monster/fleshling_manaeater.png"
+offset_x="18"
+offset_y="18" 
+default_animation="stand"
+>
+
+ <!-- stand -->
+ <RectAnimation
+  name="stand"
+  pos_x="0"
+  pos_y="0"
+  frame_count="2"
+  frame_width="38"
+  frame_height="37"
+  frame_wait="0.2"
+  frames_per_row="2"
+  loop="1"   >
+ </RectAnimation>
+
+</Sprite>

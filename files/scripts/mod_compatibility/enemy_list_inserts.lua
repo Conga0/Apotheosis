@@ -44,7 +44,7 @@ local insert_list = {
     },
     {
         id_matchup="giantshooter",
-        name="slime_leaker_weak\nslime_leaker\nslime_teleporter\ngoo_slug\nporing\nporing_magic\nporing_devil\nporing_holy\nporing_holy_arch",
+        name="slime_leaker_weak\nslime_leaker\nslime_teleporter\ngoo_slug\nporing\nporing_lukki\nporing_magic\nporing_devil\nporing_holy\nporing_holy_arch",
     },
     {
         id_matchup="blob",
@@ -100,7 +100,7 @@ local insert_list = {
     },
     {
         id_matchup="lukki_dark",
-        name="sunken_creature\nlukki_fire_miniboss_phase2\ngiant_centipede\nlocust_swarm\ndevourer_magic\nseeker\nminiboss_pit_02\nlukki_tentacle_hungry\nstar_child",
+        name="sunken_creature\nlukki_fire_tiny\nlukki_fire_miniboss_phase2\ngiant_centipede\nlocust_swarm\ndevourer_magic\nseeker\nminiboss_pit_02\nstar_child",
     },
     {
         id_matchup="worm_big",
@@ -143,12 +143,12 @@ local insert_list = {
         name="barfer_greater_apotheosis",
     },
     {
-        id_matchup="wizard_twitchy",    --Behold! 19 consecutive appends
-        name="wizard_ambrosia\nwizard_copeseethmald\nwizard_duck\nenchanted_duck\nwizard_explosive\nwizard_jackofalltrades\nwizard_manaeater\nwizard_transmutation\nwizard_corrupt_wands\nwizard_z_poly_miniboss\nwizard_corrupt_ambrosia\nwizard_corrupt_hearty\nwizard_corrupt_manaeater\nwizard_corrupt_neutral\nwizard_corrupt_swapper\nwizard_corrupt_teleport\nwizard_corrupt_twitchy\nwizard_corrupt_weaken",
+        id_matchup="wizard_twitchy",    --Behold! 19 consecutive appends (and now 25 :) ...although wasn't this 18 appends? -S )
+        name="wizard_ambrosia\nwizard_copeseethmald\nwizard_duck\nenchanted_duck\nwizard_explosive\nwizard_jackofalltrades\nwizard_manaeater\nwizard_transmutation\nwizard_z_poly_miniboss\nwizard_corrupt_wands\nwizard_corrupt_ambrosia\nwizard_corrupt_returner\nwizard_corrupt_hearty\nwizard_corrupt_manaeater\nwizard_corrupt_neutral\nwizard_corrupt_swapper\nwizard_corrupt_teleport\nwizard_corrupt_twitchy\nwizard_corrupt_weaken\nlukki_tentacle_hungry\nflesh_wizard_wands\nflesh_wizard_manaeater\nflesh_wizard_neutral\nflesh_wizard_swapper\nflesh_wizard_twitchy",
     },
     {
         id_matchup="wraith_glowing",
-        name="wraith_alchemy_apotheosis\nwraith_returner_apotheosis\nwraith_weirdo_shield",
+        name="wraith_weirdo_shield\nwraith_returner_apotheosis\nwraith_alchemy_apotheosis",
     },
     {
         id_matchup="hpcrystal",

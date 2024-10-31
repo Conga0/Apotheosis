@@ -100,6 +100,12 @@
 		event_root="animals/scavenger" >
 	</AudioComponent>
 
+	<AudioComponent 
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/hiisi_engineer" >
+	</AudioComponent>
+
+
 	<Entity>
 	    <GameEffectComponent 
 	        effect="ALLERGY_RADIOACTIVE"
@@ -116,9 +122,11 @@
     frames_between="1214"
     frames_between_global="0"
     attack_ranged_action_frame="2"
-    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/summon_tank.xml"
-    attack_ranged_offset_y="0"
+    state_duration_frames="99"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/build_tank.xml"
+    attack_ranged_offset_y="-1"
     attack_ranged_offset_x="0"
+    animation_name="attack_build"
     attack_ranged_entity_count_min="1"
     attack_ranged_entity_count_max="1"
     >
@@ -130,9 +138,11 @@
     frames_between="1520"
     frames_between_global="0"
     attack_ranged_action_frame="2"
-    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/summon_tank_rocket.xml"
-    attack_ranged_offset_y="0"
+    state_duration_frames="99"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/build_tank_rocket.xml"
+    attack_ranged_offset_y="-1"
     attack_ranged_offset_x="0"
+    animation_name="attack_build"
     attack_ranged_entity_count_min="1"
     attack_ranged_entity_count_max="1"
     >

@@ -34,6 +34,21 @@ function do_newgame_plus()
 		EntityAddChild(v,biome_rebooter)
 	end
 
+	local targets = EntityGetWithTag("poopstone")
+	for r=1,#targets
+	do local v = targets[r]
+	    if (EntityGetName(v) == "$item_apotheosis_stone_radar_name") then
+		--Disable Guiding Stone pulse as it has served its purpose in life
+		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
+		for k=1,#comps do
+			if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_ping_visual.lua" then
+				EntitySetComponentIsEnabled(v,comps[k],false)
+				break
+			end
+		end
+	    end
+	end
+
 	--Reset RGB portal locations
 	GlobalsSetValue( "apotheosis_markerportal_red_x", "0" )
 	GlobalsSetValue( "apotheosis_markerportal_red_y", "0" )

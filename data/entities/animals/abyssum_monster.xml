@@ -15,9 +15,9 @@
 	<!-- art - main body  -->
 
 	<SpriteComponent
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/abyssum_test.png"
-		offset_x="56.5"
-		offset_y="56.5"
+		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/abyssum_test.xml"
+		offset_x="0"
+		offset_y="0"
 		>
 	</SpriteComponent>
 	
@@ -236,7 +236,7 @@
 		damage_per_frame="0.14"
 		update_every_n_frame="4"
 		entities_with_tag="player_unit"
-		damage_type="DAMAGE_MELEE"
+		damage_type="DAMAGE_CURSE"
 		>
 	</AreaDamageComponent>
 	

@@ -1,4 +1,5 @@
 dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+GameAddFlagRun("apotheosis_ending_cutscene")
 
 local entity_id = GetUpdatedEntityID()
 local initframe = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"LifetimeComponent") ,"creation_frame")
@@ -8,7 +9,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 local player_id = EntityGetWithTag("player_unit")[1]
 local plyr_x, plyr_y = EntityGetTransform(player_id)
 local sheep_plyr = EntityGetWithTag("polymorphed_player")[1]
-local hereticfound = false
+-- local hereticfound = false
 
 function set_controls_enabled(enabled)
     local player = EntityGetWithTag("polymorphed_player")[1]
@@ -87,17 +88,21 @@ if runtime == 0 then
 
     --Speed talking -Spoop
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1] or nil
-    if heretic_id ~= nil then
-        hereticfound = true
-    end
     local h_x, h_y = EntityGetTransform(heretic_id)
 
     local luacomps = EntityGetComponent(heretic_id, "LuaComponent") or {}
     for i = 1, #luacomps do
         if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
-            ComponentSetValue2( luacomps[i], "execute_every_n_frame", 250 )
-        end
+            ComponentSetValue2( luacomps[i], "execute_every_n_frame", 150 )
+    	elseif ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
+    		EntityRemoveComponent( heretic_id, luacomps[i] )
+    	end
     end
+    EntityAddComponent2(heretic_id, "LuaComponent", {
+	_tags= "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_quiet",
+	script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
+	execute_every_n_frame=5,
+    }) 
 
     GameAddFlagRun("apotheosis_heretalk_end_sheep_1")
 end
@@ -142,7 +147,7 @@ if runtime > 420 and runtime < 423 then
     end
 end
 
-if runtime == 420 then
+if runtime == 419 then
     local opts = EntityGetWithTag("apotheosis_blob_boss")
     for k=1,#opts
     do local v = opts[k]
@@ -164,6 +169,15 @@ if runtime == 420 then
             EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/spell_effect_nature.xml", con_x, con_y)
         end
     end
+
+    --If you dropped him out of your inventory then it would've spawned a new one, checks for parents now :thumbsup: -S
+    local heretic_id = EntityGetWithTag("apotheosis_heretic")[1] or nil
+    local heretic_parent = EntityGetRootEntity(heretic_id)
+    local hereticfound = false
+    if heretic_id ~= nil and heretic_parent ~= nil then
+        hereticfound = true
+    end
+
     if hereticfound == true then
         EntityLoad("mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml", plyr_x+12, plyr_y)
     end

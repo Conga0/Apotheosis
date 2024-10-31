@@ -1,0 +1,13 @@
+<Entity name="flesh_converter" tags="acid">
+  	<LifetimeComponent
+		lifetime="2"
+		>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/materials/flesh_slime_converter.lua"
+		execute_on_added="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+</Entity>

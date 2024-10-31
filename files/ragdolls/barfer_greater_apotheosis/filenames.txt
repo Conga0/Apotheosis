@@ -2,5 +2,5 @@ mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/head.png
 mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/antennae_left.png
 mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/antennae_right.png
 mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/hand.png
-mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/body.png
+mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/torso.png
 mods/Apotheosis/files/ragdolls/barfer_greater_apotheosis/legs.png

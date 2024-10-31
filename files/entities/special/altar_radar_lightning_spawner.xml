@@ -1,10 +1,19 @@
-<Entity>
+<Entity name="stone_converter">
 	
 	<LuaComponent
 		script_source_file="mods/apotheosis/files/entities/special/altar_radar_lightning_spawner.lua"
 		execute_every_n_frame="120"
 		>
 	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/entities/special/altar_radar_lightning_delay.lua"
+		execute_every_n_frame="-1"
+		execute_on_added="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
 
   <LifetimeComponent
   	lifetime="122"

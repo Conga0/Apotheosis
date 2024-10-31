@@ -1,0 +1,2 @@
+mods/Apotheosis/files/ragdolls/boss_flesh_monster/piece_1.png
+mods/Apotheosis/files/ragdolls/boss_flesh_monster/piece_2.png

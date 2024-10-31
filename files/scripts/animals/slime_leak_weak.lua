@@ -7,10 +7,14 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 local targets = EntityGetInRadiusWithTag(pos_x, pos_y, 64, "mortal") --This should probably check for genome differences instead, to allow infighting, and stop if you stack more love
 local attack = false
 
+local animalai = EntityGetFirstComponentIncludingDisabled(entity_id, "AnimalAIComponent")
+local aggression = ComponentGetValue2(animalai, "mAggression") or 55
+
 for k=1, #targets
 do local v = targets[k];
-	if EntityGetHerdRelation( entity_id, v) <= 55 then
+	if EntityGetHerdRelation( entity_id, v) <= aggression then
 		attack = true
+		break
 	end
 end
 

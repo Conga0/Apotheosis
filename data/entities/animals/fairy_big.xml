@@ -54,7 +54,7 @@
 		</HitboxComponent>		
 		
 		<GenomeDataComponent 
-			herd_id="ghost" >
+			herd_id="ghost_fairy" >
 		</GenomeDataComponent>
 		
 		<CharacterDataComponent

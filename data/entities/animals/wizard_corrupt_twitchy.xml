@@ -1,4 +1,4 @@
-<Entity name="$enemy_apotheosis_wizard_corrupt_twitchy" tags="polymorphable_NOT" >
+<Entity name="$enemy_apotheosis_wizard_corrupt_twitchy" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -26,12 +26,11 @@
 		
 		<DamageModelComponent
             hp="12"
-            ragdoll_material="meat_slime"
+		materials_that_damage="acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_divine" 
+		materials_how_much_damage="0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.05"
+            ragdoll_material="meat_fast"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_twitchy/filenames.txt"
 			critical_damage_resistance="1.0"
-			ragdoll_fx_forced="DISINTEGRATED"
-			blood_material="slime"
-			blood_multiplier="0.2"
 			>
 			<damage_multipliers
 				physics_hit="0.0" >
@@ -59,9 +58,13 @@
 		</GenomeDataComponent>
 		
 		<CharacterPlatformingComponent 
-			jump_velocity_y="-12" 
+			jump_velocity_y="-90" 
 			swim_idle_buoyancy_coeff="1.0"
-			run_velocity="18"  >
+			run_velocity="36"
+			fly_speed_change_spd="0.9"
+			fly_velocity_x="56" 
+			accel_x="0.09" 
+			>
 		</CharacterPlatformingComponent>
 		
 		<CameraBoundComponent
@@ -87,36 +90,6 @@
 			>
 	    </CharacterDataComponent>
 	</Base>
-  
-	<ItemPickUpperComponent
-    	is_in_npc="1">
-    </ItemPickUpperComponent>
-	
-	<HotspotComponent
-        _tags="cape_root"
-        sprite_hotspot_name="cape" >
-    </HotspotComponent>
-	
-	<AudioLoopComponent
-		file="data/audio/Desktop/animals.bank"
-		event_name="animals/wizard/movement_loop"
-		set_speed_parameter="1"
-		auto_play="1">
-	</AudioLoopComponent>
-
-	<AudioComponent
-		file="data/audio/Desktop/animals.bank"
-		event_root="animals/wizard" >
-	</AudioComponent>
-
-	<Entity name="cape">  
-        <Base file="data/entities/verlet_chains/cape/cape.xml">
-        	<VerletPhysicsComponent
-        		cloth_color_edge="0xFFd4ccc6"
-        		cloth_color="0xFF595c61">
-        	</VerletPhysicsComponent>
-        </Base>  
-    </Entity>
 	
 	<SpriteParticleEmitterComponent
 		sprite_file="data/particles/smoke_02.xml"
@@ -149,6 +122,36 @@
 		randomize_position.max_y="10"
 		>
   </SpriteParticleEmitterComponent>
+  
+	<ItemPickUpperComponent
+    	is_in_npc="1">
+    </ItemPickUpperComponent>
+	
+	<HotspotComponent
+        _tags="cape_root"
+        sprite_hotspot_name="cape" >
+    </HotspotComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wizard/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/wizard" >
+	</AudioComponent>
+
+	<Entity name="cape">  
+        <Base file="data/entities/verlet_chains/cape/cape.xml">
+        	<VerletPhysicsComponent
+        		cloth_color_edge="0xFFb7d3ad"
+        		cloth_color="0xFF284335">
+        	</VerletPhysicsComponent>
+        </Base>  
+    </Entity>
 	
 	<MagicConvertMaterialComponent
         from_material="rock_box2d_hard"
@@ -172,34 +175,7 @@
 		rect_animation="walk" 
 		 >
 	</SpriteComponent>
-    
-	<Entity>
-		<InheritTransformComponent />
-		
-	    <GameEffectComponent 
-	        effect="STUN_PROTECTION_FREEZE"
-	        frames="-1"
-	    >
-		</GameEffectComponent >
-	</Entity>
-	
-	<Entity>
-		<InheritTransformComponent />
-		
-	    <GameEffectComponent 
-	        effect="STUN_PROTECTION_ELECTRICITY"
-	        frames="-1"
-	    >
-		</GameEffectComponent >
-	</Entity>
 
-	<AudioLoopComponent
-		file="data/audio/Desktop/animals.bank"
-		event_name="animals/thundermage/movement_loop"
-		set_speed_parameter="1"
-		auto_play="1">
-	</AudioLoopComponent>
-	
 	<LuaComponent
 		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
 		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"

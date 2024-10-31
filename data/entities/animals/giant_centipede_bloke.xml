@@ -1,0 +1,214 @@
+<Entity 
+	tags="mortal,hittable,teleportable_NOT,homing_target,enemy,worm,glue_NOT,worm" 
+	name="$enemy_apotheosis_giant_centipede"
+	>
+	<_Transform 
+		position.x="0" 
+		position.y="0" 
+		rotation="0" 
+		scale.x="1" 
+		scale.y="1" >
+	</_Transform>
+
+	<WormComponent
+		acceleration="0.75"
+		gravity="0"
+		tail_gravity="0"
+		part_distance="8"
+		ground_check_offset="8"
+		hitbox_radius="10"
+		target_kill_radius="17"
+		target_kill_ragdoll_force="8"
+		ragdoll_filename=""
+		eat_anim_wait_mult="0.3"
+		jump_cam_shake="12" 
+		bite_damage="3"
+		>
+	</WormComponent>
+
+	<WormAIComponent
+		speed="6"
+		speed_hunt="8"
+		direction_adjust_speed="0.003"
+		direction_adjust_speed_hunt="0.04"
+		hunt_box_radius="1000"
+		random_target_box_radius="128"
+		new_hunt_target_check_every="240"
+		new_random_target_check_every="240"
+		give_up_area_radius="150"
+		give_up_time_frames="250"
+		>
+	</WormAIComponent>
+
+	<DamageModelComponent 
+		air_needed="0" 
+		falling_damages="0" 
+		fire_damage_amount="0.2" 
+		fire_probability_of_ignition="0.05"
+		blood_material="apotheosis_blood_worm_centipede"
+		blood_spray_material="apotheosis_blood_worm_centipede"
+		blood_multiplier="0.25"
+		hp="13.75" 
+		is_on_fire="0" 
+		mAirAreWeInWater="0" 
+		mFallCount="0" 
+		mFallHighestY="3.40282e+038" 
+		mFallIsOnGround="0" 
+		mFireProbability="100" 
+		mIsOnFire="0" 
+		mLastCheckTime="0" 
+		mLastCheckX="0" 
+		mLastCheckY="0" 
+		materials_damage="1" 
+		materials_how_much_damage="0.0001,0.0001" 
+		materials_that_damage="acid,lava" 
+		ragdoll_filenames_file=""
+		ragdoll_material="apotheosis_meat_centipede"
+		ragdoll_offset_y="-6"
+		blood_sprite_directional="mods/Apotheosis/files/particles/blood_splatter/bloodsplatter_directional_orange_dark_$[1-3].xml"
+		blood_sprite_large="mods/Apotheosis/files/particles/blood_splatter/bloodsplatter_orange_dark_$[1-3].xml"
+		>
+		<damage_multipliers
+			drill="0.4"
+			radioactive="0.0"
+			poison="0.0"
+			projectile="1.2"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<PathFindingGridMarkerComponent
+		marker_offset_y="0"
+		marker_work_flag="16" >
+	</PathFindingGridMarkerComponent>
+
+	<GenomeDataComponent 
+		_enabled="1"
+		herd_id="ant"
+		food_chain_rank="4"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_head_alt.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.5"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent 
+		_enabled="1" 
+		_tags="character"
+		alpha="1" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_tail_alt.xml" 
+		rect_animation="eat" 
+		next_rect_animation="eat" 
+		update_transform="0"
+		z_index="-0.19"
+		>
+	</SpriteComponent>
+
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="0">
+	</SpriteStainsComponent>
+		
+	<SpriteStainsComponent
+    	fade_stains_towards_srite_top="0"
+		sprite_id="1">
+	</SpriteStainsComponent>
+
+	<Entity>
+		<InheritTransformComponent
+			parent_sprite_id="1"
+			>
+			<Transform
+			position.x="12"
+			position.y="0"
+			>
+			</Transform>
+		</InheritTransformComponent>
+
+	<GenomeDataComponent 
+		_enabled="1"
+		herd_id="ant"
+		food_chain_rank="4"
+		is_predator="1" >
+	</GenomeDataComponent>
+
+	<AreaDamageComponent
+		aabb_min.x="-12" 
+		aabb_min.y="-12" 
+		aabb_max.x="12" 
+		aabb_max.y="12" 
+		damage_per_frame="0.24"
+		update_every_n_frame="20"
+		entities_with_tag="prey"
+		damage_type="DAMAGE_MELEE"
+		>
+	</AreaDamageComponent>
+
+	</Entity>
+
+	<StatusEffectDataComponent>
+	</StatusEffectDataComponent>
+
+	<CameraBoundComponent
+		max_count="10"
+		distance="2000">
+	</CameraBoundComponent>
+	
+	<ItemChestComponent level="3" enemy_drop="1" >
+	</ItemChestComponent>
+
+	<VariableStorageComponent
+		name="target_id"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/centipede_cue.lua"
+		execute_every_n_frame="5"
+		>
+	</LuaComponent>
+
+    <MusicEnergyAffectorComponent
+    	energy_target="1">
+    </MusicEnergyAffectorComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals">
+	</AudioComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/worm" >
+	</AudioComponent>
+
+	<AudioComponent
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_root="mocreeps_audio/animals/giant_centipede" >
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/worm/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier_half.lua"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+</Entity>

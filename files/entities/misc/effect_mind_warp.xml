@@ -1,0 +1,40 @@
+<Entity>
+    
+    <GameEffectComponent 
+        effect="CUSTOM"
+        custom_effect_id="MIND_WARP"
+        frames="3600"
+    >
+	</GameEffectComponent >
+
+         <InheritTransformComponent /> 
+
+	<LuaComponent
+		execute_every_n_frame = "1"
+		script_source_file="mods/apotheosis/files/scripts/misc/effect_mind_warp.lua"
+	></LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/status_effects/mind_warp_stop.lua" 
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+	></LuaComponent>
+
+	<UIIconComponent
+		icon_sprite_file="mods/apotheosis/files/ui_gfx/status_indicators/mind_warp.png"
+		name="$status_apotheosis_mind_warp_name"
+		description="$status_apotheosis_mind_warp_desc"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+	<LuaComponent
+		script_source_file="mods/apotheosis/files/scripts/misc/effect_mind_warp_text.lua"
+		execute_every_n_frame="-1"
+		execute_on_added="1"
+		execute_on_removed="1"
+		enable_coroutines="1"
+	></LuaComponent>
+</Entity>

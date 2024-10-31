@@ -1,0 +1,19 @@
+<Entity >
+  <Base file="data/entities/animals/lukki_tentacle_hungry.xml" include_children="1" >
+    <!-- Slower/shorter attack range version for Sinkhole, also decreased health by 2 for no reason :p -->
+
+    <AnimalAIComponent
+    attack_ranged_frames_between="120"
+    creature_detection_range_x="75"
+    creature_detection_range_y="75"
+    >
+    </AnimalAIComponent>
+
+    <DamageModelComponent 
+    hp="48"
+    max_hp="48">
+    </DamageModelComponent >
+
+  </Base>
+
+</Entity>

@@ -18,13 +18,14 @@
         air_in_lungs_max="5" 
         air_lack_of_damage="0.2" 
         air_needed="0" 
+        materials_how_much_damage="0"
         falling_damage_damage_max="1.2" 
         falling_damage_damage_min="0.1" 
         falling_damage_height_max="450" 
         falling_damage_height_min="250" 
         falling_damages="1" 
         fire_damage_amount="0.2" 
-        fire_probability_of_ignition="0.5" 
+        fire_probability_of_ignition="0" 
         hp="999999" 
         is_on_fire="0" 
         mAirAreWeInWater="0" 
@@ -40,6 +41,12 @@
         ragdoll_filenames_file=""
         ragdoll_offset_y="0"
         >
+	<damage_multipliers
+		fire="0"
+		radioactive="0"
+		poison="0"
+		>
+	</damage_multipliers>
     </DamageModelComponent>
 
     <HitboxComponent 

@@ -3,7 +3,7 @@
   filename="mods/Apotheosis/files/enemies_gfx/wizard_z_poly_miniboss.png" 
   hotspots_filename="mods/Apotheosis/files/enemies_gfx/wizard_z_poly_miniboss_hotspots.png" 
   offset_x="12" 
-  offset_y="19" >
+  offset_y="20" >
 
   <RectAnimation 
     frame_count="6" 

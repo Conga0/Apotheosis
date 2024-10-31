@@ -38,6 +38,7 @@
     <SpriteComponent 
         image_file="mods/Apotheosis/files/particles/area_indicator_40_red.png"
         z_index="1.2"
+        alpha="0.5"
         offset_x="20"
         offset_y="20"
         >

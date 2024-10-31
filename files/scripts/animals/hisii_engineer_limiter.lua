@@ -19,10 +19,8 @@ end
 
 for i,v in ipairs(comps) do
 	if minionCount >= 6 then
-		ComponentSetValue2( v, "attack_ranged_entity_count_min", 0 )
-		ComponentSetValue2( v, "attack_ranged_entity_count_max", 0 )
+		EntitySetComponentIsEnabled( entity_id, v, false )
 	else
-		ComponentSetValue2( v, "attack_ranged_entity_count_min", 1 )
-		ComponentSetValue2( v, "attack_ranged_entity_count_max", 1 )
+		EntitySetComponentIsEnabled( entity_id, v, true )
 	end
 end

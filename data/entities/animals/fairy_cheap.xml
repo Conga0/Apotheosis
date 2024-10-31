@@ -116,7 +116,7 @@
 	</CharacterDataComponent>
 
 		<GenomeDataComponent 
-			herd_id="ghost"
+			herd_id="ghost_fairy"
             food_chain_rank="20"
             is_predator="0" >
 		</GenomeDataComponent>

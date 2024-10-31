@@ -20,7 +20,7 @@
     body_id="1"
     centered="1"
     image_file="mods/apotheosis/files/items_gfx/egg_red.png"
-    material="bone_box2d"
+    material="meteorite_test"
   ></PhysicsImageShapeComponent>
   
   <PhysicsThrowableComponent
@@ -104,5 +104,12 @@
 		event_root="player_projectiles/throwable"
 		>
 	</AudioComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
+		script_source_file="mods/apotheosis/files/scripts/items/egg_volcanic_lukki_awaken.lua"
+		execute_every_n_frame="200"
+		>
+	</LuaComponent>
 
 </Entity>

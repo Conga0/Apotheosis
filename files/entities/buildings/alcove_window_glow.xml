@@ -2,8 +2,8 @@
 	
 	<ParticleEmitterComponent 
 		emitted_material_name="spark_red_bright"
-		offset.x="89"
-		offset.y="57"
+		offset.x="0"
+		offset.y="0"
 		x_pos_offset_min="0"
 		x_pos_offset_max="0"
 		y_pos_offset_min="0"
@@ -43,8 +43,8 @@
 		r="225"
 		g="12"
 		b="12"
-		offset_y="57"
-		offset_x="89"
+		offset_y="0"
+		offset_x="0"
 		fade_out_time="1.5"
 		>
 	</LightComponent>

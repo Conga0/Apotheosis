@@ -321,6 +321,7 @@ credits_apotheosis_line_04,Lead Developer of Apotheosis,Главный разр�
 credits_apotheosis_line_07,Voice Actor of the Cats,Актёр озвучивания кошек,,,,,,,,,,,,
 credits_apotheosis_line_14,Creator of the Mana Drain Script,Создатель скрипта расхода маны,,,,,,,,,,,,
 credits_apotheosis_line_17,Russian Translator,Перевод на русский,,,,,,,,,,,,
+credits_apotheosis_line_ch_trans,Chinese Translators,,,,,,,,,,,,,
 credits_apotheosis_line_20,"Helped with some creature design & mod direction, also helped with alt-fire spells.","Помогал с дизайном существ и направлением мода, также помогал с заклинаниями на ПКМ.",,,,,,,,,,,,
 credits_apotheosis_line_22,Special Thanks to,Особая благодарность,,,,,,,,,,,,
 credits_apotheosis_line_39,And many modders of the Noita Discord,И многим создателям модов из Discord-сервера Noita,,,,,,,,,,,,
@@ -333,6 +334,7 @@ teleport_portal_alternate,Portal Elsewhere,Портал в другое мест
 teleport_portal_moon,Portal to the Moon,Портал на Луну,,,,,,,通向月球的传送门,月への扉,,,,
 teleport_portal_sun,Portal to the Sun,Портал на Солнце,,,,,,,通向太阳的传送门,太陽への扉,,,,
 teleport_portal_up,Portal Higher,Портал выше,,,,,,,通向上一层的传送门,上層へのポータル,,,,
+teleport_portal_heretic,Fading Portal to Kerettiläinenhirviö,Портал к Кереттиляйненхирвиё (исчезающий),,,,,,,,不安定なケレッティレイネンヒルヴィオの棲家へのポータル,,,,
 biome_slime_hell,Virulent Caverns,Ядовитые пещеры,,,,,,,毒性洞穴,猛毒洞窟,,,,
 biome_slime_hell_outpost,Contaminated Outpost,Заражённый аванпост,,,,,,,污染哨站,汚れた兵営,,,,
 biome_toxic_worm_cave,Toxic Nest,Токсичное гнездо,,,,,,,剧毒巢穴,毒虫の巣穴,,,,
@@ -366,6 +368,9 @@ biomemod_heretical,You feel a malicious presence,Вы чувствуете зл�
 material_apotheosis_bloodystone,Bloody Stonework,Кровавая каменная кладка,,,,,,,血腥石雕,血染めの石細工,,,,
 material_apotheosis_sandystone,Sandy Stonework,Песчаная каменная кладка,,,,,,,沙质石雕,砂質の石積み,,,,
 material_apotheosis_corruptflesh,Vacillating Flesh,Колеблющаяся плоть,,,,,,,摆动血肉,揺らぐ肉,,,,
+material_apotheosis_corruptflesh_slime,Rippling Flesh,,,,,,,,摆动血肉 (translate later?),波打つ肉,,,,
+material_apotheosis_corruptflesh_dark,Congested Flesh,,,,,,,,摆动血肉(translate later?),稠密な肉,,,,
+material_apotheosis_wood_static_bloody,Bloodied Wood,Окровавленная древесина,,,,,,,血腥石雕 (translate later?),血染めの木,,,,
 material_apotheosis_blood_infectous,Infectious Blood,Заразная кровь,,,,,,,感染的血,汚染された血,,,,
 material_apotheosis_volcanicrock_static_dense,Dense Volcanic Rock,Плотная вулканическая порода,,,,,,,致密火山岩,非常に硬い火山岩,,,,
 material_apotheosis_volcanicrock_superhot,Burning Rock,Горящая порода,,,,,,,燃烧岩石,焼け石,,,,
@@ -407,7 +412,7 @@ material_apotheosis_radioactive_liquid_strong,Noxious Sludge,Ядовитая ж
 material_apotheosis_radioactive_mud,Defiled Mud,Осквернённый ил,,,,,,,玷污泥土,汚染された泥,,,,
 material_apotheosis_milk_powder,Powdered Milk,Сухое молоко,,,,,,,奶粉,粉ミルク,,,,
 material_apotheosis_meat_vulnerable_protection,Ancient Meat,Древнее мясо,,,,,,,古老的肉,古代の肉,,,,
-material_apotheosis_meat_worm_strong,Worm Plating,Червячная пластина,,,,,,,蠕虫表皮,ウォームメッキ,,,,
+material_apotheosis_meat_worm_strong,Maggot Plating,Червячная пластина,,,,,,,蠕虫表皮,ウォームメッキ,,,,
 magic_liquid_berserk_cloud_name,Berserkium Mist,Туман берсеркиума,,,,,,,狂暴魔药雾,バーサキアムのミスト,,,,
 magic_liquid_charm_cloud_name,Pheromone Mist,Туман феромонов,,,,,,,魅惑魔药雾,フェロモンのミスト,,,,
 spell_apotheosis_spells_to_cursor_name,Redirect,Перенаправление,,,,,,,重新导向,繰気弾,,,,
@@ -682,7 +687,28 @@ status_apotheosis_end_debuff_name,Final Requiem,Последний реквие�
 status_apotheosis_end_debuff_desc,Protective Perks are disabled.\nYou can not be healed.,Защитные бонусы отключены.\nВы не можете быть исцелены.,,,,,,,令保护与免疫效果失效。\n此外，你无法受到治疗。,防御系パークの効果がなくなる。\n回復魔法の効果がない。,,,,
 status_apotheosis_protection_vulnerable_name,Vulnerable Immunity,Иммунитет к уязвимости,,,,,,,虚弱免疫,無力感に対する免疫,,,,
 status_apotheosis_protection_vulnerable_desc,You can not have your immunities disabled from most sources.,Вы не можете отключить свой иммунитет от большинства источников.,,,,,,,你的保护与免疫效果不再会因大多数原因失效。,ほとんどの情報源から、プロテクト特典を無効にすることはできない。,,,,
+status_apotheosis_divine_protection_name,Divine Protection,Божественная защита,,,,,,,,神々の加護,,,,
+status_apotheosis_divine_protection_desc,You feel safe.,Вы чувствуете себя в безопасности.,,,,,,,,何かに護られている感覚がある。,,,,
+status_apotheosis_twitchy_extreme_name,Awfully Twitchy,Сильная нервозность,Nervoso,¡Qué nervios!,Nervös,Spasmes,Nervoso,Drgawki,抽搐,ムカムカ,움찔움찔,,,,,,,,,,,,,
+status_apotheosis_twitchy_extreme_desc,Your hand spasms violently and your spells can hurt you!,"Ваша рука сильно дрожит, и ваши заклинания могут навредить вам!",A sua mão fica com espasmos aleatórios e você pode se ferir com seus próprios feitiços!,¡Sufres espasmos aleatorios en las manos y tus hechizos pueden hacerte daño!,Deine Hand krampft zufällig und deine Zauber können dich verletzen!,Votre main subit des spasmes et vos sorts peuvent se retourner contre vous !,La tua mano ha spasmi casuali e i tuoi incantesimi ti fanno male!,"Drżą ci dłonie, przez co twoje zaklęcia szkodzą ci!",你的手随机抽搐，且你自己的法术会对你自己造成伤害！,手が激しく震えている。呪文のダメージが自分自身にも襲い来る。,손이 무작위로 움찔거려 자신의 주문으로 자신이 다칠 수 있습니다!,,,,,,,,,,,,,
+status_apotheosis_life_drain_name,Life Drain,Похищение жизни,,,,,,,,吸血,,,,
+status_apotheosis_life_drain_desc,You feel your life being siphoned away!,"Вы чувствуете, как ваша жизнь утекает!",,,,,,,,生気が吸い取られていく！,,,,
+status_apotheosis_mind_warp_name,Mind Weave,Плетение разума,,,,,,,,織心,,,,
+status_apotheosis_mind_warp_desc,A message is being projected into your skull.,Сообщение проецируется прямо в ваш череп.,,,,,,,,身体に言葉が流れ込んでくる。,,,,
+status_apotheosis_bloodlink_name,Bloodlinked,Связанный кровью,,,,,,,,道連れ,,,,
+status_apotheosis_bloodlink_desc,Your life force is tied to another!,Ваша жизненная сила связана с другим существом!,,,,,,,,あなたの命が他のものに繋がれている！,,,,
+status_apotheosis_bloodlink_death,Bloodlink,Кровная связь,,,,,,,,道連れ,,,,
 creep_apotheosis_boss_flesh_monster_name,Kerettiläinenhirviö,Чудовище-еретик,,,,,,,异端怪物,ケレッティレイネンヒルヴィオ,,,,
+log_apotheosis_mind_warp_norm_1,"Alchemist...","Алхимик...",,,,,,,,「魔女よ……」,,,,
+log_apotheosis_mind_warp_norm_2,"Yield.","Уступи.",,,,,,,,「返すのだ……」,,,,
+log_apotheosis_mind_warp_norm_3,"Give back what is mine.","Верни то, что принадлежит мне.",,,,,,,,「我から奪いしものを……」,,,,
+log_apotheosis_mind_warp_stone_1,"Leave.","Уходи.",,,,,,,,「去れ」,,,,
+log_apotheosis_mind_warp_stone_2,"You are not welcome here.","Тебе здесь не рады.",,,,,,,,「ここはお前のいるべき場所ではない」,,,,
+log_apotheosis_mind_warp_stone_3,"Leave me to my work.","Оставь меня работать.",,,,,,,,「我の邪魔をするな」,,,,
+log_apotheosis_mind_warp_enrage_1,"Fool!","Глупец!",,,,,,,,「痴れ者が！」,,,,
+log_apotheosis_mind_warp_enrage_2,"Imprudent imbecile!","Неосторожный болван!",,,,,,,,「痴愚なる無謀者よ」,,,,
+log_apotheosis_mind_warp_enrage_3,"There's ramifications...","Твои бездумные действия...",,,,,,,,「思慮なき己の行いの……」,,,,
+log_apotheosis_mind_warp_enrage_4,"To your mindless actions!","Будут иметь последствия!",,,,,,,,「報いを受けるがよい！」,,,,
 log_apotheosis_fish,The red fish is real,Красная рыба реальна,,,,,,,朱红鱼是真实存在的,あかいさかな,,,,
 log_apotheosis_shift_blocked_name,Shift Blocked,Сдвиг заблокирован,,,,,,,转换受到了阻止,きのこシフトが無効化された,,,,
 log_apotheosis_shift_blocked_desc,The world is set in stone.,Мир застыл в камне.,,,,,,,世界稳如磐石。,世界が進化の足を止めた。,,,,
@@ -692,9 +718,12 @@ log_apotheosis_upgrade_alwayscast_success_name,A permanent enchantment sinks int
 log_apotheosis_upgrade_alwayscast_success_desc,Some things can never be undone...,Некоторые вещи нельзя отменить...,,,,,,,覆水难收，有些事永远也不能反悔,元に戻せないものもある。,,,,
 log_apotheosis_flesh_boss_warning,Something wicked this way comes...,Что-то злое идёт сюда...,,,,,,,有邪恶的东西向这边走来...,異様な気配を感じる……,,,,
 log_apotheosis_fishing_caught_name,You caught a fish!,Вы поймали рыбу!,,,,,,,你钓到了一条鱼！,魚をゲットした！,,,,
+log_apotheosis_fishing_caught_weird_name,You caught a fish?,Вы поймали рыбу?,,,,,,,,魚をゲット……した？,,,,
 log_apotheosis_fishing_caught_desc,Rarity:,Редкость:,,,,,,,稀有度：,レア度:,,,,
+prop_apotheosis_egg_fire_lukki_trap,"Restless Volcanic Egg",Неспокойное вулканическое яйцо,,,,,,,,燃え盛る卵,,,,
 item_apotheosis_egg_fire_lukki_name,Volcanic Egg,Вулканическое яйцо,,,,,,,火热的蛋,熱い卵,,,,
 item_apotheosis_egg_fire_lukki_desc,It feels warm to the touch.\nYou feel it yerns for a new home.,"Оно тёплое на ощупь.\nВы чувствуете, что оно жаждет нового дома.",,,,,,,这个蛋摸起来非常温暖。\n你感觉它渴望一个新家。,触れると温かい卵。\n新たな巣を探しているようだ。,,,,
+item_apotheosis_egg_fire_lukki_desc_alt,It feels warm to the touch.\nIt grows restless...,"Оно тёплое на ощупь.<br>Оно становится неспокойным...",,,,,,,,触れると温かい卵。\n何かが休みなく成長を続けている。,,,,
 item_apotheosis_chest_death_cross,Deathly Chest,Сундук смерти,,,,,,,死亡宝箱,死神のチェスト,,,,
 item_apotheosis_egg_fairy_name,Glowing Egg,Светящееся яйцо,,,,,,,发光的蛋,光る卵,,,,
 item_apotheosis_egg_fairy_desc,The egg looks luminescent,Яйцо выглядит люминесцентным,,,,,,,这个蛋看上去闪闪发光,光を放っている。,,,,
@@ -706,8 +735,12 @@ item_apotheosis_money_1,Gold nugget (1),Золотой самородок (1),Pe
 item_apotheosis_bloodmoney_1,Bloody gold nugget (1),Кровавый золотой самородок (1),Pepita de ouro ensanguentada (1),Pepita de oro sangrienta (1),Blutiger Goldklumpen (1),Pépite d'or ensanglantée (1),Pepita d'oro insanguinata (1),Krwaw grudka złota (1),染血金块 (1),ブラッディー金塊 (1),피투성이 황금 덩어리(1),,,
 item_apotheosis_heretical_eye_name,Heretical Eye,Глаз еретика,,,,,,,异端之眼,ヘレティックアイ,,,,
 item_apotheosis_heretical_eye_desc,It's watching you.,Он наблюдает за вами.,,,,,,,它在看着你。,視線を感じる。,,,,
+item_apotheosis_heretical_eye_revive,Reassembling Flesh,Восстановление плоти,,,,,,,,再生する肉片,,,,
+item_apotheosis_heretical_eye_husk_name,Husk,Оболочка,,,,,,,,抜け殻,,,,
+item_apotheosis_heretical_eye_husk_desc,It no longer watches.,Оно больше не наблюдает.,,,,,,,,その眼には何も映らない。,,,,
 item_apotheosis_stone_heretic_name,Korruptoitunutkivi,Осквернённый камень,,,,,,,腐化石,コルップトイトゥヌトキヴィ,,,,
 item_apotheosis_stone_heretic_desc,It feels drenched in blood.,Он пропитан кровью.,,,,,,,它被鲜血所覆盖。,血に染まっている。,,,,
+item_apotheosis_stone_heretic_desc_alt,It feels drenched in blood. It's pulses give you a sense of impending doom...,Оно пропитано кровью. Его пульсация предвещает неминуемую гибель...,,,,,,,,血に染まった石。鼓動のような音が聞こえる。とても嫌な予感がする。,,,,
 item_apotheosis_stone_radar_name,Opastavakivi,Направляющий камень,,,,,,,导引石,オパスタヴァキヴィ,,,,
 item_apotheosis_stone_radar_desc,It pulses strangely.,Он странно пульсирует.,,,,,,,它在奇怪地震动。,謎の振動を感じる。,,,,
 item_apotheosis_potion_reinforced_name,Large Potion,Большое зелье,,,,,,,大瓶魔药,メガポーション,,,,
@@ -731,6 +764,8 @@ item_apotheosis_essence_polymorphine_desc,Wait...What?,Подождите... Ч�
 item_apotheosis_stone_water_pink,Pink Vuoksikivi,Розовый вуоксикиви,,,,,,,粉色水石,ピンッキヴォクシキヴィ,,,,
 item_apotheosis_toiletpaper_fragment,Broken Spell of Cleanliness,Сломанное заклинание чистоты,,,,,,,损坏的清洁法术,壊れた魔法（浄化）,,,,
 item_apotheosis_toiletpaper_fragment_desc,"It looks broken, maybe it could be repaired?","Похоже, оно сломано, может быть, его можно починить?",,,,,,,它看起来损坏了，或许可以去哪里修好它...,このままでは使えそうにない。修理することは可能だろうか？,,,,
+item_apotheosis_gourd_holy_name,Divine Gourd,Божественная тыква,,,,,,,,神聖瓢箪,,,,
+item_apotheosis_gourd_holy_desc,"You sense great potential within. Upon breaking, releases short-lived divine protection.","Вы чувствуете огромный потенциал внутри. При разрушении высвобождает кратковременную божественную защиту.",,,,,,,,強大なチカラを感じる。破壊すると神々の加護が与えられる。,,,,
 sign_apotheosis_custom_seed,Custom Seed successfully set,Пользовательское семя успешно установлено,,,,,,,自定义种子设置成功,カスタムシードを取得した。,,,,
 sign_apotheosis_divinity_hint_name,Sealed Note,Запечатанная записка,,,,,,,密封笔记,封印されたメモ,,,,
 sign_apotheosis_divinity_hint_desc_00,"To those who seek knowledge not true, but divine.","Тем, кто ищет знания не истинные, а божественные.",,,,,,,写给那些不寻求无瑕真理，而只对神圣至理求之若渴的人,真ならずも神聖なる智慧を追い求める者へ。,,,,
@@ -853,7 +888,7 @@ motd_apotheosis_description_alt_026,Message of the Day \n3DS street pass was so 
 motd_apotheosis_description_alt_027,Message of the Day \nRemember to exercise. \nHow about 5 pushups right now?,Сообщение дня \nНе забывайте делать упражнения. \nКак насчёт 5 отжиманий прямо сейчас?,,,,,,,今日消息\n要记得多锻炼。\n先来五个俯卧撑怎么样？,今日のひとこと\n運動は大事。今すぐやろう、とりあえず腕立て5回！,,,,
 motd_apotheosis_description_alt_028,Message of the Day \nSome creatures drop loot extremely rarely. \nfeeling lucky?,Сообщение дня \nНекоторые существа очень редко роняют добычу. \nВезёт?,,,,,,,今日消息\n有些掉落物极其稀有。\n想试试吗？,今日のひとこと\nドロップアイテムがある敵もいる。出たらラッキーかも？,,,,
 motd_apotheosis_description_alt_029,"Message of the Day \nThe dragon is an awesome boss, especially when he's draggon dez nuts.","Сообщение дня \nДракон - потрясающий босс, особенно когда он тащит свои яйца.",,,,,,,每日消息\n龙是一个可怕的Boss，尤其是当他发狂的时候。,今日のひとこと\n(翻訳不能なダジャレ),,,,
-motd_apotheosis_description_alt_030,"Message of the Day \nThere's worms inside the walls who bare heavy armor. \nCareful not to awaken them unprepared, they're very hungry.","Сообщение дня \nВнутри стен есть черви в тяжёлой броне. \nБудьте осторожны, чтобы не разбудить их неподготовленными, они очень голодны.",,,,,,,今日消息\n墙壁内可能藏着一些身披重甲的虫子。\n当心不要毫无准备地吵醒它们，它们可都饿坏了。,今日のひとこと\nめちゃくちゃ硬いワームがいるから気を付けよう。\nすっごく強いぞ！,,,,
+motd_apotheosis_description_alt_030,"Message of the Day \nThere's maggots inside the walls who bare heavy armor. \nCareful not to awaken them unprepared, they're very hungry.","Сообщение дня \nВнутри стен есть черви в тяжёлой броне. \nБудьте осторожны, чтобы не разбудить их неподготовленными, они очень голодны.",,,,,,,今日消息\n墙壁内可能藏着一些身披重甲的虫子。\n当心不要毫无准备地吵醒它们，它们可都饿坏了。,今日のひとこと\nめちゃくちゃ硬いワームがいるから気を付けよう。\nすっごく強いぞ！,,,,
 motd_apotheosis_description_alt_031,Message of the Day \nDon't visit the Toxic Worm Nest at 3 am.,Сообщение дня \nНе посещайте гнездо токсичных червей в 3 часа ночи.,,,,,,,今日消息\n不要在凌晨 3 点进入剧毒蠕虫巢穴。,今日のひとこと\n夜中の3時に行かない方がいい場所:毒虫の巣,,,,
 enemy_apotheosis_abyssum_monster,Abyssaalinenolento,Abyssaalinenolento,,,,,,,深渊的存在,,,,DO NOT TRANSLATE,
 enemy_apotheosis_angel,Jumalallinen olento,Jumalallinen olento,,,,,,,神圣的存在,,,,DO NOT TRANSLATE,
@@ -924,6 +959,7 @@ enemy_apotheosis_hisii_rocketshotgun,Rakettihaulikkohiisi,Rakettihaulikkohiisi,,
 enemy_apotheosis_locust_swarm,Heinäsirkka,Heinäsirkka,,,,,,,蝗虫,,,,DO NOT TRANSLATE,
 enemy_apotheosis_longleg_pillar,Kohoava Pilari-hämis,Kohoava Pilari-hämis,,,,,,,小蜘蛛之柱,,,,DO NOT TRANSLATE,
 enemy_apotheosis_lukki_fire_miniboss,Nuori Tulihämähäkki,Nuori Tulihämähäkki,,,,,,,火焰蜘蛛幼虫,,,,DO NOT TRANSLATE,
+enemy_apotheosis_lukki_fire_tiny,Pikku Tulihämähäkki,,,,,,,,火焰蜘蛛幼虫,,,,DO NOT TRANSLATE,
 enemy_apotheosis_lukki_fungus,Revitty sieni,Revitty sieni,,,,,,,带根真菌,,,,DO NOT TRANSLATE,
 enemy_apotheosis_lukki_swarmling,Nopealukki,Nopealukki,,,,,,,迅捷蜘蛛,,,,DO NOT TRANSLATE,
 enemy_apotheosis_lukki_tentacle_hungry,Kirottuolento,Kirottuolento,,,,,,,诅咒的存在,,,,DO NOT TRANSLATE,
@@ -963,9 +999,9 @@ enemy_apotheosis_watermage_greater,Suur-Vesimagi,Suur-Vesimagi,,,,,,,沝魔,,,,D
 enemy_apotheosis_watermage_toxic,Myrkytetty Vesimagi,Myrkytetty Vesimagi,,,,,,,剧毒水魔,,,,DO NOT TRANSLATE,
 enemy_apotheosis_watermage_toxic_greater,Myrkytetty Suur-Vesimagi,Myrkytetty Suur-Vesimagi,,,,,,,剧毒沝魔,,,,DO NOT TRANSLATE,
 enemy_apotheosis_waterskull,Vesiö,Vesiö,,,,,,,清水头颅,,,,DO NOT TRANSLATE,
-enemy_apotheosis_whisp,Palavakeiju,Palavakeiju,,,,,,,鬼火,,,,DO NOT TRANSLATE,
-enemy_apotheosis_whisp_big,Jättipalavakeiju,Jättipalavakeiju,,,,,,,大鬼火,,,,DO NOT TRANSLATE,
-enemy_apotheosis_whisp_giga,Kolossaalinenpalavakeiju,Kolossaalinenpalavakeiju,,,,,,,巨大鬼火,,,,DO NOT TRANSLATE,
+enemy_apotheosis_whisp,Virvatuli,Virvatuli,,,,,,,鬼火,,,,DO NOT TRANSLATE,
+enemy_apotheosis_whisp_big,Jättivirvatuli,Jättivirvatuli,,,,,,,大鬼火,,,,DO NOT TRANSLATE,
+enemy_apotheosis_whisp_giga,Kolossaalinenvirvatuli,Kolossaalinenvirvatuli,,,,,,,巨大鬼火,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_ambrosia,Kuolemattomuudenmestari,Kuolemattomuudenmestari,,,,,,,不朽法师,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_copeseethmald,Uistelunmestari,Uistelunmestari,,,,,,,引战法师,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_corrupt_ambrosia,Korruptoitunut Kuolemattomuudenmestari,Korruptoitunut Kuolemattomuudenmestari,,,,,,,腐化不朽法师,,,,DO NOT TRANSLATE,
@@ -978,6 +1014,7 @@ enemy_apotheosis_wizard_corrupt_teleport,Korruptoitunut Siirtäjämestari,Korrup
 enemy_apotheosis_wizard_corrupt_twitchy,Korruptoitunut Sätkymestari,Korruptoitunut Sätkymestari,,,,,,,腐化抽搐法师,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_corrupt_wands,Nukketeatterinmestari,Nukketeatterinmestari,,,,,,,腐化傀儡法师,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_corrupt_weaken,Korruptoitunut Turvattomuusmestari,Korruptoitunut Turvattomuusmestari,,,,,,,腐化削弱法师,,,,DO NOT TRANSLATE,
+enemy_apotheosis_wizard_corrupt_returner,Korruptoitunut Palauttajamestari,Korruptoitunut Palauttajamestari,,,,,,,(translate later..?),,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_duck,Sinisorsienmestari,Sinisorsienmestari,,,,,,,唤鸭法师,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_explosive,Räjähteidenmestari,Räjähteidenmestari,,,,,,,爆破法师,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wizard_firemage_greater,Suur-Stendari,Suur-Stendari,,,,,,,燚魔,,,,DO NOT TRANSLATE,
@@ -989,10 +1026,15 @@ enemy_apotheosis_worm_end_big_apotheosis,Suur-Helvetinmato,Suur-Helvetinmato,,,,
 enemy_apotheosis_worm_esoteric,Esoteerinenmato,Esoteerinenmato,,,,,,,神秘蠕虫,,,,DO NOT TRANSLATE,
 enemy_apotheosis_worm_mechanical,Mekaaninenmato,Mekaaninenmato,,,,,,,机械蠕虫,,,,DO NOT TRANSLATE,
 enemy_apotheosis_worm_spine,Kirottuselkäranka,Kirottuselkäranka,,,,,,,诅咒遗骸,,,,DO NOT TRANSLATE,
-enemy_apotheosis_worm_wall,Seinämato,Seinämato,,,,,,,坚壁蠕虫,,,,DO NOT TRANSLATE,
+enemy_apotheosis_worm_wall,Seinätoukka,Seinätoukka,,,,,,,坚壁蠕虫,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wraith_alchemy_apotheosis,Alkeeminen Outo,Alkeeminen Outo,,,,,,,炼金怪异游魂,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wraith_returner_apotheosis,Heijastava Outo,Heijastava Outo,,,,,,,反制怪异游魂,,,,DO NOT TRANSLATE,
 enemy_apotheosis_wraith_weirdo_shield,Outo,Outo,,,,,,,怪异游魂,,,,DO NOT TRANSLATE,
+enemy_apotheosis_flesh_wizard_wands,Kirottu Nukketaiteilija,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_flesh_wizard_neutral,Kirottu Neutraloija,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_flesh_wizard_twitchy,Kirottu Sätkijä,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_flesh_wizard_swapper,Kirottu Korvaaja,,,,,,,,,,,,DO NOT TRANSLATE,
+enemy_apotheosis_flesh_wizard_manaeater,Kirottu Manavampyyri,,,,,,,,,,,,DO NOT TRANSLATE,
 enemy_apotheosis_blank,placeholder,placeholder,,,,,,,占位符,,,,DO NOT TRANSLATE,
 ]])
 
@@ -1063,6 +1105,15 @@ inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "varying 
 	"mods/apotheosis/files/scripts/shader/trip_red_global.frag")
 
 GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
+
+inject(args.StringFile, modes.APPEND, "data/shaders/post_final.frag", "vec2 tex_coord_glow = tex_coord_glow_;",
+	"mods/apotheosis/files/scripts/shader/mind_warp_wavy.frag")
+inject(args.StringFile, modes.APPEND, "data/shaders/post_final.frag", "gl_FragColor.a = 1.0;",
+	"mods/apotheosis/files/scripts/shader/mind_warp_red.frag")
+inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "varying vec2 tex_coord_fogofwar;",
+	"mods/apotheosis/files/scripts/shader/mind_warp_global.frag")
+
+GameSetPostFxParameter("conga_mind_warp_effect_amount", 0, 0, 0, 0)
 
 --Appends Global Spawns to vanilla biome
 do -- Global Spawns
@@ -1340,6 +1391,13 @@ if ModIsEnabled("noita-together") then
 end
 ]]
 --
+
+-- Graham's Dialogue Mod, have fun! -S
+if ModIsEnabled("grahamsdialogue") then
+  ModLuaFileAppend("mods/grahamsdialogue/files/common.lua", "mods/Apotheosis/files/scripts/mod_compatibility/graham_dialogue_populator.lua")
+  ModTextFileSetContent( "mods/grahamsdialogue/files/font_data/font_pixel_flesh.xml", ModTextFileGetContent("mods/apotheosis/files/fonts/font_pixel_flesh.xml") )
+  ModTextFileSetContent( "mods/grahamsdialogue/files/font_data/font_pixel_flesh.lua", ModTextFileGetContent("mods/apotheosis/files/fonts/font_pixel_flesh.lua") )
+end
 
 
 
@@ -1725,6 +1783,7 @@ if seasonalSetting == true then
 
 		local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 		local content = ModTextFileGetContent("data/entities/animals/poring.xml")
+		content, count = content:gsub([[script_death="mods/Apotheosis/files/scripts/animals/poring_death_explosion.lua"]], [[script_death="mods/Apotheosis/files/scripts/animals/poring_halloween_death_explosion.lua"]])
 		local xml = nxml.parse(content)
 		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
 		"mods/Apotheosis/files/enemies_gfx/poring_halloween.xml"
@@ -1733,6 +1792,7 @@ if seasonalSetting == true then
 		ModTextFileSetContent("data/entities/animals/poring.xml", tostring(xml))
 
 		local content = ModTextFileGetContent("data/entities/animals/coal_mines/poring.xml")
+		content, count = content:gsub([[script_death="mods/Apotheosis/files/scripts/animals/poring_death_explosion.lua"]], [[script_death="mods/Apotheosis/files/scripts/animals/poring_halloween_death_explosion.lua"]])
 		local xml = nxml.parse(content)
 		xml:first_of("Base"):first_of("SpriteComponent").attr.image_file =
 		"mods/Apotheosis/files/enemies_gfx/poring_halloween_weak.xml"
@@ -1975,6 +2035,17 @@ do -- Player Editor
       execute_every_n_frame="600"
       execute_times="-1"
       remove_after_executed="0"
+      >
+    </LuaComponent>
+
+  ]]))
+
+	--Since Heretic now has a new way to be summoned tied to a new area we don't want people in old runs to be locked out of him -S
+	xml:add_child(nxml.parse([[
+    <LuaComponent
+      script_source_file="mods/apotheosis/files/scripts/magic/new_run_check.lua"
+      execute_every_n_frame="60"
+      remove_after_executed="1"
       >
     </LuaComponent>
   ]]))

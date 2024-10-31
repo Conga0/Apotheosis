@@ -1,6 +1,12 @@
 <Entity name="apotheosis_teleport_cancel">
 	<InheritTransformComponent>
     </InheritTransformComponent>
+
+	<Base file="mods/Apotheosis/files/entities/particles/antiteleportation_blast.xml" >
+		<SpriteParticleEmitterComponent
+			randomize_position_inside_hitbox="1"  >
+		</SpriteParticleEmitterComponent>
+	</Base>
     
 	<LuaComponent
 		script_shot="mods/apotheosis/files/scripts/status_effects/teleport_cancel_shoot.lua"

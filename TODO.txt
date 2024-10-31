@@ -14,7 +14,7 @@ Fix Forsaken Eyes not being stainable
 Fix tentacler portal hitting itself (so it doesn't need melee immunity)
 Fix Polymorph crystals being able to spawn camp TotA's entrance
 
-Check if the sandy temple banners use the proper graphic, or if they use the ToSR one
+Check if the sandy temple banners use the proper graphic, or if they use the ToSR one (I think they do :) -Spoop)
 Make brimstone/ukkostone/etc work passively in the user's inventory
 
 

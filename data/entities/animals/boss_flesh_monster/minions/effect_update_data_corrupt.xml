@@ -1,0 +1,19 @@
+<Entity >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="data/entities/animals/boss_flesh_monster/minions/update_data_corrupt.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="10"
+	>
+	</LifetimeComponent>
+
+</Entity>

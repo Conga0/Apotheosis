@@ -133,10 +133,85 @@
 		>
 	</LuaComponent>
 
+  <Entity>
+	<!--Lava checker-->
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+
+	<LuaComponent
+		_tags="enabled_in_hand"
+		script_material_area_checker_success="mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
+		>
+	</LuaComponent>
+
+	<MaterialAreaCheckerComponent
+		update_every_x_frame="10"
+		look_for_failure="0"
+		count_min="1"
+		material="lava"
+		area_aabb.min_x="-1"
+		area_aabb.max_x="1"
+		area_aabb.min_y="-1"
+		area_aabb.max_y="1"
+		>
+	</MaterialAreaCheckerComponent>
+  </Entity>
+
+  <Entity>
+	<!--Blood checker-->
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+
+	<LuaComponent
+		_tags="enabled_in_hand"
+		script_material_area_checker_success="mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
+		>
+	</LuaComponent>
+
+	<MaterialAreaCheckerComponent
+		update_every_x_frame="10"
+		look_for_failure="0"
+		count_min="1"
+		material="blood"
+		material2="apotheosis_blood_infectious"
+		area_aabb.min_x="-1"
+		area_aabb.max_x="1"
+		area_aabb.min_y="-1"
+		area_aabb.max_y="1"
+		>
+	</MaterialAreaCheckerComponent>
+  </Entity>
+
+  <Entity>
+	<!--Toxic checker-->
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+
+	<LuaComponent
+		_tags="enabled_in_hand"
+		script_material_area_checker_success="mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
+		>
+	</LuaComponent>
+
+	<MaterialAreaCheckerComponent
+		update_every_x_frame="10"
+		look_for_failure="0"
+		count_min="1"
+		material="radioactive_liquid"
+		material2="apotheosis_radioactive_liquid_strong"
+		area_aabb.min_x="-1"
+		area_aabb.max_x="1"
+		area_aabb.min_y="-1"
+		area_aabb.max_y="1"
+		>
+	</MaterialAreaCheckerComponent>
+  </Entity>
+
   <VariableStorageComponent
     name="fishing_data"
     value_int="0"
     value_bool="0"
+    value_float="0"
   >
   </VariableStorageComponent>
   

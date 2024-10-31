@@ -1,0 +1,67 @@
+<Entity  >
+  
+	<!-- gfx -->
+	
+	<LifetimeComponent
+		lifetime="15"
+		>
+	</LifetimeComponent>
+
+	<CellEaterComponent
+		ignored_material="apotheosis_gem_box2d_red_hard"
+		radius="15" 
+		eat_probability="100">
+	</CellEaterComponent>
+	
+	<ParticleEmitterComponent 
+		emitted_material_name="magic_liquid_teleportation"
+		gravity.y="0.0"
+		lifetime_min="1.2"
+		lifetime_max="1.9"
+		count_min="10"
+		count_max="14"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.max="16"
+		cosmetic_force_create="0"
+		airflow_force="0.2"
+		airflow_time="0.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		emit_cosmetic_particles="1"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		emitted_material_name="magic_liquid_teleportation"
+		gravity.y="0.0"
+		lifetime_min="0.6"
+		lifetime_max="0.9"
+		count_min="40"
+		count_max="50"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="16"
+		area_circle_radius.max="32"
+		cosmetic_force_create="0"
+		airflow_force="1.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1" 
+		velocity_always_away_from_center="100"
+		>
+	</ParticleEmitterComponent>
+</Entity>

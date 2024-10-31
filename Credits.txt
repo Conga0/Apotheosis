@@ -53,6 +53,8 @@ Kitten & Shug - Chinese Translators
 Nathan - Created Red Sand trip visual effects
 Helped significantly with Aesthete of Water whirlpool particles
 
+Alex - Created Mind Weave warp visual effects
+
 Letaali - Translating Orb Room lore to finnish
 
 SpicySpaceSnake - Recreating Orb Room glyph font

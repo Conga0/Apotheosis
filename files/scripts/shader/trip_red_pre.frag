@@ -16,5 +16,10 @@
     conga_pointing = normalize(conga_pointing);
     conga_pointing = (conga_effect_local_scale_2 * conga_effect_global_scale * conga_pointing + conga_old_pointing) / (1.0 + conga_effect_local_scale_2 * conga_effect_global_scale);
 if (conga_red_sand_effect_amount.x > 0.02) {
-    tex_coord = conga_basic_size * conga_pointing + vec2(0.5);
+    tex_coord = conga_basic_size * conga_pointing;
+    vec2 tex_coord_vec = normalize(tex_coord);
+    float tex_coord_len = length(tex_coord);
+    tex_coord_len = pow(tex_coord_len, conga_red_sand_effect_amount.y);
+    tex_coord = tex_coord_vec * tex_coord_len;
+    tex_coord = tex_coord + vec2(0.5);
 }

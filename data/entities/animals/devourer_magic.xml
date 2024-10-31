@@ -3,6 +3,10 @@
 	<!-- Fixes some weird stuff which comes from not having an AnimalAIComp -->
 	<AnimalAIComponent/>
 
+	<LimbBossComponent
+		state = "1">
+	</LimbBossComponent>
+
 	<LuaComponent
 	    execute_every_n_frame="-1"
 	    script_death="data/scripts/items/drop_money.lua"
@@ -34,7 +38,7 @@
 		cost_of_flying="500" 
 		distance_to_reach_node_x="20" 
 		distance_to_reach_node_y="20" 
-		frames_between_searches="20" 
+		frames_between_searches="500" 
 		frames_to_get_stuck="120" 
 		initial_jump_lob="1" 
 		initial_jump_max_distance_x="100" 
@@ -57,11 +61,11 @@
 
 	<PhysicsAIComponent
 		target_vec_max_len="15.0"
-		force_coeff="10.0"
+		force_coeff="5.0"
 		force_balancing_coeff="0.8"
 		force_max="100"
-		torque_coeff="50"
-		torque_balancing_coeff="4"
+		torque_coeff="10"
+		torque_balancing_coeff="1"
 		torque_max="50.0"
 		damage_deactivation_probability="0"
 		damage_deactivation_time_min="2"

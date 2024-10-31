@@ -25,7 +25,7 @@
 	<!-- Death Cross appears to break ground a bit before the barrage -->
 	<LuaComponent
 		_enabled="1"
-		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/deathcross_spawn.lua"
+		script_source_file="data/entities/animals/boss_flesh_monster/deathlaser/deathcross_spawn_phase3.lua"
 		execute_every_n_frame="340"
 		>
 	</LuaComponent>

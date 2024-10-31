@@ -25,7 +25,7 @@
 		<DamageModelComponent 
             hp="0.8"
             ragdoll_material="steel"
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/drone_mini/filenames.txt"  >
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/drone_mini_alt/filenames.txt"  >
 			<damage_multipliers
 				fire="0.0" 
 				drill="0.1"
@@ -41,7 +41,7 @@
 		<SpriteComponent 
 			offset_x="0"
 			offset_y="0"
-			image_file="mods/Apotheosis/files/enemies_gfx/drone_mini.xml" >
+			image_file="mods/Apotheosis/files/enemies_gfx/drone_mini_alt.xml" >
 		</SpriteComponent>
 
 		<PathFindingComponent
@@ -95,9 +95,12 @@
 	</Base>
 
 		<SpriteComponent 
+			_tags="character"
 			offset_x="0"
 			offset_y="0"
-			image_file="mods/Apotheosis/files/enemies_gfx/drone_mini_propeller.xml" >
+			emissive="1"
+			additive="1"
+			image_file="mods/Apotheosis/files/enemies_gfx/drone_mini_alt_emissive.xml" >
 		</SpriteComponent>
 
 	<ParticleEmitterComponent 

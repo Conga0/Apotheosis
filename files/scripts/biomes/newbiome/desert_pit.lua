@@ -63,7 +63,7 @@ g_small_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/lukki_tentacle_hungry.xml"
+		entity 	= "data/entities/animals/sandcave/lukki_tentacle_hungry.xml"
 	},
 	{
 		prob   		= 0.05,
@@ -150,7 +150,7 @@ g_big_enemies =
 		prob   		= 0.5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "data/entities/animals/lukki_tentacle_hungry.xml"
+		entity 	= "data/entities/animals/sandcave/lukki_tentacle_hungry.xml"
 	},
 	{
 		prob   		= 0.1,

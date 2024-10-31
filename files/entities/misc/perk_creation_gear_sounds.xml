@@ -1,0 +1,9 @@
+<Entity name="gear_sounds" tags="curse" >
+	<InheritTransformComponent />
+	
+	<AudioLoopComponent
+		file="mods/Apotheosis/mocreeps_audio.bank"
+		event_name="mocreeps_audio/magic/gears/movement_loop"
+		auto_play="1">
+	</AudioLoopComponent>
+</Entity>
