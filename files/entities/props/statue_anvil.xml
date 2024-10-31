@@ -6,7 +6,7 @@
 
 	<SpriteComponent 
 		z_index="1"
-		image_file="mods/apotheosis/files/props_gfx/statue_anvil.xml" 
+		image_file="mods/Apotheosis/files/props_gfx/statue_anvil.xml" 
 		offset_x="0"
 		offset_y="0" >
 	</SpriteComponent>

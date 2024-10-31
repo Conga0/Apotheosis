@@ -15,7 +15,7 @@
 	<!-- art - main body  -->
 
 	<SpriteComponent
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor.png"
+		image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor.png"
 		offset_x="56.5"
 		offset_y="56.5"
 		>
@@ -24,7 +24,7 @@
 	<SpriteComponent
 		_enabled="0"
 		_tags="enabled_by_liquid"
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
+		image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
 		offset_x="56.5"
 		offset_y="56.5"
 		emissive="1"
@@ -34,7 +34,7 @@
 	
 	<Entity>
 		<SpriteComponent
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
 			emissive="1"
 			offset_x="8.5"
 			offset_y="8.5"
@@ -380,7 +380,7 @@
 		airflow_scale="0.05"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		image_animation_file="mods/apotheosis/files/particles/image_emitters/boss_flesh_monster_glow.png"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/boss_flesh_monster_glow.png"
 		image_animation_speed="1"
 		image_animation_loop="1"
 		image_animation_raytrace_from_center="0" >
@@ -412,7 +412,7 @@
 		airflow_scale="0.05"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		image_animation_file="mods/apotheosis/files/particles/image_emitters/boss_flesh_monster_glow.png"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/boss_flesh_monster_glow.png"
 		image_animation_speed="1"
 		image_animation_loop="1"
 		image_animation_raytrace_from_center="0" >

@@ -90,7 +90,7 @@
 
   <!--Lets the totally real fish gracefully reenter the water by enabling water collission after a few frames-->
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/entities/projectiles/fishing/fish_enter_water.lua"
+		script_source_file="mods/Apotheosis/files/entities/projectiles/fishing/fish_enter_water.lua"
 		execute_every_n_frame="45"
     remove_after_executed="1"
 		>

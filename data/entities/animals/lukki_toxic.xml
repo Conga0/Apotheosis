@@ -158,15 +158,15 @@
 	<IKLimbsAnimatorComponent>
 	</IKLimbsAnimatorComponent>
 
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb_attacker.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/lukki_toxic_limb_attacker.xml" />  </Entity>
 
 	<LuaComponent 
 		_enabled="1" 

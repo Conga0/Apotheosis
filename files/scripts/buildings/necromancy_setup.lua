@@ -13,7 +13,7 @@ do v = targets[k]
 		if ( file ~= nil ) and ( #file > 0 ) and ( string.find( file, "entities/animals/" ) ~= nil ) then
 			EntityAddComponent( v, "LuaComponent", 
 			{ 
-				script_death = "mods/apotheosis/files/scripts/status_effects/necrobot_gold.lua",
+				script_death = "mods/Apotheosis/files/scripts/status_effects/necrobot_gold.lua",
 				execute_every_n_frame = "-1",
 			} )
 			

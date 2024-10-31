@@ -2,7 +2,8 @@
   default_animation="spawn" 
   filename="mods/Apotheosis/files/projectiles_gfx/darkflame_red.png" 
   offset_x="6" 
-  offset_y="6" >
+  offset_y="6" >
+
   <RectAnimation 
     frame_count="6" 
     frame_height="13" 
@@ -12,8 +13,10 @@
     name="fireball" 
     pos_x="0" 
     pos_y="1" 
-    shrink_by_one_pixel="1" >
-  </RectAnimation>
+    shrink_by_one_pixel="1" >
+
+  </RectAnimation>
+
   <RectAnimation 
     frame_count="6" 
     frame_height="12" 
@@ -24,6 +27,9 @@
     name="spawn" 
     next_animation="fireball" 
     pos_x="0" 
-    pos_y="14" >
-  </RectAnimation>
-</Sprite>
+    pos_y="14" >
+
+  </RectAnimation>
+
+</Sprite>
+

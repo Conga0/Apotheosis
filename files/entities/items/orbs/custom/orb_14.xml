@@ -1,6 +1,6 @@
 <Entity tags="hittable,teleportable_NOT">
 	
-	<Base file="mods/apotheosis/files/entities/items/orbs/custom/orb_base_apotheosis.xml">
+	<Base file="mods/Apotheosis/files/entities/items/orbs/custom/orb_base_apotheosis.xml">
 
 		<!--We need to start counting orb count +1 here because of an unused but technically obtainable vanilla 13th orb (Great Chest Orb)-->
 		<OrbComponent
@@ -8,7 +8,7 @@
 		</OrbComponent>
 		
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/items_gfx/orbs/orb_14.xml" 
+			image_file="mods/Apotheosis/files/items_gfx/orbs/orb_14.xml" 
 			>
 		</SpriteComponent>
 		

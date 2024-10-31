@@ -626,37 +626,37 @@ g_pixel_scene_04 =
 	},
 	{
 		prob   			= 0.1,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/receptacle_lava.png",
 		visual_file		= "",
-		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava_background.png",
+		background_file	= "mods/Apotheosis/files/biome_impl/lava_excavation/receptacle_lava_background.png",
 		is_unique		= 0
 	},
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
-		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
 		is_unique		= 0
 	},
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
-		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
 		is_unique		= 0
 	},
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
-		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
 		is_unique		= 0
 	},
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
-		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
 		is_unique		= 0
 	},
 }
@@ -708,16 +708,16 @@ g_pixel_scene_04_alt =
 	},
 	{
 		prob   			= 3.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/receptacle_lava.png",
 		visual_file		= "",
-		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/receptacle_lava_background.png",
+		background_file	= "mods/Apotheosis/files/biome_impl/lava_excavation/receptacle_lava_background.png",
 		is_unique		= 0
 	},
 	{
 		prob   			= 5.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
-		background_file	= "mods/apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_visual.png",
+		background_file	= "mods/Apotheosis/files/biome_impl/lava_excavation/miniboss_arena_background.png",
 		is_unique		= 0
 	},
 	{
@@ -748,7 +748,7 @@ g_puzzleroom =
 	},
 	{
 		prob   			= 1.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/lava_excavation/puzzleroom_dipper.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/lava_excavation/puzzleroom_dipper.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -1161,7 +1161,7 @@ function spawn_meditation_cube( x, y )
 end
 
 function spawn_receptacle( x, y )
-	EntityLoad( "mods/apotheosis/files/entities/buildings/puzzle_check_lava.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/puzzle_check_lava.xml", x, y )
 end
 
 function spawn_miniboss(x, y)
@@ -1255,7 +1255,7 @@ function init(x, y, w, h)
         if pos_x >= x and pos_x <= x+w
         and pos_y >= y and pos_y <= y+h then
             -- Generate Fire Lukki Nests
-            LoadPixelScene( "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", true )
+            LoadPixelScene( "mods/Apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/Apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", pos_x-22, pos_y-22, "mods/Apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", true )
             
             --Debug Data
             --GamePrint("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
@@ -1269,7 +1269,7 @@ function init(x, y, w, h)
         if pos_x >= x and pos_x <= x+w
         and pos_y >= y and pos_y <= y+h then
             -- Generate Hatched Fire Lukki Nests
-            LoadPixelScene( "mods/apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched.png", "mods/apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched_visual.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched_background.png", true )
+            LoadPixelScene( "mods/Apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched.png", "mods/Apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched_visual.png", pos_x-22, pos_y-22, "mods/Apotheosis/files/biome_impl/lava_excavation/fire_lukki_egg_hatched_background.png", true )
             
             --Debug Data
             --GamePrint("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
@@ -1279,5 +1279,5 @@ function init(x, y, w, h)
 end
 
 function spawn_nest_egg(x, y)
-	EntityLoad("mods/apotheosis/files/entities/props/egg_volcanic_lukki_trap.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/props/egg_volcanic_lukki_trap.xml", x, y)
 end

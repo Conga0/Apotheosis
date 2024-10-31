@@ -44,6 +44,8 @@ local exp_poly_desc = "Are Apotheosis Creatures added to the chaotic polymorph p
 --Conga: I suppose at the end of the day I'm OK with having this be an option, but want to make sure the mod is designed around having this being enabled
 local spellrebalances_name = "Spell Reworks"
 local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
+local meatrealmrework_name = "Meat Realm Rework"
+local meatrealmrework_desc = "Reworks the Meat Realm to have more gradual damage and harder bosses."
 
 --Keybinds
 local keybind_name = "Key Binds"
@@ -192,7 +194,7 @@ local key_inputs ={}
 local mouse_inputs = {}
 local joystick_inputs = {}
 local old_binding = ModSettingGet("Apotheosis.bind_altfire")
---dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_keycodes.lua")
+--dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_keycodes.lua")
 
 --26/04/2024 Conga: This isn't as clean, but it fixes the issue
 mouse_codes = {
@@ -608,6 +610,14 @@ mod_settings =
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
   },
+  {
+    id = "meatrealmrework",
+    ui_name = meatrealmrework_name,
+    ui_description = meatrealmrework_desc,
+    value_default = true,
+    ---@diagnostic disable-next-line: undefined-global
+    scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+  },
   --Conga 16/11/2023: While I was enthusiastic to jump into finishing off the keybind code, I struggle to understand how it worked fundamentally; and do not see myself having the hours required to reverse engineer it's functionality unfortunately. I feel bad for controller users..
   --Might be possible to see how other mods handle it though? I know Noita Emotes has some stuff going on
   {
@@ -814,7 +824,7 @@ do -- Cat Button
                 local lmb, rmb = GuiImageButton(gui, im_id, 0, 0, "", "data/ui_gfx/animal_icons/cat_mocreeps_spoopy_skittle.png")
                 GuiTooltip(gui, "Cat", "")
                 if lmb then
-                    dofile_once("mods/apotheosis/files/scripts/magic/cat_random_sound.lua")
+                    dofile_once("mods/Apotheosis/files/scripts/magic/cat_random_sound.lua")
                     CatMeow( GameGetCameraPos())
                 end
                 if rmb then

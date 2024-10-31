@@ -2,7 +2,7 @@ function RemoveDamageScript(entity_id)
     local comps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")
     for k=1,#comps
     do local v = comps[k]
-        if ComponentGetValue2(v,"script_source_file") == "mods/apotheosis/files/scripts/animals/playerghost/tablet_damage.lua" then
+        if ComponentGetValue2(v,"script_source_file") == "mods/Apotheosis/files/scripts/animals/playerghost/tablet_damage.lua" then
             EntityRemoveComponent(entity_id,v)
             break
         end

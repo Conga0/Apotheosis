@@ -19,7 +19,7 @@ SetRandomSeed( pos_x * vel_x, pos_y * vel_y )
 for i=1,count do
 	local px = pos_x + vel_x * 0.1
 	local py = pos_y + vel_y * 0.1
-	shoot_projectile_from_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/lukki_fire_miniboss_laser_fireball.xml", px + Random( -5, 5 ), py + Random( -5, 5 ), vel_x, vel_y )
+	shoot_projectile_from_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/lukki_fire_miniboss_laser_fireball.xml", px + Random( -5, 5 ), py + Random( -5, 5 ), vel_x, vel_y )
 end
 
 -- sound is played here instead of the projectiles to avoid duplicates

@@ -204,7 +204,7 @@ g_statues =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/props/statue_anvil.xml"
+		entity 	= "mods/Apotheosis/files/entities/props/statue_anvil.xml"
 	},
 	]]--
 	{
@@ -244,7 +244,7 @@ g_pixel_scene_02 =
 	total_prob = 0,
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple_sand/stairs_right.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple_sand/stairs_right.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -256,7 +256,7 @@ g_pixel_scene_04 =
 	total_prob = 0,
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple_sand/stairs_left.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple_sand/stairs_left.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -313,13 +313,13 @@ g_lamp2 =
 		prob   		= 0.5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/props/physics/chain_torch_snuffed.xml"
+		entity 	= "mods/Apotheosis/files/entities/props/physics/chain_torch_snuffed.xml"
 	},
 	{
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/props/physics/chain_torch_broken.xml"
+		entity 	= "mods/Apotheosis/files/entities/props/physics/chain_torch_broken.xml"
 	},
 }
 
@@ -506,7 +506,7 @@ g_pixel_scene_01 =
 	total_prob = 0,
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple_sand/challenge.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple_sand/challenge.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -525,21 +525,21 @@ g_pixel_scene_03 =
 	total_prob = 0,
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple_sand/lavaroom.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/evil_temple_sand/lavaroom_visual.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple_sand/lavaroom.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/evil_temple_sand/lavaroom_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple_sand/pit.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple_sand/pit.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple_sand/symbolroom.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple_sand/symbolroom.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -554,7 +554,7 @@ g_ghostlamp =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,
-		entity 	= "mods/apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
+		entity 	= "mods/Apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
 	},
 }
 
@@ -567,7 +567,7 @@ g_background_windows =
 	},
 	{
 		prob   			= 1.0,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple_sand/alcove_window_background.png",
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple_sand/alcove_window_background.png",
 	},
 }
 
@@ -580,11 +580,11 @@ g_background_drapes =
 	},
 	{
 		prob   			= 0.66,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple_sand/drape_2.png"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple_sand/drape_2.png"
 	},
 	{
 		prob   			= 0.33,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple_sand/drape_3.png"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple_sand/drape_3.png"
 	},
 }
 

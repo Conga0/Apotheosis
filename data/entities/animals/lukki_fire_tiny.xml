@@ -255,7 +255,7 @@
 	<LuaComponent
 		_enabled="0"
 		_tags="enabled_by_liquid"
-		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_tiny_firebolt_barrage.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fire_tiny_firebolt_barrage.lua"
 		execute_every_n_frame="22"
 		execute_times="-1"
 		>
@@ -263,7 +263,7 @@
 
 	<LuaComponent
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_tiny_firebolt_barrage_redo.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fire_tiny_firebolt_barrage_redo.lua"
 		execute_every_n_frame="480"
 		execute_times="-1"
 		>
@@ -272,7 +272,7 @@
 	<!--Detects if the creature has seen the player, if so activate other lua components (Also no reason to not use the miniboss version :p)-->
 	<LuaComponent
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_miniboss_LoS_Check.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fire_miniboss_LoS_Check.lua"
 		execute_every_n_frame="120"
 		execute_times="-1"
 		>

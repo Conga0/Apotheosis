@@ -1,0 +1,18 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/clear_status_full.lua"
+		execute_every_n_frame="2"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="3"
+    >
+	</GameEffectComponent >
+	
+</Entity>

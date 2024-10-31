@@ -100,7 +100,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_head.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_head.xml" 
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		offset_x="15" 
@@ -112,7 +112,7 @@
 
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -124,7 +124,7 @@
 
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -136,7 +136,7 @@
 
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -148,7 +148,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -160,7 +160,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -172,7 +172,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -184,7 +184,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -196,7 +196,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -208,7 +208,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -220,7 +220,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -232,7 +232,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -244,7 +244,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -256,7 +256,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -268,7 +268,7 @@
 	
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 
@@ -280,7 +280,7 @@
 
 	<SpriteComponent 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_tail.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_tail.xml" 
 		rect_animation="stand" 
 		next_rect_animation="stand"  
 		offset_x="15" 

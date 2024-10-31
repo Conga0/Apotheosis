@@ -6,7 +6,7 @@ if EntityGetIsAlive(player_id) == false then return end
 
 local luacomps = EntityGetComponent(player_id, "LuaComponent") or {}
 for i = 1, #luacomps do
-    if ComponentGetValue2(luacomps[i], "script_death") == "mods/apotheosis/files/scripts/status_effects/flesh_curse_death.lua" then
+    if ComponentGetValue2(luacomps[i], "script_death") == "mods/Apotheosis/files/scripts/status_effects/flesh_curse_death.lua" then
         EntityRemoveComponent(player_id, luacomps[i])
     end
 end

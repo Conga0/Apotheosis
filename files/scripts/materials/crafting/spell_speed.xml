@@ -1,0 +1,13 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/materials/spell_spawner.lua"
+		execute_on_added="1"
+		>
+	</LuaComponent>
+
+	<VariableStorageComponent
+		value_string="SPEED"
+		>
+	</VariableStorageComponent>
+
+</Entity>

@@ -126,7 +126,7 @@
 	
 	<LuaComponent 
 		_tags="enabled_in_hand"
-		script_item_picked_up="mods/apotheosis/files/scripts/items/runestones/runestone_alchemy_kick.lua"
+		script_item_picked_up="mods/Apotheosis/files/scripts/items/runestones/runestone_alchemy_kick.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>

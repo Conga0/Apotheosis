@@ -36,7 +36,7 @@ if (math.abs(pos_y - plane_y) + math.abs(pos_x - plane_x)) > 300 then
     local indicator_x = pos_x + dir_x * indicator_distance
     local indicator_y = pos_y + dir_y * indicator_distance
 
-    GameCreateSpriteForXFrames( "mods/apotheosis/files/particles/radar_plane.png", indicator_x, indicator_y, true, 0, 0, 1, true )
+    GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/radar_plane.png", indicator_x, indicator_y, true, 0, 0, 1, true )
 
 
     --In the initial world, this will search for the location of the random plane spawn location, could be 1 of 6 places

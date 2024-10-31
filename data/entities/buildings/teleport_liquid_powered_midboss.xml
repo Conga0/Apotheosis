@@ -172,7 +172,7 @@
 
 	<LuaComponent
 	_tags="invincible"
-	script_source_file="mods/apotheosis/files/scripts/experimental/portal_midboss_check.lua"
+	script_source_file="mods/Apotheosis/files/scripts/experimental/portal_midboss_check.lua"
 	execute_every_n_frame="60"
 	remove_after_executed="0"
 	>

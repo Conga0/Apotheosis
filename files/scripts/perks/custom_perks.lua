@@ -149,8 +149,8 @@ local apotheosis_perkappends = {
         id_matchup = "SHIELD",
         ui_name = "$perk_apotheosis_shield_oversized_name",
         ui_description = "$perk_apotheosis_shield_oversized_description",
-        ui_icon = "mods/apotheosis/files/ui_gfx/perk_icons/shield_oversized.png",
-        perk_icon = "mods/apotheosis/files/items_gfx/perks/shield_oversized.png",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/shield_oversized_ui.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/shield_oversized.png",
         stackable = STACKABLE_YES,
         stackable_how_often_reappears = 10,
         stackable_maximum = 5,
@@ -233,8 +233,8 @@ local apotheosis_perkappends = {
         id = "APOTHEOSIS_HASTE",
         ui_name = "$perk_apotheosis_haste_name",
         ui_description = "$perk_apotheosis_haste_description",
-        ui_icon = "mods/apotheosis/files/ui_gfx/perk_icons/haste.png",
-        perk_icon = "mods/apotheosis/files/items_gfx/perks/haste.png",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/haste.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/haste.png",
         stackable = STACKABLE_YES,
         not_in_default_perk_pool = false,
         usable_by_enemies = true,
@@ -442,8 +442,8 @@ local apotheosis_perkappends = {
         id = "APOTHEOSIS_VOID",
         ui_name = "$perk_apotheosis_void",
         ui_description = "$perk_apotheosis_void_description",
-        ui_icon = "mods/apotheosis/files/ui_gfx/perk_icons/void.png",
-        perk_icon = "mods/apotheosis/files/items_gfx/perks/void.png",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/void.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/void.png",
         stackable = STACKABLE_YES,
         usable_by_enemies = false,
         one_off_effect = true,
@@ -453,7 +453,7 @@ local apotheosis_perkappends = {
             GlobalsSetValue( "APOTHEOSIS_VOID_COUNT", tostring(value + 1))
 
             local pos_x, pos_y = EntityGetTransform(entity_who_picked)
-            local c = EntityLoad( "mods/apotheosis/files/entities/misc/effect_tinker_with_wands_temporary.xml", pos_x, pos_y )
+            local c = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_tinker_with_wands_temporary.xml", pos_x, pos_y )
             EntityAddChild( entity_who_picked, c )
 
 
@@ -722,7 +722,7 @@ local apotheosis_perkappends = {
 			EntityAddComponent( entity_who_picked, "LuaComponent", 
 			{
 				_tags = "perk_component",
-				script_source_file = "mods/apotheosis/files/scripts/perks/plane_radar.lua",
+				script_source_file = "mods/Apotheosis/files/scripts/perks/plane_radar.lua",
 				execute_every_n_frame = "1",
 			} )
             --This forces the player to pick up the perk for the very first time they enter, but afterwards they can enter willy nilly

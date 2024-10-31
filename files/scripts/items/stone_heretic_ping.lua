@@ -8,10 +8,10 @@ local converting = false
 if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or GameHasFlagRun("ending_game_completed") then
     local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
     for i = 1, #luacomps do
-	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/stone_heretic_initiate.lua" then
+	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_initiate.lua" then
 	    EntityRemoveComponent(entity_id,luacomps[i])
 	end
-	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/stone_heretic_ping_visual.lua" then
+	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_ping_visual.lua" then
 	    EntityRemoveComponent(entity_id,luacomps[i])
 	end
     end
@@ -20,7 +20,7 @@ if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or GameHasFlagRun("e
     --[[
     EntityAddComponent( entity_id, "LuaComponent",
     {
-	script_death="mods/apotheosis/files/scripts/items/stone_heretic_altar_ping.lua",
+	script_death="mods/Apotheosis/files/scripts/items/stone_heretic_altar_ping.lua",
 	execute_every_n_frame="1",
     })
     ]]--
@@ -44,7 +44,7 @@ if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or GameHasFlagRun("e
 	    end
 	end
 
-	EntityLoad( "mods/apotheosis/files/entities/particles/stone_heretic_disperse.xml", pos_x, pos_y )
+	EntityLoad( "mods/Apotheosis/files/entities/particles/stone_heretic_disperse.xml", pos_x, pos_y )
 
 	if not HasFlagPersistent("apotheosis_stone_heretic_purified") then
 	    AddFlagPersistent("apotheosis_stone_heretic_purified")
@@ -53,7 +53,7 @@ if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or GameHasFlagRun("e
     end
 
     local itemcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ItemComponent")
-    ComponentSetValue2( itemcomp, "ui_sprite", "mods/apotheosis/files/ui_gfx/items/stone_heretic.png")
+    ComponentSetValue2( itemcomp, "ui_sprite", "mods/Apotheosis/files/ui_gfx/items/stone_heretic.png")
     ComponentSetValue2( itemcomp, "ui_description", "$item_apotheosis_stone_heretic_desc")
 
     local comp_id = GetUpdatedComponentID()
@@ -83,7 +83,7 @@ if (heretic_found == false) and (converting == false) then
     local luacomp = nil
     local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
     for i = 1, #luacomps do
-	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/stone_heretic_ping_visual.lua" then
+	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_ping_visual.lua" then
 	    luacomp = luacomps[i]
 	    break
 	end
@@ -142,9 +142,9 @@ if (heretic_found == false) and (converting == false) then
 	--ComponentSetValue2( particlecomp, "emission_interval_max_frames", no_ping )
 	ComponentSetValue2( luacomp, "execute_every_n_frame", no_ping )
 	if tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) > 0 then
-	    EntityLoad( "mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster_newgame_plus_short.xml", pos_x, pos_y - 20 )
+	    EntityLoad( "mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster_newgame_plus_short.xml", pos_x, pos_y - 20 )
 	else
-	    EntityLoad( "mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml", pos_x, pos_y - 20 )
+	    EntityLoad( "mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml", pos_x, pos_y - 20 )
 	end
     else
 	--ComponentSetValue2( particlecomp, "emission_interval_min_frames", ping )
@@ -164,7 +164,7 @@ else
 	local luacomp = nil
 	local luacomps = EntityGetComponent(entity_id, "LuaComponent") or {}
 	for i = 1, #luacomps do
-	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/stone_heretic_ping_sound.lua" then
+	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_ping_sound.lua" then
 		luacomp = luacomps[i]
 		break
 	    end
@@ -177,7 +177,7 @@ else
     local luacomp = nil
     local luacomps = EntityGetComponent(entity_id, "LuaComponent") or {}
     for i = 1, #luacomps do
-	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/stone_heretic_ping_visual.lua" then
+	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_ping_visual.lua" then
 	    luacomp = luacomps[i]
 	    break
 	end

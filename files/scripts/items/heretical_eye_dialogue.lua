@@ -104,7 +104,7 @@ function Speak(entity, text, pool)
     EntityAddTag(entity, "graham_speaking")
     EntityAddComponent2(entity, "SpriteComponent", {
         _tags = "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_text",    --Conga: This could be tag optimised... Spoop: sShhuhshshshush...
-        image_file = "mods/apotheosis/files/fonts/font_pixel_flesh.xml",
+        image_file = "mods/Apotheosis/files/fonts/font_pixel_flesh.xml",
         emissive = true,
         is_text_sprite = true,
         offset_x = offset_x,
@@ -126,7 +126,7 @@ function Speak(entity, text, pool)
     EntityAddComponent2(entity, "LuaComponent", {
         _tags= "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_quiet",
         execute_every_n_frame = 120 + (#text * rate), --Starting at 2 seconds, every letter adds 10 frames to the dialogue duration.
-        script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua"
+        script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua"
     })
 end
 
@@ -473,7 +473,7 @@ local events = {
                 local herestones = EntityGetInRadiusWithTag( x, y, 175, "poopstone" ) or {}
                 for bp=1,#herestones do
                     local shapecomp = EntityGetFirstComponentIncludingDisabled(herestones[bp],"PhysicsImageShapeComponent")
-                    if ComponentGetValue2(shapecomp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" then
+                    if ComponentGetValue2(shapecomp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" then
                         hstone = herestones[bp]
                     end
 	        end
@@ -1479,12 +1479,12 @@ local events = {
             local lua_comps = EntityGetComponentIncludingDisabled(player_id,"LuaComponent") or nil
             if lua_comps ~= nil then
                 for i = 1, #lua_comps do
-		    if ComponentGetValue2(lua_comps[i], "script_source_file") == "mods/apotheosis/files/scripts/perks/plane_radar.lua" then
+		    if ComponentGetValue2(lua_comps[i], "script_source_file") == "mods/Apotheosis/files/scripts/perks/plane_radar.lua" then
  		   	radar_perk = 1
 		    end
 	        end
 	    end	
-            if GameHasFlagRun("apotheosis_heretalk_guiding_stone") and (image_file == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or radar_perk == 1 ) then
+            if GameHasFlagRun("apotheosis_heretalk_guiding_stone") and (image_file == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or radar_perk == 1 ) then
                 stone_over = true
                 local d_opts = {"That's... curious..."}
                 if GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") then
@@ -1546,7 +1546,7 @@ local events = {
                 local lua_comps = EntityGetComponentIncludingDisabled(player_id,"LuaComponent") or nil
                 if lua_comps ~= nil then
                     for i = 1, #lua_comps do
-		        if ComponentGetValue2(lua_comps[i], "script_source_file") == "mods/apotheosis/files/scripts/perks/plane_radar.lua" then
+		        if ComponentGetValue2(lua_comps[i], "script_source_file") == "mods/Apotheosis/files/scripts/perks/plane_radar.lua" then
  		        	radar_perk = 1
 		        end
 	            end

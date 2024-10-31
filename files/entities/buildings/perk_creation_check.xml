@@ -1,6 +1,6 @@
 <Entity name="apotheosis_perk_creation_altar" tags="curse">
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/buildings/perk_creation_initial.lua"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/perk_creation_initial.lua"
 		execute_every_n_frame="80"
 		>
 	</LuaComponent>

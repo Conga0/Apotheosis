@@ -44,7 +44,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		end
 	end
 	
-	local eid = EntityLoad( table.concat({"mods/apotheosis/files/entities/misc/shields/shield_",colour,".xml"}), pos_x, pos_y )
+	local eid = EntityLoad( table.concat({"mods/Apotheosis/files/entities/misc/shields/shield_",colour,".xml"}), pos_x, pos_y )
 	EntityAddChild( entity_id, eid )
 
 	ComponentSetValue2(vcomp,"value_int",GameGetFrameNum())

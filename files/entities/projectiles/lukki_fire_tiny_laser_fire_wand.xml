@@ -34,7 +34,7 @@
 	</ProjectileComponent>
 
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/lukki_fire_tiny_laser_fire.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/lukki_fire_tiny_laser_fire.lua"
 		execute_every_n_frame="20"
 		remove_after_executed="1"
 		>
@@ -62,7 +62,7 @@
 		emission_interval_max_frames="1"
 		direction_random_deg="90"
 		emit_cosmetic_particles="1"
-		image_animation_file="mods/apotheosis/files/particles/image_emitters/wand_32.png"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/wand_32.png"
 		image_animation_speed="18"
 		image_animation_emission_probability="0.8"
 		image_animation_loop="0"

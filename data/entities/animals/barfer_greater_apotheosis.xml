@@ -43,7 +43,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/barfer_greater.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/barfer_greater.xml"
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -130,7 +130,7 @@
 		attack_ranged_offset_x="0"
 		attack_ranged_offset_y="0"
 		animation_name="attack_ranged"
-		attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/radioactive_liquid_fast.xml"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/radioactive_liquid_fast.xml"
 		attack_ranged_action_frame="5"
 		>
 	</AIAttackComponent>
@@ -164,8 +164,8 @@
 	<!-- Limit boss to taking only 1% health damage maximum with each instance of damage, additionally grants temporary invulnerable upon being hurt -->
 	<!-- Additionally has death script to say it died -->
 	<LuaComponent
-		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_miniboss.lua"
-		script_death="mods/apotheosis/files/scripts/animals/barfer_greater_death.lua"
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/dmg_limit_miniboss.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/barfer_greater_death.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>

@@ -5,7 +5,7 @@ EntityAddComponent2(
     {
         execute_every_n_frame = 3,
         execute_on_added=false,
-        script_source_file = "mods/apotheosis/files/scripts/status_effects/affluence_aura.lua",
+        script_source_file = "mods/Apotheosis/files/scripts/status_effects/affluence_aura.lua",
         remove_after_executed = false
     }
 )

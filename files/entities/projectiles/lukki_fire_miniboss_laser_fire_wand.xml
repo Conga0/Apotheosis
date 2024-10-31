@@ -34,7 +34,7 @@
 	</ProjectileComponent>
 
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/lukki_fire_miniboss_laser_fire.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/lukki_fire_miniboss_laser_fire.lua"
 		execute_every_n_frame="60"
 		remove_after_executed="1"
 		>

@@ -1,6 +1,6 @@
 <Entity>
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/mudman_slimy_spawner.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/mudman_slimy_spawner.lua"
 		execute_every_n_frame="1"
 		execute_on_added="0"
 		>

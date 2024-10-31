@@ -3,7 +3,7 @@
     </InheritTransformComponent>
     
 	<LuaComponent
-		script_shot="mods/apotheosis/files/scripts/status_effects/attunium_homing_shoot.lua"
+		script_shot="mods/Apotheosis/files/scripts/status_effects/attunium_homing_shoot.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>

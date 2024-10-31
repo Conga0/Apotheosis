@@ -18,8 +18,8 @@ function disablecopying(recursion_level)
 	if (recursion_level) ~= nil and nocopy then
 		return true
 	-- all below here is unholy blasphemous gun.lua adjacent hackery, consult me (copi) if it breaks
-	elseif playing_permanent_card and nocopy then
-		return true
+	elseif playing_permanent_card then
+		return false
 		-- Copi: you should possibly add some fizzle particle or sound (might get annoying?) in this case @conga
 	elseif not reflecting then
 		local inventory = EntityGetFirstComponent( GetUpdatedEntityID(), "Inventory2Component" ) --[[@cast inventory number]]

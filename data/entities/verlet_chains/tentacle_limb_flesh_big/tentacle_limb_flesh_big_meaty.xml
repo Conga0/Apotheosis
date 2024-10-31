@@ -27,10 +27,10 @@
 
 <!-- Doesn't work :p -->
 <!-- 
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine.xml"> <InheritTransformComponent parent_sprite_id="2"><Transform position.x="8"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent parent_sprite_id="2"><Transform position.x="15"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine.xml"> <InheritTransformComponent parent_sprite_id="3"><Transform position.x="7"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
-	<Entity>  <Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent parent_sprite_id="5"><Transform position.x="6"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine.xml"> <InheritTransformComponent parent_sprite_id="2"><Transform position.x="8"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent parent_sprite_id="2"><Transform position.x="15"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine.xml"> <InheritTransformComponent parent_sprite_id="3"><Transform position.x="7"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_vine_short.xml"> <InheritTransformComponent parent_sprite_id="5"><Transform position.x="6"  position.y="0" ></Transform></InheritTransformComponent> </Base></Entity>
 -->
 
 </Entity>

@@ -104,7 +104,7 @@ local insert_list = {
     },
     {
         id_matchup="worm_big",
-        name="worm_wall",
+        name="worm_wall\nworm_maggot_big",
     },
     {
         id_matchup="worm_end",

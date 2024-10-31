@@ -11,7 +11,7 @@
 	<!-- art - main body  -->
 
 	<SpriteComponent
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor.png"
+		image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor.png"
 		offset_x="56.5"
 		offset_y="56.5"
 		>
@@ -20,7 +20,7 @@
 	<SpriteComponent
 		_enabled="0"
 		_tags="enabled_by_liquid"
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
+		image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png"
 		offset_x="56.5"
 		offset_y="56.5"
 		emissive="1"
@@ -30,7 +30,7 @@
 	
 	<Entity>
 		<SpriteComponent
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
+			image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/pupil.png"
 			emissive="1"
 			offset_x="8.5"
 			offset_y="8.5"
@@ -364,7 +364,7 @@
 
 	<!--Would probably be better to just have a VSC to store how many limbs we're using and determine it from there instead of having 900 indiviudal lua scripts for each time we use a different/new limb count-->
    	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animators/tentacle_verlet_limb_animator_boss_flesh_monster.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animators/tentacle_verlet_limb_animator_boss_flesh_monster.lua"
 		execute_on_added="1"
 		execute_every_n_frame="1"
 		>

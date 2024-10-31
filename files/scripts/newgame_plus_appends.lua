@@ -16,10 +16,10 @@ function do_newgame_plus()
 		for k=1,#heretic_stones
 		do local v = heretic_stones[k]
 			local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-			if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" then
+			if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" then
 				stone_id = v
 				break
-			elseif ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" then
+			elseif ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" then
 				stone_id = v
 				break
 			end

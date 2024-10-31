@@ -17,7 +17,7 @@
 
 	<SpriteParticleEmitterComponent
 		_tags="enabled_in_world"
-		sprite_file="mods/apotheosis/files/particles/fire_falling_purple.xml"
+		sprite_file="mods/Apotheosis/files/particles/fire_falling_purple.xml"
 		delay="0"
 		lifetime="2"
 		color.r="1" color.g="1" color.b="1" color.a="0.5"

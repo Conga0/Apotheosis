@@ -1027,7 +1027,7 @@ biome_modifiers =
 	{
 		id = "ESOTERIC_PRESENCE",
 		ui_description="$biomemod_esoteric_presence",
-		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
+		ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
 		probability=0.3,
 		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 		action = function( biome_name, biome_filename )	end,
@@ -1044,7 +1044,7 @@ biome_modifiers =
 	{
 		id = "NECROMANCY",
 		ui_description="$biomemod_necromancy",
-		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+		ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/necromancy.png",
 		probability=0.3,
 		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 		action = function( biome_name, biome_filename )	end,
@@ -1054,14 +1054,14 @@ biome_modifiers =
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+				entity 	=  "mods/Apotheosis/files/entities/buildings/biomemod_necromancy.xml",
 			})
 		end,
 	},
 	{
 		id = "ALCHEMIC",
 		ui_description="$biomemod_alchemic",
-		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/alchemic.png",
+		ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/alchemic.png",
 		probability=0.5,
 		does_not_apply_to_biome={"mountain_hall","coalmine","snowcastle"},
 		action = function( biome_name, biome_filename )	end,
@@ -1071,35 +1071,35 @@ biome_modifiers =
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/buildings/pylon_escium_lowhp.xml",
+				entity 	=  "mods/Apotheosis/files/entities/buildings/pylon_escium_lowhp.xml",
 			})
 			inject_spawn( g_small_enemies, 0.10, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_attunium.xml",
+				entity 	=  "mods/Apotheosis/files/entities/buildings/mist_trap_large_attunium.xml",
 			})
 			inject_spawn( g_small_enemies, 0.10, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml",
+				entity 	=  "mods/Apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml",
 			})
 			inject_spawn( g_small_enemies, 0.10, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_berserkium.xml",
+				entity 	=  "mods/Apotheosis/files/entities/buildings/mist_trap_large_berserkium.xml",
 			})
 			inject_spawn( g_small_enemies, 0.10, {
 				prob   		= 0,
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/buildings/mist_trap_large_pheromone.xml",
+				entity 	=  "mods/Apotheosis/files/entities/buildings/mist_trap_large_pheromone.xml",
 			})
 			inject_spawn( g_small_enemies, 0.10, {
 				prob   		= 0,
@@ -1131,7 +1131,7 @@ biome_modifiers =
 	{
 		id = "HERETICAL",
 		ui_description="$biomemod_heretical",
-		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/3piece_heretical.png",
+		ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/3piece_heretical.png",
 		probability=0.2,
 		requires_flag = "apotheosis_card_unlocked_ending_apotheosis_03",
 		does_not_apply_to_biome={"mountain_hall","coalmine","excavationsite"},
@@ -1142,7 +1142,7 @@ biome_modifiers =
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/animals/planes/devourer_magic.xml",
+				entity 	=  "mods/Apotheosis/files/entities/animals/planes/devourer_magic.xml",
 			})
 		end,
 	},
@@ -1202,7 +1202,7 @@ biome_modifier_fog_of_war_clear_at_player = {
 biome_modifier_magmatic = {
 	id = "MAGMATIC",
 	ui_description="$biomemod_magmatic",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/magmatic.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/magmatic.png",
 	probability=0.0,
 	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
 	action = function( biome_name, biome_filename )
@@ -1220,7 +1220,7 @@ biome_modifier_magmatic = {
 biome_modifier_esoteric_den = {
 	id = "ESOTERIC_DEN",
 	ui_description="$biomemod_esoteric_den",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
 	probability=0.0,
 	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
 	action = function( biome_name, biome_filename )
@@ -1238,7 +1238,7 @@ biome_modifier_esoteric_den = {
 biome_modifier_plane_yggdrasil = {
 	id = "PLANE_YGGDRASIL",
 	ui_description="$biomemod_plane_yggdrasil",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/plane_yggdrasil.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/plane_yggdrasil.png",
 	probability=0.0,
 	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
 	action = function( biome_name, biome_filename )
@@ -1253,7 +1253,7 @@ biome_modifier_plane_yggdrasil = {
 biome_modifier_plane_magic = {
 	id = "PLANE_MAGIC",
 	ui_description="$biomemod_plane_magic",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/plane_magic.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/plane_magic.png",
 	probability=0.0,
 	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
 	action = function( biome_name, biome_filename )
@@ -1268,7 +1268,7 @@ biome_modifier_plane_magic = {
 biome_modifier_plane_technology = {
 	id = "PLANE_MECHANICAL",
 	ui_description="$biomemod_plane_mechanical",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/plane_mechanical.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/plane_mechanical.png",
 	probability=0.0,
 	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
 	action = function( biome_name, biome_filename )
@@ -1283,7 +1283,7 @@ biome_modifier_plane_technology = {
 biome_modifier_devtest = {
 	id = "DEVTEST",
 	ui_description="$biomemod_necromancy",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/necromancy.png",
 	probability=0.2,
 	does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 	action = function( biome_name, biome_filename )	end,
@@ -1293,7 +1293,7 @@ biome_modifier_devtest = {
 			min_count	= 1,
 			max_count	= 1,
 			offset_y 	= 0,    
-			entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+			entity 	=  "mods/Apotheosis/files/entities/buildings/biomemod_necromancy.xml",
 		})
 	end,
 }

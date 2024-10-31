@@ -5,7 +5,7 @@
         count.max="1"
         timeout_frames="5"
         kill_entity="1"
-        entity_file="mods/apotheosis/files/entities/items/pickups/heretical_eye.xml" >
+        entity_file="mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml" >
     </LoadEntitiesComponent>
 
 	<MagicConvertMaterialComponent

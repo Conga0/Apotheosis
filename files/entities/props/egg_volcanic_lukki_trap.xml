@@ -19,7 +19,7 @@
   <PhysicsImageShapeComponent 
     body_id="1"
     centered="1"
-    image_file="mods/apotheosis/files/items_gfx/egg_red.png"
+    image_file="mods/Apotheosis/files/items_gfx/egg_red.png"
     material="meteorite_test"
   ></PhysicsImageShapeComponent>
   
@@ -61,7 +61,7 @@
     additive="1"
     alpha="0.6"
     has_special_scale="1"
-    image_file="mods/apotheosis/files/particles/egg_volcanic_lukki_glow.png"
+    image_file="mods/Apotheosis/files/particles/egg_volcanic_lukki_glow.png"
   ></SpriteComponent>
 
   <UIInfoComponent
@@ -74,7 +74,7 @@
 		execute_every_n_frame="2" 
 		execute_times="-1" 
 		remove_after_executed="0" 
-		script_source_file="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap_light.lua" >
+		script_source_file="mods/Apotheosis/files/scripts/props/egg_volcanic_lukki_trap_light.lua" >
 	</LuaComponent>
 
 	<LuaComponent 
@@ -82,15 +82,15 @@
 		execute_every_n_frame="60" 
 		execute_times="-1" 
 		remove_after_executed="0" 
-		script_source_file="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap_shift.lua" >
+		script_source_file="mods/Apotheosis/files/scripts/props/egg_volcanic_lukki_trap_shift.lua" >
 	</LuaComponent>
 
 	<LuaComponent 
 		_enabled="1" 
 		execute_every_n_frame="10" 
 		execute_times="-1" 
-		script_source_file="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap.lua"
+		script_source_file="mods/Apotheosis/files/scripts/props/egg_volcanic_lukki_trap.lua"
 		remove_after_executed="0" 
-		script_damage_received="mods/apotheosis/files/scripts/props/egg_volcanic_lukki_trap_damage.lua" >
+		script_damage_received="mods/Apotheosis/files/scripts/props/egg_volcanic_lukki_trap_damage.lua" >
 	</LuaComponent>
 </Entity>

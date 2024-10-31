@@ -11,7 +11,7 @@
 			attack_melee_enabled="0"
 			can_fly="1"  
 			can_walk="0"
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/eye_nebula_orb.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/eye_nebula_orb.xml"
 			attack_ranged_predict="0"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="200"
@@ -171,7 +171,7 @@
 		</SpriteComponent>
 		
 		<LuaComponent
-			script_source_file="mods/apotheosis/files/scripts/animals/eye_look.lua"
+			script_source_file="mods/Apotheosis/files/scripts/animals/eye_look.lua"
 			execute_every_n_frame="1"
 			>
 		</LuaComponent>
@@ -179,7 +179,7 @@
 	
 	<LuaComponent
 		_tags="invincible"
-		script_source_file="mods/apotheosis/files/scripts/animals/eye_orbitting_rotation.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/eye_orbitting_rotation.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>

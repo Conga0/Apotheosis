@@ -32,28 +32,28 @@ end
 --[[
 local entityEvents = {
     --{lifetime_to_run_at,entity_filepath_to_load,frame_runtime (leave at 0 if default of 60)},
-    {0,"mods/apotheosis/files/entities/intro/1_1.xml"},
-    {60,"mods/apotheosis/files/entities/intro/1_2.xml"},
-    {120,"mods/apotheosis/files/entities/intro/1_1.xml"},
-    {180,"mods/apotheosis/files/entities/intro/1_2.xml"},
-    {240,"mods/apotheosis/files/entities/intro/1_3.xml"},
-    {300,"mods/apotheosis/files/entities/intro/1_4.xml"},
-    {360,"mods/apotheosis/files/entities/intro/1_5.xml"},
-    {420,"mods/apotheosis/files/entities/intro/1_6.xml"},
-    {480,"mods/apotheosis/files/entities/intro/2_1.xml"},
-    {540,"mods/apotheosis/files/entities/intro/2_2.xml"},
-    {600,"mods/apotheosis/files/entities/intro/2_3.xml"},
-    {660,"mods/apotheosis/files/entities/intro/2_4.xml"},
-    {720,"mods/apotheosis/files/entities/intro/2_5.xml"},
-    {780,"mods/apotheosis/files/entities/intro/2_6.xml"},
-    {840,"mods/apotheosis/files/entities/intro/2_7.xml"},
-    {900,"mods/apotheosis/files/entities/intro/3_1.xml"},
-    {960,"mods/apotheosis/files/entities/intro/3_2.xml"},
-    {1020,"mods/apotheosis/files/entities/intro/3_2.xml"},
-    {1080,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    {1140,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    {1200,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    --{1260,"mods/apotheosis/files/entities/intro/pan_down.xml"},
+    {0,"mods/Apotheosis/files/entities/intro/1_1.xml"},
+    {60,"mods/Apotheosis/files/entities/intro/1_2.xml"},
+    {120,"mods/Apotheosis/files/entities/intro/1_1.xml"},
+    {180,"mods/Apotheosis/files/entities/intro/1_2.xml"},
+    {240,"mods/Apotheosis/files/entities/intro/1_3.xml"},
+    {300,"mods/Apotheosis/files/entities/intro/1_4.xml"},
+    {360,"mods/Apotheosis/files/entities/intro/1_5.xml"},
+    {420,"mods/Apotheosis/files/entities/intro/1_6.xml"},
+    {480,"mods/Apotheosis/files/entities/intro/2_1.xml"},
+    {540,"mods/Apotheosis/files/entities/intro/2_2.xml"},
+    {600,"mods/Apotheosis/files/entities/intro/2_3.xml"},
+    {660,"mods/Apotheosis/files/entities/intro/2_4.xml"},
+    {720,"mods/Apotheosis/files/entities/intro/2_5.xml"},
+    {780,"mods/Apotheosis/files/entities/intro/2_6.xml"},
+    {840,"mods/Apotheosis/files/entities/intro/2_7.xml"},
+    {900,"mods/Apotheosis/files/entities/intro/3_1.xml"},
+    {960,"mods/Apotheosis/files/entities/intro/3_2.xml"},
+    {1020,"mods/Apotheosis/files/entities/intro/3_2.xml"},
+    {1080,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    {1140,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    {1200,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    --{1260,"mods/Apotheosis/files/entities/intro/pan_down.xml"},
 }
 
 for k=1,#entityEvents
@@ -70,7 +70,7 @@ end
 
 --Cutscene Initialization
 if runtime == 0 then
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_01.xml", pos_x, pos_y)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/ending_particles_01.xml", pos_x, pos_y)
 
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
 end
@@ -121,7 +121,7 @@ end
 --Enable Mina's symbols in the skybox
 if runtime == 840 then
     --Do Mina's Symbols
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/mina_02.xml", pos_x, pos_y - 90)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/mina_02.xml", pos_x, pos_y - 90)
 
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", pos_x, pos_y )
 end
@@ -135,7 +135,7 @@ end
 
 if runtime == 1260 then
     --Begin Apotheosis credits screen
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
     GameAddFlagRun("ending_game_completed")
     AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02")
 end

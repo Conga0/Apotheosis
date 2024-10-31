@@ -39,14 +39,14 @@ end
 ------------------------------------------------------------------------
 
 function spawn_orb(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/items/orbs/custom/orb_14.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/items/orbs/custom/orb_14.xml", x, y )
 	--EntityLoad( "data/entities/misc/orb_07_pitcheck_a.xml", x, y )
 	--EntityLoad( "data/entities/items/pickup/heart_better.xml", x + 30, y - 20 )
-	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_14.xml", x - 30, y - 30 )
+	EntityLoad( "mods/Apotheosis/files/entities/items/books/orbrooms/book_14.xml", x - 30, y - 30 )
 	EntityLoad( "data/entities/misc/music_energy_000.xml", x, y - 10 )
 
-	spawn_material_checker( x - 197, y - 11, "water", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_14.xml", x, y - 100 )
-	spawn_material_checker( x + 198, y - 11, "water", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_14.xml", x, y - 100 )
+	spawn_material_checker( x - 197, y - 11, "water", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/Apotheosis/files/entities/glyphs/orbroom_14.xml", x, y - 100 )
+	spawn_material_checker( x + 198, y - 11, "water", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/Apotheosis/files/entities/glyphs/orbroom_14.xml", x, y - 100 )
 
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x - 197, y - 11 )
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x + 198, y - 11 )

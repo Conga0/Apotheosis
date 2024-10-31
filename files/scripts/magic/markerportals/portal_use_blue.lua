@@ -58,7 +58,7 @@ function hereticCheck(player_id, from_x, from_y, to_x, to_y)
 	for k=1,#heretic_stones
 	do local v = heretic_stones[k]
 	    local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	    if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) ~= 0 then
+	    if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) ~= 0 then
 		local timercomp = EntityGetFirstComponentIncludingDisabled( v, "VariableStorageComponent" )
 		ComponentSetValue2( timercomp, "value_string", "rapid")
 		break

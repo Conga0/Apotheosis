@@ -54,8 +54,8 @@ local heretic_stones = EntityGetInRadiusWithTag(x,y,48,"poopstone")
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
-		EntityLoad("mods/apotheosis/files/entities/special/altar_radar_lightning_spawner.xml",x,y)
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+		EntityLoad("mods/Apotheosis/files/entities/special/altar_radar_lightning_spawner.xml",x,y)
 	end
 end
 
@@ -68,8 +68,8 @@ if not GameHasFlagRun("heretic_near_death") then
 	for k=1,#heretic_eyes
 	do local v = heretic_eyes[k]
 		local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-		if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
-			EntityLoad("mods/apotheosis/files/entities/special/altar_heretic_lightning_destroyer.xml",x,y)
+		if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
+			EntityLoad("mods/Apotheosis/files/entities/special/altar_heretic_lightning_destroyer.xml",x,y)
 		end
 	end
 end

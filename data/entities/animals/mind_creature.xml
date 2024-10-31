@@ -82,7 +82,7 @@
 	</Base>
 	
 	<SpriteParticleEmitterComponent
-		sprite_file="mods/apotheosis/files/particles/fog_dark_64.xml"
+		sprite_file="mods/Apotheosis/files/particles/fog_dark_64.xml"
 		delay="0"
 		z_index="0.1"
 		lifetime="20"

@@ -40,7 +40,7 @@ if tablet and EntityGetParent( tablet ) == 0 and (cd_frame + cd_time < GameGetFr
             EntitySetComponentsWithTagEnabled( v, "enabled_by_liquid", true )
         end
         --local sprite_comp = EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteComponent")
-        --ComponentSetValue2(sprite_comp,"image_file","mods/apotheosis/files/enemies_gfx/playerghost/playerghost_tablet.xml")
+        --ComponentSetValue2(sprite_comp,"image_file","mods/Apotheosis/files/enemies_gfx/playerghost/playerghost_tablet.xml")
 
         --Set AiAttackComp to use the appropriate tablet it just grabbed
         local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"AIAttackComponent")

@@ -10,7 +10,7 @@
 		></PhysicsThrowableComponent>
 
 		<LuaComponent 
-			script_source_file="mods/apotheosis/files/scripts/projectiles/melee/thief_tele_escape.lua"
+			script_source_file="mods/Apotheosis/files/scripts/projectiles/melee/thief_tele_escape.lua"
 		></LuaComponent>
 		
 		<LuaComponent 

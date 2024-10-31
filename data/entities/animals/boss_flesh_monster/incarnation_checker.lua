@@ -24,7 +24,7 @@ if (incarnation < cowardness) then
     	local spritecomps = EntityGetComponentIncludingDisabled(entity_id, "SpriteComponent") or {}
 	if #spritecomps > 0 then --So it doesn't do the particles when it's just a portal disappearing
     	    for i = 1, #spritecomps do
-		if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
+		if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
 		    EntityLoad("data/entities/animals/boss_flesh_monster/phase3/transport_emitter_flesh.xml", pos_x, pos_y)
 		else
 		    EntityLoad("data/entities/animals/boss_flesh_monster/transport_emitter.xml", pos_x, pos_y)

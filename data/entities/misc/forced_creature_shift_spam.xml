@@ -1,0 +1,12 @@
+<Entity>
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<LuaComponent 
+	    script_source_file="data/entities/misc/forced_creature_shift_spam.lua"
+	    execute_every_n_frame="6"
+		remove_after_executed="1"
+	></LuaComponent>
+
+</Entity>

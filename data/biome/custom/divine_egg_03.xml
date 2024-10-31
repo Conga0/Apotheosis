@@ -3,7 +3,7 @@
     name="_EMPTY_"
     background_image="data/weather_gfx/background_cave_02.png"
     background_use_neighbor="0"
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/plane_portal_03.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/plane_portal_03.lua"
     mBiomeMaterialsFile="data/materials/biome_forest.xml" 
     mExtraPerlinScaleX="0.05" 
     mExtraPerlinScaleY="0.0342857" 

@@ -9,7 +9,7 @@
     background_edge_bottom="data/weather_gfx/edges/background_cave_04_alt_bottom.png"
     background_edge_priority="10"
     wang_template_file="" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/ant_pit_top.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/ant_pit_top.lua"
     wang_map_width="256"
     wang_map_height="256"
     limit_background_image="0"

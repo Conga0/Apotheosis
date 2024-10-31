@@ -33,7 +33,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	else
 		EntityLoad( "data/entities/animals/boss_flesh_monster/phase3/phase3_stone_portal_quiet_stoneless.xml", pos_x, pos_y )
 	end
-	--EntityLoad( "mods/apotheosis/files/entities/items/pickups/stone_heretic.xml", pos_x, pos_y )
+	--EntityLoad( "mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml", pos_x, pos_y )
 
 	--April Fools Print
 	local year, month, day, hour, minute = GameGetDateAndTimeLocal()
@@ -63,7 +63,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		--if seed == "hardcore" or seed == "nightcore" then
 		if GameHasFlagRun("apotheosis_hardmode") or GameHasFlagRun("apotheosis_everything") then
 			AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_goldmode" )
-			EntityLoad( "mods/apotheosis/files/entities/items/pickups/perk_copyspells.xml", pos_x, pos_y)
+			EntityLoad( "mods/Apotheosis/files/entities/items/pickups/perk_copyspells.xml", pos_x, pos_y)
 		end
 	end
 	

@@ -17,7 +17,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 	end)
 	
 	-- add ui icon etc
-	local entity_ui = EntityLoad("mods/apotheosis/files/entities/misc/skill_our_gift.xml",pos_x,pos_y)
+	local entity_ui = EntityLoad("mods/Apotheosis/files/entities/misc/skill_our_gift.xml",pos_x,pos_y)
 	EntityAddChild( entity_who_picked, entity_ui )
 
 	-- cosmetic fx -------------------------------------------------------

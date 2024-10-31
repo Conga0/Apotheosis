@@ -7,5 +7,5 @@ if comp ~= nil then
 end
 
 local x,y = EntityGetTransform(entity_id)
-local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_status_dry_cooldown.xml", x, y)
+local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_status_dry_cooldown.xml", x, y)
 EntityAddChild(entity_id,c)

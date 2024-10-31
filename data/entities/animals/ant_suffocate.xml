@@ -20,7 +20,7 @@
 			attack_ranged_enabled="1"
 			attack_melee_enabled="1"
 			can_fly="0"  
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/ant_suffocateburst.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/ant_suffocateburst.xml"
 			attack_ranged_frames_between="50" >
 		</AnimalAIComponent>
 		
@@ -48,7 +48,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/ant_suffocate.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/ant_suffocate.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -104,7 +104,7 @@
 	</Base>
 		
 	<LuaComponent
-		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_1.lua"
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/dmg_limit_1.lua"
 		script_death="data/entities/animals/secret/ant_death.lua"
 		>
 	</LuaComponent>

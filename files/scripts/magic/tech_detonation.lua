@@ -42,7 +42,7 @@ local opts = {
             for i=0,15 do
                 local angle_ = math.pi * 0.125 * i
                 
-                shoot_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/orb_cursed_thrower.xml", ex, ex, math.cos( angle_ ) * 400, 0 - math.sin( angle_ ) * 400 )
+                shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/orb_cursed_thrower.xml", ex, ex, math.cos( angle_ ) * 400, 0 - math.sin( angle_ ) * 400 )
             end
         end
     },
@@ -88,7 +88,7 @@ local opts = {
                 local ex = pos_x + math.cos( angle ) * length
                 local ey = pos_y - math.sin( angle ) * length
 
-                EntityLoad( "mods/apotheosis/files/entities/items/pickups/potion_aggressive_tech.xml", ex, ey )
+                EntityLoad( "mods/Apotheosis/files/entities/items/pickups/potion_aggressive_tech.xml", ex, ey )
             end
         end,
     },

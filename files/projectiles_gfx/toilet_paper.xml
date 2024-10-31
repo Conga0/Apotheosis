@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/apotheosis/files/projectiles_gfx/toilet_paper.png"
+ filename="mods/Apotheosis/files/projectiles_gfx/toilet_paper.png"
  offset_x="4"
  offset_y="4"
  default_animation="fireball" >

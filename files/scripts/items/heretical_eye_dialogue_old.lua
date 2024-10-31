@@ -50,7 +50,7 @@ function Speak(entity, text, pool)
     EntityAddTag(entity, "graham_speaking")
     EntityAddComponent2(entity, "SpriteComponent", {
         _tags = "enabled_in_world, graham_speech_text",
-        image_file = "mods/apotheosis/files/fonts/font_pixel_flesh.xml",
+        image_file = "mods/Apotheosis/files/fonts/font_pixel_flesh.xml",
         emissive = true,
         is_text_sprite = true,
         offset_x = offset_x,
@@ -72,7 +72,7 @@ function Speak(entity, text, pool)
     EntityAddComponent2(entity, "LuaComponent", {
         _tags= "graham_speech_quiet",
         execute_every_n_frame = 180,
-        script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua"
+        script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua"
     })
 end
 

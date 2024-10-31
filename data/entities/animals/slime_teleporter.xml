@@ -4,7 +4,7 @@
 		<ItemChestComponent level="1" > </ItemChestComponent>
 		
 		<AnimalAIComponent
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/slime_teleporter_projectile.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/slime_teleporter_projectile.xml"
 			attack_ranged_enabled="1"
 			attack_dash_enabled="0"
 			attack_ranged_frames_between="330"
@@ -42,7 +42,7 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/slime_teleporter.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/slime_teleporter.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -129,7 +129,7 @@
   </SpriteParticleEmitterComponent>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animals/slime_teleport_attacktype.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/slime_teleport_attacktype.lua"
 		execute_every_n_frame="18"
 		>
 	</LuaComponent>

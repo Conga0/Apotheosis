@@ -5,7 +5,7 @@
     </InheritTransformComponent>
     
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/status_effects/flight_start.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/flight_start.lua"
 		execute_on_added="0"
 		execute_every_n_frame="2"
 		execute_times="1"
@@ -13,7 +13,7 @@
 	</LuaComponent>
     
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/status_effects/flight_finish.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/flight_finish.lua"
 		execute_on_added="0"
 		execute_every_n_frame="-1"
 		execute_on_removed="1"

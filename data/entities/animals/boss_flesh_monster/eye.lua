@@ -16,7 +16,7 @@ if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") then
 	for k=1,#heretic_stones
 	do local v = heretic_stones[k]
 		local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-		if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+		if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
 			stone_id = v
 			stone_found = true
 			break

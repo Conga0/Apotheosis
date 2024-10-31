@@ -4,7 +4,7 @@ local player_id = EntityGetParent(entity_id)
 
 EntityAddComponent( player_id, "LuaComponent",
 {
-    script_death="mods/apotheosis/files/scripts/status_effects/flesh_curse_death.lua",
+    script_death="mods/Apotheosis/files/scripts/status_effects/flesh_curse_death.lua",
     execute_every_n_frame="-1",
 })
 

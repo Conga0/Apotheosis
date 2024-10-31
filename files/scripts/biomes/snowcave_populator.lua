@@ -197,7 +197,7 @@ table.insert(g_big_enemies,
     prob           = 0.5,
     min_count    = 1,
     max_count    = 1,    
-    entity     = "mods/apotheosis/files/entities/buildings/snowcave/pylon_vulnerability.xml",
+    entity     = "mods/Apotheosis/files/entities/buildings/snowcave/pylon_vulnerability.xml",
     ngpluslevel = 1,
 })
 
@@ -206,7 +206,7 @@ table.insert(g_big_enemies,
     prob           = 0.5,
     min_count    = 1,
     max_count    = 1,    
-    entity     = "mods/apotheosis/files/entities/buildings/snowcave/pylon_escium.xml",
+    entity     = "mods/Apotheosis/files/entities/buildings/snowcave/pylon_escium.xml",
     ngpluslevel = 1,
 })
 

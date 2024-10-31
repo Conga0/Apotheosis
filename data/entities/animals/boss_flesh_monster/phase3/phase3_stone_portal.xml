@@ -111,7 +111,7 @@
         count.max="1"
         timeout_frames="220"
         kill_entity="1"
-        entity_file="mods/apotheosis/files/entities/items/pickups/stone_heretic.xml" >
+        entity_file="mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml" >
     </LoadEntitiesComponent>
 
 </Entity>

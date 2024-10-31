@@ -65,7 +65,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/ant_acidburst.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/ant_acidburst.xml"
 		>
 	</VariableStorageComponent>
   

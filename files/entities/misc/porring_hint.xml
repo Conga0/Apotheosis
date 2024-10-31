@@ -16,7 +16,7 @@
 		emission_interval_max_frames="1"
 		emission_chance="30"
 		emit_cosmetic_particles="1"
-		image_animation_file="mods/apotheosis/files/particles/image_emitters/porring_hint.png"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/porring_hint.png"
 		image_animation_speed="5"
 		image_animation_loop="1"
 		is_emitting="1" 

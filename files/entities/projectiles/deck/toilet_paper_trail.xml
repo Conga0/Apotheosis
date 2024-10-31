@@ -32,7 +32,7 @@
 
 	<LuaComponent
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/projectiles/toilet_paper_trail_check.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/toilet_paper_trail_check.lua"
 		execute_every_n_frame="1"
 		execute_times="1"
 		>

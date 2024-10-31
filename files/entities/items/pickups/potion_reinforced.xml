@@ -20,7 +20,7 @@
   <PhysicsImageShapeComponent 
     body_id="1"
     centered="1"
-    image_file="mods/apotheosis/files/items_gfx/potion_reinforced_normals.png"
+    image_file="mods/Apotheosis/files/items_gfx/potion_reinforced_normals.png"
     material="potion_glass_box2d"
   ></PhysicsImageShapeComponent>
   
@@ -45,7 +45,7 @@
     execute_on_added="1"
     remove_after_executed="1"
     call_init_function="1"
-    script_source_file="mods/apotheosis/files/scripts/items/potion_reinforced.lua" 
+    script_source_file="mods/Apotheosis/files/scripts/items/potion_reinforced.lua" 
   ></LuaComponent>
   
 	<LuaComponent 
@@ -145,7 +145,7 @@
     _enabled="0"
     offset_x="4"
     offset_y="4"
-    image_file="mods/apotheosis/files/items_gfx/potion_reinforced.png"
+    image_file="mods/Apotheosis/files/items_gfx/potion_reinforced.png"
   ></SpriteComponent>
 
   <ItemComponent
@@ -154,7 +154,7 @@
     max_child_items="0"
     is_pickable="1"
     is_equipable_forced="1"
-    ui_sprite="mods/apotheosis/files/ui_gfx/items/potion_reinforced.png"
+    ui_sprite="mods/Apotheosis/files/ui_gfx/items/potion_reinforced.png"
     ui_description="$item_description_potion"
     preferred_inventory="QUICK"
   ></ItemComponent>

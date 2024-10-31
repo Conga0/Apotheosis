@@ -1,5 +1,5 @@
 <Sprite 
-	filename="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.png" 
+	filename="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.png" 
 	offset_x="26.5" 
 	offset_y="33"
   default_animation="stand" >

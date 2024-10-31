@@ -24,7 +24,7 @@
 	<PhysicsImageShapeComponent 
 		body_id="1"
 		centered="1"
-		image_file="mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png"
+		image_file="mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png"
 		material="apotheosis_gem_box2d_red_hard"
 	></PhysicsImageShapeComponent>
 
@@ -34,7 +34,7 @@
 		offset_x="5"
 		offset_y="5"
 		z_index="-1"
-		image_file="mods/apotheosis/files/items_gfx/heretic_symbol.png"
+		image_file="mods/Apotheosis/files/items_gfx/heretic_symbol.png"
 	></SpriteComponent>
 	
 	<PhysicsThrowableComponent
@@ -53,7 +53,7 @@
 		_enabled="0"
 		offset_x="4"
 		offset_y="4"
-		image_file="mods/apotheosis/files/items_gfx/stone_heretic.png"
+		image_file="mods/Apotheosis/files/items_gfx/stone_heretic.png"
 	></SpriteComponent>
 	
 	<SpriteParticleEmitterComponent
@@ -95,7 +95,7 @@
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_stone_heretic_name"
 		ui_description="$item_apotheosis_stone_heretic_desc_alt"
-		ui_sprite="mods/apotheosis/files/ui_gfx/items/stone_heretic_aura.png"
+		ui_sprite="mods/Apotheosis/files/ui_gfx/items/stone_heretic_aura.png"
 		max_child_items="0"
 		is_pickable="1"
 		is_equipable_forced="1"
@@ -118,7 +118,7 @@
 	<!--
 	<LuaComponent
 		_tags="enabled_in_world,enabled_in_hand"
-		script_source_file="mods/apotheosis/files/scripts/items/stone_heretic.lua"
+		script_source_file="mods/Apotheosis/files/scripts/items/stone_heretic.lua"
 		execute_every_n_frame="5"
 		>
 	</LuaComponent>
@@ -247,14 +247,14 @@
 
 	<LuaComponent
 		_enabled="1"
-		script_item_picked_up = "mods/apotheosis/files/scripts/items/stone_heretic_initiate.lua"
+		script_item_picked_up = "mods/Apotheosis/files/scripts/items/stone_heretic_initiate.lua"
 	>
 	</LuaComponent>
 
 	<LuaComponent
 		_enabled="0"
 		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world,enabled_by_liquid"
-		script_source_file = "mods/apotheosis/files/scripts/items/stone_heretic_ping.lua"
+		script_source_file = "mods/Apotheosis/files/scripts/items/stone_heretic_ping.lua"
 		execute_every_n_frame = "1"
 	>
 	</LuaComponent>
@@ -262,7 +262,7 @@
 	<LuaComponent
 		_enabled="0"
 		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world,enabled_by_liquid"
-		script_source_file = "mods/apotheosis/files/scripts/items/stone_heretic_ping_visual.lua"
+		script_source_file = "mods/Apotheosis/files/scripts/items/stone_heretic_ping_visual.lua"
 		execute_every_n_frame = "600"
 	>
 	</LuaComponent>
@@ -270,7 +270,7 @@
 	<LuaComponent
 		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/items/stone_heretic_destroyed.lua"
+		script_source_file="mods/Apotheosis/files/scripts/items/stone_heretic_destroyed.lua"
 		execute_on_removed="1"
 		execute_every_n_frame="-1"
 		>

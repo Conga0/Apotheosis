@@ -137,7 +137,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/psychotic/orb_poly.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/psychotic/orb_poly.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

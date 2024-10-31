@@ -193,7 +193,7 @@
   <!-- drops -->
   <SpriteParticleEmitterComponent
     _tags="enabled_in_world,enabled_in_hand"
-    sprite_file="mods/apotheosis/files/particles/waterstone_drop_green.xml"
+    sprite_file="mods/Apotheosis/files/particles/waterstone_drop_green.xml"
     delay="0"
     lifetime="0.5"
     color.r="1" color.g="1" color.b="1" color.a="1"
@@ -261,7 +261,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/aquamage_toxic_pylon.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/aquamage_toxic_pylon.xml"
 		>
 	</VariableStorageComponent>
 

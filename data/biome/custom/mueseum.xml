@@ -2,7 +2,7 @@
   <Topology 
     name="$biome_mueseum"
     type="BIOME_WANG_TILE"
-    background_image="mods/apotheosis/files/weather_gfx/background_mueseum.png"
+    background_image="mods/Apotheosis/files/weather_gfx/background_mueseum.png"
     background_edge_right="data/biome_impl/wandcave/right_edge.png"
     background_edge_left="data/weather_gfx/edges/background_wandcave_left.png"
     background_edge_top="data/weather_gfx/edges/background_wandcave_top.png"
@@ -10,7 +10,7 @@
     background_edge_priority="11"     
     limit_background_image="0"
     wang_template_file="data/wang_tiles/mueseum.png" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/mueseum.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/mueseum.lua"
     wang_map_width="256"
     wang_map_height="256"
     audio_ambience="wandcave"

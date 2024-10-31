@@ -21,7 +21,7 @@ if curframe > enemy_cd + 600 then
     for k=1,#enemy_table
     do local v = enemy_table[k]
         local e_x, e_y = EntityGetTransform(v)
-        EntityAddChild(v,EntityLoad("mods/apotheosis/files/entities/misc/mindvision_short.xml", e_x, e_y))
+        EntityAddChild(v,EntityLoad("mods/Apotheosis/files/entities/misc/mindvision_short.xml", e_x, e_y))
     end
     ComponentSetValue2(vsccomp,"value_int",curframe)
 end

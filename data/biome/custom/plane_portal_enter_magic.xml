@@ -1,9 +1,9 @@
 <Biome>
   <Topology 
     name="$biome_plane_magic"
-    background_image="mods/apotheosis/files/weather_gfx/hazy_forest.png"
+    background_image="mods/Apotheosis/files/weather_gfx/hazy_forest.png"
     background_use_neighbor="0"
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/plane_portal_entertest.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/plane_portal_entertest.lua"
     mBiomeMaterialsFile="data/materials/biome_forest.xml"
     mExtraPerlinScaleX="0.05" 
     mExtraPerlinScaleY="0.0342857" 

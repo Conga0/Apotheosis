@@ -103,7 +103,7 @@
     <SpriteComponent 
         _tags="character" 
         alpha="1" 
-        image_file="mods/apotheosis/files/enemies_gfx/fish_toxic_02.xml" 
+        image_file="mods/Apotheosis/files/enemies_gfx/fish_toxic_02.xml" 
         next_rect_animation="" 
         rect_animation="walk" 
         >

@@ -53,7 +53,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/radioactive_liquid_fast.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/radioactive_liquid_fast.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

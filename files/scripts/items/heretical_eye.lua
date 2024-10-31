@@ -85,15 +85,15 @@ end
 if GameHasFlagRun("heretic_dead_dead") then
     local eye = EntityGetAllChildren(entity_id)[1]
     local pupilcomp = EntityGetFirstComponentIncludingDisabled(eye, "SpriteComponent", "enabled_in_world")
-    ComponentSetValue2( pupilcomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil_pained.png")
+    ComponentSetValue2( pupilcomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/pupil_pained.png")
 
     local otherpupilcomp = EntityGetComponentIncludingDisabled( entity_id, "SpriteComponent" )[2]
-    ComponentSetValue2( otherpupilcomp, "image_file", "mods/apotheosis/files/items_gfx/heretical_eye_pupil_pained.png")
+    ComponentSetValue2( otherpupilcomp, "image_file", "mods/Apotheosis/files/items_gfx/heretical_eye_pupil_pained.png")
 
     if GameHasFlagRun("apotheosis_heretalk_id_3") then
 	local pos_x, pos_y = EntityGetTransform(entity_id)
 	EntityKill(entity_id)
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.xml", pos_x, pos_y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.xml", pos_x, pos_y)
 	EntityLoad( "mods/Apotheosis/files/entities/items/pickups/heretical_eye_husk.xml", pos_x, pos_y )
 	GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bomb_holy/create", pos_x, pos_y )
     end

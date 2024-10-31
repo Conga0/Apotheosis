@@ -7,7 +7,7 @@ local owner_id = 0
 --This function changes the thief into "flee" mode after successfully stealing your gold
 function thiefFleeMode(thief_id)
     local animalcomp = EntityGetFirstComponentIncludingDisabled(thief_id,"AnimalAIComponent")
-    ComponentSetValue2(animalcomp,"attack_ranged_entity_file","mods/apotheosis/files/entities/projectiles/melee/thief_tele_escape.xml") --Note: Tele escape won't work until he's given a stain map!!
+    ComponentSetValue2(animalcomp,"attack_ranged_entity_file","mods/Apotheosis/files/entities/projectiles/melee/thief_tele_escape.xml") --Note: Tele escape won't work until he's given a stain map!!
     ComponentSetValue2(animalcomp,"attack_ranged_max_distance",300)
 
     local luacomp = EntityGetFirstComponentIncludingDisabled(thief_id,"LuaComponent")

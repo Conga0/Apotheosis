@@ -17,7 +17,7 @@ if ( genomecomp ~= nil ) then
 	elseif faction == StringToHerdId("mage_swapper") then
 		-- wait you're a swapper? ok one sec lemme just doublecheck...
 		local aicomp = EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent")
-		if ComponentGetValue2(aicomp,"attack_ranged_entity_file") == "mods/apotheosis/files/entities/projectiles/orb_corrupt_swapper.xml" then
+		if ComponentGetValue2(aicomp,"attack_ranged_entity_file") == "mods/Apotheosis/files/entities/projectiles/orb_corrupt_swapper.xml" then
 			--oh I see... then PERISH!
 			corrupted = true
 		end

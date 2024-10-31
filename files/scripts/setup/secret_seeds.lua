@@ -2,7 +2,7 @@
 --Load the relevent flags for the current seed loaded, then enable another flag saying to not allow anymore custom seed flags to be loaded in, would likely work
 
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
 function AddUI(filename)
     local path = "data/entities/player_base.xml"
@@ -10,7 +10,7 @@ function AddUI(filename)
     local xml = nxml.parse(content)
     
     xml:add_child(nxml.parse([[
-        <Entity>  <Base file="mods/apotheosis/files/scripts/setup/]] .. filename .. [[_ui.xml" />  </Entity>
+        <Entity>  <Base file="mods/Apotheosis/files/scripts/setup/]] .. filename .. [[_ui.xml" />  </Entity>
     ]]))
 
     ModTextFileSetContent(path, tostring(xml))
@@ -37,7 +37,7 @@ function towerclimb()
     GameAddFlagRun("apotheosis_towerclimb")
 
     --Appends Tower Spawns to All vanilla biomes
-    local populator_path = "mods/apotheosis/files/scripts/biomes/global_everything_populator_towerclimb.lua"
+    local populator_path = "mods/Apotheosis/files/scripts/biomes/global_everything_populator_towerclimb.lua"
     local biomes = {
         "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
         "coalmine",         --Coal Mine, first area, goodluck on your run
@@ -84,7 +84,7 @@ function towerclimb()
 
     for k=1,#biomes
     do biomepath = biomes[k]
-        ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
+        ModLuaFileAppend("mods/Apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
     end
 
     AddUI("towerclimb")
@@ -98,7 +98,7 @@ function hardcore()
 
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
 
-    dofile_once("mods/apotheosis/files/scripts/setup/hardmode_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/hardmode_setup.lua")
 
     AddUI("hardcore")
 
@@ -112,8 +112,8 @@ function nightcore()
 
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
 
-    dofile_once("mods/apotheosis/files/scripts/setup/hardmode_setup.lua")
-    dofile_once("mods/apotheosis/files/scripts/setup/nightcore_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/hardmode_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/nightcore_setup.lua")
 
     AddUI("nightcore")
 
@@ -128,7 +128,7 @@ function glassed()
     local xml = nxml.parse(content)
     
     xml:add_child(nxml.parse([[
-        <Entity>  <Base file="mods/apotheosis/files/scripts/setup/glassed_handler.xml" />  </Entity>
+        <Entity>  <Base file="mods/Apotheosis/files/scripts/setup/glassed_handler.xml" />  </Entity>
     ]]))
 
     xml:first_of("DamageModelComponent"):first_of("damage_multipliers").attr.explosion = "0.05"
@@ -154,7 +154,7 @@ function alchemistdream()
     do -- Replace all normal potions with large potions
       local path = "data/scripts/item_spawnlists.lua"
       local content = ModTextFileGetContent(path)
-      content = content:gsub("\"data/entities/items/pickup/potion.xml\"", "\"mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
+      content = content:gsub("\"data/entities/items/pickup/potion.xml\"", "\"mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
     
       ModTextFileSetContent(path, content)
     end
@@ -200,7 +200,7 @@ function alchemistdream()
     end
 
     do --Add alchemist & liquid bubble spawns to all biomes
-        local populator_path = "mods/apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
+        local populator_path = "mods/Apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
         local biomes = {
             "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
             "coalmine",         --Coal Mine, first area, goodluck on your run
@@ -236,7 +236,7 @@ function alchemistdream()
     end
 
     do --Add alchemist & liquid bubble spawns to all biomes (Apotheosis)
-        local populator_path = "mods/apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
+        local populator_path = "mods/Apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
         local biomes = {
             "ant_hell",
             "lava_excavation",
@@ -246,14 +246,14 @@ function alchemistdream()
     
         for k=1,#biomes
         do biomepath = biomes[k]
-            ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
+            ModLuaFileAppend("mods/Apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
         end
     end
 
     do --Update alchemy room to use large potions
-        local path = "mods/apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
+        local path = "mods/Apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
         local content = ModTextFileGetContent(path)
-        content = content:gsub("\"data/entities/items/pickup/potion%.xml\"", "\"mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
+        content = content:gsub("\"data/entities/items/pickup/potion%.xml\"", "\"mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
         ModTextFileSetContent(path, content)
     end
 
@@ -270,7 +270,7 @@ function addict()
     local xml = nxml.parse(content)
     
     xml:add_child(nxml.parse([[
-        <Entity>  <Base file="mods/apotheosis/files/scripts/setup/addict_handler.xml" />  </Entity>
+        <Entity>  <Base file="mods/Apotheosis/files/scripts/setup/addict_handler.xml" />  </Entity>
     ]]))
 
     ModTextFileSetContent(path, tostring(xml))
@@ -306,10 +306,10 @@ function downunder()
 
     GameAddFlagRun("apotheosis_downunder")
 
-    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/downunder_setup.lua")
 
     do --Artifically secret seed game flag is added
-      local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_downunder\"%)")
       ModTextFileSetContent(path, content)
@@ -328,10 +328,10 @@ function everything()
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic_everything.lua" )
 
-    dofile_once("mods/apotheosis/files/scripts/setup/everything_misc_setup.lua")
-    dofile_once("mods/apotheosis/files/scripts/setup/everything_setup.lua")
-    dofile_once("mods/apotheosis/files/scripts/setup/downunder_setup.lua")
-    dofile_once("mods/apotheosis/files/scripts/setup/nightcore_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/everything_misc_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/everything_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/downunder_setup.lua")
+    dofile_once("mods/Apotheosis/files/scripts/setup/nightcore_setup.lua")
 
     AddUI("everything")
 
@@ -348,7 +348,7 @@ end
 --    xml:add_child(nxml.parse([[
 --        <LuaComponent
 --            execute_on_added=0
---            script_source_file="mods/apotheosis/files/scripts/setup/perkedup_update.lua"
+--            script_source_file="mods/Apotheosis/files/scripts/setup/perkedup_update.lua"
 --            execute_every_n_frame=120
 --            remove_after_executed=0
 --            execute_times=-1
@@ -501,7 +501,7 @@ end
 --Set Custom Seed
 if output_seed ~= "0" and input_seed ~= "0" then
     local set_seed_xml = table.concat({'<MagicNumbers WORLD_SEED="',output_seed,'" _DEBUG_DONT_SAVE_MAGIC_NUMBERS="1"/>'})
-    ModTextFileSetContent("mods/apotheosis/scripts/setup/set_seed.xml", set_seed_xml)
-    ModMagicNumbersFileAdd("mods/apotheosis/scripts/setup/set_seed.xml")
+    ModTextFileSetContent("mods/Apotheosis/scripts/setup/set_seed.xml", set_seed_xml)
+    ModMagicNumbersFileAdd("mods/Apotheosis/scripts/setup/set_seed.xml")
     custom_seed = true
 end

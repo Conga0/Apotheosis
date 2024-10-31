@@ -11,7 +11,7 @@
 	<LuaComponent 
 		_enabled="0"
 		_tags="lurker_data"
-		script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/portals/activate_mainworld_portal.lua"
+		script_item_picked_up="mods/Apotheosis/files/entities/buildings/ending/portals/activate_mainworld_portal.lua"
 		execute_times="-1"
 		execute_every_n_frame="-1"
 		>

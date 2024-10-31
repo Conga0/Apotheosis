@@ -28,7 +28,7 @@
 			attack_ranged_aim_rotation_enabled="1"
 			attack_ranged_aim_rotation_speed="0.100"
 			attack_ranged_aim_rotation_shooting_ok_angle_deg="20"
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/plasma_shot_red.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/plasma_shot_red.xml"
 			attack_ranged_offset_y="0"
 			attack_ranged_offset_x="16"
 			attack_ranged_enabled="1"
@@ -103,7 +103,7 @@
 	<SpriteComponent 
 		_tags="gun" 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/subentity/turret_plasma.xml"
+		image_file="mods/Apotheosis/files/enemies_gfx/subentity/turret_plasma.xml"
 		next_rect_animation="" 
 		rect_animation=""
 		update_transform="1"

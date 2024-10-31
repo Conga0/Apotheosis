@@ -11,7 +11,7 @@
 
   <PhysicsImageShapeComponent 
     _tags="enabled_in_world"
-    image_file="mods/apotheosis/files/buildings_gfx/chest_random_clam.png"
+    image_file="mods/Apotheosis/files/buildings_gfx/chest_random_clam.png"
     material="apotheosis_meat_water_lukki_rock"
   ></PhysicsImageShapeComponent>
 

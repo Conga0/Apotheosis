@@ -1,5 +1,5 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
 
 do --Addict Changes
@@ -15,7 +15,7 @@ do --Addict Changes
   attrpath.hp = tostring(max_hp)
 
   xml:add_child(nxml.parse([[
-      <Entity>  <Base file="mods/apotheosis/files/scripts/setup/addict_handler_10.xml" />  </Entity>
+      <Entity>  <Base file="mods/Apotheosis/files/scripts/setup/addict_handler_10.xml" />  </Entity>
   ]]))
 
   ModTextFileSetContent(path, tostring(xml))
@@ -31,7 +31,7 @@ do --Alchemist Dream changes
   do -- Replace all normal potions with large potions
     local path = "data/scripts/item_spawnlists.lua"
     local content = ModTextFileGetContent(path)
-    content = content:gsub("\"data/entities/items/pickup/potion.xml\"", "\"mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
+    content = content:gsub("\"data/entities/items/pickup/potion.xml\"", "\"mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
   
     ModTextFileSetContent(path, content)
   end
@@ -77,7 +77,7 @@ do --Alchemist Dream changes
   end
 
   do --Add alchemist & liquid bubble spawns to all biomes
-      local populator_path = "mods/apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
+      local populator_path = "mods/Apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
       local biomes = {
           "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
           "coalmine",         --Coal Mine, first area, goodluck on your run
@@ -113,7 +113,7 @@ do --Alchemist Dream changes
   end
 
   do --Add alchemist & liquid bubble spawns to all biomes (Apotheosis)
-      local populator_path = "mods/apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
+      local populator_path = "mods/Apotheosis/files/scripts/setup/alchemistdream_spawns.lua"
       local biomes = {
           "ant_hell",
           "lava_excavation",
@@ -123,14 +123,14 @@ do --Alchemist Dream changes
   
       for k=1,#biomes
       do biomepath = biomes[k]
-          ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
+          ModLuaFileAppend("mods/Apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
       end
   end
 
   do --Update alchemy room to use large potions
-      local path = "mods/apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
+      local path = "mods/Apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
       local content = ModTextFileGetContent(path)
-      content = content:gsub("\"data/entities/items/pickup/potion%.xml\"", "\"mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
+      content = content:gsub("\"data/entities/items/pickup/potion%.xml\"", "\"mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml\"")
       ModTextFileSetContent(path, content)
   end
 end
@@ -143,7 +143,7 @@ end
 
 do --Towerclimb setup (significantly reduced spawnrates on most creatures)
   --Appends Tower Spawns to All vanilla biomes
-  local populator_path = "mods/apotheosis/files/scripts/biomes/global_everything_populator_towerclimb_everything.lua"
+  local populator_path = "mods/Apotheosis/files/scripts/biomes/global_everything_populator_towerclimb_everything.lua"
   local biomes = {
       "wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
       "coalmine",         --Coal Mine, first area, goodluck on your run
@@ -190,7 +190,7 @@ do --Towerclimb setup (significantly reduced spawnrates on most creatures)
 
   for k=1,#biomes
   do biomepath = biomes[k]
-      ModLuaFileAppend("mods/apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
+      ModLuaFileAppend("mods/Apotheosis/files/scripts/biomes/newbiome/" .. biomepath .. ".lua", populator_path)
   end
 end
 

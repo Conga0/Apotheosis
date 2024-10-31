@@ -6,7 +6,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 
 	local pos_x, pos_y = EntityGetTransform( entity_item )
 		
-	local cid = EntityLoad( "mods/apotheosis/files/entities/misc/curse_mana/curse_mana.xml", pos_x, pos_y )
+	local cid = EntityLoad( "mods/Apotheosis/files/entities/misc/curse_mana/curse_mana.xml", pos_x, pos_y )
 	EntityAddChild( entity_who_picked, cid )
 	
 	--GameAddFlagRun( "greed_curse" )
@@ -15,7 +15,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 	EntityAddComponent( entity_who_picked, "LuaComponent", 
 	{ 
 		execute_every_n_frame=-1,
-		script_damage_received="mods/apotheosis/files/scripts/items/curse_mana/curse_mana_disrupt.lua",
+		script_damage_received="mods/Apotheosis/files/scripts/items/curse_mana/curse_mana_disrupt.lua",
 		remove_after_executed=0,
 	})
 

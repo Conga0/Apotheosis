@@ -32,28 +32,28 @@ function init( x, y, w, h )
 	SetRandomSeed(444,777)
 	local pw = GetParallelWorldPosition(x,y)
 	if pw == 0 then
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/end_game_02/empyrean/01.png", "", x, y, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/end_game_02/empyrean/01.png", "", x, y, "", true )
 	end
 end
 
 function spawn_altar(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/empyrean_altar.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/empyrean_altar.xml", x, y)
 end
 
 function spawn_constellation_01(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/weather_01.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/weather_01.xml", x, y)
 end
 
 function spawn_constellation_02(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/sparks_01.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/sparks_01.xml", x, y)
 end
 
 function spawn_constellation_03(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/gears_01.xml", x, y - 20)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/gears_01.xml", x, y - 20)
 end
 
 function spawn_constellation_04(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/feathers_01.xml", x, y - 30)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/feathers_01.xml", x, y - 30)
 end

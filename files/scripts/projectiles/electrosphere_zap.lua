@@ -71,7 +71,7 @@ do local v = targets[k]
         --Here we load an entity to trail a draw, then tell that trail to draw from the projectile to the target
         --Conga: Could be optimised with the new GameCreateCosmeticParticle function? Uncertain if worth the effort
         local targ_x, targ_y = EntityGetTransform(v)
-        local child = EntityLoad("mods/apotheosis/files/entities/animators/electrosphere_fx.xml", targ_x, targ_y)
+        local child = EntityLoad("mods/Apotheosis/files/entities/animators/electrosphere_fx.xml", targ_x, targ_y)
         local comp = EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent")
         ComponentSetValue2(comp, "mExPosition", pos_x, pos_y)
         if particletype ~= "plasma_fading" then

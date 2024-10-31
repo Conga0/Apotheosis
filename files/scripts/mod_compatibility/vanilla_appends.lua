@@ -212,7 +212,7 @@ ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire
 --Maybe only do this for an optional "hardmode? Unsure"
 --Goal is for the mod to be accessible to anyone but it gets so freakin boring 1 shotting everything
 
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
 --Moved over to hardmode seed
 
@@ -358,7 +358,7 @@ do -- Add secret path check to portal entity
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
   attrpath = xml:first_of("LuaComponent").attr
-  attrpath.script_portal_teleport_used = "mods/apotheosis/files/scripts/buildings/teleporter_secret_check_fail.lua"
+  attrpath.script_portal_teleport_used = "mods/Apotheosis/files/scripts/buildings/teleporter_secret_check_fail.lua"
   ModTextFileSetContent(path, tostring(xml))
 end
 
@@ -398,7 +398,7 @@ do -- Add lua script to vulnerability effect which applies "vulnerable" tag to a
   local xml = nxml.parse(content)
   xml:add_child(nxml.parse([[
     <LuaComponent
-    script_source_file="mods/apotheosis/files/scripts/status_effects/vulnerability_tag_start.lua"
+    script_source_file="mods/Apotheosis/files/scripts/status_effects/vulnerability_tag_start.lua"
     execute_every_n_frame="4"
     remove_after_executed="1"
     >
@@ -406,7 +406,7 @@ do -- Add lua script to vulnerability effect which applies "vulnerable" tag to a
   ]]))
   xml:add_child(nxml.parse([[
     <LuaComponent
-    script_source_file="mods/apotheosis/files/scripts/status_effects/vulnerability_tag_end.lua"
+    script_source_file="mods/Apotheosis/files/scripts/status_effects/vulnerability_tag_end.lua"
     execute_every_n_frame="-1"
     execute_on_removed="1"
     >
@@ -423,7 +423,7 @@ do -- Add lua script to Waterstone, allowing you to charm watermages
     <LuaComponent
     _enabled="0"
 		_tags="enabled_in_hand"
-    script_source_file="mods/apotheosis/files/scripts/items/waterstone_charm.lua"
+    script_source_file="mods/Apotheosis/files/scripts/items/waterstone_charm.lua"
     execute_every_n_frame="30"
     remove_after_executed="0"
     >
@@ -501,7 +501,7 @@ end
 do -- Change sunseed sprite filepath for Perk Creation Anvil
   local path = "data/entities/items/pickup/sun/sunseed.xml"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("data/items_gfx/goldnugget_01.png", "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png")
+  content = content:gsub("data/items_gfx/goldnugget_01.png", "mods/Apotheosis/files/items_gfx/goldnugget_01_alt.png")
   ModTextFileSetContent(path, content)
 end
 
@@ -526,7 +526,7 @@ end
 do -- Buffs ants to have a faster moving & longer range acid spit
   local path = "data/entities/animals/ant.xml"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("data/entities/projectiles/acidburst.xml", "mods/apotheosis/files/entities/projectiles/ant_acidburst.xml")
+  content = content:gsub("data/entities/projectiles/acidburst.xml", "mods/Apotheosis/files/entities/projectiles/ant_acidburst.xml")
   ModTextFileSetContent(path, content)
 end
 
@@ -595,7 +595,7 @@ end
 --[[
 do  --File override approach for organising animal icons
   if ModSettingGet( "Apotheosis.organised_icons" ) == true then
-    local content = ModTextFileGetContent("mods/apotheosis/files/ui_gfx/animal_icons/list_override.txt")
+    local content = ModTextFileGetContent("mods/Apotheosis/files/ui_gfx/animal_icons/list_override.txt")
     ModTextFileSetContent("data/ui_gfx/animal_icons/_list.txt",content)
   end
 end
@@ -656,7 +656,7 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then
   xml:add_child(nxml.parse([[
     <LuaComponent
     _enabled="1"
-    script_source_file="mods/apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive.lua"
+    script_source_file="mods/Apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive.lua"
     execute_every_n_frame="1"
     remove_after_executed="1"
     >
@@ -667,7 +667,7 @@ end
 
 --Anvil of Destiny Compatibility
 if ModIsEnabled("anvil_of_destiny") then
-  ModLuaFileAppend("mods/anvil_of_destiny/files/scripts/modded_content.lua", "mods/apotheosis/files/scripts/mod_compatibility/anvil_of_destiny_appends.lua")
+  ModLuaFileAppend("mods/anvil_of_destiny/files/scripts/modded_content.lua", "mods/Apotheosis/files/scripts/mod_compatibility/anvil_of_destiny_appends.lua")
 end
 
 
@@ -709,7 +709,7 @@ do -- Autogenerate filepath VSCs for various items
     xml:add_child(nxml.parse([[
       <LuaComponent
       _enabled="1"
-      script_source_file="mods/apotheosis/files/scripts/items/obj_path.lua"
+      script_source_file="mods/Apotheosis/files/scripts/items/obj_path.lua"
       execute_every_n_frame="1"
       remove_after_executed="1"
       >
@@ -728,7 +728,7 @@ do --Update vanilla Player Ghost to be able to catch & throw back tablets
     <LuaComponent
 		_enabled="1"
 		_tags="disabled_by_liquid"
-		script_source_file="mods/apotheosis/files/scripts/animals/playerghost/tablet_catch.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/playerghost/tablet_catch.lua"
 		execute_every_n_frame="3"
 		execute_times="-1"
 		>
@@ -759,7 +759,7 @@ do --Update vanilla Player Ghost to be able to catch & throw back tablets
 	<LuaComponent
 		_enabled="0"
 		_tags="enabled_by_liquid"
-		script_shot="mods/apotheosis/files/scripts/animals/playerghost/tablet_throw.lua"
+		script_shot="mods/Apotheosis/files/scripts/animals/playerghost/tablet_throw.lua"
 		execute_every_n_frame="-1"
 		execute_times="-1"
 		>
@@ -793,7 +793,7 @@ do --Update vanilla Player Ghost to be able to catch & throw back tablets
 	<LuaComponent
 		_enabled="0"
 		_tags="enabled_by_liquid"
-		script_death="mods/apotheosis/files/scripts/animals/playerghost/tablet_death.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/playerghost/tablet_death.lua"
 		execute_every_n_frame="-1"
 		execute_times="1"
 		>
@@ -801,10 +801,10 @@ do --Update vanilla Player Ghost to be able to catch & throw back tablets
 
 	]]))
 
-  --xml:first_of("SpriteComponent").attr.image_file = "mods/apotheosis/files/enemies_gfx/playerghost/playerghost.xml"
+  --xml:first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/playerghost/playerghost.xml"
   ModTextFileSetContent(path, tostring(xml))
 
-  ModTextFileSetContent("data/enemies_gfx/playerghost.xml",ModTextFileGetContent("mods/apotheosis/files/enemies_gfx/playerghost/playerghost.xml"))
+  ModTextFileSetContent("data/enemies_gfx/playerghost.xml",ModTextFileGetContent("mods/Apotheosis/files/enemies_gfx/playerghost/playerghost.xml"))
 end
 
 
@@ -849,7 +849,7 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn
     --"robobase",         --Power Plant
     --"hills",            --Hills, aka forest.
   }
-  local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_reduceenemies_x4.lua"
+  local appendpath = "mods/Apotheosis/files/scripts/biomes/global_biome_reduceenemies_x4.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
@@ -868,11 +868,11 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn (modded)
     --"lava_excavation", --Core Mines
     --"sunken_cave", --Sunken Cavern
   }
-  local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_reduceenemies_x2.lua"
+  local appendpath = "mods/Apotheosis/files/scripts/biomes/global_biome_reduceenemies_x2.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
-    local biomepath = table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
+    local biomepath = table.concat({"mods/Apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
     ModLuaFileAppend(biomepath, appendpath)
   end
 end
@@ -891,7 +891,7 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn (2x)
     "snowcastle",       --Hisii Base... Interesting name.. I won't judge.. too much, I've used some really weird inengine names myself in the past
     --"wizardcave",       --Wizard's Den, aside from the darkness it's pretty habitable. Polymorph liquid is scarier, I can't shield that.
   }
-  local appendpath = "mods/apotheosis/files/scripts/biomes/global_biome_reduceenemies_x2.lua"
+  local appendpath = "mods/Apotheosis/files/scripts/biomes/global_biome_reduceenemies_x2.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
@@ -901,11 +901,11 @@ do --Reduces enemy spawnrates by increasing chance of a null spawn (2x)
 end
 
 do --Genomes
-  dofile_once("mods/apotheosis/files/scripts/mod_compatibility/genomes.lua")
+  dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/genomes.lua")
 end
 
 --Hiisi Anvil appends
-ModLuaFileAppend( "data/scripts/buildings/forge_item_convert.lua", "mods/apotheosis/files/scripts/buildings/anvil_appends.lua")
+ModLuaFileAppend( "data/scripts/buildings/forge_item_convert.lua", "mods/Apotheosis/files/scripts/buildings/anvil_appends.lua")
 
 --[[
 do -- Allow Friend & Horror Monsters to use portals
@@ -933,7 +933,7 @@ end
 -- Conga: Feels wrong
 do -- Add Portalium to the HM liquid pool
   local path = "data/scripts/biomes/temple_altar_top_shared.lua"
-  local path_append = "mods/apotheosis/files/scripts/biomes/temple_wall_appends.lua"
+  local path_append = "mods/Apotheosis/files/scripts/biomes/temple_wall_appends.lua"
 
   ModLuaFileAppend( path, path_append )
 end
@@ -1073,7 +1073,7 @@ do --Lets Kolmisilma clear slime when using his clear materials ability
 end
 
 do  --Insert enemies into the progress log where they belong, originally handled through an overwrite but now should be more mod-compatiable to future proof it incase any other inspiring enemy modders appear
-  dofile_once("mods/apotheosis/files/scripts/mod_compatibility/enemy_list_inserts.lua")
+  dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/enemy_list_inserts.lua")
 end
 
 do -- Make humanoids take damage from poisonous gas
@@ -1213,7 +1213,7 @@ do --Adds a special script to big bats so their bat projectiles accurately refle
   xml:add_child(nxml.parse([[
     <LuaComponent
       execute_every_n_frame="-1"
-      script_shot="mods/apotheosis/files/scripts/animals/bat_big_shoot.lua"
+      script_shot="mods/Apotheosis/files/scripts/animals/bat_big_shoot.lua"
       remove_after_executed="0"
     />
   ]]))
@@ -1229,7 +1229,7 @@ do --Rework ants to behave like Apotheosis Ants for consistency
 
   xml:add_child(nxml.parse([[
 	<LuaComponent
-		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_1.lua"
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/dmg_limit_1.lua"
 		script_death="data/entities/animals/secret/ant_death.lua"
 		>
 	</LuaComponent>
@@ -1246,11 +1246,11 @@ do --Fix Tower Portal not working in Parallel worlds
 end
 
 if ModIsEnabled("cheatgui") then  --Add Apotheosis items to CheatGUI
-  ModLuaFileAppend("data/hax/special_spawnables.lua","mods/apotheosis/files/scripts/mod_compatibility/cheat_gui_list.lua")
+  ModLuaFileAppend("data/hax/special_spawnables.lua","mods/Apotheosis/files/scripts/mod_compatibility/cheat_gui_list.lua")
 end
 
 do  --Fix Guiding Powder to work with new map layout
-  ModLuaFileAppend("data/scripts/lib/utilities.lua","mods/apotheosis/files/scripts/mod_compatibility/utilities_lua_appends.lua")
+  ModLuaFileAppend("data/scripts/lib/utilities.lua","mods/Apotheosis/files/scripts/mod_compatibility/utilities_lua_appends.lua")
 end
 
 do --Increase Parallel World Boss hp depending on PW count
@@ -1297,7 +1297,7 @@ end
 do --Slip Book of Kings in the Meditation Cube, only in the main world
   local path = "data/scripts/biomes/excavationsite_cube_chamber.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("spawn_teleporter%(x, y%)", "spawn_teleporter(x, y) local pw = GetParallelWorldPosition(x,y) if pw == 0 then EntityLoad(\"mods/apotheosis/files/entities/items/books/book_kings.xml\", x - 50, y + 50) end")
+  content = content:gsub("spawn_teleporter%(x, y%)", "spawn_teleporter(x, y) local pw = GetParallelWorldPosition(x,y) if pw == 0 then EntityLoad(\"mods/Apotheosis/files/entities/items/books/book_kings.xml\", x - 50, y + 50) end")
 
   ModTextFileSetContent(path, content)
 end
@@ -1448,7 +1448,7 @@ end
 if HasFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_02") and HasFlagPersistent("apotheosis_card_unlocked_sea_to_potion") == false then
   local path = "data/scripts/biomes/mountain/mountain_floating_island.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("spawn_sampo_spot%(x, y%)", "spawn_sampo_spot(x, y) \nCreateItemActionEntity( \"APOTHEOSIS_POTION_TO_SEA\", x, y ) \nEntityLoad(\"mods/apotheosis/files/entities/particles/upwards_trail.xml\", x, y)")
+  content = content:gsub("spawn_sampo_spot%(x, y%)", "spawn_sampo_spot(x, y) \nCreateItemActionEntity( \"APOTHEOSIS_POTION_TO_SEA\", x, y ) \nEntityLoad(\"mods/Apotheosis/files/entities/particles/upwards_trail.xml\", x, y)")
 
   ModTextFileSetContent(path, content)
 end
@@ -1464,17 +1464,17 @@ end
 
 --[[
 if ModIsEnabled("Apotheosis") then
-  local path = "mods/apotheosis/files/scripts/biomes/newbiome/orbroom_15.lua"
+  local path = "mods/Apotheosis/files/scripts/biomes/newbiome/orbroom_15.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("EntityLoad%( \"mods/apotheosis/files/entities/items/orbs/custom/orb_15.xml\", x, y %)", "if not HasFlagPersistent(\"nee_ear_boss\") then EntityLoad( \"mods/apotheosis/files/entities/items/orbs/custom/orb_15.xml\", x, y ) else EntityLoad( \"data/entities/buildings/ear_boss_spot.xml\", x, y ) end")
-  content = content:gsub("EntityLoad%( \"mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml\", x %- 30, y %- 30 %)", "if not HasFlagPersistent(\"nee_ear_boss\") then EntityLoad( \"mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml\", x - 30, y - 30 ) end")
+  content = content:gsub("EntityLoad%( \"mods/Apotheosis/files/entities/items/orbs/custom/orb_15.xml\", x, y %)", "if not HasFlagPersistent(\"nee_ear_boss\") then EntityLoad( \"mods/Apotheosis/files/entities/items/orbs/custom/orb_15.xml\", x, y ) else EntityLoad( \"data/entities/buildings/ear_boss_spot.xml\", x, y ) end")
+  content = content:gsub("EntityLoad%( \"mods/Apotheosis/files/entities/items/books/orbrooms/book_15.xml\", x %- 30, y %- 30 %)", "if not HasFlagPersistent(\"nee_ear_boss\") then EntityLoad( \"mods/Apotheosis/files/entities/items/books/orbrooms/book_15.xml\", x - 30, y - 30 ) end")
 
   ModTextFileSetContent(path, content)
 end
 ]]--
 
---if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/apotheosis/files/entities/items/orbs/custom/orb_15.xml", x, y ) else EntityLoad( "data/entities/buildings/ear_boss_spot.xml", x, y ) end
---if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_15.xml", x - 30, y - 30 ) end
+--if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/Apotheosis/files/entities/items/orbs/custom/orb_15.xml", x, y ) else EntityLoad( "data/entities/buildings/ear_boss_spot.xml", x, y ) end
+--if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/Apotheosis/files/entities/items/books/orbrooms/book_15.xml", x - 30, y - 30 ) end
 
 do -- Unique Heretical Eye interaction with the sun baby so it can get corrupted by him
   local path = "data/scripts/buildings/sun/spot_4.lua"
@@ -1487,10 +1487,10 @@ local w]])
 		if ( string.find( essences_list, "heretic" ) == nil ) then
 			local convert = EntityGetFirstComponentIncludingDisabled(entity_id, "MagicConvertMaterialComponent")
 			ComponentSetValue2( convert, "to_material", CellFactory_GetType("apotheosis_blood_infectious") )
-			ComponentSetValue2( comp2, "image_file", "mods/apotheosis/files/props_gfx/sun_small_heretic.png" )
+			ComponentSetValue2( comp2, "image_file", "mods/Apotheosis/files/props_gfx/sun_small_heretic.png" )
 			EntityAddComponent2(entity_id, "LuaComponent", {
 				execute_on_added = false,
-				script_source_file = "mods/apotheosis/files/scripts/buildings/sunbaby_heretic_effect.lua",
+				script_source_file = "mods/Apotheosis/files/scripts/buildings/sunbaby_heretic_effect.lua",
 				execute_every_n_frame = 120,
 			})
 			essences_list = essences_list .. "heretic,"
@@ -1514,7 +1514,71 @@ for k=1,#comps
 do v = comps[k]
 	local script_source = ComponentGetValue2(v,"script_source_file")
 	if script_source == "data/scripts/buildings/sun/sunbaby_air_effect.lua" then
-		ComponentSetValue2(v,"script_source_file","mods/apotheosis/files/scripts/buildings/sunbaby_air_heretic_effect.lua")
+		ComponentSetValue2(v,"script_source_file","mods/Apotheosis/files/scripts/buildings/sunbaby_air_heretic_effect.lua")
 	end
 end
 ]]--
+
+--if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/Apotheosis/files/entities/items/orbs/custom/orb_15.xml", x, y ) else EntityLoad( "data/entities/buildings/ear_boss_spot.xml", x, y ) end
+--if not HasFlagPersistent("nee_ear_boss") then EntityLoad( "mods/Apotheosis/files/entities/items/books/orbrooms/book_15.xml", x - 30, y - 30 ) end
+
+
+
+
+
+--Meat Realm Reworks
+
+if ModSettingGet( "Apotheosis.meatrealmrework" ) then --Remove the vanilla meat realm status code, enhances tiny
+  local path = "data/scripts/misc/no_heal_in_meat_biome.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("true","false")
+  ModTextFileSetContent(path, content)
+
+  local path = "data/scripts/buildings/maggotspot.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("EntityLoad%( \"data/entities/animals/maggot_tiny/maggot_tiny%.xml\", pos_x, pos_y %)","EntityLoad( \"data/entities/animals/maggot_tiny/reworked/maggot_tiny.xml\", pos_x, pos_y ) for k=1,6 do EntityLoad( \"data/entities/animals/worm_maggot_big.xml\", pos_x, pos_y ) end")
+  ModTextFileSetContent(path, content)
+end
+
+do --Make tiny drop the support bullet and support field spell
+  local path = "data/entities/animals/maggot_tiny/death.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("GameAddFlagRun%( \"miniboss_maggot\" %)","GameAddFlagRun( \"miniboss_maggot\" ) GameAddFlagRun( \"apotheosis_card_unlocked_support_bullet_spell\" ) GameAddFlagRun( \"apotheosis_card_unlocked_support_bullet\" ) CreateItemActionEntity( \"APOTHEOSIS_SUPPORT_BULLET\", pos_x - 8, pos_y ) CreateItemActionEntity( \"APOTHEOSIS_FIELD_SUPPORT\", pos_x + 8, pos_y )")
+
+  ModTextFileSetContent(path, content)
+end
+
+
+
+-- Adds the "harmful status" tag so support bullet knows what status's to remove
+--The following effects should not be removable by support bullet as they are either critical to gameplay functions (ie bosses) or would be game breaking to remove.
+--Vulnerability
+--Wounded
+--Shield Instability
+--Vulnerability Hexes
+--Any biome curse
+--Any permanent status effect
+--
+
+
+--This is a list of vanilla status effects to flag as harmful, default filepath for these is data/entities/misc
+--Order is the order listed on the noita wiki
+--Apotheosis status effects are handled manually in the files
+
+do
+  local harmful_effects_list = {"neutralized","effect_frozen","effect_frozen_short","effect_blindness","effect_hearty","effect_berserk","effect_polymorph","effect_polymorph_random","effect_polymorph_unstable","effect_confusion","effect_teleportation","effect_unstable_teleportation","effect_homing_shooter"}
+
+  for k=1,#harmful_effects_list
+  do local v = harmful_effects_list[k]
+    print(v)
+    local filepath = table.concat({"data/entities/misc/",v,".xml"})
+    local content = ModTextFileGetContent(filepath) 
+    local xml = nxml.parse(content)
+    if xml.attr.tags then
+      xml.attr.tags = xml.attr.tags .. ",harmful_status"
+    else 
+     xml.attr.tags = "harmful_status"
+    end
+    ModTextFileSetContent(filepath, tostring(xml))
+  end
+end

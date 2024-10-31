@@ -2,7 +2,7 @@
    
     <LuaComponent
         _enabled="1"
-        script_source_file="mods/apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive_tracker.lua"
+        script_source_file="mods/Apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive_tracker.lua"
         execute_every_n_frame="1"
         remove_after_executed="0"
         >

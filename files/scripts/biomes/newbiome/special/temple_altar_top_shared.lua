@@ -11,16 +11,16 @@ end
 function spawn_altar_top(x, y, is_solid)
 	SetRandomSeed( x, y )
 	local randomtop = Random( 1, 50 )
-	local file_visual = "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_bottom_visual.png"
+	local file_visual = "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_bottom_visual.png"
 	
-	LoadBackgroundSprite( "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_bottom_background.png", x-1, y - 30, 35 )
+	LoadBackgroundSprite( "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_bottom_background.png", x-1, y - 30, 35 )
 
 	if( y > 12000 ) then
 		--LoadPixelScene( "data/biome_impl/temple/altar_top_boss_arena.png", file_visual, x, y-40, "", true )
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_bottom.png", file_visual, x, y-40, "", true ) -- Placeholder
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_bottom.png", file_visual, x, y-40, "", true ) -- Placeholder
 	else
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_bottom.png", file_visual, x, y-40, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_bottom.png", file_visual, x, y-40, "", true )
 	end	
 
-	if is_solid then LoadPixelScene( "mods/apotheosis/files/biome_impl/upsidedown/temple/solid.png", "", x, y-300, "", true ) end
+	if is_solid then LoadPixelScene( "mods/Apotheosis/files/biome_impl/upsidedown/temple/solid.png", "", x, y-300, "", true ) end
 end

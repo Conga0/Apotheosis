@@ -42,7 +42,7 @@
     bounce_always="1"
     bounces_left="10"
     bounce_energy="0.9"
-	bounce_fx_file="mods/apotheosis/files/entities/particles/bounce_effects/rubber_ball_trigger.xml"
+	bounce_fx_file="mods/Apotheosis/files/entities/particles/bounce_effects/rubber_ball_trigger.xml"
     velocity_sets_rotation="1"
     velocity_updates_animation="1"
     velocity_sets_scale="1"
@@ -64,7 +64,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/projectiles_gfx/rubber_ball_trigger.xml" 
+    image_file="mods/Apotheosis/files/projectiles_gfx/rubber_ball_trigger.xml" 
     next_rect_animation=""
     rect_animation="" 
      
@@ -109,7 +109,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/rubber_ball_trigger.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/rubber_ball_trigger.xml"
 		>
 	</VariableStorageComponent>
 

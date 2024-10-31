@@ -1,5 +1,5 @@
 <Sprite 
-	filename="mods/apotheosis/files/enemies_gfx/worms/worm_spine_tail.png" 
+	filename="mods/Apotheosis/files/enemies_gfx/worms/worm_spine_tail.png" 
 	offset_x="18" 
 	offset_y="24" 
   default_animation="stand">

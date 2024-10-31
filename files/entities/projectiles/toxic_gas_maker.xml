@@ -62,7 +62,7 @@
 		count_max="4"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		image_animation_file="mods/apotheosis/files/particles/image_emitters/aquamine_emitter.png"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/aquamine_emitter.png"
 		image_animation_loop="1"
 		emit_cosmetic_particles="0"
 		create_real_particles="1"  >

@@ -104,8 +104,8 @@ function spawn_potions( x, y ) end
 function init( x, y, w, h )
 	spawn_altar_top(x, y-40+300, false)
 
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_right.png", "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_right_visual.png", x, y-40, "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_right_background.png", true )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_right_exit.png", "", x, y-107, "", true ) --Clears spare land around the exit
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_right.png", "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_right_visual.png", x, y-40, "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_right_background.png", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_right_exit.png", "", x, y-107, "", true ) --Clears spare land around the exit
 end
 
 function spawn_hp( x, y )

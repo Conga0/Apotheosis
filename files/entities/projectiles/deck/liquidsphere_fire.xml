@@ -163,7 +163,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/liquidsphere_fire.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_fire.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

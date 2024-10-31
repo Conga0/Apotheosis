@@ -9,7 +9,7 @@
     background_use_neighbor="0"
 		background_edge_priority="10"
     limit_background_image="1"
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/special_infinite_flight.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/special_infinite_flight.lua"
     mBiomeMaterialsFile="data/materials/biome_forest.xml" 
     mExtraPerlinScaleX="0.05" 
     mExtraPerlinScaleY="0.0342857" 

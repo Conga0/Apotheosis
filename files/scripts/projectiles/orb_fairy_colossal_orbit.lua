@@ -11,7 +11,7 @@ local projspeed = EntityGetFirstComponent( entity_id, "VariableStorageComponent"
 
 if ( projtype ~= nil ) and ( projspeed ~= nil ) then
 	local projfile = ComponentGetValue2( projtype, "value_string" )
-	local proj = "mods/apotheosis/files/entities/projectiles/orb_fairy_colossal_nolua.xml"
+	local proj = "mods/Apotheosis/files/entities/projectiles/orb_fairy_colossal_nolua.xml"
 	
 	if ( proj ~= nil ) and ( #proj > 0 ) then
 		local speed = Random( -1, 1 ) * 0.1

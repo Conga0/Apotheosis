@@ -2,7 +2,7 @@
 	<LuaComponent
 		_enabled="0"
 		_tags="disabled"
-		script_source_file="mods/apotheosis/files/scripts/buildings/flesh_boss_summon.lua"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/flesh_boss_summon.lua"
 		execute_every_n_frame="60"
 		>
 	</LuaComponent>

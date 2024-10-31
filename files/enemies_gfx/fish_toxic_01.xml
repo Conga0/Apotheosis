@@ -1,5 +1,5 @@
 <Sprite 
-	filename="mods/apotheosis/files/enemies_gfx/fish_toxic_01.png" 
+	filename="mods/Apotheosis/files/enemies_gfx/fish_toxic_01.png" 
 	offset_x="5" 
 	offset_y="5"
   default_animation="stand" >

@@ -19,7 +19,7 @@
   <PhysicsImageShapeComponent 
     body_id="1"
     centered="1"
-    image_file="mods/apotheosis/files/items_gfx/egg_metal.png"
+    image_file="mods/Apotheosis/files/items_gfx/egg_metal.png"
     material="bone_box2d"
   ></PhysicsImageShapeComponent>
   
@@ -78,7 +78,7 @@
       explosion_radius="3" 
       explosion_sprite="data/particles/explosion_012.xml" 
       explosion_sprite_lifetime="10"
-	  load_this_entity="mods/apotheosis/files/entities/projectiles/egg_robot.xml"
+	  load_this_entity="mods/Apotheosis/files/entities/projectiles/egg_robot.xml"
       hole_destroy_liquid="0" 
       hole_enabled="0" 
       ray_energy="100000"
@@ -108,7 +108,7 @@
     _enabled="0"
     offset_x="4"
     offset_y="4"
-    image_file="mods/apotheosis/files/items_gfx/egg_metal.png"
+    image_file="mods/Apotheosis/files/items_gfx/egg_metal.png"
   ></SpriteComponent>
 
   <ItemComponent
@@ -117,7 +117,7 @@
     max_child_items="0"
     is_pickable="1"
     is_equipable_forced="1"
-    ui_sprite="mods/apotheosis/files/ui_gfx/items/egg_metal.png"
+    ui_sprite="mods/Apotheosis/files/ui_gfx/items/egg_metal.png"
     ui_description="$item_apotheosis_egg_robot_desc"
     preferred_inventory="QUICK"
   ></ItemComponent>

@@ -36,6 +36,7 @@ Creating right click icon for alt-fire spells
 Creating shield sapper script
 Creating Magic Inerberation script
 Glass Cannon compatibility for Liquid Bubbles
+Various spell icons
 Various Code Contributions
 Creating the Pillar Sprites for various perk creation altar stones
 Creating the Pillar Sprites for various endings

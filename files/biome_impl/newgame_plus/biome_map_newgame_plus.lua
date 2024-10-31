@@ -112,7 +112,7 @@ end
 -- local h = 48
 
 BiomeMapSetSize( BIOME_MAP_WIDTH, BIOME_MAP_HEIGHT )
-BiomeMapLoadImage( 0, 0, "mods/apotheosis/files/biome_impl/newgame_plus/biome_map_01.png" )
+BiomeMapLoadImage( 0, 0, "mods/Apotheosis/files/biome_impl/newgame_plus/biome_map_01.png" )
 
 
 SetRandomSeed( 4573, 4621 )

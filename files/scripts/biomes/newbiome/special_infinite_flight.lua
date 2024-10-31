@@ -26,7 +26,7 @@ function spawn_potions( x, y ) end
 function spawn_wands( x, y ) end
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/our_gift.png", "", x, y, "", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/our_gift.png", "", x, y, "", true )
 end
 
 function spawn_gate(x, y)

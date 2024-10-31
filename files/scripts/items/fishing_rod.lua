@@ -19,7 +19,7 @@ if GameGetFrameNum() >= cooldown_frame then
             ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + 10 )
         else
             --Cast new bobber
-            local proj_id = EntityLoad("mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber.xml", x, y)
+            local proj_id = EntityLoad("mods/Apotheosis/files/entities/projectiles/fishing/fishing_bobber.xml", x, y)
             GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+(aim_y - 0.1)*20, proj_id)
             ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(proj_id,"VariableStorageComponent"),"value_int",entity_id)
             ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )

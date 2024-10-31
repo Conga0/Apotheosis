@@ -47,7 +47,7 @@
       explosion_radius="42" 
       explosion_sprite="data/particles/explosion_032_pink.xml"
       explosion_sprite_lifetime="0"
-	    load_this_entity="mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_explosion.xml"
+	    load_this_entity="mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega_explosion.xml"
       create_cell_probability="40" 
       cell_explosion_power_ragdoll_coeff="0.5"
       hole_destroy_liquid="0"
@@ -205,7 +205,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

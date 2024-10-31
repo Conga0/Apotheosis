@@ -5,7 +5,7 @@
 	<AnimalAIComponent
 		preferred_job="JobDefault"
 		attack_ranged_enabled="0"
-		attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/orb_corrupt_swapper.xml"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_corrupt_swapper.xml"
 		attack_ranged_predict="0"
 		attack_ranged_action_frame="2"
 		attack_ranged_min_distance="0"
@@ -37,7 +37,7 @@
 
 	<SpriteComponent 
 		_tags="character"
-		image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/fleshling_swapper.xml"
+		image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/fleshling_swapper.xml"
 		offset_x="17"
 		offset_y="15.5"
 		>
@@ -46,7 +46,7 @@
 	<Entity name="eye">
 		<SpriteComponent
 			_tags="character"
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupiling_swapper.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/pupiling_swapper.xml"
 			offset_x="5"
 			offset_y="5"
 			has_special_scale="1"
@@ -237,7 +237,7 @@
 
 
    	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animators/tentacle_verlet_limb_animator.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animators/tentacle_verlet_limb_animator.lua"
 		execute_on_added="1"
 		execute_every_n_frame="1"
 		>

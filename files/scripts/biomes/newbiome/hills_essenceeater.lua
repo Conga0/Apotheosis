@@ -204,7 +204,7 @@ g_pumpkins =
 
 function init(x, y, w, h)
 	parallel_check( x, y )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/essence_altar.png", "mods/apotheosis/files/biome_impl/special_scenes/essence_altar_visual.png", x, y + 155, "", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/essence_altar.png", "mods/Apotheosis/files/biome_impl/special_scenes/essence_altar_visual.png", x, y + 155, "", true )
 
 	-- halloween
 	local year, month, day = GameGetDateAndTimeLocal()		

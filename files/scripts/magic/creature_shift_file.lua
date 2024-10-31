@@ -35,6 +35,7 @@ enemy_list = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liqu
 --"Shift into" list to randomly pick from
 enemy_list_from = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "fish", "forsaken_eye", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield", "scavenger_grenade", "scavenger_smg", "wand_ghost", "miniblob", "lukki_fungus", "star_child", "wizard_manaeater", "blindgazer", "wizard_z_poly_miniboss", "wizard_explosive", "waterskull", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "blob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", "hideous_mass_red", "tree_tall", "hisii_giga_bomb", "mimic_explosive_box", "bubbles/ambrosia/bubble_liquid", "watermage", "watermage_greater", "wizard_copeseethmald", "miniboss_pit_02", }
 
+enemy_list_brutal = { "wizard_z_poly_miniboss", "worm_esoteric", "worm_mechanical", "worm_spine", "wraith_alchemy_apotheosis", "wraith_returner_apotheosis", "wizard_corrupt_weaken", "wizard_corrupt_wands", "wizard_corrupt_hearty", "poring_holy", "poring_devil", "miniboss_pit_02", "hideous_mass_red", "parallel/alchemist/parallel_alchemist", "esoteric_being", "thundermage_big", "sniper_hell", "lukki_tentacle_hungry", "worm_maggot_tiny_miniboss", "the_end/barfer_greater_apotheosis", "failed_alchemist", "fairy_esoteric" }
 
 local shift_check = false
 local shift_check_2 = false
@@ -100,8 +101,10 @@ end
 
 
 
-function creature_shift( entity, x, y, debug_no_limits )
+function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
     local player_id = EntityGetWithTag( "player_unit" )[1]
+    use_brutal_pool = use_brutal_pool or false
+    local selected_shift = false
 
     if GameHasFlagRun("apotheosis_flag_no_tripping") then
         local frame = GameGetFrameNum()
@@ -121,7 +124,8 @@ function creature_shift( entity, x, y, debug_no_limits )
 
     local frame = GameGetFrameNum()
     local last_frame = tonumber( GlobalsGetValue( "apotheosis_creature_shift_last_frame", "-1000000" ) )
-    if frame < last_frame + 60*60*4 and not debug_no_limits then --4 minute long cooldown between shifts
+    local shift_cd_duration = 4
+    if frame < last_frame + 60*60*shift_cd_duration and not debug_no_limits then --4 minute long cooldown between shifts
         shift_check = false --long cooldown
     else
         shift_check = true
@@ -169,7 +173,7 @@ function creature_shift( entity, x, y, debug_no_limits )
         --75% Chance
         local frng = Random(1,4)
         --print("frng is " .. frng)
-        if frng > 0 then
+        if frng > 1 then --oops, focused shifting was a 100% chance, fixing this now
             --print("player id is " .. player_id)
             local controls = EntityGetFirstComponentIncludingDisabled(player_id, "ControlsComponent")  --[[@cast controls number]]
             local cursor_x, cursor_y = ComponentGetValue2(controls, "mMousePosition")
@@ -188,6 +192,7 @@ function creature_shift( entity, x, y, debug_no_limits )
                         if dist < temp_cursor_data[2] then
                             temp_cursor_data[1] = filename
                             temp_cursor_data[2] = dist
+                            selected_shift = true
                         end
                     end
                 end
@@ -201,6 +206,11 @@ function creature_shift( entity, x, y, debug_no_limits )
 
                 target2 = temp_filename
             end
+        end
+
+        if use_brutal_pool and selected_shift then
+            local rnd = Random(1, #enemy_list_brutal)
+            target = enemy_list_brutal[rnd]
         end
 
 
@@ -309,7 +319,6 @@ function creature_shift( entity, x, y, debug_no_limits )
             EntityKill(eid)
         end
 
-        --Well... not the most specific now :p -S
         --Fish specific projectile fix for when being reeled in from a fishing rod
         if target2 == "fish" then
             local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
@@ -329,83 +338,6 @@ function creature_shift( entity, x, y, debug_no_limits )
                 gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
             end
             GlobalsSetValue( "apotheosis_fish_largegfx_filepath", gfx )
-            EntityKill(eid)
-        end
-
-        --Aesthete Baby specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "lukki_fire_tiny" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
-            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
-            if gfx == "" then
-                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
-            end
-            GlobalsSetValue( "apotheosis_lukki_fire_tinygfx_filepath", gfx )
-            EntityKill(eid)
-        end
-
-        --Toxic Slime specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "slimeshooter" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
-            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
-            if gfx == "" then
-                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
-            end
-            GlobalsSetValue( "apotheosis_slimeshootergfx_filepath", gfx )
-            EntityKill(eid)
-        end
-
-        --Eel specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "eel" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
-            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
-            if gfx == "" then
-                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
-            end
-            GlobalsSetValue( "apotheosis_eelgfx_filepath", gfx )
-            EntityKill(eid)
-        end
-
-        --Meat Maggot specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "meatmaggot" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
-            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
-            if gfx == "" then
-                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
-            end
-            GlobalsSetValue( "apotheosis_meatmaggotgfx_filepath", gfx )
-            EntityKill(eid)
-        end
-
-        --Liquid Bubble specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "bubble_liquid" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
-            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
-            if gfx == "" then
-                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
-            end
-            GlobalsSetValue( "apotheosis_bubble_liquidgfx_filepath", gfx )
-            EntityKill(eid)
-        end
-
-        --Diving Bell specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "sunken_creature" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
-            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
-            if gfx == "" then
-                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
-            end
-            GlobalsSetValue( "apotheosis_sunken_creaturegfx_filepath", gfx )
-            EntityKill(eid)
-        end
-
-        --Firemage Weak specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "firemage_weak" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
-            local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
-            if gfx == "" then
-                gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
-            end
-            GlobalsSetValue( "apotheosis_firemage_weakgfx_filepath", gfx )
             EntityKill(eid)
         end
 
@@ -511,12 +443,16 @@ function creature_shift( entity, x, y, debug_no_limits )
         ]]--
 
         --  Updates Creature icon to the new creature icon
-        local targets = EntityGetInRadius( x, y, 30 )
-        for i,v in ipairs( targets ) do
-            if ( v ~= player_id ) and ( EntityGetName( v ) == "creature_shift_ui_icon" ) then
-                local comp = EntityGetFirstComponent( v, "UIIconComponent" )
-                ComponentSetValue2( comp, "icon_sprite_file", ui_sprite_path )
-                x, y = EntityGetTransform( v )
+        local targets = EntityGetWithTag( "player_unit" )
+        for k=1,#targets do
+            local v = targets[k]
+            local children = EntityGetAllChildren(v) or {}
+            for l=1,#children do
+                local j = children[l]
+                if EntityGetName(j) == "creature_shift_ui_icon" then
+                    local uicomp = EntityGetFirstComponent( j, "UIIconComponent" )
+                    ComponentSetValue2( uicomp, "icon_sprite_file", ui_sprite_path )
+                end
             end
         end
 

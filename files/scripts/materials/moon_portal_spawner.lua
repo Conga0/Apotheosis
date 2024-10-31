@@ -5,7 +5,7 @@ local x, y = EntityGetTransform( entity_id )
 local tbl = EntityGetInRadiusWithTag( x, y, 400, "cast_share" ) or {}
 
 if #tbl < 1 then
-    local filepath = "mods/apotheosis/files/entities/buildings/moon_portal.xml"
+    local filepath = "mods/Apotheosis/files/entities/buildings/moon_portal.xml"
     local eid = EntityLoad( filepath, x, y - 20 )
 
     --Change portal graphics if it's the sun
@@ -14,7 +14,7 @@ if #tbl < 1 then
         ComponentSetValue2(comp,"name","$teleport_portal_sun")
 
         comp = EntityGetComponentIncludingDisabled(eid,"SpriteParticleEmitterComponent")
-        ComponentSetValue2(comp[1],"sprite_file","mods/apotheosis/files/particles/orangewhirl_$[1-8].png")
+        ComponentSetValue2(comp[1],"sprite_file","mods/Apotheosis/files/particles/orangewhirl_$[1-8].png")
         ComponentSetValue2(comp[2],"sprite_file","data/particles/fire_falling.xml")
         ComponentSetValue2(comp[2],"randomize_rotation",0,0)
         ComponentSetValue2(comp[2],"randomize_angular_velocity",0,0)

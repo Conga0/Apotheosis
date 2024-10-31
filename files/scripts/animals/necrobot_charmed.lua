@@ -19,7 +19,7 @@ for i,v in ipairs( targets ) do
 		end
 		
 		if found == false then
-			local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_respawn_temporary.xml", x, y)
+			local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_respawn_temporary.xml", x, y)
 			EntityAddChild(v,c)
 		end
 	end

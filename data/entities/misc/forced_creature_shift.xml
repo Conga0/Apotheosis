@@ -1,0 +1,12 @@
+<Entity>
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<LuaComponent 
+	    script_source_file="mods/Apotheosis/files/scripts/magic/effect_redstone_fever_03.lua"
+	    execute_every_n_frame="6"
+		remove_after_executed="1"
+	></LuaComponent>
+
+</Entity>

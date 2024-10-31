@@ -42,7 +42,7 @@ do local v = targets[k];
 		if valid == true then
 			local comp = EntityGetFirstComponentIncludingDisabled(v,"SpriteStainsComponent")
 			if comp ~= nil then
-				local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_status_urine.xml", pos_x, pos_y)
+				local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_status_urine.xml", pos_x, pos_y)
 				EntityAddChild(v,c)
 			end
 		end

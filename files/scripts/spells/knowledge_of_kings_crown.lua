@@ -8,4 +8,4 @@ local sprite = math.floor(now/12)%8+1			-- strange mysic numbers
 ComponentSetValue2(spec, "randomize_position", offset_x, offset_y, offset_x , offset_y)
 ComponentSetValue2(spec, "rotation", angle)
 -- Due to SPEC Haxx I need a different sprite for each frame I manually animate
-ComponentSetValue2(spec, "sprite_file", table.concat{"mods/apotheosis/files/ui_gfx/gun_actions/knowledge_extras/knowledge_of_kings_crown_", sprite, ".xml"})
+ComponentSetValue2(spec, "sprite_file", table.concat{"mods/Apotheosis/files/ui_gfx/gun_actions/knowledge_extras/knowledge_of_kings_crown_", sprite, ".xml"})

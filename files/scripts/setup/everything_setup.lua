@@ -1,5 +1,5 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
 ----Boosts Health of various in-world creatures
 
@@ -114,7 +114,7 @@ do --Reduces the NG+ count of each biome's enemy pool by 1
     "clouds",           --Cloudscapes
     "hills",            --Hills, aka forest.
   }
-  local appendpath ="mods/apotheosis/files/scripts/setup/enemy_appends_everything.lua"
+  local appendpath ="mods/Apotheosis/files/scripts/setup/enemy_appends_everything.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
@@ -132,11 +132,11 @@ do --Reduces the NG+ count of each biome's enemy pool by 1 (modded)
     "lava_excavation",  --Core Mines
     "sunken_cave",  --Sunken Cavern
   }
-  local appendpath ="mods/apotheosis/files/scripts/setup/enemy_appends_everything.lua"
+  local appendpath ="mods/Apotheosis/files/scripts/setup/enemy_appends_everything.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
-    local biomepath = table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
+    local biomepath = table.concat({"mods/Apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
     ModLuaFileAppend(biomepath, appendpath)
   end
 end
@@ -171,7 +171,7 @@ do --Remove fungal & creature shift icons to avoid ui clog
   content = content:gsub("\"lava\"", "\"apotheosis_magic_liquid_moon_portal\"")
   ModTextFileSetContent(path, content)
 
-  local path = "mods/apotheosis/files/scripts/magic/creature_shift_file.lua"
+  local path = "mods/Apotheosis/files/scripts/magic/creature_shift_file.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("if add_icon then", "if add_icon and 1 == 2 then")
   content = content:gsub("\"bubbles/freezing_liquid/bubble_liquid\", \"fish\", \"forsaken_eye\"", "\"bubbles/freezing_liquid/bubble_liquid\", \"forsaken_eye\"")
@@ -182,7 +182,7 @@ end
 do --Heretic drops the plane radar perk for convinience
   local path = "data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_death.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("%-%-EntityLoad%( \"mods/apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)", "do dofile_once(\"data/scripts/perks/perk.lua\") perk_spawn( pos_x, pos_y, \"APOTHEOSIS_PLANE_RADAR\" ) EntityLoad( \"mods/apotheosis/files/entities/items/pickups/perk_copyspells.xml\", pos_x, pos_y - 16) end")
+  content = content:gsub("%-%-EntityLoad%( \"mods/Apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)", "do dofile_once(\"data/scripts/perks/perk.lua\") perk_spawn( pos_x, pos_y, \"APOTHEOSIS_PLANE_RADAR\" ) EntityLoad( \"mods/Apotheosis/files/entities/items/pickups/perk_copyspells.xml\", pos_x, pos_y - 16) end")
   ModTextFileSetContent(path, content)
 end
 
@@ -199,41 +199,41 @@ do --Disable winning at mountain altar & the work
 
   local path = "data/entities/animals/boss_centipede/boss_centipede_update.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("\"data/entities/buildings/teleport_ending_victory_delay%.xml\"", "\"mods/apotheosis/files/entities/spawners/everything_kolmiloot.xml\"")
+  content = content:gsub("\"data/entities/buildings/teleport_ending_victory_delay%.xml\"", "\"mods/Apotheosis/files/entities/spawners/everything_kolmiloot.xml\"")
   ModTextFileSetContent(path, content)
 end
 
 do --Portal displays the Divine Radar icon to indicate the perk is required to progress
-  local path = "mods/apotheosis/files/entities/buildings/gateway_base.xml"
+  local path = "mods/Apotheosis/files/entities/buildings/gateway_base.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("portal.png", "portal_everything.png")
   ModTextFileSetContent(path, content)
 end
 
 do --Artifically secret seed game flag is added
-  local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+  local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_everything\"%)")
   ModTextFileSetContent(path, content)
 end
 
 do --Update the Hiisi Shop to always spawn a water stone & update the aesthete spawner to look for a water stone, and also remove the Volcanic Chest from the teleporter room so you HAVE to kill aesthete for them
-  local path = "mods/apotheosis/files/scripts/biomes/hiisi_shop_populator.lua"
+  local path = "mods/Apotheosis/files/scripts/biomes/hiisi_shop_populator.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("brimstone", "waterstone")
   ModTextFileSetContent(path, content)
 
-  local path = "mods/apotheosis/files/scripts/buildings/fire_lukki_brimstone_populator.lua"
+  local path = "mods/Apotheosis/files/scripts/buildings/fire_lukki_brimstone_populator.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("/boss_fire_lukki/", "/boss_water_lukki/")
   ModTextFileSetContent(path, content)
 
-  local path = "mods/apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml"
+  local path = "mods/Apotheosis/files/entities/buildings/fire_lukki_brimstone_detector.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"brimstone\"", "\"waterstone\"")
   ModTextFileSetContent(path, content)
 
-  local path = "mods/apotheosis/files/biome/special/_pixel_scenes.xml"
+  local path = "mods/Apotheosis/files/biome/special/_pixel_scenes.xml"
   local content = ModTextFileGetContent(path)
   content = content:gsub("mods/Apotheosis/files/entities/items/pickups/chest_volcanic%.xml", "")
   ModTextFileSetContent(path, content)
@@ -269,9 +269,9 @@ do --Swaps the lake into a lava lake
   content = content:gsub("essenceroom_submerged", "essenceroom_submerged_lava")
   ModTextFileSetContent(path, content)
 
-  local path = "mods/apotheosis/files/biome/special/_pixel_scenes.xml"
+  local path = "mods/Apotheosis/files/biome/special/_pixel_scenes.xml"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("data/biome_impl/spliced/lake_statue%.xml", "mods/apotheosis/files/biome_impl/spliced/lake_statue_lava.xml")
+  content = content:gsub("data/biome_impl/spliced/lake_statue%.xml", "mods/Apotheosis/files/biome_impl/spliced/lake_statue_lava.xml")
   ModTextFileSetContent(path, content)
 end
 
@@ -293,7 +293,7 @@ do
   }
 
   for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/biome/special/",overrides[k]}))
+    local content = ModTextFileGetContent(table.concat({"mods/Apotheosis/files/biome/special/",overrides[k]}))
     ModTextFileSetContent(table.concat({"data/biome/",overrides[k]}),content)
     --[[
     if k == 2 then

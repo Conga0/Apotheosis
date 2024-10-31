@@ -1,0 +1,47 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/worms/worm_maggot/maggot_tiny_tail.png" 
+  offset_x="72" 
+  offset_y="50" 
+  default_animation="exposed">
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="100" 
+    frame_wait="0.082" 
+    frame_width="96" 
+    frames_per_row="4" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" 
+    >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="100" 
+    frame_wait="0.082" 
+    frame_width="96" 
+    frames_per_row="4" 
+    name="eat" 
+    pos_x="0" 
+    pos_y="0" 
+    >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="100" 
+    frame_wait="0.082" 
+    frame_width="96" 
+    frames_per_row="6" 
+    name="exposed" 
+    pos_x="0" 
+    pos_y="101" 
+    >
+
+  </RectAnimation>
+
+</Sprite>
+

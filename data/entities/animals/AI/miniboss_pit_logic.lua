@@ -96,7 +96,7 @@ if ( state == 1 ) then
 	end
 elseif ( state == 7 ) then
 	if ( Random( 1, 10 ) == 5 ) or ( 1 == 1 ) then
-		local spells = { "mods/apotheosis/files/entities/projectiles/orb_wands", "data/entities/projectiles/orb_neutral", "mods/apotheosis/files/entities/projectiles/orb_manadrain", "data/entities/projectiles/orb_dark" }
+		local spells = { "mods/Apotheosis/files/entities/projectiles/orb_wands", "data/entities/projectiles/orb_neutral", "mods/Apotheosis/files/entities/projectiles/orb_manadrain", "data/entities/projectiles/orb_dark" }
 		local rnd = Random( 1, #spells )
 		local path = spells[rnd] .. ".xml"
 		

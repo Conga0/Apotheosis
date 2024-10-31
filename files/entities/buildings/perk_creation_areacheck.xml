@@ -12,7 +12,7 @@
 	</MaterialAreaCheckerComponent>
 
 	<LuaComponent
-		script_material_area_checker_failed="mods/apotheosis/files/scripts/buildings/perk_creation_check_for_leaks.lua" >
+		script_material_area_checker_failed="mods/Apotheosis/files/scripts/buildings/perk_creation_check_for_leaks.lua" >
 	</LuaComponent>
 
 </Entity>

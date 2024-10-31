@@ -1,7 +1,7 @@
 
 local entity_id = GetUpdatedEntityID()
 local pos_x,pos_y = EntityGetTransform(entity_id)
-EntityLoad("mods/apotheosis/files/entities/particles/circle_king.xml", pos_x, pos_y)
+EntityLoad("mods/Apotheosis/files/entities/particles/circle_king.xml", pos_x, pos_y)
 
 function HintCheck(x,y)
     local optsx = {21250,-21250,18690,-20735}

@@ -52,7 +52,7 @@
 	<UIIconComponent
 		name="$perk_apotheosis_curse_mana_reveal"
 		description="$perk_apotheosis_curse_mana_description"
-		icon_sprite_file="mods/apotheosis/files/ui_gfx/status_indicators/curse_mana.png"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/curse_mana.png"
 		is_perk="1"
 		display_above_head="0"
 		display_in_hud="1"

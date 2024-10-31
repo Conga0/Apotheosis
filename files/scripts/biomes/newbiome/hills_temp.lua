@@ -205,7 +205,7 @@ function init(x, y, w, h)
 	parallel_check( x, y )
 
 	if GameHasFlagRun("apotheosis_temp_monolith_spawned") == false then
-		EntityLoad("mods/apotheosis/files/entities/buildings/forest_monolith_spawner.xml", -21650, -210)
+		EntityLoad("mods/Apotheosis/files/entities/buildings/forest_monolith_spawner.xml", -21650, -210)
 		GameAddFlagRun("apotheosis_temp_monolith_spawned")
 	end
 	

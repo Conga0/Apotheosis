@@ -6,7 +6,7 @@
 	<BiomeTrackerComponent />
 	
 	<LuaComponent
-		script_biome_entered="mods/apotheosis/files/scripts/magic/biome_effects.lua"
+		script_biome_entered="mods/Apotheosis/files/scripts/magic/biome_effects.lua"
 		execute_every_n_frame="-1"
 	/>
 

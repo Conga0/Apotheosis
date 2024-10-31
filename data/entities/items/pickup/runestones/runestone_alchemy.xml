@@ -1,7 +1,7 @@
 <Entity>
-	<Base file="mods/apotheosis/files/entities/items/pickups/runestones/runestone_base_apo.xml">
+	<Base file="mods/Apotheosis/files/entities/items/pickups/runestones/runestone_base_apo.xml">
 		<PhysicsImageShapeComponent 
-			image_file="mods/apotheosis/files/items_gfx/runestones/runestone_alchemy.png"
+			image_file="mods/Apotheosis/files/items_gfx/runestones/runestone_alchemy.png"
 			>
 		</PhysicsImageShapeComponent>
 
@@ -13,7 +13,7 @@
   
 		<ItemComponent
 			item_name="$item_apotheosis_runestone_alchemy_name"
-			ui_sprite="mods/apotheosis/files/ui_gfx/items/runestone_alchemy.png"
+			ui_sprite="mods/Apotheosis/files/ui_gfx/items/runestone_alchemy.png"
 			ui_description="$itemdesc_runestone"
 			>
 		</ItemComponent>
@@ -29,7 +29,7 @@
 		</AbilityComponent>
 	
 		<SpriteComponent
-			image_file="mods/apotheosis/files/items_gfx/in_hand/runestone_alchemy.png"
+			image_file="mods/Apotheosis/files/items_gfx/in_hand/runestone_alchemy.png"
 			>
 		</SpriteComponent>
   
@@ -66,7 +66,7 @@
 	
 		<LuaComponent
 			_tags="activate,enabled_in_world"
-			script_source_file="mods/apotheosis/files/scripts/items/runestones/runestone_alchemy.lua"
+			script_source_file="mods/Apotheosis/files/scripts/items/runestones/runestone_alchemy.lua"
 			execute_every_n_frame="40"
 			_enabled="0"
 			>

@@ -54,7 +54,7 @@ function spawn_wands(x, y)
 end
 
 function init( x, y, w, h )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/ant_pit_top.png", "", x, y - 40, "", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/ant_pit_top.png", "", x, y - 40, "", true )
 end
 
 function spawn_metportal( x, y )

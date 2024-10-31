@@ -20,7 +20,7 @@
     <PhysicsImageShapeComponent 
         body_id="1"
         centered="1"
-        image_file="mods/apotheosis/files/items_gfx/toiletpaper_fragment.png"
+        image_file="mods/Apotheosis/files/items_gfx/toiletpaper_fragment.png"
         material="item_box2d"
         >
     </PhysicsImageShapeComponent>
@@ -59,7 +59,7 @@
         _enabled="0"
         offset_x="4"
         offset_y="4"
-        image_file="mods/apotheosis/files/items_gfx/toiletpaper_fragment.png"
+        image_file="mods/Apotheosis/files/items_gfx/toiletpaper_fragment.png"
         >
     </SpriteComponent>
 
@@ -69,7 +69,7 @@
         max_child_items="0"
         is_pickable="1"
         is_equipable_forced="1"
-        ui_sprite="mods/apotheosis/files/items_gfx/toiletpaper_fragment.png"
+        ui_sprite="mods/Apotheosis/files/items_gfx/toiletpaper_fragment.png"
         ui_description="$item_apotheosis_toiletpaper_fragment_desc"
         preferred_inventory="QUICK"
         >

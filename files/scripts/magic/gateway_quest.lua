@@ -5,7 +5,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 function Activate(gate_id)
     local comps = EntityGetComponentIncludingDisabled(gate_id,"SpriteComponent")
     EntitySetComponentIsEnabled(gate_id,comps[3],true)
-    EntityLoad("mods/apotheosis/files/biome_impl/magicegg/portal_open_emitter.xml", pos_x, pos_y)
+    EntityLoad("mods/Apotheosis/files/biome_impl/magicegg/portal_open_emitter.xml", pos_x, pos_y)
 end
 
 -- Conga: 
@@ -46,7 +46,7 @@ else
     for k=1,#radar_stones
     do local v = radar_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" then
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" then
 	    stone_id = v
 	    break
 	end

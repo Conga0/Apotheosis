@@ -10,7 +10,7 @@
 	<UIIconComponent
 		name="$status_apotheosis_dry_spell_name"
 		description="$status_apotheosis_dry_spell_desc"
-		icon_sprite_file="mods/apotheosis/files/ui_gfx/status_indicators/dry_spell.png"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/dry_spell.png"
 		is_perk="0"
 		display_above_head="1"
 		display_in_hud="1"
@@ -21,7 +21,7 @@
 		execute_on_added = "0"
 		execute_on_removed="1"
 		execute_every_n_frame="-1"
-		script_source_file = "mods/apotheosis/files/scripts/projectiles/mass_status_dry_reenable.lua"
+		script_source_file = "mods/Apotheosis/files/scripts/projectiles/mass_status_dry_reenable.lua"
 		execute_times="-1"
 		>
 	</LuaComponent>

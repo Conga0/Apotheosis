@@ -101,5 +101,20 @@
 		>
 	</LuaComponent>
 
+	<InteractableComponent
+		_tags="enabled_in_world,enabled_if_charmed"
+		_enabled="1"
+		name="longleg_love"
+		ui_text="$ui_longleg_love"
+        exclusivity_group="1"
+	></InteractableComponent>
+	
+	<LuaComponent
+		script_interacting="mods/Apotheosis/files/scripts/animals/cat_pet.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/cat_cooldown.lua"
+		execute_every_n_frame="60"
+		>
+	</LuaComponent>
+
 </Entity>
 

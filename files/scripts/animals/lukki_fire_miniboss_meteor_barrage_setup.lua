@@ -11,6 +11,6 @@ local plyr_x, plyr_y = EntityGetTransform(player)
 local did_hit = RaytraceSurfaces(pos_x, pos_y, plyr_x, plyr_y)
   
 if not did_hit then
-    local cid = EntityLoad( "mods/apotheosis/files/entities/misc/lukki_fire_miniboss_meteor_barrage_setup.xml", pos_x, pos_y )
+    local cid = EntityLoad( "mods/Apotheosis/files/entities/misc/lukki_fire_miniboss_meteor_barrage_setup.xml", pos_x, pos_y )
     EntityAddChild( entity_id, cid )
 end

@@ -98,7 +98,7 @@
 			attack_ranged_offset_y="-2"
 			can_fly="1"  
 			can_walk="0"
-			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/healshot_ailment.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/support_bullet_heal.xml"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="120"
 			attack_ranged_frames_between="100"

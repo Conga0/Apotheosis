@@ -83,7 +83,7 @@ function GenerateMagicCatalyst()
     local chance = Random(1,100)
 
     do -- Apply random materials to the recipe file
-        local path = "mods/apotheosis/files/scripts/materials/secret_materials.xml"
+        local path = "mods/Apotheosis/files/scripts/materials/secret_materials.xml"
         local content = ModTextFileGetContent(path)
         content = content:gsub("random_material_01",mat_1)
         content = content:gsub("random_material_02",mat_2)
@@ -93,7 +93,7 @@ function GenerateMagicCatalyst()
     end
 
     if HasFlagPersistent("moon_is_sun") then -- Going to put this in here too, updates the Moon Portal Potion's data if the sun exists
-        local path = "mods/apotheosis/files/scripts/materials/custom_materials.xml"
+        local path = "mods/Apotheosis/files/scripts/materials/custom_materials.xml"
         local content = ModTextFileGetContent(path)
         content = content:gsub("mods/Apotheosis/files/materials_gfx/material_sky.png","mods/Apotheosis/files/materials_gfx/material_sun.png")
         content = content:gsub("80aabfcd","80f1a329")

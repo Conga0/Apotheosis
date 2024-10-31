@@ -32,20 +32,20 @@
 	</VariableStorageComponent>
 
 <LuaComponent
-      script_source_file="mods/apotheosis/files/scripts/animators/bloodlink_link_effect.lua"
+      script_source_file="mods/Apotheosis/files/scripts/animators/bloodlink_link_effect.lua"
       execute_every_n_frame="15"
       >
 </LuaComponent>
 
 	<!-- used for bloodlink_link_effect.lua -->
 	<Entity tags="arm_fx">
-		<Base file="mods/apotheosis/files/entities/animators/bloodlink_fx.xml" />
+		<Base file="mods/Apotheosis/files/entities/animators/bloodlink_fx.xml" />
 	</Entity>
 	<Entity tags="arm_fx">
-		<Base file="mods/apotheosis/files/entities/animators/bloodlink_fx.xml" />
+		<Base file="mods/Apotheosis/files/entities/animators/bloodlink_fx.xml" />
 	</Entity>
 	<Entity tags="arm_fx">
-		<Base file="mods/apotheosis/files/entities/animators/bloodlink_fx.xml" />
+		<Base file="mods/Apotheosis/files/entities/animators/bloodlink_fx.xml" />
 	</Entity>
 
 	<UIIconComponent

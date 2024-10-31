@@ -1,5 +1,5 @@
 
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 local EZWand = dofile_once("mods/Apotheosis/lib/EZWand/EZWand.lua")
 local entity_id = GetUpdatedEntityID()
 local root = EntityGetRootEntity(entity_id)
@@ -28,7 +28,7 @@ if GameGetFrameNum() >= cooldown_frame then
             local mana = wand.mana
             if (mana > manacost) then
 
-                GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("mods/apotheosis/files/entities/projectiles/deck/targetter.xml", x, y))
+                GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/targetter.xml", x, y))
                 wand.mana = mana - manacost
                 ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
                 if HasFlagPersistent(actionid) == false then
@@ -41,7 +41,7 @@ if GameGetFrameNum() >= cooldown_frame then
                 end
                 if uses <= 0 then
                     GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/action_consumed", x, y )
-                    EntityLoad("mods/apotheosis/files/entities/particles/spell_fades/targetter_fade.xml", x, y )
+                    EntityLoad("mods/Apotheosis/files/entities/particles/spell_fades/targetter_fade.xml", x, y )
                 end
             else
                 GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", x, y );

@@ -128,7 +128,7 @@ function spawn_potions( x, y ) end
 function init( x, y, w, h )
 	spawn_altar_top(x, y-40+300, false)
 	LoadPixelScene( "data/biome_impl/temple/altar.png", "data/biome_impl/temple/altar_visual.png", x, y, "data/biome_impl/temple/altar_background.png", true )
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/upsidedown/temple/altar_top_solid.png", "", x, y-40, "", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/upsidedown/temple/altar_top_solid.png", "", x, y-40, "", true )
 end
 
 function spawn_hp( x, y )

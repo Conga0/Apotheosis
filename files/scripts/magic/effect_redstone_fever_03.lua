@@ -24,4 +24,4 @@ end
 -- shift creatures
 creature_shift(entity_id, x, y, false)
 
-EntityLoad("mods/apotheosis/files/entities/misc/effect_trip_red_end.xml")
+EntityLoad("mods/Apotheosis/files/entities/misc/effect_trip_red_end.xml")

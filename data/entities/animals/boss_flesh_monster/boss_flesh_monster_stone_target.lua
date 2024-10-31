@@ -15,10 +15,10 @@ local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,145000,"poopstone") 
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
 		stone_id = v
 		break
-	elseif ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" and EntityGetParent(v) == 0 then
+	elseif ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" and EntityGetParent(v) == 0 then
 		stone_id = v
 		purified = true
 		break
@@ -70,7 +70,7 @@ if parent <= 0 then
 	GameAddFlagRun( "apotheosis_miniboss_boss_flesh_monster_stone" )
 	local luacomps = EntityGetComponentIncludingDisabled(stone_id, "LuaComponent") or {}
 	for i = 1, #luacomps do
-            if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/stone_heretic_destroyed.lua" or ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_destroyed.lua" then
+            if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_destroyed.lua" or ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/radar_stone_destroyed.lua" then
                     EntityRemoveComponent( stone_id, luacomps[i] )
             end
 	end

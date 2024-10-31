@@ -1,0 +1,56 @@
+<Entity name="apotheosis_wounded" tags="curse">
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<!--We give the worm attractor effect here to improve tiny-tiny worm behaviour in the meat realm biome-->
+	<GameEffectComponent
+	_tags="effect_worm,effect_worm_attractor"
+	effect="WORM_ATTRACTOR"
+	frames="-1"
+    >
+	</GameEffectComponent >
+	
+	<LifetimeComponent
+		lifetime="-1"
+		>
+	</LifetimeComponent>
+
+	<UIIconComponent
+		name="$curse_apotheosis_meat_name"
+		description="$curse_apotheosis_meat_desc"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/perk_icons/curse_meat.png"
+		is_perk="1"
+		display_above_head="0"
+		display_in_hud="0"
+		>
+	</UIIconComponent>
+
+	<VariableStorageComponent
+		_tags="effect_curse_wither_type"
+		value_string="healing"
+		>
+	</VariableStorageComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/immunity_temp_start.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/noheal_end.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
+    
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/magic/curse_meat.lua"
+		execute_every_n_frame="60"
+		remove_after_executed="0"
+		>
+	</LuaComponent>
+	
+</Entity>

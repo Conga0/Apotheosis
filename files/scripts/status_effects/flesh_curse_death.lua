@@ -40,9 +40,9 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 			else
 				EntityLoad( "data/entities/animals/secret/lukki_tentacle_hungry.xml", pos_x, pos_y )
 			end
-			EntityLoad( "mods/apotheosis/files/entities/misc/flesh_curse_explosion.xml", pos_x, pos_y )
+			EntityLoad( "mods/Apotheosis/files/entities/misc/flesh_curse_explosion.xml", pos_x, pos_y )
 		else
-			EntityLoad( "mods/apotheosis/files/entities/misc/flesh_curse_explosion_small.xml", pos_x, pos_y )
+			EntityLoad( "mods/Apotheosis/files/entities/misc/flesh_curse_explosion_small.xml", pos_x, pos_y )
 		end
 	end
 	

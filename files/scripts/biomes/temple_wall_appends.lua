@@ -20,7 +20,7 @@ function spawn_altar_top(x, y, is_solid)
 		elseif (randomtop == 15) then
 			LoadPixelScene( "data/biome_impl/temple/altar_top_lava.png", file_visual, x, y-40, "", true )
 		elseif (randomtop == 20) then
-			LoadPixelScene( "mods/apotheosis/files/biome_impl/temple/altar_top_rideshare.png", "", x, y-40, "", true )
+			LoadPixelScene( "mods/Apotheosis/files/biome_impl/temple/altar_top_rideshare.png", "", x, y-40, "", true )
 		else
 			LoadPixelScene( "data/biome_impl/temple/altar_top.png", file_visual, x, y-40, "", true )
 		end

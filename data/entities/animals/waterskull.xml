@@ -43,7 +43,7 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/waterskull.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/waterskull.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>

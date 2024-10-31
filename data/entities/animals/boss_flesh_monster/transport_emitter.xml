@@ -3,7 +3,7 @@
   	<ParticleEmitterComponent
 		_enabled="1"
 		emitted_material_name="spark_red_bright"
-		image_animation_file="mods/apotheosis/files/particles/image_emitters/boss_flesh_monster_transport.png"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/boss_flesh_monster_transport.png"
 		offset.x="0"
 		offset.y="0"
 		gravity.y="0.0"

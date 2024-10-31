@@ -20,7 +20,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 		id = ComponentGetValue( comp, "value_string" )
 	end)
 	
-	local ui_icon = "mods/apotheosis/files/ui_gfx/essences/polymorphine.png"
+	local ui_icon = "mods/Apotheosis/files/ui_gfx/essences/polymorphine.png"
 	local sprite_icon = "data/items_gfx/essences/" .. id .. ".png"
 	
 	-- add ui icon etc

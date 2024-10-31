@@ -9,7 +9,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		if ( Random( 1, 8 ) == 8 ) then
 			EntityLoad( "data/entities/animals/lukki_fire_tiny.xml", pos_x, pos_y )
 		end
-		EntityLoad( "mods/apotheosis/files/entities/projectiles/fireball_explosion.xml", pos_x, pos_y )
+		EntityLoad( "mods/Apotheosis/files/entities/projectiles/fireball_explosion.xml", pos_x, pos_y )
 		EntityKill( entity_id )
 	end
 end

@@ -17,7 +17,7 @@
 	  	></ItemComponent>
 
 		<LuaComponent 
-			script_source_file="mods/apotheosis/files/scripts/items/potion_corrupted.lua"
+			script_source_file="mods/Apotheosis/files/scripts/items/potion_corrupted.lua"
 		></LuaComponent>
 		
 		<LuaComponent 

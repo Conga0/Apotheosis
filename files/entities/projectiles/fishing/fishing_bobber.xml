@@ -128,7 +128,7 @@
 	<!--Actually handles the fishing-->
 	<LuaComponent
 		_tags="enabled_in_hand"
-		script_source_file="mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber.lua"
+		script_source_file="mods/Apotheosis/files/entities/projectiles/fishing/fishing_bobber.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>
@@ -140,7 +140,7 @@
 
 	<LuaComponent
 		_tags="enabled_in_hand"
-		script_material_area_checker_success="mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
+		script_material_area_checker_success="mods/Apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
 		>
 	</LuaComponent>
 
@@ -164,7 +164,7 @@
 
 	<LuaComponent
 		_tags="enabled_in_hand"
-		script_material_area_checker_success="mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
+		script_material_area_checker_success="mods/Apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
 		>
 	</LuaComponent>
 
@@ -189,7 +189,7 @@
 
 	<LuaComponent
 		_tags="enabled_in_hand"
-		script_material_area_checker_success="mods/apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
+		script_material_area_checker_success="mods/Apotheosis/files/entities/projectiles/fishing/fishing_bobber_check.lua"
 		>
 	</LuaComponent>
 

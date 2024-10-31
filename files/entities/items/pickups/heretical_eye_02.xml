@@ -20,7 +20,7 @@
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_heretical_eye_name"
 		ui_description="$item_apotheosis_heretical_eye_desc"
-		ui_sprite="mods/apotheosis/files/ui_gfx/items/heretical_eye.png"
+		ui_sprite="mods/Apotheosis/files/ui_gfx/items/heretical_eye.png"
 		is_pickable="1"
 		preferred_inventory="FULL"
 		uses_remaining="-1" 
@@ -80,7 +80,7 @@
 		_tags="enabled_in_world,enabled_in_hand"
 		offset_x="4"
 		offset_y="4"
-		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
+		image_file="mods/Apotheosis/files/items_gfx/heretical_eye.png"
 		z_index="0.5"
 		>
 	</SpriteComponent>
@@ -89,7 +89,7 @@
 		_tags="enabled_in_world,enabled_in_hand"
 		offset_x="4"
 		offset_y="4"
-		image_file="mods/apotheosis/files/items_gfx/heretical_eye_pupil.png"
+		image_file="mods/Apotheosis/files/items_gfx/heretical_eye_pupil.png"
 		z_index="-2"
 		>
 	</SpriteComponent>

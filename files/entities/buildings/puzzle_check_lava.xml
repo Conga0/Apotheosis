@@ -12,6 +12,6 @@
 	</MaterialAreaCheckerComponent>
 
 	<LuaComponent
-		script_material_area_checker_success="mods/apotheosis/files/scripts/buildings/puzzle_check_lava.lua" >
+		script_material_area_checker_success="mods/Apotheosis/files/scripts/buildings/puzzle_check_lava.lua" >
 	</LuaComponent>
 </Entity>

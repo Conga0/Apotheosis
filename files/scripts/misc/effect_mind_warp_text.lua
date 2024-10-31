@@ -57,11 +57,11 @@ end
 
 local function get_img(ch)
   local t = {
-    ["!"] = "mods/apotheosis/files/fonts/flesh_big/exclamation.png",
-    ["'"] = "mods/apotheosis/files/fonts/flesh_big/apostrophe.png",
-    ["."] = "mods/apotheosis/files/fonts/flesh_big/period.png",
+    ["!"] = "mods/Apotheosis/files/fonts/flesh_big/exclamation.png",
+    ["'"] = "mods/Apotheosis/files/fonts/flesh_big/apostrophe.png",
+    ["."] = "mods/Apotheosis/files/fonts/flesh_big/period.png",
   }
-  return t[ch] or ("mods/apotheosis/files/fonts/flesh_big/letter_%s.png"):format(ch)
+  return t[ch] or ("mods/Apotheosis/files/fonts/flesh_big/letter_%s.png"):format(ch)
 end
 
 -- Thank you ChatGPT for this perlin noise function that I don't understand at all :)

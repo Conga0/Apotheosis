@@ -19,19 +19,19 @@ local heretic_eyes = EntityGetWithTag("apotheosis_heretic") or {}
 for k=1,#heretic_eyes
 do local v = heretic_eyes[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
 	local luacomps = EntityGetComponent(v, "LuaComponent") or {}
 	for i = 1, #luacomps do
-    	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
+    	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
     		ComponentSetValue2( luacomps[i], "execute_every_n_frame", 300 )
     	    end
-    	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
+    	    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
     		EntityRemoveComponent( v, luacomps[i] )
     	    end
 	end
 	EntityAddComponent2(v, "LuaComponent", {
 	    _tags= "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_quiet",
-	    script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
+	    script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
 	    execute_every_n_frame=10,
 	}) 
 	end
@@ -41,7 +41,7 @@ local heretic_eyes = EntityGetInRadiusWithTag(pos_x,pos_y,48,"apotheosis_heretic
 for k=1,#heretic_eyes
 do local v = heretic_eyes[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/heretical_eye.png" and EntityGetParent(v) == 0 then
         local pos_x,pos_y = EntityGetTransform(v)
         EntityLoad( "data/entities/particles/particle_explosion/main_swirly_red_giga.xml", pos_x, pos_y )
 	local c = EntityGetAllChildren( v )

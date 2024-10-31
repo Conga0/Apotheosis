@@ -66,8 +66,8 @@ g_background_windows =
 	},
 	{
 		prob   			= 1.0,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/alcove_window_background.png",
-		entity_file 	= "mods/apotheosis/files/entities/buildings/alcove_window_glow_less.xml"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple/alcove_window_background.png",
+		entity_file 	= "mods/Apotheosis/files/entities/buildings/alcove_window_glow_less.xml"
 	},
 }
 
@@ -80,8 +80,8 @@ g_background_windows_round =
 	},
 	{
 		prob   			= 1.0,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/alcove_window_round_background.png",
-		entity_file 	= "mods/apotheosis/files/entities/buildings/alcove_window_glow_small.xml"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple/alcove_window_round_background.png",
+		entity_file 	= "mods/Apotheosis/files/entities/buildings/alcove_window_glow_small.xml"
 	},
 }
 
@@ -94,8 +94,8 @@ g_background_windows_small =
 	},
 	{
 		prob   			= 1.0,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/alcove_window_small_background.png",
-		entity_file 	= "mods/apotheosis/files/entities/buildings/alcove_window_glow_small_less.xml"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple/alcove_window_small_background.png",
+		entity_file 	= "mods/Apotheosis/files/entities/buildings/alcove_window_glow_small_less.xml"
 	},
 }
 
@@ -142,7 +142,7 @@ function load_background_window_small( x, y )
 end
 
 function spawn_trigger(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/buildings/flesh_boss_summon_den.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/flesh_boss_summon_den.xml", x, y )
 end
 
 function spawn_props3(x, y)
@@ -150,13 +150,13 @@ function spawn_props3(x, y)
 end
 
 function spawn_forge_check(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/buildings/evil_forge_item_check.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/evil_forge_item_check.xml", x, y )
 end
 
 function spawn_room1_check(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/buildings/evil_room1_check.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/evil_room1_check.xml", x, y )
 end
 
 function spawn_room2_check(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/buildings/evil_room2_check.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/evil_room2_check.xml", x, y )
 end

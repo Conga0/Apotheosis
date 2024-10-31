@@ -59,7 +59,7 @@
 	</AudioLoopComponent>
 
 	<LuaComponent
-	script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_empyrean.lua"
+	script_item_picked_up="mods/Apotheosis/files/entities/buildings/ending/portals/enter_plane_empyrean.lua"
 	>
 	</LuaComponent>
 </Entity>

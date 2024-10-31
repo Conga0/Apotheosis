@@ -1,6 +1,6 @@
 <Sprite 
   default_animation="stand" 
-  filename="mods/apotheosis/files/enemies_gfx/subentity/turret_plasma.png" 
+  filename="mods/Apotheosis/files/enemies_gfx/subentity/turret_plasma.png" 
   offset_x="6" 
   offset_y="7" >
 

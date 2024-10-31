@@ -19,7 +19,7 @@ for bp=1,#boss do
 	h_x, h_y = EntityGetTransform(heretic_id)
     	local spritecomps = EntityGetComponentIncludingDisabled(heretic_id, "SpriteComponent") or {}
     	for i = 1, #spritecomps do
-	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
+	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
 		EntityLoad("data/entities/animals/boss_flesh_monster/phase3/transport_emitter_flesh.xml", pos_x, pos_y)
 	    else
 		EntityLoad("data/entities/animals/boss_flesh_monster/transport_emitter.xml", pos_x, pos_y)
@@ -56,7 +56,7 @@ if (heretic_found == true) then
     local spritecomps = EntityGetComponentIncludingDisabled(heretic_id, "SpriteComponent") or {}
     if #spritecomps > 0 then
 	for i = 1, #spritecomps do
-	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
+	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
 		EntityLoad("data/entities/animals/boss_flesh_monster/phase3/transport_emitter_flesh.xml", ambush_x, ambush_y)
 	    else
 		EntityLoad("data/entities/animals/boss_flesh_monster/transport_emitter.xml", ambush_x, ambush_y)

@@ -108,7 +108,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_head.xml" 
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_head.xml" 
     rect_animation="eat" 
     next_rect_animation="eat"
     offset_x="46" 
@@ -121,7 +121,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml" 
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml" 
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -134,7 +134,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -147,7 +147,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -160,7 +160,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -173,7 +173,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -186,7 +186,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -199,7 +199,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -212,7 +212,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -225,7 +225,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -238,7 +238,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -251,7 +251,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -264,7 +264,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat" 
     offset_x="26.5" 
@@ -277,7 +277,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -290,7 +290,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -303,7 +303,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -316,7 +316,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -329,7 +329,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -342,7 +342,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -355,7 +355,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -368,7 +368,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -381,7 +381,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -394,7 +394,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -407,7 +407,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_middle.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 
@@ -420,7 +420,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/enemies_gfx/worms/big_endworm/endworm_tail.xml"
+    image_file="mods/Apotheosis/files/enemies_gfx/worms/big_endworm/endworm_tail.xml"
     rect_animation="eat" 
     next_rect_animation="eat"	
     offset_x="26.5" 

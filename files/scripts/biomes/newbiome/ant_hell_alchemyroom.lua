@@ -173,7 +173,7 @@ g_lamp =
 --------------------------------------
 
 function init(x, y, w, h)
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/ant_hell/alchemy_hidden.png", "mods/apotheosis/files/biome_impl/ant_hell/alchemy_hidden_visual.png", x, y, "mods/apotheosis/files/biome_impl/ant_hell/alchemy_hidden_background.png", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden.png", "mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_visual.png", x, y, "mods/Apotheosis/files/biome_impl/ant_hell/alchemy_hidden_background.png", true )
 end
 
 function spawn_lamp(x, y)
@@ -185,7 +185,7 @@ function spawn_skulls(x, y)
 end
 
 function spawn_teleporter(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/teleport_alchemy_secret_return.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/teleport_alchemy_secret_return.xml", x, y)
 end
 
 function spawn_potions(x, y)
@@ -194,7 +194,7 @@ function spawn_potions(x, y)
 	if rng == 1 then
 		EntityLoad( "mods/Apotheosis/files/entities/items/pickups/runestones/runestone_alchemy.xml", x, y )
 	elseif rng == 2 then
-		EntityLoad("mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml", x , y )
+		EntityLoad("mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml", x , y )
 	else
 		EntityLoad("data/entities/items/pickup/potion.xml", x, y)
 	end
@@ -203,7 +203,7 @@ end
 function spawn_spells(x, y)
 	CreateItemActionEntity( "APOTHEOSIS_MATERIAL_SLIME", x - 16, y )
 	CreateItemActionEntity( "APOTHEOSIS_MATERIAL_ALCOHOL", x + 16, y )
-	EntityLoad("mods/apotheosis/files/entities/items/books/book_omegadeath.xml", x + 150, y + 85) --Old Numbers: x32, y8
+	EntityLoad("mods/Apotheosis/files/entities/items/books/book_omegadeath.xml", x + 150, y + 85) --Old Numbers: x32, y8
 end
 
 function spawn_shopitem( x, y ) end

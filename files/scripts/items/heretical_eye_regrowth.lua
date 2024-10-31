@@ -7,7 +7,7 @@ local fully_acknowledge = true
 
 local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
 for i = 1, #luacomps do
-	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_destroyed.lua" then
+	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/heretical_eye_destroyed.lua" then
 		EntityRemoveComponent(entity_id, luacomps[i])
 	end
 end
@@ -53,11 +53,11 @@ if regrowthness > 7 and not GameHasFlagRun("apotheosis_heretalk_cynical") then
 	EntitySetComponentIsEnabled(eid,spritecomp,true)
 	local incarncomp = EntityGetComponentIncludingDisabled( eid, "VariableStorageComponent" )[3]
 	ComponentSetValue2( incarncomp, "value_string", "homesick")
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", home_x, home_y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", home_x, home_y)
 else
 	EntityLoad( "mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml", pos_x, pos_y )
 end
-EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", pos_x, pos_y)
+EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", pos_x, pos_y)
 
 if regrowthness > 0 then
 	if GameHasFlagRun("apotheosis_heretalk_id_" .. tostring(133 + regrowthness)) == false then

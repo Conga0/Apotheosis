@@ -58,7 +58,7 @@
     execute_every_n_frame="121" 
     execute_times="-1" 
     remove_after_executed="0" 
-    script_source_file="mods/apotheosis/files/scripts/buildings/firebugnest_lava_excavation.lua" >
+    script_source_file="mods/Apotheosis/files/scripts/buildings/firebugnest_lava_excavation.lua" >
   </LuaComponent>
 
   <PathFindingGridMarkerComponent 

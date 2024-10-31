@@ -37,28 +37,28 @@ end
 --[[
 local entityEvents = {
     --{lifetime_to_run_at,entity_filepath_to_load,frame_runtime (leave at 0 if default of 60)},
-    {0,"mods/apotheosis/files/entities/intro/1_1.xml"},
-    {60,"mods/apotheosis/files/entities/intro/1_2.xml"},
-    {120,"mods/apotheosis/files/entities/intro/1_1.xml"},
-    {180,"mods/apotheosis/files/entities/intro/1_2.xml"},
-    {240,"mods/apotheosis/files/entities/intro/1_3.xml"},
-    {300,"mods/apotheosis/files/entities/intro/1_4.xml"},
-    {360,"mods/apotheosis/files/entities/intro/1_5.xml"},
-    {420,"mods/apotheosis/files/entities/intro/1_6.xml"},
-    {480,"mods/apotheosis/files/entities/intro/2_1.xml"},
-    {540,"mods/apotheosis/files/entities/intro/2_2.xml"},
-    {600,"mods/apotheosis/files/entities/intro/2_3.xml"},
-    {660,"mods/apotheosis/files/entities/intro/2_4.xml"},
-    {720,"mods/apotheosis/files/entities/intro/2_5.xml"},
-    {780,"mods/apotheosis/files/entities/intro/2_6.xml"},
-    {840,"mods/apotheosis/files/entities/intro/2_7.xml"},
-    {900,"mods/apotheosis/files/entities/intro/3_1.xml"},
-    {960,"mods/apotheosis/files/entities/intro/3_2.xml"},
-    {1020,"mods/apotheosis/files/entities/intro/3_2.xml"},
-    {1080,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    {1140,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    {1200,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    --{1260,"mods/apotheosis/files/entities/intro/pan_down.xml"},
+    {0,"mods/Apotheosis/files/entities/intro/1_1.xml"},
+    {60,"mods/Apotheosis/files/entities/intro/1_2.xml"},
+    {120,"mods/Apotheosis/files/entities/intro/1_1.xml"},
+    {180,"mods/Apotheosis/files/entities/intro/1_2.xml"},
+    {240,"mods/Apotheosis/files/entities/intro/1_3.xml"},
+    {300,"mods/Apotheosis/files/entities/intro/1_4.xml"},
+    {360,"mods/Apotheosis/files/entities/intro/1_5.xml"},
+    {420,"mods/Apotheosis/files/entities/intro/1_6.xml"},
+    {480,"mods/Apotheosis/files/entities/intro/2_1.xml"},
+    {540,"mods/Apotheosis/files/entities/intro/2_2.xml"},
+    {600,"mods/Apotheosis/files/entities/intro/2_3.xml"},
+    {660,"mods/Apotheosis/files/entities/intro/2_4.xml"},
+    {720,"mods/Apotheosis/files/entities/intro/2_5.xml"},
+    {780,"mods/Apotheosis/files/entities/intro/2_6.xml"},
+    {840,"mods/Apotheosis/files/entities/intro/2_7.xml"},
+    {900,"mods/Apotheosis/files/entities/intro/3_1.xml"},
+    {960,"mods/Apotheosis/files/entities/intro/3_2.xml"},
+    {1020,"mods/Apotheosis/files/entities/intro/3_2.xml"},
+    {1080,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    {1140,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    {1200,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    --{1260,"mods/Apotheosis/files/entities/intro/pan_down.xml"},
 }
 
 for k=1,#entityEvents
@@ -75,7 +75,7 @@ end
 
 --Cutscene Initialization
 if runtime == 0 then
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_02.xml", pos_x, pos_y)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/ending_particles_02.xml", pos_x, pos_y)
 
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
     ConvertMaterialEverywhere(CellFactory_GetType( "spark_white_bright" ),CellFactory_GetType( "spark_red_bright" ))
@@ -100,14 +100,14 @@ if runtime == 0 then
         local bodycomp = EntityGetFirstComponentIncludingDisabled(heretic_id, "PhysicsBodyComponent")
 	EntitySetComponentIsEnabled(heretic_id,bodycomp,false)
 	EntitySetComponentIsEnabled(heretic_id,bodycomp,true)
-        EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", pos_x, pos_y - 5)
+        EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", pos_x, pos_y - 5)
         GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use", pos_x, pos_y )
         GameAddFlagRun("apotheosis_heretalk_end_upset")
     end
 
     local luacomps = EntityGetComponentIncludingDisabled(heretic_id, "LuaComponent") or {}
     for i = 1, #luacomps do
-        if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
+        if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/heretical_eye_dialogue.lua" then
                 ComponentSetValue2( luacomps[i], "execute_every_n_frame", 150 )
         end
     end
@@ -118,7 +118,7 @@ end
 --Gradually turn the sky red
 --And now also handle Heretic leaving the player's inv -S
 if runtime == 240 then
-    local sky = EntityLoad("mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.xml", pos_x, pos_y)
+    local sky = EntityLoad("mods/Apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.xml", pos_x, pos_y)
     EntityAddChild(player_id,sky)
 
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
@@ -134,17 +134,17 @@ if runtime == 240 then
 
     local luacomps = EntityGetComponentIncludingDisabled(heretic_id, "LuaComponent") or {}
     for i = 1, #luacomps do
-        if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_destroyed.lua" then
+        if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/heretical_eye_destroyed.lua" then
                 EntityRemoveComponent( heretic_id, luacomps[i] )
-        elseif ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye.lua" then
+        elseif ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/heretical_eye.lua" then
                 EntityRemoveComponent( heretic_id, luacomps[i] )
-    	elseif ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
+    	elseif ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua" then
     		EntityRemoveComponent( heretic_id, luacomps[i] )
     	end
     end
     EntityAddComponent2(heretic_id, "LuaComponent", {
 	_tags= "enabled_in_world, enabled_in_hand, enabled_in_inventory, graham_speech_quiet",
-	script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
+	script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
 	execute_every_n_frame=5,
     }) 
 
@@ -232,7 +232,7 @@ if runtime == 1480 then
     --Vanish the Heretic
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", h_x, h_y)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/eye_vanish_emitter.xml", h_x, h_y)
     EntityLoad("data/entities/animals/boss_flesh_monster/boss_flesh_monster_portal_brief_small.xml", h_x, h_y)
     EntityKill(heretic_id)
     GamePlaySound( "data/audio/Desktop/misc.bank", "misc/teleport_use_end", h_x, h_y )
@@ -269,7 +269,7 @@ if runtime == 820 then
     for k=1,#opts
     do local v = opts[k]
         local con_x, con_y = EntityGetTransform(v)
-        EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_02.xml", con_x, con_y)
+        EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/revenge_02.xml", con_x, con_y)
         EntityKill(v)
     end
 
@@ -277,16 +277,16 @@ if runtime == 820 then
 
     --Conga 21/11/2023: This looks goofy
     --Spoop 30/09/2024: Nuh-uh! Not anymore!
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/constellations/revenge_01.xml", pos_x, pos_y - 175)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/constellations/revenge_01.xml", pos_x, pos_y - 175)
 
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1]
     local h_x, h_y = EntityGetTransform(heretic_id)
 
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/brick_convert.xml", h_x, h_y)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/brick_convert.xml", h_x, h_y)
 end
 
 if runtime == 1120 then
-    local particle_id = EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_particles_02.xml", pos_x, pos_y)
+    local particle_id = EntityLoad("mods/Apotheosis/files/entities/buildings/ending/ending_particles_02.xml", pos_x, pos_y)
     local comp = EntityGetFirstComponentIncludingDisabled(particle_id,"HomingComponent")
     ComponentSetValue2(comp,"target_tag","player_unit")
     GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/midas/create", pos_x, pos_y )
@@ -332,7 +332,7 @@ end
 if runtime == 2080 then
     --Begin Apotheosis credits screen
     GameAddFlagRun("apotheosis_ending_heretic")
-    EntityLoad("mods/apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
+    EntityLoad("mods/Apotheosis/files/entities/buildings/ending/credits_horscht.xml", pos_x, pos_y)
     GameAddFlagRun("ending_game_completed")
     AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_03")
 end

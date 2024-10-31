@@ -18,7 +18,7 @@ if ( c ~= nil ) then
 end
 
 if ( current > 0 ) and ( vcomp ~= 0 ) then
-	if ( current <= 21 ) then
+	if ( current <= 18 ) then
 		local ch = EntityGetAllChildren( entity_id )
 		local i_ = 0
 		
@@ -30,7 +30,7 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
 					
 					if ( i_ == current ) then
 						local px,py = EntityGetTransform( v )
-						shoot_projectile( entity_id, "data/entities/animals/maggot_tiny_reworked/orb.xml", px, py, 0, 0 )
+						shoot_projectile( entity_id, "data/entities/animals/maggot_tiny/orb.xml", px, py, 0, 0 )
 						break
 					end
 				end
@@ -39,7 +39,7 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
 	end
 	
 	current = current + 1
-	if ( current > 33 ) then
+	if ( current > 38 ) then
 		current = 1
 	end
 	

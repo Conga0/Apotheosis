@@ -14,7 +14,7 @@ for k=1,6 do
     local vel_x = math.cos( angle ) * length
     local vel_y = 0 - math.sin( angle ) * length
 
-    shoot_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/aquamine_slowhome.xml", pos_x, pos_y, vel_x, vel_y )
+    shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/aquamine_slowhome.xml", pos_x, pos_y, vel_x, vel_y )
 end
 
-EntityLoad("mods/apotheosis/files/entities/particles/circle_fast_blue.xml", pos_x, pos_y)
+EntityLoad("mods/Apotheosis/files/entities/particles/circle_fast_blue.xml", pos_x, pos_y)

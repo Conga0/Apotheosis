@@ -244,7 +244,7 @@ local apotheosis_spellappends = {
         price = 300,
         mana = 50, 
         max_uses    = 3, 
-        custom_xml_file = "mods/apotheosis/files/entities/misc/custom_cards/bomb_giga.xml",
+        custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/bomb_giga.xml",
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/bomb_giga.xml")
             c.fire_rate_wait = c.fire_rate_wait + 140
@@ -323,9 +323,10 @@ local apotheosis_spellappends = {
                 local frame = GameGetFrameNum()
 	            local last_frame = tonumber( GlobalsGetValue( "fungal_shift_last_frame", "-1000000" ) )
                 local fungal_iter = tonumber( GlobalsGetValue( "fungal_shift_iteration", "0" ) )
+                local shift_cd_duration = tonumber(GlobalsGetValue("shift_cooldown_fungus", "5"))
                 
                 -- shift materials
-                if iter > 0 and frame > last_frame + 60*60*5 and fungal_iter < 20 then
+                if iter > 0 and frame > last_frame + 60*60*shift_cd_duration and fungal_iter < 20 then
                     fungal_shift( entity_id, pos_x, pos_y, true )
                 else
                     --fungal_shift( entity_id, pos_x, pos_y, false )
@@ -334,6 +335,201 @@ local apotheosis_spellappends = {
             end
         end,
     },
+    --[[
+    {
+        id          = "APOTHEOSIS_CREATURE_SHIFT",
+        name 		= "$spell_apotheosis_creature_shift_name",
+        description = "$spell_apotheosis_creature_shift_desc", --Be Careful what you wish for.. Triggers a creature shift, still obeys normal creature cooldown
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/creature_shift_plsdontconflict.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/explosive_projectile_unidentified.png",
+        related_extra_entities = { "data/entities/misc/forced_creature_shift.xml" },
+        type 		= ACTION_TYPE_STATIC_PROJECTILE,
+        spawn_level                       = "2,3,6,7,10", -- LAVA_TO_BLOOD
+        spawn_probability                 = "0.1,0.1,0.3,0.5,0.05", -- LAVA_TO_BLOOD
+        price = 250,
+        mana = 200,
+        max_uses = 3,
+        pandorium_ignore = true,
+        action 		= function( recursion_level, iteration )
+            if reflecting then
+                c.fire_rate_wait = c.fire_rate_wait + 60
+                current_reload_time = current_reload_time + 30
+                return
+            end
+            --add_projectile("data/entities/misc/forced_bungal_shift.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 60
+            current_reload_time = current_reload_time + 30
+
+            --Fungal Shift
+            do
+                dofile_once("data/scripts/lib/utilities.lua")
+                dofile_once("mods/Apotheosis/files/scripts/magic/creature_shift_file.lua")
+                
+                local entity_id    = GetUpdatedEntityID()
+                local pos_x, pos_y = EntityGetTransform( entity_id )
+                
+                SetRandomSeed(pos_x + GameGetFrameNum(), pos_y)
+                
+                -- spawn random eye particles
+                if ( rand(0,1) > 0.5 ) then
+                    function spawn( x,y )
+                        EntityLoad( "data/entities/particles/treble_eye.xml", x,y )
+                    end
+                
+                    local x,y = pos_x + rand(-100,100), pos_y + rand(-80,80)
+                    local rad = rand(0,30)
+                
+                    spawn(x,y)
+                    spawn( x + 40 + rad, y + 30 + rad )
+                    spawn( x - 40 - rad, y + 30 + rad )
+                end
+
+                --Timer check
+                local iter = iteration or 0
+                local frame = GameGetFrameNum()
+	            local last_frame = tonumber( GlobalsGetValue( "apotheosis_creature_shift_last_frame", "-1000000" ) )
+                local fungal_iter = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
+                local shift_cd_duration = tonumber(GlobalsGetValue("shift_cooldown_redsand", "4"))
+                
+                -- shift materials
+                if iter > 0 and frame > last_frame + 60*60*shift_cd_duration and fungal_iter < 30 then
+                    creature_shift( entity_id, pos_x, pos_y, true, true )
+                else
+                    --fungal_shift( entity_id, pos_x, pos_y, false )
+                    add_projectile("data/entities/misc/forced_creature_shift.xml")
+                end
+            end
+        end,
+    },
+    ]]--
+    {
+        id          = "APOTHEOSIS_BUNGAL_SHIFT_SPAM",
+        id_matchup  = "APOTHEOSIS_BUNGAL_SHIFT",
+        name 		= "$spell_apotheosis_bungal_shift_hyper_name",
+        description = "$spell_apotheosis_bungal_shift_hyper_desc", --Triggers a fungal shift, no cooldown.
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bungal_shift_spam.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/explosive_projectile_unidentified.png",
+        related_extra_entities = { "data/entities/misc/forced_bungal_shift_spam.xml" },
+        spawn_requires_flag = "apotheosis_card_unlocked_boss_toxic_worm_spell",
+        type 		= ACTION_TYPE_STATIC_PROJECTILE,
+        spawn_level                       = "10", -- Conversion spell
+        spawn_probability                 = "0.01", -- Conversion spell
+        price = 250,
+        mana = 200,
+        max_uses = 3,
+        pandorium_ignore = true,
+        action 		= function( recursion_level, iteration )
+            if reflecting then
+                c.fire_rate_wait = c.fire_rate_wait + 60
+                current_reload_time = current_reload_time + 30
+                return
+            end
+            --add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 60
+            current_reload_time = current_reload_time + 30
+
+            --Fungal Shift
+            do
+                dofile_once("data/scripts/lib/utilities.lua")
+                dofile_once("mods/Apotheosis/files/scripts/magic/fungal_shift_spam.lua")
+                
+                local entity_id    = GetUpdatedEntityID()
+                local pos_x, pos_y = EntityGetTransform( entity_id )
+                
+                SetRandomSeed(pos_x + GameGetFrameNum(), pos_y)
+                
+                -- spawn random eye particles
+                if ( rand(0,1) > 0.5 ) then
+                    function spawn( x,y )
+                        EntityLoad( "data/entities/particles/treble_eye.xml", x,y )
+                    end
+                
+                    local x,y = pos_x + rand(-100,100), pos_y + rand(-80,80)
+                    local rad = rand(0,30)
+                
+                    spawn(x,y)
+                    spawn( x + 40 + rad, y + 30 + rad )
+                    spawn( x - 40 - rad, y + 30 + rad )
+                end
+                
+                -- shift materials
+                local iter = iteration or 0
+                if iter > 0 then
+                    fungal_shift( entity_id, pos_x, pos_y, true )
+                else
+                    add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
+                end
+            end
+        end,
+    },
+    --[[
+    {
+        id          = "APOTHEOSIS_CREATURE_SHIFT_SPAM",
+        id_matchup  = "APOTHEOSIS_CREATURE_SHIFT",
+        name 		= "$spell_apotheosis_creature_shift_spam_name",
+        description = "$spell_apotheosis_creature_shift_spam_desc", --Be Careful what you wish for.. Triggers a creature shift, still obeys normal creature cooldown
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/creature_shift_spam.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/explosive_projectile_unidentified.png",
+        related_extra_entities = { "data/entities/misc/forced_creature_shift.xml" },
+        type 		= ACTION_TYPE_STATIC_PROJECTILE,
+        spawn_level                       = "10", -- Conversion spell
+        spawn_probability                 = "0.01", -- Conversion spell
+        price = 250,
+        mana = 200,
+        max_uses = 3,
+        pandorium_ignore = true,
+        action 		= function( recursion_level, iteration )
+            if reflecting then
+                c.fire_rate_wait = c.fire_rate_wait + 60
+                current_reload_time = current_reload_time + 30
+                return
+            end
+            --add_projectile("data/entities/misc/forced_bungal_shift.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 60
+            current_reload_time = current_reload_time + 30
+
+            --Fungal Shift
+            do
+                dofile_once("data/scripts/lib/utilities.lua")
+                dofile_once("mods/Apotheosis/files/scripts/magic/creature_shift_file.lua")
+                
+                local entity_id    = GetUpdatedEntityID()
+                local pos_x, pos_y = EntityGetTransform( entity_id )
+                
+                SetRandomSeed(pos_x + GameGetFrameNum(), pos_y)
+                
+                -- spawn random eye particles
+                if ( rand(0,1) > 0.5 ) then
+                    function spawn( x,y )
+                        EntityLoad( "data/entities/particles/treble_eye.xml", x,y )
+                    end
+                
+                    local x,y = pos_x + rand(-100,100), pos_y + rand(-80,80)
+                    local rad = rand(0,30)
+                
+                    spawn(x,y)
+                    spawn( x + 40 + rad, y + 30 + rad )
+                    spawn( x - 40 - rad, y + 30 + rad )
+                end
+
+                --Timer check
+                local iter = iteration or 0
+                local frame = GameGetFrameNum()
+	            local last_frame = tonumber( GlobalsGetValue( "apotheosis_creature_shift_last_frame", "-1000000" ) )
+                local fungal_iter = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
+                
+                -- shift materials
+                local iter = iteration or 0
+                if iter > 0 then
+                    creature_shift( entity_id, pos_x, pos_y, true, true )
+                else
+                    --fungal_shift( entity_id, pos_x, pos_y, false )
+                    add_projectile("data/entities/misc/forced_creature_shift_spam.xml")
+                end
+            end
+        end,
+    },
+    ]]--
     {
         id          = "APOTHEOSIS_AQUA_MINE",
         id_matchup  = "GRENADE_LARGE",
@@ -433,66 +629,6 @@ local apotheosis_spellappends = {
                 c.damage_critical_chance = c.damage_critical_chance + 10
             --end
             --It says "+25 melee damage" instead of "25 melee damage"... hmm.. not satisfactory
-        end,
-    },
-    {
-        id          = "APOTHEOSIS_BUNGAL_SHIFT_SPAM",
-        id_matchup  = "APOTHEOSIS_BUNGAL_SHIFT",
-        name 		= "$spell_apotheosis_bungal_shift_hyper_name",
-        description = "$spell_apotheosis_bungal_shift_hyper_desc", --Triggers a fungal shift, no cooldown.
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bungal_shift_spam.png",
-        sprite_unidentified = "data/ui_gfx/gun_actions/explosive_projectile_unidentified.png",
-        related_extra_entities = { "data/entities/misc/forced_bungal_shift_spam.xml" },
-        spawn_requires_flag = "apotheosis_card_unlocked_boss_toxic_worm_spell",
-        type 		= ACTION_TYPE_STATIC_PROJECTILE,
-        spawn_level                       = "10", -- Conversion spell
-        spawn_probability                 = "0.01", -- Conversion spell
-        price = 250,
-        mana = 200,
-        max_uses = 3,
-        pandorium_ignore = true,
-        action 		= function( recursion_level, iteration )
-            if reflecting then
-                c.fire_rate_wait = c.fire_rate_wait + 60
-                current_reload_time = current_reload_time + 30
-                return
-            end
-            --add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 60
-            current_reload_time = current_reload_time + 30
-
-            --Fungal Shift
-            do
-                dofile_once("data/scripts/lib/utilities.lua")
-                dofile_once("mods/Apotheosis/files/scripts/magic/fungal_shift_spam.lua")
-                
-                local entity_id    = GetUpdatedEntityID()
-                local pos_x, pos_y = EntityGetTransform( entity_id )
-                
-                SetRandomSeed(pos_x + GameGetFrameNum(), pos_y)
-                
-                -- spawn random eye particles
-                if ( rand(0,1) > 0.5 ) then
-                    function spawn( x,y )
-                        EntityLoad( "data/entities/particles/treble_eye.xml", x,y )
-                    end
-                
-                    local x,y = pos_x + rand(-100,100), pos_y + rand(-80,80)
-                    local rad = rand(0,30)
-                
-                    spawn(x,y)
-                    spawn( x + 40 + rad, y + 30 + rad )
-                    spawn( x - 40 - rad, y + 30 + rad )
-                end
-                
-                -- shift materials
-                local iter = iteration or 0
-                if iter > 0 then
-                    fungal_shift( entity_id, pos_x, pos_y, true )
-                else
-                    add_projectile("data/entities/misc/forced_bungal_shift_spam.xml")
-                end
-            end
         end,
     },
     {
@@ -1169,7 +1305,7 @@ local apotheosis_spellappends = {
         --max_uses = 20,
         --This used to have 20 max charges as a way to limit the amount of extra gold you gain, as well as encourage players to avoid spambuilds, but I think this spell ultimately plays better with unlimited charges
         action 		= function()
-            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_affluence.xml,mods/apotheosis/files/entities/particles/tinyspark_gold.xml,"
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_affluence.xml,mods/Apotheosis/files/entities/particles/tinyspark_gold.xml,"
             draw_actions( 1, true )
         end,
     },
@@ -1180,7 +1316,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_liquidsphere_acid_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_acid.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
-        related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml"},
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml"},
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level                       = "0,2,4,5", -- BLACK_HOLE
         spawn_probability                 = "0.8,0.8,0.8,0.8", -- BLACK_HOLE
@@ -1189,7 +1325,7 @@ local apotheosis_spellappends = {
         max_uses    = 3, 
         never_unlimited = true,
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml")
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_acid.xml")
             c.fire_rate_wait = c.fire_rate_wait + 80
             c.screenshake = c.screenshake + 20
         end,
@@ -1201,7 +1337,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_liquidsphere_water_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_water.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
-        related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml"},
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml"},
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level       = "0,1,2,3,4,5,6", -- X_RAY
         spawn_probability = "0.7,0.8,0.8,0.7,0.6,0.4,0.2", -- X_RAY
@@ -1210,7 +1346,7 @@ local apotheosis_spellappends = {
         max_uses    = 30, 
         never_unlimited = false,
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml")
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_water.xml")
             c.fire_rate_wait = c.fire_rate_wait + 80
             c.screenshake = c.screenshake + 20
         end,
@@ -1222,7 +1358,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_liquidsphere_teleportatium_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_teleportatium.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/black_hole_unidentified.png",
-        related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml"},
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml"},
         type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "0,1,2,3,4,5", -- TELEPORTATION_FIELD
 		spawn_probability                 = "0.3,0.6,0.3,0.3,0.6,0.3", -- TELEPORTATION_FIELD
@@ -1231,7 +1367,7 @@ local apotheosis_spellappends = {
         max_uses    = 3, 
         never_unlimited = false,
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml")
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml")
             c.fire_rate_wait = c.fire_rate_wait + 80
             c.screenshake = c.screenshake + 20
         end,
@@ -1272,7 +1408,7 @@ local apotheosis_spellappends = {
         mana = 30,
         --max_uses = 16,
         action 		= function()
-            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml,mods/apotheosis/files/entities/particles/tinyspark_water.xml,"
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_water.xml,mods/Apotheosis/files/entities/particles/tinyspark_water.xml,"
             draw_actions( 1, true )
         end,
     },
@@ -1292,7 +1428,7 @@ local apotheosis_spellappends = {
         mana = 30,
         --max_uses = 16,
         action 		= function()
-            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_oil.xml,mods/apotheosis/files/entities/particles/tinyspark_oil.xml,"
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_oil.xml,mods/Apotheosis/files/entities/particles/tinyspark_oil.xml,"
             draw_actions( 1, true )
         end,
     },
@@ -1312,7 +1448,7 @@ local apotheosis_spellappends = {
         mana = 30,
         --max_uses = 16,
         action 		= function()
-            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_blood.xml,mods/apotheosis/files/entities/particles/tinyspark_blood.xml,"
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_hex_blood.xml,mods/Apotheosis/files/entities/particles/tinyspark_blood.xml,"
             draw_actions( 1, true )
         end,
     },
@@ -1323,7 +1459,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_mist_attunium_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mist_attunium.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/slimeball_unidentified.png",
-        related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/mist_attunium.xml"},
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/mist_attunium.xml"},
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level                       = "1,2,3,4", -- APOTHEOSIS_MIST_ATTUNIUM
         spawn_probability                 = "0.3,0.3,0.3,0.3", -- APOTHEOSIS_MIST_ATTUNIUM
@@ -1331,7 +1467,7 @@ local apotheosis_spellappends = {
         mana = 120,
         --max_uses = 10,
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/mist_attunium.xml")
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/mist_attunium.xml")
             c.fire_rate_wait = c.fire_rate_wait + 10
         end,
     },
@@ -1386,7 +1522,7 @@ local apotheosis_spellappends = {
         id_matchup  = "MATERIAL_CEMENT",
         name 		= "$spell_apotheosis_material_slime_name",
         description = "$spell_apotheosis_material_slime_desc",
-        sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/material_slime.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/material_slime.png",
         spawn_requires_flag = "apotheosis_card_unlocked_lost_alchemy_spell",  --Lost Alchemy Unlock Puzzle, hopefully these spells should make alchemy easier
         type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "0,1,2,3,4", -- MATERIAL_ALCHEMY
@@ -1395,8 +1531,8 @@ local apotheosis_spellappends = {
         mana = 0,
         sound_loop_tag = "sound_spray",
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/material_slime.xml")
-			c.game_effect_entities = c.game_effect_entities .. "mods/apotheosis/files/entities/misc/effect_apply_slimy.xml,"
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/material_slime.xml")
+			c.game_effect_entities = c.game_effect_entities .. "mods/Apotheosis/files/entities/misc/effect_apply_slimy.xml,"
 			c.fire_rate_wait = c.fire_rate_wait - 15
             current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
         end,
@@ -1406,7 +1542,7 @@ local apotheosis_spellappends = {
         id_matchup  = "APOTHEOSIS_MATERIAL_SLIME",
         name 		= "$spell_apotheosis_material_alcohol_name",
         description = "$spell_apotheosis_material_alcohol_desc",
-        sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/material_alcohol.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/material_alcohol.png",
         spawn_requires_flag = "apotheosis_card_unlocked_lost_alchemy_spell",  --Lost Alchemy Unlock Puzzle, hopefully these spells should make alchemy easier
         type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "0,1,2,3,4", -- MATERIAL_ALCHEMY
@@ -1415,8 +1551,8 @@ local apotheosis_spellappends = {
         mana = 0,
         sound_loop_tag = "sound_spray",
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/material_alcohol.xml")
-			c.game_effect_entities = c.game_effect_entities .. "mods/apotheosis/files/entities/misc/effect_apply_drunk.xml,"
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/material_alcohol.xml")
+			c.game_effect_entities = c.game_effect_entities .. "mods/Apotheosis/files/entities/misc/effect_apply_drunk.xml,"
 			c.fire_rate_wait = c.fire_rate_wait - 15
             current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
         end,
@@ -1426,7 +1562,7 @@ local apotheosis_spellappends = {
         id          = "APOTHEOSIS_MATERIAL_CONFUSE",
         name 		= "$spell_apotheosis_material_confuse_name",
         description = "$spell_apotheosis_material_confuse_desc",
-        sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/material_confuse.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/material_confuse.png",
         spawn_requires_flag = "apotheosis_card_unlocked_lost_alchemy_spell",  --Lost Alchemy Unlock Puzzle, hopefully these spells should make alchemy easier
         type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "0,1,2,3,4", -- MATERIAL_ALCHEMY
@@ -1435,7 +1571,7 @@ local apotheosis_spellappends = {
         mana = 0,
         sound_loop_tag = "sound_spray",
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/material_confuse.xml")
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/material_confuse.xml")
 			c.fire_rate_wait = c.fire_rate_wait - 15
             current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
         end,
@@ -1444,7 +1580,7 @@ local apotheosis_spellappends = {
         id          = "APOTHEOSIS_MATERIAL_COPPER",
         name 		= "$spell_apotheosis_material_copper_name",
         description = "$spell_apotheosis_material_copper_desc",
-        sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/material_copper.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/material_copper.png",
         spawn_requires_flag = "apotheosis_card_unlocked_lost_alchemy_spell",  --Lost Alchemy Unlock Puzzle, hopefully these spells should make alchemy easier
         type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "0,1,2,3,4", -- MATERIAL_ALCHEMY
@@ -1453,7 +1589,7 @@ local apotheosis_spellappends = {
         mana = 0,
         sound_loop_tag = "sound_spray",
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/material_copper.xml")
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/material_copper.xml")
 			c.fire_rate_wait = c.fire_rate_wait - 15
             current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
         end,
@@ -1462,7 +1598,7 @@ local apotheosis_spellappends = {
         id          = "APOTHEOSIS_MATERIAL_FUNGI",
         name 		= "$spell_apotheosis_material_fungi_name",
         description = "$spell_apotheosis_material_fungi_desc",
-        sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/material_fungi.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/material_fungi.png",
         spawn_requires_flag = "apotheosis_card_unlocked_lost_alchemy_spell",  --Lost Alchemy Unlock Puzzle, hopefully these spells should make alchemy easier
         type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "0,1,2,3,4", -- MATERIAL_ALCHEMY
@@ -1471,7 +1607,7 @@ local apotheosis_spellappends = {
         mana = 0,
         sound_loop_tag = "sound_spray",
         action 		= function()
-            add_projectile("mods/apotheosis/files/entities/projectiles/deck/material_fungi.xml")
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/material_fungi.xml")
 			c.fire_rate_wait = c.fire_rate_wait - 15
             current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the cement reload time back to 0
         end,
@@ -1483,9 +1619,9 @@ local apotheosis_spellappends = {
         id_matchup  = "DEATH_CROSS_BIG",
         name 		= "$spell_apotheosis_death_cross_omega_name",
         description = "$spell_apotheosis_death_cross_omega_desc",
-        sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/death_cross_omega.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/death_cross_omega.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/death_cross_unidentified.png",
-		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_omega_cross_spell",  --Teleporter Puzzle
 		type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "4,5,10", -- DISC_BULLET_BIGGER
@@ -1493,9 +1629,9 @@ local apotheosis_spellappends = {
 		price = 310,
 		mana = 150,
 		max_uses = 8,
-		custom_xml_file = "mods/apotheosis/files/entities/misc/custom_cards/death_cross_omega.xml",
+		custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/death_cross_omega.xml",
 		action 		= function()
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/death_cross_omega.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 70
 			shot_effects.recoil_knockback = shot_effects.recoil_knockback + 30.0
 		end,
@@ -1530,7 +1666,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_cloud_gunpowder_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/cloud_gunpowder.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/cloud_water_unidentified.png",
-		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/cloud_gunpowder.xml"},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/cloud_gunpowder.xml"},
 		type 		= ACTION_TYPE_STATIC_PROJECTILE,
 		spawn_level                       = "0,1,2,3,4,5", -- CLOUD_ACID
 		spawn_probability                 = "0.2,0.2,0.2,0.2,0.2,0.2", -- CLOUD_ACID
@@ -1538,7 +1674,7 @@ local apotheosis_spellappends = {
 		mana = 90,
 		max_uses = 8,
 		action 		= function()
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/cloud_gunpowder.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/cloud_gunpowder.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
 	},
@@ -1609,7 +1745,7 @@ local apotheosis_spellappends = {
         description = "$spell_apotheosis_cloud_volcanic_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/cloud_volcanic.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/cloud_water_unidentified.png",
-		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/cloud_volcanic.xml"},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/cloud_volcanic.xml"},
 		type 		= ACTION_TYPE_STATIC_PROJECTILE,
 		spawn_level                       = "0,1,2,3,4,5", -- CLOUD_ACID
 		spawn_probability                 = "0.2,0.2,0.2,0.2,0.2,0.2", -- CLOUD_ACID
@@ -1617,7 +1753,7 @@ local apotheosis_spellappends = {
 		mana = 110,
 		max_uses = 8,
 		action 		= function()
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/cloud_volcanic.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/cloud_volcanic.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
 	},
@@ -1635,7 +1771,7 @@ local apotheosis_spellappends = {
 		mana = 40,
 		--max_uses = 150,
 		action 		= function()
-			c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/larpa_shotgun.xml,"
+			c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/larpa_shotgun.xml,"
 			c.fire_rate_wait = c.fire_rate_wait + 32
 			draw_actions( 1, true )
 		end,
@@ -1766,7 +1902,7 @@ local apotheosis_spellappends = {
                 )
                 c.apo_caststate = true
             end
-            c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/lua_sharing.xml,"
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/lua_sharing.xml,"
 
         end
 
@@ -1789,7 +1925,7 @@ local apotheosis_spellappends = {
         --max_uses = 8,
         --custom_xml_file = "data/entities/misc/custom_cards/torch.xml",
         action 		= function()
-            c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/hitfx_glue_charge.xml,data/entities/particles/tinyspark_white_small.xml,"
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/hitfx_glue_charge.xml,data/entities/particles/tinyspark_white_small.xml,"
             c.fire_rate_wait = c.fire_rate_wait + 30
             draw_actions( 1, true )
         end,
@@ -1808,7 +1944,7 @@ local apotheosis_spellappends = {
         price = 240,
         mana = 80,
 		action 		= function()
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/electrosphere.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/electrosphere.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 50
 			c.screenshake = c.screenshake + 2
 			c.spread_degrees = c.spread_degrees + 3.6
@@ -1820,7 +1956,7 @@ local apotheosis_spellappends = {
         id_matchup  = "SEA_ACID_GAS",
         name 		= "$spell_apotheosis_sea_berserk_name",
         description = "$spell_apotheosis_sea_berserk_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/sea_berserk.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sea_berserk.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
 		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/sea_berserk.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_rage_aura",
@@ -1840,7 +1976,7 @@ local apotheosis_spellappends = {
         id_matchup  = "ESSENCE_TO_POWER",
         name 		= "$spell_apotheosis_kindness_to_power_name",
         description = "$spell_apotheosis_kindness_to_power_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/kindness_to_power.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/kindness_to_power.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "1,2,3,10", -- AREA_DAMAGE
@@ -1890,7 +2026,7 @@ local apotheosis_spellappends = {
         id_matchup  = "MANA_REDUCE",
         name 		= "$spell_apotheosis_water_power_name",
         description = "$spell_apotheosis_water_power_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hydromancy_s.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hydromancy_s.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "1,2,3,4,5,6", -- MANA_REDUCE
@@ -1913,7 +2049,7 @@ local apotheosis_spellappends = {
 		id_matchup  = "PENTAGRAM_SHAPE",
         name 		= "$spell_apotheosis_shape_wall_name",
         description = "$spell_apotheosis_shape_wall_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/wall_shape.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/wall_shape.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
 		type 		= ACTION_TYPE_DRAW_MANY,
 		spawn_level                       = "1,2,3,4,5,6", -- SHAPE_WALL
@@ -1933,7 +2069,7 @@ local apotheosis_spellappends = {
 		id_matchup  = "FRIEND_FLY",
         name 		= "$spell_apotheosis_summon_star_child_name",
         description = "$spell_apotheosis_summon_star_child_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/star_child.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/star_child.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
 		spawn_requires_flag = "this_should_never_spawn",
 		type 		= ACTION_TYPE_PROJECTILE,
@@ -1953,7 +2089,7 @@ local apotheosis_spellappends = {
 		id_matchup  = "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM",
         name 		= "$spell_apotheosis_fire_wall_name",
         description = "$spell_apotheosis_fire_wall_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/fire_wall.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/fire_wall.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/teleport_projectile_unidentified.png",
 		related_projectiles	= {"data/entities/projectiles/deck/wall_of_fire.xml"},
 		type 		= ACTION_TYPE_STATIC_PROJECTILE,
@@ -1963,11 +2099,11 @@ local apotheosis_spellappends = {
 		mana = 70,
 		--max_uses = 80,
 		action 		= function()
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/wall_of_fire.xml")
 			
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/wall_of_fire_setup.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/wall_of_fire_setup.xml")
 			c.fire_rate_wait = c.fire_rate_wait + 5
 		end,
 	},
@@ -1996,7 +2132,7 @@ local apotheosis_spellappends = {
 		description = "$spell_apotheosis_jumper_cables_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/jumper_cables.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/tentacle_unidentified.png",
-		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml", 2},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml", 2},
 		type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "3,4,5,6", -- TENTACLE
 		spawn_probability                 = "1,0.5,1,0.8", -- TENTACLE
@@ -2009,10 +2145,10 @@ local apotheosis_spellappends = {
             c.spread_degrees = c.spread_degrees + 30.0
             if reflecting then
                 --Stops the game from getting angry
-			    Reflection_RegisterProjectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
+			    Reflection_RegisterProjectile("mods/Apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
             else
-				add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
-				add_projectile("mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
+				add_projectile("mods/Apotheosis/files/entities/projectiles/deck/jumper_cable_red.xml")
+				add_projectile("mods/Apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml")
             end
 		end,
 	},
@@ -2140,7 +2276,7 @@ local apotheosis_spellappends = {
         id_matchup  = "APOTHEOSIS_WATER_POWER",
         name 		= "$spell_apotheosis_blood_power_name",
         description = "$spell_apotheosis_blood_power_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hemomancy.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hemomancy.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
 		type 		= ACTION_TYPE_MODIFIER,
 		spawn_level                       = "1,2,3,4,5,6", -- MANA_REDUCE
@@ -2155,10 +2291,10 @@ local apotheosis_spellappends = {
             else
                 local entity_id = GetUpdatedEntityID()
                 if GameGetGameEffectCount( entity_id, "BLOODY" ) > 0 then
-                    if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
-                        c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+                    if not c.extra_entities:find("mods/Apotheosis/files/entities/misc/piercing_handler.xml,") then
+                        c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/piercing_handler.xml,"
                     end
-                    c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_shot_2.xml,"
+                    c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/piercing_shot_2.xml,"
                 end
             end
 		end,
@@ -2169,7 +2305,7 @@ local apotheosis_spellappends = {
 		id_matchup  = "PENTA_SHOT",
         name 		= "$spell_apotheosis_shot_wall_name",
         description = "$spell_apotheosis_shot_wall_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/wall_shot.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/wall_shot.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/pentagram_shape_unidentified.png",
 		type 		= ACTION_TYPE_UTILITY,
 		spawn_level                       = "3,4,5,6,10", -- I_SHAPE
@@ -2213,7 +2349,7 @@ local apotheosis_spellappends = {
 		id_matchup  = "POLLEN",
 		name 		= "$spell_apotheosis_pollen_trigger_name",
 		description = "$spell_apotheosis_pollen_trigger_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/pollen_trigger.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/pollen_trigger.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/arrow_unidentified.png",
 		related_projectiles	= {"data/entities/projectiles/deck/pollen.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",   --These are only unlocked after killing the blob boss to not interfere with the new player experience, don't want people's first impression with new spells to be. "Oh, it's vanilla spells but rebranded, bruh"
@@ -2235,9 +2371,9 @@ local apotheosis_spellappends = {
 		id_matchup  = "RUBBER_BALL",
 		name 		= "$spell_apotheosis_rubberball_trigger_name",
 		description = "$spell_apotheosis_rubberball_trigger_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/rubber_ball_trigger.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/rubber_ball_trigger.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/rubber_ball_unidentified.png",
-		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/rubber_ball_trigger.xml"},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/rubber_ball_trigger.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_blob_boss_spell",   --These are only unlocked after killing the blob boss to not interfere with the new player experience, don't want people's first impression with new spells to be. "Oh, it's vanilla spells but rebranded, bruh"
 		type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "1,2,10", -- RUBBER_BALL
@@ -2246,7 +2382,7 @@ local apotheosis_spellappends = {
 		mana = 10,
 		--max_uses = 150,
 		action 		= function()
-			add_projectile_trigger_death("mods/apotheosis/files/entities/projectiles/deck/rubber_ball_trigger.xml", 1)
+			add_projectile_trigger_death("mods/Apotheosis/files/entities/projectiles/deck/rubber_ball_trigger.xml", 1)
 			-- damage = 0.3
 			c.fire_rate_wait = c.fire_rate_wait - 2
 			c.spread_degrees = c.spread_degrees - 1.0
@@ -2257,7 +2393,7 @@ local apotheosis_spellappends = {
         id_matchup  = "APOTHEOSIS_WATER_POWER",
         name 		= "$spell_apotheosis_blood_power_name",
         description = "$spell_apotheosis_blood_power_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/hemomancy_s.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hemomancy_s.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         spawn_requires_flag = "apotheosis_card_unlocked_boss_flesh_monster_spell",  --Requires Heretic to be slain
 		type 		= ACTION_TYPE_MODIFIER,
@@ -2269,8 +2405,8 @@ local apotheosis_spellappends = {
 		action 		= function()
             if not reflecting and GameGetGameEffectCount( GetUpdatedEntityID(), "BLOODY" ) > 0 then
                 --c.friendly_fire		= true
-                if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
-                    c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+                if not c.extra_entities:find("mods/Apotheosis/files/entities/misc/piercing_handler.xml,") then
+                    c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/piercing_handler.xml,"
                 end
                 c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_blood.xml,data/entities/misc/piercing_shot_hemomancy.xml,"
             end
@@ -2283,7 +2419,7 @@ local apotheosis_spellappends = {
         id_matchup  = "APOTHEOSIS_BLOOD_POWER",
         name 		= "$spell_apotheosis_fire_power_name",
         description = "$spell_apotheosis_fire_power_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/pyromancy_s.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/pyromancy_s.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",  --Requires Aesthete of Heat to be slain
 		type 		= ACTION_TYPE_MODIFIER,
@@ -2308,7 +2444,7 @@ local apotheosis_spellappends = {
 		id          = "APOTHEOSIS_SUMMON_POTION",
         name 		= "$spell_apotheosis_potion_name",
         description = "$spell_apotheosis_potion_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/potion.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/potion.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
 		type 		= ACTION_TYPE_OTHER,
@@ -2334,9 +2470,9 @@ local apotheosis_spellappends = {
         --description = "$spell_apotheosis_touch_grass_desc",
         name 		= "Touch of Grass",
         description = "Transmutes everything in a short radius into grass, including walls, creatures... and you",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/touch_grass.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/touch_grass.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/rocket_unidentified.png",
-		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/touch_grass.xml"},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/touch_grass.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
 		type 		= ACTION_TYPE_MATERIAL,
 		spawn_level                       = "1,2,3,4,5,6,7,10", -- TOUCH_GOLD
@@ -2346,7 +2482,7 @@ local apotheosis_spellappends = {
 		max_uses    = 1,
 		never_unlimited = true,
 		action 		= function()
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/touch_grass.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/touch_grass.xml")
 		end,
 	},
     ]]--
@@ -2355,7 +2491,7 @@ local apotheosis_spellappends = {
         id_matchup  = "APOTHEOSIS_SEA_BERSERK",
         name 		= "$spell_apotheosis_potion_to_sea_name",
         description = "$spell_apotheosis_potion_to_sea_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/potion.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/potion.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         --spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension --Previously this required ending 2 to appear, but considering how it'd change daily RNG as well as most people likely not  going throuh the work to unlock it, I ultiamtely decided to keep it as a "regular" spell
 		type 		= ACTION_TYPE_MATERIAL,
@@ -2427,7 +2563,7 @@ local apotheosis_spellappends = {
                             emission_interval_min_frames=1,
                             emission_interval_max_frames=1,
                             emit_cosmetic_particles=true,
-                            image_animation_file="mods/apotheosis/files/particles/image_emitters/sea_any.png",
+                            image_animation_file="mods/Apotheosis/files/particles/image_emitters/sea_any.png",
                             image_animation_speed=5,
                             image_animation_loop=false,
                             is_emitting=true,
@@ -2445,9 +2581,9 @@ local apotheosis_spellappends = {
 		id_matchup  = "FIREBOMB",
 		name 		= "$spell_apotheosis_toilet_paper_name",
 		description = "$spell_apotheosis_toilet_paper_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/toilet_paper.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/toilet_paper.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/rubber_ball_unidentified.png",
-		related_projectiles	= {"mods/apotheosis/files/entities/projectiles/deck/toilet_paper.xml"},
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/toilet_paper.xml"},
         spawn_requires_flag = "apotheosis_card_unlocked_toiletpaper_spell",
 		type 		= ACTION_TYPE_PROJECTILE,
 		spawn_level                       = "6,10", -- ???
@@ -2456,12 +2592,79 @@ local apotheosis_spellappends = {
 		mana = 10,
 		--max_uses = 150,
 		action 		= function()
-			add_projectile("mods/apotheosis/files/entities/projectiles/deck/toilet_paper.xml")
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/toilet_paper.xml")
 			-- damage = 0.3
 			c.fire_rate_wait = c.fire_rate_wait - 2
 			c.gore_particles = 0
 		end,
-	}
+	},
+	{
+		id          = "APOTHEOSIS_SUPPORT_BULLET",
+		id_matchup  = "ANTIHEAL",
+		name 		= "$spell_apotheosis_support_bullet_name",
+		description = "$spell_apotheosis_support_bullet_desc",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/support_bullet.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/heal_bullet_unidentified.png",
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/support_bullet.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_support_bullet_spell",
+		type 		= ACTION_TYPE_PROJECTILE,
+		spawn_level                       = "2,3,4", -- HEAL_BULLET
+		spawn_probability                 = "1,1,0.6", -- HEAL_BULLET
+		price = 60,
+		mana = 15,
+		--custom_xml_file = "data/entities/misc/custom_cards/heal_bullet.xml",
+		action 		= function()
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/support_bullet.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 4
+			c.spread_degrees = c.spread_degrees + 2.0
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_FIELD_SUPPORT",
+		id_matchup  = "REGENERATION_FIELD",
+		name 		= "$spell_apotheosis_field_support_name",
+		description = "$spell_apotheosis_field_support_desc",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/field_support.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/heal_bullet_unidentified.png",
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/field_support.xml"},
+        spawn_requires_flag = "apotheosis_card_unlocked_support_bullet_spell",
+		type 		= ACTION_TYPE_STATIC_PROJECTILE,
+		spawn_level                       = "1,2,3,4", -- REGENERATION_FIELD
+		spawn_probability                 = "0.3,0.3,0.4,0.3", -- REGENERATION_FIELD
+		price = 250,
+		mana = 80,
+		max_uses = 2,
+		never_unlimited = true,
+		action 		= function()
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/field_support.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
+    {
+        id          = "APOTHEOSIS_ALT_FIRE_COT",
+        id_matchup  = "APOTHEOSIS_ALT_FIRE_COV",
+        name 		= "$spell_apotheosis_alt_fire_cot_name",
+        description = "$spell_apotheosis_alt_fire_cot_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_field_support.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/field_support.xml"},
+        --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        type    = ACTION_TYPE_PASSIVE,
+        spawn_level                       = "1,2,3,4,10", -- REGENERATION_FIELD
+        spawn_probability                 = "0.2,0.2,0.2,0.2,0.7", -- REGENERATION_FIELD
+        subtype     = { altfire = true },
+        price = 250,
+        mana = 80,
+        max_uses = 2,
+        never_unlimited = false,
+        custom_uses_logic = true,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/alt_fire_cot.xml",
+        action            = function()
+            -- Go to the next card
+            draw_actions(1, true)
+            mana = mana + 80
+        end,
+    }
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -2556,7 +2759,7 @@ local actions_to_edit = {
     --Fix Giga Death Cross to use green sparks instead of blue ones
     ["DEATH_CROSS_BIG"] = {
         mana = 100,
-        custom_xml_file = "mods/apotheosis/files/entities/misc/custom_cards/death_cross_big.xml"
+        custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/death_cross_big.xml"
     },
 
     -- Copi: describe this
@@ -2687,8 +2890,8 @@ local actions_to_edit = {
         action = function()
             --c.damage_projectile_add = c.damage_projectile_add - 0.6
             --c.friendly_fire		= true
-            if not c.extra_entities:find("mods/apotheosis/files/entities/misc/piercing_handler.xml,") then
-                c.extra_entities = c.extra_entities .. "mods/apotheosis/files/entities/misc/piercing_handler.xml,"
+            if not c.extra_entities:find("mods/Apotheosis/files/entities/misc/piercing_handler.xml,") then
+                c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/piercing_handler.xml,"
             end
             c.extra_entities = c.extra_entities .. "data/entities/misc/piercing_shot.xml,"
             draw_actions(1, true)
@@ -2871,7 +3074,7 @@ if HasFlagPersistent( "apotheosis_card_unlocked_ending_apotheosis_02_spell" ) th
 		id          = "APOTHEOSIS_POTION_TO_SEA",
         name 		= "$spell_apotheosis_potion_to_sea_name",
         description = "$spell_apotheosis_potion_to_sea_desc",
-		sprite 		= "mods/apotheosis/files/ui_gfx/gun_actions/potion.png",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/potion.png",
 		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
         spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
 		type 		= ACTION_TYPE_OTHER,
@@ -2943,7 +3146,7 @@ if HasFlagPersistent( "apotheosis_card_unlocked_ending_apotheosis_02_spell" ) th
                             emission_interval_min_frames=1,
                             emission_interval_max_frames=1,
                             emit_cosmetic_particles=true,
-                            image_animation_file="mods/apotheosis/files/particles/image_emitters/sea_any.png",
+                            image_animation_file="mods/Apotheosis/files/particles/image_emitters/sea_any.png",
                             image_animation_speed=5,
                             image_animation_loop=false,
                             is_emitting=true,

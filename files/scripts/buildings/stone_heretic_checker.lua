@@ -8,11 +8,11 @@ for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	print("wowza!")
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
 		print("bingbangbong")
 		stone_id = v
 		break
-	elseif ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" and EntityGetParent(v) == 0 then
+	elseif ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" and EntityGetParent(v) == 0 then
 		print("bongbangbing")
 		stone_id = v
 		break

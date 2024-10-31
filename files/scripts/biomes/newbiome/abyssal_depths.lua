@@ -732,7 +732,7 @@ function spawn_any_enemy( x, y )
 		end
 		if Random(1,25) == 1 then
 			local pylons = { "escium", "hex_water", "protection_proj", "vulnerability", }
-			EntityLoad("mods/apotheosis/files/entities/buildings/pylon_" .. pylons[Random(1,#pylons)] .. ".xml", x, y)
+			EntityLoad("mods/Apotheosis/files/entities/buildings/pylon_" .. pylons[Random(1,#pylons)] .. ".xml", x, y)
 		end
 	end
 end

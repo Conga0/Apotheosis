@@ -17,9 +17,9 @@ for i=1,how_many do
 		local vel_y = math.sin( theta ) * (length * j + length_base)
 
 		if j == 1 then
-			shoot_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_laser_larpa.xml", pos_x, pos_y, vel_x, vel_y )
+			shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega_laser_larpa.xml", pos_x, pos_y, vel_x, vel_y )
 		else
-			shoot_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_laser.xml", pos_x, pos_y, vel_x, vel_y )
+			shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega_laser.xml", pos_x, pos_y, vel_x, vel_y )
 		end
 	end
 	

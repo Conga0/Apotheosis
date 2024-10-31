@@ -21,7 +21,7 @@ if player == nil then return end
 local plyr_x, plyr_y = EntityGetTransform(player)
 
 if current_frame >= (cooldown_frame - 60) then
-    GameShootProjectile(entity_id,x,y,plyr_x,plyr_y,EntityLoad("mods/apotheosis/files/entities/projectiles/meteor_white.xml", x, y))
+    GameShootProjectile(entity_id,x,y,plyr_x,plyr_y,EntityLoad("mods/Apotheosis/files/entities/projectiles/meteor_white.xml", x, y))
     if current_frame >= cooldown_frame then
         ComponentSetValue2( variablecomp, "value_int", current_frame + cooldown_frames + math.random(-60,60) )
     end

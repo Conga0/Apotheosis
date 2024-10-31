@@ -53,7 +53,7 @@
 	</LuaComponent>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animals/minion_distance_delete.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/minion_distance_delete.lua"
 		execute_every_n_frame="60"
 		execute_on_removed="1"
 		>

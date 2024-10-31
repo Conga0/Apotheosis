@@ -63,7 +63,7 @@
   </AudioComponent>
 		
 	<LuaComponent
-		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/dmg_limit_1.lua"
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/dmg_limit_1.lua"
 		>
 	</LuaComponent>
 

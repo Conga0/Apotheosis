@@ -13,7 +13,7 @@
     limit_background_image="false"
 
     wang_template_file="data/wang_tiles/vine.png" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/plane_yggdrasil.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/plane_yggdrasil.lua"
     wang_map_width="520"
     wang_map_height="520"
     background_use_neighbor="0"

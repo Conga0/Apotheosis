@@ -9,28 +9,28 @@ local player_id = EntityGetWithTag("player_unit")[1]
 
 local entityEvents = {
     --{lifetime_to_run_at,entity_filepath_to_load,frame_runtime (leave at 0 if default of 60)},
-    {0,"mods/apotheosis/files/entities/intro/1_1.xml"},
-    {60,"mods/apotheosis/files/entities/intro/1_2.xml"},
-    {120,"mods/apotheosis/files/entities/intro/1_1.xml"},
-    {180,"mods/apotheosis/files/entities/intro/1_2.xml"},
-    {240,"mods/apotheosis/files/entities/intro/1_3.xml"},
-    {300,"mods/apotheosis/files/entities/intro/1_4.xml"},
-    {360,"mods/apotheosis/files/entities/intro/1_5.xml"},
-    {420,"mods/apotheosis/files/entities/intro/1_6.xml"},
-    {480,"mods/apotheosis/files/entities/intro/2_1.xml"},
-    {540,"mods/apotheosis/files/entities/intro/2_2.xml"},
-    {600,"mods/apotheosis/files/entities/intro/2_3.xml"},
-    {660,"mods/apotheosis/files/entities/intro/2_4.xml"},
-    {720,"mods/apotheosis/files/entities/intro/2_5.xml"},
-    {780,"mods/apotheosis/files/entities/intro/2_6.xml"},
-    {840,"mods/apotheosis/files/entities/intro/2_7.xml"},
-    {900,"mods/apotheosis/files/entities/intro/3_1.xml"},
-    {960,"mods/apotheosis/files/entities/intro/3_2.xml"},
-    {1020,"mods/apotheosis/files/entities/intro/3_2.xml"},
-    {1080,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    {1140,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    {1200,"mods/apotheosis/files/entities/intro/3_3.xml"},
-    --{1260,"mods/apotheosis/files/entities/intro/pan_down.xml"},
+    {0,"mods/Apotheosis/files/entities/intro/1_1.xml"},
+    {60,"mods/Apotheosis/files/entities/intro/1_2.xml"},
+    {120,"mods/Apotheosis/files/entities/intro/1_1.xml"},
+    {180,"mods/Apotheosis/files/entities/intro/1_2.xml"},
+    {240,"mods/Apotheosis/files/entities/intro/1_3.xml"},
+    {300,"mods/Apotheosis/files/entities/intro/1_4.xml"},
+    {360,"mods/Apotheosis/files/entities/intro/1_5.xml"},
+    {420,"mods/Apotheosis/files/entities/intro/1_6.xml"},
+    {480,"mods/Apotheosis/files/entities/intro/2_1.xml"},
+    {540,"mods/Apotheosis/files/entities/intro/2_2.xml"},
+    {600,"mods/Apotheosis/files/entities/intro/2_3.xml"},
+    {660,"mods/Apotheosis/files/entities/intro/2_4.xml"},
+    {720,"mods/Apotheosis/files/entities/intro/2_5.xml"},
+    {780,"mods/Apotheosis/files/entities/intro/2_6.xml"},
+    {840,"mods/Apotheosis/files/entities/intro/2_7.xml"},
+    {900,"mods/Apotheosis/files/entities/intro/3_1.xml"},
+    {960,"mods/Apotheosis/files/entities/intro/3_2.xml"},
+    {1020,"mods/Apotheosis/files/entities/intro/3_2.xml"},
+    {1080,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    {1140,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    {1200,"mods/Apotheosis/files/entities/intro/3_3.xml"},
+    --{1260,"mods/Apotheosis/files/entities/intro/pan_down.xml"},
 }
 
 for k=1,#entityEvents
@@ -72,7 +72,7 @@ if runtime == 0 then
     --Spawn intro brazier
     EntityLoad("data/entities/props/physics_torch_stand_intro.xml", 275, -90)
 
-    local child = EntityLoad("mods/apotheosis/files/entities/misc/effect_protection_all_intro.xml")
+    local child = EntityLoad("mods/Apotheosis/files/entities/misc/effect_protection_all_intro.xml")
     EntityAddChild(player_id,child)
 
     --Disable the player's hud during the intro cutscene

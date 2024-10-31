@@ -11,4 +11,4 @@ local length = 40
 local vel_x = math.cos( angle ) * length
 local vel_y = 0 - math.sin( angle ) * length
 
-shoot_projectile_from_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_payload.xml", pos_x, pos_y, 0, 0 )
+shoot_projectile_from_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega_payload.xml", pos_x, pos_y, 0, 0 )

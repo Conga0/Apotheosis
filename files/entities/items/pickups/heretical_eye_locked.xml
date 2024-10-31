@@ -7,7 +7,7 @@
 		_tags="enabled_in_world"
 		offset_x="9"
 		offset_y="9"
-		image_file="mods/apotheosis/files/items_gfx/heretical_eye.png"
+		image_file="mods/Apotheosis/files/items_gfx/heretical_eye.png"
 		z_index="-1"
 	></SpriteComponent>
 	
@@ -18,7 +18,7 @@
 	<Entity>
 		<SpriteComponent
 			_tags="enabled_in_world"
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/pupil.xml"
 			emissive="1"
 			offset_x="8.5"
 			offset_y="8.5"
@@ -76,7 +76,7 @@
 	<LuaComponent
 		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/items/heretical_eye_dialogue.lua"
+		script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_dialogue.lua"
 		execute_every_n_frame="200"
 		>
 	</LuaComponent>

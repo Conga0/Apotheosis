@@ -20,7 +20,7 @@
 	<PhysicsImageShapeComponent 
 		body_id="1"
 		centered="1"
-		image_file="mods/apotheosis/files/items_gfx/heretical_eye_husk.png"
+		image_file="mods/Apotheosis/files/items_gfx/heretical_eye_husk.png"
 		material="apotheosis_meat_heretic"
 	></PhysicsImageShapeComponent>
 	
@@ -40,14 +40,14 @@
 		_enabled="0"
 		offset_x="4"
 		offset_y="8"
-		image_file="mods/apotheosis/files/items_gfx/heretical_eye_husk.png"
+		image_file="mods/Apotheosis/files/items_gfx/heretical_eye_husk.png"
 	></SpriteComponent>
 	
 	<ItemComponent
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_heretical_eye_husk_name"
 		ui_description="$item_apotheosis_heretical_eye_husk_desc"
-		ui_sprite="mods/apotheosis/files/ui_gfx/items/heretical_eye_husk.png"
+		ui_sprite="mods/Apotheosis/files/ui_gfx/items/heretical_eye_husk.png"
 		max_child_items="0"
 		is_pickable="1"
 		is_equipable_forced="1"

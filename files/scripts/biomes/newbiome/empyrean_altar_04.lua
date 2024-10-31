@@ -28,12 +28,12 @@ function init( x, y, w, h )
 	SetRandomSeed(444,777)
 	local pw = GetParallelWorldPosition(x,y)
 	if pw == 0 then
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04.png", "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04_visual.png", x, y, "mods/apotheosis/files/biome_impl/end_game_02/empyrean/04_background.png", true )
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/end_game_02/empyrean/04.png", "mods/Apotheosis/files/biome_impl/end_game_02/empyrean/04_visual.png", x, y, "mods/Apotheosis/files/biome_impl/end_game_02/empyrean/04_background.png", true )
 	end
 end
 
 function spawn_altar(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/empyrean_altar.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/empyrean_altar.xml", x, y)
 end

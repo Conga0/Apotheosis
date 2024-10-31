@@ -204,7 +204,7 @@
   
   <VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/psychotic/fireball_ghostly.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/psychotic/fireball_ghostly.xml"
 		>
 	</VariableStorageComponent>
 

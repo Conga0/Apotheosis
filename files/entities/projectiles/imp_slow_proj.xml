@@ -122,7 +122,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/imp_slow_proj.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/imp_slow_proj.xml"
 		>
 	</VariableStorageComponent>
 	

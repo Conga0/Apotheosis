@@ -3,7 +3,7 @@ function init( entity_id )
         local pos_x, pos_y = EntityGetTransform(entity_id)
         SetRandomSeed( pos_x+666, pos_y+777)
         if Random(1,100) == 1 then
-            EntityLoad("mods/apotheosis/files/entities/items/pickups/potion_rare.xml", pos_x, pos_y)
+            EntityLoad("mods/Apotheosis/files/entities/items/pickups/potion_rare.xml", pos_x, pos_y)
             EntityKill(entity_id)
         elseif Random(1,70) == 1 then
             local opts = {"fairy","mud","robot",}

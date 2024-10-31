@@ -986,7 +986,7 @@ biome_modifiers =
 	{
 		id = "ESOTERIC_PRESENCE",
 		ui_description="$biomemod_esoteric_presence",
-		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
+		ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/esoteric_presence.png",
 		probability=0.5,
 		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 		action = function( biome_name, biome_filename )	end,
@@ -1003,7 +1003,7 @@ biome_modifiers =
 	{
 		id = "NECROMANCY",
 		ui_description="$biomemod_necromancy",
-		ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+		ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/necromancy.png",
 		probability=0.2,
 		does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 		action = function( biome_name, biome_filename )	end,
@@ -1013,7 +1013,7 @@ biome_modifiers =
 				min_count	= 1,
 				max_count	= 1,
 				offset_y 	= 0,    
-				entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+				entity 	=  "mods/Apotheosis/files/entities/buildings/biomemod_necromancy.xml",
 			})
 		end,
 	},
@@ -1072,7 +1072,7 @@ biome_modifier_fog_of_war_clear_at_player = {
 biome_modifier_magmatic = {
 	id = "MAGMATIC",
 	ui_description="$biomemod_magmatic",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/magmatic.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/magmatic.png",
 	probability=0.0,
 	does_not_apply_to_biome={"mountain_hall",}, --does_not_apply_to_biome={"snowcave","snowcastle",},
 	action = function( biome_name, biome_filename )
@@ -1090,7 +1090,7 @@ biome_modifier_magmatic = {
 biome_modifier_devtest = {
 	id = "DEVTEST",
 	ui_description="$biomemod_necromancy",
-	ui_decoration_file="mods/apotheosis/files/ui_gfx/decorations/necromancy.png",
+	ui_decoration_file="mods/Apotheosis/files/ui_gfx/decorations/necromancy.png",
 	probability=0.0,
 	does_not_apply_to_biome={"mountain_hall","coalmine","coalmine_alt"},
 	action = function( biome_name, biome_filename )	end,
@@ -1100,7 +1100,7 @@ biome_modifier_devtest = {
 			min_count	= 1,
 			max_count	= 1,
 			offset_y 	= 0,    
-			entity 	=  "mods/apotheosis/files/entities/buildings/biomemod_necromancy.xml",
+			entity 	=  "mods/Apotheosis/files/entities/buildings/biomemod_necromancy.xml",
 		})
 	end,
 }

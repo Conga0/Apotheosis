@@ -1,6 +1,6 @@
 <Sprite 
-  filename="mods/apotheosis/files/enemies_gfx/wizard_corrupt_twitchy.png" 
-  hotspots_filename="mods/apotheosis/files/enemies_gfx/wizard_corrupt_twitchy_hotspots.png" 
+  filename="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_twitchy.png" 
+  hotspots_filename="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_twitchy_hotspots.png" 
   offset_x="8" 
   offset_y="17"
   default_animation="stand" >

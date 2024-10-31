@@ -49,13 +49,13 @@
   <LuaComponent
     execute_on_removed="1"
     execute_every_n_frame="-1"
-    script_source_file="mods/apotheosis/files/scripts/projectiles/death_cross_omega_explosion.lua"
+    script_source_file="mods/Apotheosis/files/scripts/projectiles/death_cross_omega_explosion.lua"
     remove_after_executed="0">
   </LuaComponent>
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_explosion.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega_explosion.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

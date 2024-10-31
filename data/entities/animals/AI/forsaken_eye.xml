@@ -176,7 +176,7 @@
 		</SpriteComponent>
 		
 		<LuaComponent
-			script_source_file="mods/apotheosis/files/scripts/animals/eye_look.lua"
+			script_source_file="mods/Apotheosis/files/scripts/animals/eye_look.lua"
 			execute_every_n_frame="1"
 			>
 		</LuaComponent>
@@ -184,7 +184,7 @@
 	
 	<LuaComponent
 		_tags="invincible"
-		script_source_file="mods/apotheosis/files/scripts/animals/eye_orbitting_rotation_short.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/eye_orbitting_rotation_short.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>

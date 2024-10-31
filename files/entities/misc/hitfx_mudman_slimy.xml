@@ -3,7 +3,7 @@
     <HitEffectComponent 
         condition_effect="SLIMY"
         effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
-        value_string="mods/apotheosis/files/scripts/projectiles/mudman_slimy_spawner.xml" >
+        value_string="mods/Apotheosis/files/scripts/projectiles/mudman_slimy_spawner.xml" >
 	</HitEffectComponent >
 
 </Entity>

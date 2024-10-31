@@ -7,7 +7,7 @@
 	<SpriteComponent 
         _enabled="1"
 		emissive="1"
-		image_file="mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.png"
+		image_file="mods/Apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.png"
 		emissive="0"
         z_index="10"
 		alpha="0.0"
@@ -17,7 +17,7 @@
 	</SpriteComponent>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.lua"
+		script_source_file="mods/Apotheosis/files/entities/buildings/ending/big_fuckoff_red_texture.lua"
 		execute_every_n_frame="20"
 		execute_times="-1"
 		>

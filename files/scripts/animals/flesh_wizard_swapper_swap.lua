@@ -29,7 +29,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 		EntityApplyTransform( entity_a, xc, yc )
 		EntityApplyTransform( entity_b, xc, yc )
-		EntityLoad( "mods/apotheosis/files/entities/particles/flesh_wizard_swapper_swap_particles.xml", xc, yc )
+		EntityLoad( "mods/Apotheosis/files/entities/particles/flesh_wizard_swapper_swap_particles.xml", xc, yc )
 
 		GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/swapper/swap", xb, yb );
 		GamePlaySound( "data/audio/Desktop/projectiles.bank", "animals/wraith_glowing/shoot", xb, yb );

@@ -14,7 +14,7 @@
 	/>
 
 	<LuaComponent
-	script_item_picked_up="mods/apotheosis/files/entities/buildings/ending/apotheosis.lua"
+	script_item_picked_up="mods/Apotheosis/files/entities/buildings/ending/apotheosis.lua"
 	>
 	</LuaComponent>
 

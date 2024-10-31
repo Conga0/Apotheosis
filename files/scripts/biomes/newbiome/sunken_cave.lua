@@ -244,13 +244,13 @@ g_mist_colossal =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/mist_trap_large_attunium.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/mist_trap_large_attunium.xml"
 	},
 	{
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/mist_trap_large_pure_light.xml"
 	},
 }
 
@@ -271,19 +271,19 @@ g_pylon =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/pylon_vulnerability.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/pylon_vulnerability.xml"
 	},
 	{
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/pylon_protection_proj.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/pylon_protection_proj.xml"
 	},
 	{
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/pylon_escium.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/pylon_escium.xml"
 	},
 }
 
@@ -391,7 +391,7 @@ g_items =
 		prob   		= 5,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml"
+		entity 	= "mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml"
 	},
 	-- debug tests
 	{
@@ -419,7 +419,7 @@ g_pixel_scene_01 =
 	total_prob = 0,
 	{
 		prob   			= 0.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/sunken_cave/verticalobservatory2.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/sunken_cave/verticalobservatory2.png",
 		visual_file		= "data/biome_impl/snowcave/verticalobservatory2_visual.png",
 		background_file	= "data/biome_impl/snowcave/verticalobservatory2_background.png",
 		is_unique		= 0
@@ -431,7 +431,7 @@ g_pixel_scene_01_alt =
 	total_prob = 0,
 	{
 		prob   			= 0.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/sunken_cave/verticalobservatory2.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/sunken_cave/verticalobservatory2.png",
 		visual_file		= "data/biome_impl/snowcave/verticalobservatory2_visual.png",
 		background_file	= "data/biome_impl/snowcave/verticalobservatory2_background.png",
 		is_unique		= 0
@@ -464,8 +464,8 @@ g_pixel_scene_02 =
 	},
 	{
 		prob   			= 1.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/sunken_cave/shop.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/sunken_cave/shop_visual.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/sunken_cave/shop.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/sunken_cave/shop_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
@@ -919,7 +919,7 @@ end
 function spawn_mist_colossal(x,y)
 	if safe( x, y ) then
 		spawn(g_mist_colossal, x, y)
-		EntityLoad("mods/apotheosis/files/entities/buildings/pylon_hex_water.xml", x, y)
+		EntityLoad("mods/Apotheosis/files/entities/buildings/pylon_hex_water.xml", x, y)
 	end
 end
 
@@ -1051,5 +1051,5 @@ function spawn_receptacle( x, y )
 end
 
 function spawn_potions( x, y )
-	EntityLoad("mods/apotheosis/files/entities/items/pickups/potion_reinforced.xml",x,y)
+	EntityLoad("mods/Apotheosis/files/entities/items/pickups/potion_reinforced.xml",x,y)
 end

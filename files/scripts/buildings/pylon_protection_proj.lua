@@ -52,18 +52,18 @@ end
 if #victims > 0 then
     for k=1,#victims
     do target = victims[k].id
-    local c = EntityLoad("mods/apotheosis/files/entities/misc/pylon/pylon_buff_protection_proj.xml")
+    local c = EntityLoad("mods/Apotheosis/files/entities/misc/pylon/pylon_buff_protection_proj.xml")
     local comp = EntityGetFirstComponentIncludingDisabled(c,"VariableStorageComponent")
     ComponentSetValue2(comp,"value_int",this.id)
 
     EntityAddChild(target,c)
 
     --Particle Effects at Pylon's location
-    EntityLoad("mods/apotheosis/files/entities/particles/circle_fast_green.xml", this.x, this.y - 10)
+    EntityLoad("mods/Apotheosis/files/entities/particles/circle_fast_green.xml", this.x, this.y - 10)
     local targ_x,targ_y = EntityGetTransform(target)
 
     --Particle Effects at Target's location
-    EntityLoad("mods/apotheosis/files/entities/particles/circle_fast_green.xml", targ_x, targ_y)
+    EntityLoad("mods/Apotheosis/files/entities/particles/circle_fast_green.xml", targ_x, targ_y)
     GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/all_seeing_eye/create", targ_x, targ_y);
 
     local comp = EntityGetFirstComponentIncludingDisabled(this.id,"VariableStorageComponent")

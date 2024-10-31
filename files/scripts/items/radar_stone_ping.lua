@@ -51,7 +51,7 @@ if (math.abs(pos_y - plane_y) + math.abs(pos_x - plane_x)) > 300 then
     local luacomp = nil
     local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
     for i = 1, #luacomps do
-	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_ping_visual.lua" then
+	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/radar_stone_ping_visual.lua" then
 	    luacomp = luacomps[i]
 	    break
 	end
@@ -75,7 +75,7 @@ else
     local luacomp = nil
     local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
     for i = 1, #luacomps do
-	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_ping_visual.lua" then
+	if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/radar_stone_ping_visual.lua" then
 	    luacomp = luacomps[i]
 	    break
 	end

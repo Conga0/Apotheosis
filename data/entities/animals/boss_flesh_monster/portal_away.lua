@@ -19,7 +19,7 @@ for bp=1,#boss do
 	h_x, h_y = EntityGetTransform(heretic_id)
     	local spritecomps = EntityGetComponentIncludingDisabled(heretic_id, "SpriteComponent") or {}
     	for i = 1, #spritecomps do
-	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
+	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
 		EntityLoad("data/entities/animals/boss_flesh_monster/phase3/transport_emitter_flesh.xml", pos_x, pos_y)
 	    else
 		EntityLoad("data/entities/animals/boss_flesh_monster/transport_emitter.xml", pos_x, pos_y)
@@ -42,7 +42,7 @@ if (heretic_found == true) then
 	prison_x = 21247
 	prison_y = 5892
     end
-    EntityLoad( "mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml", prison_x, prison_y )
+    EntityLoad( "mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml", prison_x, prison_y )
 
     local telecomp = EntityGetFirstComponentIncludingDisabled(entity_id, "TeleportComponent")
 

@@ -191,8 +191,8 @@
 	</Entity>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animals/eye_forsaken_orbitting_init.lua"
-		script_death="mods/apotheosis/files/scripts/animals/eye_orbitting_death.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/eye_forsaken_orbitting_init.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/eye_orbitting_death.lua"
 		execute_every_n_frame="2"
 		remove_after_executed="0"
 		>

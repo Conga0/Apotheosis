@@ -1,4 +1,4 @@
-<Entity name="$enemy_apotheosis_fairy" tags="mortal,human,hittable,teleportable_NOT,flying" >
+<Entity name="$enemy_apotheosis_fairy_cheap" tags="mortal,human,hittable,teleportable_NOT,flying" >
 	
 	<ItemChestComponent
 		_enabled="0"

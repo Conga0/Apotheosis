@@ -713,9 +713,14 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/wraith_weirdo_shield.png",
 	  },
 	  {
-		name="Wall Worm",
+		name="Wall Maggot",
 		path="data/entities/animals/worm_wall.xml",
 		image="data/ui_gfx/animal_icons/worm_wall.png",
+	  },,
+	  {
+		name="Small Slimy Maggot",
+		path="data/entities/animals/worm_maggot_big.xml",
+		image="data/ui_gfx/animal_icons/worm_maggot_big.png",
 	  },
 	  {
 		name="Greater Hell Worm",
@@ -759,7 +764,7 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Puppetering Crystal",
-		path="mods/apotheosis/files/entities/buildings/crystal_wandsteal.xml",
+		path="mods/Apotheosis/files/entities/buildings/crystal_wandsteal.xml",
 		image="data/ui_gfx/building_icons/crystal_wandsteal.png",
 	  },
 	  {

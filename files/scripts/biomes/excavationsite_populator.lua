@@ -448,7 +448,7 @@ function init(x, y, w, h)
         if pos_x >= x and pos_x <= x+w
         and pos_y >= y and pos_y <= y+h then
             -- Generate Fire Lukki Nests
-            LoadPixelScene( "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", pos_x-22, pos_y-22, "mods/apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", true )
+            LoadPixelScene( "mods/Apotheosis/files/biome_impl/excavationsite/fire_lukki_egg.png", "mods/Apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_visual.png", pos_x-22, pos_y-22, "mods/Apotheosis/files/biome_impl/excavationsite/fire_lukki_egg_background.png", true )
             
             --Debug Data
             --GamePrint("Spawning nest at X: " .. pos_x .. ", Y: " .. pos_y)
@@ -458,5 +458,5 @@ function init(x, y, w, h)
 end
 
 function spawn_nest_egg(x, y)
-	EntityLoad("mods/apotheosis/files/entities/items/pickups/egg_volcanic_lukki.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/items/pickups/egg_volcanic_lukki.xml", x, y)
 end

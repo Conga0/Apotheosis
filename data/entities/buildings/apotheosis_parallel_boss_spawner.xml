@@ -5,7 +5,7 @@
     </VariableStorageComponent>
 
     <LuaComponent
-        script_source_file="mods/apotheosis/files/scripts/buildings/parallel_boss_spawner.lua"
+        script_source_file="mods/Apotheosis/files/scripts/buildings/parallel_boss_spawner.lua"
         execute_every_n_frame="3"
         execute_times="-1" >
     </LuaComponent>

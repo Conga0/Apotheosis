@@ -153,7 +153,7 @@
 
 	<LuaComponent
 		_tags="death_reward"
-		script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/hiisi_minecart_bomb_drown.lua"
+		script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/hiisi_minecart_bomb_drown.lua"
 		script_death="mods/Apotheosis/files/scripts/animals/hisii_minecart_bomb_death.lua"
 		>
 	</LuaComponent>

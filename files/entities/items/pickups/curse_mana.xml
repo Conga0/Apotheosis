@@ -8,7 +8,7 @@
 	</ItemComponent>
 	
 	<SpriteComponent
-		image_file="mods/apotheosis/files/items_gfx/curse_mana.png"
+		image_file="mods/Apotheosis/files/items_gfx/curse_mana.png"
 		offset_x="8"
 		offset_y="8"
 		update_transform="1"
@@ -17,7 +17,7 @@
 	</SpriteComponent>
 
 	<LuaComponent 
-		script_item_picked_up="mods/apotheosis/files/scripts/items/curse_mana/curse_mana_pickup.lua"
+		script_item_picked_up="mods/Apotheosis/files/scripts/items/curse_mana/curse_mana_pickup.lua"
 		>
 	</LuaComponent>
 </Entity>

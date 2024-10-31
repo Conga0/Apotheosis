@@ -1,5 +1,5 @@
 <Sprite 
-  filename="mods/apotheosis/files/enemies_gfx/worms/worm_esoteric_body.png" 
+  filename="mods/Apotheosis/files/enemies_gfx/worms/worm_esoteric_body.png" 
   offset_x="15" 
   offset_y="6"
   default_animation="stand" >

@@ -75,7 +75,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="0.6" 
-		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_teleportatium.xml" 
+		image_file="mods/Apotheosis/files/projectiles_gfx/liquidsphere_teleportatium.xml" 
 		next_rect_animation="" 
 		offset_x="18"
 		offset_y="18"
@@ -88,7 +88,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="0.7" 
-		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_teleportatium_glow.png" 
+		image_file="mods/Apotheosis/files/projectiles_gfx/liquidsphere_teleportatium_glow.png" 
 		next_rect_animation="" 
 		offset_x="30"
 		offset_y="30"
@@ -181,7 +181,7 @@
 	<LuaComponent
 		_enabled="0"
 		_tags="enabled_by_liquid"
-		script_source_file="mods/apotheosis/files/scripts/projectiles/liquidsphere_stain_teleportatium.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/liquidsphere_stain_teleportatium.lua"
 		execute_every_n_frame="5"
 		>
 	</LuaComponent>
@@ -232,7 +232,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_teleportatium.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

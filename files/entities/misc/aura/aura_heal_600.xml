@@ -31,7 +31,7 @@
 	</ParticleEmitterComponent>
   
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/entities/misc/aura/aura_heal_600.lua"
+		script_source_file="mods/Apotheosis/files/entities/misc/aura/aura_heal_600.lua"
 		execute_every_n_frame="70"
 		>
 	</LuaComponent>

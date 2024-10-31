@@ -22,7 +22,7 @@ if projectile_filepath ~= "" then
 
         local lcomp = EntityGetComponentIncludingDisabled(p_id,"LuaComponent")
         for k=1,#lcomp do
-            if ComponentGetValue2(lcomp[k],"script_source_file") == "mods/apotheosis/files/scripts/projectiles/penta_shot.lua" then
+            if ComponentGetValue2(lcomp[k],"script_source_file") == "mods/Apotheosis/files/scripts/projectiles/penta_shot.lua" then
                 EntitySetComponentIsEnabled( entity_id, lcomp[k], false )
                 break
             end
@@ -35,7 +35,7 @@ if projectile_filepath ~= "" then
 
         local lcomp = EntityGetComponentIncludingDisabled(p_id,"LuaComponent")
         for k=1,#lcomp do
-            if ComponentGetValue2(lcomp[k],"script_source_file") == "mods/apotheosis/files/scripts/projectiles/penta_shot.lua" then
+            if ComponentGetValue2(lcomp[k],"script_source_file") == "mods/Apotheosis/files/scripts/projectiles/penta_shot.lua" then
                 EntitySetComponentIsEnabled( entity_id, lcomp[k], false )
                 break
             end

@@ -25,7 +25,7 @@ local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,50,"poopstone") or {
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
 		local stone_id = v
 		local parent = EntityGetParent(stone_id)
 		if parent == 0 then
@@ -115,23 +115,23 @@ else
 		local spritecomp2 = 0
 		local spritecomps = EntityGetComponentIncludingDisabled(eid, "SpriteComponent") or {}
 		for i = 1, #spritecomps do
-		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor.png" then
+		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor.png" then
 		        spritecomp = spritecomps[i]
 		    end
-		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png" then
+		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png" then
 		        spritecomp2 = spritecomps[i]
 		    end
 		end
 		if GameHasFlagRun("apotheosis_flesh_boss_armor_4") then
-		    ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_4.png")
+		    ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_4.png")
 		elseif GameHasFlagRun("apotheosis_flesh_boss_armor_3") then
-		    ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_3.png")
+		    ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_3.png")
 		elseif GameHasFlagRun("apotheosis_flesh_boss_armor_2") then
-		    ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_2.png")
+		    ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_2.png")
 		else
-		    ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_1.png")
+		    ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_1.png")
 		end
-		ComponentSetValue2( spritecomp2, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive_alt.png")
+		ComponentSetValue2( spritecomp2, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive_alt.png")
 	end
 
 	EntityLoad("data/entities/animals/boss_flesh_monster/transport_emitter.xml", pos_x, pos_y)

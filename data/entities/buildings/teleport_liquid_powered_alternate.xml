@@ -160,7 +160,7 @@
 	<LuaComponent
 		script_material_area_checker_failed="data/scripts/buildings/teleport_liquid_check.lua"
 		script_material_area_checker_success="data/scripts/buildings/teleport_liquid_check.lua"
-		script_portal_teleport_used="mods/apotheosis/files/scripts/buildings/teleporter_secret_check_success.lua"
+		script_portal_teleport_used="mods/Apotheosis/files/scripts/buildings/teleporter_secret_check_success.lua"
 		>
 	</LuaComponent>
 

@@ -15,7 +15,7 @@
 		count_max="1"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		image_animation_file="mods/apotheosis/files/particles/image_emitters/cloud_circle_colossal.png"
+		image_animation_file="mods/Apotheosis/files/particles/image_emitters/cloud_circle_colossal.png"
 		image_animation_loop="1"
 		image_animation_emission_probability="0.1"
 		emit_cosmetic_particles="0"

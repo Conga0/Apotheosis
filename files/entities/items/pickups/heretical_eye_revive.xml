@@ -4,7 +4,7 @@
 	<Entity>
 		<SpriteComponent
 			_enabled="1"
-			image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/pupil.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/pupil.xml"
 			emissive="1"
 			rect_animation="sapping"
 			offset_x="8.5"

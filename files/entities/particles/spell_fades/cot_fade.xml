@@ -1,0 +1,33 @@
+<Entity>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_field_support.png" 
+		offset_x="8"
+		offset_y="24">
+	</SpriteComponent>   
+	
+	<LifetimeComponent
+		lifetime="60"
+		fade_sprites="1"
+		>
+	</LifetimeComponent>
+
+	<!-- Ideally this would float up slowly after appearing, but it's very uncooperative -->
+
+	<VelocityComponent
+		mass="0.05"
+		affect_physics_bodies="1"
+		gravity_y="-200">
+	</VelocityComponent>
+		
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/monolith_heal_fade.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+</Entity>
+
+
+

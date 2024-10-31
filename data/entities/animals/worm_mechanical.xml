@@ -698,7 +698,7 @@
 	</VariableStorageComponent>
 
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animals/worm_mechanical_laser.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/worm_mechanical_laser.lua"
 		script_death="data/entities/animals/secret/mechanical_worm_death.lua"
 		execute_every_n_frame="1"
 		execute_times="-1"
@@ -744,7 +744,7 @@
 	<SpriteParticleEmitterComponent
 		_tags="invincible"
 		_enabled="0"
-		sprite_file="mods/apotheosis/files/particles/shine_red.xml"
+		sprite_file="mods/Apotheosis/files/particles/shine_red.xml"
 		delay="0"
 		lifetime="2"
 		color.r="1" color.g="1" color.b="1" color.a="1"

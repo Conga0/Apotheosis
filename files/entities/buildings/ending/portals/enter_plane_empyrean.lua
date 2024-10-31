@@ -15,7 +15,7 @@ function do_newgame_plus()
 		--Hide the Plane Radar as it's no longer needed.
 		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
 		for k=1,#comps do
-			if ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/perks/plane_radar_inside.lua" then
+			if ComponentGetValue2(comps[k],"script_source_file") == "mods/Apotheosis/files/scripts/perks/plane_radar_inside.lua" then
 				EntitySetComponentIsEnabled(v,comps[k],false)
 				break
 			end
@@ -30,7 +30,7 @@ function do_newgame_plus()
 			end
 		end
 
-		local biome_rebooter = EntityLoad("mods/apotheosis/files/entities/special/biome_rebooter.xml",-1120,-5545)
+		local biome_rebooter = EntityLoad("mods/Apotheosis/files/entities/special/biome_rebooter.xml",-1120,-5545)
 		EntityAddChild(v,biome_rebooter)
 	end
 
@@ -41,7 +41,7 @@ function do_newgame_plus()
 		--Disable Guiding Stone pulse as it has served its purpose in life
 		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
 		for k=1,#comps do
-			if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_ping_visual.lua" then
+			if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/Apotheosis/files/scripts/items/radar_stone_ping_visual.lua" then
 				EntitySetComponentIsEnabled(v,comps[k],false)
 				break
 			end
@@ -62,7 +62,7 @@ function do_newgame_plus()
 
 	-- Load the actual biome map
 
-	BiomeMapLoad_KeepPlayer( "mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_empyrean_biome_map.lua", "mods/apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
+	BiomeMapLoad_KeepPlayer( "mods/Apotheosis/files/entities/buildings/ending/portals/enter_plane_empyrean_biome_map.lua", "mods/Apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
 	SessionNumbersSave()
 	-- BiomeMapLoad( "data/biome_impl/biome_map.png" )
 

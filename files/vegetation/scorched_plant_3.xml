@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/apotheosis/files/vegetation/scorched_plant_3.png"
+ filename="mods/Apotheosis/files/vegetation/scorched_plant_3.png"
  offset_x="8"
  offset_y="63" 
  default_animation="vegetation_growth" >

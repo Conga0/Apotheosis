@@ -76,24 +76,24 @@
 			simulate_gravity="0" >
 		</VerletPhysicsComponent>
 
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
 
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
 
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
 
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
-		<Base file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_jumper.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_01.xml" />
+		<Base file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_black_jumper.xml" />
 	</Entity>
 
 	<AudioComponent
@@ -142,7 +142,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/jumper_cable_black.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

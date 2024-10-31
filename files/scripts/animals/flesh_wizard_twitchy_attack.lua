@@ -28,7 +28,7 @@ if foe == true then
 	local vy = 250
 
 	for i=1, amount do
-		local pid = shoot_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/orb_flesh_twitchy.xml", x, y, vx, vy )
+		local pid = shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/orb_flesh_twitchy.xml", x, y, vx, vy )
 		local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
 		ComponentSetValue2(projcomp, "mShooterHerdId", StringToHerdId("mage_corrupted"))
 		vx,vy = vec_rotate(vx, vy, theta)

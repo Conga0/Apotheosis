@@ -1,5 +1,5 @@
 <Sprite 
-  filename="mods/apotheosis/files/enemies_gfx/barfer_greater_old.png" 
+  filename="mods/Apotheosis/files/enemies_gfx/barfer_greater_old.png" 
   offset_x="11" 
   offset_y="20"
   default_animation="stand" >

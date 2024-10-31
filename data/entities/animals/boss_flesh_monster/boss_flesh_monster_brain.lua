@@ -109,18 +109,18 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		local spritecomp2 = 0
 		local spritecomps = EntityGetComponentIncludingDisabled(entity_id, "SpriteComponent") or {}
 		for i = 1, #spritecomps do
-		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor.png" then
+		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor.png" then
 		        spritecomp = spritecomps[i]
 		    end
-		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png" then
+		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive.png" then
 		        spritecomp2 = spritecomps[i]
 		    end
 		end
-		ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_1.png")
-		ComponentSetValue2( spritecomp2, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive_alt.png")
+		ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_1.png")
+		ComponentSetValue2( spritecomp2, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_emissive_alt.png")
 		EntityRefreshSprite( entity_id, spritecomp )
 		EntityRefreshSprite( entity_id, spritecomp2 )
-		LoadPixelScene( "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_1.png", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_1.png", pos_x-56, pos_y-56, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_1.png", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_1.png", pos_x-56, pos_y-56, "", true )
 		EntityLoad( "data/entities/particles/blood_explosion.xml", pos_x - 26, pos_y - 26 )
 		armor = 1
 	end
@@ -133,14 +133,14 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		local spritecomp = 0
 		local spritecomps = EntityGetComponent(entity_id, "SpriteComponent") or {}
 		for i = 1, #spritecomps do
-		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_1.png" then
+		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_1.png" then
 		        spritecomp = spritecomps[i]
 			break
 		    end
 		end
-		ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_2.png")
+		ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_2.png")
 		EntityRefreshSprite( entity_id, spritecomp )
-		LoadPixelScene( "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_2.png", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_2.png", pos_x-56, pos_y-56, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_2.png", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_2.png", pos_x-56, pos_y-56, "", true )
 		EntityLoad( "data/entities/particles/blood_explosion.xml", pos_x - 23, pos_y + 28 )
 		armor = 2
 	end
@@ -153,14 +153,14 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		local spritecomp = 0
 		local spritecomps = EntityGetComponent(entity_id, "SpriteComponent") or {}
 		for i = 1, #spritecomps do
-		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_2.png" then
+		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_2.png" then
 		        spritecomp = spritecomps[i]
 			break
 		    end
 		end
-		ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_3.png")
+		ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_3.png")
 		EntityRefreshSprite( entity_id, spritecomp )
-		LoadPixelScene( "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_3.png", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_3.png", pos_x-56, pos_y-56, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_3.png", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_3.png", pos_x-56, pos_y-56, "", true )
 		EntityLoad( "data/entities/particles/blood_explosion.xml", pos_x + 28, pos_y - 25 )
 		armor = 3
 	end
@@ -173,14 +173,14 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		local spritecomp = 0
 		local spritecomps = EntityGetComponent(entity_id, "SpriteComponent") or {}
 		for i = 1, #spritecomps do
-		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_3.png" then
+		    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_3.png" then
 		        spritecomp = spritecomps[i]
 			break
 		    end
 		end
-		ComponentSetValue2( spritecomp, "image_file", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_4.png")
+		ComponentSetValue2( spritecomp, "image_file", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_flesh_4.png")
 		EntityRefreshSprite( entity_id, spritecomp )
-		LoadPixelScene( "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_4.png", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_4.png", pos_x-56, pos_y-56, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_4.png", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_4.png", pos_x-56, pos_y-56, "", true )
 		EntityLoad( "data/entities/particles/blood_explosion.xml", pos_x + 29, pos_y + 29 )
 		armor = 4
 	end

@@ -21,7 +21,7 @@ for k=1,#children do
                             EntityKill(children[z])
 
                             local x,y = EntityGetTransform(entity_id)
-                            local child = EntityLoad("mods/apotheosis/files/entities/misc/perks/respawn_spent.xml",x,y)
+                            local child = EntityLoad("mods/Apotheosis/files/entities/misc/perks/respawn_spent.xml",x,y)
                             EntityAddChild(entity_id,child)
                             break
                         end

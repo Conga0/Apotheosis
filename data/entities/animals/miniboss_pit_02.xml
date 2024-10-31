@@ -350,7 +350,7 @@
 	<LuaComponent
 		_enabled="true"
 		_tags="disabled_by_liquid"
-		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_miniboss_LoS_Check.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fire_miniboss_LoS_Check.lua"
 		execute_every_n_frame="120"
 		execute_times="-1"
 		>

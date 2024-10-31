@@ -1,5 +1,5 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
 ----Boosts Health of various in-world creatures
 
@@ -121,7 +121,7 @@ do --Reduces the NG+ count of each biome's enemy pool by 1
     "clouds",           --Cloudscapes
     "hills",            --Hills, aka forest.
   }
-  local appendpath ="mods/apotheosis/files/scripts/setup/enemy_appends_hardmode.lua"
+  local appendpath ="mods/Apotheosis/files/scripts/setup/enemy_appends_hardmode.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
@@ -139,11 +139,11 @@ do --Reduces the NG+ count of each biome's enemy pool by 1 (modded)
     "lava_excavation",  --Core Mines
     "sunken_cave",  --Sunken Cavern
   }
-  local appendpath ="mods/apotheosis/files/scripts/setup/enemy_appends_hardmode.lua"
+  local appendpath ="mods/Apotheosis/files/scripts/setup/enemy_appends_hardmode.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
-    local biomepath = table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
+    local biomepath = table.concat({"mods/Apotheosis/files/scripts/biomes/newbiome/", v, ".lua"})
     ModLuaFileAppend(biomepath, appendpath)
   end
 end
@@ -156,7 +156,7 @@ do --Reduce gold dropped in hardcore by 50%
 end
 
 do --Artifically secret seed game flag is added
-  local path = "mods/apotheosis/files/scripts/magic/player_parallel_check.lua"
+  local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_hardcore\"%)")
   ModTextFileSetContent(path, content)

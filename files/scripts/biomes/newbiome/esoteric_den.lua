@@ -163,7 +163,7 @@ g_mist_colossal =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/status_trap_esoteric_damage.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/status_trap_esoteric_damage.xml"
 	},
 }
 

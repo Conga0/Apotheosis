@@ -37,7 +37,7 @@
 	</VariableStorageComponent>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/targetter_herd_changer.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/targetter_herd_changer.lua"
 		execute_every_n_frame="2"
 		execute_times="1"
 		>
@@ -45,7 +45,7 @@
 	
 	<!--Is... Is it meant to be like this..?-->
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/targetter_herd_changer_revert.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/targetter_herd_changer_revert.lua"
 		execute_every_n_frame="3590"
 		execute_times="1"
 		>

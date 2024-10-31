@@ -1,8 +1,8 @@
 <Entity serialize="0">
 
-	<Base file="mods/apotheosis/files/entities/buildings/ending/constellations/constellation_base.xml">
+	<Base file="mods/Apotheosis/files/entities/buildings/ending/constellations/constellation_base.xml">
 	  	<ParticleEmitterComponent
-			image_animation_file="mods/apotheosis/files/entities/buildings/ending/constellations/mina_02.png" >
+			image_animation_file="mods/Apotheosis/files/entities/buildings/ending/constellations/mina_02.png" >
 		</ParticleEmitterComponent>
 	</Base>
 

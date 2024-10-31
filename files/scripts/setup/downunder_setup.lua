@@ -1,5 +1,5 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 
 --Boosts Health of Wand Tinkering Crystals by x10
 MultiplyHPSelectiveBuilding("wandedit_crystal",10,false)
@@ -18,7 +18,7 @@ do
   }
 
   for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/scripts/biomes/newbiome/special/",overrides[k]}))
+    local content = ModTextFileGetContent(table.concat({"mods/Apotheosis/files/scripts/biomes/newbiome/special/",overrides[k]}))
     ModTextFileSetContent(table.concat({"data/scripts/biomes/",overrides[k]}),content)
   end
 end
@@ -35,7 +35,7 @@ do
   }
 
   for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/biome/special/",overrides[k]}))
+    local content = ModTextFileGetContent(table.concat({"mods/Apotheosis/files/biome/special/",overrides[k]}))
     ModTextFileSetContent(table.concat({"data/biome/",overrides[k]}),content)
     --[[
     if k == 2 then
@@ -67,7 +67,7 @@ do
   }
 
   for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/entities/downunder/",overrides[k]}))
+    local content = ModTextFileGetContent(table.concat({"mods/Apotheosis/files/entities/downunder/",overrides[k]}))
     ModTextFileSetContent(table.concat({"data/entities/",overrides[k]}),content)
   end
 end
@@ -79,7 +79,7 @@ do
   }
 
   for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/entities/downunder/scripts/",overrides[k]}))
+    local content = ModTextFileGetContent(table.concat({"mods/Apotheosis/files/entities/downunder/scripts/",overrides[k]}))
     ModTextFileSetContent(table.concat({"data/scripts/",overrides[k]}),content)
   end
 end
@@ -91,7 +91,7 @@ do
   }
 
   for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/biome/special/",overrides[k]}))
+    local content = ModTextFileGetContent(table.concat({"mods/Apotheosis/files/biome/special/",overrides[k]}))
     ModTextFileSetContent(table.concat({"data/biome_impl/spliced/",overrides[k]}),content)
   end
 end
@@ -102,17 +102,17 @@ do
   }
 
   for k=1,#overrides do -- Change mountain altar portals to use their flipped varient
-    local content = ModTextFileGetContent(table.concat({"mods/apotheosis/files/entities/downunder/buildings/",overrides[k]}))
-    ModTextFileSetContent(table.concat({"mods/apotheosis/files/entities/buildings/",overrides[k]}),content)
+    local content = ModTextFileGetContent(table.concat({"mods/Apotheosis/files/entities/downunder/buildings/",overrides[k]}))
+    ModTextFileSetContent(table.concat({"mods/Apotheosis/files/entities/buildings/",overrides[k]}),content)
   end
 end
 
 
 --Fixes Hiisi not being in Hiisi base
-ModLuaFileAppend("data/scripts/biomes/snowcastle.lua","mods/apotheosis/files/entities/downunder/scripts/biomes/snowcastle_appends.lua")
+ModLuaFileAppend("data/scripts/biomes/snowcastle.lua","mods/Apotheosis/files/entities/downunder/scripts/biomes/snowcastle_appends.lua")
 
 --Flip The Work spawns
-ModLuaFileAppend("data/scripts/biomes/the_end.lua","mods/apotheosis/files/entities/downunder/scripts/biomes/the_sky_appends.lua")
+ModLuaFileAppend("data/scripts/biomes/the_end.lua","mods/Apotheosis/files/entities/downunder/scripts/biomes/the_sky_appends.lua")
 
 do -- Flip the Suns
   local path = "data/biome_impl/spliced/moon.xml"
@@ -214,14 +214,14 @@ do -- Allow Volcanic Eggs to appear
 end
 
 do --Divine Radar Adjustment
-  local path = "mods/apotheosis/files/scripts/perks/plane_radar.lua"
+  local path = "mods/Apotheosis/files/scripts/perks/plane_radar.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("6445", "4909")
   ModTextFileSetContent(path, content)
 end
 
 do --Adjust which sun Solunarium searches for
-  local path = "mods/apotheosis/files/scripts/materials/secret_materials_generate.lua"
+  local path = "mods/Apotheosis/files/scripts/materials/secret_materials_generate.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"moon_is_sun\"", "\"darkmoon_is_darksun\"")
   ModTextFileSetContent(path, content)
@@ -238,14 +238,14 @@ end
 do --Newgame Plus alteration
   local path = "data/scripts/newgame_plus.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("BiomeMapLoad_KeepPlayer%( \"mods/apotheosis/files/biome_impl/newgame_plus/biome_map_newgame_plus%.lua\", \"data/biome/_pixel_scenes_newgame_plus%.xml\" %)", "BiomeMapLoad_KeepPlayer( \"mods/Apotheosis/files/scripts/setup/downunder_biome_map.lua\", \"data/biome/_pixel_scenes.xml\" )")
+  content = content:gsub("BiomeMapLoad_KeepPlayer%( \"mods/Apotheosis/files/biome_impl/newgame_plus/biome_map_newgame_plus%.lua\", \"data/biome/_pixel_scenes_newgame_plus%.xml\" %)", "BiomeMapLoad_KeepPlayer( \"mods/Apotheosis/files/scripts/setup/downunder_biome_map.lua\", \"data/biome/_pixel_scenes.xml\" )")
   ModTextFileSetContent(path, content)
 end
 
 do --Updates Water stone from the essence of Polymorphine to be pink
   local path = "data/scripts/essences/away.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("\"data/entities/items/pickup/waterstone%.xml\"", "\"mods/apotheosis/files/entities/items/pickups/waterstone_pink.xml\"")
+  content = content:gsub("\"data/entities/items/pickup/waterstone%.xml\"", "\"mods/Apotheosis/files/entities/items/pickups/waterstone_pink.xml\"")
   ModTextFileSetContent(path, content)
 end
 
@@ -277,7 +277,7 @@ do --Add downunder flag to the game
     "clouds",           --Cloudscapes
     "hills",            --Hills, aka forest.
   }
-  local appendpath ="mods/apotheosis/files/scripts/setup/enemy_appends_downunder.lua"
+  local appendpath ="mods/Apotheosis/files/scripts/setup/enemy_appends_downunder.lua"
 
   for k=1,#biomes
   do local v = biomes[k]
@@ -287,7 +287,7 @@ do --Add downunder flag to the game
 end
 
 do --Orbmap corrections
-  local path = "mods/apotheosis/files/scripts/mod_compatibility/utilities_lua_appends.lua"
+  local path = "mods/Apotheosis/files/scripts/mod_compatibility/utilities_lua_appends.lua"
   local content = ModTextFileGetContent(path)
   content = content:gsub("{8,1", "{-9,24")    --Pitboss Orb
   content = content:gsub("{1,%-3", "{1,-3")   --Mountain Temple Orb

@@ -1,7 +1,7 @@
 <Entity >
    
   <SpriteComponent 
-    image_file="mods/apotheosis/files/projectiles_gfx/verlet/cable_jumper_red_jumper.png" 
+    image_file="mods/Apotheosis/files/projectiles_gfx/verlet/cable_jumper_red_jumper.png" 
     offset_x="6"
     offset_y="6.5"
     update_transform="0"

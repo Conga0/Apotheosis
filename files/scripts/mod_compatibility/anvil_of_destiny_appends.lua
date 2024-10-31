@@ -376,7 +376,7 @@ append_effect("apotheosis_meat_heretic_eye", function(wand)
 end)
 
 register_physics_item({
-  physics_image_file = "mods/apotheosis/files/items_gfx/heretical_eye.png",
+  physics_image_file = "mods/Apotheosis/files/items_gfx/heretical_eye.png",
   type = "effect",
   effect_name = "apotheosis_meat_heretic_eye",
   emitter_material = "apotheosis_blood_infectious",

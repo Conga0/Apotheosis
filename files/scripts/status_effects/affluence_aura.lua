@@ -17,7 +17,7 @@ do local v = targets[k]
             end
         end
         if alreadyboosted ~= true then
-            local goldbuff = EntityLoad("mods/apotheosis/files/entities/misc/drop_gold.xml")
+            local goldbuff = EntityLoad("mods/Apotheosis/files/entities/misc/drop_gold.xml")
             EntityAddChild(v,goldbuff)
             EntityKill(entity_id)
             GamePrint("entity_id is " .. entity_id)

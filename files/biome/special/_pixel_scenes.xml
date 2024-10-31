@@ -266,7 +266,7 @@
 	<!--Spawns a book hinting towards bringing a brimstone to the Lava Lake-->
     <PixelScene pos_x="4007" pos_y="3313" just_load_an_entity="mods/Apotheosis/files/entities/buildings/fire_lukki_book_spawner.xml" />
 
-    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
+    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/Apotheosis/files/entities/items/pickups/fishing_rod.xml" />
 
 
 	<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17860" pos_y="-100" skip_biome_checks="1" skip_edge_textures="0"
@@ -276,10 +276,10 @@
 	></PixelScene>
 	<PixelScene pos_x="-17657" pos_y="260" just_load_an_entity="data/entities/props/physics_skull_03.xml" />
 	<PixelScene pos_x="-17657" pos_y="255" just_load_an_entity="data/entities/props/physics_bone_01.xml" />
-	<PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
+	<PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_realquest_tale.xml" />
 
 
-    <PixelScene pos_x="-19100" pos_y="-160" just_load_an_entity="mods/apotheosis/files/entities/buildings/forest_monolith_spawner.xml" />
+    <PixelScene pos_x="-19100" pos_y="-160" just_load_an_entity="mods/Apotheosis/files/entities/buildings/forest_monolith_spawner.xml" />
 
 	<!--Cruicible-->
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-8739" pos_y="16381" skip_biome_checks="1" skip_edge_textures="0"
@@ -352,7 +352,7 @@
     ></PixelScene>
 
 	<!--Le Fishe-->
-    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
+    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/Apotheosis/files/entities/items/pickups/fishing_rod.xml" />
 
 	<!--Grave 1-->
 	<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="4660" pos_y="-100" skip_biome_checks="1" skip_edge_textures="0"
@@ -362,8 +362,8 @@
 	></PixelScene>
 	<PixelScene pos_x="4863" pos_y="260" just_load_an_entity="data/entities/props/physics_skull_03.xml" />
 	<PixelScene pos_x="4863" pos_y="255" just_load_an_entity="data/entities/props/physics_bone_01.xml" />
-	<PixelScene pos_x="4883" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest.xml" />
-	<PixelScene pos_x="4843" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_alt.xml" />
+	<PixelScene pos_x="4883" pos_y="260" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_realquest.xml" />
+	<PixelScene pos_x="4843" pos_y="260" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_realquest_alt.xml" />
 
 	<!--Graave 2-->
 	<PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-17860" pos_y="-100" skip_biome_checks="1" skip_edge_textures="0"
@@ -373,7 +373,7 @@
 	></PixelScene>
 	<PixelScene pos_x="-17657" pos_y="260" just_load_an_entity="data/entities/props/physics_skull_03.xml" />
 	<PixelScene pos_x="-17657" pos_y="255" just_load_an_entity="data/entities/props/physics_bone_01.xml" />
-	<PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
+	<PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_realquest_tale.xml" />
 
 	<!--Volcanic Nest in Snowy-->
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="269" pos_y="10087" skip_biome_checks="1" skip_edge_textures="0"
@@ -403,7 +403,7 @@
     <PixelScene pos_x="20380" pos_y="-4202" just_load_an_entity="data/entities/buildings/wand_cave_populator.xml" />
 
 	<!--Rat-->
-    <PixelScene pos_x="-4060" pos_y="11325" just_load_an_entity="mods/apotheosis/files/entities/items/wands/custom/rat_wand.xml" />
+    <PixelScene pos_x="-4060" pos_y="11325" just_load_an_entity="mods/Apotheosis/files/entities/items/wands/custom/rat_wand.xml" />
 
 	<!--Cats-->
     <PixelScene pos_x="676" pos_y="-106" just_load_an_entity="data/entities/buildings/intro_kitty_populator.xml" />

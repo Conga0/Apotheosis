@@ -39,15 +39,15 @@ end
 ------------------------------------------------------------------------
 
 function spawn_orb(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/items/orbs/custom/orb_12.xml", x, y )
-	EntityLoad( "mods/apotheosis/files/entities/buildings/flesh_boss_summon.xml", x, y - 40 )
+	EntityLoad( "mods/Apotheosis/files/entities/items/orbs/custom/orb_12.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/flesh_boss_summon.xml", x, y - 40 )
 	--EntityLoad( "data/entities/misc/orb_07_pitcheck_a.xml", x, y )
 	--EntityLoad( "data/entities/items/pickup/heart_better.xml", x + 30, y - 20 )
-	EntityLoad( "mods/apotheosis/files/entities/items/books/orbrooms/book_12.xml", x - 30, y - 30 )
+	EntityLoad( "mods/Apotheosis/files/entities/items/books/orbrooms/book_12.xml", x - 30, y - 30 )
 	EntityLoad( "data/entities/misc/music_energy_000.xml", x, y - 10 )
 
-	spawn_material_checker( x - 197, y - 11, "apotheosis_redstone", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_12.xml", x, y - 100 )
-	spawn_material_checker( x + 198, y - 11, "apotheosis_redstone", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/apotheosis/files/entities/glyphs/orbroom_12.xml", x, y - 100 )
+	spawn_material_checker( x - 197, y - 11, "apotheosis_redstone", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/Apotheosis/files/entities/glyphs/orbroom_12.xml", x, y - 100 )
+	spawn_material_checker( x + 198, y - 11, "apotheosis_redstone", "data/scripts/biomes/orbrooms/orbroom_shared.lua", "mods/Apotheosis/files/entities/glyphs/orbroom_12.xml", x, y - 100 )
 
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x - 197, y - 11 )
 	-- EntityLoad( "data/entities/buildings/orb_room_materialchecker.xml", x + 198, y - 11 )

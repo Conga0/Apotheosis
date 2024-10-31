@@ -44,7 +44,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/material_confuse.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/material_confuse.xml"
 		>
 	</VariableStorageComponent>
 

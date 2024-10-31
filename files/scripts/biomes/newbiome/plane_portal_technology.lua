@@ -29,15 +29,15 @@ function init( x, y, w, h )
 	SetRandomSeed(444,777)
 	local pw = GetParallelWorldPosition(x,y)
 	if pw == 0 then
-		--LoadPixelScene( "mods/apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/magicegg/magicegg_bot_only.png", "mods/apotheosis/files/biome_impl/magicegg/magicegg_bot_only_visual.png", x, y, "mods/apotheosis/files/biome_impl/magicegg/magicegg_bot_only_background.png", true )
+		--LoadPixelScene( "mods/Apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/magicegg/magicegg_bot_only.png", "mods/Apotheosis/files/biome_impl/magicegg/magicegg_bot_only_visual.png", x, y, "mods/Apotheosis/files/biome_impl/magicegg/magicegg_bot_only_background.png", true )
 	end
 end
 
 function spawn_gate(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
-	EntityLoad("mods/apotheosis/files/entities/buildings/ending/portals/gateway_base_enter_empyrean.xml", x, y + 30)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/ending/portals/gateway_base_enter_empyrean.xml", x, y + 30)
 end
 
 function spawn_perk(x, y)

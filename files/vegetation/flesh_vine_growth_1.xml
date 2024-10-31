@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/apotheosis/files/vegetation/flesh_vine_growth_1.png"
+ filename="mods/Apotheosis/files/vegetation/flesh_vine_growth_1.png"
  offset_x="3"
  offset_y="1" 
  default_animation="vegetation_growth" >

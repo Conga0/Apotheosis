@@ -26,7 +26,7 @@ if foe == true then
 	local vel_x = math.cos(angle) * 90
 	local vel_y = -math.sin(angle) * 90
 
-	local pid = shoot_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/orb_corrupt_manadrain_weakhome.xml", x, y, vel_x, vel_y )
+	local pid = shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/orb_corrupt_manadrain_weakhome.xml", x, y, vel_x, vel_y )
 	local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
 	ComponentSetValue2(projcomp, "mShooterHerdId", StringToHerdId("mage_corrupted"))
 end

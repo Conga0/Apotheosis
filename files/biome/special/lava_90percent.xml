@@ -2,11 +2,11 @@
   <Topology 
     name="$biome_lake"
     type="BIOME_PROCEDURAL"
-    background_image="mods/apotheosis/files/weather_gfx/sunken_cavern_background.png"
-    background_edge_left="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_left.png"
-    background_edge_right="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_right.png"
-    background_edge_top="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_top.png"
-    background_edge_bottom="mods/apotheosis/files/weather_gfx/edges/sunken_cavern_background_bottom.png"
+    background_image="mods/Apotheosis/files/weather_gfx/sunken_cavern_background.png"
+    background_edge_left="mods/Apotheosis/files/weather_gfx/edges/sunken_cavern_background_left.png"
+    background_edge_right="mods/Apotheosis/files/weather_gfx/edges/sunken_cavern_background_right.png"
+    background_edge_top="mods/Apotheosis/files/weather_gfx/edges/sunken_cavern_background_top.png"
+    background_edge_bottom="mods/Apotheosis/files/weather_gfx/edges/sunken_cavern_background_bottom.png"
     background_edge_priority="9"     
 
     lua_script="data/scripts/biomes/hills.lua"

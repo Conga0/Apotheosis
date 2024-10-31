@@ -11,11 +11,11 @@
 
 	<LuaComponent
 		execute_every_n_frame = "1"
-		script_source_file="mods/apotheosis/files/scripts/misc/effect_trip_red_distort.lua"
+		script_source_file="mods/Apotheosis/files/scripts/misc/effect_trip_red_distort.lua"
 	></LuaComponent>
 
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/status_effects/trip_red_distort_stop.lua" 
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/trip_red_distort_stop.lua" 
 		execute_every_n_frame="-1"
 		execute_on_removed="1"
 	></LuaComponent>
@@ -23,6 +23,6 @@
     <LuaComponent
       execute_every_n_frame="460"
       remove_after_executed="1"
-      script_source_file="mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_nature.lua"
+      script_source_file="mods/Apotheosis/files/entities/buildings/ending/portals/enter_plane_nature.lua"
     ></LuaComponent>
 </Entity>

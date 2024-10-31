@@ -6,7 +6,7 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 local active = false
 local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
 for i = 1, #luacomps do
-    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/buildings/perk_creation.lua" then
+    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/buildings/perk_creation.lua" then
 	active = true
 	break
     end
@@ -38,11 +38,11 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 60, "item_pickup")) do
 		local sprite_comp = EntityGetFirstComponentIncludingDisabled(entity_id, "SpriteComponent")
 		ComponentSetValue2(sprite_comp, "rect_animation", "active")
 
-                local c1 = EntityLoad("mods/apotheosis/files/entities/misc/perk_creation_gear_sounds.xml", pos_x-163, pos_y+78)
+                local c1 = EntityLoad("mods/Apotheosis/files/entities/misc/perk_creation_gear_sounds.xml", pos_x-163, pos_y+78)
 		local inherit_comp1 = EntityGetFirstComponentIncludingDisabled(c1, "InheritTransformComponent")
 		local x1, y1, scale_x1, scale_y1, rot1 = ComponentGetValue2(inherit_comp1, "Transform")
 		ComponentSetValue2(inherit_comp1, "Transform", x1-163, y1+76, scale_x1, scale_y1, rot1)
-                local c2 = EntityLoad("mods/apotheosis/files/entities/misc/perk_creation_gear_sounds.xml", pos_x+160, pos_y+76)
+                local c2 = EntityLoad("mods/Apotheosis/files/entities/misc/perk_creation_gear_sounds.xml", pos_x+160, pos_y+76)
 		local inherit_comp2 = EntityGetFirstComponentIncludingDisabled(c2, "InheritTransformComponent")
 		local x2, y2, scale_x2, scale_y2, rot2 = ComponentGetValue2(inherit_comp2, "Transform")
 		ComponentSetValue2(inherit_comp2, "Transform", x2+160, y2+76, scale_x2, scale_y2, rot2)
@@ -54,7 +54,7 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 60, "item_pickup")) do
                     "LuaComponent",
                     {
                         execute_on_added = false,
-                        script_source_file = "mods/apotheosis/files/scripts/buildings/perk_creation.lua",
+                        script_source_file = "mods/Apotheosis/files/scripts/buildings/perk_creation.lua",
                         execute_every_n_frame = 96
                     }
                 )
@@ -64,7 +64,7 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 60, "item_pickup")) do
                     "LuaComponent",
                     {
                         execute_on_added = false,
-                        script_source_file = "mods/apotheosis/files/scripts/buildings/perk_creation_end.lua",
+                        script_source_file = "mods/Apotheosis/files/scripts/buildings/perk_creation_end.lua",
                         execute_every_n_frame = 144,
                         remove_after_executed = true,
                         execute_times = 1

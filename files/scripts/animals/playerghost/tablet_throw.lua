@@ -29,7 +29,7 @@ function shot( proj_id )
                     EntitySetComponentsWithTagEnabled( c, "enabled_by_liquid", false )
                 end
                 --local comp = EntityGetFirstComponentIncludingDisabled(v,"SpriteComponent")
-                --ComponentSetValue2(comp,"image_file","mods/apotheosis/files/enemies_gfx/playerghost/playerghost.xml")
+                --ComponentSetValue2(comp,"image_file","mods/Apotheosis/files/enemies_gfx/playerghost/playerghost.xml")
             end
         end
 
@@ -39,8 +39,8 @@ function shot( proj_id )
 			"LuaComponent",
 			{
 				execute_on_added = false,
-				script_source_file = "mods/apotheosis/files/scripts/animals/playerghost/tablet_damage.lua",
-                script_item_picked_up = "mods/apotheosis/files/scripts/animals/playerghost/tablet_damage.lua",
+				script_source_file = "mods/Apotheosis/files/scripts/animals/playerghost/tablet_damage.lua",
+                script_item_picked_up = "mods/Apotheosis/files/scripts/animals/playerghost/tablet_damage.lua",
 				execute_every_n_frame = 1,
 				remove_after_executed = false,
 				execute_times=90

@@ -1,6 +1,6 @@
 <Sprite 
   default_animation="build" 
-  filename="mods/apotheosis/files/projectiles_gfx/build_tank.png" 
+  filename="mods/Apotheosis/files/projectiles_gfx/build_tank.png" 
   offset_x="14" 
   offset_y="23" >
 

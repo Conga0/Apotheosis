@@ -170,7 +170,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/meteor_thunder.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/meteor_thunder.xml"
 		>
 	</VariableStorageComponent>
 	

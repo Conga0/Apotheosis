@@ -9,7 +9,7 @@ function do_newgame_plus()
 
 	-- Load the actual biome map
 
-	BiomeMapLoad_KeepPlayer( "mods/apotheosis/files/scripts/newgame/elemental_test_01_biome_map.lua", "mods/apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
+	BiomeMapLoad_KeepPlayer( "mods/Apotheosis/files/scripts/newgame/elemental_test_01_biome_map.lua", "mods/Apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
 	SessionNumbersSave()
 	-- BiomeMapLoad( "data/biome_impl/biome_map.png" )
 

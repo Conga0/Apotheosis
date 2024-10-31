@@ -12,7 +12,7 @@
 	</IKLimbComponent>
 
 	<SpriteComponent 
-		image_file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb_a.png" 
+		image_file="mods/Apotheosis/files/enemies_gfx/lukki/sunken_creature_limb_a.png" 
 		z_index="1.1"
 		offset_x="0"
 		offset_y="5"
@@ -21,7 +21,7 @@
 	</SpriteComponent>
 
 	<SpriteComponent 
-		image_file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb_b.png" 
+		image_file="mods/Apotheosis/files/enemies_gfx/lukki/sunken_creature_limb_b.png" 
 		z_index="1.1"
 		offset_x="0"
 		offset_y="5"
@@ -30,7 +30,7 @@
 	</SpriteComponent>
 
 	<SpriteComponent 
-		image_file="mods/apotheosis/files/enemies_gfx/lukki/sunken_creature_limb_knee.png" 
+		image_file="mods/Apotheosis/files/enemies_gfx/lukki/sunken_creature_limb_knee.png" 
 		z_index="1.1"
 		offset_x="4"
 		offset_y="4"

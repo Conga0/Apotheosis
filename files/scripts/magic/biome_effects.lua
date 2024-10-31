@@ -6,6 +6,7 @@ function biome_entered( new_biome_name, old_biome_name )
     local plane_yggdrasil = ( new_biome_name == "$biome_plane_yggdrasil" ) or ( new_biome_name == "$biome_plane_yggdrasil_border" )
     local plane_magic = ( new_biome_name == "$biome_plane_magic" )
     local plane_technology = ( new_biome_name == "$biome_plane_technology" )
+    local meat_realm = ( new_biome_name == "$biome_meat" )
     --local empyrean = ( new_biome_name == "$biome_empyrean" )
 
     function loadCurse(player_id,filepath)
@@ -23,15 +24,17 @@ function biome_entered( new_biome_name, old_biome_name )
     end
 
 	--if underwater then
-    --    loadCurse(player,"mods/apotheosis/files/entities/misc/curse_weaken.xml")
+    --    loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_weaken.xml")
     if plane_yggdrasil then
-        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_yggdrasil.xml")
+        loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_yggdrasil.xml")
     elseif plane_magic then
-        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_magic.xml")
+        loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_magic.xml")
     elseif plane_technology then
-        loadCurse(player,"mods/apotheosis/files/entities/misc/curse_technology.xml")
+        loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_technology.xml")
     --elseif empyrean then
-    --    loadCurse(player,"mods/apotheosis/files/entities/misc/curse_empyrean.xml")
+    --    loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_empyrean.xml")
+    elseif meat_realm and ModSettingGet( "Apotheosis.meatrealmrework" ) and GlobalsGetValue( "BOSS_MEAT_DEAD", "0" ) == "0" then
+        loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_meat.xml")
 	else
         local children = EntityGetAllChildren(player) or {}
         for k=1,#children do

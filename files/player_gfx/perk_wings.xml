@@ -1,5 +1,5 @@
 <Sprite 
-	filename="mods/apotheosis/files/player_gfx/perk_wings.png" 
+	filename="mods/Apotheosis/files/player_gfx/perk_wings.png" 
 	hotspots_filename="data/enemies_gfx/player_hotspots.png" 
 	offset_x="6" 
 	offset_y="14" 

@@ -3,7 +3,7 @@
     </InheritTransformComponent>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/perks/no_blood.lua"
+		script_source_file="mods/Apotheosis/files/scripts/perks/no_blood.lua"
 		execute_every_n_frame="60"
 		execute_times="-1"
 	>

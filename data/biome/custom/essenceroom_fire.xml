@@ -11,7 +11,7 @@
     background_edge_priority="12"     
 
     wang_template_file="" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/essenceroom_fire.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/essenceroom_fire.lua"
     wang_map_width="256"
     wang_map_height="256"
     audio_music_2="wandcave"

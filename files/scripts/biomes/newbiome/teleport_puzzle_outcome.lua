@@ -172,7 +172,7 @@ g_lamp =
 --------------------------------------
 
 function init(x, y, w, h)
-	LoadPixelScene( "mods/apotheosis/files/biome_impl/special_scenes/secret_chamber.png", "mods/apotheosis/files/biome_impl/special_scenes/secret_chamber_visual.png", x, y, "", true )
+	LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/secret_chamber.png", "mods/Apotheosis/files/biome_impl/special_scenes/secret_chamber_visual.png", x, y, "", true )
 end
 
 function spawn_lamp(x, y)
@@ -184,11 +184,11 @@ function spawn_skulls(x, y)
 end
 
 function spawn_teleporter(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/teleport_puzzle_return.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/teleport_puzzle_return.xml", x, y)
 end
 
 function spawn_chest(x, y)
-	EntityLoad("mods/apotheosis/files/entities/items/pickups/chest_death_cross.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/items/pickups/chest_death_cross.xml", x, y)
 end
 
 function spawn_shopitem( x, y ) end

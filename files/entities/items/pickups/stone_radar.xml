@@ -19,7 +19,7 @@
 	<PhysicsImageShapeComponent
 		body_id="1"
 		centered="1"
-		image_file="mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png"
+		image_file="mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png"
 		material="gem_box2d_green"
 	></PhysicsImageShapeComponent>
 	
@@ -138,14 +138,14 @@
 		_enabled="0"
 		offset_x="4"
 		offset_y="4"
-		image_file="mods/apotheosis/files/items_gfx/stone_radar.png"
+		image_file="mods/Apotheosis/files/items_gfx/stone_radar.png"
 	></SpriteComponent>
 
 	<ItemComponent
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_stone_radar_name"
 		ui_description="$item_apotheosis_stone_radar_desc"
-		ui_sprite="mods/apotheosis/files/ui_gfx/items/stone_radar.png"
+		ui_sprite="mods/Apotheosis/files/ui_gfx/items/stone_radar.png"
 		max_child_items="0"
 		is_pickable="1"
 		is_equipable_forced="1"
@@ -174,7 +174,7 @@
 	<LuaComponent
 		_enabled="0"
 		_tags = "enabled_in_inventory,enabled_in_hand"
-		script_source_file = "mods/apotheosis/files/scripts/items/radar_stone.lua"
+		script_source_file = "mods/Apotheosis/files/scripts/items/radar_stone.lua"
 		execute_every_n_frame = "1"
 	>
 	</LuaComponent>
@@ -182,7 +182,7 @@
 	<LuaComponent
 		_enabled="1"
 		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world"
-		script_source_file = "mods/apotheosis/files/scripts/items/radar_stone_ping.lua"
+		script_source_file = "mods/Apotheosis/files/scripts/items/radar_stone_ping.lua"
 		execute_every_n_frame = "1"
 	>
 	</LuaComponent>
@@ -190,7 +190,7 @@
 	<LuaComponent
 		_enabled="0"
 		_tags = "enabled_in_inventory,enabled_in_hand,enabled_in_world,enabled_by_liquid"
-		script_source_file = "mods/apotheosis/files/scripts/items/radar_stone_ping_visual.lua"
+		script_source_file = "mods/Apotheosis/files/scripts/items/radar_stone_ping_visual.lua"
 		execute_every_n_frame = "600"
 	>
 	</LuaComponent>
@@ -198,7 +198,7 @@
 	<LuaComponent
 		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/items/radar_stone_destroyed.lua"
+		script_source_file="mods/Apotheosis/files/scripts/items/radar_stone_destroyed.lua"
 		execute_on_removed="1"
 		execute_every_n_frame="-1"
 		>

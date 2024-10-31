@@ -1,7 +1,7 @@
 <Entity >
   <Base file="data/entities/animals/watermage_greater.xml" include_children="1" >
     <AnimalAIComponent 
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/aquamage_pylon_pentashot_fast.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_pylon_pentashot_fast.xml"
      ></AnimalAIComponent >
     <DamageModelComponent 
       hp="160"

@@ -43,7 +43,7 @@
     execute_on_added="1"
     remove_after_executed="1"
     call_init_function="1"
-    script_source_file="mods/apotheosis/files/scripts/potions/potion_portalium.lua" 
+    script_source_file="mods/Apotheosis/files/scripts/potions/potion_portalium.lua" 
   ></LuaComponent>
   
 	<LuaComponent 

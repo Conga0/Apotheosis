@@ -20,14 +20,14 @@
     _enabled="0"
     body_id="1"
     centered="1"
-    image_file="mods/apotheosis/files/items_gfx/gourd_holy.png"
+    image_file="mods/Apotheosis/files/items_gfx/gourd_holy.png"
     material="meat_fruit"
   ></PhysicsImageShapeComponent>
 
   <SpriteComponent
     offset_x="4.5"
     offset_y="4"
-    image_file="mods/apotheosis/files/items_gfx/gourd_holy_side.png"
+    image_file="mods/Apotheosis/files/items_gfx/gourd_holy_side.png"
   ></SpriteComponent>
   
   <PhysicsThrowableComponent
@@ -83,7 +83,7 @@
       explosion_radius="3" 
       explosion_sprite="" 
       explosion_sprite_lifetime="10"
-	  load_this_entity="mods/apotheosis/files/entities/projectiles/divine_aura.xml"
+	  load_this_entity="mods/Apotheosis/files/entities/projectiles/divine_aura.xml"
       hole_destroy_liquid="0" 
       hole_enabled="0" 
       ray_energy="100000"
@@ -114,7 +114,7 @@
     _enabled="0"
     offset_x="4"
     offset_y="4"
-    image_file="mods/apotheosis/files/items_gfx/in_hand/gourd_holy_in_hand.png"
+    image_file="mods/Apotheosis/files/items_gfx/in_hand/gourd_holy_in_hand.png"
   ></SpriteComponent>
 
   <ItemComponent
@@ -123,7 +123,7 @@
     max_child_items="0"
     is_pickable="1"
     is_equipable_forced="1"
-    ui_sprite="mods/apotheosis/files/ui_gfx/items/gourd_holy.png"
+    ui_sprite="mods/Apotheosis/files/ui_gfx/items/gourd_holy.png"
     ui_description="$item_apotheosis_gourd_holy_desc"
     preferred_inventory="QUICK"
     play_hover_animation="1"
@@ -151,7 +151,7 @@
 	<!--Disable hover animation after picked up-->
 	<LuaComponent
 		_enabled="1"
-        script_item_picked_up="mods/apotheosis/files/scripts/items/gourd_holy_pickup.lua"
+        script_item_picked_up="mods/Apotheosis/files/scripts/items/gourd_holy_pickup.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>

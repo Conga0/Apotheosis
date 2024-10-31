@@ -14,6 +14,6 @@ end
 
 if found == false then
     local x,y = EntityGetTransform(parent_id)
-    local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_brain_damage_perma.xml", x, y)
+    local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_brain_damage_perma.xml", x, y)
     EntityAddChild(parent_id,c)
 end

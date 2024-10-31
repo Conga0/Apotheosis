@@ -71,7 +71,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/projectiles_gfx/meteor_blue_dark.xml" 
+    image_file="mods/Apotheosis/files/projectiles_gfx/meteor_blue_dark.xml" 
     next_rect_animation="" 
     offset_x="0" 
     offset_y="0" 
@@ -216,7 +216,7 @@
 	</ParticleEmitterComponent>
   
   <SpriteParticleEmitterComponent
-    sprite_file="mods/apotheosis/files/particles/fire_blue_large.xml"
+    sprite_file="mods/Apotheosis/files/particles/fire_blue_large.xml"
     delay="0"
     lifetime="0"
 	emissive="1"
@@ -258,7 +258,7 @@
   <LuaComponent
       execute_every_n_frame="-1"
       execute_on_removed="1"
-      script_source_file="mods/apotheosis/files/scripts/projectiles/aquamage_bomb_death.lua"
+      script_source_file="mods/Apotheosis/files/scripts/projectiles/aquamage_bomb_death.lua"
   >
   </LuaComponent>
 

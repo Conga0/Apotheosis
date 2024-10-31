@@ -36,7 +36,7 @@
 		damage="0"
 		camera_shake="4.5" 
 		explosion_radius="9" 
-		explosion_sprite="mods/apotheosis/files/particles/explosion_032_plasma_red.xml"
+		explosion_sprite="mods/Apotheosis/files/particles/explosion_032_plasma_red.xml"
 		explosion_sprite_emissive="1"
 		explosion_sprite_additive="1"
 		explosion_sprite_lifetime="0" 

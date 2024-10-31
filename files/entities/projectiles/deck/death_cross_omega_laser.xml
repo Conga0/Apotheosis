@@ -117,7 +117,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_laser.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega_laser.xml"
 		>
 	</VariableStorageComponent>
 

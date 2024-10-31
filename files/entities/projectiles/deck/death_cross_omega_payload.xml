@@ -141,7 +141,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/death_cross_omega_payload.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/death_cross_omega_payload.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

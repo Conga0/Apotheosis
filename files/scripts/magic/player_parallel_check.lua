@@ -12,7 +12,7 @@ if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" and Ga
     do local v = comps[k]
         GlobalsSetValue("apotheosis_plane_fail", "1")
         GameScreenshake( 200 )
-        --if ComponentGetValue2(v,"script_source_file") == "mods/apotheosis/files/scripts/magic/player_parallel_check.lua" then   --Turn self off
+        --if ComponentGetValue2(v,"script_source_file") == "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua" then   --Turn self off
         --    EntitySetComponentIsEnabled(entity_id,v,false)
         --    break
         --end
@@ -31,4 +31,4 @@ local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"IngestionCompon
 ComponentSetValue2(comp,"blood_healing_speed",math.max(0.0024 * (hp / 4), 0.0024))
 
 --Removes old extra life perks
-dofile( "mods/apotheosis/files/scripts/DEBUG/clear_extra_lifes.lua" )
+dofile( "mods/Apotheosis/files/scripts/DEBUG/clear_extra_lifes.lua" )

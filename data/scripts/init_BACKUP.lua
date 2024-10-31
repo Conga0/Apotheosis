@@ -231,4 +231,4 @@ function OnCountSecrets()
 	return total,found
 end
 
-dofile_once("mods/apotheosis/init_setup.lua")
+dofile_once("mods/Apotheosis/init_setup.lua")

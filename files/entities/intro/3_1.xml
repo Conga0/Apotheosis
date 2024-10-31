@@ -2,7 +2,7 @@
 
 	<Base file="data/entities/intro/constellation_base.xml">
 	  	<ParticleEmitterComponent 
-			image_animation_file="mods/apotheosis/files/entities/intro/3_1.png" >
+			image_animation_file="mods/Apotheosis/files/entities/intro/3_1.png" >
 		</ParticleEmitterComponent>
 	</Base>
 

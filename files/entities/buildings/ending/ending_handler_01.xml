@@ -2,7 +2,7 @@
 
 	<LuaComponent
         execute_on_added="1"
-		script_source_file="mods/apotheosis/files/entities/buildings/ending/ending_handler_01.lua"
+		script_source_file="mods/Apotheosis/files/entities/buildings/ending/ending_handler_01.lua"
 		execute_every_n_frame="1"
 		execute_times="-1"
 		>

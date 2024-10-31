@@ -138,7 +138,7 @@
 	</LuaComponent>
 
     <LuaComponent
-        script_source_file="mods/apotheosis/files/scripts/animals/aura_shield_sap.lua"
+        script_source_file="mods/Apotheosis/files/scripts/animals/aura_shield_sap.lua"
 	>
     </LuaComponent>
 

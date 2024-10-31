@@ -16,7 +16,7 @@
 		attack_melee_enabled="0"
 		attack_ranged_offset_y="4"
 		can_fly="0"  
-		attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/bloodtentacle_eviltemple.xml"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/bloodtentacle_eviltemple.xml"
 		attack_ranged_frames_between="50"
 		is_static_turret="0"
 		eye_offset_x="8"
@@ -41,7 +41,7 @@
 	</DamageModelComponent>
 
 	<SpriteComponent 
-		image_file="mods/apotheosis/files/buildings_gfx/eviltemple_tentacle_trap_left.xml" 
+		image_file="mods/Apotheosis/files/buildings_gfx/eviltemple_tentacle_trap_left.xml" 
 		special_scale_x="1"
 		has_special_scale="1"
 		offset_x="0"
@@ -112,7 +112,7 @@
 	</LuaComponent>
 
 	<PixelSceneComponent
-		pixel_scene="mods/apotheosis/files/biome_impl/evil_temple/trap_frame_left.png"
+		pixel_scene="mods/Apotheosis/files/biome_impl/evil_temple/trap_frame_left.png"
 		offset_x="-5"
 		offset_y="-10" >
 	</PixelSceneComponent>

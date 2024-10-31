@@ -28,7 +28,7 @@
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
 		emit_cosmetic_particles="1"
-		image_animation_file="mods/apotheosis/files/entities/buildings/ending/clue/heretical_message.png" 
+		image_animation_file="mods/Apotheosis/files/entities/buildings/ending/clue/heretical_message.png" 
 		image_animation_speed="5"
 		image_animation_loop="1"
         emission_chance="60"

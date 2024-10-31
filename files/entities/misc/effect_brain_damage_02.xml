@@ -27,12 +27,12 @@
 	
 	<LuaComponent
 		execute_every_n_frame = "1"
-		script_source_file="mods/apotheosis/files/scripts/misc/effect_brain_damage_effect.lua"
+		script_source_file="mods/Apotheosis/files/scripts/misc/effect_brain_damage_effect.lua"
 	></LuaComponent>
 	
 	<LuaComponent
 		execute_every_n_frame = "600"
-		script_source_file="mods/apotheosis/files/scripts/status_effects/brain_damage_02.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/brain_damage_02.lua"
 	></LuaComponent>
 
 </Entity>

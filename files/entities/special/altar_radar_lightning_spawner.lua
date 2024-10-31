@@ -20,10 +20,10 @@ local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,48,"poopstone")
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
-	if ComponentGetValue2(comp,"image_file") == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
         local x,y = EntityGetTransform(v)
         EntityKill(v)
-		EntityLoad("mods/apotheosis/files/entities/items/pickups/stone_radar.xml",x,y)
+		EntityLoad("mods/Apotheosis/files/entities/items/pickups/stone_radar.xml",x,y)
         GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
 	if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
 		GameTriggerMusicEvent( "music/oneshot/heaven_03", true, pos_x, pos_y )
@@ -41,7 +41,7 @@ do local v = heretic_stones[k]
 				cowardness = 0
 			end
 			GlobalsSetValue("HERETIC_COWARDLY", tostring(cowardness + 1))
-			EntityLoad("mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster_stone_convert.xml",pos_x,pos_y-100)
+			EntityLoad("mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster_stone_convert.xml",pos_x,pos_y-100)
 		end
 		GameTriggerMusicEvent( "music/oneshot/tripping_balls_02", true, pos_x, pos_y )
 		GameScreenshake( 150 )

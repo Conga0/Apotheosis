@@ -8,7 +8,7 @@ if comp == nil then
         value_float=0,
     })
     EntityAddComponent2(me, "LuaComponent", {
-        script_damage_about_to_be_received="mods/apotheosis/files/scripts/animals/boss_armor_strong.lua",
+        script_damage_about_to_be_received="mods/Apotheosis/files/scripts/animals/boss_armor_strong.lua",
         execute_every_n_frame=-1,
     })
 else

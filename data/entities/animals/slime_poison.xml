@@ -43,7 +43,7 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/secret/darkghost_skull.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/secret/darkghost_skull.xml"
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -75,7 +75,7 @@
 	
 	<SpriteComponent 
 		_tags="character"
-		image_file="mods/apotheosis/files/enemies_gfx/secret/darkghost.xml"
+		image_file="mods/Apotheosis/files/enemies_gfx/secret/darkghost.xml"
 		offset_x="0"
 		offset_y="0"
 		additive="1"

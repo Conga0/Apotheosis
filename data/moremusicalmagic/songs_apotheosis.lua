@@ -38,7 +38,7 @@ end
 
 ocarina_funcs["bragi"]  = function()
   local x, y = EntityGetTransform( entity_id )
-  SongEntityLoad( "ocarina", "_secret_bragi", -1, "mods/apotheosis/files/entities/buildings/bragi_loader.xml", x, y, 0 )
+  SongEntityLoad( "ocarina", "_secret_bragi", -1, "mods/Apotheosis/files/entities/buildings/bragi_loader.xml", x, y, 0 )
   AddFlagPersistent("apotheosis_card_unlocked_musical_magic_played")
 end
 
@@ -69,6 +69,6 @@ end
 
 kantele_funcs["bragi"]  = function()
   local x, y = EntityGetTransform( entity_id )
-  SongEntityLoad( "ocarina", "_secret_bragi", -1, "mods/apotheosis/files/entities/buildings/bragi_loader.xml", x, y, 0 )
+  SongEntityLoad( "ocarina", "_secret_bragi", -1, "mods/Apotheosis/files/entities/buildings/bragi_loader.xml", x, y, 0 )
   AddFlagPersistent("apotheosis_card_unlocked_musical_magic_played")
 end

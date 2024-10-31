@@ -30,4 +30,4 @@ if cowardness ~= nil then
 ComponentSetValue2( incarncomp, "value_int", cowardness)
 end
 
-LoadPixelScene( "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_5.png", "mods/apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_5.png", pos_x-56, pos_y-56, "", true )
+LoadPixelScene( "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_5.png", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_5.png", pos_x-56, pos_y-56, "", true )

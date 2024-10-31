@@ -28,14 +28,14 @@ if GameGetGameEffectCount( entity_id, "CHARM" ) < 1 then
             GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/megalaser/launch", pos_x, pos_y )
             GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/mana_fully_recharged", pos_x, pos_y )
 
-            local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_shield_disabled.xml", pos_x, pos_y)
+            local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_shield_disabled.xml", pos_x, pos_y)
             EntityAddChild(v,c)
 
             --Graphics
             --Here we load an entity to trail a draw, then tell that trail to draw from the projectile to the target
             --Conga: Could be optimised with the new GameCreateCosmeticParticle function? Uncertain if worth the effort
             local targ_x, targ_y = EntityGetTransform(v)
-            local child = EntityLoad("mods/apotheosis/files/entities/animators/neutral_shield_fx.xml", targ_x, targ_y - 6)
+            local child = EntityLoad("mods/Apotheosis/files/entities/animators/neutral_shield_fx.xml", targ_x, targ_y - 6)
             local comp = EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent")
             ComponentSetValue2(comp, "mExPosition", pos_x, pos_y - 10)
         end

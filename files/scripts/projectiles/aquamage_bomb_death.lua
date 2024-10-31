@@ -17,7 +17,7 @@ do local v = targets[k];
 	end
 
 	if found ~= true then
-		local status = EntityLoad("mods/apotheosis/files/entities/misc/effect_hex_water_short.xml",x,y)
+		local status = EntityLoad("mods/Apotheosis/files/entities/misc/effect_hex_water_short.xml",x,y)
 		EntityAddChild(v,status)
 	end
 end

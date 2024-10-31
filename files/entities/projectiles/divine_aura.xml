@@ -64,7 +64,7 @@
 		</SpriteParticleEmitterComponent>
 
 		<ProjectileComponent 
-			damage_game_effect_entities="mods/apotheosis/files/entities/misc/effect_divine_protection_long.xml,"
+			damage_game_effect_entities="mods/Apotheosis/files/entities/misc/effect_divine_protection_long.xml,"
 			friendly_fire="1"
 			collide_with_shooter_frames="0" >
 			<damage_by_type 
@@ -84,7 +84,7 @@
 
 	<!-- The field is being too finnicky reapplying after the effect leaves so adding this here -->
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/divine_aura_apply.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/divine_aura_apply.lua"
 		execute_every_n_frame="10"
 		>
 	</LuaComponent>

@@ -3,7 +3,7 @@
     name="???"
     type="BIOME_WANG_TILE"
 	background_use_neighbor="0"
-    background_image="mods/apotheosis/files/weather_gfx/hazy_forest.png"
+    background_image="mods/Apotheosis/files/weather_gfx/hazy_forest.png"
     background_edge_priority="-10"
     limit_background_image="0"
     wang_template_file="" 

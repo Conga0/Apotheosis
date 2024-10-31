@@ -31,6 +31,6 @@ function spawn_orb(x, y)
 end
 
 function spawn_check(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/buildings/perk_creation_check.xml", x, y )
-	EntityLoad( "mods/apotheosis/files/entities/buildings/perk_creation_areacheck.xml", x-1, y+21 )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/perk_creation_check.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/perk_creation_areacheck.xml", x-1, y+21 )
 end

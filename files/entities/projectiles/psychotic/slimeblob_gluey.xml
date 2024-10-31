@@ -131,7 +131,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/psychotic/slimeblob.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/psychotic/slimeblob.xml"
 		>
 	</VariableStorageComponent>
 

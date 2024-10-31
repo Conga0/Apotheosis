@@ -1,7 +1,7 @@
 <Entity>
 
   <LuaComponent
-    script_source_file="mods/apotheosis/files/entities/buildings/ending/credits_horscht.lua"
+    script_source_file="mods/Apotheosis/files/entities/buildings/ending/credits_horscht.lua"
     execute_every_n_frame="1"
   ></LuaComponent>
 

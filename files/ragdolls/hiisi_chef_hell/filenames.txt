@@ -1,8 +1,8 @@
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/torso.png
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/thighs.png
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/right_foot.png
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/right_arm.png
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/right_hand.png
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/left_foot.png
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/left_hand.png
-mods/apotheosis/files/ragdolls/hiisi_chef_hell/head.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/torso.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/thighs.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/right_foot.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/right_arm.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/right_hand.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/left_foot.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/left_hand.png
+mods/Apotheosis/files/ragdolls/hiisi_chef_hell/head.png

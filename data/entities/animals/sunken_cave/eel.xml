@@ -147,7 +147,7 @@
 	</VelocityComponent>
 
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animals/avoid_surfaces.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/avoid_surfaces.lua"
 		execute_every_n_frame="10"
 		>
 	</LuaComponent>

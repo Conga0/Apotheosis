@@ -146,7 +146,7 @@
 	<LuaComponent
 		_enabled="1"
 		_tags="enabled_by_liquid"
-		script_source_file="mods/apotheosis/files/scripts/projectiles/electrosphere_zap.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/electrosphere_zap.lua"
 		execute_every_n_frame="35"
 		>
 	</LuaComponent>
@@ -166,7 +166,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/electrosphere.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/electrosphere.xml"
 		>
 	</VariableStorageComponent>
 

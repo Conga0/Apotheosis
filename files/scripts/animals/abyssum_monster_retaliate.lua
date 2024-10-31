@@ -38,7 +38,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 			local spells = { "orb_psychotic", "deck/star_shot" } --Homebringer curse of swapping would be evil... hmmm
 			local rnd = Random( 1, #spells )
-			local path = table.concat({"mods/apotheosis/files/entities/projectiles/",spells[rnd],".xml"})
+			local path = table.concat({"mods/Apotheosis/files/entities/projectiles/",spells[rnd],".xml"})
 
 			shoot_projectile( entity_id, path, x, y, vel_x, vel_y )
 		end

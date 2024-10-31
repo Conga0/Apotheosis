@@ -38,5 +38,5 @@ if (heretic_found == false) then
     local spawn_x = pos_x + dir_x * distance
     local spawn_y = pos_y + dir_y * distance
 
-    EntityLoad( "mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml", spawn_x, spawn_y - 20 )
+    EntityLoad( "mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml", spawn_x, spawn_y - 20 )
 end

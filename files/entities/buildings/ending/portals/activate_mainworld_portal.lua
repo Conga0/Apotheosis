@@ -7,7 +7,7 @@ function item_pickup( entity_item, entity_who_picked, name )
     function Activate(gate_id)
         local comps = EntityGetComponentIncludingDisabled(gate_id,"SpriteComponent")
         EntitySetComponentIsEnabled(gate_id,comps[3],true)
-        EntityLoad("mods/apotheosis/files/biome_impl/magicegg/portal_open_emitter.xml", pos_x, pos_y - 30)
+        EntityLoad("mods/Apotheosis/files/biome_impl/magicegg/portal_open_emitter.xml", pos_x, pos_y - 30)
     end
 
     local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo")

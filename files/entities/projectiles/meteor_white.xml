@@ -65,7 +65,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/projectiles_gfx/meteor_white.xml" 
+    image_file="mods/Apotheosis/files/projectiles_gfx/meteor_white.xml" 
     next_rect_animation="" 
     offset_x="0" 
     offset_y="0" 
@@ -218,7 +218,7 @@
 
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/meteor_white.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/meteor_white.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

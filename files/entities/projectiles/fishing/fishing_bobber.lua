@@ -82,15 +82,15 @@ if isfishing then
         --3 = special fish
 
         --Stock Fish
-        local fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish.xml"
+        local fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_fish.xml"
         local fish_type = 1
                 --Debug
-                --fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_firemage_weak.xml"
+                --fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_firemage_weak.xml"
                 --odd = true
                 --fish_type = 17
                 --throw = 4
         if liquid == "lava" then --fish_lava
-            fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
+            fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
             fish_type = 5
         elseif liquid == "radioactive_liquid" then --fish_toxic
             fish_type = 6
@@ -101,7 +101,7 @@ if isfishing then
 
         if rarity >= 10 then
             --The [REDACTED] is real
-            fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_red.xml"
+            fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_fish_red.xml"
             fish_type = 3
             AddFlagPersistent(table.concat({"apothe","osis_card","_unlocked_div","ine_red_fi","sh_unl","ocked"}))
             print(GameTextGetTranslatedOrNot("$log_apotheosis_fish"))
@@ -114,57 +114,57 @@ if isfishing then
             end
         elseif (rarity >= 6) and (rarity % 2 == 0) then
             local alternative = (math.random(1,5) == 1)
-            fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_eel.xml"
+            fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_eel.xml"
             fish_type = 10
             if liquid == "lava" then
                 alternative = (math.random(1,4) == 1)
                 if alternative == false then
-                    fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_lukki_fire_tiny.xml"
+                    fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_lukki_fire_tiny.xml"
                     odd = true
                     fish_type = 11
                 else --You can thank Conga for coming up with this one
-                    fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_firemage_weak.xml"
+                    fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_firemage_weak.xml"
                     odd = true
                     fish_type = 17
                 end
             elseif liquid == "radioactive_liquid" then
                 alternative = (math.random(1,2) == 1)
                 if alternative == false then
-                    fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_slimeshooter.xml"
+                    fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_slimeshooter.xml"
                     odd = true
                     fish_type = 12
                 else
-                    fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_bubble_acid.xml"
+                    fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_bubble_acid.xml"
                     odd = true
                     fish_type = 14
                 end
             elseif liquid == "blood" then
                 alternative = (math.random(1,2) == 1)
                 if alternative == false then
-                    fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_meatmaggot.xml"
+                    fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_meatmaggot.xml"
                     odd = true
                     fish_type = 13
                 else
-                    fish_path = "mods/apotheosis/files/entities/projectiles/fishing/skull.xml"
+                    fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/skull.xml"
                     odd = true
                     fish_type = -1
                     throw = 4
                 end
             elseif alternative == true then
-                fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_sunken_creature.xml"
+                fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_sunken_creature.xml"
                 odd = true
                 fish_type = 15
             end
         elseif (rarity >= 6) then
-            fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_waterskull.xml"
+            fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_waterskull.xml"
             fish_type = 16
             odd = true
             if liquid == "lava" then --fish_flesh (replace with cooler thing later)
-                fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_lukki_fire_tiny.xml"
+                fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_lukki_fire_tiny.xml"
                 odd = true
                 fish_type = 4
             elseif liquid == "radioactive_liquid" then --Toxic Worm Egg
-                fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_summon_toxic_worm.xml"
+                fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_summon_toxic_worm.xml"
                 odd = true
                 fish_type = -1
             elseif liquid == "blood" then --fish_flesh (replace with blood guy later)
@@ -172,10 +172,10 @@ if isfishing then
                 fish_type = 9
             end
         elseif (rarity % 2 == 0) then
-            fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
+            fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
             fish_type = 2
             if liquid == "lava" then
-                fish_path = "mods/apotheosis/files/entities/items/pickups/egg_volcanic_lukki.xml"
+                fish_path = "mods/Apotheosis/files/entities/items/pickups/egg_volcanic_lukki.xml"
                 odd = true
                 fish_type = -1
                 throw = 4
@@ -205,7 +205,7 @@ if isfishing then
         elseif liquid == "radioactive_liquid" then
             supa_rare = (math.random(1,50) == 1)
             if supa_rare then
-                fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_barrel_radioactive.xml"
+                fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_barrel_radioactive.xml"
                 odd = true
                 fish_type = -1
                 throw = 4
@@ -213,7 +213,7 @@ if isfishing then
         elseif liquid == "blood" then --(replace with cooler thing later)
             supa_rare = (math.random(1,100) == 1)
             if supa_rare then
-                fish_path = "mods/apotheosis/files/entities/projectiles/fishing/proj_meatmaggot.xml"
+                fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_meatmaggot.xml"
                 odd = true
                 fish_type = 13
                 throw = 1
@@ -221,7 +221,7 @@ if isfishing then
         else
             supa_rare = (math.random(1,50) == 1)
             if supa_rare then
-                fish_path = "mods/apotheosis/files/entities/items/pickups/chest_random_clam.xml"
+                fish_path = "mods/Apotheosis/files/entities/items/pickups/chest_random_clam.xml"
                 odd = true
                 fish_type = -1
                 throw = 1
@@ -245,31 +245,31 @@ if isfishing then
             },
             {
                 "data/entities/animals/fish_red.xml",
-                "mods/apotheosis/files/enemies_gfx/fish_red.xml"
+                "mods/Apotheosis/files/enemies_gfx/fish_red.xml"
             },
             { --oopsie, unused
                 GlobalsGetValue( "apotheosis_cs_lukki_fire_tiny_filepath", "data/entities/animals/lukki_fire_tiny.xml" ),
-                GlobalsGetValue( "apotheosis_lukki_fire_tinygfx_filepath", "mods/apotheosis/files/enemies_gfx/fire_lukki/lukki_fire_tiny.xml" )
+                GlobalsGetValue( "apotheosis_lukki_fire_tinygfx_filepath", "mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_fire_tiny.xml" )
             },
             {
                 "data/entities/animals/fish_lava.xml",
-                "mods/apotheosis/files/enemies_gfx/fish_lava.xml"
+                "mods/Apotheosis/files/enemies_gfx/fish_lava.xml"
             },
             {
                 "data/entities/animals/fish_toxic.xml",
-                "mods/apotheosis/files/enemies_gfx/fish_toxic_01.xml"
+                "mods/Apotheosis/files/enemies_gfx/fish_toxic_01.xml"
             },
             {
                 "data/entities/animals/fish_toxic_large.xml",
-                "mods/apotheosis/files/enemies_gfx/fish_toxic_02.xml"
+                "mods/Apotheosis/files/enemies_gfx/fish_toxic_02.xml"
             },
             {
                 "data/entities/animals/apotheosis_leech.xml",
-                "mods/apotheosis/files/enemies_gfx/leech.xml"
+                "mods/Apotheosis/files/enemies_gfx/leech.xml"
             },
             {
                 "data/entities/animals/fish_flesh.xml",
-                "mods/apotheosis/files/enemies_gfx/fish_flesh.xml"
+                "mods/Apotheosis/files/enemies_gfx/fish_flesh.xml"
             },
             {
                 GlobalsGetValue( "apotheosis_cs_eel_filepath", "data/entities/animals/eel.xml" ),
@@ -277,7 +277,7 @@ if isfishing then
             },
             {
                 GlobalsGetValue( "apotheosis_cs_lukki_fire_tiny_filepath", "data/entities/animals/lukki_fire_tiny.xml" ),
-                GlobalsGetValue( "apotheosis_lukki_fire_tinygfx_filepath", "mods/apotheosis/files/enemies_gfx/fire_lukki/lukki_fire_tiny.xml" )
+                GlobalsGetValue( "apotheosis_lukki_fire_tinygfx_filepath", "mods/Apotheosis/files/enemies_gfx/fire_lukki/lukki_fire_tiny.xml" )
             },
             {
                 GlobalsGetValue( "apotheosis_cs_slimeshooter_filepath", "data/entities/animals/slimeshooter.xml" ),
@@ -289,7 +289,7 @@ if isfishing then
             },
             {
                 GlobalsGetValue( "apotheosis_cs_bubble_liquid_filepath", "data/entities/animals/bubbles/acid/bubble_liquid.xml" ),
-                GlobalsGetValue( "apotheosis_bubble_liquidgfx_filepath", "mods/apotheosis/files/enemies_gfx/bubble_liquid_acid.xml" )
+                GlobalsGetValue( "apotheosis_bubble_liquidgfx_filepath", "mods/Apotheosis/files/enemies_gfx/bubble_liquid_acid.xml" )
             },
             {
                 GlobalsGetValue( "apotheosis_cs_sunken_creature_filepath", "data/entities/animals/sunken_creature.xml" ),
@@ -300,7 +300,7 @@ if isfishing then
                 GlobalsGetValue( "apotheosis_waterskullgfx_filepath", "mods/Apotheosis/files/enemies_gfx/waterskull.png" )
             },
             {
-                GlobalsGetValue( "apotheosis_cs_firemage_weak_filepath", "mods/apotheosis/files/entities/projectiles/fishing/firemage_weak.xml" ),
+                GlobalsGetValue( "apotheosis_cs_firemage_weak_filepath", "mods/Apotheosis/files/entities/projectiles/fishing/firemage_weak.xml" ),
                 GlobalsGetValue( "apotheosis_firemage_weakgfx_filepath", "mods/Apotheosis/files/projectiles_gfx/firemage_scuba_spin.xml" )
             },
         }

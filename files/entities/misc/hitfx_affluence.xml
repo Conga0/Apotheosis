@@ -2,7 +2,7 @@
 
     <HitEffectComponent
         effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
-        value_string="mods/apotheosis/files/entities/misc/drop_gold.xml" >
+        value_string="mods/Apotheosis/files/entities/misc/drop_gold.xml" >
 	</HitEffectComponent >
 
     <!--
@@ -10,7 +10,7 @@
 	<LuaComponent
 		execute_every_n_frame = "1"
         execute_on_added="0"
-		script_source_file = "mods/apotheosis/files/scripts/status_effects/affluence_aura_apply.lua"
+		script_source_file = "mods/Apotheosis/files/scripts/status_effects/affluence_aura_apply.lua"
 		remove_after_executed = "1"
 		>
 	</LuaComponent>

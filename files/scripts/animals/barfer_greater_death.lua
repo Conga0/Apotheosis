@@ -6,6 +6,6 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 
 	if ModIsEnabled("raksa") == false then
 		StatsLogPlayerKill( entity_id )
-		EntityLoad("mods/apotheosis/files/entities/items/pickups/toiletpaper_fragment.xml",x,y)
+		EntityLoad("mods/Apotheosis/files/entities/items/pickups/toiletpaper_fragment.xml",x,y)
 	end
 end

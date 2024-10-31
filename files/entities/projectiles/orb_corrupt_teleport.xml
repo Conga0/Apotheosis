@@ -132,7 +132,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/orb_corrupt_teleport.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/orb_corrupt_teleport.xml"
 		>
 	</VariableStorageComponent>
 </Entity>

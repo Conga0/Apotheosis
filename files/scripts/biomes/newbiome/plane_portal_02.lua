@@ -29,16 +29,16 @@ function init( x, y, w, h )
 	SetRandomSeed(444,777)
 	local pw = GetParallelWorldPosition(x,y)
 	if Random(1,6) == 2 and pw == 0 and ModIsEnabled("noita-mapcap") == false then
-		--LoadPixelScene( "mods/apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
-		LoadPixelScene( "mods/apotheosis/files/biome_impl/magicegg/magicegg.png", "mods/apotheosis/files/biome_impl/magicegg/magicegg_visual.png", x, y, "mods/apotheosis/files/biome_impl/magicegg/magicegg_background.png", true )
+		--LoadPixelScene( "mods/Apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/magicegg/magicegg.png", "mods/Apotheosis/files/biome_impl/magicegg/magicegg_visual.png", x, y, "mods/Apotheosis/files/biome_impl/magicegg/magicegg_background.png", true )
 	end
 end
 
 function spawn_gate(x, y)
 	--EntityLoad at this location
 	--EntityLoad( "mods/Apotheosis/files/entities/projectiles/orb_poly_crystal_chaotic.xml", x, y )
-	EntityLoad("mods/apotheosis/files/entities/buildings/gateway_base.xml", x, y + 30)
-	EntityLoad("mods/apotheosis/files/entities/buildings/gateway_base_helper.xml", x, y + 30)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/gateway_base.xml", x, y + 30)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/gateway_base_helper.xml", x, y + 30)
 end
 
 function spawn_perk(x, y)

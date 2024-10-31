@@ -29,7 +29,7 @@
 			explosion_radius="40" 
 			explosion_sprite="data/particles/explosion_128.xml" 
 			explosion_sprite_lifetime="0" 
-			load_this_entity="mods/apotheosis/files/entities/projectiles/circle_water_fading.xml"
+			load_this_entity="mods/Apotheosis/files/entities/projectiles/circle_water_fading.xml"
 			create_cell_probability="40" 
 			hole_destroy_liquid="0" 
 			hole_enabled="1" 

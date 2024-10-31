@@ -1,5 +1,5 @@
 <Sprite
-	filename="mods/apotheosis/files/enemies_gfx/watermage.png"
+	filename="mods/Apotheosis/files/enemies_gfx/watermage.png"
 	hotspots_filename="data/enemies_gfx/firemage_hotspots.png"
 	offset_x="8"
 	offset_y="20"

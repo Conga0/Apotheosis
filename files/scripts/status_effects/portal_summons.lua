@@ -8,7 +8,7 @@ if math.random(1,3) == 1 then
         list = {"slime_teleporter","devourer","watermage","whisp"}
         rnd = Random(-80,80)
         rnd2 = Random(1,#list)
-        EntityLoad(table.concat({"mods/apotheosis/files/entities/misc/debuff_portals/portal_",list[rnd2],".xml"}), pos_x + rnd, pos_y + rnd)
+        EntityLoad(table.concat({"mods/Apotheosis/files/entities/misc/debuff_portals/portal_",list[rnd2],".xml"}), pos_x + rnd, pos_y + rnd)
         --RO teleport sound
     end
 end

@@ -5,7 +5,7 @@ local x, y = EntityGetTransform( eid )
 
 local projectiles = {
 	"data/entities/projectiles/thunderball.xml",
-	"mods/apotheosis/files/entities/projectiles/deck/electrosphere.xml",
+	"mods/Apotheosis/files/entities/projectiles/deck/electrosphere.xml",
 }
 
 local styles =

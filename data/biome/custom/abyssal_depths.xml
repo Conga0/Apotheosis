@@ -11,7 +11,7 @@
     limit_background_image="0"
     
     wang_template_file="data/wang_tiles/sunken_cave.png" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/abyssal_depths.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/abyssal_depths.lua"
     wang_map_width="256"
     wang_map_height="256"
     audio_music_2="smokecave"

@@ -106,7 +106,7 @@
 	</GameEffectComponent >
 
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/status_effects/burn_intense.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/burn_intense.lua"
 		execute_every_n_frame="10"
 		>
 	</LuaComponent>

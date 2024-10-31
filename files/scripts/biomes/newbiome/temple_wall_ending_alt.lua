@@ -33,5 +33,5 @@ function init( x, y, w, h )
 end
 
 function spawn_endportal(x, y)
-	EntityLoad( "mods/apotheosis/files/entities/buildings/teleport_ending_alt.xml", x, y - 4 )
+	EntityLoad( "mods/Apotheosis/files/entities/buildings/teleport_ending_alt.xml", x, y - 4 )
 end

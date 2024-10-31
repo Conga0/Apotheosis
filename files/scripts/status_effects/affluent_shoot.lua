@@ -8,7 +8,7 @@ function shot( entity_id )
         "HitEffectComponent",
         {
             effect_hit="LOAD_UNIQUE_CHILD_ENTITY",
-            value_string="mods/apotheosis/files/entities/misc/drop_gold.xml"
+            value_string="mods/Apotheosis/files/entities/misc/drop_gold.xml"
         }
     )
 

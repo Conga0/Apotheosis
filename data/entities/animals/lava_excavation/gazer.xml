@@ -5,7 +5,7 @@
       max_hp="5"
      ></DamageModelComponent >
 		<AnimalAIComponent 
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/lavashot_weak.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/lavashot_weak.xml"
 			attack_ranged_frames_between="65"
 			>
 		</AnimalAIComponent>

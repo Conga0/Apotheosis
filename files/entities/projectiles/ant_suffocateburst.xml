@@ -61,7 +61,7 @@
   <LuaComponent
       execute_every_n_frame="-1"
       execute_on_removed="1"
-      script_source_file="mods/apotheosis/files/scripts/projectiles/suffocateshot_death.lua"
+      script_source_file="mods/Apotheosis/files/scripts/projectiles/suffocateshot_death.lua"
   >
   </LuaComponent>
 
@@ -72,7 +72,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/ant_suffocateburst.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/ant_suffocateburst.xml"
 		>
 	</VariableStorageComponent>
   

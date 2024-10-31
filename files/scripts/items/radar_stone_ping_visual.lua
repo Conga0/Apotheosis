@@ -19,7 +19,7 @@ local directional = false
 
 local comps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")
 for k=1,#comps do
-    if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_ping_inside.lua" then
+    if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/Apotheosis/files/scripts/items/radar_stone_ping_inside.lua" then
 	directional = true
 	break
     end
@@ -28,7 +28,7 @@ end
 GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/items/stone_radar/ping", pos_x, pos_y );
 
 if directional == true then
-    local entid = EntityLoad( "mods/apotheosis/files/entities/particles/radar_stone_ping.xml", pos_x, pos_y )
+    local entid = EntityLoad( "mods/Apotheosis/files/entities/particles/radar_stone_ping.xml", pos_x, pos_y )
     local partcomp = EntityGetFirstComponentIncludingDisabled( entid, "ParticleEmitterComponent" )
     ComponentSetValue2( partcomp, "count_min", 20 )
     ComponentSetValue2( partcomp, "count_max", 20 )
@@ -50,13 +50,13 @@ if directional == true then
 	local ping_y = pos_y + dir_y * (ping_distance * k)
 	GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/items/stone_radar/ping", ping_x, ping_y );
 	]]--
-	local eid = EntityLoad( "mods/apotheosis/files/entities/particles/radar_stone_ping.xml", pos_x, pos_y )
+	local eid = EntityLoad( "mods/Apotheosis/files/entities/particles/radar_stone_ping.xml", pos_x, pos_y )
 	EntitySetTransform( eid, pos_x, pos_y, ping_rot )
 	local particlecomp = EntityGetFirstComponentIncludingDisabled( eid, "ParticleEmitterComponent" )
 	ComponentSetValue2( particlecomp, "area_circle_sector_degrees", 180 / k )
 	ComponentSetValue2( particlecomp, "velocity_always_away_from_center", 30 * k )
     end
 else
-    EntityLoad( "mods/apotheosis/files/entities/particles/radar_stone_ping.xml", pos_x, pos_y )
+    EntityLoad( "mods/Apotheosis/files/entities/particles/radar_stone_ping.xml", pos_x, pos_y )
 end
 

@@ -344,7 +344,7 @@
 	<LuaComponent
 		_enabled="1"
 		_tags="enabled_by_liquid"
-		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_miniboss_meteor_barrage_setup.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fire_miniboss_meteor_barrage_setup.lua"
 		execute_every_n_frame="570"
 		execute_times="-1"
 		>
@@ -354,7 +354,7 @@
 	<!-- It'd be really cool if in phase 2, while he's doing in suction attack he'd shoot out a bunch of firebolts and spit them all out when the phase ends -->
 	<LuaComponent
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/animals/fire_lukki_miniboss_circle_explosion_anyrange.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/fire_lukki_miniboss_circle_explosion_anyrange.lua"
 		execute_every_n_frame="540"
 		execute_times="-1"
 		>
@@ -364,7 +364,7 @@
 	<!--Detects if the creature has seen the player, if so activate other lua components-->
 	<LuaComponent
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_miniboss_LoS_Check.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fire_miniboss_LoS_Check.lua"
 		execute_every_n_frame="120"
 		execute_times="-1"
 		>
@@ -373,7 +373,7 @@
 	<!-- Updates CellEaterComponent to use it's normal cell eater values, after eating the old head -->
 	<LuaComponent
 		_enabled="1"
-		script_source_file="mods/apotheosis/files/scripts/animals/lukki_fire_miniboss_eat_head.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/lukki_fire_miniboss_eat_head.lua"
 		execute_every_n_frame="2"
 		execute_times="1"
 		remove_after_executed="1"

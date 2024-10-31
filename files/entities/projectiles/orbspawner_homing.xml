@@ -146,7 +146,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/orbspawner_homing.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/orbspawner_homing.xml"
 		>
 	</VariableStorageComponent>
 

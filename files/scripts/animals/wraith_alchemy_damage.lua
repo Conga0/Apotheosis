@@ -28,12 +28,12 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 			end
 
 			if found ~= true then
-				local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_hex_" .. stains[rnd] .. ".xml", x, y)
+				local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_hex_" .. stains[rnd] .. ".xml", x, y)
 				EntityAddChild(entity_who_caused,c)
 			end
 
 			local t_x, t_y = EntityGetTransform(entity_who_caused)
-			local t = EntityLoad("mods/apotheosis/files/entities/animators/wraith_fx_alchemy.xml", x, y)
+			local t = EntityLoad("mods/Apotheosis/files/entities/animators/wraith_fx_alchemy.xml", x, y)
 			local comps = EntityGetComponentIncludingDisabled(t,"ParticleEmitterComponent")
 			for k=1,#comps
 			do v = comps[k]

@@ -12,6 +12,6 @@ function material_area_checker_success( pos_x, pos_y )
         vel_y = 0
     end
 
-    shoot_projectile_from_projectile( entity_id, "mods/apotheosis/files/entities/projectiles/deck/liquidsphere_fire.xml", pos_x, pos_y, vel_x, vel_y )
+    shoot_projectile_from_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/deck/liquidsphere_fire.xml", pos_x, pos_y, vel_x, vel_y )
     EntityKill(entity_id)
 end

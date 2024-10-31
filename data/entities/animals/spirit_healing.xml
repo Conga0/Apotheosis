@@ -47,7 +47,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/spirit_healing.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/spirit_healing.xml" 
 			offset_x="0"
 			offset_y="0"
 			additive="1"
@@ -127,7 +127,7 @@
 	</Entity>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/animals/spirit_healing_aura.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/spirit_healing_aura.lua"
 		execute_every_n_frame="101"
 		>
 	</LuaComponent>

@@ -17,7 +17,7 @@
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="16"
 			attack_ranged_action_frame="5"
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/melee/thief_attack.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/melee/thief_attack.xml"
 			creature_detection_range_x="300"
 			creature_detection_range_y="300"
 			food_material="meat"
@@ -39,7 +39,7 @@
             hp="2.0"
             materials_create_messages="1"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hiisi_thief/filenames.txt" 
-			fire_probability_of_ignition="0"
+			fire_probability_of_ignition="1"
 			blood_material="blood"
     		blood_spray_material="blood"
             blood_spray_create_some_cosmetic="1"
@@ -109,7 +109,7 @@
 
 		<LuaComponent
 			execute_every_n_frame="-1"
-			script_death="mods/apotheosis/files/scripts/items/drop_money_thief.lua"
+			script_death="mods/Apotheosis/files/scripts/items/drop_money_thief.lua"
 			script_material_area_checker_success="mods/Apotheosis/files/scripts/animals/hisii_hobo_check.lua"
 			remove_after_executed="0" >
 		</LuaComponent>

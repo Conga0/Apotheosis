@@ -118,13 +118,13 @@
   
   <LuaComponent
 	execute_every_n_frame="3"
-	script_source_file="mods/apotheosis/files/scripts/projectiles/death_cross_omega_repeat.lua"
+	script_source_file="mods/Apotheosis/files/scripts/projectiles/death_cross_omega_repeat.lua"
 	>
 	</LuaComponent>
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/deck/death_cross_omega_laser_larpa.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/deck/death_cross_omega_laser_larpa.xml"
 		>
 	</VariableStorageComponent>
 

@@ -1,6 +1,6 @@
 <Entity>
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/buildings/lava_nest.lua"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/lava_nest.lua"
 		execute_every_n_frame="60"
 		>
 	</LuaComponent>

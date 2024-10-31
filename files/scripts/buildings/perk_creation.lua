@@ -23,14 +23,14 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 60, "item_pickup")) do
             -- make sure item is not carried in inventory or wand
             if EntityGetRootEntity(id) == id then
                 -- start conversion
-                local c = EntityLoad("mods/apotheosis/files/entities/misc/perk_creation_child.xml", pos_x, pos_y)
+                local c = EntityLoad("mods/Apotheosis/files/entities/misc/perk_creation_child.xml", pos_x, pos_y)
                 EntityAddChild(id,c)
                 --EntityAddTag(id,"forge_item_convert")
 
 		--Restarts the end timer
 		local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
 		for i = 1, #luacomps do
-		    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/buildings/perk_creation_end.lua" then
+		    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/buildings/perk_creation_end.lua" then
 			EntityRemoveComponent( entity_id, luacomps[i] )
 
                 	EntityAddComponent2(
@@ -38,7 +38,7 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 60, "item_pickup")) do
                 	    "LuaComponent",
                 	    {
                 	        execute_on_added = false,
-                	        script_source_file = "mods/apotheosis/files/scripts/buildings/perk_creation_end.lua",
+                	        script_source_file = "mods/Apotheosis/files/scripts/buildings/perk_creation_end.lua",
                 	        execute_every_n_frame = 144,
                 	        remove_after_executed = true,
                 	        execute_times = 1
@@ -55,7 +55,7 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 60, "item_pickup")) do
                     "LuaComponent",
                     {
                         execute_on_added = false,
-                        script_source_file = "mods/apotheosis/files/scripts/misc/perk_creation_failsafe.lua",
+                        script_source_file = "mods/Apotheosis/files/scripts/misc/perk_creation_failsafe.lua",
                         execute_every_n_frame = 120,
                         remove_after_executed = true,
                         execute_times=1

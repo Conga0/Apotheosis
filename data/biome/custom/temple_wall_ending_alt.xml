@@ -6,7 +6,7 @@
     background_use_neighbor="0"
 
     wang_template_file="" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/temple_wall_ending_alt.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/temple_wall_ending_alt.lua"
     wang_map_width="256"
     wang_map_height="256"
 	  limit_background_image="0"

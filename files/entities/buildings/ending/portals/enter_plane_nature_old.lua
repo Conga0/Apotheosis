@@ -21,11 +21,11 @@ function do_newgame_plus()
 			end
 		end
 
-		local biome_rebooter = EntityLoad("mods/apotheosis/files/entities/special/biome_rebooter.xml",746,4981 - (512 * 7))
+		local biome_rebooter = EntityLoad("mods/Apotheosis/files/entities/special/biome_rebooter.xml",746,4981 - (512 * 7))
 		EntityAddChild(v,biome_rebooter)
 	end
 
-	--EntityLoad("mods/apotheosis/files/entities/buildings/ending/portals/saviour_portal_nature.xml",0,0)
+	--EntityLoad("mods/Apotheosis/files/entities/buildings/ending/portals/saviour_portal_nature.xml",0,0)
 
 	--Reset RGB portal locations
 	GlobalsSetValue( "apotheosis_markerportal_red_x", "0" )
@@ -46,7 +46,7 @@ function do_newgame_plus()
 
 	-- Load the actual biome map
 
-	BiomeMapLoad_KeepPlayer( "mods/apotheosis/files/entities/buildings/ending/portals/enter_plane_nature_biome_map.lua", "mods/apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
+	BiomeMapLoad_KeepPlayer( "mods/Apotheosis/files/entities/buildings/ending/portals/enter_plane_nature_biome_map.lua", "mods/Apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
 	SessionNumbersSave()
 	-- BiomeMapLoad( "data/biome_impl/biome_map.png" )
 
@@ -83,8 +83,8 @@ function do_newgame_plus()
 		--Disable no longer relevent ones & change the direction of plane radar to the exit portal
 		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
 		for k=1,#comps do
-			if ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/perks/plane_radar.lua" then
-				ComponentSetValue2(comps[k],"script_source_file","mods/apotheosis/files/scripts/perks/plane_radar_inside.lua")
+			if ComponentGetValue2(comps[k],"script_source_file") == "mods/Apotheosis/files/scripts/perks/plane_radar.lua" then
+				ComponentSetValue2(comps[k],"script_source_file","mods/Apotheosis/files/scripts/perks/plane_radar_inside.lua")
 			--elseif ComponentGetValue2(comps[k],"script_source_file") == "data/scripts/perks/radar_moon.lua" then
 			--	EntitySetComponentIsEnabled(v,comps[k],false)
 			end
@@ -122,8 +122,8 @@ function do_newgame_plus()
 		--Disable no longer relevent ones & change the direction of plane radar to the exit portal
 		local comps = EntityGetComponentIncludingDisabled(v,"LuaComponent")
 		for k=1,#comps do
-			if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/apotheosis/files/scripts/items/radar_stone_ping.lua" then
-				ComponentSetValue2(comps[k],"script_source_file","mods/apotheosis/files/scripts/items/radar_stone_ping_inside.lua")
+			if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "mods/Apotheosis/files/scripts/items/radar_stone_ping.lua" then
+				ComponentSetValue2(comps[k],"script_source_file","mods/Apotheosis/files/scripts/items/radar_stone_ping_inside.lua")
 			end
 		end
 	    end

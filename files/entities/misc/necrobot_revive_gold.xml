@@ -19,7 +19,7 @@
 	</SpriteComponent>
 	
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/status_effects/necrobot_gold_end.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/necrobot_gold_end.lua"
 		execute_every_n_frame="120"
 		>
 	</LuaComponent>

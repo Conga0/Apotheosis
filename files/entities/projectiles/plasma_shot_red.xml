@@ -29,7 +29,7 @@
     ragdoll_force_multiplier="0.05"
     hit_particle_force_multiplier="0.25 "
     camera_shake_when_shot="0.1"
-    muzzle_flash_file="mods/apotheosis/files/entities/particles/muzzle_flashes/muzzle_flash_magic_launcher_red.xml"
+    muzzle_flash_file="mods/Apotheosis/files/entities/particles/muzzle_flashes/muzzle_flash_magic_launcher_red.xml"
     shoot_light_flash_r="120"
     shoot_light_flash_g="235"
     shoot_light_flash_b="90"
@@ -71,7 +71,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/apotheosis/files/projectiles_gfx/fireball_smaller_red.xml" 
+    image_file="mods/Apotheosis/files/projectiles_gfx/fireball_smaller_red.xml" 
     next_rect_animation="" 
     offset_x="0" 
     offset_y="0" 
@@ -154,7 +154,7 @@
   
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/apotheosis/files/entities/projectiles/plasma_shot_red.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/plasma_shot_red.xml"
 		>
 	</VariableStorageComponent>
 

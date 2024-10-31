@@ -16,7 +16,7 @@ if GameGetRealWorldTimeSinceStarted() < 120 then
             "data/entities/items/wand_unshuffle_01.xml",
         }
         EntityLoad(lootpool[Random(1,#lootpool)], pos_x, pos_y)
-        EntityLoad("mods/apotheosis/files/entities/items/pickups/potion_mimicium.xml", pos_x + 30, pos_y + 5)
+        EntityLoad("mods/Apotheosis/files/entities/items/pickups/potion_mimicium.xml", pos_x + 30, pos_y + 5)
         local dmgcomp = EntityGetFirstComponentIncludingDisabled(players[1],"DamageModelComponent")
         ComponentSetValue2(dmgcomp,"hp",ComponentGetValue2(dmgcomp,"max_hp"))
         GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/orb/create", pos_x, pos_y )

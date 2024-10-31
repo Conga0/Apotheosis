@@ -109,7 +109,7 @@ g_nest =
 -- actual functions that get called from the wang generator
 
 function init( x, y, w, h )
-	EntityLoad("mods/apotheosis/files/entities/buildings/worm_wall_spawner.xml", x + 256, y + 256)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/worm_wall_spawner.xml", x + 256, y + 256)
 end
 
 function spawn_small_enemies(x, y)

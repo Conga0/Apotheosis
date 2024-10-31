@@ -1,7 +1,7 @@
 <Entity >
    
   <SpriteComponent 
-    image_file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_1.png" 
+    image_file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_verlet_1.png" 
     offset_x="0"
     offset_y="3.5"
     update_transform="0"

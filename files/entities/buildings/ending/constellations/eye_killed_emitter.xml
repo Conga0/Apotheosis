@@ -3,7 +3,7 @@
   	<ParticleEmitterComponent
 		_enabled="1"
 		emitted_material_name="spark_yellow"
-		image_animation_file="mods/apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.png"
+		image_animation_file="mods/Apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.png"
 		offset.x="0"
 		offset.y="0"
 		gravity.y="0.0"
@@ -33,7 +33,7 @@
   	<ParticleEmitterComponent
 		_enabled="1"
 		emitted_material_name="spark_white_bright"
-		image_animation_file="mods/apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.png"
+		image_animation_file="mods/Apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.png"
 		offset.x="0"
 		offset.y="0"
 		gravity.y="0.0"

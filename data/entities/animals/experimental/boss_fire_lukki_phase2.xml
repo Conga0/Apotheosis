@@ -413,7 +413,7 @@
 	<!-- script_damage_about_to_be_received="data/entities/animals/boss_fire_lukki/boss_fire_lukki_dmg_limit_20_percent.lua" -->
 	<LuaComponent
 		_tags="death_reward"
-		script_death="mods/apotheosis/files/scripts/experimental/midboss_text.lua"
+		script_death="mods/Apotheosis/files/scripts/experimental/midboss_text.lua"
 		>
 	</LuaComponent>
 	

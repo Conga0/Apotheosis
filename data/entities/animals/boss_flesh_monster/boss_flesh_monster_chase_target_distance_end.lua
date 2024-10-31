@@ -111,7 +111,7 @@ if distance <= 800 then
 	local fvalue = 32
 
 	local spritecomp = EntityGetFirstComponentIncludingDisabled(entity_id, "SpriteComponent")
-	if spritecomp ~= nil and ComponentGetValue2( spritecomp, "image_file" ) == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
+	if spritecomp ~= nil and ComponentGetValue2( spritecomp, "image_file" ) == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
 	    fleshy = true
 	end
 

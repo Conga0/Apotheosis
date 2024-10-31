@@ -2,7 +2,7 @@
   <Topology 
     name="$biome_plane_magic"
     type="BIOME_WANG_TILE"
-    background_image="mods/apotheosis/files/weather_gfx/hazy_forest.png"
+    background_image="mods/Apotheosis/files/weather_gfx/hazy_forest.png"
     background_edge_left="data/weather_gfx/edges/background_rainforest_left.png"
     background_edge_right="data/weather_gfx/edges/background_rainforest_right.png"
     background_edge_top="data/weather_gfx/edges/background_rainforest_top.png"
@@ -12,7 +12,7 @@
     background_image_height="0"
 
     wang_template_file="data/wang_tiles/slime_hell_test3.png" 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/plane_magic.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/plane_magic.lua"
     wang_map_width="256"
     wang_map_height="64"
     limit_background_image="0"

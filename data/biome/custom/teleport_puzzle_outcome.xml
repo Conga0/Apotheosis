@@ -10,7 +10,7 @@
 
     limit_background_image="0"
     
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/teleport_puzzle_outcome.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/teleport_puzzle_outcome.lua"
     noise_type="SIN_CAPPED_SIMPLEX"
 
     mGradientAddNoise="1" 

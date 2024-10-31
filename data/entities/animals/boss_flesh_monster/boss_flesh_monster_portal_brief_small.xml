@@ -12,7 +12,7 @@
 	</LightComponent>
 	
 	<SpriteParticleEmitterComponent
-		sprite_file="mods/apotheosis/files/particles/whirl_heretic_0$[1-6].png"
+		sprite_file="mods/Apotheosis/files/particles/whirl_heretic_0$[1-6].png"
 		sprite_centered="1"
 		delay="0"
 		lifetime="1.5"

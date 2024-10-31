@@ -8,7 +8,7 @@
     background_edge_bottom="data/weather_gfx/edges/background_cave_04_alt_bottom.png"
     background_edge_priority="10"     
 
-    lua_script="mods/apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
+    lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/ant_hell_alchemyroom.lua"
     noise_type="SIN_CAPPED_SIMPLEX"
 
     mGradientAddNoise="1" 

@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/apotheosis/files/projectiles_gfx/rubber_ball_trigger.png"
+ filename="mods/Apotheosis/files/projectiles_gfx/rubber_ball_trigger.png"
  offset_x="2"
  offset_y="2"
  default_animation="fireball" >

@@ -5,7 +5,7 @@ function shot()
     local entity_id = GetUpdatedEntityID()
 
     local animalcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent")
-    ComponentSetValue2(animalcomp,"attack_ranged_entity_file","mods/apotheosis/files/entities/projectiles/melee/thief_attack_nolua.xml")
+    ComponentSetValue2(animalcomp,"attack_ranged_entity_file","mods/Apotheosis/files/entities/projectiles/melee/thief_attack_nolua.xml")
     ComponentSetValue2(animalcomp,"attack_ranged_max_distance",16)
     ComponentSetValue2(animalcomp,"attack_ranged_enabled",true)
     ComponentSetValue2(animalcomp,"attack_if_damaged_probability",50)

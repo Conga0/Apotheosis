@@ -1,13 +1,13 @@
 <Entity tags="hittable,teleportable_NOT">
 	
-	<Base file="mods/apotheosis/files/entities/items/orbs/custom/orb_base_apotheosis.xml">
+	<Base file="mods/Apotheosis/files/entities/items/orbs/custom/orb_base_apotheosis.xml">
 
 		<OrbComponent
 			orb_id="12" >
 		</OrbComponent>
 		
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/items_gfx/orbs/orb_12.xml" 
+			image_file="mods/Apotheosis/files/items_gfx/orbs/orb_12.xml" 
 			>
 		</SpriteComponent>
 		
@@ -33,7 +33,7 @@
 	<!-- Forgot that _enabled doesn't work on script_item_picked_up scripts :p -->
 	<!-- Nevermind actually, has to be enabled for the poor folks in old runs -->
 	<LuaComponent 
-		script_item_picked_up="mods/apotheosis/files/scripts/items/orbs/orb_12_trap.lua" >
+		script_item_picked_up="mods/Apotheosis/files/scripts/items/orbs/orb_12_trap.lua" >
 	</LuaComponent>
 
 </Entity>

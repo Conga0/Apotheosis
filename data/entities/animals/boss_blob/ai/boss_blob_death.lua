@@ -11,7 +11,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
 
         table.remove(blobs_remaining, entity_id)
 
-        if #blobs_remaining == 1 and blobs_remaining[1] == entity_id then
+        if #blobs_remaining <= 1 then
             --GamePrint("All Blob are Dead")
             if flag_status then
                 local opts = { "APOTHEOSIS_MASS_STATUS_DRUNK", "APOTHEOSIS_MASS_STATUS_WET", "APOTHEOSIS_MASS_STATUS_FIRE", "APOTHEOSIS_MASS_STATUS_URINE", "APOTHEOSIS_MASS_STATUS_POLYMORPH", "APOTHEOSIS_SPLIT_SPELL" }

@@ -41,7 +41,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 	end
 
 	if heretic_found == false then
-	    local child_id = EntityLoad( "mods/apotheosis/files/entities/misc/stone_heretic_boss_scream.xml", x, y )
+	    local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/stone_heretic_boss_scream.xml", x, y )
 	    EntityAddChild( entity_who_picked, child_id )
 	end
     end

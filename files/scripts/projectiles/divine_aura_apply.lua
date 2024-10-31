@@ -17,7 +17,7 @@ for i,v in ipairs( targets ) do
 		end
 		
 		if valid then
-			local eid = EntityLoad( "mods/apotheosis/files/entities/misc/effect_divine_protection_long.xml", x, y )
+			local eid = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_divine_protection_long.xml", x, y )
 			EntityAddChild( v, eid )
 		end
 	end

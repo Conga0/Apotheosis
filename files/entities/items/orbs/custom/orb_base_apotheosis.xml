@@ -116,7 +116,7 @@
     </LuaComponent>
 
 	<LuaComponent 
-		script_item_picked_up="mods/apotheosis/files/entities/items/orbs/custom/orb_pickup_apotheosis.lua" >
+		script_item_picked_up="mods/Apotheosis/files/entities/items/orbs/custom/orb_pickup_apotheosis.lua" >
 	</LuaComponent>
 
 </Entity>

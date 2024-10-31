@@ -461,28 +461,28 @@ g_pixel_scene_04 =
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/slime_hell/icicles.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles2.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/slime_hell/icicles2.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles3.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/slime_hell/icicles3.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 0.5,
-		material_file 	= "mods/apotheosis/files/biome_impl/slime_hell/icicles4.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/slime_hell/icicles4.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -1006,12 +1006,12 @@ g_background_01 =
 	total_prob = 0,
 	{
 		prob   			= 1.0,
-		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_01_background.png",
+		sprite_file 	= "mods/Apotheosis/files/biome_impl/slime_hell_outpost/bunker_01_background.png",
 		z_index			= 41,
 	},
 	{
 		prob   			= 1.0,
-		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_01_background_alt.png",
+		sprite_file 	= "mods/Apotheosis/files/biome_impl/slime_hell_outpost/bunker_01_background_alt.png",
 		z_index			= 41,
 	},
 }
@@ -1021,12 +1021,12 @@ g_background_02 =
 	total_prob = 0,
 	{
 		prob   			= 1.0,
-		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_02_background.png",
+		sprite_file 	= "mods/Apotheosis/files/biome_impl/slime_hell_outpost/bunker_02_background.png",
 		z_index			= 41,
 	},
 	{
 		prob   			= 1.0,
-		sprite_file 	= "mods/apotheosis/files/biome_impl/slime_hell_outpost/bunker_02_background_alt.png",
+		sprite_file 	= "mods/Apotheosis/files/biome_impl/slime_hell_outpost/bunker_02_background_alt.png",
 		z_index			= 41,
 	},
 }

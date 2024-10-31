@@ -11,12 +11,12 @@
     	constrain_stretching="1" >
     </VerletPhysicsComponent>
 
-	<Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_0.xml" />
-	<Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_1.xml" />
-	<Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_2.xml" />
-	<Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_2.xml" />
-	<Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_3.xml" />
-	<Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_3.xml" />
-	<Base file="mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_4.xml" />
+	<Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_0.xml" />
+	<Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_1.xml" />
+	<Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_2.xml" />
+	<Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_2.xml" />
+	<Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_3.xml" />
+	<Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_3.xml" />
+	<Base file="mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh_vine_verlet_4.xml" />
   
 </Entity>

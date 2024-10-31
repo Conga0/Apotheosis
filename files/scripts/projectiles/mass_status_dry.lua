@@ -41,7 +41,7 @@ do local v = targets[k]
 		if comp ~= nil and found == false then
 			EntitySetComponentIsEnabled(v,comp,false)
 
-			local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_status_dry.xml", pos_x, pos_y)
+			local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_status_dry.xml", pos_x, pos_y)
 			EntityAddChild(v,c)
 		end
 	end

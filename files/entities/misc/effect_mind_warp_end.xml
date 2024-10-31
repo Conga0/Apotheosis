@@ -4,6 +4,6 @@
 
 	<LuaComponent
 		execute_every_n_frame="1"
-		script_source_file="mods/apotheosis/files/scripts/misc/mind_warp_end.lua"
+		script_source_file="mods/Apotheosis/files/scripts/misc/mind_warp_end.lua"
 	></LuaComponent>
 </Entity>

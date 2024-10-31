@@ -209,7 +209,7 @@ function ModdedStuff()
 	local fleshy == false
 	local spritecomps = EntityGetComponentIncludingDisabled(heretic_id, "SpriteComponent") or {}
 	for i = 1, #spritecomps do
-	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
+	    if ComponentGetValue2(spritecomps[i], "image_file") == "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/flesh.png" then
 		fleshy = true
 		break
 	    end

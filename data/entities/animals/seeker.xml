@@ -313,7 +313,7 @@
 			ray_energy="180000"
 			particle_effect="1" 
 			damage_mortals="1" 
-			load_this_entity="mods/apotheosis/files/entities/projectiles/meteor_thunder.xml"
+			load_this_entity="mods/Apotheosis/files/entities/projectiles/meteor_thunder.xml"
 			physics_explosion_power.min="0.7"
 			physics_explosion_power.max="1.2" 
 			physics_throw_enabled="1"

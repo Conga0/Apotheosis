@@ -18,7 +18,7 @@ end
 --If the player is no longer nullified, reenable teleportation perks & swapper mage swapping
 if teledisabled == false then
     local pos_x, pos_y = EntityGetTransform(player_id)
-    local c = EntityLoad("mods/apotheosis/files/entities/misc/effect_teleport_cancel_remove.xml", pos_x, pos_y)
+    local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_teleport_cancel_remove.xml", pos_x, pos_y)
     EntityAddChild(player_id,c)
 end
 

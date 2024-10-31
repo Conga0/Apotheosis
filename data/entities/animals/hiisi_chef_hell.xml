@@ -28,7 +28,7 @@
 		<DamageModelComponent 
             hp="8.0"
             materials_create_messages="1"
-			ragdoll_filenames_file="mods/apotheosis/files/ragdolls/hiisi_chef_hell/filenames.txt" 
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/hiisi_chef_hell/filenames.txt" 
 			fire_probability_of_ignition="5"
     		blood_spray_material="blood"
             blood_spray_create_some_cosmetic="1"
@@ -40,7 +40,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/hiisi_chef_hell.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/hiisi_chef_hell.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -160,7 +160,7 @@
 	</ParticleEmitterComponent>
 	
 	<LuaComponent
-		script_shot="mods/apotheosis/files/scripts/animals/limit_sausages_hell.lua"
+		script_shot="mods/Apotheosis/files/scripts/animals/limit_sausages_hell.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>

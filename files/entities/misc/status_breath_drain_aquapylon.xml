@@ -5,7 +5,7 @@
     </InheritTransformComponent>	
    
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/status_effects/breath_drain.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/breath_drain.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>

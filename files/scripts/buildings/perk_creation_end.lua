@@ -5,7 +5,7 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 local active = false
 local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
 for i = 1, #luacomps do
-    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/apotheosis/files/scripts/buildings/perk_creation.lua" then
+    if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/buildings/perk_creation.lua" then
 	active = true
 	EntityRemoveComponent( entity_id, luacomps[i] )
 	break

@@ -27,7 +27,7 @@
 	
 	<LuaComponent
 		execute_every_n_frame = "1"
-		script_source_file="mods/apotheosis/files/scripts/misc/effect_brain_damage_effect.lua"
+		script_source_file="mods/Apotheosis/files/scripts/misc/effect_brain_damage_effect.lua"
 	></LuaComponent>
 
 </Entity>

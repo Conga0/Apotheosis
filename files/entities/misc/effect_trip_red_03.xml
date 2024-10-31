@@ -11,7 +11,7 @@
 	
 	<LuaComponent
 		execute_every_n_frame = "1"
-		script_source_file="mods/apotheosis/files/scripts/misc/effect_trip_red.lua"
+		script_source_file="mods/Apotheosis/files/scripts/misc/effect_trip_red.lua"
 	></LuaComponent>
 
 	<LuaComponent 

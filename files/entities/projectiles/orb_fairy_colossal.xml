@@ -130,7 +130,7 @@
 	</VariableStorageComponent>
 
     <LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/projectiles/orb_fairy_colossal_orbit.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/orb_fairy_colossal_orbit.lua"
 		execute_every_n_frame="1"
 		remove_after_executed="1"
 		>
@@ -144,7 +144,7 @@
 
 	<LuaComponent 
 		_enabled="1" 
-		script_source_file="mods/apotheosis/files/scripts/projectiles/orb_fairy_colossal_trail.lua"
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/orb_fairy_colossal_trail.lua"
 		execute_every_n_frame="5">
     </LuaComponent>
 	

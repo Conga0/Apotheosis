@@ -9,7 +9,7 @@
 		
 		background_use_neighbor="0"
 
-		lua_script="mods/apotheosis/files/scripts/biomes/newbiome/hills_essenceeater.lua"
+		lua_script="mods/Apotheosis/files/scripts/biomes/newbiome/hills_essenceeater.lua"
 		name="$biome_winter"
 		mCaveOpenness="0.635714" 
 		mCavePerlinDisplacement="5" 

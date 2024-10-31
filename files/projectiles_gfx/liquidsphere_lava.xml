@@ -1,5 +1,5 @@
 <Sprite
- filename="mods/apotheosis/files/projectiles_gfx/liquidsphere_lava.png"
+ filename="mods/Apotheosis/files/projectiles_gfx/liquidsphere_lava.png"
  offset_x="18"
  offset_y="18"
  default_animation="fireball" >

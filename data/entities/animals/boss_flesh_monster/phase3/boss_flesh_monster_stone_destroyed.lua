@@ -96,7 +96,7 @@ if GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") or GameHasFlagRun("ap
     max_hp = ComponentGetValue2( dmgcomp, "max_hp" ) 
 
     if (hp < max_hp * 0.98) then
-	local heal_effect = EntityLoad( "mods/apotheosis/files/entities/particles/heal_effect_big.xml", pos_x, pos_y )
+	local heal_effect = EntityLoad( "mods/Apotheosis/files/entities/particles/heal_effect_big.xml", pos_x, pos_y )
 	EntityAddChild( entity_id, heal_effect )
     end
     ComponentSetValue2( dmgcomp, "hp", max_hp ) 

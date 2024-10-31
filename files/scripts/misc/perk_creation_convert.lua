@@ -18,9 +18,9 @@ local inputlist = {
     "data/items_gfx/goldnugget_01.png", --Wand Stone
     "data/items_gfx/beamstone.png", --Beam Stone
     "data/items_gfx/goldnugget_9px.png",    --Sun Stone
-    "mods/apotheosis/files/items_gfx/goldnugget_01_alt.png", --Sun Seed
-    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png", --Heretic Stone
-    "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png", --Guiding Stone
+    "mods/Apotheosis/files/items_gfx/goldnugget_01_alt.png", --Sun Seed
+    "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png", --Heretic Stone
+    "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png", --Guiding Stone
 }
 
 local outputlist = {
@@ -41,7 +41,7 @@ local outputlist = {
 for k=1, #inputlist
 do local v = inputlist[k];
 
-    if (image == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or image == "mods/apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" ) and not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
+    if (image == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or image == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" ) and not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
         local heretic_found = false
         local boss = EntityGetInRadiusWithTag(pos_x,pos_y,1536,"miniboss") or {}
         for bp=1,#boss do
@@ -52,9 +52,9 @@ do local v = inputlist[k];
         end
         if heretic_found == false then
 	    if tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) > 0 or GameHasFlagRun("apotheosis_flesh_boss_stone_converted") then
-	        EntityLoad("mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster_newgame_plus_short.xml",pos_x,pos_y-150)
+	        EntityLoad("mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster_newgame_plus_short.xml",pos_x,pos_y-150)
 	    else
-	        EntityLoad("mods/apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml",pos_x,pos_y-150)
+	        EntityLoad("mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml",pos_x,pos_y-150)
 	    end
             GameScreenshake( 150 )
         end

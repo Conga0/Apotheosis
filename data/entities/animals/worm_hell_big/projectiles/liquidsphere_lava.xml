@@ -83,7 +83,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="0.6" 
-		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_lava.xml" 
+		image_file="mods/Apotheosis/files/projectiles_gfx/liquidsphere_lava.xml" 
 		next_rect_animation="" 
 		offset_x="18"
 		offset_y="18"
@@ -96,7 +96,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1.0" 
-		image_file="mods/apotheosis/files/projectiles_gfx/liquidsphere_lava_glow.png" 
+		image_file="mods/Apotheosis/files/projectiles_gfx/liquidsphere_lava_glow.png" 
 		next_rect_animation="" 
 		offset_x="30"
 		offset_y="30"

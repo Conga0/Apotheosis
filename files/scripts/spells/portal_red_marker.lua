@@ -1,5 +1,5 @@
 
-dofile_once("mods/apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 dofile_once("data/scripts/lib/utilities.lua")
 local entity_id = GetUpdatedEntityID()
 local root = EntityGetRootEntity(entity_id)

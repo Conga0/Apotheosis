@@ -97,7 +97,7 @@
 
 	<LuaComponent
 		_tags="death_reward"
-		script_death="mods/apotheosis/files/scripts/animals/mimic_perk_twwe_death.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/mimic_perk_twwe_death.lua"
 		>
 	</LuaComponent>
 

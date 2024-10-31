@@ -39,7 +39,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/wizard_corrupt_neutral.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_neutral.xml"
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
@@ -163,7 +163,7 @@
 		_tags="character" 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/apotheosis/files/enemies_gfx/wizard_corrupt_neutral_emissive.xml"
+		image_file="mods/Apotheosis/files/enemies_gfx/wizard_corrupt_neutral_emissive.xml"
 		offset_x="0" 
 		offset_y="0"
 		emissive="1"
@@ -201,7 +201,7 @@
 	</AudioLoopComponent>
 	
 	<LuaComponent
-		script_damage_received="mods/apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
+		script_damage_received="mods/Apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
 		script_death="mods/Apotheosis/files/scripts/animals/wizard_corrupt_death.lua"
 		script_source_file="mods/Apotheosis/files/scripts/animals/wizard_corrupt_neutral_aura.lua"
 		limit_how_many_times_per_frame="1"

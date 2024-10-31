@@ -412,7 +412,7 @@ function spawn_persistent_teleport( x, y ) end
 function spawn_candles( x, y ) end
 
 function init( x, y, w, h )
-	--EntityLoad( "mods/apotheosis/files/entities/buildings/biome_status/debuff_yggdrasil.xml", x + 256, y + 256 )
+	--EntityLoad( "mods/Apotheosis/files/entities/buildings/biome_status/debuff_yggdrasil.xml", x + 256, y + 256 )
 end
 
 function load_pixel_scene( x, y )
@@ -432,15 +432,15 @@ function spawn_potions(x, y)
 end
 
 function spawn_alchemy_secret_entry(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/teleport_alchemy_secret_entry.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/teleport_alchemy_secret_entry.xml", x, y)
 end
 
 function spawn_alchemy_secret_entry_book(x, y)
-	EntityLoad("mods/apotheosis/files/entities/items/books/book_material_spells.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/items/books/book_material_spells.xml", x, y)
 end
 
 function spawn_enemy_clear_256(x, y)
-	EntityLoad("mods/apotheosis/files/entities/buildings/enemy_clear_256.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/enemy_clear_256.xml", x, y)
 end
 
 function spawn_potions(x, y)

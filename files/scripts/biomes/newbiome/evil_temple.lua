@@ -117,7 +117,7 @@ g_small_enemies =
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/crystal_wandsteal.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/crystal_wandsteal.xml"
 	},
 	{
 		prob		= 0.05,
@@ -274,7 +274,7 @@ g_statues =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/props/statue_anvil.xml"
+		entity 	= "mods/Apotheosis/files/entities/props/statue_anvil.xml"
 	},
 	]]--
 	{
@@ -287,7 +287,7 @@ g_statues =
 		prob   		= 0.4,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/buildings/crystal_wandsteal.xml"
+		entity 	= "mods/Apotheosis/files/entities/buildings/crystal_wandsteal.xml"
 	}
 }
 
@@ -314,7 +314,7 @@ g_pixel_scene_02 =
 	total_prob = 0,
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/stairs_right.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple/stairs_right.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -326,7 +326,7 @@ g_pixel_scene_04 =
 	total_prob = 0,
 	{
 		prob   			= 1.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/stairs_left.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple/stairs_left.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -383,7 +383,7 @@ g_lamp2 =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,    
-		entity 	= "mods/apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
+		entity 	= "mods/Apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
 	},
 }
 
@@ -570,7 +570,7 @@ g_pixel_scene_01 =
 	total_prob = 0,
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/challenge.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple/challenge.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -589,21 +589,21 @@ g_pixel_scene_03 =
 	total_prob = 0,
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/lavaroom.png",
-		visual_file		= "mods/apotheosis/files/biome_impl/evil_temple/lavaroom_visual.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple/lavaroom.png",
+		visual_file		= "mods/Apotheosis/files/biome_impl/evil_temple/lavaroom_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/pit.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple/pit.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
 	},
 	{
 		prob   			= 2.0,
-		material_file 	= "mods/apotheosis/files/biome_impl/evil_temple/symbolroom.png",
+		material_file 	= "mods/Apotheosis/files/biome_impl/evil_temple/symbolroom.png",
 		visual_file		= "",
 		background_file	= "",
 		is_unique		= 0
@@ -618,7 +618,7 @@ g_ghostlamp =
 		prob   		= 1.0,
 		min_count	= 1,
 		max_count	= 1,
-		entity 	= "mods/apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
+		entity 	= "mods/Apotheosis/files/entities/props/physics/chain_torch_bloody.xml"
 	},
 }
 
@@ -631,8 +631,8 @@ g_background_windows =
 	},
 	{
 		prob   			= 1.0,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/alcove_window_background.png",
-		entity_file 	= "mods/apotheosis/files/entities/buildings/alcove_window_glow.xml"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple/alcove_window_background.png",
+		entity_file 	= "mods/Apotheosis/files/entities/buildings/alcove_window_glow.xml"
 	},
 }
 
@@ -645,15 +645,15 @@ g_background_drapes =
 	},
 	{
 		prob   			= 1.0,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/drape_1.png"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple/drape_1.png"
 	},	
 	{
 		prob   			= 0.66,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/drape_2.png"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple/drape_2.png"
 	},
 	{
 		prob   			= 0.33,
-		sprite_file		= "mods/apotheosis/files/biome_impl/evil_temple/drape_3.png"
+		sprite_file		= "mods/Apotheosis/files/biome_impl/evil_temple/drape_3.png"
 	},
 }
 

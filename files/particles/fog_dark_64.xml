@@ -1,6 +1,6 @@
 <Sprite 
   default_animation="explosion" 
-  filename="mods/apotheosis/files/particles/fog_dark_64.png" 
+  filename="mods/Apotheosis/files/particles/fog_dark_64.png" 
   offset_x="33" 
   offset_y="33" >
 

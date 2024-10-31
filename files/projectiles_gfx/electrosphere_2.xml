@@ -1,6 +1,6 @@
 <Sprite 
   default_animation="fireball" 
-  filename="mods/apotheosis/files/projectiles_gfx/electrosphere_2.png" 
+  filename="mods/Apotheosis/files/projectiles_gfx/electrosphere_2.png" 
   offset_x="11" 
   offset_y="11" >
 

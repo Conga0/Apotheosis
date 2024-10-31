@@ -50,17 +50,17 @@ function item_pickup( entity_item, entity_who_picked, name )
         --Ending 1
         --No kingly knowledge
         --Finished
-        EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_01.xml", pos_x, pos_y)
+        EntityLoad("mods/Apotheosis/files/entities/buildings/ending/ending_handler_01.xml", pos_x, pos_y)
     elseif #heretic_id < 1 then
         --Ending 2
         --Kingly knowledge but no heretic
         --Finished
-        EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_02.xml", pos_x, pos_y)
+        EntityLoad("mods/Apotheosis/files/entities/buildings/ending/ending_handler_02.xml", pos_x, pos_y)
     else
         --Ending 3
         --Kingly knowledge and heretic
         --Probably Finished
-        EntityLoad("mods/apotheosis/files/entities/buildings/ending/ending_handler_03.xml", pos_x, pos_y)
+        EntityLoad("mods/Apotheosis/files/entities/buildings/ending/ending_handler_03.xml", pos_x, pos_y)
     end
 
 	EntityKill( entity_item )

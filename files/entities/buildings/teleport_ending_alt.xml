@@ -172,7 +172,7 @@
 
 	<!-- Check if player has taken the correct portals all the way up until now -->
 	<LuaComponent
-		script_source_file="mods/apotheosis/files/scripts/buildings/teleporter_secret_check_final.lua"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/teleporter_secret_check_final.lua"
 		execute_every_n_frame="50"
 		>
 	</LuaComponent>

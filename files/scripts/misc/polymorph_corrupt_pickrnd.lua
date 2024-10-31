@@ -3,7 +3,7 @@ local entity_id = GetUpdatedEntityID()
 entity_id = EntityGetRootEntity(entity_id)
 local pos_x, pos_y = EntityGetTransform(entity_id)
 
-local child = EntityLoad("mods/apotheosis/files/entities/misc/effect_polymorph_corrupt.xml",pos_x,pos_y)
+local child = EntityLoad("mods/Apotheosis/files/entities/misc/effect_polymorph_corrupt.xml",pos_x,pos_y)
 local comp = EntityGetFirstComponentIncludingDisabled(child,"GameEffectComponent")
 
 local polytargets = {"miniboss_pit_02.xml","fairy_giant.xml","wraith_alchemy_apotheosis.xml"}

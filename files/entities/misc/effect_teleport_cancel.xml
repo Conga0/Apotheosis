@@ -9,8 +9,8 @@
 	</Base>
     
 	<LuaComponent
-		script_shot="mods/apotheosis/files/scripts/status_effects/teleport_cancel_shoot.lua"
-		script_source_file="mods/apotheosis/files/scripts/status_effects/teleport_cancel.lua"
+		script_shot="mods/Apotheosis/files/scripts/status_effects/teleport_cancel_shoot.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_cancel.lua"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>
@@ -41,7 +41,7 @@
 	<UIIconComponent
 		name="$status_apotheosis_teleport_cancel_name"
 		description="$status_apotheosis_teleport_cancel_desc"
-		icon_sprite_file="mods/apotheosis/files/ui_gfx/status_indicators/teleport_cancel.png"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/teleport_cancel.png"
 		is_perk="0"
 		display_above_head="1"
 		display_in_hud="1"

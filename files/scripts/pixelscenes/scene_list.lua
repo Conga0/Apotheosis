@@ -1,6 +1,6 @@
 
 local worldsize = ModTextFileGetContent("data/compatibilitydata/worldsize.txt") or 35840
-local appends = {"_pixel_scenes","_pixel_scenes_newgame_plus",}
+local appends = {"_pixel_scenes","_pixel_scenes_newgame_plus"}
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 
 --Conga 20/06/2023: This could be SO optimised
@@ -506,10 +506,10 @@ ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
     <PixelScene pos_x="4863" pos_y="255" just_load_an_entity="data/entities/props/physics_bone_01.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="4883" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest.xml" />
+    <PixelScene pos_x="4883" pos_y="260" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_realquest.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="4843" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_alt.xml" />
+    <PixelScene pos_x="4843" pos_y="260" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_realquest_alt.xml" />
   ]]))
 
   
@@ -527,10 +527,10 @@ ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
     <PixelScene pos_x="-17657" pos_y="255" just_load_an_entity="data/entities/props/physics_bone_01.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/apotheosis/files/entities/items/books/book_realquest_tale.xml" />
+    <PixelScene pos_x="-17677" pos_y="260" just_load_an_entity="mods/Apotheosis/files/entities/items/books/book_realquest_tale.xml" />
   ]]))
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/apotheosis/files/entities/items/pickups/fishing_rod.xml" />
+    <PixelScene pos_x="-12472" pos_y="197" just_load_an_entity="mods/Apotheosis/files/entities/items/pickups/fishing_rod.xml" />
   ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 
@@ -546,9 +546,8 @@ ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
     <PixelScene pos_x="]] .. (-1905 + worldsize)  .. [[" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
     <PixelScene pos_x="]] .. (-1905 - worldsize)  .. [[" pos_y="-1412" just_load_an_entity="data/entities/props/music_machines/music_machine_01.xml" />
 
-    <PixelScene pos_x="12187" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
-    <PixelScene pos_x="]] .. (12187 + worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
-    <PixelScene pos_x="]] .. (12187 - worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+    <PixelScene pos_x="]] .. (-12187 + worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
+    <PixelScene pos_x="]] .. (-12187 - worldsize)  .. [[" pos_y="-421" just_load_an_entity="data/entities/props/music_machines/music_machine_02.xml" />
 
     <PixelScene pos_x="2800" pos_y="250" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
     <PixelScene pos_x="]] .. (2800 + worldsize)  .. [[" pos_y="-550" just_load_an_entity="data/entities/props/music_machines/music_machine_03.xml" />
@@ -561,7 +560,7 @@ do  --Spawn Forest Monolith
   local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
   local xml = nxml.parse(content)
   xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
-    <PixelScene pos_x="-19100" pos_y="-160" just_load_an_entity="mods/apotheosis/files/entities/buildings/forest_monolith_spawner.xml" />
+    <PixelScene pos_x="-19100" pos_y="-160" just_load_an_entity="mods/Apotheosis/files/entities/buildings/forest_monolith_spawner.xml" />
   ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
 end

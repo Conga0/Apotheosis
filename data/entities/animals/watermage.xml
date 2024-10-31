@@ -17,7 +17,7 @@
 			attack_ranged_enabled="1"
 			can_fly="0"  
 			attack_ranged_action_frame="3"
-			attack_ranged_entity_file="mods/apotheosis/files/entities/projectiles/aquamage_pylon.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_pylon.xml"
 			attack_ranged_frames_between="220"
 			attack_ranged_min_distance="10" 
 			>
@@ -26,7 +26,7 @@
 		<DamageModelComponent 
             hp="3"
 			air_needed="0"
-			ragdoll_filenames_file="mods/apotheosis/files/ragdolls/watermage/filenames.txt"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/watermage/filenames.txt"
 			fire_probability_of_ignition="0" 
 			materials_that_damage="acid,lava,magic_liquid_mana_regeneration,poison,blood_cold,blood_cold_vapour" 
 			materials_how_much_damage="0.004,0.008,0.008,0.001,0.0008,0.0007,-0.005"
@@ -48,7 +48,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/apotheosis/files/enemies_gfx/watermage.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/watermage.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>
