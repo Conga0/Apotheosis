@@ -35,6 +35,11 @@ Update spell icons/images on wiki to new ones
 -Fungal Shift
 -Hyper Fungal Shift
 
+Add Spells to the wiki
+-Cleansing Bolt
+-Circle of Trueform
+-Altfire Circle of Trueform
+
 Add entities to the wiki
 -Small Fire Spider
 -Lukki Porring
@@ -44,6 +49,8 @@ Add entities to the wiki
 -Cursed Manasucker
 -Cursed Twitcher
 -Cursed Grounder
+-Small Slimy Maggot
+-Slimy Maggot
 
 Add status effects to wiki
 -Divine Protection
