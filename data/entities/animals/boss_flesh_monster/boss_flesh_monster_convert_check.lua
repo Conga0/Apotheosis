@@ -27,6 +27,6 @@ else
     ComponentSetValue2( timercomp, "value_bool", false)
 end
 
-if ( GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") or GameHasFlagRun("apotheosis_flesh_boss_stone_converted") ) and threat == true then
+if ( GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") == false or GameHasFlagRun("apotheosis_flesh_boss_stone_converted") == false ) and threat == true then
     EntitySetComponentsWithTagEnabled(entity_id,"angry_ghost_cooldown",true)
 end
