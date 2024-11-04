@@ -236,7 +236,7 @@ credits_apotheosis_line_43,"And finally.. you, for giving Apotheosis a try and m
 credits_apotheosis_line_44,I hope you enjoyed playing it as much as I enjoyed making it <3,"Надеюсь, вам понравилось играть в него так же, как мне понравилось его создавать <3",,,,,,,,,,,,
 credits_apotheosis_line_45,Best of luck in your future adventures - Conga Lyne,Желаю удачи в ваших будущих приключениях - Conga Lyne,,,,,,,,,,,,
 credits_apotheosis_line_horscht,Provided a ton of help in the mod support channel during development and let me use his credits script.,Оказал тонну помощи в канале поддержки мода во время разработки и позволил мне использовать его скрипт для этого меню.,,,,,,,,,,,,
-Apotheosis content below,#ERROR!,#ERROR!,,,,,,,通向别处的传送门,彼方へのポータル,,,,
+Apotheosis_content_below,"ERROR! If you're seeing this text, report it as a bug.",ERROR!,,,,,,,通向别处的传送门,彼方へのポータル,,,,
 teleport_portal_alternate,Portal Elsewhere,Портал в другое место,,,,,,,通向月球的传送门,月への扉,,,,
 teleport_portal_moon,Portal to the Moon,Портал на Луну,,,,,,,通向太阳的传送门,太陽への扉,,,,
 teleport_portal_sun,Portal to the Sun,Портал на Солнце,,,,,,,通向上一层的传送门,上層へのポータル,,,,
