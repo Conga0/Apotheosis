@@ -1210,6 +1210,12 @@ ModLuaFileAppend("data/scripts/gun/gun_extra_modifiers.lua", "mods/Apotheosis/fi
 
 if ModIsEnabled("Global_Poly") then
 	ModLuaFileAppend("mods/global_poly/files/scripts/poly_pool.lua", "mods/Apotheosis/files/scripts/mod_compatibility/poly_control_compat.lua")
+	local old_on_world_init = OnWorldInitialized
+	function OnWorldInitialized()
+		dofile_once("mods/Apotheosis/files/scripts/magic/creature_shift_file_image_refresh.lua")
+
+		if old_on_world_init then old_on_world_init() end
+	end
 else
 	local old_on_world_init = OnWorldInitialized
 	function OnWorldInitialized()
