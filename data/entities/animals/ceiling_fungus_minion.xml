@@ -22,6 +22,8 @@
 			air_needed="0"
 			ragdoll_filenames_file="" 
 			fire_probability_of_ignition="100" 
+			materials_that_damage="void_liquid,acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas" 
+			materials_how_much_damage="100,0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001"
 			ragdoll_material="fungus_loose_trippy"
 			blood_material="blood_fungi"
 			blood_spray_material="blood_fungi"

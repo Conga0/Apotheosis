@@ -1237,6 +1237,20 @@ do --Rework ants to behave like Apotheosis Ants for consistency
   ModTextFileSetContent("data/entities/animals/ant.xml", tostring(xml))
 end
 
+do --Update fungus to instantly die to void liquid
+  local opts = {"fungus","fungus_big","fungus_giga","fungus_tiny"}
+  for k=1,#opts do
+    local path = table.concat({"data/entities/animals/",opts[k],".xml"})
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    attrpath = xml:first_of("Base"):first_of("DamageModelComponent").attr
+    attrpath.materials_that_damage = "void_liquid,acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas" 
+    attrpath.materials_how_much_damage = "100,0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001"
+
+    ModTextFileSetContent(path, tostring(xml))
+  end
+end
+
 do --Fix Tower Portal not working in Parallel worlds
   local path = "data/scripts/biomes/tower_end.lua"
   local content = ModTextFileGetContent(path)

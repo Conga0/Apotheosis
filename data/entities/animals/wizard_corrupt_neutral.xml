@@ -26,8 +26,8 @@
 		
 		<DamageModelComponent 
             hp="16"
-		materials_that_damage="acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_divine" 
-		materials_how_much_damage="0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.05"
+			materials_that_damage="acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_divine" 
+			materials_how_much_damage="0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.05"
             ragdoll_material="meat_confusion"
 			ragdoll_filenames_file="data/ragdolls/wizard_neutral/filenames.txt"
 			critical_damage_resistance="1.0"
@@ -149,15 +149,6 @@
         	</VerletPhysicsComponent>
         </Base>  
     </Entity>
-	
-	<MagicConvertMaterialComponent
-        from_material="rock_box2d_hard"
-        to_material="air"
-        steps_per_frame="15"
-        loop="1"
-		is_circle="1"
-        radius="15" >
-    </MagicConvertMaterialComponent>
 	
 	<SpriteComponent 
 		_tags="character" 

@@ -335,7 +335,9 @@ if isfishing then
         end
 
         GamePrint(caught_name)
-        GamePrintImportant( caught_name, table.concat({GameTextGetTranslatedOrNot("$log_apotheosis_fishing_caught_desc"),rarity}) )
+        local rarity_text = GameTextGetTranslatedOrNot("$log_apotheosis_fishing_caught_desc")
+        rarity_text = rarity_text:gsub("$0",rarity)
+        GamePrintImportant( caught_name, rarity_text)
         EntityKill(entity_id)
     end
 

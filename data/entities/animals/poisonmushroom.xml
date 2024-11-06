@@ -41,6 +41,8 @@
 		blood_material="blood_fungi"
 		blood_spray_material="poison"
         ragdoll_filenames_file="" 
+		materials_that_damage="void_liquid,acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas" 
+		materials_how_much_damage="100,0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001"
 		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_purple_$[1-3].xml"
 		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
 		>

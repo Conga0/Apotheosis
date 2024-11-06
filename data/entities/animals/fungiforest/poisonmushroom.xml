@@ -1,4 +1,4 @@
-<Entity >
+<Entity name="$enemy_apotheosis_poisonmushroom" tags="mortal,hittable,homing_target,enemy" >
   
 	<Base file="data/entities/animals/poisonmushroom.xml" include_children="1" >
 

@@ -37,6 +37,8 @@
 			air_needed="0"
 			minimum_knockback_force="1000000000"
             materials_create_messages="1"
+			materials_that_damage="void_liquid,acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas" 
+			materials_how_much_damage="100,0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001"
 			ragdoll_blood_amount_absolute="1.0"
         	ragdoll_material="fungus_loose_trippy"
             ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/ceiling_fungus/filenames.txt" 

@@ -1,4 +1,4 @@
-<Entity name="$enemy_apotheosis_wizard_corrupt_twitchy" >
+<Entity name="$enemy_apotheosis_wizard_corrupt_twitchy" tags="polymorphable_NOT" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -26,11 +26,12 @@
 		
 		<DamageModelComponent
             hp="12"
-		materials_that_damage="acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_divine" 
-		materials_how_much_damage="0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.05"
+			materials_that_damage="acid,lava,poison,blood_cold,blood_cold_vapour,radioactive_gas,radioactive_gas_static,rock_static_radioactive,rock_static_poison,ice_radioactive_static,ice_radioactive_glass,ice_acid_static,ice_acid_glass,rock_static_cursed,poo_gas,apotheosis_magic_liquid_divine" 
+			materials_how_much_damage="0.004,0.004,0.001,0.0008,0.0007,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.001,0.005,0.00001,0.05"
             ragdoll_material="meat_fast"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_twitchy/filenames.txt"
 			critical_damage_resistance="1.0"
+			ragdoll_fx_forced="DISINTEGRATED"
 			>
 			<damage_multipliers
 				physics_hit="0.0" >
@@ -175,6 +176,26 @@
 		rect_animation="walk" 
 		 >
 	</SpriteComponent>
+
+	<Entity>
+		<InheritTransformComponent />
+
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent />
+
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
 
 	<LuaComponent
 		script_damage_received="mods/Apotheosis/files/scripts/animals/wizard_corrupt_shield_logic.lua"
