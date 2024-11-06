@@ -31,7 +31,6 @@
             ragdoll_material="meat_fast"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/wizard_corrupt_twitchy/filenames.txt"
 			critical_damage_resistance="1.0"
-			ragdoll_fx_forced="DISINTEGRATED"
 			>
 			<damage_multipliers
 				physics_hit="0.0" >
