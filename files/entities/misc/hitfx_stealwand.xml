@@ -21,4 +21,14 @@
 		event_root="game_effect/blindness" >
 	</AudioComponent>
 
+	<UIIconComponent
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/stealwand.png"
+		name="$status_apotheosis_divine_protection_name"
+		description="$status_apotheosis_divine_protection_desc"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
 </Entity>
