@@ -1,0 +1,8 @@
+<Entity name="projectile_repulsion">
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/buildings/projectile_repulsion_den.lua"
+		execute_every_n_frame="2"
+		>
+	</LuaComponent>
+</Entity>

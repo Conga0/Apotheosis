@@ -159,4 +159,5 @@ end
 
 function spawn_room2_check(x, y)
 	EntityLoad( "mods/Apotheosis/files/entities/buildings/evil_room2_check.xml", x, y )
+	EntityLoad( "mods/Apotheosis/files/entities/misc/projectile_repulsion_field_den.xml", x, y )
 end

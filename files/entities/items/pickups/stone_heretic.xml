@@ -276,4 +276,11 @@
 		>
 	</LuaComponent>
 
+	<LuaComponent
+		_enabled="1"
+		script_source_file = "mods/Apotheosis/files/scripts/items/projectile_repulsion_stone.lua"
+		execute_every_n_frame = "2"
+	>
+	</LuaComponent>
+
 </Entity>
