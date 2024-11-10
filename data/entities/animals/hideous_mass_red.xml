@@ -29,6 +29,10 @@
 			ragdollify_root_angular_damping="2"
 			ragdoll_offset_y="-6"
 			>
+			<damage_multipliers
+				holy="1.2"
+				>
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<PathFindingComponent
@@ -38,7 +42,7 @@
 		</PathFindingComponent>
 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/bone_worm_red.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/Bone_worm_red.xml"
 			offset_x="15" 
 			offset_y="13"
 			>

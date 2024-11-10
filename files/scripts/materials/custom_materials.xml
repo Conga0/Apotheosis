@@ -2618,7 +2618,8 @@
 	hp="240000"
 	wang_curvature="0.5"
 	wang_noise_type="2"
-	durability="12"  
+	durability="12"
+	density="18"
 	audio_physics_material_wall="rock"
 	audio_physics_material_solid="rock"
 	>
@@ -2678,6 +2679,7 @@
 	gfx_glow="255"
 	hp="320000"
 	durability="13"
+	density="18"
 	audio_physics_material_event="rock"
 	audio_physics_material_wall="rock"
 	audio_physics_material_solid="rock"

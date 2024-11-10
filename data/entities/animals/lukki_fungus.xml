@@ -167,7 +167,7 @@
 			explosion="0.0"
 			electricity="0.6"
 			melee="1.2"
-			fire="1.4"
+			fire="40.0"
 			slice="1.2"
 			>
 		</damage_multipliers>

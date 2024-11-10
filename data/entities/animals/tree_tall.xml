@@ -59,7 +59,7 @@
 		</PathFindingComponent>
 
 		<GenomeDataComponent 
-			herd_id="fungus"
+			herd_id="flower"
 			food_chain_rank="15"
 			is_predator="1" >
 		</GenomeDataComponent>
