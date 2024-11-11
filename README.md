@@ -10,7 +10,7 @@ Lead Developer - Conga Lyne
 
 Sprite Artists - Spoopy, Conga Lyne, PickledSosig, Copi
 
-Programmers - Conga Lyne, Copi
+Programmers - Conga Lyne, Copi, Spoopy
 
 Audio - Hinoguchi Sorako, Spoopy
 
