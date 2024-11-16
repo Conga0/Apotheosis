@@ -3586,6 +3586,78 @@
 	</Graphics>
   </CellDataChild>
 
+  <CellData 
+	name="apotheosis_hell_nectar"
+	ui_name="$material_apotheosis_hell_nectar"
+  	tags="[slime],[food]"
+	burnable="0"  
+	density="7"  
+	cell_type="liquid" 
+	wang_color="8839181D"  
+	generates_smoke="0"  
+	liquid_gravity="0.05"  
+	liquid_sand="0"  
+	liquid_sticks_to_ceiling="80"
+	liquid_slime="1"
+	liquid_stains="2"
+	stickyness="0.0"
+	solid_friction="1.0"
+	on_fire="0"  
+	requires_oxygen="0"  
+	temperature_of_fire="100000"
+	audio_physics_material_event="slime"
+	audio_physics_material_wall="slime"
+	audio_physics_material_solid="slime" 
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		texture_file="data/materials_gfx/endslime.png"
+		color="888BFF80" >
+		<Edge>
+		 <EdgeGraphics 
+			overwrite="0" 
+			percent="0.8" 
+			require_same_material="0" 
+			require_same_material_type="1" 
+			type="EVERYWHERE" 
+			z="1" >
+			<Images>
+				<Image 
+					allow_random_rotation="1"
+					filename="data/materials_gfx/edge_files/edge_endslime_1.png" 
+				/>
+			</Images>
+		  </EdgeGraphics>
+		</Edge>
+    </Graphics>
+	<ParticleEffect
+		vel.y="-13.14"
+		vel_random.min_x="-11.71"
+		vel_random.max_x="11.71"
+		vel_random.min_y="-17.18"
+		vel_random.max_y="-2.8"
+		lifetime.min="0.9"
+		lifetime.max="1.6"
+		gravity.y="60"
+		render_on_grid="1"
+		airflow_force="0.5314"
+		airflow_scale="0.1371"
+		friction="0.0002"
+		probability="0.0045"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Stains>
+			<StatusEffect type="SLIMY" />
+		</Stains>
+		<Ingestion>
+			<StatusEffect type="apotheosis_HELL_NECTAR" amount="0.5" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
 
 
 

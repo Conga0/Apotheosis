@@ -1601,3 +1601,18 @@ do
     ModTextFileSetContent(filepath, tostring(xml))
   end
 end
+
+--Increases the size of Pollen's Hitbox so it damages enemies more consistently
+do
+  local path = "data/entities/projectiles/deck/pollen.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <GameAreaEffectComponent
+		radius="2"
+		collide_with_tag="hittable"
+		frame_length="1"
+    ></GameAreaEffectComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end

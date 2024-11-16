@@ -1,0 +1,16 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="600"
+    >
+	</GameEffectComponent >
+	
+	<LuaComponent
+		execute_every_n_frame = "1"
+		script_source_file="mods/Apotheosis/files/scripts/misc/effect_trip_red_hellnectar.lua"
+	></LuaComponent>
+	
+</Entity>

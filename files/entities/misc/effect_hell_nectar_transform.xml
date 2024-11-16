@@ -1,0 +1,16 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="600"
+    >
+	</GameEffectComponent >
+	
+	<LuaComponent
+		execute_every_n_frame = "1"
+		script_source_file="mods/Apotheosis/files/scripts/magic/hell_nectar_transform.lua"
+	></LuaComponent>
+	
+</Entity>

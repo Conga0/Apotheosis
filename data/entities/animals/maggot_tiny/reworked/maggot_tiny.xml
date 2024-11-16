@@ -58,7 +58,7 @@
 		>
 		<damage_multipliers
 			explosion="0.25"
-			fire="3.5"
+			fire="4.0"
 			radioactive="0.0"
 			poison="0.0"
 			projectile="0.5"

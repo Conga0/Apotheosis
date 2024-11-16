@@ -24,11 +24,21 @@ end
 
 table.insert(g_big_enemies,
 {
-    prob           = 0.005,
+    prob           = 0.006,
     min_count    = 1,
     max_count    = 1,    
     entity     = "data/entities/animals/worm_hell_big/spawn_helper.xml"
 })
+
+--[[
+table.insert(g_big_enemies,
+{
+    prob           = 0.1,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/Apotheosis/files/entities/spawners/hell_nectar_spawner.xml"
+})
+]]--
 
 
 table.insert(g_small_enemies,

@@ -204,6 +204,21 @@ local apotheosis_status_list = {
         ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/divine_protection.png",
         effect_entity="mods/Apotheosis/files/entities/misc/effect_divine_protection.xml",
     },
+    {
+        id="apotheosis_HELL_NECTAR",
+        ui_name="$status_apotheosis_hell_nectar_name",
+        ui_description="$status_apotheosis_hell_nectar_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/hell_nectar.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_hell_nectar.xml",
+    },
+    {
+        id="apotheosis_HELL_NECTAR",
+        ui_name="$status_apotheosis_hell_nectar_name",
+        ui_description="$status_apotheosis_hell_nectar_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/hell_nectar.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_hell_nectar_transform.xml",
+        min_threshold_normalized="5.0",
+    },
 }
 
 local len = #status_effects

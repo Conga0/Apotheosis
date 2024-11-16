@@ -4769,6 +4769,35 @@ local events = {
             end
         end
     },
+    --[[
+    --16/11/2024 Conga: Commenting this out until something special is finished
+    {
+        trigger = function()
+            local boss = EntityGetInRadiusWithTag( x, y, 225, "boss" ) or nil
+            for bp=1,#boss do
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_worm_end_big_apotheosis" then
+                    local d_opts = {"Ah, I had forgotten of these writhing giants...."}
+                    local dialogue = d_opts[math.random(1,#d_opts)]
+		    tone = "long"
+                    return true, dialogue
+                end
+            end
+            return false
+        end
+    },
+    {
+        trigger = function()
+            num = 270
+            if GameHasFlagRun("apotheosis_heretalk_id_" .. tostring(num-1)) then
+                local d_opts = {"Something draws them deeper, but none have found what..."}
+                local dialogue = d_opts[math.random(1,#d_opts)]
+                tone = "long"
+                return true, dialogue
+            end
+            return false
+        end
+    },
+    ]]--
 }
 
 --Cycles through events table and runs their trigger function, will skip an entry if it's already been spoken
