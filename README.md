@@ -22,9 +22,9 @@ More detailed credits are available inside credits.txt
 
 # Install Instructions
 
- - Press the *[Download Zip](https://github.com/Conga0/Apotheosis/archive/refs/heads/main.zip)* button
+ - Press the *[Download Zip](https://github.com/Conga0/Apotheosis/releases/download/v1.1.1/Apotheosis_1.1.1.7z)* button
  - Extract into your noita mod folder (`C:/Program Files (x86)/Steam/steamapps/common/Noita/mods/` for steam users)
- - Rename `Apotheosis-main` to `Apotheosis`
+ - Rename `Apotheosis-main` to `Apotheosis` (If it is already called `Apotheosis` you can ignore this step)
 
  - Note: It is strongly recommended to play on the Beta Branch of Noita, otherwise you may experience crashes
 
