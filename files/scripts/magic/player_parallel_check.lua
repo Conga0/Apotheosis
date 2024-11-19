@@ -19,6 +19,8 @@ if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" and Ga
     end
 end
 
+--DONOTDELETETHIS
+
 --Scale Vampirism Healing to be percentage based
 --100 hp = 1x rate
 --200 hp = 2x rate

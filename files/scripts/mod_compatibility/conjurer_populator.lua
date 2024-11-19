@@ -900,6 +900,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/bubbles/mana_battery.png",
 	  },
 	  {
+		name="Frozen Wand",
+		path="mods/Apotheosis/files/entities/items/wands/custom/ice_wand.xml",
+		image="data/ui_gfx/bubbles/ice_wand.png",
+	  },
+	  {
 		name="Essence of Fungus",
 		path="mods/Apotheosis/files/entities/items/pickups/essence_fungus.xml",
 		image="mods/Apotheosis/files/ui_gfx/essences/fungus.png",

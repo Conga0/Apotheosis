@@ -9,15 +9,41 @@
     scale.x="1" 
     scale.y="1" >
   </_Transform>
+
+	<!--We Initialise the worm with a dragon component so it spawns in curled up-->
+	<BossDragonComponent
+		_enabled="1"
+		speed="4"
+		speed_hunt="5"
+		acceleration="0.35"
+		direction_adjust_speed="0.003"
+		direction_adjust_speed_hunt="0.035"
+		tail_gravity="0"
+		part_distance="24"
+		ground_check_offset="8"
+		eat_anim_wait_mult="0.15"
+		hitbox_radius="18"
+		target_kill_radius="20"
+		target_kill_ragdoll_force="10"
+		hunt_box_radius="256"
+		random_target_box_radius="400"
+		new_hunt_target_check_every="240"
+		new_random_target_check_every="240"
+		ragdoll_filename="data/ragdolls/dragon/filenames.txt"
+		jump_cam_shake="20"
+		projectile_1=""
+		projectile_2="" >
+	</BossDragonComponent>
   
   <WormComponent
+		_enabled="0"
     acceleration="0.5"
     gravity="0"
     tail_gravity="0"
     part_distance="24"
     ground_check_offset="8"
     hitbox_radius="18"
-    bite_damage="2"
+    bite_damage="4"
     target_kill_radius="20"
     target_kill_ragdoll_force="10"
     ragdoll_filename="data/ragdolls/worm_skull/filenames.txt"
@@ -26,6 +52,7 @@
   </WormComponent>
   
   <WormAIComponent
+		_enabled="0"
     speed="5"
     speed_hunt="8"
     direction_adjust_speed="0.005"
@@ -403,6 +430,19 @@
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/worm_dragon_init.lua"
+		execute_every_n_frame="1"
+		execute_times="1"
+		>
+	</LuaComponent>
+
+	<!-- Keep track of the current i-frames remaining -->
+	<VariableStorageComponent
+		value_int="0"
+		>
+	</VariableStorageComponent>
 
 	<CameraBoundComponent
 	  max_count="10"

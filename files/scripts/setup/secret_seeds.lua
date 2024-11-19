@@ -36,6 +36,13 @@ function towerclimb()
 
     GameAddFlagRun("apotheosis_towerclimb")
 
+    do --Artifically secret seed game flag is added
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_towerclimb\")")
+      ModTextFileSetContent(path, content)
+    end
+
     --Appends Tower Spawns to All vanilla biomes
     local populator_path = "mods/Apotheosis/files/scripts/biomes/global_everything_populator_towerclimb.lua"
     local biomes = {
@@ -96,6 +103,13 @@ function hardcore()
 
     GameAddFlagRun("apotheosis_hardmode")
 
+    do --Artifically secret seed game flag is added
+        local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+        local content = ModTextFileGetContent(path)
+        content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_hardmode\")")
+        ModTextFileSetContent(path, content)
+    end
+
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
 
     dofile_once("mods/Apotheosis/files/scripts/setup/hardmode_setup.lua")
@@ -110,6 +124,13 @@ function nightcore()
     --Adding this just for Heretical Eye dialogue...
     GameAddFlagRun("apotheosis_nightmode")
 
+    do --Artifically secret seed game flag is added
+        local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+        local content = ModTextFileGetContent(path)
+        content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_hardmode\") GameAddFlagRun(\"apotheosis_nightmode\")")
+        ModTextFileSetContent(path, content)
+    end
+
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
 
     dofile_once("mods/Apotheosis/files/scripts/setup/hardmode_setup.lua")
@@ -122,6 +143,13 @@ end
 function glassed()
 
     GameAddFlagRun("apotheosis_glassed")
+
+    do --Artifically secret seed game flag is added
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_glassed\")")
+      ModTextFileSetContent(path, content)
+    end
     
     local path = "data/entities/player_base.xml"
     local content = ModTextFileGetContent(path)
@@ -150,6 +178,13 @@ end
 function alchemistdream()
 
     GameAddFlagRun("apotheosis_alchemistdream")
+
+    do --Artifically secret seed game flag is added
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_alchemistdream\")")
+      ModTextFileSetContent(path, content)
+    end
 
     do -- Replace all normal potions with large potions
       local path = "data/scripts/item_spawnlists.lua"
@@ -264,6 +299,13 @@ end
 function addict()
 
     GameAddFlagRun("apotheosis_addict")
+
+    do --Artifically secret seed game flag is added
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_addict\")")
+      ModTextFileSetContent(path, content)
+    end
     
     local path = "data/entities/player_base.xml"
     local content = ModTextFileGetContent(path)
@@ -282,6 +324,13 @@ end
 function poverty()
 
     GameAddFlagRun("apotheosis_poverty")
+
+    do --Artifically secret seed game flag is added
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_poverty\")")
+      ModTextFileSetContent(path, content)
+    end
 
     do --Reduce gold dropped in poverty by 100%
         local path = "data/scripts/items/drop_money.lua"
@@ -311,7 +360,7 @@ function downunder()
     do --Artifically secret seed game flag is added
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
-      content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_downunder\"%)")
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_downunder\")")
       ModTextFileSetContent(path, content)
     end
 
@@ -324,6 +373,13 @@ end
 function everything()
 
     GameAddFlagRun("apotheosis_everything")
+
+    do --Artifically secret seed game flag is added
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_everything\")")
+      ModTextFileSetContent(path, content)
+    end
 
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_hardmode.lua" )
     ModLuaFileAppend( "data/scripts/gun/gun_actions.lua", "mods/Apotheosis/files/scripts/setup/action_appends_missingmagic_everything.lua" )

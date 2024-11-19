@@ -7,7 +7,7 @@
     	effect="POLYMORPH"
     	frames="-1"
     	disable_movement="0"
-    	polymorph_target="data/entities/animals/worm_end_big_apotheosis.xml"
+    	polymorph_target="mods/Apotheosis/files/entities/buildings/hell_nectar_egg.xml"
     >
 	</GameEffectComponent >
 </Entity>

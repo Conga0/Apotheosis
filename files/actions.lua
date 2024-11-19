@@ -914,7 +914,7 @@ local apotheosis_spellappends = {
         custom_xml_file = "data/entities/misc/custom_cards/torch.xml",
         action 		= function()
             c.game_effect_entities = c.game_effect_entities .. "data/entities/misc/effect_apply_on_fire.xml,"
-            c.damage_fire_add = c.damage_fire_add + 0.12
+            c.damage_fire_add = c.damage_fire_add + 0.20
             c.extra_entities = c.extra_entities .. "data/entities/misc/burn.xml,"
             draw_actions( 1, true )
         end,

@@ -3591,9 +3591,10 @@
 	ui_name="$material_apotheosis_hell_nectar"
   	tags="[slime],[food]"
 	burnable="0"  
-	density="7"  
+	density="7"
+	durability="18"
 	cell_type="liquid" 
-	wang_color="8839181D"  
+	wang_color="8856282F"  
 	generates_smoke="0"  
 	liquid_gravity="0.05"  
 	liquid_sand="0"  
@@ -3612,7 +3613,7 @@
 	>
 	<Graphics
 		texture_file="data/materials_gfx/endslime.png"
-		color="888BFF80" >
+		color="8856282F" >
 		<Edge>
 		 <EdgeGraphics 
 			overwrite="0" 

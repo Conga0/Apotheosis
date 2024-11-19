@@ -4769,8 +4769,6 @@ local events = {
             end
         end
     },
-    --[[
-    --16/11/2024 Conga: Commenting this out until something special is finished
     {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 225, "boss" ) or nil
@@ -4797,7 +4795,6 @@ local events = {
             return false
         end
     },
-    ]]--
 }
 
 --Cycles through events table and runs their trigger function, will skip an entry if it's already been spoken

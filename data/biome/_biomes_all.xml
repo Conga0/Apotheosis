@@ -1526,4 +1526,10 @@
 		color="ff7621de" >
 	</Biome>
 
+	<Biome 
+		biome_filename="data/biome/custom/solid_wall_ice_wand.xml" 
+		height_index="10"
+		color="ff377f83" >
+	</Biome>
+
 </BiomesToLoad>
