@@ -14,6 +14,8 @@ Programmers - Conga Lyne, Copi, Spoopy
 
 Audio - Hinoguchi Sorako, Spoopy
 
+Translators - Slack, Shug, Kitten, Alex(GoD), Blueberry
+
 Other contributors:
 Y🍵, Evasia, Squirrelly, SpicySpaceSnake, Letalli, Zathers, Horscht, Extol, Rib and you for playing
 
@@ -22,7 +24,7 @@ More detailed credits are available inside credits.txt
 
 # Install Instructions
 
- - Press the *[Download Zip](https://github.com/Conga0/Apotheosis/releases/download/v1.1.1/Apotheosis_1.1.1.7z)* button
+ - Press the *[Download Zip](https://github.com/Conga0/Apotheosis/releases/download/1.1.2/Apotheosis_1.1.2.7z)* button
  - Extract into your noita mod folder (`C:/Program Files (x86)/Steam/steamapps/common/Noita/mods/` for steam users)
  - Rename `Apotheosis-main` to `Apotheosis` (If it is already called `Apotheosis` you can ignore this step)
 
