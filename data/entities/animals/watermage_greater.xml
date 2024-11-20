@@ -364,6 +364,7 @@
 	</AIAttackComponent>
 
 	<!--Spawn an aquamine on death-->
+	<!--Also now handles converting to their toxic variant when toxified-->
 	<LuaComponent
 		script_death="mods/Apotheosis/files/scripts/animals/watermage_greater_death.lua"
 		>

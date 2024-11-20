@@ -258,9 +258,9 @@
   <LightComponent 
     _enabled="1" 
     radius="60" 
-	r="80"
-	g="120"
-	b="10">
+	r="10"
+	g="80"
+	b="120">
   </LightComponent>
   
 	<VariableStorageComponent

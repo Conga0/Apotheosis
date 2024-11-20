@@ -338,6 +338,22 @@
     </Graphics>
   </CellDataChild>
 
+  <CellDataChild
+  	_parent="radioactive_liquid"
+	name="apotheosis_radioactive_liquid_fading_fast"
+	ui_name="$mat_radioactive_liquid"
+  	tags="[evaporable]"
+	wang_color="902F354D"
+	warmth_melts_to_material="apotheosis_radioactive_gas_fading"
+	warmth_melts_chance_rev="500"
+	status_effects="RADIOACTIVE"
+	>
+    <Graphics
+	color="A0376259"
+	>
+    </Graphics>
+  </CellDataChild>
+
   <CellData
 	name="apotheosis_cloud_poison"
 	ui_name="$material_apotheosis_mist_poison"
