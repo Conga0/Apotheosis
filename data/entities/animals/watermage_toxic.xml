@@ -37,6 +37,7 @@
 			blood_sprite_directional=""
 			blood_sprite_large=""
 			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
+			wet_status_effect_damage="0.3"
 			>
 			<damage_multipliers
 				explosion="1.2"
@@ -330,6 +331,11 @@
 		>
 	</SpriteParticleEmitterComponent>
 
+	<!--Handles converting to their wet variant when wetified-->
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/watermage_toxic_death.lua"
+		>
+	</LuaComponent>
 
 	
 	<!-- Protections  -->

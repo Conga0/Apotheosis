@@ -329,6 +329,11 @@
 		>
 	</SpriteParticleEmitterComponent>
 
+	<!--Handles converting to their toxic variant when toxified-->
+	<LuaComponent
+		script_death="mods/Apotheosis/files/scripts/animals/watermage_death.lua"
+		>
+	</LuaComponent>
 
 	
 	<!-- Protections  -->

@@ -18,7 +18,7 @@
 			attack_melee_enabled="1"
 			can_fly="1"  
 			attack_ranged_action_frame="3"
-			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_pylon_pentashot.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_toxic_pylon_pentashot.xml"
 			attack_ranged_frames_between="220"
 			attack_ranged_min_distance="10"
 			attack_ranged_action_frame="4"
@@ -46,6 +46,7 @@
 			physics_objects_damage="0"
 			air_needed="0"
 			healing_particle_effect_entity="data/entities/particles/heal_effect.xml"
+			wet_status_effect_damage="0.4"
 			>
 			<damage_multipliers
 				projectile="0.8"
@@ -347,7 +348,7 @@
 		attack_ranged_offset_x="8"
 		attack_ranged_offset_y="-17"
 		animation_name="attack_ranged"
-		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_pylon_pentashot.xml"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_toxic_pylon_pentashot.xml"
 		attack_ranged_action_frame="4"
 		>
 	</AIAttackComponent>
@@ -360,14 +361,15 @@
 		attack_ranged_offset_x="8"
 		attack_ranged_offset_y="-17"
 		animation_name="attack_ranged"
-		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_bomb.xml"
+		attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/aquamage_toxic_bomb.xml"
 		attack_ranged_action_frame="4"
 		>
 	</AIAttackComponent>
 
 	<!--Spawn an aquamine on death-->
+	<!--Also now handles converting to their wet variant when wetified-->
 	<LuaComponent
-		script_death="mods/Apotheosis/files/scripts/animals/watermage_greater_death.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/watermage_toxic_greater_death.lua"
 		>
 	</LuaComponent>
 
@@ -383,7 +385,7 @@
 		</GameEffectComponent >
 
 		<GameEffectComponent 
-			effect="WET"
+			effect="RADIOACTIVE"
 			frames="-1"
 			>
 		</GameEffectComponent >

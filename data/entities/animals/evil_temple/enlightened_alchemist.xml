@@ -43,7 +43,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="data/enemies_gfx/enlightened_alchemist.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/enlightened_alchemist_corrupt.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>

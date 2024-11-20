@@ -603,7 +603,7 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/hidden/watermage_toxic.png",
 	  },
 	  {
-		name="Greater Toxicmage (Unused)",
+		name="Greater Toxicmage",
 		path="data/entities/animals/watermage_toxic_greater.xml",
 		image="data/ui_gfx/animal_icons/hidden/watermage_toxic_greater.png",
 	  },
