@@ -38,6 +38,18 @@ local outputlist = {
     "APOTHEOSIS_PLANE_RADAR",
 }
 
+function radarStoneCheck(eid,img)
+    if img == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" then
+        local lcomps = EntityGetComponentIncludingDisabled(eid,"LuaComponent")
+        for j=1,#lcomps do
+            if ComponentGetValue2(lcomps[j],"script_source_file") == "mods/Apotheosis/files/scripts/items/radar_stone_destroyed.lua" then
+                EntitySetComponentIsEnabled( eid, lcomps[j], false )
+                break
+            end
+        end
+    end
+end
+
 for k=1, #inputlist
 do local v = inputlist[k];
 
@@ -64,6 +76,7 @@ do local v = inputlist[k];
         --Perk tag is removed so other perks aren't deleted upon picking this one up
         EntityRemoveTag(perk_id, "perk")
         AddFlagPersistent(table.concat({"apotheosis_card_unlocked_perkforged_",string.lower(outputlist[k])}))
+        radarStoneCheck(entity_id,image)
 		EntityKill(entity_id)
         if not GameHasFlagRun("apotheosis_perk_creation_angered") then
             GameAddFlagRun("apotheosis_perk_creation_angered")

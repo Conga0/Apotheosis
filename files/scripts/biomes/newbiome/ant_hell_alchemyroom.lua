@@ -189,8 +189,8 @@ function spawn_teleporter(x, y)
 end
 
 function spawn_potions(x, y)
-	math.randomseed(x + y)
-	local rng = math.random(1,100)
+	SetRandomSeed(x + y,x + 999 + y)
+	local rng = Random(1,100)
 	if rng == 1 then
 		EntityLoad( "mods/Apotheosis/files/entities/items/pickups/runestones/runestone_alchemy.xml", x, y )
 	elseif rng == 2 then

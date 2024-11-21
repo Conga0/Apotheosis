@@ -117,7 +117,7 @@ function init(x, y, w, h)
 	
 		if spawn then
 			if location == 2 then
-				LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/solid_wall_ice_wand_flipped.png", "", x-30, y, "", true )
+				LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/solid_wall_ice_wand_flipped.png", "", x+30, y, "", true )
 			else
 				LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/solid_wall_ice_wand.png", "", x-30, y, "", true )
 			end
@@ -128,9 +128,9 @@ function init(x, y, w, h)
 			or (location == 2 and y > 9700 and y < 9900)
 			or (location == 3 and y > 10700 and y < 10900)
 	
-		if spawn or 1 == 1 then
+		if spawn then
 			if location == 2 then
-				LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/solid_wall_ice_wand_flipped.png", "", x-30, y, "", true )
+				LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/solid_wall_ice_wand_flipped.png", "", x+30, y, "", true )
 			else
 				LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/solid_wall_ice_wand.png", "", x-30, y, "", true )
 			end
