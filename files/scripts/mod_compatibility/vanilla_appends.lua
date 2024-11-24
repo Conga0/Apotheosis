@@ -288,6 +288,7 @@ do --Boosts Health of various creatures (THE_END)
     "wizard_firemage_greater",
     "wraith_returner_apotheosis",
     "poring_holy",
+    "poring_holy_arch",
     "poring_devil",
   }
 

@@ -335,6 +335,7 @@ if ModIsEnabled("biome-plus") then
 	ModLuaFileAppend("data/scripts/biomes/mod/sulfur_cave.lua","mods/Apotheosis/files/scripts/biomes/mod_compatibility/alt_biomes/hiddengrove_populator.lua") --Hidden Grove, Overgrowth populator
 
 	--Global Spawns
+	ModLuaFileAppend("data/scripts/biomes/mod/floodcave.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/irradiated_mines.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/blast_pit.lua", "mods/Apotheosis/files/scripts/biomes/global_populator.lua")
 	ModLuaFileAppend("data/scripts/biomes/mod/frozen_passages.lua","mods/Apotheosis/files/scripts/biomes/global_populator.lua")

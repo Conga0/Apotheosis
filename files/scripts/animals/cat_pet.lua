@@ -33,8 +33,13 @@ function interacting(entity_who_interacted, entity_interacted, interactable_name
 	elseif ( rnd <= 12 ) then
 		EntitySetComponentsWithTagEnabled( entity_interacted, "enabled_if_charmed", false )
 		
-		GamePrint( "$ui_apotheosis_cat_pet_02" )
-		GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/sora_meow_01", x, y )
+		if Random(1,50) == 1 then
+			GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/snake_meow_01", x, y )
+			GamePrint( "$ui_apotheosis_cat_pet_05" )
+		else
+			GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/sora_meow_01", x, y )
+			GamePrint( "$ui_apotheosis_cat_pet_02" )
+		end
 	elseif ( rnd <= 18 ) then
 		EntitySetComponentsWithTagEnabled( entity_interacted, "enabled_if_charmed", false )
 		

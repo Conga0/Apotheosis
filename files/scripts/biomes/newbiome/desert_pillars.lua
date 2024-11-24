@@ -261,7 +261,7 @@ function init(x, y, w, h)
 		end
 		
 		for j,v in ipairs(data) do
-			local valid = HasFlagPersistent( table.concat({"apotheosis_card_unlocked_",v[1]}) ) or debug_mode
+			local valid = HasFlagPersistent( table.concat({"apotheosis_card_unlocked_",v[1]}) ) or debug_mode or ModIsEnabled("noita-mapcap")
 			
 			--print( "Checked for " .. tostring(v[1]) .. ", result: " .. tostring(valid) )
 			

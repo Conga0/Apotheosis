@@ -19,6 +19,8 @@ if (Random( 1, 20) == 20) then
             GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/sora_meow_03", pos_x, pos_y );
         elseif (meowNum >= 24) then
             GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/sora_meow_04", pos_x, pos_y );
+        elseif (meowNum >= 6) then
+            GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/snake_meow_01", pos_x, pos_y );
         elseif (meowNum >= 4) then
             GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/voc_attack_purr_01", pos_x, pos_y );
         elseif (meowNum == 3) then

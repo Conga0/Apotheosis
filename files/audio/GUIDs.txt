@@ -76,6 +76,7 @@
 {a16b29b2-f6ca-4152-94e4-e2975761674e} event:/mocreeps_audio/kittycat/meow_01
 {4490ae24-a5c7-47b3-a633-d8123ff0b9b6} event:/mocreeps_audio/kittycat/meow_02
 {c266f1c5-0e3c-4d6a-a3b6-24b26716a3bb} event:/mocreeps_audio/kittycat/meow_03
+{567348aa-32b3-4fc4-9233-773467cae75a} event:/mocreeps_audio/kittycat/snake_meow_01
 {2356d7a1-72da-48a0-8638-6ea8db38b586} event:/mocreeps_audio/kittycat/sora_hurt_02
 {38e77bff-2f49-4d3f-9adf-d364e9f4651f} event:/mocreeps_audio/kittycat/sora_hurt_04
 {a0af0a27-cbbc-48c7-be9f-95fd3e01d47c} event:/mocreeps_audio/kittycat/sora_hurt_05

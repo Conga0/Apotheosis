@@ -43,6 +43,7 @@ If you're confused why something feels different, this list may help you identif
 * Kolmisilma and his minions gain new abilities at high orb counts
 * Kolmisilma can now clear slime and water
 * Gemmed necklace cosmetic now requires 46 orbs
+* Meat realm is now reworked
 
 * Vanilla rework or change
 ** Vanilla spell rework or change that can be disabled in mod settings.
