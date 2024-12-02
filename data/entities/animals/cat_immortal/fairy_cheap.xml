@@ -193,7 +193,7 @@
 		<InheritTransformComponent />
 		
 		<SpriteComponent 
-			image_file="mods/mo_creeps/files/enemies_gfx/fairy_ylw_emissive.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_ylw_emissive.xml"
 			offset_x="4"
 			offset_y="4">
 		</SpriteComponent>

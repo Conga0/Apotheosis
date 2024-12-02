@@ -22,7 +22,7 @@ function interacting(entity_who_interacted, entity_interacted, interactable_name
 		ComponentSetValueVector2( comp, "mVelocity", 0, 0 )
 	end)
 	
-	SetRandomSeed( x + entity_interacted, y + GameGetFrameNum() )
+	SetRandomSeed( x + y + entity_interacted, y + GameGetFrameNum() )
 	local rnd = Random( 1, 20 )
 	
 	if ( rnd <= 6 ) then
@@ -33,7 +33,7 @@ function interacting(entity_who_interacted, entity_interacted, interactable_name
 	elseif ( rnd <= 12 ) then
 		EntitySetComponentsWithTagEnabled( entity_interacted, "enabled_if_charmed", false )
 		
-		if Random(1,50) == 1 then
+		if Random(1,10) == 1 then
 			GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/snake_meow_01", x, y )
 			GamePrint( "$ui_apotheosis_cat_pet_05" )
 		else

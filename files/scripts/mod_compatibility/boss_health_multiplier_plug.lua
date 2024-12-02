@@ -474,7 +474,7 @@ local content = ModTextFileGetContent(path)
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
   <LuaComponent
-    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
     execute_times="1"
 		execute_every_n_frame="3"
     remove_after_executed="1"
@@ -489,7 +489,7 @@ local content = ModTextFileGetContent(path)
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
   <LuaComponent
-    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
     execute_times="1"
 		execute_every_n_frame="3"
     remove_after_executed="1"
@@ -503,7 +503,7 @@ local content = ModTextFileGetContent(path)
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
   <LuaComponent
-    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
     execute_times="1"
 		execute_every_n_frame="3"
     remove_after_executed="1"
@@ -518,7 +518,7 @@ local content = ModTextFileGetContent(path)
 local xml = nxml.parse(content)
 xml:add_child(nxml.parse([[
   <LuaComponent
-    script_source_file="mods/mo_creeps/files/scripts/animals/boss_health_multiplier.lua"
+    script_source_file="mods/Apotheosis/files/scripts/animals/boss_health_multiplier.lua"
     execute_times="1"
 		execute_every_n_frame="3"
     remove_after_executed="1"

@@ -104,7 +104,7 @@
     <SpriteComponent 
         _tags="character" 
         alpha="1" 
-        image_file="mods/Apotheosis/files/enemies_gfx/fish_red.xml" 
+        image_file="mods/Apotheosis/files/enemies_gfx/fish_red.xml"
         next_rect_animation="" 
         rect_animation="walk" 
         >
