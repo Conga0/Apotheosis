@@ -69,6 +69,12 @@
     name="$prop_apotheosis_egg_fire_lukki_trap" >
   </UIInfoComponent>
 
+	<VariableStorageComponent
+		name="caution"
+		value_float="0"
+	>
+	</VariableStorageComponent>
+
 	<LuaComponent 
 		_enabled="1" 
 		execute_every_n_frame="2" 
@@ -79,7 +85,7 @@
 
 	<LuaComponent 
 		_enabled="1" 
-		execute_every_n_frame="60" 
+		execute_every_n_frame="180" 
 		execute_times="-1" 
 		remove_after_executed="0" 
 		script_source_file="mods/Apotheosis/files/scripts/props/egg_volcanic_lukki_trap_shift.lua" >
