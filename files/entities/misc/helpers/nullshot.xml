@@ -1,0 +1,10 @@
+<Entity >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+		
+	<ShotEffectComponent
+		extra_modifier="apotheosis_nullshot"
+		>
+	</ShotEffectComponent>
+  
+</Entity>

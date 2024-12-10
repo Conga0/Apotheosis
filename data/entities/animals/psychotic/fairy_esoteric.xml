@@ -92,6 +92,8 @@
 			fly_velocity_x="70">
 		</CharacterPlatformingComponent>
 	</Base>
+
+	<Entity><Base file="mods/Apotheosis/files/entities/misc/helpers/nullshot.xml" ></Base></Entity>
   
 	<SpriteParticleEmitterComponent
 		sprite_file="mods/Apotheosis/files/particles/spark_electric_white.xml"

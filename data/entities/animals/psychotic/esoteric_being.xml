@@ -121,6 +121,8 @@
 		</VelocityComponent>
 	</Base>
 
+	<Entity><Base file="mods/Apotheosis/files/entities/misc/helpers/nullshot.xml" ></Base></Entity>
+
 	<SpriteComponent 
 		offset_x="0"
 		offset_y="0"

@@ -34,3 +34,15 @@ extra_modifiers["apotheosis_bragi"] = function()
         current_reload_time = current_reload_time - 30
     end
 end
+
+extra_modifiers["apotheosis_nullshot"] = function()
+    c.damage_electricity_add = 0
+    c.damage_explosion_add = 0
+    c.damage_explosion = 0
+    c.damage_critical_chance = 0
+    c.damage_ice_add = 0
+    c.damage_projectile_add = 0
+    c.damage_null_all = 1
+    c.knockback_force = 0
+    c.gore_particles    = 0
+end

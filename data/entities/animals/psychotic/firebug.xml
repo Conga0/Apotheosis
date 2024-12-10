@@ -88,6 +88,8 @@
 		</StatusEffectDataComponent>
 
 	</Base>
+
+	<Entity><Base file="mods/Apotheosis/files/entities/misc/helpers/nullshot.xml" ></Base></Entity>
 	
 	<LifetimeComponent
 		lifetime="900"

@@ -118,6 +118,8 @@
 		radius="64" >
 	</LightComponent>
 
+	<Entity><Base file="mods/Apotheosis/files/entities/misc/helpers/nullshot.xml" ></Base></Entity>
+
 
 </Entity>
 
