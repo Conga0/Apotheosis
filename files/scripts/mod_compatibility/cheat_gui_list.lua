@@ -1,7 +1,7 @@
 
 local apoth_items = {
     {path="mods/Apotheosis/files/entities/items/pickups/heretical_eye.xml", name="$item_apotheosis_heretical_eye_name", xml="heretical_eye.xml"},
-    {path="mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml", name="$item_apotheosis_stone_heretic_name", xml="stone_heretic.xml"},
+    {path="mods/Apotheosis/files/entities/items/pickups/stone_heretic_cheated.xml", name="$item_apotheosis_stone_heretic_name", xml="stone_heretic.xml"},
     {path="mods/Apotheosis/files/entities/items/pickups/stone_radar.xml", name="$item_apotheosis_stone_radar_name", xml="stone_radar.xml"},
     {path="mods/Apotheosis/files/entities/items/pickups/stone_fungus.xml", name="$item_apotheosis_fungus_stone_name", xml="stone_fungus.xml"},
     {path="mods/Apotheosis/files/entities/items/pickups/orb_affluence.xml", name="$item_apotheosis_orb_affluence_name", xml="orb_affluence.xml"},

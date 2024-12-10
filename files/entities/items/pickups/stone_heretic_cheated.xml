@@ -1,0 +1,11 @@
+<Entity tags="teleportable_NOT" >
+
+	<LuaComponent
+		_enabled="1"
+		script_source_file = "mods/Apotheosis/files/scripts/items/stone_heretic_checker.lua"
+		execute_every_n_frame = "1"
+		remove_after_executed = "1"
+	>
+	</LuaComponent>
+
+</Entity>

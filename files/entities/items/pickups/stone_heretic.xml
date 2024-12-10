@@ -212,6 +212,7 @@
   
 	<ParticleEmitterComponent
 		_enabled="1"
+		_tags="enabled_in_world"
 		emitted_material_name="spark_red_bright"
 		gravity.y="0.0"
 		lifetime_min="10.01"
@@ -235,6 +236,7 @@
 	</ParticleEmitterComponent>
 
 	<VariableStorageComponent
+		_enabled="0"
 		_tags="enabled_in_world,enabled_in_inventory,enabled_in_hand,enabled_by_liquid"
 		name="heretic_incoming"
 		value_int="0"

@@ -56,6 +56,7 @@
 {cc1d47e9-4602-4558-977b-7227ba2475c6} event:/mocreeps_audio/animals/whisp_giga/voc_shoot
 {2ff7d4ed-92bd-484a-bbe5-fa37db2ec918} event:/mocreeps_audio/animals/wizard_corrupt_returner/shine
 {c1cd8dc3-3938-44b3-95d4-cde2b7f5e4c0} event:/mocreeps_audio/animals/wizard_corrupt_returner/unshine
+{eea6213d-51a6-4c82-b022-904a4beb6eb8} event:/mocreeps_audio/items/egg_volcanic_lukki/crack
 {879f7927-9514-439e-a285-3d569aa7f762} event:/mocreeps_audio/items/heretical_eye/speech_gossip
 {b0613ed4-49ba-4b46-a656-5d7c9d9102db} event:/mocreeps_audio/items/heretical_eye/speech_long
 {0ca29cfc-c833-4ab0-8307-6da7eb06d1ef} event:/mocreeps_audio/items/heretical_eye/speech_mind

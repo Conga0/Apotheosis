@@ -1,0 +1,53 @@
+<Entity tags="scroll">
+	<Base file="data/entities/items/books/base_book.xml">
+		<BookComponent
+			_enabled="0"
+			>
+		</BookComponent>
+
+		<ParticleEmitterComponent 
+			_enabled="1"
+			emitted_material_name="spark_red_bright"
+			>
+		</ParticleEmitterComponent>
+
+		<UIInfoComponent
+			name="$book_apotheosis_stone_heretic_cheater_warning_name"
+			>
+		</UIInfoComponent>
+		
+		<ItemComponent
+			ui_sprite="data/items_gfx/book.png"
+			item_name="$book_apotheosis_stone_heretic_cheater_warning_name"
+			ui_description="$book_apotheosis_stone_heretic_cheater_warning_description"
+			>
+		</ItemComponent>
+		
+		<AbilityComponent
+			ui_name="$book_apotheosis_stone_heretic_cheater_warning"
+			>
+		</AbilityComponent>
+		
+		<SpriteComponent
+			image_file="data/items_gfx/in_hand/book_in_hand.png"
+		></SpriteComponent>
+		
+		<PhysicsImageShapeComponent 
+			image_file="data/items_gfx/book_small.png"
+		></PhysicsImageShapeComponent>
+	</Base>
+
+	<VariableStorageComponent
+		name="kick-o-meter"
+		value_float="0"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world"
+		script_kick="mods/Apotheosis/files/scripts/items/stone_heretic_book_kick.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+</Entity>
