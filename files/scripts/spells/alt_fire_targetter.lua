@@ -43,10 +43,12 @@ if GameGetFrameNum() >= cooldown_frame then
                     GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/action_consumed", x, y )
                     EntityLoad("mods/Apotheosis/files/entities/particles/spell_fades/targetter_fade.xml", x, y )
                 end
+                if ModIsEnabled("quant.ew") then
+                    CrossCall("apoth_ew_alt_fire", root, x, y, aim_x, aim_y, "mods/Apotheosis/files/entities/projectiles/deck/targetter.xml")
+                end
             else
                 GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", x, y );
             end
         end
     end
 end
-
