@@ -28,6 +28,7 @@ local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
 
 if ModIsEnabled("quant.ew") then
     ModLuaFileAppend("mods/quant.ew/files/api/extra_modules.lua", "mods/Apotheosis/files/scripts/mod_compatibility/entangled_alt_fire_fix.lua")
+    ModLuaFileAppend("mods/quant.ew/files/api/global_perks.lua", "mods/Apotheosis/files/scripts/mod_compatibility/ew_global_perks.lua")
 end
 
 -- Spell Unlock Fixes
