@@ -30,6 +30,9 @@ if GameGetFrameNum() >= cooldown_frame then
                 GameAddFlagRun(table.concat({"new_",actionid}))
                 AddFlagPersistent(actionid)
             end
+                if ModIsEnabled("quant.ew") then
+                    CrossCall("apoth_ew_alt_fire", root, x, y, aim_x, aim_y, "data/entities/projectiles/deck/swapper.xml")
+                end
         else
             GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", x, y );
         end

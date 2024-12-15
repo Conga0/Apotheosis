@@ -156,10 +156,13 @@ local apotheosis_perkappends = {
         stackable_maximum = 5,
         max_in_perk_pool = 2,
         usable_by_enemies = true,
-        func = function( entity_perk_item, entity_who_picked, item_name )
+        func = function( entity_perk_item, entity_who_picked, item_name, pickup_count )
             local x,y = EntityGetTransform( entity_who_picked )
             local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/shield_oversized.xml", x, y )
-            
+
+            if ModIsEnabled("quant.ew") then
+                GlobalsSetValue("PERK_SHIELD_OVERSIZED_COUNT", tostring(pickup_count-1))
+            end
             local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_OVERSIZED_COUNT", "0" ) )
             local shield_radius = 75 + shield_num * 3.0
             local charge_speed = math.max( 0.01 - shield_num * 0.05, 0.02 )

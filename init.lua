@@ -26,7 +26,10 @@ local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
 --Note: This has been moved lower down for cleaner organisation & implementing mod compatibility
 --Note: 16/06/2023 Some boss spawns may be moved into biome files as well
 
-
+if ModIsEnabled("quant.ew") then
+    ModLuaFileAppend("mods/quant.ew/files/api/extra_modules.lua", "mods/Apotheosis/files/scripts/mod_compatibility/entangled_alt_fire_fix.lua")
+    ModLuaFileAppend("mods/quant.ew/files/api/global_perks.lua", "mods/Apotheosis/files/scripts/mod_compatibility/ew_global_perks.lua")
+end
 
 -- Spell Unlock Fixes
 -- If someone attains a spell through another mod, twitch integration, etc, this is just to make sure they aren't getting unlocks they shouldn't.
@@ -1312,7 +1315,7 @@ function OnPlayerSpawned(player_entity)
 
 		EntityLoad("mods/Apotheosis/files/entities/particles/upwards_trail.xml", 239, -229)
 		EntityLoad("mods/Apotheosis/files/entities/particles/upwards_trail.xml", 764, -860)
-		
+
 		AddFlagPersistent("apotheosis_card_unlocked_sea_to_potion")
 	end
 	]]--

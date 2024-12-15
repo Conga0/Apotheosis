@@ -1,0 +1,1 @@
+return {"APOTHEOSIS_VOID"}
