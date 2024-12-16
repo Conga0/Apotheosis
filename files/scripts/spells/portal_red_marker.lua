@@ -15,5 +15,8 @@ if GameGetFrameNum() >= cooldown_frame then
     if isButtonDown_AltFire() then
         GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_red_marker.xml", x, y))
         ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
+        if ModIsEnabled("quant.ew") then
+            CrossCall("apoth_ew_alt_fire", root, x, y, aim_x, aim_y, "mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_red_marker.xml")
+        end
     end
 end
