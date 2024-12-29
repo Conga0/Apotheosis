@@ -28,5 +28,30 @@
 
   </RectAnimation>
 
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="52" 
+    frame_wait="0.15" 
+    frame_width="34" 
+    frames_per_row="1" 
+    name="dormant" 
+    pos_x="0" 
+    pos_y="104" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_height="52" 
+    frame_wait="0.05" 
+    frame_width="34" 
+    frames_per_row="4" 
+    name="enabled" 
+    next_animation="eat" 
+    pos_x="0" 
+    pos_y="104" >
+
+  </RectAnimation>
+
 </Sprite>
 

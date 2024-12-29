@@ -44,7 +44,7 @@ end
 if (max_vel >= 1.9) then
     hatch = true
 elseif (max_vel == 0) then
-    local cooldown = Random(100,190)
+    local cooldown = Random(200,290)
     ComponentSetValue2( luacomp, "execute_every_n_frame", cooldown )
 else
     local limit = 0.90

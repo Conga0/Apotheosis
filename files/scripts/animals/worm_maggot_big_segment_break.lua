@@ -31,4 +31,5 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 
     GamePlaySound( "data/audio/Desktop/projectiles.bank", "projectiles/slime_gas/destroy", pos_x, pos_y )
     EntityLoad("mods/Apotheosis/files/entities/projectiles/mist_ominous.xml",pos_x + math.random(-100,100),pos_y + math.random(-100,100))
+    EntityLoad("mods/Apotheosis/files/entities/particles/worm_maggot_big_segment_shatter.xml",pos_x,pos_y)
 end

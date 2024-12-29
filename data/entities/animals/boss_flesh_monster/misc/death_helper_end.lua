@@ -30,4 +30,11 @@ if cowardness ~= nil then
 ComponentSetValue2( incarncomp, "value_int", cowardness)
 end
 
+local old_armorcomp = EntityGetFirstComponent( entity_id, "VariableStorageComponent", "boss_reworks_armor" )
+local recent_relative_damage = ComponentGetValue2( old_armorcomp, "value_float")
+
+local armorcomp = EntityGetFirstComponent( eid, "VariableStorageComponent", "boss_reworks_armor" )
+ComponentSetValue2( armorcomp, "value_float", recent_relative_damage)
+
+
 LoadPixelScene( "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_mat_5.png", "mods/Apotheosis/files/enemies_gfx/sacriligious_monster/armor_piece_5.png", pos_x-56, pos_y-56, "", true )

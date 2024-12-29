@@ -24,7 +24,7 @@
         critical_damage_resistance="1"
         >
         <damage_multipliers
-            projectile="1.0"
+            projectile="0.25"
             slice="0.0" 
             radioactive="0.0"
             poison="0.0"
@@ -49,4 +49,5 @@
         food_chain_rank="20"
         is_predator="1" >
     </GenomeDataComponent>
+
 </Entity>

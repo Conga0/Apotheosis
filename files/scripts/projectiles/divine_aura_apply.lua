@@ -12,8 +12,9 @@ for i,v in ipairs( targets ) do
 
 		for k=1,#c do
 			if EntityGetName(c[k]) == "divine_protection" then
-			valid = false
-			break
+				valid = false
+				break
+			end
 		end
 		
 		if valid then

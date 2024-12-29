@@ -719,8 +719,13 @@ table.insert(ALL_ENTITIES, {
 	  },
 	  {
 		name="Small Slimy Maggot",
-		path="data/entities/animals/worm_maggot_big.xml",
+		path="data/entities/animals/secret/worm_maggot_big.xml",
 		image="data/ui_gfx/animal_icons/worm_maggot_big.png",
+	  },
+	  {
+		name="Dormant Small Slimy Maggot",
+		path="data/entities/animals/worm_maggot_big.xml",
+		image="data/ui_gfx/animal_icons/hidden/worm_maggot_big_dormant.png",
 	  },
 	  {
 		name="Greater Hell Worm",
