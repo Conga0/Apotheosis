@@ -88,6 +88,7 @@ if runtime == 0 then
 
     --Speed talking -Spoop
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1] or nil
+    if heretic_id ~= nil then
     local h_x, h_y = EntityGetTransform(heretic_id)
 
     local luacomps = EntityGetComponent(heretic_id, "LuaComponent") or {}
@@ -103,6 +104,7 @@ if runtime == 0 then
 	script_source_file="mods/Apotheosis/files/scripts/items/heretical_eye_dialogue_quiet.lua",
 	execute_every_n_frame=5,
     }) 
+    end
 
     GameAddFlagRun("apotheosis_heretalk_end_sheep_1")
 end
@@ -174,7 +176,7 @@ if runtime == 419 then
     local heretic_id = EntityGetWithTag("apotheosis_heretic")[1] or nil
     local heretic_parent = EntityGetRootEntity(heretic_id)
     local hereticfound = false
-    if heretic_id ~= nil and heretic_parent ~= nil then
+    if heretic_id ~= nil and EntityHasTag(heretic_parent,"player_unit") then
         hereticfound = true
     end
 
