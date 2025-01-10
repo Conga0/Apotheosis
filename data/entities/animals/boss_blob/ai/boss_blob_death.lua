@@ -8,10 +8,7 @@ function death(damage_type_bit_field, damage_message, entity_thats_responsible, 
 	local blobs_remaining = EntityGetWithTag("apotheosis_blob_boss")
 
 	-- Return if there's still boss remained
-	if #blobs_remaining > 1 then
-		print(string.format("not all blobs are killed, remaining: %d", #blobs_remaining))
-		return
-	end
+	if #blobs_remaining > 1 then return end
 
 	local pos_x, pos_y = EntityGetTransform(entity_id)
 	local flag_status = HasFlagPersistent("apotheosis_card_unlocked_blob_boss")
