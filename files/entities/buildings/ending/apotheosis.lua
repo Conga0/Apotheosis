@@ -30,6 +30,11 @@ function item_pickup( entity_item, entity_who_picked, name )
         AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_speedrun")
     end
 
+    --Ascending in less than 1 hour
+    if time_in_seconds < 60 * 60 * 1 then
+        AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_speedrun_1hr")
+    end
+
     --Winning in hardcore or nightcore mode
     if GameHasFlagRun("apotheosis_hardmode") then
         AddFlagPersistent("apotheosis_card_unlocked_ending_apotheosis_hardcore")

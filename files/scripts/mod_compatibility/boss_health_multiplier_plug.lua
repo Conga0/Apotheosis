@@ -208,14 +208,3 @@ xml:add_child(nxml.parse([[
   </LuaComponent>
 ]]))
 ModTextFileSetContent("data/entities/animals/parallel/tentacles/parallel_tentacles.xml", tostring(xml))
-
-
-
-
-
-
-
-
-
-
-

@@ -43,5 +43,7 @@ if ( Random( 1, 4 ) > 1 ) then
 
 	vel_x = math.cos( angle ) * length
 	vel_y = 0- math.sin( angle ) * length
-	shoot_projectile( entity_id, "data/entities/projectiles/smalltentacle.xml", x, y, vel_x, vel_y )
+	local pid = shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/tentacle_portal_attack.xml", x, y, vel_x, vel_y )
+	local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
+	ComponentSetValue2(projcomp, "mShooterHerdId", StringToHerdId("slimes"))
 end

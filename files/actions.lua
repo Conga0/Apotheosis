@@ -2885,7 +2885,9 @@ local actions_to_edit = {
     --Piercing now lets a projectile hit an enemy 5 times per piercing modifier
     --If a projectile pierces more than 50 times, it gains infinite piercing, still allowing for infiniwisps to exist
     ["PIERCING_SHOT"] = {
+        name = "$spell_apotheosis_piercing_shot_name",
         description = "$spell_apotheosis_piercing_shot_desc",
+		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/penetrating_shot.png",
         mana = 60,
         action = function()
             --c.damage_projectile_add = c.damage_projectile_add - 0.6

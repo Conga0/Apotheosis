@@ -78,6 +78,14 @@ end
         entity     = "data/entities/buildings/polymorph_crystal_chaotic.xml"
     })
 
+    table.insert(g_big_enemies_sky,
+    {
+        prob           = 0.03,
+        min_count    = 1,
+        max_count    = 1,    
+        entity     = "data/entities/animals/poring_holy_arch.xml"
+    })
+
 
 
     --New Game ++ (2)
