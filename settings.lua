@@ -156,7 +156,7 @@ if currentLang == "简体中文" then
   motd_setting_name = "每日消息"
   motd_setting_desc = "每局游戏开始前是否显示每日信息？"
   seasonal_events_name = "节日事件"
-  seasonal_events_desc = "是否启用节日事件？\n例如万圣节，More Creeps（译者注：本模组前身）的生日，等等"
+  seasonal_events_desc = "是否启用节日事件？\n例如万圣节，Apotheosis（译者注：本模组前身）的生日，等等"
   boss_health_multiplayer_name = "Boss 血量倍数"
   boss_health_multiplayer_formatting = " $0% HP"
   boss_health_multiplayer_desc = "将所有 Boss 的血量乘以此值。\n适合那些需要 Boss 更耐打的玩家。\n不影响三眼的血量。\n小 Boss 的血量也会得到部分提升。"

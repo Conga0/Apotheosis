@@ -2122,7 +2122,8 @@ local apotheosis_spellappends = {
 		price = 120,
 		mana = 5,
 		action 		= function( recursion_level, iteration )
-			draw_actions( math.random(4,8), true )
+            SetRandomSeed(5,7)
+			draw_actions( Random(4,8), true )
         end
 	},
 	{

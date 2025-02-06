@@ -3,7 +3,7 @@ local last_frame = -100000
 
 --Conga: Doing this the quick and dirty way for now, planned to be fixed when I'm less sleepy; but I can't release Tuonela with this as is due to worms spawning ontop of alchemists,
 --resulting in thousands of shields spawning and the game crawling to a halt.
---Fixed your game Nolla!!!
+--Fix your game Nolla!!!
 
 function damage_received( damage )
 	local entity_id = GetUpdatedEntityID()

@@ -27,4 +27,9 @@
 		_enabled="1" >
     </InheritTransformComponent>
 
+	<LifetimeComponent
+		lifetime="72000"
+		>
+	</LifetimeComponent>
+
 </Entity>

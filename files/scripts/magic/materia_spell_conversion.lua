@@ -40,6 +40,10 @@ local inputspells =  {
     "BUBBLESHOT",
     "MINE",
     "PIPE_BOMB",
+    "APOTHEOSIS_ALT_FIRE_TELEPORT",
+    "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT",
+    "TELEPORT_PROJECTILE",
+    "TELEPORT_PROJECTILE_SHORT",
 }
 
 --Spells we're converting them into
@@ -75,6 +79,10 @@ local outputspells = {
     "BUBBLESHOT_TRIGGER",
     "MINE_DEATH_TRIGGER",
     "PIPE_BOMB_DEATH_TRIGGER",
+    "SPECIAL_ACTION",
+    "SPECIAL_ACTION",
+    "APOTHEOSIS_ALT_FIRE_TELEPORT",
+    "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT",
 }
 
 local effecttype = {
@@ -107,7 +115,13 @@ local effecttype = {
     "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
     "magical_symbol_hobo_money",
+    "NONE",
+    "NONE",
+    "magical_symbol_plasma",
+    "magical_symbol_plasma",
 }
+
+local god_cheat = false
 
 for k=1, #targets
 do local v = targets[k];
@@ -132,6 +146,32 @@ do local v = targets[k];
                     elseif inputmagic == "APOTHEOSIS_MASS_MATERIA_CONVERSION" then
                         EntityLoad("mods/Apotheosis/files/entities/projectiles/materia_conversion_explosion.xml", perk_x, perk_y)
                         EntityLoad("data/entities/misc/mass_materia_conversion.xml", perk_x, perk_y)
+                    elseif inputmagic == "APOTHEOSIS_ALT_FIRE_TELEPORT" then
+                        if (GameHasFlagRun("apotheosis_everything") or GameHasFlagRun("apotheosis_hardmode")) and not GameHasFlagRun("apotheosis_flag_copy_spells") then
+                            GameScreenshake(50, perk_x, perk_y)
+                            GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", perk_x, perk_y )
+                            if god_cheat == false then
+                                god_cheat = true
+                                GamePrintImportant("$log_apotheosis_upgrade_alwayscast_cheater_name", "")
+                            end
+                            CreateItemActionEntity( "APOTHEOSIS_ALT_FIRE_TELEPORT", perk_x, perk_y )
+                        else
+                            CreateItemActionEntity( "TELEPORT_PROJECTILE", perk_x, perk_y )
+                            EntityLoad("data/entities/particles/image_emitters/magical_symbol_plasma.xml", perk_x, perk_y)
+                        end
+                    elseif inputmagic == "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT" then
+                        if (GameHasFlagRun("apotheosis_everything") or GameHasFlagRun("apotheosis_hardmode")) and not GameHasFlagRun("apotheosis_flag_copy_spells") then
+                            GameScreenshake(50, perk_x, perk_y)
+                            GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", perk_x, perk_y )
+                            if god_cheat == false then
+                                god_cheat = true
+                                GamePrintImportant("$log_apotheosis_upgrade_alwayscast_cheater_name", "")
+                            end
+                            CreateItemActionEntity( "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT", perk_x, perk_y )
+                        else
+                            CreateItemActionEntity( "TELEPORT_PROJECTILE_SHORT", perk_x, perk_y )
+                            EntityLoad("data/entities/particles/image_emitters/magical_symbol_plasma.xml", perk_x, perk_y)
+                        end
                     end
                 else
                     CreateItemActionEntity( outputspells[k], perk_x, perk_y )
