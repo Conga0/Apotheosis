@@ -1,5 +1,6 @@
 
 local entity_id = GetUpdatedEntityID() 
+local x,y = EntityGetTransform(entity_id)
 local player = EntityGetRootEntity( entity_id ) 
 
 EntityAddComponent2(
@@ -11,3 +12,6 @@ EntityAddComponent2(
         remove_after_executed = true
     }
 )
+
+local eid = EntityLoad("mods/apotheosis/files/entities/misc/drop_gold_visual.xml",x,y)
+EntityAddChild(player,eid)

@@ -39,7 +39,7 @@
 			>
 			<damage_multipliers
 				projectile="0.7"
-				freeze="0.4" >
+				ice="0.4" >
 			</damage_multipliers>
 		</DamageModelComponent>
 
