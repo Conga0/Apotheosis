@@ -48,7 +48,9 @@ if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or GameHasFlagRun("e
 
 	if not HasFlagPersistent("apotheosis_stone_heretic_purified") then
 	    AddFlagPersistent("apotheosis_stone_heretic_purified")
-	    GamePrint("You feel a force permanently disperse...")
+	    --Lil uncertain on including something like "$log_apotheosis_stone_heretic_disperse_desc"...
+	    GamePrintImportant("$log_apotheosis_stone_heretic_disperse_name")
+	    GamePrint("$log_apotheosis_stone_heretic_disperse_name")
 	end
     end
 

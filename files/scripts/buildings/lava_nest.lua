@@ -19,6 +19,8 @@ do local v = targets[k];
         end
         if not portal then
             EntityLoad("mods/Apotheosis/files/entities/buildings/lava_nest_portal.xml", pos_x, pos_y - 60)
+        else
+            EntityLoad("mods/Apotheosis/files/entities/particles/image_emitters/lava_nest_hint.xml", pos_x, pos_y - 60)
         end
         local egg_amount = tonumber(GlobalsGetValue("APOTHEOSIS_EGG_VOLCANIC_TRAP_AMOUNT","3"))
         GlobalsSetValue("APOTHEOSIS_EGG_VOLCANIC_TRAP_AMOUNT",tostring(egg_amount+1))
