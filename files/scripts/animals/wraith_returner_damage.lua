@@ -1,4 +1,5 @@
 dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 function damage_received( damage, desc, entity_who_caused, is_fatal )
 	local entity_id	= GetUpdatedEntityID()
@@ -42,15 +43,38 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 				local name = ComponentGetValue2( v, "name" )
 				
 				if ( name == "proj_file" ) then
-					proj = ComponentGetValue2( v, "value_string" )
-					projDMG = ComponentGetValue2( v, "value_float" )
+					proj_data = SplitStringOnCharIntoTable(ComponentGetValue2( v, "value_string" ), ",")
 				end
 			end
 		end
 
-		local projectile = shoot_projectile( entity_id, proj, x, y, vel_x, vel_y )
+		local projectile = shoot_projectile( entity_id, proj_data[1], x, y, vel_x, vel_y )
 		local projComp = EntityGetFirstComponent( projectile, "ProjectileComponent" )
-		ComponentSetValue2( projComp, "damage", projDMG )
+		ComponentSetValue2( projComp, "damage", tonumber(proj_data[2]) )
+
+		local damagetypes = {
+			"melee",
+			"explosion",
+			"electricity",
+			"slice",
+			"ice",
+			"curse",
+			"drill",
+			"fire",
+			"radioactive",
+			"healing",
+			"holy",
+		}
+		
+		for k=1,#damagetypes
+		do  local v = damagetypes[k]
+			ComponentObjectSetValue2( projComp, "damage_by_type", v, tonumber(proj_data[k+2]) )
+			if v == "ice" and tonumber(proj_data[k+2]) > 0 then
+				ComponentSetValue2(projComp, "damage_game_effect_entities", ComponentGetValue2(projComp,"damage_game_effect_entities") .. "data/entities/misc/effect_frozen.xml,")
+			elseif v == "fire" and tonumber(proj_data[k+2]) > 0 then
+				ComponentSetValue2(projComp, "damage_game_effect_entities", ComponentGetValue2(projComp,"damage_game_effect_entities") .. "data/entities/misc/effect_apply_on_fire.xml,")
+			end
+		end
 
 	end
 	
