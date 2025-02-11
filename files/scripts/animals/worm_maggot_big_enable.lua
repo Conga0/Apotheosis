@@ -56,7 +56,7 @@ if ( vcomp ~= 0 ) then
 	ComponentSetValue2( vcomp, "value_int", current )
 
 	if ( current > 27 ) then
-		local hitboxes = EntityGetComponent( entity_id, "HitboxComponent" ) or {}
+		local hitboxes = EntityGetComponentIncludingDisabled( entity_id, "HitboxComponent" ) or {}
 		local wormcomp = EntityGetFirstComponentIncludingDisabled(entity_id, "WormComponent")
 		local wormaicomp = EntityGetFirstComponentIncludingDisabled(entity_id, "WormAIComponent")
 		local audiocomps = EntityGetComponentIncludingDisabled(entity_id, "AudioComponent") or {}
