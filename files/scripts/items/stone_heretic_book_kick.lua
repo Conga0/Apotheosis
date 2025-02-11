@@ -16,13 +16,7 @@ function kick( entity_who_kicked )
 	end
 
 	if (kicks_row >= 3) then
-	    local stone_id = EntityLoad( "mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml", pos_x, pos_y )
-	    local luacomps = EntityGetComponentIncludingDisabled(stone_id, "LuaComponent") or {}
-	    for i = 1, #luacomps do
-		if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_checker.lua" then
-                    EntityRemoveComponent( stone_id, luacomps[i] )
-		end
-	    end
+	    EntityLoad( "mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml", pos_x, pos_y )
 	    EntityKill(entity_id)
 	end
 

@@ -2,7 +2,7 @@ local entity_id = GetUpdatedEntityID()
 local parent_id = EntityGetParent(entity_id)
 local player_id = EntityGetParent(parent_id)
 if (player_id ~= 0 and EntityHasTag( player_id, "player_unit" )) or (player_id == 0 and parent_id ~= 0 and EntityGetName(parent_id) == "inventory_quick") then return end
-if GameHasFlagRun("apotheosis_heretalk_portal_complete") or ModIsEnabled("raksa") then return end --It don't matter it already done!
+if GameHasFlagRun("apotheosis_heretalk_portal_complete") or ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn") then return end --It don't matter it already done!
 --Oh no, Heretic gonna be upsetti
 local pos_x, pos_y = EntityGetTransform(entity_id)
 

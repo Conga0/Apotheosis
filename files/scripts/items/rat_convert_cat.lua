@@ -11,7 +11,7 @@ function collision_trigger()
 	GamePlaySound( "data/audio/Desktop/event_cues.snd", "event_cues/treble_eye/create", pos_x, pos_y)
 	GamePlaySound( "data/audio/Desktop/animals.snd", "animals/rat/death", pos_x, pos_y)
 
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		AddFlagPersistent( "apotheosis_card_unlocked_cat_secret" )
 		AddFlagPersistent( "apotheosis_card_unlocked_cat_secret_spell" )
 

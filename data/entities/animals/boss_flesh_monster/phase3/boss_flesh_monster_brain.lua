@@ -119,7 +119,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		)
 	end
 
-	if (GameHasFlagRun("apotheosis_flesh_boss_mind_warp") == false and (GameHasFlagRun("apotheosis_flesh_boss_mind_warp_norm") == false or GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") == true)) and (phase >= 2 and phase <= 4) and ModIsEnabled("raksa") == false then
+	if (GameHasFlagRun("apotheosis_flesh_boss_mind_warp") == false and (GameHasFlagRun("apotheosis_flesh_boss_mind_warp_norm") == false or GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") == true)) and (phase >= 2 and phase <= 4) and not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		local player = EntityGetInRadiusWithTag(pos_x, pos_y, 400, "player_unit")[1] or nil
 		if player ~= nil then
 			GameAddFlagRun("apotheosis_flesh_boss_mind_warp_norm")

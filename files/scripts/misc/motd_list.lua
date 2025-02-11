@@ -11,7 +11,7 @@ elseif ModIsEnabled("noitavania") then
     filepath = "mods/noitavania/data/biome/_pixel_scenes.xml"
 end
 
-if ModIsEnabled("raksa") == false then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 
     local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
     local content = ModTextFileGetContent(filepath)

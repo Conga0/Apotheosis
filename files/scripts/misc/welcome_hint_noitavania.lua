@@ -1,6 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-if ModIsEnabled("raksa") == false then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 
     local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
     local content = ModTextFileGetContent("mods/noitavania/mods/noitavania/data/biome/_pixel_scenes.xml")

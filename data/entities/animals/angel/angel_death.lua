@@ -43,7 +43,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		EntityLoad( "mods/Apotheosis/files/entities/props/statue_divine_being.xml", 4152, 2115 )
 	end
 	
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		AddFlagPersistent( "apotheosis_card_unlocked_divinebeing" )
 		AddFlagPersistent( "apotheosis_card_unlocked_divinebeing_spell" )
 		if GameHasFlagRun("apotheosis_hardmode") then

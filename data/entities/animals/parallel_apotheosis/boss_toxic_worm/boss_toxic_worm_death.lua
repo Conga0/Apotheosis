@@ -23,7 +23,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 			EntityLoad( "mods/Apotheosis/files/entities/props/statue_toxic_worm.xml", 4202, 2115 )
         end
 	
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		GameAddFlagRun( "apotheosis_miniboss_boss_toxic_worm" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_toxic_worm" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_toxic_worm_spell" )

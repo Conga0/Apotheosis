@@ -288,7 +288,7 @@ ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apothe
 
 --Spawns all the above spawns in a single file and appends to pixel scenes to prevent double spawning
 -- If Conjurer is enabled, disable this for a fix.
-if ModIsEnabled("raksa") == false then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	dofile_once("mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_spawn_list.lua")
 	dofile_once("mods/Apotheosis/files/scripts/biomes/boss_spawns/blob_cave_spawn_list.lua")
 end
@@ -382,6 +382,10 @@ end
 -- Conjurer Mod, adds enemies, buildings and wands to a custom tab
 if ModIsEnabled("raksa") then
 	ModLuaFileAppend("mods/raksa/files/scripts/lists/entity_categories.lua", "mods/Apotheosis/files/scripts/mod_compatibility/conjurer_populator.lua")
+end
+
+if ModIsEnabled("conjurer_reborn") then
+	ModLuaFileAppend("mods/conjurer_reborn/files/wandhelper/ent_list_pre.lua", "mods/Apotheosis/files/scripts/mod_compatibility/conjurer_populator.lua")
 end
 
 
@@ -487,7 +491,7 @@ if HasFlagPersistent("action_apotheosis_aqua_mine") or HasFlagPersistent("action
 end
 
 --MOTD & Welcome Hint
-if ModIsEnabled("raksa") == false then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	local flag_status = HasFlagPersistent("apotheosis_card_unlocked_welcome_hint")
 	if motdSetting == true or ((month == 4) and (day == 1)) then
 		dofile_once("mods/Apotheosis/files/scripts/misc/motd_list.lua")
@@ -765,7 +769,7 @@ dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua
 
 -- If Conjurer is enabled, disable this for a fix.
 -- Adds custom Pixel Scenes in
-if ModIsEnabled("raksa") == false then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	dofile_once("mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua")
 end
 
@@ -1135,7 +1139,7 @@ end
 
 
 --Guarantees Dense Smoke modifier to appear in the coalpits for your first run when playing with Apotheosis
-if ModIsEnabled("raksa") == false then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	if (HasFlagPersistent("apotheosis_card_unlocked_coalpits_dense_smoke") ~= true) then
 		local filepc = "data/biome/_pixel_scenes.xml"
 		if ModIsEnabled("purgatory") then

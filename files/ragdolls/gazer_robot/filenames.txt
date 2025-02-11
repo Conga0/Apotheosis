@@ -1,1 +1,12 @@
-mods/Apotheosis/files/ragdolls/gazer_robot/body.png
+mods/Apotheosis/files/ragdolls/gazer_robot/body_l.png
+mods/Apotheosis/files/ragdolls/gazer_robot/body_r.png
+mods/Apotheosis/files/ragdolls/gazer_robot/pupil.png
+mods/Apotheosis/files/ragdolls/gazer_robot/sclera.png
+mods/Apotheosis/files/ragdolls/gazer_robot/antenna_1.png
+mods/Apotheosis/files/ragdolls/gazer_robot/antenna_2.png
+mods/Apotheosis/files/ragdolls/gazer_robot/antenna_3.png
+mods/Apotheosis/files/ragdolls/gazer_robot/antenna_4.png
+mods/Apotheosis/files/ragdolls/gazer_robot/bottom_doodad.png
+mods/Apotheosis/files/ragdolls/gazer_robot/back_doodad.png
+mods/Apotheosis/files/ragdolls/gazer_robot/wire_1.png
+mods/Apotheosis/files/ragdolls/gazer_robot/wire_2.png

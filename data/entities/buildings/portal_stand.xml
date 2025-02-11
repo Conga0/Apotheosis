@@ -15,8 +15,8 @@
     materials_damage="1" 
     materials_how_much_damage="" 
     materials_that_damage="" 
-    ragdoll_material="ice_b2"
-    ragdoll_filenames_file="" 
+    ragdoll_material="steel"
+    ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/portal_stand/filenames.txt" 
     ragdoll_offset_y="-6" >
       <damage_multipliers
         fire="0.0" 

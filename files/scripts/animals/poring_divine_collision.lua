@@ -16,7 +16,7 @@ do local v = targets[k];
 	EntityKill( v )
 	EntityKill( entity_id )
 	
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		AddFlagPersistent( "apotheosis_card_unlocked_divine_liquid" )
 
 		if ModIsEnabled("nightmare") or ModIsEnabled("purgatory") then

@@ -20,7 +20,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
         --EntityLoad( "mods/Apotheosis/files/entities/props/statue_music_boss.xml", 4262, 2115 )
 	end
 	
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		GameAddFlagRun( "apotheosis_miniboss_musical_boss" )
 		AddFlagPersistent( "apotheosis_card_unlocked_musical_boss" )
 		AddFlagPersistent( "apotheosis_card_unlocked_musical_boss_spell" )
