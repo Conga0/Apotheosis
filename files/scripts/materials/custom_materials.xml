@@ -4052,7 +4052,7 @@
 	<Reaction probability="75"
 		input_cell1="apotheosis_meat_heretic_eye" 		input_cell2="apotheosis_magic_liquid_divine"
 		output_cell1="apotheosis_meat_heretic_eye"		output_cell2="smoke"
-		blob_radius1="3"
+		blob_radius2="3"
 		>
 	</Reaction>
 
@@ -4060,7 +4060,7 @@
 	<Reaction probability="100"
 		input_cell1="apotheosis_magic_liquid_divine" 		input_cell2="mimic_liquid"
 		output_cell1="smoke"		output_cell2="mimic_liquid"
-  		blob_radius2="2"
+  		blob_radius1="4"
 		>
 	</Reaction>
 
