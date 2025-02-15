@@ -30,6 +30,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	
 	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		GameAddFlagRun( "apotheosis_miniboss_boss_fire_lukki" )
+		GameAddFlagRun( "apotheosis_miniboss_boss_water_lukki" )
 		AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki" )
 		AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki_spell" )
 		if GameHasFlagRun("apotheosis_hardmode") then

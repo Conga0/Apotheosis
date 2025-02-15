@@ -813,6 +813,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/building_icons/chest_portals.png",
 	  },
 	  {
+		name="Clam Chest",
+		path="mods/Apotheosis/files/entities/items/pickups/chest_random_clam.xml",
+		image="data/ui_gfx/building_icons/chest_random_clam.png",
+	  },
+	  {
 		name="Pandora's Chest",
 		path="mods/Apotheosis/files/entities/items/pickups/chest_random_cursed.xml",
 		image="data/ui_gfx/building_icons/chest_random_cursed.png",

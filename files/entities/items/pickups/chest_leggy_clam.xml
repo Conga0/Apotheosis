@@ -1,4 +1,4 @@
-<Entity name="chest_clam" tags="teleportable_NOT,item_physics,item_pickup,effectable_prop">
+<Entity tags="teleportable_NOT,item_physics,item_pickup,effectable_prop">
 	<UIInfoComponent
 		name="$item_apotheosis_chest_clam"
 		>
@@ -19,7 +19,7 @@
     on_death_leave_physics_body="0"
     on_death_really_leave_body="0"
   ></PhysicsBodyComponent>
-  
+
   <PhysicsImageShapeComponent 
     body_id="1"
     centered="1"
@@ -36,14 +36,20 @@
   </ItemComponent>
 
   <LuaComponent 
-    script_physics_body_modified="mods/Apotheosis/files/scripts/items/chest_random_clam.lua" 
-    execute_times="1"
-	>
+    _tags="enabled_in_world"
+    script_physics_body_modified="mods/Apotheosis/files/scripts/items/chest_leggy_clam.lua" 
+    script_item_picked_up="mods/Apotheosis/files/scripts/items/chest_leggy_clam.lua" 
+    script_collision_trigger_hit="mods/Apotheosis/files/scripts/items/chest_leggy_clam.lua" >
   </LuaComponent>
-  
-  <LuaComponent 
-    script_item_picked_up="mods/Apotheosis/files/scripts/items/chest_random_clam.lua" >
-  </LuaComponent>
+
+  <CollisionTriggerComponent
+    width="30"
+    height="30"
+    radius="30"
+    required_tag="player_unit"
+    >
+  </CollisionTriggerComponent>
+
 
   <LightComponent 
     _tags="enabled_in_world"

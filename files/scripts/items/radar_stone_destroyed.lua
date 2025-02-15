@@ -7,10 +7,10 @@ if GameHasFlagRun("apotheosis_heretalk_portal_complete") or ModIsEnabled("raksa"
 local pos_x, pos_y = EntityGetTransform(entity_id)
 
 GameAddFlagRun("apotheosis_flesh_boss_stone_initiated")
--- if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") then
+if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") or GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
     GameAddFlagRun("apotheosis_flesh_boss_stone_destroyed")
     EntityLoad( "mods/Apotheosis/files/entities/misc/stone_heretic_death_check.xml", pos_x, pos_y )
--- end
+end
 
 if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") == false and GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") == false then
     local player = EntityGetClosestWithTag( pos_x, pos_y, "player_unit" ) or nil

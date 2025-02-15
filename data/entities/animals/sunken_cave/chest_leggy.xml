@@ -1,0 +1,40 @@
+<Entity tags="enemy,mortal,hittable,homing_target,teleportable_NOT,glue_NOT">
+  <Base file="data/entities/animals/chest_leggy.xml" include_children="0" >
+    <DamageModelComponent 
+      hp="24"
+      max_hp="24"
+      ragdoll_material="apotheosis_meat_water_lukki_rock"
+     ></DamageModelComponent >
+
+     <SpriteComponent 
+      image_file="mods/Apotheosis/files/enemies_gfx/chest_mimic_clam.xml" 
+      offset_x="0"
+      offset_y="0"
+      >
+     </SpriteComponent>
+
+  <LuaComponent 
+    script_death="mods/Apotheosis/files/scripts/animals/chest_leggy_clam_death.lua"
+    >
+  </LuaComponent>
+
+	<GenomeDataComponent 
+		herd_id="spider" >
+	</GenomeDataComponent>
+
+  </Base>
+
+	<IKLimbsAnimatorComponent>
+	</IKLimbsAnimatorComponent>
+
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb_attacker.xml" />  </Entity>
+	<Entity>  <Base file="mods/Apotheosis/files/enemies_gfx/lukki/crab_mimic_limb_attacker.xml" />  </Entity>
+</Entity>
