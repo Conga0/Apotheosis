@@ -1,0 +1,22 @@
+<Entity name="unknown" tags="item_physics,gold_nugget" >
+
+	<Base file="data/entities/items/pickup/goldnugget.xml" >
+
+		<!-- physical presence -->
+		<UIInfoComponent
+			name="$item_apotheosis_pearl" >
+		</UIInfoComponent>
+
+		<PhysicsImageShapeComponent 
+			image_file="mods/Apotheosis/files/items_gfx/pearl_01.png"
+			material="apotheosis_pearl_box2d" >
+		</PhysicsImageShapeComponent>
+
+		<ItemComponent
+			_tags="enabled_in_world"
+			item_name="$item_apotheosis_pearl_10"
+			>
+		</ItemComponent>
+	</Base>
+
+</Entity>

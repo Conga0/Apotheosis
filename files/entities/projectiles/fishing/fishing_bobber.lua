@@ -219,7 +219,7 @@ if isfishing then
                 throw = 1
             end
         else
-            supa_rare = (math.random(1,50) == 1)
+            supa_rare = (math.random(1,math.max(50 - ((fish_max-1)*5),25)) == 1) -- After 5 angler skills it reaches max of 1/25
             if supa_rare then
                 fish_path = "mods/Apotheosis/files/entities/items/pickups/chest_random_clam.xml"
                 odd = true

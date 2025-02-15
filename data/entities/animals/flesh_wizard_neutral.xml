@@ -352,9 +352,15 @@
 	<LuaComponent
 		execute_on_removed="0"
 		script_source_file="mods/Apotheosis/files/scripts/animals/flesh_wizard_neutral_attack_start.lua"
-		execute_every_n_frame="600"
+		execute_every_n_frame="30"
 		>
 	</LuaComponent>
+
+	<VariableStorageComponent
+		name="cooldown_frame"
+		value_int="-1"
+		>
+	</VariableStorageComponent>
 
 	<SpriteParticleEmitterComponent
 		sprite_file="data/particles/spark_electric.xml"

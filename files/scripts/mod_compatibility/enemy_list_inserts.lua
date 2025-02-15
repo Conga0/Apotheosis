@@ -116,7 +116,7 @@ local insert_list = {
     },
     {
         id_matchup="drone_lasership",
-        name="tesla_turret",
+        name="gazer_robot\ntesla_turret",
     },
     {
         id_matchup="basebot_soldier",
@@ -172,7 +172,7 @@ local insert_list = {
     },
     {
         id_matchup="skygazer",
-        name="gazer_greater_sky\ngazer_cold_apotheosis\ngazer_greater_cold\ngazer_parasitic\ngazer_robot",
+        name="gazer_greater_sky\ngazer_cold_apotheosis\ngazer_greater_cold\ngazer_parasitic",
     },
     {
         id_matchup="spitmonster",

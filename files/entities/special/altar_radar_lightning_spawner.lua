@@ -56,6 +56,6 @@ else
 EntityLoad("data/entities/animals/boss_flesh_monster/boss_flesh_monster_hint.xml",pos_x,pos_y-50)
 GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )
 GameScreenshake( 150 )
-GamePrint("Something stops you from beyond...")
+GamePrint("$log_apotheosis_stone_radar_denied")
 GlobalsSetValue("HERETIC_HINT_DELAY", tostring(GameGetFrameNum()+600))
 end

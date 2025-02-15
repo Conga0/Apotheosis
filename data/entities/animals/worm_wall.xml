@@ -106,6 +106,7 @@
 			radioactive="0.0"
 			poison="0.0"
 			projectile="1.2"
+			fire="2.0"
 			>
 		</damage_multipliers>
 	</DamageModelComponent>

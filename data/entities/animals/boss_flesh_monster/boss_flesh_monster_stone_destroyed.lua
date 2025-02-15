@@ -5,7 +5,7 @@ if GameHasFlagRun( "apotheosis_miniboss_boss_flesh_monster_stone" ) then
     EntityRemoveComponent(entity_id,comp_id)
 end
 
-if GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") or GameHasFlagRun("apotheosis_flesh_boss_stone_converted") and ModIsEnabled("raksa") == false then
+if GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") or GameHasFlagRun("apotheosis_flesh_boss_stone_converted") and not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
     --MY SHINY ROCK NOOOOOO!!!
     local entity_id = GetUpdatedEntityID()
     local pos_x,pos_y = EntityGetTransform( entity_id )

@@ -42,7 +42,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		GamePrint("The ancient spirits of light and dark have been released.")
 	end
 	
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		GameAddFlagRun( "apotheosis_miniboss_boss_flesh_monster" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster" )
 		AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_spell" )

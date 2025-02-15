@@ -248,6 +248,28 @@
   </CellData>
 
   <CellDataChild
+  	_parent="apotheosis_meat_water_lukki_rock"
+	name="apotheosis_clam_rock"
+	ui_name="$material_apotheosis_sunkenrock"
+  	tags="[box2d],[corrodible],[alchemy],[solid],[earth]"
+	solid_break_to_type="bone"
+	wang_color="ff597c91"
+	platform_type="1"
+	solid_static_type="0"
+	solid_collide_with_self="1"
+	audio_physics_material_event="rock"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+	texture_file="mods/Apotheosis/files/materials_gfx/sunken_rock.png"
+	color="ff4a7c91" >
+	</Graphics>
+  </CellDataChild>
+
+  <CellDataChild
   	_parent="meat_slime"
 	name="apotheosis_meat_big_hell_worm"
 	ui_name="$material_apotheosis_meat_vulnerable_protection"
@@ -3053,6 +3075,22 @@
     </Graphics>
   </CellDataChild>
 
+  <CellDataChild
+  	_parent="gold_box2d"
+  	_inherit_reactions="1"
+	tags="[box2d],[alchemy]"
+  	name="apotheosis_pearl_box2d"
+	ui_name="$material_apotheosis_pearl"
+	gfx_glow_color="0xFFFF0000"
+	wang_color="ffb299b8"
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+	normal_mapped="0"
+	color="ffc3b1c8" >
+    </Graphics>
+  </CellDataChild>
+
 
   <!--08/02/2024 Conga: This used to have a durability of 14 but I'm lowering it down to 12 so people can break out of the abyss incase the game bugs out, no clue why this is happening, too late for me to figure it out right now-->
   <!--Also had the [matter_eater_ignore_list],[indestructible] tags and didn't have [solid]-->
@@ -4014,9 +4052,18 @@
 	<Reaction probability="75"
 		input_cell1="apotheosis_meat_heretic_eye" 		input_cell2="apotheosis_magic_liquid_divine"
 		output_cell1="apotheosis_meat_heretic_eye"		output_cell2="smoke"
-		blob_radius1="3"
+		blob_radius2="3"
 		>
 	</Reaction>
+
+	<!--Divine liquid vaporizes to Mimicium, go get some opposing Porrings instead-->
+	<Reaction probability="100"
+		input_cell1="apotheosis_magic_liquid_divine" 		input_cell2="mimic_liquid"
+		output_cell1="smoke"		output_cell2="mimic_liquid"
+  		blob_radius1="4"
+		>
+	</Reaction>
+
 
 	<!--Corrupt flesh corpses convert into corrupt slime stuff when offscreen-->
 	<!--Nvm hardcoded, instead corrupt flesh corpses decay into corrupt slime stuff over time-->

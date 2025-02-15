@@ -129,7 +129,7 @@
 
 	<GenomeDataComponent 
 		food_chain_rank="5" 
-		herd_id="slimes" 
+		herd_id="spider" 
 		is_predator="1" >
 	</GenomeDataComponent>
 	

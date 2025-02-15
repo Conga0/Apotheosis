@@ -208,6 +208,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/drone_status_ailment.png",
 	  },
 	  {
+		name="Zoner",
+		path="data/entities/animals/gazer_robot.xml",
+		image="data/ui_gfx/animal_icons/gazer_robot.png",
+	  },
+	  {
 		name="Esoteric Being",
 		path="data/entities/buildings/esoteric_being_asleep.xml",
 		image="data/ui_gfx/animal_icons/esoteric_being.png",
@@ -281,11 +286,6 @@ table.insert(ALL_ENTITIES, {
 		name="Parasitic Gazer",
 		path="data/entities/animals/gazer_parasitic.xml",
 		image="data/ui_gfx/animal_icons/gazer_parasitic.png",
-	  },
-	  {
-		name="Zoner",
-		path="data/entities/animals/gazer_robot.xml",
-		image="data/ui_gfx/animal_icons/gazer_robot.png",
 	  },
 	  {
 		name="Phantom Bow",
@@ -811,6 +811,11 @@ table.insert(ALL_ENTITIES, {
 		name="Dimensional Chest",
 		path="mods/Apotheosis/files/entities/items/pickups/chest_portals.xml",
 		image="data/ui_gfx/building_icons/chest_portals.png",
+	  },
+	  {
+		name="Clam Chest",
+		path="mods/Apotheosis/files/entities/items/pickups/chest_random_clam.xml",
+		image="data/ui_gfx/building_icons/chest_random_clam.png",
 	  },
 	  {
 		name="Pandora's Chest",

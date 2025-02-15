@@ -48,7 +48,7 @@ function material_area_checker_success( pos_x, pos_y )
 	EntityLoad("data/entities/animals/hisii_hobo_rich.xml", x, y)
     EntityKill(entity_id)
 	
-    if ModIsEnabled("raksa") == false then
+    if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	    AddFlagPersistent( "apotheosis_card_unlocked_donated_beggar" )
     end
 

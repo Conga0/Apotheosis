@@ -1,5 +1,19 @@
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
+local current_frame = GameGetFrameNum()
+
+local cooldown_frame = 0
+local variablecomp = EntityGetComponentIncludingDisabled( entity_id, "VariableStorageComponent" )
+for k=1,#variablecomp
+do local v = variablecomp[k]
+    if ComponentGetValue2(v,"name") == "cooldown_frame" then
+        cooldown_frame = ComponentGetValue2( v, "value_int" )
+        break
+    end
+end
+
+if (current_frame < cooldown_frame) then return end
+
 local r = 300
 
 local targets = EntityGetInRadiusWithTag( x, y, r, "mortal" ) or {}

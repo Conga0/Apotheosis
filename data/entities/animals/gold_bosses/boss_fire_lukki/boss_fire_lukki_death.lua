@@ -24,7 +24,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		
 		EntityLoad( "mods/Apotheosis/files/entities/buildings/portal_fire_lukki_input.xml",  pos_x, pos_y - 32 )
 	
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		GameAddFlagRun( "apotheosis_miniboss_boss_fire_lukki" )
 		AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki" )
 		AddFlagPersistent( "apotheosis_card_unlocked_fire_lukki_spell" )

@@ -10,7 +10,7 @@ if GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") or GameHasFlagRun("ap
     local entity_id = GetUpdatedEntityID()
     local pos_x,pos_y = EntityGetTransform( entity_id )
 
-    if GameHasFlagRun("apotheosis_flesh_boss_mind_warp") == false and GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") and ModIsEnabled("raksa") == false then
+    if GameHasFlagRun("apotheosis_flesh_boss_mind_warp") == false and GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") and not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	local player = EntityGetInRadiusWithTag(pos_x, pos_y, 400, "player_unit")[1] or nil
 	if player ~= nil then
 	    GameAddFlagRun("apotheosis_flesh_boss_mind_warp")

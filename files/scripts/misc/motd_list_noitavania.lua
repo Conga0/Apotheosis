@@ -3,7 +3,7 @@ dofile_once("data/scripts/lib/utilities.lua")
 --Spawns the Message of the day if enabled
 local year, month, day, hour = GameGetDateAndTimeLocal()
 
-if ModIsEnabled("raksa") == false then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 
     if ( month == 7 ) and (( day >= 20 ) and ( day <= 22 )) then                      --Birthday
         local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")

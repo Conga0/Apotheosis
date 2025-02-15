@@ -17,7 +17,7 @@ function collision_trigger()
 	EntityLoad("mods/Apotheosis/files/entities/particle_generators/smoke_cloud_generator.xml", x, y)
 	GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
 
-	if ModIsEnabled("raksa") == false then
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 		AddFlagPersistent( "apotheosis_card_unlocked_rage_aura" )
 
 		if ModIsEnabled("nightmare") or ModIsEnabled("purgatory") then

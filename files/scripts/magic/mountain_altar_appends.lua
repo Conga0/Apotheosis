@@ -50,6 +50,50 @@ if( GlobalsGetValue("MISC_PANDORA_CHEST_RAIN") ~= "1" ) then
 	end
 end
 
+if( GlobalsGetValue("MISC_CLAM_CHEST_RAIN") ~= "1" ) then
+
+	local chests_clam = EntityGetWithTag( "effectable_prop" )
+	for k=1,#chests_clam
+	do local v = chests_clam[k]
+		if EntityGetName(v) == "chest_clam" then
+			local collected = false
+			local players = EntityGetWithTag( "player_unit" )
+			
+			if ( #players > 0 ) then
+				local player_id = players[1]
+				local px, py = EntityGetTransform( player_id )
+				
+				for i,chest_id in ipairs(chests_clam) do
+					local cx, cy = EntityGetTransform( chest_id )
+					
+					local distance = math.abs( x - cx ) + math.abs( y - cy )
+				
+					if ( distance < 48 ) then
+						local eid = EntityLoad("mods/Apotheosis/files/entities/misc/chest_rain_clam.xml", px, py)
+						EntityAddChild( player_id, eid )
+						local world_id = GameGetWorldStateEntity()
+						local rid = EntityLoad("mods/Apotheosis/files/entities/misc/rain_brine.xml", 0, 0)
+						EntityAddChild( world_id, rid )
+						EntityLoad("mods/Apotheosis/files/entities/particles/image_emitters/chest_clam_convert.xml", cx, cy)
+						collected = true
+						EntityKill( chest_id )
+					end
+				end
+			end
+			
+			if collected then
+				GlobalsSetValue("MISC_CLAM_CHEST_RAIN", "1" )
+				GamePrintImportant( "$log_altar_magic_monster", "" )
+		
+				if HasFlagPersistent( "apotheosis_card_unlocked_clam_chest_rain" ) == false then
+					AddFlagPersistent( "apotheosis_card_unlocked_clam_chest_rain" )
+				end
+			end
+			break
+		end
+	end
+end
+
 local heretic_stones = EntityGetInRadiusWithTag(x,y,48,"poopstone")
 for k=1,#heretic_stones
 do local v = heretic_stones[k]

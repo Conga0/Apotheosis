@@ -1,0 +1,13 @@
+mods/Apotheosis/files/ragdolls/portal_stand/prongl.png
+mods/Apotheosis/files/ragdolls/portal_stand/prongr.png
+mods/Apotheosis/files/ragdolls/portal_stand/smallprongl.png
+mods/Apotheosis/files/ragdolls/portal_stand/smallprongr.png
+mods/Apotheosis/files/ragdolls/portal_stand/channeler.png
+mods/Apotheosis/files/ragdolls/portal_stand/basel.png
+mods/Apotheosis/files/ragdolls/portal_stand/baser.png
+mods/Apotheosis/files/ragdolls/portal_stand/slabl.png
+mods/Apotheosis/files/ragdolls/portal_stand/slabr.png
+mods/Apotheosis/files/ragdolls/portal_stand/wire1l.png
+mods/Apotheosis/files/ragdolls/portal_stand/wire1r.png
+mods/Apotheosis/files/ragdolls/portal_stand/wire2l.png
+mods/Apotheosis/files/ragdolls/portal_stand/wire2r.png

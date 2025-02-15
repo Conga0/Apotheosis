@@ -4,7 +4,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 local heretic_found = false
 local converting = false
 
---If heretic dead dead then destroy this script and the other stuff
+--If heretic dead dead or game ended then destroy this script and the other stuff
 if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or GameHasFlagRun("ending_game_completed") then
     local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
     for i = 1, #luacomps do
@@ -48,7 +48,9 @@ if GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") or GameHasFlagRun("e
 
 	if not HasFlagPersistent("apotheosis_stone_heretic_purified") then
 	    AddFlagPersistent("apotheosis_stone_heretic_purified")
-	    GamePrint("You feel a force permanently disperse...")
+	    --Lil uncertain on including something like "$log_apotheosis_stone_heretic_disperse_desc"...
+	    GamePrintImportant("$log_apotheosis_stone_heretic_disperse_name")
+	    GamePrint("$log_apotheosis_stone_heretic_disperse_name")
 	end
     end
 

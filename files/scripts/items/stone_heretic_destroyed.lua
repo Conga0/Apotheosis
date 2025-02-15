@@ -2,15 +2,15 @@ local entity_id = GetUpdatedEntityID()
 local parent_id = EntityGetParent(entity_id)
 local player_id = EntityGetParent(parent_id)
 if (player_id ~= 0 and EntityHasTag( player_id, "player_unit" )) or (player_id == 0 and parent_id ~= 0 and EntityGetName(parent_id) == "inventory_quick") then return end
-if GameHasFlagRun("apotheosis_heretalk_portal_complete") or ModIsEnabled("raksa") then return end --It don't matter it already done!
+if GameHasFlagRun("apotheosis_heretalk_portal_complete") or ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn") then return end --It don't matter it already done!
 --Oh no, Heretic gonna be upsetti
 local pos_x, pos_y = EntityGetTransform(entity_id)
 
 GameAddFlagRun("apotheosis_flesh_boss_stone_initiated")
--- if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") then
+-- if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") and GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
     if GameHasFlagRun("apotheosis_heretalk_guiding_stone") then
 	GameAddFlagRun("apotheosis_flesh_boss_stone_converted")
-    else
+    elseif not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") or GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
 	GameAddFlagRun("apotheosis_flesh_boss_stone_destroyed")
 	EntityLoad( "mods/Apotheosis/files/entities/misc/stone_heretic_death_check.xml", pos_x, pos_y )
     end

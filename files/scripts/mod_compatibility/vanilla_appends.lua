@@ -1123,6 +1123,54 @@ do -- Add Alchemic runestone to the runestone pool (chests)
   ModTextFileSetContent(path, content)
 end
 
+do -- Lets chests convert into clam chests when let into Sunken Caverns
+  local path = "data/entities/items/pickup/chest_random.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    _enabled="1"
+    script_source_file="mods/Apotheosis/files/scripts/items/chest_random_converter.lua"
+    execute_every_n_frame="30"
+    remove_after_executed="0"
+    >
+    </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Same as above but for mimics
+  local path = "data/entities/animals/chest_mimic.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    _enabled="1"
+    script_source_file="mods/Apotheosis/files/scripts/animals/chest_mimic_converter.lua"
+    execute_every_n_frame="30"
+    remove_after_executed="0"
+    >
+    </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
+do -- Same as above but for leggy
+  local path = "data/entities/items/pickup/chest_leggy.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    _enabled="1"
+    script_source_file="mods/Apotheosis/files/scripts/items/chest_leggy_converter.lua"
+    execute_every_n_frame="30"
+    remove_after_executed="0"
+    >
+    </LuaComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 do -- Add death check to MoM for the run
   local path = "data/entities/animals/boss_wizard/death.lua"
   local content = ModTextFileGetContent(path)

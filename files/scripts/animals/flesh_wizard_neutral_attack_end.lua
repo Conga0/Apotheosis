@@ -52,11 +52,23 @@ if #targets > 1 then
 				ComponentSetValue2(velcomp, "mPrevVelocity", vel_x, vel_y)
 				GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/megalaser/launch", pos_x, pos_y )
 			end
+
+			local current_frame = GameGetFrameNum()
+			local cooldown = 600
+			local variablecomp = EntityGetComponentIncludingDisabled( entity_id, "VariableStorageComponent" )
+			for k=1,#variablecomp
+			do local v = variablecomp[k]
+				if ComponentGetValue2(v,"name") == "cooldown_frame" then
+					ComponentSetValue2( v, "value_int", current_frame + cooldown )
+					break
+				end
+			end
 			break
 		end
 		end
 	end
 end
+
 
 local c = EntityGetAllChildren( entity_id )
 for a,b in ipairs( c ) do
