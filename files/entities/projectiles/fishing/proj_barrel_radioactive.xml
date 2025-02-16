@@ -95,8 +95,8 @@
     alpha="1" 
     image_file="mods/Apotheosis/files/entities/projectiles/fishing/barrel_radioactive.png" 
     next_rect_animation="" 
-    offset_x="5" 
-    offset_y="4" 
+    offset_x="5.5" 
+    offset_y="4.5" 
     rect_animation="" 
      >
   </SpriteComponent>

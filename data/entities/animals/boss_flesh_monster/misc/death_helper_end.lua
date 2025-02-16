@@ -6,6 +6,9 @@ local pos_x, pos_y = EntityGetTransform( root_id )
 --Checks to see if Heretic is meant to be always loaded
 local allseeing = EntityGetFirstComponentIncludingDisabled( root_id, "StreamingKeepAliveComponent" )
 
+local old_armorcomp = EntityGetFirstComponent( root_id, "VariableStorageComponent", "boss_reworks_armor" )
+local recent_relative_damage = ComponentGetValue2( old_armorcomp, "value_float")
+
 -- kill self
 -- We use an EntityKill here to avoid adding a kill count to the progress log
 EntityKill(root_id)
@@ -29,9 +32,6 @@ local cowardness = tonumber(GlobalsGetValue("HERETIC_COWARDLY"))
 if cowardness ~= nil then
 ComponentSetValue2( incarncomp, "value_int", cowardness)
 end
-
-local old_armorcomp = EntityGetFirstComponent( entity_id, "VariableStorageComponent", "boss_reworks_armor" )
-local recent_relative_damage = ComponentGetValue2( old_armorcomp, "value_float")
 
 local armorcomp = EntityGetFirstComponent( eid, "VariableStorageComponent", "boss_reworks_armor" )
 ComponentSetValue2( armorcomp, "value_float", recent_relative_damage)

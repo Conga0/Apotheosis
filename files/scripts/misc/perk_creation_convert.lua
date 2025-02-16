@@ -47,6 +47,7 @@ function radarStoneCheck(eid,img)
                 break
             end
         end
+        GameAddFlagRun("apotheosis_stone_obsolete)
     end
 end
 
@@ -74,7 +75,15 @@ do local v = inputlist[k];
 		EntityLoad("data/entities/projectiles/explosion.xml", pos_x, pos_y - 10)
 		local perk_id = perk_spawn( pos_x, pos_y, outputlist[k] )
         --Perk tag is removed so other perks aren't deleted upon picking this one up
-        EntityRemoveTag(perk_id, "perk")
+        --EntityRemoveTag(perk_id, "perk")
+        --Decided to swap this out for this way instead seeing as Leggy Mimic's perk uses it so it must be the official way! -S
+	if( perk_id ~= nil ) then
+		EntityAddComponent( perk_id, "VariableStorageComponent", 
+		{ 
+			name = "perk_dont_remove_others",
+			value_bool = "1",
+		} )
+	end
         AddFlagPersistent(table.concat({"apotheosis_card_unlocked_perkforged_",string.lower(outputlist[k])}))
         radarStoneCheck(entity_id,image)
 		EntityKill(entity_id)
