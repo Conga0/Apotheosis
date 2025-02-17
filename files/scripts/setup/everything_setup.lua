@@ -185,7 +185,7 @@ do --Heretic drops the plane radar perk for convinience
   content = content:gsub("%-%-EntityLoad%( \"mods/Apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)", "do dofile_once(\"data/scripts/perks/perk.lua\") 
 perk_spawn( pos_x, pos_y, \"APOTHEOSIS_PLANE_RADAR\" ) 
 EntityLoad( \"mods/Apotheosis/files/entities/items/pickups/perk_copyspells.xml\", pos_x, pos_y - 16) 
-GameAddFlagRun("apotheosis_stone_obsolete) 
+GameAddFlagRun("apotheosis_stone_obsolete") 
 end")
   ModTextFileSetContent(path, content)
 end

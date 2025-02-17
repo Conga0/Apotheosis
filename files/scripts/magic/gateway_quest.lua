@@ -35,7 +35,7 @@ if tonumber(GlobalsGetValue("apotheosis_plane_fail",0)) == 1 then
     EntitySetComponentsWithTagEnabled(entity_id,"invincible",false)
     EntitySetComponentsWithTagEnabled(entity_id,"counter",true)
     GameAddFlagRun("apotheosis_heretalk_portal_fail")
-    GameAddFlagRun("apotheosis_stone_obsolete)
+    GameAddFlagRun("apotheosis_stone_obsolete")
 else
     --Detect Sampo's presence & enable helper entity if it's found
     --Conga: Leave this disabled until it's time for release
