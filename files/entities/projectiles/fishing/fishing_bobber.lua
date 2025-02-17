@@ -175,10 +175,10 @@ if isfishing then
             fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_fish_large.xml"
             fish_type = 2
             if liquid == "lava" then
-                fish_path = "mods/Apotheosis/files/entities/items/pickups/egg_volcanic_lukki.xml"
+                fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_egg_volcanic_lukki.xml"
                 odd = true
                 fish_type = -1
-                throw = 4
+                throw = 1
             elseif liquid == "radioactive_liquid" then --fish_toxic_large
                 fish_type = 7
             elseif liquid == "blood" then --fish_flesh
@@ -188,6 +188,7 @@ if isfishing then
         end
 
         local supa_rare = (math.random(1,100) == 1)
+	if rarity < 10 then
         if liquid == "lava" then
             supa_rare = (math.random(1,1000) == 1)
             if supa_rare and GameHasFlagRun( "apotheosis_fire_lukki_boss_summoned" ) ~= true then
@@ -208,7 +209,7 @@ if isfishing then
                 fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_barrel_radioactive.xml"
                 odd = true
                 fish_type = -1
-                throw = 4
+                throw = 1
             end
         elseif liquid == "blood" then --(replace with cooler thing later)
             supa_rare = (math.random(1,100) == 1)
@@ -221,11 +222,12 @@ if isfishing then
         else
             supa_rare = (math.random(1,math.max(50 - ((fish_max-1)*5),25)) == 1) -- After 5 angler skills it reaches max of 1/25
             if supa_rare then
-                fish_path = "mods/Apotheosis/files/entities/items/pickups/chest_random_clam.xml"
+                fish_path = "mods/Apotheosis/files/entities/projectiles/fishing/proj_chest_random_clam.xml"
                 odd = true
                 fish_type = -1
                 throw = 1
             end
+        end
         end
 
         local mult_x = (plyr_x - x)*(throw - 1)
@@ -342,7 +344,7 @@ if isfishing then
     end
 
 --Fish Caught!
-elseif math.random(1,2000) <= math.max((fish_max),8) then
+elseif math.random(1,2000) <= math.max((fish_max),8) and RaytraceSurfacesAndLiquiform(x, y, x, y+3) and not RaytracePlatforms(x, y, x, y+3) then
     ComponentSetValue2(vsccomp,"value_bool",true)
 
     local velcomp = EntityGetFirstComponent(entity_id, "VelocityComponent") --[[@cast velcomp number]]

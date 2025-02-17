@@ -87,7 +87,7 @@ function drop_random_reward( x, y, entity_id, rand_x, rand_y, set_rnd_  )
 			
 		elseif( rnd <= 40 ) then
 			-------------------------------------------------------------------
-			-- Gold (I think the reason there's empty is chests is goldnuggets)
+			-- Pearls (I think the reason there's empty is chests is goldnuggets) What do you mean Nolla?? -S
 			-------------------------------------------------------------------
 			local remove_gold_timer = false
 	

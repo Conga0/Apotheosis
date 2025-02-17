@@ -3510,7 +3510,7 @@ local events = {
         trigger = function()
             num = 201
             if GameHasFlagRun("apotheosis_heretalk_id_" .. tostring(num-1)) then
-                local d_opts = {"You'd likely appreciate it much more than me..."}
+                local d_opts = {"You'd likely appreciate it much more than I..."}
                 local dialogue = d_opts[math.random(1,#d_opts)]
                 return true, dialogue
             else
