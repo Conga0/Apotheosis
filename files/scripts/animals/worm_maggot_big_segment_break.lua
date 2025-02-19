@@ -1,11 +1,17 @@
 
-function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
+function damage_received( damage, message, entity_thats_responsible, is_fatal, projectile_thats_responsible )
+	if not is_fatal then return end
     local entity_id = GetUpdatedEntityID()
     local pos_x,pos_y = EntityGetTransform(entity_id)
     local parent_id = EntityGetRootEntity(entity_id)
+    local damagemodelcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
     local inheritcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"InheritTransformComponent")
     local segment_id = ComponentGetValue2(inheritcomp,"parent_sprite_id")
     local sprite_comp = EntityGetComponent(parent_id,"SpriteComponent")
+
+	ComponentSetValue2(damagemodelcomp, "wait_for_kill_flag_on_death", true)
+	--local comps = EntityGetAllComponents(entity_id)
+	--EntitySetComponentIsEnabled(entity_id, damagemodelcomp, false)
 
     for k=1,#sprite_comp do
         if k == segment_id + 1 then
@@ -32,4 +38,5 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
     GamePlaySound( "data/audio/Desktop/projectiles.bank", "projectiles/slime_gas/destroy", pos_x, pos_y )
     EntityLoad("mods/Apotheosis/files/entities/projectiles/mist_ominous.xml",pos_x + math.random(-100,100),pos_y + math.random(-100,100))
     EntityLoad("mods/Apotheosis/files/entities/particles/worm_maggot_big_segment_shatter.xml",pos_x,pos_y)
+	EntityKill(entity_id)
 end

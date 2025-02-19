@@ -1,53 +1,51 @@
 
 <Entity tags="hittable,necrobot_NOT,polymorphable_NOT,teleportable_NOT">
-    <HitboxComponent 
-        _enabled="1" 
-        aabb_min_x="-8" 
-        aabb_max_x="8" 
-        aabb_min_y="-8" 
-        aabb_max_y="8" 
-        is_enemy="1" 
-        is_item="0" 
-        is_player="0" >
-    </HitboxComponent>
+	<HitboxComponent 
+		_enabled="1" 
+		aabb_min_x="-8" 
+		aabb_max_x="8" 
+		aabb_min_y="-8" 
+		aabb_max_y="8" 
+		is_enemy="1" 
+		is_item="0" 
+		is_player="0"
+	/>
 
-    <DamageModelComponent 
-        hp="40.0"
-        air_needed="0"
-        minimum_knockback_force="1000000000"
-        materials_create_messages="1"
-        ragdoll_fx_forced="DISINTEGRATED"
-        fire_probability_of_ignition="0"
-        blood_multiplier="0.0"
-        blood_material="material_darkness"
-        blood_spray_material="material_darkness"
-        critical_damage_resistance="1"
-        >
-        <damage_multipliers
-            projectile="0.25"
-            slice="0.0" 
-            radioactive="0.0"
-            poison="0.0"
-            explosion="4.0"
-            >
-        </damage_multipliers>
-    </DamageModelComponent>
+	<DamageModelComponent 
+		hp="40.0"
+		air_needed="0"
+		minimum_knockback_force="1000000000"
+		materials_create_messages="1"
+		ragdoll_fx_forced="DISINTEGRATED"
+		fire_probability_of_ignition="0"
+		blood_multiplier="0.0"
+		blood_material="material_darkness"
+		blood_spray_material="material_darkness"
+		critical_damage_resistance="1"
+		>
+		<damage_multipliers
+			projectile="0.25"
+			slice="0.0" 
+			radioactive="0.0"
+			poison="0.0"
+			explosion="4.0"
+		/>
+	</DamageModelComponent>
 
-    <LuaComponent
-        script_death="mods/Apotheosis/files/scripts/animals/worm_maggot_big_segment_break.lua"
-        >
-    </LuaComponent>
+	<LuaComponent
+		script_damage_received="mods/Apotheosis/files/scripts/animals/worm_maggot_big_segment_break.lua"
+	/>
 
-    <AudioComponent
-        file="data/audio/Desktop/animals.bank"
-        event_root="animals/robot">
-    </AudioComponent>
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/robot"
+	/>
 		
-    <GenomeDataComponent 
-        _enabled="1"
-        herd_id="boss_dragon"
-        food_chain_rank="20"
-        is_predator="1" >
-    </GenomeDataComponent>
+	<GenomeDataComponent 
+		_enabled="1"
+		herd_id="boss_dragon"
+		food_chain_rank="20"
+		is_predator="1"
+	/>
 
 </Entity>
