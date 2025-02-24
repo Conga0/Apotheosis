@@ -2665,7 +2665,48 @@ local apotheosis_spellappends = {
             draw_actions(1, true)
             mana = mana + 80
         end,
+    },
+    --[[
+    {
+        id          = "APOTHEOSIS_ORB_KNOWLEDGE",
+        id_matchup  = "APOTHEOSIS_STAR_SHOT",
+        name 		= "Learning Orb",
+        description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        type 		= ACTION_TYPE_PROJECTILE,
+        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
+        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        price = 220,
+        mana = 50,
+        action 		= function()
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 12
+            current_reload_time = current_reload_time + 30
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_WATERBALL",
+        id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
+        name 		= "Water Ball",
+        description = "Casts a seeking ball of condensed water.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_holy_shotgun.xml", 1},
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        type 		= ACTION_TYPE_PROJECTILE,
+        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT 
+        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        price = 220,
+        mana = 50,
+        action 		= function()
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_holy_shotgun.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 12
+        end,
     }
+    ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
