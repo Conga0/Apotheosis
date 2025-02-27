@@ -246,6 +246,14 @@ local apotheosis_spellappends = {
         max_uses    = 3, 
         custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/bomb_giga.xml",
         action 		= function()
+            --[[
+            if not reflecting then
+                dofile("mods/Twitch-Integration/data/ws/utils.lua")
+                dofile_once("data/scripts/perks/perk.lua")
+                dofile("mods/Twitch-Integration/twitch_fragments/outcomes/conga_steal_wand.lua")
+                twitch_conga_steal_wand()
+            end
+            --]]
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/bomb_giga.xml")
             c.fire_rate_wait = c.fire_rate_wait + 140
         end,
@@ -2703,6 +2711,7 @@ local apotheosis_spellappends = {
         mana = 50,
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_holy_shotgun.xml")
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml,"
             c.fire_rate_wait = c.fire_rate_wait + 12
         end,
     }

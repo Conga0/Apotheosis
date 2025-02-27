@@ -33,4 +33,4 @@ local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"IngestionCompon
 ComponentSetValue2(comp,"blood_healing_speed",math.max(0.0024 * (hp / 4), 0.0024))
 
 --Removes old extra life perks
-dofile( "mods/Apotheosis/files/scripts/DEBUG/clear_extra_lifes.lua" )
+--dofile( "mods/Apotheosis/files/scripts/DEBUG/clear_extra_lifes.lua" )
