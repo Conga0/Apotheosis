@@ -1,0 +1,19 @@
+hii im copi :)))))
+if you're seeing this you PROBABLY downloaded the modworkshop zip :)))
+you're gonna need to do a teensy bit of work
+locate your noita.exe, in the same directory there will be a /mods/ directory
+extract apotheosis into it such that the init.lua file is like this:
+
+Noita/mods/Apotheosis/init.lua
+
+things you DO NOT WANT!!!!:
+Noita/mods/init.lua (bad, game wont recognize as mod, messy)
+Noita/mods/Apotheosis/Apotheosis/init.lua (bad, game wont recognize mod)
+
+it SHOULD show up in your mods list in game if you did it right
+and give no angry red text when you start the game and have the content and stuff
+Join the server if you need help (OR if you dont we're chill): https://discord.gg/gtyGnv8Pxk
+
+hope this helped :D
+P.S. IF you downloaded the files off steam but are trying to use it manually (be it a GoG user, a pirate, whatever,) then MAKE SURE you rename the folder to 'Apotheosis' because it WILL NOT WORK if the folder is named '3032128572'. This is the STEAM ID and mods only work with their steam ID as their name IF THEY ARE in the STEAM WORKSHOP FOLDER (only possible with steam)
+kthxbai
