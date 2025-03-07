@@ -63,7 +63,7 @@ if g_props then
   
     table.insert(g_props,
     {
-        prob           = 0.03, --Originally 0.2, increased to compensate for opal crystals being added
+        prob           = 0.02, --Originally 0.2, increased to compensate for opal crystals being added
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/buildings/polymorph_crystal.xml"
@@ -71,7 +71,7 @@ if g_props then
   
     table.insert(g_props,
     {
-        prob           = 0.05, --Originally 0.2, increased to compensate for opal crystals being added
+        prob           = 0.03, --Originally 0.2, increased to compensate for opal crystals being added
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/buildings/polymorph_crystal_chaotic.xml"
