@@ -22,7 +22,7 @@ function draw_shot( ... )
 
     if call_end_cast then
         apo_state.new_cast = nil
-		apo_state.orbing = false
+		apo_state.min_reload = nil
     end
 
     apo_state.old.draw_shot( ... )
