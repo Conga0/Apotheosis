@@ -1386,3 +1386,25 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		GenerateMagicCatalyst()
 	end
 end
+
+
+
+
+
+-- NEW COPI TECH
+-- EVIL NOLLA MAGIC WARDING SPELLS
+-- RITUALS TO KEEP NOLLA BULLSHIT AWAY
+-- MAD FUCKIGN SPELLS PROTECTION FROM EVIL
+-- DIVINE PROTECTION ABJURATION GLYPHS BELOW
+-- HALT CRASHING SHIT 1 FRAME DELAY HACKERY
+-- FRANKENSTEIN RADIO CONTROLS BELOW
+function OnWorldPreUpdate()
+	local orbs = EntityGetWithTag("orb_knowledge_sorry4tag") or {}
+	local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS")) -- TESTING VAR
+	--local orbcount = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) --Three-Eyed Orb? Kolmi-orb?
+	local radius = 6*orbcount^0.5
+	for i=1, #orbs do
+		dofile_once("mods/Apotheosis/files/scripts/projectiles/orb_knowledge_setup.lua")(orbs[i], orbcount, radius)
+		EntityRemoveTag(orbs[i], "orb_knowledge_sorry4tag")
+	end
+end

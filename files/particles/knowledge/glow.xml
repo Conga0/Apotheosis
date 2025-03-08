@@ -1,0 +1,16 @@
+<Sprite filename="mods/Apotheosis/files/particles/knowledge/glow.png"
+	offset_x="128"
+	offset_y="128"
+	default_animation="smoke"
+	> <RectAnimation
+		name="smoke"
+		pos_x="0"
+		pos_y="0"
+		frame_count="1"
+		frame_width="256"
+		frame_height="256"
+		frame_wait="0.15"
+		frames_per_row="1"
+		loop="0"
+	/>
+</Sprite>
