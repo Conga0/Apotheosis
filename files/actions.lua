@@ -2673,13 +2673,13 @@ local apotheosis_spellappends = {
             draw_actions(1, true)
             mana = mana + 80
         end,
-    },
-    --[[
+    },--[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
         name 		= "Learning Orb",
-        description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
+        --description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
+        description = "Sui generis. Casts an orb that grows alongside your knowledge, even tainted.",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
@@ -2691,10 +2691,12 @@ local apotheosis_spellappends = {
         mana = 50,
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 12
-            current_reload_time = current_reload_time + 30
+            c.fire_rate_wait = c.fire_rate_wait + 25
+			current_reload_time = current_reload_time + 60
+            apo_state.min_reload = 60
         end,
-    },
+    },]]
+    --[[
     {
         id          = "APOTHEOSIS_WATERBALL",
         id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
