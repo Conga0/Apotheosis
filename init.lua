@@ -1398,6 +1398,7 @@ end
 -- DIVINE PROTECTION ABJURATION GLYPHS BELOW
 -- HALT CRASHING SHIT 1 FRAME DELAY HACKERY
 -- FRANKENSTEIN RADIO CONTROLS BELOW
+--[[
 function OnWorldPreUpdate()
 	local orbs = EntityGetWithTag("orb_knowledge_sorry4tag") or {}
 	local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS")) -- TESTING VAR
@@ -1408,3 +1409,4 @@ function OnWorldPreUpdate()
 		EntityRemoveTag(orbs[i], "orb_knowledge_sorry4tag")
 	end
 end
+]]--
