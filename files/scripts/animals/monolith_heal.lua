@@ -8,7 +8,7 @@ if hp < 3999 then
 	EntityAddChild(entity_id, c_id)
 end
 
---Conga: no worky, too tired to fix
+--Conga: no worky, too eepy seepy to fix
 --Some issue with healthbar components not liking being disabled
 --Could reduce alpha instead?
 --[[

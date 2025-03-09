@@ -153,6 +153,7 @@ local actions_to_edit = {
 		end
 	},
 
+	--[[
 	["SEA_MIMIC"] = {
 		description = "$spell_apotheosis_sea_mimic_desc",
 		custom_uses_logic = true,
@@ -164,6 +165,7 @@ local actions_to_edit = {
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end
 	},
+	]]--
 
 	["APOTHEOSIS_ALT_FIRE_COV"] = {
 		description = "$spell_apotheosis_alt_fire_cov_hardcore_desc",
