@@ -1067,8 +1067,8 @@ end
 do --Lets Kolmisilma clear slime when using his clear materials ability
   local path = "data/entities/animals/boss_centipede/clear_materials.xml"
   local content = ModTextFileGetContent(path)
-  content, count = content:gsub([[lava,radioactive_liquid,acid,poison]], [[lava,radioactive_liquid,acid,poison,slime,water]])
-  content, count = content:gsub([[air,air,air,air]], [[air,air,air,air,air,air]])
+  content, count = content:gsub([[lava,radioactive_liquid,acid,poison]], [[lava,radioactive_liquid,acid,poison,slime,water,blood,oil]])
+  content, count = content:gsub([[air,air,air,air]], [[air,air,air,air,air,air,air,air]])
 
   ModTextFileSetContent(path, content)
 end

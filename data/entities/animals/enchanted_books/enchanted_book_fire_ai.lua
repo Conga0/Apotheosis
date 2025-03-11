@@ -17,7 +17,7 @@ local attack = "firebolt"
 local attack_switch_timer = ComponentGetValue2(find_vsc("cooldown_data"),"value_int")
 local attack_timer = ComponentGetValue2(find_vsc("cooldown_data"),"value_float")
 local book_timer = ComponentGetValue2(find_vsc("open_status"),"value_float")
-local attack_opts = {"firebolt","firebolt"}
+local attack_opts = {"firebolt","small_sun"}
 local last_attack = ""
 
 attack_switch_timer = attack_switch_timer - 1
@@ -88,6 +88,46 @@ if attack_timer <= 0 then
             local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
             ComponentSetValue2(projcomp, "mShooterHerdId", StringToHerdId("ghost"))
         end        
+    elseif attack == "small_sun" then
+        ComponentSetValue2(find_vsc("cooldown_data"),"value_float",260)
+
+        local targets = EntityGetInRadiusWithTag( pos_x, pos_y, 350, "player_unit" )
+
+        target = targets[1]
+        
+        
+        local angle_inc = 0
+        local angle_inc_set = false
+        
+        local length = 2
+        
+        if ( target ~= nil ) and ( target ~= NULL_ENTITY ) then
+            local ex, ey = EntityGetTransform( target )
+            
+            if ( ex ~= nil ) and ( ey ~= nil ) then
+                angle_inc = 0 - math.atan2( ( ey - pos_y ), ( ex - pos_x ) )
+                angle_inc_set = true
+            end
+        end
+
+        do
+            SetRandomSeed(pos_x,pos_y)
+
+            local angle = 0
+            local length = 250
+            if angle_inc_set then
+                angle = angle_inc + Random( -35, 35 ) * 0.01
+            else
+                angle = math.rad( Random( 1, 360 ) )
+            end
+            
+            local vel_x = math.cos( angle ) * length
+            local vel_y = 0- math.sin( angle ) * length
+        
+            local pid = shoot_projectile( entity_id, "mods/Apotheosis/files/entities/projectiles/sun_small.xml", pos_x, pos_y, vel_x, vel_y )
+            local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
+            ComponentSetValue2(projcomp, "mShooterHerdId", StringToHerdId("ghost"))
+        end
     end
 end
 
