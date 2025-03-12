@@ -1,3 +1,4 @@
+local extract = dofile_once("mods/Apotheosis/files/scripts/misc/proj_data.lua")
 local entity_id = GetUpdatedEntityID()
 if EntityHasTag(entity_id,"cast_share") == false then
 	EntityAddTag(entity_id, "cast_share")
@@ -6,6 +7,9 @@ if EntityHasTag(entity_id,"cast_share") == false then
 	--Entity Add Component, this component is a lua script with a shot script
 	--If the entity shoots a projectile, then the magic properties will be carried over to the newly shot out projectile.
 	--Only need to transfer the tag & projectile description on shoot. Don't make an infinite lua share loop!!!
+
+	-- Hey conga, about this
+	-- Sounds like it could be fucking awesome :3
 else
 	if EntityGetName(entity_id) ~= "separator" then
 
@@ -28,22 +32,15 @@ else
 			end
 		end
 
-		local caststate = nil
-		do  -- Get cast state
-			local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id, "ProjectileComponent") --[[@cast projcomp number]]
-			local desc = ComponentObjectGetValue2(projcomp, "config", "action_description")
-			local i, j = string.find(desc, "\nCASTSTATE_APOLUASHARE|([a-zA-Z0-9]*)")
-			caststate = (string.sub(desc, i, j))
-		end
+		local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id, "ProjectileComponent") --[[@cast projcomp number]]
+		local cast_state = extract(projcomp, {1})
 
 		local player_projectiles = EntityGetWithTag("cast_share") or {}
 		for index = 1, #player_projectiles do
 			local target = player_projectiles[index]
-			local projcomp = EntityGetFirstComponentIncludingDisabled(target, "ProjectileComponent") --[[@cast projcomp number]]
-			local desc = ComponentObjectGetValue2(projcomp, "config", "action_description")
-			local i, j = string.find(desc, "\nCASTSTATE_APOLUASHARE|([a-zA-Z0-9]*)")
-			local target_caststate = (string.sub(desc, i, j))
-			if target_caststate == caststate then
+			local projcomp2 = EntityGetFirstComponentIncludingDisabled(target, "ProjectileComponent") --[[@cast projcomp number]]
+			local target_caststate = extract(projcomp2, {1})
+			if target_caststate == cast_state then
 				EntityAddComponent2(target, "LuaComponent", values )
 			end
 		end

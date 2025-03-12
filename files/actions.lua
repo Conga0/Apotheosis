@@ -1898,20 +1898,12 @@ local apotheosis_spellappends = {
     action = function()
 
         if not reflecting then
-
-            if c.apo_caststate == nil then
-                -- Relies on gun.lua haxx refer to "gun_append.lua" if you want to use data transfer haxx
-                c.action_description = table.concat(
-                    {
-                        (c.action_description or ""),
-                        "\nCASTSTATE_APOLUASHARE|",
-                        GlobalsGetValue("APOTHEOSIS_LUA_SHARING_CAST_STATE", "0"),
-                    }
-                )
-                c.apo_caststate = true
-            end
+			if not DontTouch_Data[1] and not reflecting then
+				-- Relies on gun.lua haxx refer to "Datat.lua" if you want to use data transfer haxx
+				-- Also contact copi if you want an infodump. Warning, obscene amounts of rambling.
+				Datat[1] = GlobalsGetValue("GLOBAL_CAST_STATE", "0")
+			end
             c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/lua_sharing.xml,"
-
         end
 
         --c.fire_rate_wait = c.fire_rate_wait + 20
