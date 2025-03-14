@@ -1118,6 +1118,16 @@
 		damage_type="DAMAGE_CURSE"
 		>
 	</AreaDamageComponent>
+
+	<!-- Bite curse damage scales with player's max hp -->
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/maggot_tiny/reworked/bite_damage_update.lua"
+		execute_every_n_frame="10"
+		execute_times="-1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
 	
 	<VariableStorageComponent
 		name="shooter_part"

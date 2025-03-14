@@ -75,20 +75,20 @@
 			distance="160000">
 		</CameraBoundComponent>
         
-        <HitboxComponent 
+        <HitboxComponent
             _enabled="1"
-			aabb_min_x="-13" 
-            aabb_min_y="-14" 
-            aabb_max_x="13" 
-            aabb_max_y="4" 
+			aabb_min_x="-13"
+            aabb_max_x="13"
+            aabb_min_y="-10"
+            aabb_max_y="8"
 			>
         </HitboxComponent>
 		
 		<CharacterDataComponent
-			collision_aabb_min_x="-13" 
-			collision_aabb_min_y="-14" 
-			collision_aabb_max_x="13" 
-			collision_aabb_max_y="4"
+			collision_aabb_min_x="-13"
+			collision_aabb_max_x="13"
+			collision_aabb_min_y="-10"
+			collision_aabb_max_y="8"
 			mass="1"
 			>
 		</CharacterDataComponent>

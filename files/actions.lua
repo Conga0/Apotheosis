@@ -246,6 +246,14 @@ local apotheosis_spellappends = {
         max_uses    = 3, 
         custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/bomb_giga.xml",
         action 		= function()
+            --[[
+            if not reflecting then
+                dofile("mods/Twitch-Integration/data/ws/utils.lua")
+                dofile_once("data/scripts/perks/perk.lua")
+                dofile("mods/Twitch-Integration/twitch_fragments/outcomes/conga_steal_wand.lua")
+                twitch_conga_steal_wand()
+            end
+            --]]
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/bomb_giga.xml")
             c.fire_rate_wait = c.fire_rate_wait + 140
         end,
@@ -1890,20 +1898,12 @@ local apotheosis_spellappends = {
     action = function()
 
         if not reflecting then
-
-            if c.apo_caststate == nil then
-                -- Relies on gun.lua haxx refer to "gun_append.lua" if you want to use data transfer haxx
-                c.action_description = table.concat(
-                    {
-                        (c.action_description or ""),
-                        "\nCASTSTATE_APOLUASHARE|",
-                        GlobalsGetValue("APOTHEOSIS_LUA_SHARING_CAST_STATE", "0"),
-                    }
-                )
-                c.apo_caststate = true
-            end
+			if not DontTouch_Data[1] and not reflecting then
+				-- Relies on gun.lua haxx refer to "Datat.lua" if you want to use data transfer haxx
+				-- Also contact copi if you want an infodump. Warning, obscene amounts of rambling.
+				Datat[1] = GlobalsGetValue("GLOBAL_CAST_STATE", "0")
+			end
             c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/lua_sharing.xml,"
-
         end
 
         --c.fire_rate_wait = c.fire_rate_wait + 20
@@ -2487,6 +2487,7 @@ local apotheosis_spellappends = {
 		end,
 	},
     ]]--
+    --[[
 	{
 		id          = "APOTHEOSIS_POTION_TO_SEA",
         id_matchup  = "APOTHEOSIS_SEA_BERSERK",
@@ -2577,6 +2578,7 @@ local apotheosis_spellappends = {
             end
 		end,
 	},
+    ]]--
 	{
 		id          = "APOTHEOSIS_TOILET_PAPER",
 		id_matchup  = "FIREBOMB",
@@ -2665,7 +2667,51 @@ local apotheosis_spellappends = {
             draw_actions(1, true)
             mana = mana + 80
         end,
+    },--[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
+    {
+        id          = "APOTHEOSIS_ORB_KNOWLEDGE",
+        id_matchup  = "APOTHEOSIS_STAR_SHOT",
+        name 		= "Learning Orb",
+        --description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
+        description = "Sui generis. Casts an orb that grows alongside your knowledge, even tainted.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        type 		= ACTION_TYPE_PROJECTILE,
+        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
+        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        price = 220,
+        mana = 50,
+        action 		= function()
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml")
+            c.fire_rate_wait = c.fire_rate_wait + 25
+			current_reload_time = current_reload_time + 60
+            apo_state.min_reload = 60
+        end,
+    },]]
+    --[[
+    {
+        id          = "APOTHEOSIS_WATERBALL",
+        id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
+        name 		= "Water Ball",
+        description = "Casts a seeking ball of condensed water.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_holy_shotgun.xml", 1},
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        type 		= ACTION_TYPE_PROJECTILE,
+        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT 
+        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        price = 220,
+        mana = 50,
+        action 		= function()
+            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_waterball.xml")
+            c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/proj_homing_delayed_weak.xml,"
+            c.fire_rate_wait = c.fire_rate_wait + 12
+        end,
     }
+  ]]--
 }
 
 if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -3025,6 +3071,121 @@ local actions_to_edit = {
     ["HOMING_AREA"] = {
         subtype = { homing=true },
         mandatory_addition = true
+    },
+    --Replaces Sea of Mimicium with Apotheosis's Potion to Sea
+    --To any code diggers, I'll tell you a story about mimicium.
+    --Long before Mimicium was added to the base game, it was an Apotheosis material that was very rare to come across, you could only find in in the 'rare potion pool' which had a 1% chance of appearing in the place of regular potions.
+    --Outside of getting lucky, the only guaranteed way to get mimicium, an orange-brown liquid at the time, was by completing the sleep altar secret.
+    --Mimicium was a very difficult resource to get because it was powerful, it let you obtain more of very limited (by design) resources.
+    --Ambrosia was something you had to be weary of, the same goes for healthium or any other powerful liquids you have an intentionally finite amount of to spend.
+    --This balance worked well because you had to choose what you wanted to use mimicum on and what you didn't.
+    --Resources could be rare and you'd have to make decisions about how you want to use them, maybe you'd go wild and spent them immediately to kill a boss or keep them for later to exploit a certain interaction.
+    --You made choices.
+    --
+    --Fast forward to the Epilogue 2 beta updates, mimicium is added to vanilla and it behaves nearly identically to how it does in the mod, it's addition to vanilla was pure coincidence.
+    --It's awesome, everything mimicium that was in the mod was in vanilla, with the added flair of potion mimics too!
+    --But one thing stood out that broke everything about mimicium and liquids in the context of being a resource as a whole, Sea of Mimicium
+    --Sea of Mimicium could be cast indefinitely with greek letters and it had no cost associated with it.
+    --You could make infinite ambrosia wherever you want.
+    --Found an extremely rare resource? You have infinite of it now.
+    --Liquids as a resource vanished and everything became infinite, you didn't need to worry about using up your ambrosia, teleportatium or any liquid since as long as you had a single pixel you could summon more from nothing.
+    --The liquid economy was broken.
+    --No choices had to be made.
+    --And when one has everything, one has nothing.
+    --Much later, now as of thursday 06/03/2024 4:33PM ACST, Sea of Mimicium is being replaced with it's modded predecessor that came far before it.
+    --You can still use this similar to how you would use Sea of Mimicium, but you pay the price of shattering a potion each time; in other words there's a price attached each time you duplicate liquid, powder or solid matter.
+    --
+    --I don't want to seem anti-fun; fun, more specifically invoking emotions, is my most important goal when it comes to videogames.
+    --It's what makes them magical to me.
+    --I have my fun from having choices to make and seeing how that affects my story, and I hope this choice gives more to you.
+    --Conga Lyne
+    ["SEA_MIMIC"] = {
+        mandatory_addition = true,
+        name = "$spell_apotheosis_potion_to_sea_name",
+        description = "$spell_apotheosis_potion_to_sea_desc",
+        sprite = "mods/Apotheosis/files/ui_gfx/gun_actions/potion.png",
+        type = ACTION_TYPE_MATERIAL,
+        spawn_level = "0,1,2,3,10",
+        spawn_probability = "0.05,0.05,0.05,0.1,0.1",
+		spawn_requires_flag = "card_unlocked_sea_mimic",
+        price = 250,
+        mana = 200,
+        max_uses = 1,
+        never_unlimited = true,
+        action = function()
+        if not reflecting then
+            local x,y = EntityGetTransform(GetUpdatedEntityID())
+
+            --Get material
+            local potion = nil
+            local inventories = EntityGetAllChildren(GetUpdatedEntityID()) or {}
+            for inventory_index = 1, #inventories do
+                if EntityGetName(inventories[inventory_index]) == "inventory_quick" then
+                    -- Find last potion tagged item
+                    local children = EntityGetAllChildren(inventories[inventory_index]) or {}
+                    for i = 1, #children do
+                        if EntityHasTag(children[i], "potion") then
+                            potion = children[i]
+                            break
+                        end
+                    end
+                    break
+                end
+            end
+
+
+            
+            if potion ~= nil then
+                local e = EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/sea_any.xml", x, y)
+                GamePlaySound( "data/audio/Desktop/materials.bank", "collision/glass_potion/destroy", x, y )
+                local mat = GetMaterialInventoryMainMaterial(potion)
+
+                local comp = EntityAddComponent2(
+                    e,
+                    "MaterialSeaSpawnerComponent",
+                    {
+                        speed=10,
+                        noise_threshold=0.0,
+                        material=mat,
+                    }
+                )
+                ComponentSetValue2(comp, "size", 300, 256)
+                ComponentSetValue2(comp, "offset", 0, 158)
+
+                local comp = EntityAddComponent2(
+                    e,
+                    "ParticleEmitterComponent",
+                    {
+                        emitted_material_name=CellFactory_GetName(mat),
+                        lifetime_min=6,
+                        lifetime_max=8,
+                        count_min=8,
+                        count_max=8,
+                        render_on_grid=true,
+                        fade_based_on_lifetime=true,
+                        cosmetic_force_create=false,
+                        airflow_force=0.51,
+                        airflow_time=1.01,
+                        airflow_scale=0.05,
+                        x_pos_offset_min=0,
+                        x_pos_offset_max=0,
+                        y_pos_offset_min=0,
+                        y_pos_offset_max=0,
+                        emission_interval_min_frames=1,
+                        emission_interval_max_frames=1,
+                        emit_cosmetic_particles=true,
+                        image_animation_file="mods/Apotheosis/files/particles/image_emitters/sea_any.png",
+                        image_animation_speed=5,
+                        image_animation_loop=false,
+                        is_emitting=true,
+                    }
+                )
+                ComponentSetValue2(comp, "gravity", 0, 0)
+                ComponentSetValue2(comp, "area_circle_radius", 0, 0)
+                EntityKill(potion)
+            end
+        end
+    end,
     },
 
     --Conga: Actually, this was unneccessary, bastard still worms it's way in

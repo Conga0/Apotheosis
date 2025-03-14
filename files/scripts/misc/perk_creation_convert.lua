@@ -47,7 +47,7 @@ function radarStoneCheck(eid,img)
                 break
             end
         end
-        GameAddFlagRun("apotheosis_stone_obsolete)
+        GameAddFlagRun("apotheosis_stone_obsolete")
     end
 end
 

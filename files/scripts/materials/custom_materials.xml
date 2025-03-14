@@ -365,7 +365,7 @@
 	name="apotheosis_radioactive_liquid_fading_fast"
 	ui_name="$mat_radioactive_liquid"
   	tags="[evaporable]"
-	wang_color="902F354D"
+	wang_color="902F354E"
 	warmth_melts_to_material="apotheosis_radioactive_gas_fading"
 	warmth_melts_chance_rev="500"
 	status_effects="RADIOACTIVE"

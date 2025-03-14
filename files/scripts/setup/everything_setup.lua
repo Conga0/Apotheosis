@@ -175,19 +175,31 @@ do --Remove fungal & creature shift icons to avoid ui clog
   local content = ModTextFileGetContent(path)
   content = content:gsub("if add_icon then", "if add_icon and 1 == 2 then")
   content = content:gsub("\"bubbles/freezing_liquid/bubble_liquid\", \"fish\", \"forsaken_eye\"", "\"bubbles/freezing_liquid/bubble_liquid\", \"forsaken_eye\"")
-  content = content:gsub("%( EntityGetName%( v %) == \"creature_shift_ui_icon\" %)", "%( EntityGetName%( v %) == \"creature_shift_ui_icon\" %) and 1 == 2")
+  --content = content:gsub("%( EntityGetName%( v %) == \"creature_shift_ui_icon\" %)", "%( EntityGetName%( v %) == \"creature_shift_ui_icon\" %) and 1 == 2")
   ModTextFileSetContent(path, content)
 end
 
 do --Heretic drops the plane radar perk for convinience
   local path = "data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_death.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("%-%-EntityLoad%( \"mods/Apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)", "do dofile_once(\"data/scripts/perks/perk.lua\") 
+  content = content:gsub("%-%-EntityLoad%( \"mods/Apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)", [[do dofile_once(\"data/scripts/perks/perk.lua\") 
 perk_spawn( pos_x, pos_y, \"APOTHEOSIS_PLANE_RADAR\" ) 
 EntityLoad( \"mods/Apotheosis/files/entities/items/pickups/perk_copyspells.xml\", pos_x, pos_y - 16) 
-GameAddFlagRun("apotheosis_stone_obsolete) 
-end")
+GameAddFlagRun("apotheosis_stone_obsolete") 
+end]])
   ModTextFileSetContent(path, content)
+end
+
+
+do --Heretic drops the plane radar perk for convinience
+	local path = "data/entities/animals/boss_flesh_monster/phase3/boss_flesh_monster_death.lua"
+	local content = ModTextFileGetContent(path)
+	content = content:gsub([[%-%-EntityLoad%( \"mods/Apotheosis/files/entities/items/pickups/stone_heretic%.xml\", pos_x, pos_y %)]], [[do dofile_once(\"data/scripts/perks/perk.lua\") 
+	perk_spawn( pos_x, pos_y, \"APOTHEOSIS_PLANE_RADAR\" ) 
+	EntityLoad( \"mods/Apotheosis/files/entities/items/pickups/perk_copyspells.xml\", pos_x, pos_y - 16) 
+	GameAddFlagRun("apotheosis_stone_obsolete") 
+	end]])
+  	ModTextFileSetContent(path, content)
 end
 
 do --Disable winning at mountain altar & the work

@@ -1,0 +1,50 @@
+<Sprite 
+  filename="mods/Apotheosis/files//enemies_gfx/worms/worm_music_big_body.png" 
+	hotspots_filename="mods/Apotheosis/files//enemies_gfx/worms/worm_music_big_body_hotspot.png"
+  offset_x="14" 
+  offset_y="12" 
+  default_animation="stand">
+
+	<Hotspot 
+		color="3183f4" 
+		name="line_a" >
+	</Hotspot>
+
+	<Hotspot 
+		color="68f431" 
+		name="line_b" >
+	</Hotspot>
+
+	<Hotspot 
+		color="f43131" 
+		name="line_c" >
+	</Hotspot>
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_height="26" 
+    frame_wait="0.082" 
+    frame_width="29" 
+    frames_per_row="4" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="1" 
+    shrink_by_one_pixel="1" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="4" 
+    frame_height="26" 
+    frame_wait="0.082" 
+    frame_width="29" 
+    frames_per_row="4" 
+    name="eat" 
+    pos_x="0" 
+    pos_y="1" 
+    shrink_by_one_pixel="1" >
+
+  </RectAnimation>
+
+</Sprite>
+

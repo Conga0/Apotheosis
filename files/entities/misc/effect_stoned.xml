@@ -1,0 +1,31 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+    <LuaComponent
+        execute_every_n_frame="1"
+        script_source_file="mods/Apotheosis/files/scripts/status_effects/stoned_stun_init.lua"
+		execute_times="1"
+    >
+    </LuaComponent>
+
+    <LuaComponent
+        execute_every_n_frame="-1"
+        execute_on_removed="1"
+        script_source_file="mods/Apotheosis/files/scripts/status_effects/stoned_stun_expire.lua"
+    >
+    </LuaComponent>
+
+    <GameEffectComponent
+    	effect="PROTECTION_ELECTRICITY"
+    	frames="600"
+    >
+	</GameEffectComponent >
+
+    <GameEffectComponent
+    	effect="FROZEN"
+    	frames="600"
+    >
+	</GameEffectComponent >
+	
+</Entity>
