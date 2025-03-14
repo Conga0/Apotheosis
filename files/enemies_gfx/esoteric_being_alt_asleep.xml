@@ -1,6 +1,6 @@
 <Sprite 
   filename="mods/Apotheosis/files/enemies_gfx/esoteric_being_alt_asleep.png"
-  offset_x="40" 
+  offset_x="39" 
   offset_y="28"
   default_animation="stand" >
 

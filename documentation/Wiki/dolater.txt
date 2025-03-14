@@ -1,6 +1,4 @@
 Update entity icons/images on wiki to new ones
--Phantom Bow
--Esoteric Fairy
 -Will o' the whisp
 -Giant Centipede (barely noticeable tbh)
 -Wand Tinkering Crystal

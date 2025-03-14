@@ -1,7 +1,7 @@
 <Sprite
  filename="mods/Apotheosis/files/enemies_gfx/fairy_big_esoteric.png"
- offset_x="12"
- offset_y="12"
+ offset_x="12.5"
+ offset_y="12.5"
  default_animation="stand" >
 
  <!-- animation -->
@@ -12,7 +12,7 @@
   frame_count="5"
   frame_width="24"
   frame_height="24"
-  frame_wait="0.05"
+  frame_wait="0.075"
   frames_per_row="8"
   loop="1"   >
  </RectAnimation>

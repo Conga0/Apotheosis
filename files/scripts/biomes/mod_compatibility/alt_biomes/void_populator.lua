@@ -84,3 +84,19 @@ table.insert(g_small_enemies,
     max_count    = 8,
     entity     = "data/entities/animals/the_end/fairy_big_discord.xml"
 })
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.006,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "data/entities/animals/worm_hell_big/spawn_helper.xml"
+})
+
+table.insert(g_big_enemies,
+{
+    prob           = 0.1,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/Apotheosis/files/entities/spawners/hell_nectar_spawner.xml"
+})

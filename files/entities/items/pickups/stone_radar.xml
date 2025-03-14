@@ -20,8 +20,17 @@
 		body_id="1"
 		centered="1"
 		image_file="mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png"
-		material="gem_box2d_green"
+		material="apotheosis_gem_box2d_green_hard"
 	></PhysicsImageShapeComponent>
+
+	<SpriteComponent
+		_tags="enabled_in_world"
+		_enabled="1"
+		offset_x="5"
+		offset_y="5"
+		z_index="-1"
+		image_file="mods/Apotheosis/files/items_gfx/radar_symbol.png"
+	></SpriteComponent>
 	
 	<PhysicsThrowableComponent
 		max_throw_speed="180"

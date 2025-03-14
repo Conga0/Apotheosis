@@ -299,7 +299,7 @@ if isfishing then
             },
             {
                 GlobalsGetValue( "apotheosis_cs_waterskull_filepath", "data/entities/animals/waterskull.xml" ),
-                GlobalsGetValue( "apotheosis_waterskullgfx_filepath", "mods/Apotheosis/files/enemies_gfx/waterskull.png" )
+                GlobalsGetValue( "apotheosis_waterskullgfx_filepath", "mods/Apotheosis/files/enemies_gfx/waterskull.xml" )
             },
             {
                 GlobalsGetValue( "apotheosis_cs_firemage_weak_filepath", "mods/Apotheosis/files/entities/projectiles/fishing/firemage_weak.xml" ),

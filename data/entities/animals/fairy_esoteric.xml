@@ -18,7 +18,7 @@
             hp="4"
 			air_needed="1"
 			ragdollify_child_entity_sprites="0"
-            ragdoll_material="meat_slime_green"
+            ragdoll_material="plasma_fading"
 		    ragdoll_fx_forced="DISINTEGRATED"
 			fire_probability_of_ignition="0.00"
 			physics_objects_damage="0"
@@ -118,6 +118,15 @@
 		randomize_position.max_y="2"
 		>
 	</SpriteParticleEmitterComponent>
+
+		<SpriteComponent 
+			_tags="character"
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big_esoteric_star.xml"
+			emissive="1"
+			additive="1"
+			offset_x="12"
+			offset_y="12" >
+		</SpriteComponent>
 
 	<Entity>
 		
