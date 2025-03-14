@@ -24,7 +24,7 @@
 		</ItemComponent>
 		
 		<AbilityComponent
-			ui_name="$book_apotheosis_stone_heretic_cheater_warning"
+			ui_name="$book_apotheosis_stone_heretic_cheater_warning_name"
 			>
 		</AbilityComponent>
 		

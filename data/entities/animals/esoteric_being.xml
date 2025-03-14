@@ -37,8 +37,9 @@
 			ragdoll_fx_forced="DISINTEGRATED"
             ragdoll_material="plasma_fading"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/drone_mini/filenames.txt"
-			blood_material="plasma_fading"
-			blood_spray_material="plasma_fading"
+			blood_material="void_liquid"
+			blood_spray_material="void_liquid"
+			blood_multiplier="0.05"
 			blood_sprite_directional=""
 			blood_sprite_large=""
 			>
@@ -122,7 +123,7 @@
 
 	<SpriteComponent 
 		offset_x="18.5"
-		offset_y="17.5"
+		offset_y="18.5"
 		image_file="mods/Apotheosis/files/projectiles_gfx/beam_holy_warning.xml" >
 	</SpriteComponent>
 

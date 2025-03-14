@@ -55,15 +55,18 @@ if parent <= 0 then
 
     local distance = get_magnitude(dis_x, dis_y)
 
+    --No longer needed thanks to now being handled by material tags
+    --[[
     if distance <= 100 then
 	--change Heretic's celleater so it doesn't chew up the corrupt stone
 	local cellcomp = EntityGetFirstComponentIncludingDisabled( entity_id, "CellEaterComponent" )
 	if purified == true then
-	    ComponentSetValue2(cellcomp, "ignored_material", CellFactory_GetType("gem_box2d_green"))
+	    ComponentSetValue2(cellcomp, "ignored_material", CellFactory_GetType("apotheosis_gem_box2d_green_hard"))
 	else
 	    ComponentSetValue2(cellcomp, "ignored_material", CellFactory_GetType("apotheosis_gem_box2d_red_hard"))
 	end
     end
+    ]]--
 
     if distance <= 40 then
 	--Heretic has successfully eaten the corrupt stone, now Heretic will hoodini away shortly after

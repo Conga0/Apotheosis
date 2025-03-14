@@ -1,7 +1,7 @@
 <Sprite
  filename="mods/Apotheosis/files/enemies_gfx/fairy_big_esoteric_emissive.png"
- offset_x="12"
- offset_y="12"
+ offset_x="12.5"
+ offset_y="12.5"
  default_animation="stand" >
 
  <!-- animation -->
@@ -9,7 +9,7 @@
   name="stand"
   pos_x="0"
   pos_y="0"
-  frame_count="4"
+  frame_count="1"
   frame_width="24"
   frame_height="24"
   frame_wait="0.09"

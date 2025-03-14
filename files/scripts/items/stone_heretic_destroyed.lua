@@ -5,8 +5,16 @@ if (player_id ~= 0 and EntityHasTag( player_id, "player_unit" )) or (player_id =
 if GameHasFlagRun("apotheosis_stone_obsolete") or ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn") then return end --It don't matter it already done!
 --Oh no, Heretic gonna be upsetti
 local pos_x, pos_y = EntityGetTransform(entity_id)
+local stashed = false
+if ModIsEnabled("bags_of_many") and parent_id ~= 0 and player_id ~= 0 then
+    if EntityHasTag(player_id, "bags_of_many") then
+	stashed = true
+	print("stashed")
+    end
+end
 
 GameAddFlagRun("apotheosis_flesh_boss_stone_initiated")
+if not stashed then
 -- if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") and GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
     if GameHasFlagRun("apotheosis_heretalk_guiding_stone") then
 	GameAddFlagRun("apotheosis_flesh_boss_stone_converted")
@@ -45,4 +53,7 @@ if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") and not GameHasF
     end
 end
 GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/items/stone_heretic/destroyed", pos_x, pos_y );
+else
+    EntityLoad( "mods/Apotheosis/files/entities/items/pickups/stone_heretic.xml", pos_x, pos_y )
+end
 EntityKill(entity_id)

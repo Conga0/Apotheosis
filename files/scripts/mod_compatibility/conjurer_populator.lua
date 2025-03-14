@@ -248,7 +248,7 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/fairy_big_discord.png",
 	  },
 	  {
-		name="Esoteric Fairy",
+		name="Esoteric Reverie",
 		path="data/entities/animals/fairy_esoteric.xml",
 		image="data/ui_gfx/animal_icons/fairy_esoteric.png",
 	  },

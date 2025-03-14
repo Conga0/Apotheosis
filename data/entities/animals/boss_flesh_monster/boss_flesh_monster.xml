@@ -124,7 +124,7 @@
 	</PhysicsShapeComponent>
 	
 	<CellEaterComponent
-		ignored_material="rock_box2d_nohit_hard"
+		ignored_material_tag="[heretic_inedible]"
 		radius="60" 
 		eat_probability="100">
 	</CellEaterComponent>
