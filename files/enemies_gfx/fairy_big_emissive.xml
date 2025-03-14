@@ -1,7 +1,7 @@
 <Sprite
  filename="mods/Apotheosis/files/enemies_gfx/fairy_big_emissive.png"
- offset_x="12"
- offset_y="12"
+ offset_x="12.5"
+ offset_y="12.5"
  default_animation="stand" >
 
  <!-- animation -->

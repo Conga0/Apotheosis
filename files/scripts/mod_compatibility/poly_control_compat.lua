@@ -151,7 +151,7 @@ local apotheosis_creatures = {
     },
     {
         file="fairy_esoteric",
-        name="Esoteric Fairy",
+        name="Esoteric Reverie",
     },
     {
         file="esoteric_being",

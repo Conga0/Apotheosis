@@ -3065,6 +3065,7 @@
   <CellDataChild
   	_parent="gem_box2d_red"
   	_inherit_reactions="1"
+  	tags="[box2d],[sunbaby_ignore_list],[heretic_inedible]"
   	name="apotheosis_gem_box2d_red_hard"
 	ui_name="$mat_gem_box2d_red"
 	gfx_glow_color="0xFFFF0000"
@@ -3075,6 +3076,23 @@
 	>
   	<Graphics
 	color="ffE72850" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="gem_box2d_green"
+  	_inherit_reactions="1"
+  	tags="[box2d],[sunbaby_ignore_list],[heretic_inedible]"
+  	name="apotheosis_gem_box2d_green_hard"
+	ui_name="$mat_gem_box2d_green"
+	gfx_glow_color="0xFF00FF00"
+	wang_color="fffd33ae"
+	show_in_creative_mode="1"
+	durability="20"
+	hp="360000"
+	>
+  	<Graphics
+	color="ff80cc51" >
     </Graphics>
   </CellDataChild>
 
@@ -3092,6 +3110,23 @@
   	<Graphics
 	normal_mapped="0"
 	color="ffc3b1c8" >
+    </Graphics>
+  </CellDataChild>
+
+  <CellDataChild
+  	_parent="rock_box2d_nohit_hard"
+  	_inherit_reactions="1"
+  	tags="[box2d],[solid],[heretic_inedible]"
+  	name="rock_box2d_nohit_hard_heretic"
+	ui_name="$mat_rock_box2d_nohit_hard"
+	wang_color="ff354dbc"
+	durability="15"
+	hp="100000"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock" >
+  	<Graphics
+		texture_file="data/materials_gfx/rock.png"
+		color="ff2d2dac" >
     </Graphics>
   </CellDataChild>
 
@@ -3672,24 +3707,8 @@
 	show_in_creative_mode="1"
 	>
 	<Graphics
-		texture_file="data/materials_gfx/endslime.png"
-		color="8856282F" >
-		<Edge>
-		 <EdgeGraphics 
-			overwrite="0" 
-			percent="0.8" 
-			require_same_material="0" 
-			require_same_material_type="1" 
-			type="EVERYWHERE" 
-			z="1" >
-			<Images>
-				<Image 
-					allow_random_rotation="1"
-					filename="data/materials_gfx/edge_files/edge_endslime_1.png" 
-				/>
-			</Images>
-		  </EdgeGraphics>
-		</Edge>
+		texture_file="mods/Apotheosis/files/materials_gfx/endnectar.png"
+		color="ff461f1f" >
     </Graphics>
 	<ParticleEffect
 		vel.y="-13.14"

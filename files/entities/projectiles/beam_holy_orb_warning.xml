@@ -126,6 +126,13 @@
     execute_every_n_frame="1"
 		remove_after_executed="1">
    </LuaComponent>
+
+  <LuaComponent 
+		_enabled="1" 
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/beam_holy_warning_alert.lua" 
+    execute_every_n_frame="220"
+		remove_after_executed="1">
+   </LuaComponent>
    
   <LuaComponent 
 		_enabled="1" 

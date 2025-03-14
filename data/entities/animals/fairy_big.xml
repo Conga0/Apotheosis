@@ -73,7 +73,8 @@
 		
 		<SpriteComponent 
 			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big_emissive.xml"
-			alpha="0.9"
+			alpha="1"
+			emissive="1"
 			offset_x="12"
 			offset_y="12" >
 		</SpriteComponent>
