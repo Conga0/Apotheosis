@@ -2719,7 +2719,7 @@ apotheosis_spellappends = {
     {
         id          = "APOTHEOSIS_SPELL_WORM",
         id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
-        name 		= "Ethereal Worm",
+        name 		= "Ethereal Wyrm",
         description = "Summons the ghostly visage of a wyrm containing great power.",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
@@ -2758,7 +2758,8 @@ apotheosis_spellappends = {
                         damage_electricity_add = c_old["damage_electricity_add"] * bite_dmg_mult,
                         damage_explosion_add = c_old["damage_explosion_add"] * bite_dmg_mult,
                         damage_melee_add = c_old["damage_melee_add"] * bite_dmg_mult,
-                        lifetime_add = c_old["lifetime_add"]
+                        lifetime_add = c_old["lifetime_add"] * 2, --Increase lifetime is twice as effective on the Wyrm
+                        friendly_fire = c_old["friendly_fire"]
                     })
                     SetProjectileConfigs()
                 EndTrigger()

@@ -1372,10 +1372,6 @@ function OnMagicNumbersAndWorldSeedInitialized()
 end
 
 function OnModPreInit()
-	for o=1,10 do
-		print("reset setting is " .. tostring(ModSettingGet("Apotheosis.progress_handling_do_reset")))
-		ModSettingGet("Apotheosis.progress_handling_do_reset")
-	end
 
 	--RESET ALL PROGRESS
 	if ModSettingGet("Apotheosis.progress_handling_do_reset") == true then
@@ -1387,7 +1383,7 @@ function OnModPreInit()
 			print("removing " .. apotheosis_flag_list[flag])
 			RemoveFlagPersistent(apotheosis_flag_list[flag])
 		end
-		ModSettingSet("progress_handling_do_reset", false)
+		ModSettingSet("Apotheosis.progress_handling_do_reset", false)
 	end
 
 end

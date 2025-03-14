@@ -4167,6 +4167,12 @@
 		output_cell1="apotheosis_lavarock_superhot"	output_cell2="fire"
 		>
 	</Reaction>
+	
+	<Reaction probability="15"
+		input_cell1="apotheosis_lavarock_superhot" 		input_cell2="radioactive_liquid"
+		output_cell1="apotheosis_lavarock_superhot"	output_cell2="radioactive_gas"
+		>
+	</Reaction>
 
 	<!--Cursed Liquid leaks out when broken-->
 	<Reaction probability="50"

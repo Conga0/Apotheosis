@@ -39,13 +39,17 @@ function collision_trigger()
 	repeat
 		
 		pos_x, pos_y = EntityGetTransform( entity_id )
-		pos_x = pos_x + (Random(-3, 4) * 20) ---60 to 80, in intervals of 20
-		pos_y = pos_y + Random(-40, -30)
+		SetRandomSeed( catcount, pos_x + entity_id )
+		local n_x = pos_x + (Random(-3, 4) * 20) ---60 to 80, in intervals of 20
+		if n_x < 720 and n_x > 630 then
+			n_x = 630 --Jank to try to avoid spawning them inside minecarts, being cats they'll probably still find a way to get into trouble
+		end
+		local n_y = pos_y + Random(-40, -30)
 
 		local rnd = Random( 1, #cat_list )
 		local target = cat_list[rnd]
 
-		EntityLoad( "data/entities/" .. catPath .. "/" .. target .. ".xml", pos_x, pos_y )
+		EntityLoad( "data/entities/" .. catPath .. "/" .. target .. ".xml", n_x, n_y )
 
 		catcount = catcount - 1
 

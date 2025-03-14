@@ -790,7 +790,7 @@ end
 
 if statue_count >= 8 or HasFlagPersistent("apotheosis_seasonal_settings_unlocked") then
 AddFlagPersistent("apotheosis_seasonal_settings_unlocked")
-table.insert(mod_settings,
+table.insert(mod_settings,#mod_settings,
   {
     category_id = "seasonal_events_forced",
     ui_name = seasonal_forced_name,

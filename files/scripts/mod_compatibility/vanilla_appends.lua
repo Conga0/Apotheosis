@@ -1392,10 +1392,10 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make chainbolt better at
   ModTextFileSetContent(path, content)
 end
 
-do --Reduce the duration of the blindness status effect by 25%
+do --Reduce the duration of the blindness status effect by 50%
   local path = "data/entities/misc/effect_blindness.xml"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("\"1200\"", "\"900\"")
+  content = content:gsub("\"1200\"", "\"600\"")
 
   ModTextFileSetContent(path, content)
 end

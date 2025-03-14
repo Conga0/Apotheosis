@@ -7,14 +7,33 @@ local vcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"VariableStorag
 local current = ComponentGetValue2( vcomp, "value_int" ) or 1
 local current_max = 22 --Wyrm's actual length is 11, but we use 22 to stall as a cooldown
 local enemy_count = #(EntityGetInRadiusWithTag(x,y,150,"enemy") or {})
-local player_count = #(EntityGetInRadiusWithTag(x,y,200,"player_unit") or {})
 local homingcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"HomingComponent")
 local projectile_damage_mult = 0.5
 
-if player_count == 0 then
+function player_nearby()
+	local player_nearby = false
+	
+	local players = EntityGetWithTag( "player_unit" )
+	if ( #players > 0 ) then
+		local player_id = players[1]
+		local px,py = EntityGetTransform( player_id )
+		local distance = math.abs(py - y) * 0.5 + math.abs(px - x)
+		
+		if (distance < 256) then
+			player_nearby = true
+		end
+	end
+    return player_nearby
+end
+
+if player_nearby() == false then
     ComponentSetValue2(homingcomp,"target_who_shot",true)
+    ComponentSetValue2(homingcomp,"detect_distance",1000)
+    --GamePrint("returning to player")
 else
     ComponentSetValue2(homingcomp,"target_who_shot",false)
+    ComponentSetValue2(homingcomp,"detect_distance",300)
+    --GamePrint("seeking enemies")
 end
 
 function SplitStringOnCharIntoTable(string, char)
@@ -53,10 +72,10 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
                         GameShootProjectile( entity_id, r_x, r_y, t_x, t_y, pid)
                         local pvcomp = EntityGetFirstComponentIncludingDisabled(pid,"VelocityComponent")
                         local vel_x, vel_y = ComponentGetValue2(pvcomp,"mVelocity", vel_x, vel_y)
-                        local speed_mult = gun_info[23] -- Projectile speed
+                        local speed_mult = gun_info[23] or 1 -- Projectile speed
                         ComponentSetValue2(pvcomp,"mVelocity", vel_x * speed_mult, vel_y * speed_mult)
                         local pcomp = EntityGetFirstComponentIncludingDisabled(pid,"ProjectileComponent")
-                        ComponentSetValue2(pcomp,"mWhoShot",entity_id) 
+                        ComponentSetValue2(pcomp,"mWhoShot",ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileComponent"),"mWhoShot"))
                         ComponentSetValue2(pcomp,"mShooterHerdId",StringToHerdId("player"))
 
                         ---Gun data time
@@ -99,8 +118,10 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
                                 ComponentSetValue2(pcomp,"bounce_energy",0.9)
                             end
                         --Friendly Fire
-                            if gun_info[58] == true then
-                                ComponentSetValue2(pcomp,"friendly_fire",true)
+                            if tostring(gun_info[58]) == "true" then --Why do you only work like this? -Conga
+                                EntityAddTag(pid,"friendly_fire_enabled")
+                                ComponentSetValue2(pcomp,"friendly_fire", true)
+                                ComponentSetValue2(pcomp, "collide_with_shooter_frames", 6 )
                             end
                         ---Misc Data (Specify)
                         --Lifetime

@@ -1,7 +1,8 @@
 ---@diagnostic disable-next-line: lowercase-global
 apo_state = { -- Altars of apostasy....... pft, -copi
     new_cast = nil,                 ---@type boolean|nil
-	min_reload = nil,				---@type number|nil
+	min_reload = -math.huge,				---@type number|nil
+    mana_multiplier = 1.0,          ---@type number|nil
     old = {                         ---@type table
 		draw_shot = draw_shot,      ---@type function
 		draw_action = draw_action,  ---@type function
@@ -20,7 +21,7 @@ function draw_shot( ... )
 
     if call_end_cast then
         apo_state.new_cast = nil
-		apo_state.min_reload = nil
+		apo_state.min_reload = -math.huge
     end
 
     apo_state.old.draw_shot( ... )

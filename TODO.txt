@@ -5,7 +5,8 @@ Music Boss rework
 Implement graphics for Ethereal Wyrm
 Improve audiovisual feedback on the reset all progress button if possible, may not be since the gui seems very prone to crashing and not cooperating.
 Check Orb of Knowledge is working as intended before release.
-
+Add an unlock method for the new spells (waterorb is simple and can be unlocked by default, orb of knowledge is complex and should require some level of unlock requirement, wyrm is extremely complex and definitely needs an unlock method/dedicated quest)
+Adult Centipede
 
 Ideas:
 Giant Mages in challenge zone
