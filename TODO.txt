@@ -1,33 +1,10 @@
-
-Inspect data/curse_wither_start.lua
-
 Fix creature shift icons being transparent
-Remove the limiter on cat hissing
-Remove extra life (spent) in the ui
 Add Nursing Ant
-
-
-Remove ABBC anti-cheese after it goes to main
-Add warning icon to meat realm if it goes to main without one 
-
-Fix Forsaken Eyes not being stainable
-Fix tentacler portal hitting itself (so it doesn't need melee immunity)
-Fix Polymorph crystals being able to spawn camp TotA's entrance
-
-Check if the sandy temple banners use the proper graphic, or if they use the ToSR one (I think they do :) -Spoop)
 Make brimstone/ukkostone/etc work passively in the user's inventory
-
-
-Reimplement Weakening Curse rework
 Music Boss rework
-
-
-Add more dangerous bubbles to the Liquid Bubble seed
-Oil Bubble
-Lava Bubble
-Poison Bubble
-Suffocatium Bubble
-
+Implement graphics for Ethereal Wyrm
+Improve audiovisual feedback on the reset all progress button if possible, may not be since the gui seems very prone to crashing and not cooperating.
+Check Orb of Knowledge is working as intended before release.
 
 
 Ideas:
