@@ -1,0 +1,146 @@
+<Entity name="$enemy_apotheosis_snowman" tags="polymorphable_NOT,curse_NOT">
+
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent level="1" > </ItemChestComponent>
+		
+		<AnimalAIComponent
+			_enabled="1"
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="0"
+			eye_offset_x="0"
+			eye_offset_y="-20"
+			creature_detection_range_x="500"
+			creature_detection_range_y="500"
+			sense_creatures="1"
+			attack_ranged_enabled="1"
+			attack_melee_enabled="0"
+			can_fly="0"
+
+			attack_ranged_min_distance="0"
+			attack_ranged_max_distance="500"
+			attack_ranged_action_frame="4"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/snowball.xml"
+			attack_ranged_frames_between="30"
+			attack_ranged_offset_y="-21"
+			attack_ranged_offset_x="-6"
+			attack_ranged_predict="1"
+			attack_ranged_state_duration_frames="60"
+			attack_ranged_aim_rotation_shooting_ok_angle_deg="0"
+
+			needs_food="0"
+			dont_counter_attack_own_herd="0"
+			
+			max_distance_to_cam_to_start_hunting="200"
+			pathfinding_max_depth_no_target="120"
+			pathfinding_max_depth_has_target="240"
+
+			aggressiveness_min="50"
+			aggressiveness_max="50"
+			/>
+		
+		<DamageModelComponent
+			hp="8.0"
+
+			ui_report_damage="1"
+			air_needed="0"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/snowman/filenames.txt"
+			ragdoll_material="snow_b2"
+			fire_probability_of_ignition="0"
+			blood_material="snow"
+			blood_spray_material="snow"
+			blood_multiplier="0.2"
+			blood_spray_create_some_cosmetic="1"
+			materials_that_damage="acid,fire,lava,blood_cold,blood_cold_vapour"
+			materials_how_much_damage="0.004,0.004,0.01,-0.01,-0.004"
+
+			blood_sprite_directional=""
+			blood_sprite_large=""
+			>
+			<damage_multipliers
+				explosion="1.2"
+				fire="2"
+				ice="-0.5"
+				/>
+		</DamageModelComponent>
+
+		<SpriteComponent
+			image_file="mods/Apotheosis/files/enemies_gfx/snowman.xml"
+			offset_x="0"
+			offset_y="0"
+			z_index="2"/>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="0"
+			can_walk="1"
+			jump_speed="150"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="60"
+			initial_jump_max_distance_y="60"
+			can_swim_on_surface="1"
+			/>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" />
+		
+		<GenomeDataComponent
+			herd_id="ghost"
+			food_chain_rank="1"
+			is_predator="1"
+			friend_thundermage="1" />
+		
+		<CharacterPlatformingComponent
+			jump_velocity_y="-14"
+			run_velocity="10"/>
+
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000"/>
+		
+		<HitboxComponent
+			_enabled="1"
+			aabb_min_x="-5"
+			aabb_min_y="-28"
+			aabb_max_x="5"
+			aabb_max_y="-1"
+			/>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-5"
+			collision_aabb_max_x="5"
+			collision_aabb_min_y="-28"
+			collision_aabb_max_y="-1"
+			mass="4"
+			/>
+	</Base>
+
+	<ItemPickUpperComponent
+		is_in_npc="1"
+		pick_up_any_item_buggy="1"
+		/>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/alchemist" />
+
+	<GameEffectComponent
+        effect="PROTECTION_RADIOACTIVITY"
+        frames="-1"
+    />
+
+	<GameEffectComponent
+        effect="PROTECTION_FREEZE"
+        frames="-1"
+    />
+
+	<GameEffectComponent
+        effect="STUN_PROTECTION_FREEZE"
+        frames="-1"
+    />
+
+	<MusicEnergyAffectorComponent
+		energy_target="0"
+		trigger_danger_music="0"
+		is_enemy="0"
+		/>
+</Entity>

@@ -96,10 +96,30 @@
         entity     = "data/entities/animals/hiisi_thief.xml"
     })
 
+    --April Fools Snowmen
+    local year, month, day, hour, minute = GameGetDateAndTimeLocal()
+    if ((( month == 4 ) and ( day == 1 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_april_fools" ) then
+        table.insert(g_small_enemies,
+        {
+            prob           = 0.2,
+            min_count    = 1,
+            max_count    = 1,    
+            entity     = "data/entities/animals/snowman.xml"
+        })
+    end
+
+    --Give snowmen an very, very rare chance to appear naturally outside of april fools
+    table.insert(g_unique_enemy,
+    {
+        prob           = 0.01,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/snowman.xml"
+    })
+
 
 
     --Cirno Day Frogs
-    local year, month, day, hour, minute = GameGetDateAndTimeLocal()
     if ((( month == 9 ) and ( day == 9 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_cirno" ) then
         table.insert(g_small_enemies,
         {

@@ -169,7 +169,11 @@ function do_money_drop( amount_multiplier, trick_kill )
 end
 
 function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
-	do_money_drop( 1, false )
+	if entity_thats_responsible == 0 then
+		do_money_drop( 2, true )
+	else
+		do_money_drop( 1, false )
+	end
 
 	local entity_id    = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( entity_id )

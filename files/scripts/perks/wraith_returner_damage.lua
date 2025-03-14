@@ -58,7 +58,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 		local projectile = shoot_projectile( entity_id, proj, x, y, vel_x, vel_y )
 		local projComp = EntityGetFirstComponent( projectile, "ProjectileComponent" )
-		ComponentSetValue2( projComp, "damage", projDMG )
+		ComponentSetValue2( projComp, "damage", projDMG or 0 )
 
 	end
 	

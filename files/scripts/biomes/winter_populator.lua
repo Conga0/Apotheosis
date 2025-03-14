@@ -79,6 +79,18 @@
         entity     = "data/entities/animals/gazer_cold_apotheosis.xml"
     })
 
+    --April Fools Snowmen
+    local year, month, day, hour, minute = GameGetDateAndTimeLocal()
+    if ((( month == 4 ) and ( day == 1 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_april_fools" ) then
+        table.insert(g_small_enemies,
+        {
+            prob           = 0.1,
+            min_count    = 1,
+            max_count    = 1,    
+            entity     = "data/entities/animals/snowman.xml"
+        })
+    end
+
     table.insert(g_props,
     {
         prob           = 0.04,

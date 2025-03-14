@@ -1,4 +1,4 @@
-local apotheosis_spellappends = {
+apotheosis_spellappends = {
     {
         id          = "APOTHEOSIS_SAWBLADE_BIG_RAY",
         id_matchup  = "LASER_EMITTER_RAY",
@@ -2695,49 +2695,109 @@ local apotheosis_spellappends = {
         id          = "APOTHEOSIS_WATERBALL",
         id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
         name 		= "Water Ball",
-        description = "Casts a seeking ball of condensed water.",
+        description = "Casts a seeking ball of condensed water, no mana cost if the user is wet.",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
-        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_holy_shotgun.xml", 1},
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_waterball.xml", 1},
         --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_PROJECTILE,
-        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT 
-        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        spawn_level                       = "0,1,2,3,4", -- BUCKSHOT
+        spawn_probability                 = "0.2,0.4,0.8,0.8,0.6", -- BUCKSHOT
         price = 220,
         mana = 50,
         action 		= function()
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_waterball.xml")
             c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/proj_homing_delayed_weak.xml,"
             c.fire_rate_wait = c.fire_rate_wait + 12
+            if not reflecting and GameGetGameEffectCount( GetUpdatedEntityID(), "WET" ) > 0 then
+                mana = mana - 20
+            end
+        end,
+    },
+  ]]--
+    {
+        id          = "APOTHEOSIS_SPELL_WORM",
+        id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
+        name 		= "Ethereal Worm",
+        description = "Summons the ghostly visage of a wyrm containing great power.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spell_worm_attack.xml", 1},
+        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        type 		= ACTION_TYPE_PROJECTILE,
+        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT 
+        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        price = 220,
+        mana = 600,
+        action 		= function()
+            if reflecting then
+                Reflection_RegisterProjectile( "mods/Apotheosis/files/entities/projectiles/deck/spell_worm.xml" ) --Wyrm's filepath
+                current_reload_time = current_reload_time + 600
+                return
+            end
+
+            c_old = c
+
+            BeginProjectile( "mods/Apotheosis/files/entities/projectiles/special/trigger_projectile.xml" ) --Dummy
+                BeginTriggerDeath()
+                    WriteCToDatat(c_old)
+
+                    BeginProjectile( "mods/Apotheosis/files/entities/projectiles/deck/spell_worm.xml" ) --Wyrm
+                    EndProjectile()
+                    local bite_dmg_mult = 0.25
+                    register_action({
+                        --Hacky but functional, I'm probably wildly misusing this -Conga
+                        action_description = DontTouch_Data[2],
+                        damage_projectile_add = c_old["damage_projectile_add"] * bite_dmg_mult, --75% reduction on worm bite damage, to be balanced
+                        damage_fire_add = c_old["damage_fire_add"] * bite_dmg_mult,
+                        damage_ice_add = c_old["damage_ice_add"] * bite_dmg_mult,
+                        damage_slice_add = c_old["damage_slice_add"] * bite_dmg_mult,
+                        damage_curse_add = c_old["damage_curse_add"] * bite_dmg_mult,
+                        damage_drill_add = c_old["damage_drill_add"] * bite_dmg_mult,
+                        damage_electricity_add = c_old["damage_electricity_add"] * bite_dmg_mult,
+                        damage_explosion_add = c_old["damage_explosion_add"] * bite_dmg_mult,
+                        damage_melee_add = c_old["damage_melee_add"] * bite_dmg_mult,
+                        lifetime_add = c_old["lifetime_add"]
+                    })
+                    SetProjectileConfigs()
+                EndTrigger()
+            EndProjectile()
+            current_reload_time = current_reload_time + 600 + (c_old["lifetime_add"] / 2)
+            apo_state.min_reload = 600
         end,
     }
-  ]]--
 }
 
-if ModSettingGet( "Apotheosis.organised_icons" ) == true then
-    for k=1,#apotheosis_spellappends
-    do local v = apotheosis_spellappends[k]
-        v.author    = v.author  or "Conga Lyne"
-        v.mod       = v.mod     or "Apotheosis"
-        if v.id_matchup == nil then
-            table.insert(actions,v)
-        else
-            for z=1,#actions
-            do c = actions[z]
-                if c.id == v.id_matchup or z == #actions then
-                    table.insert(actions,z + 1,v)
-                    break
+function append_apotheosis_spells()
+    if ModSettingGet( "Apotheosis.organised_icons" ) == true then
+        for k=1,#apotheosis_spellappends
+        do local v = apotheosis_spellappends[k]
+            v.author    = v.author  or "Conga Lyne"
+            v.mod       = v.mod     or "Apotheosis"
+            if v.id_matchup == nil then
+                table.insert(actions,v)
+            else
+                for z=1,#actions
+                do c = actions[z]
+                    if c.id == v.id_matchup or z == #actions then
+                        table.insert(actions,z + 1,v)
+                        break
+                    end
                 end
             end
         end
+    else
+        for k=1,#apotheosis_spellappends
+        do local v = apotheosis_spellappends[k]
+            v.author    = v.author  or "Conga Lyne"
+            v.mod       = v.mod     or "Apotheosis"
+            table.insert(actions,v)
+        end
     end
-else
-    for k=1,#apotheosis_spellappends
-    do local v = apotheosis_spellappends[k]
-        v.author    = v.author  or "Conga Lyne"
-        v.mod       = v.mod     or "Apotheosis"
-        table.insert(actions,v)
-    end
+end
+
+if actions ~= nil then
+    append_apotheosis_spells()
 end
 
 
@@ -3211,120 +3271,17 @@ end
 
 --Script should scan through each item, and if rebalances are enabled, it'll do all of them; otherwise only do mandatory additions
 --Not currently enabled, but would just need to be uncommented in theory.
-for i=1,#actions do -- fast as fuck boi
-    if actions_to_edit[actions[i].id] and (ModSettingGet( "Apotheosis.spellrebalances" ) or actions_to_edit[actions[i].id].mandatory_addition) then
-        for key, value in pairs(actions_to_edit[actions[i].id]) do
-            actions[i][key] = value
+function apotheosis_spell_rebalances()
+    for i=1,#actions do -- fast as fuck boi
+        if actions_to_edit[actions[i].id] and (ModSettingGet( "Apotheosis.spellrebalances" ) or actions_to_edit[actions[i].id].mandatory_addition) then
+            for key, value in pairs(actions_to_edit[actions[i].id]) do
+                actions[i][key] = value
+            end
+            actions[i]['apotheosis_reworked'] = true
         end
-        actions[i]['apotheosis_reworked'] = true
     end
 end
 
-
-
-
-
-
-
-
-
-
-
---Something Special
---[[
-if HasFlagPersistent( "apotheosis_card_unlocked_ending_apotheosis_02_spell" ) then
-    local v = 
-	{
-		id          = "APOTHEOSIS_POTION_TO_SEA",
-        name 		= "$spell_apotheosis_potion_to_sea_name",
-        description = "$spell_apotheosis_potion_to_sea_desc",
-		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/potion.png",
-		sprite_unidentified = "data/ui_gfx/gun_actions/homing_unidentified.png",
-        spawn_requires_flag = "apotheosis_card_unlocked_ending_apotheosis_02_spell",  --Requires Ascension
-		type 		= ACTION_TYPE_OTHER,
-		spawn_level                       = "0,1,2,3,10", -- CHAIN_BOLT
-		spawn_probability                 = "0.05,0.05,0.05,0.05,0.1", -- CHAIN_BOLT
-		price = 250,
-		mana = 200,
-		max_uses = 1,
-        never_unlimited = true,
-		action 		= function()
-            if not reflecting then
-                local x,y = EntityGetTransform(GetUpdatedEntityID())
-                local e = EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/sea_any.xml", x, y)
-                GamePlaySound( "data/audio/Desktop/materials.bank", "collision/glass_potion/destroy", x, y )
-
-                --Get material
-                local potion = nil
-                local inventories = EntityGetAllChildren(GetUpdatedEntityID()) or {}
-                for inventory_index = 1, #inventories do
-                    if EntityGetName(inventories[inventory_index]) == "inventory_quick" then
-                        -- Find last potion tagged item
-                        local children = EntityGetAllChildren(inventories[inventory_index]) or {}
-                        for i = 1, #children do
-                            if EntityHasTag(children[i], "potion") then
-                                potion = children[i]
-                                break
-                            end
-                        end
-                        break
-                    end
-                end
-
-
-                
-                local mat = GetMaterialInventoryMainMaterial(potion) or nil
-
-                if mat ~= nil then
-                    local comp = EntityAddComponent2(
-                        e,
-                        "MaterialSeaSpawnerComponent",
-                        {
-                            speed=10,
-                            noise_threshold=0.0,
-                            material=mat,
-                        }
-                    )
-                    ComponentSetValue2(comp, "size", 300, 256)
-                    ComponentSetValue2(comp, "offset", 0, 158)
-
-                    local comp = EntityAddComponent2(
-                        e,
-                        "ParticleEmitterComponent",
-                        {
-                            emitted_material_name=CellFactory_GetName(mat),
-                            lifetime_min=6,
-                            lifetime_max=8,
-                            count_min=8,
-                            count_max=8,
-                            render_on_grid=true,
-                            fade_based_on_lifetime=true,
-                            cosmetic_force_create=false,
-                            airflow_force=0.51,
-                            airflow_time=1.01,
-                            airflow_scale=0.05,
-                            x_pos_offset_min=0,
-                            x_pos_offset_max=0,
-                            y_pos_offset_min=0,
-                            y_pos_offset_max=0,
-                            emission_interval_min_frames=1,
-                            emission_interval_max_frames=1,
-                            emit_cosmetic_particles=true,
-                            image_animation_file="mods/Apotheosis/files/particles/image_emitters/sea_any.png",
-                            image_animation_speed=5,
-                            image_animation_loop=false,
-                            is_emitting=true,
-                        }
-                    )
-                    ComponentSetValue2(comp, "gravity", 0, 0)
-                    ComponentSetValue2(comp, "area_circle_radius", 0, 0)
-                    EntityKill(potion)
-                end
-            end
-		end,
-	}
-    v.author    = v.author  or "Conga Lyne"
-    v.mod       = v.mod     or "Apotheosis"
-    table.insert(actions,v)
+if actions ~= nil then
+    apotheosis_spell_rebalances()
 end
-]]--

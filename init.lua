@@ -988,11 +988,11 @@ if seasonalSetting == true then
 		end
 		if Random(1, randomCap) == 1 then
 			ModLuaFileAppend("data/scripts/biomes/snowcastle.lua","mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			ModLuaFileAppend("mods/Apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
 			ModLuaFileAppend("data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
+			ModLuaFileAppend("mods/Apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
 			randomCap = randomCap + 1
 		end
 		if Random(1, randomCap) == 1 then
@@ -1254,23 +1254,7 @@ end
 --And print Happy April Fools at the start of the run
 --Happy april fools <3
 function AprilFoolsPlayerSpawn(plyr_id)
-
-	local comp = EntityGetFirstComponentIncludingDisabled(plyr_id,"DamageModelComponent")
-	local hp = ComponentGetValue2(comp,"hp")
-	local max_hp = ComponentGetValue2(comp,"max_hp")
-
-	if hp ~= 4 then return end
-	if max_hp ~= 4 then return end
-
-	if seasonalSetting and (((month == 4) and (day == 1)) or seasonalForced_AprilFools) then
-		local x, y = EntityGetTransform(player_entity)
-		local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_fungus_curse_slow.xml", x, y)
-		EntityAddChild(player_entity, cid)
-		local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/moon_creature_curse_slow.xml", x, y)
-		EntityAddChild(player_entity, cid)
-		local cid = EntityLoad("mods/Apotheosis/files/entities/misc/essence/creature_shift_april_fools_bootup.xml", x, y) --20 random creature shifts at the start of the run
-		EntityAddChild(player_entity, cid)
-
+	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
 		GamePrint("$sign_apotheosis_aprilfools_intro")
 	end
 end
@@ -1387,6 +1371,27 @@ function OnMagicNumbersAndWorldSeedInitialized()
 	end
 end
 
+function OnModPreInit()
+	for o=1,10 do
+		print("reset setting is " .. tostring(ModSettingGet("Apotheosis.progress_handling_do_reset")))
+		ModSettingGet("Apotheosis.progress_handling_do_reset")
+	end
+
+	--RESET ALL PROGRESS
+	if ModSettingGet("Apotheosis.progress_handling_do_reset") == true then
+		for l=1,20 do
+			print("reset setting found, beginning purge")
+		end
+		dofile("mods/Apotheosis/lib/Apotheosis/apotheosis_flag_utils.lua")
+		for flag=1,#apotheosis_flag_list do
+			print("removing " .. apotheosis_flag_list[flag])
+			RemoveFlagPersistent(apotheosis_flag_list[flag])
+		end
+		ModSettingSet("progress_handling_do_reset", false)
+	end
+
+end
+
 
 
 
@@ -1401,7 +1406,7 @@ end
 --[[
 function OnWorldPreUpdate()
 	local orbs = EntityGetWithTag("orb_knowledge_sorry4tag") or {}
-	local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS")) -- TESTING VAR
+	local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS","0")) -- TESTING VAR
 	--local orbcount = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) --Three-Eyed Orb? Kolmi-orb?
 	local radius = 6*orbcount^0.5
 	for i=1, #orbs do

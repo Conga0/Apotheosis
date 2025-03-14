@@ -160,6 +160,6 @@
 		event_name="misc/teleport_emitter_loop"
 		calculate_material_lowpass="0"
 		auto_play="1" >
-	</AudioLoopComponent>157cb7
+	</AudioLoopComponent>
 
 </Entity>

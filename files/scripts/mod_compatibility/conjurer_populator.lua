@@ -483,6 +483,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/slime_teleporter.png",
 	  },
 	  {
+		name="Snowman",
+		path="data/entities/animals/snowman.xml",
+		image="data/ui_gfx/animal_icons/snowman.png",
+	  },
+	  {
 		name="Healing Spirit",
 		path="data/entities/animals/spirit_healing.xml",
 		image="data/ui_gfx/animal_icons/spirit_healing.png",

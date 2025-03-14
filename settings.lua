@@ -701,6 +701,45 @@ mod_settings =
       },
     }
   },
+  {
+    category_id = "progress_handling",
+    ui_name = "Reset Progress",
+    ui_description = "Resets all Apotheosis progress.",
+    foldable = true,
+    _folded = true,
+    settings = {
+      {
+        id = "progress_handling_reset_all",
+        ui_name = "",
+        ui_fn = function(mod_id, gui, in_main_menu, im_id, setting)
+            if in_main_menu then
+                  GuiLayoutBeginHorizontal(gui, 0, 0, false, 6, 6)
+                  GuiOptionsAddForNextWidget(gui, 28)
+                  GuiOptionsAddForNextWidget(gui, 4)
+                  GuiOptionsAddForNextWidget(gui, 6)
+                  local lmb, rmb = GuiButton(gui, im_id, 0, 0, "RESET ALL PROGRESS")
+                  GuiTooltip(gui,"Resets all unlock progress in Apotheosis.\nThis cannot be undone.", "")
+                  if lmb then
+                    print("doing reset")
+                    ModSettingSet("Apotheosis.progress_handling_do_reset", true)
+                    print("reset is " .. tostring(ModSettingGet("Apotheosis.progress_handling_do_reset")))
+                  end
+                GuiLayoutEnd(gui)
+                GuiIdPop(gui)
+            else    -- In main menu warning
+                GuiImage(gui, im_id, 0, 0, "data/ui_gfx/inventory/icon_warning.png", 1, 1, 1)
+                GuiTooltip(gui, "Progress can not be reset mid-run.", "")
+            end
+        end
+      },
+      {
+				id = "progress_handling_do_reset",
+				ui_name = "If this is true then reset all apotheosis progress on game start",
+				value_default = false,
+				hidden = true,
+      }
+    }
+  },
 }
 
 --statue settings unlocks
@@ -747,8 +786,10 @@ end
 --Conga: Haven't gone through with this change as it'd screw over people who left them forcefully enabled before the change was enacted, could force reset all of them to be turned off but, not sure.
 
 --Forced Seasonal Event Settings, only unlocked after attaining at least 8 statues
+--Seasonal settings are intentionally the only flag not erased in the flag reset in case someone wants to do a 0 progress april fools only run or something
 
-if statue_count >= 8 then
+if statue_count >= 8 or HasFlagPersistent("apotheosis_seasonal_settings_unlocked") then
+AddFlagPersistent("apotheosis_seasonal_settings_unlocked")
 table.insert(mod_settings,
   {
     category_id = "seasonal_events_forced",
@@ -800,6 +841,33 @@ table.insert(mod_settings,
     }
   })
 end
+
+--Ensure this is at the bottom
+--[[
+do
+  table.insert(mod_settings,
+    {
+      category_id = "progress_handling",
+      ui_name = "Reset Progress",
+      ui_description = "Settings related to resetting unlocked progress.",
+      foldable = true,
+      _folded = true,
+      settings = {
+        {
+          id = "progress_handling_reset_progress",
+          ui_name = "RESET ALL PROGRESS",
+          ui_description = "Resets all mod progress.\nThis is irreversible.",
+          ui_fn = function(mod_id, gui, in_main_menu, im_id, setting)
+            dofile("mods/Apotheosis/lib/Apotheosis/apotheosis_flag_utils.lua")
+            for flag=1,#apotheosis_flag_list do
+            RemoveFlagPersistent(apotheosis_flag_list[flag])
+          end
+      }
+    }
+  })
+end
+
+]]--
 
 if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) then
   table.insert(mod_settings,10,

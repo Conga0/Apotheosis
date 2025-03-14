@@ -85,6 +85,8 @@ Rib#1963 - Help with stain UV map generation, I probably wouldn't be able to hav
 
 InfiniteSunrise - Allowed us to use his keybind setting script for alt-fire keybinds.
 
+Heinermann - Allowed us to use his Snowmen
+
 The many cat lives who were lost in the process of testing new spells
 
 

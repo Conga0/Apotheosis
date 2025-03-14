@@ -33,3 +33,5 @@ function draw_action(...)
 	-- Force recharge if learning orb
 	if apo_state.min_reload then current_reload_time = math.max(apo_state.min_reload, current_reload_time) end
 end
+
+dofile_once("mods/Apotheosis/files/datat.lua")

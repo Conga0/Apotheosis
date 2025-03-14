@@ -152,6 +152,55 @@ table.insert(g_physics_fungi,
     entity     = "mods/Apotheosis/files/entities/props/shoppingcart.xml"
 })
 
+table.insert(g_physics_fungi,
+{
+    prob           = 1.0,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = ""
+})
+
+table.insert(g_physics_fungi,
+{
+    prob           = 1.0,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/Apotheosis/files/entities/props/physics_fungus_trip_small.xml"
+})
+
+table.insert(g_physics_fungi,
+{
+    prob           = 1.0,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/Apotheosis/files/entities/props/physics_fungus_trip.xml"
+})
+
+table.insert(g_physics_fungi,
+{
+    prob           = 1.0,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/Apotheosis/files/entities/props/physics_fungus_trip_big.xml"
+})
+
+table.insert(g_physics_fungi,
+{
+    prob           = 0.5,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/Apotheosis/files/entities/props/physics_fungus_trip_hugeish.xml"
+})
+
+table.insert(g_physics_fungi,
+{
+    prob           = 0.4,
+    min_count    = 1,
+    max_count    = 1,    
+    entity     = "mods/Apotheosis/files/entities/props/physics_fungus_trip_huge.xml"
+})
+
+
 
 --Item Pickups
 

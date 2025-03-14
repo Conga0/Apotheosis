@@ -1604,7 +1604,7 @@ if ModSettingGet( "Apotheosis.meatrealmrework" ) then --Remove the vanilla meat 
 
   local path = "data/entities/animals/boss_meat/death.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("AddFlagPersistent%( \"miniboss_meat\" %)","AddFlagPersistent( \"miniboss_meat\" ) local children = EntityGetAllChildren(player) or {} for k=1,#children do local v = children[k] if EntityHasTag(v,\"curse\") then local comp = EntityGetFirstComponentIncludingDisabled(v,\"LifetimeComponent\") ComponentSetValue2(comp,\"lifetime\",3) break end end")
+  content = content:gsub("AddFlagPersistent%( \"miniboss_meat\" %)","AddFlagPersistent( \"miniboss_meat\" ) local player = EntityGetWithTag(\"player_unit\")[1] local children = EntityGetAllChildren(player) or {} for k=1,#children do local v = children[k] if EntityHasTag(v,\"curse\") then local comp = EntityGetFirstComponentIncludingDisabled(v,\"LifetimeComponent\") ComponentSetValue2(comp,\"lifetime\",3) break end end")
   ModTextFileSetContent(path, content)
 end
 

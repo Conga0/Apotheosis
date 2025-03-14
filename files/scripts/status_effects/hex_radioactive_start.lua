@@ -15,6 +15,7 @@ if comp then
         "apotheosis_radioactive_liquid_strong",
         "apotheosis_radioactive_mud",
         "rock_static_radioactive",
+        "radioactive_gas",
     }
 
     for k=1,#materials do

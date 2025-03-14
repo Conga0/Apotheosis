@@ -1,5 +1,5 @@
 
-local apotheosis_perkappends = {
+apotheosis_perkappends = {
     {
         id = "APOTHEOSIS_GHOSTLY_VISION",
         ui_name = "$perk_apotheosis_ghostly_vision",
@@ -733,6 +733,61 @@ local apotheosis_perkappends = {
             AddFlagPersistent("apotheosis_card_unlocked_radarfound")
 		end,
 	},
+	{
+		id = "APOTHEOSIS_ABSORBENT_CAPE",
+        id_matchup = "REPELLING_CAPE",
+        ui_name = "$perk_apotheosis_absorbent_cape",
+        ui_description = "$perk_apotheosis_absorbent_cape_description",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/absorbent_cape_ui.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/absorbent_cape_perk.png",
+		not_in_default_perk_pool = false,
+		stackable = STACKABLE_YES,
+		func = function( entity_perk_item, entity_who_picked, item_name )
+
+            local perk_found = false
+            local absorbent_vsc = 0
+            local vcomps = EntityGetComponent(entity_who_picked,"VariableStorageComponent")
+            for k=1,#vcomps do
+                if ComponentGetValue2(vcomps[k],"name") == "perk_absorbent_cape" then
+                    perk_found = true
+                    absorbent_vsc = vcomps[k]
+                    break
+                end
+            end
+
+            if perk_found == false then
+                --First pickup
+                EntityAddComponent( entity_who_picked, "VariableStorageComponent", 
+                {
+                    _tags = "perk_component",
+                    name = "perk_absorbent_cape",
+                    value_float = 0.25, --stain drop rate multiplier
+                    value_int = 1 --Perks taken count
+                } )
+
+                EntityAddComponent( entity_who_picked, "LuaComponent", 
+                {
+                    _tags = "perk_component",
+                    script_source_file = "mods/Apotheosis/files/scripts/perks/absorbent_cape.lua",
+                    execute_every_n_frame = 1,
+                    execute_times = -1
+                } )
+            else
+                --Subsequent pickups
+                ComponentSetValue2(absorbent_vsc,"value_int",ComponentGetValue2(absorbent_vsc,"value_int") + 1)
+                local stain_drop_mult = 1 * (0.25^math.max(1,ComponentGetValue2(absorbent_vsc,"value_int")))
+                ComponentSetValue2(absorbent_vsc,"value_float",stain_drop_mult)
+            end
+		end,
+        _remove = function(entity_id)
+            local staincomp = EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteStainsComponent")
+            ComponentSetValue2(staincomp,"stain_shaken_drop_chance_multiplier",1)
+        end,
+        func_remove = function( entity_id )
+            local staincomp = EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteStainsComponent")
+            ComponentSetValue2(staincomp,"stain_shaken_drop_chance_multiplier",1)
+        end,
+	},
     --[[
     --I really like this perk visually, but the only issue is if this was easy to access, then you'd have no reason not to grab it everytime you want to go for the alternate ending
     --Maybe there could be a puzzle or cost behind it like needing to go through a sacred rock tomb and you need to figure out a wand that can teleport you through it, but I can't think of anything particularly fitting right now...
@@ -796,47 +851,52 @@ table.insert(perk_list,
 })
 ]]--
 
+function apotheosis_perk_appends()
+    if ModSettingGet( "Apotheosis.organised_icons" ) == true then
+        for k=1,#apotheosis_perkappends
+        do local v = apotheosis_perkappends[k]
 
-if ModSettingGet( "Apotheosis.organised_icons" ) == true then
-    for k=1,#apotheosis_perkappends
-    do local v = apotheosis_perkappends[k]
+            -- Disables the perk from spawning if it's not unlocked
+            if v.unlock_flag then
+                if HasFlagPersistent( v.unlock_flag ) == false then
+                    v.not_in_default_perk_pool = true
+                end
+            end
 
-        -- Disables the perk from spawning if it's not unlocked
-        if v.unlock_flag then
-            if HasFlagPersistent( v.unlock_flag ) == false then
-                v.not_in_default_perk_pool = true
+            --Adds Perk into the list at the position we want
+            if v.id_matchup == nil then
+                v.author    = v.author  or "Conga Lyne"
+                v.mod       = v.mod     or "Apotheosis"
+                table.insert(perk_list,v)
+            else
+                for z=1,#perk_list
+                do c = perk_list[z]
+                    if c.id == v.id_matchup or z == #perk_list then
+                        v.author    = v.author  or "Conga Lyne"
+                        v.mod       = v.mod     or "Apotheosis"
+                        table.insert(perk_list,z + 1,v)
+                        break
+                    end
+                end
             end
         end
-
-        --Adds Perk into the list at the position we want
-        if v.id_matchup == nil then
+    else
+        for k=1,#apotheosis_perkappends
+        do local v = apotheosis_perkappends[k]
+            if v.unlock_flag then
+                if HasFlagPersistent( v.unlock_flag ) == false then
+                    v.not_in_default_perk_pool = true
+                end
+            end
             v.author    = v.author  or "Conga Lyne"
             v.mod       = v.mod     or "Apotheosis"
             table.insert(perk_list,v)
-        else
-            for z=1,#perk_list
-            do c = perk_list[z]
-                if c.id == v.id_matchup or z == #perk_list then
-                    v.author    = v.author  or "Conga Lyne"
-                    v.mod       = v.mod     or "Apotheosis"
-                    table.insert(perk_list,z + 1,v)
-                    break
-                end
-            end
         end
     end
-else
-    for k=1,#apotheosis_perkappends
-    do local v = apotheosis_perkappends[k]
-        if v.unlock_flag then
-            if HasFlagPersistent( v.unlock_flag ) == false then
-                v.not_in_default_perk_pool = true
-            end
-        end
-        v.author    = v.author  or "Conga Lyne"
-        v.mod       = v.mod     or "Apotheosis"
-        table.insert(perk_list,v)
-    end
+end
+
+if perk_list ~= nil then
+    apotheosis_perk_appends()
 end
 
 
@@ -855,130 +915,135 @@ end
 
 
 
-
--- Remove Perks from perk_list
-function remove_perk(perk_name)
-	local key_to_perk = nil
-	for key, perk in pairs(perk_list) do
-		if (perk.id == perk_name) then
-			key_to_perk = key
-		end
-	end
-
-	if (key_to_perk ~= nil) then
-		table.remove(perk_list, key_to_perk)
-	end
-end
-
-remove_perk("PROJECTILE_REPULSION") --Reworked into Oversized Shield
-remove_perk("MOVEMENT_FASTER") --Combined into HASTE
-remove_perk("FASTER_LEVITATION") --Combined into HASTE
-remove_perk("LOW_RECOIL") --Reworked into No Recoil
-
---Modify existing perk data for minor changes, DO NOT USE FOR MAJOR REWORKS
---if you need to do a major rework, remove the relevent perk(s) and add a new one instead
-local old_gas_blood_func = 0
-for k=1,#perk_list
-do local v = perk_list[k]
-    if v.id == "BLEED_GAS" then
-        old_gas_blood_func = v.func
-        break
-    end
-end
-
-local perks_to_edit = {
-
-    ["CONTACT_DAMAGE"] = {
-        ui_description = "$perk_apotheosis_contactdamage_description",
-        game_effect = "PROTECTION_MELEE",
-        perk_icon = "mods/Apotheosis/files/items_gfx/perks/contact_damage_new.png", --Conga: It feels too modded, too much noise going on in the graphic
-    },
-
-    ["PROTECTION_RADIOACTIVITY"] = {
-		func = function( entity_perk_item, entity_who_picked, item_name )
-            EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
-
-            --Makes Toxic Immunity actually make you toxic immune
-            local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
-            ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
-        end
-    },
-
-    --Could probably be monkey wrenched
-    ["BLEED_GAS"] = {
-		func = function( entity_perk_item, entity_who_picked, item_name )
-
-            old_gas_blood_func( entity_perk_item, entity_who_picked, item_name )
-            EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
-
-            --Makes Toxic Immunity actually make you toxic immune
-            local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
-            ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
-		end,
-    },
-
-}
-
-for i=1,#perk_list do -- fast as fuck boi
-    if perks_to_edit[perk_list[i].id] then
-        for key, value in pairs(perks_to_edit[perk_list[i].id]) do
-            perk_list[i][key] = value
-        end
-        perk_list[i]['apotheosis_reworked'] = true
-    end
-end
-
---Make glass cannon compatible with glass cannon.. because.. it's funny? :gigachad:
---Side note, this could definitely be faster, same for hardcore spell changes, need to do tomorrow I suppose
-
---Concept code for getting bubbles working with GC, once material value is obtained it can be multiplied by * 5
---Had trouble getting the game to properly update GC with the new func_enemy code I wanted
---Not 100% sure to grab the material amount data in the first place honestly, mostly looking at bottled percentages for reference here.. maybe soler TI would be a better example though with the spiked drinks event? Unsure.
-
--- ^ above comments from conga
---  Copi:   I don't understand nor use modify existing perk (it's also impossible to monkey patch, only overwrite)
---          If you want I can set up a table thing like with the spell edits for perks, should be faster because it doesn't go through every perk again each time
---          I have ideas for monkey patch func tables where it returns the old func so you can call it in your own monkey patches?
---          Example usage:
---[=[
-    ["GLASS_CANNON"] = {
-        func_enemy = function(entity_perk_item, entity_who_picked, old_fn)
-            -- do crap
-            if based[entity_who_picked] then
-                old_fn(entity_perk_item, entity_who_picked)
+function apotheosis_perk_changes()
+    -- Remove Perks from perk_list
+    function remove_perk(perk_name)
+        local key_to_perk = nil
+        for key, perk in pairs(perk_list) do
+            if (perk.id == perk_name) then
+                key_to_perk = key
             end
         end
-    }
-]=]
---          Thoughts?
 
--- code by copi, feel free to mess around with it and just mark what bits ive done if you want idc that much though its not too fancy
--- Conga: This seems to work perfectly fine, the only mistake with it is when I said multiplying the material amount by 5 was enough. It isn't. I want more suffering.
-do  --Allow glass cannon to function with Liquid Bubbles
-    for i = 1, #perk_list do
-        if perk_list[i].id == "GLASS_CANNON" then
-            -- Monkey patch
-            local fn_old = perk_list[i].func_enemy ---@type function
-            perk_list[i].func_enemy = function(entity_perk_item, entity_who_picked)
-                if EntityGetName(entity_who_picked) == "$enemy_apotheosis_bubble_liquid" then
-                    local inv = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "MaterialInventoryComponent")
-                    if inv then
-                        -- Pentuple(?) material count
-                        local mats = ComponentGetValue2(inv, "count_per_material_type") --{} only here to prevent ide from getting mad, -copiop
-                        for j = 0, #mats, 1 do
-                            -- print(string.format("%-80s | %12s", CellFactory_GetName(j), mats[j+1])) -- Displays material count by id, prints laggy as FUCK though...
-                            -- Actually *sets* material count, do not be fooled.
-                            AddMaterialInventoryMaterial(entity_who_picked, CellFactory_GetName(j), (mats[j+1] or 0) * 10) --Amount liquid contained is multiplied by, in this example it's 1000%
-                        end
-                        -- piss materials **REALLY** hard
-                        local vel_coeff = ComponentGetValue2(inv, "death_throw_particle_velocity_coeff")
-                        ComponentSetValue2(inv, "death_throw_particle_velocity_coeff", vel_coeff * 2.5) --Speed stray liquid is shot out at is multiplied by this amount, in this example it's 250%
-                    end
-                end
-                -- Run old func
-                fn_old(entity_perk_item, entity_who_picked)
-            end
+        if (key_to_perk ~= nil) then
+            table.remove(perk_list, key_to_perk)
+        end
+    end
+
+    remove_perk("PROJECTILE_REPULSION") --Reworked into Oversized Shield
+    remove_perk("MOVEMENT_FASTER") --Combined into HASTE
+    remove_perk("FASTER_LEVITATION") --Combined into HASTE
+    remove_perk("LOW_RECOIL") --Reworked into No Recoil
+
+    --Modify existing perk data for minor changes, DO NOT USE FOR MAJOR REWORKS
+    --if you need to do a major rework, remove the relevent perk(s) and add a new one instead
+    local old_gas_blood_func = 0
+    for k=1,#perk_list
+    do local v = perk_list[k]
+        if v.id == "BLEED_GAS" then
+            old_gas_blood_func = v.func
             break
         end
     end
+
+    local perks_to_edit = {
+
+        ["CONTACT_DAMAGE"] = {
+            ui_description = "$perk_apotheosis_contactdamage_description",
+            game_effect = "PROTECTION_MELEE",
+            perk_icon = "mods/Apotheosis/files/items_gfx/perks/contact_damage_new.png", --Conga: It feels too modded, too much noise going on in the graphic
+        },
+
+        ["PROTECTION_RADIOACTIVITY"] = {
+            func = function( entity_perk_item, entity_who_picked, item_name )
+                EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+
+                --Makes Toxic Immunity actually make you toxic immune
+                local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
+                ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
+            end
+        },
+
+        --Could probably be monkey wrenched
+        ["BLEED_GAS"] = {
+            func = function( entity_perk_item, entity_who_picked, item_name )
+
+                old_gas_blood_func( entity_perk_item, entity_who_picked, item_name )
+                EntitySetDamageFromMaterial( entity_who_picked, "apotheosis_radioactive_gas_fading", 0)
+
+                --Makes Toxic Immunity actually make you toxic immune
+                local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_who_picked,"DamageModelComponent")
+                ComponentObjectSetValue2( dmgcomp, "damage_multipliers", "radioactive", 0.0 )
+            end,
+        },
+
+    }
+
+    for i=1,#perk_list do -- fast as fuck boi
+        if perks_to_edit[perk_list[i].id] then
+            for key, value in pairs(perks_to_edit[perk_list[i].id]) do
+                perk_list[i][key] = value
+            end
+            perk_list[i]['apotheosis_reworked'] = true
+        end
+    end
+
+    --Make glass cannon compatible with glass cannon.. because.. it's funny? :gigachad:
+    --Side note, this could definitely be faster, same for hardcore spell changes, need to do tomorrow I suppose
+
+    --Concept code for getting bubbles working with GC, once material value is obtained it can be multiplied by * 5
+    --Had trouble getting the game to properly update GC with the new func_enemy code I wanted
+    --Not 100% sure to grab the material amount data in the first place honestly, mostly looking at bottled percentages for reference here.. maybe soler TI would be a better example though with the spiked drinks event? Unsure.
+
+    -- ^ above comments from conga
+    --  Copi:   I don't understand nor use modify existing perk (it's also impossible to monkey patch, only overwrite)
+    --          If you want I can set up a table thing like with the spell edits for perks, should be faster because it doesn't go through every perk again each time
+    --          I have ideas for monkey patch func tables where it returns the old func so you can call it in your own monkey patches?
+    --          Example usage:
+    --[=[
+        ["GLASS_CANNON"] = {
+            func_enemy = function(entity_perk_item, entity_who_picked, old_fn)
+                -- do crap
+                if based[entity_who_picked] then
+                    old_fn(entity_perk_item, entity_who_picked)
+                end
+            end
+        }
+    ]=]
+    --          Thoughts?
+
+    -- code by copi, feel free to mess around with it and just mark what bits ive done if you want idc that much though its not too fancy
+    -- Conga: This seems to work perfectly fine, the only mistake with it is when I said multiplying the material amount by 5 was enough. It isn't. I want more suffering.
+    do  --Allow glass cannon to function with Liquid Bubbles
+        for i = 1, #perk_list do
+            if perk_list[i].id == "GLASS_CANNON" then
+                -- Monkey patch
+                local fn_old = perk_list[i].func_enemy ---@type function
+                perk_list[i].func_enemy = function(entity_perk_item, entity_who_picked)
+                    if EntityGetName(entity_who_picked) == "$enemy_apotheosis_bubble_liquid" then
+                        local inv = EntityGetFirstComponentIncludingDisabled(entity_who_picked, "MaterialInventoryComponent")
+                        if inv then
+                            -- Pentuple(?) material count
+                            local mats = ComponentGetValue2(inv, "count_per_material_type") --{} only here to prevent ide from getting mad, -copiop
+                            for j = 0, #mats, 1 do
+                                -- print(string.format("%-80s | %12s", CellFactory_GetName(j), mats[j+1])) -- Displays material count by id, prints laggy as FUCK though...
+                                -- Actually *sets* material count, do not be fooled.
+                                AddMaterialInventoryMaterial(entity_who_picked, CellFactory_GetName(j), (mats[j+1] or 0) * 10) --Amount liquid contained is multiplied by, in this example it's 1000%
+                            end
+                            -- piss materials **REALLY** hard
+                            local vel_coeff = ComponentGetValue2(inv, "death_throw_particle_velocity_coeff")
+                            ComponentSetValue2(inv, "death_throw_particle_velocity_coeff", vel_coeff * 2.5) --Speed stray liquid is shot out at is multiplied by this amount, in this example it's 250%
+                        end
+                    end
+                    -- Run old func
+                    fn_old(entity_perk_item, entity_who_picked)
+                end
+                break
+            end
+        end
+    end
+end
+
+if perk_list ~= nil then
+    apotheosis_perk_changes()
 end

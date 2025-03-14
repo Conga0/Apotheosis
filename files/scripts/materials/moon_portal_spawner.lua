@@ -25,6 +25,28 @@ if #tbl < 1 then
         ComponentSetValue2(comp,"emission_interval_max_frames",2)
         ComponentSetValue2(comp,"velocity_always_away_from_center",80)
         ComponentSetValue2(comp,"lifetime_max",2)
+
+		comp = EntityAddComponent2(
+			eid,
+			"LuaComponent",
+			{
+                script_source_file="mods/Apotheosis/files/scripts/buildings/sun_portal_fire.lua",
+                execute_every_n_frame=10,
+			}
+		)
+
+		comp = EntityAddComponent2(
+			eid,
+			"MagicConvertMaterialComponent",
+			{
+				kill_when_finished=false,
+                from_material_tag="[burnable]",
+                steps_per_frame=20,
+                to_material=CellFactory_GetType("fire"),
+                is_circle=true,
+                radius=120,
+			}
+		)
     end
 end
     

@@ -14,7 +14,7 @@ end
 if (ModSettingGet( "Apotheosis.seasonal_events" ) and ( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools == true then 
     table.insert(g_big_enemies,
     {
-        prob           = 0.08,
+        prob           = 0.04,
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/angel.xml"

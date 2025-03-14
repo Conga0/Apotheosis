@@ -50,7 +50,7 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 
 		local projectile = shoot_projectile( entity_id, proj_data[1], x, y, vel_x, vel_y )
 		local projComp = EntityGetFirstComponent( projectile, "ProjectileComponent" )
-		ComponentSetValue2( projComp, "damage", tonumber(proj_data[2]) )
+		ComponentSetValue2( projComp, "damage", tonumber(proj_data[2]) or 0 )
 
 		local damagetypes = {
 			"melee",
@@ -68,10 +68,11 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
 		
 		for k=1,#damagetypes
 		do  local v = damagetypes[k]
-			ComponentObjectSetValue2( projComp, "damage_by_type", v, tonumber(proj_data[k+2]) )
-			if v == "ice" and tonumber(proj_data[k+2]) > 0 then
+			local dmg = tonumber(proj_data[k+2]) or 0
+			ComponentObjectSetValue2( projComp, "damage_by_type", v, dmg )
+			if v == "ice" and dmg > 0 then
 				ComponentSetValue2(projComp, "damage_game_effect_entities", ComponentGetValue2(projComp,"damage_game_effect_entities") .. "data/entities/misc/effect_frozen.xml,")
-			elseif v == "fire" and tonumber(proj_data[k+2]) > 0 then
+			elseif v == "fire" and dmg > 0 then
 				ComponentSetValue2(projComp, "damage_game_effect_entities", ComponentGetValue2(projComp,"damage_game_effect_entities") .. "data/entities/misc/effect_apply_on_fire.xml,")
 			end
 		end
