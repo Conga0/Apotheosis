@@ -1,8 +1,17 @@
 local haxx = function (entity_id, orbcount, radius)
+	local evil = GameHasFlagRun("apotheosis_evil_knowledge")
 
 	--[[
 	================================================================================= VISUAL: RINGS
 	]]
+
+	local function color(i)
+		if evil then
+			return table.concat{math.random(1,9),"_",i%14+1}
+		else
+			return table.concat{"c_",math.random(1,9),"_",math.random(1,4)}
+		end
+	end
 
 	-- Add visual rings. +1 ring per 7.5 orbs.
 	for j=1, math.min(math.floor(orbcount/7.5)+1, 5) do
@@ -10,7 +19,7 @@ local haxx = function (entity_id, orbcount, radius)
 		EntityAddChild(entity_id, ring)
 		for i=1, math.floor((math.pi*radius)/6) do
 			EntityAddComponent2(ring, "SpriteComponent", {
-				image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/",math.random(1,9),"_",i%14+1,".png"},--image_file="data/debug/circle_16.png",
+				image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/", color(i), ".png"},--image_file="data/debug/circle_16.png",
 				has_special_scale=true,
 				emissive=true,
 				additive=true,
@@ -41,6 +50,10 @@ local haxx = function (entity_id, orbcount, radius)
 	local types = {"melee", "projectile", "explosion", "electricity", "fire", "drill", "slice", "ice", "healing", "physics_hit", "radioactive", "poison", "overeating", "curse", "holy"}
 	local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id, "ProjectileComponent") --[[@cast projcomp number]]
 
+
+	ComponentSetValue2(projcomp, "friendly_fire", true)
+	-- Add radius scaled don't hit shooter frames?
+
 	-- R, G, B
 	local color_weight = {0, 0, 0}
 	local type_weights = {
@@ -69,30 +82,41 @@ local haxx = function (entity_id, orbcount, radius)
 	-- Div by 60 for per-frame dmg
 	-- 60 is too low, seemingly
 	ComponentSetValue2(projcomp, "damage", (dmg*(1 + (0.1 * orbcount)))/15)
-	color_weight[1] = color_weight[1] + dmg
-	color_weight[2] = color_weight[2] + dmg
-	color_weight[3] = color_weight[3] + dmg
+	if not evil then
+		color_weight[1] = color_weight[1] + dmg
+		color_weight[2] = color_weight[2] + dmg
+		color_weight[3] = color_weight[3] + dmg
+	end
 	for i=1, #types do
 		dmg = ComponentObjectGetValue2(projcomp, "damage_by_type", types[i])
 		if dmg > highest[1] then highest={i, dmg} end
 		ComponentObjectSetValue2(projcomp, "damage_by_type", types[i], (dmg*(1 + (0.1 * orbcount)))/15)
-		color_weight[1] = color_weight[1] + type_weights[i][1] * dmg
-		color_weight[2] = color_weight[2] + type_weights[i][2] * dmg
-		color_weight[3] = color_weight[3] + type_weights[i][3] * dmg
+		if not evil then 
+			color_weight[1] = color_weight[1] + type_weights[i][1] * dmg
+			color_weight[2] = color_weight[2] + type_weights[i][2] * dmg
+			color_weight[3] = color_weight[3] + type_weights[i][3] * dmg
+		end
 	end
 
 	-- Add final 5 damage per second per orb to highest type, and to color weighting
 	local final_dmg = (0.2*orbcount)/15
 	if highest[1]==0 then
 		ComponentSetValue2(projcomp, "damage", ComponentGetValue2(projcomp, "damage")+final_dmg)
-		color_weight[1] = color_weight[1] + final_dmg
-		color_weight[2] = color_weight[2] + final_dmg
-		color_weight[3] = color_weight[3] + final_dmg
+		if not evil then
+			color_weight[1] = color_weight[1] + final_dmg
+			color_weight[2] = color_weight[2] + final_dmg
+			color_weight[3] = color_weight[3] + final_dmg			
+		end
 	else
 		ComponentObjectSetValue2(projcomp, "damage_by_type", types[highest[1]], ComponentObjectGetValue2(projcomp, "damage_by_type", types[highest[1]])+final_dmg)
-		color_weight[1] = color_weight[1] + type_weights[highest[1]][1] * final_dmg
-		color_weight[2] = color_weight[2] + type_weights[highest[1]][2] * final_dmg
-		color_weight[3] = color_weight[3] + type_weights[highest[1]][3] * final_dmg
+		if not evil then
+			color_weight[1] = color_weight[1] + type_weights[highest[1]][1] * final_dmg
+			color_weight[2] = color_weight[2] + type_weights[highest[1]][2] * final_dmg
+			color_weight[3] = color_weight[3] + type_weights[highest[1]][3] * final_dmg			
+		end
+	end
+	if evil then
+		color_weight = {1, 0.5, 0.5}
 	end
 
 	--[[

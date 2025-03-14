@@ -1414,4 +1414,6 @@ function OnWorldPreUpdate()
 		EntityRemoveTag(orbs[i], "orb_knowledge_sorry4tag")
 	end
 end
+
+ModLuaFileAppend("data/scripts/items/orb_pickup.lua", "mods/Apotheosis/files/scripts/magic/orb_pickup.lua")
 ]]--
