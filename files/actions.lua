@@ -2688,6 +2688,7 @@ apotheosis_spellappends = {
             c.fire_rate_wait = c.fire_rate_wait + 25
 			current_reload_time = current_reload_time + 60
             apo_state.min_reload = 60
+			c.blood_count_multiplier = 0
         end,
     },]]
     --[[
