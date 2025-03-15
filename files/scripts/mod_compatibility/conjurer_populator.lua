@@ -158,6 +158,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/ant_suffocate.png",
 	  },
 	  {
+		name="Nursing Ant",
+		path="data/entities/animals/ant_pheromone.xml",
+		image="data/ui_gfx/animal_icons/ant_pheromone.png",
+	  },
+	  {
 		name="Cat",
 		path="mods/Apotheosis/files/entities/special/conjurer_cat_spawner.xml",
 		image="data/ui_gfx/animal_icons/cat_mocreeps.png",
@@ -748,6 +753,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/worm_spine.png",
 	  },
 	  {
+		name="Ant Eggs",
+		path="data/entities/buildings/apotheosis_ant_eggs.xml",
+		image="data/ui_gfx/building_icons/ant_eggs.png",
+	  },
+	  {
 		name="Hämis Nest",
 		path="data/entities/buildings/hamis_nest.xml",
 		image="data/ui_gfx/building_icons/hamis_nest.png",
@@ -923,36 +933,6 @@ table.insert(ALL_ENTITIES, {
 		name="Essence of Fungus",
 		path="mods/Apotheosis/files/entities/items/pickups/essence_fungus.xml",
 		image="mods/Apotheosis/files/ui_gfx/essences/fungus.png",
-	  },
-	  {
-		name="Divine Being (Deprecated)",
-		path="data/entities/animals/angel.xml",
-		image="data/ui_gfx/animal_icons/hidden/angel.png",
-	  },
-	  {
-		name="Nightmare Divine Being (Deprecated)",
-		path="data/entities/animals/gold_bosses/angel/angel.xml",
-		image="data/ui_gfx/gold_boss/angel.png",
-	  },
-	  {
-		name="Nightmare Colossal Blob (Deprecated)",
-		path="data/entities/animals/gold_bosses/boss_blob/blob_titan.xml",
-		image="data/ui_gfx/gold_boss/blob_titan.png",
-	  },
-	  {
-		name="Nightmare Abandoned Orchestra (Deprecated)",
-		path="data/entities/animals/gold_bosses/boss_musical_ghost.xml",
-		image="data/ui_gfx/gold_boss/boss_musical_ghost.png",
-	  },
-	  {
-		name="Nightmare Giant Toxic Worm (Deprecated)",
-		path="data/entities/animals/gold_bosses/toxic_worm/boss_toxic_worm.xml",
-		image="data/ui_gfx/gold_boss/boss_toxic_worm.png",
-	  },
-	  {
-		name="Nightmare Asthete of Heat (Deprecated)",
-		path="data/entities/animals/gold_bosses/boss_fire_lukki/boss_fire_lukki.xml",
-		image="data/ui_gfx/gold_boss/boss_fire_lukki.png",
 	  },
 	  {
 		name="Apparition Player Ghost (Debug)",

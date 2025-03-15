@@ -1,8 +1,7 @@
 Fix creature shift icons being transparent
-Add Nursing Ant
 Make brimstone/ukkostone/etc work passively in the user's inventory
 Music Boss rework
-Implement graphics for Ethereal Wyrm
+Improve graphics for acquiring orb of knowledge
 Improve audiovisual feedback on the reset all progress button if possible, may not be since the gui seems very prone to crashing and not cooperating.
 Check Orb of Knowledge is working as intended before release.
 Add an unlock method for the new spells (waterorb is simple and can be unlocked by default, orb of knowledge is complex and should require some level of unlock requirement, wyrm is extremely complex and definitely needs an unlock method/dedicated quest)

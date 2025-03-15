@@ -6,7 +6,7 @@ local haxx = function (entity_id, orbcount, radius)
 	]]
 
 	local function color(i)
-		if evil then
+		if not evil then
 			return table.concat{math.random(1,9),"_",i%14+1}
 		else
 			return table.concat{"c_",math.random(1,9),"_",math.random(1,4)}
@@ -22,7 +22,7 @@ local haxx = function (entity_id, orbcount, radius)
 				image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/", color(i), ".png"},--image_file="data/debug/circle_16.png",
 				has_special_scale=true,
 				emissive=true,
-				additive=true,
+				additive=not evil,
 				special_scale_x=1,
 				special_scale_y=1,
 				offset_x=5,
@@ -116,7 +116,7 @@ local haxx = function (entity_id, orbcount, radius)
 		end
 	end
 	if evil then
-		color_weight = {1, 0.5, 0.5}
+		color_weight = {1, 0.0, 0.0}
 	end
 
 	--[[

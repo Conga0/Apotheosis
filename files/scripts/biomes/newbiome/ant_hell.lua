@@ -45,6 +45,12 @@ g_small_enemies =
 		entity 	= "data/entities/animals/ant_suffocate.xml"
 	},
 	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/ant_pheromone.xml"
+	},
+	{
 		prob   		= 0.05,
 		min_count	= 1,
 		max_count	= 3,    

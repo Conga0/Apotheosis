@@ -150,7 +150,6 @@ local apotheosis_status_list = {
         ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/teleport_rideshare.png",
         effect_entity="mods/Apotheosis/files/entities/misc/effect_teleport_rideshare.xml",
     },
-    --[[
     {
         id="apotheosis_ANTHATCHING",
         ui_name="$status_apotheosis_anthatching_name",
@@ -158,7 +157,6 @@ local apotheosis_status_list = {
         ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/anthatching.png",
         effect_entity="mods/Apotheosis/files/entities/misc/effect_anthatching.xml",
     },
-    ]]--
     {
         id="apotheosis_BRAIN_DAMAGE",
         ui_name="$status_apotheosis_brain_damage_00_name",

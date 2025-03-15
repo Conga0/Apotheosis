@@ -3,7 +3,7 @@
     <CellData
 		name="apotheosis_liquid_knowledge_of_kings"
 		ui_name="$material_apotheosis_knowledge_of_kings"
-		tags="[liquid]"
+		tags="[liquid],[catastrophic],[not_in_potion_pool]"
 		burnable="0"
 		density="7.70"
 		cell_type="liquid"

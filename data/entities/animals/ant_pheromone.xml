@@ -20,7 +20,7 @@
 			attack_ranged_enabled="1"
 			attack_melee_enabled="1"
 			can_fly="0"  
-			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/ant_suffocateburst.xml"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/ant_pheromoneburst.xml"
 			attack_ranged_frames_between="50" >
 		</AnimalAIComponent>
 		
@@ -29,10 +29,10 @@
             hp="0.8"
 			fire_damage_amount="0.0" 
 			fire_probability_of_ignition="0" 
-			ragdoll_material="apotheosis_meat_slime_blue"
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/ant_suffocate/filenames.txt" 
-			blood_material="apotheosis_slime_blue"
-			blood_spray_material="apotheosis_slime_blue"
+			ragdoll_material="meat_slime"
+			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/ant_pheromone/filenames.txt" 
+			blood_material="apotheosis_magic_liquid_ant_pheromones"
+			blood_spray_material="meat_slime"
 			blood_multiplier="0.2"
 			fire_probability_of_ignition="5" 
 			materials_that_damage="acid,poison,blood_cold,blood_cold_vapour,lava" 
@@ -49,7 +49,7 @@
 		</DamageModelComponent>
 
 		<SpriteComponent 
-			image_file="mods/Apotheosis/files/enemies_gfx/ant_suffocate.xml" 
+			image_file="mods/Apotheosis/files/enemies_gfx/ant_pheromone.xml" 
 			offset_x="0"
 			offset_y="0">
 		</SpriteComponent>

@@ -2651,7 +2651,7 @@ apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_field_support.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
 		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/field_support.xml"},
-        --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        spawn_requires_flag = "apotheosis_card_unlocked_support_bullet_spell",
         type    = ACTION_TYPE_PASSIVE,
         spawn_level                       = "1,2,3,4,10", -- REGENERATION_FIELD
         spawn_probability                 = "0.2,0.2,0.2,0.2,0.7", -- REGENERATION_FIELD
@@ -2667,13 +2667,14 @@ apotheosis_spellappends = {
             draw_actions(1, true)
             mana = mana + 80
         end,
-    },--[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
+    },
+    --[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
-        name 		= "Learning Orb",
+        name 		= "$spell_apotheosis_orb_knowledge_name",
         --description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
-        description = "Sui generis. Casts an orb that grows alongside your knowledge, even tainted.",
+        description = "$spell_apotheosis_orb_knowledge_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
@@ -2690,13 +2691,14 @@ apotheosis_spellappends = {
             apo_state.min_reload = 60
 			c.blood_count_multiplier = 0
         end,
-    },]]
+    },
+    ]]--
     --[[
     {
         id          = "APOTHEOSIS_WATERBALL",
         id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
-        name 		= "Water Ball",
-        description = "Casts a seeking ball of condensed water, no mana cost if the user is wet.",
+        name 		= "$spell_apotheosis_waterball_name",
+        description = "$spell_apotheosis_waterball_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_waterball.xml", 1},
@@ -2715,12 +2717,13 @@ apotheosis_spellappends = {
             end
         end,
     },
-  ]]--
+    ]]--
+    --[[
     {
         id          = "APOTHEOSIS_SPELL_WORM",
         id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
-        name 		= "Ethereal Wyrm",
-        description = "Summons the ghostly visage of a wyrm containing great power.",
+        name 		= "$spell_apotheosis_spell_worm_name",
+        description = "$spell_apotheosis_spell_worm_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spell_worm_attack.xml", 1},
@@ -2768,6 +2771,7 @@ apotheosis_spellappends = {
             apo_state.min_reload = 600
         end,
     }
+    ]]--
 }
 
 function append_apotheosis_spells()

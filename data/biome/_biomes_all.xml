@@ -1527,6 +1527,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/forest_lectern.xml"
+		height_index="13"
+		color="ff027c24" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/solid_wall_ice_wand.xml" 
 		height_index="10"
 		color="ff377f83" >

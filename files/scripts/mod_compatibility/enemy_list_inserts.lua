@@ -52,7 +52,7 @@ local insert_list = {
     },
     {
         id_matchup="ant",
-        name="ant_fire\nant_suffocate",
+        name="ant_fire\nant_suffocate\nant_pheromone",
     },
     {
         id_matchup="rat",

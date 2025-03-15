@@ -2107,6 +2107,51 @@
 	</ParticleEffect>
   </CellData>
 
+  <CellData
+	name="apotheosis_magic_liquid_ant_pheromones"
+	ui_name="$status_apotheosis_anthatching_name"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="3.513"
+	cell_type="liquid"
+	wang_color="80c2308d"
+	generates_smoke="0"
+	liquid_gravity="0.8"
+	liquid_sand="0"
+	gfx_glow="150"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="2"
+	liquid_sprite_stain_ignited_drop_chance="0"
+	status_effects="apotheosis_ANTHATCHING"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		color="80c24830" 
+		>
+    </Graphics>
+	<ParticleEffect
+		vel_random.min_x="-17"
+		vel_random.max_x="17"
+		vel_random.min_y="-17"
+		vel_random.max_y="-5"
+		lifetime.min="0.12"
+		lifetime.max="0.41"
+		gravity.y="2.857"
+		render_on_grid="1"
+		friction="-10"
+		probability="0.3571"
+		>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_ANTHATCHING" amount="0.2" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
   <CellDataChild
   	_parent="templebrick_static"
   	_inherit_reactions="1"
@@ -3737,6 +3782,24 @@
 		</Ingestion>
 	</StatusEffects>
   </CellData>
+  
+  <CellDataChild
+  	_parent="rock_static"
+	tags="[static],[alchemy],[solid],[earth]"
+  	name="apotheosis_invisible_solid" 
+	ui_name="$mat_wood"
+	wang_color="ff08725f"
+	hp="200000"
+	durability="12"
+	audio_physics_material_event="rock"
+	audio_physics_material_wall="woodwall"
+	audio_physics_material_solid="wood"
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		color="0008725f" >
+    </Graphics>
+  </CellDataChild>
 
 
 
@@ -4238,8 +4301,15 @@
 		>
 	</Reaction>
   
+	<!--Ant spit slowly fades over time-->
 	<Reaction probability="5"
 		input_cell1="apotheosis_magic_liquid_suffocatium_fading" 			input_cell2="air"
+		output_cell1="air" 													output_cell2="air"
+		>
+	</Reaction>
+  
+	<Reaction probability="5"
+		input_cell1="apotheosis_magic_liquid_ant_pheromones" 			input_cell2="air"
 		output_cell1="air" 													output_cell2="air"
 		>
 	</Reaction>

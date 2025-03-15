@@ -31,13 +31,14 @@
 			never_cache="1" 
 			camera_shake="0.5" 
 			explosion_radius="0" 
-			explosion_sprite="mods/Apotheosis/files/projectiles_gfx/orb_blue_solid.xml" 
+			explosion_sprite="" 
 			explosion_sprite_lifetime="0.0" 
 			ray_energy="10000"
 			hole_destroy_liquid="1" 
 			hole_enabled="1" 
 			damage = "0.00"
 			hole_image="data/temp/explosion_hole.png"
+			load_this_entity=""
 			explosion_sprite_emissive="1"
 			explosion_sprite_additive="1"
 			particle_effect="0" 
@@ -55,6 +56,7 @@
 			light_b="20"
 			stains_enabled="1" 
 			stains_image="data/temp/explosion_stain.png"
+			audio_event_name="explosions/magic_rocket_mid"
 		/>
 	</ProjectileComponent>
 
@@ -74,18 +76,20 @@
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="projectiles/orb_poly"
-	/>
+		event_root="projectiles/orb_b" >
+	</AudioComponent>
 	
 	<AudioLoopComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_name="projectiles/magic_orb/loop"
-		auto_play="1"
-	/>
+		event_name="projectiles/magic_big_passby"
+		auto_play="1">
+	</AudioLoopComponent>
 	
 	<VariableStorageComponent
 		name="projectile_file"
 		value_string="mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml"
 	/>
+
+	<!--Conga: The orb needs to explode to play the cool skoude orb expiration sound "explosions/magic_rocket_mid", but noita is super finnicky with what counts as an explosion, probably easier to just play it manaully via lua comp-->
 
 </Entity>

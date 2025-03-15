@@ -1665,3 +1665,22 @@ do
   ]]))
   ModTextFileSetContent(path, tostring(xml))
 end
+
+do --Make random potion not spawn certain materials by request
+  local path = "data/scripts/items/potion_random_material.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("local materials = nil","local materials = nil local potion_material = \"water\" local catastrophic = true")
+  content = content:gsub("local potion_material = random_from_array%( materials %)",[[while(catastrophic) do
+    potion_material = random_from_array( materials )
+    catastrophic = false
+    local tags = CellFactory_GetTags( CellFactory_GetType( potion_material ) ) or {}
+    for k, v in ipairs(tags) do
+      if(v == "[not_in_potion_pool]")then
+        table.remove(materials, material_id)
+        catastrophic = true
+        break
+      end
+    end
+  end]])
+  ModTextFileSetContent(path, content)
+end

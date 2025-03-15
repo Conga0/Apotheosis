@@ -1,0 +1,19 @@
+<Entity>
+	
+	<LifetimeComponent
+		lifetime="300"
+		>
+	</LifetimeComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="projectiles/orb_poly"
+	/>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_orb/loop"
+		auto_play="1"
+	/>
+
+</Entity>
