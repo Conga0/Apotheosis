@@ -31,7 +31,7 @@
         damage="0"
         camera_shake="4.5" 
         explosion_radius="9" 
-        explosion_sprite="data/particles/explosion_032_pink.xml"
+        explosion_sprite="mods/Apotheosis/files/particles/explosion_032_worm.xml"
         explosion_sprite_emissive="1"
         explosion_sprite_additive="1"
         explosion_sprite_lifetime="0" 
@@ -59,7 +59,7 @@
   <SpriteComponent 
     _enabled="1" 
     alpha="1" 
-    image_file="mods/Apotheosis/files/projectiles_gfx/orb_poison_big.xml" 
+    image_file="mods/Apotheosis/files/projectiles_gfx/orb_worm_big.xml" 
     next_rect_animation="" 
     offset_x="0" 
     offset_y="0" 
@@ -71,7 +71,7 @@
   </SpriteComponent>
 
   <SpriteParticleEmitterComponent
-    sprite_file="mods/Apotheosis/files/particles/orb_poison_big_out.xml"
+    sprite_file="mods/Apotheosis/files/particles/orb_worm_big_out.xml"
     delay="0"
     lifetime="0"
 	additive="1"

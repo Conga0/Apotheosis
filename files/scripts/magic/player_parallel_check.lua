@@ -12,6 +12,11 @@ if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" and Ga
     do local v = comps[k]
         GlobalsSetValue("apotheosis_plane_fail", "1")
         GameScreenshake( 200 )
+	EntityLoad("mods/Apotheosis/files/entities/particles/image_emitters/parallel_hint.xml", pos_x, pos_y)
+	GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bomb_holy/create", pos_x, pos_y )
+	local world_id = GameGetWorldStateEntity()
+	local rid = EntityLoad("mods/Apotheosis/files/entities/misc/rain_water_ice.xml", 0, 0)
+	EntityAddChild( world_id, rid )
         --if ComponentGetValue2(v,"script_source_file") == "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua" then   --Turn self off
         --    EntitySetComponentIsEnabled(entity_id,v,false)
         --    break

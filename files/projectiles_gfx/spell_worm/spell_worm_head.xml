@@ -1,6 +1,6 @@
 <Sprite 
   filename="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_head.png" 
-  offset_x="3" 
+  offset_x="5" 
   offset_y="7" 
   default_animation="stand">
 
