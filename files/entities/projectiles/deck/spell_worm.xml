@@ -84,6 +84,8 @@
 	<SpriteComponent
 	_enabled="1"
 	alpha="1"
+	additive="1"
+	emissive="1"
 	image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_head.xml"
 	next_rect_animation=""
 	rect_animation=""
@@ -125,7 +127,7 @@
 		<SpriteComponent 
 			_enabled="1"
 			alpha="0"
-			image_file="data/enemies_gfx/worm_head.xml"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_head.xml"
 			rect_animation="eat" 
 			next_rect_animation="eat" 
 			offset_x="15" 
@@ -137,11 +139,13 @@
 
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
-			offset_y="6" 
+			offset_y="7" 
 			update_transform="0"
 			z_index="-0.49"
 			>
@@ -149,11 +153,13 @@
 
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
-			offset_y="6" 
+			offset_y="7" 
 			update_transform="0"
 			z_index="-0.48"
 			>
@@ -161,11 +167,13 @@
 
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
-			offset_y="6" 
+			offset_y="7" 
 			update_transform="0"
 			z_index="-0.47"
 			>
@@ -173,7 +181,9 @@
 		
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
@@ -185,7 +195,9 @@
 		
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
@@ -197,7 +209,9 @@
 		
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
@@ -209,7 +223,9 @@
 		
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
@@ -221,7 +237,9 @@
 		
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_body.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_body.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
@@ -233,7 +251,9 @@
 
 		<SpriteComponent 
 			alpha="1" 
-			image_file="data/enemies_gfx/worm_tail.xml"
+			additive="1"
+			emissive="1"
+			image_file="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_worm_tail.xml"
 			rect_animation="stand" 
 			next_rect_animation="stand"  
 			offset_x="15" 
