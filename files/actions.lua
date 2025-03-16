@@ -2669,6 +2669,7 @@ apotheosis_spellappends = {
         end,
     },
     --[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
+    ]]--
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
@@ -2683,16 +2684,24 @@ apotheosis_spellappends = {
         spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
         spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
         price = 220,
-        mana = 50,
+        mana = 50, 
         action 		= function()
-            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 25
+			if reflecting then c.fire_rate_wait = c.fire_rate_wait + 25 current_reload_time = current_reload_time + 60 return end
+			local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS","0")) -- TESTING VAR
+			--local orbcount = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) --Three-Eyed Orb? Kolmi-orb?
+			if orbcount>0 then
+				add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml")
+				apo_state.min_reload = 60
+				c.blood_count_multiplier = 0
+			else
+				-- No orb puff of smoke
+			end
+			c.fire_rate_wait = c.fire_rate_wait + 25
 			current_reload_time = current_reload_time + 60
-            apo_state.min_reload = 60
-			c.blood_count_multiplier = 0
+
+
         end,
     },
-    ]]--
     --[[
     {
         id          = "APOTHEOSIS_WATERBALL",

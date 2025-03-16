@@ -1400,6 +1400,7 @@ end
 -- HALT CRASHING SHIT 1 FRAME DELAY HACKERY
 -- FRANKENSTEIN RADIO CONTROLS BELOW
 --[[
+]]--
 function OnWorldPreUpdate()
 	local orbs = EntityGetWithTag("orb_knowledge_sorry4tag") or {}
 	local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS","0")) -- TESTING VAR
@@ -1412,4 +1413,3 @@ function OnWorldPreUpdate()
 end
 
 ModLuaFileAppend("data/scripts/items/orb_pickup.lua", "mods/Apotheosis/files/scripts/magic/orb_pickup.lua")
-]]--

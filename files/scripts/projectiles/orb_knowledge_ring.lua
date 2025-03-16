@@ -6,6 +6,7 @@ if GetValueNumber("radius", -100) == -100 then
 	SetValueNumber("speed", math.random(15,20))
 	SetValueNumber("rot", (math.random()-0.5)/12)
 	EntitySetTransform(entity_id, 0, 0, 2*math.pi*math.random())
+	SetValueInteger("init", GameGetFrameNum())
 end
 local x, y, r = EntityGetTransform(entity_id)
 local radius = GetValueNumber("radius", 8)
@@ -21,5 +22,6 @@ for i=1, n_spcs do
 	ComponentSetValue2(spc,	"offset_x",			(math.cos(b)*radius/sin)+2)
 	ComponentSetValue2(spc,	"offset_y",			((math.cos(0.1*b))/2*radius*sin)+2)
 	ComponentSetValue2(spc,	"z_index",			(sin>=0 and 10 or -10))
+	ComponentSetValue2(spc,	"alpha",			math.min(GameGetFrameNum()-GetValueInteger("init", 0),16)/(16)*0.35)
 	EntityRefreshSprite(entity_id, spc)
 end
