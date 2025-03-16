@@ -46,6 +46,11 @@ local spellrebalances_name = "Spell Reworks"
 local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
 local meatrealmrework_name = "Meat Realm Rework"
 local meatrealmrework_desc = "Reworks the Meat Realm to have more gradual damage and harder bosses."
+local reset_progress_name = "Reset Progress"
+local reset_progress_desc = "Resets all Apotheosis progress."
+local reset_progress_confirm_name = "RESET ALL PROGRESS"
+local reset_progress_confirm_desc = "Resets all unlock progress in Apotheosis.\nThis cannot be undone."
+local reset_progress_warning = "Progress can not be reset mid-run."
 
 --Keybinds
 local keybind_name = "Key Binds"
@@ -703,8 +708,8 @@ mod_settings =
   },
   {
     category_id = "progress_handling",
-    ui_name = "Reset Progress",
-    ui_description = "Resets all Apotheosis progress.",
+    ui_name = reset_progress_name,
+    ui_description = reset_progress_desc,
     foldable = true,
     _folded = true,
     settings = {
@@ -717,10 +722,11 @@ mod_settings =
                   GuiOptionsAddForNextWidget(gui, 28)
                   GuiOptionsAddForNextWidget(gui, 4)
                   GuiOptionsAddForNextWidget(gui, 6)
-                  local lmb, rmb = GuiButton(gui, im_id, 0, 0, "RESET ALL PROGRESS")
-                  GuiTooltip(gui,"Resets all unlock progress in Apotheosis.\nThis cannot be undone.", "")
+                  GuiColorSetForNextWidget(gui, 1.0, 0.4, 0.4, 1.0)
+                  local lmb, rmb = GuiButton(gui, im_id, 0, 0, reset_progress_confirm_name)
+                  GuiTooltip(gui,reset_progress_confirm_desc, "")
                   if lmb then
-                    print("doing reset")
+                    print("Resetting all Apotheosis progress")
                     ModSettingSet("Apotheosis.progress_handling_do_reset", true)
                     print("reset is " .. tostring(ModSettingGet("Apotheosis.progress_handling_do_reset")))
                   end
@@ -728,7 +734,7 @@ mod_settings =
                 GuiIdPop(gui)
             else    -- In main menu warning
                 GuiImage(gui, im_id, 0, 0, "data/ui_gfx/inventory/icon_warning.png", 1, 1, 1)
-                GuiTooltip(gui, "Progress can not be reset mid-run.", "")
+                GuiTooltip(gui, reset_progress_warning, "")
             end
         end
       },

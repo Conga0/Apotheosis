@@ -393,6 +393,23 @@ do
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do
+  --Prevents Omega Blackhole & Whitehole from eating through indestructible terrain
+  local path = "data/entities/projectiles/deck/black_hole_giga.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("CellEaterComponent").attr
+  attrpath.ignored_material_tag = "[indestructible]"
+  ModTextFileSetContent(path, tostring(xml))
+
+  local path = "data/entities/projectiles/deck/white_hole_giga.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  attrpath = xml:first_of("CellEaterComponent").attr
+  attrpath.ignored_material_tag = "[indestructible]"
+  ModTextFileSetContent(path, tostring(xml))
+end
+
 do -- Add lua script to vulnerability effect which applies "vulnerable" tag to afflicted creature (allows for lua scripts to detect for vulnerability)
   local path = "data/entities/misc/effect_weaken.xml"
   local content = ModTextFileGetContent(path)

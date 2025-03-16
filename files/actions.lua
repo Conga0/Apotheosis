@@ -2733,6 +2733,7 @@ apotheosis_spellappends = {
         spawn_probability                 = "0.1", -- WYRM
         price = 220,
         mana = 600,
+        pandorium_ignore = true,
         action 		= function()
             if reflecting then
                 Reflection_RegisterProjectile( "mods/Apotheosis/files/entities/projectiles/deck/spell_worm.xml" ) --Wyrm's filepath
@@ -2761,6 +2762,8 @@ apotheosis_spellappends = {
                         damage_electricity_add = c_old["damage_electricity_add"] * bite_dmg_mult,
                         damage_explosion_add = c_old["damage_explosion_add"] * bite_dmg_mult,
                         damage_melee_add = c_old["damage_melee_add"] * bite_dmg_mult,
+                        damage_critical_chance = c_old["damage_critical_chance"],
+                        damage_critical_multiplier = c_old["damage_critical_multiplier"],
                         lifetime_add = c_old["lifetime_add"] * 2, --Increase lifetime is twice as effective on the Wyrm
                         friendly_fire = c_old["friendly_fire"]
                     })
@@ -2769,6 +2772,63 @@ apotheosis_spellappends = {
             EndProjectile()
             current_reload_time = current_reload_time + 600 + (c_old["lifetime_add"] / 2)
             apo_state.min_reload = 600
+        end,
+    },
+    ]]--
+    --[[
+    {
+        id          		= "APOTHEOSIS_TERMINUS",
+        id_matchup          = "APOTHEOSIS_ALT_FIRE_TARGETTER",
+        name 				= "Sealed Magic",
+        description 		= "This spell appears to have been sealed within crytallized barriers of protective magic. However barriers can only handle so much before breaking...",
+        sprite 				= "mods/Apotheosis/files/ui_gfx/gun_actions/terminus.png",
+        sprite_unidentified	= "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+        spawn_requires_flag	= "this_should_never_spawn",
+        spawn_manual_unlock	= true,
+        never_unlimited		= true,
+        type 				= ACTION_TYPE_OTHER,
+        recursive			= true,
+        ai_never_uses 		= true,
+        spawn_level			= "0",
+        spawn_probability	= "0",
+        price				= 2000,
+        mana				= 10000,
+        max_uses    		= 1,
+        custom_xml_file		= "mods/Apotheosis/files/entities/misc/custom_cards/terminus.xml",
+        custom_uses_logic = true,
+        pandorium_ignore = true,
+        action 				= function()
+            if reflecting then
+                return
+            end
+
+            if current_action.id ~= "APOTHEOSIS_TERMINUS" then
+                return
+            end
+
+            --Break the spell, spawn reward
+            --Spell should fade upwards, shatter, spawn your reward
+
+            --Remove Spell
+            local EZWand = dofile_once("mods/Apotheosis/lib/EZWand/EZWand.lua")
+            local entity_id = GetUpdatedEntityID()
+            local x,y = EntityGetTransform(entity_id)
+            local inventory = EntityGetFirstComponent( entity_id, "Inventory2Component" )
+            local active_wand = ComponentGetValue2( inventory, "mActiveItem" )
+            local wand = EZWand(active_wand)
+
+            if wand.mana < 9999 then
+                return 
+            end
+
+            wand:RemoveSpells("APOTHEOSIS_TERMINUS")
+
+            --Reward item
+            EntityLoad("mods/Apotheosis/files/entities/special/terminus_reward.xml", x, y )
+
+            --Initial sounds & visuals
+            GameScreenshake(100, x, y)
+            GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", x, y )
         end,
     }
     ]]--

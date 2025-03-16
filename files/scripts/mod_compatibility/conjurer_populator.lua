@@ -935,6 +935,11 @@ table.insert(ALL_ENTITIES, {
 		image="mods/Apotheosis/files/ui_gfx/essences/fungus.png",
 	  },
 	  {
+		name="Divine Being (Deprecated)",
+		path="data/entities/animals/angel.xml",
+		image="data/ui_gfx/animal_icons/hidden/angel.png",
+	  },
+	  {
 		name="Apparition Player Ghost (Debug)",
 		path="data/entities/animals/apparition/playerghost.xml",
 		image="data/ui_gfx/animal_icons/playerghost.png",

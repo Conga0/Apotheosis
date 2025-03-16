@@ -8,7 +8,7 @@ local current = ComponentGetValue2( vcomp, "value_int" ) or 1
 local current_max = 22 --Wyrm's actual length is 11, but we use 22 to stall as a cooldown
 local enemy_count = #(EntityGetInRadiusWithTag(x,y,150,"enemy") or {})
 local homingcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"HomingComponent")
-local projectile_damage_mult = 0.5
+local projectile_damage_mult = 1.5 --50% damage boost on all projectile attacks, to be balanced
 
 function player_nearby()
 	local player_nearby = false
@@ -80,7 +80,7 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
 
                         ---Gun data time
                         --Damage
-                            ComponentSetValue2(pcomp,"damage",ComponentGetValue2(pcomp,"damage") + (gun_info[32] * projectile_damage_mult)) --50% damage reduction on all attacks, to be balanced
+                            ComponentSetValue2(pcomp,"damage",ComponentGetValue2(pcomp,"damage") + (gun_info[32] * projectile_damage_mult))
                             local damagetypes = {
                                 "melee",
                                 "projectile",
@@ -95,7 +95,7 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
                             }
                             for u=1,#damagetypes do
                                 if u ~= 2 or u~= 5 then --2 is projectile, 5 is explosive, both are handled differently
-                                    ComponentObjectSetValue2( pcomp, "damage_by_type", damagetypes[u], ComponentObjectGetValue2( pcomp, "damage_by_type", damagetypes[u]) + (gun_info[30+u] * projectile_damage_mult)) --50% damage reduction on all attacks, to be balanced
+                                    ComponentObjectSetValue2( pcomp, "damage_by_type", damagetypes[u], ComponentObjectGetValue2( pcomp, "damage_by_type", damagetypes[u]) + (gun_info[30+u] * projectile_damage_mult))
                                 end
                             end
                         --Extra Entities
@@ -109,7 +109,7 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
                             ComponentObjectSetValue2( pcomp, "damage_critical", "chance", ComponentObjectGetValue2( pcomp, "damage_critical", "chance") + gun_info[42])
                             ComponentObjectSetValue2( pcomp, "damage_critical", "damage_multiplier", ComponentObjectGetValue2( pcomp, "damage_critical", "damage_multiplier") + gun_info[43])
                         --Explosions
-                            ComponentObjectSetValue2( pcomp, "config_explosion", "damage", ComponentObjectGetValue2( pcomp, "config_explosion", "damage") + (gun_info[35] * projectile_damage_mult)) --50% damage reduction on all attacks, to be balanced
+                            ComponentObjectSetValue2( pcomp, "config_explosion", "damage", ComponentObjectGetValue2( pcomp, "config_explosion", "damage") + (gun_info[35] * projectile_damage_mult))
                             ComponentObjectSetValue2( pcomp, "config_explosion", "explosion_radius", ComponentObjectGetValue2( pcomp, "config_explosion", "explosion_radius") + gun_info[26])
                         --Bounces
                             ComponentSetValue2(pcomp,"bounces_left",tonumber(gun_info[52]))

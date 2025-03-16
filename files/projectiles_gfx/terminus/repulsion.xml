@@ -1,0 +1,14 @@
+<Entity name="" tags="">
+
+	<LifetimeComponent
+		lifetime="15"
+	>
+	</LifetimeComponent>
+
+	<LuaComponent
+		script_source_file="data/scripts/projectiles/white_hole_gravity.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+</Entity>
+

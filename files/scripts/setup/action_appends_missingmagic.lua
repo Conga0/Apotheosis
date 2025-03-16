@@ -50,6 +50,8 @@ local blacklist = {
     ["APOTHEOSIS_PORTAL_LUKKI_BLUE_PORTAL"] = true,     --One of a kind 
     ["APOTHEOSIS_PORTAL_LUKKI_GREEN_PORTAL"] = true,    --One of a kind 
     ["APOTHEOSIS_KNOWLEDGE_OF_KINGS"] = true,           --Quest spell
+    ["APOTHEOSIS_TERMINUS"] = true,                     --Quest spell
+    ["APOTHEOSIS_SPELL_WORM"] = true,                   --Questish spell
 
     --Notes
     ["OCARINA_A"] = true,

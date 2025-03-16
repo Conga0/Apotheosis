@@ -1,0 +1,93 @@
+<Entity>
+
+	<Base file="data/entities/base_custom_card.xml">
+		<!-- this gets replaced automagically, so we need to use a luacomp -->
+		<SpriteComponent image_file="mods/Apotheosis/files/ui_gfx/gun_actions/terminus.png" />
+
+		<ItemActionComponent
+			_tags="enabled_in_world"
+			action_id="APOTHEOSIS_TERMINUS"
+		/>
+	</Base>
+
+	<InheritTransformComponent
+		_tags="enabled_in_world,enabled_in_hand"
+		parent_hotspot_tag="shoot_pos"
+	/>
+
+	<LuaComponent 
+		_tags="enabled_in_hand"
+		script_source_file="mods/Apotheosis/files/scripts/spells/terminus_particles.lua"
+		execute_every_n_frame="60"
+	/>
+
+	<SpriteParticleEmitterComponent
+		_tags="enabled_by_script"
+		sprite_file="data/particles/spark_electric.xml"
+		delay="0"
+		lifetime="0"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="0"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="10"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="10"
+		emission_interval_max_frames="25"
+		count_min="1" 
+		count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_position.min_x="-4"
+		randomize_position.max_x="4"
+		randomize_position.min_y="-2"
+		randomize_position.max_y="2"
+		>
+	</SpriteParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		_tags="enabled_in_world"
+		emitted_material_name="spark_red"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-1"
+		x_pos_offset_max="1"
+		y_pos_offset_min="-9"
+		y_pos_offset_max="-7"
+		gravity.y="0"
+		x_vel_min="-20"
+		x_vel_max="20"
+		y_vel_min="-20"
+		y_vel_max="20"
+		count_min="5"
+		count_max="8"
+		lifetime_min="0.85"
+		lifetime_max="1.35"
+		airflow_force="0.1"
+		airflow_time="0.1"
+		airflow_scale="0.25"
+		is_trail="0"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		render_on_grid="1"
+		emission_interval_min_frames="5"
+		emission_interval_max_frames="20"
+		fade_based_on_lifetime="1"
+		is_emitting="1"
+		draw_as_long="1"
+		velocity_always_away_from_center="0"
+		direction_random_deg="360"
+	/>
+	
+	<AudioLoopComponent
+		_tags="enabled_in_world"
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_big_passby"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>

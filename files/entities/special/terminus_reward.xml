@@ -1,0 +1,99 @@
+<Entity>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/ui_gfx/gun_actions/terminus.png" 
+		offset_x="8"
+		offset_y="8">
+	</SpriteComponent>
+	
+	<VariableStorageComponent
+		name="pos_data"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+		
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/special/terminus_reward.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<SpriteComponent 
+		image_file="mods/Apotheosis/files/projectiles_gfx/terminus/terminus_shimmer.xml"
+		alpha="0"
+		emissive="1"
+		additive="0"
+		offset_x="0"
+		offset_y="0" >
+	</SpriteComponent>
+	
+	<ParticleEmitterComponent
+		emitted_material_name="spark_red"
+		gravity.y="0.0"
+		lifetime_min="1.2"
+		lifetime_max="2.2"
+		count_min="4"
+		count_max="8"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.max="16"
+		area_circle_radius.min="64"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="4"
+		emission_interval_max_frames="12"
+		emit_cosmetic_particles="1"
+		render_ultrabright="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1"
+		attractor_force="4"
+		>
+	</ParticleEmitterComponent>
+	
+	<ParticleEmitterComponent
+		_enabled="0"
+		_tags="enabled_by_script"
+		emitted_material_name="spark_red"
+		gravity.y="0.0"
+		lifetime_min="3.1"
+		lifetime_max="3.2"
+		count_min="80"
+		count_max="80"
+		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		area_circle_radius.max="96"
+		area_circle_radius.min="96"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		render_ultrabright="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1"
+		attractor_force="1"
+		>
+	</ParticleEmitterComponent>
+	
+	<AudioLoopComponent
+		_tags="enabled_in_world"
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/magic_big_passby"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>
+
+
+

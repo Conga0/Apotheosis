@@ -1531,6 +1531,12 @@
 		height_index="13"
 		color="ff027c24" >
 	</Biome>
+	
+	<Biome 
+		biome_filename="data/biome/custom/ocean_trench_treasure.xml" 
+		height_index="13"
+		color="ff0b3188" >
+	</Biome>
 
 	<Biome 
 		biome_filename="data/biome/custom/solid_wall_ice_wand.xml" 
