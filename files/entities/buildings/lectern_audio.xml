@@ -1,7 +1,7 @@
 <Entity>
 	
 	<LifetimeComponent
-		lifetime="300"
+		lifetime="600"
 		>
 	</LifetimeComponent>
 
@@ -14,6 +14,7 @@
 		file="data/audio/Desktop/projectiles.bank"
 		event_name="projectiles/magic_orb/loop"
 		auto_play="1"
+		m_volume="4"
 	/>
 
 </Entity>

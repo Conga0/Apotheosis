@@ -2466,6 +2466,7 @@ apotheosis_spellappends = {
     ]]--
     --[[
 	{
+        --Nolla got to this joke before we did
 		id          = "APOTHEOSIS_TOUCH_GRASS",
         --name 		= "$spell_apotheosis_touch_grass_name",
         --description = "$spell_apotheosis_touch_grass_desc",
@@ -2669,7 +2670,6 @@ apotheosis_spellappends = {
         end,
     },
     --[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
-    ]]--
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
@@ -2702,6 +2702,7 @@ apotheosis_spellappends = {
 
         end,
     },
+    ]]--
     --[[
     {
         id          = "APOTHEOSIS_WATERBALL",
@@ -2727,6 +2728,8 @@ apotheosis_spellappends = {
         end,
     },
     ]]--
+    --These spells should nearly be ready for release, just needs an icon for one and commiting to an unlock quest for the other.
+    --I do appreciate the theme of sealed magic between the two.
     --[[
     {
         id          = "APOTHEOSIS_SPELL_WORM",
@@ -2736,7 +2739,7 @@ apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spell_worm.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spell_worm_attack.xml", 1},
-        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        spawn_requires_flag = "apotheosis_terminus_complete",
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level                       = "10", -- WYRM
         spawn_probability                 = "0.1", -- WYRM
@@ -2788,8 +2791,8 @@ apotheosis_spellappends = {
     {
         id          		= "APOTHEOSIS_TERMINUS",
         id_matchup          = "APOTHEOSIS_ALT_FIRE_TARGETTER",
-        name 				= "Sealed Magic",
-        description 		= "This spell appears to have been sealed within crytallized barriers of protective magic. However barriers can only handle so much before breaking...",
+        name 				= "$spell_apotheosis_terminus_name",
+        description 		= "$spell_apotheosis_terminus_desc",
         sprite 				= "mods/Apotheosis/files/ui_gfx/gun_actions/terminus.png",
         sprite_unidentified	= "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
         spawn_requires_flag	= "this_should_never_spawn",

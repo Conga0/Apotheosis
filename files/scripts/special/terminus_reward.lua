@@ -51,7 +51,7 @@ if progress == 385 then
     GamePlaySound( "data/audio/Desktop/misc.bank", "game_effect/frozen/damage", pos_x, pos_y )
     local spell_id = CreateItemActionEntity( "APOTHEOSIS_SPELL_WORM", pos_x, pos_y )
     local svcomp = EntityGetFirstComponentIncludingDisabled(spell_id,"VelocityComponent")
-    ComponentSetValue2(svcomp,"gravity_y",0)
+    ComponentSetValue2(svcomp,"gravity_y",20)
 
     EntityAddComponent2(
         spell_id,
@@ -67,4 +67,5 @@ if progress == 385 then
     )
 	GamePlaySound( "data/audio/Desktop/misc.bank", "misc/chest_dark_open", pos_x, pos_y )
 	GameTriggerMusicEvent( "music/oneshot/dark_03", true, pos_x, pos_y )
+    AddFlagPersistent("apotheosis_terminus_complete")
 end

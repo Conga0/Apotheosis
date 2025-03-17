@@ -53,8 +53,9 @@ local haxx = function (entity_id, orbcount, radius)
 	local types = {"melee", "projectile", "explosion", "electricity", "fire", "drill", "slice", "ice", "healing", "physics_hit", "radioactive", "poison", "overeating", "curse", "holy"}
 	local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id, "ProjectileComponent") --[[@cast projcomp number]]
 
-
-	ComponentSetValue2(projcomp, "friendly_fire", true)
+	if evil then
+		ComponentSetValue2(projcomp, "friendly_fire", true)
+	end
 	ComponentSetValue2(projcomp, "lifetime", ComponentGetValue2(projcomp, "lifetime")+math.max(10*orbcount, 120))
 	-- Add radius scaled don't hit shooter frames?
 

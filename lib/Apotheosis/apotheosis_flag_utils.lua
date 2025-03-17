@@ -120,6 +120,8 @@ local remaining_flags = {
     "apotheosis_card_unlocked_secret_knowledge_of_kings_spell",
     "apotheosis_card_unlocked_support_bullet_spell",
     "apotheosis_card_unlocked_support_bullet_spell_spell",
+    "apotheosis_terminus_complete",
+    "apotheosis_lectern_quest",
 }
 
 for k=1,#remaining_flags do

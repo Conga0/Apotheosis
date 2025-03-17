@@ -74,6 +74,7 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
                         local vel_x, vel_y = ComponentGetValue2(pvcomp,"mVelocity", vel_x, vel_y)
                         local speed_mult = gun_info[23] or 1 -- Projectile speed
                         ComponentSetValue2(pvcomp,"mVelocity", vel_x * speed_mult, vel_y * speed_mult)
+                        ComponentSetValue2(pvcomp,"gravity_y",ComponentGetValue2(pvcomp,"gravity_y") + (gun_info[53]or 0))
                         local pcomp = EntityGetFirstComponentIncludingDisabled(pid,"ProjectileComponent")
                         ComponentSetValue2(pcomp,"mWhoShot",ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileComponent"),"mWhoShot"))
                         ComponentSetValue2(pcomp,"mShooterHerdId",StringToHerdId("player"))

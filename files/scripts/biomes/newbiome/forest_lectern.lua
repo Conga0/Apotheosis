@@ -192,7 +192,7 @@ function spawn_book(x, y)
 end
 
 function spawn_quest_point(x, y)
-	EntityLoad("mods/Apotheosis/files/entities/buildings/wiseguy_taunt_questcheck.xml", x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/wiseguy_taunt_questcheck.xml", x, y-48)
 end
 
 function spawn_shopitem( x, y ) end
