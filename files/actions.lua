@@ -1495,9 +1495,6 @@ apotheosis_spellappends = {
         price = 200,
         mana = 50,
         --max_uses = 16,
-        subtype = {
-            homing = true
-        },
         action 		= function()
             c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml,data/entities/particles/tinyspark_white_weak.xml,"
             draw_actions( 1, true )
@@ -2671,6 +2668,7 @@ apotheosis_spellappends = {
         end,
     },
     --[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
+	-- Mission success
     ]]--
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
@@ -2680,7 +2678,7 @@ apotheosis_spellappends = {
         description = "$spell_apotheosis_orb_knowledge_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
-        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge_trigger.xml", 1},
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
         --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
         type 		= ACTION_TYPE_PROJECTILE,
         spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
@@ -2794,7 +2792,6 @@ apotheosis_spellappends = {
     {
         id          		= "APOTHEOSIS_TERMINUS",
         id_matchup          = "CESSATION",
-        id_matchup          = "APOTHEOSIS_ALT_FIRE_TARGETTER",
         name 				= "$spell_apotheosis_terminus_name",
         description 		= "$spell_apotheosis_terminus_desc",
         sprite 				= "mods/Apotheosis/files/ui_gfx/gun_actions/terminus.png",
