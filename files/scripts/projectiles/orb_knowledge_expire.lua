@@ -30,7 +30,6 @@ local pec = EntityAddComponent2(inner_glow, "ParticleEmitterComponent", {
 EntitySetTransform(inner_glow, x, y)
 ComponentSetValue2(pec, "gravity", 0, 0)
 ComponentSetValue2(pec, "area_circle_radius", radius+3, radius+6)
---GamePrint"!"
 local xv, yv = 0, 1
 for i=1, 4 do
 	local pec2 = EntityAddComponent2(inner_glow, "ParticleEmitterComponent", {
