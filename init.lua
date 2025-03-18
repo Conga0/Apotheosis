@@ -1403,7 +1403,7 @@ end
 ]]--
 function OnWorldPreUpdate()
 	local orbs = EntityGetWithTag("orb_knowledge_sorry4tag") or {}
-	local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS","0")) -- TESTING VAR
+	local orbcount = GameGetOrbCountThisRun()
 	--local orbcount = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) --Three-Eyed Orb? Kolmi-orb?
 	local radius = 6*orbcount^0.5
 	for i=1, #orbs do

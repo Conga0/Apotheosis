@@ -1,10 +1,8 @@
 Fix creature shift icons being transparent
 Make brimstone/ukkostone/etc work passively in the user's inventory
 Music Boss rework
-Check Orb of Knowledge is working as intended before release.
-Remove debug print from orb pickups before release.
 Adult Centipede
-Update downunder map with lectern & new chest biome
+Fix motd not spawning in downunder spawn area
 
 Ideas:
 Giant Mages in challenge zone

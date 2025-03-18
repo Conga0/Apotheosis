@@ -81,12 +81,13 @@ local haxx = function (entity_id, orbcount, radius)
 
 	-- Remember highest damage type, defaulting to projectile
 	local dmg = ComponentGetValue2(projcomp, "damage")
+	local dmg_multiplier = evil and 0.4 or 0.2
 	local highest = {0,dmg}
 
-	-- Add 10% damage per orb to all types, and add typed damage to weighting
+	-- Add 20% damage per orb to all types, and add typed damage to weighting
 	-- Div by 60 for per-frame dmg
 	-- 60 is too low, seemingly
-	ComponentSetValue2(projcomp, "damage", (dmg*(1 + (0.1 * orbcount)))/15)
+	ComponentSetValue2(projcomp, "damage", (dmg*(1 + (dmg_multiplier * orbcount)))/15)
 	if not evil then
 		color_weight[1] = color_weight[1] + dmg
 		color_weight[2] = color_weight[2] + dmg
@@ -95,7 +96,7 @@ local haxx = function (entity_id, orbcount, radius)
 	for i=1, #types do
 		dmg = ComponentObjectGetValue2(projcomp, "damage_by_type", types[i])
 		if dmg > highest[1] then highest={i, dmg} end
-		ComponentObjectSetValue2(projcomp, "damage_by_type", types[i], (dmg*(1 + (0.1 * orbcount)))/15)
+		ComponentObjectSetValue2(projcomp, "damage_by_type", types[i], (dmg*(1 + (dmg_multiplier * orbcount)))/15)
 		if not evil then 
 			color_weight[1] = color_weight[1] + type_weights[i][1] * dmg
 			color_weight[2] = color_weight[2] + type_weights[i][2] * dmg

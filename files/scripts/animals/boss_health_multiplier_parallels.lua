@@ -5,7 +5,7 @@ local x = EntityGetTransform(entity_id)
 
 local health = 0
 local max_health = 0
-local healthMultiplier = math.max(1, 1 + (math.abs(GetParallelWorldPosition( x, 0 ) * 0.20)))
+local healthMultiplier = math.max(1, 1 + (math.abs(GetParallelWorldPosition( x, 0 ) * 0.40)))
 
 local comp = EntityGetFirstComponent( entity_id, "DamageModelComponent" )
 
@@ -17,6 +17,6 @@ health = health * healthMultiplier
 health_max = health_max * healthMultiplier
 blood_mult = blood_mult / healthMultiplier
 
-ComponentSetValue( comp, "max_hp", tostring(health_max) )
-ComponentSetValue( comp, "hp", tostring(health) )
-ComponentSetValue( comp, "blood_multiplier", tostring(blood_mult) )
+ComponentSetValue( comp, "max_hp", health_max )
+ComponentSetValue( comp, "hp", health )
+ComponentSetValue( comp, "blood_multiplier", blood_mult )

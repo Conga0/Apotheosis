@@ -185,3 +185,45 @@ function isButtonDown_AltFire()
       end
   end
 end
+
+--Fairmod is the gift that keeps on giving
+function userseed_check(seed)
+  local userseed = ModSettingGet("fairmod.user_seed") or 0
+  if userseed ~= 0 then
+    if userseed:find(seed) then
+      return true
+    end
+  end
+  return false
+end
+
+function is_leap_year(year)
+  return (year % 4 == 0 and year % 100 ~= 0) or (year % 400 == 0)
+end
+
+function days_in_month(month, year)
+  if month == 2 then
+      return is_leap_year(year) and 29 or 28
+  elseif month == 4 or month == 6 or month == 9 or month == 11 then
+      return 30
+  else
+      return 31
+  end
+end
+
+function time_since(target_day, target_month, target_year, current_day, current_month, current_year)
+  local diff_months = (current_year - target_year) * 12 + (current_month - target_month)
+
+  if current_day < target_day then
+      diff_months = diff_months - 1
+  end
+
+  local remaining_days = 0
+  if current_day >= target_day then
+      remaining_days = current_day - target_day
+  else
+      remaining_days = days_in_month(target_month, target_year) - target_day + current_day
+  end
+
+  return remaining_days, diff_months
+end

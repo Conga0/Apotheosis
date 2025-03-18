@@ -464,7 +464,7 @@ do -- Limit enemies to dropping 300k gold at any given time, prevents lag in NG+
   ModTextFileSetContent(path, content)
 end
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, Plasma & Omega Disc Projectile to only hit once very 15 frames instead of once every 1 frame
+if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, Plasma, Omega Disc Projectile & Ball Lightning to only hit once very 15 frames instead of once every 1 frame
   local pathprefix = "data/entities/projectiles/deck/"
   local notes = {
     "kantele/kantele_a.xml",
@@ -486,6 +486,7 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, 
     "disc_bullet_bigger.xml",
     "duck.xml",
     "glowing_bolt.xml",
+    "ball_lightning.xml",
   }
 
   for k=1,#notes do
@@ -496,15 +497,6 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, 
     attrpath.damage_every_x_frames = "15"
     ModTextFileSetContent(path, tostring(xml))
   end
-end
-
-if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Ball Lightning to hit once every 10 frames instead of once every 1 frame
-  local path = "data/entities/projectiles/deck/ball_lightning.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  attrpath = xml:first_of("ProjectileComponent").attr
-  attrpath.damage_every_x_frames = "10"
-  ModTextFileSetContent(path, tostring(xml))
 end
 
 if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Fish to hit once every 10 frames instead of once every 1 frame

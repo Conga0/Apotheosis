@@ -8,7 +8,15 @@ local current = ComponentGetValue2( vcomp, "value_int" ) or 1
 local current_max = 22 --Wyrm's actual length is 11, but we use 22 to stall as a cooldown
 local enemy_count = #(EntityGetInRadiusWithTag(x,y,150,"enemy") or {})
 local homingcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"HomingComponent")
-local projectile_damage_mult = 1.5 --50% damage boost on all projectile attacks, to be balanced
+local projectile_damage_mult = 2.0 --100% damage boost on all projectile attacks, to be balanced
+local worm_vcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"VelocityComponent")
+local wvel_x, wvel_y = ComponentGetValue2(worm_vcomp,"mVelocity")
+
+--Ultra hacky but lets the worm move in fungal
+if (math.abs(wvel_x) < 5) and (math.abs(wvel_y) < 5) then
+    wvel_x = wvel_x * 100 wvel_y = wvel_y * 100
+    ComponentSetValue2(worm_vcomp,"mVelocity", wvel_x, wvel_y)
+end
 
 function player_nearby()
 	local player_nearby = false
@@ -19,7 +27,7 @@ function player_nearby()
 		local px,py = EntityGetTransform( player_id )
 		local distance = math.abs(py - y) * 0.5 + math.abs(px - x)
 		
-		if (distance < 256) then
+		if (distance < 200) then
 			player_nearby = true
 		end
 	end
@@ -71,7 +79,7 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
                         local pid = EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/spell_worm_attack.xml",r_x,r_y)
                         GameShootProjectile( entity_id, r_x, r_y, t_x, t_y, pid)
                         local pvcomp = EntityGetFirstComponentIncludingDisabled(pid,"VelocityComponent")
-                        local vel_x, vel_y = ComponentGetValue2(pvcomp,"mVelocity", vel_x, vel_y)
+                        local vel_x, vel_y = ComponentGetValue2(pvcomp,"mVelocity")
                         local speed_mult = gun_info[23] or 1 -- Projectile speed
                         ComponentSetValue2(pvcomp,"mVelocity", vel_x * speed_mult, vel_y * speed_mult)
                         ComponentSetValue2(pvcomp,"gravity_y",ComponentGetValue2(pvcomp,"gravity_y") + (gun_info[53]or 0))

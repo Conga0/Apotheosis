@@ -6,7 +6,6 @@ function open_chest()
 
 	CreateItemActionEntity( "APOTHEOSIS_TERMINUS", pos_x, pos_y )
 	
-    GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", pos_x, pos_y)
 	EntityKill(entity_id)
 end
 

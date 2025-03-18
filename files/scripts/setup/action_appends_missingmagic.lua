@@ -52,6 +52,14 @@ local blacklist = {
     ["APOTHEOSIS_KNOWLEDGE_OF_KINGS"] = true,           --Quest spell
     ["APOTHEOSIS_TERMINUS"] = true,                     --Quest spell
     ["APOTHEOSIS_SPELL_WORM"] = true,                   --Questish spell
+    ["DIVIDE_2"] = true,                --Important DPS spell
+    ["DIVIDE_3"] = true,                --Important DPS spell
+    ["DIVIDE_4"] = true,                --Important DPS spell
+    ["DIVIDE_10"] = true,               --Important DPS spell
+    ["PIERCING_SHOT"] = true,           --Important DPS spell
+    ["APOTHEOSIS_BLOOD_POWER"] = true,  --Important DPS spell
+    ["SEA_MIMIC"] = true,
+    ["APOTHEOSIS_MASS_MATERIA_CONVERSION"] = true,
 
     --Notes
     ["OCARINA_A"] = true,
@@ -78,7 +86,7 @@ local blacklist = {
 
 for k=1,#actions do -- fast as fuck boi
     local v = actions[k]
-    SetRandomSeed(v.price,v.mana)
+    SetRandomSeed(v.price + k,v.mana)
     if not blacklist[v.id] and Random(1,2) == 1 then
         for key, value in pairs(locked_spell) do
             actions[k][key] = value

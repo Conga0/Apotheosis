@@ -714,6 +714,13 @@ mod_settings =
     _folded = true,
     settings = {
       {
+				id = "progress_handling_filler",
+				ui_name = " ", --This exists solely to ensure the progress reset button and close binder button aren't touching each other.
+				value_default = false,
+				hidden = false,
+				not_setting = true,
+      },
+      {
         id = "progress_handling_reset_all",
         ui_name = "",
         ui_fn = function(mod_id, gui, in_main_menu, im_id, setting)

@@ -19,28 +19,26 @@ function rings(entity_id, orbcount, radius)
 		end
 	end
 
-	if orbcount>0 and not EntityHasTag(entity_id, "projectile_cloned")then
-		-- Add visual rings. +1 ring per 7.5 orbs.
-		for j=1, math.min(math.floor(orbcount/7.5)+1, 5) do
-			local ring = EntityCreateNew(tostring(radius))
-			EntityAddChild(entity_id, ring)
-			for i=1, math.floor((math.pi*radius)/6) do
-				EntityAddComponent2(ring, "SpriteComponent", {
-					image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/", color(i), ".png"},--image_file="data/debug/circle_16.png",
-					has_special_scale=true,
-					emissive=true,
-					additive=not evil,
-					special_scale_x=1,
-					special_scale_y=1,
-					offset_x=5,
-					offset_y=5,
-					alpha=0.3+math.random()*0.1,
-				})
-			end
-			EntityAddComponent2(ring, "LuaComponent", {script_source_file=table.concat{"mods/Apotheosis/files/scripts/projectiles/orb_knowledge_ring", j==1 and "_1" or "", ".lua"}})
-			EntityAddComponent2(ring, "InheritTransformComponent", {only_position=true})
-		end
-	end
+    -- Add visual rings. +1 ring per 7.5 orbs.
+    for j=1, math.min(math.floor(orbcount/7.5)+1, 5) do
+        local ring = EntityCreateNew(tostring(radius))
+        EntityAddChild(entity_id, ring)
+        for i=1, math.floor((math.pi*radius)/6) do
+            EntityAddComponent2(ring, "SpriteComponent", {
+                image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/", color(i), ".png"},--image_file="data/debug/circle_16.png",
+                has_special_scale=true,
+                emissive=true,
+                additive=not evil,
+                special_scale_x=1,
+                special_scale_y=1,
+                offset_x=5,
+                offset_y=5,
+                alpha=0.3+math.random()*0.1,
+            })
+        end
+        EntityAddComponent2(ring, "LuaComponent", {script_source_file=table.concat{"mods/Apotheosis/files/scripts/projectiles/orb_knowledge_ring", j==1 and "_1" or "", ".lua"}})
+        EntityAddComponent2(ring, "InheritTransformComponent", {only_position=true})
+    end
 end
 
 function insult_player()
@@ -61,7 +59,7 @@ function insult_player()
 end
 
 function reject_player(player_id)
-    --EntityInflictDamage( player_id, 0.8, "DAMAGE_CURSE", "$status_apotheosis_brain_damage_perma_name", "NONE", 0, 0, entity_id, x, y, 100 ) --Used to do 20 damage, disabling for now to not feel like you're punishing yourself for exploration
+    EntityInflictDamage( player_id, 0.4, "DAMAGE_CURSE", "$status_apotheosis_brain_damage_perma_name", "NONE", 0, 0, entity_id, x, y, 100 )
     local p_x, p_y = EntityGetTransform(player_id)
     local cdcomp = EntityGetFirstComponentIncludingDisabled(player_id,"CharacterDataComponent")
     local vel_x = p_x - x
