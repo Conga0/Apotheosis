@@ -2670,13 +2670,14 @@ apotheosis_spellappends = {
         end,
     },
     --[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
+    ]]--
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
         name 		= "$spell_apotheosis_orb_knowledge_name",
         --description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
         description = "$spell_apotheosis_orb_knowledge_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
         --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
@@ -2684,7 +2685,8 @@ apotheosis_spellappends = {
         spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
         spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
         price = 220,
-        mana = 50, 
+        mana = 50,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/orb_knowledge.xml",
         action 		= function()
 			if reflecting then c.fire_rate_wait = c.fire_rate_wait + 25 current_reload_time = current_reload_time + 60 return end
 			local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS","0")) -- TESTING VAR
@@ -2702,7 +2704,6 @@ apotheosis_spellappends = {
 
         end,
     },
-    ]]--
     --[[
     {
         id          = "APOTHEOSIS_WATERBALL",

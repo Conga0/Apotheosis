@@ -1,4 +1,4 @@
-
+-- UNUSED FILE!!! REFER TO SETUP
 local entity_id = GetUpdatedEntityID()
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileComponent")
 local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS","0"))--GameGetOrbCountThisRun() + tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) --Three-Eyed Orb? Kolmi-orb?
