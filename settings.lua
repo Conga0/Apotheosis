@@ -144,6 +144,11 @@ if currentLang == "日本語" then
   spellrebalances_desc = "オンにすると一部のスペルのマナ消費が低下し、より使いやすくなります。\nまた、貫通呪文、チェーンソー、音符など一部の強力なスペルは弱体化されます。\nこのMODのゲームバランスは、この設定がオンであることを前提に調整されています。"
   meatrealmrework_name = "肉の領域リワーク"
   meatrealmrework_desc = "肉の領域での特殊ダメージの仕様変更、エリアボスの強化"
+  reset_progress_name = "進行度をリセット"
+  reset_progress_desc = "Apotheosis MOD関係の進行度を全てリセットします。"
+  reset_progress_confirm_name = "リセットする"
+  reset_progress_confirm_desc = "Apotheosis MOD関係の進行度を全てリセットします。\nこの操作を実行すると元に戻せなくなります。"
+  reset_progress_warning = "ランの最中に進行度をリセットすることはできません。"
 
   keybind_name = "操作設定"
   keybind_desc = "Apotheosisで使用するキーを設定できます。"

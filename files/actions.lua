@@ -2674,15 +2674,14 @@ apotheosis_spellappends = {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
         name 		= "$spell_apotheosis_orb_knowledge_name",
-        --description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
         description = "$spell_apotheosis_orb_knowledge_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
-        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        spawn_requires_flag	= "this_should_never_spawn",
         type 		= ACTION_TYPE_PROJECTILE,
-        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
-        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        spawn_level			= "0",
+        spawn_probability	= "0",
         price = 220,
         mana = 50,
         custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/orb_knowledge.xml",
@@ -2742,8 +2741,8 @@ apotheosis_spellappends = {
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spell_worm_attack.xml", 1},
         spawn_requires_flag = "apotheosis_terminus_complete",
         type 		= ACTION_TYPE_PROJECTILE,
-        spawn_level                       = "10", -- WYRM
-        spawn_probability                 = "0.1", -- WYRM
+        spawn_level                       = "4,10", -- WYRM
+        spawn_probability                 = "0.01,0.1", -- WYRM
         price = 220,
         mana = 600,
         pandorium_ignore = true,
@@ -2762,7 +2761,7 @@ apotheosis_spellappends = {
 
                     BeginProjectile( "mods/Apotheosis/files/entities/projectiles/deck/spell_worm.xml" ) --Wyrm
                     EndProjectile()
-                    local bite_dmg_mult = 0.25
+                    local bite_dmg_mult = 1.0
                     register_action({
                         --Hacky but functional, I'm probably wildly misusing this -Conga
                         action_description = DontTouch_Data[2],
@@ -3087,9 +3086,31 @@ local actions_to_edit = {
 
     --I feel worried that I'm tinkering with the base game a bit too much here
     --[[ COPI: I think it's alright :^) ]]
+    --19/03/2024 Conga: hah, I forgot I was even worried about this, good times
     ["REGENERATION_FIELD"] = {
         spawn_level         = "1,2,3,4,10",
         spawn_probability   = "0.2,0.2,0.2,0.2,1.2",
+        mandatory_addition = true
+    },
+
+    --Increase damage up's spawnrate since apotheosis adds no damage plus skills to the spawn pool
+    ["DAMAGE"] = {
+        spawn_level         = "1,2,3,4,5", -- DAMAGE
+        spawn_probability   = "0.8,0.8,1.0,0.8,0.8", -- DAMAGE
+        mandatory_addition = true
+    },
+
+    --Increase heavy shot's spawnrate since apotheosis adds no damage plus skills to the spawn pool
+    ["HEAVY_SHOT"] = {
+        spawn_level         = "2,3,4,10", -- HEAVY_SHOT
+        spawn_probability   = "0.6,0.6,0.8,0.1", -- HEAVY_SHOT
+        mandatory_addition = true
+    },
+
+    --Increase bloodlust's spawnrate since apotheosis adds no damage plus skills to the spawn pool
+    ["BLOODLUST"] = {
+        spawn_level         = "1,3,4,5,6", -- BLOODLUST
+        spawn_probability   = "0.3,0.5,0.8,0.9,0.5", -- BLOODLUST
         mandatory_addition = true
     },
 
@@ -3112,11 +3133,6 @@ local actions_to_edit = {
     ["SPELLS_TO_POWER"] = {
         spawn_level         = "10",
         spawn_probability   = "1.0"
-    },
-
-    ["HEAVY_SHOT"] = {
-		spawn_level                       = "2,3,4,10", -- HEAVY_SHOT
-		spawn_probability                 = "0.4,0.4,0.5,0.1" -- HEAVY_SHOT
     },
 
     --Changes Summon Egg to implement modded Apotheosis eggs in
