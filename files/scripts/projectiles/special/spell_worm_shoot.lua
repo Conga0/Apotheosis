@@ -8,7 +8,7 @@ local current = ComponentGetValue2( vcomp, "value_int" ) or 1
 local current_max = 12 --Wyrm's actual length is 11, but we use 22 to stall as a cooldown
 local enemy_count = #(EntityGetInRadiusWithTag(x,y,150,"enemy") or {})
 local homingcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"HomingComponent")
-local projectile_damage_mult = 3.0 --100% damage boost on all projectile attacks, to be balanced
+local projectile_damage_mult = 3.0 --200% damage boost on all projectile attacks, to be balanced
 local worm_vcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"VelocityComponent")
 local wvel_x, wvel_y = ComponentGetValue2(worm_vcomp,"mVelocity")
 
