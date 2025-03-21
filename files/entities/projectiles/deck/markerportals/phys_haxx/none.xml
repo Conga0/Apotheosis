@@ -1,0 +1,6 @@
+<Entity>
+	<Base file="data/entities/base_projectile.xml">
+		<ProjectileComponent lifetime="1" damage="0" > <config_explosion never_cache="1" damage="0" explosion_radius="1" /> </ProjectileComponent>
+	</Base>
+	<LifetimeComponent lifetime="1" />
+</Entity>
