@@ -44,7 +44,7 @@ function BeginProjectile(entity_filename)
 			ADD_DEATH_TRIGGER = true,
 		}
 	}
-	if replace.knowledge[current_action.id] == "APOTHEOSIS_ORB_KNOWLEDGE" then
+	if replace.knowledge[current_action.id] and entity_filename == "mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml" then
 		entity_filename = "mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge_trigger.xml"
 	end
 	apo_state.old.BeginProjectile(entity_filename)
