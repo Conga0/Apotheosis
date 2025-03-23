@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_flesh_monster_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT" >
+<Entity name="$enemy_apotheosis_boss_flesh_monster" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT" >
 		
 	<AnimalAIComponent
 		creature_detection_range_x="600"

@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_flesh_monster_name" >
+<Entity name="$enemy_apotheosis_boss_flesh_monster" >
 
 	<InheritTransformComponent/>
 

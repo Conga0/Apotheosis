@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_fire_lukki_name" >
+<Entity name="$enemy_apotheosis_boss_fire_lukki" >
 
 	<LifetimeComponent
 		lifetime="246"

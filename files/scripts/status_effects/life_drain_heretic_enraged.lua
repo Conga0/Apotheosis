@@ -68,7 +68,7 @@ end
 local heretic_id = 0
 local boss = EntityGetWithTag( "miniboss" ) or nil
 for bp=1,#boss do
-    if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+    if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
 	local heretic_id = boss[bp]
 	local heretic_hp = 0
 	local heretic_max_hp = 0

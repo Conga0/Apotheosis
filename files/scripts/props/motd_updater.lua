@@ -29,10 +29,10 @@ if comp then
     elseif userseed_check("00130639114681086286") and HasFlagPersistent("apotheosis_dnk_oneoff") == false then
         --Special message just for dunk, using fairmod userseed tech
 
-        -- Last time Dunk played (11th of july 2024)
-        local target_day = 11
-        local target_month = 7
-        local target_year = 2024
+        -- Last time Dunk played (23rd of march 2025)
+        local target_day = 23
+        local target_month = 3
+        local target_year = 2025
 
         -- Calculate the difference
         local days, months = time_since(target_day, target_month, target_year, day, month, year)

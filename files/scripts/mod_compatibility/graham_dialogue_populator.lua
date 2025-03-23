@@ -76,21 +76,21 @@ AddEnemyDialogue(pools.DAMAGEDEALT, "$enemy_apotheosis_waterskull", {"Keep it al
 
 --Saving this for when I fully finish it
 --[[
-AddEnemyDialogue(pools.IDLE, "$creep_apotheosis_boss_flesh_monster_name", 
+AddEnemyDialogue(pools.IDLE, "$enemy_apotheosis_boss_flesh_monster", 
 {"How much value do you truly gift to your life?", 
 "It took much strive to acquire such a stone...", 
 "You're better off giving that artefact back...", 
 "", 
 "", 
 ""})
-AddEnemyDialogue(pools.DAMAGETAKEN, "$creep_apotheosis_boss_flesh_monster_name", 
+AddEnemyDialogue(pools.DAMAGETAKEN, "$enemy_apotheosis_boss_flesh_monster", 
 {"These shackles shan't damper my pursuit.", 
 "", 
 "", 
 "", 
 "", 
 ""})
-AddEnemyDialogue(pools.DAMAGEDEALT, "$creep_apotheosis_boss_flesh_monster_name", 
+AddEnemyDialogue(pools.DAMAGEDEALT, "$enemy_apotheosis_boss_flesh_monster", 
 {"There's an easier solution than this...", 
 "", 
 "", 
@@ -117,11 +117,11 @@ Special_offsets_y["$enemy_apotheosis_fairy"] = -5
 Special_offsets_y["$enemy_apotheosis_whisp"] = -5
 Special_offsets_y["$enemy_apotheosis_fairy_big"] = -4
 Special_offsets_y["$enemy_apotheosis_whisp_big"] = -4
-Special_offsets_y["$creep_apotheosis_boss_flesh_monster_name"] = 15
+Special_offsets_y["$enemy_apotheosis_boss_flesh_monster"] = 15
 
 Special_sizes["$enemy_apotheosis_fairy"] = -0.10
 Special_sizes["$enemy_apotheosis_whisp"] = -0.10
-Special_sizes["$creep_apotheosis_boss_flesh_monster_name"] = 0.45
+Special_sizes["$enemy_apotheosis_boss_flesh_monster"] = 0.45
 
 local ApotheosisDialogue = ModdedStuff
 function ModdedStuff()
@@ -201,7 +201,7 @@ function ModdedStuff()
 	config.text = new
     end
 
-    Special_dialogue["$creep_apotheosis_boss_flesh_monster_name"] = function(config)
+    Special_dialogue["$enemy_apotheosis_boss_flesh_monster"] = function(config)
 	config.font = "font_pixel_flesh"
 	config.custom_font = true
 

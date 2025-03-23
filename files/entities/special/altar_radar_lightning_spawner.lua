@@ -31,7 +31,7 @@ do local v = heretic_stones[k]
 		local heretic_found = false
 		local boss = EntityGetWithTag( "miniboss" ) or {}
 		for bp=1,#boss do
-			if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+			if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
 				heretic_found = true
 			end
 		end

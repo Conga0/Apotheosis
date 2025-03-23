@@ -37,7 +37,7 @@ if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") and not GameHasF
 
 	local boss = EntityGetInRadiusWithTag( pos_x, pos_y, 800, "miniboss" ) or nil
 	for bp=1,#boss do
-	    if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+	    if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
 		--Oh he upsetti
 		heretic_found = true
 		h_x, h_y = EntityGetTransform( boss[bp] )
