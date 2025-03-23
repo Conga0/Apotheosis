@@ -1,5 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
+local apoth_version = "v1.3.1"
+
 --local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
 local modCompatibilitySpellEvolutions = ModSettingGet("Apotheosis.mod_compat_mode_spell_evolution")
 local motdSetting = ModSettingGet("Apotheosis.motd_setting")
@@ -1363,12 +1365,25 @@ ModLuaFileAppend("data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts
 ModLuaFileAppend("data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua")
 ModLuaFileAppend("data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
 
+local splash = ""
 function OnMagicNumbersAndWorldSeedInitialized()
 	--You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible
 	do --Setup Magic Catalyst data
 		dofile("mods/Apotheosis/files/scripts/materials/secret_materials_generate.lua")
 		GenerateMagicCatalyst()
 	end
+
+	local splashes = {
+		"Now with 50% more fairies",
+		"| || || |_",
+		(function () local y, m, d, h, m, s = GameGetDateAndTimeLocal() local greet = "" if h>=5 and h<12 then greet = "morning" elseif h>=12 and h<18 then greet = "afternoon" elseif h>=18 and h<22 then greet = "evening" else greet = "night" end return table.concat{"Good ", greet} end)(),
+		"Pet the cat!",
+		"Drink water!",
+		"Take stretches!",
+		":3",
+	}
+	SetRandomSeed(1111, 7783258)
+	splash = splashes[Random(1, #splashes)]
 end
 
 function OnModPreInit()
@@ -1413,3 +1428,22 @@ function OnWorldPreUpdate()
 end
 
 ModLuaFileAppend("data/scripts/items/orb_pickup.lua", "mods/Apotheosis/files/scripts/magic/orb_pickup.lua")
+
+
+
+
+-- MENU SHIT!!!!!
+-- THIS WILL SHOW IN THE PAUSE MENU!!
+-- TODO mod compatible method for fitting multiple items 
+function OnPausePreUpdate()
+	Gui = Gui or GuiCreate()
+	GuiIdPushString(Gui, "apoth_pause")
+	-- https://stackoverflow.com/a/60942437
+	-- Var for apoth build date
+	--[[
+		Apotheosis v1.32 - ?Beta? Build Mar 22 2025 - ?Hardcore?
+	]]
+	GuiColorSetForNextWidget(Gui, 0.35, 0.35, 0.35, 0.5)
+	GuiText(Gui, 12.5, ({GuiGetScreenDimensions(Gui)})[2]/2-38, table.concat{"Apotheosis - ", apoth_version, " - ", splash}, 1, "data/fonts/font_pixel.xml")
+	GuiIdPop(Gui)
+end
