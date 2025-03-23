@@ -789,9 +789,10 @@ local flags_statues = {
   --Apotheosis
   "apotheosis_card_unlocked_boss_monolith",
   "apotheosis_card_unlocked_boss_flesh_monster",
-  "apotheosis_card_unlocked_challenge_towerclimb_win",
-  "apotheosis_card_unlocked_challenge_missingmagic_win",
-  "apotheosis_card_unlocked_challenge_hardcore_win",
+  "apotheosis_card_unlocked_ending_apotheosis_speedrun",
+  "apotheosis_card_unlocked_ending_apotheosis_speedrun_1hr",
+  "apotheosis_card_unlocked_ending_apotheosis_hardcore",
+  "apotheosis_card_unlocked_ending_apotheosis_everything",
   "apotheosis_card_unlocked_musical_magic_played",
   --Endings
   "apotheosis_card_unlocked_ending_apotheosis_01",
