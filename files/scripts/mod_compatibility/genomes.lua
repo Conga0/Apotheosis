@@ -92,7 +92,7 @@ function split_string(inputstr, sep)
       curse = 100,
       trap = 100,
       ghost_boss = 100,
-      ghost_fairy = { 20, 40 },
+      ghost_fairy = { 0, 0 },
   })
   content = add_new_genome(content, "ghost_fairy", 90, 90, 100, {
       player = 0,
@@ -106,7 +106,7 @@ function split_string(inputstr, sep)
       curse = 100,
       trap = 100,
       ghost_boss = 100,
-      ghost_whisp = { 40, 20 },
+      ghost_whisp = { 0, 0 },
       orcs = { 90, 70 },
   })
   

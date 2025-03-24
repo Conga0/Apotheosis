@@ -16,9 +16,7 @@ end
 GameAddFlagRun("apotheosis_flesh_boss_stone_initiated")
 if not stashed then
 -- if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") and GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
-    if GameHasFlagRun("apotheosis_heretalk_guiding_stone") then
-	GameAddFlagRun("apotheosis_flesh_boss_stone_converted")
-    elseif not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") or GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
+    if not GameHasFlagRun("apotheosis_flesh_boss_stone_converted") and not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") or GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
 	GameAddFlagRun("apotheosis_flesh_boss_stone_destroyed")
 	EntityLoad( "mods/Apotheosis/files/entities/misc/stone_heretic_death_check.xml", pos_x, pos_y )
     end
@@ -32,7 +30,7 @@ if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") and not GameHasF
 	    execute_every_n_frame=3600,
 	})
     end
-    if not GameHasFlagRun("apotheosis_heretalk_guiding_stone") then
+    if not GameHasFlagRun("apotheosis_flesh_boss_stone_converted") then
 	local heretic_found = false
 
 	local boss = EntityGetInRadiusWithTag( pos_x, pos_y, 800, "miniboss" ) or nil

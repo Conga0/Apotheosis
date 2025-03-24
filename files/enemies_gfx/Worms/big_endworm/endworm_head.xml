@@ -27,5 +27,65 @@
 		frames_per_row="1"
 		loop="1"  >
 	</RectAnimation>
+
+	<RectAnimation 
+		name="freezing_1"
+		pos_x="0"
+		pos_y="67"
+		frame_count="1"
+		frame_width="70"
+		frame_height="66"
+		frame_wait="0.1"
+		frames_per_row="1"
+		loop="1"  >
+	</RectAnimation>
+
+	<RectAnimation 
+		name="freezing_2"
+		pos_x="70"
+		pos_y="67"
+		frame_count="1"
+		frame_width="70"
+		frame_height="66"
+		frame_wait="0.1"
+		frames_per_row="1"
+		loop="1"  >
+	</RectAnimation>
+
+	<RectAnimation 
+		name="freezing_3"
+		pos_x="140"
+		pos_y="67"
+		frame_count="1"
+		frame_width="70"
+		frame_height="66"
+		frame_wait="0.1"
+		frames_per_row="1"
+		loop="1"  >
+	</RectAnimation>
+
+	<RectAnimation 
+		name="freezing_4"
+		pos_x="210"
+		pos_y="67"
+		frame_count="1"
+		frame_width="70"
+		frame_height="66"
+		frame_wait="0.1"
+		frames_per_row="1"
+		loop="1"  >
+	</RectAnimation>
+
+	<RectAnimation 
+		name="cold"
+		pos_x="280"
+		pos_y="67"
+		frame_count="1"
+		frame_width="70"
+		frame_height="66"
+		frame_wait="0.1"
+		frames_per_row="1"
+		loop="1"  >
+	</RectAnimation>
   
 </Sprite>

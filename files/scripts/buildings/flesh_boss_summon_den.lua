@@ -1,6 +1,7 @@
-
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
+
+if GameHasFlagRun("apotheosis_flesh_boss_released") then EntityKill(entity_id) return end
 
 local players = EntityGetInRadiusWithTag(pos_x, pos_y, 256, "player_unit")
 if #players > 0 then

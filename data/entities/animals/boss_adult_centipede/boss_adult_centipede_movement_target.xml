@@ -1,4 +1,4 @@
-<Entity name="movement_target" tags="teleportable_NOT,movement_target">
+<Entity name="movement_target" tags="teleportable_NOT,movement_target,mortal">
 	
 	<VariableStorageComponent
 		name="target_data"
@@ -96,4 +96,20 @@
 		material="gem_box2d_turquoise"
 	></PhysicsImageShapeComponent>
 
+	<!--
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_movement_target_jank.lua"
+		execute_every_n_frame="-1"
+		execute_on_added="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/boss_adult_centipede/boss_adult_centipede_movement_target_jank_tag.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
+	-->
+	
 </Entity>
