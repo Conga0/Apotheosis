@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 local entity_id = GetUpdatedEntityID()
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id, "InteractableComponent")
 
@@ -25,6 +26,21 @@ if comp then
     elseif (month == 12) and (day >= 15) and (hour % 2 == 0) then
         --Smissmass
         motd = motd .. "_smissmass"
+    elseif userseed_check("00130639114681086286") and HasFlagPersistent("apotheosis_dnk_oneoff") == false then
+        --Special message just for dunk, using fairmod userseed tech
+
+        -- Last time Dunk played (23rd of march 2025)
+        local target_day = 23
+        local target_month = 3
+        local target_year = 2025
+
+        -- Calculate the difference
+        local days, months = time_since(target_day, target_month, target_year, day, month, year)
+
+        motd = table.concat({"Message of the Day\nWelcome back old man!\nIt's been ",days," days and ",months," months since you were last here."})
+        AddFlagPersistent("apotheosis_dnk_oneoff")
+        --This can be removed next time he plays, which should be somewhere around the heat death of the unvierse
+        --motd = "Message of the Day\n\"Dunk is bald\"\n- With love, from fairmod"
     else
         -- Regular MOTD values
         -- MOTD switches between original & alt list every month

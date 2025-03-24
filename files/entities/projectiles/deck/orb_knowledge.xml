@@ -19,13 +19,16 @@
 		on_death_gfx_leave_sprite="0" 
 		on_lifetime_out_explode="0"
 		explosion_dont_damage_shooter="1"
-		friendly_fire="1"
+		friendly_fire="0"
+		collide_with_shooter_frames="6"
 		penetrate_entities="1"
 		damage="0.04"
 		velocity_sets_scale="1"
 		on_collision_die="0"
 		lifetime="350"
 		ragdoll_fx_on_collision="DISINTEGRATED"
+		penetrate_world="1"
+		penetrate_world_velocity_coeff="0.05"
 		>
 		<config_explosion
 			never_cache="1" 
@@ -76,14 +79,14 @@
 
 	<AudioComponent
 		file="data/audio/Desktop/projectiles.bank"
-		event_root="projectiles/orb_b" >
-	</AudioComponent>
+		event_root="projectiles/orb_b"
+	/>
 	
 	<AudioLoopComponent
 		file="data/audio/Desktop/projectiles.bank"
 		event_name="projectiles/magic_big_passby"
-		auto_play="1">
-	</AudioLoopComponent>
+		auto_play="1"
+	/>
 	
 	<VariableStorageComponent
 		name="projectile_file"
@@ -91,5 +94,11 @@
 	/>
 
 	<!--Conga: The orb needs to explode to play the cool skoude orb expiration sound "explosions/magic_rocket_mid", but noita is super finnicky with what counts as an explosion, probably easier to just play it manaully via lua comp-->
-
+	<!-- Copi: I plan to add an expire script anyways for gfx, this can be arranged-->
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/orb_knowledge_expire.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+	/>
 </Entity>

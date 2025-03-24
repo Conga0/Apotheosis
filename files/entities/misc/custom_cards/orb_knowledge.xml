@@ -1,0 +1,19 @@
+<Entity>
+	<!-- maybe make this look fancier -->
+	<Base file="data/entities/base_custom_card.xml" > 
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png"
+		/>
+		
+		<ItemActionComponent 
+			_tags="enabled_in_world"
+			action_id="APOTHEOSIS_ORB_KNOWLEDGE"
+		/>
+	</Base>
+
+	<LuaComponent
+		_tags="enabled_in_world,enabled_in_hand,enabled_in_inventory"
+		script_source_file="mods/Apotheosis/files/scripts/spells/orb_knowledge.lua"
+		execute_every_n_frame="1"
+	/>
+</Entity>

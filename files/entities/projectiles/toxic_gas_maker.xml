@@ -1,5 +1,15 @@
 <Entity name="$projectile_default" >
 
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+			gravity_y="0"
+			air_friction="-0.1"
+			mass="0.05"
+			liquid_drag="0"
+			>
+		</VelocityComponent> 
+	</Base>
+
   <ProjectileComponent 
     _enabled="1" 
 	speed_min="200"

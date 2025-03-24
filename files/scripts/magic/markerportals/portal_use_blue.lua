@@ -37,7 +37,7 @@ function hereticCheck(player_id, from_x, from_y, to_x, to_y)
     local h_x, h_y = nil
     local boss = EntityGetInRadiusWithTag( from_x, from_y, 350, "miniboss" ) or {}
     for bp=1,#boss do
-	if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+	if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
 	    heretic_found = true
 	    h_x,h_y = EntityGetTransform(boss[bp])
 	    break

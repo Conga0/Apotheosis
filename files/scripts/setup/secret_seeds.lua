@@ -443,7 +443,7 @@ local secret_seeds = {
         func = hardcore
     },
     {
-        IDs = {"nightcore"},   --Conga: Anyone else remember this? I remember listening to this a ton when I was younger
+        IDs = {"nightcore","nightmare"},   --Conga: Anyone else remember this? I remember listening to this a ton when I was younger
         func = nightcore
     },
     --[[

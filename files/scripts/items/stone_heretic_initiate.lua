@@ -31,7 +31,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 
 	local boss = EntityGetWithTag( "miniboss" ) or nil
 	for bp=1,#boss do
-	    if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+	    if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
 		--Mmmyes making every potential Heretic in the area make the sound will be funny I'm sure
 		heretic_found = true
 		h_x, h_y = EntityGetTransform( boss[bp] )

@@ -3,50 +3,52 @@
 		_tags="invincible"
 		_enabled="1"
 		script_source_file="mods/Apotheosis/files/scripts/buildings/lectern_quest.lua"
+    	script_interacting="mods/Apotheosis/files/scripts/buildings/lectern_quest.lua"
 		execute_every_n_frame="10"
 		>
 	</LuaComponent>
 	
 	<VariableStorageComponent
 		name=""
-		value_int="0"
+		value_int="-1"
+		value_string="1"
 		>
 	</VariableStorageComponent>
 
-	<ParticleEmitterComponent 
+	<InteractableComponent
+		radius="40"
+		ui_text="$building_apotheosis_wiseguy"
+		name="TEST TITLE"
+	>
+	</InteractableComponent>
+	
+	<ParticleEmitterComponent
 		_tags="enabled_by_script"
 		_enabled="0"
-		emitted_material_name="spark_blue_dark"
-		fade_based_on_lifetime="1"
-		x_pos_offset_min="0"
-		x_pos_offset_max="0"
-		y_pos_offset_min="0"
-		y_pos_offset_max="0"
-		x_vel_min="-20"
-		x_vel_max="20"
-		y_vel_min="-20"
-		y_vel_max="20"
-		area_circle_radius.min="6"
-		area_circle_radius.max="18"
-		velocity_always_away_from_center="100"
-		gravity.y="0"
-		friction="0.1"
-		airflow_force="0.9"
-		airflow_time="0.101"
-		airflow_scale="0.81"
-		count_min="20"
-		count_max="40"
-		lifetime_min="0.5"
-		lifetime_max="0.9"
-		create_real_particles="0"
-		emit_cosmetic_particles="1"
-		draw_as_long="1"
-		collide_with_grid="0"
+		emitted_material_name="rainbow_gas"
+		gravity.y="0.0"
+		lifetime_min="5.1"
+		lifetime_max="6.2"
+		count_min="2"
+		count_max="3"
 		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		area_circle_radius.max="32"
+		area_circle_radius.min="32"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
 		emission_interval_min_frames="1"
 		emission_interval_max_frames="1"
-		attractor_force="32"
+		emit_cosmetic_particles="1"
 		render_ultrabright="1"
-		is_emitting="1" >
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1"
+		attractor_force="2"
+		>
 	</ParticleEmitterComponent>
 </Entity>

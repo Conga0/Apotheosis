@@ -1,5 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
+local apoth_version = "v1.3.1"
+
 --local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
 local modCompatibilitySpellEvolutions = ModSettingGet("Apotheosis.mod_compat_mode_spell_evolution")
 local motdSetting = ModSettingGet("Apotheosis.motd_setting")
@@ -1363,12 +1365,137 @@ ModLuaFileAppend("data/scripts/items/potion.lua", "mods/Apotheosis/files/scripts
 ModLuaFileAppend("data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/scripts/potions/powder_stash_appends.lua")
 ModLuaFileAppend("data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
 
+local splash = ""
 function OnMagicNumbersAndWorldSeedInitialized()
 	--You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible
 	do --Setup Magic Catalyst data
 		dofile("mods/Apotheosis/files/scripts/materials/secret_materials_generate.lua")
 		GenerateMagicCatalyst()
 	end
+
+	local splashes = {
+		"Now with 50% more fairies",
+		"l ll ll l_",
+		(function () local y, m, d, h, m, s = GameGetDateAndTimeLocal() local greet = "" if h>=5 and h<12 then greet = "morning" elseif h>=12 and h<18 then greet = "afternoon" elseif h>=18 and h<22 then greet = "evening" else greet = "night" end return table.concat{"Good ", greet} end)(),
+		"Pet the cat!",
+		"Drink water!",
+		"Take stretches!",
+		":3",
+		"Every pixel is simulated",
+		"Mina stole the precious thing",
+		"Ashcorporation, brought to you by Ken",
+		"Not blurry!",
+		"Not bubbly!",
+		"Photorealistic!",
+		"32-bit!",
+		"Supports 8D graphics",
+		"Send us a postcard with your highscore!",
+		"Stay out of hell",
+		"Quit nagging me!",
+		"MOTY!",
+		"Now in 2D",
+		"May contain peanuts",
+		"Destroy every pixel",
+		"Plz reply to my tweet",
+		"Everyone gets a puppy!",
+		"100% pure",
+		"No artifical preservatives, colours, or flavours",
+		"Doesn't contain microplastics!",
+		"May contain alcohol",
+		"Drinking may cause lifelong harm to your homunculus",
+		"Best in it's class!",
+		"Limited edition!",
+		"More than 50,000 downloads!",
+		"May contain spiders",
+		"Exploding eggs!",
+		"Ask your doctor!",
+		"1432",
+		"That hiisi is a spy!",
+		"All you had to do was follow the train CJ",
+		"Has an ending!",
+		"Monoliths!",
+		"Has a habbit for sentient rocks",
+		"Déjà vu!",
+		"Déjà vu!",
+		"Not associated with shadowy wizard gangs",
+		"The rumors are true",
+		"3 years in development",
+		"Casual gaming",
+		"Hardcore gaming!",
+		"Pneumonoultramicroscopicsilicovolcanoconiosis!",
+		"I miss my cat",
+		"Swan dive into the sun!",
+		"Now with 100% more sweat!",
+		"Now with furious blacksmiths!",
+		"Now with 100% more maggots",
+		"Played by snakes with tophats!",
+		"Now with 100% more.. what is pixy?",
+		"Starry edition!",
+		"Bringing home the bacon!",
+		"It's a mod",
+		"As seen on TV!",
+		"One of a kind!",
+		"Every copy is personalised!",
+		"Famous within it's circles!",
+		"May contain traces of chocolate",
+		"Keyboard compatible!",
+		"Keybaord uncompatiable",
+		"l33t",
+		"Not affected by scunthorpe!",
+		"Not associated with that other Apotheosis",
+		"More Creeps and Weirdos: Extended",
+		"More Creeps and Weirdos, we miss you.",
+		"I'll never tell you my oshi",
+		"The noob's adventure",
+		"Recommended by 9 out of 10 dentists!",
+		"dQw4w9WgXcQ",
+		"oavMtUWDBTM",
+		"Not associated with Calamity!",
+		"L is real",
+		"Spell racecar backwards!",
+		"Based on a true story!",
+		"Player 2 is connected",
+		"Featuring rainbow cats!",
+		"Turn your head and cough",
+		"The moon is made of cheese!",
+		"Now featuring DOOMKILLER!!",
+		"This Terraria update looks wild",
+		"Don't mind me here.",
+		"There's no time! The eye puzzle solution is...",
+		"What do the numbers mean???",
+		"Chainsaw stocks are plummeting!",
+		"I've come to talk about your extended warrenty",
+		"Download more ram!",
+		"Try Kolmi's perfect math class!",
+		"The trees are moving!",
+		"The hills have eyes!",
+		"The best day of your life so far!",
+		"You just lost the game!",
+		"Clever girl",
+		"Use by 21 July 2082",
+		"Fresh Meat!",
+		"Now with fishing!",
+		"Now supports wyrms!",
+		"Absolutely no sentient books!",
+		"We built this mod on Rock n' Roll!",
+		"Have a vegemite sandwich!",
+		"MINA IS YOU",
+		"Order now for 50% off!",
+		"Free wins or your money back!",
+		"The red fish is real",
+		"Built on an ancient indian burial ground",
+		"Extra Large!",
+		"The cake is a lie!",
+		"I'm a potato!",
+		"Ohh yeahh!!!!",
+		"Alway rember happy day",
+		"Approved by Notla Games",
+		"That's a lot of damage! How about a little more?",
+		"Nanomachines son!",
+		"Don't dig straight down!",
+	}
+	SetRandomSeed(1111, 7783258)
+	splash = splashes[Random(1, #splashes)]
 end
 
 function OnModPreInit()
@@ -1400,9 +1527,10 @@ end
 -- HALT CRASHING SHIT 1 FRAME DELAY HACKERY
 -- FRANKENSTEIN RADIO CONTROLS BELOW
 --[[
+]]--
 function OnWorldPreUpdate()
 	local orbs = EntityGetWithTag("orb_knowledge_sorry4tag") or {}
-	local orbcount = tonumber(GlobalsGetValue("DEBUG_ORBS","0")) -- TESTING VAR
+	local orbcount = GameGetOrbCountThisRun()
 	--local orbcount = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) --Three-Eyed Orb? Kolmi-orb?
 	local radius = 6*orbcount^0.5
 	for i=1, #orbs do
@@ -1412,4 +1540,22 @@ function OnWorldPreUpdate()
 end
 
 ModLuaFileAppend("data/scripts/items/orb_pickup.lua", "mods/Apotheosis/files/scripts/magic/orb_pickup.lua")
-]]--
+
+
+
+
+-- MENU SHIT!!!!!
+-- THIS WILL SHOW IN THE PAUSE MENU!!
+-- TODO mod compatible method for fitting multiple items 
+function OnPausePreUpdate()
+	Gui = Gui or GuiCreate()
+	GuiIdPushString(Gui, "apoth_pause")
+	-- https://stackoverflow.com/a/60942437
+	-- Var for apoth build date
+	--[[
+		Apotheosis v1.32 - ?Beta? Build Mar 22 2025 - ?Hardcore?
+	]]
+	GuiColorSetForNextWidget(Gui, 0.35, 0.35, 0.35, 0.5)
+	GuiText(Gui, 12.5, ({GuiGetScreenDimensions(Gui)})[2]/2-38, table.concat{"Apotheosis - ", apoth_version, " - ", splash}, 1, "data/fonts/font_pixel.xml")
+	GuiIdPop(Gui)
+end

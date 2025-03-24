@@ -1143,6 +1143,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_UPGRADE_ALWAYSCAST",
+        id_matchup  = "CESSATION",
         name 		= "$spell_apotheosis_upgrade_alwayscast_name",
         description = "$spell_apotheosis_upgrade_alwayscast_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/upgrade_alwayscast.png",
@@ -1494,9 +1495,6 @@ apotheosis_spellappends = {
         price = 200,
         mana = 50,
         --max_uses = 16,
-        subtype = {
-            homing = true
-        },
         action 		= function()
             c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/proj_homing_delayed.xml,data/entities/particles/tinyspark_white_weak.xml,"
             draw_actions( 1, true )
@@ -2466,6 +2464,7 @@ apotheosis_spellappends = {
     ]]--
     --[[
 	{
+        --Nolla got to this joke before we did
 		id          = "APOTHEOSIS_TOUCH_GRASS",
         --name 		= "$spell_apotheosis_touch_grass_name",
         --description = "$spell_apotheosis_touch_grass_desc",
@@ -2669,30 +2668,41 @@ apotheosis_spellappends = {
         end,
     },
     --[[ -- TOP SECRET!!! DO NOT TELL PEOPLE ABOUT THIS PLEASE AND THANKS :)))))) - copi'r
+	-- Mission success
+    ]]--
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
         name 		= "$spell_apotheosis_orb_knowledge_name",
-        --description = "Casts an orb that increases it's damage depending on how much knowledge you have acquired",
         description = "$spell_apotheosis_orb_knowledge_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
-        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        spawn_requires_flag	= "this_should_never_spawn",
         type 		= ACTION_TYPE_PROJECTILE,
-        spawn_level                       = "2,3,4,5,6", -- BUCKSHOT
-        spawn_probability                 = "0.7,0.7,0.8,0.8,0.6", -- BUCKSHOT
+        spawn_level			= "0",
+        spawn_probability	= "0",
         price = 220,
         mana = 50,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/orb_knowledge.xml",
         action 		= function()
-            add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml")
-            c.fire_rate_wait = c.fire_rate_wait + 25
+			if reflecting then c.fire_rate_wait = c.fire_rate_wait + 25 current_reload_time = current_reload_time + 60 return end
+			local orbcount = GameGetOrbCountThisRun()
+			--local orbcount = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) --Three-Eyed Orb? Kolmi-orb?
+			if orbcount>0 then
+				add_projectile("mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml")
+				apo_state.min_reload = 60
+				c.blood_count_multiplier = 0
+			else
+                local x,y = EntityGetTransform(GetUpdatedEntityID())
+                GamePlaySound( "data/audio/Desktop/misc.bank", "misc/telekinesis/throw", x, y )
+			end
+			c.fire_rate_wait = c.fire_rate_wait + 25
 			current_reload_time = current_reload_time + 60
-            apo_state.min_reload = 60
-			c.blood_count_multiplier = 0
+
+
         end,
     },
-    ]]--
     --[[
     {
         id          = "APOTHEOSIS_WATERBALL",
@@ -2718,7 +2728,9 @@ apotheosis_spellappends = {
         end,
     },
     ]]--
+    --Conga 18/03/2025: I do appreciate the theme of sealed magic between these two
     --[[
+    ]]--
     {
         id          = "APOTHEOSIS_SPELL_WORM",
         id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
@@ -2727,10 +2739,10 @@ apotheosis_spellappends = {
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spell_worm.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/spell_worm_attack.xml", 1},
-        --spawn_requires_flag = "apotheosis_card_unlocked_divinebeing_spell",
+        spawn_requires_flag = "apotheosis_terminus_complete",
         type 		= ACTION_TYPE_PROJECTILE,
-        spawn_level                       = "10", -- WYRM
-        spawn_probability                 = "0.1", -- WYRM
+        spawn_level                       = "4,10", -- WYRM
+        spawn_probability                 = "0.01,0.1", -- WYRM
         price = 220,
         mana = 600,
         pandorium_ignore = true,
@@ -2749,7 +2761,7 @@ apotheosis_spellappends = {
 
                     BeginProjectile( "mods/Apotheosis/files/entities/projectiles/deck/spell_worm.xml" ) --Wyrm
                     EndProjectile()
-                    local bite_dmg_mult = 0.25
+                    local bite_dmg_mult = 1.0
                     register_action({
                         --Hacky but functional, I'm probably wildly misusing this -Conga
                         action_description = DontTouch_Data[2],
@@ -2774,13 +2786,13 @@ apotheosis_spellappends = {
             apo_state.min_reload = 600
         end,
     },
-    ]]--
     --[[
+    ]]--
     {
         id          		= "APOTHEOSIS_TERMINUS",
-        id_matchup          = "APOTHEOSIS_ALT_FIRE_TARGETTER",
-        name 				= "Sealed Magic",
-        description 		= "This spell appears to have been sealed within crytallized barriers of protective magic. However barriers can only handle so much before breaking...",
+        id_matchup          = "CESSATION",
+        name 				= "$spell_apotheosis_terminus_name",
+        description 		= "$spell_apotheosis_terminus_desc",
         sprite 				= "mods/Apotheosis/files/ui_gfx/gun_actions/terminus.png",
         sprite_unidentified	= "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
         spawn_requires_flag	= "this_should_never_spawn",
@@ -2831,7 +2843,6 @@ apotheosis_spellappends = {
             GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", x, y )
         end,
     }
-    ]]--
 }
 
 function append_apotheosis_spells()
@@ -3075,9 +3086,31 @@ local actions_to_edit = {
 
     --I feel worried that I'm tinkering with the base game a bit too much here
     --[[ COPI: I think it's alright :^) ]]
+    --19/03/2024 Conga: hah, I forgot I was even worried about this, good times
     ["REGENERATION_FIELD"] = {
         spawn_level         = "1,2,3,4,10",
         spawn_probability   = "0.2,0.2,0.2,0.2,1.2",
+        mandatory_addition = true
+    },
+
+    --Increase damage up's spawnrate since apotheosis adds no damage plus skills to the spawn pool
+    ["DAMAGE"] = {
+        spawn_level         = "1,2,3,4,5", -- DAMAGE
+        spawn_probability   = "0.8,0.8,1.0,0.8,0.8", -- DAMAGE
+        mandatory_addition = true
+    },
+
+    --Increase heavy shot's spawnrate since apotheosis adds no damage plus skills to the spawn pool
+    ["HEAVY_SHOT"] = {
+        spawn_level         = "2,3,4,10", -- HEAVY_SHOT
+        spawn_probability   = "0.6,0.6,0.8,0.1", -- HEAVY_SHOT
+        mandatory_addition = true
+    },
+
+    --Increase bloodlust's spawnrate since apotheosis adds no damage plus skills to the spawn pool
+    ["BLOODLUST"] = {
+        spawn_level         = "1,3,4,5,6", -- BLOODLUST
+        spawn_probability   = "0.3,0.5,0.8,0.9,0.5", -- BLOODLUST
         mandatory_addition = true
     },
 
@@ -3100,11 +3133,6 @@ local actions_to_edit = {
     ["SPELLS_TO_POWER"] = {
         spawn_level         = "10",
         spawn_probability   = "1.0"
-    },
-
-    ["HEAVY_SHOT"] = {
-		spawn_level                       = "2,3,4,10", -- HEAVY_SHOT
-		spawn_probability                 = "0.4,0.4,0.5,0.1" -- HEAVY_SHOT
     },
 
     --Changes Summon Egg to implement modded Apotheosis eggs in
@@ -3165,6 +3193,315 @@ local actions_to_edit = {
 			end
 		end,
     },
+
+    --Divide By spells respect add mana
+    --Realistically you would only ever use this for terminus, if it was around the 5,000 mana cost mark.
+    --I can't see it being used if it's at 10k
+    --[[
+    ["DIVIDE_2"] = {
+		action 		= function( recursion_level, iteration )
+			c.fire_rate_wait = c.fire_rate_wait + 20
+			
+			local data = {}
+            local mana_reduce = 0
+			
+			local iter = iteration or 1
+			local iter_max = iteration or 1
+			
+			if ( #deck > 0 ) then
+				data = deck[iter] or nil
+			else
+				data = nil
+			end
+			
+			local count = 2
+			if ( iter >= 5 ) then
+				count = 1
+			end
+			
+			local rec = check_recursion( data, recursion_level )
+			
+			if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+				local firerate = c.fire_rate_wait
+				local reload = current_reload_time
+				
+				for i=1,count do
+					if ( i == 1 ) then
+						dont_draw_actions = true
+					end
+					local imax = data.action( rec, iter + 1 )
+					dont_draw_actions = false
+                    if data.mana < 0 then mana_reduce = mana_reduce - data.mana end
+					if (imax ~= nil) then
+						iter_max = imax
+					end
+				end
+				
+				if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+					data.uses_remaining = data.uses_remaining - 1
+					
+					local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+					if not reduce_uses then
+						data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+					end
+				end
+				
+				if (iter == 1) then
+					c.fire_rate_wait = firerate
+					current_reload_time = reload
+					
+					for i=1,iter_max do
+						if (#deck > 0) then
+							local d = deck[1]
+							table.insert( discarded, d )
+							table.remove( deck, 1 )
+						end
+					end
+				end
+			end
+			
+			c.damage_projectile_add = c.damage_projectile_add - 0.2
+			c.explosion_radius = c.explosion_radius - 5.0
+			if (c.explosion_radius < 0) then
+				c.explosion_radius = 0
+			end
+			
+			c.pattern_degrees = 5
+            mana = mana + mana_reduce
+			
+			return iter_max
+		end,
+	},
+
+    --Divide By spells respect add mana
+    ["DIVIDE_3"] = {
+		action 		= function( recursion_level, iteration )
+			c.fire_rate_wait = c.fire_rate_wait + 35
+			
+			local data = {}
+            local mana_reduce = 0
+			
+			local iter = iteration or 1
+			local iter_max = iteration or 1
+			
+			if ( #deck > 0 ) then
+				data = deck[iter] or nil
+			else
+				data = nil
+			end
+			
+			local count = 3
+			if ( iter >= 4 ) then
+				count = 1
+			end
+			
+			local rec = check_recursion( data, recursion_level )
+			
+			if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+				local firerate = c.fire_rate_wait
+				local reload = current_reload_time
+				
+				for i=1,count do
+					if ( i == 1 ) then
+						dont_draw_actions = true
+					end
+					local imax = data.action( rec, iter + 1 )
+					dont_draw_actions = false
+                    if data.mana < 0 then mana_reduce = mana_reduce - data.mana end
+					if (imax ~= nil) then
+						iter_max = imax
+					end
+				end
+				
+				if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+					data.uses_remaining = data.uses_remaining - 1
+					
+					local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+					if not reduce_uses then
+						data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+					end
+				end
+				
+				if (iter == 1) then
+					c.fire_rate_wait = firerate
+					current_reload_time = reload
+					
+					for i=1,iter_max do
+						if (#deck > 0) then
+							local d = deck[1]
+							table.insert( discarded, d )
+							table.remove( deck, 1 )
+						end
+					end
+				end
+			end
+			
+			c.damage_projectile_add = c.damage_projectile_add - 0.4
+			c.explosion_radius = c.explosion_radius - 10.0
+			if (c.explosion_radius < 0) then
+				c.explosion_radius = 0
+			end
+			
+			c.pattern_degrees = 5
+            mana = mana + mana_reduce
+			
+			return iter_max
+		end,
+    },
+
+    --Divide By spells respect add mana
+    ["DIVIDE_4"] = {
+		action 		= function( recursion_level, iteration )
+        c.fire_rate_wait = c.fire_rate_wait + 50
+        
+        local data = {}
+        local mana_reduce = 0
+        
+        local iter = iteration or 1
+        local iter_max = iteration or 1
+        
+        if ( #deck > 0 ) then
+            data = deck[iter] or nil
+        else
+            data = nil
+        end
+        
+        local count = 4
+        if ( iter >= 4 ) then
+            count = 1
+        end
+        
+        local rec = check_recursion( data, recursion_level )
+        
+        if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+            local firerate = c.fire_rate_wait
+            local reload = current_reload_time
+            
+            for i=1,count do
+                if ( i == 1 ) then
+                    dont_draw_actions = true
+                end
+                local imax = data.action( rec, iter + 1 )
+                dont_draw_actions = false
+                if data.mana < 0 then mana_reduce = mana_reduce - data.mana end
+                if (imax ~= nil) then
+                    iter_max = imax
+                end
+            end
+            
+            if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+                data.uses_remaining = data.uses_remaining - 1
+                
+                local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+                if not reduce_uses then
+                    data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+                end
+            end
+            
+            if (iter == 1) then
+                c.fire_rate_wait = firerate
+                current_reload_time = reload
+                
+                for i=1,iter_max do
+                    if (#deck > 0) then
+                        local d = deck[1]
+                        table.insert( discarded, d )
+                        table.remove( deck, 1 )
+                    end
+                end
+            end
+        end
+        
+        c.damage_projectile_add = c.damage_projectile_add - 0.6
+        c.explosion_radius = c.explosion_radius - 20.0
+        if (c.explosion_radius < 0) then
+            c.explosion_radius = 0
+        end
+        
+        c.pattern_degrees = 5
+        mana = mana + mana_reduce
+        
+        return iter_max
+    end,
+    },
+
+    --Divide By spells respect add mana
+    ["DIVIDE_10"] = {
+		action 		= function( recursion_level, iteration )
+			c.fire_rate_wait = c.fire_rate_wait + 80
+			current_reload_time = current_reload_time + 20
+			
+			local data = {}
+            local mana_reduce = 0
+			
+			local iter = iteration or 1
+			local iter_max = iteration or 1
+			
+			if ( #deck > 0 ) then
+				data = deck[iter] or nil
+			else
+				data = nil
+			end
+			
+			local count = 10
+			if ( iter >= 3 ) then
+				count = 1
+			end
+			
+			local rec = check_recursion( data, recursion_level )
+			
+			if ( data ~= nil ) and ( rec > -1 ) and ( ( data.uses_remaining == nil ) or ( data.uses_remaining ~= 0 ) ) then
+				local firerate = c.fire_rate_wait
+				local reload = current_reload_time
+				
+				for i=1,count do
+					if ( i == 1 ) then
+						dont_draw_actions = true
+					end
+					local imax = data.action( rec, iter + 1 )
+					dont_draw_actions = false
+                    if data.mana < 0 then mana_reduce = mana_reduce - data.mana end
+					if (imax ~= nil) then
+						iter_max = imax
+					end
+				end
+				
+				if ( data.uses_remaining ~= nil ) and ( data.uses_remaining > 0 ) then
+					data.uses_remaining = data.uses_remaining - 1
+					
+					local reduce_uses = ActionUsesRemainingChanged( data.inventoryitem_id, data.uses_remaining )
+					if not reduce_uses then
+						data.uses_remaining = data.uses_remaining + 1 -- cancel the reduction
+					end
+				end
+				
+				if (iter == 1) then
+					c.fire_rate_wait = firerate
+					current_reload_time = reload
+					
+					for i=1,iter_max do
+						if (#deck > 0) then
+							local d = deck[1]
+							table.insert( discarded, d )
+							table.remove( deck, 1 )
+						end
+					end
+				end
+			end
+			
+			c.damage_projectile_add = c.damage_projectile_add - 1.5
+			c.explosion_radius = c.explosion_radius - 40.0
+			if (c.explosion_radius < 0) then
+				c.explosion_radius = 0
+			end
+			
+			c.pattern_degrees = 5
+            mana = mana + mana_reduce
+			
+			return iter_max
+		end,
+    },
+    ]]--
 
     -- Homing subtype data
     ["HOMING"] = {

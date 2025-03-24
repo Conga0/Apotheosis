@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_fire_lukki_name" tags="teleportable_NOT,lukki,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT,curse_NOT,weaken_NOT" >	
+<Entity name="$enemy_apotheosis_boss_fire_lukki" tags="teleportable_NOT,lukki,polymorphable_NOT,touchmagic_immunity,necrobot_NOT,glue_NOT,curse_NOT,weaken_NOT" >	
 
 	<!-- art - main body ---------------------- -->
 

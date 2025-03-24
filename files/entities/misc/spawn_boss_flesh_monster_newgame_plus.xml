@@ -1,4 +1,4 @@
-<Entity tags="miniboss" name="$creep_apotheosis_boss_flesh_monster_name" serialize="1">
+<Entity tags="miniboss" name="$enemy_apotheosis_boss_flesh_monster" serialize="1">
 
 	<LightComponent 
 		_enabled="1" 

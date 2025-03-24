@@ -1,4 +1,4 @@
-<Entity name="$enemy_apotheosis_hiisi_thief" >
+<Entity name="$enemy_apotheosis_hiisi_thief" serialize="1" >
 
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

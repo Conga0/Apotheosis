@@ -3,6 +3,9 @@ dofile_once("data/scripts/lib/utilities.lua")
 function material_area_checker_success( pos_x, pos_y )
 	local entity_id = GetUpdatedEntityID()
 	local x,y = EntityGetTransform(entity_id)
+    local donation_count = tonumber(GlobalsGetValue("apotheosis_hobo_donation_count","0"))
+    donation_count = donation_count + 1
+    GlobalsSetValue("apotheosis_hobo_donation_count",tostring(donation_count))
 
 	SetRandomSeed( GameGetFrameNum(), pos_x + pos_y + entity_id )
 
@@ -47,7 +50,7 @@ function material_area_checker_success( pos_x, pos_y )
     
 	local has_already_found_battery = GameHasFlagRun("apotheosis_temp_battery_donated")
 
-    if (Random(1,10) == 10) and (has_already_found_battery == false) then
+    if ((Random(1,10) == 1) or donation_count > 4) and (has_already_found_battery == false) then
 		EntityLoad( "mods/Apotheosis/files/entities/items/wands/custom/mana_battery.xml", x, y - 16 )
         GameAddFlagRun( "apotheosis_temp_battery_donated" )
     end

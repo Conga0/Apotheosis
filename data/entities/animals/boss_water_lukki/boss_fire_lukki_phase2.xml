@@ -1,4 +1,4 @@
-<Entity name="$creep_apotheosis_boss_water_lukki_name" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT" >
+<Entity name="$enemy_apotheosis_boss_water_lukki" tags="enemy,mortal,hittable,homing_target,teleportable_NOT,music_energy_100,lukki,polymorphable_NOT,touchmagic_immunity,boss,necrobot_NOT,glue_NOT,miniboss,music_energy_100,curse_NOT,weaken_NOT" >
 
 	<ItemChestComponent level="4" enemy_drop="1" > </ItemChestComponent>
 

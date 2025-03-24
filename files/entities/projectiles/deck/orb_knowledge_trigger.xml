@@ -1,0 +1,8 @@
+<Entity name="$projectile_default" tags="projectile_player,orb_knowledge_sorry4tag" >
+
+	<Base file="mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml" >
+		<ProjectileComponent
+    	damage_every_x_frames="15"
+		/>
+	</Base>
+</Entity>

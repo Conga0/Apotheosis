@@ -7,7 +7,7 @@ local heretic_found = false
 
 local boss = EntityGetInRadiusWithTag( pos_x, pos_y, 450, "miniboss" ) or nil
 for bp=1,#boss do
-    if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+    if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
 	--Mmmyes making every potential Heretic in the area make the sound will be funny
 	heretic_found = true
 	h_x, h_y = EntityGetTransform( boss[bp] )

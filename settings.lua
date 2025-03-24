@@ -76,6 +76,7 @@ if currentLang == "русский" then
   custom_seed_desc = "Установить пользовательское семя для забега. \nНапример: 0948274926 или hardcore"
   organised_icons_name = "Упорядочить значки"
   organised_icons_desc = "Будут ли заклинания и перки упорядочены в соответствии со списком ванильных перков? \n \nНапример, если эта опция включена, перк, связанный с иммунитетом, появится рядом с другими \nперками иммунитета в журнале прогресса, а не внизу списка перков. \nТо же самое относится к заклинаниям и значкам существ."
+  
   seasonal_forced_name = "Запустить сезонные праздники"
   seasonal_forced_desc = "Список сезонных праздников, которые можно принудительно запустить"
   seasonal_forced_april_fools_name = "Запустить день смеха"
@@ -92,10 +93,17 @@ if currentLang == "русский" then
   secret_golden_cape_desc = "Включен ли аксессуар в виде золотой накидки? \nНекоторые могут захотеть выключить его, если используют пользовательские моды на персонажа."
   exp_poly_name = "Расширенный список полиморфов"
   exp_poly_desc = "Добавлены ли существа из Apotheosis в список хаотичного полиморфа? \n \nЭта опция временно находится в настройках мода, \nпока эта функция не будет добавлена в основную игру (не бета-ветку)"
+  
   spellrebalances_name = "Переработка заклинаний"
   spellrebalances_desc = "Перерабатывает различные заклинания, чтобы уменьшить затраты маны и сделать их более практичными.\nТакже перерабатывает заклинания пробивания, бензопилы и музыкальных нот, чтобы они больше соответствовали балансу заклинаний в ванильной игре.\nApotheosis разработан с учётом включения этой опции."
   meatrealmrework_name = "Переработка Царства Плоти"
   meatrealmrework_desc = "Переработка Царства Плоти для более постепенного нанесения урона и более сильных боссов."
+  reset_progress_name = "Сбросить прогресс"
+  reset_progress_desc = "Сбрасывает весь прогресс в моде Apotheosis."
+  reset_progress_confirm_name = "СБРОСИТЬ ВЕСЬ ПРОГРЕСС"
+  reset_progress_confirm_desc = "Сбрасывает весь прогресс разблокировок в Apotheosis.\nЭто действие нельзя отменить."
+  reset_progress_warning = "Прогресс не может быть сброшен во время прохождения."
+  
   keybind_name = "Привязка клавиш"
   keybind_desc = "Измените привязку клавиш для Apotheosis"
   keybind_tutorial = "Нажмите на подсказку ниже, чтобы ввести новую привязку для альтернативного огня.\nПо умолчанию используется правая кнопка мыши."
@@ -144,6 +152,11 @@ if currentLang == "日本語" then
   spellrebalances_desc = "オンにすると一部のスペルのマナ消費が低下し、より使いやすくなります。\nまた、貫通呪文、チェーンソー、音符など一部の強力なスペルは弱体化されます。\nこのMODのゲームバランスは、この設定がオンであることを前提に調整されています。"
   meatrealmrework_name = "肉の領域リワーク"
   meatrealmrework_desc = "肉の領域での特殊ダメージの仕様変更、エリアボスの強化"
+  reset_progress_name = "進行度をリセット"
+  reset_progress_desc = "Apotheosis MOD関係の進行度を全てリセットします。"
+  reset_progress_confirm_name = "リセットする"
+  reset_progress_confirm_desc = "Apotheosis MOD関係の進行度を全てリセットします。\nこの操作を実行すると元に戻せなくなります。"
+  reset_progress_warning = "ランの最中に進行度をリセットすることはできません。"
 
   keybind_name = "操作設定"
   keybind_desc = "Apotheosisで使用するキーを設定できます。"
@@ -714,6 +727,13 @@ mod_settings =
     _folded = true,
     settings = {
       {
+				id = "progress_handling_filler",
+				ui_name = " ", --This exists solely to ensure the progress reset button and close binder button aren't touching each other.
+				value_default = false,
+				hidden = false,
+				not_setting = true,
+      },
+      {
         id = "progress_handling_reset_all",
         ui_name = "",
         ui_fn = function(mod_id, gui, in_main_menu, im_id, setting)
@@ -769,9 +789,10 @@ local flags_statues = {
   --Apotheosis
   "apotheosis_card_unlocked_boss_monolith",
   "apotheosis_card_unlocked_boss_flesh_monster",
-  "apotheosis_card_unlocked_challenge_towerclimb_win",
-  "apotheosis_card_unlocked_challenge_missingmagic_win",
-  "apotheosis_card_unlocked_challenge_hardcore_win",
+  "apotheosis_card_unlocked_ending_apotheosis_speedrun",
+  "apotheosis_card_unlocked_ending_apotheosis_speedrun_1hr",
+  "apotheosis_card_unlocked_ending_apotheosis_hardcore",
+  "apotheosis_card_unlocked_ending_apotheosis_everything",
   "apotheosis_card_unlocked_musical_magic_played",
   --Endings
   "apotheosis_card_unlocked_ending_apotheosis_01",

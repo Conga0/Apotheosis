@@ -13,7 +13,7 @@ local heretic_id = nil
 local h_x, h_y = nil
 local boss = EntityGetInRadiusWithTag( pos_x, pos_y, 60, "miniboss" ) or {}
 for bp=1,#boss do
-    if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+    if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
 	heretic_found = true
 	heretic_id = boss[bp]
 	h_x, h_y = EntityGetTransform(heretic_id)

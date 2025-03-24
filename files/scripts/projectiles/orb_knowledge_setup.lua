@@ -1,4 +1,5 @@
 local haxx = function (entity_id, orbcount, radius)
+	radius=math.max(radius, 6)
 	local evil = GameHasFlagRun("apotheosis_evil_knowledge")
 
 	--[[
@@ -13,25 +14,27 @@ local haxx = function (entity_id, orbcount, radius)
 		end
 	end
 
-	-- Add visual rings. +1 ring per 7.5 orbs.
-	for j=1, math.min(math.floor(orbcount/7.5)+1, 5) do
-		local ring = EntityCreateNew(tostring(radius))
-		EntityAddChild(entity_id, ring)
-		for i=1, math.floor((math.pi*radius)/6) do
-			EntityAddComponent2(ring, "SpriteComponent", {
-				image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/", color(i), ".png"},--image_file="data/debug/circle_16.png",
-				has_special_scale=true,
-				emissive=true,
-				additive=not evil,
-				special_scale_x=1,
-				special_scale_y=1,
-				offset_x=5,
-				offset_y=5,
-				alpha=0.3+math.random()*0.1,
-			})
+	if orbcount>0 and not EntityHasTag(entity_id, "projectile_cloned")then
+		-- Add visual rings. +1 ring per 7.5 orbs.
+		for j=1, math.min(math.floor(orbcount/7.5)+1, 5) do
+			local ring = EntityCreateNew(tostring(radius))
+			EntityAddChild(entity_id, ring)
+			for i=1, math.floor((math.pi*radius)/6) do
+				EntityAddComponent2(ring, "SpriteComponent", {
+					image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/", color(i), ".png"},--image_file="data/debug/circle_16.png",
+					has_special_scale=true,
+					emissive=true,
+					additive=not evil,
+					special_scale_x=1,
+					special_scale_y=1,
+					offset_x=5,
+					offset_y=5,
+					alpha=0.3+math.random()*0.1,
+				})
+			end
+			EntityAddComponent2(ring, "LuaComponent", {script_source_file=table.concat{"mods/Apotheosis/files/scripts/projectiles/orb_knowledge_ring", j==1 and "_1" or "", ".lua"}})
+			EntityAddComponent2(ring, "InheritTransformComponent", {only_position=true})
 		end
-		EntityAddComponent2(ring, "LuaComponent", {script_source_file=table.concat{"mods/Apotheosis/files/scripts/projectiles/orb_knowledge_ring", j==1 and "_1" or "", ".lua"}})
-		EntityAddComponent2(ring, "InheritTransformComponent", {only_position=true})
 	end
 
 	--[[
@@ -50,8 +53,10 @@ local haxx = function (entity_id, orbcount, radius)
 	local types = {"melee", "projectile", "explosion", "electricity", "fire", "drill", "slice", "ice", "healing", "physics_hit", "radioactive", "poison", "overeating", "curse", "holy"}
 	local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id, "ProjectileComponent") --[[@cast projcomp number]]
 
-
-	ComponentSetValue2(projcomp, "friendly_fire", true)
+	if evil then
+		ComponentSetValue2(projcomp, "friendly_fire", true)
+	end
+	ComponentSetValue2(projcomp, "lifetime", ComponentGetValue2(projcomp, "lifetime")+math.max(10*orbcount, 120))
 	-- Add radius scaled don't hit shooter frames?
 
 	-- R, G, B
@@ -76,12 +81,13 @@ local haxx = function (entity_id, orbcount, radius)
 
 	-- Remember highest damage type, defaulting to projectile
 	local dmg = ComponentGetValue2(projcomp, "damage")
+	local dmg_multiplier = evil and 0.4 or 0.2
 	local highest = {0,dmg}
 
-	-- Add 10% damage per orb to all types, and add typed damage to weighting
+	-- Add 20% damage per orb to all types, and add typed damage to weighting
 	-- Div by 60 for per-frame dmg
 	-- 60 is too low, seemingly
-	ComponentSetValue2(projcomp, "damage", (dmg*(1 + (0.1 * orbcount)))/15)
+	ComponentSetValue2(projcomp, "damage", (dmg*(1 + (dmg_multiplier * orbcount)))/15)
 	if not evil then
 		color_weight[1] = color_weight[1] + dmg
 		color_weight[2] = color_weight[2] + dmg
@@ -90,7 +96,7 @@ local haxx = function (entity_id, orbcount, radius)
 	for i=1, #types do
 		dmg = ComponentObjectGetValue2(projcomp, "damage_by_type", types[i])
 		if dmg > highest[1] then highest={i, dmg} end
-		ComponentObjectSetValue2(projcomp, "damage_by_type", types[i], (dmg*(1 + (0.1 * orbcount)))/15)
+		ComponentObjectSetValue2(projcomp, "damage_by_type", types[i], (dmg*(1 + (dmg_multiplier * orbcount)))/15)
 		if not evil then 
 			color_weight[1] = color_weight[1] + type_weights[i][1] * dmg
 			color_weight[2] = color_weight[2] + type_weights[i][2] * dmg
@@ -128,6 +134,28 @@ local haxx = function (entity_id, orbcount, radius)
 	local inner_glow = EntityCreateNew("inner_glow")
 	EntityAddChild(entity_id, inner_glow)
 	EntityAddComponent2(inner_glow, "InheritTransformComponent")
+	if evil then
+		local pec = EntityAddComponent2(inner_glow, "ParticleEmitterComponent", {
+			emitted_material_name="spark_red",
+			lifetime_min=0.05*radius^0.25,
+			lifetime_max=0.25*radius^0.25,
+			count_min=math.floor((math.pi*radius)/3),
+			count_max=math.floor((math.pi*radius)/6),
+			render_on_grid=true,
+			fade_based_on_lifetime=true,
+			cosmetic_force_create=false,
+			airflow_force=0.5,
+			airflow_time=0.1,
+			airflow_scale=0.5,
+			emission_interval_min_frames=1,
+			emission_interval_max_frames=1,
+			emit_cosmetic_particles=true,
+			is_emitting=true,
+			attractor_force=24,
+		})
+		ComponentSetValue2(pec, "gravity", 0, 0)
+		ComponentSetValue2(pec, "area_circle_radius", radius-3, radius)
+	end
 	for i=1, 3 do
 		EntityAddComponent2(inner_glow, "SpriteComponent", {
 			image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/glow_", i,".png"},

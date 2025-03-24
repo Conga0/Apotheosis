@@ -1,7 +1,7 @@
 
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform(entity_id)
-local r = 120
+local r = 60
 local targets = EntityGetInRadiusWithTag(x,y,r,"hittable")
 for k=1,#targets do
     local comp = EntityGetFirstComponent(targets[k],"DamageModelComponent") or false

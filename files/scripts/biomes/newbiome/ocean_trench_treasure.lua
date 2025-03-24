@@ -173,7 +173,7 @@ g_lamp =
 function init(x, y, w, h)
 	local parallel = GetParallelWorldPosition( x, y )
 	if parallel == 0 then
-		LoadPixelScene( "mods/Apotheosis/files/biome_impl/lake/ocean_trench.png", "", x, y, "", true )
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/lake/ocean_trench.png", "", x, y, "mods/Apotheosis/files/biome_impl/lake/ocean_trench_background.png", true )
 	end
 end
 

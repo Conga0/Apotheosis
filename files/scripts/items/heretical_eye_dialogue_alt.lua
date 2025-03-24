@@ -578,7 +578,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 175, "miniboss" ) or nil
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_flesh_monster_name" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_flesh_monster" then
                     local d_opts = {"Tampering with fate will do you no good..."}
                     local dialogue = d_opts[math.random(1,#d_opts)]
 		    tone = "power"
@@ -1706,7 +1706,7 @@ local events = {
         trigger = function()
             local boss = EntityGetInRadiusWithTag( x, y, 175, "miniboss" ) or nil
             for bp=1,#boss do
-                if EntityGetName(boss[bp]) == "$creep_apotheosis_boss_fire_lukki_name" then
+                if EntityGetName(boss[bp]) == "$enemy_apotheosis_boss_fire_lukki" then
                     local d_opts = {"An adult fireborn arachnid, I've never been very fond of their kind."}
                     local dialogue = d_opts[math.random(1,#d_opts)]
 		    tone = "long"

@@ -232,8 +232,8 @@ function wake_up_waiting_threads()
     current_hold_time = current_hold_time + 1
   end
   if current_hold_time == 1 then
-    GamePrint(table.concat({GameTextGetTranslatedOrNot("$creep_apotheosis_boss_flesh_monster_name"),": ",GameTextGetTranslatedOrNot(translation_texts[current_text])}))
-    print(table.concat({GameTextGetTranslatedOrNot("$creep_apotheosis_boss_flesh_monster_name"),": ",GameTextGetTranslatedOrNot(translation_texts[current_text])}))
+    GamePrint(table.concat({GameTextGetTranslatedOrNot("$enemy_apotheosis_boss_flesh_monster"),": ",GameTextGetTranslatedOrNot(translation_texts[current_text])}))
+    print(table.concat({GameTextGetTranslatedOrNot("$enemy_apotheosis_boss_flesh_monster"),": ",GameTextGetTranslatedOrNot(translation_texts[current_text])}))
   end
   if current_hold_time == sentence_hold_time then
     for i, letter in ipairs(letters) do
