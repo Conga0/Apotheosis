@@ -136,6 +136,7 @@ if (depth_check and chilly_meter <= 0) then
 	}) 
 	local damagecomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
 	ComponentSetValue2(damagecomp, "ragdoll_material", "rock_hard_border")
+	ComponentSetValue2( damagecomp, "damage_multipliers", "ice", 2 )
 
 	EntitySetComponentsWithTagEnabled(entity_id,"invincible",false)
 	local c = EntityGetAllChildren( entity_id )
@@ -187,6 +188,7 @@ elseif (chilly_meter > 0 and safety_check) then
 	}) 
 	local damagecomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
 	ComponentSetValue2(damagecomp, "ragdoll_material", "apotheosis_meat_big_hell_worm")
+	ComponentSetValue2( damagecomp, "damage_multipliers", "ice", 0.3 )
 
     local movement_id = nil
     local c = EntityGetAllChildren(entity_id) or {}
