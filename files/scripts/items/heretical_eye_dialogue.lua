@@ -1484,7 +1484,7 @@ local events = {
 		    end
 	        end
 	    end	
-            if GameHasFlagRun("apotheosis_heretalk_guiding_stone") and (image_file == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or radar_perk == 1 ) then
+            if GameHasFlagRun("apotheosis_flesh_boss_stone_converted") and (image_file == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or radar_perk == 1 ) then
                 stone_over = true
                 local d_opts = {"That's... curious..."}
                 if GameHasFlagRun("apotheosis_flesh_boss_stone_destroyed") then

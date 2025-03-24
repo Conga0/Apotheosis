@@ -42,7 +42,11 @@ if parent <= 0 then
     ]]--
 
     local pathfindcomp = EntityGetFirstComponentIncludingDisabled( entity_id, "PathFindingComponent" )
-    EntitySetComponentIsEnabled( entity_id, pathfindcomp, false )
+    if ( GameGetFrameNum() % 200 == 0 ) then --Reactivates pathfinding every 10 seconds so they don't sometimes get stuck... yeah idk
+	EntitySetComponentIsEnabled( entity_id, pathfindcomp, true )
+    else
+	EntitySetComponentIsEnabled( entity_id, pathfindcomp, false )
+    end
 
     local physaicomp = EntityGetFirstComponentIncludingDisabled( entity_id, "PhysicsAIComponent" )
     ComponentSetValue2(physaicomp, "mLastPositionWhenHadPath", stone_x, stone_y)

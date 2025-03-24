@@ -1,9 +1,10 @@
 local entity_id = GetUpdatedEntityID()
 
-local bodcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"PhysicsBodyComponent")
-local shapecomp = EntityGetFirstComponentIncludingDisabled(entity_id,"PhysicsImageShapeComponent")
-
-if bodcomp ~= nil and shapecomp ~= nil then
-	EntityRemoveComponent( entity_id, bodcomp )
-	EntityRemoveComponent( entity_id, shapecomp )
+local bodcomps = EntityGetComponent(entity_id, "PhysicsBodyComponent") or {}
+for i, comp in ipairs(bodcomps) do
+	EntityRemoveComponent( entity_id, comp )
+end
+local shapecomps = EntityGetComponent(entity_id, "PhysicsImageShapeComponent") or {}
+for i, comp in ipairs(shapecomps) do
+	EntityRemoveComponent( entity_id, comp )
 end

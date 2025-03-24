@@ -46,7 +46,7 @@ do local v = heretic_stones[k]
 		GameTriggerMusicEvent( "music/oneshot/tripping_balls_02", true, pos_x, pos_y )
 		GameScreenshake( 150 )
 	end
-        GameAddFlagRun("apotheosis_heretalk_guiding_stone")
+        GameAddFlagRun("apotheosis_flesh_boss_stone_converted")
 	end
 end
 

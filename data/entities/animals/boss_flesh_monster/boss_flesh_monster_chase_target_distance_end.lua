@@ -215,6 +215,25 @@ elseif distance >= 4096 then
         end
     end
   end
+else
+    --Every 20 seconds try to get Heretic to move cause they stop sometimes if the player doesn't move...
+    --Fun Fact: This same thing happens to Kolmisilma when they're chasing you : )
+    if GameGetFrameNum() % 40 then
+	ComponentSetValue2(limbbosscomp, "state", 1)
+    end
+    if limbstate == 1 then
+	ComponentSetValue2(limbbosscomp, "state", 5)
+
+	local pathfindcomp = EntityGetFirstComponentIncludingDisabled( entity_id, "PathFindingComponent" )
+	EntitySetComponentIsEnabled( entity_id, pathfindcomp, true )
+
+	local luacomps = EntityGetComponentIncludingDisabled(entity_id, "LuaComponent") or {}
+	for i = 1, #luacomps do
+	    if ComponentGetValue2(luacomps[i], "script_source_file") == "data/entities/animals/boss_flesh_monster/boss_flesh_monster_portal_ambush.lua" then
+		EntityRemoveComponent(entity_id, luacomps[i])
+	    end
+        end
+    end
 end
 else
     ComponentSetValue2(limbbosscomp, "state", 1)

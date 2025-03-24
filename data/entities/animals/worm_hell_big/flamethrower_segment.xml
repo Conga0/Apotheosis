@@ -1,0 +1,13 @@
+
+<Entity name="flamethrower_segment">
+
+	<LuaComponent
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		script_source_file="data/entities/animals/worm_hell_big/worm_flamethrower.lua"
+		execute_every_n_frame="15"
+		execute_times="-1"
+		>
+	</LuaComponent>
+		
+</Entity>
