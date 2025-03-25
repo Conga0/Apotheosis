@@ -972,50 +972,15 @@ if seasonalSetting == true then
 		local content = ModTextFileGetContent("data/entities/animals/seasonal/fairy_big.xml")
 		ModTextFileSetContent("data/entities/animals/fairy_big.xml", content)
 
-		local randomCap = 10
-
-		SetRandomSeed(hour + minute, hour + day)
-		--10% chance for any main path biome to become weird in April Fools
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/vault.lua","mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
-		end
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/fungicave.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
-		end
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/rainforest.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
-		end
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/snowcastle.lua","mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
-		end
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/snowcave.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			ModLuaFileAppend("mods/Apotheosis/files/scripts/biomes/newbiome/lava_excavation.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
-		end
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
-		end
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
-		end
-		if Random(1, randomCap) == 1 then
-			ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-			randomCap = randomCap + 1
+		do -- Rename overgrown caverns to wandmart
+			local path = "data/biomes/fungiforest.xml"
+			local content = ModTextFileGetContent(path)
+			content = content:gsub("$biome_fun", "$biome_fungiforest_aprilfools")
+			ModTextFileSetContent(path, content)
 		end
 
 		--100% chance for the Temple of the Art to be spawn everything
 		ModLuaFileAppend("data/scripts/biomes/crypt.lua", "mods/Apotheosis/files/scripts/biomes/global_everything_populator.lua")
-
-
-
-		--Remember to check global spawn files, pandora's chest spawnrate boost is managed there
 	end
 end
 
@@ -1429,7 +1394,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Now with furious blacksmiths!",
 		"Now with 100% more maggots",
 		"Played by snakes with tophats!",
-		"Now with 100% more.. what is pixy?",
+		"Now with 100% more demons!",
 		"Starry edition!",
 		"Bringing home the bacon!",
 		"It's a mod",
@@ -1493,6 +1458,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"That's a lot of damage! How about a little more?",
 		"Nanomachines son!",
 		"Don't dig straight down!",
+		"U.N. Owen was Her?",
 	}
 	SetRandomSeed(1111, 7783258)
 	splash = splashes[Random(1, #splashes)]

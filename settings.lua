@@ -572,7 +572,7 @@ mod_settings =
     id = "motd_setting",
     ui_name = motd_setting_name,
     ui_description = motd_setting_desc,
-    value_default = false,
+    value_default = false,  --Disabled by default since motds have 4th wall breaking messages
     ---@diagnostic disable-next-line: undefined-global
     scope = MOD_SETTING_SCOPE_NEW_GAME,
   },

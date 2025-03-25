@@ -3850,8 +3850,6 @@
 	</StatusEffects>
   </CellData>
 
-  
-
 	<!-- Give cheese the [dairy] tag-->
   <CellData
 	name="cheese_static"
@@ -3875,6 +3873,43 @@
 	show_in_creative_mode="1"
 	>
   </CellData>
+
+  <!--Make cooked meat give a meaningful amount of faster movement-->
+  <CellDataChild
+  	name="meat_done" 
+	ui_name="$mat_meat_done"
+  	_parent="meat"
+  	_inherit_reactions="0"
+	wang_color="ff5d5246"
+	platform_type="1"
+	fire_hp="9000"
+	solid_on_collision_material="oil"
+	solid_static_type="0"
+	>
+	    <Graphics
+		texture_file="data/materials_gfx/meat_done.png"
+		color="ff5d5246"
+		pixel_all_around="ff7d5a4d"
+	
+		pixel_lonely="ff7d5a4d"
+		pixel_top_right="ff7d5a4d"
+		pixel_bottom_left="ff7d5a4d"
+		
+		pixel_left="ff7d5a4d"
+		pixel_top_left="ff7d5a4d"
+		pixel_top="ff7d5a4d"
+		
+		pixel_right="ff7d5a4d"
+		pixel_bottom_right="ff7d5a4d"
+		pixel_bottom="ff7d5a4d"
+		>
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="MOVEMENT_FASTER_2X" amount="2.0" />
+		</Ingestion>
+	</StatusEffects>
+  </CellDataChild>
 
 
 
@@ -4231,7 +4266,7 @@
 		>
 	</Reaction>
 	
-	<Reaction probability="15"
+	<Reaction probability="50"
 		input_cell1="apotheosis_lavarock_superhot" 		input_cell2="radioactive_liquid"
 		output_cell1="apotheosis_lavarock_superhot"	output_cell2="radioactive_gas"
 		>

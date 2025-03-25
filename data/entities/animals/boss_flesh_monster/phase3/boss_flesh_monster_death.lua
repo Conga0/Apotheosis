@@ -4,6 +4,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local entity_id    = GetUpdatedEntityID()
 	local pos_x, pos_y = EntityGetTransform( entity_id )
 	local flag_status = HasFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster" )
+	dofile_once("data/scripts/perks/perk.lua")
 	StatsLogPlayerKill( entity_id )
 
 	-- do some kind of an effect? throw some particles into the air?
@@ -63,7 +64,11 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 		--if seed == "hardcore" or seed == "nightcore" then
 		if GameHasFlagRun("apotheosis_hardmode") or GameHasFlagRun("apotheosis_everything") then
 			AddFlagPersistent( "apotheosis_card_unlocked_boss_flesh_monster_goldmode" )
-			EntityLoad( "mods/Apotheosis/files/entities/items/pickups/perk_copyspells.xml", pos_x, pos_y)
+			EntityLoad( "mods/Apotheosis/files/entities/items/pickups/perk_copyspells.xml", pos_x, pos_y - 16)
+		end
+		if GameHasFlagRun("apotheosis_everything") then
+			perk_spawn( pos_x, pos_y, "APOTHEOSIS_PLANE_RADAR" )
+			GameAddFlagRun("apotheosis_stone_obsolete") 
 		end
 	end
 	
