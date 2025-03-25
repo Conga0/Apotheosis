@@ -15,7 +15,7 @@ local player_far = false
 local limbbosscomp = EntityGetFirstComponentIncludingDisabled( entity_id, "LimbBossComponent" )
 local limbstate = ComponentGetValue2(limbbosscomp, "state")
 
-if player_id ~= nil then
+if player_id ~= 0 then
     local p_x, p_y = EntityGetTransform(player_id)
     local dis_x = p_x - pos_x
     local dis_y = p_y - pos_y

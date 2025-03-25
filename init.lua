@@ -1,6 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-local apoth_version = "v1.3.1"
+local apoth_version = "v1.3.2"
 
 --local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
 local modCompatibilitySpellEvolutions = ModSettingGet("Apotheosis.mod_compat_mode_spell_evolution")
@@ -1459,6 +1459,9 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Nanomachines son!",
 		"Don't dig straight down!",
 		"U.N. Owen was Her?",
+		"Testing Testing 1 2 3",
+		"Bazinga!",
+		"I AM YOUR DEAFENING",
 	}
 	SetRandomSeed(1111, 7783258)
 	splash = splashes[Random(1, #splashes)]
