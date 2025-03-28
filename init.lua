@@ -1511,19 +1511,22 @@ end
 ModLuaFileAppend("data/scripts/items/orb_pickup.lua", "mods/Apotheosis/files/scripts/magic/orb_pickup.lua")
 
 
-
-
 -- MENU SHIT!!!!!
 -- THIS WILL SHOW IN THE PAUSE MENU!!
 -- TODO mod compatible method for fitting multiple items 
 function OnPausePreUpdate()
 	Gui = Gui or GuiCreate()
-	GuiIdPushString(Gui, "apoth_pause")
-	-- https://stackoverflow.com/a/60942437
-	-- Var for apoth build date
 	--[[
-		Apotheosis v1.32 - ?Beta? Build Mar 22 2025 - ?Hardcore?
-	]]
+	-- Ultra haxx so we can detect menus being open. Force an ID collision.
+	for i=1, 10 do
+		GuiColorSetForNextWidget(Gui, 0.35, 0.35, 0.35, 0.5)
+		GuiButton(Gui, 2, 12.5, 20*i-10, "TEST", 1, "data/fonts/font_pixel.xml")
+		GuiColorSetForNextWidget(Gui, 0.35, 0.35, 0.35, 0.5)
+		local t={GuiGetPreviousWidgetInfo(Gui)} for i=1, #t do t[i]=tostring(t[i]) end
+		GuiText(Gui, 12.5, 20*i, table.concat(t, " "), 1, "data/fonts/font_pixel.xml")
+	end]]
+
+	GuiIdPushString(Gui, "apoth_pause")
 	GuiColorSetForNextWidget(Gui, 0.35, 0.35, 0.35, 0.5)
 	GuiText(Gui, 12.5, ({GuiGetScreenDimensions(Gui)})[2]/2-38, table.concat{"Apotheosis - ", apoth_version, " - ", splash}, 1, "data/fonts/font_pixel.xml")
 	GuiIdPop(Gui)
