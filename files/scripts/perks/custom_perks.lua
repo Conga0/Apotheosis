@@ -742,6 +742,7 @@ apotheosis_perkappends = {
         perk_icon = "mods/Apotheosis/files/items_gfx/perks/absorbent_cape_perk.png",
 		not_in_default_perk_pool = false,
 		stackable = STACKABLE_YES,
+        usable_by_enemies = true,
 		func = function( entity_perk_item, entity_who_picked, item_name )
 
             local perk_found = false

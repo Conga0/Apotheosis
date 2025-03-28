@@ -35,7 +35,7 @@ function update_ui_graphic( ui_name, offset_y )
 						G=math.ceil(base.G*(1-a)+from.G*(a)),
 						B=math.ceil(base.B*(1-a)+from.B*(a)),
 					}
-					print(result.R, result.G, result.B)
+					--print(result.R, result.G, result.B)
 					ModImageSetPixel( csi_from_id_output, x, y + offset_y, bit.bor(bit.lshift(result.R, 0), bit.lshift(result.G, 8), bit.lshift(result.B, 16), bit.lshift(0xFF, 24)) )
 				elseif colour ~= 0 then
 					ModImageSetPixel( csi_from_id_output, x, y + offset_y, colour )

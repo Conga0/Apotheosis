@@ -1331,6 +1331,7 @@ ModLuaFileAppend("data/scripts/items/powder_stash.lua", "mods/Apotheosis/files/s
 ModLuaFileAppend("data/scripts/items/potion_aggressive.lua", "mods/Apotheosis/files/scripts/potions/potion_aggressive_appends.lua")
 
 local splash = ""
+local mod_name = "Apotheosis"
 function OnMagicNumbersAndWorldSeedInitialized()
 	--You can just edit material file data after appending it and it works, uhh, cool, thanks Nolla; Thanks Wondible
 	do --Setup Magic Catalyst data
@@ -1420,6 +1421,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Spell racecar backwards!",
 		"Based on a true story!",
 		"Player 2 is connected",
+		"Player Count: 2",
 		"Featuring rainbow cats!",
 		"Turn your head and cough",
 		"The moon is made of cheese!",
@@ -1463,8 +1465,11 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Bazinga!",
 		"I AM YOUR DEAFENING",
 	}
-	SetRandomSeed(1111, 7783258)
+	SetRandomSeed(minute, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]
+
+	--1 in 10000 chance for it to swap around the o and the e
+	if Random(1,10000) == 1 then mod_name = "Apothoesis" end
 end
 
 function OnModPreInit()
@@ -1528,6 +1533,6 @@ function OnPausePreUpdate()
 
 	GuiIdPushString(Gui, "apoth_pause")
 	GuiColorSetForNextWidget(Gui, 0.35, 0.35, 0.35, 0.5)
-	GuiText(Gui, 12.5, ({GuiGetScreenDimensions(Gui)})[2]/2-38, table.concat{"Apotheosis - ", apoth_version, " - ", splash}, 1, "data/fonts/font_pixel.xml")
+	GuiText(Gui, 12.5, ({GuiGetScreenDimensions(Gui)})[2]/2-38, table.concat{mod_name," - ", apoth_version, " - ", splash}, 1, "data/fonts/font_pixel.xml")
 	GuiIdPop(Gui)
 end
