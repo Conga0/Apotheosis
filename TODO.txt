@@ -1,5 +1,3 @@
-Fix creature shift icons being transparent
-Make brimstone/ukkostone/etc work passively in the user's inventory
 Music Boss rework
 Adult Centipede
 Fix motd not spawning in downunder spawn area
