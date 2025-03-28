@@ -77,6 +77,35 @@ do
   attrs._tags = attrs._tags .. ",enabled_in_inventory"
   ModTextFileSetContent("data/entities/items/pickup/wandstone.xml", tostring(xml))
 end
+-- In-inv behavior for various items
+do
+	local content = ModTextFileGetContent("data/entities/items/pickup/brimstone.xml")
+	local xml = nxml.parse(content)
+	local attrs = xml:first_of("GameEffectComponent").attr
+	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	ModTextFileSetContent("data/entities/items/pickup/brimstone.xml", tostring(xml))
+end
+do
+	local content = ModTextFileGetContent("data/entities/items/pickup/thunderstone.xml")
+	local xml = nxml.parse(content)
+	local attrs = xml:first_of("GameEffectComponent").attr
+	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	ModTextFileSetContent("data/entities/items/pickup/thunderstone.xml", tostring(xml))
+end
+do
+	local content = ModTextFileGetContent("data/entities/items/pickup/waterstone.xml")
+	local xml = nxml.parse(content)
+	local attrs = xml:first_of("GameEffectComponent").attr
+	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	ModTextFileSetContent("data/entities/items/pickup/waterstone.xml", tostring(xml))
+end
+do
+	local content = ModTextFileGetContent("data/entities/items/pickup/sun/sunstone.xml")
+	local xml = nxml.parse(content)
+	local attrs = xml:first_of("GameEffectComponent").attr
+	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	ModTextFileSetContent("data/entities/items/pickup/sun/sunstone.xml", tostring(xml))
+end
 
 --Lets sun seed provide ASE while passively inside the player's inventory
 do
