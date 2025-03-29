@@ -1395,7 +1395,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Now with furious blacksmiths!",
 		"Now with 100% more maggots",
 		"Played by snakes with tophats!",
-		"Now with 100% more demons!",
+		"Ah! Chippie!",
 		"Starry edition!",
 		"Bringing home the bacon!",
 		"It's a mod",
@@ -1485,6 +1485,13 @@ function OnModPreInit()
 			RemoveFlagPersistent(apotheosis_flag_list[flag])
 		end
 		ModSettingSet("Apotheosis.progress_handling_do_reset", false)
+	end
+
+	--Local Userseed backup
+	local user_seed = ModSettingGet("fairmod.user_seed") or 0
+	if user_seed ~= 0 then
+		print(user_seed)
+		ModSettingSetNextValue("Apotheosis.user_seed", user_seed, false)
 	end
 
 end

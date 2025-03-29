@@ -569,7 +569,7 @@ status_apotheosis_homing_desc,Your spells seek targets automatically.,Ваши �
 status_apotheosis_light_reflect_name,Magical Light,Волшебный свет,,,,,,,魔法之光,魔法の光,,,,
 status_apotheosis_light_reflect_desc,Taking damage causes you to retaliate with a beam of light.,Получение урона заставляет вас отвечать лучом света.,,,,,,,你受到伤害会反射一束复仇光线,ダメージを負うと、ビームを放って反撃する。,,,,
 status_apotheosis_breath_drain_name,Suffocating,Удушье,,,,,,,窒息,窒息,,,,
-status_apotheosis_breath_drain_desc,You are rapidly loosing oxygen!!,Вы быстро теряете кислород!!,,,,,,,你快速地失去氧气！,酸素が急激に失われていく。,,,,
+status_apotheosis_breath_drain_desc,You are rapidly losing oxygen!!,Вы быстро теряете кислород!!,,,,,,,你快速地失去氧气！,酸素が急激に失われていく。,,,,
 status_apotheosis_speedup_name,Accelerated Velocity,Ускоренная скорость,,,,,,,加速,超加速,,,,
 status_apotheosis_speedup_desc,Your spells feel significantly faster.,Ваши заклинания кажутся значительно быстрее.,,,,,,,你的法术明显快了许多。,とても速く動けるようになった。,,,,
 status_apotheosis_clear_status_name,Pure Stomach,Чистый желудок,,,,,,,净胃,ピュアな胃袋,,,,

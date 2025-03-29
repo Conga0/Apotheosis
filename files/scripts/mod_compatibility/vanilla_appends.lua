@@ -100,31 +100,18 @@ do
 	ModTextFileSetContent("data/entities/items/pickup/waterstone.xml", tostring(xml))
 end
 do
+  local content = ModTextFileGetContent("data/entities/items/pickup/sun/sunseed.xml")
+  local xml = nxml.parse(content)
+  local attrs = xml:first_of("GameEffectComponent").attr
+  attrs._tags = attrs._tags .. ",enabled_in_inventory"
+  ModTextFileSetContent("data/entities/items/pickup/sun/sunseed.xml", tostring(xml))
+end
+do
 	local content = ModTextFileGetContent("data/entities/items/pickup/sun/sunstone.xml")
 	local xml = nxml.parse(content)
 	local attrs = xml:first_of("GameEffectComponent").attr
 	attrs._tags = attrs._tags .. ",enabled_in_inventory"
 	ModTextFileSetContent("data/entities/items/pickup/sun/sunstone.xml", tostring(xml))
-end
-
---Lets sun seed provide ASE while passively inside the player's inventory
-do
-  local path = "data/entities/items/pickup/sun/sunseed.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("GameEffectComponent").attr
-  attrs._tags = attrs._tags .. ",enabled_in_inventory"
-  ModTextFileSetContent(path, tostring(xml))
-end
-
---Lets sun stone provide ASE while passively inside the player's inventory
-do
-  local path = "data/entities/items/pickup/sun/sunstone.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("GameEffectComponent").attr
-  attrs._tags = attrs._tags .. ",enabled_in_inventory"
-  ModTextFileSetContent(path, tostring(xml))
 end
 
 --Adds tag to beamstone so perk creation altar can detect it.. technically you can throw it into the sun because of this but, eh, nobody would ever do that.. right? I just wanna save on tags whenever possible
@@ -510,7 +497,6 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, 
     "ocarina/ocarina_f.xml",
     "ocarina/ocarina_gsharp.xml",
     "orb_laseremitter.xml",
-    "glowing_bolt.xml",
     "orb_laseremitter_four.xml",
     "orb_laseremitter_cutter.xml",
     "disc_bullet_bigger.xml",
