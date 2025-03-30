@@ -1,0 +1,97 @@
+<Entity serialize="0">
+
+  	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_yellow"
+		image_animation_file="mods/Apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.png"
+		offset.x="0"
+		offset.y="0"
+		gravity.y="0.0"
+		lifetime_min="3"
+		lifetime_max="4"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="0"
+		y_vel_max="0"
+		count_min="10"
+		count_max="10"
+		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		cosmetic_force_create="1"
+		collide_with_grid="0"
+		airflow_force="0.051"
+		airflow_time="1.01"
+		airflow_scale="0.03"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="3"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="1"
+		render_back="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+  	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_yellow"
+		image_animation_file="mods/Apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.png"
+		offset.x="0"
+		offset.y="0"
+		gravity.y="0.0"
+		lifetime_min="3"
+		lifetime_max="4"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="0"
+		y_vel_max="0"
+		count_min="5"
+		count_max="5"
+		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		cosmetic_force_create="1"
+		collide_with_grid="0"
+		airflow_force="0.051"
+		airflow_time="1.01"
+		airflow_scale="0.03"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="3"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="1"
+		render_back="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+  	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_white_bright"
+		image_animation_file="mods/Apotheosis/files/entities/buildings/ending/constellations/eye_killed_emitter.png"
+		offset.x="0"
+		offset.y="0"
+		gravity.y="0.0"
+		lifetime_min="3"
+		lifetime_max="4"
+		x_vel_min="0"
+		x_vel_max="0"
+		y_vel_min="0"
+		y_vel_max="0"
+		count_min="5"
+		count_max="5"
+		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		cosmetic_force_create="1"
+		collide_with_grid="0"
+		airflow_force="0.051"
+		airflow_time="1.01"
+		airflow_scale="0.03"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="3"
+		emit_cosmetic_particles="1"
+		velocity_always_away_from_center="1"
+		render_back="1"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+	<LifetimeComponent
+		lifetime="5" >
+	</LifetimeComponent>
+
+</Entity>

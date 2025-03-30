@@ -1,0 +1,74 @@
+<Entity>
+
+  <InheritTransformComponent /> 
+
+  <GameEffectComponent  
+    effect="NONE"
+    frames="400"
+  > 
+  </GameEffectComponent >
+
+  <LuaComponent
+    script_source_file="mods/Apotheosis/files/scripts/misc/tuonela_rubberband.lua" 
+    execute_every_n_frame="-1"
+    execute_on_removed="1"
+    >
+  </LuaComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="buildup_particles"
+		emitted_material_name="spark_yellow"
+		gravity.y="0.0"
+		lifetime_min="0.8"
+		lifetime_max="5.5"
+		count_min="20"
+		count_max="40"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="0"
+		area_circle_radius.max="0"
+		cosmetic_force_create="0"
+		airflow_force="1.1"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		image_animation_file="data/particles/image_emitters/aura.png"
+		image_animation_speed="0.5"
+		image_animation_loop="0"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<ParticleEmitterComponent 
+		_tags="buildup_particles"
+		emitted_material_name="spark_white"
+		gravity.y="0.0"
+		lifetime_min="0.8"
+		lifetime_max="5.5"
+		count_min="20"
+		count_max="40"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="0"
+		area_circle_radius.max="0"
+		cosmetic_force_create="0"
+		airflow_force="1.1"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		image_animation_file="data/particles/image_emitters/aura.png"
+		image_animation_speed="0.5"
+		image_animation_loop="0"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+
+  <AudioLoopComponent
+    file="data/audio/Desktop/projectiles.bank"
+    event_name="player_projectiles/tentacle_portal/loop"
+    auto_play="1">
+  </AudioLoopComponent>
+
+</Entity>

@@ -12,10 +12,12 @@ local parent_id = EntityGetParent( entity_id )
 
 local rnd = Random( 1, 1000 )
 if( rnd >= 1000 ) then
-    proj_entity = "precursor"			
+    proj_entity = "precursor"
 elseif( rnd >= 999 ) then
     proj_entity = "lively_concoction"
-elseif( rnd >= 994 ) then
+elseif( rnd >= 998 ) then
+    proj_entity = "wand_essence"
+elseif( rnd >= 993 ) then
     proj_entity = "cursed_liquid"
 elseif( rnd >= 978 ) then
     proj_entity = "fungus"
