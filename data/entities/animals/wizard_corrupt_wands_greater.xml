@@ -1,4 +1,4 @@
-<Entity name="Greater Master of Puppetering" tags="ui_use_raw_name">
+<Entity name="Greater Master of Puppetering" tags="polymorphable_NOT">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="1" > </ItemChestComponent>

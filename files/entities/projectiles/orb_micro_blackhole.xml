@@ -105,7 +105,7 @@
 		damage_per_frame="0.01"
 		update_every_n_frame="8"
 		entities_with_tag="mortal"
-		death_cause="Micro Blackhole"
+		death_cause="$damage_apotheosis_blackhole_small"
 		damage_type="DAMAGE_CURSE"
 		>
 	</AreaDamageComponent>

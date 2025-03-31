@@ -1,4 +1,4 @@
-<Entity name="$enemy_apotheosis_wizard_corrupt_wands">
+<Entity name="$enemy_apotheosis_wizard_corrupt_wands" tags="polymorphable_NOT" >
 	<!-- Placeholder, confirm before final release -->
   
 	<Base file="data/entities/base_enemy_basic.xml" >

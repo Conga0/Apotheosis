@@ -1631,6 +1631,17 @@ if ModSettingGet( "Apotheosis.meatrealmrework" ) then --Remove the vanilla meat 
   local content = ModTextFileGetContent(path)
   content = content:gsub("AddFlagPersistent%( \"miniboss_meat\" %)","AddFlagPersistent( \"miniboss_meat\" ) local player = EntityGetWithTag(\"player_unit\")[1] local children = EntityGetAllChildren(player) or {} for k=1,#children do local v = children[k] if EntityHasTag(v,\"curse\") then local comp = EntityGetFirstComponentIncludingDisabled(v,\"LifetimeComponent\") ComponentSetValue2(comp,\"lifetime\",3) break end end")
   ModTextFileSetContent(path, content)
+
+  local path = "data/entities/animals/maggot_tiny/orb.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+	<HitEffectComponent 
+    effect_hit="LOAD_UNIQUE_CHILD_ENTITY"
+    value_string="mods/Apotheosis/files/entities/misc/hitfx_nohealing_short.xml" >
+	</HitEffectComponent >
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
 end
 
 do --Make tiny drop the support bullet and support field spell

@@ -1,4 +1,4 @@
-<Entity name="$enemy_apotheosis_wizard_corrupt_returner" >
+<Entity name="$enemy_apotheosis_wizard_corrupt_returner" tags="polymorphable_NOT" >
   
 	<Base file="data/entities/base_enemy_basic.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>

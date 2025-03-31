@@ -1,4 +1,4 @@
-<Entity name="Tome of Pyrokinetics" tags="monk_hand">
+<Entity name="Tome of Pyrokinetics" tags="monk_hand,polymorphable_NOT">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
