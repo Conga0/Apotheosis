@@ -1,6 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-local apoth_version = "v1.3.2"
+local apoth_version = "v1.3.3"
 
 --local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
 local modCompatibilitySpellEvolutions = ModSettingGet("Apotheosis.mod_compat_mode_spell_evolution")
@@ -973,7 +973,7 @@ if seasonalSetting == true then
 		ModTextFileSetContent("data/entities/animals/fairy_big.xml", content)
 
 		do -- Rename overgrown caverns to wandmart
-			local path = "data/biomes/fungiforest.xml"
+			local path = "data/biome/fungiforest.xml"
 			local content = ModTextFileGetContent(path)
 			content = content:gsub("$biome_fun", "$biome_fungiforest_aprilfools")
 			ModTextFileSetContent(path, content)
