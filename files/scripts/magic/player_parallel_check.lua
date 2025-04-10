@@ -36,6 +36,15 @@ local hpcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelCo
 local hp = ComponentGetValue2(hpcomp,"max_hp")
 local comp = EntityGetFirstComponentIncludingDisabled(entity_id,"IngestionComponent")
 ComponentSetValue2(comp,"blood_healing_speed",math.max(0.0024 * (hp / 4), 0.0024))
+--Scale suffocation damage to be percentage based
+--Scales at half the default rate
+--100 hp = 1x rate
+--200 hp = 1x rate
+--400 hp = 2x rate
+--800 hp = 4x rate
+--4000 hp = 20x rate
+--etc
+ComponentSetValue2(hpcomp,"air_lack_of_damage",math.max(0.3 * (hp / 4), 0.6))
 
 --Removes old extra life perks
 --dofile( "mods/Apotheosis/files/scripts/DEBUG/clear_extra_lifes.lua" )

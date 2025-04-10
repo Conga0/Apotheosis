@@ -1,6 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 
-local apoth_version = "v1.3.3"
+local apoth_version = "v1.3.4"
 
 --local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
 local modCompatibilitySpellEvolutions = ModSettingGet("Apotheosis.mod_compat_mode_spell_evolution")
@@ -1464,6 +1464,10 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Testing Testing 1 2 3",
 		"Bazinga!",
 		"I AM YOUR DEAFENING",
+		"Not as fair as fairmod!",
+		"Buy one get one free!",
+		"Move like an egyptian!",
+		"10 doesn't mean 11!!!"
 	}
 	SetRandomSeed(minute, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]

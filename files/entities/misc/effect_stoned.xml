@@ -23,7 +23,7 @@
 	</GameEffectComponent >
 
     <GameEffectComponent
-    	effect="FROZEN"
+    	effect="KNOCKBACK"
     	frames="600"
     >
 	</GameEffectComponent >

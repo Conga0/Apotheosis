@@ -1,4 +1,4 @@
-<Entity >
+<Entity name="apotheosis_breath_drain_effect" >
 	
 	<InheritTransformComponent 
 		_enabled="1" >
@@ -12,7 +12,7 @@
 
 	<LuaComponent
 		execute_on_removed="1"
-		script_source_file="mods/Apotheosis/files/scripts/status_effects/breath_drain_remove.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/breath_drain_remove_endcheck.lua"
 		execute_every_n_frame="-1"
 		>
 	</LuaComponent>

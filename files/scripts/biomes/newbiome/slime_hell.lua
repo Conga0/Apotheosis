@@ -146,6 +146,7 @@ g_big_enemies =
 		max_count	= 0,    
 		entity 	= ""
 	},
+	--[[
 	{
 		prob   		= 0.05,
 		min_count	= 1,
@@ -164,8 +165,9 @@ g_big_enemies =
 		max_count	= 3,    
 		entity 	= "data/entities/animals/worm_tiny.xml"
 	},
+	]]--
 	{
-		prob   		= 0.05,
+		prob   		= 0.15,
 		min_count	= 1,
 		max_count	= 1,    
 		entity 	= "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml"

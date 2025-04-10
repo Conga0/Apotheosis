@@ -1,4 +1,5 @@
 <MagicNumbers 
   BIOME_MAP="mods/Apotheosis/files/scripts/biomes/biome_map.lua"
+  NUM_ORBS_TOTAL="16"
   > 
 </MagicNumbers>

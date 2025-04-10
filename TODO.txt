@@ -1,6 +1,9 @@
 Music Boss rework
 Adult Centipede
 Fix motd not spawning in downunder spawn area
+Review how overpowered destruction is in ToSR, if at all
+* Potential solutions, if decided to be too powerful (strong to the point of being non-competitive with all other options, highly unlikely considering it's rarity), add a temporary wounded effect upon casting destruction or make corrupt mages immune to destruction
+* To reiterate, it'll only really be a problem spell if it's powerful to the point of making other options non-competitive, which I predict to be not the case given it's rarity.
 
 Ideas:
 Giant Mages in challenge zone

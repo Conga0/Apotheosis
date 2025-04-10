@@ -41,6 +41,7 @@
 
 	<CellEaterComponent
 		_tags="cell_eater"
+		ignored_material_tag="[indestructible]"
 		radius="6" >
 	</CellEaterComponent>
 
@@ -260,17 +261,5 @@
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>
-	
-	<LifetimeComponent
-		lifetime="18000"
-		>
-	</LifetimeComponent>
-	
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/illusion_disappear_green.lua"
-		execute_every_n_frame="-1"
-		execute_on_removed="1"
-		>
-	</LuaComponent>
 
 </Entity>
