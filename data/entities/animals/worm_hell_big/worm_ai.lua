@@ -95,7 +95,7 @@ local depth_check = (pos_y <= depth_cap)
 local safety_check = (pos_y >= safety_cap)
 local target_distance = 50
 local cold_limit = 1200
--- if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
+if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 if GameHasFlagRun("apotheosis_everything") or GameHasFlagRun("apotheosis_downunder") then
 	depth_cap = -7180
 	safety_cap = -30000
@@ -206,7 +206,7 @@ elseif (chilly_meter > 0 and safety_check) then
 	end
     end
 end
--- end
+end
 
 if (chilly_meter <= 0) then
 do

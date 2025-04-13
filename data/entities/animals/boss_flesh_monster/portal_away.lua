@@ -52,8 +52,9 @@ if (heretic_found == true) then
 
     local safe_mode = false
 
-    local player_id = EntityGetWithTag("player_unit")[1]
-    targ_x, targ_y = EntityGetTransform(player_id)
+    local player_id = EntityGetWithTag("player_unit")[1] or EntityGetWithTag("polymorphed_player")[1] or nil
+    if player_id ~= nil then
+    local targ_x, targ_y = EntityGetTransform(player_id)
 
     local cam_x, cam_y, cam_w, cam_h = GameGetCameraBounds()
 
@@ -66,6 +67,9 @@ if (heretic_found == true) then
     if ( distance > range ) then
 	--oh no! the player likely cannot see this nonsense transpiring!
 	--let's cool things down a bit so they can see the portal before it disappears
+	safe_mode = true
+    end
+    else
 	safe_mode = true
     end
 
