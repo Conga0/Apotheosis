@@ -66,18 +66,6 @@ function do_newgame_plus()
 	local targets = EntityGetWithTag("player_unit")
 	for k=1,#targets
 	do local v = targets[k]
-		local damagemodels = EntityGetComponent( v, "DamageModelComponent" )
-		if( damagemodels ~= nil ) then
-			for i,damagemodel in ipairs(damagemodels) do
-				
-				local curse = tonumber(ComponentObjectGetValue( damagemodel, "damage_multipliers", "curse" ) )
-
-				curse = curse + 1
-
-				ComponentObjectSetValue( damagemodel, "damage_multipliers", "curse", curse )
-
-			end
-		end
 
 		--Update Radars to point to the correct location inside of planes
 		--Disable no longer relevent ones & change the direction of plane radar to the exit portal

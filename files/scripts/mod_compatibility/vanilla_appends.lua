@@ -81,22 +81,25 @@ end
 do
 	local content = ModTextFileGetContent("data/entities/items/pickup/brimstone.xml")
 	local xml = nxml.parse(content)
+  xml.attr.tags = xml.attr.tags .. ",effect_protection"
 	local attrs = xml:first_of("GameEffectComponent").attr
-	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	attrs._tags = attrs._tags .. ",enabled_in_inventory,effect_protection"
 	ModTextFileSetContent("data/entities/items/pickup/brimstone.xml", tostring(xml))
 end
 do
 	local content = ModTextFileGetContent("data/entities/items/pickup/thunderstone.xml")
 	local xml = nxml.parse(content)
+  xml.attr.tags = xml.attr.tags .. ",effect_protection"
 	local attrs = xml:first_of("GameEffectComponent").attr
-	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	attrs._tags = attrs._tags .. ",enabled_in_inventory,effect_protection"
 	ModTextFileSetContent("data/entities/items/pickup/thunderstone.xml", tostring(xml))
 end
 do
 	local content = ModTextFileGetContent("data/entities/items/pickup/waterstone.xml")
 	local xml = nxml.parse(content)
+  xml.attr.tags = xml.attr.tags .. ",effect_protection"
 	local attrs = xml:first_of("GameEffectComponent").attr
-	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	attrs._tags = attrs._tags .. ",enabled_in_inventory,effect_protection"
 	ModTextFileSetContent("data/entities/items/pickup/waterstone.xml", tostring(xml))
 end
 do
@@ -447,6 +450,11 @@ do -- Add lua script to vulnerability effect which applies "vulnerable" tag to a
     </LuaComponent>
   ]]))
   ModTextFileSetContent(path, tostring(xml))
+end
+
+do --Handle toxic damage multipliers (hax)
+  ModLuaFileAppend("data/scripts/status_effects/weaken_start.lua", "mods/Apotheosis/files/scripts/status_effects/weaken_start_append.lua")
+  ModLuaFileAppend("data/scripts/status_effects/weaken_end.lua", "mods/Apotheosis/files/scripts/status_effects/weaken_end_append.lua")
 end
 
 do -- Add lua script to Waterstone, allowing you to charm watermages

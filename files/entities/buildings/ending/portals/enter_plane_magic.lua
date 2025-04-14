@@ -54,23 +54,6 @@ function do_newgame_plus()
 
 
 	--Increase curse (& suffocation by relation) damage to match with the player's new HP stats
-
-	local targets = EntityGetWithTag("player_unit")
-	for k=1,#targets
-	do local v = targets[k]
-		local damagemodels = EntityGetComponent( v, "DamageModelComponent" )
-		if( damagemodels ~= nil ) then
-			for i,damagemodel in ipairs(damagemodels) do
-				
-				local curse = tonumber(ComponentObjectGetValue2( damagemodel, "damage_multipliers", "curse" ) )
-
-				curse = curse + 1
-
-				ComponentObjectSetValue2( damagemodel, "damage_multipliers", "curse", curse )
-
-			end
-		end
-	end
 end
 
 
