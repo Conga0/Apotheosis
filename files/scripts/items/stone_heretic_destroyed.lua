@@ -9,7 +9,6 @@ local stashed = false
 if ModIsEnabled("bags_of_many") and parent_id ~= 0 and player_id ~= 0 then
     if EntityHasTag(player_id, "bags_of_many") then
 	stashed = true
-	print("stashed")
     end
 end
 

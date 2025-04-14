@@ -1,17 +1,7 @@
 Update entity icons/images on wiki to new ones
--Will o' the whisp
 -Giant Centipede (barely noticeable tbh)
--Wand Tinkering Crystal
--Mana Drain Crystal
--Lime Cyrstal
--Opal Crystal
--Greater Barfer
 -Blind Gazer
 -Memory of the Worm
--Wand Tinkering Crystal
--Mana Drain Crystal
--Lime Crystal
--Opal Crystal
 
 Update spell icons/images on wiki to new ones
 None! Hooray!
@@ -21,15 +11,12 @@ None! Hooray!
 
 Add entities to the wiki
 -Small Fire Spider
--Lukki Porring
 
 Add status effects to wiki
 -Divine Protection
 -Mind Weave
--Bloodlinked
 
 Misc. things to update
--Weirdos rename
 -Fishing changes
--Corrupt Stone changes
+-Corrupt Stone changes (Uh... can't remember what this is specifically referring to :p)
 -Heretical Eye destruction changes

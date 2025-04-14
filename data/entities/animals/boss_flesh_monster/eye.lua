@@ -90,26 +90,34 @@ if stone_found == true then
 	if ( stone_id ~= nil ) then
 		local s = stone_id
 		local sx,sy = EntityGetTransform( s )
-		angle = get_direction( x, y, sx, sy )
+		angle = math.pi - math.atan2( ( sy - y ), ( sx - x ) )
 	end
 elseif him == true then
 	if ( wizard_id ~= nil ) then
 		local w = wizard_id
 		local wx,wy = EntityGetTransform( w )
-		angle = get_direction( x, y, wx, wy )
+		angle = math.pi - math.atan2( ( wy - y ), ( wx - x ) )
 	end
 elseif dislike == true then
 	if ( target_id ~= nil ) then
 		local t = target_id
 		local tx,ty = EntityGetTransform( t )
-		angle = get_direction( x, y, tx, ty )
+		angle = math.pi - math.atan2( ( ty - y ), ( tx - x ) )
 	end
 else
-	local players = EntityGetWithTag( "player_unit" )
+	local players = EntityGetWithTag( "player_unit" ) or EntityGetWithTag( "polymorphed_player" ) or {}
 	if ( #players > 0 ) then
 		local p = players[1]
 		local px,py = EntityGetTransform( p )
-		angle = get_direction( x, y, px, py )
+		angle = math.pi - math.atan2( ( py - y ), ( px - x ) )
+	else
+		SetRandomSeed( GameGetFrameNum(), x + y + entity_id )
+		if Random( 1, 50 ) == 1 then
+			angle = math.pi - math.rad( Random( 1, 360 ) )
+		else
+			local pos_x,pos_y = EntityGetTransform( entity_id )
+			angle = math.pi - math.atan2( ( pos_y - y ), ( pos_x - x ) )
+		end
 	end
 end
 

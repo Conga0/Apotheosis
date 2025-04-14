@@ -21,6 +21,13 @@ for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")
 	if ComponentGetValue2(comp,"image_file") == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" and EntityGetParent(v) == 0 then
+        GameAddFlagRun("apotheosis_flesh_boss_stone_converted")
+	local luacomps = EntityGetComponentIncludingDisabled(v, "LuaComponent") or {}
+	for i = 1, #luacomps do
+            if ComponentGetValue2(luacomps[i], "script_source_file") == "mods/Apotheosis/files/scripts/items/stone_heretic_destroyed.lua" then
+                    EntityRemoveComponent( v, luacomps[i] )
+            end
+	end
         local x,y = EntityGetTransform(v)
         EntityKill(v)
 		EntityLoad("mods/Apotheosis/files/entities/items/pickups/stone_radar.xml",x,y)
@@ -46,7 +53,6 @@ do local v = heretic_stones[k]
 		GameTriggerMusicEvent( "music/oneshot/tripping_balls_02", true, pos_x, pos_y )
 		GameScreenshake( 150 )
 	end
-        GameAddFlagRun("apotheosis_flesh_boss_stone_converted")
 	end
 end
 
