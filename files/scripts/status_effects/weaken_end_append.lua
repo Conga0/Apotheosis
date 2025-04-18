@@ -11,7 +11,7 @@ if status_count > 0 then
 	end
 end
 
-local children = EntityGetAllChildren(player_id)
+local children = EntityGetAllChildren(player_id) or {}
 for k=1,#children do
     if EntityGetName(children[k]) == "inventory_quick" then
         local items = EntityGetAllChildren(children[k])

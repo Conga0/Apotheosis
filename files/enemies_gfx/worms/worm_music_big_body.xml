@@ -7,17 +7,17 @@
 
 	<Hotspot 
 		color="3183f4" 
-		name="line_a" >
+		name="line_top" >
 	</Hotspot>
 
 	<Hotspot 
 		color="68f431" 
-		name="line_b" >
+		name="line_mid" >
 	</Hotspot>
 
 	<Hotspot 
 		color="f43131" 
-		name="line_c" >
+		name="line_bot" >
 	</Hotspot>
 
   <RectAnimation 

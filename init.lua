@@ -769,50 +769,6 @@ dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability_
 --Try not to tinker with base noita too much, the main goal to this mod is to be an expansion pack, not a rebalance.
 dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua")
 
--- If Conjurer is enabled, disable this for a fix.
--- Adds custom Pixel Scenes in
-if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
-	dofile_once("mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua")
-end
-
---Overrides some creep's settings for spoopy's alternate graphics
---Removed as it uses Spoopy's Graphics by default
---[[
-if spoopyGFXSetting == true then
-
-  --Esoteric Being
-  local content = ModTextFileGetContent("data/entities/animals/esoteric_being.xml")
-  local xml = nxml.parse(content)
-  xml:first_of("Base"):first_of("AnimalAIComponent").attr.attack_ranged_action_frame = "2"
-  xml:first_of("Base"):first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/esoteric_being_alt.xml"
-  xml:first_of("SpriteComponent").attr.offset_x = "18.5"
-  xml:first_of("SpriteComponent").attr.offset_y = "17.5"
-  ModTextFileSetContent("data/entities/animals/esoteric_being.xml", tostring(xml))
-
-  local content = ModTextFileGetContent("data/entities/buildings/esoteric_being_asleep.xml")
-  local xml = nxml.parse(content)
-  xml:first_of("SpriteComponent").attr.image_file = "mods/Apotheosis/files/enemies_gfx/esoteric_being_alt_asleep.xml"
-  ModTextFileSetContent("data/entities/buildings/esoteric_being_asleep.xml", tostring(xml))
-
-  local content = ModTextFileGetContent("mods/Apotheosis/files/scripts/animals/angel_holy_beam_calldown_alt.lua")
-  ModTextFileSetContent("mods/Apotheosis/files/scripts/animals/angel_holy_beam_calldown.lua", content)
-
-end
-]]
---
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1337,6 +1293,11 @@ function OnMagicNumbersAndWorldSeedInitialized()
 	do --Setup Magic Catalyst data
 		dofile("mods/Apotheosis/files/scripts/materials/secret_materials_generate.lua")
 		GenerateMagicCatalyst()
+	end
+
+	-- Adds custom Pixel Scenes in
+	if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
+		dofile_once("mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua")
 	end
 
 	local splashes = {

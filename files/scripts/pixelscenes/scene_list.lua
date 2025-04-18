@@ -488,6 +488,25 @@ ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
     ></PixelScene>
   ]]))
   ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+  
+  do
+    local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
+    local xml = nxml.parse(content)
+    local positions = {{20892,11400},{19715,-4823},{-21032,-4000},{-6815,16565},{9377,10002},{23914,22783},{24634,6886},{7249,3033}}
+    for k=1,#positions do
+      SetRandomSeed((k * 9) + 20,392)
+      local rng = Random(1,#positions)
+      xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse(table.concat({[[
+        <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="]],positions[rng][1],[[" pos_y="]],positions[rng][2],[[" skip_biome_checks="1" skip_edge_textures="0"
+          material_filename="mods/Apotheosis/files/biome_impl/ghost_pixel.png"
+          background_filename="mods/Apotheosis/files/props_gfx/symbols/starglyphs_0]],k,[[.png"
+          colors_filename=""
+        ></PixelScene>
+      ]]})))
+      table.remove(positions,rng)
+    end
+    ModTextFileSetContent("data/biome/" .. v .. ".xml", tostring(xml))
+  end
 
   --RealQuest Grave
   local content = ModTextFileGetContent("data/biome/" .. v .. ".xml")
