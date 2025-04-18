@@ -1,6 +1,9 @@
 local entity_id = GetUpdatedEntityID()
 local player_id = EntityGetParent( entity_id )
-local status_count = GameGetGameEffectCount( player_id, "PROTECTION_RADIOACTIVITY" )
+local status_count = 0
+if player_id > 0 then
+    status_count = GameGetGameEffectCount( player_id, "PROTECTION_RADIOACTIVITY" )
+end
 
 if status_count > 0 then
     comp = EntityGetFirstComponent( player_id, "DamageModelComponent" )
