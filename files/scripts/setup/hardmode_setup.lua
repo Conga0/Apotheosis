@@ -6,6 +6,7 @@ dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
 --Mainpath
 --[[
 ]]--
+local old_on_world_init = OnWorldInitialized
 function OnWorldInitialized() 
     MultiplyHPOnBiome("coalmine", 1, 1)
     MultiplyHPOnBiome("excavationsite", 1.2, 1)
@@ -46,6 +47,7 @@ function OnWorldInitialized()
     MultiplyHPOnBiome("custom/plane_yggdrasil", 10, 1.5)
     MultiplyHPOnBiome("custom/plane_magic", 10, 1.5)
     MultiplyHPOnBiome("custom/plane_mechanical", 10, 1.5)
+    if old_on_world_init then old_on_world_init() end
 end
 
 
@@ -155,9 +157,15 @@ do --Reduce gold dropped in hardcore by 50%
   ModTextFileSetContent(path, content)
 end
 
-do --Artifically secret seed game flag is added
-  local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("%-%-Placeholder", "GameAddFlagRun%(\"apotheosis_hardcore\"%)")
-  ModTextFileSetContent(path, content)
+if false == true then --Cause the player to be inflicted with Wounded every time they take damage. [[[Disabled]]]
+  local path = "data/entities/player_base.xml"
+	local xml = nxml.parse(ModTextFileGetContent(path))
+  xml:add_child(nxml.parse([[
+    <LuaComponent
+    script_damage_received="mods/Apotheosis/files/scripts/setup/hardcore_damage.lua"
+    execute_every_n_frame="-1"
+    >
+    </LuaComponent>
+  ]]))
+	ModTextFileSetContent(path, tostring(xml))
 end

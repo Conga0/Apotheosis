@@ -360,6 +360,36 @@
     </Graphics>
   </CellDataChild>
 
+  <CellData
+	name="apotheosis_sweat"
+	ui_name="$material_apotheosis_sweat"
+  	tags="[liquid],[corrodible],[freezable],[water],[liquid_common],[chaotic_transmutation],[evaporable]"
+	burnable="0"
+	density="4"
+	cell_type="liquid"
+	wang_color="902F554E"
+	generates_smoke="0"
+	liquid_gravity="1.5"
+	liquid_sand="0"
+	liquid_stains_self="0"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10" 
+	danger_water="1"
+	liquid_stains="1"
+	liquid_sprite_stain_ignited_drop_chance="10"
+	liquid_sprite_stains_check_offset="-1"
+	warmth_melts_to_material="steam"
+	warmth_melts_chance_rev="500"
+	cold_freezes_to_material="ice_static"
+	show_in_creative_mode="1"
+	>
+	<Graphics
+		color="A0376259"
+		>
+	</Graphics>
+  </CellData>
+
   <CellDataChild
   	_parent="radioactive_liquid"
 	name="apotheosis_radioactive_liquid_fading_fast"

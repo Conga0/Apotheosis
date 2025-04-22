@@ -11,7 +11,7 @@ if player_id ~= 0 then
     return end
 
     local air = ComponentGetValue2(dmgcomp, "air_in_lungs")
-    local suffocating_damage_rate = ComponentGetValue2(dmgcomp,"air_lack_of_damage")
+    local suffocating_damage_rate = math.max(0.3 * (ComponentGetValue2(dmgcomp,"max_hp") / 4), 0.6)
 
     --Drain air slower if user has breathless effect
     if air > 0.1 then

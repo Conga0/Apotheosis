@@ -1,0 +1,34 @@
+<Entity name="apotheosis_wounded">
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<VariableStorageComponent
+		_tags="effect_curse_wither_type"
+		value_string="healing"
+		>
+	</VariableStorageComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/immunity_temp_start.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/noheal_end.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
+	
+	<UIIconComponent
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/nohealing_hardcore.png"
+		name="$status_apotheosis_nohealing_name"
+		description="$status_apotheosis_nohealing_desc"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+</Entity>

@@ -7,6 +7,7 @@ function biome_entered( new_biome_name, old_biome_name )
     local plane_magic = ( new_biome_name == "$biome_plane_magic" )
     local plane_technology = ( new_biome_name == "$biome_plane_technology" )
     local meat_realm = ( new_biome_name == "$biome_meat" )
+    local desert = ( new_biome_name == "$biome_desert" )
     --local empyrean = ( new_biome_name == "$biome_empyrean" )
 
     function loadCurse(player_id,filepath)
@@ -35,6 +36,8 @@ function biome_entered( new_biome_name, old_biome_name )
     --    loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_empyrean.xml")
     elseif meat_realm and ModSettingGet( "Apotheosis.meatrealmrework" ) and GlobalsGetValue( "BOSS_MEAT_DEAD", "0" ) == "0" then
         loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_meat.xml")
+    elseif desert then
+        loadCurse(player,"mods/Apotheosis/files/entities/misc/curse_desert.xml")
 	else
         local children = EntityGetAllChildren(player) or {}
         for k=1,#children do
