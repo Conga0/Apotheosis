@@ -1728,3 +1728,6 @@ do --Make random potion not spawn certain materials by request
   end]])
   ModTextFileSetContent(path, content)
 end
+
+ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")
+ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers.lua")

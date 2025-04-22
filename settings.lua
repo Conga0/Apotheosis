@@ -539,7 +539,11 @@ joystick_codes = {
 }
 
 
-
+local function patch_games_init_lua() --patching vanilla's init.lua, we are doing it here since this file loads before any mods
+	local file = "data/scripts/init.lua"
+	local patch = "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/init_biome_modifiers_patcher.lua"
+	ModLuaFileAppend(file, patch)
+end
 
 local mod_id = "Apotheosis"
 ---@diagnostic disable-next-line: lowercase-global
@@ -961,6 +965,7 @@ function ModSettingsUpdate( init_scope )
 	local old_version = mod_settings_get_version( mod_id )
     ---@diagnostic disable-next-line: undefined-global
 	mod_settings_update( mod_id, mod_settings, init_scope )
+  if init_scope == 0 or init_scope == 1 then patch_games_init_lua() end
 end
 
 function ModSettingsGuiCount()
