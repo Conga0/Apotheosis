@@ -25,6 +25,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 			message_desc = "$itempickupdesc_orb_discovered"
 			
 			AddFlagPersistent( "progress_orb_evil" )
+			GameAddFlagRun("apotheosis_evil_knowledge")
 			
 			-- shoot_projectile( entity_id, "data/entities/items/pickup/heart_evil.xml", pos_x, pos_y, 0, 0 )
 			EntityLoad( "data/entities/items/pickup/heart_evil.xml", pos_x, pos_y )
