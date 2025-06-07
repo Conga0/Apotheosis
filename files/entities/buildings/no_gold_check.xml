@@ -1,0 +1,7 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/buildings/no_gold.lua"
+		execute_every_n_frame="120"
+		>
+	</LuaComponent>
+</Entity>

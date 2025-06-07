@@ -2,7 +2,7 @@ ocarina_songs["fullhp"]  = { "d", "e", "a", "d" }                 --Hinted at in
 ocarina_songs["spawnpouch"]  = { "b", "a2", "f", "e" }            --Hinted at in Sink Hole (Desert)
 ocarina_songs["spawnpotion"]  = { "d", "d", "e", "e" }            --Hinted at in Sunken Cavern
 ocarina_songs["krittycats"]  = { "a", "b", "c", "d" }             --Hinted at in Tree Top (Above achievement pillars)
-ocarina_songs["bragi"]  = { "b", "b", "b", "b" }                  --Hinted at in ????
+ocarina_songs["bragi"]  = { "b", "b", "b", "b" }                  --Hinted at in Ant Hell
 
 kantele_songs["fullhp"]  = { "d", "e", "a", "d" }
 kantele_songs["spawnpouch"]  = { "g", "dis", "a", "e" }

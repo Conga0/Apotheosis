@@ -1,0 +1,28 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<UIIconComponent
+		name="$perk_apotheosis_mimic_tip"
+		description="$perk_apotheosis_mimic_tip_desc"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/perk_icons/mimic_perk_tip.png"
+		is_perk="1"
+		display_above_head="0"
+		display_in_hud="0"
+		>
+	</UIIconComponent>
+
+    <VariableStorageComponent
+        name="cooldown_frame"
+        value_int="0"
+        >
+    </VariableStorageComponent>
+	
+	<LuaComponent 
+        _enabled="1" 
+        execute_every_n_frame="1"
+        script_source_file="mods/Apotheosis/files/scripts/perks/mimic.lua"
+	>
+    </LuaComponent>
+	
+</Entity>

@@ -23,6 +23,7 @@ function item_pickup( entity_item, entity_who_picked, item_name )
 			-- special outside bounds orbs only give evil_hearts
 			message_title = "$itempickup_orb_evil"
 			message_desc = "$itempickupdesc_orb_discovered"
+			GameAddFlagRun("apotheosis_evil_knowledge")
 			
 			AddFlagPersistent( "progress_orb_evil" )
 			

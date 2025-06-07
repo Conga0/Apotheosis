@@ -46,6 +46,7 @@
 				electricity="1"
 				fire="0" 
 				slice="1"
+				holy="1.2"
 				>
 			</damage_multipliers>
 		</DamageModelComponent>

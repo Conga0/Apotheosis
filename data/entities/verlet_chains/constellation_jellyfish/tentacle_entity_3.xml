@@ -1,0 +1,29 @@
+<Entity >
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+   
+    <VerletPhysicsComponent
+    	num_points="6"
+    	stiffness="0.0"
+		velocity_dampening="0.9"
+    	resting_distance="35" 
+    	simulate_gravity="1"
+		scale_sprite_x="0"
+		collide_with_cells="0"
+    	constrain_stretching="1" >
+    </VerletPhysicsComponent>
+
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_3.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_3.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_3.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_3.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_3.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_3.xml" />
+
+	<LuaComponent
+	  script_source_file="data/entities/animals/constellation_jellyfish/jellyfish_tendril_glow.lua"
+	  execute_every_n_frame="5" >
+	</LuaComponent>
+  
+</Entity>
+

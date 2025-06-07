@@ -1,0 +1,20 @@
+<Entity>
+    <Base file="data/entities/base_custom_card.xml" > 
+        <SpriteComponent image_file="data/ui_gfx/gun_actions/sea_acid_unidentified.png" alpha="0" />
+        <ItemActionComponent _tags="enabled_in_world" action_id="APOTHEOSIS_SPELLBOOK" />
+    </Base>
+
+    <InheritTransformComponent _tags="enabled_in_world,enabled_in_hand"/>
+
+    <LuaComponent 
+        _tags="enabled_in_hand,enabled_in_world,enabled_in_inventory"
+        script_source_file="mods/Apotheosis/files/scripts/spells/glyph.lua"
+        execute_every_n_frame="1"
+        execute_times="2"
+    />
+
+    <VariableStorageComponent
+        name="glyph"
+        value_string="?"
+    />
+</Entity>

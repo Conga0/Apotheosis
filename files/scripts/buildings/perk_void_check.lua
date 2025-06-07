@@ -13,7 +13,7 @@ do local v = perks[k]
     if Random(1,void_count + 2) >= 3 and (void_count >= 1) then
         perk_spawn( x, y, "APOTHEOSIS_VOID" )
         EntityKill(v)
-    elseif Random(1,300) == 1 then
+    elseif Random(1,300) == 1 and GameHasFlagRun("apotheosis_perk_mimic_reveal") == false then
     --elseif Random(1,400) == 1 then
         EntityLoad("data/entities/animals/mimic_perk_twwe.xml", x, y)
         EntityKill(v)

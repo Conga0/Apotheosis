@@ -790,6 +790,66 @@ apotheosis_perkappends = {
         end,
 	},
     --[[
+    --Should this show up in the progress bar?
+    --It probably should, I just feel unsatisfied with the icon
+    --Would also make it easier for the player to remove if it was a perk
+	{
+		id = "APOTHEOSIS_NO_GOLD",
+        ui_name = "$perk_apotheosis_no_gold",
+        ui_description = "$perk_apotheosis_no_gold_description",
+        ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/no_gold_ui.png",
+        perk_icon = "mods/Apotheosis/files/items_gfx/perks/no_gold_perk.png",
+		not_in_default_perk_pool = true,
+		stackable = STACKABLE_NO,
+        usable_by_enemies = false,
+		func = function( entity_perk_item, entity_who_picked, item_name )
+            GameAddFlagRun("drop_no_gold")
+		end,
+        _remove = function(entity_id)
+            GameRemoveFlagRun("drop_no_gold")
+        end,
+        func_remove = function( entity_id )
+            GameRemoveFlagRun("drop_no_gold")
+        end,
+	},
+    ]]--
+    --I want this to show up in the progress bar, but I want it's purpose to be hidden when you grab it for the first time each run; only being revealed (use the proper icon/description after you use it at least once)
+    --The problem is I also want the progress ui to use the revealed icon, doable but would need to insert some code into the perk generation functions the game uses
+    --[[
+    {
+        id = "APOTHEOSIS_MIMIC",
+        ui_name = "$perk_apotheosis_mimic",
+        ui_description = "$perk_apotheosis_mimic_description_progress",
+		ui_icon = "data/ui_gfx/perk_icons/edit_wands_everywhere.png",
+		perk_icon = "data/items_gfx/perks/edit_wands_everywhere.png",
+        not_in_default_perk_pool = true,
+        stackable = STACKABLE_NO,
+        usable_by_enemies = false,
+        func = function( entity_perk_item, entity_who_picked, item_name )
+            local x,y = EntityGetTransform( entity_who_picked )
+            local child_id = EntityLoad( "mods/Apotheosis/files/entities/misc/perks/mimic.xml", x, y )
+            EntityAddTag( child_id, "perk_entity" )
+            EntityAddChild( entity_who_picked, child_id )
+        end,
+        _remove = function(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_mimic" ) then
+                    EntityKill ( v )
+                end
+            end
+        end,
+        func_remove = function( entity_id )
+            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            for i,v in ipairs( apotheosis_targets ) do
+                if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_mimic" ) then
+                    EntityKill ( v )
+                end
+            end
+        end,
+    },
+    ]]--
+    --[[
     --I really like this perk visually, but the only issue is if this was easy to access, then you'd have no reason not to grab it everytime you want to go for the alternate ending
     --Maybe there could be a puzzle or cost behind it like needing to go through a sacred rock tomb and you need to figure out a wand that can teleport you through it, but I can't think of anything particularly fitting right now...
     {

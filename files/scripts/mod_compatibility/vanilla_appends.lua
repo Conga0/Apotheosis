@@ -37,6 +37,13 @@ do
   ModTextFileSetContent(path, tostring(xml))
 end
 
+do -- Stop pitboss from copying learning orb to prevent slowdown
+  local path = "data/entities/animals/boss_pit/boss_pit_memory.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("#p_n > 0", "#p_n > 0 and p_n ~= \"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml\"")
+  ModTextFileSetContent(path, content)
+end
+
 --Prevents High Alchemist from creating an unnecessarily high amount of shields by giving him a 3 second cooldown between creating a new shield from taking damage
 do
   local path = "data/entities/animals/boss_alchemist/boss_alchemist.xml"
@@ -76,6 +83,14 @@ do
   local attrs = xml:first_of("GameEffectComponent").attr
   attrs._tags = attrs._tags .. ",enabled_in_inventory"
   ModTextFileSetContent("data/entities/items/pickup/wandstone.xml", tostring(xml))
+end
+--Add perk creation altar tag to necessary items
+--Gold Orb, Dice, etc?
+do
+local items = {}
+  for k=1,#items do
+    
+  end
 end
 -- In-inv behavior for various items
 do
@@ -484,7 +499,7 @@ end
 do -- Limit enemies to dropping 300k gold at any given time, prevents lag in NG+ runs
   local path = "data/scripts/items/drop_money.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("local x, y = EntityGetTransform( entity )", "if money > 250000 then money = 250000 end local x, y = EntityGetTransform( entity )")
+  content = content:gsub("local x, y = EntityGetTransform%( entity %)", "if GameHasFlagRun%(\"drop_no_gold\"%) then money = 0 elseif money > 250000 then money = 250000 end local x, y = EntityGetTransform( entity )")
   ModTextFileSetContent(path, content)
 end
 
@@ -708,7 +723,10 @@ end
 do --Add Random Homing to Pyramid Boss loot pool
   local path = "data/entities/animals/boss_limbs/boss_limbs_death.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub("\"DRAW_RANDOM_X3\", \"DRAW_3_RANDOM\"", "\"DRAW_RANDOM_X3\", \"DRAW_3_RANDOM\", \"APOTHEOSIS_RANDOM_HOMING\", \"APOTHEOSIS_RANDOM_BURST\"")
+  content = content:gsub("local opts =","local apoth_opts = {\"APOTHEOSIS_RANDOM_HOMING\", \"APOTHEOSIS_RANDOM_BURST\", \"APOTHEOSIS_RANDOM_ARC\"} local opts =")
+  content = content:gsub("i=1,4","i=1,3")
+  content = content:gsub("AddFlagPersistent%( \"card_unlocked_pyramid\" %)","AddFlagPersistent( \"card_unlocked_pyramid\" ) CreateItemActionEntity( apoth_opts[Random( 1, #apoth_opts )], pos_x - 8 * 4 + (3) * 16, pos_y )")
+  --content = content:gsub("\"DRAW_RANDOM_X3\", \"DRAW_3_RANDOM\"", "\"DRAW_RANDOM_X3\", \"DRAW_3_RANDOM\", \"APOTHEOSIS_RANDOM_HOMING\", \"APOTHEOSIS_RANDOM_BURST\", \"APOTHEOSIS_RANDOM_ARC\"")
   ModTextFileSetContent(path, content)
 end
 
@@ -717,6 +735,39 @@ do --Add Chi to High Alchemist loot pool
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"PHI\", \"TAU\", \"SIGMA\"","\"PHI\", \"TAU\", \"SIGMA\", \"APOTHEOSIS_CHI\"")
   ModTextFileSetContent(path, content)
+end
+
+do -- Apply "paper_book" tag to various books
+  local paths = {
+    "data/entities/items/books/book_barren.xml",
+    "data/entities/items/books/book_bunker.xml",
+    "data/entities/items/books/book_diamond.xml",
+    "data/entities/items/books/book_essences.xml",
+    "data/entities/items/books/book_hint.xml",
+    "data/entities/items/books/book_mestari.xml",
+    "data/entities/items/books/book_moon.xml",
+    "data/entities/items/books/book_music_a.xml",
+    "data/entities/items/books/book_music_b.xml",
+    "data/entities/items/books/book_music_c.xml",
+    "data/entities/items/books/book_robot.xml",
+    "data/entities/items/books/book_s_a.xml",
+    "data/entities/items/books/book_s_b.xml",
+    "data/entities/items/books/book_s_c.xml",
+    "data/entities/items/books/book_s_d.xml",
+    "data/entities/items/books/book_s_e.xml",
+  }
+
+  for k=1,#paths
+  do local v = paths[k]
+    local content = ModTextFileGetContent(v)
+    local xml = nxml.parse(content)
+    if xml.attr.tags then
+      xml.attr.tags = xml.attr.tags .. ",paper_book"
+    else 
+      xml.attr.tags = "paper_book"
+    end
+    ModTextFileSetContent(v, tostring(xml))
+  end
 end
 
 do -- Autogenerate filepath VSCs for various items
@@ -1660,6 +1711,14 @@ do --Make tiny drop the support bullet and support field spell
   ModTextFileSetContent(path, content)
 end
 
+do --Fix Meatball wandering away from his arena before the player gets close to him
+  local path = "data/scripts/biomes/meatroom.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"data/entities/animals/boss_meat/boss_meat%.xml\"","\"data/entities/animals/boss_meat/boss_meat_spawn_fixer.xml\"")
+
+  ModTextFileSetContent(path, content)
+end
+
 
 
 -- Adds the "harmful status" tag so support bullet knows what status's to remove
@@ -1682,7 +1741,6 @@ do
 
   for k=1,#harmful_effects_list
   do local v = harmful_effects_list[k]
-    print(v)
     local filepath = table.concat({"data/entities/misc/",v,".xml"})
     local content = ModTextFileGetContent(filepath) 
     local xml = nxml.parse(content)
@@ -1727,6 +1785,31 @@ do --Make random potion not spawn certain materials by request
     end
   end]])
   ModTextFileSetContent(path, content)
+end
+
+do -- Generate spellbook glyph projectiles
+  local spellbook_letters = "abcdefghijklmnopqrstuvwxyz"
+  for k=1, #spellbook_letters do
+      local letter = spellbook_letters:sub(k, k)
+      local filepath = "mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_base.xml"
+      local content = ModTextFileGetContent(filepath)
+      content = content:gsub("\"a\"",table.concat({"\"",letter,"\""}))
+      filepath = filepath:gsub("spellbook_base.xml",table.concat({"spellbook_",letter,".xml"}))
+      ModTextFileSetContent(filepath,content)
+  end
+end
+
+do  -- Change various mimic enemies to use mimic genome
+  local opts = {"illusions/dark_alchemist.xml","illusions/shaman_wind.xml","mimic_physics.xml","chest_mimic.xml"}
+  for k=1,#opts do
+  local path = "data/entities/animals/" .. opts[k]
+  local xml = nxml.parse(ModTextFileGetContent(path))
+
+  local attrs = xml:first_of("Base"):first_of("GenomeDataComponent").attr
+  attrs.herd_id = "mimic"
+
+  ModTextFileSetContent(path, tostring(xml))
+  end
 end
 
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")

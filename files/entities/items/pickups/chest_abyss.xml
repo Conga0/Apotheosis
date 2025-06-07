@@ -1,6 +1,6 @@
 <Entity tags="teleportable_NOT,item_physics,chest_pandora,item_pickup,effectable_prop,music_energy_100_near">
 	<UIInfoComponent
-		name="Abyssal Chest"
+		name="$item_apotheosis_chest_abyssal"
 		>
 	</UIInfoComponent>
 
@@ -27,7 +27,7 @@
   ></PhysicsImageShapeComponent>
 
   <ItemComponent
-    item_name="Abyssal Chest"
+    item_name="$item_apotheosis_chest_abyssal"
     stats_count_as_item_pick_up="0"
     play_spinning_animation="0"
     custom_pickup_string="$itempickup_open"

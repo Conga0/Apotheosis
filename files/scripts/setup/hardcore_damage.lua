@@ -1,5 +1,9 @@
 function damage_received( damage, desc, entity_who_caused, is_fatal )
     local entity_id = GetUpdatedEntityID()
+    local comp_id = GetUpdatedComponentID()
+    if ComponentGetIsEnabled( comp_id ) == false then
+        return
+    end
     local healthcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
     local hp_max = ComponentGetValue2(healthcomp,"max_hp")
     local hp_min = hp_max * 0.01 --1% hp damage = 2s of wounded

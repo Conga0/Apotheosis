@@ -32,8 +32,12 @@
 
 	<!-- Forgot that _enabled doesn't work on script_item_picked_up scripts :p -->
 	<!-- Nevermind actually, has to be enabled for the poor folks in old runs -->
+	
+	<!-- It's been a long, long time, I don't think we need this anymore -Conga -->
+	<!--
 	<LuaComponent 
 		script_item_picked_up="mods/Apotheosis/files/scripts/items/orbs/orb_12_trap.lua" >
 	</LuaComponent>
+	-->
 
 </Entity>

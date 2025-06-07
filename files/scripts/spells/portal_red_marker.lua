@@ -12,7 +12,7 @@ cooldown_frame = ComponentGetValue2( variablecomp, "value_int" )
 local aim_x, aim_y = ComponentGetValue2(controlscomp, "mAimingVectorNormalized")
 
 if GameGetFrameNum() >= cooldown_frame then
-	if isButtonDown_AltFire() then
+	if isButtonDown("altfire") then
 		GameShootProjectile(root, x+aim_x*12, y+aim_y*12, x+aim_x*20, y+aim_y*20, EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/markerportals/portal_red_marker.xml", x, y))
 		ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
 		if ModIsEnabled("quant.ew") then

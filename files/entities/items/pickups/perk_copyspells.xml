@@ -1,9 +1,10 @@
-<Entity tags="teleportable_NOT,essence,item_pickup">
+<Entity tags="teleportable_NOT,item_pickup">
 	<ItemComponent
 		item_name="$perk_apotheosis_copy_spells"
 		ui_description="$perk_apotheosis_copy_spells_description"
 		play_spinning_animation="0"
 		stats_count_as_item_pick_up="0"
+    	ui_display_description_on_pick_up_hint="1" 
 		>
 	</ItemComponent>
 	

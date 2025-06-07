@@ -1,6 +1,7 @@
 dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
-local apoth_version = "v1.3.4"
+local apoth_version = "v1.4.0 Beta Branch"
 
 --local modCompatibilityConjurer = ModSettingGet( "Apotheosis.mod_compat_mode_conjurer" )
 local modCompatibilitySpellEvolutions = ModSettingGet("Apotheosis.mod_compat_mode_spell_evolution")
@@ -154,6 +155,15 @@ ModLuaFileAppend("data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua")
 
 dofile_once("mods/Apotheosis/lib/injection.lua")
 
+
+inject(args.StringFile, modes.APPEND, "data/shaders/post_final.frag", "gl_FragColor.a = 1.0;",
+	"mods/Apotheosis/files/scripts/shader/constellation_transition_white.frag")
+inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "varying vec2 tex_coord_fogofwar;",
+	"mods/Apotheosis/files/scripts/shader/constellation_transition_global.frag")
+
+GameSetPostFxParameter("conga_constellation_transition_amount", 0, 0, 0, 0)
+
+
 inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "// liquid distortion",
 	"mods/Apotheosis/files/scripts/shader/trip_red_pre.frag")
 inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "gl_FragColor",
@@ -162,6 +172,7 @@ inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "varying 
 	"mods/Apotheosis/files/scripts/shader/trip_red_global.frag")
 
 GameSetPostFxParameter("conga_red_sand_effect_amount", 0, 0, 0, 0)
+
 
 inject(args.StringFile, modes.APPEND, "data/shaders/post_final.frag", "vec2 tex_coord_glow = tex_coord_glow_;",
 	"mods/Apotheosis/files/scripts/shader/mind_warp_wavy.frag")
@@ -1033,6 +1044,36 @@ do -- Player Editor
     </LuaComponent>
   ]]))
 
+  --Causes the player to gain the wounded status upon taking damage.
+	xml:add_child(nxml.parse([[
+	<LuaComponent
+	_enabled="0"
+	_tags="hardcore_healing"
+	script_damage_received="mods/Apotheosis/files/scripts/setup/hardcore_damage.lua"
+	execute_every_n_frame="-1"
+	>
+	</LuaComponent>
+  ]]))
+
+  --Causes the player to gain the wounded status upon taking damage.
+	xml:add_child(nxml.parse([[
+	<LuaComponent
+	_enabled="0"
+	_tags="hardcore_healing"
+	script_damage_about_to_be_received="mods/Apotheosis/files/scripts/setup/hardcore_healthcap.lua"
+	execute_every_n_frame="-1"
+	>
+	</LuaComponent>
+  ]]))
+
+  --Spellbook support
+	xml:add_child(nxml.parse([[
+	<VariableStorageComponent
+		name="spellbook_spell"
+		value_string=""
+	></VariableStorageComponent>
+  ]]))
+
 	--Adds Biome Check to the player
 	xml:add_child(nxml.parse([[
     <Entity>
@@ -1120,9 +1161,12 @@ end
 if ModTextFileGetContent("data/moremusicalmagic/musicmagic.lua") == nil then
 	local data = ModTextFileGetContent("data/moremusicalmagic/compatibility/musicmagic.lua")
 	ModTextFileSetContent("data/moremusicalmagic/musicmagic.lua", data)
+	ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
 end
-ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_default.lua")
 ModLuaFileAppend("data/moremusicalmagic/musicmagic.lua", "data/moremusicalmagic/songs_apotheosis.lua")
+
+--Spellbook
+ModLuaFileAppend("mods/Apotheosis/files/scripts/magic/spellbook/spellbook_magic.lua", "mods/Apotheosis/files/scripts/magic/spellbook/spellbook_outcomes.lua")
 
 
 --Set Custom Seed (And Check for Secret Seeds)
@@ -1357,6 +1401,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Now with 100% more maggots",
 		"Played by snakes with tophats!",
 		"Ah! Chippie!",
+		"Rabbits, guns and supermarts are bad mix",
 		"Starry edition!",
 		"Bringing home the bacon!",
 		"It's a mod",
@@ -1428,10 +1473,25 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Not as fair as fairmod!",
 		"Buy one get one free!",
 		"Move like an egyptian!",
-		"10 doesn't mean 11!!!"
+		"10 doesn't mean 11!!!",
+		"Call an exorcist!",
+		"Awaken my masters!",
+		"Less addictive than nethack!",
+		"Something wicked this way comes..."
 	}
 	SetRandomSeed(minute, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]
+
+	--6.66% chance for the associated user's reference splash to appear if they're playing
+	if userseed_check("393592761468528034044338707123") then --SnekGregory
+		if Random(1,15) == 1 then
+			splash = "Played by snakes with tophats!"
+		end
+	elseif userseed_check("00130639114681086286") then --DunkOrSlam
+		if Random(1,15) == 1 then
+			splash = "Now with 100% more sweat!"
+		end
+	end
 
 	--1 in 10000 chance for it to swap around the o and the e
 	if Random(1,10000) == 1 then mod_name = "Apothoesis" end
@@ -1455,7 +1515,8 @@ function OnModPreInit()
 	--Local Userseed backup
 	local user_seed = ModSettingGet("fairmod.user_seed") or 0
 	if user_seed ~= 0 then
-		print(user_seed)
+		print(table.concat({"userseed is ",user_seed}))
+		AddFlagPersistent(table.concat({"userseed_",userseed}))
 		ModSettingSetNextValue("Apotheosis.user_seed", user_seed, false)
 	end
 

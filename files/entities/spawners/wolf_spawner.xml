@@ -1,0 +1,9 @@
+<Entity>
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/spawner/wolf_spawner.lua"
+		execute_every_n_frame="60"
+		execute_times="-1"
+		>
+	</LuaComponent>
+</Entity>
+

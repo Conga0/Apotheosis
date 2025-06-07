@@ -44,7 +44,7 @@
 		</PathFindingGridMarkerComponent>
 		
 		<GenomeDataComponent 
-			herd_id="ghost"
+			herd_id="mimic"
 			food_chain_rank="5"
 			is_predator="1" >
 		</GenomeDataComponent>
@@ -86,6 +86,16 @@
 
 	</Base>
 
+	<ItemComponent
+		_enabled="0"
+		item_name="$perk_apotheosis_mimic"
+		ui_description="$perk_apotheosis_mimic_description_progress"
+		play_spinning_animation="0"
+		stats_count_as_item_pick_up="0"
+    	ui_display_description_on_pick_up_hint="1" 
+		>
+	</ItemComponent>
+
 	<SpriteOffsetAnimatorComponent
 		x_phase="0"
 		x_phase_offset="0"
@@ -96,8 +106,10 @@
 	</SpriteOffsetAnimatorComponent>
 
 	<LuaComponent
-		_tags="death_reward"
-		script_death="mods/Apotheosis/files/scripts/animals/mimic_perk_twwe_death.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/mimic_perk_twwe.lua"
+		script_source_file="mods/Apotheosis/files/scripts/animals/mimic_perk_twwe.lua"
+		script_item_picked_up="mods/Apotheosis/files/scripts/animals/mimic_perk_twwe.lua"
+		execute_every_n_frame="60"
 		>
 	</LuaComponent>
 

@@ -44,7 +44,7 @@
 		</PathFindingGridMarkerComponent>
 		
 		<GenomeDataComponent 
-			herd_id="ghost"
+			herd_id="mimic"
 			food_chain_rank="5"
 			is_predator="1" >
 		</GenomeDataComponent>

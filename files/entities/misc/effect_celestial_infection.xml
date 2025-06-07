@@ -1,0 +1,42 @@
+<Entity name="apotheosis_celestial_infection" >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<GameEffectComponent
+		frames="3600"
+		effect="NONE"
+	>
+	</GameEffectComponent>
+
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/celestial_infection.lua"
+        execute_every_n_frame="20"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_removed="1"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/celestial_infection_end.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name="curse_data"
+		value_int="0"
+		value_bool="0"
+		value_float="1"
+		>
+	</VariableStorageComponent>
+	
+	<UIIconComponent
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/celestial_infection.png"
+		name="$status_apotheosis_celestial_infection_name"
+		description="$status_apotheosis_celestial_infection_desc"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+</Entity>

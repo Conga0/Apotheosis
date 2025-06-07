@@ -56,6 +56,22 @@ local new_scenes = {
 		skip_biome_checks = true,
 		skip_edge_textures = false,
 	},
+	--Ceasement Spawn Location
+	{
+		pos_x = 8455,
+		pos_y = 240,
+		material_filename = "mods/Apotheosis/files/biome_impl/no_gold.png",
+		background_filename = "mods/Apotheosis/files/biome_impl/no_gold_background.png",
+		--colors_filename = "mods/Apotheosis/files/biome_impl/no_gold_visual.png",
+		skip_biome_checks = true,
+		skip_edge_textures = false,
+	},
+	--Ceasement Entity
+	{
+		pos_x = 8561,
+		pos_y = 356,
+		just_load_an_entity = "mods/Apotheosis/files/entities/buildings/no_gold_check.xml",
+	},
 	--Hisii Beggar Hint
 	{
 		pos_x = 23729,
@@ -480,6 +496,21 @@ local new_scenes = {
 		just_load_an_entity = "mods/Apotheosis/files/entities/items/books/book_realquest_alt.xml",
 	},
 	{
+		pos_x = 4800,
+		pos_y = -120,
+		just_load_an_entity = "mods/Apotheosis/files/entities/spawners/wolf_spawner.xml",
+	},
+	{
+		pos_x = 4750,
+		pos_y = -120,
+		just_load_an_entity = "mods/Apotheosis/files/entities/spawners/wolf_spawner.xml",
+	},
+	{
+		pos_x = 4850,
+		pos_y = -120,
+		just_load_an_entity = "mods/Apotheosis/files/entities/spawners/wolf_spawner.xml",
+	},
+	{
 		pos_x = -17860,
 		pos_y = -100,
 		material_filename = "mods/Apotheosis/files/biome_impl/forest/realquest.png",
@@ -604,7 +635,7 @@ local ghost_pixel_positions = {
 	},
 }
 
-for k = 1, #ghost_pixel_positions do
+for k = 1, 5 do
 	SetRandomSeed((k * 9) + 20, 392)
 	local rng = Random(1, #ghost_pixel_positions)
 

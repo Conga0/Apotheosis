@@ -487,7 +487,7 @@
 	requires_oxygen="1"
 	temperature_of_fire="10"
 	hp="800" 
-	electrical_conductivity="1"
+	electrical_conductivity="0"
 	audio_physics_material_event="sand"
 	audio_physics_material_wall="sand"
 	audio_physics_material_solid="sand"
@@ -496,6 +496,39 @@
 	>
     <Graphics
 		texture_file="mods/Apotheosis/files/materials_gfx/milk_dust.png"
+		color="720000" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_CLEAR_STATUS" amount="0.01" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
+	name="apotheosis_spirit_powder"
+	ui_name="$material_apotheosis_spirit_powder"
+  	tags="[sand_ground],[corrodible],[alchemy]"
+	burnable="0"
+	density="4.0"
+	cell_type="liquid"
+	wang_color="aa0092c3"
+	generates_smoke="0"
+	liquid_gravity="0.9"
+	liquid_sand="1"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="10"
+	hp="3200" 
+	electrical_conductivity="1"
+	audio_physics_material_event="sand"
+	audio_physics_material_wall="sand"
+	audio_physics_material_solid="sand"
+	durability="4"
+	show_in_creative_mode="1"
+	>
+    <Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/spiritpowder.png"
 		color="720000" >
     </Graphics>
 	<StatusEffects>

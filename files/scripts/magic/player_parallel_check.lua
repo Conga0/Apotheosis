@@ -5,18 +5,18 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 --worldsize = worldsize * 0.5
 local parallel = GetParallelWorldPosition(pos_x, pos_y)
 
-if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" and GameHasFlagRun("apotheosis_everything") == false then
+if parallel ~= 0 and GlobalsGetValue("apotheosis_plane_fail", "0") == "0" and GameHasFlagRun("apotheosis_everything") == false and GameHasFlagRun("apotheosis_planes_entered") == false then
 
     local comps = EntityGetComponentIncludingDisabled(entity_id,"LuaComponent")
     for k=1,#comps
     do local v = comps[k]
         GlobalsSetValue("apotheosis_plane_fail", "1")
         GameScreenshake( 200 )
-	EntityLoad("mods/Apotheosis/files/entities/particles/image_emitters/parallel_hint.xml", pos_x, pos_y)
-	GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bomb_holy/create", pos_x, pos_y )
-	local world_id = GameGetWorldStateEntity()
-	local rid = EntityLoad("mods/Apotheosis/files/entities/misc/rain_water_ice.xml", 0, 0)
-	EntityAddChild( world_id, rid )
+        EntityLoad("mods/Apotheosis/files/entities/particles/image_emitters/parallel_hint.xml", pos_x, pos_y)
+        GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bomb_holy/create", pos_x, pos_y )
+        local world_id = GameGetWorldStateEntity()
+        local rid = EntityLoad("mods/Apotheosis/files/entities/misc/rain_water_ice.xml", 0, 0)
+        EntityAddChild( world_id, rid )
         --if ComponentGetValue2(v,"script_source_file") == "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua" then   --Turn self off
         --    EntitySetComponentIsEnabled(entity_id,v,false)
         --    break
@@ -51,6 +51,51 @@ ComponentSetValue2(hpcomp,"air_lack_of_damage",math.max(0.3 * (hp / 4), 0.6))
 
 --Ensure you never. Never spawn, even if you get the relevent flag mid-run.
 RemoveFlagPersistent("this_should_never_spawn")
+
+if tonumber(GlobalsGetValue("APOTHEOSIS_SIGIL_ANGER","0")) > 0 then
+    local spirit_anger = tonumber(GlobalsGetValue("APOTHEOSIS_SIGIL_ANGER","0"))
+    GamePrint("spirit anger is " .. spirit_anger)
+    if spirit_anger > 500 and GameHasFlagRun("apotheosis_spirit_anger_01") == false then
+        GamePrint("You feel a chill go down your spine")
+        GameAddFlagRun("apotheosis_spirit_anger_01")
+    elseif spirit_anger > 1000 and GameHasFlagRun("apotheosis_spirit_anger_02") == false then
+        GamePrint("Worldly voices whisper in your ears")
+        --Upgrade basic phantoms
+        GameAddFlagRun("apotheosis_spirit_anger_02")
+    elseif spirit_anger > 1500 and GameHasFlagRun("apotheosis_spirit_anger_03") == false then
+        GamePrintImportant("Memories of anger you don't recognise invade your mind.","You feel a foreboding end approaching.")
+        GamePrint("Memories of anger you don't recognise invade your mind.")
+        GamePrint("You feel a foreboding end approaching.")
+        GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", pos_x, pos_y )
+        GameAddFlagRun("apotheosis_spirit_anger_03")
+    elseif spirit_anger > 1510 and GameHasFlagRun("apotheosis_spirit_anger_04") == false then
+        GamePrint("Something wicked this way comes.")
+        GameAddFlagRun("apotheosis_spirit_anger_04")
+        --Summon phantom ambush
+        --If you try to teleport away the message "Worldly spirits will not be fooled that easily" before a trio of 3 greater spirits appears before you
+        --This leaves running for your life as an option to ease to burden, but not a solution to it
+        --You were warned, afterall
+    end
+    --anger 1
+    --anger 2
+    --anger 3
+    --anger 4
+end
+
+--Curse the player back below their hp% cap if they go above it
+--Maybe just change their max hp? Could encourage some heart farming shenanigans
+--This would be so much easier if regeneration functioned normally
+if tonumber(GlobalsGetValue("apotheosis_healthcap","1")) < 1 then
+    local health_cap = tonumber(GlobalsGetValue("apotheosis_healthcap","1"))
+    local hpcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
+    local hp_max = ComponentGetValue2(hpcomp,"max_hp")
+    local hp = ComponentGetValue2(hpcomp,"hp")
+    local hp_limit = hp_max * health_cap
+    if hp > hp_limit then
+        EntityInflictDamage( entity_id, 0.04, "DAMAGE_CURSE", "jojo fans when they see 2 identical rocks", "NONE", 0, 0, entity_id )
+        ComponentSetValue2(hpcomp,"hp",hp_limit)
+    end
+end
 
 if GameHasFlagRun("apotheosis_everything") and parallel ~= 0 then
     --Have the player teleported back to the main world if they try to enter parallels in Tuonela

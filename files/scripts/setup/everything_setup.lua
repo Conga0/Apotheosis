@@ -70,6 +70,7 @@ MultiplyHPSelective("boss_toxic_worm/boss_toxic_worm",4,false)
 --MultiplyHPSelective("boss_spirit/islandspirit",4,true)
 MultiplyHPSelective("boss_dragon",4,false)
 MultiplyHPSelective("boss_fish/fish_giga",2,false)
+MultiplyHPSelective("constellation_jellyfish",5,false)
 
 --Increase health of PW bosses
 MultiplyHPSelective("parallel/tentacles/parallel_tentacles",2,false)

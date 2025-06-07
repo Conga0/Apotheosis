@@ -1,0 +1,21 @@
+<Entity >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<VariableStorageComponent
+		name="curse_data"
+		value_int="0"
+		value_bool="0"
+		value_float="5"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/phantom_curse.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+</Entity>

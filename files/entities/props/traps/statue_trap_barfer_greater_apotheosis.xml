@@ -1,0 +1,27 @@
+<Entity>
+
+	<VelocityComponent />
+
+    <SimplePhysicsComponent/>
+
+	<SpriteComponent 
+		z_index="1"
+		image_file="mods/Apotheosis/files/props_gfx/traps/statue_trap_barfer_greater_apotheosis.png" 
+		offset_x="0"
+		offset_y="47" >
+	</SpriteComponent>
+
+	<VariableStorageComponent
+		name="statue_data"
+		value_string="data/entities/animals/entities/the_end/barfer_greater_apotheosis.xml"
+	>
+	</VariableStorageComponent>
+	
+  	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/props/statue_trap_break_free.lua"
+		execute_every_n_frame="60"
+		execute_times="-1"
+		>
+	</LuaComponent>
+</Entity>
+

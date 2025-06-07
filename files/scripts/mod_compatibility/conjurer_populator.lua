@@ -178,6 +178,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/fungus_smoking_creep.png",
 	  },
 	  {
+		name="Constellation Jellyfish",
+		path="data/entities/animals/constellation_jellyfish.xml",
+		image="data/ui_gfx/animal_icons/constellation_jellyfish.png",
+	  },
+	  {
 		name="Devouring Phantom",
 		path="data/entities/animals/devourer_ghost.xml",
 		image="data/ui_gfx/animal_icons/devourer_ghost.png",
@@ -417,6 +422,13 @@ table.insert(ALL_ENTITIES, {
 		path="data/entities/animals/phantom_c_apotheosis.xml",
 		image="data/ui_gfx/animal_icons/phantom_c_apotheosis.png",
 	  },
+	  --[[
+	  {
+		name="Horrified Phantom",
+		path="data/entities/animals/phantom_skull.xml",
+		image="data/ui_gfx/animal_icons/phantom_c_apotheosis.png",
+	  },
+	  ]]--
 	  {
 		name="Tablet Ghost",
 		path="data/entities/animals/playerghost_apotheosis/playerghost.xml",

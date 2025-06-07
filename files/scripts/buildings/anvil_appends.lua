@@ -58,7 +58,8 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 70, "tablet")) do
 	end
 end
 
-local forgables = EntityGetInRadiusWithTag(pos_x, pos_y, 70, "forgeable")
+local paper_books = EntityGetInRadiusWithTag(pos_x, pos_y, 110, "paper_book") or {}
+local forgables = EntityGetInRadiusWithTag(pos_x, pos_y, 70, "forgeable") or {}
 for k=1,#forgables do
 	local v = forgables[k]
 	local x,y = EntityGetTransform(v)
@@ -70,9 +71,19 @@ for k=1,#forgables do
 		EntityLoad("data/entities/projectiles/explosion.xml", x, y - 10)
 		EntityKill(v)
 		converted_apotheosis = true
+	elseif EntityGetName(v) == "celestial_pearl" and #forgables > 0 then
+		EntityLoad("data/entities/projectiles/explosion.xml", x, y - 10)
+		EntityKill(v)
+		
+		for z=1,#paper_books do
+			local book_x,book_y = EntityGetTransform(paper_books[z])
+			EntityLoad("mods/Apotheosis/files/entities/items/wands/custom/spell_book.xml",book_x,book_y)
+			EntityLoad("data/entities/projectiles/explosion.xml", book_x, book_y - 10)
+			EntityKill(paper_books[z])
+			converted_apotheosis = true
+		end
 	end
 end
-
 
 if converted_apotheosis then
 	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )

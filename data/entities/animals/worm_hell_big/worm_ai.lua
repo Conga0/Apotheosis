@@ -3,6 +3,7 @@ local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
 local wormComp = EntityGetFirstComponentIncludingDisabled(entity_id,"WormComponent")
 local wormAiComp = EntityGetFirstComponentIncludingDisabled(entity_id,"WormAIComponent")
+local dmgcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"DamageModelComponent")
 local targ_x, targ_y = ComponentGetValue2(wormComp,"mTargetVec")
 local iframes_comp = EntityGetFirstComponentIncludingDisabled(entity_id,"VariableStorageComponent")
 
@@ -59,10 +60,17 @@ end
 function Stage5()
     --Allow the worm to speed back up
 
-	ComponentSetValue2( wormAiComp, "speed", 6 )
-	ComponentSetValue2( wormAiComp, "speed_hunt", 8 )
-	ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.003 )
-	ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.04 )    
+	if ComponentGetValue2(dmgcomp,"hp") < (ComponentGetValue2(dmgcomp,"max_hp") * 0.8) then
+        ComponentSetValue2( wormAiComp,"speed",8)
+        ComponentSetValue2( wormAiComp,"speed_hunt",12)
+		ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.006 )
+		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.08 )
+	else
+		ComponentSetValue2( wormAiComp, "speed", 6 )
+		ComponentSetValue2( wormAiComp, "speed_hunt", 8 )
+		ComponentSetValue2( wormAiComp, "direction_adjust_speed", 0.003 )
+		ComponentSetValue2( wormAiComp, "direction_adjust_speed_hunt", 0.04 )
+	end
 
 	local c = EntityGetAllChildren( entity_id )
 	if c ~= nil then

@@ -10,9 +10,16 @@
   </Base>
 
   <Entity>
+		<InheritTransformComponent />
 
     <GameEffectComponent
     	effect="PROTECTION_RADIOACTIVITY"
+    	frames="-1"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+
+    <GameEffectComponent
+    	effect="KNOCKBACK_IMMUNITY"
     	frames="-1"
     	exclusivity_group="0"
     ></GameEffectComponent >

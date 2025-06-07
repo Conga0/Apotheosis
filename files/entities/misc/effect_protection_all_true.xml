@@ -1,0 +1,31 @@
+<Entity >
+	
+	<InheritTransformComponent
+		_enabled="1" >
+    </InheritTransformComponent>
+    
+    <GameEffectComponent
+        effect="PROTECTION_ALL"
+        frames="300"
+    >
+	</GameEffectComponent >
+    
+    <GameEffectComponent
+        effect="PROTECTION_POLYMORPH"
+        frames="300"
+    >
+	</GameEffectComponent >
+    
+    <GameEffectComponent
+        effect="PROTECTION_FREEZE"
+        frames="300"
+    >
+	</GameEffectComponent >
+    
+    <GameEffectComponent
+        effect="KNOCKBACK_IMMUNITY"
+        frames="300"
+    >
+	</GameEffectComponent >
+
+</Entity>

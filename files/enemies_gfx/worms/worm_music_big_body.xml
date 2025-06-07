@@ -1,6 +1,6 @@
 <Sprite 
-  filename="mods/Apotheosis/files//enemies_gfx/worms/worm_music_big_body.png" 
-	hotspots_filename="mods/Apotheosis/files//enemies_gfx/worms/worm_music_big_body_hotspot.png"
+  filename="mods/Apotheosis/files/enemies_gfx/worms/worm_music_big_body.png" 
+	hotspots_filename="mods/Apotheosis/files/enemies_gfx/worms/worm_music_big_body_hotspot.png"
   offset_x="14" 
   offset_y="12" 
   default_animation="stand">

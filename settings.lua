@@ -55,7 +55,8 @@ local reset_progress_warning = "Progress can not be reset mid-run."
 --Keybinds
 local keybind_name = "Key Binds"
 local keybind_desc = "Edit your Apotheosis keybinds"
-local keybind_tutorial = "Hit the prompt below to input a new alt-fire binding.\nThe default setting is right mouse button."
+local keybind_tutorial_altfire = "\nHit the prompt below to input a new alt-fire binding.\nThe default setting is right mouse button."
+local keybind_tutorial_disguise = "\nHit the prompt below to input a new disguise binding.\nThe default setting is G."
 local keybind_newbinding = "SET NEW BINDING"
 local keybind_current = "Current alt-fire binding: "
 
@@ -106,7 +107,7 @@ if currentLang == "русский" then
   
   keybind_name = "Привязка клавиш"
   keybind_desc = "Измените привязку клавиш для Apotheosis"
-  keybind_tutorial = "Нажмите на подсказку ниже, чтобы ввести новую привязку для альтернативного огня.\nПо умолчанию используется правая кнопка мыши."
+  keybind_tutorial_altfire = "Нажмите на подсказку ниже, чтобы ввести новую привязку для альтернативного огня.\nПо умолчанию используется правая кнопка мыши."
   keybind_newbinding = "УСТАНОВИТЬ НОВУЮ ПРИВЯЗКУ"
   keybind_current = "Текущая привязка альтернативного огня: "
 end
@@ -160,7 +161,7 @@ if currentLang == "日本語" then
 
   keybind_name = "操作設定"
   keybind_desc = "Apotheosisで使用するキーを設定できます。"
-  keybind_tutorial = "ALT魔法の発動に使用するキーの設定です。下のボタンを押してから、設定したいキーを入力してください。\n初期設定は、マウス右クリックです。"
+  keybind_tutorial_altfire = "ALT魔法の発動に使用するキーの設定です。下のボタンを押してから、設定したいキーを入力してください。\n初期設定は、マウス右クリックです。"
   keybind_newbinding = "キーを入力"
   keybind_current = "現在の設定: "
 end
@@ -206,7 +207,7 @@ if currentLang == "简体中文" then
   --Keybinds
   keybind_name = "键位绑定"
   keybind_desc = "编辑你的 Apotheosis 模组键位绑定"
-  keybind_tutorial = "点击下方提示以输入新的副法术绑定。\n默认为鼠标右键。"
+  keybind_tutorial_altfire = "点击下方提示以输入新的副法术绑定。\n默认为鼠标右键。"
   keybind_newbinding = "设定新绑定"
   keybind_current = "副法术释放按键绑定："
 end
@@ -217,7 +218,8 @@ local there_has_been_input = false
 local key_inputs ={}
 local mouse_inputs = {}
 local joystick_inputs = {}
-local old_binding = ModSettingGet("Apotheosis.bind_altfire")
+local old_binding = 0
+local current_keybind = ""
 --dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_keycodes.lua")
 
 --26/04/2024 Conga: This isn't as clean, but it fixes the issue
@@ -685,18 +687,21 @@ mod_settings =
                       for key, value in pairs(key_codes) do
                           if value == code then
                               keybind_string = keybind_string .. key
+                              ModSettingSet("Apotheosis.bind_altfire_translated",key)
                           end
                       end
                   elseif mode == "mouse_code" then
                       for key, value in pairs(mouse_codes) do
                           if value == code then
                               keybind_string = keybind_string .. key
+                              ModSettingSet("Apotheosis.bind_altfire_translated",key)
                           end
                       end
                   elseif mode == "joystick_code" then
                       for key, value in pairs(joystick_codes) do
                           if value == code then
                               keybind_string = keybind_string .. key
+                              ModSettingSet("Apotheosis.bind_altfire_translated",key)
                           end
                       end
                   end
@@ -704,8 +709,8 @@ mod_settings =
           end
     
           GuiColorSetForNextWidget(gui, 1, 1, 1, 0.5)
-          GuiText(gui, 0, 0, keybind_tutorial)
-          if listening then
+          GuiText(gui, 0, 0, keybind_tutorial_altfire)
+          if listening and current_keybind == "altfire" then
               GuiColorSetForNextWidget(gui, 1, 0, 0, 1)
               GuiOptionsAdd(gui, GUI_OPTION.NonInteractive)
           end
@@ -716,11 +721,98 @@ mod_settings =
               listening = true
               there_has_been_input = false
               old_binding = ModSettingGet("Apotheosis.bind_altfire")
+              current_keybind = "altfire"
           end
           GuiText(gui, 0, 5, keybind_current .. keybind_string)
           GuiText(gui, 0, -5, " ")
         end
       },
+			{
+				id = "bind_altfire_translated",
+				ui_name = "Secret setting",
+				value_default = "MOUSE_RIGHT",
+				text_max_length = 20,
+				allowed_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_0123456789",
+				hidden = true,
+			},
+      {
+        id = "bind_disguise",
+        ui_name = "",
+        value_default = "key_code,10,mouse_code,joystick_code",
+        ui_fn = function(mod_id, gui, in_main_menu, im_id, setting)
+          if listening then
+            input_listen(key_inputs,mouse_inputs,joystick_inputs)
+          end
+    
+          local _id = 0
+          local function id()
+              _id = _id + 1
+              return _id
+          end
+    
+          local keybind_string = ""
+          local keybind_setting = ModSettingGet("Apotheosis.bind_disguise")
+          local mode = "key_code"
+          for code in string.gmatch(keybind_setting, "[^,]+") do
+              if code == "mouse_code" or code == "key_code" or code == "joystick_code" then
+                  mode = code
+              else
+                  if keybind_string ~= "" then
+                      keybind_string = keybind_string .. " + "
+                  end
+                  code = tonumber(code)
+                  if mode == "key_code" then
+                      for key, value in pairs(key_codes) do
+                          if value == code then
+                              keybind_string = keybind_string .. key
+                              ModSettingSet("Apotheosis.bind_disguise_translated",key)
+                          end
+                      end
+                  elseif mode == "mouse_code" then
+                      for key, value in pairs(mouse_codes) do
+                          if value == code then
+                              keybind_string = keybind_string .. key
+                              ModSettingSet("Apotheosis.bind_disguise_translated",key)
+                          end
+                      end
+                  elseif mode == "joystick_code" then
+                      for key, value in pairs(joystick_codes) do
+                          if value == code then
+                              keybind_string = keybind_string .. key
+                              ModSettingSet("Apotheosis.bind_disguise_translated",key)
+                          end
+                      end
+                  end
+              end
+          end
+    
+          GuiColorSetForNextWidget(gui, 1, 1, 1, 0.5)
+          GuiText(gui, 0, 0, keybind_tutorial_disguise)
+          if listening and current_keybind == "disguise" then
+              GuiColorSetForNextWidget(gui, 1, 0, 0, 1)
+              GuiOptionsAdd(gui, GUI_OPTION.NonInteractive)
+          end
+          if GuiButton(gui, id() + 1, 5, 5, keybind_newbinding) then
+              key_inputs = {}
+              mouse_inputs = {}
+              joystick_inputs = {}
+              listening = true
+              there_has_been_input = false
+              old_binding = ModSettingGet("Apotheosis.bind_disguise")
+              current_keybind = "disguise"
+          end
+          GuiText(gui, 0, 5, keybind_current .. keybind_string)
+          GuiText(gui, 0, -5, " ")
+        end
+      },
+			{
+				id = "bind_disguise_translated",
+				ui_name = "Secret setting",
+				value_default = "G",
+				text_max_length = 20,
+				allowed_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_0123456789",
+				hidden = true,
+			},
     }
   },
   {
@@ -901,7 +993,7 @@ end
 ]]--
 
 if HasFlagPersistent( "apotheosis_card_unlocked_secret_knowledge_of_kings" ) then
-  table.insert(mod_settings,10,
+  table.insert(mod_settings,11,
   {
     id = "secret_golden_cape",
     ui_name = secret_golden_cape_name,
@@ -1039,7 +1131,7 @@ function input_listen(key_inputs,mouse_inputs,joystick_inputs)
     decided = true
   end
   binding = binding:sub(1, -2)
-  ModSettingSet("Apotheosis.bind_altfire", binding)
+  ModSettingSet(table.concat({"Apotheosis.bind_",current_keybind}), binding)
 
   if there_has_been_input and not there_is_input then
       listening = false
@@ -1047,8 +1139,8 @@ function input_listen(key_inputs,mouse_inputs,joystick_inputs)
       key_inputs = {}
       mouse_inputs = {}
       joystick_inputs = {}
-      if ModSettingGet("Apotheosis.bind_altfire") == "key_code,mouse_code,joystick_code" then
-          ModSettingSet("Apotheosis.bind_altfire", old_binding)
+      if ModSettingGet(table.concat({"Apotheosis.bind_",current_keybind})) == "key_code,mouse_code,joystick_code" then
+          ModSettingSet(table.concat({"Apotheosis.bind_",current_keybind}), old_binding)
       end
   end
 end

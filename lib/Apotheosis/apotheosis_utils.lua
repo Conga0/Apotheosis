@@ -161,8 +161,33 @@ function PlayerCamControls(enabled)   --Disables camera locking onto player
   ComponentSetValue2(comp,"center_camera_on_this_entity",enabled)
 end
 
-function isButtonDown_AltFire()
-  local binding = ModSettingGet("Apotheosis.bind_altfire")
+function isButtonDown(key_name)
+  local binding = ModSettingGet(table.concat({"Apotheosis.bind_",key_name}))
+  local mode = "key_code"
+  for code in string.gmatch(binding, "[^,]+") do
+      if code == "mouse_code" or code == "key_code" or code == "joystick_code" then
+          mode = code
+      else
+          code = tonumber(code)
+          if mode == "key_code" then
+              if InputIsKeyDown(code) then
+                return true
+              end
+          elseif mode == "mouse_code" then
+              if InputIsMouseButtonDown(code) then
+                return true
+              end
+          elseif mode == "joystick_code" then
+              if InputIsJoystickButtonDown(0, code) then
+                return true
+              end
+          end
+      end
+  end
+end
+
+function buttonTranslatedName(key_name)
+  local binding = ModSettingGet(table.concat({"Apotheosis.bind_",key_name}))
   local mode = "key_code"
   for code in string.gmatch(binding, "[^,]+") do
       if code == "mouse_code" or code == "key_code" or code == "joystick_code" then

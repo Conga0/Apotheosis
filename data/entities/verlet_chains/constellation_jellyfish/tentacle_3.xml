@@ -1,5 +1,5 @@
 <Sprite
-filename="data/entities/verlet_chains/devourer_ghost/tentacle.png"
+filename="data/entities/verlet_chains/constellation_jellyfish/tentacle_long.png"
 offset_x="0"
 offset_y="0"
 default_animation="stand" >
@@ -7,10 +7,10 @@ default_animation="stand" >
 <!-- animation -->
 	<RectAnimation
 		name="stand"
-		pos_x="8"
+		pos_x="0"
 		pos_y="0"
 		frame_count="1"
-		frame_width="4"
+		frame_width="40"
 		frame_height="11"
 		frame_wait="1"
 		frames_per_row="8"

@@ -85,6 +85,10 @@ if GameHasFlagRun("apotheosis_flesh_boss_armor") then
 
 	EntityLoad("data/entities/animals/boss_flesh_monster/phase3/transport_emitter_flesh.xml", pos_x, pos_y)
 
+	--Make the heretic more aggressive if the player has severely stacked more love, to prevent Heretic from having no thoughts head empty and floating to the east
+	local animalaicomp = EntityGetFirstComponentIncludingDisabled(eid,"AnimalAIComponent")
+	ComponentSetValue2(animalaicomp,"mAggression",ComponentGetValue2(animalaicomp,"mAggression") + (total_extra_love * 25))
+
 else
 	local eid = EntityLoad("data/entities/animals/boss_flesh_monster/boss_flesh_monster.xml", pos_x, pos_y)
 	EntityAddComponent(eid, "StreamingKeepAliveComponent" ) 
@@ -135,6 +139,10 @@ else
 	end
 
 	EntityLoad("data/entities/animals/boss_flesh_monster/transport_emitter.xml", pos_x, pos_y)
+
+	--Make the heretic more aggressive if the player has severely stacked more love, to prevent Heretic from having no thoughts head empty and floating to the east
+	local animalaicomp = EntityGetFirstComponentIncludingDisabled(eid,"AnimalAIComponent")
+	ComponentSetValue2(animalaicomp,"mAggression",ComponentGetValue2(animalaicomp,"mAggression") + (total_extra_love * 25))
 
 end
 

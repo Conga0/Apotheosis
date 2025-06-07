@@ -1,0 +1,28 @@
+<Entity >
+	<InheritTransformComponent>
+	</InheritTransformComponent>
+   
+    <VerletPhysicsComponent
+    	num_points="10"
+    	stiffness="0.4"
+		velocity_dampening="0.9"
+    	resting_distance="11" 
+    	simulate_gravity="1"
+		scale_sprite_x="0"
+		collide_with_cells="0"
+    	constrain_stretching="1" >
+    </VerletPhysicsComponent>
+
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+	<Base file="data/entities/verlet_chains/constellation_jellyfish/tentacle_verlet_2.xml" />
+  
+</Entity>
+

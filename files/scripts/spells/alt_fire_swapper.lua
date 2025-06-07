@@ -19,7 +19,7 @@ local aim_x, aim_y = ComponentGetValue2(controlscomp, "mAimingVectorNormalized")
 local manacost = 10
 
 if GameGetFrameNum() >= cooldown_frame then
-    if isButtonDown_AltFire() then
+    if isButtonDown("altfire") then
         local mana = wand.mana
         if (mana > manacost) then
 

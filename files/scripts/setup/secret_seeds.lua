@@ -36,7 +36,7 @@ function towerclimb()
 
     GameAddFlagRun("apotheosis_towerclimb")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_towerclimb\")")
@@ -103,7 +103,7 @@ function hardcore()
 
     GameAddFlagRun("apotheosis_hardmode")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
         local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
         local content = ModTextFileGetContent(path)
         content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_hardmode\")")
@@ -124,7 +124,7 @@ function nightcore()
     --Adding this just for Heretical Eye dialogue...
     GameAddFlagRun("apotheosis_nightmode")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
         local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
         local content = ModTextFileGetContent(path)
         content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_hardmode\") GameAddFlagRun(\"apotheosis_nightmode\")")
@@ -144,7 +144,7 @@ function glassed()
 
     GameAddFlagRun("apotheosis_glassed")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_glassed\")")
@@ -179,7 +179,7 @@ function alchemistdream()
 
     GameAddFlagRun("apotheosis_alchemistdream")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_alchemistdream\")")
@@ -300,7 +300,7 @@ function addict()
 
     GameAddFlagRun("apotheosis_addict")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_addict\")")
@@ -325,7 +325,7 @@ function poverty()
 
     GameAddFlagRun("apotheosis_poverty")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_poverty\")")
@@ -357,7 +357,7 @@ function downunder()
 
     dofile_once("mods/Apotheosis/files/scripts/setup/downunder_setup.lua")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_downunder\")")
@@ -374,7 +374,7 @@ function everything()
 
     GameAddFlagRun("apotheosis_everything")
 
-    do --Artifically secret seed game flag is added
+    do --Add the secret seed game flag via the parallel world check
       local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
       local content = ModTextFileGetContent(path)
       content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_everything\")")
@@ -390,6 +390,29 @@ function everything()
     dofile_once("mods/Apotheosis/files/scripts/setup/nightcore_setup.lua")
 
     AddUI("everything")
+
+end
+
+function realism()
+
+    GameAddFlagRun("apotheosis_realism")
+
+    do --Add the secret seed game flag via the parallel world check
+      local path = "mods/Apotheosis/files/scripts/magic/player_parallel_check.lua"
+      local content = ModTextFileGetContent(path)
+      content = content:gsub("%-%-DONOTDELETETHIS", "GameAddFlagRun(\"apotheosis_realism\")")
+      ModTextFileSetContent(path, content)
+    end
+    
+    local path = "data/entities/player_base.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    xml:first_of("IngestionComponent").attr.ingestion_size = 3750
+    xml:first_of("IngestionComponent").attr.ingestion_reduce_every_n_frame = 60
+
+    ModTextFileSetContent(path, tostring(xml))
+
+    --AddUI("addict")
 
 end
 
@@ -471,7 +494,7 @@ local secret_seeds = {
         func = alchemistdream
     },
     {
-        IDs = {"addict"},
+        IDs = {"addict","fungalpain"},
         func = addict
     },
     {
@@ -485,6 +508,10 @@ local secret_seeds = {
     {
         IDs = {"everything","getfixedboi","junglejuice","tuonela","jared"},
         func = everything
+    },
+    {
+        IDs = {"realism"},
+        func = realism
     },
 }
 

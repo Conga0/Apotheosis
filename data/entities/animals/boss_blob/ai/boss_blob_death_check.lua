@@ -8,7 +8,7 @@ function check_death()
 	local blobs_remaining = EntityGetWithTag("apotheosis_blob_boss")
 
 	-- Return if there's still boss remained
-	if #blobs_remaining > 1 then return end
+	if #blobs_remaining > 0 then return end
 
 	local pos_x, pos_y = EntityGetTransform(entity_id)
 	local flag_status = HasFlagPersistent("apotheosis_card_unlocked_blob_boss")

@@ -31,10 +31,12 @@ for k=1,amount do
     --3.12 * 0.15 / 2 = 0.234
     --GamePrint("rot is " .. rot)
     local offset_x = vel_x * 0.3
-    local offset_y = vel_x * 0.3
+    local offset_y = vel_y * 0.3
 
-    vel_x = vel_x + math.random(offset_x * -1,offset_x)
-    vel_y = vel_y + math.random(offset_y * -1,offset_y)
+    local offset_final = vel_x + vel_y / 2
+
+    vel_x = vel_x + math.random(offset_final * -1,offset_final)
+    vel_y = vel_y + math.random(offset_final * -1,offset_final)
 
 
     if ( #projectile_file > 0 ) then

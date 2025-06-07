@@ -1,0 +1,269 @@
+<Entity name="celestial_pearl" tags="hittable,teleportable_NOT,item_physics,item_pickup" >
+
+	
+	<SpriteComponent
+    _enabled="1"
+    offset_x="4"
+    offset_y="4"
+    image_file="mods/Apotheosis/files/items_gfx/in_hand/orb_jellyfish_pearl.png"
+  ></SpriteComponent>
+
+	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="apotheosis_magic_liquid_pure_light"
+		offset.x="0"
+		offset.y="0"
+		count_min="1"
+		count_max="1"
+		emission_interval_min_frames="60"
+		emission_interval_max_frames="120"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		lifetime_min="8.5"
+		lifetime_max="15.5"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="220"
+		area_circle_radius.max="220"
+		airflow_force="0.5"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		collide_with_grid="0"
+		render_ultrabright="1"
+		velocity_always_away_from_center="-120"
+		gravity.y="0.0"
+		>
+	</ParticleEmitterComponent>
+
+  <PhysicsBodyComponent
+	_enabled="0"
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="0"
+    on_death_leave_physics_body="0"
+    hax_fix_going_through_ground="1"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent
+	_enabled="0"
+    body_id="1"
+    centered="1"
+    image_file="mods/Apotheosis/files/items_gfx/orb_jellyfish_pearl.png"
+    material="apotheosis_pearl_box2d" >
+  </PhysicsImageShapeComponent>
+  
+  <CameraBoundComponent
+    max_count="50"
+    distance="500">
+  </CameraBoundComponent>
+	
+	<PhysicsThrowableComponent
+	_tags="enabled_in_world"
+    max_throw_speed="180"
+    throw_force_coeff="1.5"
+  ></PhysicsThrowableComponent>
+  
+  <PhysicsBodyCollisionDamageComponent 
+    _tags="enabled_in_world" 
+    speed_threshold="140.0"
+  ></PhysicsBodyCollisionDamageComponent>
+  
+  <ItemComponent
+    _tags="enabled_in_world"
+    item_name="$item_apotheosis_orb_jellyfish_pearl_name"
+    max_child_items="0"
+    is_pickable="1"
+    is_equipable_forced="1"
+    ui_sprite="mods/Apotheosis/files/ui_gfx/items/orb_jellyfish_pearl.png"
+    ui_description="$item_apotheosis_orb_jellyfish_pearl_desc"
+    preferred_inventory="QUICK"
+	play_spinning_animation="0"
+	play_hover_animation="1"
+  ></ItemComponent>
+  
+  <UIInfoComponent
+    _tags="enabled_in_world"
+    name="$item_apotheosis_orb_jellyfish_pearl_name" >
+  </UIInfoComponent>
+  
+  <AbilityComponent
+		ui_name="$item_apotheosis_orb_jellyfish_pearl_name"
+		throw_as_item="1"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+	
+	<SpriteComponent
+    _tags="enabled_in_hand"
+    _enabled="0"
+    offset_x="4"
+    offset_y="4"
+    image_file="mods/Apotheosis/files/items_gfx/in_hand/orb_jellyfish_pearl.png"
+  ></SpriteComponent>
+
+
+	<!-- damage  -->
+
+	<DamageModelComponent 
+		_enabled="0"
+		_tags="enabled_in_world"
+		hp="4" 
+		air_needed="0" 
+		falling_damages="0"
+		fire_probability_of_ignition="0" 
+		blood_material="spark_white"
+		wait_for_kill_flag_on_death="0"
+		is_on_fire="0" 
+		ragdoll_filenames_file=""
+        ragdoll_material="spark_white"
+		ragdoll_offset_y="-6"
+		ragdoll_fx_forced="DISINTEGRATED"
+		ragdoll_material="spark_white"
+		ragdollify_child_entity_sprites="1" 
+		blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_purple_$[1-3].xml"
+		blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
+		critical_damage_resistance="1.0"
+		physics_objects_damage="0"
+		>
+		<damage_multipliers
+			curse="2.0"
+			holy="-2.0"
+			physics_hit="0.0"
+			>
+		</damage_multipliers>
+	</DamageModelComponent>
+
+	<GenomeDataComponent 
+		food_chain_rank="1" 
+		herd_id="curse" 
+		is_predator="1" >
+	</GenomeDataComponent>
+	
+	<HitboxComponent 
+		_enabled="0"
+		_tags="enabled_in_world"
+		damage_multiplier="1.0"
+		aabb_max_x="4" 
+		aabb_min_x="-4" 
+		aabb_max_y="4" 
+		aabb_min_y="-4" >
+	</HitboxComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/shine_blue.xml"
+		delay="0"
+		lifetime="20"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="15"
+		emission_interval_max_frames="30"
+		count_min="1" count_max="2"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-9"
+		randomize_velocity.max_x="9"
+		randomize_velocity.min_y="-9"
+		randomize_velocity.max_y="9"
+		randomize_position.min_x="-8"
+		randomize_position.max_x="8"
+		randomize_position.min_y="-8"
+		randomize_position.max_y="8"
+		>
+  </SpriteParticleEmitterComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/shine_02.xml"
+		delay="0"
+		lifetime="20"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="15"
+		emission_interval_max_frames="30"
+		count_min="1" count_max="2"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-9"
+		randomize_velocity.max_x="9"
+		randomize_velocity.min_y="-9"
+		randomize_velocity.max_y="9"
+		randomize_position.min_x="-8"
+		randomize_position.max_x="8"
+		randomize_position.min_y="-8"
+		randomize_position.max_y="8"
+		>
+  </SpriteParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		emitted_material_name="spark_white"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_min="-4"
+		y_pos_offset_max="4"
+		x_vel_min="-4"
+		x_vel_max="4"
+		y_vel_min="-4"
+		y_vel_max="4"
+		gravity.y="0.0"
+		count_min="1"
+		count_max="1"
+		lifetime_min="3"
+		lifetime_max="5"
+		is_trail="1"
+		trail_gap="1.0"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		airflow_force="0"
+		airflow_time="0"
+		airflow_scale="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		is_emitting="1"
+    />
+
+	<CollisionTriggerComponent
+		width="70"
+		height="70"
+		radius="70"
+		required_tag="paper_book"
+		destroy_this_entity_when_triggered="0" >
+	</CollisionTriggerComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world"
+		script_death="mods/Apotheosis/files/scripts/items/orb_jellyfish_pearl.lua"
+		script_source_file="mods/Apotheosis/files/scripts/items/orb_jellyfish_pearl.lua"
+		execute_every_n_frame="60"
+		>
+	</LuaComponent>
+
+</Entity>

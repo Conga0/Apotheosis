@@ -538,6 +538,7 @@
   <VariableStorageComponent
     name="iframes"
 		value_int="0"
+    value_bool="0"
   >
   </VariableStorageComponent>
 

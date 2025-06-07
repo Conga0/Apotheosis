@@ -1,0 +1,6 @@
+local entity_id = GetUpdatedEntityID()
+local player_id = EntityGetRootEntity(entity_id)
+local pos_x,pos_y = EntityGetTransform(player_id)
+local vcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"VariableStorageComponent")
+local uicomp = EntityGetFirstComponentIncludingDisabled(entity_id,"UIIconComponent")
+local curse_level = ComponentGetValue2(vcomp,"value_int")

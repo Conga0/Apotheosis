@@ -1,0 +1,191 @@
+<Entity name="unknown" tags="hittable,teleportable_NOT,item_physics,item_pickup,apotheosis_cursed_item" >
+
+	
+	<SpriteComponent
+    _enabled="1"
+    offset_x="4"
+    offset_y="4"
+    image_file="data/items_gfx/book.png"
+  ></SpriteComponent>
+
+	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_red"
+		offset.x="0"
+		offset.y="0"
+		count_min="1"
+		count_max="1"
+		emission_interval_min_frames="60"
+		emission_interval_max_frames="120"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		lifetime_min="8.5"
+		lifetime_max="15.5"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="220"
+		area_circle_radius.max="220"
+		airflow_force="0.5"
+		airflow_time="0.01"
+		airflow_scale="0.05"
+		collide_with_grid="0"
+		render_ultrabright="1"
+		velocity_always_away_from_center="-120"
+		gravity.y="0.0"
+		>
+	</ParticleEmitterComponent>
+
+	<InteractableComponent
+		radius="25"
+		ui_text="$item_apotheosis_dispell_key_cursed_desc"
+		name="TEST TITLE"
+	>
+	</InteractableComponent>
+	
+	<LuaComponent
+		script_interacting="mods/Apotheosis/files/scripts/items/spell_book_cursed.lua"
+      	script_collision_trigger_hit="mods/Apotheosis/files/scripts/items/spell_book_cursed.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+
+	<CollisionTriggerComponent
+		_enabled="0"
+		_tags="invincible"
+		width="128"
+		height="128"
+		radius="256"
+		required_tag="player_unit"
+		destroy_this_entity_when_triggered="0" >
+	</CollisionTriggerComponent>
+
+	<SpriteOffsetAnimatorComponent
+		x_phase="0"
+		x_phase_offset="0"
+		x_speed="0"
+		y_amount="2"
+		y_speed="3"
+		>
+	</SpriteOffsetAnimatorComponent>
+  
+  <UIInfoComponent
+    _tags="enabled_in_world"
+    name="$item_apotheosis_dispell_key_cursed_name" >
+  </UIInfoComponent>
+  
+  <AbilityComponent
+		ui_name="$item_apotheosis_dispell_key_cursed_name"
+		throw_as_item="1"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+	
+	<SpriteComponent
+    _tags="enabled_in_hand"
+    _enabled="0"
+    offset_x="4"
+    offset_y="4"
+    image_file="mods/Apotheosis/files/items_gfx/in_hand/orb_jellyfish_pearl.png"
+  ></SpriteComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="mods/Apotheosis/files/particles/spark_electric_red.xml"
+		delay="0"
+		lifetime="20"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="15"
+		emission_interval_max_frames="30"
+		count_min="1" count_max="2"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_velocity.min_x="-9"
+		randomize_velocity.max_x="9"
+		randomize_velocity.min_y="-9"
+		randomize_velocity.max_y="9"
+		randomize_position.min_x="-8"
+		randomize_position.max_x="8"
+		randomize_position.min_y="-8"
+		randomize_position.max_y="8"
+		>
+  </SpriteParticleEmitterComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="mods/Apotheosis/files/particles/spark_electric_red.xml"
+		delay="0"
+		lifetime="20"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="15"
+		emission_interval_max_frames="30"
+		count_min="1" count_max="2"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_velocity.min_x="-9"
+		randomize_velocity.max_x="9"
+		randomize_velocity.min_y="-9"
+		randomize_velocity.max_y="9"
+		randomize_position.min_x="-8"
+		randomize_position.max_x="8"
+		randomize_position.min_y="-8"
+		randomize_position.max_y="8"
+		>
+  </SpriteParticleEmitterComponent>
+
+	<ParticleEmitterComponent
+		emitted_material_name="spark_red"
+		offset.x="0"
+		offset.y="0"
+		x_pos_offset_min="-4"
+		x_pos_offset_max="4"
+		y_pos_offset_min="-4"
+		y_pos_offset_max="4"
+		x_vel_min="-4"
+		x_vel_max="4"
+		y_vel_min="-4"
+		y_vel_max="4"
+		gravity.y="0.0"
+		count_min="1"
+		count_max="2"
+		lifetime_min="5"
+		lifetime_max="8"
+		is_trail="1"
+		trail_gap="1.0"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		airflow_force="0"
+		airflow_time="0"
+		airflow_scale="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		create_real_particles="0"
+		render_ultrabright="1"
+		is_emitting="1"
+    />
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/thundermage/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>

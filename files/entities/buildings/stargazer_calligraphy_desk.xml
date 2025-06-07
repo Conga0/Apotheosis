@@ -1,0 +1,70 @@
+<Entity>
+	<LuaComponent
+		_tags="invincible"
+		_enabled="1"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/calligraphy_desk.lua"
+    	script_interacting="mods/Apotheosis/files/scripts/buildings/calligraphy_desk.lua"
+		execute_every_n_frame="90"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name=""
+		value_int="-1"
+		value_string="abcdefghijklmnopqrstuvwxyz"
+		>
+	</VariableStorageComponent>
+
+	<InteractableComponent
+		_enabled="0"
+		_tags="enabled_by_script"
+		radius="40"
+		ui_text="$building_apotheosis_calligraphy_desk"
+		name="TEST TITLE"
+	>
+	</InteractableComponent>
+
+	<SpriteComponent 
+	_enabled="1" 
+	alpha="1" 
+	has_special_scale="0" 
+	image_file="mods/Apotheosis/files/buildings_gfx/hisii_healing_station.xml"
+	emissive="0"
+	is_text_sprite="0" 
+	next_rect_animation="" 
+	offset_x="0" 
+	offset_y="0" 
+	rect_animation="stand" 
+	visible="1" 
+		>
+	</SpriteComponent>
+	
+	<ParticleEmitterComponent
+		emitted_material_name="spark_green"
+		gravity.y="0.0"
+		x_pos_offset_min="-6"
+		x_pos_offset_max="6"
+		y_pos_offset_min="-8"
+		y_pos_offset_max="0"
+		lifetime_min="5.1"
+		lifetime_max="6.2"
+		count_min="1"
+		count_max="3"
+		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="20"
+		emission_interval_max_frames="40"
+		emit_cosmetic_particles="1"
+		render_ultrabright="0"
+		x_vel_min="-2"
+		x_vel_max="2"
+		y_vel_min="-2"
+		y_vel_max="2"
+		is_emitting="1"
+		>
+	</ParticleEmitterComponent>
+</Entity>

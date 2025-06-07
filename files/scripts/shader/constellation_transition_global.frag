@@ -1,0 +1,1 @@
+uniform vec4 conga_constellation_transition_amount;

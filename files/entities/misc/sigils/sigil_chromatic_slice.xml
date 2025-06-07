@@ -1,0 +1,15 @@
+<Entity>
+	<LuaComponent 
+		_enabled="1" 
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/convert_dmg_any.lua" 
+		execute_every_n_frame="5"
+		remove_after_executed="1">
+   </LuaComponent>
+
+   <VariableStorageComponent
+		name="sigil_chromatic"
+		value_string="slice"
+		>
+   </VariableStorageComponent>
+</Entity>
+

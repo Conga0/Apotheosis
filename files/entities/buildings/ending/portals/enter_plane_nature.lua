@@ -2,10 +2,13 @@ function do_newgame_plus()
 	-- GameDoEnding2()
 	-- BiomeMapLoad( "mods/nightmare/files/biome_map.lua" )
 
+	--Do we need to do this?
+	--[[
 	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
 	-- print( newgame_n )
 	newgame_n = newgame_n + 1
 	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
+	]]--
 
 	local players = EntityGetWithTag("player_unit") or {}
 	for k=1,#players
@@ -40,6 +43,9 @@ function do_newgame_plus()
 
 	--Planes check for Heretic to lock off certain dialogue
 	GameAddFlagRun("apotheosis_planes_entered")
+
+	--Prevent planes enemies from dropping gold
+	GameAddFlagRun("drop_no_gold")
 
 	--Deque & Fadeout current music so the new biome music can take over
     GameTriggerMusicFadeOutAndDequeueAll()

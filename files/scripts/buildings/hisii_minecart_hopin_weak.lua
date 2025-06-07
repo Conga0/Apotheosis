@@ -10,7 +10,7 @@ local targets = EntityGetInRadius( x, y, r )
 
 for k=1,#targets
 do v= targets[k]
-	if ( v ~= entity_id ) and (EntityHasTag(v,"player_polymorphed") == false) and ( EntityGetName( v ) == "minecart_hisii_hopin" ) and cart_found == false then
+	if ( v ~= entity_id ) and (EntityHasTag(entity_id,"player_polymorphed") == false) and ( EntityGetName( v ) == "minecart_hisii_hopin" ) and cart_found == false then
 		--GamePrint("HISII MINECART LUA CHECK")
 		local target_x,target_y = EntityGetTransform( v )
 		GameDropAllItems( entity_id )

@@ -1825,8 +1825,59 @@ apotheosis_spellappends = {
 			local safety = 0
 			local rec = check_recursion( data, recursion_level )
 			
+            dont_draw_actions = true
 			data.action( rec )
+            dont_draw_actions = false
             c.fire_rate_wait = tdelay
+			draw_actions( 1, true )
+		end,
+	},
+	{
+		id          = "APOTHEOSIS_RANDOM_ARC",
+        id_matchup  = "APOTHEOSIS_RANDOM_HOMING",
+        name 		= "$spell_apotheosis_random_arc_name",
+        description = "$spell_apotheosis_random_arc_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_arc.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+		spawn_requires_flag = "card_unlocked_pyramid",
+		type 		= ACTION_TYPE_MODIFIER,
+		recursive	= true,
+		spawn_level                       = "3,4,5,6", -- MANA_REDUCE
+		spawn_probability                 = "0.1,0.3,0.1,0.1", -- MANA_REDUCE
+		price = 120,
+		mana = 2,
+		action 		= function( recursion_level, iteration )
+			SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
+            if reflecting then
+                c.damage_projectile_add = c.damage_projectile_add + 0.32
+            else
+                local tdelay = c.fire_rate_wait
+    
+                local IDTable = {}
+    
+                for k=1,#actions
+                do local v = actions[k]
+                    if v.subtype then
+                        if v.subtype.arc then
+                            table.insert(IDTable,k)
+                        end
+                    end
+                end
+    
+                local rnd = Random( 1, #IDTable )
+                local data = actions[IDTable[rnd]]
+                
+                local safety = 0
+                local rec = check_recursion( data, recursion_level )
+                
+                dont_draw_actions = true
+                data.action( rec )
+                dont_draw_actions = false
+                c.damage_projectile_add = c.damage_projectile_add + 0.32
+                c.fire_rate_wait = tdelay
+                current_reload_time = 0
+            end
+            draw_actions( 1, true )
 		end,
 	},
     --[[ Old Lua Sharing - new one directly below
@@ -2842,8 +2893,177 @@ apotheosis_spellappends = {
             GameScreenshake(100, x, y)
             GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/angered_the_gods/create", x, y )
         end,
+    },
+    --[[
+    {
+        id          = "APOTHEOSIS_SIGIL_RED",
+        id_matchup  = "BLOODLUST",
+        name 		= "Red Sigil",
+        description = "Increases damage done by a projectile. Prolonged use may anger worldly spirits.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_red.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/heavy_bullet_unidentified.png",
+        spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "10", -- SIGIL
+        spawn_probability                 = "0", -- SIGIL
+        price = 300,
+        mana = 20,
+        --max_uses = 8,
+        --custom_xml_file = "data/entities/misc/custom_cards/torch.xml",
+        action 		= function()
+			c.extra_entities    = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,"
+			c.damage_projectile_add = c.damage_projectile_add + 1.2
+            if not reflecting then
+                local cd = tonumber(GlobalsGetValue("APOTHEOSIS_SIGIL_CD","0"))
+                local frame = GameGetFrameNum()
+                if cd + 60 < frame then
+                    GlobalsSetValue("APOTHEOSIS_SIGIL_CD",tostring(frame))
+                    local anger = GlobalsGetValue("APOTHEOSIS_SIGIL_ANGER","0")
+                    GlobalsSetValue("APOTHEOSIS_SIGIL_ANGER",tostring(anger + 1))
+                end
+            end
+            draw_actions( 1, true )
+        end,
+    }
+    ]]--
+    --[[
+    {
+        id          = "APOTHEOSIS_SIGIL_CHROMATIC",
+        id_matchup  = "BLOODLUST",
+        name 		= "Chromatic Sigil",
+        description = "Concentrates a projectile's damage into a single element, right click to change the focus. Prolonged use may anger worldly spirits.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_red.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/heavy_bullet_unidentified.png",
+        --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "10", -- SIGIL
+        spawn_probability                 = "0", -- SIGIL
+        price = 300,
+        mana = 20,
+        --max_uses = 8,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/sigil_chromatic.xml",
+        action 		= function()
+			c.extra_entities    = c.extra_entities .. "mods/Apotheosis/files/entities/misc/sigil_chromatic.xml,"
+            if not reflecting then
+                local cd = tonumber(GlobalsGetValue("APOTHEOSIS_SIGIL_CD","0"))
+                local frame = GameGetFrameNum()
+                if cd + 60 < frame then
+                    local player_id = GetUpdatedEntityID()
+                    local curse = EntityLoad("mods/Apotheosis/files/entities/misc/effect_phantom_curse_01.xml", pos_x, pos_y)
+                    EntityAddChild(player_id,curse)
+                    GlobalsSetValue("APOTHEOSIS_SIGIL_CD",tostring(frame))
+                end
+            end
+            draw_actions( 1, true )
+
+            --Get the jellyfish pearls
+            --Use them to crack open cursed chests
+            --Obtain the sigil spells from them
+            --Using the sigil spells grants immense power, but gives you phantom curse each time you use them
+            --Phantom curse can be purged with jellyfish pearls
+            ----...Killing too many jellyfish angers celestial beings above?
+            --Read cursed coffer's lua file for additional information
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_SIGIL_GREEN",
+        id_matchup  = "BLOODLUST",
+        name 		= "Green Sigil",
+        description = "Greatly increases one's healing abilities. Prolonged use may anger worldly spirits.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_green.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/heavy_bullet_unidentified.png",
+        --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "10", -- SIGIL
+        spawn_probability                 = "0", -- SIGIL
+        price = 300,
+        mana = 20,
+        --max_uses = 8,
+        --custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/sigil_green.xml",
+        action 		= function()
+			c.extra_entities    = c.extra_entities .. "mods/Apotheosis/files/entities/misc/sigil_green.xml,"
+            if not reflecting then
+                local cd = tonumber(GlobalsGetValue("APOTHEOSIS_SIGIL_CD","0"))
+                local frame = GameGetFrameNum()
+                if cd + 60 < frame then
+                    local player_id = GetUpdatedEntityID()
+                    local curse = EntityLoad("mods/Apotheosis/files/entities/misc/effect_phantom_curse_01.xml", pos_x, pos_y)
+                    EntityAddChild(player_id,curse)
+                    GlobalsSetValue("APOTHEOSIS_SIGIL_CD",tostring(frame))
+                end
+            end
+            draw_actions( 1, true )
+        end,
+    },
+    {
+        id          = "APOTHEOSIS_SIGIL_BLUE",
+        id_matchup  = "BLOODLUST",
+        name 		= "Blue Sigil",
+        description = "Immediately adds 60 mana to the wand. Prolonged use may anger worldly spirits.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_blue.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/heavy_bullet_unidentified.png",
+        --spawn_requires_flag = "apotheosis_card_unlocked_fire_lukki_spell",
+        type 		= ACTION_TYPE_MODIFIER,
+        spawn_level                       = "10", -- SIGIL
+        spawn_probability                 = "0", -- SIGIL
+        price = 300,
+        mana = -60,
+        --max_uses = 8,
+        --custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/sigil_blue.xml",
+        action 		= function()
+            if not reflecting then
+                local cd = tonumber(GlobalsGetValue("APOTHEOSIS_SIGIL_CD","0"))
+                local frame = GameGetFrameNum()
+                if cd + 60 < frame then
+                    local player_id = GetUpdatedEntityID()
+                    local curse = EntityLoad("mods/Apotheosis/files/entities/misc/effect_phantom_curse_01.xml", pos_x, pos_y)
+                    EntityAddChild(player_id,curse)
+                    GlobalsSetValue("APOTHEOSIS_SIGIL_CD",tostring(frame))
+                end
+            end
+            draw_actions( 1, true )
+        end,
+    }
+    ]]--
+    {
+        id          = "APOTHEOSIS_SPELLBOOK",
+        name         = "$spell_apotheosis_spellbook_glyph_name",
+        description = "$spell_apotheosis_spellbook_glyph_desc",
+        spawn_requires_flag = "apotheosis_spellbook_unlocked", -- spawn_requires_flag = "this_should_never_spawn", ? it feels odd that these can appear from chests n shit
+        sprite         = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
+        --sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spellbook/spellbook_glyph_a.png",
+        related_projectiles    = {"mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_fake.xml"},
+        type         = ACTION_TYPE_OTHER,
+        spawn_level                       = "10",
+        spawn_probability                 = "0",
+        price = 10,
+        mana = 1,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/glyph.xml",
+        action         = function()
+            c.fire_rate_wait = c.fire_rate_wait + 15
+            if reflecting then return end
+            local entity_id = GetUpdatedEntityID()
+            local inventory = EntityGetFirstComponent( entity_id, "Inventory2Component" ) --[[@cast inventory number]]
+            local active_wand = ComponentGetValue2( inventory, "mActiveItem" )
+            local wand_actions = EntityGetAllChildren(active_wand, "card_action") or {}
+            local action = nil
+            for j = 1, #wand_actions do
+                local itemcomp = EntityGetFirstComponentIncludingDisabled(wand_actions[j], "ItemComponent") --[[@cast itemcomp number]]
+                if ComponentGetValue2(itemcomp, "mItemUid") == current_action.inventoryitem_id then
+                    action = wand_actions[j] break
+                end
+            end
+            if EntityGetName(active_wand) == "celestial_spellbook" and action then
+                local vsc = EntityGetFirstComponentIncludingDisabled(action, "VariableStorageComponent") --[[@cast vsc number]]
+                add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_" .. ComponentGetValue2(vsc, "value_string") .. ".xml")
+            else
+                add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_fake.xml")
+            end
+        end,
     }
 }
+
+
 
 function append_apotheosis_spells()
     if ModSettingGet( "Apotheosis.organised_icons" ) == true then
@@ -2982,7 +3202,7 @@ local actions_to_edit = {
         spawn_probability   = "0.5,1,1,1,0.5,0.1"
     },
 
-    --Allow Path of Darkflame to spawn in lower tier spell pools, it's a great early game spell but you only ever find it mid-late game, by then it's garbage
+    --Allow Path of Darkflame to spawn in lower tier spell pools, it's a great early game spell but you only ever find it mid-late game and by then it's no longer competitive with the other options available via modifiers
     ["DARKFLAME"] = {
         spawn_level         = "1,2,3,5,6",
         spawn_probability   = "0.8,0.8,1,0.9,0.8"
@@ -3535,6 +3755,68 @@ local actions_to_edit = {
         subtype = { homing=true },
         mandatory_addition = true
     },
+
+    --Arc subtype data
+    ["GRAVITY"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["GRAVITY_ANTI"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["SINEWAVE"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["CHAOTIC_ARC"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["PINGPONG_PATH"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["AVOIDING_ARC"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["FLOATING_ARC"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["FLY_DOWNWARDS"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["FLY_UPWARDS"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["HORIZONTAL_ARC"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["LINE_ARC"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["ORBIT_SHOT"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["SPIRALING_SHOT"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["PHASING_SHOT"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
+    ["TRUE_ORBIT"] = {
+        subtype = { arc=true },
+        mandatory_addition = true
+    },
     --Replaces Sea of Mimicium with Apotheosis's Potion to Sea
     --To any code diggers, I'll tell you a story about mimicium.
     --Long before Mimicium was added to the base game, it was an Apotheosis material that was very rare to come across, you could only find in in the 'rare potion pool' which had a 1% chance of appearing in the place of regular potions.
@@ -3562,8 +3844,19 @@ local actions_to_edit = {
     --It's what makes them magical to me.
     --I have my fun from having choices to make and seeing how that affects my story, and I hope this choice gives more to you.
     --Conga Lyne
+    --
+    --Append: I don't think sea of mimicium by itself is inheritly bad, however, I see the the problem in that it's guaranteed every run
+    --Potion to Sea was always intended to be a rare resource you couldn't guarantee you'd get every run, you could break the liquid economy but it wasn't guaranteed, having a guaranteed way to duplicate materials is more so the root issue I believe
+    --Sea of mimicium by itself isn't inheritly bad, but it's the fact you can get it guaranteed after a fairly safe quest that makes it an overwhelmingly decisive option to grab for longer runs
+    --I'm not against the idea of having a way to duplicate liquids or breaking the liquid economy, but it's the same problem as piercing shot or chainsaw
+    --Sea of Mimicium is so good that there's no reason not to grab it
+    --I don't like sea of mimicium being replaced with sea of potion since they're realistically the same thing, just one's inconvenient to use
+    --Ideally I would keep sea of mimicium in the game & have potion to sea be it's own thing, but without a guarantee to get either (even though they would realistically clash with each other and one would be better than the other)
+    --How I would achieve this ideal I am not confident
+    --Perhaps this is a route to be investigated should apotheosis diverge into a wholly unique map at some point with no similarities to vanilla
+    --
     ["SEA_MIMIC"] = {
-        mandatory_addition = true,
+        --mandatory_addition = true,
         name = "$spell_apotheosis_potion_to_sea_name",
         description = "$spell_apotheosis_potion_to_sea_desc",
         sprite = "mods/Apotheosis/files/ui_gfx/gun_actions/potion.png",

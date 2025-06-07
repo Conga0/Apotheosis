@@ -152,7 +152,7 @@ local insert_list = {
     },
     {
         id_matchup="hpcrystal",
-        name="whisp\nwhisp_big\nwhisp_giga\nfairy_cheap\nfairy_big\nfairy_giant\nfairy_big_discord\nfairy_esoteric\nesoteric_being\nworm_esoteric",
+        name="whisp\nwhisp_big\nwhisp_giga\nfairy_cheap\nfairy_big\nfairy_giant\nfairy_big_discord\nfairy_esoteric\nesoteric_being\nworm_esoteric\nconstellation_jellyfish",
     },
     {
         id_matchup="ethereal_being",

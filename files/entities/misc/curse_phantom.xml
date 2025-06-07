@@ -1,0 +1,31 @@
+<Entity name="apotheosis_phantom_curse" >
+
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+	
+	<VariableStorageComponent
+		name="status_data"
+		value_int="0"
+		value_float="1"
+		>
+	</VariableStorageComponent>
+    
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/magic/curse_phantom_effects.lua"
+		execute_every_n_frame="10"
+		remove_after_executed="0"
+		>
+	</LuaComponent>
+	
+	<UIIconComponent
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/perk_icons/curse_phantom_00.png"
+		name="$status_apotheosis_phantom_curse_name"
+		description="$status_apotheosis_phantom_curse_desc"
+		is_perk="1"
+		display_above_head="0"
+		display_in_hud="0"
+		>
+	</UIIconComponent>
+
+</Entity>

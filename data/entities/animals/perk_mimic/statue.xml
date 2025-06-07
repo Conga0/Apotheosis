@@ -1,0 +1,162 @@
+<Entity name="$animal_statue">
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent 
+			_enabled="1" 
+			preferred_job="JobDefault"
+			escape_if_damaged_probability="100"
+			attack_melee_damage_min="0.4" 
+			attack_melee_damage_max="0.7"
+			creature_detection_range_x="400"
+			creature_detection_range_y="400"
+			creature_detection_angular_range_deg="60"
+			attack_melee_max_distance="20"
+			food_material="meat"
+			needs_food="0"
+			sense_creatures="1"
+			can_fly="1"  
+			attack_melee_enabled="1"
+			attack_landing_ranged_enabled="0"
+			attack_ranged_enabled="0"
+			attack_ranged_entity_file=""
+			aggressiveness_min="90"
+			aggressiveness_max="100"
+			>
+		</AnimalAIComponent>
+
+		<DamageModelComponent 
+			hp="7"
+			materials_create_messages="1"
+			ragdoll_filenames_file="" 
+			fire_probability_of_ignition="0"
+			ragdoll_fx_forced="DISINTEGRATED"
+			ragdoll_material="rock_static_glow"
+			minimum_knockback_force="1000"
+			materials_that_damage="" 
+			materials_how_much_damage=""
+			air_needed="0"
+			>
+			<damage_multipliers
+				melee="1.0"
+				projectile="0.0"
+				explosion="0.0"
+				electricity="0.0"
+				slice="0.0"
+				ice="0.0"
+				fire="0.0" >
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+    		image_file="data/buildings_gfx/statue_trap_right.xml"
+			offset_x="10" 
+			offset_y="17" >
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1"
+			can_fly="1" 
+			can_walk="1"
+			jump_speed="80"
+			initial_jump_lob="1"
+			initial_jump_max_distance_x="60"
+			initial_jump_max_distance_y="60" >
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="24" >
+		</PathFindingGridMarkerComponent>
+
+		<GenomeDataComponent 
+			herd_id="healer"
+			food_chain_rank="1"
+			is_predator="1" >
+		</GenomeDataComponent>
+
+		<CharacterPlatformingComponent
+			fly_speed_change_spd="0.0"
+			fly_speed_max_up="0.0"
+			fly_speed_max_down="0.0"
+			fly_velocity_x="0" 
+			swim_idle_buoyancy_coeff="0.0"
+			swim_up_buoyancy_coeff="0.0"
+			swim_down_buoyancy_coeff="0.0"
+			accel_x="0.03" 
+			jump_velocity_y="0" 
+			run_velocity="0"  >
+		</CharacterPlatformingComponent>
+
+		<CameraBoundComponent
+			_enabled="1"
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_max_x="3" 
+			aabb_max_y="3" 
+			aabb_min_x="-3" 
+			aabb_min_y="-14" 
+			>
+		</HitboxComponent>
+
+		<AudioComponent
+			file="data/audio/Desktop/animals.bank"
+			event_root="animals/statue" >
+		</AudioComponent>
+		
+	</Base>
+	
+	<InventoryGuiComponent> </InventoryGuiComponent>
+
+	<Entity> <Base file="mods/Apotheosis/files/entities/misc/helpers/mimic_perk_tip.xml" /> </Entity>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/disguise_statue_flip.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="50"
+		fade_out_time="1.5" >
+	</LightComponent>
+
+	<ItemPickUpperComponent
+		is_in_npc="1">
+	</ItemPickUpperComponent>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_PROJECTILE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_EXPLOSION"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+	
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+</Entity>
+

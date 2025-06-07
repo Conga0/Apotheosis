@@ -53,7 +53,7 @@ function split_string(inputstr, sep)
   
   local content = ModTextFileGetContent("data/genome_relations.csv")
   content = add_new_genome(content, "mage_corrupted", 40, 60, 100, {
-      player = 0,
+      player = -100,
       ["-1"] = 0,
       robot = { 50, 50 },
       fly = 100,
@@ -108,6 +108,24 @@ function split_string(inputstr, sep)
       ghost_boss = 100,
       ghost_whisp = { 0, 0 },
       orcs = { 90, 70 },
+  })
+  content = add_new_genome(content, "mimic", 100, 100, 100, {
+      player = { 0, 100 },
+      ["-1"] = 0,
+      nest = { 0, 100 },
+      boss_limbs = 100,
+      healer = { 0, 100 },
+      apparition = { 0, 100 },
+      bat = { 0, 100 },
+      mage = 0,
+      mage_swapper = 0,
+      curse = 100,
+      trap = 100,
+      ghost_boss = 100,
+      mage_corrupted = 0,
+      ghost_fairy = 100,
+      ghost_whisp = 100,
+      orcs = { 0, 100 },
   })
   
   ModTextFileSetContent("data/genome_relations.csv", content)

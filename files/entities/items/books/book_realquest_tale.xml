@@ -1,4 +1,4 @@
-<Entity tags="scroll">
+<Entity tags="scroll,paper_book">
 	<Base file="data/entities/items/books/base_book.xml">
 		<BookComponent
 			_enabled="0"
