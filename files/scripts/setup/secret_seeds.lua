@@ -2,7 +2,7 @@
 --Load the relevent flags for the current seed loaded, then enable another flag saying to not allow anymore custom seed flags to be loaded in, would likely work
 
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 function AddUI(filename)
     local path = "data/entities/player_base.xml"

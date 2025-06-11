@@ -220,7 +220,7 @@ local mouse_inputs = {}
 local joystick_inputs = {}
 local old_binding = 0
 local current_keybind = ""
---dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_keycodes.lua")
+--dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_keycodes.lua")
 
 --26/04/2024 Conga: This isn't as clean, but it fixes the issue
 mouse_codes = {
