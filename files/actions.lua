@@ -3359,7 +3359,7 @@ local actions_to_edit = {
     ["SUMMON_EGG"] = {
         action = function()
             SetRandomSeed( GameGetFrameNum(), GameGetFrameNum() )
-            local types = {"egg_monster","egg_slime","egg_red","egg_fire","apotheosis/egg_fairy","apotheosis/egg_mud","apotheosis/egg_robot"}
+            local types = {"egg_monster","egg_slime","egg_red","egg_fire","Apotheosis/egg_fairy","Apotheosis/egg_mud","Apotheosis/egg_robot"}
             local rnd = Random(1, #types)
             add_projectile(table.concat{"data/entities/items/pickup/", types[rnd], ".xml"})
         end,
