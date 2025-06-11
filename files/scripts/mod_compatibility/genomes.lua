@@ -127,5 +127,7 @@ function split_string(inputstr, sep)
       ghost_whisp = 100,
       orcs = { 0, 100 },
   })
+  content = add_new_genome(content, "hate_all", 0, 0, 0, {
+  })
   
   ModTextFileSetContent("data/genome_relations.csv", content)

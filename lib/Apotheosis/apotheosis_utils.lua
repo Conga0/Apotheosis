@@ -252,3 +252,16 @@ function time_since(target_day, target_month, target_year, current_day, current_
 
   return remaining_days, diff_months
 end
+
+--Bit-flag functions
+function add_bit_flag(current, flag)
+    return bit.bor(current, flag)
+end
+
+function remove_bit_flag(current, flag)
+    return bit.band(current, bit.bnot(flag))
+end
+
+function has_bit_flag(current, flag)
+    return bit.band(current, flag) ~= 0
+end

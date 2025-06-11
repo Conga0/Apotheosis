@@ -61,7 +61,7 @@ if ComponentGetValue2(generic_ai_data,"value_bool") == true then
             local target_y = pos_y + 0 - math.sin( angle ) * radius
 
             local backup = EntityLoad("data/entities/animals/constellation_jellyfish/jellyfish_backup_summon.xml",target_x,target_y)
-            EntityLoad("mods/Apotheosis/debug/static_image.xml",target_x,target_y)
+            --EntityLoad("mods/Apotheosis/debug/static_image.xml",target_x,target_y)
         end
     end
 end

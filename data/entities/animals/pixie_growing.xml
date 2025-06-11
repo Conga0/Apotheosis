@@ -1,0 +1,179 @@
+<Entity name="Pixie" >
+
+	<!--"Ascends" after each kill, aggressive against everyone but gets stronger overtime if left alive. Even aggressive towards it's own kind-->
+	<!--Not falling far from divinity, every pixie is pretentious -->
+
+	<!--All their attacks will need to do friendly-fire to harm other pixies but not actually inflict self-damage-->
+  
+	<Base file="data/entities/base_enemy_flying.xml" >
+		<AnimalAIComponent
+			attack_melee_enabled="0"
+			attack_ranged_enabled="0"
+			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_holy_pixie.xml"
+			attack_ranged_action_frame="1"
+			attack_ranged_frames_between="130"
+			attack_ranged_max_distance="250"
+			attack_ranged_offset_y="4.5"
+			escape_if_damaged_probability="0"
+			needs_food="0"
+			can_fly="1" >
+		</AnimalAIComponent>
+
+		<DamageModelComponent 
+            hp="10"
+			air_needed="1"
+			fire_probability_of_ignition="0" 
+			ragdollify_child_entity_sprites="0"
+            ragdoll_material="meat_slime_green"
+		    ragdoll_fx_forced="DISINTEGRATED"
+            ragdoll_filenames_file="" 
+			blood_material="plasma_fading"
+			blood_spray_material="plasma_fading"
+			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_yellow_$[1-3].xml"
+			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_yellow_$[1-3].xml"
+			materials_that_damage="lava,poison,blood_cold,blood_cold_vapour,acid" 
+			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005"
+			>
+			<damage_multipliers
+				holy="0.0"
+				>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<PathFindingComponent
+			can_fly="1" 
+			can_walk="0"
+			>
+		</PathFindingComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big.xml"
+			offset_x="12"
+			offset_y="12" >
+		</SpriteComponent>
+		
+		<HitboxComponent 
+			_enabled="1" 
+			aabb_min_x="-6" 
+			aabb_max_x="6" 
+			aabb_min_y="-6" 
+			aabb_max_y="6" 
+			is_enemy="1" 
+			is_item="0" 
+			is_player="0" >
+		</HitboxComponent>		
+		
+		<GenomeDataComponent 
+			herd_id="hate_all" 
+			food_chain_rank="0"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-6" 
+			collision_aabb_max_x="6" 
+			collision_aabb_min_y="-6" 
+			collision_aabb_max_y="6" 
+			mass="0.3"
+			>
+		</CharacterDataComponent>
+	</Base>
+
+	<Entity>
+		
+		<InheritTransformComponent />
+		
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/fairy_big_emissive.xml"
+			alpha="1"
+			emissive="1"
+			offset_x="12"
+			offset_y="12" >
+		</SpriteComponent>
+		
+		<SpriteComponent 
+			alpha="0.55"
+			image_file="data/particles/fog_of_war_hole_128.xml"
+			smooth_filtering="1"
+			fog_of_war_hole="1"
+			>
+		</SpriteComponent>
+
+	</Entity>
+
+	<VariableStorageComponent
+		name="pixie_level_data"
+		value_int="1"
+		value_float="0"
+		value_string="0"
+	>
+	</VariableStorageComponent>
+	
+	<CellEaterComponent
+		_enabled="0"
+		radius="19" 
+		eat_probability="90"
+		>
+	</CellEaterComponent>
+
+	<LightComponent 
+	    _enabled="1" 
+	    radius="300" 
+		r="233"
+		g="227"
+		b="68"
+		fade_out_time="1.5"
+		>
+    </LightComponent>
+
+	<!-- Pixie AI -->
+    <LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/animals/pixie_ai.lua"
+		script_damage_received="mods/Apotheosis/files/scripts/animals/pixie_ai.lua"
+        script_death="mods/Apotheosis/files/scripts/animals/pixie_kill_tracker.lua"
+        execute_every_n_frame="1"
+        remove_after_executed="0" >
+	</LuaComponent>
+
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+	</Entity>
+
+	<Entity>
+		
+		<InheritTransformComponent />
+
+		<GameEffectComponent
+			effect="KNOCKBACK_IMMUNITY"
+			frames="-1"
+			exclusivity_group="0"
+		></GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_ELECTRICITY"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+	</Entity>
+	
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/lasershooter" >
+	</AudioComponent>
+
+</Entity>
+

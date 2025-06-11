@@ -52,15 +52,15 @@ gun.mana_max = {10,10}
 --Strong Stats (can be used for any spells)
 local gun = { }
 gun.name = {"$wand_apotheosis_spell_book_name"}
-gun.deck_capacity = 20
+gun.deck_capacity = 26
 gun.actions_per_round = 1
 gun.reload_time = {33,33}
 gun.shuffle_deck_when_empty = 0
-gun.fire_rate_wait = {11,33}
+gun.fire_rate_wait = {11,22}
 gun.spread_degrees = 0
 gun.speed_multiplier = 1.00
 gun.mana_charge_speed = {400,600}
-gun.mana_max = {800,1200}
+gun.mana_max = {1200,1800}
 
 local mana_max = get_random_between_range( gun.mana_max )
 local deck_capacity = gun.deck_capacity

@@ -17,7 +17,7 @@ end
 local children = EntityGetAllChildren(player_id) or {}
 for k=1,#children do
     if EntityGetName(children[k]) == "inventory_quick" then
-        local items = EntityGetAllChildren(children[k])
+        local items = EntityGetAllChildren(children[k]) or {}
         for v=1,#items do
             if EntityHasTag( items[v], "effect_protection" ) then
                 local comp = EntityGetFirstComponentIncludingDisabled(items[v],"GameEffectComponent")
