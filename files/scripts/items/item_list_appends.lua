@@ -29,17 +29,17 @@ end
 local items = {
     {
         weight = 3,
-        entity = "data/entities/items/pickup/apotheosis/egg_fairy.xml",
+        entity = "data/entities/items/pickup/Apotheosis/egg_fairy.xml",
         offset = -2
     },
     {
         weight = 3,
-        entity = "data/entities/items/pickup/apotheosis/egg_mud.xml",
+        entity = "data/entities/items/pickup/Apotheosis/egg_mud.xml",
         offset = -2
     },
     {
         weight = 3,
-        entity = "data/entities/items/pickup/apotheosis/egg_robot.xml",
+        entity = "data/entities/items/pickup/Apotheosis/egg_robot.xml",
         offset = -2
     },
 }
