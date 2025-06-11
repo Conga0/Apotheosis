@@ -246,7 +246,7 @@ ModTextFileSetContent("data/entities/projectiles/deck/bounce_spark_friendly_fire
 --Maybe only do this for an optional "hardmode? Unsure"
 --Goal is for the mod to be accessible to anyone but it gets so freakin boring 1 shotting everything
 
-dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 --Moved over to hardmode seed
 

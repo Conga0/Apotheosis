@@ -1,5 +1,5 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 ----Boosts Health of various in-world creatures
 

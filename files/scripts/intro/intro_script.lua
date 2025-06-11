@@ -1,4 +1,4 @@
-dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 local entity_id = GetUpdatedEntityID()
 local initframe = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"LifetimeComponent") ,"creation_frame")

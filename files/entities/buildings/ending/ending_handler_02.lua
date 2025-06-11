@@ -1,4 +1,4 @@
-dofile_once("mods/Apotheosis/lib/apotheosis/apotheosis_utils.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 GameAddFlagRun("apotheosis_ending_cutscene")
 
 local entity_id = GetUpdatedEntityID()
