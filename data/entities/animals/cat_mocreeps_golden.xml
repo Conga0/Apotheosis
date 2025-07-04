@@ -1,131 +1,17 @@
 <Entity tags="mortal,prey,acid" name="$enemy_apotheosis_cat_mocreeps_louis_gold">
-  
-	<Base file="data/entities/base_helpless_animal.xml" >
 
-        <AnimalAIComponent 
-        	preferred_job="Escaping"
-			attack_melee_enabled="0"
-			attack_ranged_entity_file=""
-			attack_ranged_predict="1"
-			attack_ranged_enabled="0"
-			attack_melee_enabled="0"
-			sense_creatures="1"
-			creature_detection_range_x="128"
-			creature_detection_range_y="160"
-			attack_melee_damage_min="0"
-			attack_melee_damage_max="0"
-			can_fly="0"
-			food_material="apotheosis_milk"
-			food_particle_effect_material="apotheosis_milk"
-			food_eating_create_particles="0"
-            >
-        </AnimalAIComponent >
-		
-		<DamageModelComponent 
-			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_mocreeps_golden/filenames.txt" 
-			fire_probability_of_ignition="0.05"
-			hp="0.6"
-			>
-		</DamageModelComponent>
+	<Base file="data/entities/animals/cat_mocreeps.xml" >
 
-		<SpriteComponent 
-			_enabled="1" 
-			alpha="1" 
-			image_file="mods/Apotheosis/files/enemies_gfx/cat_golden.xml" 
-			next_rect_animation="" 
-			offset_x="15" 
-			offset_y="25" 
-			rect_animation="stand" 
-			 >
-		</SpriteComponent>
+		<DamageModelComponent ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_mocreeps_golden/filenames.txt"/>
 
-		<PathFindingGridMarkerComponent
-			marker_work_flag="24" >
-		</PathFindingGridMarkerComponent>
-		
-		<GenomeDataComponent 
-			herd_id="helpless"
-			food_chain_rank="20"
-			is_predator="0" >
-		</GenomeDataComponent>
-		
-		<CharacterPlatformingComponent 
-			jump_velocity_y="-12" 
-			run_velocity="30"  
-			>
-		</CharacterPlatformingComponent>
-		
-		<HitboxComponent 
-			_enabled="1" 
-			aabb_min_x="-3.5" 
-			aabb_max_x="3.5" 
-			aabb_min_y="-3" 
-			aabb_max_y="3" 
-			>
-		</HitboxComponent>
-		
-		<PathFindingComponent
-		    can_swim_on_surface="1"
-		    can_dive="1"
-			>
-		</PathFindingComponent>
-		
-		<CharacterDataComponent
-			collision_aabb_min_x="-4.6" 
-			collision_aabb_max_x="4.6" 
-			collision_aabb_min_y="-3" 
-			collision_aabb_max_y="3" 
-			mass="2.4"
-			>
-		</CharacterDataComponent>
+		<SpriteComponent image_file="mods/Apotheosis/files/enemies_gfx/cat_golden.xml"/>
 
-		<CameraBoundComponent
-			max_count="20"
-			distance="2000"
-		freeze_on_distance_kill="1"
-		freeze_on_max_count_kill="1" >
-		</CameraBoundComponent>
 	</Base>
 
 	<LuaComponent
 	    execute_every_n_frame="-1"
 	    script_death="mods/Apotheosis/files/scripts/animals/cat_golden_dropmoney.lua"
-	    remove_after_executed="1" >
-	</LuaComponent>
-	
-	<AudioComponent
-		file="mods/Apotheosis/mocreeps_audio.bank"
-		event_root="apotheosis/kittycat" >
-	</AudioComponent>
-
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow.lua"
-		script_damage_received="mods/Apotheosis/files/scripts/animals/cat_meow_hurt.lua"
-		execute_every_n_frame="60"
-		>
-	</LuaComponent>
-	
-  	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/cat_homing_remove.lua"
-		execute_times="1"
-		remove_after_executed="1"
-		>
-	</LuaComponent>
-
-	<InteractableComponent
-		_tags="enabled_in_world,enabled_if_charmed"
-		_enabled="1"
-		name="longleg_love"
-		ui_text="$ui_longleg_love"
-        exclusivity_group="1"
-	></InteractableComponent>
-	
-	<LuaComponent
-		script_interacting="mods/Apotheosis/files/scripts/animals/cat_pet.lua"
-		script_source_file="mods/Apotheosis/files/scripts/animals/cat_cooldown.lua"
-		execute_every_n_frame="60"
-		>
-	</LuaComponent>
+	    remove_after_executed="1"
+    />
 
 </Entity>
-
