@@ -33,13 +33,15 @@
 			next_rect_animation=""
 			offset_x="0"
 			offset_y="0"
-        />
+		/>
 
-	    <LuaComponent
-	    	script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow.lua"
-	    	script_damage_received=""
-	    	execute_every_n_frame="60"
-	    />
+		<LuaComponent/>
+
+		<LuaComponent
+			script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow.lua"
+			script_damage_received=""
+			execute_every_n_frame="60"
+		/>
 
 	</Base>
 
@@ -70,9 +72,9 @@
 	/>
 
 	<LuaComponent
-	    execute_every_n_frame="-1"
-	    script_death="mods/Apotheosis/files/scripts/animals/cat_rainbow_dropmoney.lua"
-	    remove_after_executed="1"
+		execute_every_n_frame="-1"
+		script_death="mods/Apotheosis/files/scripts/animals/cat_rainbow_dropmoney.lua"
+		remove_after_executed="1"
 	/>
 
 </Entity>

@@ -1,7 +1,7 @@
 <Entity tags="mortal,prey,acid" name="$enemy_apotheosis_cat_mocreeps_herbet">
 
 	<Base file="data/entities/animals/cat_mocreeps.xml" >
-		
+
 		<DamageModelComponent ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_mocreeps_white/filenames.txt"/>
 
 		<SpriteComponent image_file="mods/Apotheosis/files/enemies_gfx/cat_white.xml"/>

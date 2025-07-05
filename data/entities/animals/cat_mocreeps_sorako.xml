@@ -3,7 +3,7 @@
 	<Base file="data/entities/animals/cat_mocreeps.xml" >
 
 
-		
+
 		<DamageModelComponent
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_mocreeps_spoopy/filenames.txt"
 			ragdoll_fx_forced="DISINTEGRATED"
@@ -20,14 +20,16 @@
 			offset_y="0"
 		/>
 
-	    <LuaComponent script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow_sora.lua"/>
+		<LuaComponent/>
+
+		<LuaComponent script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow_sora.lua"/>
 
 	</Base>
 
 	<LuaComponent
-	    execute_every_n_frame="-1"
-	    script_death="mods/Apotheosis/files/scripts/animals/cat_rainbow_dropmoney.lua"
-	    remove_after_executed="1"
-    />
+		execute_every_n_frame="-1"
+		script_death="mods/Apotheosis/files/scripts/animals/cat_rainbow_dropmoney.lua"
+		remove_after_executed="1"
+	/>
 
 </Entity>

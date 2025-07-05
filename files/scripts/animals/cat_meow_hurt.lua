@@ -1,4 +1,3 @@
-
 function damage_received( damage, desc, entity_who_caused, is_fatal )
 
     local entity_id    = GetUpdatedEntityID()
@@ -19,5 +18,4 @@ function damage_received( damage, desc, entity_who_caused, is_fatal )
         --Hiss
         GamePlaySound( "mods/Apotheosis/mocreeps_audio.bank", "mocreeps_audio/kittycat/sora_hurt_07", pos_x, pos_y );
     end
-
 end

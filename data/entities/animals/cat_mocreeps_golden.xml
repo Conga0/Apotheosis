@@ -9,9 +9,9 @@
 	</Base>
 
 	<LuaComponent
-	    execute_every_n_frame="-1"
-	    script_death="mods/Apotheosis/files/scripts/animals/cat_golden_dropmoney.lua"
-	    remove_after_executed="1"
-    />
+		execute_every_n_frame="-1"
+		script_death="mods/Apotheosis/files/scripts/animals/cat_golden_dropmoney.lua"
+		remove_after_executed="1"
+	/>
 
 </Entity>

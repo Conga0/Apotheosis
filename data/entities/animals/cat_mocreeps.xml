@@ -2,8 +2,8 @@
 
 	<Base file="data/entities/base_helpless_animal.xml" >
 
-        <AnimalAIComponent
-        	preferred_job="Escaping"
+		<AnimalAIComponent
+			preferred_job="Escaping"
 			attack_melee_enabled="0"
 			attack_ranged_entity_file=""
 			attack_ranged_predict="1"
@@ -18,7 +18,7 @@
 			food_material="apotheosis_milk"
 			food_particle_effect_material="apotheosis_milk"
 			food_eating_create_particles="0"
-        />
+		/>
 		
 		<DamageModelComponent
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_mocreeps/filenames.txt"
@@ -42,7 +42,7 @@
 			herd_id="helpless"
 			food_chain_rank="20"
 			is_predator="0"
-        />
+		/>
 		
 		<CharacterPlatformingComponent
 			jump_velocity_y="-12"
@@ -58,8 +58,8 @@
 		/>
 		
 		<PathFindingComponent
-		    can_swim_on_surface="1"
-		    can_dive="1"
+			can_swim_on_surface="1"
+			can_dive="1"
 		/>
 		
 		<CharacterDataComponent
@@ -73,20 +73,21 @@
 		<CameraBoundComponent
 			max_count="20"
 			distance="2000"
-		    freeze_on_distance_kill="1"
-		    freeze_on_max_count_kill="1"
-        />
+			freeze_on_distance_kill="1"
+			freeze_on_max_count_kill="1"
+		/>
 
 	</Base>
 	
 	<AudioComponent
 		file="mods/Apotheosis/mocreeps_audio.bank"
 		event_root="apotheosis/kittycat"
-    />
+	/>
 
 	<LuaComponent
 		script_source_file="mods/Apotheosis/files/scripts/animals/cat_meow.lua"
 		script_damage_received="mods/Apotheosis/files/scripts/animals/cat_meow_hurt.lua"
+		script_death="mods/Apotheosis/files/scripts/animals/cat_death.lua"
 		execute_every_n_frame="60"
 	/>
 	
@@ -101,7 +102,7 @@
 		_enabled="1"
 		name="longleg_love"
 		ui_text="$ui_longleg_love"
-        exclusivity_group="1"
+		exclusivity_group="1"
 	/>
 	
 	<LuaComponent

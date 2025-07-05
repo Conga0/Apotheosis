@@ -2,14 +2,14 @@
 
 	<Base file="data/entities/animals/cat_mocreeps.xml" >
 
-        <AnimalAIComponent
+		<AnimalAIComponent
 			attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/orb_forceingest.xml"
 			attack_ranged_action_frame="5"
 			attack_ranged_frames_between="180"
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="300"
-        />
-		
+		/>
+
 		<DamageModelComponent ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/cat_mocreeps_wizard/filenames.txt"/>
 
 		<SpriteComponent image_file="mods/Apotheosis/files/enemies_gfx/cat_wizard.xml"/>
