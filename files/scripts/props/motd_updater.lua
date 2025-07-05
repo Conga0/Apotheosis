@@ -116,7 +116,7 @@ MOTD_regulars = { --global so other mods can append their own stuff if they want
         motd = "$motd_apotheosis_lore_questions"
     },
     {
-        probability = 1000000,
+        probability = 10,
         func = function () --numbers used to be "78 40 28 59 20 13"
             local numbers = ""
             for i = 1, 6, 1 do
@@ -327,6 +327,11 @@ if comp then
     end
 
     if motd == nil then
+        --[[ <---- put a space before the double brackets to turn on debug test
+        for i = 1, 1000, 1 do
+            local target = random_from_weighted_table_procedural(MOTD_regulars, {rnd_seed[1] + i, rnd_seed[2]})
+            print(GameTextGetTranslatedOrNot(target.motd or target.func()))
+        end--]]
         local target = random_from_weighted_table_procedural(MOTD_regulars, rnd_seed)
         motd = target.motd or target.func()
     end
