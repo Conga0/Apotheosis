@@ -306,12 +306,14 @@ MOTD_regulars = { --global so other mods can append their own stuff if they want
         motd = "$motd_apotheosis_favourite_liquid_2"
     },
     {
-        probability = tonumber(ModSettingGet("Apotheosis.cat_kills") or 0) >= 10 and 30 or 0,
-        motd = "$motd_apotheosis_cat_killer"
+        probability = 30,
+        motd = "$motd_apotheosis_cat_killer",
+        condition = tonumber(ModSettingGet("Apotheosis.cat_kills") or 0) >= 10,
     },
     {
-        probability = tonumber(ModSettingGet("Apotheosis.cat_deaths") or 0) >= 25 and 10 or 0,
-        motd = "$motd_apotheosis_cat_deaths"
+        probability = 10,
+        motd = "$motd_apotheosis_cat_deaths",
+        condition = tonumber(ModSettingGet("Apotheosis.cat_deaths") or 0) >= 25,
     },
 }
 
@@ -327,12 +329,10 @@ if comp then
     end
 
     if motd == nil then
-        --[[ <---- put a space before the double brackets to turn on debug test
-        for i = 1, 1000, 1 do
-            local target = random_from_weighted_table_procedural(MOTD_regulars, {rnd_seed[1] + i, rnd_seed[2]})
-            print(GameTextGetTranslatedOrNot(target.motd or target.func()))
-        end--]]
-        local target = random_from_weighted_table_procedural(MOTD_regulars, rnd_seed)
+        for i = 1, 50, 1 do --reroll 50 times before giving up
+            local target = random_from_weighted_table_procedural(MOTD_regulars, rnd_seed)
+            if target.condition then break end
+        end
         motd = target.motd or target.func()
     end
 
