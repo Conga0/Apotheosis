@@ -4,7 +4,7 @@
 
 		<DamageModelComponent _enabled="0"/>
 
-		<SpriteComponent image_file="mods/Apotheosis/files/enemies_gfx/cats_immortal/custom_esoteric.xml"/>
+		<SpriteComponent image_file="mods/Apotheosis/files/enemies_gfx/cats/cats_immortal/custom_esoteric.xml"/>
 
 		<GenomeDataComponent
 			_enabled="1"
