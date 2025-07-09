@@ -333,9 +333,7 @@ if comp then
 
         while(target_found == false) do
             local target = random_from_weighted_table_procedural(MOTD_regulars, rnd_seed)
-            print(target.motd)
             if target.condition ~= nil and target.condition == false and 1 == 2 then
-                print("invalid motd")
                 rnd_seed[2] = rnd_seed[2] + 1
             else
                 target_found = true
