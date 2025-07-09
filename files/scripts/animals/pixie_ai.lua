@@ -216,7 +216,7 @@ end
 --Basic levelling behavior below
 --Every second, damage nearby entities for (10 * current_level) damage
 if current_frame % 60 == 0 then
-    AttackAura(pos_x,pos_y,current_level * 0.40, 24 + math.min(current_level * 24,72))
+    AttackAura(pos_x,pos_y,current_level * 0.40, 24 + math.min(current_level * 24,48))
 end
 
 --Every 11 seconds shoot a large laserbeam if the pixie is level 3 or greater

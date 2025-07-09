@@ -1812,5 +1812,13 @@ do  -- Change various mimic enemies to use mimic genome
   end
 end
 
+do --Allow If Random to appear with the other requirement spells
+  local path = "data/scripts/buildings/bunker2_check.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("CreateItemActionEntity%( \"IF_END\", x %+ 122, y %- 15%)","CreateItemActionEntity( \"IF_END\", x + 122, y - 15) CreateItemActionEntity( \"IF_RANDOM_APOTHEOSIS\", x + 10, y - 6)")
+
+  ModTextFileSetContent(path, content)
+end
+
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers.lua")

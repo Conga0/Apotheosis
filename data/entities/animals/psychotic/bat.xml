@@ -21,6 +21,23 @@
 			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_purple_$[1-3].xml"
 			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
 			>
+			<damage_multipliers
+				projectile="0.0"
+				explosion="0.0"
+				fire="0.0"
+				electricity="0.0"
+				melee="0.0"
+				drill="0.0"
+				slice="0.0"
+				ice="0.0"
+				healing="0.0"
+				radioactive="0.0"
+				poison="0.0"
+				cursed="0.0"
+				holy="0.0"
+				physics_hit="0.0"
+				>
+			</damage_multipliers>
 		</DamageModelComponent>
 
 		<PathFindingComponent

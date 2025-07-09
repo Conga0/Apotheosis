@@ -46,6 +46,8 @@ local spellrebalances_name = "Spell Reworks"
 local spellrebalances_desc = "Reworks various spells to have reduced mana costs to make them more practical.\nAlso reworks piercing, chainsaw & music note spells to be more inline with vanilla's spell balance.\nApotheosis is designed around this being enabled."
 local meatrealmrework_name = "Meat Realm Rework"
 local meatrealmrework_desc = "Reworks the Meat Realm to have more gradual damage and harder bosses."
+
+--Reset Mod Progress
 local reset_progress_name = "Reset Progress"
 local reset_progress_desc = "Resets all Apotheosis progress."
 local reset_progress_confirm_name = "RESET ALL PROGRESS"
@@ -203,6 +205,13 @@ if currentLang == "简体中文" then
   spellrebalances_desc = "调整许多法术的法力消耗，使它们更加实用。\n此外，还调整了穿刺射击、链锯、音符法术，使它们与原版的平衡性相一致。\nApotheosis 模组是基于该选项启用的情况所设计。"
   meatrealmrework_name = "血肉地狱重做"
   meatrealmrework_desc = "重做血肉地狱，重做后其诅咒效果会逐渐施加于玩家，同时也会由更困难的 Boss 坐镇。"
+
+  --Reset Mod Progress
+  reset_progress_name = "重置进展"
+  reset_progress_desc = "重置神化模组相关的进展。"
+  reset_progress_confirm_name = "确认重置所有进展"
+  reset_progress_confirm_desc = "重置你在神化模组中取得的所有进展。\n此操作无法撤销。"
+  reset_progress_warning = "游戏过程中不能重置进展。"
 
   --Keybinds
   keybind_name = "键位绑定"

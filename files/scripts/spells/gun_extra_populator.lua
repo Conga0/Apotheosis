@@ -9,8 +9,9 @@ extra_modifiers["apotheosis_use_no_charges"] = function()
     if current_reload_time < 15 then current_reload_time = 15 end
 end
 
+-- -100 recoil is turned into 0 recoil when the wand actually fires
 extra_modifiers["apotheosis_no_recoil"] = function()
-    shot_effects.recoil_knockback = 0
+    shot_effects.recoil_knockback = -100 
 end
 
 extra_modifiers["apotheosis_homing"] = function()
