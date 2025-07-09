@@ -265,3 +265,51 @@ end
 function has_bit_flag(current, flag)
     return bit.band(current, flag) ~= 0
 end
+
+--t should be the table with probability values
+function random_from_weighted_table(t)
+	if #t == 0 then return nil end
+	
+	local weight_sum = 0.0
+	for _,it in ipairs(t) do
+		it.weight_min = weight_sum
+		it.weight_max = weight_sum + it.probability
+		weight_sum = it.weight_max
+	end
+
+	local val = Randomf(0.0, weight_sum)
+	local result = t[1]
+	for _,it in ipairs(t) do
+		if val >= it.weight_min and val <= it.weight_max then
+			result = it
+			break
+		end
+	end
+
+	return result
+end
+
+--t should be the table with probability values
+--rng should be a table of 2 values acting as the seed
+function random_from_weighted_table_procedural(t, rng)
+	if #t == 0 then return nil end
+	
+	local weight_sum = 0.0
+	for _,it in ipairs(t) do
+		it.weight_min = weight_sum
+		it.weight_max = weight_sum + it.probability
+		weight_sum = it.weight_max
+	end
+
+    math.randomseed(rng[1], rng[2])
+    local val = math.random(0.0, weight_sum)
+	local result = t[1]
+	for _,it in ipairs(t) do
+		if val >= it.weight_min and val <= it.weight_max then
+			result = it
+			break
+		end
+	end
+
+	return result
+end
