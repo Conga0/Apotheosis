@@ -318,7 +318,8 @@ MOTD_regulars = { --global so other mods can append their own stuff if they want
 }
 
 if comp then
-    local motd
+    local motd = nil
+    local target_found = false
 
     for index, value in ipairs(MOTD_conditionals) do
         if value.condition then
@@ -329,11 +330,18 @@ if comp then
     end
 
     if motd == nil then
-        for i = 1, 50, 1 do --reroll 50 times before giving up
+
+        while(target_found == false) do
             local target = random_from_weighted_table_procedural(MOTD_regulars, rnd_seed)
-            if target.condition then break end
+            print(target.motd)
+            if target.condition ~= nil and target.condition == false and 1 == 2 then
+                print("invalid motd")
+                rnd_seed[2] = rnd_seed[2] + 1
+            else
+                target_found = true
+            end
+            motd = target.motd or target.func()
         end
-        motd = target.motd or target.func()
     end
 
     --This should never appear under any circumstances.. Unless you did something really, *really* bad
