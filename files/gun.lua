@@ -31,22 +31,11 @@ end
 
 ---@diagnostic disable-next-line: lowercase-global
 function draw_action(...)
-	apo_state.old.draw_action(...)
+	local ret = apo_state.old.draw_action(...)
 	-- Force recharge if learning orb
 	if apo_state.min_reload then current_reload_time = math.max(apo_state.min_reload, current_reload_time) end
 
-	if reflecting then  return  end
-
-	if action_mana_required > mana then
-		OnNotEnoughManaForAction()
-		table.insert( discarded, action )
-		return false -- <------------------------------------------ RETURNS
-	end
-
-	if action.uses_remaining == 0 then
-		table.insert( discarded, action )
-		return false -- <------------------------------------------ RETURNS
-	end
+	return ret
 end
 
 function BeginProjectile(entity_filename)
