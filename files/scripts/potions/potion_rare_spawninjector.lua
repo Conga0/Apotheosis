@@ -7,7 +7,7 @@ function init( entity_id )
             EntityKill(entity_id)
         elseif Random(1,70) == 1 then
             local opts = {"fairy","mud","robot",}
-            EntityLoad("data/entities/items/pickup/apotheosis/egg_" .. opts[Random(1,#opts)] .. ".xml", pos_x, pos_y)
+            EntityLoad("data/entities/items/pickup/Apotheosis/egg_" .. opts[Random(1,#opts)] .. ".xml", pos_x, pos_y)
             EntityKill(entity_id)
         end
     end

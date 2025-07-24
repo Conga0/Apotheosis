@@ -13,5 +13,5 @@ EntityAddComponent2(
     }
 )
 
-local eid = EntityLoad("mods/apotheosis/files/entities/misc/drop_gold_visual.xml",x,y)
+local eid = EntityLoad("mods/Apotheosis/files/entities/misc/drop_gold_visual.xml",x,y)
 EntityAddChild(player,eid)

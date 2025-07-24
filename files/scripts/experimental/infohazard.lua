@@ -39,7 +39,7 @@ GamePrint(tostring(math.deg(ansAgain)))
 --[[
 local e = EntityCreateNew("TEST")
 EntityAddComponent2(e, "LuaComponent", {
-	script_source_file="mods/apotheosis/files/scripts/experimental/infohazard.lua"
+	script_source_file="mods/Apotheosis/files/scripts/experimental/infohazard.lua"
 })
 EntitySetTransform(e, DEBUG_GetMouseWorld())
 ]]
