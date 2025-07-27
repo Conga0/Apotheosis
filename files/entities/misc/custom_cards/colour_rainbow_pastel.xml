@@ -1,0 +1,27 @@
+<Entity>
+    <Base file="data/entities/base_custom_card.xml" > 
+        <SpriteComponent image_file="data/ui_gfx/gun_actions/colour_rainbow.png" alpha="1" />
+        <ItemActionComponent _tags="enabled_in_world" action_id="COLOUR_RAINBOW" />
+    </Base>
+
+    <InheritTransformComponent _tags="enabled_in_world,enabled_in_hand"/>
+
+    <LuaComponent 
+        _tags="enabled_in_world"
+		script_material_area_checker_success="mods/Apotheosis/files/scripts/spells/rainbow_glimmer_convert.lua"
+		script_material_area_checker_failed="mods/Apotheosis/files/scripts/spells/rainbow_glimmer_convert.lua"
+        execute_every_n_frame="-1"
+    />
+
+	<MaterialAreaCheckerComponent
+		_tags="enabled_in_world"
+		area_aabb.min_x="-2"
+		area_aabb.max_x="2" 
+		area_aabb.min_y="-2"   
+		area_aabb.max_y="-1" 
+		update_every_x_frame="60"
+		material="apotheosis_magic_liquid_pure_light"
+		look_for_failure="0"
+		kill_after_message="0">
+	</MaterialAreaCheckerComponent>
+</Entity>

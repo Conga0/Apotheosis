@@ -1820,5 +1820,13 @@ do --Allow If Random to appear with the other requirement spells
   ModTextFileSetContent(path, content)
 end
 
+do --Allow rainbow to create a pastel rainbow
+  local path = "data/scripts/projectiles/colour_spell.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("invis =","pastel_rainbow = {particle = \"rainbow_gas\"}, invis =")
+
+  ModTextFileSetContent(path, content)
+end
+
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers.lua")

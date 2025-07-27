@@ -3498,6 +3498,40 @@ local actions_to_edit = {
 		end,
     },
 
+    --Rainbow glimmer can be turned into pastel rainbow glimmer
+    ["COLOUR_RAINBOW"] = {
+        custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/colour_rainbow_pastel.xml",
+		action 		= function()
+			c.fire_rate_wait = c.fire_rate_wait - 8
+			c.screenshake = c.screenshake - 2.5
+			if ( c.screenshake < 0 ) then
+				c.screenshake = 0
+			end
+
+
+
+            if reflecting then return end
+            local entity_id = GetUpdatedEntityID()
+            local inventory = EntityGetFirstComponent( entity_id, "Inventory2Component" ) --[[@cast inventory number]]
+            local active_wand = ComponentGetValue2( inventory, "mActiveItem" )
+            local wand_actions = EntityGetAllChildren(active_wand, "card_action") or {}
+            local action = nil
+            for j = 1, #wand_actions do
+                local itemcomp = EntityGetFirstComponentIncludingDisabled(wand_actions[j], "ItemComponent") --[[@cast itemcomp number]]
+                if ComponentGetValue2(itemcomp, "mItemUid") == current_action.inventoryitem_id then
+                    action = wand_actions[j] break
+                end
+            end
+            local spritecomp = EntityGetFirstComponentIncludingDisabled(action, "SpriteComponent")
+            if ComponentGetValue2(spritecomp,"image_file") == "mods/Apotheosis/files/ui_gfx/gun_actions/colour_rainbow_pastel.png" then
+			    c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,mods/Apotheosis/files/entities/misc/colour_rainbow_pastel.xml,"
+            else
+			    c.extra_entities = c.extra_entities .. "data/entities/particles/tinyspark_red.xml,data/entities/misc/colour_rainbow.xml,"
+            end
+			draw_actions( 1, true )
+		end,
+    },
+
     --Divide By spells respect add mana
     --Realistically you would only ever use this for terminus, if it was around the 5,000 mana cost mark.
     --I can't see it being used if it's at 10k
