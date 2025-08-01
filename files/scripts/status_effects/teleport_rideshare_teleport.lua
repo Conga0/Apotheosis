@@ -11,10 +11,10 @@ function teleported( from_x, from_y, to_x, to_y, wasportal )
             local did_hit, r_x, r_y = Raytrace(to_x,to_y,target_x,target_y)
             if did_hit then
                 --Move all creatures over to the new location if a solid wall was in the way
-                EntitySetTransform(v,r_x, r_y)
+                EntityApplyTransform(v,r_x, r_y)
             else
                 --Move all creatures over to the new location if it's open air
-                EntitySetTransform(v,target_x, target_y)
+                EntityApplyTransform(v,target_x, target_y)
             end
         end
     end
