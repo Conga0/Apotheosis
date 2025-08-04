@@ -2,6 +2,7 @@
 apo_state = { -- Altars of apostasy....... pft, -copi
     new_cast = nil,                 ---@type boolean|nil
 	min_reload = -math.huge,				---@type number|nil
+	min_cast_delay = -math.huge,			---@type number|nil
     mana_multiplier = 1.0,          ---@type number|nil
     old = {                         ---@type table
 		draw_shot = draw_shot,      ---@type function

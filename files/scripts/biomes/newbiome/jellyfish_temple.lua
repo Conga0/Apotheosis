@@ -24,9 +24,14 @@ function spawn_wands( x, y ) end
 
 function init( x, y, w, h )
 	local pw = GetParallelWorldPosition(x,y)
-	if pw == 0 and ModIsEnabled("noita-mapcap") == false then
-		--LoadPixelScene( "mods/Apotheosis/files/biome_impl/dev_test/demo_scene.png", "", x, y, "", true )
-		LoadPixelScene( "mods/Apotheosis/files/biome_impl/jellyfish_temple.png", "mods/Apotheosis/files/biome_impl/jellyfish_temple_visual.png", x, y, "mods/Apotheosis/files/biome_impl/jellyfish_temple_background.png", true )
+	if pw == 0 and ModIsEnabled("noita-mapcap") == false and math.abs(y) > 30700 and math.abs(y) < 30800 then
+		--Spawn island here
+		--Materials, Colours, Background
+		--Do not give this area a biome name, instead display the biome name in manually when the player is teleported to it.
+		--Island Coordinates:
+		--x: -20750
+		--y: -30350
+		LoadPixelScene( "mods/Apotheosis/files/biome_impl/sky_islands/random_island_01.png", "", x, y, "", true )
 	end
 end
 

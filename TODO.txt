@@ -1,21 +1,13 @@
 Music Boss rework
 Adult Centipede
 Fix motd not spawning in downunder spawn area
-Review how overpowered destruction is in ToSR, if at all
-* Potential solutions, if decided to be too powerful (strong to the point of being non-competitive with all other options, highly unlikely considering it's rarity), add a temporary wounded effect upon casting destruction or make corrupt mages immune to destruction
-* To reiterate, it'll only really be a problem spell if it's powerful to the point of making other options non-competitive, which I predict to be not the case given it's rarity.
-Fix mass materia conversion making shop spells free
 
 Make sure jellyfish *scream* for help when alerting their breathren they're in danger
 Ensure there's an escape from the jellyfish temple, maybe a bright light you can step into to go back to where the jellyfish who took you there was?
 * The portal entity is already made, just needs to be put in world
 Review spirit powder
 Nerf tuonela Kolmi? (Currently you can only consistently kill him with freeze kick as he is)
-Remove the free jellyfish pearl from the jellyfish temple, replace with lore
 Hint towards what the spell book spells are (be creative, maybe use paintings?)
-Music Worm Visuals (pain peko) (I've noticed, ironically despite feeling like I want to be told what to do for once, struggle to actually do what others request of me without being shouted at regularly to do so; I feel a sense of disappointment in myself that I haven't finished this task yet and keep telling myself I'll do it tomorrow, but tomorrow never comes)
-Fix weird white lines when you eat red sand (This happens due to the new jellyfish bloom shader)
-Bug check to make sure planes work properly without incrementing the NG+ counter
 
 Red Sigil:
 After 1 floor of use on a bolt orb build (~1 cast per second when in combat) I ended on 71 spirit anger
@@ -35,7 +27,7 @@ Giant Mages in challenge zone
 Books which grant temporary buffs, healing, berserk, poem of serville, etc
 Portal stabilization area in center
 "You did it!" trophy for "winning" the biome
-Surrounded by cursed rock, can only enter via a portal
+Surrounded by cursed rock, can only enter via a portal (Warded rock? Undiggable, kicks the player out when they're inside it, regenerates, disables all digging, EQ & cell conversion spells when inside; The ultimate no-digging solution)
 Eldritch Library?
 
 Spell book

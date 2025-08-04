@@ -28,6 +28,10 @@ extra_modifiers["apotheosis_braindamage"] = function()
     end
 end
 
+extra_modifiers["apotheosis_min_cast_delay"] = function()
+    if apo_state.min_cast_delay then c.fire_rate_wait = math.max(c.fire_rate_wait,apo_state.min_cast_delay) end
+end
+
 extra_modifiers["apotheosis_bragi"] = function()
     if not c.extra_entities:find("mods/Apotheosis/files/entities/misc/bragi_fx.xml,") then
         c.extra_entities = table.concat({c.extra_entities,"mods/Apotheosis/files/entities/misc/bragi_fx.xml,"})

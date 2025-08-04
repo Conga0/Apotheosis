@@ -56,7 +56,7 @@ function stage3()
     if frame == init_frame + 300 then
         ComponentSetValue2(vsc,"value_bool",true)
         if phaseout_stage > 202 then
-            EntitySetTransform(parent_id,-24390,16700)
+            EntitySetTransform(parent_id,-20750,-30350)
             local c = EntityLoad("mods/Apotheosis/files/entities/misc/effect_protection_all_true.xml",pos_x,pos_y)
             EntityAddChild(parent_id,c)
             GlobalsSetValue("apotheosis_jellyfish_lastpos",table.concat({pos_x,",",pos_y}))

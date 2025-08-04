@@ -2984,6 +2984,7 @@
 <!--Temporary holding data to prevent run crashes until mimicium is more or less filtered out from everyone's save files-->
   <CellData
   	_parent="mimic_liquid"
+	ui_name="$material_apotheosis_magic_liquid_mimic"
 	name="apotheosis_magic_liquid_mimic"
 	wang_color="8034c95f"
 	>

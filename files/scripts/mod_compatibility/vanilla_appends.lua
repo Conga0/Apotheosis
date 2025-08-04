@@ -1828,5 +1828,13 @@ do --Allow rainbow to create a pastel rainbow
   ModTextFileSetContent(path, content)
 end
 
+if ModSettingGet( "Apotheosis.spellrebalances" ) then --Replace Sea of Mimicium with Sea of Ominous Liquid with spell reworks enabled
+  local path = "data/biome_impl/static_tile/puzzle_logic_potion_mimics.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"SEA_MIMIC\"","\"APOTHEOSIS_SEA_OMINOUS\"")
+
+  ModTextFileSetContent(path, content)
+end
+
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers.lua")

@@ -156,7 +156,7 @@ ModLuaFileAppend("data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua")
 dofile_once("mods/Apotheosis/lib/injection.lua")
 
 
-inject(args.StringFile, modes.APPEND, "data/shaders/post_final.frag", "gl_FragColor.a = 1.0;",
+inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "gl_FragColor.a = 1.0;",
 	"mods/Apotheosis/files/scripts/shader/constellation_transition_white.frag")
 inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "varying vec2 tex_coord_fogofwar;",
 	"mods/Apotheosis/files/scripts/shader/constellation_transition_global.frag")
@@ -1080,6 +1080,14 @@ do -- Player Editor
       <Base file="mods/Apotheosis/files/scripts/magic/biome_effects.xml" >
       </Base>
     </Entity>
+  ]]))
+
+	--Adds minimum cast delay gun extra to the player
+	xml:add_child(nxml.parse([[
+	<ShotEffectComponent
+		extra_modifier="apotheosis_min_cast_delay"
+		>
+	</ShotEffectComponent>
   ]]))
 
 	--Debug

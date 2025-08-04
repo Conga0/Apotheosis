@@ -3144,7 +3144,26 @@ apotheosis_spellappends = {
 			
 			draw_actions( 1, true )
 		end,
-	}
+	},
+	{
+		id          = "APOTHEOSIS_SEA_OMINOUS",
+        id_matchup  = "SEA_SWAMP",
+		name 		= "$spell_apotheosis_sea_ominous_name",
+		description = "$spell_apotheosis_sea_ominous_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sea_ominous.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
+		related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/sea_ominous.xml"},
+		type 		= ACTION_TYPE_MATERIAL,
+		spawn_level                       = "0",
+		spawn_probability                 = "0",
+		price = 350,
+		mana = 140,
+		max_uses = 3,
+		action 		= function()
+			add_projectile("mods/Apotheosis/files/entities/projectiles/deck/sea_ominous.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 15
+		end,
+	},
 }
 
 
@@ -3294,8 +3313,15 @@ local actions_to_edit = {
 
     --Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on
     --[[ COPI: This is incredibly based, thank you conga ]]
+    --Total people upset by this change = math.huge
     ["CHAINSAW"] = {
-        mana = 12
+        mana = 12,
+        action = function()
+			add_projectile("data/entities/projectiles/deck/chainsaw.xml")
+			c.fire_rate_wait = math.max(0,apo_state.min_cast_delay)
+			c.spread_degrees = c.spread_degrees + 6.0
+			current_reload_time = current_reload_time - ACTION_DRAW_RELOAD_TIME_INCREASE - 10 -- this is a hack to get the digger reload time back to 0
+        end
     },
 
     --Slightly buff Explosive Bounce by reducing the spell cost & removing the recoil effect from the modifier
@@ -3501,6 +3527,7 @@ local actions_to_edit = {
     --Rainbow glimmer can be turned into pastel rainbow glimmer
     ["COLOUR_RAINBOW"] = {
         custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/colour_rainbow_pastel.xml",
+        mandatory_addition = true,
 		action 		= function()
 			c.fire_rate_wait = c.fire_rate_wait - 8
 			c.screenshake = c.screenshake - 2.5
@@ -3973,6 +4000,12 @@ local actions_to_edit = {
     --How I would achieve this ideal I am not confident
     --Perhaps this is a route to be investigated should apotheosis diverge into a wholly unique map at some point with no similarities to vanilla
     --
+    --04/08/2025 Potion to Sea (Sea of Mimicium) now no longer consumes a potion but is no longer guaranteed to be obtained each run.
+    --After thinking about it I'm perfectly fine with the idea of having infinite liquids, but having it guaranteed each run was the problem; Potion to Sea was always intended to be a rare resource
+    --the player wouldn't be guaranteed to have on any specific run, so in other words obtaining it is a powerful rare blessing you should take advantage of if you get it, this is always how potion to sea
+    --had functioned since it was first added to Apotheosis.
+    --The requirement of shattering the potion being duplicated is being shaved off here for user convinence, as a sort of middle-ground between the original intended behavior of the spell and the sea of mimicium people have grown used to using
+    --
     ["SEA_MIMIC"] = {
         --mandatory_addition = true,
         name = "$spell_apotheosis_potion_to_sea_name",
@@ -3981,7 +4014,7 @@ local actions_to_edit = {
         type = ACTION_TYPE_MATERIAL,
         spawn_level = "0,1,2,3,10",
         spawn_probability = "0.05,0.05,0.05,0.1,0.1",
-		spawn_requires_flag = "card_unlocked_sea_mimic",
+		spawn_requires_flag = "",
         price = 250,
         mana = 200,
         max_uses = 1,
@@ -4011,7 +4044,6 @@ local actions_to_edit = {
             
             if potion ~= nil then
                 local e = EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/sea_any.xml", x, y)
-                GamePlaySound( "data/audio/Desktop/materials.bank", "collision/glass_potion/destroy", x, y )
                 local mat = GetMaterialInventoryMainMaterial(potion)
 
                 local comp = EntityAddComponent2(
@@ -4056,7 +4088,12 @@ local actions_to_edit = {
                 )
                 ComponentSetValue2(comp, "gravity", 0, 0)
                 ComponentSetValue2(comp, "area_circle_radius", 0, 0)
-                EntityKill(potion)
+
+                --Kill the potion
+                --I swear there was code that make a squeaking noise if you shattered a mimic potion, but that might've gotten lost at some point?
+                --Should be easy to reimplement if potion shattering is re-implemented.
+                --GamePlaySound( "data/audio/Desktop/materials.bank", "collision/glass_potion/destroy", x, y )
+                --EntityKill(potion)
             end
         end
     end,
