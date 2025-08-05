@@ -16,6 +16,7 @@ spell_apotheosis_spellbook_glyph_desc,"A simple glyph without any special proper
 spell_apotheosis_sea_ominous_name,Sea of Ominous Liquid,,,,,,,,,,,,,
 spell_apotheosis_sea_ominous_desc,Summons a large body of ominous liquid below the caster,,,,,,,,,,,,,
 spell_apotheosis_potion_to_sea_desc,The first flask in your inventory is converted into a sea of the same material,,,,,,,,,,,,,
+spell_apotheosis_orb_knowledge_desc_april_fools,"Tu Stultus Es. Casts an orb that grows alongside your knowledge, which you lack.",,,,,,,,,,,,,
 status_apotheosis_celestial_infection_name,"Celestial Infection %d",,,,,,,,,,,,,
 status_apotheosis_celestial_infection_desc,"You've been infected by a celestial being.\nYou feel your heart is having trouble beating.",,,,,,,,,,,,,
 book_apotheosis_jellyfish_hint_name,"Stargazer's Observations",,,,,,,,,,,,,

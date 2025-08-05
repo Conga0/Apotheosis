@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 apotheosis_spellappends = {
     {
         id          = "APOTHEOSIS_SAWBLADE_BIG_RAY",
@@ -2725,8 +2726,8 @@ apotheosis_spellappends = {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
         id_matchup  = "APOTHEOSIS_STAR_SHOT",
         name 		= "$spell_apotheosis_orb_knowledge_name",
-        description = "$spell_apotheosis_orb_knowledge_desc",
-        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png",
+        description = is_holiday_active("april_fools") and "$spell_apotheosis_orb_knowledge_desc_april_fools" or "$spell_apotheosis_orb_knowledge_desc",
+        sprite 		= is_holiday_active("april_fools") and "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb_april_fools.png" or "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png",
         sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
         related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge.xml", 1},
         spawn_requires_flag	= "this_should_never_spawn",

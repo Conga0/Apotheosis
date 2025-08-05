@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 local haxx = function (entity_id, orbcount, radius)
 	radius=math.max(radius, 6)
 	local evil = GameHasFlagRun("apotheosis_evil_knowledge")
@@ -74,8 +75,12 @@ local haxx = function (entity_id, orbcount, radius)
 	================================================================================= VISUAL: RINGS
 	]]
 
+	local is_april_fools = is_holiday_active("april_fools") --save resources by checking ahead of time instead of on every individual glyph
+
 	local function color(i)
-		if evil and divine then
+		if is_april_fools then
+			return "april_fools"
+		elseif evil and divine then
 			return table.concat{"dc_",math.random(1,9),"_",math.random(1,4)}
 		elseif evil then
 			return table.concat{"c_",math.random(1,9),"_",math.random(1,4)}
@@ -97,11 +102,11 @@ local haxx = function (entity_id, orbcount, radius)
 					image_file=table.concat{"mods/Apotheosis/files/particles/knowledge/", color(i), ".png"},--image_file="data/debug/circle_16.png",
 					has_special_scale=true,
 					emissive=true,
-					additive=not evil or divine,
+					additive=is_april_fools or not evil or divine,
 					special_scale_x=1,
 					special_scale_y=1,
-					offset_x=5,
-					offset_y=5,
+					offset_x=is_april_fools and 12 or 5,
+					offset_y=is_april_fools and 12 or 5,
 					alpha=0.3+math.random()*0.1,
 				})
 			end
@@ -124,7 +129,7 @@ local haxx = function (entity_id, orbcount, radius)
 		add_divine_glimmer(entity_id,radius)
 	end
 
-	local celleater_component = EntityGetFirstComponentIncludingDisabled(entity_id,"CellEaterComponent")
+	local celleater_component = EntityGetFirstComponentIncludingDisabled(entity_id,"CellEaterComponent") or 0
 	if celleater_component ~= 0 then
 		ComponentSetValue2(celleater_component,"radius",radius)
 	end
@@ -214,7 +219,9 @@ local haxx = function (entity_id, orbcount, radius)
 			color_weight[3] = color_weight[3] + type_weights[highest[1]][3] * final_dmg			
 		end
 	end
-	if evil then
+	if is_april_fools then
+		color_weight = {1, 1, 1}
+	elseif evil then
 		color_weight = {1, 0.0, 0.0}
 	elseif divine then
 		color_weight = {0.97, 0.89, 0.55}

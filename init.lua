@@ -9,8 +9,6 @@ local motdSetting = ModSettingGet("Apotheosis.motd_setting")
 local seasonalSetting = ModSettingGet("Apotheosis.seasonal_events")
 local spoopyGFXSetting = ModSettingGet("Apotheosis.spoopy_graphics")
 
-local seasonalForced_Smissmass = ModSettingGet("Apotheosis.seasonal_events_forced_smissmass")
-
 local experimental_biomemap = ModSettingGet("Apotheosis.exp_biomemap")
 
 local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
@@ -838,7 +836,7 @@ if seasonalSetting == true then
 
 
 	-- Smissmass Event
-	if ((month == 12) and (day >= 15)) or seasonalForced_Smissmass then
+	if is_holiday_active("smissmass") then
 		local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 		local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_tnt.xml")
 		local xml = nxml.parse(content)
