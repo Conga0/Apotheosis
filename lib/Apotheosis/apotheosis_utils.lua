@@ -1,6 +1,7 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local set_content = ModTextFileSetContent
 local get_content = ModTextFileGetContent
+local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
 
 function MultiplyHP(filepath,enemy_list,multiplier,base)
   for k=1,#enemy_list

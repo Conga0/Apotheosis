@@ -501,7 +501,7 @@ end
 --MOTD & Welcome Hint
 if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	local flag_status = HasFlagPersistent("apotheosis_card_unlocked_welcome_hint")
-	if motdSetting == true or ((month == 4) and (day == 1)) then
+	if motdSetting == true or is_holiday_active("april_fools") then
 		dofile_once("mods/Apotheosis/files/scripts/misc/motd_list.lua")
 	elseif flag_status == false then
 		--dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
