@@ -1,4 +1,5 @@
-    
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")    
+
 --If the player has over 1,000 max hp, soft-cap heart spawns by disabling random heart generation in the wild
 ---@diagnostic disable-next-line: lowercase-global
 function player_health_check(player_id)

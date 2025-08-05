@@ -1,5 +1,4 @@
-   
-
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
    --- Rare Bubbles
 

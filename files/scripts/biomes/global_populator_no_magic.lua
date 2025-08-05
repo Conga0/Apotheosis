@@ -1,4 +1,6 @@
-    --- Rare Bubbles
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
+
+--- Rare Bubbles
     
 
     table.insert(g_big_enemies,
