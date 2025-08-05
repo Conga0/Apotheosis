@@ -1,4 +1,6 @@
 --Thankyou Eba
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
+
 local function register_item(listname, weight, entity, offset) -- use this to register an item in spawn table
     if ( type( listname ) == "string" ) then
         local newmin = spawnlists[listname].rnd_max + 1
@@ -45,7 +47,7 @@ local items = {
 }
 
 local year, month, day, hour, minute = GameGetDateAndTimeLocal()
-if ((( month == 9 ) and ( day == 9 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_cirno" ) then
+if is_holiday_active("cirno") then
     table.insert(items,{
         weight = 3,
         entity = "mods/Apotheosis/files/entities/items/pickups/orb_cirno.xml",

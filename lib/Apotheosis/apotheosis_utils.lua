@@ -326,3 +326,65 @@ function print_table(o)
       return tostring(o)
    end
 end
+
+local holiday_list = {
+  {
+    name = "april_fools",
+    date_function = function()
+      if (month == 4) and (day == 1) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "birthday",
+    date_function = function()
+      if (month == 7) and ((day >= 20) and (day <= 22)) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "halloween",
+    date_function = function()
+      if (month == 10) and (day >= 15) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "smissmass",
+    date_function = function()
+      if (month == 12) and (day >= 15) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "cirno",
+    date_function = function()
+      if (month == 9) and (day == 9) then
+        return true
+      else
+        return false
+      end
+    end
+  }
+}
+
+function is_holiday_active(holiday_name)
+  local is_being_forced = ModSettingGet(table.concat({"Apotheosis.seasonal_events_forced_",holiday_name}))
+  for k=1,#holiday_list do
+    if holiday_list[k].name == holiday_name then
+      return is_being_forced or ModSettingGet("Apotheosis.seasonal_events") and holiday_list[k].date_function()
+    end
+  end
+end

@@ -9,9 +9,6 @@ local motdSetting = ModSettingGet("Apotheosis.motd_setting")
 local seasonalSetting = ModSettingGet("Apotheosis.seasonal_events")
 local spoopyGFXSetting = ModSettingGet("Apotheosis.spoopy_graphics")
 
-local seasonalForced_AprilFools = ModSettingGet("Apotheosis.seasonal_events_forced_april_fools")
-local seasonalForced_Birthday = ModSettingGet("Apotheosis.seasonal_events_forced_birthday")
-local seasonalForced_Halloween = ModSettingGet("Apotheosis.seasonal_events_forced_halloween")
 local seasonalForced_Smissmass = ModSettingGet("Apotheosis.seasonal_events_forced_smissmass")
 
 local experimental_biomemap = ModSettingGet("Apotheosis.exp_biomemap")
@@ -803,7 +800,7 @@ local year, month, day, hour, minute = GameGetDateAndTimeLocal()
 
 if seasonalSetting == true then
 	-- Halloween Event
-	if ((month == 10) and (day >= 15)) or seasonalForced_Halloween then
+	if is_holiday_active("halloween") then
 		ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coal Mine, first area, goodluck on your run
 		ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coalmine but to the west side near damp cave
 		ModLuaFileAppend("data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coal Pits, area 2
@@ -906,7 +903,7 @@ if seasonalSetting == true then
 	-- Birthday Event
 	-- Update to be centered on 21/07/2022, this is when the first enemy was created and development officially began. Should be a fair trade off between not being the official release date but also not clashing with Halloween
 	--Remember Update global_populator & global_populator_small too, wand tinkering crystal spawns are inside.
-	if ((month == 7) and ((day >= 20) and (day <= 22))) or seasonalForced_Birthday then
+	if is_holiday_active("birthday") then
 		ModLuaFileAppend("data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua") --Hills slightly below ground
 		ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua") --Coal Mine, first area, goodluck on your run
 		ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
@@ -926,7 +923,7 @@ if seasonalSetting == true then
 
 
 	-- April Fools Event
-	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+	if is_holiday_active("april_fools") then
 		--Replace all hisii hobos with clowns.
 		local content = ModTextFileGetContent("data/entities/animals/seasonal/hisii_hobo.xml")
 		ModTextFileSetContent("data/entities/animals/hisii_hobo.xml", content)
@@ -1229,7 +1226,7 @@ end
 --And print Happy April Fools at the start of the run
 --Happy april fools <3
 function AprilFoolsPlayerSpawn(plyr_id)
-	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+	if is_holiday_active("april_fools") then
 		GamePrint("$sign_apotheosis_aprilfools_intro")
 	end
 end

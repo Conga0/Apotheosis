@@ -60,7 +60,8 @@ local keybind_desc = "Edit your Apotheosis keybinds"
 local keybind_tutorial_altfire = "\nHit the prompt below to input a new alt-fire binding.\nThe default setting is right mouse button."
 local keybind_tutorial_disguise = "\nHit the prompt below to input a new disguise binding.\nThe default setting is G."
 local keybind_newbinding = "SET NEW BINDING"
-local keybind_current = "Current alt-fire binding: "
+local keybind_current_altfire = "Current alt-fire binding: "
+local keybind_current_disguise = "Current disguise binding: "
 
   --Russian Translations
 if currentLang == "русский" then
@@ -111,7 +112,7 @@ if currentLang == "русский" then
   keybind_desc = "Измените привязку клавиш для Apotheosis"
   keybind_tutorial_altfire = "Нажмите на подсказку ниже, чтобы ввести новую привязку для альтернативного огня.\nПо умолчанию используется правая кнопка мыши."
   keybind_newbinding = "УСТАНОВИТЬ НОВУЮ ПРИВЯЗКУ"
-  keybind_current = "Текущая привязка альтернативного огня: "
+  keybind_current_altfire = "Текущая привязка альтернативного огня: "
 end
 
 --Japanese Translations
@@ -165,7 +166,7 @@ if currentLang == "日本語" then
   keybind_desc = "Apotheosisで使用するキーを設定できます。"
   keybind_tutorial_altfire = "ALT魔法の発動に使用するキーの設定です。下のボタンを押してから、設定したいキーを入力してください。\n初期設定は、マウス右クリックです。"
   keybind_newbinding = "キーを入力"
-  keybind_current = "現在の設定: "
+  keybind_current_altfire = "現在の設定: "
 end
 
 --Chinese Translations
@@ -218,7 +219,7 @@ if currentLang == "简体中文" then
   keybind_desc = "编辑你的 Apotheosis 模组键位绑定"
   keybind_tutorial_altfire = "点击下方提示以输入新的副法术绑定。\n默认为鼠标右键。"
   keybind_newbinding = "设定新绑定"
-  keybind_current = "副法术释放按键绑定："
+  keybind_current_altfire = "副法术释放按键绑定："
 end
 
 --Key binding data
@@ -732,7 +733,7 @@ mod_settings =
               old_binding = ModSettingGet("Apotheosis.bind_altfire")
               current_keybind = "altfire"
           end
-          GuiText(gui, 0, 5, keybind_current .. keybind_string)
+          GuiText(gui, 0, 5, keybind_current_altfire .. keybind_string)
           GuiText(gui, 0, -5, " ")
         end
       },
@@ -810,7 +811,7 @@ mod_settings =
               old_binding = ModSettingGet("Apotheosis.bind_disguise")
               current_keybind = "disguise"
           end
-          GuiText(gui, 0, 5, keybind_current .. keybind_string)
+          GuiText(gui, 0, 5, keybind_current_disguise .. keybind_string)
           GuiText(gui, 0, -5, " ")
         end
       },

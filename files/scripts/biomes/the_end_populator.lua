@@ -1,6 +1,6 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 local apotheosis_HardmodeCheck = false
-local seasonalForced_AprilFools = ModSettingGet( "Apotheosis.seasonal_events_forced_april_fools" )
 local year, month, day, hour, minute = GameGetDateAndTimeLocal()
 
 if ModIsEnabled("nightmare") or ModIsEnabled("purgatory") then
@@ -11,7 +11,7 @@ end
 
 
 --Divine Being only spawns during April Fools
-if (ModSettingGet( "Apotheosis.seasonal_events" ) and ( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools == true then 
+if is_holiday_active("april_fools") then 
     table.insert(g_big_enemies,
     {
         prob           = 0.04,
@@ -111,7 +111,7 @@ table.insert(g_small_enemies_sky,
 })
 
 
-if (ModSettingGet( "Apotheosis.seasonal_events" ) and ( month == 4 ) and ( day == 1 )) or seasonalForced_AprilFools == true then 
+if is_holiday_active("april_fools") then 
     table.insert(g_big_enemies_sky,
     {
         prob           = 0.04,

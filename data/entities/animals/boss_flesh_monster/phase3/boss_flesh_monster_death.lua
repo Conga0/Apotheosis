@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
 	-- kill self
@@ -38,8 +39,7 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 
 	--April Fools Print
 	local year, month, day, hour, minute = GameGetDateAndTimeLocal()
-	local seasonalForced_AprilFools = ModSettingGet("Apotheosis.seasonal_events_forced_april_fools")
-	if ModSettingGet("Apotheosis.seasonal_events") and (((month == 4) and (day == 1)) or seasonalForced_AprilFools) then
+	if ModSettingGet("Apotheosis.seasonal_events") and is_holiday_active("april_fools") then
 		GamePrint("The ancient spirits of light and dark have been released.")
 	end
 	

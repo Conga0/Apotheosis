@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
     table.insert(g_big_enemies,
     {
@@ -150,7 +151,7 @@
     
     --Cirno Day Frogs
     local year, month, day, hour, minute = GameGetDateAndTimeLocal()
-    if ((( month == 9 ) and ( day == 9 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_cirno" ) then
+    if is_holiday_active("cirno") then
         table.insert(g_small_enemies,
         {
             prob           = 0.12,
