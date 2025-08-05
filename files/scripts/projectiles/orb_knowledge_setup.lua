@@ -3,6 +3,7 @@ local haxx = function (entity_id, orbcount, radius)
 	radius=math.max(radius, 6)
 	local evil = GameHasFlagRun("apotheosis_evil_knowledge")
 	local divine = GameHasFlagRun("apotheosis_card_unlocked_secret_knowledge_of_kings_complete")
+	local is_april_fools = is_holiday_active("april_fools")
 	if divine then radius = math.floor(radius * 1.25) end
 
 
@@ -75,11 +76,13 @@ local haxx = function (entity_id, orbcount, radius)
 	================================================================================= VISUAL: RINGS
 	]]
 
-	local is_april_fools = is_holiday_active("april_fools") --save resources by checking ahead of time instead of on every individual glyph
-
 	local function color(i)
 		if is_april_fools then
-			return "april_fools"
+			if i % 2 ~= 0 then
+				return "you_are_an_idiot"
+			else
+				return "ahahahaha"
+			end
 		elseif evil and divine then
 			return table.concat{"dc_",math.random(1,9),"_",math.random(1,4)}
 		elseif evil then
@@ -236,7 +239,7 @@ local haxx = function (entity_id, orbcount, radius)
 	local inner_glow = EntityCreateNew("inner_glow")
 	EntityAddChild(entity_id, inner_glow)
 	EntityAddComponent2(inner_glow, "InheritTransformComponent")
-	if evil then
+	if not is_april_fools and evil then
 		local pec = EntityAddComponent2(inner_glow, "ParticleEmitterComponent", {
 			emitted_material_name="spark_red",
 			lifetime_min=0.05*radius^0.25,
