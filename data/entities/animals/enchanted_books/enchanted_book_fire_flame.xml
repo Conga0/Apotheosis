@@ -23,9 +23,9 @@
 	</VariableStorageComponent>
 
     <CollisionTriggerComponent
-		width="32"
-		height="32" 
-		radius="32"
+		width="24"
+		height="24" 
+		radius="24"
 		required_tag="projectile"
 		destroy_this_entity_when_triggered="0" >
   	</CollisionTriggerComponent>

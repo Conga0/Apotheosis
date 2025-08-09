@@ -8,6 +8,7 @@ Ensure there's an escape from the jellyfish temple, maybe a bright light you can
 Review spirit powder
 Nerf tuonela Kolmi? (Currently you can only consistently kill him with freeze kick as he is)
 Hint towards what the spell book spells are (be creative, maybe use paintings?)
+Enchanted book warm-up miniboss to get people familiar with mechanics (Maybe don't reveal hand until library update)
 
 Red Sigil:
 After 1 floor of use on a bolt orb build (~1 cast per second when in combat) I ended on 71 spirit anger

@@ -46,7 +46,6 @@ local items = {
     },
 }
 
-local year, month, day, hour, minute = GameGetDateAndTimeLocal()
 if is_holiday_active("cirno") then
     table.insert(items,{
         weight = 3,

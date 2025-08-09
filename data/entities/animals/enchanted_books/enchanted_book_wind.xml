@@ -1,4 +1,4 @@
-<Entity name="Tome of Pyrokinetics" tags="monk_hand,polymorphable_NOT">
+<Entity name="Tome of Extreme Vacuum" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -10,7 +10,7 @@
 			
 			attack_ranged_action_frame="4"
 			attack_ranged_min_distance="0"
-			attack_ranged_max_distance="200"
+			attack_ranged_max_distance="400"
 			attack_ranged_frames_between="2"
 			attack_ranged_aim_rotation_enabled="0"
 			attack_ranged_aim_rotation_speed="0.27"
@@ -38,8 +38,8 @@
 			<damage_multipliers
 				projectile="1"
 				explosion="1"
-				electricity="1"
-				fire="0" 
+				electricity="0"
+				fire="1" 
 				slice="2"
 				>
 			</damage_multipliers>
@@ -54,19 +54,17 @@
 	
 		<SpriteComponent
 			_tags="gun"
-			image_file="mods/Apotheosis/files/enemies_gfx/enchanted_book_fire.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/enchanted_book_wind.xml"
 			emissive="0"
 			offset_x="0"
 			offset_y="0"
-			has_special_scale="1"
-			special_scale_x="1"
 			update_transform="1"
 			update_transform_rotation="1"
 			>
 		</SpriteComponent>
 		
 		<GenomeDataComponent 
-			herd_id="ghost"
+			herd_id="mage_library"
 			food_chain_rank="10"
 			is_predator="1" >
 		</GenomeDataComponent>
@@ -96,7 +94,7 @@
 	</Base>
 	
 	<SpriteParticleEmitterComponent
-		sprite_file="data/particles/shine_01.xml"
+		sprite_file="data/particles/smoke_02.xml"
 		delay="0"
 		lifetime="2"
 		color.r="1" color.g="1" color.b="1" color.a="1"
@@ -148,7 +146,7 @@
 		name="cooldown_data"
 		value_int="300"
 		value_float="90"
-		value_string="mini_sun"
+		value_string="extreme_vacuum"
 		>
 	</VariableStorageComponent>
 
@@ -160,24 +158,82 @@
 	</VariableStorageComponent>
 
    	<LuaComponent
-		script_source_file="data/entities/animals/enchanted_books/enchanted_book_fire_ai.lua"
+		script_source_file="data/entities/animals/enchanted_books/enchanted_book_wind_ai.lua"
 		execute_on_added="1"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>
-	
-	<LuaComponent
-		script_source_file="data/entities/animals/enchanted_books/enchanted_book_fire_orbit_init.lua"
-		script_death="data/entities/animals/enchanted_books/enchanted_book_fire_orbit_death.lua"
-		execute_every_n_frame="2"
-		remove_after_executed="0"
-		>
-	</LuaComponent>
+
+	<Entity>
+		<InheritTransformComponent
+			only_position="1"
+			>
+			<Transform 
+				position.x="0" 
+				position.y="-8" >
+			</Transform>
+		</InheritTransformComponent>
+		
+		<ParticleEmitterComponent
+			emitted_material_name="spark_white"
+			gravity.y="0.0"
+			lifetime_min="0.06"
+			lifetime_max="0.12"
+			count_min="15"
+			count_max="25"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.min="75"
+			area_circle_radius.max="75"
+			cosmetic_force_create="0"
+			airflow_force="0.3"
+			airflow_time="0.01"
+			airflow_scale="0.05"
+			emission_interval_min_frames="0"
+			emission_interval_max_frames="0"
+			emit_cosmetic_particles="1"
+			is_emitting="1" >
+		</ParticleEmitterComponent>
+		
+		<ParticleEmitterComponent 
+			emitted_material_name="spark_white"
+			gravity.y="0.0"
+			lifetime_min="0.4"
+			lifetime_max="0.7"
+			count_min="5"
+			count_max="10"
+			render_on_grid="1"
+			fade_based_on_lifetime="1"
+			area_circle_radius.min="1"
+			area_circle_radius.max="55"
+			cosmetic_force_create="0"
+			airflow_force="1.5"
+			airflow_time="1.9"
+			airflow_scale="0.15"
+			emission_interval_min_frames="1"
+			emission_interval_max_frames="1"
+			emit_cosmetic_particles="1"
+			draw_as_long="1"
+			x_vel_min="-1"
+			x_vel_max="1"
+			y_vel_min="-1"
+			y_vel_max="1"
+			is_emitting="1" 
+			velocity_always_away_from_center="100"
+			>
+		</ParticleEmitterComponent>
+		
+		<LuaComponent
+			script_source_file="data/entities/animals/enchanted_books/enchanted_book_wind_repulsion_field.lua"
+			execute_every_n_frame="2"
+			>
+		</LuaComponent>
+	</Entity>
 
     <ParticleEmitterComponent
 		_enabled="0"
 		_tags="invincible"
-		emitted_material_name="spark"
+		emitted_material_name="spark_white"
 		fade_based_on_lifetime="1"
 		x_pos_offset_min="0"
 		x_pos_offset_max="0"
@@ -214,7 +270,7 @@
     <ParticleEmitterComponent
 		_enabled="0"
 		_tags="invincible"
-		emitted_material_name="spark_red"
+		emitted_material_name="spark_white"
 		fade_based_on_lifetime="1"
 		x_pos_offset_min="0"
 		x_pos_offset_max="0"

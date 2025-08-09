@@ -1,0 +1,227 @@
+<Entity tags="projectile,teleportable_NOT" >
+	
+	<Base file="data/entities/base_projectile.xml">
+		<VelocityComponent 
+			gravity_y="0"
+			mass="0.1"
+			air_friction="0.2"
+			displace_liquid="0"
+			liquid_drag="0"
+			>
+		</VelocityComponent>
+	</Base>
+	
+	<ProjectileComponent 
+    _enabled="1" 
+    lob_min="0.8"
+    lob_max="1.0"
+    speed_min="100"
+    speed_max="140"
+    direction_random_rad="0.00"
+    on_death_explode="1"
+    on_death_gfx_leave_sprite="0" 
+    on_lifetime_out_explode="1"
+    explosion_dont_damage_shooter="1" 
+    on_collision_die="0"
+    lifetime="800"
+    damage="0"
+    damage_every_x_frames="5"
+    knockback_force="0.1"
+    velocity_sets_scale="1"
+	velocity_sets_scale_coeff="2.0"
+    penetrate_entities="1"
+    lifetime_randomness="7"
+    velocity_sets_rotation="0"
+    ragdoll_force_multiplier="0.0025"
+    hit_particle_force_multiplier="0.25 "
+    camera_shake_when_shot="0.4"
+    muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_small_pink.xml"
+    collide_with_shooter_frames="10"
+    collide_with_entities="0"
+    friendly_fire="0"
+	collide_with_world="0"
+	penetrate_world="0"
+    shoot_light_flash_radius="250" 
+    shoot_light_flash_r="255"
+    shoot_light_flash_g="180"
+    shoot_light_flash_b="230" >
+    <config_explosion
+      never_cache="1" 
+      damage="0"
+      camera_shake="0" 
+      explosion_radius="1"
+      explosion_sprite="data/particles/black_hole_big_circle_out.xml" 
+      explosion_sprite_emissive="1"
+      explosion_sprite_additive="1"
+      explosion_sprite_random_rotation="0"
+      explosion_sprite_lifetime="0" 
+      create_cell_probability="0" 
+      hole_destroy_liquid="0" 
+      hole_enabled="1" 
+      ray_energy="0"
+      particle_effect="0" 
+      damage_mortals="1"
+      physics_explosion_power.min="0" 
+      physics_explosion_power.max="0" 
+      physics_throw_enabled="0" 
+      shake_vegetation="1" 
+      sparks_count_max="1" 
+      sparks_count_min="4" 
+      sparks_enabled="0"
+      light_enabled="0" 
+      stains_enabled="0"
+      spark_material="plasma_fading" >
+    </config_explosion>
+  </ProjectileComponent>
+	
+	<BlackHoleComponent
+		_enabled="0"
+		particle_attractor_force="8"
+		damage_probability="1.0"
+		radius="85">
+	</BlackHoleComponent>
+
+	<!-- Audio Effect -->
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith_glowing/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith/vortex_loop"
+		auto_play="1">
+	</AudioLoopComponent>
+
+
+	<!-- Visual FX -->
+	<!-- Suction -->
+	
+	<LuaComponent
+		_enabled="1"
+		_tags="invincible"
+		script_source_file="data/entities/animals/enchanted_books/projectiles/extreme_vacuum_init.lua"
+		execute_every_n_frame="1"
+		execute_times="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		_enabled="0"
+		_tags="invincible"
+		script_source_file="data/entities/animals/enchanted_books/projectiles/extreme_vacuum_suction_field.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		_enabled="0"
+		_tags="invincible"
+		script_source_file="data/entities/animals/enchanted_books/projectiles/extreme_vacuum_spin.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		_enabled="1"
+		script_source_file="data/entities/animals/enchanted_books/projectiles/extreme_vacuum.lua"
+		execute_every_n_frame="180"
+		>
+	</LuaComponent>
+
+	<!-- FX -->
+	<ParticleEmitterComponent 
+        emitted_material_name="magic_liquid_worm_attractor"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-10"
+        x_vel_max="10"
+        y_vel_min="-10"
+        y_vel_max="10"
+        count_min="15"
+        count_max="15"
+        lifetime_min="0.1"
+        lifetime_max="0.3"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="60"
+        emission_interval_max_frames="250"
+        is_emitting="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent 
+        emitted_material_name="spark_white"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="14"
+        count_max="16"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="1"
+        emission_interval_max_frames="3"
+        is_emitting="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+  
+    <ParticleEmitterComponent 
+        emitted_material_name="spark_white"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="6"
+        count_max="9"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="2"
+        emission_interval_max_frames="6"
+        is_emitting="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+      
+    <ParticleEmitterComponent 
+        emitted_material_name="magic_liquid_worm_attractor"
+		area_circle_radius.min="65"
+		area_circle_radius.max="85"
+        x_vel_min="-2"
+        x_vel_max="2"
+        y_vel_min="-20"
+        y_vel_max="-10"
+        count_min="6"
+        count_max="9"
+        lifetime_min="0.3"
+        lifetime_max="0.4"
+        create_real_particles="0"
+        emit_cosmetic_particles="1"
+        emission_interval_min_frames="2"
+        emission_interval_max_frames="6"
+        fire_cells_dont_ignite_damagemodel="1"
+		velocity_always_away_from_center="-80"
+		>
+    </ParticleEmitterComponent>
+
+	<!-- Healing FX -->
+	<Entity>  <Base file="data/entities/animals/enchanted_books/projectiles/vacuum_fx_base.xml" /> <InheritTransformComponent><Transform rotation="-2.09" ></Transform></InheritTransformComponent> </Entity>
+	<Entity>  <Base file="data/entities/animals/enchanted_books/projectiles/vacuum_fx_base.xml" /> <InheritTransformComponent><Transform rotation="0" ></Transform></InheritTransformComponent> </Entity>
+	<Entity>  <Base file="data/entities/animals/enchanted_books/projectiles/vacuum_fx_base.xml" /> <InheritTransformComponent><Transform rotation="2.09" ></Transform></InheritTransformComponent> </Entity>
+
+</Entity>

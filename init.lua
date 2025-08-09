@@ -1379,7 +1379,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Drinking may cause lifelong harm to your homunculus",
 		"Best in it's class!",
 		"Limited edition!",
-		"More than 50,000 downloads!",
+		"More than 60,000 downloads!",
 		"May contain spiders",
 		"Exploding eggs!",
 		"Ask your doctor!",
@@ -1393,7 +1393,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Déjà vu!",
 		"Not associated with shadowy wizard gangs",
 		"The rumors are true",
-		"3 years in development",
+		"3 years in development", --We won't be developing this forever, so it'd be improper to leave this as something which automatically updates over time. May as well see how high this number can go before it stops incrementing
 		"Casual gaming",
 		"Hardcore gaming!",
 		"Pneumonoultramicroscopicsilicovolcanoconiosis!",
@@ -1401,7 +1401,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Swan dive into the sun!",
 		"Now with 100% more sweat!",
 		"Now with furious blacksmiths!",
-		"Now with 100% more maggots",
+		"Now with 100% more maggots and dogs!",
 		"Played by snakes with tophats!",
 		"Ah! Chippie!",
 		"Rabbits, guns and supermarts are bad mix",
@@ -1480,7 +1480,11 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Call an exorcist!",
 		"Awaken my masters!",
 		"Less addictive than nethack!",
-		"Something wicked this way comes..."
+		"Something wicked this way comes...",
+		"Remember to slip, slop, slap, seek and slide!",
+		"Back in my day we couldn't drop spells freely",
+		"I have intense bomb-igniting thoughts!!",
+		"D4 + G4, D4 + G4, G4 + C5, D5 + G4, F4 + A#4"
 	}
 	SetRandomSeed(minute, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]

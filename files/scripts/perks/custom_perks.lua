@@ -456,7 +456,7 @@ apotheosis_perkappends = {
             GlobalsSetValue( "APOTHEOSIS_VOID_COUNT", tostring(value + 1))
 
             local pos_x, pos_y = EntityGetTransform(entity_who_picked)
-            local c = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_tinker_with_wands_temporary.xml", pos_x, pos_y )
+            local c = EntityLoad( "mods/Apotheosis/files/entities/misc/effect_tinker_with_wands_temporary.xml", pos_x, pos_y ) --Void should not add to the existing TWWE timer, it should only add a new one since the timer should never go higher than 1200 seconds, the point of this is to make the perk feel addictive and that you keep wanting just one more to keep the TWWE effect going, until you realize all your perks are void and your HMs are ruined forever. The downside of addiction.
             EntityAddChild( entity_who_picked, c )
 
 

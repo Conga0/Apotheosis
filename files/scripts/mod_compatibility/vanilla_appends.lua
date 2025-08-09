@@ -1196,6 +1196,14 @@ do -- Add Alchemic runestone to the runestone pool (item pedestals)
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"disc\", \"metal\"", "\"disc\", \"metal\", \"alchemy\"")
 
+  --Hopefully make brimstone & ukkoskivi rarer without breaking everything?
+  --Why did they code it like this?
+  content = content:gsub("value_max = 83,", "value_max = 81,") --brimstone max
+  content = content:gsub("value_min = 84,", "value_min = 82,") --ukkoskivi min
+  content = content:gsub("value_max = 85,", "value_max = 82,") --ukkoskivi max
+  content = content:gsub("value_min = 86,", "value_min = 83,") --broken wand min
+
+  print(content)
   ModTextFileSetContent(path, content)
 end
 
