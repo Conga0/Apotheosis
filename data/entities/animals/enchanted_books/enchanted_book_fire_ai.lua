@@ -7,7 +7,7 @@ attack_options = {
         count_max = 5,
         attacks_in_this_cycle = 5,
         random_spread = 35,
-        speed = 250,
+        speed = 180,
         speed_random_mult = 2.0,
         after_attack_delay = 60
     },
@@ -30,7 +30,7 @@ attack_options = {
         attacks_in_this_cycle = 80,
         random_spread = 15,
         speed = 250,
-        speed_random_mult = 2.0,
+        speed_random_mult = 1.15,
         --spin_speed = 0.06,  --Example of how to tell an attack to spin, book will spin at the given speed, 0.06 is the default turn-speed for the book.
         after_attack_delay = 3
     }

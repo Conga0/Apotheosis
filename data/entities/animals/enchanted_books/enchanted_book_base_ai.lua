@@ -144,8 +144,8 @@ function run_attack(attack_name)
                     speed = speed * Randomf(1,attack_options[k].speed_random_mult)
                 end
 
-                local vel_x = math.cos( firing_angle ) * attack_options[k].speed
-                local vel_y = math.sin( firing_angle ) * attack_options[k].speed
+                local vel_x = math.cos( firing_angle ) * speed
+                local vel_y = math.sin( firing_angle ) * speed
             
                 local pid = shoot_projectile( entity_id, attack_options[k].filepath, pos_x, pos_y, vel_x, vel_y )
                 local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
