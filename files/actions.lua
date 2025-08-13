@@ -3028,6 +3028,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_SPELLBOOK",
+        id_matchup  = "KANTELE_G",
         name         = "$spell_apotheosis_spellbook_glyph_name",
         description = "$spell_apotheosis_spellbook_glyph_desc",
         spawn_requires_flag = "apotheosis_spellbook_unlocked", -- spawn_requires_flag = "this_should_never_spawn", ? it feels odd that these can appear from chests n shit

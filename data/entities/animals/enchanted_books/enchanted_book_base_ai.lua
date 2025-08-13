@@ -1,4 +1,5 @@
 dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 entity_id = GetUpdatedEntityID()
 local pos_x,pos_y,rotation,scale_x,scale_y = EntityGetTransform(entity_id)
@@ -51,19 +52,26 @@ local attack = ComponentGetValue2(find_vsc("cooldown_data"),"value_string")
 local attack_timer = ComponentGetValue2(find_vsc("cooldown_data"),"value_float")
 local book_timer = ComponentGetValue2(find_vsc("open_status"),"value_float")
 local attacks_in_this_cycle = ComponentGetValue2(find_vsc("cooldown_data_2"),"value_int")
+local burst_wait_between = ComponentGetValue2(find_vsc("cooldown_data_3"),"value_int")
+local attacks_remaining_in_this_burst = ComponentGetValue2(find_vsc("cooldown_data_3"),"value_float")
 local spin_speed = ComponentGetValue2(find_vsc("cooldown_data_2"),"value_float") or 0.0
+local bias_data = ComponentGetValue2(find_vsc("cooldown_data_2"),"value_string") or "0,0"
+if bias_data ~= "0,0" then bias_data = SplitStringOnCharIntoTable(bias_data, ",") if math.abs(rotation) > (math.pi / 2) then bias_data[1] = bias_data[1] * -1 end end
 
---Manually handle visual rotation?
+
+--Manually handle visual rotation
 local rotation_goal = 0
 local animalAiComp = EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent")
 local current_target = ComponentGetValue2(animalAiComp,"mGreatestPrey") or ComponentGetValue2(animalAiComp,"mGreatestThreat") or 0
+if EntityGetIsAlive(current_target) == false then current_target = 0 end
 
-local ctarg_x,ctarg_y = EntityGetTransform(current_target)
-
---print(rotation)
---print(tostring(current_target))
+local ctarg_x,ctarg_y = 0,0
+if current_target ~= 0 then
+    ctarg_x,ctarg_y = EntityGetTransform(current_target)
+end
 
 if current_target ~= 0 or rotation ~= 0 then
+    if type(bias_data) == "table" then ctarg_x = ctarg_x + bias_data[1] ctarg_y = ctarg_y + bias_data[2] end
     if current_target ~= 0 then rotation_goal = math.atan2( ( ctarg_y - pos_y ), ( ctarg_x - pos_x ) ) end
     if spin_speed ~= 0 then rotation_goal = rotation + spin_speed end
     local rotate_speed = (spin_speed ~= 0.0 and spin_speed) or 0.06
@@ -129,8 +137,20 @@ function run_attack(attack_name)
     EntitySetComponentsWithTagEnabled( entity_id, "invincible", false )
     for k=1,#attack_options do
         if attack_options[k].name == attack_name then
-            ComponentSetValue2(find_vsc("cooldown_data"),"value_float",attack_options[k].after_attack_delay)
-            ComponentSetValue2(find_vsc("cooldown_data_2"),"value_int",attacks_in_this_cycle - 1)
+            if (attack_options[k].attacks_in_this_burst or 0) > 0 then
+                if attacks_remaining_in_this_burst > 1 then
+                    ComponentSetValue2(find_vsc("cooldown_data"),"value_float",attack_options[k].after_attack_delay)
+                    ComponentSetValue2(find_vsc("cooldown_data_3"),"value_float",attacks_remaining_in_this_burst - 1)
+                else
+                    ComponentSetValue2(find_vsc("cooldown_data"),"value_float",attack_options[k].burst_wait_between)
+                    ComponentSetValue2(find_vsc("cooldown_data_3"),"value_float",attack_options[k].attacks_in_this_burst)
+                    ComponentSetValue2(find_vsc("cooldown_data_2"),"value_int",attacks_in_this_cycle - 1)
+                end
+            else
+                ComponentSetValue2(find_vsc("cooldown_data"),"value_float",attack_options[k].after_attack_delay)
+                ComponentSetValue2(find_vsc("cooldown_data_2"),"value_int",attacks_in_this_cycle - 1)
+            end
+
             SetRandomSeed(k+pos_x+GameGetFrameNum(),pos_y+k)
 
             for z=1,Random(attack_options[k].count_min,attack_options[k].count_max) do
@@ -178,15 +198,20 @@ if book_timer <= 0 or (open_state == 3 and current_target == 0) then
         if new_attack.give_warning == true then
             EntitySetComponentsWithTagEnabled( entity_id, "invincible", true )
         end
-        if new_attack.spin_speed then
-            ComponentSetValue2(find_vsc("cooldown_data_2"),"value_float",new_attack.spin_speed)
-        end
+        ComponentSetValue2(find_vsc("cooldown_data_2"),"value_float",new_attack.spin_speed or 0)
+        ComponentSetValue2(find_vsc("cooldown_data_2"),"value_string",table.concat({new_attack.bias_x or 0,",",new_attack.bias_y or 0}))
+        ComponentSetValue2(find_vsc("cooldown_data_3"),"value_int",new_attack.burst_wait_between or 0)
+        ComponentSetValue2(find_vsc("cooldown_data_3"),"value_float",new_attack.attacks_in_this_burst or 0)
+
         --ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent"), "attack_ranged_enabled", true)
     elseif open_state == 3 then
         ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteComponent"),"rect_animation","closing")
         ComponentSetValue2(find_vsc("open_status"),"value_float",32)
         ComponentSetValue2(find_vsc("open_status"),"value_int",2)
         ComponentSetValue2(find_vsc("cooldown_data_2"),"value_float",0.0)
+        ComponentSetValue2(find_vsc("cooldown_data_2"),"value_string","0,0")
+        ComponentSetValue2(find_vsc("cooldown_data_3"),"value_int",0)
+        ComponentSetValue2(find_vsc("cooldown_data_3"),"value_float",0)
         --ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent"), "attack_ranged_enabled", false)
     else
         ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteComponent"),"rect_animation","closed")

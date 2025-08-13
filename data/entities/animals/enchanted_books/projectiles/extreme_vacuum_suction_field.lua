@@ -24,7 +24,7 @@ if ( #targets > 0 ) then
 
 				if ( distance < distance_full ) then
 					local velocitycomponents = EntityGetComponent( target_id, "CharacterDataComponent" ) or EntityGetComponent( target_id, "VelocityComponent" ) or nil
-					local dmg_to_inflict = (100 - distance) * 0.0002
+					local dmg_to_inflict = (100 - distance) * 0.001
 					EntityInflictDamage( target_id, dmg_to_inflict, "DAMAGE_PROJECTILE", "$damage_apotheosis_extreme_vacuum", "NONE", 0, 0, shooter_id )
 					
 					local gravity_percent = math.max(( distance_full - distance ) / distance_full, 0.01)

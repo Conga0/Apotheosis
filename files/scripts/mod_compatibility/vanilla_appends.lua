@@ -1203,7 +1203,6 @@ do -- Add Alchemic runestone to the runestone pool (item pedestals)
   content = content:gsub("value_max = 85,", "value_max = 82,") --ukkoskivi max
   content = content:gsub("value_min = 86,", "value_min = 83,") --broken wand min
 
-  print(content)
   ModTextFileSetContent(path, content)
 end
 
@@ -1842,6 +1841,27 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then --Replace Sea of Mimicium 
   content = content:gsub("\"SEA_MIMIC\"","\"APOTHEOSIS_SEA_OMINOUS\"")
 
   ModTextFileSetContent(path, content)
+end
+
+do
+  local path = "data/entities/items/pickup/stonestone.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+  	_enabled="0"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="apotheosis_eviltemple_stone"
+    to_material="apotheosis_corrupt_flesh_static_hard"
+    clean_stains="0"
+    is_circle="1"
+    radius="48" 
+  >
+  </MagicConvertMaterialComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
 end
 
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")

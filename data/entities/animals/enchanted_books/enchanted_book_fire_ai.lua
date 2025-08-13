@@ -9,6 +9,7 @@ attack_options = {
         random_spread = 35,
         speed = 180,
         speed_random_mult = 2.0,
+        bias_y = -30,
         after_attack_delay = 60
     },
     {

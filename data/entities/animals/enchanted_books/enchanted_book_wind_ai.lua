@@ -2,7 +2,7 @@
 attack_options = {
     {
         name = "airburst",
-        filepath = "mods/Apotheosis/files/entities/projectiles/air_bullet_book.xml",
+        filepath = "data/entities/animals/enchanted_books/projectiles/air_bullet_book.xml",
         count_min = 6,
         count_max = 8,
         attacks_in_this_cycle = 6,
@@ -20,7 +20,7 @@ attack_options = {
         random_spread = 0,
         speed = 0,
         give_warning = true,
-        after_attack_delay = 200
+        after_attack_delay = 150
     }
 }
 

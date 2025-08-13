@@ -28,10 +28,10 @@
             hp="400"
 			fire_probability_of_ignition="0"
             ragdoll_filenames_file=""
-			ragdoll_material="spark"
+			ragdoll_material="spark_white"
 			ragdoll_fx_forced="DISINTEGRATED"
-			blood_material="spark"
-			blood_spray_material="spark"
+			blood_material="spark_white"
+			blood_spray_material="spark_white"
 			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_blue_$[1-3].xml"
 			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_blue_$[1-3].xml"
 			>
@@ -130,9 +130,9 @@
   <LightComponent 
     _enabled="1" 
     radius="90" 
-	r="180"
-	g="80"
-	b="10">
+	r="10"
+	g="180"
+	b="80">
   </LightComponent>
 
 	<VariableStorageComponent
@@ -154,6 +154,14 @@
 		name="cooldown_data_2"
 		value_int="1"
 		value_float="0"
+		value_string="0,0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="cooldown_data_3"
+		value_int="0"
+		value_string="0,0"
 		>
 	</VariableStorageComponent>
 

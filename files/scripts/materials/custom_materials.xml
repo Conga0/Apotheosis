@@ -936,7 +936,7 @@
   <CellDataChild
   	_parent="rock_static"
   	_inherit_reactions="1"
-	tags="[static],[alchemy],[earth],[matter_eater_ignore_list],[indestructible]"
+	tags="[static],[alchemy],[matter_eater_ignore_list],[indestructible]"
   	name="rock_static_cursed_hard" 
 	ui_name="$material_apotheosis_cursed_rock_hard"
 	wang_color="ffe6f4af"
@@ -1014,7 +1014,7 @@
   	_inherit_reactions="1"
   	name="apotheosis_eviltemple_stone" 
 	ui_name="$material_apotheosis_bloodystone"
-	tags="[static],[corrodible],[alchemy],[earth],[matter_eater_ignore_list],[indestructible],[apotheosis_bloody]"
+	tags="[static],[corrodible],[alchemy],[matter_eater_ignore_list],[indestructible],[apotheosis_bloody]"
 	wang_color="ff490b0b"
 	wang_noise_percent="0.33"
 	hp="240000"
@@ -1066,6 +1066,71 @@
 					do_only_horizontal_stripe="0" 
 					do_only_vertical_stripe="1" 
 					filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_bloodystone_ver.png"
+					min_angle="0" 
+					max_angle="45" />
+				</Images>
+			  </EdgeGraphics>
+		</Edge>
+    </Graphics>
+  </CellDataChild>
+  
+  <CellDataChild
+  	_parent="templerock_static"
+  	_inherit_reactions="1"
+  	name="apotheosis_corrupt_flesh_static_hard" 
+	ui_name="$material_apotheosis_corruptflesh_hard"
+	tags="[static],[corrodible],[alchemy],[matter_eater_ignore_list],[indestructible],[apotheosis_bloody]"
+	wang_color="ff490b0d"
+	wang_noise_percent="0.33"
+	hp="240000"
+	wang_curvature="0.5"
+	wang_noise_type="2"
+	durability="15"
+	audio_physics_material_wall="rock"
+	audio_physics_material_solid="rock"
+	>
+  	<Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/corrupt_flesh_slop.png"
+		color="ff786C42" 
+		>
+		<Edge>
+			  <EdgeGraphics 
+				color="ff233112" 
+				overwrite="0" 
+				percent="1" 
+				require_same_material="0" 
+				require_same_material_type="1" 
+				type="NORMAL_BASED" 
+				z="1" >
+				<Images>
+				<Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_hor.png" 
+					min_angle="45" 
+					max_angle="135" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_ver.png" 
+					min_angle="135" 
+					max_angle="235" />
+				  <Image 
+					do_only_horizontal_stripe="1" 
+					do_only_vertical_stripe="0" 
+					filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_hor.png" 
+					min_angle="235" 
+					max_angle="315" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_ver.png"
+					min_angle="315" 
+					max_angle="360" />
+				  <Image 
+					do_only_horizontal_stripe="0" 
+					do_only_vertical_stripe="1" 
+					filename="mods/Apotheosis/files/materials_gfx/edge_files/edge_corrupt_flesh_dark_ver.png"
 					min_angle="0" 
 					max_angle="45" />
 				</Images>
