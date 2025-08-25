@@ -1,0 +1,57 @@
+<Sprite 
+  filename="mods/Apotheosis/files/enemies_gfx/enchanted_book_lightning.png" 
+  offset_x="16" 
+  offset_y="16"
+  default_animation="closed" >
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="32" 
+    frame_wait="0.1" 
+    frame_width="32" 
+    frames_per_row="6" 
+    name="closed" 
+    pos_x="0" 
+    pos_y="0" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="32" 
+    frame_wait="0.1" 
+    frame_width="32" 
+    frames_per_row="6" 
+    name="openning" 
+    pos_x="0" 
+    pos_y="32" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="32" 
+    frame_wait="0.1" 
+    frame_width="32" 
+    frames_per_row="6" 
+    name="closing" 
+    pos_x="0" 
+    pos_y="64" >
+
+  </RectAnimation>
+
+  <RectAnimation 
+    frame_count="6" 
+    frame_height="32" 
+    frame_wait="0.12"
+    frame_width="32"
+    frames_per_row="6" 
+    loop="1" 
+    name="open"
+    pos_x="0" 
+    pos_y="96" >
+
+  </RectAnimation>
+
+</Sprite>
+

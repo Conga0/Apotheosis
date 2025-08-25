@@ -1,0 +1,175 @@
+<Entity name="$projectile_default" tags="projectile_player">
+
+	<Base file="data/entities/base_projectile.xml" >
+		<VelocityComponent
+			air_friction="0.3"
+			gravity_y="0" 
+			mass="0.3"
+			liquid_drag="0"
+			>
+		</VelocityComponent>
+	</Base>
+
+	<ProjectileComponent 
+		_enabled="1" 
+		lob_min="0.8"
+		lob_max="1.0"
+		speed_min="40"
+		speed_max="40"
+		collide_with_world="0"
+		direction_random_rad="0.00"
+		on_death_explode="1"
+		on_death_gfx_leave_sprite="0" 
+		on_lifetime_out_explode="1"
+		explosion_dont_damage_shooter="1" 
+		on_collision_die="0"
+		lifetime="1800"
+		damage="0"
+    	damage_every_x_frames="10"
+		knockback_force="0.1"
+		velocity_sets_scale="0"
+		penetrate_entities="1"
+		lifetime_randomness="7"
+		velocity_sets_rotation="0"
+		ragdoll_force_multiplier="0.0025"
+		hit_particle_force_multiplier="0.25"
+		camera_shake_when_shot="0.4"
+		muzzle_flash_file="data/entities/particles/muzzle_flashes/muzzle_flash_small_pink.xml"
+		damage_game_effect_entities="mods/Apotheosis/files/entities/misc/effect_lex_aeterna_long.xml,"
+		collide_with_shooter_frames="10"
+		collide_with_entities="0"
+		friendly_fire="0"
+		shoot_light_flash_radius="100"
+		shoot_light_flash_r="255"
+		shoot_light_flash_g="180"
+		shoot_light_flash_b="230"
+		>
+	  <damage_by_type
+		curse="0.20"
+		>
+	  </damage_by_type>
+		<config_explosion
+			never_cache="1" 
+			damage="0"
+			camera_shake="3.5" 
+			explosion_radius="18" 
+			explosion_sprite="data/particles/explosion_040_poof_blue.xml" 
+			explosion_sprite_lifetime="0" 
+			create_cell_material="water"
+			create_cell_probability="0"  
+			hole_destroy_liquid="0" 
+			hole_enabled="1" 
+			hole_image="data/temp/explosion_hole.png" 
+			particle_effect="0" 
+			damage_mortals="1" 
+			physics_explosion_power.min="0.3"
+			physics_explosion_power.max="0.4"
+			physics_throw_enabled="1" 
+			shake_vegetation="1" 
+			sparks_count_max="20" 
+			sparks_count_min="7" 
+			sparks_enabled="0" 
+			stains_enabled="1" 
+			stains_radius="9"
+			audio_enabled="0"
+			spark_material="spark_white"
+			>
+		</config_explosion>
+	</ProjectileComponent>
+  
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/smoke_04.xml"
+		delay="0"
+		lifetime="2"
+		color.r="0.14" color.g="0.77" color.b="0.13" color.a="0.3"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		count_min="1" count_max="1"
+		randomize_position.min_x="-9"
+		randomize_position.max_x="9"
+		randomize_position.min_y="-9"
+		randomize_position.max_y="9"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-10"
+		randomize_angular_velocity.max="10"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		>
+	</SpriteParticleEmitterComponent>
+	
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/skull.xml"
+		delay="0"
+		lifetime="2"
+		color.r="0.7" color.g="1" color.b="0.7" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="8"
+		emission_interval_max_frames="32"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="-15"
+		randomize_angular_velocity.max="15"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-15"
+		randomize_position.max_x="15"
+		randomize_position.min_y="-15"
+		randomize_position.max_y="15"
+			emissive="1"
+			additive="1"
+		>
+  </SpriteParticleEmitterComponent>
+
+	<GameAreaEffectComponent
+		radius="18"
+		collide_with_tag="hittable"
+		frame_length="1"
+	></GameAreaEffectComponent>
+
+	<LightComponent 
+	    _enabled="1" 
+	    radius="48" 
+		r="255"
+		g="255"
+		b="255"
+		fade_out_time="1.5"
+		>
+    </LightComponent>
+
+	<!-- Audio Effect -->
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/wraith/vortex_loop"
+		auto_play="1">
+	</AudioLoopComponent>
+	
+	<VariableStorageComponent
+		name="projectile_file"
+		value_string="data/entities/animals/enchanted_books/projectiles/ice_mist.xml"
+		>
+	</VariableStorageComponent>
+</Entity>
+

@@ -74,7 +74,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="data/projectiles_gfx/orb_blue.xml" 
+		image_file="data/projectiles_gfx/orb_blue.xml"
 		next_rect_animation="" 
 		offset_x="5" 
 		offset_y="5" 

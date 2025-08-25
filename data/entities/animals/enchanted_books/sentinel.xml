@@ -1,6 +1,4 @@
-<Entity name="Tome of Pyrokinetics" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
-
-	<Base file="data/entities/animals/enchanted_books/damage_resistance_base.xml" />
+<Entity name="Sentinel" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -28,7 +26,6 @@
 
 		<DamageModelComponent
             hp="400"
-	  		minimum_knockback_force="100000"
 			fire_probability_of_ignition="0"
             ragdoll_filenames_file=""
 			ragdoll_material="spark_white"
@@ -42,8 +39,7 @@
 				projectile="1"
 				explosion="1"
 				electricity="1"
-				fire="2" 
-				ice="0" 
+				fire="0" 
 				slice="2"
 				>
 			</damage_multipliers>
@@ -170,7 +166,7 @@
 	</VariableStorageComponent>
 
    	<LuaComponent
-		script_source_file="data/entities/animals/enchanted_books/enchanted_book_ice_ai.lua"
+		script_source_file="data/entities/animals/enchanted_books/sentinel_ai.lua"
 		execute_on_added="1"
 		execute_every_n_frame="1"
 		>
@@ -181,6 +177,13 @@
 		script_death="data/entities/animals/enchanted_books/enchanted_book_ice_orbit_death.lua"
 		execute_every_n_frame="2"
 		remove_after_executed="0"
+		>
+	</LuaComponent>
+
+	<!--Explode on death?-->
+	<LuaComponent
+		script_damage_about_to_be_received="data/entities/animals/enchanted_books/sentinel_retaliate.lua"
+		execute_every_n_frame="-1"
 		>
 	</LuaComponent>
 

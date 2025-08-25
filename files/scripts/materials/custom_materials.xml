@@ -1870,6 +1870,45 @@
   </CellData>
 
   <CellData
+	name="apotheosis_hidden_liquid_baldium"
+	ui_name="$material_apotheosis_baldium"
+  	tags="[liquid],[water],[magic_liquid],[impure]"
+	burnable="0"
+	density="0.91"
+	cell_type="liquid"
+	wang_color="80f6cbba"
+	generates_smoke="0"
+	liquid_gravity="0.81"
+	liquid_sand="0"
+	gfx_glow="100"
+	on_fire="0"
+	requires_oxygen="0"
+	liquid_stains="1"
+	liquid_sprite_stain_shaken_drop_chance="1"
+	audio_materialaudio_type="MAGICAL" 
+	show_in_creative_mode="1"
+	>
+	<ParticleEffect
+		vel_random.min_x="-17"
+		vel_random.max_x="17"
+		vel_random.min_y="-17"
+		vel_random.max_y="-5"
+		lifetime.min="0.12"
+		lifetime.max="0.41"
+		gravity.y="2.857"
+		render_on_grid="1"
+		friction="-10"
+		probability="0.3571"
+		>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_BALD" amount="1.0" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+  <CellData
 	name="apotheosis_magic_liquid_pure_light"
 	ui_name="$material_apotheosis_magic_liquid_pure_light"
   	tags="[liquid],[water],[impure]"

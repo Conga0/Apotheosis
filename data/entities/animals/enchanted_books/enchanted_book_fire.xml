@@ -1,4 +1,6 @@
 <Entity name="Tome of Pyrokinetics" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
+
+	<Base file="data/entities/animals/enchanted_books/damage_resistance_base.xml" />
   
 	<Base file="data/entities/base_enemy_flying.xml" >
 		<ItemChestComponent level="2" > </ItemChestComponent>
@@ -26,6 +28,7 @@
 
 		<DamageModelComponent
             hp="400"
+	  		minimum_knockback_force="100000"
 			fire_probability_of_ignition="0"
             ragdoll_filenames_file=""
 			ragdoll_material="spark"

@@ -389,3 +389,12 @@ function is_holiday_active(holiday_name)
     end
   end
 end
+
+function draw_line(pos_x,pos_y,targ_x,targ_y,particle_name)
+    local child = EntityLoad("mods/Apotheosis/files/entities/animators/electrosphere_fx.xml", targ_x, targ_y)
+    local comp = EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent")
+    ComponentSetValue2(comp, "mExPosition", pos_x, pos_y)
+    if particle_name ~= "plasma_fading" then
+        ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent"),"emitted_material_name",particle_name)
+    end
+end

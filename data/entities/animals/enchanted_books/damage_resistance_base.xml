@@ -1,0 +1,38 @@
+<Entity>
+	<VariableStorageComponent
+		name="iframe_data"
+		value_int="0"
+		value_float="0"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_damage_about_to_be_received="data/entities/animals/enchanted_books/damage_resistance.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<!-- Protections  -->
+	<Entity>
+		<InheritTransformComponent />
+		
+	    <GameEffectComponent 
+	        effect="STUN_PROTECTION_FREEZE"
+	        frames="-1"
+	    >
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+			effect="STUN_PROTECTION_ELECTRICITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+
+		<GameEffectComponent 
+    	    effect="KNOCKBACK_IMMUNITY"
+			frames="-1"
+			>
+		</GameEffectComponent >
+	</Entity>
+</Entity>
+

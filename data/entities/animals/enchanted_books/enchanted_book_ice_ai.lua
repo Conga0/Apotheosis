@@ -19,9 +19,9 @@ attack_options = {
         count_min = 1,
         count_max = 1,
         attacks_in_this_cycle = 25,
-        random_spread = 35,
-        speed = 25,
-        speed_random_mult = 3.0,
+        random_spread = 85,
+        speed = 10,
+        speed_random_mult = 7.0,
         after_attack_delay = 10
     }
 }

@@ -134,7 +134,6 @@ end
 
 function run_attack(attack_name)
     local target = current_target
-    EntitySetComponentsWithTagEnabled( entity_id, "invincible", false )
     for k=1,#attack_options do
         if attack_options[k].name == attack_name then
             if (attack_options[k].attacks_in_this_burst or 0) > 0 then
@@ -166,8 +165,22 @@ function run_attack(attack_name)
 
                 local vel_x = math.cos( firing_angle ) * speed
                 local vel_y = math.sin( firing_angle ) * speed
+
+                local proj_filepath = ""
+                if type(attack_options[k].filepath) == "string" then
+                    proj_filepath = attack_options[k].filepath
+                else
+                    proj_filepath = attack_options[k].filepath[math.random(1,#attack_options[k].filepath)]
+                end
+
+                if attack_options[k].continous_warning == false then
+                    EntitySetComponentsWithTagEnabled( entity_id, "invincible", false )
+                end
             
-                local pid = shoot_projectile( entity_id, attack_options[k].filepath, pos_x, pos_y, vel_x, vel_y )
+                local pid = shoot_projectile( entity_id, proj_filepath, pos_x, pos_y, vel_x, vel_y )
+                if attack_options[k].extra_func then
+                    attack_options[k].extra_func(pid,current_target)
+                end
                 local projcomp = EntityGetFirstComponentIncludingDisabled( pid, "ProjectileComponent" )
                 if projcomp ~= nil then
                     ComponentSetValue2(projcomp, "mShooterHerdId", StringToHerdId("mage_library"))
@@ -212,6 +225,7 @@ if book_timer <= 0 or (open_state == 3 and current_target == 0) then
         ComponentSetValue2(find_vsc("cooldown_data_2"),"value_string","0,0")
         ComponentSetValue2(find_vsc("cooldown_data_3"),"value_int",0)
         ComponentSetValue2(find_vsc("cooldown_data_3"),"value_float",0)
+        EntitySetComponentsWithTagEnabled( entity_id, "invincible", false )
         --ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent"), "attack_ranged_enabled", false)
     else
         ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteComponent"),"rect_animation","closed")

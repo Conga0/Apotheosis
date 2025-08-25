@@ -1,4 +1,4 @@
-<Entity name="Tome of Pyrokinetics" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
+<Entity name="Tome of Jupitel Thunder" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
 
 	<Base file="data/entities/animals/enchanted_books/damage_resistance_base.xml" />
   
@@ -39,11 +39,10 @@
 			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_blue_$[1-3].xml"
 			>
 			<damage_multipliers
-				projectile="1"
+				projectile="0.5"
 				explosion="1"
-				electricity="1"
-				fire="2" 
-				ice="0" 
+				electricity="0"
+				fire="1" 
 				slice="2"
 				>
 			</damage_multipliers>
@@ -58,7 +57,7 @@
 	
 		<SpriteComponent
 			_tags="gun"
-			image_file="mods/Apotheosis/files/enemies_gfx/enchanted_book_ice.xml"
+			image_file="mods/Apotheosis/files/enemies_gfx/enchanted_book_lightning.xml"
 			emissive="0"
 			offset_x="0"
 			offset_y="0"
@@ -69,7 +68,7 @@
 		
 		<GenomeDataComponent 
 			herd_id="mage_library"
-			food_chain_rank="1"
+			food_chain_rank="10"
 			is_predator="1" >
 		</GenomeDataComponent>
 
@@ -98,7 +97,7 @@
 	</Base>
 	
 	<SpriteParticleEmitterComponent
-		sprite_file="data/particles/snowflake_$[1-4].xml"
+		sprite_file="data/particles/spark_electric.xml"
 		delay="0"
 		lifetime="2"
 		color.r="1" color.g="1" color.b="1" color.a="1"
@@ -116,8 +115,8 @@
 		count_min="1" count_max="1"
 		randomize_rotation.min="-3.1415"
 		randomize_rotation.max="3.1415"
-		randomize_angular_velocity.min="-15"
-		randomize_angular_velocity.max="15"
+		randomize_angular_velocity.min="0"
+		randomize_angular_velocity.max="0"
 		randomize_velocity.min_x="-5"
 		randomize_velocity.max_x="5"
 		randomize_velocity.min_y="-5"
@@ -126,15 +125,15 @@
 		randomize_position.max_x="15"
 		randomize_position.min_y="-15"
 		randomize_position.max_y="15"
-			emissive="1"
-			additive="1"
+		emissive="1"
+		additive="1"
 		>
   </SpriteParticleEmitterComponent>
 	
   <LightComponent 
     _enabled="1" 
     radius="90" 
-	r="10"
+	r="80"
 	g="80"
 	b="180">
   </LightComponent>
@@ -150,7 +149,7 @@
 		name="cooldown_data"
 		value_int="300"
 		value_float="90"
-		value_string="flamethrower"
+		value_string="mini_sun"
 		>
 	</VariableStorageComponent>
 
@@ -170,93 +169,53 @@
 	</VariableStorageComponent>
 
    	<LuaComponent
-		script_source_file="data/entities/animals/enchanted_books/enchanted_book_ice_ai.lua"
+		script_source_file="data/entities/animals/enchanted_books/enchanted_book_lightning_ai.lua"
 		execute_on_added="1"
 		execute_every_n_frame="1"
 		>
 	</LuaComponent>
 	
+	<SpriteParticleEmitterComponent
+		_enabled="0"
+		_tags="invincible"
+		sprite_file="data/particles/spark_electric.xml"
+		delay="0"
+		lifetime="2"
+		color.r="1" color.g="1" color.b="1" color.a="1"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="30"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		use_velocity_as_rotation="0"
+		scale.x="1" scale.y="1"
+		scale_velocity.x="0" scale_velocity.y="0"
+		emission_interval_min_frames="4"
+		emission_interval_max_frames="8"
+		count_min="1" count_max="1"
+		randomize_rotation.min="-3.1415"
+		randomize_rotation.max="3.1415"
+		randomize_angular_velocity.min="0"
+		randomize_angular_velocity.max="0"
+		randomize_velocity.min_x="-5"
+		randomize_velocity.max_x="5"
+		randomize_velocity.min_y="-5"
+		randomize_velocity.max_y="5"
+		randomize_position.min_x="-15"
+		randomize_position.max_x="15"
+		randomize_position.min_y="-15"
+		randomize_position.max_y="15"
+		emissive="1"
+		additive="1"
+		>
+  </SpriteParticleEmitterComponent>
+		
 	<LuaComponent
-		script_source_file="data/entities/animals/enchanted_books/enchanted_book_ice_orbit_init.lua"
-		script_death="data/entities/animals/enchanted_books/enchanted_book_ice_orbit_death.lua"
-		execute_every_n_frame="2"
-		remove_after_executed="0"
+		script_source_file="data/entities/animals/enchanted_books/enchanted_book_lightning_pd.lua"
+		execute_every_n_frame="5"
 		>
 	</LuaComponent>
-
-    <ParticleEmitterComponent
-		_enabled="0"
-		_tags="invincible"
-		emitted_material_name="spark_white"
-		fade_based_on_lifetime="1"
-		x_pos_offset_min="0"
-		x_pos_offset_max="0"
-		y_pos_offset_min="0"
-		y_pos_offset_max="0"
-		x_vel_min="-80"
-		x_vel_max="80"
-		y_vel_min="-80"
-		y_vel_max="80"
-		area_circle_radius.min="10"
-		area_circle_radius.max="30"
-		velocity_always_away_from_center="90"
-		gravity.y="0"
-		friction="0.1"
-		airflow_force="0.9"
-		airflow_time="0.101"
-		airflow_scale="0.81"
-		count_min="40"
-		count_max="60"
-		lifetime_min="0.1"
-		lifetime_max="0.9"
-		create_real_particles="0"
-		emit_cosmetic_particles="1"
-		draw_as_long="1"
-		collide_with_grid="0"
-		render_on_grid="1"
-		emission_interval_min_frames="1"
-		emission_interval_max_frames="1"
-		render_ultrabright="1"
-		is_emitting="1"
-		>
-    </ParticleEmitterComponent>
-
-    <ParticleEmitterComponent
-		_enabled="0"
-		_tags="invincible"
-		emitted_material_name="spark_white"
-		fade_based_on_lifetime="1"
-		x_pos_offset_min="0"
-		x_pos_offset_max="0"
-		y_pos_offset_min="0"
-		y_pos_offset_max="0"
-		x_vel_min="-80"
-		x_vel_max="80"
-		y_vel_min="-80"
-		y_vel_max="80"
-		area_circle_radius.min="10"
-		area_circle_radius.max="10"
-		velocity_always_away_from_center="40"
-		gravity.y="0"
-		friction="0.1"
-		airflow_force="0.9"
-		airflow_time="0.101"
-		airflow_scale="0.81"
-		count_min="40"
-		count_max="60"
-		lifetime_min="0.1"
-		lifetime_max="0.6"
-		create_real_particles="0"
-		emit_cosmetic_particles="1"
-		draw_as_long="1"
-		collide_with_grid="0"
-		render_on_grid="1"
-		emission_interval_min_frames="1"
-		emission_interval_max_frames="1"
-		render_ultrabright="1"
-		is_emitting="1"
-		>
-    </ParticleEmitterComponent>
 			
 	<AudioComponent
 		file="data/audio/Desktop/animals.bank"
@@ -266,6 +225,13 @@
 	<AudioLoopComponent
 		file="data/audio/Desktop/animals.bank"
 		event_name="animals/ghost/movement_loop"
+		set_speed_parameter="1"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/thundermage/movement_loop"
 		set_speed_parameter="1"
 		auto_play="1">
 	</AudioLoopComponent>

@@ -217,6 +217,14 @@ local apotheosis_status_list = {
         effect_entity="mods/Apotheosis/files/entities/misc/effect_hell_nectar_transform.xml",
         min_threshold_normalized="5.0",
     },
+    {
+        id="apotheosis_BALD",
+        ui_name="$status_apotheosis_bald_name",
+        ui_description="$status_apotheosis_bald_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/bald.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_bald.xml",
+		effect_permanent=true,
+    },
 }
 
 local len = #status_effects
