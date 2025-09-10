@@ -1,6 +1,9 @@
 Music Boss rework
 Adult Centipede
 Fix motd not spawning in downunder spawn area
+Check if Vampirism Scaling is too OP
+Look at data/wang_tiles/extra_layers/coalmine.png to fix tuonela coalmines being randomly empty
+Make mod_settings.lua read a csv file
 
 Make sure jellyfish *scream* for help when alerting their breathren they're in danger
 Ensure there's an escape from the jellyfish temple, maybe a bright light you can step into to go back to where the jellyfish who took you there was?

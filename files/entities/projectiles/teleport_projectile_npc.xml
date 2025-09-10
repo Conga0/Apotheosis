@@ -156,7 +156,7 @@
 	
 	<VariableStorageComponent
 		name="projectile_file"
-		value_string="mods/Apotheosis/files/entities/projectiles/deck/teleport_projectile_npc.xml"
+		value_string="mods/Apotheosis/files/entities/projectiles/teleport_projectile_npc.xml"
 		>
 	</VariableStorageComponent>
 

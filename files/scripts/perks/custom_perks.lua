@@ -224,7 +224,7 @@ apotheosis_perkappends = {
             EntityAddChild( entity_who_picked, child_id )
         end,
         _remove = function( entity_who_picked )
-            local shield_num = 0
+            local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_OVERSIZED_COUNT", "0" ) ) - 1
             GlobalsSetValue( "PERK_SHIELD_OVERSIZED_COUNT", tostring( shield_num ) )
         end,
         func_remove = function( entity_who_picked )
@@ -262,10 +262,10 @@ apotheosis_perkappends = {
 
                 --Default speed values Mina starts with, multiplied to be a 40% boost in ComponentSetValue
                 local defaults = {
-                    -95,
-                    56,
-                    95,
-                    85,
+                    -95 * 0.75,
+                    56 * 0.75,
+                    95 * 0.75,
+                    85 * 0.75,
                     154,
                     52,
                     -57,
@@ -316,7 +316,7 @@ apotheosis_perkappends = {
 
                 for k=1,#values
                 do v = values[k]
-                    ComponentSetValue2(comp,v,defaults[k])
+                    ComponentSetValue2(comp,v,ComponentGetValue2(comp,v) - (defaults[k] * 0.4))
                 end
             end
         end,
@@ -502,10 +502,10 @@ apotheosis_perkappends = {
 
                 --Default speed values Mina starts with, multiplied to be a 15% boost in ComponentSetValue
                 local defaults = {
-                    -95,
-                    56,
-                    95,
-                    85,
+                    -95 * 0.75,
+                    56 * 0.75,
+                    95 * 0.75,
+                    85 * 0.75,
                     154,
                     52,
                     -57,
@@ -783,10 +783,27 @@ apotheosis_perkappends = {
         _remove = function(entity_id)
             local staincomp = EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteStainsComponent")
             ComponentSetValue2(staincomp,"stain_shaken_drop_chance_multiplier",1)
+            
+            local absorbent_vsc = 0
+            local vcomps = EntityGetComponent(entity_who_picked,"VariableStorageComponent")
+            for k=1,#vcomps do
+                if ComponentGetValue2(vcomps[k],"name") == "perk_absorbent_cape" then
+                    perk_found = true
+                    absorbent_vsc = vcomps[k]
+                    break
+                end
+            end
+            ComponentSetValue2(absorbent_vsc,"value_int",math.max(ComponentGetValue2(absorbent_vsc,"value_int") - 1,0))
+            local stain_drop_mult = 1 * (0.25^math.max(1,ComponentGetValue2(absorbent_vsc,"value_int")))
+            ComponentSetValue2(absorbent_vsc,"value_float",stain_drop_mult)
+
         end,
         func_remove = function( entity_id )
             local staincomp = EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteStainsComponent")
             ComponentSetValue2(staincomp,"stain_shaken_drop_chance_multiplier",1)
+
+            ComponentSetValue2(absorbent_vsc,"value_int",0)
+            ComponentSetValue2(absorbent_vsc,"value_float",1)
         end,
 	},
     --[[

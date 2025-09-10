@@ -186,6 +186,21 @@
 	</AIAttackComponent>
 
     <AIAttackComponent
+    min_distance="100"
+    max_distance="400"
+    frames_between="100"
+    frames_between_global="10"
+    attack_ranged_action_frame="7"
+    attack_ranged_entity_file="mods/Apotheosis/files/entities/projectiles/star_shot_jellyfish.xml"
+    attack_ranged_entity_count_min="7"
+    attack_ranged_entity_count_max="12"
+    attack_ranged_offset_y="0"
+    attack_ranged_offset_x="0"
+	attack_ranged_predict="0"
+    >
+	</AIAttackComponent>
+
+    <AIAttackComponent
     min_distance="20"
     max_distance="250"
     frames_between="720"

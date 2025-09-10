@@ -1,6 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
-	
-	local comp = EntityGetFirstComponent( entity_id, "VariableStorageComponent", "ghost_id" )
+function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
+	local comp = EntityGetFirstComponent( GetUpdatedEntityID(), "VariableStorageComponent", "ghost_id" )
 	
 	if ( comp ~= nil ) then
 		local ghost_id = ComponentGetValue2( comp, "value_int" )
@@ -10,3 +10,4 @@ dofile_once("data/scripts/lib/utilities.lua")
 			StatsLogPlayerKill( ghost_id )
 		end
 	end
+end

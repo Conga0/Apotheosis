@@ -1500,8 +1500,8 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		end
 	end
 
-	--1 in 10000 chance for it to swap around the o and the e
-	if Random(1,10000) == 1 then mod_name = "Apothoesis" end
+	--1 in 1000 chance for it to swap around the o and the e
+	if Random(1,1000) == 1 then mod_name = "Apothoesis" end
 end
 
 function OnModPreInit()
