@@ -2,7 +2,7 @@ dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 apotheosis_spellappends = {
     {
         id          = "APOTHEOSIS_SAWBLADE_BIG_RAY",
-        id_matchup  = "LASER_EMITTER_RAY",
+        id_append   = "LASER_EMITTER_RAY",
         name 		= "$spell_apotheosis_thrower_disc_name",
         description = "$spell_apotheosis_thrower_disc_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray.png",
@@ -22,7 +22,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_CURSED_ORB_RAY",
-        id_matchup  = "APOTHEOSIS_SAWBLADE_BIG_RAY",
+        id_append   = "APOTHEOSIS_SAWBLADE_BIG_RAY",
         name 		= "$spell_apotheosis_thrower_cursed_orb_name",
         description = "$spell_apotheosis_thrower_cursed_orb_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray.png",
@@ -43,7 +43,7 @@ apotheosis_spellappends = {
     --[[
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY",
-        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY",
+        id_append   = "APOTHEOSIS_CURSED_ORB_RAY",
         name 		= "$spell_apotheosis_thrower_tnt_name",
         description = "$spell_apotheosis_thrower_tnt_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray.png",
@@ -64,7 +64,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_ICEBALL_RAY",
-        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY",
+        id_append   = "APOTHEOSIS_CURSED_ORB_RAY",
         name 		= "$spell_apotheosis_thrower_ice_ball_name",
         description = "$spell_apotheosis_thrower_ice_ball_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray.png",
@@ -84,7 +84,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_NUKE_RAY",
-        id_matchup  = "APOTHEOSIS_ICEBALL_RAY",
+        id_append   = "APOTHEOSIS_ICEBALL_RAY",
         name 		= "$spell_apotheosis_thrower_nuke_name",
         description = "$spell_apotheosis_thrower_nuke_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray.png",
@@ -104,7 +104,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_SAWBLADE_BIG_RAY_ENEMY",
-        id_matchup  = "TENTACLE_RAY_ENEMY",
+        id_append   = "TENTACLE_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_disc_enemy_name",
         description = "$spell_apotheosis_thrower_disc_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_disc_big_ray_enemy.png",
@@ -124,7 +124,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
-        id_matchup  = "APOTHEOSIS_SAWBLADE_BIG_RAY_ENEMY",
+        id_append   = "APOTHEOSIS_SAWBLADE_BIG_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_cursed_orb_enemy_name",
         description = "$spell_apotheosis_thrower_cursed_orb_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_cursed_orb_ray_enemy.png",
@@ -145,7 +145,7 @@ apotheosis_spellappends = {
     --[[
     {
         id          = "APOTHEOSIS_DYNAMITE_RAY_ENEMY",
-        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
+        id_append   = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_tnt_enemy_name",
         description = "$spell_apotheosis_thrower_tnt_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_dynamite_ray_enemy.png",
@@ -166,7 +166,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
-        id_matchup  = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
+        id_append   = "APOTHEOSIS_CURSED_ORB_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_ice_ball_enemy_name",
         description = "$spell_apotheosis_thrower_ice_ball_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_ice_ball_ray_enemy.png",
@@ -186,7 +186,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_NUKE_RAY_ENEMY",
-        id_matchup  = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
+        id_append   = "APOTHEOSIS_ICEBALL_RAY_ENEMY",
         name 		= "$spell_apotheosis_thrower_nuke_enemy_name",
         description = "$spell_apotheosis_thrower_nuke_enemy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/thrower_nuke_ray_enemy.png",
@@ -206,7 +206,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HOLYORB_SHOTGUN",
-        id_matchup  = "LANCE_HOLY",
+        id_append   = "LANCE_HOLY",
         name 		= "$spell_apotheosis_holy_orb_barrage_name",
         description = "$spell_apotheosis_holy_orb_barrage_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
@@ -233,7 +233,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_BOMB_GIGA",
-        id_matchup  = "BOMB",
+        id_append   = "BOMB",
         name 		= "$spell_apotheosis_giga_bomb_name",
         description = "$spell_apotheosis_giga_bomb_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bomb_giga.png",
@@ -413,7 +413,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_BUNGAL_SHIFT_SPAM",
-        id_matchup  = "APOTHEOSIS_BUNGAL_SHIFT",
+        id_append   = "APOTHEOSIS_BUNGAL_SHIFT",
         name 		= "$spell_apotheosis_bungal_shift_hyper_name",
         description = "$spell_apotheosis_bungal_shift_hyper_desc", --Triggers a fungal shift, no cooldown.
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/bungal_shift_spam.png",
@@ -474,7 +474,7 @@ apotheosis_spellappends = {
     --[[
     {
         id          = "APOTHEOSIS_CREATURE_SHIFT_SPAM",
-        id_matchup  = "APOTHEOSIS_CREATURE_SHIFT",
+        id_append   = "APOTHEOSIS_CREATURE_SHIFT",
         name 		= "$spell_apotheosis_creature_shift_spam_name",
         description = "$spell_apotheosis_creature_shift_spam_desc", --Be Careful what you wish for.. Triggers a creature shift, still obeys normal creature cooldown
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/creature_shift_spam.png",
@@ -541,7 +541,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_AQUA_MINE",
-        id_matchup  = "GRENADE_LARGE",
+        id_append   = "GRENADE_LARGE",
         name 		= "$spell_apotheosis_aqua_mine_name",
         description = "$spell_apotheosis_aqua_mine_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/aquamine.png",
@@ -560,7 +560,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MUSICAL_STRIKE",
-        id_matchup  = "MEGALASER",
+        id_append   = "MEGALASER",
         name 		= "$spell_apotheosis_musical_proj_name",
         description = "$spell_apotheosis_musical_proj_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/musical_strike.png",
@@ -579,7 +579,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
-        id_matchup  = "APOTHEOSIS_MUSICAL_STRIKE",
+        id_append   = "APOTHEOSIS_MUSICAL_STRIKE",
         name 		= "$spell_apotheosis_musical_proj_trig_name",
         description = "$spell_apotheosis_musical_proj_trig_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/musical_strike_trigger.png",
@@ -598,7 +598,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_REVERBERATION",
-        id_matchup  = "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
+        id_append   = "APOTHEOSIS_MUSICAL_STRIKE_TRIGGER",
         name 		= "$spell_apotheosis_reverberation_name",
         description = "$spell_apotheosis_reverberation_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/reverberation.png",
@@ -642,7 +642,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_RAT_BITE_CRIT",
-        id_matchup  = "APOTHEOSIS_RAT_BITE",
+        id_append   = "APOTHEOSIS_RAT_BITE",
         name 		= "$spell_apotheosis_bite_crit_name",
         description = "$spell_apotheosis_bite_crit_desc", --Converted Rat Bite, Big Crit chance.
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/rat_bite_crit.png",
@@ -662,7 +662,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_SPELLS_TO_CATS",
-        id_matchup  = "ALL_ACID",
+        id_append   = "ALL_ACID",
         name 		= "$spell_apotheosis_spells_to_sorako_name",
         description = "$spell_apotheosis_spells_to_sorako_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cats.png",
@@ -683,7 +683,7 @@ apotheosis_spellappends = {
     },
     {
         id                = "APOTHEOSIS_SPLIT_SPELL",
-        id_matchup        = "CHAIN_SHOT",
+        id_append        = "CHAIN_SHOT",
         name              = "$spell_apotheosis_split_shot_name",
         description       = "$spell_apotheosis_split_shot_desc",
         sprite            = "mods/Apotheosis/files/ui_gfx/gun_actions/split_spell.png",
@@ -816,7 +816,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_TARGETTER",
-        id_matchup  = "LASER_LUMINOUS_DRILL",
+        id_append   = "LASER_LUMINOUS_DRILL",
         name 		= "$spell_apotheosis_targetter_name",
         description = "$spell_apotheosis_targetter_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/targetter.png",
@@ -908,7 +908,7 @@ apotheosis_spellappends = {
     --I do want a spell which lets me do fire damage though.. so...
     {
         id          = "APOTHEOSIS_FIRE_CHARGE",
-        id_matchup  = "FREEZE",
+        id_append   = "FREEZE",
         name 		= "$spell_apotheosis_firecharge_name",
         description = "$spell_apotheosis_firecharge_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/fire_charge.png",
@@ -1038,7 +1038,7 @@ apotheosis_spellappends = {
 
     {
         id          = "APOTHEOSIS_SPELLS_TO_CURSOR",
-        id_matchup  = "APOTHEOSIS_SPELLS_TO_CATS",
+        id_append   = "APOTHEOSIS_SPELLS_TO_CATS",
         name 		= "$spell_apotheosis_spells_to_cursor_name",
         description = "$spell_apotheosis_spells_to_cursor_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spells_to_cursor.png",
@@ -1058,7 +1058,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
-        id_matchup  = "APOTHEOSIS_MASS_STATUS_POLYMORPH",
+        id_append   = "APOTHEOSIS_MASS_STATUS_POLYMORPH",
         name 		= "$spell_apotheosis_status_polymorph_intense_name",
         description = "$spell_apotheosis_status_polymorph_intense_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_intense_polymorph.png",
@@ -1080,7 +1080,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MASS_BURROW",
-        id_matchup  = "WORM_RAIN",
+        id_append   = "WORM_RAIN",
         name 		= "$spell_apotheosis_mass_burrow_name",
         description = "$spell_apotheosis_mass_burrow_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_burrow.png",
@@ -1102,7 +1102,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MASS_DRY",
-        id_matchup  = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
+        id_append   = "APOTHEOSIS_MASS_STATUS_POLYMORPH_INTENSE",
         name 		= "$spell_apotheosis_status_dry_name",
         description = "$spell_apotheosis_status_dry_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mass_status_dry.png",
@@ -1124,7 +1124,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_AUTOFIRE",
-        id_matchup  = "TINY_GHOST",
+        id_append   = "TINY_GHOST",
         name 		= "$spell_apotheosis_autofire_name",
         description = "$spell_apotheosis_autofire_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/autofire.png",
@@ -1144,7 +1144,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_UPGRADE_ALWAYSCAST",
-        id_matchup  = "CESSATION",
+        id_append   = "CESSATION",
         name 		= "$spell_apotheosis_upgrade_alwayscast_name",
         description = "$spell_apotheosis_upgrade_alwayscast_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/upgrade_alwayscast.png",
@@ -1203,7 +1203,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_ALT_FIRE_COV",
-        id_matchup  = "APOTHEOSIS_ALT_FIRE_SWAPPER",
+        id_append   = "APOTHEOSIS_ALT_FIRE_SWAPPER",
         name 		= "$spell_apotheosis_alt_fire_cov_name",
         description = "$spell_apotheosis_alt_fire_cov_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_cov_projectile.png",
@@ -1228,7 +1228,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_ALT_FIRE_TARGETTER",
-        id_matchup  = "APOTHEOSIS_ALT_FIRE_COV",
+        id_append   = "APOTHEOSIS_ALT_FIRE_COV",
         name 		= "$spell_apotheosis_alt_fire_targetter_name",
         description = "$spell_apotheosis_alt_fire_targetter_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_targetter.png",
@@ -1281,7 +1281,7 @@ apotheosis_spellappends = {
 
     {
         id          = "APOTHEOSIS_HITFX_CRITICAL_DRUNK",
-        id_matchup  = "HITFX_CRITICAL_BLOOD",
+        id_append   = "HITFX_CRITICAL_BLOOD",
         name 		= "$spell_apotheosis_critical_drunk_name",
         description = "$spell_apotheosis_critical_drunk_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/critical_drunk.png",
@@ -1301,7 +1301,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_AFFLUENCE",
-        id_matchup  = "LIGHT",
+        id_append   = "LIGHT",
         name 		= "$spell_apotheosis_affluence_name",
         description = "$spell_apotheosis_affluence_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/affluence.png",
@@ -1321,7 +1321,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_LIQUIDSPHERE_ACID",
-        id_matchup  = "INFESTATION",
+        id_append   = "INFESTATION",
         name 		= "$spell_apotheosis_liquidsphere_acid_name",
         description = "$spell_apotheosis_liquidsphere_acid_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_acid.png",
@@ -1342,7 +1342,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_LIQUIDSPHERE_WATER",
-        id_matchup  = "APOTHEOSIS_LIQUIDSPHERE_ACID",
+        id_append   = "APOTHEOSIS_LIQUIDSPHERE_ACID",
         name 		= "$spell_apotheosis_liquidsphere_water_name",
         description = "$spell_apotheosis_liquidsphere_water_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_water.png",
@@ -1363,7 +1363,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM",
-        id_matchup  = "APOTHEOSIS_LIQUIDSPHERE_WATER",
+        id_append   = "APOTHEOSIS_LIQUIDSPHERE_WATER",
         name 		= "$spell_apotheosis_liquidsphere_teleportatium_name",
         description = "$spell_apotheosis_liquidsphere_teleportatium_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/liquidsphere_teleportatium.png",
@@ -1384,7 +1384,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_STAR_SHOT",
-        id_matchup  = "APOTHEOSIS_HOLYORB_SHOTGUN",
+        id_append   = "APOTHEOSIS_HOLYORB_SHOTGUN",
         name 		= "$spell_apotheosis_star_shot_name",
         description = "$spell_apotheosis_star_shot_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/star_shot.png",
@@ -1404,7 +1404,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_HEX_WATER",
-        id_matchup  = "APOTHEOSIS_HITFX_AFFLUENCE",
+        id_append   = "APOTHEOSIS_HITFX_AFFLUENCE",
         name 		= "$spell_apotheosis_hex_water_name",
         description = "$spell_apotheosis_hex_water_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_water.png",
@@ -1424,7 +1424,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_HEX_OIL",
-        id_matchup  = "APOTHEOSIS_HITFX_HEX_WATER",
+        id_append   = "APOTHEOSIS_HITFX_HEX_WATER",
         name 		= "$spell_apotheosis_hex_oil_name",
         description = "$spell_apotheosis_hex_oil_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_oil.png",
@@ -1444,7 +1444,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HITFX_HEX_BLOOD",
-        id_matchup  = "APOTHEOSIS_HITFX_HEX_OIL",
+        id_append   = "APOTHEOSIS_HITFX_HEX_OIL",
         name 		= "$spell_apotheosis_hex_blood_name",
         description = "$spell_apotheosis_hex_blood_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hex_blood.png",
@@ -1464,7 +1464,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MIST_ATTUNIUM",
-        id_matchup  = "MIST_BLOOD",
+        id_append   = "MIST_BLOOD",
         name 		= "$spell_apotheosis_mist_attunium_name",
         description = "$spell_apotheosis_mist_attunium_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mist_attunium.png",
@@ -1483,7 +1483,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_HOMING_DELAYED",
-        id_matchup  = "HOMING_AREA",
+        id_append   = "HOMING_AREA",
         name 		= "$spell_apotheosis_homing_delayed_name",
         description = "$spell_apotheosis_homing_delayed_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/homing_delayed.png",
@@ -1526,7 +1526,7 @@ apotheosis_spellappends = {
     --Hey, while you're here snooping as usual I see, have you ever tried mixing whiskey & soarium? Or was it concentrated mana and levitatium? I don't remember
     {
         id          = "APOTHEOSIS_MATERIAL_SLIME",
-        id_matchup  = "MATERIAL_CEMENT",
+        id_append   = "MATERIAL_CEMENT",
         name 		= "$spell_apotheosis_material_slime_name",
         description = "$spell_apotheosis_material_slime_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/material_slime.png",
@@ -1546,7 +1546,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_MATERIAL_ALCOHOL",
-        id_matchup  = "APOTHEOSIS_MATERIAL_SLIME",
+        id_append   = "APOTHEOSIS_MATERIAL_SLIME",
         name 		= "$spell_apotheosis_material_alcohol_name",
         description = "$spell_apotheosis_material_alcohol_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/material_alcohol.png",
@@ -1623,7 +1623,7 @@ apotheosis_spellappends = {
     --Note (Conga): Omega Death Cross should spawn in a special place after a questline, similar to how Giga Nuke and Omega Sawblade does
 	{
 		id          = "APOTHEOSIS_DEATH_CROSS_OMEGA",
-        id_matchup  = "DEATH_CROSS_BIG",
+        id_append   = "DEATH_CROSS_BIG",
         name 		= "$spell_apotheosis_death_cross_omega_name",
         description = "$spell_apotheosis_death_cross_omega_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/death_cross_omega.png",
@@ -1646,7 +1646,7 @@ apotheosis_spellappends = {
     --There's a really fun way to Noita yourself here by using boomerang + healing bolt :)
     {
         id          = "APOTHEOSIS_HITFX_MUDMAN_SLIMY",
-        id_matchup  = "HITFX_EXPLOSION_ALCOHOL_GIGA",
+        id_append   = "HITFX_EXPLOSION_ALCOHOL_GIGA",
         name 		= "$spell_apotheosis_mudman_slimy_name",
         description = "$spell_apotheosis_mudman_slimy_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mudman_slimy.png",
@@ -1668,7 +1668,7 @@ apotheosis_spellappends = {
     --[[
 	{
 		id          = "APOTHEOSIS_CLOUD_GUNPOWDER",
-        id_matchup  = "CLOUD_ACID",
+        id_append   = "CLOUD_ACID",
         name 		= "$spell_apotheosis_cloud_gunpowder_name",
         description = "$spell_apotheosis_cloud_gunpowder_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/cloud_gunpowder.png",
@@ -1688,7 +1688,7 @@ apotheosis_spellappends = {
     --More interesting as a perk
     {
         id          = "APOTHEOSIS_HITFX_NORAGDOLL",
-        id_matchup  = "HITFX_PETRIFY",
+        id_append   = "HITFX_PETRIFY",
         name 		= "$spell_apotheosis_noragdoll_name",
         description = "$spell_apotheosis_noragdoll_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/noragdoll.png",
@@ -1708,7 +1708,7 @@ apotheosis_spellappends = {
     ]]--
 	{
 		id          = "APOTHEOSIS_TRAIL_LARGER",
-        id_matchup  = "FIRE_TRAIL",
+        id_append   = "FIRE_TRAIL",
         name 		= "$spell_apotheosis_trail_enhancer_name",
         description = "$spell_apotheosis_trail_enhancer_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/trail_enhancer.png",
@@ -1728,7 +1728,7 @@ apotheosis_spellappends = {
         --Bloat, when would you ever use this?.... within reason!
 	{
 		id          = "APOTHEOSIS_TRAIL_SMALLER",
-        id_matchup  = "APOTHEOSIS_TRAIL_LARGER",
+        id_append   = "APOTHEOSIS_TRAIL_LARGER",
         name 		= "$spell_apotheosis_trail_reducer_name",
         description = "$spell_apotheosis_trail_reducer_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/trail_reducer.png",
@@ -1747,7 +1747,7 @@ apotheosis_spellappends = {
     ]]--
 	{
 		id          = "APOTHEOSIS_CLOUD_VOLCANIC",
-        id_matchup  = "CLOUD_ACID",
+        id_append   = "CLOUD_ACID",
         name 		= "$spell_apotheosis_cloud_volcanic_name",
         description = "$spell_apotheosis_cloud_volcanic_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/cloud_volcanic.png",
@@ -1766,7 +1766,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_LARPA_DELAYED",   --Copi: It slightly bothers me that the extra entity name and the ID are inconsistent
-        id_matchup  = "LARPA_DEATH",
+        id_append   = "LARPA_DEATH",
         name 		= "$spell_apotheosis_larpa_delayed_name",
         description = "$spell_apotheosis_larpa_delayed_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/larpa_delay.png",
@@ -1785,7 +1785,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_RANDOM_HOMING",
-        id_matchup  = "RANDOM_STATIC_PROJECTILE",
+        id_append   = "RANDOM_STATIC_PROJECTILE",
         name 		= "$spell_apotheosis_random_homing_name",
         description = "$spell_apotheosis_random_homing_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_homing.png",
@@ -1835,7 +1835,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_RANDOM_ARC",
-        id_matchup  = "APOTHEOSIS_RANDOM_HOMING",
+        id_append   = "APOTHEOSIS_RANDOM_HOMING",
         name 		= "$spell_apotheosis_random_arc_name",
         description = "$spell_apotheosis_random_arc_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_arc.png",
@@ -1848,6 +1848,7 @@ apotheosis_spellappends = {
 		price = 120,
 		mana = 2,
 		action 		= function( recursion_level, iteration )
+            --Conga: This the reload time reset should only apply if the spell is outside of a trigger
 			SetRandomSeed( GameGetFrameNum() + #deck, GameGetFrameNum() + 133 )
             if reflecting then
                 c.damage_projectile_add = c.damage_projectile_add + 0.32
@@ -1876,7 +1877,9 @@ apotheosis_spellappends = {
                 dont_draw_actions = false
                 c.damage_projectile_add = c.damage_projectile_add + 0.32
                 c.fire_rate_wait = tdelay
-                current_reload_time = 0
+
+                --If random arc is not inside a trigger, set reload time to 0
+                if apo_state.trigger_nesting == 0 then current_reload_time = 0 end
             end
             draw_actions( 1, true )
 		end,
@@ -1884,7 +1887,7 @@ apotheosis_spellappends = {
     --[[ Old Lua Sharing - new one directly below
 	{   --How would this even work on a technical level? Idea is to share lua components of projectiles amongst all other projectiles
 		id          = "APOTHEOSIS_LUA_SHARING",
-        id_matchup  = "TRANSMUTATION",
+        id_append   = "TRANSMUTATION",
         name 		= "$spell_apotheosis_lua_sharing_name",
         description = "$spell_apotheosis_lua_sharing_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_homing.png",
@@ -1933,7 +1936,7 @@ apotheosis_spellappends = {
     ]]--
 	{   --Thankyou Copi'r for the help!
     id          = "APOTHEOSIS_LUA_SHARING",
-    id_matchup  = "TRANSMUTATION",
+    id_append   = "TRANSMUTATION",
     name 		= "$spell_apotheosis_lua_sharing_name",
     description = "$spell_apotheosis_lua_sharing_desc",
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/lua_sharing.png",
@@ -1962,7 +1965,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_GLUE_CHARGE",
-        id_matchup  = "APOTHEOSIS_FIRE_CHARGE",
+        id_append   = "APOTHEOSIS_FIRE_CHARGE",
         name 		= "$spell_apotheosis_gluecharge_name",
         description = "$spell_apotheosis_gluecharge_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/glue_charge.png",
@@ -1982,7 +1985,7 @@ apotheosis_spellappends = {
     },
     {   --Conga: Confession, I only made this because of Lua Sharing, and it's so damn worth it
         id          = "APOTHEOSIS_ELECTROSPHERE",
-        id_matchup  = "APOTHEOSIS_HOLYORB_SHOTGUN",
+        id_append   = "APOTHEOSIS_HOLYORB_SHOTGUN",
         name 		= "$spell_apotheosis_electrosphere_name",
         description = "$spell_apotheosis_electrosphere_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/electrosphere.png",
@@ -2003,7 +2006,7 @@ apotheosis_spellappends = {
     },
 	{
 		id          = "APOTHEOSIS_SEA_BERSERK",
-        id_matchup  = "SEA_ACID_GAS",
+        id_append   = "SEA_ACID_GAS",
         name 		= "$spell_apotheosis_sea_berserk_name",
         description = "$spell_apotheosis_sea_berserk_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sea_berserk.png",
@@ -2023,7 +2026,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_KINDNESS_TO_POWER",
-        id_matchup  = "ESSENCE_TO_POWER",
+        id_append   = "ESSENCE_TO_POWER",
         name 		= "$spell_apotheosis_kindness_to_power_name",
         description = "$spell_apotheosis_kindness_to_power_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/kindness_to_power.png",
@@ -2038,7 +2041,7 @@ apotheosis_spellappends = {
             local shooter = GetUpdatedEntityID()
             local x, y = EntityGetTransform(shooter)
             local targets = EntityGetInRadiusWithTag(x, y, 512, "mortal")
-            local hotness = 1
+            local hotness = 0
             for k=1,#targets
             do local v = targets[k]
                 if GameGetGameEffectCount( v, "CHARM" ) > 0 then
@@ -2048,13 +2051,13 @@ apotheosis_spellappends = {
             if c.damage_critical_chance < 50 and hotness > 1 then
                 c.damage_critical_chance = 50
             end
-			c.damage_critical_chance = (c.damage_critical_chance * hotness)
+			c.damage_critical_chance = c.damage_critical_chance + (50 * hotness)
 			draw_actions( 1, true )
 		end,
 	},
     {
         id          = "APOTHEOSIS_MIND_VISION",
-        id_matchup  = "X_RAY",
+        id_append   = "X_RAY",
         name 		= "$spell_apotheosis_mind_vision_name",
         description = "$spell_apotheosis_mind_vision_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mindvision.png",
@@ -2073,7 +2076,7 @@ apotheosis_spellappends = {
     },
 	{
 		id          = "APOTHEOSIS_WATER_POWER",
-        id_matchup  = "MANA_REDUCE",
+        id_append   = "MANA_REDUCE",
         name 		= "$spell_apotheosis_water_power_name",
         description = "$spell_apotheosis_water_power_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hydromancy_s.png",
@@ -2096,7 +2099,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_SHAPE_WALL",
-		id_matchup  = "PENTAGRAM_SHAPE",
+		id_append   = "PENTAGRAM_SHAPE",
         name 		= "$spell_apotheosis_shape_wall_name",
         description = "$spell_apotheosis_shape_wall_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/wall_shape.png",
@@ -2116,7 +2119,7 @@ apotheosis_spellappends = {
     --Kind of boring, and bloat
 	{
 		id          = "APOTHEOSIS_SUMMON_STAR_CHILD",
-		id_matchup  = "FRIEND_FLY",
+		id_append   = "FRIEND_FLY",
         name 		= "$spell_apotheosis_summon_star_child_name",
         description = "$spell_apotheosis_summon_star_child_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/star_child.png",
@@ -2136,7 +2139,7 @@ apotheosis_spellappends = {
     ]]--
 	{
 		id          = "APOTHEOSIS_FIRE_WALL",
-		id_matchup  = "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM",
+		id_append   = "APOTHEOSIS_LIQUIDSPHERE_TELEPORTATIUM",
         name 		= "$spell_apotheosis_fire_wall_name",
         description = "$spell_apotheosis_fire_wall_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/fire_wall.png",
@@ -2159,7 +2162,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_RANDOM_BURST",
-        id_matchup  = "APOTHEOSIS_RANDOM_HOMING",
+        id_append   = "APOTHEOSIS_RANDOM_HOMING",
         name 		= "$spell_apotheosis_random_burst_name",
         description = "$spell_apotheosis_random_burst_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/random_burst.png",
@@ -2178,7 +2181,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_JUMPER_CABLES",
-        id_matchup  = "TENTACLE_TIMER",
+        id_append   = "TENTACLE_TIMER",
 		name 		= "$spell_apotheosis_jumper_cables_name",
 		description = "$spell_apotheosis_jumper_cables_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/jumper_cables.png",
@@ -2205,7 +2208,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_CHI",
-        id_matchup  = "SIGMA",
+        id_append   = "SIGMA",
 		name 		= "$spell_apotheosis_chi_name",
 		description = "$spell_apotheosis_chi_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/chi.png",
@@ -2269,7 +2272,7 @@ apotheosis_spellappends = {
     --Might be able to use EzWand..?
 	{
 		id          = "APOTHEOSIS_KAPPA",
-        id_matchup  = "APOTHEOSIS_CHI",
+        id_append   = "APOTHEOSIS_CHI",
 		name 		= "$spell_apotheosis_kappa_name",
 		description = "$spell_apotheosis_kappa_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/kappa.png",
@@ -2324,7 +2327,7 @@ apotheosis_spellappends = {
     --Hydromancy can make or break your wand if you're wet
 	{
 		id          = "APOTHEOSIS_BLOOD_POWER",
-        id_matchup  = "APOTHEOSIS_WATER_POWER",
+        id_append   = "APOTHEOSIS_WATER_POWER",
         name 		= "$spell_apotheosis_blood_power_name",
         description = "$spell_apotheosis_blood_power_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hemomancy.png",
@@ -2353,7 +2356,7 @@ apotheosis_spellappends = {
     ]]--
 	{
 		id          = "APOTHEOSIS_SHOT_WALL",
-		id_matchup  = "PENTA_SHOT",
+		id_append   = "PENTA_SHOT",
         name 		= "$spell_apotheosis_shot_wall_name",
         description = "$spell_apotheosis_shot_wall_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/wall_shot.png",
@@ -2397,7 +2400,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_POLLEN_TRIGGER",
-		id_matchup  = "POLLEN",
+		id_append   = "POLLEN",
 		name 		= "$spell_apotheosis_pollen_trigger_name",
 		description = "$spell_apotheosis_pollen_trigger_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/pollen_trigger.png",
@@ -2419,7 +2422,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_RUBBER_BALL_TRIGGER",
-		id_matchup  = "RUBBER_BALL",
+		id_append   = "RUBBER_BALL",
 		name 		= "$spell_apotheosis_rubberball_trigger_name",
 		description = "$spell_apotheosis_rubberball_trigger_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/rubber_ball_trigger.png",
@@ -2441,7 +2444,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_BLOOD_POWER",
-        id_matchup  = "APOTHEOSIS_WATER_POWER",
+        id_append   = "APOTHEOSIS_WATER_POWER",
         name 		= "$spell_apotheosis_blood_power_name",
         description = "$spell_apotheosis_blood_power_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/hemomancy_s.png",
@@ -2467,7 +2470,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_FIRE_POWER",
-        id_matchup  = "APOTHEOSIS_BLOOD_POWER",
+        id_append   = "APOTHEOSIS_BLOOD_POWER",
         name 		= "$spell_apotheosis_fire_power_name",
         description = "$spell_apotheosis_fire_power_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/pyromancy_s.png",
@@ -2541,7 +2544,7 @@ apotheosis_spellappends = {
     --[[
 	{
 		id          = "APOTHEOSIS_POTION_TO_SEA",
-        id_matchup  = "APOTHEOSIS_SEA_BERSERK",
+        id_append   = "APOTHEOSIS_SEA_BERSERK",
         name 		= "$spell_apotheosis_potion_to_sea_name",
         description = "$spell_apotheosis_potion_to_sea_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/potion.png",
@@ -2632,7 +2635,7 @@ apotheosis_spellappends = {
     ]]--
 	{
 		id          = "APOTHEOSIS_TOILET_PAPER",
-		id_matchup  = "FIREBOMB",
+		id_append   = "FIREBOMB",
 		name 		= "$spell_apotheosis_toilet_paper_name",
 		description = "$spell_apotheosis_toilet_paper_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/toilet_paper.png",
@@ -2654,7 +2657,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_SUPPORT_BULLET",
-		id_matchup  = "ANTIHEAL",
+		id_append   = "ANTIHEAL",
 		name 		= "$spell_apotheosis_support_bullet_name",
 		description = "$spell_apotheosis_support_bullet_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/support_bullet.png",
@@ -2675,7 +2678,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_FIELD_SUPPORT",
-		id_matchup  = "REGENERATION_FIELD",
+		id_append   = "REGENERATION_FIELD",
 		name 		= "$spell_apotheosis_field_support_name",
 		description = "$spell_apotheosis_field_support_desc",
 		sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/field_support.png",
@@ -2696,7 +2699,7 @@ apotheosis_spellappends = {
 	},
     {
         id          = "APOTHEOSIS_ALT_FIRE_COT",
-        id_matchup  = "APOTHEOSIS_ALT_FIRE_COV",
+        id_append   = "APOTHEOSIS_ALT_FIRE_COV",
         name 		= "$spell_apotheosis_alt_fire_cot_name",
         description = "$spell_apotheosis_alt_fire_cot_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/alt_fire_field_support.png",
@@ -2724,7 +2727,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_ORB_KNOWLEDGE",
-        id_matchup  = "APOTHEOSIS_STAR_SHOT",
+        id_append   = "APOTHEOSIS_STAR_SHOT",
         name 		= "$spell_apotheosis_orb_knowledge_name",
         description = is_holiday_active("april_fools") and "$spell_apotheosis_orb_knowledge_desc_april_fools" or "$spell_apotheosis_orb_knowledge_desc",
         sprite 		= is_holiday_active("april_fools") and "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb_april_fools.png" or "mods/Apotheosis/files/ui_gfx/gun_actions/learning_orb.png",
@@ -2758,7 +2761,7 @@ apotheosis_spellappends = {
     --[[
     {
         id          = "APOTHEOSIS_WATERBALL",
-        id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
+        id_append   = "APOTHEOSIS_ORB_KNOWLEDGE",
         name 		= "$spell_apotheosis_waterball_name",
         description = "$spell_apotheosis_waterball_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/orb_holy_shotgun.png",
@@ -2785,7 +2788,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_SPELL_WORM",
-        id_matchup  = "APOTHEOSIS_ORB_KNOWLEDGE",
+        id_append   = "APOTHEOSIS_ORB_KNOWLEDGE",
         name 		= "$spell_apotheosis_spell_worm_name",
         description = "$spell_apotheosis_spell_worm_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/spell_worm.png",
@@ -2842,7 +2845,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          		= "APOTHEOSIS_TERMINUS",
-        id_matchup          = "CESSATION",
+        id_append          = "CESSATION",
         name 				= "$spell_apotheosis_terminus_name",
         description 		= "$spell_apotheosis_terminus_desc",
         sprite 				= "mods/Apotheosis/files/ui_gfx/gun_actions/terminus.png",
@@ -2898,7 +2901,7 @@ apotheosis_spellappends = {
     --[[
     {
         id          = "APOTHEOSIS_SIGIL_RED",
-        id_matchup  = "BLOODLUST",
+        id_append   = "BLOODLUST",
         name 		= "Red Sigil",
         description = "Increases damage done by a projectile. Prolonged use may anger worldly spirits.",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_red.png",
@@ -2930,7 +2933,7 @@ apotheosis_spellappends = {
     --[[
     {
         id          = "APOTHEOSIS_SIGIL_CHROMATIC",
-        id_matchup  = "BLOODLUST",
+        id_append   = "BLOODLUST",
         name 		= "Chromatic Sigil",
         description = "Concentrates a projectile's damage into a single element, right click to change the focus. Prolonged use may anger worldly spirits.",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_red.png",
@@ -2968,7 +2971,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_SIGIL_GREEN",
-        id_matchup  = "BLOODLUST",
+        id_append   = "BLOODLUST",
         name 		= "Green Sigil",
         description = "Greatly increases one's healing abilities. Prolonged use may anger worldly spirits.",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_green.png",
@@ -2998,7 +3001,7 @@ apotheosis_spellappends = {
     },
     {
         id          = "APOTHEOSIS_SIGIL_BLUE",
-        id_matchup  = "BLOODLUST",
+        id_append   = "BLOODLUST",
         name 		= "Blue Sigil",
         description = "Immediately adds 60 mana to the wand. Prolonged use may anger worldly spirits.",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sigil_blue.png",
@@ -3028,7 +3031,7 @@ apotheosis_spellappends = {
     ]]--
     {
         id          = "APOTHEOSIS_SPELLBOOK",
-        id_matchup  = "KANTELE_G",
+        id_append   = "KANTELE_G",
         name         = "$spell_apotheosis_spellbook_glyph_name",
         description = "$spell_apotheosis_spellbook_glyph_desc",
         spawn_requires_flag = "apotheosis_spellbook_unlocked", -- spawn_requires_flag = "this_should_never_spawn", ? it feels odd that these can appear from chests n shit
@@ -3059,13 +3062,14 @@ apotheosis_spellappends = {
                 local vsc = EntityGetFirstComponentIncludingDisabled(action, "VariableStorageComponent") --[[@cast vsc number]]
                 add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_" .. ComponentGetValue2(vsc, "value_string") .. ".xml")
             else
-                add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_fake.xml")
+                local vsc = EntityGetFirstComponentIncludingDisabled(action, "VariableStorageComponent") --[[@cast vsc number]]
+                add_projectile("mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_fake_" .. ComponentGetValue2(vsc, "value_string") .. ".xml")
             end
         end,
     },
 	{
 		id          = "IF_RANDOM_APOTHEOSIS", --This is the only spell in the entire mod with it's ID on the end, because requirement spells check specifically for "IF_" the first 3 characters of the spell_id and nowhere else
-        id_matchup  = "IF_HALF",
+        id_append   = "IF_HALF",
 		name 		= "$spell_apotheosis_if_random_name",
 		description = "$spell_apotheosis_if_random_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/if_random.png",
@@ -3149,7 +3153,7 @@ apotheosis_spellappends = {
 	},
 	{
 		id          = "APOTHEOSIS_SEA_OMINOUS",
-        id_matchup  = "SEA_SWAMP",
+        id_append   = "SEA_SWAMP",
 		name 		= "$spell_apotheosis_sea_ominous_name",
 		description = "$spell_apotheosis_sea_ominous_desc",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/sea_ominous.png",
@@ -3166,6 +3170,141 @@ apotheosis_spellappends = {
 			c.fire_rate_wait = c.fire_rate_wait + 15
 		end,
 	},
+    --[[
+	{
+		id          = "APOTHEOSIS_MONO_CAST",
+        id_prepend  = "BURST_2",
+		name 		= "$spell_apotheosis_mono_cast_name",
+		description = "$spell_apotheosis_mono_cast_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/mono_cast.png",
+		sprite_unidentified = "data/ui_gfx/gun_actions/sea_acid_unidentified.png",
+		type 		= ACTION_TYPE_DRAW_MANY,
+		spawn_level                       = "0,1",
+		spawn_probability                 = "0.1,0.1",
+		price = 100,
+		mana = 0,
+		action 		= function()
+            if ( #deck > 0 ) then
+                
+                local function isSpellPresent(table_to_search,id)
+                    for i=1,#table_to_search do
+                        if table_to_search[i] == id then return true end
+                    end
+                    return false
+                end
+
+                local function banishDuplicatespells(table_to_search)
+                    local duplicates = {}
+                    local table_of_first_appearances = {}
+                    local data = {}
+                    for k=1,#table_to_search do
+                        local pos = k
+                        
+                        if isSpellPresent(table_of_first_appearances,table_to_search[pos].id) then
+                            --discard from deck
+                            --Add to discard
+                            data = table_to_search[pos]
+                            table.insert( duplicates, pos )
+                            --table.insert( discarded, data )
+                        elseif table_to_search[pos].uses_remaining == nil or table_to_search[pos].uses_remaining ~= 0 then
+                            --Add to first appearances
+                            table.insert( table_of_first_appearances, table_to_search[pos].id)
+                        end
+                    end
+
+                    if #duplicates > 0 then
+                        for k=1,#duplicates do
+                            local pos = #duplicates+1 - k
+                            table.insert( discarded, table_to_search[duplicates[pos] ] )
+                            table.remove( table_to_search, duplicates[pos] )
+                        end
+                    end
+                    return table_to_search
+                end
+
+                deck = banishDuplicatespells(deck)
+                hand = banishDuplicatespells(hand)
+            end
+
+            draw_actions( 1, true ) 
+		end,
+	},
+    ]]--
+    --[[
+    ]]--
+    {
+        id          = "APOTHEOSIS_FAE_LANTERN",
+        id_append   = "APOTHEOSIS_SPELL_WORM",
+        name 		= "$spell_apotheosis_fae_lantern_name",
+        description = "$spell_apotheosis_fae_lantern_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/fae_lantern.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+        related_projectiles	= {"mods/Apotheosis/files/entities/projectiles/deck/fae_lantern_projectile.xml", 1},
+        spawn_requires_flag = "apotheosis_fae_lantern_unlocked",
+        type 		= ACTION_TYPE_PROJECTILE,
+        spawn_level                       = "2,4,5,6", -- WYRM
+        spawn_probability                 = "0.05,0.1,0.1,0.1", -- WYRM
+        price = 220,
+        mana = 80,
+        pandorium_ignore = true,
+        action 		= function()
+            if reflecting then
+                Reflection_RegisterProjectile( "mods/Apotheosis/files/entities/projectiles/deck/fae_lantern_projectile.xml" ) --Lantern's Projectile Filepath
+                current_reload_time = current_reload_time + 20
+                return
+            end
+
+            c_old = c
+
+            BeginProjectile( "mods/Apotheosis/files/entities/projectiles/special/trigger_projectile.xml" ) --Dummy
+                BeginTriggerDeath()
+                    WriteCToDatat(c_old)
+
+                    BeginProjectile( "mods/Apotheosis/files/entities/projectiles/deck/fae_lantern.xml" ) --Lantern
+                    EndProjectile()
+                    register_action({
+                        --Hacky but functional, I'm probably wildly misusing this -Conga
+                        action_description = DontTouch_Data[2],
+                        lifetime_add = c_old["lifetime_add"],
+                        friendly_fire = c_old["friendly_fire"],
+                        speed_multiplier = c_old["speed_multiplier"]
+                    })
+                    SetProjectileConfigs()
+                EndTrigger()
+            EndProjectile()
+            current_reload_time = current_reload_time + 20
+        end,
+    },
+    --[[
+	{
+        id          = "APOTHEOSIS_GOD_CHALLENGE",
+        id_append   = "ALL_SPELLS
+		name 		= "Provocansdeos",
+		description = "You are heavily, heavily advised never to cast this spell. Casting this spell will challenge the gods to kill you.",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/fae_lantern.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/dynamite_unidentified.png",
+		spawn_requires_flag = "this_should_never_spawn",
+		spawn_manual_unlock = true,
+		never_unlimited		= true,
+		type 		= ACTION_TYPE_OTHER,
+		recursive	= true,
+		ai_never_uses = true,
+		spawn_level                       = "0", -- MANA_REDUCE
+		spawn_probability                 = "0", -- MANA_REDUCE
+		price = 1000,
+		mana = 600,
+		max_uses    = 1,
+		action 		= function()
+			local players = EntityGetWithTag( "player_unit" )
+			for i,v in ipairs( players ) do
+				local x,y = EntityGetTransform( v )
+				local eid = EntityLoad("data/entities/projectiles/deck/all_spells_loader.xml", x, y)
+			end
+			c.fire_rate_wait = c.fire_rate_wait + 100
+			current_reload_time = current_reload_time + 100
+		end,
+	},
+    ]]--
 }
 
 
@@ -3176,12 +3315,15 @@ function append_apotheosis_spells()
         do local v = apotheosis_spellappends[k]
             v.author    = v.author  or "Conga Lyne"
             v.mod       = v.mod     or "Apotheosis"
-            if v.id_matchup == nil then
+            if v.id_append == nil and v.id_prepend == nil then
                 table.insert(actions,v)
             else
                 for z=1,#actions
                 do c = actions[z]
-                    if c.id == v.id_matchup or z == #actions then
+                    if c.id == v.id_prepend then
+                        table.insert(actions,z,v)
+                        break
+                    elseif c.id == v.id_append or z == #actions then
                         table.insert(actions,z + 1,v)
                         break
                     end

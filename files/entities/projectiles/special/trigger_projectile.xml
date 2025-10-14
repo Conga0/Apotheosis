@@ -32,7 +32,7 @@
         collide_with_world="0"
         collide_with_tag=""
         >
-        <config_explosion damage="0.0" explosion_radius="0" />
+        <config_explosion damage="0.0" explosion_radius="0" damage_mortals="0" />
     </ProjectileComponent>
     <LuaComponent execute_on_added="1" script_source_file="mods/Apotheosis/files/scripts/projectiles/special/kill.lua" />
 </Entity>

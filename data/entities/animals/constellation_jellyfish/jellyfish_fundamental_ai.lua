@@ -1,9 +1,7 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
+
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
-local worldEntity = GameGetWorldStateEntity()
-local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
-local time = ComponentGetValue2(comp,"time")
-local skylight = GameGetSkyVisibility( pos_x, pos_y )
 
 local vsc_comps = EntityGetComponentIncludingDisabled(entity_id,"VariableStorageComponent")
 local generic_ai_data = vsc_comps[1]
@@ -15,7 +13,7 @@ local hp_max = ComponentGetValue2(dmgcomp,"max_hp")
 --Outside of this range is day time for Noita
 --If it's daytime then vanish the jellyfish until night
 --The jellyfish need clear visibility of the sun to soak in it's radiance
-if (time < 0.55 or time > 0.70) and (pos_y < 500 or skylight > 0.5) then
+if isDayTime(pos_x,pos_y) then
     EntityKill(entity_id)
     if EntityHasTag(entity_id,"minion") == false then
         EntityLoad("data/entities/animals/AI/constellation_jellyfish_day.xml",pos_x,pos_y)

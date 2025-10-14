@@ -1,4 +1,4 @@
-<Entity tags="energy_shield">	
+<Entity name="apotheosis_oversized_shield" tags="energy_shield">	
 
     <HitboxComponent 
         _tags="enabled_in_world"

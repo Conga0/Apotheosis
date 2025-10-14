@@ -3969,6 +3969,93 @@
     </Graphics>
   </CellDataChild>
 
+  <CellData
+  	_inherit_reactions="0"
+  	name="apotheosis_ant_mucus" 
+	ui_name="$material_apotheosis_ant_mucus"
+	tags="[static],[corrodible],[alchemy],[slime],[chaotic_transmutation]"
+	liquid_gravity="1.2"
+	liquid_sand="1"
+	liquid_static="1"
+	solid_static_type="1"
+	wang_color="88888140" 
+	show_in_creative_mode="1"
+	>
+  	<Graphics
+		texture_file="mods/Apotheosis/files/materials_gfx/ant_mucus.png"
+		color="88888140" >
+    </Graphics>
+	<ParticleEffect
+		vel.y="-13.14"
+		vel_random.min_x="-11.71"
+		vel_random.max_x="11.71"
+		vel_random.min_y="-17.18"
+		vel_random.max_y="-2.8"
+		lifetime.min="0.9"
+		lifetime.max="1.6"
+		gravity.y="60"
+		render_on_grid="1"
+		airflow_force="0.5314"
+		airflow_scale="0.1371"
+		friction="0.0002"
+		probability="0.0045"
+		count.min="0"
+		count.max="1"
+	>
+	</ParticleEffect>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="FOOD_POISONING" amount="0.3" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
+
+
+  <CellData
+	name="apotheosis_brick_static"
+	ui_name="$mat_brick"
+  	tags="[corrodible],[alchemy],[solid],[earth]"
+	burnable="1"
+	density="50"
+	cell_type="solid"
+	wang_color="ffb80800"
+	generates_smoke="0"
+	on_fire="0"
+	requires_oxygen="1"
+	solid_friction="1"
+	temperature_of_fire="30"
+	autoignition_temperature="99" 
+	solid_break_on_explosion_rate="10"
+	hp="4000"
+	convert_to_box2d_material="brick"
+	liquid_gravity="0.5"
+	liquid_sand="1"
+	liquid_static="1"
+	solid_static_type="1"
+	audio_physics_material_wall="gravel"
+	audio_physics_material_solid="rock"
+	>
+    <Graphics
+	texture_file="data/materials_gfx/brick.png"
+	color="ff73737f"
+	pixel_all_around="ff73737f"
+	
+	pixel_lonely="ff73737f"
+	pixel_top_right="ff73737f"
+	pixel_bottom_left="ff73737f"
+	
+	pixel_left="ffc7c7cc"
+	pixel_top_left="ffc7c7cc"
+	pixel_top="ffc7c7cc"
+	
+	pixel_right="ff706d60"
+	pixel_bottom_right="ff706d60"
+	pixel_bottom="ff706d60"
+	>
+    </Graphics>
+  </CellData>
+
 
 
 
@@ -4569,6 +4656,12 @@
 	<!--Turn milk + polymorphine into pilk-->
 	<Reaction probability="20" 
 		input_cell1="apotheosis_milk" input_cell2="magic_liquid_polymorph"
+		output_cell1="apotheosis_milk_polymorph_polymorph" 		output_cell2="apotheosis_milk_polymorph_polymorph"
+	>
+	</Reaction>
+	
+	<Reaction probability="20" 
+		input_cell1="milk" input_cell2="magic_liquid_polymorph"
 		output_cell1="apotheosis_milk_polymorph_polymorph" 		output_cell2="apotheosis_milk_polymorph_polymorph"
 	>
 	</Reaction>

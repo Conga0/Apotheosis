@@ -34,6 +34,7 @@ function math.sign(x)
     end
 end
 
+--Optimise this lmao
 function find_vsc(name)
     local vsc = EntityGetComponentIncludingDisabled(entity_id,"VariableStorageComponent")
     for k=1,#vsc do

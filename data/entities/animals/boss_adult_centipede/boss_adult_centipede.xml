@@ -99,7 +99,7 @@
 	<SpriteComponent 
 		_enabled="1" 
 		alpha="1" 
-		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_head.xml" 
+		image_file="mods/Apotheosis/files/enemies_gfx/worms/giant_centipede_head.xml"
 		rect_animation="eat" 
 		next_rect_animation="eat" 
 		update_transform="0"

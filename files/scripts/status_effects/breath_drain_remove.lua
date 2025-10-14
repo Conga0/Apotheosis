@@ -13,7 +13,7 @@ if children then
     end
 end
 
-if c_check ~= true then
+if c_check ~= true and player_id ~= 0 then
     --Disables Suffocatium if target has Breathless
 	if GameGetGameEffectCount( player_id, "BREATH_UNDERWATER" ) >= 1 then
         local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")

@@ -4,6 +4,7 @@ apo_state = { -- Altars of apostasy....... pft, -copi
 	min_reload = -math.huge,				---@type number|nil
 	min_cast_delay = -math.huge,			---@type number|nil
     mana_multiplier = 1.0,          ---@type number|nil
+	trigger_nesting = 0,			---@type number|nil
     old = {                         ---@type table
 		draw_shot = draw_shot,      ---@type function
 		draw_action = draw_action,  ---@type function
@@ -51,6 +52,24 @@ function BeginProjectile(entity_filename)
 		entity_filename = "mods/Apotheosis/files/entities/projectiles/deck/orb_knowledge_trigger.xml"
 	end
 	apo_state.old.BeginProjectile(entity_filename)
+end
+
+do	--Detect if a spell is being cast from within a trigger, and if so how deep
+	local fns = {"BeginTriggerDeath", "BeginTriggerHitWorld","BeginTriggerTimer"}
+
+	for _, fn in ipairs(fns) do
+		local _fn = _G[fn]
+		_G[fn] = function()
+			apo_state.trigger_nesting = apo_state.trigger_nesting + 1
+			_fn()
+		end
+	end
+
+	local _EndTrigger = EndTrigger
+	EndTrigger = function()
+		apo_state.trigger_nesting = apo_state.trigger_nesting - 1
+		_EndTrigger()
+	end
 end
 
 dofile_once("mods/Apotheosis/files/datat.lua")

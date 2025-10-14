@@ -1,4 +1,4 @@
-<Entity >
+<Entity name="$enemy_apotheosis_whisp_big" >
   <Base file="data/entities/animals/whisp_big.xml" include_children="1" >
     <DamageModelComponent 
       hp="6.5"

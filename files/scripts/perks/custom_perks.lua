@@ -16,7 +16,7 @@ apotheosis_perkappends = {
             EntityAddChild( entity_who_picked, child_id )
         end,
         _remove = function(entity_id)
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_ghostly_vision" ) then
                     EntityKill ( v )
@@ -24,7 +24,7 @@ apotheosis_perkappends = {
             end
         end,
         func_remove = function( entity_id )
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_ghostly_vision" ) then
                     EntityKill ( v )
@@ -74,7 +74,7 @@ apotheosis_perkappends = {
     ]]--
     {
         id = "APOTHEOSIS_REVENGE_REFLECTIVE",
-        id_matchup = "REVENGE_BULLET",
+        id_append = "REVENGE_BULLET",
         unlock_flag = "boss_centipede", --despite what you may think, this is Kolmisilma, not the adult centipede
         ui_name = "$perk_apotheosis_revenge_reflective",
         ui_description = "$perk_apotheosis_revenge_reflective_description",
@@ -146,7 +146,7 @@ apotheosis_perkappends = {
     },
     {
         id = "APOTHEOSIS_OVERSIZED_SHIELD",
-        id_matchup = "SHIELD",
+        id_append = "SHIELD",
         ui_name = "$perk_apotheosis_shield_oversized_name",
         ui_description = "$perk_apotheosis_shield_oversized_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/shield_oversized_ui.png",
@@ -226,6 +226,20 @@ apotheosis_perkappends = {
         _remove = function( entity_who_picked )
             local shield_num = tonumber( GlobalsGetValue( "PERK_SHIELD_OVERSIZED_COUNT", "0" ) ) - 1
             GlobalsSetValue( "PERK_SHIELD_OVERSIZED_COUNT", tostring( shield_num ) )
+
+            local children = EntityGetAllChildren(entity_who_picked) or {}
+            local largest_radius = 0
+            local largest_shield = 0
+            for k=1,#children do
+                if EntityGetName(children[k]) == "apotheosis_oversized_shield" then
+                    local r = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(children[k],"EnergyShieldComponent"),"radius")
+                    if r > 0 then
+                        largest_radius = r
+                        largest_shield = children[k]
+                    end
+                end
+            end
+            if largest_shield > 0 then EntityKill(largest_shield) end
         end,
         func_remove = function( entity_who_picked )
             local shield_num = 0
@@ -302,10 +316,10 @@ apotheosis_perkappends = {
 
                 --Default speed values Mina starts with
                 local defaults = {
-                -95,
-                56,
-                95,
-                85,
+                -95 * 0.75,
+                56 * 0.75,
+                95 * 0.75,
+                85 * 0.75,
                 154,
                 52,
                 -57,
@@ -358,7 +372,7 @@ apotheosis_perkappends = {
     },
     {
         id = "APOTHEOSIS_ALCOHOL_IMMUNITY",
-        id_matchup = "PROTECTION_ELECTRICITY",
+        id_append = "PROTECTION_ELECTRICITY",
         ui_name = "$perk_apotheosis_alcohol_immunity",
         ui_description = "$perk_apotheosis_alcohol_immunity_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/protection_alcohol_perk_ui.png",
@@ -373,7 +387,7 @@ apotheosis_perkappends = {
             EntityAddChild( entity_who_picked, child_id )
         end,
         _remove = function(entity_id)
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_alcohol_immunity" ) then
                     EntityKill ( v )
@@ -381,7 +395,7 @@ apotheosis_perkappends = {
             end
         end,
         func_remove = function( entity_id )
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_alcohol_immunity" ) then
                     EntityKill ( v )
@@ -391,7 +405,7 @@ apotheosis_perkappends = {
     },
     {
         id = "APOTHEOSIS_TRIP_IMMUNITY",
-        id_matchup = "APOTHEOSIS_ALCOHOL_IMMUNITY",
+        id_append = "APOTHEOSIS_ALCOHOL_IMMUNITY",
         ui_name = "$perk_apotheosis_trip_immunity",
         ui_description = "$perk_apotheosis_trip_immunity_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/protection_trip_perk_ui.png",
@@ -411,7 +425,7 @@ apotheosis_perkappends = {
     },
     {
         id = "APOTHEOSIS_NO_RECOIL",
-        id_matchup = "NO_MORE_KNOCKBACK",
+        id_append = "NO_MORE_KNOCKBACK",
         ui_name = "$perk_apotheosis_no_recoil",
         ui_description = "$perk_apotheosis_no_recoil_description",
         ui_icon = "data/ui_gfx/perk_icons/low_recoil.png",
@@ -425,7 +439,7 @@ apotheosis_perkappends = {
             EntityAddChild( entity_who_picked, child_id )
         end,
         _remove = function(entity_id)
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_no_recoil" ) then
                     EntityKill ( v )
@@ -433,7 +447,7 @@ apotheosis_perkappends = {
             end
         end,
         func_remove = function( entity_id )
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_recoil" ) then
                     EntityKill ( v )
@@ -523,6 +537,7 @@ apotheosis_perkappends = {
                 end
             end
         end,
+        --[[
         _remove = function(entity_who_picked)
 
             GlobalsSetValue( "APOTHEOSIS_VOID_COUNT", 0 )
@@ -563,10 +578,10 @@ apotheosis_perkappends = {
 
                 --Default speed values Mina starts with
                 local defaults = {
-                -95,
-                56,
-                95,
-                85,
+                -95 * 0.75,
+                56 * 0.75,
+                95 * 0.75,
+                85 * 0.75,
                 154,
                 52,
                 -57,
@@ -577,10 +592,11 @@ apotheosis_perkappends = {
 
                 for k=1,#values
                 do v = values[k]
-                    ComponentSetValue2(comp,v,defaults[k])
+                    ComponentSetValue2(comp,v,math.max(defaults[k],ComponentGetValue2(comp,v) - (defaults[k] * 0.4)))
                 end
             end
         end,
+        ]]--
         func_remove = function( entity_who_picked )
 
             GlobalsSetValue( "APOTHEOSIS_VOID_COUNT", 0 )
@@ -641,7 +657,7 @@ apotheosis_perkappends = {
     },
     {
         id = "APOTHEOSIS_NO_BLOOD",
-        id_matchup = "GLOBAL_GORE",
+        id_append = "GLOBAL_GORE",
         ui_name = "$perk_apotheosis_no_blood",
         ui_description = "$perk_apotheosis_no_blood_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/no_blood_perk_ui.png",
@@ -656,7 +672,7 @@ apotheosis_perkappends = {
             EntityAddChild( entity_who_picked, child_id )
         end,
         _remove = function(entity_id)
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_no_blood" ) then
                     EntityKill ( v )
@@ -664,7 +680,7 @@ apotheosis_perkappends = {
             end
         end,
         func_remove = function( entity_id )
-            local apotheosis_targets = EntityGetAllChildren(entity_id)
+            local apotheosis_targets = EntityGetAllChildren(entity_id) or {}
             for i,v in ipairs( apotheosis_targets ) do
                 if ( v ~= entity_id ) and ( EntityGetName( v ) == "apotheosis_perk_no_blood" ) then
                     EntityKill ( v )
@@ -675,7 +691,7 @@ apotheosis_perkappends = {
     --[[
     {
         id = "APOTHEOSIS_GOD_TI",
-        id_matchup = "APOTHEOSIS_VOID",
+        id_append = "APOTHEOSIS_VOID",
         ui_name = "$perk_apotheosis_god_ti",
         ui_description = "$perk_apotheosis_god_ti_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/no_blood_perk_ui.png",
@@ -713,7 +729,7 @@ apotheosis_perkappends = {
     ]]--
 	{
 		id = "APOTHEOSIS_PLANE_RADAR",
-        id_matchup = "MOON_RADAR",
+        id_append = "MOON_RADAR",
         ui_name = "$perk_apotheosis_plane_radar",
         ui_description = "$perk_apotheosis_plane_radar_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/plane_radar_perk_ui.png",
@@ -735,7 +751,7 @@ apotheosis_perkappends = {
 	},
 	{
 		id = "APOTHEOSIS_ABSORBENT_CAPE",
-        id_matchup = "REPELLING_CAPE",
+        id_append = "REPELLING_CAPE",
         ui_name = "$perk_apotheosis_absorbent_cape",
         ui_description = "$perk_apotheosis_absorbent_cape_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/absorbent_cape_ui.png",
@@ -785,7 +801,7 @@ apotheosis_perkappends = {
             ComponentSetValue2(staincomp,"stain_shaken_drop_chance_multiplier",1)
             
             local absorbent_vsc = 0
-            local vcomps = EntityGetComponent(entity_who_picked,"VariableStorageComponent")
+            local vcomps = EntityGetComponent(entity_id,"VariableStorageComponent") or {}
             for k=1,#vcomps do
                 if ComponentGetValue2(vcomps[k],"name") == "perk_absorbent_cape" then
                     perk_found = true
@@ -871,7 +887,7 @@ apotheosis_perkappends = {
     --Maybe there could be a puzzle or cost behind it like needing to go through a sacred rock tomb and you need to figure out a wand that can teleport you through it, but I can't think of anything particularly fitting right now...
     {
         id = "APOTHEOSIS_INFINITE_FLIGHT",
-        id_matchup = "PROTECTION_INFINITE_FLIGHT",
+        id_append = "PROTECTION_INFINITE_FLIGHT",
         ui_name = "$perk_apotheosis_infinite_flight",   --Our Gift
         ui_description = "$perk_apotheosis_infinite_flight_description",
         ui_icon = "mods/Apotheosis/files/ui_gfx/perk_icons/infinite_flight_ui.png",
@@ -942,14 +958,19 @@ function apotheosis_perk_appends()
             end
 
             --Adds Perk into the list at the position we want
-            if v.id_matchup == nil then
+            if v.id_append == nil then
                 v.author    = v.author  or "Conga Lyne"
                 v.mod       = v.mod     or "Apotheosis"
                 table.insert(perk_list,v)
             else
                 for z=1,#perk_list
                 do c = perk_list[z]
-                    if c.id == v.id_matchup or z == #perk_list then
+                    if c.id == v.id_prepend then
+                        v.author    = v.author  or "Conga Lyne"
+                        v.mod       = v.mod     or "Apotheosis"
+                        table.insert(perk_list,z,v)
+                        break
+                    elseif c.id == v.id_append or z == #perk_list then
                         v.author    = v.author  or "Conga Lyne"
                         v.mod       = v.mod     or "Apotheosis"
                         table.insert(perk_list,z + 1,v)

@@ -1,3 +1,5 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
+
 function get_player()
   return (EntityGetWithTag( "player_unit" ) or {})[1]
 end
@@ -95,7 +97,7 @@ function SongNotePlayed()
                 if (b[#b-i] == matches[#matches-i]) then
                   if (i == notec) then
                     ComponentSetValue( comp, "value_string", "" )
-                     GamePrint( "Song: "..song)
+                    GamePrint("$log_apotheosis_spell_success")
                     instrument_funcs[song]()
                     return
                   end

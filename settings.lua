@@ -1,9 +1,11 @@
 dofile("data/scripts/lib/mod_settings.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 ---@diagnostic disable-next-line: lowercase-global
 function mod_setting_change_callback( mod_id, gui, in_main_menu, setting, old_value, new_value  )
 	print( tostring(new_value) )
 end
+
 
 local currentLang = GameTextGetTranslatedOrNot("$current_language")
 

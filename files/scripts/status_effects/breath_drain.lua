@@ -2,7 +2,7 @@ local entity_id = GetUpdatedEntityID()
 local player_id = EntityGetParent( entity_id )
 local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
 
-if dmgcomp ~= 0 then
+if dmgcomp ~= 0 and player_id ~= 0 then
 
     local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
 

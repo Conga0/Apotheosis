@@ -1801,7 +1801,14 @@ do -- Generate spellbook glyph projectiles
       local filepath = "mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_base.xml"
       local content = ModTextFileGetContent(filepath)
       content = content:gsub("\"a\"",table.concat({"\"",letter,"\""}))
+      content = content:gsub("glyph_a.xml",table.concat({"glyph_",letter,".xml"}))
       filepath = filepath:gsub("spellbook_base.xml",table.concat({"spellbook_",letter,".xml"}))
+      ModTextFileSetContent(filepath,content)
+      
+      filepath = "mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_fake.xml"
+      content = ModTextFileGetContent(filepath)
+      content = content:gsub("glyph_a.xml",table.concat({"glyph_",letter,".xml"}))
+      filepath = filepath:gsub("spellbook_fake.xml",table.concat({"spellbook_fake_",letter,".xml"}))
       ModTextFileSetContent(filepath,content)
   end
 end

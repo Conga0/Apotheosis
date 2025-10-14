@@ -475,8 +475,7 @@ ModLuaFileAppend("data/scripts/perks/perk_list.lua", "mods/Apotheosis/files/scri
 
 
 -- Custom Status support injection
-ModLuaFileAppend("data/scripts/status_effects/status_list.lua",
-	"mods/Apotheosis/files/scripts/status_effects/status_effects.lua")
+ModLuaFileAppend("data/scripts/status_effects/status_list.lua", "mods/Apotheosis/files/scripts/status_effects/status_effects.lua")
 
 
 -- Custom Audio Support
@@ -792,10 +791,7 @@ dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua
 
 
 
--- Seasonal
-local year, month, day, hour, minute = GameGetDateAndTimeLocal()
-
-
+-- Seasonal Events
 if seasonalSetting == true then
 	-- Halloween Event
 	if is_holiday_active("halloween") then
@@ -1475,7 +1471,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"I AM YOUR DEAFENING",
 		"Not as fair as fairmod!",
 		"Buy one get one free!",
-		"Move like an egyptian!",
+		"Walk like an egyptian!",
 		"10 doesn't mean 11!!!",
 		"Call an exorcist!",
 		"Awaken my masters!",
@@ -1486,7 +1482,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"I have intense bomb-igniting thoughts!!",
 		"D4 + G4, D4 + G4, G4 + C5, D5 + G4, F4 + A#4"
 	}
-	SetRandomSeed(minute, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
+	SetRandomSeed(minute * second, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]
 
 	--6.66% chance for the associated user's reference splash to appear if they're playing

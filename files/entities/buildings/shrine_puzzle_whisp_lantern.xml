@@ -1,0 +1,95 @@
+<Entity>
+	<LuaComponent
+		_enabled="1"
+    	script_interacting="mods/Apotheosis/files/scripts/buildings/shrine_puzzle_whisp_lantern.lua"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/shrine_puzzle_whisp_lantern.lua"
+		execute_every_n_frame="10"
+		>
+	</LuaComponent>
+
+	<InteractableComponent
+		_tags="invincible"
+		_enabled="0"
+		radius="10"
+		ui_text="$building_apotheosis_whisp_lantern"
+		name="TEST TITLE"
+	>
+	</InteractableComponent>
+	
+	<SpriteComponent 
+		_enabled="0"
+		_tags="enabled_by_liquid"
+		alpha="1"
+		image_file="mods/apotheosis/files/projectiles_gfx/fae_lantern.png"
+		next_rect_animation=""
+		offset_x="6"
+		offset_y="6"
+		rect_animation="spawn"
+		update_transform_rotation="0"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent
+		_enabled="0"
+		_tags="enabled_by_script"
+		image_file="mods/Apotheosis/files/enemies_gfx/whisp.xml"
+		offset_x="4"
+		offset_y="4"
+		z_index="1.01"
+		update_transform_rotation="0"
+		>
+	</SpriteComponent>
+
+	<SpriteComponent 
+		_enabled="0"
+		_tags="enabled_by_script"
+		alpha="0.8" 
+		never_ragdollify_on_death="1"
+		image_file="mods/Apotheosis/files/enemies_gfx/whisp_emissive.xml"
+		offset_x="4"
+		offset_y="4"
+		update_transform_rotation="0"
+		emissive="1"
+		additive="1"
+		>
+	</SpriteComponent>
+
+	<LightComponent 
+	    _enabled="0"
+		_tags="enabled_by_script"
+	    radius="100" 
+		r="233"
+		g="227"
+		b="68"
+		fade_out_time="1.5"
+		>
+    </LightComponent>
+  
+  <ParticleEmitterComponent 
+	    _enabled="0"
+		_tags="enabled_by_script"
+		emitted_material_name="fire"
+		custom_style="FIRE"
+		count_min="1"
+		count_max="2"
+		offset.x="0"
+		offset.y="-0.5"
+		x_pos_offset_min="-2"
+		y_pos_offset_min="-2"
+		x_pos_offset_max="2"
+		y_pos_offset_max="2"
+		x_vel_min="-10"
+		x_vel_max="10"
+		y_vel_min="-10"
+		y_vel_max="10"
+		count_min="5"
+		count_max="5"
+		lifetime_min="0.4"
+		lifetime_max="1.0"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="2"
+		is_emitting="1" >
+  </ParticleEmitterComponent>
+</Entity>
