@@ -15,9 +15,9 @@ end
 if seasonalSetting == true then
 	local year, month, day = GameGetDateAndTimeLocal()
 	
-	if ( month == 10 ) and ( day >= 15 ) then -- Halloween Event
+	if is_holiday_active("halloween") then -- Halloween Event
 		cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
-	elseif ( month == 12 ) and ( day >= 15 ) then --Smissmass Event
+	elseif is_holiday_active("smissmass") then --Smissmass Event
 		cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
 	end
 end
@@ -62,7 +62,7 @@ end
 
 if seasonalSetting == true then
 	-- Halloween Event
-	if ( month == 10 ) and ( day >= 1 ) then
+	if is_holiday_active("halloween") then
 		if esotericCatSeed >= 95 and (valid == true) then
 			EntityLoad( "data/entities/" .. catPath .. "/cat_mocreeps_esoteric.xml", pos_x, pos_y )
 			valid = false
@@ -70,7 +70,7 @@ if seasonalSetting == true then
 	end
 
 	-- Smissmass Event
-	if ( month == 10 ) and ( day >= 1 ) then
+	if is_holiday_active("smissmass") then
 		if goldenCatSeed <= 4 and (valid == true) then
 			EntityLoad( "data/entities/" .. catPath .. "/cat_mocreeps_golden.xml", pos_x, pos_y )
 			valid = false

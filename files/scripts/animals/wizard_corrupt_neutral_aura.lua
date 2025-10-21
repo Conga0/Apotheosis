@@ -15,8 +15,7 @@ if GameGetGameEffectCount( entity_id, "CHARM" ) < 1 then
         if not hit then
             local shieldren = EntityGetAllChildren(v)
             for z=1,#shieldren do
-                local b = shieldren[z]
-                if EntityHasTag(b,"energy_shield") then
+                if EntityHasTag(shieldren[z],"energy_shield") then
                     found = true
                     break
                 end
@@ -34,8 +33,7 @@ if GameGetGameEffectCount( entity_id, "CHARM" ) < 1 then
             --Graphics
             --Here we load an entity to trail a draw, then tell that trail to draw from the projectile to the target
             --Conga: Could be optimised with the new GameCreateCosmeticParticle function? Uncertain if worth the effort
-            local targ_x, targ_y = EntityGetTransform(v)
-            local child = EntityLoad("mods/Apotheosis/files/entities/animators/neutral_shield_fx.xml", targ_x, targ_y - 6)
+            local child = EntityLoad("mods/Apotheosis/files/entities/animators/neutral_shield_fx.xml", plyr_x, plyr_y - 6)
             local comp = EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent")
             ComponentSetValue2(comp, "mExPosition", pos_x, pos_y - 10)
         end

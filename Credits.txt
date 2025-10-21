@@ -53,6 +53,7 @@ Kitten & Shug - Chinese Translators
 
 Nathan - Created Red Sand trip visual effects
 Helped significantly with Aesthete of Water whirlpool particles
+Helped with random arc spell functionality
 
 Alex - Created Mind Weave warp visual effects
 

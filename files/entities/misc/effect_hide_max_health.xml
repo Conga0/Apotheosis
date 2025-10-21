@@ -1,0 +1,78 @@
+<Entity>
+	<InheritTransformComponent />
+	
+	<GameEffectComponent
+		effect="NONE"
+		frames="1200"
+		>
+	</GameEffectComponent>
+	
+	<VariableStorageComponent
+        name="trueHealth"
+        value_float="4"
+        >
+    </VariableStorageComponent>
+	
+	<DrugEffectModifierComponent>
+		<fx_add
+			distortion_amount="0.2"
+			color_amount="0.05"
+			fractals_amount="0.1"
+		/>
+	</DrugEffectModifierComponent>
+	
+	<SpriteParticleEmitterComponent
+        sprite_file="data/particles/heal_small.xml"
+        lifetime="0.75"
+        randomize_lifetime.min="0.5"
+        randomize_lifetime.max="1.0"
+        emission_interval_min_frames="2"
+        emission_interval_max_frames="15"
+        count_min="1"
+        count_max="1"
+        additive="1"
+        emissive="0"
+        sprite_random_rotation="1"
+        gravity.y="-5"
+        randomize_velocity.min_y="-10" 
+        randomize_velocity.max_y="10"
+        randomize_velocity.min_x="-10"  
+        randomize_velocity.max_x="10"
+        randomize_position.min_x="-7"
+		randomize_position.max_x="7"
+		randomize_position.min_y="-10"
+		randomize_position.max_y="10"
+		velocity_slowdown="0.5"
+        randomize_animation_speed_coeff.min="0.667"  
+        randomize_animation_speed_coeff.max="1.0" 
+        >
+    </SpriteParticleEmitterComponent>
+	
+	<LuaComponent
+    script_source_file="mods/Apotheosis/files/scripts/status_effects/hide_max_health_start.lua"
+    execute_every_n_frame="1"
+    remove_after_executed="1"
+	></LuaComponent>
+	
+	<LuaComponent
+    script_source_file="mods/Apotheosis/files/scripts/status_effects/hide_max_health.lua"
+	execute_every_n_frame="1"
+	></LuaComponent>
+	
+	<LuaComponent
+    script_source_file="mods/Apotheosis/files/scripts/status_effects/hide_max_health_end.lua"
+	execute_every_n_frame="-1"
+    execute_on_removed="1"
+    ></LuaComponent>
+	
+	<UIIconComponent
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/bliss.png"
+		name="$status_apotheosis_hide_max_health_name"
+		description="$status_apotheosis_hide_max_health_desc"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+	
+</Entity>

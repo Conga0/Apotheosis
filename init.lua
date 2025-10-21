@@ -9,11 +9,6 @@ local motdSetting = ModSettingGet("Apotheosis.motd_setting")
 local seasonalSetting = ModSettingGet("Apotheosis.seasonal_events")
 local spoopyGFXSetting = ModSettingGet("Apotheosis.spoopy_graphics")
 
-local seasonalForced_AprilFools = ModSettingGet("Apotheosis.seasonal_events_forced_april_fools")
-local seasonalForced_Birthday = ModSettingGet("Apotheosis.seasonal_events_forced_birthday")
-local seasonalForced_Halloween = ModSettingGet("Apotheosis.seasonal_events_forced_halloween")
-local seasonalForced_Smissmass = ModSettingGet("Apotheosis.seasonal_events_forced_smissmass")
-
 local experimental_biomemap = ModSettingGet("Apotheosis.exp_biomemap")
 
 local capeSetting = ModSettingGet("Apotheosis.secret_golden_cape")
@@ -156,7 +151,7 @@ ModLuaFileAppend("data/scripts/gun/gun.lua", "mods/Apotheosis/files/gun.lua")
 dofile_once("mods/Apotheosis/lib/injection.lua")
 
 
-inject(args.StringFile, modes.APPEND, "data/shaders/post_final.frag", "gl_FragColor.a = 1.0;",
+inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "gl_FragColor.a = 1.0;",
 	"mods/Apotheosis/files/scripts/shader/constellation_transition_white.frag")
 inject(args.StringFile, modes.PREPEND, "data/shaders/post_final.frag", "varying vec2 tex_coord_fogofwar;",
 	"mods/Apotheosis/files/scripts/shader/constellation_transition_global.frag")
@@ -517,7 +512,7 @@ end
 --MOTD & Welcome Hint
 if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
 	local flag_status = HasFlagPersistent("apotheosis_card_unlocked_welcome_hint")
-	if motdSetting == true or ((month == 4) and (day == 1)) then
+	if motdSetting == true or is_holiday_active("april_fools") then
 		dofile_once("mods/Apotheosis/files/scripts/misc/motd_list.lua")
 	elseif flag_status == false then
 		--dofile_once( "mods/Apotheosis/files/scripts/misc/welcome_hint.lua" )
@@ -808,13 +803,10 @@ dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua
 
 
 
--- Seasonal
-local year, month, day, hour, minute = GameGetDateAndTimeLocal()
-
-
+-- Seasonal Events
 if seasonalSetting == true then
 	-- Halloween Event
-	if ((month == 10) and (day >= 15)) or seasonalForced_Halloween then
+	if is_holiday_active("halloween") then
 		ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coal Mine, first area, goodluck on your run
 		ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coalmine but to the west side near damp cave
 		ModLuaFileAppend("data/scripts/biomes/excavationsite.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/halloween.lua")                                           --Coal Pits, area 2
@@ -852,7 +844,7 @@ if seasonalSetting == true then
 
 
 	-- Smissmass Event
-	if ((month == 12) and (day >= 15)) or seasonalForced_Smissmass then
+	if is_holiday_active("smissmass") then
 		local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 		local content = ModTextFileGetContent("data/entities/animals/hisii_minecart_tnt.xml")
 		local xml = nxml.parse(content)
@@ -917,7 +909,7 @@ if seasonalSetting == true then
 	-- Birthday Event
 	-- Update to be centered on 21/07/2022, this is when the first enemy was created and development officially began. Should be a fair trade off between not being the official release date but also not clashing with Halloween
 	--Remember Update global_populator & global_populator_small too, wand tinkering crystal spawns are inside.
-	if ((month == 7) and ((day >= 20) and (day <= 22))) or seasonalForced_Birthday then
+	if is_holiday_active("birthday") then
 		ModLuaFileAppend("data/scripts/biomes/hills.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua") --Hills slightly below ground
 		ModLuaFileAppend("data/scripts/biomes/coalmine.lua", "mods/Apotheosis/files/scripts/biomes/seasonal/birthday.lua") --Coal Mine, first area, goodluck on your run
 		ModLuaFileAppend("data/scripts/biomes/coalmine_alt.lua",
@@ -937,7 +929,7 @@ if seasonalSetting == true then
 
 
 	-- April Fools Event
-	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+	if is_holiday_active("april_fools") then
 		--Replace all hisii hobos with clowns.
 		local content = ModTextFileGetContent("data/entities/animals/seasonal/hisii_hobo.xml")
 		ModTextFileSetContent("data/entities/animals/hisii_hobo.xml", content)
@@ -1093,6 +1085,14 @@ do -- Player Editor
     </Entity>
   ]]))
 
+	--Adds minimum cast delay gun extra to the player
+	xml:add_child(nxml.parse([[
+	<ShotEffectComponent
+		extra_modifier="apotheosis_min_cast_delay"
+		>
+	</ShotEffectComponent>
+  ]]))
+
 	--Debug
 	--xml:add_child(nxml.parse([[
 	--  <SpriteComponent
@@ -1232,7 +1232,7 @@ end
 --And print Happy April Fools at the start of the run
 --Happy april fools <3
 function AprilFoolsPlayerSpawn(plyr_id)
-	if ((month == 4) and (day == 1)) or seasonalForced_AprilFools then
+	if is_holiday_active("april_fools") then
 		GamePrint("$sign_apotheosis_aprilfools_intro")
 	end
 end
@@ -1388,7 +1388,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Drinking may cause lifelong harm to your homunculus",
 		"Best in it's class!",
 		"Limited edition!",
-		"More than 50,000 downloads!",
+		"More than 60,000 downloads!",
 		"May contain spiders",
 		"Exploding eggs!",
 		"Ask your doctor!",
@@ -1402,7 +1402,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Déjà vu!",
 		"Not associated with shadowy wizard gangs",
 		"The rumors are true",
-		"3 years in development",
+		"3 years in development", --We won't be developing this forever, so it'd be improper to leave this as something which automatically updates over time. May as well see how high this number can go before it stops incrementing
 		"Casual gaming",
 		"Hardcore gaming!",
 		"Pneumonoultramicroscopicsilicovolcanoconiosis!",
@@ -1410,7 +1410,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Swan dive into the sun!",
 		"Now with 100% more sweat!",
 		"Now with furious blacksmiths!",
-		"Now with 100% more maggots",
+		"Now with 100% more maggots and dogs!",
 		"Played by snakes with tophats!",
 		"Ah! Chippie!",
 		"Rabbits, guns and supermarts are bad mix",
@@ -1486,13 +1486,18 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"I AM YOUR DEAFENING",
 		"Not as fair as fairmod!",
 		"Buy one get one free!",
-		"Move like an egyptian!",
+		"Walk like an egyptian!",
 		"10 doesn't mean 11!!!",
 		"Call an exorcist!",
 		"Awaken my masters!",
 		"Less addictive than nethack!",
 		"Something wicked this way comes...",
+		"Remember to slip, slop, slap, seek and slide!",
+		"Back in my day we couldn't drop spells freely",
+		"I have intense bomb-igniting thoughts!!",
+		"D4 + G4, D4 + G4, G4 + C5, D5 + G4, F4 + A#4"
 	}
+	SetRandomSeed(minute * second, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]
 
 	--6.66% chance for the associated user's reference splash to appear if they're playing
@@ -1506,8 +1511,8 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		end
 	end
 
-	--1 in 10000 chance for it to swap around the o and the e
-	if Random(1,10000) == 1 then mod_name = "Apothoesis" end
+	--1 in 1000 chance for it to swap around the o and the e
+	if Random(1,1000) == 1 then mod_name = "Apothoesis" end
 end
 
 function OnModPreInit()

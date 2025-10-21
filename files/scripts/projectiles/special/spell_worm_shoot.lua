@@ -85,7 +85,13 @@ if ( current > 0 ) and ( vcomp ~= 0 ) then
                         ComponentSetValue2(pvcomp,"gravity_y",ComponentGetValue2(pvcomp,"gravity_y") + (gun_info[53]or 0))
                         local pcomp = EntityGetFirstComponentIncludingDisabled(pid,"ProjectileComponent")
                         ComponentSetValue2(pcomp,"mWhoShot",ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileComponent"),"mWhoShot"))
-                        ComponentSetValue2(pcomp,"mShooterHerdId",StringToHerdId("player"))
+                        local ohcomp = EntityGetFirstComponentIncludingDisabled(owner_id,"GenomeDataComponent")
+                        ComponentSetValue2(pcomp,"mShooterHerdId",ohcomp ~= 0 and ComponentGetValue2(ohcomp,"herd_id") or StringToHerdId("player"))
+
+                    --If an enemy is shooting the spell, set the homing target to be 'prey'
+                    if EntityHasTag(owner_id,"player_unit") == false then
+                        ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(pid,"HomingComponent"),"target_tag","prey")
+                    end
 
                         ---Gun data time
                         --Damage

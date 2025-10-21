@@ -1,8 +1,9 @@
 
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform( entity_id )
+local orbital_count = 6
 
-for i=1,4 do
+for i=1,orbital_count do
 
     local eid = EntityLoad( "data/entities/animals/enchanted_books/enchanted_book_fire_flame.xml", x, y )
 

@@ -127,6 +127,25 @@ function split_string(inputstr, sep)
       ghost_whisp = 100,
       orcs = { 0, 100 },
   })
+  content = add_new_genome(content, "mage_library", 0, 0, 100, {
+      player = 0,
+      ["-1"] = 0,
+      nest = { 0, 100 },
+      boss_limbs = 100,
+      healer = 100,
+      apparition = { 0, 100 },
+      bat = { 0, 100 },
+      mage = 0,
+      mage_swapper = 0,
+      curse = 100,
+      trap = 100,
+      ghost_boss = 100,
+      mage_corrupted = 0,
+      ghost_fairy = 100,
+      ghost_whisp = 100,
+      mimic = 0,
+      orcs = 60,
+  })
   content = add_new_genome(content, "hate_all", 0, 0, 0, {
   })
   

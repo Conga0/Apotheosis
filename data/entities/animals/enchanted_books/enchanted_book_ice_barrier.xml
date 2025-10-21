@@ -1,0 +1,33 @@
+<Entity >
+	
+	<LuaComponent
+		_tags="invincible"
+		script_source_file="data/entities/animals/enchanted_books/enchanted_book_ice_barrier_rotation.lua"
+		script_collision_trigger_hit="data/entities/animals/enchanted_books/enchanted_book_fire_flame_destroy.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<SpriteComponent 
+		image_file="data/entities/animals/enchanted_books/enchanted_book_ice_barrier.png"
+		offset_x="8"
+		offset_y="8"
+		z_index="1.1" >
+	</SpriteComponent>
+	
+	<VariableStorageComponent
+		_tags="wizard_orb_id"
+		name="wizard_orb_id"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+    <CollisionTriggerComponent
+		width="24"
+		height="24" 
+		radius="24"
+		required_tag="projectile"
+		destroy_this_entity_when_triggered="0" >
+  	</CollisionTriggerComponent>
+
+</Entity>

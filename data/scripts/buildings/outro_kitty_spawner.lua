@@ -1,4 +1,5 @@
 dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 local seasonalSetting = ModSettingGet( "Apotheosis.seasonal_events" )
 
 function collision_trigger()
@@ -18,9 +19,9 @@ function collision_trigger()
 	if seasonalSetting == true then
 		local year, month, day = GameGetDateAndTimeLocal()
 		
-		if ( month == 10 ) and ( day >= 15 ) then -- Halloween Event
+		if is_holiday_active("halloween") then -- Halloween Event
 			cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
-		elseif ( month == 12 ) and ( day >= 15 ) then --Smissmass Event
+		elseif is_holiday_active("smissmass") then --Smissmass Event
 			cat_list = { "cat_mocreeps", "cat_mocreeps_black", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_white", "cat_mocreeps_spoopy", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_skittle", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_frisky", "cat_mocreeps_spoopy_tiger" }
 		end
 	end
@@ -61,14 +62,14 @@ function collision_trigger()
 	if seasonalSetting == true then
 		local year, month, day = GameGetDateAndTimeLocal()
 		-- Halloween Event
-		if ( month == 10 ) and ( day >= 1 ) then
+		if is_holiday_active("halloween") then
 			if esotericCatSeed >= 95 then
 				EntityLoad( "data/entities/" .. catPath .. "/cat_mocreeps_esoteric.xml", pos_x, pos_y )
 			end
 		end
 
 		-- Smissmass Event
-		if ( month == 10 ) and ( day >= 1 ) then
+		if is_holiday_active("smissmass") then
 			if goldenCatSeed <= 4 then
 				EntityLoad( "data/entities/" .. catPath .. "/cat_mocreeps_golden.xml", pos_x, pos_y )
 			elseif goldenCatSeed <= 6 then

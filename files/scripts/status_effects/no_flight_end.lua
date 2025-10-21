@@ -45,6 +45,6 @@ if permitted == true then
     local old_jump = ComponentGetValue2(comp2,"jump_velocity_y")
     local old_swim = ComponentGetValue2(comp2,"swim_up_buoyancy_coeff")
 
-    ComponentSetValue2(comp2,"jump_velocity_y",old_jump - jump_vel)
-    ComponentSetValue2(comp2,"swim_up_buoyancy_coeff",old_swim - swim_vel)
+    ComponentSetValue2(comp2,"jump_velocity_y",math.max(old_jump - jump_vel,-95))
+    ComponentSetValue2(comp2,"swim_up_buoyancy_coeff",math.max(old_swim - swim_vel,swim_vel))
 end

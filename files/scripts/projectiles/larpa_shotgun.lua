@@ -26,23 +26,14 @@ end)
 
 for k=1,amount do
 
-    local length = 400 * math.random(0.70,1.30)
-
-    --3.12 * 0.15 / 2 = 0.234
-    --GamePrint("rot is " .. rot)
-    local offset_x = vel_x * 0.3
-    local offset_y = vel_y * 0.3
-
-    local offset_final = vel_x + vel_y / 2
-
-    vel_x = vel_x + math.random(offset_final * -1,offset_final)
-    vel_y = vel_y + math.random(offset_final * -1,offset_final)
+    math.randomseed( GameGetFrameNum() + k + pos_x + pos_y)
+    vel_x = math.random(vel_x * 0.7, vel_x * 1.3) + math.random(vel_y * -0.2, vel_y * 0.2)
+    vel_y = math.random(vel_y * 0.7, vel_y * 1.3) + math.random(vel_x * -0.2, vel_x * 0.2)
 
 
     if ( #projectile_file > 0 ) then
         local eid = shoot_projectile_from_projectile( entity_id, projectile_file, pos_x, pos_y, vel_x, vel_y )
         EntityAddTag( eid, "projectile_cloned" )
     end
-    SetRandomSeed( GameGetFrameNum() + k, pos_x + pos_y + entity_id )
 
 end

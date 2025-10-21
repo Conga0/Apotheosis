@@ -1196,6 +1196,13 @@ do -- Add Alchemic runestone to the runestone pool (item pedestals)
   local content = ModTextFileGetContent(path)
   content = content:gsub("\"disc\", \"metal\"", "\"disc\", \"metal\", \"alchemy\"")
 
+  --Hopefully make brimstone & ukkoskivi rarer without breaking everything?
+  --Why did they code it like this?
+  content = content:gsub("value_max = 83,", "value_max = 81,") --brimstone max
+  content = content:gsub("value_min = 84,", "value_min = 82,") --ukkoskivi min
+  content = content:gsub("value_max = 85,", "value_max = 82,") --ukkoskivi max
+  content = content:gsub("value_min = 86,", "value_min = 83,") --broken wand min
+
   ModTextFileSetContent(path, content)
 end
 
@@ -1794,7 +1801,14 @@ do -- Generate spellbook glyph projectiles
       local filepath = "mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_base.xml"
       local content = ModTextFileGetContent(filepath)
       content = content:gsub("\"a\"",table.concat({"\"",letter,"\""}))
+      content = content:gsub("glyph_a.xml",table.concat({"glyph_",letter,".xml"}))
       filepath = filepath:gsub("spellbook_base.xml",table.concat({"spellbook_",letter,".xml"}))
+      ModTextFileSetContent(filepath,content)
+      
+      filepath = "mods/Apotheosis/files/entities/projectiles/deck/spellbook/spellbook_fake.xml"
+      content = ModTextFileGetContent(filepath)
+      content = content:gsub("glyph_a.xml",table.concat({"glyph_",letter,".xml"}))
+      filepath = filepath:gsub("spellbook_fake.xml",table.concat({"spellbook_fake_",letter,".xml"}))
       ModTextFileSetContent(filepath,content)
   end
 end
@@ -1826,6 +1840,35 @@ do --Allow rainbow to create a pastel rainbow
   content = content:gsub("invis =","pastel_rainbow = {particle = \"rainbow_gas\"}, invis =")
 
   ModTextFileSetContent(path, content)
+end
+
+if ModSettingGet( "Apotheosis.spellrebalances" ) then --Replace Sea of Mimicium with Sea of Ominous Liquid with spell reworks enabled
+  local path = "data/biome_impl/static_tile/puzzle_logic_potion_mimics.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"SEA_MIMIC\"","\"APOTHEOSIS_SEA_OMINOUS\"")
+
+  ModTextFileSetContent(path, content)
+end
+
+do
+  local path = "data/entities/items/pickup/stonestone.xml"
+  local content = ModTextFileGetContent(path)
+  local xml = nxml.parse(content)
+  xml:add_child(nxml.parse([[
+  <MagicConvertMaterialComponent
+    _tags="enabled_in_hand,enabled_in_world"
+  	_enabled="0"
+    kill_when_finished="0"
+    steps_per_frame="3"
+    from_material="apotheosis_eviltemple_stone"
+    to_material="apotheosis_corrupt_flesh_static_hard"
+    clean_stains="0"
+    is_circle="1"
+    radius="48" 
+  >
+  </MagicConvertMaterialComponent>
+  ]]))
+  ModTextFileSetContent(path, tostring(xml))
 end
 
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")

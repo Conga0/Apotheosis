@@ -115,7 +115,7 @@
     count_min="29"
     count_max="30"
     offset.x="0"
-    offset.y="5"
+    offset.y="0"
     x_pos_offset_min="-1"
     y_pos_offset_min="-1"
     x_pos_offset_max="1"

@@ -134,47 +134,80 @@ do local v = targets[k];
 
             if ComponentGetValue2(comp, "action_id") == inputmagic then
                 local perk_x,perk_y = EntityGetTransform( v )
+                local cost_component = EntityGetFirstComponent(v,"ItemCostComponent")
+                local gold_cost = ComponentGetValue2(cost_component,"cost") or 0
             
                 EntityKill(v)
                 if effecttype[k] ~= "NONE" then EntityLoad("data/entities/particles/image_emitters/" .. effecttype[k] .. ".xml", perk_x, perk_y) end
                 GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
+                local output_spell = 0
 
                 if outputspells[k] == "SPECIAL_ACTION" then
                     if inputmagic == "WORM_RAIN" then
                         EntityLoad("data/entities/animals/worm_big.xml", perk_x, perk_y)
-                        CreateItemActionEntity( "APOTHEOSIS_MASS_BURROW", perk_x, perk_y )
+                        output_spell = CreateItemActionEntity( "APOTHEOSIS_MASS_BURROW", perk_x, perk_y )
                     elseif inputmagic == "APOTHEOSIS_MASS_MATERIA_CONVERSION" then
                         EntityLoad("mods/Apotheosis/files/entities/projectiles/materia_conversion_explosion.xml", perk_x, perk_y)
                         EntityLoad("data/entities/misc/mass_materia_conversion.xml", perk_x, perk_y)
                     elseif inputmagic == "APOTHEOSIS_ALT_FIRE_TELEPORT" then
-                        if (GameHasFlagRun("apotheosis_everything") or GameHasFlagRun("apotheosis_hardmode")) and not GameHasFlagRun("apotheosis_flag_copy_spells") then
+                        --if (GameHasFlagRun("apotheosis_everything") or GameHasFlagRun("apotheosis_hardmode")) and not GameHasFlagRun("apotheosis_flag_copy_spells") then
+                        if true == false then
                             GameScreenshake(50, perk_x, perk_y)
                             GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", perk_x, perk_y )
                             if god_cheat == false then
                                 god_cheat = true
                                 GamePrintImportant("$log_apotheosis_upgrade_alwayscast_cheater_name", "")
                             end
-                            CreateItemActionEntity( "APOTHEOSIS_ALT_FIRE_TELEPORT", perk_x, perk_y )
+                            output_spell = CreateItemActionEntity( "APOTHEOSIS_ALT_FIRE_TELEPORT", perk_x, perk_y )
                         else
-                            CreateItemActionEntity( "TELEPORT_PROJECTILE", perk_x, perk_y )
+                            output_spell = CreateItemActionEntity( "TELEPORT_PROJECTILE", perk_x, perk_y )
                             EntityLoad("data/entities/particles/image_emitters/magical_symbol_plasma.xml", perk_x, perk_y)
                         end
                     elseif inputmagic == "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT" then
-                        if (GameHasFlagRun("apotheosis_everything") or GameHasFlagRun("apotheosis_hardmode")) and not GameHasFlagRun("apotheosis_flag_copy_spells") then
+                        --if (GameHasFlagRun("apotheosis_everything") or GameHasFlagRun("apotheosis_hardmode")) and not GameHasFlagRun("apotheosis_flag_copy_spells") then
+                        if true == false then
                             GameScreenshake(50, perk_x, perk_y)
                             GamePlaySound( "data/audio/Desktop/items.bank", "magic_wand/out_of_mana", perk_x, perk_y )
                             if god_cheat == false then
                                 god_cheat = true
                                 GamePrintImportant("$log_apotheosis_upgrade_alwayscast_cheater_name", "")
                             end
-                            CreateItemActionEntity( "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT", perk_x, perk_y )
+                            output_spell = CreateItemActionEntity( "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT", perk_x, perk_y )
                         else
-                            CreateItemActionEntity( "TELEPORT_PROJECTILE_SHORT", perk_x, perk_y )
+                            output_spell = CreateItemActionEntity( "TELEPORT_PROJECTILE_SHORT", perk_x, perk_y )
                             EntityLoad("data/entities/particles/image_emitters/magical_symbol_plasma.xml", perk_x, perk_y)
                         end
                     end
                 else
-                    CreateItemActionEntity( outputspells[k], perk_x, perk_y )
+                    output_spell = CreateItemActionEntity( outputspells[k], perk_x, perk_y )
+                end
+
+                if gold_cost ~= 0 then
+                    EntityAddComponent2(
+                        output_spell,
+                        "ItemCostComponent",
+                        {
+                             _enabled=true,
+                            _tags="enabled_in_world,shop_cost",
+                            cost=gold_cost,
+                            stealable=true
+                        }
+                    )
+
+                    EntityAddComponent2(
+                        output_spell,
+                        "SpriteComponent",
+                        {
+                             _enabled=true,
+                            _tags="enabled_in_world,shop_cost",
+                            text=tostring(gold_cost),
+                            image_file="data/fonts/font_pixel_white.xml",
+                            is_text_sprite=true,
+                            offset_x=5.5,
+                            offset_y=25,
+                            z_index = -1
+                        }
+                    )
                 end
             end
         end

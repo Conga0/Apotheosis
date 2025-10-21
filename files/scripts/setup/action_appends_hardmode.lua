@@ -209,26 +209,40 @@ local actions_to_edit = {
 		end
 	},
 
-	--Remove Teleport Bolts from the spell pool
+	--Force teleport bolt to have a 0.75s minimum cast delay & reload time
 	["TELEPORT_PROJECTILE"] = {
-		spawn_level = "0",
-		spawn_probability = "0",
-		spawn_requires_flag = "this_should_never_spawn",
+		action = function(recursion_level)
+			add_projectile("data/entities/projectiles/deck/teleport_projectile.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 3
+			c.spread_degrees = c.spread_degrees - 2.0
+			--apo_state.min_cast_delay = 45
+			apo_state.min_reload = 45
+		end
 	},
 	["TELEPORT_PROJECTILE_SHORT"] = {
-		spawn_level = "0",
-		spawn_probability = "0",
-		spawn_requires_flag = "this_should_never_spawn",
+		action = function(recursion_level)
+			add_projectile("data/entities/projectiles/deck/teleport_projectile_short.xml")
+			c.spread_degrees = c.spread_degrees - 2.0
+			--apo_state.min_cast_delay = 45
+			apo_state.min_reload = 45
+		end
 	},
 	["TELEPORT_PROJECTILE_STATIC"] = {
-		spawn_level = "0",
-		spawn_probability = "0",
-		spawn_requires_flag = "this_should_never_spawn",
+		action = function(recursion_level)
+			add_projectile("data/entities/projectiles/deck/teleport_projectile_static.xml")
+			c.fire_rate_wait = c.fire_rate_wait + 3
+			c.spread_degrees = c.spread_degrees - 2.0
+			--apo_state.min_cast_delay = 45
+			apo_state.min_reload = 45
+		end
 	},
 	["GRAHAM_TELEPORT"] = {
-		spawn_level = "0",
-		spawn_probability = "0",
-		spawn_requires_flag = "this_should_never_spawn",
+		action = function(recursion_level)
+			c.fire_rate_wait = c.fire_rate_wait + 35
+			add_projectile("mods/grahamsperks/files/spells/teleport_fast.xml")
+			--apo_state.min_cast_delay = 45
+			apo_state.min_reload = 45
+		end
 	},
 
 	["WHITE_HOLE"] = {
@@ -236,7 +250,8 @@ local actions_to_edit = {
 		spawn_probability = "0.01,0.01,0.05,0.05,0.05",
 	},
 
-	--Increases the spawnrate of alt-fire teleport spells to compensate
+	--Increases the spawnrate of alt-fire teleport spells
+	--This was previously done since regular teleport spells were banned in hardcore & upwards, but I'll leave it in to practically ensure people can get access to some form of tele-bolt - Conga
 	["APOTHEOSIS_ALT_FIRE_TELEPORT"] = {
 		spawn_probability = "2.0,2.0,2.0,1.6,1.6,1.6,1.6"
 	},

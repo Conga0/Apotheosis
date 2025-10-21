@@ -1,4 +1,6 @@
-    --- Rare Bubbles
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
+
+--- Rare Bubbles
     
 
     table.insert(g_big_enemies,
@@ -79,7 +81,7 @@ if g_props then
         spawn_check = function() 
             local year, month, day = GameGetDateAndTimeLocal()
             
-            if ( month == 4 ) and (( day >= 1 ) and ( day <= 3 )) then
+            if is_holiday_active("april_fools") then
                 return true
             else
                 return false 

@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
     table.insert(g_big_enemies,
     {
@@ -107,7 +108,7 @@
 
     --April Fools Snowmen
     local year, month, day, hour, minute = GameGetDateAndTimeLocal()
-    if ((( month == 4 ) and ( day == 1 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_april_fools" ) then
+    if is_holiday_active("april_fools") then
         table.insert(g_small_enemies,
         {
             prob           = 0.2,
@@ -129,7 +130,7 @@
 
 
     --Cirno Day Frogs
-    if ((( month == 9 ) and ( day == 9 )) and ModSettingGet( "Apotheosis.seasonal_events" )) or ModSettingGet( "Apotheosis.seasonal_events_forced_cirno" ) then
+    if is_holiday_active("cirno") then
         table.insert(g_small_enemies,
         {
             prob           = 0.2,

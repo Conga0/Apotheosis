@@ -9,7 +9,7 @@ function cartGold()
 	local eid = ""
 
 	if seasonalSetting == true then
-		if ( month == 12 ) and ( day >= 15 ) or ModSettingGet("Apotheosis.seasonal_events_forced_smissmass") then
+		if is_holiday_active("smissmass") then
 			eid = EntityLoad( "data/entities/animals/miner_santa.xml", pos_x, pos_y )
 		else
 			eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )

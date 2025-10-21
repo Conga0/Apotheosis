@@ -155,9 +155,7 @@
 		 >
 	</SpriteComponent>
 
-	<HealthBarComponent
-		gui="0"
-		in_world="1">
+	<HealthBarComponent>
 	</HealthBarComponent>
 
 	<Entity>

@@ -10,7 +10,7 @@ local comp = EntityGetFirstComponent( entity_id, "VariableStorageComponent", "wi
 if ( comp ~= nil ) then
 	local id = ComponentGetValue2( comp, "value_int" )
 	
-	local count = 4
+	local count = 6
 	local circle = math.pi * 2
 	local inc = circle / count
 	

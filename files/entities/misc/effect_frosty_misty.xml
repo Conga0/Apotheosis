@@ -1,0 +1,51 @@
+<Entity name="apotheosis_teleport_cancel">
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+
+	<Base file="mods/Apotheosis/files/entities/particles/antiteleportation_blast.xml" >
+		<SpriteParticleEmitterComponent
+			randomize_position_inside_hitbox="1"  >
+		</SpriteParticleEmitterComponent>
+	</Base>
+    
+	<LuaComponent
+		script_shot="mods/Apotheosis/files/scripts/status_effects/teleport_cancel_shoot.lua"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_cancel.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_cancel_start.lua"
+		execute_every_n_frame="2"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+	<LuaComponent
+		execute_on_added="0"
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/teleport_cancel_endcheck.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+
+    <GameEffectComponent
+    	effect="SLIMY"
+    	frames="600"
+    >
+	</GameEffectComponent >
+
+	<UIIconComponent
+		name="$status_apotheosis_frosty_mist_name"
+		description="$status_apotheosis_frosty_mist_desc"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/frosty_mist.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+	
+</Entity>

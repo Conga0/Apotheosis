@@ -307,6 +307,17 @@ do --Orbmap corrections
   ModTextFileSetContent(path, content)
 end
 
+do --Correct coordinates for the jellyfish teleport-away attack locations
+  local path = "data/entities/animals/constellation_jellyfish/jellyfish_teleport_aggressive.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("{%-16268,7908}", "{-16268,5820}")    --Sunken Cavern
+  content = content:gsub("{16200,9900}", "{16200,7250}")    --Power Plant
+  --content = content:gsub("{9740,9130}", "{9740,9130}")    --The Tower
+  content = content:gsub("{2740,11550}", "{3215,1830}")    --Temple of the Art
+  content = content:gsub("{%-8960,14650}", "{-8960,1140}")    --Bottom of the Snowy Chasm
+  ModTextFileSetContent(path, content)
+end
+
 do --Name the surface to "The Surface"
     local path = "data/biome/mountain_hall.xml"
     local content = ModTextFileGetContent(path)

@@ -1,6 +1,7 @@
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local set_content = ModTextFileSetContent
 local get_content = ModTextFileGetContent
+year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
 
 function MultiplyHP(filepath,enemy_list,multiplier,base)
   for k=1,#enemy_list
@@ -325,4 +326,144 @@ function print_table(o)
    else
       return tostring(o)
    end
+end
+
+local holiday_list = {
+  {
+    name = "april_fools",
+    date_function = function()
+      if (month == 4) and (day == 1) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "birthday",
+    date_function = function()
+      if (month == 7) and ((day >= 20) and (day <= 22)) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "halloween",
+    date_function = function()
+      if (month == 10) and (day >= 15) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "smissmass",
+    date_function = function()
+      if (month == 12) and (day >= 15) then
+        return true
+      else
+        return false
+      end
+    end
+  },
+  {
+    name = "cirno",
+    date_function = function()
+      if (month == 9) and (day == 9) then
+        return true
+      else
+        return false
+      end
+    end
+  }
+}
+
+function is_holiday_active(holiday_name)
+  local is_being_forced = ModSettingGet(table.concat({"Apotheosis.seasonal_events_forced_",holiday_name}))
+  for k=1,#holiday_list do
+    if holiday_list[k].name == holiday_name then
+      return is_being_forced or ModSettingGet("Apotheosis.seasonal_events") and holiday_list[k].date_function()
+    end
+  end
+end
+
+function draw_line(pos_x,pos_y,targ_x,targ_y,particle_name)
+    local child = EntityLoad("mods/Apotheosis/files/entities/animators/electrosphere_fx.xml", targ_x, targ_y)
+    local comp = EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent")
+    ComponentSetValue2(comp, "mExPosition", pos_x, pos_y)
+    if particle_name ~= "plasma_fading" then
+        ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(child,"ParticleEmitterComponent"),"emitted_material_name",particle_name)
+    end
+end
+
+
+--[[
+--Functions to read a csv file arbitrarily
+--This was intended to be used in the settings file to make it easier to organise, but I had forgotten files cannot be loaded
+function load_csv(csv_filepath)
+  local translations = ModTextFileGetContent(csv_filepath)
+  local translations_row = SplitStringOnCharIntoTable(translations, "\r")
+  local translations_final = {}
+  for k=1,#translations_row do
+    local translation_column = SplitStringOnCharIntoTable(translations_row[k], ",")
+    table.insert(translations_final,SplitStringOnCharIntoTable(translations_row[k], ","))
+  end
+  return translations_final, translation_length
+end
+
+local translation_data = load_csv("mods/Apotheosis/translations_settings.csv")
+
+function translate(key,lang)
+  local lang_pos = 0
+  for k=1,#translation_data[1] do
+    if translation_data[1][k] == lang then
+      lang_pos = k
+      break
+    end
+  end
+
+  for k=1,#translation_data do
+    if translation_data[k][1] == "\n" .. key then
+      return translation_data[k][lang_pos] or translation_data[k][2]
+    end
+  end
+
+end
+
+print(translate("settings_apotheosis_cat_immortality_name","en"))
+]]--
+
+function isDayTime(pos_x,pos_y)
+  local worldEntity = GameGetWorldStateEntity()
+  local comp = EntityGetFirstComponentIncludingDisabled(worldEntity,"WorldStateComponent")
+  local time = ComponentGetValue2(comp,"time")
+  local skylight = GameGetSkyVisibility( pos_x, pos_y )
+
+  if (time < 0.55 or time > 0.70) and (pos_y < 500 or skylight > 0.5) then
+    return true
+  else
+    return false
+  end
+end
+
+function getPlayer()
+    local tags = {"player_unit", "polymorphed_player", "polymorphed_cessation"}
+	for tag=1,#tags do
+		local player = EntityGetWithTag(tags[tag])
+		if #player > 0 then
+			return player[1]
+		end
+	end
+    return nil
+end
+
+function getDistanceFromTarget(entity_id,victim_id)
+  if victim_id == 0 or victim_id == nil then return 0 end
+  local x,y = EntityGetTransform(entity_id)
+  local v_x,v_y = EntityGetTransform(victim_id)
+  local distance = math.abs(v_y - y) + math.abs(v_x - x)
+  return distance or 0
 end

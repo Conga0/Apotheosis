@@ -1,4 +1,5 @@
-    
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")    
+
 --If the player has over 1,000 max hp, soft-cap heart spawns by disabling random heart generation in the wild
 ---@diagnostic disable-next-line: lowercase-global
 function player_health_check(player_id)
@@ -92,7 +93,7 @@ table.insert(g_small_enemies,
     spawn_check = function() 
         local year, month, day = GameGetDateAndTimeLocal()
         
-        if ( month == 7 ) and (( day >= 20 ) and ( day <= 22 )) then
+        if is_holiday_active("birthday") then
             return true
         else
             return false 
@@ -169,7 +170,7 @@ if g_props then
         spawn_check = function() 
             local year, month, day = GameGetDateAndTimeLocal()
             
-            if ( month == 4 ) and (( day >= 1 ) and ( day <= 3 )) then
+            if is_holiday_active("april_fools") then
                 return true
             else
                 return false 

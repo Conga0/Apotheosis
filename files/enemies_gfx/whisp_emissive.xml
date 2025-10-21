@@ -1,7 +1,7 @@
 <Sprite
  filename="mods/Apotheosis/files/enemies_gfx/whisp_emissive.png"
- offset_x="4"
- offset_y="4"
+ offset_x="4.5"
+ offset_y="4.5"
  default_animation="stand" >
 
  <!-- animation -->

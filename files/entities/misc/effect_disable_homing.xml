@@ -1,0 +1,27 @@
+<Entity>
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+    
+	<LuaComponent
+		script_shot="mods/Apotheosis/files/scripts/status_effects/disable_homing_shoot.lua"
+		execute_every_n_frame="-1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="1200"
+		>
+	</LifetimeComponent>
+	
+	<UIIconComponent
+		name="$status_apotheosis_disable_homing_name"
+		description="$status_apotheosis_disable_homing_desc"
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/disable_homing.png"
+		is_perk="0"
+		display_above_head="1"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+
+	
+</Entity>

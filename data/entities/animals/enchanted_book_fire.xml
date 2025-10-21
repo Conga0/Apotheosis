@@ -12,12 +12,12 @@
 			attack_ranged_min_distance="0"
 			attack_ranged_max_distance="200"
 			attack_ranged_frames_between="2"
-			attack_ranged_aim_rotation_enabled="1"
+			attack_ranged_aim_rotation_enabled="0"
 			attack_ranged_aim_rotation_speed="0.27"
-			attack_ranged_aim_rotation_shooting_ok_angle_deg="60"
-			attack_ranged_entity_file=""
-			attack_ranged_entity_count_min="1"
-			attack_ranged_entity_count_max="1"
+			attack_ranged_aim_rotation_shooting_ok_angle_deg="0"
+			attack_ranged_entity_file="data/entities/animals/enchanted_books/dummy_attack.xml"
+			attack_ranged_entity_count_min="0"
+			attack_ranged_entity_count_max="0"
 			attack_ranged_offset_y="0"
 			attack_ranged_offset_x="-8"
 			attack_ranged_enabled="1"
@@ -61,7 +61,7 @@
 			has_special_scale="1"
 			special_scale_x="1"
 			update_transform="1"
-			update_transform_rotation="0"
+			update_transform_rotation="1"
 			>
 		</SpriteComponent>
 		
@@ -148,6 +148,14 @@
 		name="cooldown_data"
 		value_int="300"
 		value_float="90"
+		value_string="mini_sun"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="cooldown_data_2"
+		value_int="1"
+		value_float="0"
 		>
 	</VariableStorageComponent>
 
@@ -165,6 +173,80 @@
 		remove_after_executed="0"
 		>
 	</LuaComponent>
+
+    <ParticleEmitterComponent
+		_enabled="0"
+		_tags="invincible"
+		emitted_material_name="spark"
+		fade_based_on_lifetime="1"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-80"
+		x_vel_max="80"
+		y_vel_min="-80"
+		y_vel_max="80"
+		area_circle_radius.min="10"
+		area_circle_radius.max="30"
+		velocity_always_away_from_center="90"
+		gravity.y="0"
+		friction="0.1"
+		airflow_force="0.9"
+		airflow_time="0.101"
+		airflow_scale="0.81"
+		count_min="40"
+		count_max="60"
+		lifetime_min="0.1"
+		lifetime_max="0.9"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		collide_with_grid="0"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		render_ultrabright="1"
+		is_emitting="1"
+		>
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent
+		_enabled="0"
+		_tags="invincible"
+		emitted_material_name="spark_red"
+		fade_based_on_lifetime="1"
+		x_pos_offset_min="0"
+		x_pos_offset_max="0"
+		y_pos_offset_min="0"
+		y_pos_offset_max="0"
+		x_vel_min="-80"
+		x_vel_max="80"
+		y_vel_min="-80"
+		y_vel_max="80"
+		area_circle_radius.min="10"
+		area_circle_radius.max="10"
+		velocity_always_away_from_center="40"
+		gravity.y="0"
+		friction="0.1"
+		airflow_force="0.9"
+		airflow_time="0.101"
+		airflow_scale="0.81"
+		count_min="40"
+		count_max="60"
+		lifetime_min="0.1"
+		lifetime_max="0.6"
+		create_real_particles="0"
+		emit_cosmetic_particles="1"
+		draw_as_long="1"
+		collide_with_grid="0"
+		render_on_grid="1"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		render_ultrabright="1"
+		is_emitting="1"
+		>
+    </ParticleEmitterComponent>
 			
 	<AudioComponent
 		file="data/audio/Desktop/animals.bank"

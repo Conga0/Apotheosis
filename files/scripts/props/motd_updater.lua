@@ -5,7 +5,7 @@ local comp = EntityGetFirstComponentIncludingDisabled(entity_id, "InteractableCo
 
 local year, month, day, hour = GameGetDateAndTimeLocal()
 local rnd_seed = {year, month * day}
-math.randomseed(rnd_seed[1], rnd_seed[2]) --use math.random instead of Noita random to avoid world seed stuff
+math.randomseed(rnd_seed[1] + rnd_seed[2]) --use math.random instead of Noita random to avoid world seed stuff
 
 
 MOTD_conditionals = {

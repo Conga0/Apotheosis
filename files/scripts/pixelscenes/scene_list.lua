@@ -602,6 +602,13 @@ local new_scenes = {
 		just_load_an_entity = "mods/Apotheosis/files/entities/buildings/forest_monolith_spawner.xml",
 	},
 
+	--Spawn Whisp Shrine
+	{
+		pos_x = 3275,
+		pos_y = -120,
+		just_load_an_entity = "mods/Apotheosis/files/entities/buildings/shrine_puzzle_whisp_spawner.xml",
+	},
+
 	-- {
 	-- 	pos_x = 23829,
 	-- 	pos_y = 79532,
