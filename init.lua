@@ -478,10 +478,21 @@ end
 -- Custom Perk support injection
 ModLuaFileAppend("data/scripts/perks/perk_list.lua", "mods/Apotheosis/files/scripts/perks/custom_perks.lua")
 
+--[=[
+-- Add portals to spatial awareness
+do
+	ModTextFileSetContent("data/scripts/perks/map.lua",ModTextFileGetContent("data/scripts/perks/map.lua"):gsub("if %( pw ~= 0 %) then", [[
+			do local x, y = GlobalsGetValue("apotheosis_markerportal_red_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_red_y", "INVALID") if x ~= "INVALID" 		then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_r.png", mi_x+x/mult_x, mi_y+y/mult_y, true, 0, 0, 1, true ) end end
+			do local x, y = GlobalsGetValue("apotheosis_markerportal_blue_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_blue_y", "INVALID") if x ~= "INVALID" 	then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_b.png", mi_x+x/mult_x, mi_y+y/mult_y, true, 0, 0, 1, true ) end end
+			do local x, y = GlobalsGetValue("apotheosis_markerportal_green_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_green_y", "INVALID") if x ~= "INVALID" 	then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_g.png", mi_x+x/mult_x, mi_y+y/mult_y, true, 0, 0, 1, true ) end end
+			if ( pw ~= 0 ) then]])
+	)
+	ModTextFileSetContent("data/scripts/perks/map.lua",ModTextFileGetContent("data/scripts/perks/map.lua"):gsub("is_moving == false", "true") )
+end
+]=]
 
 -- Custom Status support injection
-ModLuaFileAppend("data/scripts/status_effects/status_list.lua",
-	"mods/Apotheosis/files/scripts/status_effects/status_effects.lua")
+ModLuaFileAppend("data/scripts/status_effects/status_list.lua", "mods/Apotheosis/files/scripts/status_effects/status_effects.lua")
 
 
 -- Custom Audio Support
@@ -1344,6 +1355,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		dofile_once("mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua")
 	end
 
+	SetRandomSeed(minute, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	local splashes = {
 		"Now with 50% more fairies",
 		"l ll ll l_",
@@ -1407,7 +1419,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"It's a mod",
 		"As seen on TV!",
 		"One of a kind!",
-		"Every copy is personalised!",
+		Random()>0.999 and "Every copi is personalised!" or "Every copy is personalised!", -- :p
 		"Famous within it's circles!",
 		"May contain traces of chocolate",
 		"Keyboard compatible!",
@@ -1415,6 +1427,8 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"l33t",
 		"Not affected by scunthorpe!",
 		"Not associated with that other Apotheosis",
+		"Upgrades all your cards!",
+		"Overenchanting!",
 		"More Creeps and Weirdos: Extended",
 		"More Creeps and Weirdos, we miss you.",
 		"I'll never tell you my oshi",
@@ -1477,9 +1491,8 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Call an exorcist!",
 		"Awaken my masters!",
 		"Less addictive than nethack!",
-		"Something wicked this way comes..."
+		"Something wicked this way comes...",
 	}
-	SetRandomSeed(minute, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]
 
 	--6.66% chance for the associated user's reference splash to appear if they're playing
