@@ -11,6 +11,7 @@ local locked_spell = {
     sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/locked_spell.png",
     mana = 0,
     custom_uses_logic = true,
+	custom_xml_file = nil,
     action = function()
         --Nil
     end,
