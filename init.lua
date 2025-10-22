@@ -261,37 +261,7 @@ end
 
 
 
---- Boss Spawns
---These use the Mountain Hall for biome compatibility.
 
---[[
-
---Spawns Toxic Worm boss after filling the dragon egg with toxic sludge
---This was the original intent, now the Toxic Worm spawns inside of a "nest" area of sorts with an egg, approach it and get got!
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/toxic_worm_nest_populator.lua" )
-
-
---Spawns the Abandoned Orchestra in the sandcaves.
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/boss_musical_ghost_sandcave_populator.lua" )
-
-
---Spawns a Magic Devourer inside the Abandoned Alchemy Lab to show off its' gimmick, only one though, and the only one with cell eater capabilities in the entire game!
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/devourer_magic_liquidcave_spawn.lua" )
-
-
---Spawns a wand editting crystal inside the pyramid, this will provide people incentive to go there and wander around the actual pyramid part for a bit before rushing either the boss or the orb.
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/pyramid_wandedit_crystal_populator.lua" )
-
-
---Deletes polymorph crystal surrounding the entrance to the Temple of the Art. Wouldn't want to get cockblocked by a poly crystal covering the entrance and a tentacler camping right behind the wall.
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/crypt_polycrystal_deletion_populator.lua" )
-
-
---Spawns a Hisii Beggar near the essence of earth, hopefully demonstrates or at least hints towards how to interact with them
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_hall.lua", "mods/Apotheosis/files/scripts/biomes/boss_spawns/hisii_beggar_populator.lua" )
-
-]]
---
 
 
 --Spawns all the above spawns in a single file and appends to pixel scenes to prevent double spawning
@@ -473,18 +443,16 @@ end
 -- Custom Perk support injection
 ModLuaFileAppend("data/scripts/perks/perk_list.lua", "mods/Apotheosis/files/scripts/perks/custom_perks.lua")
 
---[=[
 -- Add portals to spatial awareness
 do
 	ModTextFileSetContent("data/scripts/perks/map.lua",ModTextFileGetContent("data/scripts/perks/map.lua"):gsub("if %( pw ~= 0 %) then", [[
-			do local x, y = GlobalsGetValue("apotheosis_markerportal_red_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_red_y", "INVALID") if x ~= "INVALID" 		then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_r.png", mi_x+x/mult_x, mi_y+y/mult_y, true, 0, 0, 1, true ) end end
-			do local x, y = GlobalsGetValue("apotheosis_markerportal_blue_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_blue_y", "INVALID") if x ~= "INVALID" 	then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_b.png", mi_x+x/mult_x, mi_y+y/mult_y, true, 0, 0, 1, true ) end end
-			do local x, y = GlobalsGetValue("apotheosis_markerportal_green_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_green_y", "INVALID") if x ~= "INVALID" 	then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_g.png", mi_x+x/mult_x, mi_y+y/mult_y, true, 0, 0, 1, true ) end end
+			do local x, y = GlobalsGetValue("apotheosis_markerportal_red_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_red_y", "INVALID") if x ~= "INVALID" 		then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_r.png", mi_x + ((x / 512) * 6) + 3, mi_y + ((y / 512) * 6) - 56, true, 0, 0, 1, true ) end end
+			do local x, y = GlobalsGetValue("apotheosis_markerportal_blue_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_blue_y", "INVALID") if x ~= "INVALID" 	then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_b.png", mi_x + ((x / 512) * 6) + 3, mi_y + ((y / 512) * 6) - 56, true, 0, 0, 1, true ) end end
+			do local x, y = GlobalsGetValue("apotheosis_markerportal_green_x", "INVALID"), GlobalsGetValue("apotheosis_markerportal_green_y", "INVALID") if x ~= "INVALID" 	then GameCreateSpriteForXFrames( "mods/Apotheosis/files/particles/spatial_map_portal_g.png", mi_x + ((x / 512) * 6) + 3, mi_y + ((y / 512) * 6) - 56, true, 0, 0, 1, true ) end end
 			if ( pw ~= 0 ) then]])
 	)
 	ModTextFileSetContent("data/scripts/perks/map.lua",ModTextFileGetContent("data/scripts/perks/map.lua"):gsub("is_moving == false", "true") )
 end
-]=]
 
 -- Custom Status support injection
 ModLuaFileAppend("data/scripts/status_effects/status_list.lua", "mods/Apotheosis/files/scripts/status_effects/status_effects.lua")
@@ -634,82 +602,13 @@ ModTextFileSetContent("data/entities/buildings/dark_moon_altar.xml", tostring(xm
 
 
 
---Nightmare & Purgatory fixes for bubbles so they don't spew out infinite liquid everywhere
---I forgot nightmare/purgatory naturally reduces blood multipliers by default anyways.. oops
---[[
-if ModIsEnabled("purgatory") or ModIsEnabled("nightmare") then
 
-  local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-  local content = ModTextFileGetContent("data/entities/animals/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "20"
-  ModTextFileSetContent("data/entities/animals/bubble_liquid.xml", tostring(xml))
 
-  local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/acid/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "20"
-  ModTextFileSetContent("data/entities/animals/bubbles/acid/bubble_liquid.xml", tostring(xml))
 
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/freezing_liquid/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "30"
-  ModTextFileSetContent("data/entities/animals/bubbles/freezing_liquid/bubble_liquid.xml", tostring(xml))
 
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/cursed_liquid/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "10"
-  ModTextFileSetContent("data/entities/animals/bubbles/cursed_liquid/bubble_liquid.xml", tostring(xml))
 
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/ambrosia/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "20"
-  ModTextFileSetContent("data/entities/animals/bubbles/ambrosia/bubble_liquid.xml", tostring(xml))
 
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/alchemicprecursor/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "15"
-  ModTextFileSetContent("data/entities/animals/bubbles/alchemicprecursor/bubble_liquid.xml", tostring(xml))
 
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/healthium/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "15"
-  ModTextFileSetContent("data/entities/animals/bubbles/healthium/bubble_liquid.xml", tostring(xml))
-
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/unstablePandorium/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "10"
-  ModTextFileSetContent("data/entities/animals/bubbles/unstablePandorium/bubble_liquid.xml", tostring(xml))
-
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/pandorium/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "10"
-  ModTextFileSetContent("data/entities/animals/bubbles/pandorium/bubble_liquid.xml", tostring(xml))
-
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/stophittingyourself/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "10"
-  ModTextFileSetContent("data/entities/animals/bubbles/stophittingyourself/bubble_liquid.xml", tostring(xml))
-
-  local content = ModTextFileGetContent("data/entities/animals/bubbles/sliceLiquid/bubble_liquid.xml")
-  local xml = nxml.parse(content)
-  local attrs = xml:first_of("Base"):first_of("DamageModelComponent").attr
-  attrs.blood_multiplier = "10"
-  ModTextFileSetContent("data/entities/animals/bubbles/sliceLiquid/bubble_liquid.xml", tostring(xml))
-
-end
-]]
---
 
 --Resets Blob Boss kill reward to prevent cheesing multiple "reward events" per kill
 ModLuaFileAppend("data/scripts/newgame_plus.lua", "mods/Apotheosis/files/scripts/newgame_plus_appends.lua")
@@ -1432,7 +1331,7 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"More Creeps and Weirdos: Extended",
 		"More Creeps and Weirdos, we miss you.",
 		"I'll never tell you my oshi",
-		"The noob's adventure",
+		"The noobs adventure",
 		"Recommended by 9 out of 10 dentists!",
 		"dQw4w9WgXcQ",
 		"oavMtUWDBTM",
@@ -1495,7 +1394,8 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Remember to slip, slop, slap, seek and slide!",
 		"Back in my day we couldn't drop spells freely",
 		"I have intense bomb-igniting thoughts!!",
-		"D4 + G4, D4 + G4, G4 + C5, D5 + G4, F4 + A#4"
+		"D4 + G4, D4 + G4, G4 + C5, D5 + G4, F4 + A#4",
+		"Somewhere over the rainbow"
 	}
 	SetRandomSeed(minute * second, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]
