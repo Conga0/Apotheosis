@@ -1,0 +1,61 @@
+<Entity >
+   
+    <VerletPhysicsComponent
+    	num_points="17"
+    	stiffness="1.0"
+		velocity_dampening="0.9"
+    	resting_distance="6" 
+    	pixelate_sprite_transforms="1"
+        follow_entity_transform="0"
+    	simulate_wind="1"
+    	wind_change_speed="0.25"
+    	simulate_gravity="1" >
+    </VerletPhysicsComponent>
+
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_empty.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_green.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_red.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_empty.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_green.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_red.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_empty.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_green.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_red.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_empty.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_green.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_red.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_empty.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_green.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_red.xml" />
+	<Base file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_part_empty.xml" />
+	
+	<MoveToSurfaceOnCreateComponent
+		lookup_radius="64"
+		verlet_min_joint_distance="50"
+		type="VERLET_ROPE_TWO_JOINTS" >
+	</MoveToSurfaceOnCreateComponent>
+
+	<LightComponent 
+		_enabled="1"
+		update_properties="1"
+		radius="200" 
+		r="255"
+		g="0"
+		b="0"
+		fade_out_time="1.5"
+		>
+	</LightComponent>
+
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/entities/props/christmas/fairy_lights_lighting_handler.lua"
+		execute_every_n_frame="60"
+		execute_times="-1"
+		>
+	</LuaComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/materials.bank"
+		event_root="collision/vine" >
+	</AudioComponent>
+  
+</Entity>

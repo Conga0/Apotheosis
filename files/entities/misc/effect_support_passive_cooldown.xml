@@ -1,0 +1,20 @@
+<Entity >
+	<InheritTransformComponent>
+    </InheritTransformComponent>
+  
+    <GameEffectComponent
+    	effect="NONE"
+    	frames="3600"
+    	exclusivity_group="0"
+    ></GameEffectComponent >
+	
+	<UIIconComponent
+		icon_sprite_file="mods/Apotheosis/files/ui_gfx/status_indicators/support_passive_cooldown.png"
+		name="$status_apotheosis_support_passive_cooldown_name"
+		description="$status_apotheosis_support_passive_cooldown_desc"
+		is_perk="0"
+		display_above_head="0"
+		display_in_hud="1"
+		>
+	</UIIconComponent>
+</Entity>

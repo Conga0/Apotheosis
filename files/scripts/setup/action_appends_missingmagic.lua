@@ -78,6 +78,8 @@ local blacklist = {
     ["KANTELE_E"] = true,
     ["KANTELE_G"] = true,
 
+    ["APOTHEOSIS_SPELLBOOK"] = true,
+
     --Grahams Things Compatibility
     ["GRAHAM_GLOW_DART"] = true,       --Starting Spell
     ["GRAHAM_BRAMBALL"] = true,       --Starting Spell
@@ -88,7 +90,7 @@ local blacklist = {
 for k=1,#actions do -- fast as fuck boi
     local v = actions[k]
     SetRandomSeed(v.price + k,v.mana)
-    if not blacklist[v.id] and Random(1,2) == 1 then
+    if not blacklist[v.id] and Random(1,3) == 1 then
         for key, value in pairs(locked_spell) do
             actions[k][key] = value
         end

@@ -3305,6 +3305,31 @@ apotheosis_spellappends = {
 		end,
 	},
     ]]--
+    {
+        id          = "APOTHEOSIS_SUPPORT_PASSIVE",
+        id_append   = "APOTHEOSIS_AUTOFIRE",
+        name 		= "$spell_apotheosis_support_passive_name",
+        description = "$spell_apotheosis_support_passive_desc",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/support_passive.png",
+        sprite_unidentified = "data/ui_gfx/gun_actions/spread_reduce_unidentified.png",
+        mana = 0,
+        spawn_requires_flag	= "this_should_never_spawn",
+        spawn_manual_unlock	= true,
+        never_unlimited		= true,
+        type    = ACTION_TYPE_PASSIVE,
+        recursive			= true,
+        ai_never_uses 		= true,
+        spawn_level			= "0",
+        spawn_probability	= "0",
+        price				= 2000,
+        custom_uses_logic = true,
+        --max_uses    = 1,
+        custom_xml_file   = "mods/Apotheosis/files/entities/misc/custom_cards/support_passive.xml",
+        action            = function()
+            -- Go to the next card
+            draw_actions(1, true)
+        end,
+    },
 }
 
 

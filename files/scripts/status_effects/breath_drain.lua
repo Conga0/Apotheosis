@@ -6,8 +6,17 @@ if dmgcomp ~= 0 and player_id ~= 0 then
 
     local dmgcomp = EntityGetFirstComponentIncludingDisabled(player_id,"DamageModelComponent")
 
+    local inventory = 0
+    local children = EntityGetAllChildren(player_id)
+    for k=1,#children do
+        if EntityGetName(children[k]) == "inventory_quick" then
+            inventory = children[k]
+            break
+        end
+    end
+
     --Disables Suffocatium if target has Breathless
-	if (GameGetGameEffectCount( player_id, "BREATH_UNDERWATER" ) >= 1 or ComponentGetValue2(dmgcomp, "air_needed") == false) and (EntityHasTag(player_id,"vulnerable") ~= true) then
+	if (GameGetGameEffectCount( player_id, "BREATH_UNDERWATER" ) >= 1 or (inventory ~= 0 and GameGetGameEffectCount( inventory, "BREATH_UNDERWATER" ) >= 1) or ComponentGetValue2(dmgcomp, "air_needed") == false) and (EntityHasTag(player_id,"vulnerable") ~= true) then
         ComponentSetValue2(dmgcomp,"air_in_lungs",ComponentGetValue2(dmgcomp,"air_in_lungs_max"))
     return end
 

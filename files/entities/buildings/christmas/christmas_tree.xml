@@ -1,0 +1,84 @@
+<Entity>
+	<VelocityComponent
+		_enabled="0"
+		_tags="enabled_by_script"
+	>
+	</VelocityComponent>
+
+    <SimplePhysicsComponent
+		_enabled="0"
+		_tags="enabled_by_script"
+	>
+	</SimplePhysicsComponent>
+
+	<AltarComponent
+		_enabled="0"
+		recognized_entity_tags="gift"
+		uses_remaining="3" >
+	</AltarComponent>
+  
+	<HitboxComponent 
+		aabb_min_x="-23" 
+		aabb_max_x="23" 
+		aabb_min_y="-15"
+		aabb_max_y="25" >
+	</HitboxComponent>
+  
+	<SpriteComponent
+		offset_x="23"
+		offset_y="72"
+		image_file="mods/Apotheosis/files/props_gfx/christmas_tree.png"
+	></SpriteComponent>
+	
+	<ParticleEmitterComponent 
+		_enabled="0"
+		emitted_material_name="gold"
+		gravity.y="0.0"
+		lifetime_min="1"
+		lifetime_max="2"
+		count_min="0"
+		count_max="1"
+		offset.x="-1"
+		offset.y="-37"
+		x_vel_min="-5"
+		x_vel_max="5"
+		y_vel_min="-5"
+		y_vel_max="5"
+		render_on_grid="1"
+		fade_based_on_lifetime="1"
+		area_circle_radius.min="0"
+		area_circle_radius.max="0"
+		cosmetic_force_create="0"
+		airflow_force="0.101"
+		airflow_time="1.01"
+		airflow_scale="0.05"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		image_animation_file="mods/Apotheosis/files/particles/christmas/christmas_tree.png"
+		image_animation_speed="3"
+		image_animation_loop="0"
+		is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<Entity name="on_sacrifice" >
+		
+		<LuaComponent
+			_tags="offme"
+			_enabled="0"
+			script_source_file="mods/wirelights/files/scripts/treward.lua"
+			execute_every_n_frame="1"
+		/>
+		
+		<InheritTransformComponent />
+		
+	</Entity>
+	
+	<VariableStorageComponent
+		_enabled="0"
+		name="giftCount"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+		
+</Entity>

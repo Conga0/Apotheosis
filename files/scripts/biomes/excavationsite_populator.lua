@@ -184,6 +184,18 @@
         max_count    = 1,    
         entity     = "data/entities/animals/hiisi_thief.xml"
     })
+    
+
+
+    --Item Pickups
+
+    table.insert(g_items,
+    {
+        prob   		= 0.75,
+        min_count	= 1,
+        max_count	= 1,    
+        entity 	= "mods/Apotheosis/files/entities/items/wands/custom/chaos_wand.xml"
+    })
 
 
 

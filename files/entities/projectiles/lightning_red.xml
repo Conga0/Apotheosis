@@ -11,6 +11,7 @@
 
   <ProjectileComponent 
     _enabled="1" 
+    sprite_lightning_file="mods/Apotheosis/files/particles/lightning_red.png"
     on_death_explode="1"
     on_death_gfx_leave_sprite="0"
     on_lifetime_out_explode="0"

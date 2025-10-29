@@ -48,6 +48,13 @@ gun.mana_max = {400,600}
 gun.actions = {"AIR_BULLET", "ICEBALL", "FREEZING_GAZE"}
 
 local mana_max = get_random_between_range( gun.mana_max )
+local deck_capacity = get_random_between_range( gun.deck_capacity )
+if Random(1,1000) == 1 then
+	deck_capacity = deck_capacity + 1
+	while Random(1,10) ~= 1 do
+		deck_capacity = deck_capacity + 1
+	end
+end
 
 ComponentSetValue( ability_comp, "ui_name", get_random_from( gun.name ) )
 
@@ -56,7 +63,7 @@ ComponentObjectSetValue( ability_comp, "gunaction_config", "fire_rate_wait", get
 ComponentSetValue( ability_comp, "mana_charge_speed", get_random_between_range( gun.mana_charge_speed ) )
 
 ComponentObjectSetValue( ability_comp, "gun_config", "actions_per_round", gun.actions_per_round )
-ComponentObjectSetValue( ability_comp, "gun_config", "deck_capacity", get_random_between_range( gun.deck_capacity ) )
+ComponentObjectSetValue( ability_comp, "gun_config", "deck_capacity", deck_capacity )
 ComponentObjectSetValue( ability_comp, "gun_config", "shuffle_deck_when_empty", gun.shuffle_deck_when_empty )
 ComponentObjectSetValue( ability_comp, "gunaction_config", "spread_degrees", gun.spread_degrees )
 ComponentObjectSetValue( ability_comp, "gunaction_config", "speed_multiplier", gun.speed_multiplier )

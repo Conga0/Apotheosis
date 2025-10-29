@@ -181,6 +181,10 @@
     emission_interval_max_frames="2"
     is_emitting="1" >
   </ParticleEmitterComponent>
+
+	<VariableStorageComponent
+		value_bool="0"
+	></VariableStorageComponent>
 	
 </Entity>
 

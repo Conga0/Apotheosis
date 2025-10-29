@@ -196,6 +196,7 @@
 	<VariableStorageComponent
 		name="fairy_version"
 		value_string="data/entities/animals/fairy_big.xml"
+		value_bool="0"
 	></VariableStorageComponent>
 	
 </Entity>

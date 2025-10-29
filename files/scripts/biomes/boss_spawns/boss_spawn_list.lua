@@ -49,7 +49,7 @@ ModTextFileSetContent("data/biome/_pixel_scenes.xml", tostring(xml))
 
 
 
---Deletes polymorph crystal surrounding the entrance to the Temple of the Art. Wouldn't want to get cockblocked by a poly crystal covering the entrance and a tentacler camping right behind the wall.
+--Deletes polymorph crystal surrounding the entrance to the Temple of the Art. Wouldn't want to get softlocked by a poly crystal covering the entrance and a tentacler camping right behind the wall.
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local content = ModTextFileGetContent("data/biome/_pixel_scenes.xml")
 local xml = nxml.parse(content)

@@ -684,6 +684,7 @@ dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/boss_vulnerability_
 --Modifies vanilla entity data
 --Try not to tinker with base noita too much, the main goal to this mod is to be an expansion pack, not a rebalance.
 dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/vanilla_appends.lua")
+dofile_once("mods/Apotheosis/files/scripts/mod_compatibility/seasonal_tweaks.lua")
 
 
 

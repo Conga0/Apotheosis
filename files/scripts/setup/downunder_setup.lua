@@ -332,3 +332,11 @@ end
 
 --Fixes Island Spirit not spawning properly on Downunder & Tuonela
 ModLuaFileAppend("data/scripts/biomes/lake.lua", "mods/Apotheosis/files/scripts/setup/lake_downunder_fix.lua")
+
+do --Bandaid fix, fixes a 2nd blob cavern from spawning inside the snowydepths on upsidedown seeds
+  local path = "mods/Apotheosis/files/scripts/pixelscenes/scene_list.lua"
+  local content = ModTextFileGetContent(path)
+
+  content = content:gsub("pos_y = 8777,", "pos_y = 200000,")
+  ModTextFileSetContent(path, content)
+end

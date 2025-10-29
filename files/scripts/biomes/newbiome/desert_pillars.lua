@@ -8,6 +8,7 @@ RegisterSpawnFunction( 0xff3cfbf4, "spawn_essence_eater" )
 RegisterSpawnFunction( 0xffffeedd, "init" )
 
 local debug_mode = DebugGetIsDevBuild()
+local mapcap_mode = ModIsEnabled("noita-mapcap")
 
 ------------ SMALL ENEMIES ----------------------------------------------------
 
@@ -233,9 +234,9 @@ function init(x, y, w, h)
 		{ { "pandora_chest_rain", "p_secret_pandora" }, { "clam_chest_rain", "p_secret_clam" }, { "musical_magic_played", "p_secret_musical_magic" }, { "unlocked_divine_liquid", "p_secret_opposing_porring" }, { "boss_flesh_monster_gourd_holy", "p_boss_heretic_gourd_holy" } },
 		{ { "perkforged_protection_fire", "p_perk_fire" }, { "perkforged_breath_underwater", "p_perk_breathless" }, { "perkforged_protection_electricity", "p_perk_electricity" }, { "perkforged_telekinesis", "p_perk_telekinesis" }, { "perkforged_edit_wands_everywhere", "p_perk_twwe" }, { "perkforged_remove_fog_of_war", "p_perk_ase" }, { "perkforged_apotheosis_alcohol_immunity", "p_perk_drunk" }, { "perkforged_apotheosis_trip_immunity", "p_perk_trip" }, { "perkforged_mega_beam_stone", "p_perk_beamstone" }, {"perkforged_global_gore", "p_perk_moreblood"}, { "perkforged_apotheosis_plane_radar", "p_perk_radar" }, { "essence_fungus", "p_essence_fungus" }, { "moon_fungus_unlock", "p_essence_fungus_moon" }, },
 		{ { "ending_apotheosis_01", "p_ending_01" }, { "ending_apotheosis_02", "p_ending_02" }, { "ending_apotheosis_03", "p_ending_03" }, { "ending_apotheosis_speedrun", "p_ending_500" }, { "ending_apotheosis_speedrun_1hr", "p_ending_100_hr" }, { "ending_apotheosis_hardcore", "p_ending_challenge_hardcore" }, { "ending_apotheosis_everything", "p_ending_challenge_tuonela" } },
-		{ { "boss_toxic_worm", "p_boss_toxic" }, { "blob_boss", "p_boss_blob" }, { "musical_boss", "p_boss_music" }, {"boss_monolith", "p_boss_monolith"}, { "fire_lukki", "p_boss_fire_lukki" }, { "worm_end_big", "p_boss_hell_worm" }, { "boss_flesh_monster", "p_boss_heretic" }, { "boss_flesh_monster_wrath", "p_boss_heretic_wrath" }, },
+		{ { "boss_toxic_worm", "p_boss_toxic" }, { "blob_boss", "p_boss_blob" }, { "musical_boss", "p_boss_music" }, {"boss_monolith", "p_boss_monolith"}, {"constellation_jellyfish", "p_boss_constellation_jellyfish"}, { "fire_lukki", "p_boss_fire_lukki" }, { "worm_end_big", "p_boss_hell_worm" }, { "boss_flesh_monster", "p_boss_heretic" }, { "boss_flesh_monster_wrath", "p_boss_heretic_wrath" }, },
 		{ { "foundneworb", "p_orb_1" }, { "foundallneworbs", "p_orb_4" }, { "45_orbs", "p_orb_45" }, },
-		{ { "divine_red_fish_unlocked", "p_secret_red_fish" }, { "cat_secret", "p_secret_cat" }, { "donated_beggar", "p_secret_hobo" }, { "sleep", "p_secret_sleep" }, { "lost_alchemy", "p_secret_alchemy_ants" }, { "perk_creation", "p_secret_perk_creation" }, { "omega_cross", "p_secret_omegadeath" }, { "rage_aura", "p_secret_trolling" }, },
+		{ { "divine_red_fish_unlocked", "p_secret_red_fish" }, { "cat_secret", "p_secret_cat" }, { "donated_beggar", "p_secret_hobo" }, { "sleep", "p_secret_sleep" }, { "lost_alchemy", "p_secret_alchemy_ants" }, { "perk_creation", "p_secret_perk_creation" }, { "omega_cross", "p_secret_omegadeath" }, { "rage_aura", "p_secret_trolling" }, {"whisp_lantern","p_whisp_lantern"} },
 	}
 	
 	for i=1,count do
@@ -261,7 +262,7 @@ function init(x, y, w, h)
 		end
 		
 		for j,v in ipairs(data) do
-			local valid = HasFlagPersistent( table.concat({"apotheosis_card_unlocked_",v[1]}) ) or debug_mode or ModIsEnabled("noita-mapcap")
+			local valid = HasFlagPersistent( table.concat({"apotheosis_card_unlocked_",v[1]}) ) or debug_mode or mapcap_mode
 			
 			--print( "Checked for " .. tostring(v[1]) .. ", result: " .. tostring(valid) )
 			

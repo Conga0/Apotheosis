@@ -1549,11 +1549,5 @@
 		height_index="13"
 		color="ff870e0e" >
 	</Biome>
-	
-	<Biome 
-		biome_filename="data/biome/custom/desert_cursed_spell_book.xml" 
-		height_index="13"
-		color="ff852e2e" >
-	</Biome>
 
 </BiomesToLoad>

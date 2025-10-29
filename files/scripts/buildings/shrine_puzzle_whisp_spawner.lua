@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
 
@@ -7,6 +8,10 @@ function loadShrine(x,y)
     LoadPixelScene( "mods/Apotheosis/files/biome_impl/forest/shrine_puzzle_whisp.png", "mods/Apotheosis/files/biome_impl/forest/shrine_puzzle_whisp_colour.png", x-85, y-175, "mods/Apotheosis/files/biome_impl/forest/shrine_puzzle_whisp_background.png", true )
     EntityLoad("mods/Apotheosis/files/entities/buildings/shrine_puzzle_whisp_lantern.xml", x+2, y-103)
     EntityLoad("mods/Apotheosis/files/entities/props/glyphs/shrine_puzzle_whisp.xml", x+2, y-175)
+
+    if is_holiday_active("smissmass") then
+        EntityLoad("mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml", x+2, y-40)
+    end
 
     local targets = EntityGetInRadiusWithTag(x,y,300,"vegetation")
     for k=1,#targets do

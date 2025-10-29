@@ -609,6 +609,47 @@ local new_scenes = {
 		just_load_an_entity = "mods/Apotheosis/files/entities/buildings/shrine_puzzle_whisp_spawner.xml",
 	},
 
+	--Christmas Lights
+	--Starting Mountain
+	{
+		pos_x = 470,
+		pos_y = -105,
+		just_load_an_entity = is_holiday_active("smissmass") and "mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml" or "",
+	},
+	--Pyramid Greed Room
+	{
+		pos_x = 8560,
+		pos_y = 330,
+		just_load_an_entity = is_holiday_active("smissmass") and "mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml" or "",
+	},
+	--Lake Cabin
+	{
+		pos_x = -12438,
+		pos_y = 187,
+		just_load_an_entity = is_holiday_active("smissmass") and "mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml" or "",
+	},
+	--Tree
+	{
+		pos_x = -1540,
+		pos_y = -760,
+		just_load_an_entity = is_holiday_active("smissmass") and "mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml" or "",
+	},
+	{
+		pos_x = -1600,
+		pos_y = -760,
+		just_load_an_entity = is_holiday_active("smissmass") and "mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml" or "",
+	},
+	{
+		pos_x = -1620,
+		pos_y = -760,
+		just_load_an_entity = is_holiday_active("smissmass") and "mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml" or "",
+	},
+	{
+		pos_x = -1730,
+		pos_y = -760,
+		just_load_an_entity = is_holiday_active("smissmass") and "mods/Apotheosis/files/entities/props/christmas/fairy_lights_loader.xml" or "",
+	},
+
 	-- {
 	-- 	pos_x = 23829,
 	-- 	pos_y = 79532,
@@ -636,10 +677,7 @@ local ghost_pixel_positions = {
 	{ 9377, 10002 },
 	{ 23914, 22783 },
 	{ 24634, 6886 },
-	{
-		7249,
-		3033,
-	},
+	{ 7249, 3033, },
 }
 
 for k = 1, 5 do

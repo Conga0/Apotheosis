@@ -131,6 +131,7 @@ do
 	attrs._tags = attrs._tags .. ",enabled_in_inventory"
 	ModTextFileSetContent("data/entities/items/pickup/sun/sunstone.xml", tostring(xml))
 end
+
 -- GRAHAM'S THINGS COMPAT !!
 if ModIsEnabled("grahamsperks") then
 	local content = ModTextFileGetContent("mods/grahamsperks/files/pickups/magmastone.xml")
@@ -1499,36 +1500,32 @@ do --Reduce the duration of the blindness status effect by 50%
   ModTextFileSetContent(path, content)
 end
 
-do --Necrobots & Super Necrobots can give the player a temporary one-up effect
-  local path = "data/entities/animals/necrobot.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  xml:add_child(nxml.parse([[
-    <LuaComponent
-      script_source_file="mods/Apotheosis/files/scripts/animals/necrobot_charmed.lua"
-      execute_every_n_frame="180"
-      execute_times="-1"
-      remove_after_executed="0"
-      >
-	  </LuaComponent>
-  ]]))
-  ModTextFileSetContent(path, tostring(xml))
-end
+do --Necrobots & Super Necrobots can give the player a temporary one-up effect, also disables their revive abilities for enemies when charmed
+  local paths = {"data/entities/animals/necrobot.xml","data/entities/animals/necrobot_super.xml"}
+  for k=1,#paths do
+    local path = paths[k]
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    xml:add_child(nxml.parse([[
+      <LuaComponent
+        script_source_file="mods/Apotheosis/files/scripts/animals/necrobot_charmed.lua"
+        execute_every_n_frame="180"
+        execute_times="-1"
+        remove_after_executed="0"
+        >
+      </LuaComponent>
+    ]]))
+    ModTextFileSetContent(path, tostring(xml))
+  end
 
-do --Necrobots & Super Necrobots can give the player a temporary one-up effect
-  local path = "data/entities/animals/necrobot_super.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  xml:add_child(nxml.parse([[
-    <LuaComponent
-      script_source_file="mods/Apotheosis/files/scripts/animals/necrobot_charmed.lua"
-      execute_every_n_frame="180"
-      execute_times="-1"
-      remove_after_executed="0"
-      >
-	  </LuaComponent>
-  ]]))
-  ModTextFileSetContent(path, tostring(xml))
+  paths = {"data/scripts/animals/necrobot.lua","data/scripts/animals/necrobot_super.lua"}
+  for k=1,#paths do
+    local path = paths[k]
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("%( EntityHasTag%( v, \"necrobot_NOT\" %) == false %)", "((GameGetGameEffectCount( entity_id, \"CHARM\" ) < 1 and GameGetGameEffectCount( v, \"CHARM\" ) < 1) or (GameGetGameEffectCount( entity_id, \"CHARM\" ) > 0 and GameGetGameEffectCount( v, \"CHARM\" ) > 0)) and ( EntityHasTag( v, \"necrobot_NOT\" ) == false )")
+
+    ModTextFileSetContent(path, content)
+  end
 end
 
 do --Rare chance to make hiisi base spooked during herobrine hours
@@ -1763,6 +1760,23 @@ do
       xml.attr.tags = xml.attr.tags .. ",harmful_status"
     else 
      xml.attr.tags = "harmful_status"
+    end
+    ModTextFileSetContent(filepath, tostring(xml))
+  end
+end
+
+do
+  local harmful_effects_list = {"effect_weaken"}
+
+  for k=1,#harmful_effects_list
+  do local v = harmful_effects_list[k]
+    local filepath = table.concat({"data/entities/misc/",v,".xml"})
+    local content = ModTextFileGetContent(filepath) 
+    local xml = nxml.parse(content)
+    if xml.attr.tags then
+      xml.attr.tags = xml.attr.tags .. ",very_harmful_status"
+    else 
+     xml.attr.tags = "very_harmful_status"
     end
     ModTextFileSetContent(filepath, tostring(xml))
   end

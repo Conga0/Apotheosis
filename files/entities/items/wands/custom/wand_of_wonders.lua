@@ -49,6 +49,12 @@ gun.actions = {"RANDOM_MODIFIER", "RANDOM_SPELL"}
 
 local mana_max = get_random_between_range( gun.mana_max )
 local deck_capacity = gun.deck_capacity
+if Random(1,1000) == 1 then
+	deck_capacity = deck_capacity + 1
+	while Random(1,10) ~= 1 do
+		deck_capacity = deck_capacity + 1
+	end
+end
 
 ComponentSetValue( ability_comp, "ui_name", get_random_from( gun.name ) )
 

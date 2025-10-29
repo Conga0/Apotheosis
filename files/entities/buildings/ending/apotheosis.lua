@@ -2,9 +2,9 @@
 function item_pickup( entity_item, entity_who_picked, name )
 	local player_id = EntityGetWithTag("player_unit")[1]
     local orb_count = GameGetOrbCountThisRun()
-    local heretic_id = EntityGetWithTag("apotheosis_heretic") or {}
+    local heretic_id = EntityGetWithTagInRadius(pos_x,pos_y,512,"apotheosis_heretic") or {}
     local pos_x, pos_y = EntityGetTransform(entity_item)
-    local knowledge = EntityGetWithTag("apotheosis_knowledge") or {}
+    local knowledge = EntityGetWithTagInRadius(pos_x,pos_y,512,"apotheosis_knowledge") or {}
 	local time_in_seconds = tonumber( StatsGetValue("playtime") )
 
     --Uhhh, do stuff
@@ -64,7 +64,7 @@ function item_pickup( entity_item, entity_who_picked, name )
     else
         --Ending 3
         --Kingly knowledge and heretic
-        --Probably Finished
+        --Finished
         EntityLoad("mods/Apotheosis/files/entities/buildings/ending/ending_handler_03.xml", pos_x, pos_y)
     end
 

@@ -1,0 +1,99 @@
+<Entity tags="wand">
+    <AbilityComponent
+        amount_in_inventory="1" 
+        cooldown_frames="0" 
+        drop_as_item_on_death="1" 
+        entity_count="1" 
+        entity_file="" 
+        fast_projectile="0" 
+		mana_charge_speed="30"
+		mana_max="100"
+        max_amount_in_inventory="1" 
+        reload_time_frames="0" 
+        shooting_reduces_amount_in_inventory="0" 
+        sprite_file="mods/Apotheosis/files/items_gfx/wands/custom/centipede_wand.xml"
+        swim_propel_amount="0" 
+        throw_as_item="0" 
+        ui_name="$wand_apotheosis_centipede_wand_name" 
+        use_gun_script="1" 
+        >
+        <gun_config 
+            shuffle_deck_when_empty="0"
+            reload_time="24" 
+            deck_capacity="3" >
+        </gun_config>
+        <gunaction_config 
+            fire_rate_wait="10" >
+        </gunaction_config>
+    </AbilityComponent>
+    
+    <HotspotComponent 
+        _tags="shoot_pos" 
+        offset.x="24" 
+        offset.y="0" >
+    </HotspotComponent>
+	
+	<Base file="data/entities/base_item.xml" >
+        <ItemComponent
+            item_name="$wand_apotheosis_centipede_wand_name"
+			play_hover_animation="1"
+			>
+        </ItemComponent>
+		
+		<SpriteComponent 
+			_tags="item,enabled_in_world,enabled_in_hand" 
+			alpha="1" 
+			image_file="mods/Apotheosis/files/items_gfx/wands/custom/centipede_wand.xml" 
+			next_rect_animation="default" 
+			rect_animation="default"
+			z_index="-1.5" >
+		</SpriteComponent>
+		
+		<SimplePhysicsComponent
+            _enabled="0">
+        </SimplePhysicsComponent>
+    </Base>
+
+	<SpriteParticleEmitterComponent
+		sprite_file="data/particles/ray.xml" 
+		delay="0"
+		lifetime="1.5"
+		color.r="1" color.g="1" color.b="1" color.a="0.5"
+		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-0.5"
+		velocity.x="0" velocity.y="0"
+		gravity.x="0" gravity.y="0"
+		velocity_slowdown="0"
+		rotation="0"
+		angular_velocity="0"
+		scale.x="1" scale.y="0"
+		scale_velocity.x="-0.2" scale_velocity.y="4"
+		emission_interval_min_frames="3"
+		emission_interval_max_frames="6"
+		emissive="0"
+		additive="1"
+		count_min="1" count_max="1"
+		use_velocity_as_rotation="1"
+        randomize_position.max_x="5" 
+        randomize_position.max_y="5" 
+        randomize_position.min_x="-5" 
+        randomize_position.min_y="-5" 
+		randomize_velocity.min_x="-30"
+		randomize_velocity.max_x="30"
+		randomize_velocity.min_y="-30"
+		randomize_velocity.max_y="30"
+		velocity_always_away_from_center="1">
+	</SpriteParticleEmitterComponent>
+    
+    <LuaComponent 
+        _enabled="1" 
+        execute_on_added="1"
+        remove_after_executed="1"
+        script_source_file="mods/Apotheosis/files/entities/items/wands/custom/centipede_wand.lua" 
+	>
+    </LuaComponent>
+
+    <ManaReloaderComponent
+        _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory" >
+    </ManaReloaderComponent>
+
+</Entity>

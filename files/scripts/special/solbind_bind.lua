@@ -2,6 +2,8 @@ local entity_id = GetUpdatedEntityID()
 local parent_id = EntityGetParent(entity_id)
 local pos_x, pos_y = EntityGetTransform(parent_id)
 local entity_name = EntityGetName(parent_id)
+local vsc_comp = EntityGetFirstComponentIncludingDisabled(parent_id)
+local has_spoken = ComponentGetValue2(vsc_comp,"value_bool")
 
 local resist_data = {
     {"$enemy_apotheosis_whisp_giga",
@@ -40,8 +42,9 @@ if entity_name == "$enemy_apotheosis_whisp" then
         GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
         GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/barren_puzzle_completed/create", pos_x, pos_y )
         AddFlagPersistent("apotheosis_fae_lantern_unlocked")
+        AddFlagPersistent("apotheosis_card_unlocked_whisp_lantern")
     end
-else
+elseif has_spoken == false then
     --Resisted Bind
     math.randomseed(pos_x + pos_y)
     for k=1,#resist_data do

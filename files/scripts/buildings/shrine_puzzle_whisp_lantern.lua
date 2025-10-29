@@ -38,13 +38,15 @@ function checkPotionsForFlammables(player_id)
             -- Find last potion tagged item
             local children = EntityGetAllChildren(inventories[inventory_index]) or {}
             for i = 1, #children do
-                if EntityHasTag(children[i], "potion") then
+                if EntityHasTag(children[i],"potion") then
                     local potion = children[i]
                     local mat_id = GetMaterialInventoryMainMaterial(potion)
 
                     if CellFactory_HasTag( mat_id, "[fire]" ) or CellFactory_HasTag( mat_id, "[fire_strong]" ) or CellFactory_HasTag( mat_id, "[hot]" ) or CellFactory_HasTag( mat_id, "[molten_metal]" ) then
                         return true
                     end
+                elseif EntityHasTag(children[i],"brimstone") then
+                    return true
                 end
             end
             break

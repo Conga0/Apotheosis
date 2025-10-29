@@ -1,0 +1,14 @@
+<Entity >
+	<MagicConvertMaterialComponent
+      kill_when_finished="0"
+      steps_per_frame="2"
+      clean_stains="0"
+      is_circle="1"
+      radius="128" 
+	  loop="1"
+      from_material_array="water,steam,rock_static"
+      to_material_array="air,air,air"
+	  >
+    </MagicConvertMaterialComponent>
+
+</Entity>

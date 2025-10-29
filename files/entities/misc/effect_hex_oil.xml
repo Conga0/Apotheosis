@@ -1,4 +1,4 @@
-<Entity name="apotheosis_hex_oil" >
+<Entity name="apotheosis_hex_oil" tags="very_harmful_status" >
 
 	<InheritTransformComponent>
     </InheritTransformComponent>

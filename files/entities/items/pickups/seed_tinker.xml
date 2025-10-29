@@ -12,17 +12,6 @@
 	<SimplePhysicsComponent
 		_tags="enabled_in_world" >
 	</SimplePhysicsComponent>
-	
-	<HitboxComponent
-		_tags="enabled_in_world"
-		aabb_max_x="4" 
-		aabb_max_y="4" 
-		aabb_min_x="-4" 
-		aabb_min_y="-4" 
-		is_enemy="0" 
-		is_item="0" 
-		is_player="0" >
-	</HitboxComponent>
 
 	<SpriteComponent
     	_tags="enabled_in_world,enabled_in_hand" 
@@ -76,7 +65,7 @@
 		is_equipable_forced="1"
 		preferred_inventory="QUICK"
 		play_spinning_animation="0"
-		play_hover_animation="1"
+		play_hover_animation="0"
 	></ItemComponent>
 	
 	<AbilityComponent
@@ -97,33 +86,10 @@
 		radius="64" >
 	</LightComponent>
 	
-	<MaterialSuckerComponent
-		_enabled="1"
-		_tags="enabled_in_world"
-		num_cells_sucked_per_frame="200"
-		randomized_position.min_x="-64"
-		randomized_position.max_x="64"
-		randomized_position.min_y="-64"
-		randomized_position.max_y="64"
-		suck_tag="[magic_liquid]"
-		material_type="0"
-		barrel_size="10000"
-		>
-	</MaterialSuckerComponent>
-	
-	<MaterialInventoryComponent
-		_enabled="1"
-		_tags="enabled_in_world"
-		drop_as_item="0"
-		on_death_spill="1"
-		max_capacity="10000"
-		>
-	</MaterialInventoryComponent>
-	
 	<LuaComponent
 		_enabled="1"
 		_tags="enabled_in_world"
-		script_source_file="mods/Apotheosis/files/scripts/items/seed_tinker.lua"
+		script_source_file="mods/Apotheosis/files/scripts/items/seed_tinker_item.lua"
 		execute_every_n_frame="10"
 		>
 	</LuaComponent>

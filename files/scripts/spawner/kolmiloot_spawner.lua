@@ -5,7 +5,11 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 
 CreateItemActionEntity( "ALPHA", pos_x - 60, pos_y - 40 )
 EntityLoad( "data/entities/items/pickup/heart_better.xml", pos_x - 30, pos_y - 40 )
-perk_spawn( pos_x, pos_y - 40, "EDIT_WANDS_EVERYWHERE" )
+if GlobalsGetValue("PERK_PICKED_EDIT_WANDS_EVERYWHERE_PICKUP_COUNT","0") == "0" then
+    perk_spawn( pos_x, pos_y - 40, "EDIT_WANDS_EVERYWHERE" )
+else
+    perk_spawn_random( pos_x, pos_y - 40, true )
+end
 EntityLoad( "data/entities/items/pickup/heart_fullhp.xml", pos_x + 30, pos_y - 40 )
 CreateItemActionEntity( "BLACK_HOLE", pos_x + 60, pos_y - 40 )
 
