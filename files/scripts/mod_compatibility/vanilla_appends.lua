@@ -131,6 +131,14 @@ do
 	attrs._tags = attrs._tags .. ",enabled_in_inventory"
 	ModTextFileSetContent("data/entities/items/pickup/sun/sunstone.xml", tostring(xml))
 end
+-- GRAHAM'S THINGS COMPAT !!
+if ModIsEnabled("grahamsperks") then
+	local content = ModTextFileGetContent("mods/grahamsperks/files/pickups/magmastone.xml")
+	local xml = nxml.parse(content)
+	local attrs = xml:first_of("GameEffectComponent").attr
+	attrs._tags = attrs._tags .. ",enabled_in_inventory"
+	ModTextFileSetContent("mods/grahamsperks/files/pickups/magmastone.xml", tostring(xml))
+end
 
 --Adds tag to beamstone so perk creation altar can detect it.. technically you can throw it into the sun because of this but, eh, nobody would ever do that.. right? I just wanna save on tags whenever possible
 do
