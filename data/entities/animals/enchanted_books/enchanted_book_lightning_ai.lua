@@ -16,7 +16,7 @@ attack_options = {
     --[[
     {
         name = "lightning_orb",
-        filepath = "mods/Apotheosis/files/entities/projectiles/sun_mini.xml", --Written idea is very similar to the sun, maybe do a lightning bomb instead?
+        filepath = "data/entities/animals/enchanted_books/projectiles/orb_lightning_seeker.xml", --Written idea is very similar to the sun, maybe do a lightning bomb instead?
         count_min = 1,
         count_max = 1,
         attacks_in_this_cycle = 1,

@@ -168,6 +168,12 @@
 		>
 	</VariableStorageComponent>
 
+	<VariableStorageComponent
+		name="targetting_data"
+		value_string="0,0"
+		>
+	</VariableStorageComponent>
+
    	<LuaComponent
 		script_source_file="data/entities/animals/enchanted_books/enchanted_book_arcane_ai.lua"
 		execute_on_added="1"

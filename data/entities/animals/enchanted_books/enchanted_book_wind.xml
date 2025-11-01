@@ -1,4 +1,4 @@
-<Entity name="Tome of Extreme Vacuum" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
+<Entity name="$enemy_apotheosis_enchanted_book_wind" tags="monk_hand,polymorphable_NOT,touchmagic_immunity,curse_NOT,weaken_NOT,no_swap">
 
 	<Base file="data/entities/animals/enchanted_books/damage_resistance_base.xml" />
   
@@ -164,6 +164,12 @@
 	<VariableStorageComponent
 		name="cooldown_data_3"
 		value_int="0"
+		value_string="0,0"
+		>
+	</VariableStorageComponent>
+
+	<VariableStorageComponent
+		name="targetting_data"
 		value_string="0,0"
 		>
 	</VariableStorageComponent>

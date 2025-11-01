@@ -57,23 +57,30 @@ local burst_wait_between = ComponentGetValue2(find_vsc("cooldown_data_3"),"value
 local attacks_remaining_in_this_burst = ComponentGetValue2(find_vsc("cooldown_data_3"),"value_float")
 local spin_speed = ComponentGetValue2(find_vsc("cooldown_data_2"),"value_float") or 0.0
 local bias_data = ComponentGetValue2(find_vsc("cooldown_data_2"),"value_string") or "0,0"
+local target_last_pos = ComponentGetValue2(find_vsc("targetting_data"),"value_string") or "0,0"
+local needs_target_entity = ComponentGetValue2(find_vsc("targetting_data"),"value_bool")
 if bias_data ~= "0,0" then bias_data = SplitStringOnCharIntoTable(bias_data, ",") if math.abs(rotation) > (math.pi / 2) then bias_data[1] = bias_data[1] * -1 end end
+if target_last_pos ~= "0,0" then target_last_pos = SplitStringOnCharIntoTable(target_last_pos, ",") end
 
 
 --Manually handle visual rotation
 local rotation_goal = 0
 local animalAiComp = EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent")
 local current_target = ComponentGetValue2(animalAiComp,"mGreatestPrey") or ComponentGetValue2(animalAiComp,"mGreatestThreat") or 0
-if EntityGetIsAlive(current_target) == false then current_target = 0 end
+if EntityGetIsAlive(current_target) == false and current_target ~= 0 then current_target = 0 ComponentSetValue2(find_vsc("targetting_data"),"value_string","0,0") end
 
 local ctarg_x,ctarg_y = 0,0
 if current_target ~= 0 then
     ctarg_x,ctarg_y = EntityGetTransform(current_target)
+    ComponentSetValue2(find_vsc("targetting_data"),"value_string",table.concat({ctarg_x,",",ctarg_y}))
+elseif type(target_last_pos) == "table" then
+    ctarg_x = target_last_pos[1]
+    ctarg_y = target_last_pos[2]
 end
 
-if current_target ~= 0 or rotation ~= 0 then
+if (ctarg_x ~= 0 and ctarg_y ~= 0) or rotation ~= 0 then
     if type(bias_data) == "table" then ctarg_x = ctarg_x + bias_data[1] ctarg_y = ctarg_y + bias_data[2] end
-    if current_target ~= 0 then rotation_goal = math.atan2( ( ctarg_y - pos_y ), ( ctarg_x - pos_x ) ) end
+    rotation_goal = math.atan2( ( ctarg_y - pos_y ), ( ctarg_x - pos_x ) )
     if spin_speed ~= 0 then rotation_goal = rotation + spin_speed end
     local rotate_speed = (spin_speed ~= 0.0 and spin_speed) or 0.06
     local new_rotation = rotateTo(rotation, rotation_goal, rotate_speed)
@@ -174,7 +181,7 @@ function run_attack(attack_name)
                     proj_filepath = attack_options[k].filepath[math.random(1,#attack_options[k].filepath)]
                 end
 
-                if attack_options[k].continous_warning == false then
+                if attack_options[k].continous_warning ~= true then
                     EntitySetComponentsWithTagEnabled( entity_id, "invincible", false )
                 end
             
@@ -194,12 +201,12 @@ end
 if attack_timer <= 0 and open_state == 3 then
     if attacks_in_this_cycle <= 0 then
         book_timer = 0
-    elseif current_target ~= 0 then
+    elseif current_target ~= 0 or ((ctarg_x ~= 0 and ctarg_y ~= 0) and needs_target_entity == false) then
         run_attack(attack)
     end
 end
 
-if book_timer <= 0 or (open_state == 3 and current_target == 0) then
+if book_timer <= 0 or (open_state == 3 and current_target == 0 and needs_target_entity == true) then
     if open_state == 0 and current_target ~= 0 then
         ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteComponent"),"rect_animation","openning")
         ComponentSetValue2(find_vsc("open_status"),"value_float",36)
@@ -216,6 +223,7 @@ if book_timer <= 0 or (open_state == 3 and current_target == 0) then
         ComponentSetValue2(find_vsc("cooldown_data_2"),"value_string",table.concat({new_attack.bias_x or 0,",",new_attack.bias_y or 0}))
         ComponentSetValue2(find_vsc("cooldown_data_3"),"value_int",new_attack.burst_wait_between or 0)
         ComponentSetValue2(find_vsc("cooldown_data_3"),"value_float",new_attack.attacks_in_this_burst or 0)
+        ComponentGetValue2(find_vsc("targetting_data"),"value_bool",new_attack.extra_func ~= nil)
 
         --ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent"), "attack_ranged_enabled", true)
     elseif open_state == 3 then
