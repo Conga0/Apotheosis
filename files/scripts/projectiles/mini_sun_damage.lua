@@ -6,6 +6,7 @@ local targets = EntityGetInRadiusWithTag(pos_x,pos_y,120,"mortal") or {}
 
 function checkGenomeLikeness(entity_id,victim_id)
   if entity_id == victim_id then return true end
+  if entity_id == 0 then return false end
 
   local entity_animal_id = EntityGetFirstComponentIncludingDisabled(entity_id, "AnimalAIComponent") or 0
   local aggression = ComponentGetValue2(entity_animal_id, "mAggression") or 40
@@ -22,7 +23,7 @@ for k=1,#targets do
     local targ_x, targ_y = EntityGetTransform(v)
     local hit = RaytraceSurfaces(pos_x, pos_y, targ_x, targ_y)
 
-    if not hit and checkGenomeLikeness(shooter_id,v) then
+    if not hit and checkGenomeLikeness(shooter_id,v) == false then
         EntityInflictDamage( v, 0.1, "DAMAGE_FIRE", "$damage_sun", "NONE", 0, 0, shooter_id )
 
         

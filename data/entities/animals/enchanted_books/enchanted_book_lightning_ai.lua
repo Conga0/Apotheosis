@@ -13,19 +13,17 @@ attack_options = {
         continous_warning = true,
         after_attack_delay = 60
     },
-    --[[
     {
-        name = "lightning_orb",
-        filepath = "data/entities/animals/enchanted_books/projectiles/orb_lightning_seeker.xml", --Written idea is very similar to the sun, maybe do a lightning bomb instead?
+        name = "lightning_bomb",
+        filepath = "data/entities/animals/enchanted_books/projectiles/orb_lightning_bomb.xml", --Written idea is very similar to the sun, maybe do a lightning bomb instead?
         count_min = 1,
         count_max = 1,
         attacks_in_this_cycle = 1,
         random_spread = 0,
         speed = 80,
         give_warning = true,
-        after_attack_delay = 260
+        after_attack_delay = 120
     },
-    ]]--
     {
         name = "summon_cloud",
         filepath = "data/entities/animals/enchanted_books/projectiles/thunder_cloud_homing.xml",
@@ -37,7 +35,7 @@ attack_options = {
         speed_random_mult = 1.0,
         give_warning = true,
         bias_y = -777,
-        after_attack_delay = 180,
+        after_attack_delay = 120,
         extra_func = function(projectile_id,current_target)
             local comp = EntityGetFirstComponentIncludingDisabled(projectile_id,"VariableStorageComponent")
             ComponentSetValue2(comp,"value_int",current_target)

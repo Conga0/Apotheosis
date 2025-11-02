@@ -1,0 +1,21 @@
+<Sprite 
+  filename="mods/Apotheosis/files/projectiles_gfx/spell_worm/spell_eel_tail.png" 
+  offset_x="18" 
+  offset_y="10" 
+  default_animation="stand">
+
+  <RectAnimation 
+    frame_count="1" 
+    frame_height="20" 
+    frame_wait="0.082" 
+    frame_width="20" 
+    frames_per_row="1" 
+    name="stand" 
+    pos_x="0" 
+    pos_y="0" 
+    >
+
+  </RectAnimation>
+
+</Sprite>
+

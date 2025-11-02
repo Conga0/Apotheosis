@@ -993,6 +993,18 @@ do -- Player Editor
 	</ShotEffectComponent>
   ]]))
 
+	if is_holiday_active("smissmass") then
+		local spritecomps = xml:all_of("SpriteComponent")
+		for k=1,#spritecomps do
+			if spritecomps[k].attr.image_file == "data/enemies_gfx/player_hat2.xml" then
+				spritecomps[k].attr.image_file = HasFlagPersistent( "secret_hat" ) and "mods/Apotheosis/files/enemies_gfx/seasonal/player_hat_santa_crown.xml" or "mods/Apotheosis/files/enemies_gfx/seasonal/player_hat_santa.xml"
+				spritecomps[k].attr.offset_x = 5.5
+				spritecomps[k].attr.offset_y = 17
+				break
+			end
+		end
+	end
+
 	--Debug
 	--xml:add_child(nxml.parse([[
 	--  <SpriteComponent
@@ -1396,7 +1408,8 @@ function OnMagicNumbersAndWorldSeedInitialized()
 		"Back in my day we couldn't drop spells freely",
 		"I have intense bomb-igniting thoughts!!",
 		"D4 + G4, D4 + G4, G4 + C5, D5 + G4, F4 + A#4",
-		"Somewhere over the rainbow"
+		"Somewhere over the rainbow",
+		"Love what you have while you still can"
 	}
 	SetRandomSeed(minute * second, 7783258) --Used to be 1111 instead of minute, seeding rng by the real life minute rolls different splash text between mod restarts
 	splash = splashes[Random(1, #splashes)]

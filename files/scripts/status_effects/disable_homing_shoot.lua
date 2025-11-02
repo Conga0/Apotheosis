@@ -3,7 +3,7 @@ local entity_id = GetUpdatedEntityID()
 function shot( entity_id )
 
     EntityAddComponent2(
-        entity_id
+        entity_id,
         "LuaComponent",
         {
             execute_on_added = false,

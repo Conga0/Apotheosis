@@ -3,6 +3,7 @@ dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 entity_id = GetUpdatedEntityID()
 local pos_x,pos_y,rotation,scale_x,scale_y = EntityGetTransform(entity_id)
+local book_attack_state_timeout = 1800 --If the book is in its attack state for longer than 30 seconds, tell it to close
 
 local function rotateTo(current, goal, maxStep)
     local function normalizeAngle(angle)
@@ -80,7 +81,7 @@ end
 
 if (ctarg_x ~= 0 and ctarg_y ~= 0) or rotation ~= 0 then
     if type(bias_data) == "table" then ctarg_x = ctarg_x + bias_data[1] ctarg_y = ctarg_y + bias_data[2] end
-    rotation_goal = math.atan2( ( ctarg_y - pos_y ), ( ctarg_x - pos_x ) )
+    if (ctarg_x ~= 0 and ctarg_y ~= 0) then rotation_goal = math.atan2( ( ctarg_y - pos_y ), ( ctarg_x - pos_x ) ) end
     if spin_speed ~= 0 then rotation_goal = rotation + spin_speed end
     local rotate_speed = (spin_speed ~= 0.0 and spin_speed) or 0.06
     local new_rotation = rotateTo(rotation, rotation_goal, rotate_speed)
@@ -213,7 +214,7 @@ if book_timer <= 0 or (open_state == 3 and current_target == 0 and needs_target_
         ComponentSetValue2(find_vsc("open_status"),"value_int",1)
     elseif open_state == 1 then
         ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteComponent"),"rect_animation","open")
-        ComponentSetValue2(find_vsc("open_status"),"value_float",600 + math.random(-60,60) + 99999)
+        ComponentSetValue2(find_vsc("open_status"),"value_float",book_attack_state_timeout)
         ComponentSetValue2(find_vsc("open_status"),"value_int",3)
         local new_attack = select_new_attack()
         if new_attack.give_warning == true then
@@ -236,6 +237,7 @@ if book_timer <= 0 or (open_state == 3 and current_target == 0 and needs_target_
         ComponentSetValue2(find_vsc("cooldown_data_3"),"value_float",0)
         EntitySetComponentsWithTagEnabled( entity_id, "invincible", false )
         --ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"AnimalAIComponent"), "attack_ranged_enabled", false)
+        ComponentSetValue2(find_vsc("targetting_data"),"value_string","0,0")
     else
         ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"SpriteComponent"),"rect_animation","closed")
         ComponentSetValue2(find_vsc("open_status"),"value_float",180 + math.random(-18,18))

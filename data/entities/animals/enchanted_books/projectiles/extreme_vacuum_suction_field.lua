@@ -45,6 +45,11 @@ if ( #targets > 0 ) then
 							ComponentSetValueVector2( comp, "mVelocity", vel_x, vel_y)
 						end)
 					end
+
+					if EntityHasTag(target_id,"player_unit") == true then
+						local proj_comp = EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileComponent")
+						ComponentSetValue2(proj_comp,"lifetime",math.min(ComponentGetValue2(proj_comp,"lifetime"),180))
+					end
 				end
 			end
 		end

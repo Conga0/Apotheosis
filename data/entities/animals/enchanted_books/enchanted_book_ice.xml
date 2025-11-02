@@ -139,42 +139,6 @@
 	b="180">
   </LightComponent>
 
-	<VariableStorageComponent
-		name="open_status"
-		value_int="0"
-		value_float="180"
-		>
-	</VariableStorageComponent>
-
-	<VariableStorageComponent
-		name="cooldown_data"
-		value_int="300"
-		value_float="90"
-		value_string="flamethrower"
-		>
-	</VariableStorageComponent>
-
-	<VariableStorageComponent
-		name="cooldown_data_2"
-		value_int="1"
-		value_float="0"
-		value_string="0,0"
-		>
-	</VariableStorageComponent>
-
-	<VariableStorageComponent
-		name="cooldown_data_3"
-		value_int="0"
-		value_string="0,0"
-		>
-	</VariableStorageComponent>
-
-	<VariableStorageComponent
-		name="targetting_data"
-		value_string="0,0"
-		>
-	</VariableStorageComponent>
-
    	<LuaComponent
 		script_source_file="data/entities/animals/enchanted_books/enchanted_book_ice_ai.lua"
 		execute_on_added="1"
@@ -184,7 +148,6 @@
 	
 	<LuaComponent
 		script_source_file="data/entities/animals/enchanted_books/enchanted_book_ice_orbit_init.lua"
-		script_death="data/entities/animals/enchanted_books/enchanted_book_ice_orbit_death.lua"
 		execute_every_n_frame="2"
 		remove_after_executed="0"
 		>

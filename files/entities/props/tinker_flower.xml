@@ -1,4 +1,9 @@
 <Entity tags="prop,workshop" >
+
+	<VelocityComponent />
+
+    <SimplePhysicsComponent/>
+	
 	<SpriteComponent 
 		z_index="1"
 		image_file="mods/Apotheosis/files/props_gfx/tinker_flower.png" 
