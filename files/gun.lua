@@ -55,7 +55,7 @@ function BeginProjectile(entity_filename)
 end
 
 do	--Detect if a spell is being cast from within a trigger, and if so how deep
-	local fns = {"BeginTriggerDeath", "BeginTriggerHitWorld","BeginTriggerTimer"}
+	local fns = {"BeginTriggerDeath", "BeginTriggerHitWorld"}
 
 	for _, fn in ipairs(fns) do
 		local _fn = _G[fn]
@@ -63,6 +63,12 @@ do	--Detect if a spell is being cast from within a trigger, and if so how deep
 			apo_state.trigger_nesting = apo_state.trigger_nesting + 1
 			_fn()
 		end
+	end
+
+	local _BeginTriggerTimer = BeginTriggerTimer
+	BeginTriggerTimer = function(delay_frames)
+		apo_state.trigger_nesting = apo_state.trigger_nesting + 1
+		_BeginTriggerTimer(delay_frames)
 	end
 
 	local _EndTrigger = EndTrigger
