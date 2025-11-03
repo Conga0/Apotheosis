@@ -59,16 +59,16 @@ do	--Detect if a spell is being cast from within a trigger, and if so how deep
 
 	for _, fn in ipairs(fns) do
 		local _fn = _G[fn]
-		_G[fn] = function()
+		_G[fn] = function(...)
 			apo_state.trigger_nesting = apo_state.trigger_nesting + 1
-			_fn()
+			_fn(...)
 		end
 	end
 
 	local _EndTrigger = EndTrigger
-	EndTrigger = function()
+	EndTrigger = function(...)
 		apo_state.trigger_nesting = apo_state.trigger_nesting - 1
-		_EndTrigger()
+		_EndTrigger(...)
 	end
 end
 
