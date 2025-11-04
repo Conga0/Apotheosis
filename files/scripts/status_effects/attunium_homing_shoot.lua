@@ -1,18 +1,20 @@
 
 
-function shot( entity_id )
+function shot( projectile_id )
 
     --Sets homing strength to 40 for monsters, 100 for the player
     local homingspeed=40
     local tag = "prey"
-    if EntityHasTag(entity_id,"projectile_player") then
+
+    local projcomp = EntityGetFirstComponentIncludingDisabled(projectile_id,"ProjectileComponent")
+    if ComponentGetValue2(projcomp, "mShooterHerdId") == StringToHerdId("player") then
         homingspeed=100
         tag = "homing_target"
     end
 
     --Adds homing to a projectile using designated values
     EntityAddComponent2(
-        entity_id,
+        projectile_id,
         "HomingComponent",
         {
             target_tag=tag,
@@ -23,7 +25,7 @@ function shot( entity_id )
 
     --Adds homing particle effects to the projectile
     local comp = EntityAddComponent2(
-        entity_id,
+        projectile_id,
         "ParticleEmitterComponent",
         {
             emitted_material_name="spark_white",

@@ -155,10 +155,10 @@
     count_min="3" count_max="6"
     randomize_rotation.min="-3.1415"
     randomize_rotation.max="3.1415"
-    randomize_position.min_x="-192"
-    randomize_position.max_x="192"
-    randomize_position.min_y="-192"
-    randomize_position.max_y="192"
+    randomize_position.min_x="-128"
+    randomize_position.max_x="128"
+    randomize_position.min_y="-128"
+    randomize_position.max_y="128"
     >
   </SpriteParticleEmitterComponent>
 
@@ -209,9 +209,9 @@
     emit_cosmetic_particles="1"
     emission_interval_min_frames="1"
     emission_interval_max_frames="3"
-    area_circle_radius.min="192"
-    area_circle_radius.max="192"
-		velocity_always_away_from_center="-100"
+    area_circle_radius.min="128"
+    area_circle_radius.max="128"
+		velocity_always_away_from_center="-40"
     gravity.y="0"
     is_emitting="1" >
   </ParticleEmitterComponent>
