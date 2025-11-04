@@ -269,25 +269,18 @@ end
 
 --t should be the table with probability values
 function random_from_weighted_table(t)
-	if #t == 0 then return nil end
-	
-	local weight_sum = 0.0
-	for _,it in ipairs(t) do
-		it.weight_min = weight_sum
-		it.weight_max = weight_sum + it.probability
-		weight_sum = it.weight_max
-	end
+    local total_weight = 0
+    for _, entry in ipairs(t) do
+        total_weight = total_weight + entry.probability
+    end
 
-	local val = Randomf(0.0, weight_sum)
-	local result = t[1]
-	for _,it in ipairs(t) do
-		if val >= it.weight_min and val <= it.weight_max then
-			result = it
-			break
-		end
-	end
-
-	return result
+    local rnd = Randomf(0, total_weight)
+    for _, entry in ipairs(t) do
+        if rnd <= entry.probability then
+            return entry
+        else rnd = rnd - entry.probability end
+    end
+    return t[#t] --Randomf has a miniscule chance to overflow
 end
 
 --t should be the table with probability values
