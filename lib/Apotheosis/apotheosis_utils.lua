@@ -267,7 +267,9 @@ function has_bit_flag(current, flag)
     return bit.band(current, flag) ~= 0
 end
 
---t should be the table with probability values
+---entries under `t` should all contain a probability field
+---@param t table
+---@return table
 function random_from_weighted_table(t)
     local total_weight = 0
     for _, entry in ipairs(t) do
