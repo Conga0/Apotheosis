@@ -21,7 +21,7 @@ local orb_options = {
                 entity_id,
                 "SpriteParticleEmitterComponent",
                 {
-                    sprite_file="mods/Apotheosis/files/particles/antiteleparticle.xml"
+                    sprite_file="mods/Apotheosis/files/particles/antiteleparticle.xml",
                     delay=0,
                     lifetime=0.4,
                     velocity_slowdown=0,

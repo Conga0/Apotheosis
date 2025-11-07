@@ -39,7 +39,7 @@ local bolt_options = {
     }
 }
 
-local bolt_data = random_from_weighted_table(bolt_options)
+local bolt_data = RandomFromTable(bolt_options)
 local bolt_colours = rgba_translate(bolt_data.bolt_rgba)
 
 if bolt_data.bolt_debuff_file then
