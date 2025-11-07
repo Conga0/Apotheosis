@@ -6,6 +6,9 @@ if comp ~= nil then
 
     local materials = {
         "blood",
+        "blood_fading",
+        "blood_thick",
+        "cloud_blood",
         "apotheosis_blood_infectious",
         "apotheosis_eviltemple_stone",
         "apotheosis_redstone",

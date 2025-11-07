@@ -30,10 +30,14 @@ if comp and water_immune == false then
         "water_swamp",
         "water_salt",
         "swamp",
+        "peat",
         "snow",
+        "slush",
+        "water_temp",
         "water_ice",
         "water_fading",
         "apotheosis_water_fading_fast",
+        "apotheosis_sweat",
     }
 
     for k=1,#materials do

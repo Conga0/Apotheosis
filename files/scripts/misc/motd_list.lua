@@ -21,4 +21,13 @@ if not (ModIsEnabled("raksa") or ModIsEnabled("conjurer_reborn")) then
     ]]))
     ModTextFileSetContent(filepath, tostring(xml))
 
+    filepath = "mods/Apotheosis/files/biome/special/_pixel_scenes.xml"
+    local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
+    local content = ModTextFileGetContent(filepath)
+    local xml = nxml.parse(content)
+    xml:first_of("mBufferedPixelScenes"):add_child(nxml.parse([[
+        <PixelScene pos_x="-1806" pos_y="13189" just_load_an_entity="mods/Apotheosis/files/entities/props/sign_motd/sign_motd.xml" />
+    ]]))
+    ModTextFileSetContent(filepath, tostring(xml))
+
 end

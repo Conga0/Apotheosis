@@ -10,11 +10,11 @@
     
     table.insert(g_big_enemies,
     {
-        prob           = 0.01,
+        prob           = 0.03,
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
-        spawn_check = function() return GameHasFlagRun( "apotheosis_miniboss_boss_toxic_worm" ) end,
+        spawn_check = function() return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) end,
     })
    
     ---Small Enemies

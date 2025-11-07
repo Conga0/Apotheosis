@@ -70,11 +70,20 @@ dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
     
     table.insert(g_big_enemies,
     {
-        prob           = 2.00,
+        prob           = 0.20,
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
         spawn_check = function() return GameHasFlagRun( "apotheosis_miniboss_boss_toxic_worm" ) end,
+    })
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 1.00,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
+        spawn_check = function() return (GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) and GameHasFlagRun( "apotheosis_miniboss_boss_toxic_worm" ) == false) end,
     })
 
 

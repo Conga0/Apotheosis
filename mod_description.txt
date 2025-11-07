@@ -1,35 +1,35 @@
-[img]https://i.imgur.com/S6OzhJT.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_title.png[/img]
 
-[img]https://i.imgur.com/A1MmL9l.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_blasphemers_curse_update.png[/img]
 
 Apotheosis is a massive content mod which expands upon [b]EVERYTHING.[/b]
-132 new enemies!
+134 new enemies!
 6 new bosses!
-81 new spells!
+84 new spells!
 7+ new biomes!
 18+ new materials!
 New Endings!
 Perks, Items, structures, Secrets, Music, and more!
 
-[img]https://i.imgur.com/GNe0ULT.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_01.png[/img]
 
 Explore a massively expanded world map with smooth gameplay containing bug fixes, rebalances and optimisations.
 Alchemic Curiosities, Musical Wonders, you want it? we have it!
 
-[img]https://i.imgur.com/gmdmmTN.gif[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_02.gif[/img]
 
 New player or seasoned veteran? No worries!
 Apotheosis is built for skill levels of all types, with brutal endgame content to early game quests you can complete for fun unlocks and optional areas you can visit to fast track your progress to the harder content, if you're a ready for it.
 
 Just be aware Apotheosis is it's own world, so not everything may be the same world you're familiar with.
 
-[img]https://i.imgur.com/gcY1Dgd.gif[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_03.gif[/img]
 
 If you're a seasoned veteran, you may also prefer the seed "hardcore" for a little extra challenge in your journey.
 
 With all that aside, go nuts, have fun and goodluck out there!
 
-[img]https://i.imgur.com/ZgGRcKd.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_04.png[/img]
 
 Seasonal events include:
 April Fools April 1st
@@ -46,6 +46,7 @@ Copi's Things
 Graham's Things
 Souls
 More Stuff [Must disable More Stuff's custom biomemap]
+Alternate Biomes
 And should be compatiable with most content mods
 
 This mod is [b]not[/b] compatiable with:
@@ -57,4 +58,4 @@ More Musical Magic
 More Creeps & Weirdos
 Conga's Cats
 
-[img]https://i.imgur.com/gh3w3Ch.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_05.png[/img]

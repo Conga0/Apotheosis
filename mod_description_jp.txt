@@ -1,32 +1,34 @@
-[img]https://i.imgur.com/S6OzhJT.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_title.png[/img]
+
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_blasphemers_curse_update.png[/img]
 
 [b]超・大規模[/b]拡張MOD、Apotheosisにようこそ！このMODでは、
-116体のモブ
+134体のモブ
 6体のボス
-76個のスペル
+84個のスペル
 6+種のバイオーム
-15+種の物質
+16+種の物質
 新エンディング
 さらにパークやアイテム、構造物、隠し要素、音楽など、たくさんの要素が追加されます！
 
-[img]https://i.imgur.com/rYbK0bD.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_01.png[/img]
 
 マップを大拡張、バグフィックス、バランス調整、最適化、錬金、音楽……このMODにはすべてがある！
 
-[img]https://i.imgur.com/d8d9KH6.gif[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_02.gif[/img]
 
 Noitaは初心者？大丈夫！
 Apotheosisは初心者から上級者まで、誰でも遊べるように設計されています。超高難度のエンドコンテンツから、ゆかいな隠し要素、ショートカットまで！
 
 マップ全体に変更点がたくさん！知らない場所に迷い込んじゃうかも？
 
-[img]https://i.imgur.com/4n1vFlS.gif[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_03.gif[/img]
 
 腕に自信があるなら、設定からシード値を"hardcore"に設定してみましょう。高難易度のコンテンツで遊ぶことができます。
 
 百聞は一見にしかず、早速遊んでみましょう！
 
-[img]https://i.imgur.com/jGdk4on.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_04.png[/img]
 
 季節イベント一覧:
 April Fools April 1st
@@ -54,12 +56,4 @@ More Musical Magic
 More Creeps & Weirdos
 Conga's Cats
 
-補足
-このMODはBeta版で開発されています。Stable版で遊んだ場合、不具合が発生することがあります。
-
-[img]https://i.imgur.com/yvzCtok.png[/img]
-
-
-作者を支援したい方は、ここから寄付してください！:
-https://ko-fi.com/congalyne
-遊んでくれるだけでも作者は喜びます。無理してお金を払うなんてだめ！
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_05.png[/img]

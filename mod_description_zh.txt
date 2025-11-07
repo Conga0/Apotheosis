@@ -1,0 +1,61 @@
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_title.png[/img]
+
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_blasphemers_curse_update.png[/img]
+
+神化(Apotheosis)是一个大型内容模组，扩展了原版的[b]一切。[/b]
+134 种新敌人！
+6 种新Boss！
+84 种新法术！
+超过 7 种新群系！
+超过 18 种新材料！
+还有一个新结局！
+天赋, 物品, 结构, 秘密, 音乐, 以及更多其他内容!
+
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_01.png[/img]
+
+用调试、平衡以及优化给你带来在巨大世界中流畅探索的游玩体验。
+对炼金感到好奇？想要探寻音乐的奇迹？你想要的，我们都有！
+
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_02.gif[/img]
+
+无论你是萌新还是大佬，都不需要担心！
+神化适合各种熟练度的玩家，既有残酷的终极游戏目标，也有早期游戏任务，你可以通过完成这些任务解锁有趣的游戏内容。如果你已经做好准备，还可以进入旁线区域，更早向较难的内容发起挑战。
+
+一定要记住，神化是一个独立的世界，因此并非所有内容都与你熟悉的世界相同。
+ 
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_03.gif[/img]
+
+如果你是一名经验丰富的大佬级玩家，你可能还喜欢硬核种子“hardcore”，为你的游戏旅程增加一些额外的挑战。
+
+先不聊这些了，去疯吧，去玩吧，祝你出师大捷！
+
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_04.png[/img]
+
+节日事件包括：
+愚人节 4月1日
+神化模组的生日 7月20日-22日
+万圣节 10月15日-30日
+圣诞节 12月15日-31日
+⑨日 9月9日
+
+资料文档：
+维基百科：https://noita.wiki.gg/wiki/Mod:Apotheosis
+Discord社区：https://discord.gg/gtyGnv8Pxk
+
+此模组兼容以下模组：
+Copi's Things
+Graham's Things
+More Stuff（必须在设置中关闭 Alter Map 功能）
+以及和大部分模组兼容的模组
+
+此模组[b]不[/b]兼容以下模组：
+覆盖群系地图的模组 (例如 Noitavania、Purgatory、More Stuff 等)
+Ride Minecarts
+New Enemies & Biomes Mod 模组如果开启啄木鸟和深渊 Boss，也会出现兼容性问题。
+
+此模组已内置以下模组：
+More Musical Magic
+More Creeps & Weirdos
+Conga's Cats
+
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_05.png[/img]

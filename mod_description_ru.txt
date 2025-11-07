@@ -1,33 +1,35 @@
-[img]https://i.imgur.com/S6OzhJT.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_title.png[/img]
+
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_blasphemers_curse_update.png[/img]
 
 Apotheosis - это масштабный мод, расширяющий [b]ВСЁ[/b] в Noita.
-124 новых врага!
+134 новых врага!
 6 новых боссов!
-78 новых заклинаний!
+84 новых заклинаний!
 7+ новых биомов!
 18+ новых материалов!
 Новая концовка!
 Перки, предметы, структуры, секреты, музыка и многое другое!
 
-[img]https://i.imgur.com/rYbK0bD.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_01.png[/img]
 
 Исследуйте значительно расширенную карту мира с улучшенным геймплеем, включающим исправления ошибок, изменения баланса и оптимизацию.
 Алхимические диковинки, музыкальные чудеса - всё, что душе угодно!
 
-[img]https://i.imgur.com/d8d9KH6.gif[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_02.gif[/img]
 
 Новичок или опытный ветеран? Не беспокойтесь!
 Apotheosis создан для игроков любого уровня, с жестоким контентом для поздней игры и заданиями для ранней игры, которые можно выполнить ради интересных разблокировок. Вас ждут дополнительные области, которые можно посетить, чтобы ускорить прогресс и быстрее добраться до сложного контента, если вы к нему готовы.
 
 Только имейте в виду, что Apotheosis - это свой собственный мир, поэтому не всё может быть таким, как в знакомой вам Noita.
 
-[img]https://i.imgur.com/4n1vFlS.gif[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_03.gif[/img]
 
 Если вы опытный игрок, вы можете выбрать семя "hardcore" для дополнительного испытания в вашем путешествии.
 
 А теперь - вперёд, развлекайтесь и удачи вам!
 
-[img]https://i.imgur.com/jGdk4on.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_04.png[/img]
 
 Сезонные события:
 День дурака: 1 апреля
@@ -55,6 +57,4 @@ More Musical Magic
 More Creeps & Weirdos
 Conga's Cats
 
-Настоятельно рекомендуется играть на бета-версии игры для максимальной стабильности мода.
-
-[img]https://i.imgur.com/yvzCtok.png[/img]
+[img]https://raw.githubusercontent.com/Conga0/Apotheosis/refs/heads/main/documentation/workshop_images/apotheosis_banner_05.png[/img]
