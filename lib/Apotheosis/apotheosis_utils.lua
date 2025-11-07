@@ -1,3 +1,12 @@
+--TYPES:
+---@class (exact) Weighted
+---@field probability number
+
+---@class (exact) Seed
+---@field [1] number
+---@field [2] number
+
+---@type nxml
 local nxml = dofile_once("mods/Apotheosis/lib/nxml.lua")
 local set_content = ModTextFileSetContent
 local get_content = ModTextFileGetContent
@@ -267,60 +276,54 @@ function has_bit_flag(current, flag)
     return bit.band(current, flag) ~= 0
 end
 
---t should be the table with probability values
-function random_from_weighted_table(t)
-	if #t == 0 then return nil end
-	
-	local weight_sum = 0.0
-	for _,it in ipairs(t) do
-		it.weight_min = weight_sum
-		it.weight_max = weight_sum + it.probability
-		weight_sum = it.weight_max
-	end
 
-	local val = Randomf(0.0, weight_sum)
-	local result = t[1]
-	for _,it in ipairs(t) do
-		if val >= it.weight_min and val <= it.weight_max then
-			result = it
-			break
-		end
-	end
+---@generic T : Weighted
+---@param t T[]
+---@return T
+---Function for picking a random table entry on `probability` as weight
+function RandomFromTable(t)
+    local total_weight = 0
+    for _, entry in ipairs(t) do
+        total_weight = total_weight + entry.probability
+    end
 
-	return result
+    local rnd = Randomf(0, total_weight)
+    for _, entry in ipairs(t) do
+        if rnd <= entry.probability then
+            return entry
+        else rnd = rnd - entry.probability end
+    end
+    return t[#t] --Randomf has a miniscule chance to overflow
 end
 
---t should be the table with probability values
---rng should be a table of 2 values acting as the seed
-function random_from_weighted_table_procedural(t, rng)
-	if #t == 0 then return nil end
-	
-	local weight_sum = 0.0
-	for _,it in ipairs(t) do
-		it.weight_min = weight_sum
-		it.weight_max = weight_sum + it.probability
-		weight_sum = it.weight_max
-	end
+---@generic T : Weighted
+---@param t T[]
+---@param seed Seed
+---@return T
+---Function for picking a procedurally random table entry on `probability` as weight based on `seed`
+function ProceduralRandomFromTable(t, seed)
+    local total_weight = 0
+    for _, entry in ipairs(t) do
+        total_weight = total_weight + entry.probability
+    end
 
-    math.randomseed(rng[1], rng[2])
-    local val = math.random(0.0, weight_sum)
-	local result = t[1]
-	for _,it in ipairs(t) do
-		if val >= it.weight_min and val <= it.weight_max then
-			result = it
-			break
-		end
-	end
-
-	return result
+    local rnd = ProceduralRandomf(seed[1], seed[2], 0, total_weight)
+    for _, entry in ipairs(t) do
+        if rnd <= entry.probability then
+            return entry
+        else rnd = rnd - entry.probability end
+    end
+    return t[#t] --Randomf has a miniscule chance to overflow
 end
 
-function print_table(o)
+---@param o table
+---@return string
+function DumpTable(o)
    if type(o) == 'table' then
       local s = '{ '
       for k,v in pairs(o) do
          if type(k) ~= 'number' then k = '"'..k..'"' end
-         s = s .. '['..k..'] = ' .. dump(v) .. ','
+         s = s .. '['..k..'] = ' .. DumpTable(v) .. ','
       end
       return s .. '} '
    else

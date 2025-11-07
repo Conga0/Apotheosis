@@ -321,7 +321,7 @@ if comp then
     local motd = nil
     local target_found = false
 
-    for index, value in ipairs(MOTD_conditionals) do
+    for _, value in ipairs(MOTD_conditionals) do
         if value.condition then
             motd = value.motd
             if value.func then motd = value.func() end
@@ -332,7 +332,7 @@ if comp then
     if motd == nil then
 
         while(target_found == false) do
-            local target = random_from_weighted_table_procedural(MOTD_regulars, rnd_seed)
+            local target = ProceduralRandomFromTable(MOTD_regulars, rnd_seed)
             if target.condition ~= nil and target.condition == false and 1 == 2 then
                 rnd_seed[2] = rnd_seed[2] + 1
             else
