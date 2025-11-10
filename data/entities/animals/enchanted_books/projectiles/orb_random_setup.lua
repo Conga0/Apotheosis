@@ -53,7 +53,7 @@ local orb_options = {
     },
 }
 
-local proj_data = random_from_weighted_table(bolt_options)
+local proj_data = ProceduralRandomFromTable(bolt_options)
 
 if proj_data.bolt_debuff_file then
     EntityAddComponent2(

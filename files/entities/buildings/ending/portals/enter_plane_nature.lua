@@ -1,21 +1,13 @@
 function do_newgame_plus()
-	-- GameDoEnding2()
-	-- BiomeMapLoad( "mods/nightmare/files/biome_map.lua" )
-
-	--Do we need to do this?
-	--[[
-	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
-	-- print( newgame_n )
-	newgame_n = newgame_n + 1
-	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
-	]]--
 
 	local players = EntityGetWithTag("player_unit") or {}
 	for k=1,#players
 	do local v = players[k]
 		EntitySetTransform(v,746,4981 - (512 * 7))
 
+		--[[
 		--18/02/2024 Conga: Temp Fix until Nolla fixes the CompLoadOrder bug
+		--09/11/2025 Conga: I'm pretty sure Nolla fixed this bug and it's safe to comment this out, I really hope so because this code breaks the WorldStateComponent for god knows what reason
 		local children = EntityGetAllChildren(v) or {}
 		for l=1,#children do
 			local comps = EntityGetComponentIncludingDisabled(children[l],"BiomeTrackerComponent") or {}
@@ -26,6 +18,7 @@ function do_newgame_plus()
 
 		local biome_rebooter = EntityLoad("mods/Apotheosis/files/entities/special/biome_rebooter.xml",746,4981 - (512 * 7))
 		EntityAddChild(v,biome_rebooter)
+		]]--
 	end
 
 	--EntityLoad("mods/Apotheosis/files/entities/buildings/ending/portals/saviour_portal_nature.xml",0,0)
@@ -54,21 +47,10 @@ function do_newgame_plus()
 
 	BiomeMapLoad_KeepPlayer( "mods/Apotheosis/files/entities/buildings/ending/portals/enter_plane_nature_biome_map.lua", "mods/Apotheosis/files/scripts/newgame/_pixel_scenes_empty.xml" )
 	SessionNumbersSave()
-	-- BiomeMapLoad( "data/biome_impl/biome_map.png" )
-
-	-- clean up entrances to biomes
-	--LoadPixelScene( "data/biome_impl/clean_entrance.png", "", 128, 1534, "", true, true )
-
-
-	--"Entered blah blah blah" "You feel warped to another dimension" "blah blah blah"
-	--local text = GameTextGetTranslatedOrNot("$new_game_for_newgame_plus")
-
-	--GamePrintImportant( text, "" )
 
 
 
-	--Increase curse (& suffocation by relation) damage to match with the player's new HP stats
-
+	--Update Mapping Perks to behave as intended in planes
 	local targets = EntityGetWithTag("player_unit")
 	for k=1,#targets
 	do local v = targets[k]
@@ -92,20 +74,6 @@ function do_newgame_plus()
 				ComponentSetValue2(lcomp,"script_source_file","")
 			end
 		end
-
-		--Disable Spatial Awareness
-		--[[
-		local children = EntityGetAllChildren(v) or {}
-		for z=1,#children do
-			local comps = EntityGetComponentIncludingDisabled(children[z],"LuaComponent")
-			for k=1,#comps do
-				if comps[k] ~= nil and ComponentGetValue2(comps[k],"script_source_file") == "data/scripts/perks/map.lua" then
-					EntitySetComponentIsEnabled(children[z],comps[k],false)
-					break
-				end
-			end
-		end
-		]]--
 	end
 
 	local targets = EntityGetWithTag("poopstone")

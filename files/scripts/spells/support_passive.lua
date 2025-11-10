@@ -71,7 +71,9 @@ if current_frame > next_trueform_frame then
         local pos_x, pos_y = EntityGetTransform(entity_id)
 		GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/all_seeing_eye/create", pos_x, pos_y )
         local status = EntityLoad("mods/Apotheosis/files/entities/misc/effect_support_passive_cooldown.xml",pos_x,pos_y)
+        local extended_protection = EntityLoad("mods/Apotheosis/files/entities/misc/effect_clear_status_everything.xml",pos_x,pos_y)
         EntityAddChild(player_id,status)
+        EntityAddChild(player_id,extended_protection)
         visualEffects(pos_x,pos_y)
     end
 end

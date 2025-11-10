@@ -3,6 +3,7 @@
 	<!-- item -->
 
 	<VelocityComponent
+		_enabled="0"
 		_tags="enabled_in_world"
 		gravity_y="400"
 		air_friction="0.55"
@@ -10,17 +11,18 @@
 	</VelocityComponent>
 		
 	<SimplePhysicsComponent
+		_enabled="0"
 		_tags="enabled_in_world" >
 	</SimplePhysicsComponent>
 
 	<SpriteComponent
     	_tags="enabled_in_world,enabled_in_hand" 
 		_enabled="1"
-		offset_x="10"
-		offset_y="38"
+		offset_x="6"
+		offset_y="6"
 		image_file="mods/Apotheosis/files/items_gfx/seed_tinker.png"
 		z_index="-1.5" 
-		update_transform_rotation="0"
+		update_transform_rotation="1"
 	></SpriteComponent>
 
 	<SpriteParticleEmitterComponent
@@ -59,7 +61,7 @@
 		_tags="enabled_in_world"
 		item_name="$item_apotheosis_seed_tinker_name"
 		ui_description="$item_apotheosis_seed_tinker_desc"
-		ui_sprite="mods/Apotheosis/files/items_gfx/seed_tinker.png"
+		ui_sprite="mods/Apotheosis/files/items_gfx/in_hand/seed_tinker_in_hand.png"
 		max_child_items="1"
 		is_pickable="1"
 		is_equipable_forced="1"
@@ -83,6 +85,9 @@
   
 	<LightComponent
 		_tags="enabled_in_world"
+		r="81"
+		g="219"
+		b="136"
 		radius="64" >
 	</LightComponent>
 	
@@ -99,5 +104,28 @@
 		value_int="0"
 		>
 	</VariableStorageComponent>
+
+	<Entity>
+		<MaterialSuckerComponent
+			_enabled="0"
+			num_cells_sucked_per_frame="200"
+			randomized_position.min_x="-64"
+			randomized_position.max_x="64"
+			randomized_position.min_y="-64"
+			randomized_position.max_y="64"
+			suck_tag="[magic_liquid]"
+			material_type="0"
+			barrel_size="10000"
+			>
+		</MaterialSuckerComponent>
+		
+		<MaterialInventoryComponent
+			_enabled="0"
+			drop_as_item="0"
+			on_death_spill="1"
+			max_capacity="10000"
+			>
+		</MaterialInventoryComponent>
+	</Entity>
 
 </Entity>

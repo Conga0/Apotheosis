@@ -1,0 +1,20 @@
+<Sprite
+	filename="mods/Apotheosis/files/particles/tinker_tree_crystals.png"
+	offset_x="3.5"
+	offset_y="5"
+	default_animation="explosion"
+	>
+
+	<!-- explosion -->
+	<RectAnimation
+		name="explosion"
+		pos_x="21"
+		pos_y="0"
+		frame_count="2"
+		frame_width="7"
+		frame_height="10"
+		frame_wait="0.2"
+		frames_per_row="1"
+		loop="0"   >
+	</RectAnimation>
+</Sprite>

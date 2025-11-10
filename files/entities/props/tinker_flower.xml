@@ -6,7 +6,7 @@
 	
 	<SpriteComponent 
 		z_index="1"
-		image_file="mods/Apotheosis/files/props_gfx/tinker_flower.png" 
+		image_file="mods/Apotheosis/files/props_gfx/tinker_flower_0$[1-4].png" 
 		offset_x="12"
 		offset_y="22" >
 	</SpriteComponent>
@@ -26,9 +26,9 @@
 		_enabled="1" 
 		radius="96"
 		fade_out_time="1.5" 
-		r="182"
-		g="255"
-		b="153"
+		r="81"
+		g="219"
+		b="136"
 		offset_y="-9"
 		>
 	</LightComponent>

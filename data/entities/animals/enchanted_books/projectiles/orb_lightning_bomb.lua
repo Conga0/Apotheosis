@@ -5,20 +5,6 @@ local shooter_id = ComponentGetValue2(projcomp,"mWhoShot") or 0
 local radius = 128
 local targets = EntityGetInRadiusWithTag( pos_x, pos_y, radius, "mortal" )
 
-function checkGenomeLikeness(entity_id,victim_id)
-  if entity_id == victim_id then return true end
-  if entity_id == 0 then return false end
-
-  local entity_animal_id = EntityGetFirstComponentIncludingDisabled(entity_id, "AnimalAIComponent") or 0
-  local aggression = ComponentGetValue2(entity_animal_id, "mAggression") or 40
-
-  if EntityGetHerdRelation(entity_id, victim_id) < aggression then
-    return false
-  else
-    return true
-  end
-end
-
 for k=1, #targets
 do local v = targets[k]
     local targ_x, targ_y = EntityGetTransform(v)

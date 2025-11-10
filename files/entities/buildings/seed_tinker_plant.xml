@@ -1,11 +1,20 @@
-<Entity name="Seed Tinker Plant Apotheosis" tags="teleportable_NOT">
+<Entity name="Seed Tinker Plant Apotheosis" tags="teleportable_NOT,workshop">
 
 	<SpriteComponent
 		_enabled="1"
-		offset_x="10"
-		offset_y="38"
-		image_file="mods/Apotheosis/files/items_gfx/seed_tinker.png"
+		offset_x="24"
+		offset_y="48"
+		image_file="mods/Apotheosis/files/buildings_gfx/tinker_tree_stage_01.xml"
 		z_index="-1.5" 
+		update_transform_rotation="0"
+	></SpriteComponent>
+
+	<SpriteComponent
+		_enabled="0"
+		offset_x="24"
+		offset_y="48"
+		image_file="mods/Apotheosis/files/buildings_gfx/tinker_tree_stage_01.xml"
+		z_index="-1.55" 
 		update_transform_rotation="0"
 	></SpriteComponent>
 	
@@ -18,40 +27,12 @@
 		is_item="0" 
 		is_player="0" >
 	</HitboxComponent>
-
-	<SpriteParticleEmitterComponent
-		_enabled="1"
-		sprite_file="data/particles/ray.xml" 
-		delay="0"
-		lifetime="1.5"
-		color.r="1" color.g="1" color.b="1" color.a="0.5"
-		color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-0.5"
-		velocity.x="0" velocity.y="0"
-		gravity.x="0" gravity.y="0"
-		velocity_slowdown="0"
-		rotation="0"
-		angular_velocity="0"
-		scale.x="1" scale.y="0"
-		scale_velocity.x="-0.2" scale_velocity.y="4"
-		emission_interval_min_frames="3"
-		emission_interval_max_frames="6"
-		emissive="1"
-		additive="1"
-		count_min="1" count_max="1"
-		use_velocity_as_rotation="1"
-		randomize_position.min_x="-5"
-		randomize_position.max_x="5"
-		randomize_position.min_y="-5"
-		randomize_position.max_y="5"
-		randomize_velocity.min_x="-30"
-		randomize_velocity.max_x="30"
-		randomize_velocity.min_y="-30"
-		randomize_velocity.max_y="30"
-		velocity_always_away_from_center="1">
-	</SpriteParticleEmitterComponent>
 	
 	<LightComponent
 		_tags="enabled_in_world"
+		r="81"
+		g="219"
+		b="136"
 		radius="64" >
 	</LightComponent>
 	
@@ -86,7 +67,107 @@
 	<VariableStorageComponent
 		name="growth_state"
 		value_int="0"
+		value_bool="1"
+		value_string="0"
 		>
 	</VariableStorageComponent>
+
+	<Entity>
+		<InheritTransformComponent>
+			<Transform
+				position.x="0"
+				position.y="-6"
+				>
+			</Transform>
+		</InheritTransformComponent>
+
+		<InteractableComponent
+			ui_text="$building_apotheosis_seed_tinker_remove"
+			exclusivity_group="1"
+		/>
+		
+		<LuaComponent
+			script_interacting="mods/Apotheosis/files/scripts/items/seed_tinker.lua"
+			execute_every_n_frame="-1"
+		/>
+
+		<SpriteComponent
+			_enabled="1"
+			_tags="invincible"
+			offset_x="6"
+			offset_y="6"
+			image_file="mods/Apotheosis/files/items_gfx/seed_tinker.png"
+			z_index="-1.6" 
+			update_transform_rotation="0"
+		></SpriteComponent>
+
+		<SpriteParticleEmitterComponent
+			_enabled="1"
+			_tags="invincible"
+			sprite_file="data/particles/ray.xml" 
+			delay="0"
+			lifetime="1.5"
+			z_index="-1.7"
+			color.r="1" color.g="1" color.b="1" color.a="0.5"
+			color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-0.5"
+			velocity.x="0" velocity.y="0"
+			gravity.x="0" gravity.y="0"
+			velocity_slowdown="0"
+			rotation="0"
+			angular_velocity="0"
+			scale.x="1" scale.y="0"
+			scale_velocity.x="-0.2" scale_velocity.y="4"
+			emission_interval_min_frames="3"
+			emission_interval_max_frames="6"
+			emissive="1"
+			additive="1"
+			count_min="1" count_max="1"
+			use_velocity_as_rotation="1"
+			randomize_position.min_x="-5"
+			randomize_position.max_x="5"
+			randomize_position.min_y="-5"
+			randomize_position.max_y="5"
+			randomize_velocity.min_x="-30"
+			randomize_velocity.max_x="30"
+			randomize_velocity.min_y="-30"
+			randomize_velocity.max_y="30"
+			velocity_always_away_from_center="1">
+		</SpriteParticleEmitterComponent>
+
+		<SpriteParticleEmitterComponent
+			_enabled="0"
+			_tags="enabled_by_script"
+			sprite_file="mods/Apotheosis/files/particles/tinker_tree_crystal_0$[1-4].xml"
+			delay="0"
+			lifetime="60"
+			z_index="-1.7"
+			color.r="1" color.g="1" color.b="1" color.a="1.0"
+			color_change.r="0" color_change.g="0" color_change.b="0" color_change.a="-1"
+			velocity.x="0" velocity.y="0"
+			gravity.x="0" gravity.y="10"
+			velocity_slowdown="0"
+			rotation="0"
+			angular_velocity="0"
+			use_velocity_as_rotation="0"
+			scale.x="1" scale.y="1"
+			scale_velocity.x="0" scale_velocity.y="0"
+			emission_interval_min_frames="1"
+			emission_interval_max_frames="1"
+			count_min="10" count_max="15"
+			randomize_rotation.min="-0.1"
+			randomize_rotation.max="0.1"
+			randomize_angular_velocity.min="-0.2"
+			randomize_angular_velocity.max="0.2"
+			randomize_position.min_x="-18"
+			randomize_position.max_x="18"
+			randomize_position.min_y="-21"
+			randomize_position.max_y="6"
+			randomize_velocity.min_x="-10"
+			randomize_velocity.max_x="10"
+			randomize_velocity.min_y="0"
+			randomize_velocity.max_y="10"
+			>
+		</SpriteParticleEmitterComponent>
+	</Entity>
 
 </Entity>

@@ -15,7 +15,9 @@ function do_newgame_plus()
 	do local v = players[k]
 		EntitySetTransform(v,-5910,2421)
 
+		--[[
 		--18/02/2024 Conga: Temp Fix until Nolla fixes the CompLoadOrder bug
+		--09/11/2025 Conga: I'm pretty sure Nolla fixed this bug and it's safe to comment this out, I really hope so because this code breaks the WorldStateComponent for god knows what reason
 		local children = EntityGetAllChildren(v) or {}
 		for l=1,#children do
 			local comps = EntityGetComponentIncludingDisabled(children[l],"BiomeTrackerComponent") or {}
@@ -26,6 +28,7 @@ function do_newgame_plus()
 
 		local biome_rebooter = EntityLoad("mods/Apotheosis/files/entities/special/biome_rebooter.xml",-5910,2421)
 		EntityAddChild(v,biome_rebooter)
+		]]--
 	end
 
 	--Reset RGB portal locations

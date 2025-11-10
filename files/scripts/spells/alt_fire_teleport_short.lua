@@ -18,7 +18,7 @@ cooldown_frame = ComponentGetValue2( variablecomp, "value_int" )
 local aim_x, aim_y = ComponentGetValue2(controlscomp, "mAimingVectorNormalized")
 local manacost = 20
 
-if GameGetFrameNum() >= cooldown_frame then
+if GameGetFrameNum() >= cooldown_frame and GameIsInventoryOpen() == false then
     if isButtonDown("altfire") then
         local mana = wand.mana
         if (mana > manacost) then
