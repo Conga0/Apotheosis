@@ -300,20 +300,24 @@ end
 ---@param t T[]
 ---@param seed Seed
 ---@return T
----Function for picking a procedurally random table entry on `probability` as weight based on `seed`
+---Function for picking a procedurally random table entry on `probability` as weight based on `seed`.
+---Uses `math.random` to avoid being influenced by World Seed.
+---Note: `probability` should not have more than 2 decimal places.
 function ProceduralRandomFromTable(t, seed)
     local total_weight = 0
     for _, entry in ipairs(t) do
         total_weight = total_weight + entry.probability
     end
 
-    local rnd = ProceduralRandomf(seed[1], seed[2], 0, total_weight)
+    math.randomseed(seed[1], seed[2])
+    local rnd = math.random(0, total_weight * 100) --this only takes 2 decimal places but feel free to increase if needed
+    rnd = rnd * .01
     for _, entry in ipairs(t) do
         if rnd <= entry.probability then
             return entry
         else rnd = rnd - entry.probability end
     end
-    return t[#t] --Randomf has a miniscule chance to overflow
+    return t[#t]
 end
 
 ---@param o table
