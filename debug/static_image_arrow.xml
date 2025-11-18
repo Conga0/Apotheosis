@@ -1,0 +1,17 @@
+<Entity>
+
+  <SpriteComponent 
+    _enabled="1" 
+    alpha="1" 
+    image_file="mods/Apotheosis/debug/static_image_arrow.png" 
+    next_rect_animation="" 
+    offset_x="12" 
+    offset_y="7" 
+	additive="1"
+    rect_animation="fireball"
+	z_index="-100"
+     >
+  </SpriteComponent>
+  
+</Entity>
+

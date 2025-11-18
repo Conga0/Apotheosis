@@ -13,7 +13,7 @@
 		damage_deactivation_time_max="120" >
 	</PhysicsAIComponent>
 
-	<PhysicsBodyComponent 
+	<PhysicsBodyComponent
 		allow_sleep="1" 
 		angular_damping="0.02" 
 		fixed_rotation="0" 
@@ -211,21 +211,9 @@
 
 
 	<!-- Status Clearing AI -->
-	
-	<!-- Extinguish nearby creatures only if they're on fire -->
-	<!-- Originally every 180 frames but reduce to 130 since they get a chance to shine less often than I'd like...-->
 	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/ailment_extinguish_ai.lua"
-		execute_every_n_frame="90"
-		execute_times="-1"
-		>
-	</LuaComponent>
-	
-	<!-- Defrosts nearby creatures only if they're frozen -->
-	<!-- Originally every 90 frames but reduced to 80 since they get a chance to shine less often than I'd like...-->
-	<LuaComponent
-		script_source_file="mods/Apotheosis/files/scripts/animals/ailment_unfreeze_ai.lua"
-		execute_every_n_frame="80"
+		script_source_file="mods/Apotheosis/files/scripts/animals/drone_status_ailment_ai.lua"
+		execute_every_n_frame="20"
 		execute_times="-1"
 		>
 	</LuaComponent>

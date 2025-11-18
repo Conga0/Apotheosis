@@ -474,3 +474,28 @@ function getDistanceFromTarget(entity_id,victim_id)
   local distance = math.abs(v_y - y) + math.abs(v_x - x)
   return distance or 0
 end
+
+function getItemTypeFromTable(item_table)
+  local item_types = {
+
+  }
+
+  local spells = {}
+  local wands = {}
+  local items = {}
+
+  for k=1,#item_table do
+    local item = item_table[k]
+    local ability_comp = EntityGetFirstComponentIncludingDisabled(item,"AbilityComponent") or 0
+    
+    if EntityHasTag(item,"card_action") then
+      table.insert(spells,item)
+    elseif ability_comp > 0 and ComponentGetValue2(ability_comp,"use_gun_script") == true then
+      table.insert(wands,item)
+    else
+      table.insert(items,item)
+    end
+  end
+
+  return items,wands,spells
+end

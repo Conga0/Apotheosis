@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 local entity_id = GetUpdatedEntityID()
 local x,y = EntityGetTransform(entity_id)
@@ -14,11 +15,26 @@ local sprite_comps = EntityGetComponentIncludingDisabled(entity_id,"SpriteCompon
 local sprite_comp_tree = sprite_comps[1]
 local sprite_comp_leaves = sprite_comps[2]
 
+local player_inventory_states = {
+    slot_is_open = 1,
+    inventory_is_open = 2,
+    inventory_is_full = 3,
+}
+
+function get_player_inventory_state(player_id)
+    if GameIsInventoryOpen() then return 2 end
+
+    local player_items = GameGetAllInventoryItems( player_id ) or {}
+    local items = getItemTypeFromTable(player_items)
+    if #items >= 4 then return 3 end
+
+    return 1
+end
+
 local player_tbl = EntityGetWithTag("player_unit") or {}
 local tinker_seedslot_id = EntityGetAllChildren(entity_id)[1]
 local interactable_comp = EntityGetFirstComponentIncludingDisabled(tinker_seedslot_id,"InteractableComponent")
 if #player_tbl > 0 and is_seed_present == false then
-
     local inventory = EntityGetFirstComponentIncludingDisabled(player_tbl[1], "Inventory2Component")
     local active_item = ComponentGetValue2(inventory, "mActualActiveItem") or 0
     if active_item ~= 0 and EntityGetName(active_item) == "Seed Tinker Apotheosis" then
@@ -29,8 +45,7 @@ if #player_tbl > 0 and is_seed_present == false then
 else
     EntitySetComponentIsEnabled( tinker_seedslot_id, interactable_comp, true )
 end
-
-    EntitySetComponentsWithTagEnabled(tinker_seedslot_id,"enabled_by_script",false)
+EntitySetComponentsWithTagEnabled(tinker_seedslot_id,"enabled_by_script",false)
 
 local mats = ComponentGetValue2(matinvcomp, "count_per_material_type")
 for j = 0, #mats, 1 do
@@ -187,7 +202,14 @@ function interacting(player_id, tinker_seedslot_id, interactable_name)
     else
         --Remove the seed
         local slot_x,slot_y = EntityGetTransform(tinker_seedslot_id)
-        EntityLoad("mods/Apotheosis/files/entities/items/pickups/seed_tinker.xml",slot_x,slot_y)
+        local seed_item_id = EntityLoad("mods/Apotheosis/files/entities/items/pickups/seed_tinker.xml",slot_x,slot_y)
+
+
+        if get_player_inventory_state(player_id) == player_inventory_states.slot_is_open then
+            GamePickUpInventoryItem( player_id, seed_item_id, true )
+        else
+            EntitySetComponentsWithTagEnabled( seed_item_id, "enabled_in_world", true )
+        end
 
         --Update the trees seed status to empty
         ComponentSetValue2(vscomp,"value_bool",false)

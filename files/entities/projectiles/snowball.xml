@@ -29,7 +29,7 @@
 		damage_game_effect_entities=""
 		knockback_force="10"
 		on_collision_spawn_entity="1"
-		spawn_entity="mods/noita.fairmod/files/content/snowman/snowball_item.xml"
+		spawn_entity="mods/Apotheosis/files/entities/items/pickups/snowball_item.xml"
 		>
 		<config_explosion
 			never_cache="1"

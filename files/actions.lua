@@ -247,14 +247,6 @@ apotheosis_spellappends = {
         max_uses    = 3, 
         custom_xml_file = "mods/Apotheosis/files/entities/misc/custom_cards/bomb_giga.xml",
         action 		= function()
-            --[[
-            if not reflecting then
-                dofile("mods/Twitch-Integration/data/ws/utils.lua")
-                dofile_once("data/scripts/perks/perk.lua")
-                dofile("mods/Twitch-Integration/twitch_fragments/outcomes/conga_steal_wand.lua")
-                twitch_conga_steal_wand()
-            end
-            --]]
             add_projectile("mods/Apotheosis/files/entities/projectiles/deck/bomb_giga.xml")
             c.fire_rate_wait = c.fire_rate_wait + 140
         end,
@@ -3478,6 +3470,16 @@ local actions_to_edit = {
     ["DARKFLAME"] = {
         spawn_level         = "1,2,3,5,6",
         spawn_probability   = "0.8,0.8,1,0.9,0.8"
+    },
+
+    --Increase spawnrate for teleport bolt
+    ["TELEPORT_PROJECTILE"] = {
+        spawn_level         = "0,1,2,4,5,6",
+        spawn_probability   = "0.9,0.9,0.9,0.6,0.6,0.6"
+    },
+    ["TELEPORT_PROJECTILE_SHORT"] = {
+        spawn_level         = "0,1,2,4,5,6",
+        spawn_probability   = "0.9,0.9,0.9,0.6,0.6,0.6"
     },
 
     --Chainsaw mana cost increase, forces you to expend all your mana for making a rapidfire build early on

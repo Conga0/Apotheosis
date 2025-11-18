@@ -4735,9 +4735,9 @@
 		>
 	</Reaction>
 	
-	<!--Teleportatium + Blood = Portalium-->
+	<!--Teleportatium + Red Sand = Portalium-->
 	<Reaction probability="15"
-		input_cell1="blood" 		input_cell2="magic_liquid_teleportation"
+		input_cell1="apotheosis_redstone" 		input_cell2="magic_liquid_teleportation"
 		output_cell1="steam"	output_cell2="apotheosis_magic_liquid_rideshare"
 		>
 	</Reaction>

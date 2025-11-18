@@ -8,7 +8,10 @@ function collision_trigger()
 	GamePlaySound( "data/audio/Desktop/event_cues.snd", "event_cues/greed_curse/create", pos_x, pos_y)
 
 	local worm_count = 1
-	if ModSettingGet( "Apotheosis.motd_setting" ) == true and (day == 31 or day == 1) and hour == 3 then worm_count = 10 end
+	if ModSettingGet( "Apotheosis.motd_setting" ) == true and (day == 31 or day == 1) and hour == 3 then
+		worm_count = 10
+		GamePrintImportant( "$log_apotheosis_toxicnest_secret_name", "$logdesc_apotheosis_moon_altar_fungus", "mods/Apotheosis/files/ui_gfx/decorations/3piece_creature_shift.png" )
+	end
 	
 	for k=1,worm_count do
 		local eid = EntityLoad( "data/entities/animals/boss_toxic_worm/boss_toxic_worm.xml", pos_x, pos_y )
