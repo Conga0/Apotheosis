@@ -1,0 +1,15 @@
+<Entity >
+   
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/projectiles/float_orbit.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+	
+	<VariableStorageComponent
+		name="float_orbit_comp"
+		value_string="0,0"
+		>
+	</VariableStorageComponent>
+  
+</Entity>

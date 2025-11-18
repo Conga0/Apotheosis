@@ -3322,6 +3322,26 @@ apotheosis_spellappends = {
             draw_actions(1, true)
         end,
     },
+	{
+		id          = "APOTHEOSIS_HOVER_ORBIT",
+        id_prepend  = "TRUE_ORBIT",
+        name 		= "$spell_apotheosis_hover_orbit_name",
+        description = "$spell_apotheosis_hover_orbit_desc",
+		sprite 		= "data/ui_gfx/gun_actions/true_orbit.png",
+        sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/float_orbit.png",
+		related_extra_entities = { "mods/Apotheosis/files/entities/misc/float_orbit.xml" },
+		type 		= ACTION_TYPE_MODIFIER,
+		spawn_level                       = "2,3,4", -- HORIZONTAL_ARC
+		spawn_probability                 = "0.2,0.3,0.4", -- HORIZONTAL_ARC
+		price = 40,
+		mana = 20,
+		--max_uses = 150,
+		action 		= function()
+			c.extra_entities = c.extra_entities .. "mods/Apotheosis/files/entities/misc/float_orbit.xml,"
+			c.lifetime_add = c.lifetime_add + 300
+			draw_actions( 1, true )
+		end,
+	},
 }
 
 
