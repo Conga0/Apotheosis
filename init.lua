@@ -437,6 +437,10 @@ if ModIsEnabled("grahamsdialogue") then
   ModTextFileSetContent( "mods/grahamsdialogue/files/font_data/font_pixel_flesh.lua", ModTextFileGetContent("mods/Apotheosis/files/fonts/font_pixel_flesh.lua") )
 end
 
+-- Parallel Parity
+if ModIsEnabled("parallel_parity") then
+	ModLuaFileAppend("mods/parallel_parity/init.lua", "mods/Apotheosis/files/scripts/mod_compatibility/parallel_parity_append.lua")
+end
 
 
 
