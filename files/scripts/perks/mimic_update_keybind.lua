@@ -14,7 +14,7 @@ if current_frame >= cooldown_frame then
         if EntityHasTag(root,"polymorphed_player") then
             local comp = EntityGetFirstComponentIncludingDisabled(root,"GameEffectComponent")
             ComponentSetValue2(comp,"frames",1)
-        elseif EntityHasTag(root,"player_unit")
+        elseif EntityHasTag(root,"player_unit") then
             LoadGameEffectEntityTo( root, "mods/Apotheosis/files/entities/misc/effect_polymorph_mimic_statue.xml" )
             ComponentSetValue2( variablecomp, "value_int", current_frame + cooldown_frames )
         end
