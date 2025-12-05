@@ -1,5 +1,5 @@
 
-attack_options = {,
+attack_options = {
     {
         name = "example_attack",                                                        --Name of the attack, used for internal identification
         filepath = "data/entities/animals/enchanted_books/projectiles/icebolt.xml",     --Filepath of the projectile being shot out

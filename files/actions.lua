@@ -3327,7 +3327,6 @@ apotheosis_spellappends = {
         id_prepend  = "TRUE_ORBIT",
         name 		= "$spell_apotheosis_hover_orbit_name",
         description = "$spell_apotheosis_hover_orbit_desc",
-		sprite 		= "data/ui_gfx/gun_actions/true_orbit.png",
         sprite 		= "mods/Apotheosis/files/ui_gfx/gun_actions/float_orbit.png",
 		related_extra_entities = { "mods/Apotheosis/files/entities/misc/float_orbit.xml" },
 		type 		= ACTION_TYPE_MODIFIER,
@@ -3381,10 +3380,24 @@ if actions ~= nil then
     append_apotheosis_spells()
 end
 
-
-
-
-
+--[[actions[#actions+1] = {
+	id                = "APOTHEOSIS_DEVTOOL",
+	name 		      = "Developer Utility",
+	description       = "cur: mana mult TEST_MANA_MULT",
+	sprite 		      = "data/ui_gfx/gun_actions/baab_all.png",
+	type 		      = ACTION_TYPE_OTHER,
+	spawn_level       = "0", -- HORIZONTAL_ARC
+	spawn_probability = "0", -- HORIZONTAL_ARC
+	price             = 40,
+	mana              = 0,
+	action            = function()
+		apo_state.mana_multiplier = tonumber(GlobalsGetValue("TEST_MANA_MULT", "1"))
+		draw_actions( 1, true )
+	end,
+	spawn_requires_flag = "this_should_never_spawn",
+}]]
+-- You can probably read the custom wand in the gun script to edit mana mult, otherwise always casts under this sort of principle should work.
+-- Do operations on mana_multiplier instead of setting, so it respects cases like double division. apo_state.mana_multiplier = apo_state.mana_multiplier * 0.5
 
 -- Checks if a spell is being cast by a greek letter & if you have the perk which allows it
 -- Not completely sure why, but this feels like a bad solution, wrong, is it because it isn't 'absolute'?
