@@ -1,0 +1,27 @@
+<Entity >
+	<LifetimeComponent
+		lifetime="120"
+		fade_sprites="1"
+		>
+		</LifetimeComponent>
+
+	<SpriteComponent 
+		_enabled="1" 
+		alpha="1" 
+		image_file="mods/Apotheosis/files/projectiles_gfx/beam_holy_orb_big.xml" 
+		offset_x="51" 
+		offset_y="51" 
+		emissive="1"
+		additive="1"
+		update_transform_rotation="0"
+		>
+	</SpriteComponent>
+
+	<LightComponent 
+		_enabled="1" 
+		radius="250" 
+		r="255"
+		g="255"
+		b="255">
+	</LightComponent>
+</Entity>

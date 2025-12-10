@@ -38,7 +38,7 @@
         </SpriteComponent>
 
         <DamageModelComponent
-            hp="1.5"
+            hp="1.1"
             air_needed="0"
 			ragdoll_filenames_file="mods/Apotheosis/files/ragdolls/goo_slug/filenames.txt"
 			blood_material="slime"
@@ -50,7 +50,7 @@
 			materials_how_much_damage="0.004,0.001,0.0008,0.0007,0.005,0.001"
 			>
 			<damage_multipliers
-			    projectile="0.75"
+			    projectile="0.8"
 			    ice="1.2" >
 			</damage_multipliers>
         </DamageModelComponent>

@@ -1,0 +1,83 @@
+<Entity tags="teleportable_NOT,item_physics,item_pickup,effectable_prop">
+
+	<UIInfoComponent name="$booktitle01"></UIInfoComponent>
+
+	<PhysicsBodyComponent _tags="enabled_in_world"
+		uid="1"
+		allow_sleep="1"
+		angular_damping="0"
+		fixed_rotation="0"
+		is_bullet="1"
+		linear_damping="0"
+		auto_clean="1"
+		hax_fix_going_through_ground="1"
+		on_death_leave_physics_body="0"
+		on_death_really_leave_body="0"></PhysicsBodyComponent>
+
+	<PhysicsImageShapeComponent body_id="1"
+		centered="1"
+		image_file="mods/Apotheosis/files/items_gfx/april_fools/empty_tablet.png"
+		material="rock_box2d_hard"></PhysicsImageShapeComponent>
+
+	<PhysicsThrowableComponent max_throw_speed="130"
+		throw_force_coeff="1.5"></PhysicsThrowableComponent>
+
+	<ProjectileComponent _tags="enabled_in_world"
+		lifetime="-1"
+		penetrate_entities="1"
+		never_hit_player="1"></ProjectileComponent>
+
+	<VelocityComponent _tags="enabled_in_world"></VelocityComponent>
+
+	<ItemComponent _tags="enabled_in_world"
+		ui_sprite="mods/Apotheosis/files/items_gfx/april_fools/conga_fumo_ui.png"
+		preferred_inventory="QUICK"
+		item_name="$booktitle01"
+		ui_description=""></ItemComponent>
+
+	<SpriteComponent _tags="enabled_in_hand"
+		_enabled="0"
+		z_index="-1.5"
+		has_special_scale="1"
+		special_scale_x="0.12"
+		special_scale_y="0.12"
+		image_file="mods/Apotheosis/files/items_gfx/april_fools/conga_fumo.xml"></SpriteComponent>
+
+	<SpriteComponent _tags="enabled_in_world"
+		has_special_scale="1"
+		special_scale_x="0.12"
+		special_scale_y="0.12"
+		image_file="mods/Apotheosis/files/items_gfx/april_fools/conga_fumo.xml"></SpriteComponent>
+
+	<HitboxComponent _tags="enabled_in_world"
+		aabb_min_x="-3"
+		aabb_max_x="3"
+		aabb_min_y="-5"
+		aabb_max_y="0">
+	</HitboxComponent>
+
+	<LightComponent _tags="enabled_in_world"
+		_enabled="1"
+		r="255"
+		g="255"
+		b="255"
+		radius="64"
+		fade_out_time="0.75">
+	</LightComponent>
+
+	<AbilityComponent
+		ui_name="$item_potion_with_material"
+		throw_as_item="1"
+	><gun_config
+		deck_capacity="0"
+	></gun_config>
+	</AbilityComponent>
+
+	<LuaComponent
+		_tags="enabled_in_world,enabled_in_inventory,enabled_in_hand"
+		script_source_file="mods/Apotheosis/files/scripts/items/april_fools/conga_fumo.lua"
+		execute_every_n_frame="2"
+		>
+	</LuaComponent>
+
+</Entity>

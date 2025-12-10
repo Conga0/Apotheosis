@@ -25,8 +25,37 @@
             --print("target2 is " .. target2)
             --print(target2 .. " has turned into " .. target)
 
-            local content = ModTextFileGetContent("data/entities/animals/" .. target .. ".xml")
+            --Grab target data
+            local content = ModTextFileGetContent(table.concat({"data/entities/animals/",target2,".xml"}))
             local xml = nxml.parse(content)
+            local creature_name_get = xml.attr.name
+            local target_hp = 4
+            local target_hp_max = 4
+            if xml:first_of("Base") then
+                local dmg_comp = xml:first_of("Base"):first_of("DamageModelComponent")
+                target_hp = dmg_comp.attr.hp
+                target_hp_max = dmg_comp.attr.max_hp
+            else
+                local dmg_comp = xml:first_of("DamageModelComponent")
+                target_hp = dmg_comp.attr.hp
+                target_hp_max = dmg_comp.attr.max_hp or target_hp
+            end
+
+            --Inject target data into victim
+            local content = ModTextFileGetContent(table.concat({"data/entities/animals/",target,".xml"}))
+            local xml = nxml.parse(content)
+            if xml.attr.tags ~= nil then
+                xml.attr.tags = xml.attr.tags .. ",c_shifted" --Prevents the player updater script from needlessly updating creatures
+            end
+            if xml:first_of("Base") then
+                local dmg_comp = xml:first_of("Base"):first_of("DamageModelComponent")
+                dmg_comp.attr.hp = target_hp
+                dmg_comp.attr.max_hp = target_hp_max
+            else
+                local dmg_comp = xml:first_of("DamageModelComponent")
+                dmg_comp.attr.hp = target_hp
+                dmg_comp.attr.max_hp = target_hp_max
+            end
             xml:add_child(nxml.parse([[
                 <ParticleEmitterComponent
                 emitted_material_name="fungal_shift_particle_fx"

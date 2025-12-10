@@ -1,0 +1,62 @@
+<Entity>
+  <PhysicsBodyComponent
+    _tags="enabled_in_world"
+    is_bullet="1"
+    allow_sleep="1"
+    angular_damping="0"
+    fixed_rotation="0"
+    linear_damping="0"
+    on_death_really_leave_body="0"
+    hax_wait_till_pixel_scenes_loaded="0"
+    go_through_sand="0"
+  ></PhysicsBodyComponent>
+
+  <PhysicsImageShapeComponent
+    material="steel"
+    image_file="mods/Apotheosis/files/props_gfx/hatch_steel.png"
+    use_sprite="0"
+    offset_x="11"
+    offset_y="2"
+  ></PhysicsImageShapeComponent>
+
+  <PhysicsJointComponent
+    nail_to_wall="1"
+    breakable="1"
+    grid_joint="1"
+    pos_x="0"
+    pos_y="3"
+  ></PhysicsJointComponent>
+
+  <PhysicsJointComponent
+    nail_to_wall="1"
+    grid_joint="1"
+    breakable="1"
+    pos_x="23"
+    pos_y="3"
+  ></PhysicsJointComponent>
+
+  <!-- The main sprite when door is open -->
+  <SpriteComponent
+    _tags="enabled_in_world,door_open_sprite"
+    _enabled="0"
+    alpha="1"
+    image_file="mods/Apotheosis/files/props_gfx/hatch_steel_open.png"
+    offset_x="11"
+    offset_y="21"
+  ></SpriteComponent>
+
+  <VelocityComponent
+    _tags="enabled_in_world"
+  ></VelocityComponent>
+
+  <InteractableComponent
+    radius="20"
+    ui_text="Press $0 to operate hatch"
+    name="door"
+  ></InteractableComponent>
+
+  <LuaComponent
+    script_interacting="mods/Apotheosis/files/scripts/props/hatch_steel.lua"
+    script_physics_body_modified="mods/Apotheosis/files/scripts/props/hatch_steel.lua"
+  ></LuaComponent>
+</Entity>

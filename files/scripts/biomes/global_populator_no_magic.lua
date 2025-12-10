@@ -79,8 +79,6 @@ if g_props then
         max_count    = 1,
         entity     = "mods/Apotheosis/files/entities/items/pickups/chest_random_cursed.xml",
         spawn_check = function() 
-            local year, month, day = GameGetDateAndTimeLocal()
-            
             if is_holiday_active("april_fools") then
                 return true
             else

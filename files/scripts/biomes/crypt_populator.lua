@@ -54,7 +54,12 @@
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
-        spawn_check = function() return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) end,
+        spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+            
+            return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" )
+        end,
     })
     
 
@@ -271,6 +276,9 @@ table.insert(g_small_enemies,
     max_count    = 1,    
     entity     = "data/entities/items/pickup/heart.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
             return true
         else
@@ -286,6 +294,9 @@ table.insert(g_big_enemies,
     max_count    = 1,    
     entity     = "data/entities/animals/watermage_greater.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
             return true
         else
@@ -302,6 +313,9 @@ table.insert(g_big_enemies,
     offset_y 	= -3, 
     entity     = "data/entities/animals/wizard_z_poly_miniboss.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
             return true
         else
@@ -317,6 +331,9 @@ table.insert(g_small_enemies,
     max_count    = 6,    
     entity     = "data/entities/animals/bubbles/cursed_liquid/bubble_liquid.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
             return true
         else
@@ -332,6 +349,9 @@ table.insert(g_small_enemies,
     max_count    = 2,    
     entity     = "data/entities/animals/wizard_ambrosia.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
             return true
         else

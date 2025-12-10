@@ -38,7 +38,7 @@ local ability_comp = EntityGetFirstComponent( entity_id, "AbilityComponent" )
 
 local gun = { }
 gun.name = "$wand_apotheosis_chaos_wand_name"
-gun.deck_capacity = {3,7}
+gun.deck_capacity = {5,9}
 gun.actions_per_round = {1,3}
 gun.reload_time = {25,40}
 gun.shuffle_deck_when_empty = 0

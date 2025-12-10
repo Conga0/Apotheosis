@@ -1,5 +1,14 @@
 dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")    
 
+local requires_world_state = {"GlobalsGetValue", "GlobalsSetValue", ...}
+for _, v in ipairs(requires_world_state) do
+    local old = _G[v]
+    _G[v] = function(...)
+        if not EntityGetIsAlive(GameGetWorldStateEntity()) then return end
+        return old(...)
+    end
+end
+
 --If the player has over 1,000 max hp, soft-cap heart spawns by disabling random heart generation in the wild
 ---@diagnostic disable-next-line: lowercase-global
 function player_health_check(player_id)
@@ -91,8 +100,6 @@ table.insert(g_small_enemies,
     max_count    = 1,
     entity     = "data/entities/buildings/wandedit_crystal.xml",
     spawn_check = function() 
-        local year, month, day = GameGetDateAndTimeLocal()
-        
         if is_holiday_active("birthday") then
             return true
         else
@@ -109,6 +116,9 @@ table.insert(g_small_enemies,
     max_count    = 1,    
     entity     = "data/entities/items/pickup/heart.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) and player_health_check() then
             return true
         else
@@ -168,8 +178,9 @@ if g_props then
         max_count    = 1,
         entity     = "mods/Apotheosis/files/entities/items/pickups/chest_random_cursed.xml",
         spawn_check = function() 
-            local year, month, day = GameGetDateAndTimeLocal()
-            
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
             if is_holiday_active("april_fools") then
                 return true
             else
@@ -222,6 +233,7 @@ if ModIsEnabled("Hydroxide") then
 end
 
 --Inserts tablet ghosts, changes their tablet description based on day rather than random chance, had problems with one ghost overriding the other
+--Why did I implement it like this...? -C
 local year, month, day, hour = GameGetDateAndTimeLocal()
 if (day % 2 == 0) then
     --Tablet Ghost
@@ -232,6 +244,8 @@ if (day % 2 == 0) then
         max_count    = 1,
         entity     = "data/entities/animals/playerghost_apotheosis/playerghost.xml",
         spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
     
             local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
             
@@ -252,6 +266,8 @@ else
         max_count    = 1,
         entity     = "data/entities/animals/playerghost_apotheosis/temp/playerghost.xml",
         spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
     
             local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
             

@@ -17,6 +17,14 @@ if inventory ~= nil then
             ComponentSetValue2(inventory, "mActiveItem", 0)
             EntityLoad("data/entities/animals/AI/wand_ghost.xml", pos_x, pos_y)
             EntitySetTransform(active_wand, pos_x, pos_y)
+
+            --Prevents items from being dropped briefly after having your wand stolen
+            --
+            --This is most impactful in the heretic fight, where it's easy to have your wand stolen, and because you were likely holding down Left Click to fire your wand at the time
+            --the moment your character automatically swaps to an item in their inventory because their wand was stolen; the game will read that Left Click as a "throw item" command, and immediately throw whatever item you swapped to away.
+            --The goal of this is to prevent such an interaction from occuring
+            local nodrop_items = EntityLoad("mods/Apotheosis/files/entities/misc/hitfx_stealwand_nodrop.xml",pos_x,pos_y)
+            EntityAddChild(victim,nodrop_items)
             --EntityAddChild(wand, active_wand)
 
             --local c= EntityLoad("mods/Apotheosis/files/entities/misc/stealwand_glow.xml",pos_x,pos_y)

@@ -1,0 +1,120 @@
+<Entity name="spell_machine_vat" >
+	
+	<VariableStorageComponent
+		name=""
+		value_int="-1"
+		value_string="1"
+		>
+	</VariableStorageComponent>
+	
+	<LightComponent
+		_tags="enabled_in_world"
+		r="255"
+		g="255"
+		b="255"
+		radius="64" >
+	</LightComponent>
+
+	<ParticleEmitterComponent
+	_enabled="0"
+	emitted_material_name="water"
+	count_min="7"
+	count_max="15"
+	offset.x="0"
+	offset.y="1"
+	x_pos_offset_min="-1"
+	x_pos_offset_max="1"
+	y_pos_offset_min="-29"
+	y_pos_offset_max="-26"
+	x_vel_min="-10"
+	x_vel_max="10"
+	y_vel_min="-10"
+	y_vel_max="10"
+	count_min="2"
+	count_max="3"
+	lifetime_min="1.1"
+	lifetime_max="2.8"
+	create_real_particles="1"
+	emit_cosmetic_particles="0"
+	emission_interval_min_frames="1"
+	emission_interval_max_frames="2"
+	is_emitting="1" >
+	</ParticleEmitterComponent>
+	
+	<LuaComponent
+		_enabled="1"
+		script_source_file="mods/Apotheosis/files/scripts/buildings/magic_fountain.lua"
+		script_material_area_checker_success="mods/Apotheosis/files/scripts/buildings/magic_fountain.lua"
+		execute_every_n_frame="1"
+		call_init_function="1"
+		execute_on_added="1"
+		>
+	</LuaComponent>
+	
+	<MaterialSuckerComponent
+		_enabled="0"
+		num_cells_sucked_per_frame="10"
+		randomized_position.min_x="-26"
+		randomized_position.max_x="26"
+		randomized_position.min_y="-7"
+		randomized_position.max_y="7"
+		suck_tag="[liquid]"
+		material_type="0"
+		barrel_size="10000"
+		>
+	</MaterialSuckerComponent>
+	
+	<MaterialInventoryComponent
+		_enabled="1"
+		drop_as_item="0"
+		on_death_spill="1"
+		max_capacity="10000"
+		>
+	</MaterialInventoryComponent>
+
+	<Entity>
+		<InheritTransformComponent>
+			<Transform
+				position.x="-29"
+				position.y="-13"
+				>
+			</Transform>
+		</InheritTransformComponent>
+
+		<MagicConvertMaterialComponent
+		_enabled="0"
+		kill_when_finished="0"
+		from_material_tag="[liquid]"
+		steps_per_frame="5"
+		to_material="air"
+		clean_stains="0"
+		is_circle="0"
+		radius="5" 
+		loop="1"
+		>
+		</MagicConvertMaterialComponent>
+	</Entity>
+
+	<Entity>
+		<InheritTransformComponent>
+			<Transform
+				position.x="29"
+				position.y="-13"
+				>
+			</Transform>
+		</InheritTransformComponent>
+
+		<MagicConvertMaterialComponent
+		_enabled="0"
+		kill_when_finished="0"
+		from_material_tag="[liquid]"
+		steps_per_frame="5"
+		to_material="air"
+		clean_stains="0"
+		is_circle="0"
+		radius="5" 
+		loop="1"
+		>
+		</MagicConvertMaterialComponent>
+	</Entity>
+</Entity>

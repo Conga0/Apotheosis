@@ -181,7 +181,10 @@
         min_count    = 1,
         max_count    = 1,    
         entity     = "data/entities/animals/hisii_giga_bomb.xml",
-		spawn_check = function() 
+		spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+            
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else

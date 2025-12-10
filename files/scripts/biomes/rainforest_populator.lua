@@ -14,7 +14,12 @@
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
-        spawn_check = function() return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) end,
+        spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+            
+            return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" )
+        end,
     })
    
     ---Small Enemies
@@ -100,6 +105,9 @@
         max_count    = 1,    
         entity     = "data/entities/items/pickup/heart.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else
@@ -115,6 +123,9 @@
         max_count    = 2,    
         entity     = "data/entities/animals/giant_centipede.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else
@@ -130,6 +141,9 @@
         max_count    = 1,    
         entity     = "data/entities/animals/fungicave/lukki_fungus.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else
@@ -145,6 +159,9 @@
         max_count    = 6,    
         entity     = "data/entities/animals/fungicave/triangle_gem.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else

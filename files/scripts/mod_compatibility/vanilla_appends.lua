@@ -547,15 +547,6 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Kantele, Ocarina, 
   end
 end
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then -- Nerf Fish to hit once every 10 frames instead of once every 1 frame
-  local path = "data/entities/projectiles/deck/fish.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  attrpath = xml:first_of("ProjectileComponent").attr
-  attrpath.damage_every_x_frames = "10"
-  ModTextFileSetContent(path, tostring(xml))
-end
-
 do -- Change sunseed sprite filepath for Perk Creation Anvil
   local path = "data/entities/items/pickup/sun/sunseed.xml"
   local content = ModTextFileGetContent(path)
@@ -706,22 +697,6 @@ do -- Piercing only hit 5 times per modifier
 
 end
 ]]--
-
-if ModSettingGet( "Apotheosis.spellrebalances" ) then
-  local path = "data/entities/misc/piercing_shot.xml"
-  local content = ModTextFileGetContent(path)
-  local xml = nxml.parse(content)
-  xml:add_child(nxml.parse([[
-    <LuaComponent
-    _enabled="1"
-    script_source_file="mods/Apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive.lua"
-    execute_every_n_frame="1"
-    remove_after_executed="1"
-    >
-    </LuaComponent>
-  ]]))
-  ModTextFileSetContent(path, tostring(xml))
-end
 
 --Anvil of Destiny Compatibility
 if ModIsEnabled("anvil_of_destiny") then
@@ -1484,12 +1459,56 @@ if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make antiheal do innate 
 end
 ]]--
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then --Make chainbolt better at hitting single targets
-  local path = "data/scripts/projectiles/chain_bolt.lua"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("%( target_id ~= prev_entity_id %) and %( target_id ~= prev_prev_entity_id %)", "(( target_id ~= prev_entity_id ) and ( target_id ~= prev_prev_entity_id ) or #targets == 1)")
+if ModSettingGet( "Apotheosis.spellrebalances" ) then 
+  do --Allow chainbolt to repeatedly hit the same target if no other options are available
+    local path = "data/scripts/projectiles/chain_bolt.lua"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("%( target_id ~= prev_entity_id %) and %( target_id ~= prev_prev_entity_id %)", "(( target_id ~= prev_entity_id ) and ( target_id ~= prev_prev_entity_id ) or #targets == 1)")
 
-  ModTextFileSetContent(path, content)
+    ModTextFileSetContent(path, content)
+  end
+
+  do --Make expanding sphere scale off of damage% instead of by flat damage
+    local path = "data/entities/projectiles/orb_expanding.xml"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("damage=\"3.0\"","damage=\"1.0\"")
+    content = content:gsub("\"data/scripts/projectiles/orb_expanding%.lua\"", "\"mods/Apotheosis/files/scripts/projectiles/orb_expanding_reworked.lua\"")
+
+    ModTextFileSetContent(path, content)
+  end
+
+  do --Make Sea of Mimicium spawn Sea of Ominous Liquid instead
+    local path = "data/biome_impl/static_tile/puzzle_logic_potion_mimics.lua"
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("\"SEA_MIMIC\"","\"APOTHEOSIS_SEA_OMINOUS\"")
+
+    ModTextFileSetContent(path, content)
+  end
+
+  do --Nerf fish to hit once every 10 frames
+    local path = "data/entities/projectiles/deck/fish.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    attrpath = xml:first_of("ProjectileComponent").attr
+    attrpath.damage_every_x_frames = "10"
+    ModTextFileSetContent(path, tostring(xml))
+  end
+
+  do --Piercing Shot Rework
+    local path = "data/entities/misc/piercing_shot.xml"
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    xml:add_child(nxml.parse([[
+      <LuaComponent
+      _enabled="1"
+      script_source_file="mods/Apotheosis/files/scripts/projectiles/piercing_shot_rebalance_additive.lua"
+      execute_every_n_frame="1"
+      remove_after_executed="1"
+      >
+      </LuaComponent>
+    ]]))
+    ModTextFileSetContent(path, tostring(xml))
+  end
 end
 
 do --Reduce the duration of the blindness status effect by 50%
@@ -1864,14 +1883,6 @@ do --Allow rainbow to create a pastel rainbow
   ModTextFileSetContent(path, content)
 end
 
-if ModSettingGet( "Apotheosis.spellrebalances" ) then --Replace Sea of Mimicium with Sea of Ominous Liquid with spell reworks enabled
-  local path = "data/biome_impl/static_tile/puzzle_logic_potion_mimics.lua"
-  local content = ModTextFileGetContent(path)
-  content = content:gsub("\"SEA_MIMIC\"","\"APOTHEOSIS_SEA_OMINOUS\"")
-
-  ModTextFileSetContent(path, content)
-end
-
 do
   local path = "data/entities/items/pickup/stonestone.xml"
   local content = ModTextFileGetContent(path)
@@ -1891,6 +1902,31 @@ do
   </MagicConvertMaterialComponent>
   ]]))
   ModTextFileSetContent(path, tostring(xml))
+end
+
+do
+  local paths = {"chainsaw","disc_bullet","disc_bullet_big","disc_bullet_bigger"}
+  for k=1,#paths do
+    local path = table.concat({"data/entities/projectiles/deck/",paths[k],".xml"})
+    local content = ModTextFileGetContent(path)
+    local xml = nxml.parse(content)
+    if xml.attr.tags then
+      xml.attr.tags = xml.attr.tags .. ",chainsaw"
+    else 
+      xml.attr.tags = "chainsaw"
+    end
+    ModTextFileSetContent(path, tostring(xml))
+  end
+end
+
+if ModSettingGet("Apotheosis.custom_parallax") then --Remove backgrounds from biomes with parallax
+  local biomes_to_purge_background = {"custom/plane_magic","custom/plane_portal_magic","custom/plane_portal_enter_magic","custom/esoteric_den"}
+  for k=1,#biomes_to_purge_background do
+    local path = table.concat({"data/biome/",biomes_to_purge_background[k],".xml"})
+    local content = ModTextFileGetContent(path)
+    content = content:gsub('%f[%w]background_image%s*=%s*".-%"', 'background_image=""')
+    ModTextFileSetContent(path, content)
+  end
 end
 
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")

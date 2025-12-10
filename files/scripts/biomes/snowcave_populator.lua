@@ -74,7 +74,12 @@ dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
-        spawn_check = function() return GameHasFlagRun( "apotheosis_miniboss_boss_toxic_worm" ) end,
+        spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+            
+            return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" )
+        end,
     })
     
     table.insert(g_big_enemies,
@@ -83,7 +88,12 @@ dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
-        spawn_check = function() return (GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) and GameHasFlagRun( "apotheosis_miniboss_boss_toxic_worm" ) == false) end,
+        spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+            
+            return (GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) and GameHasFlagRun( "apotheosis_miniboss_boss_toxic_worm" ) == false)
+        end,
     })
 
 

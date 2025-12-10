@@ -107,7 +107,12 @@
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
-        spawn_check = function() return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) end,
+        spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+            
+            return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" )
+        end,
     })
 
 
@@ -261,6 +266,9 @@
         max_count    = 1,    
         entity     = "data/entities/animals/hisii_giga_bomb.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else
@@ -276,6 +284,9 @@
         max_count    = 1,    
         entity     = "data/entities/animals/illusions/dark_alchemist.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else

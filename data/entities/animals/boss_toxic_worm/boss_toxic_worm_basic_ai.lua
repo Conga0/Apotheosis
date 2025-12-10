@@ -80,9 +80,13 @@ do
         ComponentSetValue2( variablecomp, "value_float", 5 )
         Stage4()
     elseif (current_frame >= cooldown_frame) and laser_stage == 5 then
-        ComponentSetValue2( variablecomp, "value_int", current_frame + acidspit_cooldown_duration )
-        ComponentSetValue2( variablecomp, "value_float", 1 )
+        ComponentSetValue2( variablecomp, "value_int", current_frame + (acidspit_cooldown_duration / 2) )
+        ComponentSetValue2( variablecomp, "value_float", 6 )
         --Toxic worms lingers around the player for at least 5 seconds before being allowed to peace out
+    elseif (current_frame >= cooldown_frame) and laser_stage == 6 then
+        ComponentSetValue2( variablecomp, "value_int", current_frame + (acidspit_cooldown_duration / 2) )
+        ComponentSetValue2( variablecomp, "value_float", 1 )
+        --Toxic worm is allowed to leave the player for half of its toxic sphere cooldown duration
     end
 end
 

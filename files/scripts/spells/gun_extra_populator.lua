@@ -40,6 +40,12 @@ extra_modifiers["apotheosis_bragi"] = function()
     end
 end
 
+extra_modifiers["apotheosis_godwand_damage"] = function()
+    if not c.extra_entities:find("mods/Apotheosis/files/entities/misc/godwand_damage.xml,") then
+        c.extra_entities = table.concat({c.extra_entities,"mods/Apotheosis/files/entities/misc/godwand_damage.xml,"})
+    end
+end
+
 extra_modifiers["apotheosis_nullshot"] = function()
     c.damage_electricity_add = 0
     c.damage_explosion_add = 0

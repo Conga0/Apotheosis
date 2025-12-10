@@ -32,6 +32,9 @@ table.insert(g_big_enemies,
     max_count    = 1,    
     entity     = "data/entities/animals/illusions/dark_alchemist.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
             return true
         else

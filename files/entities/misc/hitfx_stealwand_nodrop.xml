@@ -1,0 +1,28 @@
+<Entity>
+	
+	<InheritTransformComponent 
+		_enabled="1" >
+    </InheritTransformComponent>
+
+	<VariableStorageComponent/>
+    
+    <LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/stealwand_nodrop_start.lua"
+		execute_every_n_frame="1"
+		remove_after_executed="1"
+		>
+	</LuaComponent>
+	
+	<LuaComponent
+		script_source_file="mods/Apotheosis/files/scripts/status_effects/stealwand_nodrop_end.lua"
+		execute_every_n_frame="-1"
+		execute_on_removed="1"
+		>
+	</LuaComponent>
+	
+	<LifetimeComponent
+		lifetime="180"
+	>
+	</LifetimeComponent>
+
+</Entity>

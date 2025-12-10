@@ -84,7 +84,12 @@
         min_count    = 1,
         max_count    = 1,
         entity     = "data/entities/animals/boss_toxic_worm/boss_toxic_worm_minion.xml",
-        spawn_check = function() return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" ) end,
+        spawn_check = function()
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+            
+            return GameHasFlagRun( "apotheosis_boss_toxic_worm_summoned" )
+        end,
     })
 
 
@@ -216,6 +221,9 @@
         max_count    = 1,    
         entity     = "data/entities/items/pickup/heart.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else
@@ -231,6 +239,9 @@
         max_count    = 8,    
         entity     = "data/entities/animals/blindgazer.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else
@@ -246,6 +257,9 @@
         max_count    = 1,    
         entity     = "data/entities/animals/watermage_greater.xml",
         spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
             if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
                 return true
             else
@@ -261,6 +275,9 @@
         max_count    = 4,    
         entity     = "data/entities/animals/poring_lukki.xml",
 		spawn_check = function() 
+            local world_state = GameGetWorldStateEntity()
+            if EntityGetIsAlive(world_state) == false then return false end
+
 			if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
 				return true
 			else
@@ -345,34 +362,50 @@
 
 
 
-    -- Pixel Scenes/Areas
-    
-    --[[
-    ]]--
-    
-    table.insert(g_pixel_scene_wide,
-    {
-            prob   			= 0.5,
-            material_file 	= "mods/Apotheosis/files/biome_impl/vault/lava_pit.png",
-            visual_file		= "mods/Apotheosis/files/biome_impl/vault/lava_pit_visual.png",
-            background_file	= "mods/Apotheosis/files/biome_impl/vault/lava_pit_background.png",
-            is_unique		= 0
-    })
-    --Adding shop into the pool a 2nd time to not dilute it's spawn chance
-    table.insert(g_pixel_scene_wide,
-    {
-            prob   			= 0.5,
-            material_file 	= "data/biome_impl/vault/shop.png",
-            visual_file		= "data/biome_impl/vault/shop_visual.png",
-            background_file	= "",
-            is_unique		= 0,
-    })
-    
-    table.insert(g_pixel_scene_tall,
-    {
-            prob   			= 0.5,
-            material_file 	= "mods/Apotheosis/files/biome_impl/vault/redstone_trap_room.png",
-            visual_file		= "",
-            background_file	= "mods/Apotheosis/files/biome_impl/vault/redstone_trap_room_background.png",
-            is_unique		= 0
-    })
+-- Pixel Scenes/Areas
+
+--[[
+]]--
+
+table.insert(g_pixel_scene_wide,
+{
+        prob   			= 0.5,
+        material_file 	= "mods/Apotheosis/files/biome_impl/vault/lava_pit.png",
+        visual_file		= "mods/Apotheosis/files/biome_impl/vault/lava_pit_visual.png",
+        background_file	= "mods/Apotheosis/files/biome_impl/vault/lava_pit_background.png",
+        is_unique		= 0
+})
+--Adding shop into the pool a 2nd time to not dilute it's spawn chance
+table.insert(g_pixel_scene_wide,
+{
+        prob   			= 0.5,
+        material_file 	= "data/biome_impl/vault/shop.png",
+        visual_file		= "data/biome_impl/vault/shop_visual.png",
+        background_file	= "",
+        is_unique		= 0,
+})
+
+table.insert(g_pixel_scene_tall,
+{
+        prob   			= 0.5,
+        material_file 	= "mods/Apotheosis/files/biome_impl/vault/redstone_trap_room.png",
+        visual_file		= "",
+        background_file	= "mods/Apotheosis/files/biome_impl/vault/redstone_trap_room_background.png",
+        is_unique		= 0
+})
+
+RegisterSpawnFunction( 0xff22ec6e, "spawn_hatch" )
+RegisterSpawnFunction( 0xffefce17, "spawn_spell_machine_controller" )
+RegisterSpawnFunction( 0xff4cacab, "spawn_spell_machine_vat" )
+
+function spawn_hatch(x, y)
+	EntityLoad("mods/Apotheosis/files/entities/props/hatch_steel.xml", x, y)
+end
+
+function spawn_spell_machine_controller(x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/spell_machine_controller.xml", x, y)
+end
+
+function spawn_spell_machine_vat(x, y)
+	EntityLoad("mods/Apotheosis/files/entities/buildings/spell_machine_vat.xml", x, y)
+end

@@ -1,0 +1,80 @@
+<Entity name="apotheosis_pity" tags="hittable,teleportable_NOT,item_physics,item_pickup" >
+
+  <PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="0"
+    on_death_leave_physics_body="0"
+    hax_fix_going_through_ground="1"
+  ></PhysicsBodyComponent>
+  
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="mods/Apotheosis/files/items_gfx/pity.png"
+    material="apotheosis_ice_b2_hard" >
+  </PhysicsImageShapeComponent>
+	
+	<LuaComponent
+		_tags="enabled_in_hand"
+    _enabled="0"
+		script_source_file="mods/Apotheosis/files/scripts/items/pity.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+
+  <VariableStorageComponent
+    _tags="enabled_in_hand"
+    name="cooldown_frame"
+    value_int="0"
+    >
+  </VariableStorageComponent>
+  
+  <PhysicsBodyCollisionDamageComponent 
+    _tags="enabled_in_world" 
+    speed_threshold="140.0"
+  ></PhysicsBodyCollisionDamageComponent>
+  
+  <ItemComponent
+    _tags="enabled_in_world"
+    item_name="$item_apotheosis_pity_name"
+    max_child_items="0"
+    is_pickable="1"
+    is_equipable_forced="1"
+    ui_sprite="mods/Apotheosis/files/ui_gfx/items/pity.png"
+    ui_description="$item_apotheosis_pity_desc"
+    preferred_inventory="QUICK"
+  ></ItemComponent>
+  
+  <UIInfoComponent
+    _tags="enabled_in_world"
+    name="$item_apotheosis_pity_name" >
+  </UIInfoComponent>
+  
+  <AbilityComponent
+		ui_name="$item_apotheosis_pity_name"
+		throw_as_item="0"
+		><gun_config
+			deck_capacity="0"
+		></gun_config>
+	</AbilityComponent>
+	
+	<SpriteComponent
+    _tags="enabled_in_hand"
+    _enabled="0"
+    offset_x="4"
+    offset_y="4"
+    image_file="mods/Apotheosis/files/items_gfx/in_hand/pity.png"
+  ></SpriteComponent>
+    
+  <HotspotComponent 
+      _tags="shoot_pos" 
+      offset.x="7" 
+      offset.y="5" >
+  </HotspotComponent>
+</Entity>

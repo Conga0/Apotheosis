@@ -71,8 +71,6 @@ dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
         max_count    = 1,
         entity     = "data/entities/buildings/wandedit_crystal.xml",
 		spawn_check = function() 
-			local year, month, day = GameGetDateAndTimeLocal()
-			
             if is_holiday_active("birthday") then
 				return true
 			else
@@ -125,8 +123,6 @@ if g_props then
         max_count    = 1,
         entity     = "mods/Apotheosis/files/entities/items/pickups/chest_random_cursed.xml",
         spawn_check = function() 
-            local year, month, day = GameGetDateAndTimeLocal()
-            
             if is_holiday_active("april_fools") then
                 return true
             else
@@ -186,7 +182,9 @@ table.insert(g_small_enemies,
     min_count    = 1,
     max_count    = 1,
     entity     = "data/entities/animals/playerghost_apotheosis/playerghost.xml",
-    spawn_check = function() 
+    spawn_check = function()
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
 
         local ghost_count = tonumber( GlobalsGetValue( "apotheosis_tabletghost_count", "0" ) ) or 0
         

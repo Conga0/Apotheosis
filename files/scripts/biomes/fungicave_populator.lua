@@ -150,6 +150,9 @@ table.insert(g_items,
     max_count	= 1,    
     entity 	= "mods/Apotheosis/files/entities/items/wands/custom/wand_of_wonders.xml",
     spawn_check = function() 
+        local world_state = GameGetWorldStateEntity()
+        if EntityGetIsAlive(world_state) == false then return false end
+
         if GameHasFlagRun( "apotheosis_pandora_unleashed" ) then
             return true
         else
