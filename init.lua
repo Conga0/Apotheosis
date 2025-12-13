@@ -439,7 +439,8 @@ end
 
 -- Parallel Parity
 if ModIsEnabled("parallel_parity") then
-	ModLuaFileAppend("mods/parallel_parity/init.lua", "mods/Apotheosis/files/scripts/mod_compatibility/parallel_parity_append.lua")
+	ModLuaFileAppend("mods/parallel_parity/data.lua", "mods/Apotheosis/files/scripts/mod_compatibility/parallel_parity_append.lua")
+	ModLuaFileAppend("mods/parallel_parity/settings.lua", "mods/Apotheosis/files/scripts/mod_compatibility/parallel_parity_settings.lua")
 end
 
 
