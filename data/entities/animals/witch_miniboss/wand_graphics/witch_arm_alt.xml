@@ -1,0 +1,25 @@
+<Sprite
+  filename="data/entities/animals/witch_miniboss/wand_graphics/witch_arm_alt.png"
+  hotspots_filename="data/entities/animals/witch_miniboss/wand_graphics/witch_arm_alt_hotspots.png"
+  offset_x="1"
+  offset_y="2" 
+  default_animation="default" >
+
+ <RectAnimation
+  name="default"
+  pos_x="0"
+  pos_y="0"
+  frame_count="1"
+  frame_height="8"
+  frame_width="8"
+  frame_wait="0.2"
+  frames_per_row="8"
+  loop="1"   >
+ </RectAnimation>
+
+	<Hotspot 
+		color="ff002a" 
+		name="hand" >
+	</Hotspot>
+
+</Sprite>

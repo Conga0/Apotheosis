@@ -1,0 +1,214 @@
+<Entity name="Opetuslapsi" >
+  
+	<Base file="data/entities/base_enemy_basic.xml" >
+		<ItemChestComponent _enabled="0" level="2" > </ItemChestComponent>
+		
+		<LuaComponent
+			_enabled="0"
+			>
+		</LuaComponent>
+		
+		<AnimalAIComponent 
+			preferred_job="JobDefault"
+			attack_melee_enabled="0"
+			creature_detection_range_x="400"
+			creature_detection_range_y="400"
+			food_material="blood"
+			needs_food="0"
+			sense_creatures="1"
+			attack_ranged_enabled="0"
+			can_fly="1" 
+			>
+		</AnimalAIComponent>
+		
+		<DamageModelComponent 
+            hp="20"
+			wait_for_kill_flag_on_death="1"
+			blood_multiplier="0.1"
+			blood_material="slime"
+			blood_spray_material="slime"
+			blood_sprite_directional="data/particles/bloodsplatters/bloodsplatter_directional_purple_$[1-3].xml"
+			blood_sprite_large="data/particles/bloodsplatters/bloodsplatter_purple_$[1-3].xml"
+			ragdoll_offset_y="-14"
+			fire_probability_of_ignition="0.0"
+			minimum_knockback_force="1000"
+			ragdoll_filenames_file=""
+			ragdoll_fx_forced="DISINTEGRATED"
+			ragdoll_material="rock_static_glow"
+			air_needed="0"
+			create_ragdoll="0"
+			>
+			<damage_multipliers
+			projectile="0.5"
+			explosive="0.0"
+			holy="1.2"
+			>
+			</damage_multipliers>
+		</DamageModelComponent>
+
+		<SpriteComponent 
+			image_file="mods/Apotheosis/files/enemies_gfx/witch_miniboss_sprite_alt.xml" 
+			offset_x="0"
+			offset_y="0">
+		</SpriteComponent>
+
+		<PathFindingComponent
+			can_jump="1" 
+			can_walk="1"
+			can_fly="1"
+			>
+		</PathFindingComponent>
+
+		<PathFindingGridMarkerComponent
+			marker_work_flag="16" >
+		</PathFindingGridMarkerComponent>
+		
+		<GenomeDataComponent 
+			herd_id="mage"
+			food_chain_rank="3"
+			is_predator="1" >
+		</GenomeDataComponent>
+		
+		<CharacterPlatformingComponent 
+			jump_velocity_y="-12" 
+			swim_idle_buoyancy_coeff="1.0"
+			run_velocity="1"  >
+		</CharacterPlatformingComponent>
+		
+		<CameraBoundComponent
+			max_count="30"
+			distance="160000">
+		</CameraBoundComponent>
+		
+		<HitboxComponent 
+            _enabled="1" 
+            aabb_min_x="-4" 
+            aabb_max_x="5" 
+            aabb_min_y="-10"
+            aabb_max_y="7"  >
+        </HitboxComponent>
+		
+		<CharacterDataComponent
+			collision_aabb_min_x="-3.0" 
+			collision_aabb_max_x="4.0" 
+			collision_aabb_min_y="-9" 
+			collision_aabb_max_y="6"
+			mass="1.8" >
+		</CharacterDataComponent>
+	</Base>
+
+	<SpriteComponent
+		_tags="character"
+		image_file="mods/Apotheosis/files/enemies_gfx/witch_miniboss_sprite_alt_emissive.xml"
+		emissive="1"
+		additive="1"
+		offset_x="0"
+		offset_y="0">
+	</SpriteComponent>
+
+	<VariableStorageComponent
+		name="0"
+		value_string="0"
+	/>
+
+	<VariableStorageComponent
+		name="0"
+		value_string="0,0"
+	/>
+
+	<VariableStorageComponent
+		name="1"
+		value_string="1"
+	/>
+
+	<VariableStorageComponent
+		name="0"
+		value_string="0"
+	/>
+
+	<VariableStorageComponent
+		name="0"
+		value_string="0"
+	/>
+
+	<VariableStorageComponent
+		name="0"
+		value_string="0"
+	/>
+
+	<Entity name="arm" >
+
+		<HotspotComponent
+			_tags="hand"
+			sprite_hotspot_name="hand" >
+		</HotspotComponent>
+
+		<SpriteComponent
+			alpha="1"
+			image_file="data/entities/animals/witch_miniboss/wand_graphics/witch_arm_alt.xml"
+			next_rect_animation="default" 
+			rect_animation="default"
+        	z_index="-1.5"
+		>
+		</SpriteComponent>
+
+		<Entity name="wand" >
+			<InheritTransformComponent
+				parent_hotspot_tag="hand" >
+			</InheritTransformComponent>
+
+			<SpriteComponent
+				alpha="1"
+				image_file="data/entities/animals/witch_miniboss/wand_graphics/sparkbolt_wand.xml"
+				next_rect_animation="default" 
+				rect_animation="default"
+				z_index="-1.55"
+			>
+			</SpriteComponent>
+
+			<HotspotComponent
+				_tags="hand"
+				sprite_hotspot_name="tip" >
+			</HotspotComponent>
+
+			<Entity name="wand_tip" >
+				<InheritTransformComponent
+					parent_hotspot_tag="hand" >
+				</InheritTransformComponent>
+			</Entity>
+		</Entity>
+	</Entity>
+
+	<HotspotComponent
+		_tags="hand"
+		sprite_hotspot_name="hand" >
+	</HotspotComponent>
+	
+	<HotspotComponent
+		_tags="cape_root"
+		sprite_hotspot_name="cape" >
+	</HotspotComponent>
+
+	<Entity name="arm_joint">
+		<InheritTransformComponent
+			parent_hotspot_tag="hand" >
+		</InheritTransformComponent>  
+	</Entity>
+
+	<Entity name="cape">  
+		<Base file="data/entities/verlet_chains/cape/cape.xml">
+		</Base>  
+	</Entity>
+	
+	<AudioLoopComponent
+		file="data/audio/Desktop/animals.bank"
+		event_name="animals/failed_alchemist_b/magic_loop"
+		auto_play="1">
+	</AudioLoopComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/animals.bank"
+		event_root="animals/enlightened_alchemist" >
+	</AudioComponent>
+</Entity>
+

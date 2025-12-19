@@ -1,0 +1,38 @@
+<Entity tags="scroll,paper_book">
+	<Base file="data/entities/items/books/base_book.xml">
+		<BookComponent
+			_enabled="0"
+			>
+		</BookComponent>
+
+		<ParticleEmitterComponent 
+			_enabled="0"
+			>
+		</ParticleEmitterComponent>
+
+		<UIInfoComponent
+			name="$book_apotheosis_tinkerseed_hint_name"
+			>
+		</UIInfoComponent>
+		
+		<ItemComponent
+			ui_sprite="mods/Apotheosis/files/items_gfx/note.png"
+			item_name="$book_apotheosis_tinkerseed_hint_name"
+			ui_description="$book_apotheosis_tinkerseed_hint_desc"
+			>
+		</ItemComponent>
+		
+		<AbilityComponent
+			ui_name="$book_apotheosis_tinkerseed_hint_name"
+			>
+		</AbilityComponent>
+		
+		<SpriteComponent
+			image_file="data/items_gfx/in_hand/scroll_in_hand.png"
+		></SpriteComponent>
+		
+		<PhysicsImageShapeComponent 
+			image_file="mods/Apotheosis/files/items_gfx/note.png"
+		></PhysicsImageShapeComponent>
+	</Base>
+</Entity>

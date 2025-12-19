@@ -565,6 +565,11 @@ table.insert(ALL_ENTITIES, {
 		image="data/ui_gfx/animal_icons/whisp_giga.png",
 	  },
 	  {
+		name="Disciple",
+		path="data/entities/animals/witch_miniboss/witch_variants/arcane/witch_miniboss.xml",
+		image="data/ui_gfx/animal_icons/witch_miniboss.png",
+	  },
+	  {
 		name="Master of Immortality",
 		path="data/entities/animals/wizard_ambrosia.xml",
 		image="data/ui_gfx/animal_icons/wizard_ambrosia.png",

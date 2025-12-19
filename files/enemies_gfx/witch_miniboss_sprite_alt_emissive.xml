@@ -1,0 +1,75 @@
+<Sprite 
+	filename="mods/Apotheosis/files/enemies_gfx/witch_miniboss_sprite_alt_emissive.png" 
+	offset_x="10" 
+	offset_y="13"
+	default_animation="stand"
+	>
+
+	<RectAnimation 
+		frame_count="6" 
+		frame_height="24" 
+		frame_wait="0.15" 
+		frame_width="21" 
+		frames_per_row="8" 
+		name="stand" 
+		pos_x="0" 
+		pos_y="0" >
+	</RectAnimation>
+
+	<RectAnimation 
+		frame_count="4" 
+		frame_height="24" 
+		frame_wait="0.2" 
+		frame_width="21" 
+		frames_per_row="8" 
+		name="walk" 
+		pos_x="0" 
+		pos_y="25" >
+	</RectAnimation>
+
+	<RectAnimation 
+		frame_count="4" 
+		frame_height="24" 
+		frame_wait="0.2" 
+		frame_width="21" 
+		frames_per_row="8" 
+		name="run" 
+		pos_x="0" 
+		pos_y="25" >
+	</RectAnimation>
+
+	<RectAnimation 
+		frame_count="6" 
+		frame_height="24" 
+		frame_wait="0.15" 
+		frame_width="21" 
+		frames_per_row="8" 
+		name="fly_idle" 
+		pos_x="0" 
+		pos_y="0" >
+	</RectAnimation>
+
+	<RectAnimation 
+		frame_count="4" 
+		frame_height="24" 
+		frame_wait="0.2" 
+		frame_width="21" 
+		frames_per_row="8" 
+		name="fly_move" 
+		pos_x="0" 
+		pos_y="25" >
+	</RectAnimation>
+
+	<RectAnimation 
+		frame_count="4" 
+		frame_height="24" 
+		frame_wait="0.15" 
+		frame_width="21" 
+		frames_per_row="4" 
+		name="death" 
+		pos_x="0" 
+		pos_y="50" >
+	</RectAnimation>
+
+</Sprite>
+

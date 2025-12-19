@@ -1,0 +1,12 @@
+<Entity name="$enemy_apotheosis_witch_miniboss" >
+
+	<Base file="data/entities/animals/witch_miniboss/witch_miniboss_base.xml" include_children="1" />
+
+	<LuaComponent
+		script_source_file="data/entities/animals/witch_miniboss/witch_variants/arcane/witch_miniboss_ai_arcane.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+</Entity>
+

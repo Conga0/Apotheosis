@@ -1,0 +1,14 @@
+<Entity name="$enemy_apotheosis_witch_miniboss" >
+
+	<!-- DO NOT USE THIS FILE IT IS A PLACEHOLDER FOR THE PROGRESS LOG -->
+
+	<Base file="data/entities/animals/witch_miniboss/witch_miniboss_base.xml" include_children="1" />
+
+	<LuaComponent
+		script_source_file="data/entities/animals/witch_miniboss/witch_miniboss_ai.lua"
+		execute_every_n_frame="1"
+		execute_times="-1"
+		>
+	</LuaComponent>
+</Entity>
+

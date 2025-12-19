@@ -221,6 +221,11 @@ function buttonTranslatedName(key_name)
   end
 end
 
+userseed_library = {
+  dunkorslam = "00130639114681086286",
+  snekgregory = "393592761468528034044338707123"
+}
+
 --Fairmod is the gift that keeps on giving
 function userseed_check(seed)
   local userseed = ModSettingGet("fairmod.user_seed") or 0
@@ -476,9 +481,6 @@ function getDistanceFromTarget(entity_id,victim_id)
 end
 
 function getItemTypeFromTable(item_table)
-  local item_types = {
-
-  }
 
   local spells = {}
   local wands = {}

@@ -34,6 +34,14 @@ dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
     table.insert(g_big_enemies,
     {
+        prob           = 0.02,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/witch_miniboss/witch_variants/arcane/witch_miniboss.xml"
+    })
+
+    table.insert(g_big_enemies,
+    {
         prob           = 0.05,
         min_count    = 1,
         max_count    = 1,

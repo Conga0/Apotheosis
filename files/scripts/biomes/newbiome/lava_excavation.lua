@@ -228,6 +228,12 @@ g_big_enemies =
         max_count    = 1,
         entity     = "data/entities/animals/sentry.xml"
     },
+	{
+		prob   		= 0.02,
+		min_count	= 1,
+		max_count	= 1,    
+		entity 	= "data/entities/animals/witch_miniboss/witch_variants/explosive/witch_miniboss.xml"
+	},
 }
 g_miniboss_enemies =
 {

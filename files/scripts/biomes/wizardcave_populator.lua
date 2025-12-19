@@ -11,8 +11,24 @@
     {
         prob           = 0.02,
         min_count    = 1,
-        max_count    = 1,    
+        max_count    = 1,
         entity     = "data/entities/animals/wizard_explosive.xml"
+    })
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.06,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/witch_miniboss/witch_variants/arcane/witch_miniboss.xml"
+    })
+    
+    table.insert(g_big_enemies,
+    {
+        prob           = 0.04,
+        min_count    = 1,
+        max_count    = 1,
+        entity     = "data/entities/animals/witch_miniboss/witch_variants/explosive/witch_miniboss.xml"
     })
 
     table.insert(g_big_enemies,

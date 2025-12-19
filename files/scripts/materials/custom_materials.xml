@@ -310,6 +310,37 @@
 	</StatusEffects>
   </CellDataChild>
 
+  <CellData
+	name="apotheosis_meat_wand_tinkering"
+	ui_name="$material_apotheosis_meat_crystal"
+  	tags="[box2d],[corrodible],[alchemy],[meat],[solid],[earth],[food]"
+	burnable="1"
+	density="3"
+	cell_type="solid"
+	wang_color="ffed3d43"
+	generates_smoke="0"
+	on_fire="0"
+	requires_oxygen="1"
+	temperature_of_fire="30"
+	autoignition_temperature="99" 
+	platform_type="0"
+	hp="10000"
+	fire_hp="600"
+	solid_collide_with_self="0"
+	solid_on_collision_splash_power="1"
+	solid_restitution="0.4"
+	audio_physics_material_wall="gravel"
+	audio_physics_material_solid="glass"
+	audio_is_soft="1"
+	show_in_creative_mode="1"
+	>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="apotheosis_TWWE_INGESTION" amount="6" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
   <CellDataChild
   	_parent="sand"
   	_inherit_reactions="1"
@@ -363,7 +394,7 @@
   <CellData
 	name="apotheosis_sweat"
 	ui_name="$material_apotheosis_sweat"
-  	tags="[liquid],[corrodible],[freezable],[water],[liquid_common],[chaotic_transmutation],[evaporable]"
+  	tags="[liquid],[corrodible],[freezable],[water],[liquid_common],[chaotic_transmutation]"
 	burnable="0"
 	density="4"
 	cell_type="liquid"
@@ -4991,6 +5022,16 @@
 		convert_all="1"
 		req_lifetime="540"
 		>
+	</Reaction>
+
+	<Reaction probability="5"
+	input_cell1="apotheosis_sweat" 		input_cell2="air"
+	output_cell1="air" 		output_cell2="air" >
+	</Reaction>
+
+	<Reaction probability="15"
+	input_cell1="apotheosis_sweat" 		input_cell2="[sand]"
+	output_cell1="air" 		output_cell2="[sand]" >
 	</Reaction>
 
 </Materials>

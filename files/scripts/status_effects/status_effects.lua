@@ -225,6 +225,13 @@ local apotheosis_status_list = {
         effect_entity="mods/Apotheosis/files/entities/misc/effect_bald.xml",
 		effect_permanent=true,
     },
+    {
+        id="apotheosis_TWWE_INGESTION",
+        ui_name="$perk_edit_wands_everywhere",
+        ui_description="$perkdesc_edit_wands_everywhere",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/edit_wands_everywhere.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_tinker_with_wands_temporary_noicon.xml",
+    },
 }
 
 local len = #status_effects
