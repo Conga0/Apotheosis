@@ -132,7 +132,7 @@
 		r="45"
 		g="45"
 		b="90">
-	</LightComponent>	
+	</LightComponent>
    
   <LuaComponent 
 		_enabled="1" 

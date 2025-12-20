@@ -3,6 +3,7 @@ local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
 local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileComponent")
 local shooter_id = ComponentGetValue2(projcomp,"mWhoShot") or 0
+local shooter_genome = ComponentGetValue2(projcomp,"mShooterHerdId")
 local sound = false
 local particletype = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(entity_id,"ParticleEmitterComponent"),"emitted_material_name")
 
@@ -11,10 +12,19 @@ function friendlyfireCheck(target_id,projectilecomponent,caster_id)
     if EntityGetFirstComponentIncludingDisabled(target_id,"DamageModelComponent") == nil or EntityGetParent(target_id) ~= 0 then
         return false
     end
-
+    
     if ComponentGetValue2(projectilecomponent,"friendly_fire") == true then
         return true
-    elseif target_id ~= caster_id then
+    end
+
+    local target_genome_comp = EntityGetFirstComponentIncludingDisabled(target_id,"GenomeDataComponent") or 0
+    if target_genome_comp > 0 then
+        if ComponentGetValue2(target_genome_comp,"herd_id") == shooter_genome then
+            return false
+        end
+    end
+
+    if target_id ~= caster_id then
         return true
     else
         return false

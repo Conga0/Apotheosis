@@ -71,6 +71,14 @@
 		value_string="0"
 		>
 	</VariableStorageComponent>
+	
+	<VariableStorageComponent
+		name="misc_data"
+		value_int="0"
+		value_bool="0"
+		value_string="0"
+		>
+	</VariableStorageComponent>
 
 	<Entity>
 		<InheritTransformComponent>

@@ -147,6 +147,10 @@ local insert_list = {
         name="wizard_ambrosia\nwizard_copeseethmald\nwizard_duck\nenchanted_duck\nwizard_explosive\nwizard_jackofalltrades\nwizard_manaeater\nwizard_transmutation\nwizard_z_poly_miniboss\nwizard_corrupt_wands\nwizard_corrupt_ambrosia\nwizard_corrupt_returner\nwizard_corrupt_hearty\nwizard_corrupt_manaeater\nwizard_corrupt_neutral\nwizard_corrupt_swapper\nwizard_corrupt_teleport\nwizard_corrupt_twitchy\nwizard_corrupt_weaken\nlukki_tentacle_hungry\nflesh_wizard_wands\nflesh_wizard_manaeater\nflesh_wizard_neutral\nflesh_wizard_swapper\nflesh_wizard_twitchy",
     },
     {
+        id_matchup="failed_alchemist_b",
+        name="witch_miniboss",
+    },
+    {
         id_matchup="wraith_glowing",
         name="wraith_weirdo_shield\nwraith_returner_apotheosis\nwraith_alchemy_apotheosis",
     },

@@ -466,6 +466,18 @@ local new_scenes = {
 		skip_edge_textures = false,
 	},
 
+	--Spell Machine
+	--[[
+	{
+		pos_x = -2920,
+		pos_y = 10000,
+		material_filename = "mods/Apotheosis/files/biome_impl/vault/spell_machine.png",
+		--background_filename = "mods/Apotheosis/files/pixel_scenes/true_gods/true_gods_background.png",
+		skip_biome_checks = true,
+		skip_edge_textures = false,
+	},
+	]]--
+
 	--RealQuest Grave
 	{
 		pos_x = 4660,
@@ -607,6 +619,13 @@ local new_scenes = {
 		pos_x = 3275,
 		pos_y = -120,
 		just_load_an_entity = "mods/Apotheosis/files/entities/buildings/shrine_puzzle_whisp_spawner.xml",
+	},
+
+	--Spawn Magic Fountain
+	{
+		pos_x = 2925,
+		pos_y = 12335,
+		just_load_an_entity = "mods/Apotheosis/files/entities/spawners/magic_fountain_spawner.xml",
 	},
 
 	--Christmas Lights

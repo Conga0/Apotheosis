@@ -24,8 +24,8 @@
 	offset.y="1"
 	x_pos_offset_min="-1"
 	x_pos_offset_max="1"
-	y_pos_offset_min="-29"
-	y_pos_offset_max="-26"
+	y_pos_offset_min="-36"
+	y_pos_offset_max="-33"
 	x_vel_min="-10"
 	x_vel_max="10"
 	y_vel_min="-10"
@@ -37,7 +37,7 @@
 	create_real_particles="1"
 	emit_cosmetic_particles="0"
 	emission_interval_min_frames="1"
-	emission_interval_max_frames="2"
+	emission_interval_max_frames="1"
 	is_emitting="1" >
 	</ParticleEmitterComponent>
 	
@@ -54,10 +54,10 @@
 	<MaterialSuckerComponent
 		_enabled="0"
 		num_cells_sucked_per_frame="10"
-		randomized_position.min_x="-26"
-		randomized_position.max_x="26"
-		randomized_position.min_y="-7"
-		randomized_position.max_y="7"
+		randomized_position.min_x="-27"
+		randomized_position.max_x="27"
+		randomized_position.min_y="-6"
+		randomized_position.max_y="6"
 		suck_tag="[liquid]"
 		material_type="0"
 		barrel_size="10000"
@@ -75,8 +75,8 @@
 	<Entity>
 		<InheritTransformComponent>
 			<Transform
-				position.x="-29"
-				position.y="-13"
+				position.x="-32"
+				position.y="-7"
 				>
 			</Transform>
 		</InheritTransformComponent>
@@ -98,8 +98,8 @@
 	<Entity>
 		<InheritTransformComponent>
 			<Transform
-				position.x="29"
-				position.y="-13"
+				position.x="32"
+				position.y="-7"
 				>
 			</Transform>
 		</InheritTransformComponent>

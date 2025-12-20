@@ -19,7 +19,7 @@ Nathan - Created Red Sand trip visual effects
 Helped significantly with Aesthete of Water whirlpool particles
 Helped with random arc spell functionality
 
-Alex - Created Mind Weave warp visual effects
+Alex - Creator of the Custom Parallax library and Mind Weave warp visual effects
 
 Letaali - Translating Orb Room lore to finnish
 
@@ -30,8 +30,6 @@ Squirrelly#6472 - Created the mana drain effect lua script and provided the spri
 Evasia - Created the item list appends script
 
 Y🍵 - Creator of More Musical Magic, implemented into this mod to allow for new musical songs
-
-Alex - Creator of the Custom Parallax library
 
 Blueberry#1414 - Translating the mod to Russian
 

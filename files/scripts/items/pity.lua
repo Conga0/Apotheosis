@@ -14,16 +14,27 @@ local variablecomp = EntityGetFirstComponentIncludingDisabled( entity_id, "Varia
 local hotspotcomp = EntityGetFirstComponentIncludingDisabled( entity_id, "HotspotComponent")
 local offset_x, offset_y = ComponentGetValue2(hotspotcomp,"offset")
 local cooldown_frame = ComponentGetValue2( variablecomp, "value_int" )
+local uses = ComponentGetValue2(variablecomp, "value_float")
 local aim_x, aim_y = ComponentGetValue2(controlscomp, "mAimingVectorNormalized")
 local fire_button = ComponentGetValue2(controlscomp,"mButtonDownFire")
+local uses_to_reveal = 50
 
 if GameGetFrameNum() >= cooldown_frame and GameIsInventoryOpen() == false then
     if fire_button then
-        GameShootProjectile(root, i_x, i_y, i_x+aim_x*20, i_y+aim_y*20, EntityLoad("data/entities/projectiles/deck/laser.xml", i_x, i_y))
+        GameShootProjectile(root, i_x, i_y, i_x+aim_x*20, i_y+aim_y*20, EntityLoad("mods/Apotheosis/files/entities/projectiles/laser_purple.xml", i_x, i_y))
         ComponentSetValue2( variablecomp, "value_int", GameGetFrameNum() + cooldown_frames )
+        if uses >= uses_to_reveal then
+            if uses == uses_to_reveal then
+                local item_comp = EntityGetFirstComponentIncludingDisabled(entity_id, "ItemComponent")
+                ComponentSetValue2(item_comp, "ui_description", "$item_apotheosis_pity_desc_upgrade")
+                ComponentSetValue2( variablecomp, "value_float", uses + 1)
+            end
+        else
+            ComponentSetValue2( variablecomp, "value_float", uses + 1)
+        end
 
         if ModIsEnabled("quant.ew") then
-            CrossCall("apoth_ew_alt_fire", root, i_x, i_y, i_x+aim_x*20, i_y+aim_y*20, "data/entities/projectiles/deck/laser.xml")
+            CrossCall("apoth_ew_alt_fire", root, i_x, i_y, i_x+aim_x*20, i_y+aim_y*20, "mods/Apotheosis/files/entities/projectiles/laser_purple.xml")
         end
     end
 end

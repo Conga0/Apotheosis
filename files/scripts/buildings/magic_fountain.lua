@@ -1,4 +1,5 @@
 dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
+dofile_once("data/scripts/perks/perk.lua")
 
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
@@ -18,19 +19,29 @@ local state_options = {
     evaluate_contents = 2,
     creation_animation = 3,
     create_spells = 4,
-    self_destruct = 5,
+    sleep = 5,
     reset_to_default = 99,
 }
 
 spell_material_database = {
     {
+        materials = {"acid"},
+        reward = function()
+            local spell_opts = {"APOTHEOSIS_LIQUIDSPHERE_ACID",}
+            local spell_id = spell_opts[Random(1,#spell_opts)]
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
+
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
+        end
+    },
+    {
         materials = {"magic_liquid_movement_faster","magic_liquid_faster_levitation","magic_liquid_faster_levitation_and_movement","apotheosis_magic_liquid_velocium","apotheosis_magic_liquid_escapium"},
         reward = function()
             local spell_opts = {"SPEED","ACCELERATING_SHOT"}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -38,9 +49,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"DAMAGE", "DAMAGE_RANDOM", "BLOODLUST", "HEAVY_SHOT",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -48,9 +59,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"POLYMORPH_FIELD", "CHAOS_POLYMORPH_FIELD", "PROJECTILE_TRANSMUTATION_FIELD",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -58,9 +69,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"MANA_REDUCE",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -68,9 +79,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"APOTHEOSIS_RANDOM_ARC","APOTHEOSIS_RANDOM_HOMING","DAMAGE_RANDOM","RANDOM_EXPLOSION","TRANSMUTATION","CHAOTIC_ARC",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -78,9 +89,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"HEAL_BULLET","ANTIHEAL","REGENERATION_FIELD",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -88,9 +99,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"HOMING_SHOOTER",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -102,9 +113,9 @@ spell_material_database = {
             end
 
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -112,10 +123,10 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"RAINBOW_TRAIL","COLOUR_RAINBOW",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
             --09/12/2025 Conga: I would like this to create a rainbow parallax that replaces the default parallax but I'm weary of 
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -126,9 +137,9 @@ spell_material_database = {
                 spell_opts = {"APOTHEOSIS_ALT_FIRE_TELEPORT", "APOTHEOSIS_ALT_FIRE_TELEPORT_SHORT"}
             end
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -136,27 +147,29 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"HOMING", "HOMING_SHORT", "HOMING_ROTATE", "HOMING_ACCELERATING", "HOMING_AREA", "APOTHEOSIS_HOMING_DELAYED",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
+    --[[
     {
         materials = {"apotheosis_magic_liquid_divine"},
         reward = function()
             local spell_opts = {"ALL_SPELLS",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(false, pos_x, pos_y - 30)
+            ProduceRewardFlair(false, pos_x, pos_y - 35)
         end
     },
+    ]]--
     {
         materials = {"apotheosis_magic_liquid_moon_portal"},
         reward = function()
             EntityLoad("mods/Apotheosis/files/scripts/materials/moon_portal_spawner.xml",pos_x,pos_y - 60)
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -164,9 +177,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"NUKE","ORBIT_NUKES","APOTHEOSIS_NUKE_RAY","APOTHEOSIS_NUKE_RAY_ENEMY",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -174,9 +187,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"LIGHT","APOTHEOSIS_MIND_VISION"}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -184,9 +197,9 @@ spell_material_database = {
         reward = function()
             local spell_opts = {"MATERIAL_WATER",}
             local spell_id = spell_opts[Random(1,#spell_opts)]
-            CreateItemActionEntity( spell_id, pos_x, pos_y - 30 )
+            CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
@@ -195,24 +208,44 @@ spell_material_database = {
             local pcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ParticleEmitterComponent")
             ComponentSetValue2(pcomp,"emitted_material_name","apotheosis_hidden_liquid_baldium")
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
     {
         materials = {"water"},
         reward = function()
-            EntityLoad("mods/Apotheosis/files/entities/items/pickups/pity.xml", pos_x, pos_y - 30)
+            EntityLoad("mods/Apotheosis/files/entities/items/pickups/pity.xml", pos_x + 10, pos_y - 35)
 
-            ProduceRewardFlair(false, pos_x, pos_y - 30)
+            ProduceRewardFlair(false, pos_x, pos_y - 35)
         end
     },
     {
-        materials = {"blood","midas","midas_precursor"},
+        materials = {"midas","midas_precursor"},
         reward = function()
             local pcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ParticleEmitterComponent")
             ComponentSetValue2(pcomp,"emitted_material_name","gold")
 
-            ProduceRewardFlair(true, pos_x, pos_y - 30)
+            local plyr = EntityGetWithTag("player_unit") or {}
+            for k=1,#plyr do
+                local wallet = EntityGetFirstComponentIncludingDisabled(plyr[k],"WalletComponent")
+                local money = ComponentGetValue2(wallet,"money")
+                ComponentSetValue2(wallet,"money",money + 1000000)
+            end
+
+            ProduceRewardFlair(true, pos_x, pos_y - 35)
+        end
+    },
+    {
+        materials = {"milk","apotheosis_milk"},
+        reward = function()
+            if Random(1,4) == 1 then
+                perk_spawn( pos_x, pos_y - 35, "IRON_STOMACH" )
+
+                ProduceRewardFlair(true, pos_x, pos_y - 35)
+            else
+                EntityLoad("data/entities/particles/image_emitters/chest_effect_bad.xml", pos_x, pos_y - 35)
+                GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/chest_bad/create", pos_x, pos_y - 35)
+            end
         end
     },
 }
@@ -313,10 +346,12 @@ function vat_update()
             EntitySetComponentIsEnabled(children[child],mcon_comp,true)
         end
 
+        ComponentSetValue2(vsc_comp,"value_int",state_options.sleep)
+
     elseif state == state_options.reset_to_default then
         --Reset since we failed for some reason
 
-        local area_checkers = EntityGetComponent(entity_id,"MaterialAreaCheckerComponent")
+        local area_checkers = EntityGetComponent(entity_id,"MaterialAreaCheckerComponent") or {}
         for k=1,#area_checkers do
             EntitySetComponentIsEnabled(entity_id,area_checkers[k],true)
         end
@@ -353,7 +388,7 @@ function init(entity_id)
             }
         )
 
-        ComponentSetValue2(suck_comp, "area_aabb", -20, -6, 20, 1)
+        ComponentSetValue2(suck_comp, "area_aabb", -25, -3, 25, 3)
     end
 end
 
