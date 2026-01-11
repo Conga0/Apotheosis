@@ -3,11 +3,7 @@
     name="$biome_esoteric_den"
     type="BIOME_WANG_TILE"
 	  background_image="data/weather_gfx/background_cave_04_alt6.png"
-	  background_edge_left="data/weather_gfx/edges/background_cave_04_alt6_left.png"
-    background_edge_right="data/weather_gfx/edges/background_cave_04_alt6_right.png"
-    background_edge_top="data/weather_gfx/edges/background_cave_04_alt6_top.png"
-    background_edge_bottom="data/weather_gfx/edges/background_cave_04_alt6_bottom.png"
-    background_edge_priority="10"
+    background_edge_priority="0"
 
     limit_background_image="0"
     noise_biome_edges="1"
@@ -17,6 +13,13 @@
     wang_map_height="256"
     audio_ambience="snowcave"
     >
+  
+  <RandomMaterials>
+    <!-- changes liquids to void liquid.. at least it's supposed to. Does not work. -->
+    <RandomColor input_color="FF99D014" output_colors="FFA2332A" />
+
+  </RandomMaterials>
+
 	<BitmapCaves 
       size_x="512"
       size_y="256"

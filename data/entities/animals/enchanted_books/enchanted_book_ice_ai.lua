@@ -10,8 +10,8 @@ attack_options = {
         random_spread = 5,
         speed = 500,
         speed_random_mult = 1.0,
-        burst_wait_between = 60,
-        after_attack_delay = 8
+        burst_wait_between = 8,
+        after_attack_delay = 60
     },
     {
         name = "ice_mist",

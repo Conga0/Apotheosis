@@ -281,6 +281,10 @@
 
     <PixelScene pos_x="-19100" pos_y="-160" just_load_an_entity="mods/Apotheosis/files/entities/buildings/forest_monolith_spawner.xml" />
 
+    <PixelScene pos_x="3275" pos_y="-120" just_load_an_entity="mods/Apotheosis/files/entities/buildings/shrine_puzzle_whisp_spawner.xml" />
+
+    <PixelScene pos_x="-400" pos_y="-70" just_load_an_entity="mods/Apotheosis/files/entities/spawners/magic_fountain_spawner.xml" />
+
 	<!--Cruicible-->
     <PixelScene DEBUG_RELOAD_ME="0" clean_area_before="0" pos_x="-8739" pos_y="16381" skip_biome_checks="1" skip_edge_textures="0"
       material_filename="mods/Apotheosis/files/pixel_scenes/portal_room_fire_lukki/portal_room_fire_lukki.png"

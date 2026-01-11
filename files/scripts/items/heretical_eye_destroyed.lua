@@ -25,7 +25,8 @@ end
 --Without this Heretic when placed down would manifest himself in the next NG+ upon being deleted while loading the next world
 --May not be needed, since as it turns out it might not really be considered deletion when transitioning while held...???
 --But I'll keep it just in case... this stuff is finnicky
-local ngplus = tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT"))
+
+local ngplus = tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) + tonumber(GlobalsGetValue( "apotheosis_artifical_ngplus", "0" ))
 local incarncomp = EntityGetComponentIncludingDisabled( entity_id, "VariableStorageComponent" )[3]
 local incarnation = ComponentGetValue2( incarncomp, "value_int" )
 if incarnation < ngplus then

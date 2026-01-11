@@ -3,11 +3,7 @@
     name="$biome_plane_magic"
     type="BIOME_WANG_TILE"
     background_image="mods/Apotheosis/files/weather_gfx/hazy_forest.png"
-    background_edge_left="data/weather_gfx/edges/background_rainforest_left.png"
-    background_edge_right="data/weather_gfx/edges/background_rainforest_right.png"
-    background_edge_top="data/weather_gfx/edges/background_rainforest_top.png"
-    background_edge_bottom="data/weather_gfx/edges/background_rainforest_bottom.png"
-    background_edge_priority="9"     
+    background_edge_priority="0"
     background_use_neighbor="0"
     background_image_height="0"
 

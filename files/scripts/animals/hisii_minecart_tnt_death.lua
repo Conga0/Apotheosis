@@ -1,4 +1,5 @@
 dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 function death( damage_type_bit_field, damage_message, entity_thats_responsible, drop_items )
 	-- kill self
@@ -8,14 +9,10 @@ function death( damage_type_bit_field, damage_message, entity_thats_responsible,
 	local max_health = 0
 	local combo_count = 2
 
-	local eid = ""
+	local eid = 0
 
-	if seasonalSetting == true then
-		if is_holiday_active("smissmass") then
-			eid = EntityLoad( "data/entities/animals/miner_santa.xml", pos_x, pos_y )
-		else
-			eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
-		end
+	if is_holiday_active("smissmass") then
+		eid = EntityLoad( "data/entities/animals/miner_santa.xml", pos_x, pos_y )
 	else
 		eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
 	end

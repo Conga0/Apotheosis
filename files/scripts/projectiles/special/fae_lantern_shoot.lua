@@ -20,13 +20,21 @@ local projcomp = EntityGetFirstComponentIncludingDisabled(entity_id,"ProjectileC
 local gun_data = extract(projcomp, {2})
 local gun_info = SplitStringOnCharIntoTable(gun_data,string.char(255))
 
---Handles actually shooting the projectiles we want
-if enemy_count > 0 then
-    local target = EntityGetClosestWithTag(  x, y, "enemy" )
-    SetRandomSeed( GameGetFrameNum(), x + y + entity_id )
-    local r_x,r_y = EntityGetTransform(entity_id)
-    local t_x,t_y = EntityGetTransform(target)
+--Grab a target x,y position
+local target = EntityGetClosestWithTag(  x, y, "enemy" ) or 0
+SetRandomSeed( GameGetFrameNum(), x + y + entity_id )
+local r_x,r_y = EntityGetTransform(entity_id)
+local t_x,t_y = 0,0
 
+if enemy_count > 0 then
+    t_x,t_y = EntityGetTransform(target)
+else
+    t_x = r_x + Random(-50,50)
+    t_y = r_y + Random(-50,50)
+end
+
+--Handles actually shooting the projectiles we want
+do
     local pid = EntityLoad("mods/Apotheosis/files/entities/projectiles/deck/fae_lantern_projectile.xml",r_x,r_y)
     GameShootProjectile( entity_id, r_x, r_y, t_x, t_y, pid)
     local pvcomp = EntityGetFirstComponentIncludingDisabled(pid,"VelocityComponent")

@@ -1,13 +1,9 @@
 function do_newgame_plus()
-	-- GameDoEnding2()
-	-- BiomeMapLoad( "mods/nightmare/files/biome_map.lua" )
 
-	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") )
-	-- print( newgame_n )
-	newgame_n = newgame_n + 1
-	SessionNumbersSetValue( "NEW_GAME_PLUS_COUNT", newgame_n )
+	local artifical_ngplus = tonumber(GlobalsGetValue( "apotheosis_artifical_ngplus", "0" )) + 1
+	GlobalsSetValue( "apotheosis_artifical_ngplus", tostring(artifical_ngplus) )
 
-	local players = EntityGetWithTag("player_unit")
+	local players = EntityGetWithTag("player_unit") or {}
 	for k=1,#players
 	do local v = players[k]
 		EntitySetTransform(v,-1120,-5545)

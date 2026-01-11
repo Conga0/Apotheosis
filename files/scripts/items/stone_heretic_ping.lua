@@ -143,7 +143,10 @@ if (heretic_found == false) and (converting == false) then
 	--ComponentSetValue2( particlecomp, "emission_interval_min_frames", no_ping )
 	--ComponentSetValue2( particlecomp, "emission_interval_max_frames", no_ping )
 	ComponentSetValue2( luacomp, "execute_every_n_frame", no_ping )
-	if tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) > 0 then
+
+	local ngplus_count = tonumber(SessionNumbersGetValue("NEW_GAME_PLUS_COUNT")) + tonumber(GlobalsGetValue( "apotheosis_artifical_ngplus", "0" ))
+
+	if ngplus_count > 0 then
 	    EntityLoad( "mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster_newgame_plus_short.xml", pos_x, pos_y - 20 )
 	else
 	    EntityLoad( "mods/Apotheosis/files/entities/misc/spawn_boss_flesh_monster.xml", pos_x, pos_y - 20 )

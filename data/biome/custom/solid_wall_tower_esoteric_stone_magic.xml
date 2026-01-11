@@ -1,6 +1,6 @@
 <Biome>
   <Topology 
-    name="_EMPTY_"
+    name="$biome_plane_magic"
 	  background_image="data/weather_gfx/background_cave_04_alt6.png"
 	  background_edge_left="data/weather_gfx/edges/background_cave_04_alt6_left.png"
     background_edge_right="data/weather_gfx/edges/background_cave_04_alt6_right.png"

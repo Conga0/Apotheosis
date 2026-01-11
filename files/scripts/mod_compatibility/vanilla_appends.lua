@@ -896,7 +896,7 @@ end
 do --Tower creature appends
   local path = "data/scripts/biomes/tower.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[local enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[local enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "witch_miniboss/witch_variants/arcane/witch_miniboss.xml", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
   ModTextFileSetContent(path, content)
 end
 
@@ -1927,6 +1927,33 @@ if ModSettingGet("Apotheosis.custom_parallax") then --Remove backgrounds from bi
     content = content:gsub('%f[%w]background_image%s*=%s*".-%"', 'background_image=""')
     ModTextFileSetContent(path, content)
   end
+end
+
+do --Implement Shift Immunity functionality for non-fungal based shifts
+  --Leviathan water shift
+  local path = "data/entities/animals/boss_fish/death.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub([[ConvertMaterialEverywhere( CellFactory_GetType( "water" ), CellFactory_GetType( "smoke" ) )]],[[if GameHasFlagRun("apotheosis_flag_no_tripping") == false then ConvertMaterialEverywhere( CellFactory_GetType( "water" ), CellFactory_GetType( "smoke" ) ) else GamePrintImportant( "$log_apotheosis_shift_blocked_name", "$log_apotheosis_shift_blocked_desc" ) end]])
+  ModTextFileSetContent(path, content)
+
+  --Supernova material shift
+  local path = "data/scripts/buildings/sun/sun_collision.lua"
+  local content = ModTextFileGetContent(path)
+  local pattern = "ConvertMaterialEverywhere%s*%(%s*CellFactory_GetType%s*%(%s*\"[^\"]+\"%s*%)%s*,%s*CellFactory_GetType%s*%(%s*\"[^\"]+\"%s*%)%s*%)"
+  local replacement = [[if GameHasFlagRun("apotheosis_flag_no_tripping") == false then %1 end]]
+  content = content:gsub(pattern, replacement)
+  content = content:gsub("AddFlagPersistent%( \"secret_supernova\" %)","AddFlagPersistent( \"secret_supernova\" ) if GameHasFlagRun(\"apotheosis_flag_no_tripping\") then GamePrintImportant( \"$log_apotheosis_shift_blocked_name\", \"$log_apotheosis_shift_blocked_desc\" ) end")
+  ModTextFileSetContent(path, content)
+
+  --Fungal boulder shift
+  local path = "data/scripts/buildings/funroom_check.lua"
+  local content = ModTextFileGetContent(path)
+  local pattern = "ConvertMaterialEverywhere%s*%(%s*CellFactory_GetType%s*%(%s*\"[^\"]+\"%s*%)%s*,%s*CellFactory_GetType%s*%(%s*\"[^\"]+\"%s*%)%s*%)"
+  local replacement = [[if GameHasFlagRun("apotheosis_flag_no_tripping") == false then %1 end]]
+  content = content:gsub(pattern, replacement)
+  content = content:gsub("EntityKill%( entity_id %)","EntityKill( entity_id ) if GameHasFlagRun(\"apotheosis_flag_no_tripping\") then GamePrintImportant( \"$log_apotheosis_shift_blocked_name\", \"$log_apotheosis_shift_blocked_desc\" ) end")
+
+  ModTextFileSetContent(path, content)
 end
 
 ModLuaFileAppend("data/scripts/biome_modifiers.lua", "mods/Apotheosis/files/scripts/mod_compatibility/biome_modifiers/biome_modifiers_rewrite.lua")

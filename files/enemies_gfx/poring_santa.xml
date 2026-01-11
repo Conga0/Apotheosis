@@ -1,7 +1,7 @@
 <Sprite 
   filename="mods/Apotheosis/files/enemies_gfx/poring_santa.png" 
   offset_x="14" 
-  offset_y="20"
+  offset_y="16"
   default_animation="stand" >
 
   <RectAnimation 

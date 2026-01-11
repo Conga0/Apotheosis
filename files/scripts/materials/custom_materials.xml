@@ -4156,6 +4156,39 @@
     </Graphics>
   </CellData>
 
+ <CellData 
+	name="apotheosis_cobweb"
+	ui_name="$material_apotheosis_cobweb"
+	tags="[static],[alchemy],[solid],[earth],[food],[burnable]"
+	burnable="1"
+	density="1"
+	cell_type="liquid"
+	wang_color="886a6d6d"
+	generates_smoke="0"
+	liquid_gravity="1.0"
+	liquid_sand="0"
+	liquid_stains="1"
+	liquid_stains_self="0"
+	liquid_static="1"
+	on_fire="0"
+	requires_oxygen="1"
+	fire_hp="300"
+	temperature_of_fire="50"
+	autoignition_temperature="10"
+	liquid_slime="1"
+	stickyness="1.0"
+	solid_friction="1.0"
+	>
+    <Graphics 
+	color="88eaeaea" >
+    </Graphics>
+	<StatusEffects>
+		<Ingestion>
+			<StatusEffect type="FOOD_POISONING" amount="0.1" />
+		</Ingestion>
+	</StatusEffects>
+  </CellData>
+
 
 
 
@@ -5101,11 +5134,6 @@
 	<Reaction probability="15"
 	input_cell1="apotheosis_sweat" 		input_cell2="[sand]"
 	output_cell1="air" 		output_cell2="[sand]" >
-	</Reaction>
-
-	<Reaction probability="5"
-	input_cell1="apotheosis_sweat" 		input_cell2="air"
-	output_cell1="air" 		output_cell2="air" >
 	</Reaction>
 
 	<Reaction probability="25"

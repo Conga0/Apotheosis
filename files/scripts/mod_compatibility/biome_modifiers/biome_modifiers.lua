@@ -238,6 +238,65 @@ local new_modifiers = {
 			})
 		end,
 	},
+	{
+		id = "SPIDERS",
+		ui_description = "$biomemod_spiders",
+		ui_decoration_file = "mods/Apotheosis/files/ui_gfx/decorations/spiders.png",
+		probability = 0.5,
+		does_not_apply_to_biome = { "mountain_hall", "snowcave", "snowcastle" },
+		action = function(biome_name, biome_filename) end,
+		inject_spawns_action = function()
+			inject_spawn(g_small_enemies, 1.00, {
+				prob = 0,
+				min_count = 6,
+				max_count = 8,
+				offset_y = 0,
+				entity = "data/entities/animals/longleg.xml",
+			})
+			inject_spawn(g_small_enemies, 0.50, {
+				prob = 0,
+				min_count = 1,
+				max_count = 1,
+				offset_y = 0,
+				entity = "data/entities/buildings/hamis_nest.xml",
+			})
+			inject_spawn(g_small_enemies, 0.05, {
+				prob = 0,
+				min_count = 1,
+				max_count = 1,
+				offset_y = 0,
+				entity = "data/entities/animals/lukki/lukki.xml",
+			})
+			inject_spawn(g_small_enemies, 0.05, {
+				prob = 0,
+				min_count = 1,
+				max_count = 1,
+				offset_y = 0,
+				entity = "data/entities/animals/lukki/lukki_longleg.xml",
+			})
+			inject_spawn(g_props, 0.8, {
+				prob = 0,
+				min_count = 1,
+				max_count = 1,
+				offset_y = 0,
+				entity = "mods/Apotheosis/files/entities/particle_generators/cobweb_01.xml",
+			})
+			inject_spawn(g_props, 0.8, {
+				prob = 0,
+				min_count = 1,
+				max_count = 1,
+				offset_y = 0,
+				entity = "mods/Apotheosis/files/entities/particle_generators/cobweb_02.xml",
+			})
+			inject_spawn(g_props, 0.8, {
+				prob = 0,
+				min_count = 1,
+				max_count = 1,
+				offset_y = 0,
+				entity = "mods/Apotheosis/files/entities/particle_generators/cobweb_03.xml",
+			})
+		end,
+	},
 	--[[
 	--Requires ending 3
 	--Replace all biome liquid with blood, add way to be afflicted by Lively Hex?

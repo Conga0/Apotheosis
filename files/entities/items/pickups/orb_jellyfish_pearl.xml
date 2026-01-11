@@ -250,6 +250,11 @@
 		is_emitting="1"
     />
 
+	<LightComponent 
+		radius="75"
+		fade_out_time="1.5" >
+	</LightComponent>
+
 	<CollisionTriggerComponent
 		width="70"
 		height="70"

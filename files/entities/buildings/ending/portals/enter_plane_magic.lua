@@ -1,6 +1,9 @@
 function do_newgame_plus()
 
-	local players = EntityGetWithTag("player_unit")
+	local artifical_ngplus = tonumber(GlobalsGetValue( "apotheosis_artifical_ngplus", "0" )) + 1
+	GlobalsSetValue( "apotheosis_artifical_ngplus", tostring(artifical_ngplus) )
+
+	local players = EntityGetWithTag("player_unit") or {}
 	for k=1,#players
 	do local v = players[k]
 		local pos_x,pos_y = EntityGetTransform(v)
@@ -32,6 +35,8 @@ function do_newgame_plus()
 
 	--Deque & Fadeout current music so the new biome music can take over
     GameTriggerMusicFadeOutAndDequeueAll()
+
+	GameAddFlagRun("apotheosis_planes_entered")
 
 	-- Load the actual biome map
 

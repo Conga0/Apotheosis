@@ -1,5 +1,8 @@
 function do_newgame_plus()
 
+	local artifical_ngplus = tonumber(GlobalsGetValue( "apotheosis_artifical_ngplus", "0" )) + 1
+	GlobalsSetValue( "apotheosis_artifical_ngplus", tostring(artifical_ngplus) )
+
 	local players = EntityGetWithTag("player_unit") or {}
 	for k=1,#players
 	do local v = players[k]

@@ -1299,6 +1299,12 @@
 	</Biome>
 
 	<Biome 
+		biome_filename="data/biome/custom/solid_wall_tower_esoteric_stone_magic.xml"
+		height_index="10"
+		color="ff684ca0" >
+	</Biome>
+
+	<Biome 
 		biome_filename="data/biome/custom/esoteric_den.xml" 
 		height_index="10"
 		color="ff733ede" >

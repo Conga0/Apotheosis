@@ -13,6 +13,7 @@ local inputlist = {
     "data/items_gfx/stonestone.png",    --Earth Stone
     "data/items_gfx/smallgem_03.png",   --Lightning Stone
     "data/items_gfx/waterstone.png",    --Water Stone
+    "mods/Apotheosis/files/items_gfx/waterstone_pink.png", -- Pink Water Stone
     "data/items_gfx/kakke.png", --Spirit Stone
     "mods/Apotheosis/files/items_gfx/stone_fungus.png", --Fungus Stone
     "data/items_gfx/goldnugget_01.png", --Wand Stone
@@ -27,6 +28,7 @@ local outputlist = {
     "PROTECTION_FIRE",
     "TELEKINESIS",
     "PROTECTION_ELECTRICITY",
+    "BREATH_UNDERWATER",
     "BREATH_UNDERWATER",
     "APOTHEOSIS_ALCOHOL_IMMUNITY",
     "APOTHEOSIS_TRIP_IMMUNITY",

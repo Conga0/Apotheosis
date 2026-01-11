@@ -1,3 +1,4 @@
+dofile_once("mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua")
 
 function cartGold()
 	local entity_id    = GetUpdatedEntityID()
@@ -6,14 +7,10 @@ function cartGold()
 	local max_health = 0
 	local combo_count = 2
 
-	local eid = ""
+	local eid = 0
 
-	if seasonalSetting == true then
-		if is_holiday_active("smissmass") then
-			eid = EntityLoad( "data/entities/animals/miner_santa.xml", pos_x, pos_y )
-		else
-			eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
-		end
+	if is_holiday_active("smissmass") then
+		eid = EntityLoad( "data/entities/animals/miner_santa.xml", pos_x, pos_y )
 	else
 		eid = EntityLoad( "data/entities/animals/miner_weak.xml", pos_x, pos_y )
 	end
@@ -51,7 +48,10 @@ function cartGold()
 		remove_after_executed = "1",
 	} )
 
-    EntityInflictDamage( eid, 2, "DAMAGE_DROWNING", "Drowning", "NONE", 0, 0, 0 )
+	local dmg_comp = EntityGetFirstComponentIncludingDisabled(eid,"DamageModelComponent")
+	ComponentSetValue2(dmg_comp,"hp",0.04)
+
+    EntityInflictDamage( eid, 4, "DAMAGE_DROWNING", "Drowning", "NONE", 0, 0, 0 )
 end
 
 function damage_about_to_be_received( damage )

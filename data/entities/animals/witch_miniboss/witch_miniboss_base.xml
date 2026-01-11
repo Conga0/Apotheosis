@@ -40,8 +40,8 @@
 			>
 			<damage_multipliers
 			projectile="0.5"
-			explosive="0.0"
-			holy="1.2"
+			explosive="0.33"
+			holy="1.5"
 			>
 			</damage_multipliers>
 		</DamageModelComponent>

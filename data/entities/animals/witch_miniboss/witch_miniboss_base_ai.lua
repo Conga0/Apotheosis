@@ -180,6 +180,7 @@ function setEntityImmobile()
 end
 
 function setTeleportLocation()
+    SetRandomSeed(pos_x+current_frame,pos_y)
     if EntityGetIsAlive(current_target) == false and current_target ~= 0 then return end
     local t_x,t_y = EntityGetTransform(current_target)
     local angle = math.rad(Random(0,359))
@@ -368,6 +369,8 @@ function runAIUpdate()
             ComponentGetValue2(attack_data_1,"value_string","1")
             ComponentSetValue2(attack_data_1,"name","2")
             attack_data.attack_tbl_id = 2
+            
+            GamePlaySound( "data/audio/Desktop/animals.bank", "failed_alchemist_damage_01", pos_x, pos_y )
 
             reset_attack_data()
             decide_next_attack()
@@ -379,7 +382,7 @@ function runAIUpdate()
         if current_target ~= 0 and (current_frame >= next_teleport_frame) then setTeleportLocation() end
 
         if hp_percent <= 0.00 then
-            --Enter desath phase ewewewewewewe
+            --Enter death phase ewewewewewewe
             ComponentSetValue2(attack_data_2,"name",tostring(current_frame+wait_between_attack_subphases))
             ComponentSetValue2(state_data,"value_float",sub_state_options.idle)
 
