@@ -15,3 +15,5 @@ table.insert(ParallelParity_Settings.mod_compat_settings, {
         },
     },
 })
+
+ParallelParity_Settings.max_orbs = ParallelParity_Settings.max_orbs + 12
