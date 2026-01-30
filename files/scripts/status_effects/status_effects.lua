@@ -232,6 +232,13 @@ local apotheosis_status_list = {
         ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/edit_wands_everywhere.png",
         effect_entity="mods/Apotheosis/files/entities/misc/effect_tinker_with_wands_temporary_noicon.xml",
     },
+    {
+        id="apotheosis_WEBBED",
+        ui_name="$status_apotheosis_webbed_name",
+        ui_description="$status_apotheosis_webbed_desc",
+        ui_icon="mods/Apotheosis/files/ui_gfx/status_indicators/webbed.png",
+        effect_entity="mods/Apotheosis/files/entities/misc/effect_webbed.xml",
+    },
 }
 
 local len = #status_effects

@@ -15,7 +15,7 @@ function shot( entity_id )
     if comps then
         for k=1,#comps
         do local v = comps[k]
-            if ComponentGetValue2(v,"effect_hit") == "SWAPPER" then
+            if ComponentGetValue2(v,"effect_hit") == "SWAPPER" or ComponentGetValue2(v,"value_string") == "data/entities/misc/teleport_projectile_closer_hit.xml" then
                 EntityRemoveComponent(entity_id,v)
             end
         end

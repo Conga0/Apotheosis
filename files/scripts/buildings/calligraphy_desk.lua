@@ -35,6 +35,10 @@ function interacting( player_id, shrine_id, interactable_name )
                 letter_num = letter_num + 1
                 local spell_id = CreateItemActionEntity( "APOTHEOSIS_SPELLBOOK", pos_x, pos_y - 10 )
                 local svcomp = EntityGetFirstComponentIncludingDisabled(spell_id,"VelocityComponent")
+                local itemcomp = EntityGetFirstComponentIncludingDisabled(spell_id,"ItemComponent")
+
+                ComponentSetValue2(itemcomp,"always_use_item_name_in_ui",true)
+                ComponentSetValue2(itemcomp,"item_name",GameTextGet("$spell_apotheosis_spellbook_glyph_ingame_name",string.upper(letter))) 
 
                 local circle = math.pi * 2
                 local inc = circle / (letters_to_create * 2 -2)
@@ -50,7 +54,7 @@ function interacting( player_id, shrine_id, interactable_name )
                 ComponentSetValue2(svcomp, "mVelocity", vel_x * Randomf(0.75^(k-1),1.00), vel_y * Randomf(0.80,1.20))
                 ComponentSetValue2(svcomp, "gravity_y", 40)
                 
-                local spell_id = CreateItemActionEntity( "APOTHEOSIS_SPELLBOOK", pos_x, pos_y - 10 )
+                --local spell_id = CreateItemActionEntity( "APOTHEOSIS_SPELLBOOK", pos_x, pos_y - 10 )
                 ComponentSetValue2(EntityGetFirstComponentIncludingDisabled(spell_id , "VariableStorageComponent"), "value_string", letter)
 
                 --Return gravity to normal after the spell is picked up

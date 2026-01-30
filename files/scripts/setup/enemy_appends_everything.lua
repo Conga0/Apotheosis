@@ -27,4 +27,3 @@ if g_props then
 end
 
 GameAddFlagRun("apotheosis_everything")
-GamePrint("adding run flag")

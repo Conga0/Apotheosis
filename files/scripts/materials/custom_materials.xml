@@ -4156,33 +4156,38 @@
     </Graphics>
   </CellData>
 
- <CellData 
+  <CellData 
 	name="apotheosis_cobweb"
 	ui_name="$material_apotheosis_cobweb"
 	tags="[static],[alchemy],[solid],[earth],[food],[burnable]"
 	burnable="1"
-	density="1"
+	density="4.99"
 	cell_type="liquid"
 	wang_color="886a6d6d"
 	generates_smoke="0"
 	liquid_gravity="1.0"
-	liquid_sand="0"
-	liquid_stains="1"
-	liquid_stains_self="0"
+	liquid_sand="1"
 	liquid_static="1"
+	liquid_stains="1"
+	solid_static_type="1"
 	on_fire="0"
 	requires_oxygen="1"
 	fire_hp="300"
 	temperature_of_fire="50"
 	autoignition_temperature="10"
+	liquid_sprite_stain_shaken_drop_chance="100"
 	liquid_slime="1"
 	stickyness="1.0"
-	solid_friction="1.0"
+	solid_friction="20.0"
+	platform_type="0"
 	>
     <Graphics 
 	color="88eaeaea" >
     </Graphics>
 	<StatusEffects>
+		<Stains>
+			<StatusEffect type="apotheosis_WEBBED" />
+		</Stains>
 		<Ingestion>
 			<StatusEffect type="FOOD_POISONING" amount="0.1" />
 		</Ingestion>
