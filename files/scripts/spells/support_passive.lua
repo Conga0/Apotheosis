@@ -26,7 +26,7 @@ function visualEffects(pos_x,pos_y)
 end
 
 if current_frame > next_trueform_frame then
-    local children = EntityGetAllChildren(player_id)
+    local children = EntityGetAllChildren(player_id) or {}
     for k=1,#children
     do local v = children[k]
         if EntityHasTag(v,"harmful_status") or EntityHasTag(v,"very_harmful_status") then

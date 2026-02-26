@@ -1,9 +1,9 @@
 dofile_once("data/scripts/status_effects/status_list.lua")
 
-local entity_id = EntityGetParent(GetUpdatedEntityID())
+local entity_id = EntityGetRootEntity(GetUpdatedEntityID())
 
 function removeStatusAilments(player_id)
-    local children = EntityGetAllChildren(player_id)
+    local children = EntityGetAllChildren(player_id) or {}
     for k=1,#children
     do local v = children[k]
         if EntityHasTag(v,"harmful_status") or EntityHasTag(v,"very_harmful_status") then
