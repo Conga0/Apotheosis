@@ -12,7 +12,7 @@ local stone_found = false
 local stone_id = nil
 
 if not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster_stone") then
-	local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,145000,"poopstone") or {}
+	local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,145000,"apoth_perk_forgable") or {}
 	for k=1,#heretic_stones
 	do local v = heretic_stones[k]
 		local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")

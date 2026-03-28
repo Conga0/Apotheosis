@@ -10,6 +10,6 @@ local scene_radius = 128
 
 LoadPixelScene( "mods/Apotheosis/files/biome_impl/special_scenes/magic_fountain.png", "mods/Apotheosis/files/biome_impl/special_scenes/magic_fountain_visual.png", hit_x-scene_radius, hit_y-scene_radius-112, "mods/Apotheosis/files/biome_impl/special_scenes/magic_fountain_background.png", true )
 
-EntityLoad("mods/Apotheosis/files/entities/buildings/magic_fountain.xml",hit_x,hit_y)
+EntityLoad("mods/Apotheosis/files/entities/buildings/magic_fountain.xml",hit_x+44,hit_y-51)
 
 EntityKill(entity_id)

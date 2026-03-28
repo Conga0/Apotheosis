@@ -152,7 +152,6 @@ spell_material_database = {
             ProduceRewardFlair(true, pos_x, pos_y - 35)
         end
     },
-    --[[
     {
         materials = {"apotheosis_magic_liquid_divine"},
         reward = function()
@@ -161,9 +160,9 @@ spell_material_database = {
             CreateItemActionEntity( spell_id, pos_x, pos_y - 35 )
 
             ProduceRewardFlair(false, pos_x, pos_y - 35)
+            perk_spawn( pos_x, pos_y - 35, "SAVING_GRACE" )
         end
     },
-    ]]--
     {
         materials = {"apotheosis_magic_liquid_moon_portal"},
         reward = function()
@@ -238,7 +237,7 @@ spell_material_database = {
     {
         materials = {"milk","apotheosis_milk"},
         reward = function()
-            if Random(1,4) == 1 then
+            if Random(1,3) ~= 1 then
                 perk_spawn( pos_x, pos_y - 35, "IRON_STOMACH" )
 
                 ProduceRewardFlair(true, pos_x, pos_y - 35)

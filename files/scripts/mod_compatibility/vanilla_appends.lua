@@ -79,7 +79,7 @@ end
 do
   local content = ModTextFileGetContent("data/entities/items/pickup/wandstone.xml")
   local xml = nxml.parse(content)
-  xml.attr.tags = xml.attr.tags .. ",poopstone"
+  xml.attr.tags = xml.attr.tags .. ",apoth_perk_forgable"
   local attrs = xml:first_of("GameEffectComponent").attr
   attrs._tags = attrs._tags .. ",enabled_in_inventory"
   ModTextFileSetContent("data/entities/items/pickup/wandstone.xml", tostring(xml))
@@ -145,7 +145,7 @@ end
 do
   local content = ModTextFileGetContent("data/entities/items/pickup/beamstone.xml")
   local xml = nxml.parse(content)
-  xml.attr.tags = xml.attr.tags .. ",poopstone"
+  xml.attr.tags = xml.attr.tags .. ",apoth_perk_forgable"
   ModTextFileSetContent("data/entities/items/pickup/beamstone.xml", tostring(xml))
 end
 
@@ -441,15 +441,23 @@ do
   local path = "data/entities/projectiles/deck/black_hole_giga.xml"
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
-  attrpath = xml:first_of("CellEaterComponent").attr
-  attrpath.ignored_material_tag = "[indestructible]"
+  xml:first_of("CellEaterComponent").attr.ignored_material_tag = "[indestructible]"
+  local proj_comp = xml:first_of("ProjectileComponent")
+  local dmg_by_type = nxml.new_element("damage_by_type", {
+    curse = "8.4",
+  })
+  proj_comp:add_child(dmg_by_type)
   ModTextFileSetContent(path, tostring(xml))
 
   local path = "data/entities/projectiles/deck/white_hole_giga.xml"
   local content = ModTextFileGetContent(path)
   local xml = nxml.parse(content)
-  attrpath = xml:first_of("CellEaterComponent").attr
-  attrpath.ignored_material_tag = "[indestructible]"
+  xml:first_of("CellEaterComponent").attr.ignored_material_tag = "[indestructible]"
+  local proj_comp = xml:first_of("ProjectileComponent")
+  local dmg_by_type = nxml.new_element("damage_by_type", {
+    holy = "8.4",
+  })
+  proj_comp:add_child(dmg_by_type)
   ModTextFileSetContent(path, tostring(xml))
 end
 
@@ -896,7 +904,7 @@ end
 do --Tower creature appends
   local path = "data/scripts/biomes/tower.lua"
   local content = ModTextFileGetContent(path)
-  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[local enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "witch_miniboss/witch_variants/arcane/witch_miniboss.xml", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
+  content = content:gsub([[local enemy_list = { "acidshooter", "alchemist", "ant",]], [[local enemy_list = { "acidshooter", "alchemist", "ant", "boss_toxic_worm", "boss_toxic_worm_minion", "bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "blob_big", "blob_huge", "forsaken_eye", "fungus_smoking_creep", "gazer_cold_apotheosis", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "vault/goo_slug", "ccc_bat_psychic", "fungiforest/ceiling_fungus", "devourer_ghost", "devourer_magic", "drone_mini", "drone_status_ailment", "esoteric_being", "fairy_big", "fairy_big_discord", "fairy_esoteric", "crypt/hideous_mass", "vault/hisii_engineer", "hisii_giga_bomb", "hisii_minecart", "hisii_minecart_tnt", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "poisonmushroom", "poring", "poring_holy", "poring_lukki", "poring_magic", "rat_birthday", "sentry", "star_child", "sunken_creature", "slime_leaker", "slime_leaker_weak", "slime_teleporter", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "watermage", "whisp", "whisp_big", "witch_miniboss/witch_variants/arcane/witch_miniboss", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_corrupt_teleport", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_returner_apotheosis", "wraith_weirdo_shield", ]])
   ModTextFileSetContent(path, content)
 end
 
@@ -1904,20 +1912,20 @@ do
   ModTextFileSetContent(path, tostring(xml))
 end
 
-do
-  local paths = {"chainsaw","disc_bullet","disc_bullet_big","disc_bullet_bigger"}
-  for k=1,#paths do
-    local path = table.concat({"data/entities/projectiles/deck/",paths[k],".xml"})
-    local content = ModTextFileGetContent(path)
-    local xml = nxml.parse(content)
-    if xml.attr.tags then
-      xml.attr.tags = xml.attr.tags .. ",chainsaw"
-    else 
-      xml.attr.tags = "chainsaw"
-    end
-    ModTextFileSetContent(path, tostring(xml))
-  end
-end
+-- do
+--   local paths = {"chainsaw","disc_bullet","disc_bullet_big","disc_bullet_bigger"}
+--   for k=1,#paths do
+--     local path = table.concat({"data/entities/projectiles/deck/",paths[k],".xml"})
+--     local content = ModTextFileGetContent(path)
+--     local xml = nxml.parse(content)
+--     if xml.attr.tags then
+--       xml.attr.tags = xml.attr.tags .. ",chainsaw"
+--     else 
+--       xml.attr.tags = "chainsaw"
+--     end
+--     ModTextFileSetContent(path, tostring(xml))
+--   end
+-- end
 
 if ModSettingGet("Apotheosis.custom_parallax") then --Remove backgrounds from biomes with parallax
   local biomes_to_purge_background = {"custom/plane_magic","custom/plane_portal_magic","custom/plane_portal_enter_magic","custom/esoteric_den"}
@@ -1953,6 +1961,54 @@ do --Implement Shift Immunity functionality for non-fungal based shifts
   content = content:gsub(pattern, replacement)
   content = content:gsub("EntityKill%( entity_id %)","EntityKill( entity_id ) if GameHasFlagRun(\"apotheosis_flag_no_tripping\") then GamePrintImportant( \"$log_apotheosis_shift_blocked_name\", \"$log_apotheosis_shift_blocked_desc\" ) end")
 
+  ModTextFileSetContent(path, content)
+end
+
+do --Give every projectile in the game the "digging_enabled" tag to make digging disabling effects more effecient later
+  local filepath = "data/entities/base_projectile.xml"
+  local content = ModTextFileGetContent(filepath)
+  local xml = nxml.parse(content)
+  xml.attr.tags = xml.attr.tags .. ",digging_enabled"
+  ModTextFileSetContent(filepath, tostring(xml))
+end
+
+do --Disable Tannerkivi Earthquakes in certain biomes (Warded Temple)
+  local path = "data/scripts/items/stonestone.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("EntityGetTransform%( GetUpdatedEntityID%(%) %)","EntityGetTransform( GetUpdatedEntityID() ) dofile_once(\"mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua\") if isInsideProtectedBiome(x,y) then GameScreenshake( 60, x, y ) return end")
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Disable the Kammi hut affecting terrain in certain biomes (Warded Temple)
+  local path = "data/scripts/items/safe_haven_spawn.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("dofile_once%(\"data/scripts/lib/utilities.lua\"%)","dofile_once(\"data/scripts/lib/utilities.lua\") dofile_once(\"mods/Apotheosis/lib/Apotheosis/apotheosis_utils.lua\")")
+  content = content:gsub("elseif t == throw_time %+ time_spawn then","elseif (t == throw_time + time_spawn) and isInsideProtectedBiome(pos_x,pos_y) == true then GamePrint(GameTextGet(\"$log_apotheosis_generic_shattered\",GameTextGet(\"$item_safe_haven\"))) GamePlaySound( \"data/audio/Desktop/event_cues.bank\", \"event_cues/angered_the_gods/create\", pos_x, pos_y ) GameScreenshake( 50 ) EntityKill(entity_id) elseif (t == throw_time + time_spawn) and isInsideProtectedBiome(pos_,pos_y) == false then")
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Make broken wands repaired at hiisi base always be non-shuffle
+  local path = "data/scripts/buildings/forge_item_convert.lua"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("\"data/entities/items/wand_level_05_better%.xml\"","\"data/entities/items/wand_unshuffle_05.xml\"")
+
+  ModTextFileSetContent(path, content)
+end
+
+do --Updates the name of the pyramids outer walls to work with the new weather system, and prevents the "entered the pyramid" text from appearing when touching the right wall of the pyramid despite being outside of the structure
+  local opts = {"data/biome/pyramid_entrance.xml","data/biome/pyramid_left.xml","data/biome/pyramid_top.xml"}
+  for k=1,#opts do
+    local path = opts[k]
+    local content = ModTextFileGetContent(path)
+    content = content:gsub("name=\"_EMPTY_\"","name=\"$biome_desert\"")
+    ModTextFileSetContent(path, content)
+  end
+
+  local path = "data/biome/pyramid_right.xml"
+  local content = ModTextFileGetContent(path)
+  content = content:gsub("name=\"%$biome_pyramid\"","name=\"$biome_desert\"")
   ModTextFileSetContent(path, content)
 end
 

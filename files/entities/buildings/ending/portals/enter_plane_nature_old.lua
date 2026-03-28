@@ -103,8 +103,8 @@ function do_newgame_plus()
 		end
 		]]--
 	end
-
-	local targets = EntityGetWithTag("poopstone")
+apoth_perk_forgable
+	local targets = EntityGetWithTag("apoth_perk_forgable")
 	for r=1,#targets
 	do local v = targets[r]
 	    if (EntityGetName(v) == "$item_apotheosis_stone_radar_name") then

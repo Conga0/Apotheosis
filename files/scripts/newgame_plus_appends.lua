@@ -12,7 +12,7 @@ function do_newgame_plus()
 		--EntityLoad("mods/Apotheosis/files/entities/buildings/newgame_plus_stone_heretic_checker.xml", 778, -1261)
 
 		local stone_id = nil
-		local heretic_stones = EntityGetWithTag("poopstone") or {}
+		local heretic_stones = EntityGetWithTag("apoth_perk_forgable") or {}
 		for k=1,#heretic_stones
 		do local v = heretic_stones[k]
 			local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")

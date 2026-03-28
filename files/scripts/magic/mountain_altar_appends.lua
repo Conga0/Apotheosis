@@ -94,7 +94,7 @@ if( GlobalsGetValue("MISC_CLAM_CHEST_RAIN") ~= "1" ) then
 	end
 end
 
-local heretic_stones = EntityGetInRadiusWithTag(x,y,48,"poopstone")
+local heretic_stones = EntityGetInRadiusWithTag(x,y,48,"apoth_perk_forgable")
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")

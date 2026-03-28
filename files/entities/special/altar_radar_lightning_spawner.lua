@@ -16,7 +16,7 @@ GamePlaySound( "data/audio/Desktop/projectiles.bank", "player_projectiles/bullet
 --Screenshake
 GameScreenshake( 40 )
 
-local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,48,"poopstone")
+local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,48,"apoth_perk_forgable")
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")

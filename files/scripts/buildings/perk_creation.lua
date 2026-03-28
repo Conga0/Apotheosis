@@ -8,7 +8,7 @@ local convertlist = {
     "stonestone",
     "thunderstone",
     "waterstone",
-    "poopstone",
+    "apoth_perk_forgable",
     "seed_a",
     "seed_b",
 }

@@ -42,7 +42,7 @@ else
     --[[
     ]]--
     local sampo = EntityGetInRadiusWithTag(pos_x, pos_y, 512, "this_is_sampo") or {}
-    local radar_stones = EntityGetInRadiusWithTag(pos_x,pos_y,512,"poopstone") or {}
+    local radar_stones = EntityGetInRadiusWithTag(pos_x,pos_y,512,"apoth_perk_forgable") or {}
     local stone_id = 0
     for k=1,#radar_stones
     do local v = radar_stones[k]

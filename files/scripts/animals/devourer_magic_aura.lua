@@ -22,7 +22,7 @@ if frozenTest <= 0 then
 	]]--
 	--Would perform better if put on the wandstone itself
 	--11/01/2023 Conga: too troubled to optimise right now.. ugh..
-	local stones = EntityGetInRadiusWithTag(x,y,20,"poopstone")
+	local stones = EntityGetInRadiusWithTag(x,y,20,"apoth_perk_forgable")
 	for k=1,#stones
 	do local v = stones[k]
 		local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")

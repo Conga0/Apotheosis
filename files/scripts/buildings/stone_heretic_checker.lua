@@ -3,7 +3,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 
 print("wagawaga")
 local stone_id = nil
-local heretic_stones = EntityGetWithTag("poopstone") or {}
+local heretic_stones = EntityGetWithTag("apoth_perk_forgable") or {}
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	print("wowza!")

@@ -11,7 +11,7 @@ local pos_x, pos_y = EntityGetTransform(entity_id)
 
 local stone_id = nil
 local purified = false
-local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,145000,"poopstone") or {}
+local heretic_stones = EntityGetInRadiusWithTag(pos_x,pos_y,145000,"apoth_perk_forgable") or {}
 for k=1,#heretic_stones
 do local v = heretic_stones[k]
 	local comp = EntityGetFirstComponentIncludingDisabled(v,"PhysicsImageShapeComponent")

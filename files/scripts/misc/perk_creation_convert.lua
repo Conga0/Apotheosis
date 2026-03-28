@@ -1,5 +1,6 @@
 dofile_once("data/scripts/lib/utilities.lua")
 dofile_once("data/scripts/perks/perk.lua")
+dofile_once("mods/Apotheosis/files/scripts/misc/perk_creation_data.lua")
 
 local reforge_entity_id = GetUpdatedEntityID()
 local entity_id = EntityGetRootEntity(reforge_entity_id)
@@ -7,38 +8,6 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 
 local comp = EntityGetComponentIncludingDisabled(entity_id,"PhysicsImageShapeComponent")[1]
 local image = ComponentGetValue2(comp,"image_file")
-
-local inputlist = {
-    "data/items_gfx/brimstone.png", --Fire Stone
-    "data/items_gfx/stonestone.png",    --Earth Stone
-    "data/items_gfx/smallgem_03.png",   --Lightning Stone
-    "data/items_gfx/waterstone.png",    --Water Stone
-    "mods/Apotheosis/files/items_gfx/waterstone_pink.png", -- Pink Water Stone
-    "data/items_gfx/kakke.png", --Spirit Stone
-    "mods/Apotheosis/files/items_gfx/stone_fungus.png", --Fungus Stone
-    "data/items_gfx/goldnugget_01.png", --Wand Stone
-    "data/items_gfx/beamstone.png", --Beam Stone
-    "data/items_gfx/goldnugget_9px.png",    --Sun Stone
-    "mods/Apotheosis/files/items_gfx/goldnugget_01_alt.png", --Sun Seed
-    "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png", --Heretic Stone
-    "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png", --Guiding Stone
-}
-
-local outputlist = {
-    "PROTECTION_FIRE",
-    "TELEKINESIS",
-    "PROTECTION_ELECTRICITY",
-    "BREATH_UNDERWATER",
-    "BREATH_UNDERWATER",
-    "APOTHEOSIS_ALCOHOL_IMMUNITY",
-    "APOTHEOSIS_TRIP_IMMUNITY",
-    "EDIT_WANDS_EVERYWHERE",
-    "MEGA_BEAM_STONE",
-    "REMOVE_FOG_OF_WAR",
-    "REMOVE_FOG_OF_WAR",
-    "GLOBAL_GORE",
-    "APOTHEOSIS_PLANE_RADAR",
-}
 
 function radarStoneCheck(eid,img)
     if img == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" then
@@ -53,8 +22,8 @@ function radarStoneCheck(eid,img)
     end
 end
 
-for k=1, #inputlist
-do local v = inputlist[k];
+for k=1, #conversion_data do
+local v = conversion_data[k].input
 
     if (image == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_radar.png" or image == "mods/Apotheosis/files/items_gfx/goldnugget_01_alt_heretic.png" ) and not GameHasFlagRun("apotheosis_miniboss_boss_flesh_monster") then
         local heretic_found = false
@@ -75,7 +44,7 @@ do local v = inputlist[k];
         end
     elseif image == v then
 		EntityLoad("data/entities/projectiles/explosion.xml", pos_x, pos_y - 10)
-		local perk_id = perk_spawn( pos_x, pos_y, outputlist[k] )
+		local perk_id = perk_spawn( pos_x, pos_y, conversion_data[k].output )
         --Perk tag is removed so other perks aren't deleted upon picking this one up
         --EntityRemoveTag(perk_id, "perk")
         --Decided to swap this out for this way instead seeing as Leggy Mimic's perk uses it so it must be the official way! -S
@@ -86,7 +55,7 @@ do local v = inputlist[k];
 			value_bool = "1",
 		} )
 	end
-        AddFlagPersistent(table.concat({"apotheosis_card_unlocked_perkforged_",string.lower(outputlist[k])}))
+        AddFlagPersistent(table.concat({"apotheosis_card_unlocked_perkforged_",string.lower(conversion_data[k].output)}))
         radarStoneCheck(entity_id,image)
 		EntityKill(entity_id)
         if not GameHasFlagRun("apotheosis_perk_creation_angered") then
