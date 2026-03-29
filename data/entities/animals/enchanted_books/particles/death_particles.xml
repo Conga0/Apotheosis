@@ -1,0 +1,50 @@
+<Entity >
+
+	<InheritTransformComponent />
+
+	<LifetimeComponent
+		lifetime="108"
+		>
+	</LifetimeComponent>
+	
+	<ParticleEmitterComponent
+		_enabled="1"
+		emitted_material_name="spark_white"
+		gravity.y="0.0"
+		lifetime_min="0.6"
+		lifetime_max="0.9"
+		count_min="1"
+		count_max="1"
+		render_on_grid="1"
+		fade_based_on_lifetime="0"
+		area_circle_radius.max="48"
+		area_circle_radius.min="48"
+		cosmetic_force_create="0"
+		airflow_force="0.5"
+		airflow_time="1.9"
+		airflow_scale="0.15"
+		emission_interval_min_frames="1"
+		emission_interval_max_frames="1"
+		emit_cosmetic_particles="1"
+		render_ultrabright="1"
+		x_vel_min="-1"
+		x_vel_max="1"
+		y_vel_min="-1"
+		y_vel_max="1"
+		is_emitting="1"
+		velocity_always_away_from_center="-100"
+		>
+	</ParticleEmitterComponent>
+
+	<AudioComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_root="player_projectiles/bomb_holy">
+	</AudioComponent>
+
+	<AudioLoopComponent
+		file="data/audio/Desktop/projectiles.bank"
+		event_name="projectiles/fuse_burn_magic"
+		auto_play="1">
+	</AudioLoopComponent>
+
+</Entity>

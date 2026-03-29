@@ -1,0 +1,29 @@
+<Entity>
+	<InheritTransformComponent/>
+
+	<VariableStorageComponent
+		name="state_data"
+		value_int="0"
+		>
+	</VariableStorageComponent>
+
+	<LuaComponent
+		script_source_file="data/entities/animals/enchanted_books/drop_loot.lua"
+		execute_every_n_frame="1"
+		>
+	</LuaComponent>
+	
+	<SpriteComponent
+		_tags="gun"
+		image_file="mods/Apotheosis/files/enemies_gfx/enchanted_book_metamorphasis.xml"
+		emissive="0"
+		offset_x="0"
+		offset_y="0"
+		update_transform="1"
+		update_transform_rotation="1"
+		alpha="0"
+		z_index="-2"
+		>
+	</SpriteComponent>
+</Entity>
+
