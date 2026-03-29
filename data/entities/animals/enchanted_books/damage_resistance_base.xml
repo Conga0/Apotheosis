@@ -39,36 +39,32 @@
 	<VariableStorageComponent
 		name="open_status"
 		value_int="0"
-		value_float="180"
+		value_float="0"
+		value_bool="0"
 		>
 	</VariableStorageComponent>
 
 	<VariableStorageComponent
-		name="cooldown_data"
-		value_int="300"
-		value_float="90"
-		value_string="mini_sun"
-		>
-	</VariableStorageComponent>
-
-	<VariableStorageComponent
-		name="cooldown_data_2"
-		value_int="1"
+		name="target_data"
+		value_int="0"
 		value_float="0"
 		value_string="0,0"
 		>
 	</VariableStorageComponent>
 
 	<VariableStorageComponent
-		name="cooldown_data_3"
+		name="attack_data_1"
 		value_int="0"
-		value_string="0,0"
+		value_float="0"
+		value_string="1"
 		>
 	</VariableStorageComponent>
 
 	<VariableStorageComponent
-		name="targetting_data"
-		value_string="0,0"
+		name="attack_data_2"
+		value_int="0"
+		value_float="0"
+		value_string="mini_sun"
 		>
 	</VariableStorageComponent>
 </Entity>

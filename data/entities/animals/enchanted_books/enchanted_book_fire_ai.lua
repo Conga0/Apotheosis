@@ -1,6 +1,18 @@
 
 attack_options = {
     {
+        name = "flamethrower",
+        filepath = "data/entities/projectiles/flamethrower.xml",
+        count_min = 3,
+        count_max = 3,
+        attacks_in_this_cycle = 80,
+        random_spread = 15,
+        speed = 250,
+        speed_random_mult = 1.15,
+        --spin_speed = 0.06,  --Example of how to tell an attack to spin, book will spin at the given speed, 0.06 is the default turn-speed for the book.
+        after_attack_delay = 3
+    },
+    {
         name = "firebolt",
         filepath = "data/entities/projectiles/deck/grenade.xml",
         count_min = 4,
@@ -22,18 +34,6 @@ attack_options = {
         speed = 80,
         give_warning = true,
         after_attack_delay = 260
-    },
-    {
-        name = "flamethrower",
-        filepath = "data/entities/projectiles/flamethrower.xml",
-        count_min = 3,
-        count_max = 3,
-        attacks_in_this_cycle = 80,
-        random_spread = 15,
-        speed = 250,
-        speed_random_mult = 1.15,
-        --spin_speed = 0.06,  --Example of how to tell an attack to spin, book will spin at the given speed, 0.06 is the default turn-speed for the book.
-        after_attack_delay = 3
     }
 }
 
