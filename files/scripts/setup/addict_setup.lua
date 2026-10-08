@@ -23,4 +23,4 @@ end
 
 -- shift creatures
 creature_shift( entity_id, x, y, true )
-fungal_shift( entity_id, pos_x, pos_y, false )
+fungal_shift( entity_id, pos_x, pos_y, true )
