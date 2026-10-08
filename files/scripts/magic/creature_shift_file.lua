@@ -185,8 +185,6 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         rnd = Random(1, #enemy_list)
         local target2 = enemy_list[rnd]
         table.remove(enemy_list, rnd)
-        --Conga: I don't know why I'm only removing from the table if NE is enabled.. autocorrect typo?
-        --Maybe some attempt to reduce likelyhood of clones? I genuinely don't know
         table.remove(enemy_list_from, rnd)
 
 
