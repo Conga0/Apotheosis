@@ -182,15 +182,31 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
 
         --Grabs Target enemy (the shift-to target) & Target2 Enemy (the victim)
 
-        rnd = Random(1, #enemy_list)
+        local rnd = Random(1, #enemy_list)
         local target2 = enemy_list[rnd]
+        --Prevent further shifts from changing this creature to something else.
+        --Once a creature is changed, that's its fate.
         table.remove(enemy_list, rnd)
-        table.remove(enemy_list_from, rnd)
 
+        --Prevent further shifts from changing into the target2.
+        --This prevents "double particle" effects (from re-editing an already
+        --edited XML), and also means that we don't double the probability of a
+        --further shift turning some other victim into this creature. It also
+        --prevents creatures from shifting into themselves.
+        for i = 1, #enemy_list do
+            if enemy_list[i] == target2 then
+                table.remove(enemy_list, i)
+                break
+            end
+        end
 
         local rnd = Random(1, #enemy_list_from)
         local target = enemy_list_from[rnd]
-        table.remove(enemy_list, rnd)
+        --Prevent further shifts from changing into this creature.
+        --Each creature can spawn as at most two others (itself, one thing
+        --shifted into it). This also prevents "broken shifts", where we turn
+        --something into this, but then turn this into something else.
+        table.remove(enemy_list_from, rnd)
 
         --Prioritise an enemy if the player is mousing over them, only applies to valid shift targets
         --75% Chance
