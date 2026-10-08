@@ -24,11 +24,6 @@ local year, month, day, hour, minute, second = GameGetDateAndTimeLocal()
 
 --enemy_list = { "bubbles/freezing_liquid/bubble_liquid", "bubbles/ambrosia/bubble_liquid", "blindgazer", "forsaken_eye", "gazer_greater", "gazer_greater_cold", "gazer_greater_sky", "gazer_robot", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "fairy_big_discord", "fairy_esoteric", "hideous_mass", "hisii_engineer", "hisii_giga_bomb", "hisii_rocketshotgun", "locust_swarm", "lukki_fungus", "lukki_swarmling", "mimic_explosive_box", "musical_being_weak", "poisonmushroom", "poring", "poring_holy", "poring_magic", "rat_birthday", "sentry", "star_child", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "triangle_gem", "whisp", "whisp_big", "wizard_ambrosia", "wizard_copeseethmald", "wizard_duck", "wizard_explosive", "wizard_manaeater", "wizard_transmutation", "wizard_firemage_greater", "wizard_z_poly_miniboss", "wraith_weirdo_shield", "acidshooter", "alchemist", "ant", "assassin", "barfer", "bat", "bigfirebug", "bigzombie", "miniblob", "bloodcrystal_physics", "bloom", "chest_mimic", "crystal_physics", "drone_physics", "enlightened_alchemist", "failed_alchemist", "failed_alchemist_b", "firebug", "firemage", "fireskull", "flamer", "fly", "frog", "frog_big", "fungus", "fungus_big", "gazer", "ghoul", "giant", "giantshooter", "healerdrone_physics", "icer", "iceskull", "lasershooter", "longleg", "maggot", "miner", "miner_fire", "missilecrab", "monk", "necromancer", "necromancer_shop", "phantom_a", "phantom_b", "rat", "roboguard", "scavenger_clusterbomb", "scavenger_heal", "scavenger_grenade", "scavenger_leader", "scavenger_mine", "scavenger_poison", "scavenger_smg", "shooterflower", "shotgunner", "skullfly", "skullrat", "slimeshooter", "sniper", "spitmonster", "statue_physics", "tank", "tank_rocket", "tank_super", "tentacler", "tentacler_small", "thundermage", "thunderskull", "wizard_dark", "wizard_neutral", "wizard_poly", "wizard_returner", "wizard_swapper", "wizard_tele", "wolf", "wraith", "wraith_glowing", "wraith_storm", "zombie", "skycrystal_physics", "scavenger_shield", "spearbot", "goblin_bomb", "necrobot", "ethereal_being", }
 
---Full enemy list, specifically for "focused shift" victims
---Includes creatures that wouldn't be exciting to be creature shifted normally, but the player can choose to focus on when shifting to change them
-local enemy_list_full = { "ant", "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "miniblob", "blob", "drone_status_ailment", "enchanted_duck", "eel", "firebug", "bigfirebug", "fairy_big_discord", "fairy_esoteric", "fish", "fish_large", "forsaken_eye", "frog", "frog_big", "fungus", "fungus_big", "fungus_giga", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "goo_slug", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hiisi_thief", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "poring", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_small", "tentacler", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield",  "scavenger_grenade", "scavenger_smg", "tank", "tank_rocket", "tank_super", "wand_ghost", "ultimate_killer", "miner_weak", "miner", "shotgunner_weak", "shotgunner", "slime_leaker_weak", "slime_leaker", "seeker", "wraith_alchemy_apotheosis", "rat", "plague_rat", "bat", "bigbat", "zombie_weak", "zombie", "firemage_weak", "firemage", "giant", "miner_fire", "fireskull", "fly", "necromancer_shop", "necromancer_super" }
-
-
 --"Shift from" list to randomly pick from
 enemy_list = { "ant_fire", "ant_suffocate", "bubbles/freezing_liquid/bubble_liquid", "fish", "forsaken_eye", "fungus_smoking_creep", "gazer", "ghost_bow", "giant_centipede", "ccc_bat_psychic", "ceiling_fungus", "devourer_magic", "drone_mini", "esoteric_being", "fairy_cheap", "fairy_big", "hideous_mass", "hisii_engineer", "hisii_rocketshotgun", "lukki_swarmling", "longleg", "mudman_friendly", "poisonmushroom", "poring_magic", "sentry", "shaman_greater_apotheosis", "tank_flame_apotheosis", "tentacler_big", "tesla_turret", "triangle_gem", "whisp", "whisp_big", "wizard_duck", "wraith_returner_apotheosis", "wraith_weirdo_shield",  "scavenger_grenade", "scavenger_smg", "wand_ghost", "miniblob", }
 
@@ -180,19 +175,33 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         GlobalsSetValue( "apotheosis_creature_shift_iteration", tostring(iter+1) )
 
 
-        --Grabs Target enemy (the shift-to target) & Target2 Enemy (the victim)
+        --Grabs copied creature (the shift-to target) & victim creature (the one that goes away)
 
-        rnd = Random(1, #enemy_list)
-        local target2 = enemy_list[rnd]
+        local rnd = Random(1, #enemy_list)
+        local victim_name = enemy_list[rnd]
+        --Prevent further shifts from changing this creature to something else.
+        --Once a creature is changed, that's its fate.
         table.remove(enemy_list, rnd)
-        --Conga: I don't know why I'm only removing from the table if NE is enabled.. autocorrect typo?
-        --Maybe some attempt to reduce likelyhood of clones? I genuinely don't know
-        table.remove(enemy_list_from, rnd)
 
+        --Prevent further shifts from changing into the victim.
+        --This prevents "double particle" effects (from re-editing an already
+        --edited XML), and also means that we don't double the probability of a
+        --further shift turning some other victim into this creature. It also
+        --prevents creatures from shifting into themselves.
+        for i = 1, #enemy_list do
+            if enemy_list[i] == victim_name then
+                table.remove(enemy_list, i)
+                break
+            end
+        end
 
         local rnd = Random(1, #enemy_list_from)
-        local target = enemy_list_from[rnd]
-        table.remove(enemy_list, rnd)
+        local copied_name = enemy_list_from[rnd]
+        --Prevent further shifts from changing into this creature.
+        --Each creature can spawn as at most two others (itself, one thing
+        --shifted into it). This also prevents "broken shifts", where we turn
+        --something into this, but then turn this into something else.
+        table.remove(enemy_list_from, rnd)
 
         --Prioritise an enemy if the player is mousing over them, only applies to valid shift targets
         --75% Chance
@@ -229,38 +238,38 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
                 local temp_filename = temp_filepath:match("([^/]*)$")
                 temp_filename = temp_filename:gsub(".xml", "")
 
-                --50/50 chance on whether the victim or the target is set to what the player is mousing over, similar to vanilla fungal shifts
+                --50/50 chance on whether the victim or the copied is set to what the player is mousing over, similar to vanilla fungal shifts
                 if Random(1,2) == 1 then
-                    target = temp_filename
+                    copied_name = temp_filename
                 else
-                    target2 = temp_filename
+                    victim_name = temp_filename
                 end
             end
         end
 
         if use_brutal_pool and selected_shift then
             local rnd = Random(1, #enemy_list_brutal)
-            target = enemy_list_brutal[rnd]
+            copied_name = enemy_list_brutal[rnd]
         end
 
 
-        print(table.concat({"Attempting to creature shift \"",target2,"\" into \"",target,"\""}))
+        print(table.concat({"Attempting to creature shift \"",victim_name,"\" into \"",copied_name,"\""}))
 
         local ui_offset_y = 0
-        if target2 == "miniblob" then
+        if victim_name == "miniblob" then
             ui_offset_y = -4
         end
 
-        local successful_image_update = update_ui_graphic( target2, ui_offset_y )
+        local successful_image_update = update_ui_graphic( victim_name, ui_offset_y )
 
 
         --Debugging shift, forces all bats to be turned into triangular gems
-        --target = "triangle_gem"
-        --target2 = "bat"
+        --copied_name = "triangle_gem"
+        --victim_name = "bat"
 
-        --target2 = "esoteric_being"
+        --victim_name = "esoteric_being"
         --Debugging helper
-        --GamePrint(target2 .. " has turned into " .. target)
+        --GamePrint(victim_name .. " has turned into " .. copied_name)
         --GamePrint("The minute is " .. minute)
 
 
@@ -270,10 +279,10 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         --"Yea, ModTextFileSetContent won't be available after initialisation but SetContent will be"
         --"but you can't make any more modifications after a file has been loaded; even if you save a reference to the function"
         --"If you use dofile("xx.lua") from init.lua then ModTextFileSetContent will also be available there."
-        --"can't you just unload the entities and load the shift target in their place instead of swapping their file contents?"
+        --"can't you just unload the entities and load the shift copied_name in their place instead of swapping their file contents?"
         --"I could.. but that'd require rewriting everything I have from the base up, unless you mean unloading the entity from the game's memory?"
         --"no just a script on the entity that kills itself and spawns the other entity in it's place"
-        local content = ModTextFileGetContent(table.concat({"data/entities/animals/",target2,".xml"}))
+        local content = ModTextFileGetContent(table.concat({"data/entities/animals/",victim_name,".xml"}))
         local xml = nxml.parse(content)
         local creature_name_get = xml.attr.name
         local target_hp = 4
@@ -291,7 +300,7 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
 
 
 
-        local content = ModTextFileGetContent(table.concat({"data/entities/animals/",target,".xml"}))
+        local content = ModTextFileGetContent(table.concat({"data/entities/animals/",copied_name,".xml"}))
         local xml = nxml.parse(content)
         if xml.attr.tags ~= nil then
             xml.attr.tags = xml.attr.tags .. ",c_shifted" --Prevents the player updater script from needlessly updating creatures
@@ -333,7 +342,7 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         ]]))
 
         --If the creature being shifted away is an Esoteric Being, add a smoke effect for when it awakens
-        if target2 == "esoteric_being" then
+        if victim_name == "esoteric_being" then
             xml:add_child(nxml.parse([[
             <LuaComponent
                 script_source_file="mods/Apotheosis/files/scripts/animals/esoteric_being_shifted_smoke.lua"
@@ -348,19 +357,19 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         --Conga: I wanted the bat to have their projectile graphic updated too, but it ended up being a really deep rabbit hole to grab the necessary data
 
         --Updates filepath data dynamically to use in edge cases (fishing up shifted fish, spawning shifted mudmen from mud, etc)
-        GlobalsSetValue( table.concat({"apotheosis_cs_",target2,"_filepath"}), table.concat({"data/entities/animals/",target,".xml"}) )
+        GlobalsSetValue( table.concat({"apotheosis_cs_",victim_name,"_filepath"}), table.concat({"data/entities/animals/",copied_name,".xml"}) )
 
-        ModTextFileSetContent("data/entities/animals/" .. target2 .. ".xml", tostring(xml))
+        ModTextFileSetContent("data/entities/animals/" .. victim_name .. ".xml", tostring(xml))
 
         from_creature_name = GameTextGetTranslatedOrNot(creature_name_get)
 
         --Add smoke particles to victim
-        --Target = The shift-to target
-        --Target2 = The Victim, the one being shifted
+        --copied_name = The shift-to target
+        --victim_name = The Victim, the one being overwritten
 
         --Bat specific projectile fix for when being launched by big bat
-        if target2 == "bat" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+        if victim_name == "bat" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",copied_name,".xml"}),0,0)
             local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
             if gfx == "" then
                 gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
@@ -370,8 +379,8 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         end
 
         --Fish specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "fish" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+        if victim_name == "fish" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",copied_name,".xml"}),0,0)
             local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
             if gfx == "" then
                 gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
@@ -381,8 +390,8 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         end
 
         --Fish Large specific projectile fix for when being reeled in from a fishing rod
-        if target2 == "fish_large" then
-            local eid = EntityLoad(table.concat({"data/entities/animals/",target,".xml"}),0,0)
+        if victim_name == "fish_large" then
+            local eid = EntityLoad(table.concat({"data/entities/animals/",copied_name,".xml"}),0,0)
             local gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"SpriteComponent"),"image_file")
             if gfx == "" then
                 gfx = ComponentGetValue2(EntityGetFirstComponentIncludingDisabled(eid,"PhysicsImageShapeComponent"),"image_file")
@@ -446,7 +455,7 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
             end
         end
 
-        local icon_name = target2
+        local icon_name = victim_name
         if icon_name == "bubbles/freezing_liquid/bubble_liquid" then
             icon_name = "bubble_liquid"
         end
@@ -507,19 +516,19 @@ function creature_shift( entity, x, y, debug_no_limits, use_brutal_pool )
         end
 
         local iter_glob = tonumber( GlobalsGetValue( "apotheosis_creature_shift_iteration", "0" ) )
-        GlobalsSetValue(table.concat({"apotheosis_global_Cshift_",iter_glob,"_targ1"}), tostring(target) )
-        GlobalsSetValue(table.concat({"apotheosis_global_Cshift_",iter_glob,"_targ2"}), tostring(target2) )
+        GlobalsSetValue(table.concat({"apotheosis_global_Cshift_",iter_glob,"_targ1"}), tostring(copied_name) )
+        GlobalsSetValue(table.concat({"apotheosis_global_Cshift_",iter_glob,"_targ2"}), tostring(victim_name) )
 
         
 
 
         --Debugging
         --[[
-        local target = (GlobalsGetValue("apotheosis_global_Cshift_" ..iter .. "_targ1", "failed") )
-        local target2 = (GlobalsGetValue("apotheosis_global_Cshift_" .. iter .. "_targ2", "failed") )
+        local copied_name = (GlobalsGetValue("apotheosis_global_Cshift_" ..iter .. "_targ1", "failed") )
+        local victim_name = (GlobalsGetValue("apotheosis_global_Cshift_" .. iter .. "_targ2", "failed") )
 
-        GamePrint(target)
-        GamePrint(target2)
+        GamePrint(copied_name)
+        GamePrint(victim_name)
         ]]--
 
         --Updates old, already created entities to be shifted to their new form

@@ -28,6 +28,13 @@ for id,enemy in pairs(enemy_list) do
                     local shiftto = EntityLoad("data/entities/animals/" .. target1 .. ".xml", pos_x, pos_y)
                     --GamePrint(tostring(target1))
 
+		    -- Behaviour here is slightly different to a new spawn.
+		    -- If the entity is saved and reloaded, then found by this script,
+		    -- we'll copy the original spawned creature's health.
+		    -- If the enemy is a new spawn, we'll use biome-specific health as
+		    -- an override if this were a biome spawn, but if it's not
+		    -- a biome spawn, we'll use the base "to" creature's health
+		    -- instead.
                     local comp = EntityGetFirstComponent(enemy, "DamageModelComponent" )
                     if comp ~= nil then
                         max_health = ComponentGetValue2(comp, "max_hp")
